@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <!-- Forkjørsvei: Black border, white, black border, yellow center -->
+  <!-- Outer black diamond -->
+  <rect x="14" y="14" width="72" height="72" rx="3" ry="3" transform="rotate(45 50 50)" fill="#222" stroke="none"/>
+  <!-- White diamond -->
+  <rect x="18" y="18" width="64" height="64" rx="2" ry="2" transform="rotate(45 50 50)" fill="white" stroke="none"/>
+  <!-- Inner black border diamond -->
+  <rect x="24" y="24" width="52" height="52" rx="2" ry="2" transform="rotate(45 50 50)" fill="#222" stroke="none"/>
+  <!-- Yellow center diamond -->
+  <rect x="27" y="27" width="46" height="46" rx="1" ry="1" transform="rotate(45 50 50)" fill="#e6d020" stroke="none"/>
+</svg>

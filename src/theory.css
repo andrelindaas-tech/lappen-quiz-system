@@ -282,6 +282,57 @@ body.dark-mode .theory-section-example {
     background-color: #2a1a3a;
 }
 
+/* Skilt-seksjon med bilder */
+.theory-section-signs {
+    background-color: var(--color-bg);
+}
+
+.theory-signs-grid {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+}
+
+.theory-sign-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-lg);
+    padding: var(--spacing-md);
+    border-radius: var(--radius-md);
+    background-color: var(--color-bg-secondary);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.theory-sign-item:hover {
+    transform: translateX(4px);
+    box-shadow: var(--shadow-sm);
+}
+
+.theory-sign-img {
+    width: 64px;
+    height: 64px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.theory-sign-text {
+    flex-grow: 1;
+}
+
+.theory-sign-text strong {
+    display: block;
+    font-size: var(--font-size-base);
+    color: var(--color-text);
+    margin-bottom: 2px;
+}
+
+.theory-sign-text p {
+    color: var(--color-text-light);
+    font-size: var(--font-size-sm);
+    margin: 0;
+    line-height: 1.5;
+}
+
 /* ===== Bremselengde-kalkulator ===== */
 .brake-calculator {
     background-color: var(--color-bg);

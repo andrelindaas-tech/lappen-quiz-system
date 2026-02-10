@@ -26,11 +26,30 @@ export default function TheoryTopic({ topic, onBack }: TheoryTopicProps) {
                 {topic.sections.map((section, index) => (
                     <div key={index} className={`theory-section theory-section-${section.type}`}>
                         <h3 className="theory-section-title">{section.title}</h3>
-                        <div className="theory-section-content">
-                            {section.content.split('\n').map((line, i) => (
-                                <p key={i}>{line}</p>
-                            ))}
-                        </div>
+
+                        {section.type === 'signs' && section.signs ? (
+                            <div className="theory-signs-grid">
+                                {section.signs.map((sign, i) => (
+                                    <div key={i} className="theory-sign-item">
+                                        <img
+                                            src={sign.imageUrl}
+                                            alt={sign.name}
+                                            className="theory-sign-img"
+                                        />
+                                        <div className="theory-sign-text">
+                                            <strong>{sign.name}</strong>
+                                            <p>{sign.description}</p>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                        ) : (
+                            <div className="theory-section-content">
+                                {section.content.split('\n').map((line, i) => (
+                                    <p key={i}>{line}</p>
+                                ))}
+                            </div>
+                        )}
                     </div>
                 ))}
             </div>

@@ -1,9 +1,16 @@
 // Teoridata — Alt innhold på norsk
 
+export interface SignItem {
+    name: string
+    description: string
+    imageUrl: string
+}
+
 export interface TheorySection {
     title: string
     content: string
-    type: 'text' | 'formula' | 'info' | 'warning' | 'tip' | 'example'
+    type: 'text' | 'formula' | 'info' | 'warning' | 'tip' | 'example' | 'signs'
+    signs?: SignItem[]
 }
 
 export interface TheoryTopic {
@@ -110,8 +117,25 @@ export const theoryTopics: TheoryTopic[] = [
             },
             {
                 title: 'Vikepliktskilt',
-                type: 'info',
-                content: '• Vikepliktskilt (trekant med spissen ned) — Du skal vike for all trafikk på kryssende vei\n• Stoppskilt (rødt åttekantskilt) — Du MÅ stoppe helt opp før du kjører videre\n• Forkjørsvei (gul rute på hvit bakgrunn) — Du har forkjørsrett, kryssende trafikk skal vike'
+                type: 'signs',
+                content: '',
+                signs: [
+                    {
+                        name: 'Vikepliktskilt',
+                        description: 'Du skal vike for all trafikk på kryssende vei',
+                        imageUrl: '/signs/vikeplikt.svg'
+                    },
+                    {
+                        name: 'Stoppskilt',
+                        description: 'Du MÅ stoppe helt opp før du kjører videre',
+                        imageUrl: '/signs/stopp.svg'
+                    },
+                    {
+                        name: 'Forkjørsvei',
+                        description: 'Du har forkjørsrett, kryssende trafikk skal vike',
+                        imageUrl: '/signs/forkjorsvei.svg'
+                    }
+                ]
             },
             {
                 title: 'Rundkjøring',
