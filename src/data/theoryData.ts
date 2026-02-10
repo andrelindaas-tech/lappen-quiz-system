@@ -122,17 +122,17 @@ export const theoryTopics: TheoryTopic[] = [
                 signs: [
                     {
                         name: 'Vikepliktskilt',
-                        description: 'Du skal vike for all trafikk på kryssende vei',
+                        description: 'Trekant med spissen ned og rød kant. Du skal vike for all trafikk på kryssende vei. Senk farten og vær klar til å stoppe. Du trenger ikke stoppe helt hvis veien er klar.',
                         imageUrl: '/signs/vikeplikt.svg'
                     },
                     {
                         name: 'Stoppskilt',
-                        description: 'Du MÅ stoppe helt opp før du kjører videre',
+                        description: 'Rødt åttekantskilt med hvit tekst «STOPP». Du MÅ stoppe helt opp ved stopplinjen eller ved krysset før du kjører videre — selv om veien virker klar. Se til begge sider før du fortsetter.',
                         imageUrl: '/signs/stopp.svg'
                     },
                     {
                         name: 'Forkjørsvei',
-                        description: 'Du har forkjørsrett, kryssende trafikk skal vike',
+                        description: 'Gul rute på hvit bakgrunn med svart kant. Betyr at du har forkjørsrett — kryssende trafikk skal vike for deg. Skiltet gjelder til det blir opphevet av «slutt på forkjørsvei»-skilt.',
                         imageUrl: '/signs/forkjorsvei.svg'
                     }
                 ]
