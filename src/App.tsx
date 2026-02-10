@@ -2,9 +2,14 @@
 import { useState, useEffect } from 'react'
 import QuizContainer from './components/QuizContainer'
 import StartScreen from './components/StartScreen'
+import TheoryPage from './components/TheoryPage'
 import ThemeToggle from './components/ThemeToggle'
 import type { QuizMode } from './types/quiz.types'
 import './index.css'
+import './fokus.css'
+import './theory.css'
+
+type AppPage = 'quiz' | 'theory'
 
 export default function App() {
     const [isDarkMode, setIsDarkMode] = useState(() => {
@@ -13,6 +18,7 @@ export default function App() {
         return saved === 'true'
     })
 
+    const [currentPage, setCurrentPage] = useState<AppPage>('quiz')
     const [currentMode, setCurrentMode] = useState<QuizMode | null>(null)
 
     useEffect(() => {
@@ -39,6 +45,11 @@ export default function App() {
         setCurrentMode(null)
     }
 
+    const handlePageChange = (page: AppPage) => {
+        setCurrentPage(page)
+        setCurrentMode(null) // Reset quiz when switching
+    }
+
     return (
         <>
             <header style={{
@@ -46,6 +57,7 @@ export default function App() {
                 borderBottom: '1px solid var(--color-border)',
                 padding: 'var(--spacing-lg) 0',
                 marginBottom: 'var(--spacing-xl)',
+                boxShadow: 'var(--shadow-sm)',
                 transition: 'background-color 0.3s ease, border-color 0.3s ease'
             }}>
                 <div className="container" style={{
@@ -55,22 +67,31 @@ export default function App() {
                 }}>
                     <div>
                         <h1 style={{ marginBottom: 0 }}>
-                            🚗 Lappen.no - Teoriprøve
+                            🏁 Lappen.no
                         </h1>
-                        <p style={{
-                            color: 'var(--color-text-light)',
-                            fontSize: 'var(--font-size-sm)',
-                            marginTop: 'var(--spacing-xs)'
-                        }}>
-                            Klasse B (Personbil)
-                        </p>
+                        <nav className="nav-tabs">
+                            <button
+                                className={`nav-tab ${currentPage === 'quiz' ? 'nav-tab-active' : ''}`}
+                                onClick={() => handlePageChange('quiz')}
+                            >
+                                📝 Øvingsprøve
+                            </button>
+                            <button
+                                className={`nav-tab ${currentPage === 'theory' ? 'nav-tab-active' : ''}`}
+                                onClick={() => handlePageChange('theory')}
+                            >
+                                📖 Teori
+                            </button>
+                        </nav>
                     </div>
                     <ThemeToggle isDark={isDarkMode} onToggle={toggleDarkMode} />
                 </div>
             </header>
 
             <main>
-                {currentMode ? (
+                {currentPage === 'theory' ? (
+                    <TheoryPage />
+                ) : currentMode ? (
                     <QuizContainer
                         mode={currentMode}
                         onReturnHome={handleReturnHome}
@@ -85,7 +106,8 @@ export default function App() {
                 padding: 'var(--spacing-xl) 0',
                 textAlign: 'center',
                 color: 'var(--color-text-light)',
-                fontSize: 'var(--font-size-sm)'
+                fontSize: 'var(--font-size-sm)',
+                opacity: 0.8
             }}>
                 <div className="container">
                     <p>© 2026 Lappen.no - Øvingsprøve for førerkort</p>
@@ -94,3 +116,4 @@ export default function App() {
         </>
     )
 }
+

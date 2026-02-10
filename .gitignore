@@ -26,3 +26,14 @@ dist-ssr
 # Environment variables
 .env.local
 .env.*.local
+
+# Dev utility scripts (contain DB references)
+add-questions.js
+add-questions.sql
+check-question-count.js
+check-duplicates.js
+inspect-schema.js
+test-db.mjs
+test-supabase.html
+remove-duplicates.sql
+diagnose.ts

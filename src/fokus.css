@@ -1,0 +1,42 @@
+/* Fokus Mode Styles - Clean Addition */
+
+/* Mode badge for Fokus mode */
+.mode-badge-skilt {
+    background-color: #eab308;
+    color: white;
+}
+
+.mode-badge-fokus {
+    background-color: var(--color-fokus);
+    color: white;
+}
+
+/* Fokus mode card hover state */
+.mode-card-fokus:hover:not(:disabled) {
+    border-color: var(--color-fokus);
+    box-shadow: var(--shadow-xl);
+}
+
+/* Disabled mode cards */
+.mode-card:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.mode-card:disabled:hover {
+    transform: none;
+    box-shadow: none;
+    border-color: var(--color-border);
+}
+
+/* Mobile responsive padding adjustments */
+@media (max-width: 640px) {
+    .question-card {
+        padding: 2rem;
+    }
+
+    .container {
+        padding: var(--spacing-lg);
+    }
+}

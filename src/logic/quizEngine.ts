@@ -21,6 +21,7 @@ export interface QuizResult {
     passed: boolean
     percentage: number
     maxErrors: number
+    timeTaken?: number  // Time taken in seconds
 }
 
 export class QuizEngine {
@@ -134,5 +135,15 @@ export class QuizEngine {
      */
     getProgress(): number {
         return this.answers.length
+    }
+
+    /**
+     * Get IDs of questions answered incorrectly
+     * Used to sync with localStorage for Fokus mode
+     */
+    getIncorrectAnswerIds(): number[] {
+        return this.answers
+            .filter(answer => answer.isCorrect === false)
+            .map(answer => answer.questionId)
     }
 }

@@ -1,0 +1,536 @@
+/* Teori-side stiler */
+
+/* ===== Navigasjon ===== */
+.nav-tabs {
+    display: flex;
+    gap: var(--spacing-xs);
+    margin-top: var(--spacing-sm);
+}
+
+.nav-tab {
+    background: none;
+    border: none;
+    padding: var(--spacing-xs) var(--spacing-md);
+    font-family: var(--font-family);
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    color: var(--color-text-light);
+    cursor: pointer;
+    border-radius: var(--radius-sm);
+    transition: all 0.2s ease;
+    position: relative;
+}
+
+.nav-tab:hover {
+    color: var(--color-text);
+    background-color: var(--color-bg-secondary);
+}
+
+.nav-tab-active {
+    color: var(--color-primary);
+    background-color: var(--color-bg-secondary);
+}
+
+.nav-tab-active::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: var(--spacing-sm);
+    right: var(--spacing-sm);
+    height: 3px;
+    background-color: var(--color-primary);
+    border-radius: 2px;
+}
+
+/* ===== Teori-side ===== */
+.theory-page {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: var(--spacing-xl);
+    text-align: center;
+}
+
+.theory-page h1 {
+    font-size: var(--font-size-2xl);
+    margin-bottom: var(--spacing-md);
+}
+
+.theory-subtitle {
+    color: var(--color-text-light);
+    font-size: var(--font-size-lg);
+    margin-bottom: var(--spacing-xl);
+}
+
+/* ===== Emne-kort ===== */
+.theory-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: var(--spacing-xl);
+    text-align: left;
+}
+
+.theory-card {
+    background-color: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-top: 4px solid transparent;
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    font-family: var(--font-family);
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.theory-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+}
+
+.theory-card-icon {
+    font-size: 2.5rem;
+}
+
+.theory-card-title {
+    font-size: var(--font-size-lg);
+    font-weight: 700;
+    color: var(--color-text);
+    margin: 0;
+}
+
+.theory-card-desc {
+    color: var(--color-text-light);
+    font-size: var(--font-size-sm);
+    line-height: 1.5;
+    margin: 0;
+    flex-grow: 1;
+}
+
+.theory-card-badge {
+    display: inline-block;
+    padding: var(--spacing-xs) var(--spacing-md);
+    border-radius: var(--radius-sm);
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    color: white;
+    align-self: flex-start;
+    margin-top: var(--spacing-sm);
+}
+
+/* ===== Emne-detaljvisning ===== */
+.theory-topic-detail {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.theory-back-btn {
+    background: none;
+    border: none;
+    font-family: var(--font-family);
+    font-size: var(--font-size-base);
+    font-weight: 600;
+    color: var(--color-primary);
+    cursor: pointer;
+    padding: var(--spacing-sm) 0;
+    margin-bottom: var(--spacing-lg);
+    transition: opacity 0.2s ease;
+}
+
+.theory-back-btn:hover {
+    opacity: 0.7;
+}
+
+.theory-topic-header {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-lg);
+    padding: var(--spacing-xl);
+    background-color: var(--color-bg);
+    border-radius: var(--radius-lg);
+    border-left: 5px solid;
+    box-shadow: var(--shadow-md);
+    margin-bottom: var(--spacing-xl);
+}
+
+.theory-topic-header h2 {
+    margin: 0;
+    font-size: var(--font-size-2xl);
+}
+
+.theory-topic-desc {
+    color: var(--color-text-light);
+    margin: var(--spacing-xs) 0 0 0;
+}
+
+.theory-topic-icon-lg {
+    font-size: 3.5rem;
+}
+
+/* ===== Teori-seksjoner ===== */
+.theory-sections {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+}
+
+.theory-section {
+    background-color: var(--color-bg);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-xl);
+    box-shadow: var(--shadow-sm);
+    transition: background-color 0.3s ease;
+}
+
+.theory-section-title {
+    font-size: var(--font-size-lg);
+    font-weight: 700;
+    margin-bottom: var(--spacing-md);
+    color: var(--color-text);
+}
+
+.theory-section-content p {
+    margin: 0 0 var(--spacing-xs) 0;
+    line-height: 1.7;
+    color: var(--color-text);
+}
+
+.theory-section-content p:empty {
+    margin: 0;
+}
+
+/* Formel-seksjon */
+.theory-section-formula {
+    background-color: #f0f4ff;
+    border-left: 4px solid var(--color-primary);
+}
+
+.theory-section-formula .theory-section-title {
+    color: var(--color-primary);
+}
+
+.theory-section-formula .theory-section-content p {
+    font-family: 'Courier New', monospace;
+    font-size: var(--font-size-base);
+    font-weight: 600;
+}
+
+body.dark-mode .theory-section-formula {
+    background-color: #1e2a4a;
+}
+
+/* Info-seksjon */
+.theory-section-info {
+    background-color: #f0fdf4;
+    border-left: 4px solid #059669;
+}
+
+.theory-section-info .theory-section-title {
+    color: #059669;
+}
+
+body.dark-mode .theory-section-info {
+    background-color: #1a2e1a;
+}
+
+/* Advarsel-seksjon */
+.theory-section-warning {
+    background-color: #fef3c7;
+    border-left: 4px solid #f59e0b;
+}
+
+.theory-section-warning .theory-section-title {
+    color: #d97706;
+}
+
+body.dark-mode .theory-section-warning {
+    background-color: #3a2e1a;
+}
+
+/* Tips-seksjon */
+.theory-section-tip {
+    background-color: #eff6ff;
+    border-left: 4px solid #3b82f6;
+}
+
+.theory-section-tip .theory-section-title {
+    color: #2563eb;
+}
+
+body.dark-mode .theory-section-tip {
+    background-color: #1a253a;
+}
+
+/* Eksempel-seksjon */
+.theory-section-example {
+    background-color: #fdf4ff;
+    border-left: 4px solid #a855f7;
+}
+
+.theory-section-example .theory-section-title {
+    color: #7c3aed;
+}
+
+.theory-section-example .theory-section-content p {
+    font-family: 'Courier New', monospace;
+    font-weight: 500;
+}
+
+body.dark-mode .theory-section-example {
+    background-color: #2a1a3a;
+}
+
+/* ===== Bremselengde-kalkulator ===== */
+.brake-calculator {
+    background-color: var(--color-bg);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-xl);
+    box-shadow: var(--shadow-md);
+    margin-top: var(--spacing-xl);
+    border-top: 4px solid #3b82f6;
+}
+
+.calc-title {
+    font-size: var(--font-size-xl);
+    margin-bottom: var(--spacing-xl);
+    text-align: center;
+}
+
+.calc-input-section {
+    margin-bottom: var(--spacing-xl);
+}
+
+.calc-label {
+    display: block;
+    font-size: var(--font-size-base);
+    color: var(--color-text-light);
+    margin-bottom: var(--spacing-sm);
+    text-align: center;
+}
+
+.calc-label strong {
+    font-size: var(--font-size-xl);
+    color: var(--color-text);
+}
+
+.calc-slider {
+    width: 100%;
+    height: 8px;
+    appearance: none;
+    -webkit-appearance: none;
+    background: var(--color-border);
+    border-radius: 99px;
+    outline: none;
+    margin: var(--spacing-md) 0;
+}
+
+.calc-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--color-primary);
+    cursor: pointer;
+    box-shadow: var(--shadow-md);
+    transition: transform 0.15s ease;
+}
+
+.calc-slider::-webkit-slider-thumb:hover {
+    transform: scale(1.15);
+}
+
+.calc-slider::-moz-range-thumb {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--color-primary);
+    cursor: pointer;
+    border: none;
+    box-shadow: var(--shadow-md);
+}
+
+.calc-presets {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-xs);
+    flex-wrap: wrap;
+}
+
+.calc-preset-btn {
+    padding: var(--spacing-xs) var(--spacing-md);
+    border: 2px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    background: var(--color-bg);
+    color: var(--color-text);
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: var(--font-size-sm);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.calc-preset-btn:hover {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+}
+
+.calc-preset-btn.active {
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+    color: white;
+}
+
+/* Resultat-barer */
+.calc-results {
+    margin-bottom: var(--spacing-xl);
+}
+
+.calc-result-row {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+}
+
+.calc-result-label {
+    min-width: 140px;
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    color: var(--color-text);
+}
+
+.calc-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.calc-bar-container {
+    flex-grow: 1;
+    height: 24px;
+    background-color: var(--color-bg-secondary);
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+}
+
+.calc-bar {
+    height: 100%;
+    border-radius: var(--radius-sm);
+    transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    min-width: 4px;
+}
+
+.calc-value {
+    min-width: 70px;
+    text-align: right;
+    font-weight: 700;
+    font-size: var(--font-size-sm);
+    color: var(--color-text);
+    font-variant-numeric: tabular-nums;
+}
+
+.calc-divider {
+    height: 1px;
+    background-color: var(--color-border);
+    margin: var(--spacing-md) 0;
+}
+
+/* Detaljert tabell */
+.calc-breakdown {
+    background-color: var(--color-bg-secondary);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-lg);
+}
+
+.calc-breakdown h4 {
+    margin-bottom: var(--spacing-md);
+    color: var(--color-text);
+    font-size: var(--font-size-base);
+}
+
+.calc-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: var(--font-size-sm);
+}
+
+.calc-table th,
+.calc-table td {
+    padding: var(--spacing-sm) var(--spacing-md);
+    text-align: left;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.calc-table th {
+    font-weight: 600;
+    color: var(--color-text-light);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.calc-table td {
+    color: var(--color-text);
+}
+
+.calc-total-row {
+    background-color: var(--color-bg);
+    border-radius: var(--radius-sm);
+}
+
+.calc-total-row td {
+    border-bottom: none;
+}
+
+/* ===== Responsiv Teori ===== */
+@media (max-width: 640px) {
+    .theory-page {
+        padding: var(--spacing-md);
+    }
+
+    .theory-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .theory-topic-header {
+        flex-direction: column;
+        text-align: center;
+        gap: var(--spacing-md);
+    }
+
+    .theory-topic-icon-lg {
+        font-size: 2.5rem;
+    }
+
+    .theory-section {
+        padding: var(--spacing-lg);
+    }
+
+    .calc-result-row {
+        flex-wrap: wrap;
+    }
+
+    .calc-result-label {
+        min-width: 100%;
+        margin-bottom: var(--spacing-xs);
+    }
+
+    .calc-value {
+        min-width: 60px;
+    }
+
+    .nav-tabs {
+        gap: 2px;
+    }
+
+    .nav-tab {
+        font-size: 0.8rem;
+        padding: var(--spacing-xs) var(--spacing-sm);
+    }
+}

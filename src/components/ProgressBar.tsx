@@ -1,5 +1,4 @@
 // Action Layer: Progress Bar Component
-import React from 'react'
 
 interface ProgressBarProps {
     current: number
