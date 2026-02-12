@@ -2,13 +2,66 @@
 <html lang="no">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+
+    <!-- Favicon & App Icons -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/favicon.svg" />
+
+    <!-- Viewport & Mobile -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; connect-src 'self' https://tdclflxovwhqutaikvuj.supabase.co; img-src 'self' https://tdclflxovwhqutaikvuj.supabase.co https://upload.wikimedia.org data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline';" />
+    <meta name="theme-color" content="#1a1d2e" />
+
+    <!-- Primary SEO Meta Tags -->
+    <title>Lappen.no – Gratis øvingsprøve for førerkort klasse B</title>
+    <meta name="description" content="Øv gratis på teoriprøven for førerkort klasse B (personbil). Realistiske øvingsprøver med trafikkregler, skilt, sikkerhet og mer. Bestå teoriprøven på første forsøk!" />
+    <meta name="keywords" content="teoriprøve, førerkort, klasse B, øvingsprøve, trafikkregler, skilt, førerkort Norge, lappen, teori bil" />
+    <meta name="author" content="Lappen.no" />
+    <link rel="canonical" href="https://animated-unicorn-c10425.netlify.app/" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://animated-unicorn-c10425.netlify.app/" />
+    <meta property="og:title" content="Lappen.no – Gratis øvingsprøve for førerkort klasse B" />
+    <meta property="og:description" content="Øv gratis på teoriprøven for førerkort klasse B. Realistiske øvingsprøver med trafikkregler, skilt, sikkerhet og mer." />
+    <meta property="og:locale" content="nb_NO" />
+    <meta property="og:site_name" content="Lappen.no" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Lappen.no – Gratis øvingsprøve for førerkort klasse B" />
+    <meta name="twitter:description" content="Øv gratis på teoriprøven for førerkort klasse B. Realistiske øvingsprøver med trafikkregler, skilt, sikkerhet og mer." />
+
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/manifest.json" />
+
+    <!-- Security Headers -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; connect-src 'self' https://tdclflxovwhqutaikvuj.supabase.co; img-src 'self' https://tdclflxovwhqutaikvuj.supabase.co https://upload.wikimedia.org data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self' 'unsafe-inline';" />
     <meta http-equiv="X-Content-Type-Options" content="nosniff" />
     <meta name="referrer" content="strict-origin-when-cross-origin" />
-    <title>Lappen.no - Teoriprøve Klasse B</title>
-    <meta name="description" content="Øv på teoriprøven for førerkort klasse B (personbil)" />
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Lappen.no",
+      "url": "https://animated-unicorn-c10425.netlify.app/",
+      "description": "Gratis øvingsprøve for teoriprøven til førerkort klasse B (personbil) i Norge.",
+      "applicationCategory": "EducationalApplication",
+      "operatingSystem": "All",
+      "inLanguage": "no",
+      "isAccessibleForFree": true,
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "NOK"
+      },
+      "author": {
+        "@type": "Organization",
+        "name": "Lappen.no"
+      }
+    }
+    </script>
   </head>
   <body>
     <div id="root"></div>

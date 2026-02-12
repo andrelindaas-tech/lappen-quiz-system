@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://animated-unicorn-c10425.netlify.app/sitemap.xml

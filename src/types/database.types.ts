@@ -46,7 +46,19 @@ export interface Database {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      get_random_questions: {
+        Args: {
+          p_count: number
+        }
+        Returns: Database['public']['Tables']['questions']['Row'][]
+      }
+      get_random_questions_by_category: {
+        Args: {
+          p_count: number
+          p_category: string
+        }
+        Returns: Database['public']['Tables']['questions']['Row'][]
+      }
     }
     Enums: {
       [_ in never]: never

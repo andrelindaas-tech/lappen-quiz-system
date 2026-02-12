@@ -9,13 +9,12 @@ export async function fetchRandomQuestions(count: number): Promise<Question[]> {
   try {
     console.log(`📡 Fetching questions from Supabase...`)
 
-    // Fetch all questions from database
-    const { data, error } = await supabase
-      .from('questions')
-      .select('*')
+    // Fetch random questions from database using RPC
+    const { data, error } = await (supabase as any)
+      .rpc('get_random_questions', { p_count: count })
 
     if (error) {
-      console.error('❌ Supabase query error:', error)
+      console.error('❌ Supabase RPC error:', error)
       throw new Error(`Database feil: ${error.message}`)
     }
 
@@ -23,17 +22,8 @@ export async function fetchRandomQuestions(count: number): Promise<Question[]> {
       throw new Error('Ingen spørsmål funnet i databasen. Vennligst legg til spørsmål først.')
     }
 
-    console.log(`✅ Loaded ${data.length} questions from database`)
-
-    if (data.length < count) {
-      console.warn(`⚠️ Requested ${count} questions but only ${data.length} available`)
-      // Return all available questions if less than requested
-      return shuffleArray(data)
-    }
-
-    // Shuffle and return requested count
-    const shuffled = shuffleArray(data)
-    return shuffled.slice(0, count)
+    console.log(`✅ Loaded ${data.length} random questions from server`)
+    return data
 
   } catch (err) {
     // Self-healing: Log error for debugging but re-throw for UI handling
@@ -55,14 +45,15 @@ export async function fetchQuestionsByCategory(count: number, category: string):
   try {
     console.log(`📡 Fetching ${count} questions from category: ${category}`)
 
-    // Fetch questions filtered by category
-    const { data, error } = await supabase
-      .from('questions')
-      .select('*')
-      .eq('category', category)
+    // Fetch questions filtered by category using RPC
+    const { data, error } = await (supabase as any)
+      .rpc('get_random_questions_by_category', {
+        p_count: count,
+        p_category: category
+      })
 
     if (error) {
-      console.error('❌ Supabase query error:', error)
+      console.error('❌ Supabase RPC error:', error)
       throw new Error(`Database feil: ${error.message}`)
     }
 
@@ -70,17 +61,8 @@ export async function fetchQuestionsByCategory(count: number, category: string):
       throw new Error(`Ingen spørsmål funnet for kategori "${category}". Vennligst sjekk databasen.`)
     }
 
-    console.log(`✅ Loaded ${data.length} questions from category "${category}"`)
-
-    if (data.length < count) {
-      console.warn(`⚠️ Requested ${count} questions but only ${data.length} available in category "${category}"`)
-      // Return all available questions if less than requested
-      return shuffleArray(data)
-    }
-
-    // Shuffle and return requested count
-    const shuffled = shuffleArray(data)
-    return shuffled.slice(0, count)
+    console.log(`✅ Loaded ${data.length} questions from server for category "${category}"`)
+    return data
 
   } catch (err) {
     console.error('💥 Question service error:', err)

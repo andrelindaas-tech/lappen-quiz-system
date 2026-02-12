@@ -1,0 +1,18 @@
+{
+    "name": "Lappen.no – Teoriprøve Klasse B",
+    "short_name": "Lappen.no",
+    "description": "Gratis øvingsprøve for teoriprøven til førerkort klasse B. Øv på trafikkregler, skilt og sikkerhet.",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#1a1d2e",
+    "theme_color": "#1a1d2e",
+    "lang": "no",
+    "icons": [
+        {
+            "src": "/favicon.svg",
+            "sizes": "any",
+            "type": "image/svg+xml",
+            "purpose": "any maskable"
+        }
+    ]
+}
