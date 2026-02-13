@@ -15,11 +15,12 @@ import { getWrongAnswers, removeWrongAnswer, addWrongAnswers } from '../utils/wr
 interface QuizContainerProps {
     mode: QuizMode
     onReturnHome: () => void
+    onQuizComplete: () => void
 }
 
 const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL
 
-export default function QuizContainer({ mode, onReturnHome }: QuizContainerProps) {
+export default function QuizContainer({ mode, onReturnHome, onQuizComplete }: QuizContainerProps) {
     const [questions, setQuestions] = useState<Question[]>([])
     const [currentIndex, setCurrentIndex] = useState(0)
     const [engine] = useState(() => new QuizEngine(mode.maxErrors))
@@ -93,6 +94,7 @@ export default function QuizContainer({ mode, onReturnHome }: QuizContainerProps
             setTimeTaken(elapsed)
             // Show results
             setShowResults(true)
+            onQuizComplete()
         }
     }
 

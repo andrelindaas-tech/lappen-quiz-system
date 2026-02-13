@@ -1,9 +1,11 @@
 // Main App Component
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import QuizContainer from './components/QuizContainer'
 import StartScreen from './components/StartScreen'
 import TheoryPage from './components/TheoryPage'
 import ThemeToggle from './components/ThemeToggle'
+import DailyStreak from './components/DailyStreak'
+import { recordCompletion } from './utils/streakStore'
 import type { QuizMode } from './types/quiz.types'
 import './index.css'
 import './fokus.css'
@@ -20,6 +22,16 @@ export default function App() {
 
     const [currentPage, setCurrentPage] = useState<AppPage>('quiz')
     const [currentMode, setCurrentMode] = useState<QuizMode | null>(null)
+    const [streakBounce, setStreakBounce] = useState(false)
+
+    const handleQuizComplete = useCallback(() => {
+        recordCompletion()
+        setStreakBounce(true)
+    }, [])
+
+    const handleBounceComplete = useCallback(() => {
+        setStreakBounce(false)
+    }, [])
 
     useEffect(() => {
         // Apply dark mode class to body
@@ -84,7 +96,10 @@ export default function App() {
                             </button>
                         </nav>
                     </div>
-                    <ThemeToggle isDark={isDarkMode} onToggle={toggleDarkMode} />
+                    <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--spacing-sm)' }}>
+                        <DailyStreak shouldBounce={streakBounce} onBounceComplete={handleBounceComplete} />
+                        <ThemeToggle isDark={isDarkMode} onToggle={toggleDarkMode} />
+                    </div>
                 </div>
             </header>
 
@@ -95,6 +110,7 @@ export default function App() {
                     <QuizContainer
                         mode={currentMode}
                         onReturnHome={handleReturnHome}
+                        onQuizComplete={handleQuizComplete}
                     />
                 ) : (
                     <StartScreen onStartQuiz={handleStartQuiz} />
