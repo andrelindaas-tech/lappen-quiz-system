@@ -1,6 +1,6 @@
 {
-    "name": "Lappen.no – Teoriprøve Klasse B",
-    "short_name": "Lappen.no",
+    "name": "Teori-test.no – Teoriprøve Klasse B",
+    "short_name": "Teori-test.no",
     "description": "Gratis øvingsprøve for teoriprøven til førerkort klasse B. Øv på trafikkregler, skilt og sikkerhet.",
     "start_url": "/",
     "display": "standalone",

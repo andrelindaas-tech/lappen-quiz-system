@@ -79,7 +79,7 @@ export default function App() {
                 }}>
                     <div>
                         <h1 style={{ marginBottom: 0 }}>
-                            🏁 Lappen.no
+                            🏁 Teori-test.no
                         </h1>
                         <nav className="nav-tabs">
                             <button
@@ -126,7 +126,7 @@ export default function App() {
                 opacity: 0.8
             }}>
                 <div className="container">
-                    <p>© 2026 Lappen.no - Øvingsprøve for førerkort</p>
+                    <p>© 2026 Teori-test.no - Øvingsprøve for førerkort</p>
                 </div>
             </footer>
         </>
