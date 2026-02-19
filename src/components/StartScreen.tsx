@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react'
 import type { QuizMode } from '../types/quiz.types'
 import { getWrongAnswersCount } from '../utils/wrongAnswersStore'
+import { useDocumentMetadata } from '../hooks/useDocumentMetadata'
 
 interface StartScreenProps {
     onStartQuiz: (mode: QuizMode) => void
@@ -10,6 +11,12 @@ interface StartScreenProps {
 export default function StartScreen({ onStartQuiz }: StartScreenProps) {
     const [fokusCount, setFokusCount] = useState(0)
     const [useTimerForFull, setUseTimerForFull] = useState(false)
+
+    // Manage Metadata for Home Page
+    useDocumentMetadata({
+        title: 'Teori-test.no – Gratis øvingsprøve for førerkort klasse B',
+        description: 'Øv gratis på teoriprøven for førerkort klasse B (personbil). Realistiske øvingsprøver med trafikkregler, skilt, sikkerhet og mer.'
+    })
 
     // Load wrong answers count on mount and when returning from quiz
     useEffect(() => {
@@ -52,14 +59,32 @@ export default function StartScreen({ onStartQuiz }: StartScreenProps) {
 
     return (
         <div className="start-screen">
-            <h1>Velg prøvetype</h1>
-            <p style={{
-                color: 'var(--color-text-light)',
-                fontSize: 'var(--font-size-lg)',
-                marginBottom: 'var(--spacing-xl)'
-            }}>
-                Velg mellom en rask øvingstest eller full eksamensprøve
-            </p>
+            <h1>Øv til teoriprøven – enkelt og gratis</h1>
+
+            <div className="hero-section">
+                <p className="hero-description">
+                    Her finner du kvalitetssikrede teorioppgaver for klasse B. Vi oppdaterer stadig siden med nye spørsmål og smarte funksjoner for å hjelpe deg på vei mot førerkortet.
+                </p>
+                <div className="features-strip">
+                    <div className="feature-item">
+                        <span className="feature-icon">✅</span>
+                        <span>Gratis øving</span>
+                    </div>
+                    <div className="feature-item">
+                        <span className="feature-icon">🆕</span>
+                        <span>Nye spørsmål</span>
+                    </div>
+                    <div className="feature-item">
+                        <span className="feature-icon" style={{ transform: 'scale(1.2)', display: 'inline-block' }}>🇳🇴</span>
+                        <span>Norske forhold</span>
+                    </div>
+                </div>
+            </div>
+
+            <div className="mode-selection-header">
+                <h2>Velg prøvetype</h2>
+                <p>Velg mellom en rask øvingstest eller full eksamensprøve</p>
+            </div>
 
             <div className="mode-cards">
                 <button

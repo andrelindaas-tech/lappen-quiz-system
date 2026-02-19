@@ -14,6 +14,8 @@ interface QuestionCardProps {
 export default function QuestionCard({ question, questionNumber, totalQuestions, onAnswer, onPrevious, previousAnswer }: QuestionCardProps) {
     const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null)
     const [hasAnswered, setHasAnswered] = useState(false)
+    const [imageError, setImageError] = useState(false)
+    const [imageLoading, setImageLoading] = useState(true)
 
     // Initialize state with previous answer or reset when question changes
     useEffect(() => {
@@ -49,8 +51,9 @@ export default function QuestionCard({ question, questionNumber, totalQuestions,
     }))
 
     // Generate image URL if image_name exists
+    const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL
     const imageUrl = question.image_name
-        ? `https://tdclflxovwhqutaikvuj.supabase.co/storage/v1/object/public/quiz-images/${question.image_name}`
+        ? `${SUPABASE_URL}/storage/v1/object/public/quiz-images/${question.image_name}`
         : null
 
     // Determine CSS classes for each option
@@ -86,16 +89,22 @@ export default function QuestionCard({ question, questionNumber, totalQuestions,
                 {question.question_text}
             </h2>
 
-            {imageUrl && (
+            {imageUrl && !imageError && (
                 <div className="question-image-container">
+                    {imageLoading && (
+                        <div className="image-loading-placeholder">
+                            Laster bilde...
+                        </div>
+                    )}
                     <img
                         src={imageUrl}
                         alt="Spørsmålsbilde"
-                        className="question-image"
-                        onError={(e) => {
-                            // Hide container if image fails to load
-                            const container = e.currentTarget.parentElement
-                            if (container) container.style.display = 'none'
+                        className={`question-image ${imageLoading ? 'hidden' : ''}`}
+                        onLoad={() => setImageLoading(false)}
+                        onError={() => {
+                            console.warn(`Failed to load image: ${imageUrl}`)
+                            setImageError(true)
+                            setImageLoading(false)
                         }}
                     />
                 </div>

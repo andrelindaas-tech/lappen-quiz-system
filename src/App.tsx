@@ -24,6 +24,26 @@ export default function App() {
     const [currentMode, setCurrentMode] = useState<QuizMode | null>(null)
     const [streakBounce, setStreakBounce] = useState(false)
 
+    // Handle initial routing and back/forward buttons
+    useEffect(() => {
+        const handleHashChange = () => {
+            const hash = window.location.hash
+            if (hash.startsWith('#/teori')) {
+                setCurrentPage('theory')
+                setCurrentMode(null)
+            } else {
+                setCurrentPage('quiz')
+                // We don't automatically trigger quiz modes from hash yet 
+                // to maintain current flow, but theory is now deep-linkable
+            }
+        }
+
+        window.addEventListener('hashchange', handleHashChange)
+        handleHashChange() // Initial check
+
+        return () => window.removeEventListener('hashchange', handleHashChange)
+    }, [])
+
     const handleQuizComplete = useCallback(() => {
         recordCompletion()
         setStreakBounce(true)
@@ -92,7 +112,7 @@ export default function App() {
                                 className={`nav-tab ${currentPage === 'theory' ? 'nav-tab-active' : ''}`}
                                 onClick={() => handlePageChange('theory')}
                             >
-                                📖 Teori
+                                📚 Læringsressurser
                             </button>
                         </nav>
                     </div>

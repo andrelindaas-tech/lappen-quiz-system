@@ -13,10 +13,13 @@ interface ResultScreenProps {
 }
 
 export default function ResultScreen({ result, mode, onRestart, onReview, onReturnHome }: ResultScreenProps) {
-    // Trigger confetti when Fokus mode is cleared (all correct)
+    // Trigger confetti when passing full test or clearing Fokus mode
     useEffect(() => {
-        if (mode.isFokusMode && result.passed && result.errors === 0) {
-            // Celebrate clearing Fokus mode!
+        const isFullPass = mode.name === 'Full prøve' && result.passed
+        const isFokusCleared = mode.isFokusMode && result.passed && result.errors === 0
+
+        if (isFullPass || isFokusCleared) {
+            // Celebrate!
             const duration = 3000
             const end = Date.now() + duration
 
@@ -43,7 +46,7 @@ export default function ResultScreen({ result, mode, onRestart, onReview, onRetu
 
             frame()
         }
-    }, [mode.isFokusMode, result.passed, result.errors])
+    }, [mode.isFokusMode, mode.name, result.passed, result.errors])
 
     // Special message for Fokus mode cleared
     const isFokusCleared = mode.isFokusMode && result.passed && result.errors === 0
@@ -64,8 +67,8 @@ export default function ResultScreen({ result, mode, onRestart, onReview, onRetu
                 {isFokusCleared
                     ? '🌟 Fantastisk! Du har mestret alle feilene dine!'
                     : result.passed
-                        ? 'Gratulerer! Du har bestått teoriprøven.'
-                        : 'Du må øve mer og prøve igjen.'}
+                        ? (mode.name === 'Full prøve' ? 'Gratulerer! Du har bestått teoriprøven.' : 'Bra jobba! Du besto øvingstesten.')
+                        : (mode.isFokusMode ? 'Du har fortsatt noen feil å jobbe med. Prøv igjen!' : 'Du må øve mer og prøve igjen.')}
             </p>
 
             <div className="result-details">

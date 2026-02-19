@@ -84,7 +84,7 @@ export const theoryTopics: TheoryTopic[] = [
             {
                 title: 'Hva påvirker reaksjonstiden?',
                 type: 'info',
-                content: '• Tretthet — Kan doble eller tredoble reaksjonstiden\n• Alkohol — Selv små mengder forsinker reaksjonene\n• Mobilbruk — Tar oppmerksomheten bort fra veien\n• Uoppmerksomhet — Snakking, radio, mat\n• Medisiner — Noen medisiner gir trøtthet\n• Mørke — Vanskeligere å oppdage farer\n• Alder — Eldre sjåfører reagerer noe langsommere'
+                content: '• Tretthet — Kan doble eller tredoble reaksjonstiden\n• Alkohol — Selv små mengder forsinker reaksjonene\n• Mobilbruk — Tar oppmerksomheten bort fra veien\n• Uoppmerksomhet — Snakking, radio, mat\n• Medisiner — Noen medisiner gir tretthet\n• Mørke — Vanskeligere å oppdage farer\n• Alder — Eldre sjåfører reagerer noe langsommere'
             },
             {
                 title: 'Stopplengde = Reaksjon + Bremsing',
@@ -189,7 +189,7 @@ export const theoryTopics: TheoryTopic[] = [
             {
                 title: 'Tips for eksamen',
                 type: 'tip',
-                content: 'Fokuser ekstra på forskjellen mellom \"Parkering forbudt\" (én strek) og \"All stans forbudt\" (X-strek). Mange svarer feil på dette. Husk også at \"Innkjøring forbudt\" bare gjelder i den retningen du ser skiltet.'
+                content: 'Fokuser ekstra på forskjellen mellom "Parkering forbudt" (én strek) og "All stans forbudt" (X-strek). Mange svarer feil på dette. Husk også at "Innkjøring forbudt" bare gjelder i den retningen du ser skiltet.'
             }
         ]
     },
@@ -258,6 +258,92 @@ export const theoryTopics: TheoryTopic[] = [
                 title: 'Elektrisk bil',
                 type: 'tip',
                 content: 'Elbiler har null lokale utslipp og lavere driftskostnader. Regenerativ bremsing (energigjenvinning) gjør at bilen lader batteriet når du slipper gassen. For å maksimere rekkevidden: bruk varme- og klimaanlegg med måte, og kjør jevnt.'
+            }
+        ]
+    }
+]
+
+export const theoryArticles: TheoryTopic[] = [
+    {
+        id: 'tips-eksamen',
+        title: 'Tips til teoriprøven',
+        icon: '💡',
+        shortDescription: 'Slik forbereder du deg best og unngår de vanligste feilene',
+        color: '#f59e0b',
+        sections: [
+            {
+                title: 'Forberedelser er nøkkelen',
+                type: 'text',
+                content: 'For å bestå teoriprøven på første forsøk, må du ha lest teorien grundig. Ikke bare lær deg svarene på spørsmålene utenat – du må forstå LOGIKKEN bak reglene. Statens vegvesen endrer ofte ordlyden i spørsmålene for å sjekke om du faktisk har forstått stoffet.'
+            },
+            {
+                title: 'Les spørsmålene nøye!',
+                type: 'warning',
+                content: 'Den vanligste feilen på teoriprøven er uoppmerksomhet. Mange leser spørsmålet for fort og går glipp av ord som "IKKE" eller "UNNTATT". Les hvert spørsmål to ganger før du ser på svaralternativene.'
+            },
+            {
+                title: 'Våre beste tips',
+                type: 'info',
+                content: '• Bruk eliminasjonsmetoden: Fjern de svaralternativene du er helt sikker på at er feil.\n• Se på bildet: Bildene på prøven inneholder ofte viktig informasjon om fartsgrenser, skilt eller blindsoner.\n• Tenk trafikksikkerhet: Hvis du er i tvil, velg det alternativet som er mest trafikksikkert.\n• Ikke stress: Du har 90 minutter på deg, noe som er mer enn nok tid for de fleste.'
+            },
+            {
+                title: 'Hva skjer på selve dagen?',
+                type: 'text',
+                content: 'Du må bestille time for teoriprøve på forhånd hos Statens vegvesen. Husk gyldig legitimasjon! Prøven foregår på en datamaskin ved trafikkstasjonen. Du får resultatet med en gang du har levert.'
+            },
+            {
+                title: 'Gode vaner før prøven',
+                type: 'tip',
+                content: 'Sørg for å være uthvilt og ha spist godt før du drar til trafikkstasjonen. En trøtt hjerne gjør lettere slurvefeil. Kom også i god tid slik at du ikke starter prøven med høy puls.'
+            },
+            {
+                title: 'Øv deg her — gratis!',
+                type: 'tip',
+                content: 'Her på Teori-test.no kan du øve deg med realistiske spørsmål akkurat som på den ekte prøven. Prøv Full prøve-modus for å simulere en ekte eksamen (45 spørsmål, 90 minutter). Bruk Ekspresstest for raske økter i hverdagen. Og sjekk ut Fokus-modus — den husker hvilke spørsmål du svarer feil på og lar deg øve spesifikt på svakhetene dine. Alt helt gratis. 🎯'
+            }
+        ]
+    },
+    {
+        id: 'ovingskjoring',
+        title: 'Guide til øvingskjøring',
+        icon: '🚗',
+        shortDescription: 'Alt du trenger å vite om krav, ledsager og progresjon',
+        color: '#10b981',
+        sections: [
+            {
+                title: 'Hva er øvingskjøring?',
+                type: 'text',
+                content: 'Øvingskjøring er privat kjøretrening med en godkjent ledsager, og er en av de beste måtene å bygge opp kjøreerfaring på. Jo mer du øver, desto tryggere vil du stå i fagprøven — og som sjåfør generelt. Men det er viktig å gjøre det riktig fra starten av.'
+            },
+            {
+                title: 'Krav til deg som elev',
+                type: 'info',
+                content: '• Minst 16 år gammel\n• Bestått trafikalt grunnkurs (TG) ved en godkjent trafikkskole\n• Oppfylle helsekravene for førerkort\n\nTrafikalt grunnkurs er obligatorisk og må gjennomføres FØR du kan begynne å øvingskjøre. Unntak: Er du over 25 år, kan du starte uten å ha fullført hele TG.'
+            },
+            {
+                title: 'Krav til ledsageren',
+                type: 'warning',
+                content: 'Ledsageren har samme juridiske ansvar som en kjørelærer. Vedkommende må:\n• Være minst 25 år gammel\n• Ha hatt gyldig klasse B-førerkort sammenhengende i minst 5 år\n• Sitte i forsetet ved siden av deg\n• Være helt edru under kjøringen\n\nVelg en ledsager som er tålmodig og konstruktiv — det gjør øktene mye mer effektive.'
+            },
+            {
+                title: 'Krav til bilen',
+                type: 'info',
+                content: '• Gyldig EU-kontroll\n• Forsikret for øvingskjøring — sjekk med forsikringsselskapet!\n• L-skilt festet foran og bak på bilen\n• Fungerende speil, bremser, lys og sikkerhetsbelter\n\nDe fleste kaskoforsikringer dekker øvingskjøring automatisk, men det lønner seg å bekrefte dette på forhånd.'
+            },
+            {
+                title: 'Bygg deg opp trinn for trinn',
+                type: 'tip',
+                content: 'Start enkelt og øk vanskelighetsgraden gradvis:\n\nFase 1 – Grunnleggende: starte, stoppe, gire og parkere på tom p-plass\nFase 2 – Rolige boligveier, enkle kryss og rundkjøringer\nFase 3 – Bykjøring med fotgjengere, syklister og kø\nFase 4 – Landevei og motorvei\nFase 5 – Mørke, regn og vinterføre\n\nStatens vegvesen anbefaler minst 100–150 kjørte timer. Ikke spar på øvingen!'
+            },
+            {
+                title: 'Tips for gode øvingsøkter',
+                type: 'tip',
+                content: '• Avtal på forhånd hva dere skal fokusere på\n• Gi eleven tid til å reagere — unngå å rykke til i rattet\n• Gi ros for det som går bra, ikke bare korriger feil\n• Avslutt på en positiv opplevelse for å holde motivasjonen oppe\n• Varier mellom kjente og ukjente strekninger for bredere erfaring'
+            },
+            {
+                title: 'Teori + praksis = best forberedt',
+                type: 'tip',
+                content: 'Øvingskjøring gir deg den praktiske erfaringen, men god trafikal forståelse starter med teorien. Her på Teori-test.no kan du øve på vikeplikt, skiltgjenkjenning og trafikkregler mellom kjøreøktene — slik at du er best mulig forberedt til både teori- og fagprøven. 🎯'
             }
         ]
     }

@@ -229,6 +229,7 @@ export default function QuizContainer({ mode, onReturnHome, onQuizComplete }: Qu
             />
 
             <QuestionCard
+                key={currentQuestion.id}
                 question={currentQuestion}
                 questionNumber={currentIndex + 1}
                 totalQuestions={questions.length}

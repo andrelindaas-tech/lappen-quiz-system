@@ -8,8 +8,33 @@ interface TheoryTopicProps {
 }
 
 export default function TheoryTopic({ topic, onBack }: TheoryTopicProps) {
+    // Generate JSON-LD for this specific topic
+    const structuredData = {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": topic.title,
+        "description": topic.shortDescription,
+        "author": {
+            "@type": "Organization",
+            "name": "Teori-test.no"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Teori-test.no"
+        },
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": `https://teori-test.no/#/teori/${topic.id}`
+        }
+    }
+
     return (
         <div className="theory-topic-detail">
+            {/* Inject JSON-LD */}
+            <script type="application/ld+json">
+                {JSON.stringify(structuredData)}
+            </script>
+
             <button className="theory-back-btn" onClick={onBack}>
                 ← Tilbake til emner
             </button>
