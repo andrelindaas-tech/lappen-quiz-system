@@ -14,17 +14,21 @@ export default function TheoryTopic({ topic, onBack }: TheoryTopicProps) {
         "@type": "Article",
         "headline": topic.title,
         "description": topic.shortDescription,
+        "inLanguage": "nb",
+        "datePublished": "2026-02-21",
         "author": {
             "@type": "Organization",
-            "name": "Teori-test.no"
+            "name": "Teori-test.no",
+            "url": "https://teori-test.no"
         },
         "publisher": {
             "@type": "Organization",
-            "name": "Teori-test.no"
+            "name": "Teori-test.no",
+            "url": "https://teori-test.no"
         },
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": `https://teori-test.no/#/teori/${topic.id}`
+            "@id": `https://teori-test.no/teori/${topic.id}`
         }
     }
 

@@ -2,55 +2,67 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://teori-test.no/</loc>
-    <lastmod>2026-02-19</lastmod>
+    <lastmod>2026-02-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://teori-test.no/#/teori/bremselengde</loc>
-    <lastmod>2026-02-19</lastmod>
+    <loc>https://teori-test.no/laeringsressurser</loc>
+    <lastmod>2026-02-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://teori-test.no/teori/bremselengde</loc>
+    <lastmod>2026-02-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://teori-test.no/#/teori/reaksjonstid</loc>
-    <lastmod>2026-02-19</lastmod>
+    <loc>https://teori-test.no/teori/reaksjonstid</loc>
+    <lastmod>2026-02-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://teori-test.no/#/teori/vikeplikt</loc>
-    <lastmod>2026-02-19</lastmod>
+    <loc>https://teori-test.no/teori/vikeplikt</loc>
+    <lastmod>2026-02-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://teori-test.no/#/teori/skilt</loc>
-    <lastmod>2026-02-19</lastmod>
+    <loc>https://teori-test.no/teori/skilt</loc>
+    <lastmod>2026-02-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://teori-test.no/#/teori/sikkerhet</loc>
-    <lastmod>2026-02-19</lastmod>
+    <loc>https://teori-test.no/teori/sikkerhet</loc>
+    <lastmod>2026-02-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://teori-test.no/#/teori/miljo</loc>
-    <lastmod>2026-02-19</lastmod>
+    <loc>https://teori-test.no/teori/miljo</loc>
+    <lastmod>2026-02-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://teori-test.no/#/teori/tips-eksamen</loc>
-    <lastmod>2026-02-19</lastmod>
+    <loc>https://teori-test.no/teori/tips-eksamen</loc>
+    <lastmod>2026-02-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://teori-test.no/#/teori/ovingskjoring</loc>
-    <lastmod>2026-02-19</lastmod>
+    <loc>https://teori-test.no/teori/ovingskjoring</loc>
+    <lastmod>2026-02-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://teori-test.no/teori/promille</loc>
+    <lastmod>2026-02-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

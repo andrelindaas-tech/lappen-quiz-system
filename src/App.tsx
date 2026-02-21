@@ -13,35 +13,33 @@ import './theory.css'
 
 type AppPage = 'quiz' | 'theory'
 
+function getPageFromPath(): AppPage {
+    const path = window.location.pathname
+    if (path.startsWith('/laeringsressurser') || path.startsWith('/teori/')) {
+        return 'theory'
+    }
+    return 'quiz'
+}
+
 export default function App() {
     const [isDarkMode, setIsDarkMode] = useState(() => {
-        // Initialize from localStorage or default to false
         const saved = localStorage.getItem('darkMode')
         return saved === 'true'
     })
 
-    const [currentPage, setCurrentPage] = useState<AppPage>('quiz')
+    const [currentPage, setCurrentPage] = useState<AppPage>(getPageFromPath)
     const [currentMode, setCurrentMode] = useState<QuizMode | null>(null)
     const [streakBounce, setStreakBounce] = useState(false)
 
-    // Handle initial routing and back/forward buttons
+    // Handle browser back/forward buttons
     useEffect(() => {
-        const handleHashChange = () => {
-            const hash = window.location.hash
-            if (hash.startsWith('#/teori')) {
-                setCurrentPage('theory')
-                setCurrentMode(null)
-            } else {
-                setCurrentPage('quiz')
-                // We don't automatically trigger quiz modes from hash yet 
-                // to maintain current flow, but theory is now deep-linkable
-            }
+        const handlePopState = () => {
+            setCurrentPage(getPageFromPath())
+            setCurrentMode(null)
         }
 
-        window.addEventListener('hashchange', handleHashChange)
-        handleHashChange() // Initial check
-
-        return () => window.removeEventListener('hashchange', handleHashChange)
+        window.addEventListener('popstate', handlePopState)
+        return () => window.removeEventListener('popstate', handlePopState)
     }, [])
 
     const handleQuizComplete = useCallback(() => {
@@ -54,14 +52,11 @@ export default function App() {
     }, [])
 
     useEffect(() => {
-        // Apply dark mode class to body
         if (isDarkMode) {
             document.body.classList.add('dark-mode')
         } else {
             document.body.classList.remove('dark-mode')
         }
-
-        // Save preference to localStorage
         localStorage.setItem('darkMode', isDarkMode.toString())
     }, [isDarkMode])
 
@@ -79,7 +74,12 @@ export default function App() {
 
     const handlePageChange = (page: AppPage) => {
         setCurrentPage(page)
-        setCurrentMode(null) // Reset quiz when switching
+        setCurrentMode(null)
+        if (page === 'theory') {
+            history.pushState({}, '', '/laeringsressurser')
+        } else {
+            history.pushState({}, '', '/')
+        }
     }
 
     return (
@@ -152,4 +152,3 @@ export default function App() {
         </>
     )
 }
-

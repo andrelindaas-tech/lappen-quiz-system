@@ -1,26 +1,28 @@
 // Teori-siden — Oversikt over alle emner
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { theoryTopics, theoryArticles } from '../data/theoryData'
 import TheoryTopic from './TheoryTopic'
 import { useDocumentMetadata } from '../hooks/useDocumentMetadata'
-import { useEffect } from 'react'
+
+function getTopicIdFromPath(): string | null {
+    const parts = window.location.pathname.split('/')
+    // Path: /teori/{id}  →  parts = ['', 'teori', '{id}']
+    if (parts[1] === 'teori' && parts[2]) {
+        return parts[2]
+    }
+    return null
+}
 
 export default function TheoryPage() {
-    const [selectedTopicId, setSelectedTopicId] = useState<string | null>(null)
+    const [selectedTopicId, setSelectedTopicId] = useState<string | null>(getTopicIdFromPath)
 
-    // Sync state with URL hash
+    // Sync state when browser back/forward is used
     useEffect(() => {
-        const handleHash = () => {
-            const parts = window.location.hash.split('/')
-            if (parts.length >= 3 && parts[1] === 'teori') {
-                setSelectedTopicId(parts[2])
-            } else {
-                setSelectedTopicId(null)
-            }
+        const handlePopState = () => {
+            setSelectedTopicId(getTopicIdFromPath())
         }
-        window.addEventListener('hashchange', handleHash)
-        handleHash()
-        return () => window.removeEventListener('hashchange', handleHash)
+        window.addEventListener('popstate', handlePopState)
+        return () => window.removeEventListener('popstate', handlePopState)
     }, [])
 
     // Combine topics and articles for content lookup
@@ -34,11 +36,13 @@ export default function TheoryPage() {
     })
 
     const handleSelectTopic = (id: string) => {
-        window.location.hash = `#/teori/${id}`
+        history.pushState({}, '', `/teori/${id}`)
+        setSelectedTopicId(id)
     }
 
     const handleBack = () => {
-        window.location.hash = `#/teori`
+        history.pushState({}, '', '/laeringsressurser')
+        setSelectedTopicId(null)
     }
 
     if (selectedTopic) {

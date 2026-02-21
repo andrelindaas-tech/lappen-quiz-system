@@ -23,7 +23,7 @@ export async function fetchRandomQuestions(count: number): Promise<Question[]> {
     }
 
     console.log(`✅ Loaded ${data.length} random questions from server`)
-    return data
+    return shuffleArray(data)
 
   } catch (err) {
     // Self-healing: Log error for debugging but re-throw for UI handling
@@ -62,7 +62,7 @@ export async function fetchQuestionsByCategory(count: number, category: string):
     }
 
     console.log(`✅ Loaded ${data.length} questions from server for category "${category}"`)
-    return data
+    return shuffleArray(data)
 
   } catch (err) {
     console.error('💥 Question service error:', err)
