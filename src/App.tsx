@@ -11,6 +11,9 @@ import './index.css'
 import './fokus.css'
 import './theory.css'
 
+// GA4 global type
+declare function gtag(...args: unknown[]): void
+
 type AppPage = 'quiz' | 'theory'
 
 function getPageFromPath(): AppPage {
@@ -75,10 +78,14 @@ export default function App() {
     const handlePageChange = (page: AppPage) => {
         setCurrentPage(page)
         setCurrentMode(null)
-        if (page === 'theory') {
-            history.pushState({}, '', '/laeringsressurser')
-        } else {
-            history.pushState({}, '', '/')
+        const newPath = page === 'theory' ? '/laeringsressurser' : '/'
+        history.pushState({}, '', newPath)
+        // Send GA4 page_view for SPA navigation
+        if (typeof gtag !== 'undefined') {
+            gtag('event', 'page_view', {
+                page_path: newPath,
+                page_title: document.title
+            })
         }
     }
 

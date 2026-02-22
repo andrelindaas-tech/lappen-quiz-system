@@ -4,6 +4,9 @@ import { theoryTopics, theoryArticles } from '../data/theoryData'
 import TheoryTopic from './TheoryTopic'
 import { useDocumentMetadata } from '../hooks/useDocumentMetadata'
 
+// GA4 global type
+declare function gtag(...args: unknown[]): void
+
 function getTopicIdFromPath(): string | null {
     const parts = window.location.pathname.split('/')
     // Path: /teori/{id}  →  parts = ['', 'teori', '{id}']
@@ -36,13 +39,20 @@ export default function TheoryPage() {
     })
 
     const handleSelectTopic = (id: string) => {
-        history.pushState({}, '', `/teori/${id}`)
+        const path = `/teori/${id}`
+        history.pushState({}, '', path)
         setSelectedTopicId(id)
+        if (typeof gtag !== 'undefined') {
+            gtag('event', 'page_view', { page_path: path, page_title: document.title })
+        }
     }
 
     const handleBack = () => {
         history.pushState({}, '', '/laeringsressurser')
         setSelectedTopicId(null)
+        if (typeof gtag !== 'undefined') {
+            gtag('event', 'page_view', { page_path: '/laeringsressurser', page_title: document.title })
+        }
     }
 
     if (selectedTopic) {
