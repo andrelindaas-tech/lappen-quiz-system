@@ -27,7 +27,7 @@ function getPageFromPath(): AppPage {
 export default function App() {
     const [isDarkMode, setIsDarkMode] = useState(() => {
         const saved = localStorage.getItem('darkMode')
-        return saved === 'true'
+        return saved !== 'false' // Default to true (Antigravity theme)
     })
 
     const [currentPage, setCurrentPage] = useState<AppPage>(getPageFromPath)
@@ -92,34 +92,41 @@ export default function App() {
     return (
         <>
             <header style={{
-                backgroundColor: 'var(--color-bg)',
+                position: 'sticky',
+                top: 0,
+                zIndex: 100,
+                backgroundColor: 'var(--color-header-bg)',
+                backdropFilter: 'blur(12px)',
+                WebkitBackdropFilter: 'blur(12px)',
                 borderBottom: '1px solid var(--color-border)',
-                padding: 'var(--spacing-lg) 0',
-                marginBottom: 'var(--spacing-xl)',
-                boxShadow: 'var(--shadow-sm)',
+                padding: 'var(--spacing-md) 0',
                 transition: 'background-color 0.3s ease, border-color 0.3s ease'
             }}>
                 <div className="container" style={{
                     display: 'flex',
                     justifyContent: 'space-between',
-                    alignItems: 'center'
+                    alignItems: 'center',
+                    paddingTop: 0,
+                    paddingBottom: 0
                 }}>
-                    <div>
-                        <h1 style={{ marginBottom: 0 }}>
-                            🏁 Teori-test.no
+                    <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--spacing-lg)' }}>
+                        <h1 className="header-logo-text">
+                            Teori-test.no
                         </h1>
-                        <nav className="nav-tabs">
+                        <nav className="nav-tabs" style={{ gap: 'var(--spacing-md)', marginLeft: 'var(--spacing-md)' }}>
                             <button
                                 className={`nav-tab ${currentPage === 'quiz' ? 'nav-tab-active' : ''}`}
                                 onClick={() => handlePageChange('quiz')}
+                                style={{ padding: '0.5rem 0' }}
                             >
-                                📝 Øvingsprøve
+                                Øvingsprøve
                             </button>
                             <button
                                 className={`nav-tab ${currentPage === 'theory' ? 'nav-tab-active' : ''}`}
                                 onClick={() => handlePageChange('theory')}
+                                style={{ padding: '0.5rem 0' }}
                             >
-                                📚 Læringsressurser
+                                Læringsressurser
                             </button>
                         </nav>
                     </div>
