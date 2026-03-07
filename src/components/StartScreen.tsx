@@ -119,6 +119,19 @@ export default function StartScreen() {
                     </span>
                 </button>
             </div>
+
+            {/* SEO Content Section */}
+            <div className="seo-section">
+                <h2>Norges enkleste måte å øve til teoriprøven</h2>
+                <p>
+                    Teori-test.no er laget for deg som snart skal ta teoriprøven for klasse B (personbil). Her finner du hundrevis av øvingsspørsmål som dekker hele pensum – fra fartsgrenser og vikeplikt til vegoppmerking og trafikkskilt. Du trenger ikke lage bruker, betale, eller laste ned noe.
+                </p>
+
+                <h3>Hva dekker spørsmålene?</h3>
+                <p>
+                    Spørsmålene dekker fartsregler og fartsgrenser, vikeplikt og kjørefeltsregler, trafikkskilt (forbudsskilt, påbudsskilt, opplysningsskilt), og veimerking og oppmerking.
+                </p>
+            </div>
         </div>
     )
 }

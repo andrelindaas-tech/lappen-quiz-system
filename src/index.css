@@ -617,6 +617,45 @@ body.dark-mode .error {
   text-align: center;
 }
 
+/* Base SEO Section styles (Light/Dark agnostic layout) */
+.seo-section {
+  margin-top: var(--spacing-2xl);
+  padding: var(--spacing-2xl);
+  background-color: var(--color-bg);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-md);
+  text-align: left;
+}
+
+.seo-section h2 {
+  font-size: var(--font-size-2xl);
+  color: var(--color-text);
+  margin-bottom: var(--spacing-md);
+  letter-spacing: -0.02em;
+}
+
+.seo-section h3 {
+  font-size: var(--font-size-lg);
+  color: var(--color-text);
+  margin-top: var(--spacing-xl);
+  margin-bottom: var(--spacing-sm);
+  font-weight: 600;
+}
+
+.seo-section p {
+  color: var(--color-text-light);
+  font-size: 1.125rem;
+  line-height: 1.8;
+  margin-bottom: 0;
+}
+
+/* Antigravity Dark Mode overrides for SEO Section */
+body.dark-mode .seo-section {
+  background: var(--color-bg);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.4);
+}
+
 /* Antigravity Theme Component Overrides */
 body.dark-mode .button:not(.button-secondary) {
   background: var(--color-accent-glow);
