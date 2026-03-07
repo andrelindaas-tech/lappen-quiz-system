@@ -1,12 +1,12 @@
 // Main App Component
 import { useState, useEffect, useCallback } from 'react'
+import { Routes, Route, NavLink, Link, useNavigate, useLocation } from 'react-router-dom'
 import QuizContainer from './components/QuizContainer'
 import StartScreen from './components/StartScreen'
 import TheoryPage from './components/TheoryPage'
 import ThemeToggle from './components/ThemeToggle'
 import DailyStreak from './components/DailyStreak'
 import { recordCompletion } from './utils/streakStore'
-import type { QuizMode } from './types/quiz.types'
 import './index.css'
 import './fokus.css'
 import './theory.css'
@@ -14,36 +14,15 @@ import './theory.css'
 // GA4 global type
 declare function gtag(...args: unknown[]): void
 
-type AppPage = 'quiz' | 'theory'
-
-function getPageFromPath(): AppPage {
-    const path = window.location.pathname
-    if (path.startsWith('/laeringsressurser') || path.startsWith('/teori/')) {
-        return 'theory'
-    }
-    return 'quiz'
-}
-
 export default function App() {
     const [isDarkMode, setIsDarkMode] = useState(() => {
         const saved = localStorage.getItem('darkMode')
         return saved !== 'false' // Default to true (Antigravity theme)
     })
 
-    const [currentPage, setCurrentPage] = useState<AppPage>(getPageFromPath)
-    const [currentMode, setCurrentMode] = useState<QuizMode | null>(null)
     const [streakBounce, setStreakBounce] = useState(false)
-
-    // Handle browser back/forward buttons
-    useEffect(() => {
-        const handlePopState = () => {
-            setCurrentPage(getPageFromPath())
-            setCurrentMode(null)
-        }
-
-        window.addEventListener('popstate', handlePopState)
-        return () => window.removeEventListener('popstate', handlePopState)
-    }, [])
+    const location = useLocation()
+    const navigate = useNavigate()
 
     const handleQuizComplete = useCallback(() => {
         recordCompletion()
@@ -67,27 +46,19 @@ export default function App() {
         setIsDarkMode(prev => !prev)
     }
 
-    const handleStartQuiz = (mode: QuizMode) => {
-        setCurrentMode(mode)
-    }
-
     const handleReturnHome = () => {
-        setCurrentMode(null)
+        navigate('/')
     }
 
-    const handlePageChange = (page: AppPage) => {
-        setCurrentPage(page)
-        setCurrentMode(null)
-        const newPath = page === 'theory' ? '/laeringsressurser' : '/'
-        history.pushState({}, '', newPath)
-        // Send GA4 page_view for SPA navigation
+    // Send GA4 page_view for SPA navigation
+    useEffect(() => {
         if (typeof gtag !== 'undefined') {
             gtag('event', 'page_view', {
-                page_path: newPath,
+                page_path: location.pathname + location.search,
                 page_title: document.title
             })
         }
-    }
+    }, [location])
 
     return (
         <>
@@ -110,24 +81,27 @@ export default function App() {
                     paddingBottom: 0
                 }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--spacing-lg)' }}>
-                        <h1 className="header-logo-text">
-                            Teori-test.no
-                        </h1>
-                        <nav className="nav-tabs" style={{ gap: 'var(--spacing-md)', marginLeft: 'var(--spacing-md)' }}>
-                            <button
-                                className={`nav-tab ${currentPage === 'quiz' ? 'nav-tab-active' : ''}`}
-                                onClick={() => handlePageChange('quiz')}
-                                style={{ padding: '0.5rem 0' }}
+                        <Link to="/" style={{ textDecoration: 'none' }}>
+                            <h1 className="header-logo-text">
+                                Teori-test.no
+                            </h1>
+                        </Link>
+                        <nav className="nav-tabs" style={{ gap: 'var(--spacing-xl)', marginLeft: 'var(--spacing-md)' }}>
+                            <NavLink
+                                to="/"
+                                end
+                                className={({ isActive }) => `nav-tab ${isActive || location.pathname.startsWith('/quiz') ? 'nav-tab-active' : ''}`}
+                                style={{ padding: '0.5rem 0.25rem', textDecoration: 'none' }}
                             >
                                 Øvingsprøve
-                            </button>
-                            <button
-                                className={`nav-tab ${currentPage === 'theory' ? 'nav-tab-active' : ''}`}
-                                onClick={() => handlePageChange('theory')}
-                                style={{ padding: '0.5rem 0' }}
+                            </NavLink>
+                            <NavLink
+                                to="/laeringsressurser"
+                                className={({ isActive }) => `nav-tab ${isActive || location.pathname.startsWith('/teori') ? 'nav-tab-active' : ''}`}
+                                style={{ padding: '0.5rem 0.25rem', textDecoration: 'none' }}
                             >
                                 Læringsressurser
-                            </button>
+                            </NavLink>
                         </nav>
                     </div>
                     <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--spacing-sm)' }}>
@@ -138,17 +112,14 @@ export default function App() {
             </header>
 
             <main>
-                {currentPage === 'theory' ? (
-                    <TheoryPage />
-                ) : currentMode ? (
-                    <QuizContainer
-                        mode={currentMode}
-                        onReturnHome={handleReturnHome}
-                        onQuizComplete={handleQuizComplete}
-                    />
-                ) : (
-                    <StartScreen onStartQuiz={handleStartQuiz} />
-                )}
+                <Routes>
+                    <Route path="/" element={<StartScreen />} />
+                    <Route path="/quiz" element={<QuizContainer onReturnHome={handleReturnHome} onQuizComplete={handleQuizComplete} />} />
+                    <Route path="/quiz/:category" element={<QuizContainer onReturnHome={handleReturnHome} onQuizComplete={handleQuizComplete} />} />
+                    <Route path="/laeringsressurser/:articleId?" element={<TheoryPage />} />
+                    {/* Fallback route */}
+                    <Route path="*" element={<StartScreen />} />
+                </Routes>
             </main>
 
             <footer style={{

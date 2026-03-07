@@ -87,7 +87,7 @@ export default function ResultScreen({ result, mode, onRestart, onReview, onRetu
                     <span className="result-stat-value" style={{
                         color: result.errors > result.maxErrors ? 'var(--color-error)' : 'inherit'
                     }}>
-                        {result.errors} / {result.maxErrors}
+                        {result.errors} <span style={{ fontSize: '0.85em', opacity: 0.8, fontWeight: 'normal', marginLeft: '0.25rem' }}>(Maks {result.maxErrors})</span>
                     </span>
                 </div>
 

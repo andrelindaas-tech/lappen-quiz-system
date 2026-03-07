@@ -1,4 +1,5 @@
 // Teori-emne detaljvisning
+import { Helmet } from 'react-helmet-async'
 import type { TheoryTopic as TopicType } from '../data/theoryData'
 import BrakeCalculator from './BrakeCalculator'
 
@@ -38,6 +39,12 @@ export default function TheoryTopic({ topic, onBack }: TheoryTopicProps) {
             <script type="application/ld+json">
                 {JSON.stringify(structuredData)}
             </script>
+
+            {/* Dynamic SEO Header Tags */}
+            <Helmet>
+                <title>{topic.seoTitle || `${topic.title} | Teori-test.no`}</title>
+                <meta name="description" content={topic.seoDescription || topic.shortDescription} />
+            </Helmet>
 
             <button className="theory-back-btn" onClick={onBack}>
                 ← Tilbake til emner

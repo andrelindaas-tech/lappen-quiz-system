@@ -21,6 +21,8 @@ export interface TheoryTopic {
     color: string
     sections: TheorySection[]
     hasCalculator?: boolean
+    seoTitle?: string
+    seoDescription?: string
 }
 
 export const theoryTopics: TheoryTopic[] = [
@@ -30,6 +32,8 @@ export const theoryTopics: TheoryTopic[] = [
         icon: '🛑',
         shortDescription: 'Lær å beregne bremselengde, reaksjonslengde og stopplengde',
         color: '#dc2626',
+        seoTitle: 'Bremselengde og stopplengde – formel og kalkulator | Teori-test.no',
+        seoDescription: 'Lær å beregne bremselengde, reaksjonslengde og stopplengde til teoriprøven. Interaktiv kalkulator for 30–120 km/t.',
         hasCalculator: true,
         sections: [
             {
@@ -70,6 +74,8 @@ export const theoryTopics: TheoryTopic[] = [
         icon: '⏱️',
         shortDescription: 'Forstå hvordan reaksjonstiden påvirker stopplengden',
         color: '#2563eb',
+        seoTitle: 'Reaksjonstid og stopplengde – beregning | Teori-test.no',
+        seoDescription: 'Forstå hvordan reaksjonstiden påvirker stopplengden. Lær formelen for reaksjonslengde til teoriprøven på tørr og glatt vei.',
         sections: [
             {
                 title: 'Hva er reaksjonstid?',
@@ -109,6 +115,8 @@ export const theoryTopics: TheoryTopic[] = [
         icon: '🔺',
         shortDescription: 'Hvem skal vike? Regler for kryss, rundkjøring og trikk',
         color: '#ea580c',
+        seoTitle: 'Vikeplikt – regler for kryss og rundkjøring | Teori-test.no',
+        seoDescription: 'Lær hvem som skal vike med høyreregel, vikepliktskilt og forkjørsvei. Viktig vikeplikt-teori for førerkort klasse B.',
         sections: [
             {
                 title: 'Grunnregel: Høyreregel',
@@ -165,6 +173,8 @@ export const theoryTopics: TheoryTopic[] = [
         icon: '🚦',
         shortDescription: 'De viktigste trafikkskiltene du må kjenne til',
         color: '#059669',
+        seoTitle: 'Trafikkskilt – oversikt for teoriprøven | Teori-test.no',
+        seoDescription: 'De viktigste trafikkskiltene du må kjenne til for klasse B: fareskilt, forbudsskilt og vikepliktskilt.',
         sections: [
             {
                 title: 'Skilttyper etter form og farge',
@@ -199,6 +209,8 @@ export const theoryTopics: TheoryTopic[] = [
         icon: '🦺',
         shortDescription: 'Bilbelte, barneseter, varseltrekant og førstehjelp',
         color: '#7c3aed',
+        seoTitle: 'Sikkerhetsutstyr og bilbelte | Teori-test.no',
+        seoDescription: 'Sikkerhetsutstyr i bil: bilbelte, barneseter, airbag, varseltrekant og førstehjelp for en trygg biltur.',
         sections: [
             {
                 title: 'Bilbelte',
@@ -233,6 +245,8 @@ export const theoryTopics: TheoryTopic[] = [
         icon: '🌿',
         shortDescription: 'Spar drivstoff og reduser utslipp med riktig kjørestil',
         color: '#16a34a',
+        seoTitle: 'Miljøvennlig kjøring – spar drivstoff | Teori-test.no',
+        seoDescription: 'Lær hvordan du kjører miljøvennlig, sparer drivstoff og reduserer utslipp for å bestå teoriprøven klasse B.',
         sections: [
             {
                 title: 'Økonomisk kjøring',
@@ -270,6 +284,8 @@ export const theoryArticles: TheoryTopic[] = [
         icon: '💡',
         shortDescription: 'Slik forbereder du deg best og unngår de vanligste feilene',
         color: '#f59e0b',
+        seoTitle: 'Tips til teoriprøven – bestå på første forsøk | Teori-test.no',
+        seoDescription: 'Våre beste tips for å bestå teoriprøven. Unngå de vanligste feilene og vær best forberedt for klasse B.',
         sections: [
             {
                 title: 'Forberedelser er nøkkelen',
@@ -309,6 +325,8 @@ export const theoryArticles: TheoryTopic[] = [
         icon: '🚗',
         shortDescription: 'Alt du trenger å vite om krav, ledsager og progresjon',
         color: '#10b981',
+        seoTitle: 'Guide til øvingskjøring – krav og regler | Teori-test.no',
+        seoDescription: 'Alt du trenger å vite om øvingskjøring: krav til ledsager, elev og bil for klasse B førerkort.',
         sections: [
             {
                 title: 'Hva er øvingskjøring?',
@@ -353,6 +371,8 @@ export const theoryArticles: TheoryTopic[] = [
         icon: '🚫',
         shortDescription: 'Promillegrenser, straff og hvordan alkohol påvirker kjøreevnen',
         color: '#dc2626',
+        seoTitle: 'Promille og alkohol i trafikken | Teori-test.no',
+        seoDescription: 'Lær alt om promillegrenser, straff og hvordan rus påvirker kjøreevnen din. Avgjørende for teoriprøven.',
         sections: [
             {
                 title: 'Promillegrensen i Norge',

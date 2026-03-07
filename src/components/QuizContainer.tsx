@@ -1,5 +1,7 @@
 // Action Layer: Quiz Container (Main Orchestrator)
 import { useState, useEffect } from 'react'
+import { useParams, useSearchParams } from 'react-router-dom'
+import { Helmet } from 'react-helmet-async'
 import { fetchRandomQuestions, fetchQuestionsByCategory, fetchQuestionsByIds } from '../services/questionService'
 import { QuizEngine } from '../logic/quizEngine'
 import type { Question } from '../services/supabase'
@@ -10,17 +12,68 @@ import ResultScreen from './ResultScreen'
 import ReviewMode from './ReviewMode'
 import Timer from './Timer'
 import { useImagePrefetch } from '../hooks/useImagePrefetch'
-import { getWrongAnswers, removeWrongAnswer, addWrongAnswers } from '../utils/wrongAnswersStore'
+import { getWrongAnswers, removeWrongAnswer, addWrongAnswers, getWrongAnswersCount } from '../utils/wrongAnswersStore'
 
 interface QuizContainerProps {
-    mode: QuizMode
     onReturnHome: () => void
     onQuizComplete: () => void
 }
 
 const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL
 
-export default function QuizContainer({ mode, onReturnHome, onQuizComplete }: QuizContainerProps) {
+export default function QuizContainer({ onReturnHome, onQuizComplete }: QuizContainerProps) {
+    const { category } = useParams()
+    const [searchParams] = useSearchParams()
+
+    // Construct mode dynamically from URL params
+    const modeParam = searchParams.get('mode')
+    const timerParam = searchParams.get('timer') === 'true'
+
+    // This runs on init to figure out what type of quiz we are taking based on URL
+    const mode: QuizMode = (() => {
+        if (category) {
+            return {
+                name: `${category.charAt(0).toUpperCase() + category.slice(1)}-test`,
+                questionCount: 15, // Default for category tests unless specified
+                maxErrors: 3,
+                description: `Øv på ${category} spørsmål`,
+                category: category
+            }
+        } else if (modeParam === 'hurtig') {
+            return {
+                name: 'Ekspresstest',
+                questionCount: 10,
+                maxErrors: 2,
+                description: '10 spørsmål - Maks 2 feil'
+            }
+        } else if (modeParam === 'eksamen') {
+            return {
+                name: 'Full prøve',
+                questionCount: 45,
+                maxErrors: 7,
+                description: '45 spørsmål - Maks 7 feil',
+                timeLimitMinutes: 90,
+                useTimer: timerParam
+            }
+        } else if (modeParam === 'fokus') {
+            return {
+                name: 'Fokus mode',
+                questionCount: getWrongAnswersCount(),
+                maxErrors: 0,
+                description: 'Øv på feil du har gjort',
+                isFokusMode: true
+            }
+        }
+
+        // Fallback for direct /quiz with no params
+        return {
+            name: 'Øvingsprøve',
+            questionCount: 15,
+            maxErrors: 3,
+            description: 'Blandet prøve'
+        }
+    })()
+
     const [questions, setQuestions] = useState<Question[]>([])
     const [currentIndex, setCurrentIndex] = useState(0)
     const [engine] = useState(() => new QuizEngine(mode.maxErrors))
@@ -37,7 +90,7 @@ export default function QuizContainer({ mode, onReturnHome, onQuizComplete }: Qu
 
     useEffect(() => {
         loadQuiz()
-    }, [])
+    }, [category, modeParam]) // Reload if URL params change
 
     async function loadQuiz() {
         try {
@@ -57,7 +110,7 @@ export default function QuizContainer({ mode, onReturnHome, onQuizComplete }: Qu
                 }
                 data = await fetchQuestionsByIds(wrongIds)
             } else if (mode.category) {
-                // Category filter (e.g., Skilt-test)
+                // Category filter (path param)
                 data = await fetchQuestionsByCategory(mode.questionCount, mode.category)
             } else {
                 // Random questions
@@ -86,13 +139,10 @@ export default function QuizContainer({ mode, onReturnHome, onQuizComplete }: Qu
         }
 
         if (currentIndex < questions.length - 1) {
-            // Move to next question
             setCurrentIndex(prev => prev + 1)
         } else {
-            // Calculate time taken before showing results
             const elapsed = Math.floor((Date.now() - startTime) / 1000)
             setTimeTaken(elapsed)
-            // Show results
             setShowResults(true)
             onQuizComplete()
         }
@@ -116,24 +166,32 @@ export default function QuizContainer({ mode, onReturnHome, onQuizComplete }: Qu
         setShowReview(true)
     }
 
-    // Timer callbacks
     function handleTimeUp() {
-        // Auto-submit quiz when timer expires
         const elapsed = Math.floor((Date.now() - startTime) / 1000)
         setTimeTaken(elapsed)
         setShowResults(true)
     }
 
     function handleTimeWarning() {
-        // Show warning notification at 5 minutes remaining
         setShowTimeWarning(true)
         console.log('⏰ 5 minutes remaining!')
     }
 
-    // Loading state
+    // Dynamic SEO Metadata for Quiz Container
+    const metaTitle = category
+        ? `Teoriprøve: ${category.charAt(0).toUpperCase() + category.slice(1)} | Teori-test.no`
+        : `Start ${mode.name} | Teori-test.no`
+
+    const metaDescription = category
+        ? `Øv på ${category} spørsmål for førerkort klasse B. Spesialtilpasset øvingsprøve for ${category}.`
+        : `Forbered deg til teoriprøven med vår ${mode.name}.`
+
     if (loading) {
         return (
             <div className="container">
+                <Helmet>
+                    <title>Laster... | Teori-test.no</title>
+                </Helmet>
                 <div className="loading">
                     Laster spørsmål...
                 </div>
@@ -141,10 +199,12 @@ export default function QuizContainer({ mode, onReturnHome, onQuizComplete }: Qu
         )
     }
 
-    // Error state
     if (error) {
         return (
             <div className="container">
+                <Helmet>
+                    <title>Feil | Teori-test.no</title>
+                </Helmet>
                 <div className="error">
                     <h2>Feil ved lasting av quiz</h2>
                     <p>{error}</p>
@@ -160,26 +220,25 @@ export default function QuizContainer({ mode, onReturnHome, onQuizComplete }: Qu
         )
     }
 
-    // Review mode state
     if (showReview) {
         const incorrectAnswers = engine.getIncorrectAnswers(questions)
         return (
             <div className="container">
+                <Helmet>
+                    <title>Gjennomgang av svar | Teori-test.no</title>
+                </Helmet>
                 <ReviewMode incorrectAnswers={incorrectAnswers} onRestart={handleRestart} />
             </div>
         )
     }
 
-    // Results state
     if (showResults) {
         const result = engine.calculateScore(questions)
 
-        // Add time taken to result if timer was used
         if (mode.useTimer && timeTaken > 0) {
             result.timeTaken = timeTaken
         }
 
-        // If not in Fokus mode, sync wrong answers to localStorage
         if (!mode.isFokusMode) {
             const incorrectIds = engine.getIncorrectAnswerIds()
             if (incorrectIds.length > 0) {
@@ -190,6 +249,9 @@ export default function QuizContainer({ mode, onReturnHome, onQuizComplete }: Qu
 
         return (
             <div className="container">
+                <Helmet>
+                    <title>Resultat: {result.passed ? 'Bestått' : 'Ikke bestått'} | Teori-test.no</title>
+                </Helmet>
                 <ResultScreen
                     result={result}
                     mode={mode}
@@ -201,13 +263,16 @@ export default function QuizContainer({ mode, onReturnHome, onQuizComplete }: Qu
         )
     }
 
-    // Quiz state
     const currentQuestion = questions[currentIndex]
     const previousAnswer = engine.getAnswer(currentQuestion.id)
 
     return (
         <div className="container">
-            {/* Timer component for Full Test with timer enabled */}
+            <Helmet>
+                <title>{metaTitle}</title>
+                <meta name="description" content={metaDescription} />
+            </Helmet>
+
             {mode.useTimer && mode.timeLimitMinutes && (
                 <Timer
                     timeLimitMinutes={mode.timeLimitMinutes}
@@ -216,7 +281,6 @@ export default function QuizContainer({ mode, onReturnHome, onQuizComplete }: Qu
                 />
             )}
 
-            {/* Time warning notification */}
             {showTimeWarning && (
                 <div className="time-warning-notification">
                     ⏰ 5 minutter gjenstår!

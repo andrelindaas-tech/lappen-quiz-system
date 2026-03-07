@@ -1,16 +1,13 @@
 // Start Screen Component - Mode Selection
 import { useState, useEffect } from 'react'
-import type { QuizMode } from '../types/quiz.types'
+import { useNavigate } from 'react-router-dom'
 import { getWrongAnswersCount } from '../utils/wrongAnswersStore'
 import { useDocumentMetadata } from '../hooks/useDocumentMetadata'
 
-interface StartScreenProps {
-    onStartQuiz: (mode: QuizMode) => void
-}
-
-export default function StartScreen({ onStartQuiz }: StartScreenProps) {
+export default function StartScreen() {
     const [fokusCount, setFokusCount] = useState(0)
     const [useTimerForFull, setUseTimerForFull] = useState(false)
+    const navigate = useNavigate()
 
     // Manage Metadata for Home Page
     useDocumentMetadata({
@@ -24,38 +21,6 @@ export default function StartScreen({ onStartQuiz }: StartScreenProps) {
         setFokusCount(count)
         console.log(`🎯 Fokus mode has ${count} questions`)
     }, [])
-
-    const expressMode: QuizMode = {
-        name: 'Ekspresstest',
-        questionCount: 10,
-        maxErrors: 2,
-        description: '10 spørsmål - Maks 2 feil'
-    }
-
-    const fullMode: QuizMode = {
-        name: 'Full prøve',
-        questionCount: 45,
-        maxErrors: 7,
-        description: '45 spørsmål - Maks 7 feil',
-        timeLimitMinutes: 90,
-        useTimer: useTimerForFull
-    }
-
-    const skiltMode: QuizMode = {
-        name: 'Skilt-test',
-        questionCount: 10,
-        maxErrors: 1,
-        description: '10 skilte spørsmål - Maks 1 feil',
-        category: 'skilt'
-    }
-
-    const fokusMode: QuizMode = {
-        name: 'Fokus mode',
-        questionCount: fokusCount,
-        maxErrors: 0, // Must get all correct to clear Fokus mode
-        description: `Øv på ${fokusCount} feil${fokusCount === 1 ? '' : ''}`,
-        isFokusMode: true
-    }
 
     return (
         <div className="start-screen">
@@ -89,21 +54,21 @@ export default function StartScreen({ onStartQuiz }: StartScreenProps) {
             <div className="mode-cards">
                 <button
                     className="mode-card mode-card-express"
-                    onClick={() => onStartQuiz(expressMode)}
+                    onClick={() => navigate('/quiz?mode=hurtig')}
                 >
                     <div className="mode-icon">⚡️</div>
-                    <h2>{expressMode.name}</h2>
-                    <p>{expressMode.description}</p>
+                    <h2>Ekspresstest</h2>
+                    <p>10 spørsmål - Maks 2 feil</p>
                     <span className="mode-badge mode-badge-express">Rask øving</span>
                 </button>
 
                 <button
                     className="mode-card mode-card-full"
-                    onClick={() => onStartQuiz(fullMode)}
+                    onClick={() => navigate(`/quiz?mode=eksamen${useTimerForFull ? '&timer=true' : ''}`)}
                 >
                     <div className="mode-icon">📝</div>
-                    <h2>{fullMode.name}</h2>
-                    <p>{fullMode.description}</p>
+                    <h2>Full prøve</h2>
+                    <p>45 spørsmål - Maks 7 feil</p>
                     <span className="mode-badge mode-badge-full">Offisiell format</span>
 
                     {/* Timer toggle checkbox */}
@@ -128,17 +93,17 @@ export default function StartScreen({ onStartQuiz }: StartScreenProps) {
 
                 <button
                     className="mode-card mode-card-skilt"
-                    onClick={() => onStartQuiz(skiltMode)}
+                    onClick={() => navigate('/quiz/skilt')}
                 >
                     <div className="mode-icon">🚥</div>
-                    <h2>{skiltMode.name}</h2>
-                    <p>{skiltMode.description}</p>
+                    <h2>Skilt-test</h2>
+                    <p>10 skilte spørsmål - Maks 1 feil</p>
                     <span className="mode-badge mode-badge-skilt">Kun skilter</span>
                 </button>
 
                 <button
                     className="mode-card mode-card-fokus"
-                    onClick={() => onStartQuiz(fokusMode)}
+                    onClick={() => navigate('/quiz?mode=fokus')}
                     disabled={fokusCount === 0}
                 >
                     <div className="mode-icon">🎯</div>

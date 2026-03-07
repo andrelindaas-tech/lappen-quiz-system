@@ -1,55 +1,37 @@
 // Teori-siden — Oversikt over alle emner
-import { useState, useEffect } from 'react'
+import { useParams, useNavigate } from 'react-router-dom'
+import { Helmet } from 'react-helmet-async'
 import { theoryTopics, theoryArticles } from '../data/theoryData'
 import TheoryTopic from './TheoryTopic'
-import { useDocumentMetadata } from '../hooks/useDocumentMetadata'
 
 // GA4 global type
 declare function gtag(...args: unknown[]): void
 
-function getTopicIdFromPath(): string | null {
-    const parts = window.location.pathname.split('/')
-    // Path: /teori/{id}  →  parts = ['', 'teori', '{id}']
-    if (parts[1] === 'teori' && parts[2]) {
-        return parts[2]
-    }
-    return null
-}
-
 export default function TheoryPage() {
-    const [selectedTopicId, setSelectedTopicId] = useState<string | null>(getTopicIdFromPath)
+    const { articleId } = useParams()
+    const navigate = useNavigate()
 
-    // Sync state when browser back/forward is used
-    useEffect(() => {
-        const handlePopState = () => {
-            setSelectedTopicId(getTopicIdFromPath())
-        }
-        window.addEventListener('popstate', handlePopState)
-        return () => window.removeEventListener('popstate', handlePopState)
-    }, [])
+    // Using react-router-dom, we don't need manual popstate tracking anymore
+    const selectedTopicId = articleId || null
 
     // Combine topics and articles for content lookup
     const allContent = [...theoryTopics, ...theoryArticles]
     const selectedTopic = allContent.find(t => t.id === selectedTopicId)
 
-    // Manage Metadata
-    useDocumentMetadata({
-        title: selectedTopic ? `Læringsressurser: ${selectedTopic.title}` : 'Læringsressurser for førerkort',
-        description: selectedTopic ? selectedTopic.shortDescription : 'Teori, tips og artikler som hjelper deg gjennom førerprøven. Gratis og enkelt.'
-    })
+    // Determine base metadata (overridden by TheoryTopic if one is selected)
+    const baseTitle = 'Læringsressurser for førerkort | Teori-test.no'
+    const baseDescription = 'Teori, tips og artikler som hjelper deg gjennom førerprøven. Gratis og enkelt.'
 
     const handleSelectTopic = (id: string) => {
-        const path = `/teori/${id}`
-        history.pushState({}, '', path)
-        setSelectedTopicId(id)
+        const path = `/laeringsressurser/${id}`
+        navigate(path)
         if (typeof gtag !== 'undefined') {
             gtag('event', 'page_view', { page_path: path, page_title: document.title })
         }
     }
 
     const handleBack = () => {
-        history.pushState({}, '', '/laeringsressurser')
-        setSelectedTopicId(null)
+        navigate('/laeringsressurser')
         if (typeof gtag !== 'undefined') {
             gtag('event', 'page_view', { page_path: '/laeringsressurser', page_title: document.title })
         }
@@ -58,6 +40,7 @@ export default function TheoryPage() {
     if (selectedTopic) {
         return (
             <div className="container">
+                {/* TheoryTopic internal Helmet tag will override the base Helmet tag */}
                 <TheoryTopic
                     key={selectedTopic.id}
                     topic={selectedTopic}
@@ -69,6 +52,11 @@ export default function TheoryPage() {
 
     return (
         <div className="theory-page">
+            <Helmet>
+                <title>{baseTitle}</title>
+                <meta name="description" content={baseDescription} />
+            </Helmet>
+
             <section className="theory-section-group">
                 <h1>📚 Læringsressurser</h1>
                 <p className="theory-subtitle">
