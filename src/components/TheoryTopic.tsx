@@ -1,7 +1,45 @@
 // Teori-emne detaljvisning
 import { Helmet } from 'react-helmet-async'
+import { Link } from 'react-router-dom'
 import type { TheoryTopic as TopicType } from '../data/theoryData'
 import BrakeCalculator from './BrakeCalculator'
+
+// Helper function to safely parse markdown-style localized [links](/urls)
+function parseInlineLinks(text: string) {
+    const linkRegex = /\[([^\]]+)\]\(([^)]+)\)/g
+    const parts = []
+    let lastIndex = 0
+    let match
+
+    while ((match = linkRegex.exec(text)) !== null) {
+        if (match.index > lastIndex) {
+            parts.push(text.substring(lastIndex, match.index))
+        }
+        const textContent = match[1]
+        const url = match[2]
+
+        if (url.startsWith('/')) {
+            parts.push(
+                <Link key={match.index} to={url} style={{ color: 'var(--color-primary)', textDecoration: 'none', fontWeight: 600 }}>
+                    {textContent}
+                </Link>
+            )
+        } else {
+            parts.push(
+                <a key={match.index} href={url} target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-primary)', textDecoration: 'none', fontWeight: 600 }}>
+                    {textContent}
+                </a>
+            )
+        }
+        lastIndex = linkRegex.lastIndex
+    }
+
+    if (lastIndex < text.length) {
+        parts.push(text.substring(lastIndex))
+    }
+
+    return parts.length > 0 ? parts : text
+}
 
 interface TheoryTopicProps {
     topic: TopicType
@@ -50,7 +88,7 @@ export default function TheoryTopic({ topic, onBack }: TheoryTopicProps) {
                 ← Tilbake til emner
             </button>
 
-            <div className="theory-topic-header" style={{ borderLeftColor: topic.color }}>
+            <div className="theory-topic-header">
                 <span className="theory-topic-icon-lg">{topic.icon}</span>
                 <div>
                     <h2>{topic.title}</h2>
@@ -82,7 +120,7 @@ export default function TheoryTopic({ topic, onBack }: TheoryTopicProps) {
                         ) : (
                             <div className="theory-section-content">
                                 {section.content.split('\n').map((line, i) => (
-                                    <p key={i}>{line}</p>
+                                    <p key={i}>{parseInlineLinks(line)}</p>
                                 ))}
                             </div>
                         )}

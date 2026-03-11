@@ -717,8 +717,8 @@ body.dark-mode .mode-card-full:hover {
   border: none;
   color: var(--color-text-light);
   font-weight: 600;
-  font-size: 1.25rem;
-  /* Increased from 1.125rem */
+  font-size: 1.375rem;
+  /* Bumped 10% from 1.25rem per user request */
   letter-spacing: 0.01em;
   cursor: pointer;
   position: relative;

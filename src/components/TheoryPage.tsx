@@ -69,7 +69,7 @@ export default function TheoryPage() {
                             key={topic.id}
                             className="theory-card"
                             onClick={() => handleSelectTopic(topic.id)}
-                            style={{ borderTopColor: topic.color }}
+                            style={{ borderLeftColor: topic.color }}
                         >
                             <span className="theory-card-icon">{topic.icon}</span>
                             <h2 className="theory-card-title">{topic.title}</h2>
@@ -97,7 +97,7 @@ export default function TheoryPage() {
                             key={article.id}
                             className="theory-card article-card"
                             onClick={() => handleSelectTopic(article.id)}
-                            style={{ borderTopColor: article.color }}
+                            style={{ borderLeftColor: article.color }}
                         >
                             <div className="article-card-content">
                                 <span className="theory-card-icon">{article.icon}</span>

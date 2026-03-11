@@ -280,42 +280,32 @@ export const theoryTopics: TheoryTopic[] = [
 export const theoryArticles: TheoryTopic[] = [
     {
         id: 'tips-eksamen',
-        title: 'Tips til teoriprøven',
+        title: 'Hvordan bestå teoriprøven på første forsøk (Klasse B)',
         icon: '💡',
-        shortDescription: 'Slik forbereder du deg best og unngår de vanligste feilene',
-        color: '#f59e0b',
-        seoTitle: 'Tips til teoriprøven – bestå på første forsøk | Teori-test.no',
-        seoDescription: 'Våre beste tips for å bestå teoriprøven. Unngå de vanligste feilene og vær best forberedt for klasse B.',
+        shortDescription: 'Å stryke koster både tid og penger. Faktisk stryker omtrent halvparten av alle som tar teoriprøven for bil. Slik forbereder du deg riktig, unngår fellene og består på første forsøk.',
+        color: '#fb923c', // AG Bright Orange/Yellow
+        seoTitle: 'Slik består du teoriprøven på første forsøk | Teori-test.no',
+        seoDescription: 'Omtrent halvparten stryker på teoriprøven. Lær hvordan du unngår de vanligste fellene, forstår logikken og består på første forsøk. Øv gratis her.',
         sections: [
             {
-                title: 'Forberedelser er nøkkelen',
+                title: '1. Forstå logikken (ikke bare pugg)',
                 type: 'text',
-                content: 'For å bestå teoriprøven på første forsøk, må du ha lest teorien grundig. Ikke bare lær deg svarene på spørsmålene utenat – du må forstå LOGIKKEN bak reglene. Statens vegvesen endrer ofte ordlyden i spørsmålene for å sjekke om du faktisk har forstått stoffet.'
+                content: 'Vegvesenet endrer ofte ordlyden i spørsmålene sine. Lærer du deg bare fasiten utenat, vil du slite når spørsmålet stilles på en ny måte. Fokuser på å forstå hvorfor reglene er som de er. Forstår du logikken bak trafikkreglene, som for eksempel [vikeplikt](/laeringsressurser/vikeplikt), kan du resonnere deg frem til riktig svar uansett hvordan oppgaven er formulert.'
             },
             {
-                title: 'Les spørsmålene nøye!',
+                title: '2. Unngå de vanligste fellene',
                 type: 'warning',
-                content: 'Den vanligste feilen på teoriprøven er uoppmerksomhet. Mange leser spørsmålet for fort og går glipp av ord som "IKKE" eller "UNNTATT". Les hvert spørsmål to ganger før du ser på svaralternativene.'
+                content: 'Den vanligste årsaken til unødvendige feil er uoppmerksomhet. Ha dette i bakhodet under selve prøven:\n• Les spørsmålet to ganger: Se opp for små, avgjørende ord som "IKKE" eller "UNNTATT".\n• Bruk eliminasjonsmetoden: Fjern svaralternativene du vet med sikkerhet er feil først.\n• Studer bildene: De er ikke bare illustrasjoner, men inneholder ofte viktige hint om fartsgrenser, [skilt](/quiz/skilt) eller blindsoner.\n• Tenk trafikksikkerhet: Er du i tvil, velg alltid det alternativet som gir lavest risiko.'
             },
             {
-                title: 'Våre beste tips',
+                title: '3. Fakta om prøven',
                 type: 'info',
-                content: '• Bruk eliminasjonsmetoden: Fjern de svaralternativene du er helt sikker på at er feil.\n• Se på bildet: Bildene på prøven inneholder ofte viktig informasjon om fartsgrenser, skilt eller blindsoner.\n• Tenk trafikksikkerhet: Hvis du er i tvil, velg det alternativet som er mest trafikksikkert.\n• Ikke stress: Du har 90 minutter på deg, noe som er mer enn nok tid for de fleste.'
+                content: 'Husk å forhåndsbestille time hos Statens vegvesen og ta med gyldig legitimasjon.\n• Krav: Prøven har 45 spørsmål. Du må ha minst 38 riktige (maks 7 feil) for å bestå.\n• Tid: Du har 90 minutter. Det er mer enn nok tid for de aller fleste, så unngå å stresse.\n• Før prøven: Møt opp uthvilt og ha spist på forhånd. En trøtt hjerne gjør lettere slurvefeil.'
             },
             {
-                title: 'Hva skjer på selve dagen?',
-                type: 'text',
-                content: 'Du må bestille time for teoriprøve på forhånd hos Statens vegvesen. Husk gyldig legitimasjon! Prøven foregår på en datamaskin ved trafikkstasjonen. Du får resultatet med en gang du har levert.'
-            },
-            {
-                title: 'Gode vaner før prøven',
+                title: '4. Øv målrettet og effektivt',
                 type: 'tip',
-                content: 'Sørg for å være uthvilt og ha spist godt før du drar til trafikkstasjonen. En trøtt hjerne gjør lettere slurvefeil. Kom også i god tid slik at du ikke starter prøven med høy puls.'
-            },
-            {
-                title: 'Øv deg her — gratis!',
-                type: 'tip',
-                content: 'Her på Teori-test.no kan du øve deg med realistiske spørsmål akkurat som på den ekte prøven. Prøv Full prøve-modus for å simulere en ekte eksamen (45 spørsmål, 90 minutter). Bruk Ekspresstest for raske økter i hverdagen. Og sjekk ut Fokus-modus — den husker hvilke spørsmål du svarer feil på og lar deg øve spesifikt på svakhetene dine. Alt helt gratis. 🎯'
+                content: 'Den beste treningen er å simulere den ekte prøvesituasjonen. På Teori-test.no kan du øve gratis med verktøy som forbereder deg nøyaktig på det som møter deg:\n• [Full prøve-modus](/quiz?mode=eksamen): 45 spørsmål på 90 minutter – akkurat som på trafikkstasjonen.\n• [Ekspresstest](/quiz?mode=hurtig): Raske økter som passer perfekt på mobilen når du har noen minutter ledig.\n• [Fokus-modus](/quiz?mode=fokus): Et smart verktøy som husker hva du svarer feil på, slik at du kun trenger å terpe på svakhetene dine.'
             }
         ]
     },
@@ -324,7 +314,7 @@ export const theoryArticles: TheoryTopic[] = [
         title: 'Guide til øvingskjøring',
         icon: '🚗',
         shortDescription: 'Alt du trenger å vite om krav, ledsager og progresjon',
-        color: '#10b981',
+        color: '#10b981', // AG Green
         seoTitle: 'Guide til øvingskjøring – krav og regler | Teori-test.no',
         seoDescription: 'Alt du trenger å vite om øvingskjøring: krav til ledsager, elev og bil for klasse B førerkort.',
         sections: [
@@ -370,8 +360,8 @@ export const theoryArticles: TheoryTopic[] = [
         title: 'Alkohol og promille i trafikken',
         icon: '🚫',
         shortDescription: 'Promillegrenser, straff og hvordan alkohol påvirker kjøreevnen',
-        color: '#dc2626',
-        seoTitle: 'Promille og alkohol i trafikken | Teori-test.no',
+        color: '#3b82f6', // AG Blue
+        seoTitle: 'Alkohol og promille i trafikken – regler og konsekvenser | Teori-test.no',
         seoDescription: 'Lær alt om promillegrenser, straff og hvordan rus påvirker kjøreevnen din. Avgjørende for teoriprøven.',
         sections: [
             {

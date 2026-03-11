@@ -73,7 +73,7 @@
 .theory-card {
     background-color: var(--color-bg);
     border: 1px solid var(--color-border);
-    border-top: 4px solid transparent;
+    border-left: 3px solid transparent;
     border-radius: var(--radius-lg);
     padding: 2rem;
     cursor: pointer;
@@ -149,24 +149,35 @@
     gap: var(--spacing-lg);
     padding: var(--spacing-xl);
     background-color: var(--color-bg);
-    border-radius: var(--radius-lg);
-    border-left: 5px solid;
+    border-radius: var(--radius-xl);
+    border: 1px solid var(--color-border);
     box-shadow: var(--shadow-md);
     margin-bottom: var(--spacing-xl);
+    transition: all 0.3s ease;
+}
+
+body.dark-mode .theory-topic-header {
+    background: var(--color-bg);
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.4);
 }
 
 .theory-topic-header h2 {
     margin: 0;
     font-size: var(--font-size-2xl);
+    color: var(--color-text);
+    letter-spacing: -0.02em;
 }
 
 .theory-topic-desc {
     color: var(--color-text-light);
     margin: var(--spacing-xs) 0 0 0;
+    font-size: 1.125rem;
+    line-height: 1.6;
 }
 
 .theory-topic-icon-lg {
     font-size: 3.5rem;
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.2));
 }
 
 /* ===== Teori-seksjoner ===== */
@@ -177,109 +188,119 @@
 }
 
 .theory-section {
+    position: relative;
     background-color: var(--color-bg);
-    border-radius: var(--radius-md);
+    border-radius: var(--radius-xl);
     padding: var(--spacing-xl);
-    box-shadow: var(--shadow-sm);
-    transition: background-color 0.3s ease;
+    box-shadow: var(--shadow-md);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    /* Less is more: ultra subtle border instead of thick colored blocks */
+    border: 1px solid var(--color-border);
+}
+
+
+
+/* Subtle AG brand hover effect instead of permanent thick colorful borders */
+body.dark-mode .theory-section:hover {
+    box-shadow: 0 12px 40px -10px rgba(0, 0, 0, 0.5);
+    border-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Add a very slim AG gradient strip to the top of the cards for a premium feel */
+body.dark-mode .theory-section::before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: 20%;
+    right: 20%;
+    height: 1px;
+    background: var(--ag-gradient);
+    opacity: 0;
+    transition: all 0.5s ease;
+    border-radius: 100px;
+    filter: blur(1px);
+}
+
+body.dark-mode .theory-section:hover::before {
+    opacity: 0.8;
+    left: 10%;
+    right: 10%;
+}
+
+body.dark-mode .theory-section {
+    background: var(--color-bg);
+    box-shadow: 0 8px 25px -8px rgba(0, 0, 0, 0.3);
 }
 
 .theory-section-title {
-    font-size: var(--font-size-lg);
+    font-size: var(--font-size-xl);
     font-weight: 700;
     margin-bottom: var(--spacing-md);
     color: var(--color-text);
+    letter-spacing: -0.01em;
 }
 
 .theory-section-content p {
-    margin: 0 0 var(--spacing-xs) 0;
+    margin: 0 0 var(--spacing-sm) 0;
     line-height: 1.7;
     color: var(--color-text);
+    font-size: 1.05rem;
 }
 
 .theory-section-content p:empty {
     margin: 0;
 }
 
-/* Formel-seksjon */
-.theory-section-formula {
-    background-color: #f0f4ff;
-    border-left: 4px solid var(--color-primary);
-}
-
-.theory-section-formula .theory-section-title {
-    color: var(--color-primary);
-}
-
+/* Formel-seksjons typography override */
 .theory-section-formula .theory-section-content p {
     font-family: 'Courier New', monospace;
-    font-size: var(--font-size-base);
+    font-size: var(--font-size-lg);
     font-weight: 600;
 }
 
-body.dark-mode .theory-section-formula {
-    background-color: #1e2a4a;
-}
-
-/* Info-seksjon */
-.theory-section-info {
-    background-color: #f0fdf4;
-    border-left: 4px solid #059669;
-}
-
-.theory-section-info .theory-section-title {
-    color: #059669;
-}
-
-body.dark-mode .theory-section-info {
-    background-color: #1a2e1a;
-}
-
-/* Advarsel-seksjon */
-.theory-section-warning {
-    background-color: #fef3c7;
-    border-left: 4px solid #f59e0b;
-}
-
-.theory-section-warning .theory-section-title {
-    color: #d97706;
-}
-
-body.dark-mode .theory-section-warning {
-    background-color: #3a2e1a;
-}
-
-/* Tips-seksjon */
-.theory-section-tip {
-    background-color: #eff6ff;
-    border-left: 4px solid #3b82f6;
-}
-
-.theory-section-tip .theory-section-title {
-    color: #2563eb;
-}
-
-body.dark-mode .theory-section-tip {
-    background-color: #1a253a;
-}
-
-/* Eksempel-seksjon */
-.theory-section-example {
-    background-color: #fdf4ff;
-    border-left: 4px solid #a855f7;
-}
-
-.theory-section-example .theory-section-title {
-    color: #7c3aed;
-}
-
+/* Eksempel-seksjons typography override */
 .theory-section-example .theory-section-content p {
     font-family: 'Courier New', monospace;
     font-weight: 500;
 }
 
+/* Adjust light mode to use slightly tinted backgrounds for context if desired,
+   but keeping it clean and matched to dark mode philosophy */
+@media (prefers-color-scheme: light) {
+
+    /* Info-seksjon */
+    .theory-section-info {
+        background-color: #f0fdf4;
+    }
+
+    /* Advarsel-seksjon */
+    .theory-section-warning {
+        background-color: #fef3c7;
+    }
+
+    /* Tips-seksjon */
+    .theory-section-tip {
+        background-color: #eff6ff;
+    }
+
+    /* Formel-seksjon */
+    .theory-section-formula {
+        background-color: #faf5ff;
+    }
+
+    /* Eksempel-seksjon */
+    .theory-section-example {
+        background-color: #fdf4ff;
+    }
+}
+
+/* Ensure dark mode definitely forces raw backgrounds */
+body.dark-mode .theory-section-info,
+body.dark-mode .theory-section-warning,
+body.dark-mode .theory-section-tip,
+body.dark-mode .theory-section-formula,
 body.dark-mode .theory-section-example {
-    background-color: #2a1a3a;
+    background: var(--color-bg);
 }
 
 /* Skilt-seksjon med bilder */
