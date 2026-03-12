@@ -1,4 +1,5 @@
 // Teori-emne detaljvisning
+import React from 'react'
 import { Helmet } from 'react-helmet-async'
 import { Link } from 'react-router-dom'
 import type { TheoryTopic as TopicType } from '../data/theoryData'
@@ -39,6 +40,56 @@ function parseInlineLinks(text: string) {
     }
 
     return parts.length > 0 ? parts : text
+}
+
+// Renders content string with support for paragraphs, bullet lists (- ) and numbered lists (1. )
+function renderContent(text: string) {
+    const lines = text.split('\n')
+    const output: React.ReactNode[] = []
+    let ulItems: string[] = []
+    let olItems: string[] = []
+    let key = 0
+
+    const flushUl = () => {
+        if (ulItems.length > 0) {
+            output.push(
+                <ul key={key++} className="theory-list">
+                    {ulItems.map((item, i) => <li key={i}>{parseInlineLinks(item)}</li>)}
+                </ul>
+            )
+            ulItems = []
+        }
+    }
+    const flushOl = () => {
+        if (olItems.length > 0) {
+            output.push(
+                <ol key={key++} className="theory-list theory-list-ol">
+                    {olItems.map((item, i) => <li key={i}>{parseInlineLinks(item)}</li>)}
+                </ol>
+            )
+            olItems = []
+        }
+    }
+
+    for (const line of lines) {
+        if (line.startsWith('- ')) {
+            flushOl()
+            ulItems.push(line.slice(2))
+        } else if (/^\d+\.\s/.test(line)) {
+            flushUl()
+            olItems.push(line.replace(/^\d+\.\s/, ''))
+        } else {
+            flushUl()
+            flushOl()
+            if (line.trim() !== '') {
+                output.push(<p key={key++}>{parseInlineLinks(line)}</p>)
+            }
+        }
+    }
+    flushUl()
+    flushOl()
+
+    return output
 }
 
 interface TheoryTopicProps {
@@ -119,9 +170,7 @@ export default function TheoryTopic({ topic, onBack }: TheoryTopicProps) {
                             </div>
                         ) : (
                             <div className="theory-section-content">
-                                {section.content.split('\n').map((line, i) => (
-                                    <p key={i}>{parseInlineLinks(line)}</p>
-                                ))}
+                                {renderContent(section.content)}
                             </div>
                         )}
                     </div>

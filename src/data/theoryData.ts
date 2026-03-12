@@ -111,62 +111,68 @@ export const theoryTopics: TheoryTopic[] = [
     },
     {
         id: 'vikeplikt',
-        title: 'Vikeplikt',
+        title: 'Vikeplikt – komplett guide til teoriprøven',
+        shortDescription: 'Vikeplikt er et av de vanligste stryketemaene på teoriprøven. Her får du en oversiktlig gjennomgang av de viktigste reglene du må kunne for førerkort klasse B. Tren på vikeplikt med våre øvingsspørsmål når du har lest gjennom.',
         icon: '🔺',
-        shortDescription: 'Hvem skal vike? Regler for kryss, rundkjøring og trikk',
         color: '#ea580c',
-        seoTitle: 'Vikeplikt – regler for kryss og rundkjøring | Teori-test.no',
-        seoDescription: 'Lær hvem som skal vike med høyreregel, vikepliktskilt og forkjørsvei. Viktig vikeplikt-teori for førerkort klasse B.',
+        seoTitle: 'Vikeplikt – høyreregelen, myndighetspyramiden og rundkjøring | Teori-test.no',
+        seoDescription: 'Lær alle vikepliktreglene til teoriprøven. Høyreregelen, myndighetspyramiden, rundkjøring, trikk og fotgjengere – med eksempelspørsmål.',
         sections: [
             {
-                title: 'Grunnregel: Høyreregel',
+                title: '1. Grunnregelen: Høyreregelen',
                 type: 'text',
-                content: 'Den viktigste vikepliktsregelen i Norge er høyreregelen: Du har vikeplikt for kjøretøy som kommer fra høyre, med mindre noe annet er bestemt ved skilt eller oppmerking. Denne regelen gjelder i kryss uten skilt.'
+                content: 'Den viktigste regelen i trafikken er høyreregelen: Du har vikeplikt for kjøretøy som kommer fra høyre, med mindre noe annet er bestemt av skilt eller oppmerking.\n- Hvor gjelder den? I alle kryss uten vikepliktskilt, stoppskilt eller forkjørsvei.\n- Viktig om T-kryss: Høyreregelen gjelder også i umerkede T-kryss. Selv om du kjører rett frem på den gjennomgående veien, må du vike for biler som kommer fra høyre i krysset.'
             },
             {
-                title: 'Vikepliktskilt',
+                title: '2. Myndighetspyramiden: Hva gjelder når?',
+                type: 'info',
+                content: 'I trafikken oppstår det ofte situasjoner der skilt, lys og generelle regler sier forskjellige ting. Da bruker vi myndighetspyramiden for å vite hva som gjelder. Reglene følges i denne rekkefølgen:\n1. Politi og manuelle dirigenter: Deres anvisninger overstyrer alt annet.\n2. Trafikklys: Grønt lys overstyrer skilt. (Blinker lyset gult, eller er slukket, er det skiltene som gjelder).\n3. Trafikkskilt og oppmerking: Vikepliktskilt og forkjørsvei overstyrer de generelle trafikkreglene.\n4. Trafikkregler (Høyreregelen): Dette er bunnen av pyramiden. Den gjelder bare når det ikke finnes politi, lys eller skilt som sier noe annet.\n\nKlassisk teoriprøvespørsmål: «Du ankommer et kryss der trafikklyset viser grønt, men det er også satt opp et vikepliktskilt. Hva er riktig?»\nA) Jeg har vikeplikt fordi skiltet gjelder.\nB) Jeg kan kjøre fordi trafikklyset gjelder foran skiltet.\nC) Høyreregelen gjelder.\n\nRiktig svar: B. Trafikklys (nivå 2 i pyramiden) står over trafikkskilt (nivå 3).'
+            },
+            {
+                title: '3. Skilt som overstyrer høyreregelen',
                 type: 'signs',
-                content: '',
+                content: 'Skilt forteller deg når høyreregelen ikke gjelder. Du må kjenne til disse tre:',
                 signs: [
                     {
                         name: 'Vikepliktskilt',
-                        description: 'Trekant med spissen ned og rød kant. Du skal vike for all trafikk på kryssende vei. Senk farten og vær klar til å stoppe. Du trenger ikke stoppe helt hvis veien er klar.',
+                        description: 'Trekant med spissen ned og rød kant. Du skal vike for all kryssende trafikk. Senk farten og vær klar til å stoppe. Veien må være klar før du kjører.',
                         imageUrl: '/signs/vikeplikt.svg'
                     },
                     {
                         name: 'Stoppskilt',
-                        description: 'Rødt åttekantskilt med hvit tekst «STOPP». Du MÅ stoppe helt opp ved stopplinjen eller ved krysset før du kjører videre — selv om veien virker klar. Se til begge sider før du fortsetter.',
+                        description: 'Rød åttekant. Du MÅ stoppe helt opp (hjulene skal stå stille) ved stopplinjen, selv om krysset virker tomt. Se deg godt for til begge sider før du kjører videre.',
                         imageUrl: '/signs/stopp.svg'
                     },
                     {
                         name: 'Forkjørsvei',
-                        description: 'Gul rute på hvit bakgrunn med svart kant. Betyr at du har forkjørsrett — kryssende trafikk skal vike for deg. Skiltet gjelder til det blir opphevet av «slutt på forkjørsvei»-skilt.',
+                        description: 'Gul rute. Du har forkjørsrett. Kryssende trafikk har vikeplikt for deg. Dette gjelder helt til du ser skiltet for "Slutt på forkjørsvei".',
                         imageUrl: '/signs/forkjorsvei.svg'
                     }
                 ]
             },
             {
-                title: 'Rundkjøring',
+                title: '4. Rundkjøringer',
                 type: 'text',
-                content: 'I en rundkjøring har du vikeplikt for trafikk som allerede er inne i rundkjøringen. Det betyr at du må vente til det er trygt å kjøre inn. Husk å bruke blinklys når du kjører ut av rundkjøringen!'
+                content: 'I norske rundkjøringer har du vikeplikt for trafikken som allerede befinner seg inne i rundkjøringen.\n- Vent ved vikepliktslinjen til du har en trygg luke.\n- Bruk alltid blinklys når du skal ut av rundkjøringen.\n\nVanlig misforståelse: Mange tror høyreregelen gjelder i rundkjøring. Det gjør den ikke – rundkjøringsskiltet opphever høyreregelen.'
             },
             {
-                title: 'Trikk og buss',
+                title: '5. Trikk og buss',
                 type: 'warning',
-                content: 'Trikk har som regel forkjørsrett. Du har vikeplikt for trikk selv om den kommer fra venstre (unntak fra høyreregelen). Buss som forlater holdeplass med blinklys har forkjørsrett når fartsgrensen er 60 km/t eller lavere.'
+                content: 'Det gjelder egne regler for kollektivtrafikk:\n- Trikk: Du har vikeplikt for trikken, selv om den kommer fra venstre. Dette er et viktig unntak fra høyreregelen.\n- Buss: Hvis en buss blinker seg ut fra en holdeplass i en 60-sone (eller lavere), har du vikeplikt og må la bussen kjøre ut.'
             },
             {
-                title: 'Vikeplikt ved utkjøring',
+                title: '6. Fotgjengere og syklister',
                 type: 'text',
-                content: 'Du har alltid vikeplikt når du kjører ut fra:\n• Parkeringsplass\n• Eiendom (gårdsplass, garasje)\n• Bensinstasjon\n• Gang- eller sykkelvei\n\nDu skal vike for ALL trafikk — også fotgjengere og syklister.'
+                content: 'Som bilist må du alltid ta hensyn til myke trafikanter:\n- Fotgjengere: Du har vikeplikt for gående i gangfelt, enten du kjører rett frem eller svinger.\n- Syklister: Hvis du skal svinge og krysser et sykkelfelt, har du vikeplikt for syklister som befinner seg i feltet.'
             },
             {
-                title: 'Husk!',
-                type: 'tip',
-                content: 'Ved tvil — ta det rolig og la den andre passere. Det er bedre å vente litt for lenge enn å forårsake en ulykke.'
+                title: '7. Utkjøring fra privat vei',
+                type: 'text',
+                content: 'Du har alltid vikeplikt for all trafikk (inkludert fotgjengere og syklister) når du kjører ut fra parkeringsplasser og garasjer, privat eiendom eller gårdsplass, bensinstasjoner, og gang- og sykkelvei.\n\nEr du i tvil i trafikken, er det beste rådet å ta det rolig og la den andre passere. Det er alltid bedre å vente litt enn å skape en farlig situasjon.\n\nKlar til å teste kunnskapen? [Les også hvordan du består teoriprøven på første forsøk](/laeringsressurser/tips-eksamen) når eksamensdagen nærmer seg.'
             }
         ]
     },
+
     {
         id: 'skilt',
         title: 'Skilt-oversikt',
@@ -313,7 +319,7 @@ export const theoryArticles: TheoryTopic[] = [
         id: 'ovingskjoring',
         title: 'Guide til øvingskjøring',
         icon: '🚗',
-        shortDescription: 'Alt du trenger å vite om krav, ledsager og progresjon',
+        shortDescription: 'Skal du lære bort kjøring til egne barn? Lær hvordan du formidler erfaring, hva du bør øve på først, de vanskeligste situasjonene – og hvordan du sparer penger på trafikkskolen.',
         color: '#10b981', // AG Green
         seoTitle: 'Guide til øvingskjøring – krav og regler | Teori-test.no',
         seoDescription: 'Alt du trenger å vite om øvingskjøring: krav til ledsager, elev og bil for klasse B førerkort.',
@@ -359,7 +365,7 @@ export const theoryArticles: TheoryTopic[] = [
         id: 'promille',
         title: 'Alkohol og promille i trafikken',
         icon: '🚫',
-        shortDescription: 'Promillegrenser, straff og hvordan alkohol påvirker kjøreevnen',
+        shortDescription: 'Visste du at du kan være straffbart påvirket selv om du føler deg edru? Lær promillegrensene, hva som skjer i kroppen og hvilke konsekvenser promillekjøring kan få.',
         color: '#3b82f6', // AG Blue
         seoTitle: 'Alkohol og promille i trafikken – regler og konsekvenser | Teori-test.no',
         seoDescription: 'Lær alt om promillegrenser, straff og hvordan rus påvirker kjøreevnen din. Avgjørende for teoriprøven.',

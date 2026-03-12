@@ -103,7 +103,7 @@
 
 .theory-card-desc {
     color: var(--color-text-light);
-    font-size: var(--font-size-sm);
+    font-size: 1rem; /* +15% from 0.875rem (--font-size-sm) */
     line-height: 1.5;
     margin: 0;
     flex-grow: 1;
@@ -249,6 +249,27 @@ body.dark-mode .theory-section {
 
 .theory-section-content p:empty {
     margin: 0;
+}
+
+/* List styles for bullet (ul) and numbered (ol) content */
+.theory-list {
+    margin: 0 0 var(--spacing-sm) 0;
+    padding-left: 1.5rem;
+    color: var(--color-text);
+    font-size: 1.05rem;
+    line-height: 1.7;
+}
+
+.theory-list li {
+    margin-bottom: 0.35rem;
+}
+
+.theory-list li:last-child {
+    margin-bottom: 0;
+}
+
+.theory-list-ol {
+    list-style-type: decimal;
 }
 
 /* Formel-seksjons typography override */

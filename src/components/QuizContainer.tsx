@@ -190,7 +190,7 @@ export default function QuizContainer({ onReturnHome, onQuizComplete }: QuizCont
         return (
             <div className="container">
                 <Helmet>
-                    <title>Laster... | Teori-test.no</title>
+                    <title>{metaTitle}</title>
                 </Helmet>
                 <div className="loading">
                     Laster spørsmål...
