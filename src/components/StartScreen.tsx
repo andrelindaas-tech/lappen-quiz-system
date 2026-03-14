@@ -24,12 +24,26 @@ export default function StartScreen() {
 
     return (
         <div className="start-screen">
-            <h1>Øv til teoriprøven – enkelt og gratis</h1>
+            <h1>Gratis teoriprøve for personbil (Klasse B)</h1>
 
             <div className="hero-section">
-                <p className="hero-description">
-                    Her finner du kvalitetssikrede teorioppgaver for klasse B. Vi oppdaterer stadig siden med nye spørsmål og smarte funksjoner for å hjelpe deg på vei mot førerkortet.
+                <p className="hero-description" style={{ fontWeight: 'bold', color: 'var(--color-primary-light, #fff)' }}>
+                    Norges enkleste måte å øve til teoriprøven – helt gratis.
                 </p>
+                <p style={{ fontSize: '1.1rem', color: 'var(--color-text)', marginBottom: '1rem', maxWidth: '700px', margin: '0 auto 1rem auto', lineHeight: '1.6' }}>
+                    Teori-test.no er laget for deg som snart skal ta teoriprøven for klasse B. Her finner du kvalitetssikrede teorioppgaver som dekker hele pensum – fra fartsgrenser og vikeplikt til vegoppmerking og trafikkskilt.
+                </p>
+                <p style={{ fontSize: '1.1rem', color: 'var(--color-text)', marginBottom: '2.5rem', maxWidth: '700px', margin: '0 auto 2.5rem auto', lineHeight: '1.6' }}>
+                    Vi oppdaterer stadig siden med nye spørsmål og smarte funksjoner for å hjelpe deg på vei mot førerkortet. Du trenger ikke å lage bruker, betale, eller laste ned noe. Det er bare å sette i gang.
+                </p>
+                
+                <button 
+                    className="cta-button primary-action" 
+                    style={{ fontSize: '1.1rem', padding: '15px 30px', fontWeight: 'bold', cursor: 'pointer', borderRadius: '8px', backgroundColor: '#007BFF', color: '#fff', border: 'none', marginBottom: '1.5rem' }}
+                    onClick={() => document.getElementById('mode-selection')?.scrollIntoView({ behavior: 'smooth' })}
+                >
+                    Start gratis teoriprøve
+                </button>
                 <div className="features-strip">
                     <div className="feature-item">
                         <span className="feature-icon">✅</span>
@@ -46,7 +60,7 @@ export default function StartScreen() {
                 </div>
             </div>
 
-            <div className="mode-selection-header">
+            <div id="mode-selection" className="mode-selection-header">
                 <h2>Velg prøvetype</h2>
                 <p>Velg mellom en rask øvingstest eller full eksamensprøve</p>
             </div>
@@ -127,10 +141,33 @@ export default function StartScreen() {
                     Teori-test.no er laget for deg som snart skal ta teoriprøven for klasse B (personbil). Her finner du hundrevis av øvingsspørsmål som dekker hele pensum – fra fartsgrenser og vikeplikt til vegoppmerking og trafikkskilt. Du trenger ikke lage bruker, betale, eller laste ned noe.
                 </p>
 
-                <h3>Hva dekker spørsmålene?</h3>
-                <p>
-                    Spørsmålene dekker fartsregler og fartsgrenser, vikeplikt og kjørefeltsregler, trafikkskilt (forbudsskilt, påbudsskilt, opplysningsskilt), og veimerking og oppmerking.
-                </p>
+                <div className="faq-section" style={{ marginTop: '2rem' }}>
+                    <h2>Ofte stilte spørsmål om teoriprøven (Klasse B)</h2>
+
+                    <h3>Spørsmål 1: Hvor mange feil kan man ha på teoriprøven for bil?</h3>
+                    <p>
+                        På den offisielle eksamenen hos Statens vegvesen får du 45 spørsmål. Du må svare riktig på minst 38 av dem for å bestå. Det betyr at du maksimalt kan ha 7 feil. Vår gratis teoriprøve er bygget opp på nøyaktig samme måte, slik at du får testet om du er klar til å ta lappen.
+                    </p>
+
+                    <h3>Spørsmål 2: Finnes det en gratis teoriprøve-app jeg kan bruke?</h3>
+                    <p>
+                        Du trenger ikke å laste ned en egen app via App Store eller Google Play. Teori-test.no er utviklet for å fungere raskt og smidig på mobiltelefonen, akkurat som en vanlig app. For den beste opplevelsen anbefaler vi at du legger siden direkte på hjemskjermen din:
+                    </p>
+                    <ul>
+                        <li><strong>iPhone (Safari):</strong> Åpne teori-test.no. Trykk på "Del"-ikonet (firkanten med pil opp) nederst på skjermen, bla ned og velg "Legg til på Hjem-skjerm".</li>
+                        <li><strong>Android (Chrome):</strong> Åpne teori-test.no. Trykk på menyikonet (tre prikker) øverst til høyre og velg "Legg til på startsiden" eller "Installer app".</li>
+                    </ul>
+
+                    <h3>Spørsmål 3: Hvilke temaer dekker øvingsprøven?</h3>
+                    <p>
+                        Prøvene våre dekker hele pensum for personbil. Du vil få grundig trening i viktige temaer som trafikkskilt, regler for vikeplikt, fartsgrenser og generell trafikksikkerhet. Systemet trekker spørsmål tilfeldig, slik at ingen prøver er helt like.
+                    </p>
+
+                    <h3>Spørsmål 4: Koster det noe å se fasiten etter prøven?</h3>
+                    <p>
+                        Nei, det er ingen skjulte kostnader. Dette er en 100 % gratis teoriprøve. Når du har fullført testen, får du umiddelbart se resultatet ditt, en oversikt over eventuelle feil, og en forklaring på hva som er riktig svar.
+                    </p>
+                </div>
             </div>
         </div>
     )
