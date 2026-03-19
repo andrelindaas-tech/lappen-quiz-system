@@ -168,6 +168,13 @@ export default function TheoryTopic({ topic, onBack }: TheoryTopicProps) {
                                     </div>
                                 ))}
                             </div>
+                        ) : section.type === 'calculator' ? (
+                            <div className="theory-section-content">
+                                {renderContent(section.content)}
+                                <div style={{ marginTop: '1.5rem' }}>
+                                    <BrakeCalculator />
+                                </div>
+                            </div>
                         ) : (
                             <div className="theory-section-content">
                                 {renderContent(section.content)}
@@ -176,10 +183,6 @@ export default function TheoryTopic({ topic, onBack }: TheoryTopicProps) {
                     </div>
                 ))}
             </div>
-
-            {topic.hasCalculator && (
-                <BrakeCalculator />
-            )}
         </div>
     )
 }

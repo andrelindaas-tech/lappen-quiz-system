@@ -9,7 +9,7 @@ export interface SignItem {
 export interface TheorySection {
     title: string
     content: string
-    type: 'text' | 'formula' | 'info' | 'warning' | 'tip' | 'example' | 'signs'
+    type: 'text' | 'formula' | 'info' | 'warning' | 'tip' | 'example' | 'signs' | 'calculator'
     signs?: SignItem[]
 }
 
@@ -32,14 +32,19 @@ export const theoryTopics: TheoryTopic[] = [
         icon: '🛑',
         shortDescription: 'Lær å beregne bremselengde, reaksjonslengde og stopplengde',
         color: '#dc2626',
-        seoTitle: 'Bremselengde og stopplengde – formel og kalkulator | Teori-test.no',
-        seoDescription: 'Lær å beregne bremselengde, reaksjonslengde og stopplengde til teoriprøven. Interaktiv kalkulator for 30–120 km/t.',
+        seoTitle: 'Bremselengde kalkulator – regn ut stopplengde | Teori-test.no',
+        seoDescription: 'Bruk vår interaktive kalkulator og regn ut bremselengde og stopplengde for 30–120 km/t på tørr vei, våt vei og is. Med formel og eksempler.',
         hasCalculator: true,
         sections: [
             {
                 title: 'Hva er bremselengde?',
                 type: 'text',
                 content: 'Bremselengde er den avstanden bilen tilbakelegger fra du begynner å bremse til bilen står stille. Bremselengden avhenger av farten, veidekke, bremsenes tilstand og bilens vekt.'
+            },
+            {
+                title: 'Prøv kalkulatoren!',
+                type: 'calculator',
+                content: 'Bruk kalkulatoren under for å se nøyaktig stopplengde ved din hastighet – på tørr vei, våt vei og is.\n\nBruk kalkulatoren nedenfor til å se hvordan ulike hastigheter påvirker bremselengden. Test med 30, 50, 80 og 100 km/t for å se forskjellen!'
             },
             {
                 title: 'Formler',
@@ -59,12 +64,7 @@ export const theoryTopics: TheoryTopic[] = [
             {
                 title: 'Faktorer som påvirker bremselengden',
                 type: 'info',
-                content: '• Fart — Dobbel fart gir 4 ganger lengre bremselengde\n• Veidekke — Is, snø, regn øker bremselengden betydelig\n• Dekkenes tilstand — Slitte dekk gir dårligere grep\n• Bremsenes tilstand — Slitte bremser reduserer bremsekraften\n• Bilens vekt — Tung bil trenger lengre avstand\n• Helning — Nedoverbakke øker bremselengden'
-            },
-            {
-                title: 'Prøv kalkulatoren!',
-                type: 'tip',
-                content: 'Bruk kalkulatoren nedenfor til å se hvordan ulike hastigheter påvirker bremselengden. Test med 30, 50, 80 og 100 km/t for å se forskjellen!'
+                content: '• Fart — Dobbel fart gir 4 ganger lengre bremselengde\n• Veidekke — Is, snø, regn øker bremselengden betydelig\n• Dekkenes tilstand — Slitte dekk gir dårligere grep\n• Bremsenes tilstand — Slitte bremser reduserer bremsekraften\n• Bilens vekt — Tung bil trenger lengre avstand\n• Helning — Nedoverbakke øker bremselengden\n\nKlar til å teste kunnskapen? Ta [øvingsprøven om fartsregler](/quiz/fartsregler) eller les om [vikeplikt](/laeringsressurser/vikeplikt).'
             }
         ]
     },
@@ -285,6 +285,14 @@ export const theoryTopics: TheoryTopic[] = [
 
 export const theoryArticles: TheoryTopic[] = [
     {
+        id: 'oppkjoring',
+        title: 'Oppkjøring klasse B: Komplett guide',
+        icon: '🚗',
+        shortDescription: 'Du har bestått teoriprøven – nå er det bare oppkjøringen igjen. Lær hva det koster, hva som skjer på sikkerhetskontrollen og hva sensor faktisk ser etter. Ekspert-tips som hjelper deg bestå på første forsøk.',
+        color: '#f59e0b',
+        sections: []
+    },
+    {
         id: 'tips-eksamen',
         title: 'Hvordan bestå teoriprøven på første forsøk (Klasse B)',
         icon: '💡',
@@ -357,7 +365,7 @@ export const theoryArticles: TheoryTopic[] = [
             {
                 title: 'Teori + praksis = best forberedt',
                 type: 'tip',
-                content: 'Øvingskjøring gir deg den praktiske erfaringen, men god trafikal forståelse starter med teorien. Her på Teori-test.no kan du øve på vikeplikt, skiltgjenkjenning og trafikkregler mellom kjøreøktene — slik at du er best mulig forberedt til både teori- og fagprøven. 🎯'
+                content: 'Øvingskjøring gir deg den praktiske erfaringen, men god trafikal forståelse starter med teorien. Her på Teori-test.no kan du øve på vikeplikt, skiltgjenkjenning og trafikkregler mellom kjøreøktene — slik at du er best mulig forberedt til både teori- og fagprøven. 🎯\n\nNår du er klar for selve oppkjøringen, les vår komplette guide til hva du kan vente deg -> [Oppkjøring klasse B](/laeringsressurser/oppkjoring)'
             }
         ]
     },

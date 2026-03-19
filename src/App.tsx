@@ -4,12 +4,14 @@ import { Routes, Route, NavLink, Link, useNavigate, useLocation } from 'react-ro
 import QuizContainer from './components/QuizContainer'
 import StartScreen from './components/StartScreen'
 import TheoryPage from './components/TheoryPage'
+import OppkjoringPage from './components/OppkjoringPage'
 import ThemeToggle from './components/ThemeToggle'
 import DailyStreak from './components/DailyStreak'
 import { recordCompletion } from './utils/streakStore'
 import './index.css'
 import './fokus.css'
 import './theory.css'
+import { Helmet } from 'react-helmet-async'
 
 // GA4 global type
 declare function gtag(...args: unknown[]): void
@@ -62,6 +64,9 @@ export default function App() {
 
     return (
         <>
+            <Helmet>
+                <link rel="canonical" href={"https://teori-test.no" + location.pathname} />
+            </Helmet>
             <header style={{
                 position: 'sticky',
                 top: 0,
@@ -82,9 +87,9 @@ export default function App() {
                 }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--spacing-lg)' }}>
                         <Link to="/" style={{ textDecoration: 'none' }}>
-                            <h1 className="header-logo-text">
+                            <span className="header-logo-text">
                                 Teori-test.no
-                            </h1>
+                            </span>
                         </Link>
                         <nav className="nav-tabs" style={{ gap: 'var(--spacing-xl)', marginLeft: 'var(--spacing-md)' }}>
                             <NavLink
@@ -116,6 +121,7 @@ export default function App() {
                     <Route path="/" element={<StartScreen />} />
                     <Route path="/quiz" element={<QuizContainer onReturnHome={handleReturnHome} onQuizComplete={handleQuizComplete} />} />
                     <Route path="/quiz/:category" element={<QuizContainer onReturnHome={handleReturnHome} onQuizComplete={handleQuizComplete} />} />
+                    <Route path="/laeringsressurser/oppkjoring" element={<OppkjoringPage />} />
                     <Route path="/laeringsressurser/:articleId?" element={<TheoryPage />} />
                     {/* Fallback route */}
                     <Route path="*" element={<StartScreen />} />

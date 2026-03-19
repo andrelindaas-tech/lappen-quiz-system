@@ -2,18 +2,15 @@
 import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { getWrongAnswersCount } from '../utils/wrongAnswersStore'
-import { useDocumentMetadata } from '../hooks/useDocumentMetadata'
+import { Helmet } from 'react-helmet-async'
 
 export default function StartScreen() {
     const [fokusCount, setFokusCount] = useState(0)
     const [useTimerForFull, setUseTimerForFull] = useState(false)
     const navigate = useNavigate()
 
-    // Manage Metadata for Home Page
-    useDocumentMetadata({
-        title: 'Teori-test.no – Gratis øvingsprøve for førerkort klasse B',
-        description: 'Øv gratis på teoriprøven for førerkort klasse B (personbil). Realistiske øvingsprøver med trafikkregler, skilt, sikkerhet og mer.'
-    })
+    // Manage Metadata for Home Page (Now handled directly in Helmet)
+    // useDocumentMetadata removed in favor of static title/description in Helmet
 
     // Load wrong answers count on mount and when returning from quiz
     useEffect(() => {
@@ -24,6 +21,52 @@ export default function StartScreen() {
 
     return (
         <div className="start-screen">
+            <Helmet>
+                <title>Gratis teoriprøve klasse B 2026 | Teori-test.no</title>
+                <meta name="description" content="Øv gratis på teoriprøven for førerkort klasse B. 45 spørsmål i offisielt format — ingen registrering, ingen betaling." />
+                <script type="application/ld+json">
+                    {`
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Hvor mange feil kan man ha på teoriprøven for bil?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Du får 45 spørsmål og må svare riktig på minst 38. Maksimalt 7 feil er tillatt for å bestå."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Finnes det en gratis teoriprøve-app?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Teori-test.no fungerer som en app i nettleseren. Legg siden til på hjemskjermen for rask tilgang – helt gratis, ingen registrering."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Koster det noe å se fasiten etter prøven?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nei. Teori-test.no er 100% gratis – ingen skjulte kostnader, ingen registrering."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hva er Fokus mode?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Fokus mode husker hvilke spørsmål du svarer feil på og lar deg øve kun på disse. Ingen konkurrenter tilbyr denne funksjonen."
+      }
+    }
+  ]
+}
+                    `}
+                </script>
+            </Helmet>
             <h1>Gratis teoriprøve for personbil (Klasse B)</h1>
 
             <div className="hero-section">

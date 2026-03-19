@@ -19,8 +19,8 @@ export default function TheoryPage() {
     const selectedTopic = allContent.find(t => t.id === selectedTopicId)
 
     // Determine base metadata (overridden by TheoryTopic if one is selected)
-    const baseTitle = 'Læringsressurser for førerkort | Teori-test.no'
-    const baseDescription = 'Teori, tips og artikler som hjelper deg gjennom førerprøven. Gratis og enkelt.'
+    const baseTitle = 'Læringsressurser for teoriprøven | Teori-test.no'
+    const baseDescription = 'Gratis guider om vikeplikt, bremselengde, trafikkskilt og mer. Alt du trenger for å bestå teoriprøven klasse B.'
 
     const handleSelectTopic = (id: string) => {
         const path = `/laeringsressurser/${id}`
