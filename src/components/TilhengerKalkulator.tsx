@@ -213,6 +213,42 @@ export function TilhengerKalkulator() {
                     to { opacity: 1; transform: translateY(0); }
                 }
             `}} />
+
+            <div style={{
+                marginTop: 'var(--spacing-2xl)',
+                padding: 'var(--spacing-xl)',
+                backgroundColor: 'var(--color-bg-alt)',
+                border: '1px solid var(--color-border)',
+                borderRadius: 'var(--radius-md)',
+                textAlign: 'center'
+            }}>
+                <h4 style={{ fontSize: 'var(--font-size-md)', marginBottom: 'var(--spacing-sm)', color: 'var(--color-text)' }}>
+                    Vil du sjekke hva akkurat din bil er godkjent for å trekke?
+                </h4>
+                <p style={{ color: 'var(--color-text-light)', marginBottom: 'var(--spacing-lg)', fontSize: 'var(--font-size-sm)' }}>
+                    Statens vegvesen har en egen kalkulator der du søker opp bilen din på registreringsnummer:
+                </p>
+                <a 
+                    href="https://www.vegvesen.no/kjoretoy/eie-og-vedlikeholde/tilhenger/tilhengerkalkulator/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    style={{
+                        display: 'inline-block',
+                        padding: 'var(--spacing-sm) var(--spacing-lg)',
+                        backgroundColor: 'var(--color-primary)',
+                        color: 'white',
+                        textDecoration: 'none',
+                        borderRadius: 'var(--radius-full)',
+                        fontWeight: 600,
+                        fontSize: 'var(--font-size-sm)',
+                        transition: 'opacity 0.2s',
+                    }}
+                    onMouseOver={(e) => e.currentTarget.style.opacity = '0.9'}
+                    onMouseOut={(e) => e.currentTarget.style.opacity = '1'}
+                >
+                    Vegvesenets tilhengerkalkulator →
+                </a>
+            </div>
         </div>
     );
 }

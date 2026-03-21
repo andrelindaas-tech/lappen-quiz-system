@@ -462,17 +462,17 @@ export const theoryArticles: TheoryTopic[] = [
             {
                 title: 'Vanlige spørsmål om tilhenger (FAQ)',
                 type: 'info',
-                content: 'Q: Kan jeg kjøre tilhenger med bare lappen?\nA: Ja, med øvelseskjøring under ledsager kan du trekke tilhenger innenfor klasse B-reglene (750 kg eller campingvogn-regelen).\n\nQ: Hva skjer hvis kombinert vekt overstiger 3500 kg og jeg ikke har B96?\nA: Det er ulovlig og kan gi tap av førerretten. Forsikringen kan også bli ugyldig ved en eventuell ulykke.\n\nQ: Trenger jeg speil for tilhenger?\nA: Ja, du må ha tilstrekkelig sikt bakover. Er tilhengeren bredere enn bilen, må du montere forlengede sidespeil.\n\nQ: Gjelder 80 km/t-regelen også inne i tettbygd strøk?\nA: Inne i tettbygd strøk gjelder alltid skiltede grenser (normalt 50 km/t). 80 km/t-grensen for tilhenger gjelder der skiltet ellers ville tillatt mer.'
+                content: 'Q: Kan jeg øvelseskjøre med tilhenger hvis jeg bare har klasse B?\nA: Ja, du kan øvelseskjøre med tilhenger så lenge du følger reglene for klassen du skal ta (f.eks. BE). Ledsageren må ha hatt førerrett for den aktuelle klassen sammenhengende de siste 5 årene og være over 25 år. Husk «L»-skilt og ekstra speil.\n\nQ: Hva skjer hvis kombinert vekt overstiger 3500 kg og jeg bare har klasse B?\nA: Da kjører du uten gyldig førerkort for kjøretøyet. Dette kan føre til bøter og tap av førerretten. I verste fall kan forsikringsselskapet kreve at du må betale skaden selv ved en ulykke.\n\nQ: Trenger jeg ekstra speil for tilhenger?\nA: Ja, dersom tilhengeren eller lasten er så bred at den hindrer sikt bakover i bilens vanlige speil. Du skal kunne se langs hele siden av tilhengeren.\n\nQ: Gjelder 80 km/t-regelen også i 50-sonen?\nA: Nei, i tettbygd strøk følger du alltid de lokale fartsgrensene (skiltingen). 80 km/t-grensen er en maksgrense for tilhenger på veier der skiltingen ellers ville tillatt høyere fart.'
             }
         ]
     },
     {
         id: 'fartsgrenser',
-        title: 'Fartsgrenser i Norge: Alt du må vite til teoriprøven (2025)',
+        title: 'Fartsgrenser i Norge: Alt du må vite til teoriprøven',
         icon: '⚡',
         shortDescription: 'Lær alle fartsgrenser i Norge til teoriprøven: 30, 50, 80 og 110 km/t, regler for skole og tilhenger, hva fartsbøter koster og prikker i førerkortet.',
         color: '#ef4444',
-        seoTitle: 'Fartsgrenser i Norge: Alt du må vite til teoriprøven (2025)',
+        seoTitle: 'Fartsgrenser i Norge: Alt du må vite til teoriprøven',
         seoDescription: 'Lær alle fartsgrenser i Norge til teoriprøven: 30, 50, 80 og 110 km/t, regler for skole og tilhenger, hva fartsbøter koster og prikker i førerkortet.',
         sections: [
             {

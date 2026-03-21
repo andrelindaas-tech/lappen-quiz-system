@@ -98,6 +98,10 @@ export default function TheoryTopic({ topic, onBack, extraComponent }: TheoryTop
             <Helmet>
                 <title>{topic.seoTitle || `${topic.title} | Teori-test.no`}</title>
                 <meta name="description" content={topic.seoDescription || topic.shortDescription} />
+                <meta property="og:title" content={topic.seoTitle || `${topic.title} | Teori-test.no`} />
+                <meta property="og:description" content={topic.seoDescription || topic.shortDescription} />
+                <meta name="twitter:title" content={topic.seoTitle || `${topic.title} | Teori-test.no`} />
+                <meta name="twitter:description" content={topic.seoDescription || topic.shortDescription} />
             </Helmet>
 
             <button className="theory-back-btn" onClick={onBack}>
@@ -107,7 +111,7 @@ export default function TheoryTopic({ topic, onBack, extraComponent }: TheoryTop
             <div className="theory-topic-header">
                 <span className="theory-topic-icon-lg">{topic.icon}</span>
                 <div>
-                    <h2>{topic.title}</h2>
+                    <h1 style={{ fontSize: '2rem', margin: '0 0 var(--spacing-sm)' }}>{topic.title}</h1>
                     <p className="theory-topic-desc">{parseInlineLinks(topic.shortDescription)}</p>
                 </div>
             </div>
