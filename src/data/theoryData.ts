@@ -90,7 +90,7 @@ export const theoryTopics: TheoryTopic[] = [
             {
                 title: 'Hva påvirker reaksjonstiden?',
                 type: 'info',
-                content: '• Tretthet — Kan doble eller tredoble reaksjonstiden\n• Alkohol — Selv små mengder forsinker reaksjonene\n• Mobilbruk — Tar oppmerksomheten bort fra veien\n• Uoppmerksomhet — Snakking, radio, mat\n• Medisiner — Noen medisiner gir tretthet\n• Mørke — Vanskeligere å oppdage farer\n• Alder — Eldre sjåfører reagerer noe langsommere'
+                content: '• Tretthet — Kan doble eller tredoble reaksjonstiden\n• Alkohol — Selv små menger forsinker reaksjonene\n• Mobilbruk — Tak oppmerksomheten bort fra veien\n• Uoppmerksomhet — Snakking, radio, mat\n• Medisiner — Noen medisiner gir tretthet\n• Mørke — Vanskeligere å oppdage farer\n• Alder — Eldre sjåfører reagerer noe langsommere'
             },
             {
                 title: 'Stopplengde = Reaksjon + Bremsing',
@@ -412,6 +412,113 @@ export const theoryArticles: TheoryTopic[] = [
                 title: 'Test kunnskapen din!',
                 type: 'tip',
                 content: 'Promille og ruspåvirkning er et av de temaene det oftest stilles spørsmål om på den ekte teoriprøven. Her på Teori-test.no kan du øve på akkurat disse spørsmålene i Ekspresstest eller Full prøve — helt gratis. Jo mer du øver, desto tryggere blir du på eksamensdagen. 🎯'
+            }
+        ]
+    },
+    {
+        id: 'tilhenger',
+        title: 'Tilhenger og henger: Regler, klasser og kalkulator',
+        icon: '🚗',
+        shortDescription: 'Alt du trenger om tilhenger til teoriprøven. 750 kg-regelen, campingvogn-regelen, klasse B96 og BE forklart enkelt med [gratis kalkulator](/laeringsressurser/tilhenger#henger-kalkulator).',
+        color: '#3b82f6', // AG Blue
+        seoTitle: 'Tilhenger og henger: Regler, klasser og kalkulator | Teori-test.no',
+        seoDescription: 'Alt du trenger om tilhenger til teoriprøven. 750 kg-regelen, campingvogn-regelen, klasse B96 og BE forklart enkelt. Bruk vår gratis kalkulator for å finne rett klasse.',
+        sections: [
+            {
+                title: 'Hva betyr "tillatt totalvekt"?',
+                type: 'text',
+                content: 'Når vi snakker om vekt for tilhenger og bil i dette regelverket, er det alltid "tillatt totalvekt" (også kalt registrert totalvekt) som gjelder – IKKE faktisk lastet vekt. Tillatt totalvekt finner du i vognkortet (del I og II).\n\nEksempel: Campingvognen din veier 800 kg lastet, men tillatt totalvekt i vognkortet er 1300 kg. Da bruker du 1300 kg i alle beregninger.\n\nTIP: Sjekk alltid vognkortet – ikke stol på gjetning.'
+            },
+            {
+                title: 'Klasse B – grunnreglene for tilhenger',
+                type: 'info',
+                content: 'Med vanlig klasse B (personbil) kan du trekke tilhenger i to situasjoner:\n\n1. 750 kg-regelen:\nTilhengeren har tillatt totalvekt på 750 kg eller mindre. Kombinert vekt kan da være hva som helst.\n\n2. Campingvogn-regelen (også kalt 3500 kg-regelen):\nTilhengeren er TYNGRE enn 750 kg, men bilens tillatte totalvekt pluss tilhengerens tillatte totalvekt overstiger IKKE 3500 kg.\n\nEksempel: Bil med tillatt totalvekt 2200 kg + tilhenger 1100 kg = 3300 kg. Tilhengeren er over 750 kg, men kombinasjonen er under 3500 kg → Klasse B holder!'
+            },
+            {
+                title: '⚠️ Husk bilens begrensninger',
+                type: 'warning',
+                content: 'Husk: selv om førerkortklassen din tillater en viss vekt, må du også sjekke bilens maksimale tillatte tilhengervekt i vognkortet. Denne grensen kan være lavere enn det klassereglene tillater, og varierer fra bil til bil. Vekten av tilhengeren må være innenfor det bilen har lov å trekke.'
+            },
+            {
+                title: 'Klasse B96 – mellomklassen',
+                type: 'text',
+                content: 'B96 er en utvidelse av klasse B som gjelder når:\n- Tilhengeren veier MER enn 750 kg, OG\n- Kombinert tillatt totalvekt (bil + tilhenger) er MELLOM 3500 kg og 4250 kg.\n\nKrav for B96:\n- Bestå et 7-timers obligatorisk kurs (5 t teori + 2 t kjøring)\n- INGEN oppkjøring/praktisk prøve kreves\n- B96 "stemplet" i førerkortet etter bestått kurs\n\nEksempel: Bil with tillatt totalvekt 2500 kg + tilhenger 1200 kg = 3700 kg → B96.'
+            },
+            {
+                title: 'Klasse BE – for de tyngste kombinasjonene',
+                type: 'text',
+                content: 'BE kreves når kombinert tillatt totalvekt overstiger 4250 kg.\n- Tilhengeren kan ha tillatt totalvekt opp til 3500 kg\n- Kombinert vekt kan gå opp til 7000 kg\n- Krever full teoriprøve for BE + praktisk oppkjøring\n\nEksempel: Bil 3000 kg + tilhenger 1500 kg = 4500 kg → Klasse BE.\n\nNB: Hestehengere og større båthengere havner ofte i BE-kategorien.'
+            },
+            {
+                title: 'Fartsgrenser med tilhenger',
+                type: 'info',
+                content: 'VIKTIG: Når du kjører med tilhenger, gjelder særlige fartsgrenser.\n\nStandard regel (2022-reglene):\n- Motorvei skiltet 110 km/t → Du kjører maks 80 km/t med tilhenger\n- Motorvei skiltet 100 km/t → Du kjører maks 80 km/t med tilhenger\n- Øvrige veier → Følg skiltede grenser opp til maks 80 km/t\n\nTempo 100-ordningen (100 km/t tillatt):\nBilen og tilhengeren MÅ begge være Tempo 100-godkjente. Godkjenning vises i vognkortet. Da kan du kjøre 100 km/t der skiltet tillater det.\n\nHuskeregel: Med tilhenger = maks 80 km/t, med mindre du har Tempo 100-godkjenning.'
+            },
+            {
+                title: 'Sjekkliste før avgang med tilhenger',
+                type: 'tip',
+                content: 'Bruk denne sjekklisten FØR du kjører – dette er pensumstoff på teoriprøven:\n- Koblingen: Henger/kule er låst og sikret (klikk-lyd)\n- Låsekabel: Nødbremsewire er festet til bilen (IKKE lås/kule)\n- Lys: Brems-, bak-, og blinklys fungerer (sjekk via bakspeil mens noen trykker)\n- Last: 100% sikret mot fremover – 50% sikret mot sideveis og bakover\n- Dekk: Riktig lufttrykk på tilhengerdekk (se vognkort)\n- Nummerskilt: Synlig, rent, og belyst (samme nr. som bil der tilhenger mangler eget)\n- Lastfordeling: Tyngde av last FORAN tilhengernes aksling → gir stabilitet\n\nHusk: Overvekt bakerst = svaiing og ustabilitet i høy hastighet.'
+            },
+            {
+                title: 'Vanlige spørsmål om tilhenger (FAQ)',
+                type: 'info',
+                content: 'Q: Kan jeg kjøre tilhenger med bare lappen?\nA: Ja, med øvelseskjøring under ledsager kan du trekke tilhenger innenfor klasse B-reglene (750 kg eller campingvogn-regelen).\n\nQ: Hva skjer hvis kombinert vekt overstiger 3500 kg og jeg ikke har B96?\nA: Det er ulovlig og kan gi tap av førerretten. Forsikringen kan også bli ugyldig ved en eventuell ulykke.\n\nQ: Trenger jeg speil for tilhenger?\nA: Ja, du må ha tilstrekkelig sikt bakover. Er tilhengeren bredere enn bilen, må du montere forlengede sidespeil.\n\nQ: Gjelder 80 km/t-regelen også inne i tettbygd strøk?\nA: Inne i tettbygd strøk gjelder alltid skiltede grenser (normalt 50 km/t). 80 km/t-grensen for tilhenger gjelder der skiltet ellers ville tillatt mer.'
+            }
+        ]
+    },
+    {
+        id: 'fartsgrenser',
+        title: 'Fartsgrenser i Norge: Alt du må vite til teoriprøven (2025)',
+        icon: '⚡',
+        shortDescription: 'Lær alle fartsgrenser i Norge til teoriprøven: 30, 50, 80 og 110 km/t, regler for skole og tilhenger, hva fartsbøter koster og prikker i førerkortet.',
+        color: '#ef4444',
+        seoTitle: 'Fartsgrenser i Norge: Alt du må vite til teoriprøven (2025)',
+        seoDescription: 'Lær alle fartsgrenser i Norge til teoriprøven: 30, 50, 80 og 110 km/t, regler for skole og tilhenger, hva fartsbøter koster og prikker i førerkortet.',
+        sections: [
+            {
+                title: 'Fartsgrenser i Norge: Alt du må vite til teoriprøven',
+                type: 'text',
+                content: 'Fartsgrenser er ett av de temaene du garantert møter på teoriprøven. Her får du en fullstendig oversikt over alle gjeldende fartsgrenser, hva bøtene koster, og hvordan prikkesystemet fungerer.'
+            },
+            {
+                title: 'De generelle fartsgrensene',
+                type: 'info',
+                content: 'I Norge gjelder disse standardfartsgrensene der ingen skilt sier noe annet:\n\n• Tettbygd strøk: 50 km/t\n• Utenfor tettbygd strøk: 80 km/t\n• Motorvei: 100 eller 110 km/t\n\nHuskeregel: Ser du ingen fartsgrenseskilt og er i tettbygd strøk → 50 km/t. Er du utenfor tettbygd strøk → 80 km/t.'
+            },
+            {
+                title: 'Lavere fartsgrenser — når gjelder de?',
+                type: 'text',
+                content: 'På mange veier er fartsgrensen lavere enn 50 km/t. Dette er typisk i:\n\n• 30 km/t: Gjelder nær skoler, barnehager og i boliggater. Skolen trenger ikke å ha skilt — ser du "30-sone"-skilt gjelder det for hele sonen frem til du ser et nytt skilt.\n• 40 km/t: Vanlig i tettere bymiljøer og ved lekeplasser.\n\nFysiske fartsdumper er ofte plassert i 30- og 40-soner. De er der for å håndheve grensen, ikke bare markere den.'
+            },
+            {
+                title: 'Spesielle fartsgrenser du må huske',
+                type: 'warning',
+                content: 'Noen kjøretøy og situasjoner har egne regler — og disse er favoritter på teoriprøven.\n\n• Med tilhenger: Maks 80 km/t, selv om veien er skiltet 110 km/t. Eneste unntak er Tempo 100-godkjenning (se tilhenger-artikkelen).\n• Moped (45 km/t-moped): Maks 45 km/t uansett fartsgrense på veien.\n• Traktor: Maks 40 km/t.\n• Tunge kjøretøy over 3 500 kg: Maks 80 km/t på alle veier.'
+            },
+            {
+                title: '110 km/t på motorvei — hva gjelder?',
+                type: 'info',
+                content: '110 km/t er den høyeste fartsgrensen i Norge og gjelder kun på utvalgte motorveistrekninger der det er skiltet. Det er ikke automatisk 110 km/t på alle motorveier — sjekk alltid skiltene.\n\nDe fleste motorveier er skiltet 100 km/t. Noen strekninger, særlig rundt Oslo og Bergen, er hevet til 110 km/t etter dokumenterte sikkerhetsvurderinger.'
+            },
+            {
+                title: 'Fartsbøter og prikker i førerkortet (ved 50 km/t grense)',
+                type: 'warning',
+                content: 'Dette er noe veldig mange unge lurer på — og det er god grunn til det.\n\nPrikker i førerkortet:\nDu får prikker når du kjører mer enn 10 km/t over fartsgrensen (der grensen er 60 km/t eller lavere) eller mer enn 15 km/t over (der grensen er 70 km/t eller høyere). Samler du 8 prikker på 3 år mister du førerretten i 6 måneder.\n\nBøtesatser 2025 (ved 50 km/t fartsgrense):\n• Inntil 5 km/t over: 1 250 kr\n• 6–10 km/t over: 3 350 kr\n• 11–15 km/t over: 5 950 kr\n• 16–20 km/t over: 8 650 kr\n• Over 25 km/t over: Fra 13 450 kr + mulig tap av lappen\n\nVed kraftig overskridelse (vanligvis 30+ km/t over) mister du førerkortet og saken kan gå til retten.\n\nViktig for deg under 18 år: Du er på prøveperiode de to første årene. Én alvorlig forseelse kan bety at du mister lappen og må ta den på nytt.'
+            },
+            {
+                title: 'Fartsgrenser og bremselengde — sammenhengen',
+                type: 'text',
+                content: 'Dette er et klassisk teoriprøve-spørsmål. Fart har dramatisk effekt på bremselengde fordi bremseenergien øker med kvadratet av farten:\n\n• 50 km/t → bremselengde ca. 13 meter (tørr asfalt)\n• 80 km/t → bremselengde ca. 32 meter\n• 100 km/t → bremselengde ca. 50 meter\n\nDobler du farten, firedobles bremselengden — ikke dobbles. For total stopplengde (reaksjonstid + bremsing) blir forskjellen enda større.'
+            },
+            {
+                title: 'Tips for å huske fartsgrensene til teoriprøven',
+                type: 'tip',
+                content: '• Ingen skilt i by = 50. Det er alltid utgangspunktet i tettbygd strøk.\n• Ingen skilt på landet = 80. Gjelder utenfor tettbygd strøk.\n• Tilhenger = alltid maks 80, uansett hva veien er skiltet (uten Tempo 100).\n• Skolen er ofte 30, med eller uten fartsdump.\n• 110 km/t finnes bare der det er skiltet — anta aldri 110.'
+            },
+            {
+                title: 'Vanlige spørsmål om fartsgrenser (FAQ)',
+                type: 'info',
+                content: 'Q: Hva er fartsgrensen der det ikke er satt opp skilt?\nA: I tettbygd strøk er den 50 km/t, og utenfor tettbygd strøk er den 80 km/t. Dette følger av trafikkreglene § 13.\n\nQ: Kan kommunen sette lavere fartsgrenser?\nA: Ja. Kommunen kan skilte lavere grenser enn de nasjonale standardene, for eksempel 30 km/t i boliggater.\n\nQ: Mister man lappen første gang man kjører for fort?\nA: Ikke nødvendigvis, men ved alvorlig overskridelse (typisk 30+ km/t over) kan førerretten inndras selv første gang.\n\nQ: Gjelder 50 km/t også på riksveier gjennom tettsteder?\nA: Ja. Fartsgrensen følger veitype og bebyggelse, ikke om veien er en riksvei eller kommunal vei.'
             }
         ]
     }

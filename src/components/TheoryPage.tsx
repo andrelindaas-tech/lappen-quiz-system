@@ -3,6 +3,8 @@ import { useParams, useNavigate } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
 import { theoryTopics, theoryArticles } from '../data/theoryData'
 import TheoryTopic from './TheoryTopic'
+import { TilhengerKalkulator } from './TilhengerKalkulator'
+import { parseInlineLinks } from '../utils/textUtils'
 
 // GA4 global type
 declare function gtag(...args: unknown[]): void
@@ -45,6 +47,7 @@ export default function TheoryPage() {
                     key={selectedTopic.id}
                     topic={selectedTopic}
                     onBack={handleBack}
+                    extraComponent={selectedTopic.id === 'tilhenger' ? <TilhengerKalkulator /> : undefined}
                 />
             </div>
         )
@@ -65,22 +68,22 @@ export default function TheoryPage() {
 
                 <div className="theory-cards">
                     {theoryTopics.map(topic => (
-                        <button
+                        <div
                             key={topic.id}
                             className="theory-card"
                             onClick={() => handleSelectTopic(topic.id)}
-                            style={{ borderLeftColor: topic.color }}
+                            style={{ borderLeftColor: topic.color, cursor: 'pointer' }}
                         >
                             <span className="theory-card-icon">{topic.icon}</span>
                             <h2 className="theory-card-title">{topic.title}</h2>
-                            <p className="theory-card-desc">{topic.shortDescription}</p>
+                            <p className="theory-card-desc">{parseInlineLinks(topic.shortDescription)}</p>
                             <span
                                 className="theory-card-badge"
                                 style={{ backgroundColor: topic.color }}
                             >
                                 Les mer →
                             </span>
-                        </button>
+                        </div>
                     ))}
                 </div>
             </section>
@@ -93,17 +96,17 @@ export default function TheoryPage() {
 
                 <div className="theory-cards article-grid">
                     {theoryArticles.map(article => (
-                        <button
+                        <div
                             key={article.id}
                             className="theory-card article-card"
                             onClick={() => handleSelectTopic(article.id)}
-                            style={{ borderLeftColor: article.color }}
+                            style={{ borderLeftColor: article.color, cursor: 'pointer' }}
                         >
                             <div className="article-card-content">
                                 <span className="theory-card-icon">{article.icon}</span>
                                 <div>
                                     <h3 className="theory-card-title">{article.title}</h3>
-                                    <p className="theory-card-desc">{article.shortDescription}</p>
+                                    <p className="theory-card-desc">{parseInlineLinks(article.shortDescription)}</p>
                                 </div>
                             </div>
                             <span
@@ -112,7 +115,7 @@ export default function TheoryPage() {
                             >
                                 Les artikkel →
                             </span>
-                        </button>
+                        </div>
                     ))}
                 </div>
             </section>

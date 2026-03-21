@@ -1,46 +1,10 @@
 // Teori-emne detaljvisning
 import React from 'react'
 import { Helmet } from 'react-helmet-async'
-import { Link } from 'react-router-dom'
 import type { TheoryTopic as TopicType } from '../data/theoryData'
 import BrakeCalculator from './BrakeCalculator'
+import { parseInlineLinks } from '../utils/textUtils'
 
-// Helper function to safely parse markdown-style localized [links](/urls)
-function parseInlineLinks(text: string) {
-    const linkRegex = /\[([^\]]+)\]\(([^)]+)\)/g
-    const parts = []
-    let lastIndex = 0
-    let match
-
-    while ((match = linkRegex.exec(text)) !== null) {
-        if (match.index > lastIndex) {
-            parts.push(text.substring(lastIndex, match.index))
-        }
-        const textContent = match[1]
-        const url = match[2]
-
-        if (url.startsWith('/')) {
-            parts.push(
-                <Link key={match.index} to={url} style={{ color: 'var(--color-primary)', textDecoration: 'none', fontWeight: 600 }}>
-                    {textContent}
-                </Link>
-            )
-        } else {
-            parts.push(
-                <a key={match.index} href={url} target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-primary)', textDecoration: 'none', fontWeight: 600 }}>
-                    {textContent}
-                </a>
-            )
-        }
-        lastIndex = linkRegex.lastIndex
-    }
-
-    if (lastIndex < text.length) {
-        parts.push(text.substring(lastIndex))
-    }
-
-    return parts.length > 0 ? parts : text
-}
 
 // Renders content string with support for paragraphs, bullet lists (- ) and numbered lists (1. )
 function renderContent(text: string) {
@@ -95,9 +59,10 @@ function renderContent(text: string) {
 interface TheoryTopicProps {
     topic: TopicType
     onBack: () => void
+    extraComponent?: React.ReactNode
 }
 
-export default function TheoryTopic({ topic, onBack }: TheoryTopicProps) {
+export default function TheoryTopic({ topic, onBack, extraComponent }: TheoryTopicProps) {
     // Generate JSON-LD for this specific topic
     const structuredData = {
         "@context": "https://schema.org",
@@ -143,7 +108,7 @@ export default function TheoryTopic({ topic, onBack }: TheoryTopicProps) {
                 <span className="theory-topic-icon-lg">{topic.icon}</span>
                 <div>
                     <h2>{topic.title}</h2>
-                    <p className="theory-topic-desc">{topic.shortDescription}</p>
+                    <p className="theory-topic-desc">{parseInlineLinks(topic.shortDescription)}</p>
                 </div>
             </div>
 
@@ -182,6 +147,12 @@ export default function TheoryTopic({ topic, onBack }: TheoryTopicProps) {
                         )}
                     </div>
                 ))}
+                
+                {extraComponent && (
+                    <div className="theory-extra-component" style={{ marginTop: '2rem' }}>
+                        {extraComponent}
+                    </div>
+                )}
             </div>
         </div>
     )
