@@ -4,6 +4,7 @@ import { Helmet } from 'react-helmet-async'
 import type { TheoryTopic as TopicType } from '../data/theoryData'
 import BrakeCalculator from './BrakeCalculator'
 import { parseInlineLinks } from '../utils/textUtils'
+import { SignIllustration } from './SignIllustration'
 
 
 // Renders content string with support for paragraphs, bullet lists (- ) and numbered lists (1. )
@@ -87,12 +88,30 @@ export default function TheoryTopic({ topic, onBack, extraComponent }: TheoryTop
         }
     }
 
+    const faqData = topic.faq ? {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": topic.faq.map(item => ({
+            "@type": "Question",
+            "name": item.question,
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": item.answer
+            }
+        }))
+    } : null
+
     return (
         <div className="theory-topic-detail">
             {/* Inject JSON-LD */}
             <script type="application/ld+json">
                 {JSON.stringify(structuredData)}
             </script>
+            {faqData && (
+                <script type="application/ld+json">
+                    {JSON.stringify(faqData)}
+                </script>
+            )}
 
             {/* Dynamic SEO Header Tags */}
             <Helmet>
@@ -122,20 +141,29 @@ export default function TheoryTopic({ topic, onBack, extraComponent }: TheoryTop
                         <h3 className="theory-section-title">{section.title}</h3>
 
                         {section.type === 'signs' && section.signs ? (
-                            <div className="theory-signs-grid">
-                                {section.signs.map((sign, i) => (
-                                    <div key={i} className="theory-sign-item">
-                                        <img
-                                            src={sign.imageUrl}
-                                            alt={sign.name}
-                                            className="theory-sign-img"
-                                        />
-                                        <div className="theory-sign-text">
-                                            <strong>{sign.name}</strong>
-                                            <p>{sign.description}</p>
+                            <div className="theory-section-content">
+                                {renderContent(section.content)}
+                                <div className="theory-signs-grid">
+                                    {section.signs.map((sign, i) => (
+                                        <div key={i} className="theory-sign-item">
+                                            <div className="theory-sign-visual">
+                                                {sign.signId ? (
+                                                    <SignIllustration signId={sign.signId} className="theory-sign-svg" />
+                                                ) : (
+                                                    <img
+                                                        src={sign.imageUrl}
+                                                        alt={sign.name}
+                                                        className="theory-sign-img"
+                                                    />
+                                                )}
+                                            </div>
+                                            <div className="theory-sign-text">
+                                                <strong>{sign.name}</strong>
+                                                <p>{sign.description}</p>
+                                            </div>
                                         </div>
-                                    </div>
-                                ))}
+                                    ))}
+                                </div>
                             </div>
                         ) : section.type === 'calculator' ? (
                             <div className="theory-section-content">

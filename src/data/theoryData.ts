@@ -3,7 +3,8 @@
 export interface SignItem {
     name: string
     description: string
-    imageUrl: string
+    imageUrl?: string
+    signId?: string
 }
 
 export interface TheorySection {
@@ -23,6 +24,7 @@ export interface TheoryTopic {
     hasCalculator?: boolean
     seoTitle?: string
     seoDescription?: string
+    faq?: { question: string, answer: string }[]
 }
 
 export const theoryTopics: TheoryTopic[] = [
@@ -175,37 +177,171 @@ export const theoryTopics: TheoryTopic[] = [
 
     {
         id: 'skilt',
-        title: 'Skilt-oversikt',
+        title: 'Trafikkskilt – Komplett oversikt til teoriprøven for bil',
         icon: '🚦',
-        shortDescription: 'De viktigste trafikkskiltene du må kjenne til',
+        shortDescription: 'Trafikkskilt er hjørnesteinen i trafikksikkerhet. Her får du vår komplette guide til de norske trafikkskiltene du må kjenne til for klasse B.',
         color: '#059669',
-        seoTitle: 'Trafikkskilt – oversikt for teoriprøven | Teori-test.no',
-        seoDescription: 'De viktigste trafikkskiltene du må kjenne til for klasse B: fareskilt, forbudsskilt og vikepliktskilt.',
+        seoTitle: 'Trafikkskilt til teoriprøven (Klasse B): Komplett oversikt 2026 | Teori-test.no',
+        seoDescription: 'Sliter du med å huske trafikkskiltene? Få en enkel og komplett oversikt over forbudsskilt, fareskilt og vikeplikt. Lær de vanligste eksamensfellene her!',
         sections: [
             {
-                title: 'Skilttyper etter form og farge',
-                type: 'text',
-                content: 'Norske trafikkskilt er delt inn i kategorier basert på form og farge:\n\n• Forbudsskilt — Runde med rød kant (forbud og påbud)\n• Fareskilt — Trekantede med rød kant (varsling om fare)\n• Opplysningsskilt — Firkantede, blå eller grønne (informasjon)\n• Veivisningsskilt — Rektangulære (retning og avstand)\n• Underskilt — Supplerer hovedskiltet med tilleggsinformasjon'
+                title: '1. Knekk koden: Slik er norske trafikkskilt organisert',
+                type: 'signs',
+                content: 'Norske trafikkskilt er delt inn i faste kategorier basert på farge og form. Kjenner du fargekoden og formen, kan du ofte gjette deg til hva et ukjent skilt betyr på teoritentamen:',
+                signs: [
+                    {
+                        name: 'Forbudsskilt',
+                        description: 'Runde med rød kant: Forteller deg strengt hva du ikke har lov til.',
+                        signId: 'prohibition-template'
+                    },
+                    {
+                        name: 'Påbudsskilt',
+                        description: 'Runde med blå bunn: Forteller deg hva du må gjøre.',
+                        signId: 'mandatory-template'
+                    },
+                    {
+                        name: 'Fareskilt',
+                        description: 'Trekantede med rød kant: Varsler om fare fremover, slik at du kan senke farten.',
+                        signId: 'danger-template'
+                    },
+                    {
+                        name: 'Vikepliktsskilt',
+                        description: 'Ulike former: Forteller hvem som skal vike for hvem i et veikryss eller på en strekning.',
+                        signId: 'yield'
+                    },
+                    {
+                        name: 'Opplysningsskilt',
+                        description: 'Firkantede: Gir deg nyttig informasjon, uten å forby eller påby noe.',
+                        signId: 'info-template'
+                    },
+                    {
+                        name: 'Underskilt',
+                        description: 'Rektangulære små skilt: Står alltid under et hovedskilt for å presisere når eller for hvem hovedskiltet gjelder.',
+                        signId: 'sub-sign-template'
+                    }
+                ]
             },
             {
-                title: 'Forbudsskilt',
-                type: 'info',
-                content: '• Innkjøring forbudt — Rød sirkel med hvit vannrett strek\n• All motorkjøretøytrafikk forbudt — Rød ring, hvit bunn\n• Fartsgrense — Rød ring med tall (30, 40, 50, 60, 70, 80, 90, 100, 110)\n• Forbikjøring forbudt — Rød ring med to biler\n• Parkering forbudt — Blå sirkel med rød kant og kryss\n• Stopp forbudt — Blå sirkel med rød kant og X'
+                title: '2. Vikepliktsskilt og forkjørsregulering',
+                type: 'signs',
+                content: 'Dette er skiltene som styrer hvem som har retten på sin side. Fordi konsekvensene er så store ved feil, har disse skiltene unike former, slik at du kjenner dem igjen selv om de er dekket av snø:\n\n[Les mer i vår komplette guide til vikeplikt og høyreregelen](/laeringsressurser/vikeplikt)',
+                signs: [
+                    {
+                        name: 'Vikeplikt',
+                        description: 'Trekant med spissen ned: Du skal vike for all trafikk på kryssende vei.',
+                        signId: 'yield'
+                    },
+                    {
+                        name: 'Stopp',
+                        description: 'Rød åttekant: Du MÅ stoppe helt opp ved stopplinjen (eller før krysset), selv om veien virker helt klar. Bilen skal stå helt stille.',
+                        signId: 'stop'
+                    },
+                    {
+                        name: 'Forkjørsvei',
+                        description: 'Gul rute / Diamant: Du har forkjørsrett. Trafikk fra sideveier har vikeplikt for deg.',
+                        signId: 'priority-road'
+                    },
+                    {
+                        name: 'Slutt på forkjørsvei',
+                        description: 'Gul rute med grå skravering: Forkjørsretten din er over, og du må vanligvis forholde deg til høyreregelen igjen.',
+                        signId: 'end-priority-road'
+                    }
+                ]
             },
             {
-                title: 'Fareskilt',
+                title: '3. Forbudsskilt – Hva du ikke har lov til',
+                type: 'signs',
+                content: 'Disse skiltene er runde med en tydelig rød kant på hvit bunn.',
+                signs: [
+                    {
+                        name: 'Fartsgrense 50',
+                        description: 'Viser maksimal lovlig hastighet. Dette skiltet gjelder frem til du passerer et nytt fartsgrenseskilt.',
+                        signId: 'speed-50'
+                    },
+                    {
+                        name: 'Innkjøring forbudt',
+                        description: 'Gjelder kun i den retningen du ser skiltet. Det betyr vanligvis at det er en enveiskjørt gate du forsøker å kjøre inn i fra feil side.',
+                        signId: 'no-entry'
+                    },
+                    {
+                        name: 'Parkering forbudt',
+                        description: 'Du kan stoppe for å slippe av en passasjer, men du kan ikke forlate bilen.',
+                        signId: 'no-parking'
+                    },
+                    {
+                        name: 'All stans forbudt',
+                        description: 'Her har du ikke engang lov til å stoppe for å slippe av eller plukke opp noen.',
+                        signId: 'no-stopping'
+                    }
+                ]
+            },
+            {
+                title: '4. Fareskilt – Vær forberedt',
+                type: 'signs',
+                content: 'Fareskiltene varsler om farlige forhold fremover. Utenfor tettbygd strøk er de vanligvis plassert 150–250 meter før selve faren, slik at du rekker å bremse.',
+                signs: [
+                    {
+                        name: 'Farlig sving (Høyre)',
+                        description: 'Varsler om en sving som er skarpere enn veien ellers gir inntrykk av.',
+                        signId: 'dangerous-curve-right'
+                    },
+                    {
+                        name: 'Glatt vei',
+                        description: 'Vær forberedt på at underlaget kan være spesielt glatt, for eksempel ved regn eller frost.',
+                        signId: 'slippery-road'
+                    },
+                    {
+                        name: 'Vegarbeid',
+                        description: 'Betyr at du må forvente nedsatt fartsgrense, arbeidere i veibanen og endret kjøremønster.',
+                        signId: 'road-work'
+                    },
+                    {
+                        name: 'Elg / Vilt',
+                        description: 'Vær ekstremt oppmerksom på dyr i vegbanen, spesielt i skumring og demring.',
+                        signId: 'moose'
+                    }
+                ]
+            },
+            {
+                title: '5. Påbudsskilt – Ting du må gjøre',
+                type: 'signs',
+                content: 'Disse er enkle å kjenne igjen på sin knallblå bakgrunn med hvite symboler.',
+                signs: [
+                    {
+                        name: 'Påbudt kjøreretning (Rett frem)',
+                        description: 'Viser deg hvilken vei du må svinge i et kryss. Du kan ikke velge andre retninger.',
+                        signId: 'mandatory-straight'
+                    },
+                    {
+                        name: 'Påbudt rundkjøring',
+                        description: 'Viser at du nærmer deg en rundkjøring og må følge kjøreretningen mot klokka.',
+                        signId: 'roundabout'
+                    }
+                ]
+            },
+            {
+                title: 'De 3 vanligste skilt-feilene på teoriprøven',
                 type: 'warning',
-                content: '• Farlig sving — Trekant med svingete pil\n• Glatt vei — Trekant med bil i skrens\n• Vegarbeid — Trekant med person med spade\n• Barn — Trekant med to barnefigurer\n• Vilt — Trekant med elg/hjort\n• Jernbanekryssing — Trekant med togskinner'
+                content: 'For å bestå teoriprøven hos Statens vegvesen på første forsøk, må du unngå disse klassiske tabbene:\n\n1. Forveksle stans og parkering: Mange blander «Parkering forbudt» (én skråstrek) med «All stans forbudt» (to skråstreker i kryss).\n2. Glemme hvor fareskilt gjelder: Fareskiltet gjelder ikke nøyaktig der stolpen står, det varsler om en fare et stykke lengre fremme.\n3. Misforstå fartsgrenser for gågate og gatetun: Fartsgrensen her er ikke 30 km/t, men gangfart (altså at du skal kjøre i samme tempo som folk går).'
             },
             {
-                title: 'Fartsgrenser i Norge',
-                type: 'text',
-                content: 'Standard fartsgrenser (når ikke annet er skiltet):\n\n• I tettbygd strøk: 50 km/t\n• Utenfor tettbygd strøk: 80 km/t\n• Motorvei: Skiltet (vanligvis 100 eller 110 km/t)\n\nHusk at forbudet gjelder fra skiltet til neste fartsgrenseskilt eller til tettbygd strøk.'
+                title: 'Ofte stilte spørsmål om trafikkskilt (FAQ)',
+                type: 'info',
+                content: 'Hvor mange spørsmål om skilt får jeg på teoriprøven?\nDu får 45 spørsmål totalt på teoriprøven for bil. Skilt, vikeplikt og vegoppmerking utgjør en svært stor del av disse oppgavene. Du kan maksimalt ha 7 feil for å bestå.\n\nHva er standard fartsgrense i Norge hvis det ikke er skiltet?\nDersom du ikke ser noen fartsgrenseskilt, er hovedregelen at fartsgrensen er 50 km/t i tettbygd strøk, og 80 km/t utenfor tettbygd strøk.\n\nHvilket trafikkskilt overstyrer alt annet?\nTrafikkskilt overstyres alltid av trafikklys og av manuell dirigering fra politiet. Hvis et lyskryss derimot slutter å fungere (blinker gult), er det skiltene som gjelder.\n\nFøler du deg klar? [Prøv skilt-quizen her](/quiz/skilt)'
+            }
+        ],
+        faq: [
+            {
+                question: 'Hvor mange spørsmål om skilt får jeg på teoriprøven?',
+                answer: 'Du får 45 spørsmål totalt på teoriprøven for bil. Skilt, vikeplikt og vegoppmerking utgjør en svært stor del av disse oppgavene. Du kan maksimalt ha 7 feil for å bestå.'
             },
             {
-                title: 'Tips for eksamen',
-                type: 'tip',
-                content: 'Fokuser ekstra på forskjellen mellom "Parkering forbudt" (én strek) og "All stans forbudt" (X-strek). Mange svarer feil på dette. Husk også at "Innkjøring forbudt" bare gjelder i den retningen du ser skiltet.'
+                question: 'Hva er standard fartsgrense i Norge hvis det ikke er skiltet?',
+                answer: 'Dersom du ikke ser noen fartsgrenseskilt, er hovedregelen at fartsgrensen er 50 km/t i tettbygd strøk, og 80 km/t utenfor tettbygd strøk.'
+            },
+            {
+                question: 'Hvilket trafikkskilt overstyrer alt annet?',
+                answer: 'Trafikkskilt overstyres alltid av trafikklys og av manuell dirigering fra politiet. Hvis et lyskryss derimot slutter å fungere (blinker gult), er det skiltene som gjelder.'
             }
         ]
     },
