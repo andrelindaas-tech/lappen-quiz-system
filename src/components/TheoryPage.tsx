@@ -74,7 +74,11 @@ export default function TheoryPage() {
                             onClick={() => handleSelectTopic(topic.id)}
                             style={{ borderLeftColor: topic.color, cursor: 'pointer' }}
                         >
-                            <span className="theory-card-icon">{topic.icon}</span>
+                            <span className="theory-card-icon">
+                                {topic.icon.startsWith('data:image') 
+                                    ? <img src={topic.icon} alt={topic.title} style={{ width: '32px', height: '32px', objectFit: 'contain' }} /> 
+                                    : topic.icon}
+                            </span>
                             <h2 className="theory-card-title">{topic.title}</h2>
                             <p className="theory-card-desc">{parseInlineLinks(topic.shortDescription)}</p>
                             <span

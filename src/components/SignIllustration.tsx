@@ -64,16 +64,17 @@ export const SignIllustration: React.FC<SignIllustrationProps> = ({ signId, clas
         )
       case 'priority-road':
         return (
-          <g>
-            <rect x="25" y="25" width="50" height="50" transform="rotate(45 50 50)" fill={COLORS.YELLOW} stroke={COLORS.WHITE} strokeWidth="4" />
-            <rect x="27" y="27" width="46" height="46" transform="rotate(45 50 50)" fill="none" stroke={COLORS.BLACK} strokeWidth="1" />
+          <g transform="rotate(45 50 50)">
+            <rect x="18" y="18" width="64" height="64" fill={COLORS.WHITE} stroke={COLORS.BLACK} strokeWidth="4" />
+            <rect x="32" y="32" width="36" height="36" fill={COLORS.YELLOW} stroke={COLORS.BLACK} strokeWidth="1.5" />
           </g>
         )
       case 'end-priority-road':
         return (
-          <g>
-            <rect x="25" y="25" width="50" height="50" transform="rotate(45 50 50)" fill={COLORS.YELLOW} stroke={COLORS.WHITE} strokeWidth="4" />
-            <path d="M15 85 L85 15" stroke={COLORS.BLACK} strokeWidth="8" opacity="0.6" />
+          <g transform="rotate(45 50 50)">
+            <rect x="18" y="18" width="64" height="64" fill={COLORS.WHITE} stroke={COLORS.BLACK} strokeWidth="4" />
+            <rect x="32" y="32" width="36" height="36" fill={COLORS.YELLOW} stroke={COLORS.BLACK} strokeWidth="1.5" />
+            <line x1="50" y1="18" x2="50" y2="82" stroke={COLORS.BLACK} strokeWidth="14" />
           </g>
         )
 
@@ -132,7 +133,12 @@ export const SignIllustration: React.FC<SignIllustrationProps> = ({ signId, clas
         return (
           <g>
             <path d="M50 5 L95 85 L5 85 Z" fill={COLORS.WHITE} stroke={COLORS.RED} strokeWidth="8" strokeLinejoin="round" />
-            <path d="M40 70 Q40 50 60 50 L60 40 L75 55 L60 70 L60 60 Q50 60 50 70 Z" fill={COLORS.BLACK} />
+            
+            {/* Curved stem for the right arrow - slimmed down based on feedback */}
+            <path d="M 38 76 L 38 56 Q 38 46, 46 40 L 50 38" stroke={COLORS.BLACK} strokeWidth="9" strokeLinecap="butt" fill="none" />
+            
+            {/* Arrowhead polygon appropriately scaled down */}
+            <polygon points="46,31 64,32 54,45" fill={COLORS.BLACK} />
           </g>
         )
       case 'slippery-road':

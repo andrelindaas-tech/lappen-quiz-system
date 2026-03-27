@@ -128,7 +128,11 @@ export default function TheoryTopic({ topic, onBack, extraComponent }: TheoryTop
             </button>
 
             <div className="theory-topic-header">
-                <span className="theory-topic-icon-lg">{topic.icon}</span>
+                <span className="theory-topic-icon-lg">
+                    {topic.icon.startsWith('data:image') 
+                        ? <img src={topic.icon} alt={topic.title} style={{ width: '64px', height: '64px', objectFit: 'contain' }} /> 
+                        : topic.icon}
+                </span>
                 <div>
                     <h1 style={{ fontSize: '2rem', margin: '0 0 var(--spacing-sm)' }}>{topic.title}</h1>
                     <p className="theory-topic-desc">{parseInlineLinks(topic.shortDescription)}</p>

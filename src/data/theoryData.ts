@@ -278,7 +278,7 @@ export const theoryTopics: TheoryTopic[] = [
             {
                 title: '4. Fareskilt – Vær forberedt',
                 type: 'signs',
-                content: 'Fareskiltene varsler om farlige forhold fremover. Utenfor tettbygd strøk er de vanligvis plassert 150–250 meter før selve faren, slik at du rekker å bremse.',
+                content: 'Fareskiltene varsler om farlige forhold fremover. Avstanden fra skiltet til faren avhenger av fartsgrensen:\n- Inntil 60 km/t: ca. 50–150 meter før faren.\n- 70 km/t eller mer: ca. 150–250 meter før faren.\n- 90 km/t eller mer: ofte inntil 400 meter før faren.',
                 signs: [
                     {
                         name: 'Farlig sving (Høyre)',
@@ -305,7 +305,7 @@ export const theoryTopics: TheoryTopic[] = [
             {
                 title: '5. Påbudsskilt – Ting du må gjøre',
                 type: 'signs',
-                content: 'Disse er enkle å kjenne igjen på sin knallblå bakgrunn med hvite symboler.',
+                content: 'Hvordan ser påbudsskilt ut? Påbudsskiltene er runde med blå bunn, hvit bord/kant og hvite symboler. Skiltene gir påbud om kjøreretning, bruk av kjørefelt og bestemte kjøremåter.',
                 signs: [
                     {
                         name: 'Påbudt kjøreretning (Rett frem)',
@@ -318,6 +318,16 @@ export const theoryTopics: TheoryTopic[] = [
                         signId: 'roundabout'
                     }
                 ]
+            },
+            {
+                title: '6. Veivisningsskilt – Finn frem i trafikken',
+                type: 'info',
+                content: 'Veivisningsskilt hjelper deg å finne frem til riktig sted. Fargen på bakgrunnen forteller deg hva slags type mål skiltet peker mot:\n- Blå bakgrunn: Geografiske mål på motorvei.\n- Gul bakgrunn: Geografiske mål på vanlige veier.\n- Hvit bakgrunn: Lokale mål og bedrifter.\n- Oransje bakgrunn: Midlertidig omkjøring.\n- Brun bakgrunn: Turistmål og severdigheter.'
+            },
+            {
+                title: 'Viktig: Midlertidig skilting overstyrer alt',
+                type: 'warning',
+                content: 'Trafikkskilt med gul bakgrunn (gule skilt) betyr at det er en midlertidig situasjon, for eksempel på grunn av vegarbeid. Disse skiltene overstyrer ALLTID de permanente skiltene på strekningen. Pass ekstremt godt på midlertidige fartsgrenser og vikeplikt her!'
             },
             {
                 title: 'De 3 vanligste skilt-feilene på teoriprøven',
@@ -414,6 +424,143 @@ export const theoryTopics: TheoryTopic[] = [
                 title: 'Elektrisk bil',
                 type: 'tip',
                 content: 'Elbiler har null lokale utslipp og lavere driftskostnader. Regenerativ bremsing (energigjenvinning) gjør at bilen lader batteriet når du slipper gassen. For å maksimere rekkevidden: bruk varme- og klimaanlegg med måte, og kjør jevnt.'
+            }
+        ]
+    },
+    {
+        id: 'stans-og-parkering',
+        title: 'Stans og parkering: Forskjellen du må kunne til teoriprøven',
+        icon: '🅿️',
+        shortDescription: 'Lær forskjellen mellom stans og parkering, avstandsreglene (kryss, gangfelt, busslomme) og unngå fellene på teoriprøven.',
+        color: '#dc2626',
+        seoTitle: 'Stans og parkering: Forskjellen du må kunne til teoriprøven',
+        seoDescription: 'Sliter du med reglene for stans og parkering? Lær forskjellen, avstandsreglene (kryss, gangfelt, busslomme) og unngå fellene på teoriprøven for bil.',
+        sections: [
+            {
+                title: 'Stans og parkering: Hva er egentlig forskjellen?',
+                type: 'text',
+                content: 'Reglene for stans og parkering er en klassisk gjenganger på teoriprøven for klasse B. Mange mister unødvendige poeng her fordi de blander sammen de to begrepene, eller glemmer de eksakte avstandsreglene for gangfelt og veikryss. Her gir vi deg en komplett og enkel oversikt over hva trafikkreglene faktisk sier, slik at du er trygg når disse oppgavene dukker opp på eksamen.'
+            },
+            {
+                title: '1. Definisjonen på stans',
+                type: 'info',
+                content: 'For å forstå reglene, må vi først vite hva "stans" betyr i juridisk forstand. Stans er en kortvarig stans av kjøretøyet for å:\n\n- Slippe av eller ta på passasjerer (av- og påstigning).\n- Laste inn eller ut varer (av- og pålessing).\n\nSå lenge du gjør dette aktivt, regnes det som stans. Det er viktig å merke seg at hvis du stopper fordi trafikken krever det (for eksempel i kø, for rødt lys, eller for å overholde vikeplikt), regnes ikke dette som stans i lovens forstand. Det er rett og slett en del av det å kjøre bil.'
+            },
+            {
+                title: '2. Definisjonen på parkering',
+                type: 'text',
+                content: 'Hva skiller så stans fra parkering? Trafikkreglene er veldig tydelige: Enhver hensetting av kjøretøyet, selv for en kort stund, regnes som parkering hvis det varer lenger enn det som kreves for å slippe av/på passasjerer eller laste av/på varer.\n\nTommelfingerregel: Hvis du forlater bilen for å stikke inn på kiosken for å kjøpe en pølse, har du parkert – selv om motoren går og det bare tar ett minutt.'
+            },
+            {
+                title: '3. Kjenn igjen skiltene',
+                type: 'signs',
+                content: 'Det finnes to hovedskilt som regulerer dette, og du må ikke forveksle dem (se vår [komplette skilt-oversikt](/laeringsressurser/skilt) for mer):',
+                signs: [
+                    {
+                        name: 'Parkering forbudt',
+                        description: '(Én skråstrek): Skiltet er en blå sirkel med rød kant og én rød skråstrek. Her har du ikke lov til å parkere, men du har lov til å foreta en kort stans for å slippe av en venn eller lesse ut noen kasser.',
+                        signId: 'no-parking'
+                    },
+                    {
+                        name: 'All stans forbudt',
+                        description: '(To skråstreker / et kryss): Skiltet har blå bunn, rød kant og to røde streker som danner et kryss. Her kan du verken parkere eller stoppe for å slippe av passasjerer. Det er totalt forbudt å stanse frivillig.',
+                        signId: 'no-stopping'
+                    }
+                ]
+            },
+            {
+                title: '4. Avstandsreglene (Puggestoff til eksamen!)',
+                type: 'warning',
+                content: 'Dette er tallene du rett og slett må pugge. Du har verken lov til å stanse eller parkere på følgende steder:\n\n- Gangfelt og sykkelkryssing: På selve feltet, og nærmere enn 5 meter foran feltet. (Du har imidlertid lov til å parkere umiddelbart etter feltet).\n- Veikryss: I selve krysset, eller nærmere enn 5 meter fra krysset. (Avstanden måles fra det punktet hvor fortauskanten, eller kanten av veibanen, begynner å runde).\n- Jernbane- og sporveiskryssing: Nærmere planovergangen enn 5 meter.\n- Uoversiktlige steder: I uoversiktlige svinger, bakketopper eller tunneler.\n- Motorvei og motortrafikkvei: Det er totalt forbudt å stanse eller parkere (unntatt på oppmerkede rasteplasser eller ved nødstopp).'
+            },
+            {
+                title: '5. Spesialregel for busslommer',
+                type: 'info',
+                content: 'Busslommer har en egen avstandsregel som ofte testes. Du har ikke lov til å parkere i en busslomme (holdeplass for buss, taxi eller trikk), eller nærmere enn 20 meter før og 15 meter etter skiltet for holdeplassen.\n\nUnntak: Du har lov til å stanse kort for å slippe av eller på passasjerer i en busslomme, men kun hvis det ikke er til hinder for bussen eller taxien.'
+            },
+            {
+                title: 'De 3 vanligste fellene på teoriprøven',
+                type: 'warning',
+                content: '1. Parkering ETTER gangfelt: På et bilde står en bil parkert rett etter et gangfelt. Mange svarer at dette er ulovlig på grunn av 5-metersregelen. Fasit: Dette er lovlig. Forbudet gjelder bare på og 5 meter foran gangfeltet.\n\n2. Forlate bilen "et lite øyeblikk": Du står i en sone med "Parkering forbudt", men går ut for å poste et brev. Er det stans eller parkering? Fasit: Du har parkert, og handlingen er ulovlig. Du forlot bilen for et annet ærend enn av/på-stigning eller lasting.\n\n3. Stans på forkjørsvei: Mange tror det er lov å parkere på en forkjørsvei hvis man står helt i kanten. Fasit: Hvis fartsgrensen på forkjørsveien er høyere enn 50 km/t, er det forbudt å parkere på kjørebanen.'
+            },
+            {
+                title: 'Test dine kunnskaper',
+                type: 'tip',
+                content: 'Klarer du å skille skilt og situasjoner i praksis? Ta en [Gratis ekspresstest](/quiz?mode=hurtig) og se om du unngår fellene!'
+            }
+        ],
+        faq: [
+            {
+                question: 'Er det lov å stanse på et fortau eller en gang- og sykkelvei?',
+                answer: 'Nei, det er strengt forbudt å både stanse og parkere på fortau, gangveier og sykkelveier. Dette er for å sikre at myke trafikanter kan ferdes trygt uten å måtte gå ut i bilveien.'
+            },
+            {
+                question: 'Hva skjer hvis jeg får motorstopp der det er stans forbudt?',
+                answer: 'Motorstopp eller trafikkulykke regnes som "nødstopp". Da skal du sette på varselblinkere, få bilen så langt ut til siden som mulig, og sette ut varseltrekant (150-250 meter unna utenfor tettbygd strøk).'
+            },
+            {
+                question: 'Kan jeg parkere mot kjøreretningen?',
+                answer: 'Hovedregelen i Norge er at man skal parkere på høyre side av veien (i kjøreretningen). Unntaket er i enveiskjørte gater, hvor du kan parkere på venstre side hvis det er plass og ikke skiltet med forbud.'
+            }
+        ]
+    },
+    {
+        id: 'vognkort-og-vekt',
+        title: 'Vognkort og vekter: Slik forstår du tallene til teoriprøven',
+        icon: 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none"><rect x="10" y="6" width="44" height="52" rx="3" fill="%23F4F4F6" stroke="%23D1D1D6" stroke-width="2"/><rect x="11" y="7" width="42" height="50" rx="2" fill="%23FFFFFF"/><rect x="25" y="12" width="14" height="10" rx="1" fill="%23C8102E"/><path d="M28 15 L32 19 L36 15 Z" fill="%23FFD100"/><text x="44" y="20" font-family="Arial, sans-serif" font-weight="bold" font-size="14" fill="%231A1A1A">1</text><rect x="20" y="25" width="24" height="2" rx="1" fill="%238E8E93"/><rect x="16" y="29" width="32" height="1.5" rx="0.75" fill="%23AEAEB2"/><rect x="14" y="34" width="36" height="6" rx="1" fill="%23E5E5EA"/><rect x="16" y="36.5" width="10" height="1" rx="0.5" fill="%238E8E93"/><rect x="30" y="36.5" width="16" height="1" rx="0.5" fill="%23C7C7CC"/><rect x="14" y="42" width="36" height="6" rx="1" fill="%23E5E5EA"/><rect x="16" y="44.5" width="12" height="1" rx="0.5" fill="%238E8E93"/><rect x="30" y="44.5" width="12" height="1" rx="0.5" fill="%23C7C7CC"/><rect x="14" y="50" width="36" height="6" rx="1" fill="%23E5E5EA"/><rect x="16" y="52.5" width="8" height="1" rx="0.5" fill="%238E8E93"/><rect x="30" y="52.5" width="18" height="1" rx="0.5" fill="%23C7C7CC"/></svg>',
+        shortDescription: 'Lær å lese vognkortet: egenvekt, tillatt totalvekt, aktuell vekt, og hvordan du regner ut nøyaktig nyttelast for personbil.',
+        color: '#8b5cf6',
+        seoTitle: 'Vognkort og vekter: Slik regner du ut nyttelast (Klasse B)',
+        seoDescription: 'Lær å lese vognkortet til teoriprøven. Vi forklarer egenvekt, tillatt totalvekt, aktuell vekt, og hvordan du regner ut nøyaktig nyttelast for personbil.',
+        sections: [
+            {
+                title: 'Vognkort og vekter: Slik forstår du tallene til teoriprøven',
+                type: 'text',
+                content: 'Vognkortet (spesielt del 1) inneholder avgjørende teknisk informasjon om bilen. På teoriprøven får du ofte se et bilde av et vognkort, etterfulgt av et spørsmål om hvor mye bagasje eller hvor mange passasjerer du kan ha med. For å løse disse oppgavene, må du forstå de fire viktigste vektbegrepene.'
+            },
+            {
+                title: '1. De fire viktigste vektbegrepene',
+                type: 'info',
+                content: 'Disse begrepene finner du under punkt 8 ("Vekter") i bilens vognkort. Dette er definisjonene du må pugge:\n\n- Egenvekt: Dette er hva bilen veier når den er "tom" for passasjerer og bagasje. Men, egenvekten inkluderer alltid full drivstofftank (eller batteri), standardutstyr og vekten av bilens fører (som er standardisert til 75 kg).\n- Tillatt totalvekt: Dette er den absolutt maksimale vekten bilen er bygget, registrert og godkjent for å tåle. Dette tallet kan aldri lovlig overskrides.\n- Aktuell totalvekt (Aktuell vekt): Dette er det bilen faktisk veier akkurat nå, i dette øyeblikket ute på veien. Altså bilens egenvekt pluss alle passasjerer og all bagasje du har lastet inn. Aktuell vekt må aldri være høyere enn tillatt totalvekt.\n- Nyttelast: Dette er den maksimale vekten du har lov til å putte inn i bilen (passasjerer og bagasje).'
+            },
+            {
+                title: '2. Slik regner du ut nyttelast (Formelen)',
+                type: 'formula',
+                content: 'Det klassiske regnestykket på eksamen er å finne ut hvor mange kilo bagasje du har plass til, hvis du for eksempel har med deg tre venner i bilen.\n\nFormelen er alltid den samme:\nTillatt totalvekt - Egenvekt = Nyttelast'
+            },
+            {
+                title: 'Praktisk eksempel',
+                type: 'example',
+                content: 'I vognkortet står det at bilens Tillatte totalvekt er 2000 kg.\nBilens Egenvekt er 1500 kg.\n\nNyttelasten er da: 2000 - 1500 = 500 kg.\n\nDu skal ha med deg 3 passasjerer som veier 80 kg hver (totalt 240 kg). Føreren trenger du ikke å regne med, da personen allerede er inkludert i bilens egenvekt!\n\nRestvekt til bagasje: 500 kg (Nyttelast) - 240 kg (Passasjerer) = 260 kg. Du kan trygt laste inn 260 kg i bagasjerommet.'
+            },
+            {
+                title: '3. Taklast og tilhengervekt',
+                type: 'info',
+                content: 'I tillegg til nyttelasten inni bilen, regulerer vognkortet hva du kan ha på taket og på slep:\n\n- Maks tillatt taklast: Maksimal vekt du kan ha på taket. Ligger typisk mellom 50-100 kg. Husk at selve takstativet og takboksen veier noe – dette må trekkes fra taklasten før du fyller boksen med ski og bagasje.\n- Maks tillatt tilhengervekt: Deler seg i to kategorier: "med brems" og "uten brems". (Les mer om fartsgrensene for tilhengere i vår [artikkel om fartsgrenser](/laeringsressurser/fartsgrenser)).'
+            },
+            {
+                title: 'De 3 vanligste fellene på teoriprøven',
+                type: 'warning',
+                content: '1. Glemme føreren: Mange trekker fra vekten på 4 personer når de regner ut restvekt. Husk at sjåføren (75 kg) allerede er bakt inn i bilens "Egenvekt". Du skal bare trekke fra passasjerene.\n2. Forveksle Tillatt og Aktuell: "Tillatt" er maksgrensen skrevet i papirene. "Aktuell" er det bilen veier akkurat nå på vekta.\n3. Glemme takboksens egenvekt: Får du oppgitt at taklasten er 75 kg, og at takboksen veier 25 kg, har du bare lov til å legge 50 kg med utstyr inni boksen.'
+            },
+            {
+                title: 'Klar for å teste regneferdighetene?',
+                type: 'tip',
+                content: 'Ta en [Gratis teoriprøve](/quiz) og se om du klarer å unngå overlast-fellene på eksamen!'
+            }
+        ],
+        faq: [
+            {
+                question: 'Må jeg alltid ha vognkortet i bilen?',
+                answer: 'Ja, del 1 av vognkortet skal alltid ligge i bilen under kjøring. Det beviser at bilen er lovlig registrert. Del 2 av vognkortet er et eierbevis og skal oppbevares trygt hjemme, aldri i bilen.'
+            },
+            {
+                question: 'Hva skjer hvis jeg kjører med for høy aktuell totalvekt (overlast)?',
+                answer: 'Bilen får vesentlig dårligere kjøreegenskaper, og bremselengden øker farlig mye. Ved kontroll kan du få kjøreforbud (du må laste ut) og et klekkelig gebyr.'
+            },
+            {
+                question: 'Hvor finner jeg bilens vekter?',
+                answer: 'Du finner alle vektbegrensninger under punkt 8 ("Vekter") i bilens vognkort del 1. Dette inkluderer også aksellast og tillatt tilhengervekt.'
             }
         ]
     }
@@ -622,14 +769,14 @@ export const theoryArticles: TheoryTopic[] = [
                 content: 'I Norge gjelder disse standardfartsgrensene der ingen skilt sier noe annet:\n\n• Tettbygd strøk: 50 km/t\n• Utenfor tettbygd strøk: 80 km/t\n• Motorvei: 100 eller 110 km/t\n\nHuskeregel: Ser du ingen fartsgrenseskilt og er i tettbygd strøk → 50 km/t. Er du utenfor tettbygd strøk → 80 km/t.'
             },
             {
-                title: 'Lavere fartsgrenser — når gjelder de?',
+                title: 'Lavere fartsgrenser og gangfart — når gjelder de?',
                 type: 'text',
-                content: 'På mange veier er fartsgrensen lavere enn 50 km/t. Dette er typisk i:\n\n• 30 km/t: Gjelder nær skoler, barnehager og i boliggater. Skolen trenger ikke å ha skilt — ser du "30-sone"-skilt gjelder det for hele sonen frem til du ser et nytt skilt.\n• 40 km/t: Vanlig i tettere bymiljøer og ved lekeplasser.\n\nFysiske fartsdumper er ofte plassert i 30- og 40-soner. De er der for å håndheve grensen, ikke bare markere den.'
+                content: 'På mange veier er fartsgrensen lavere enn standarden på 50 km/t. Dette er typisk i:\n\nGangfart (ca. 5-7 km/t): I gågater og på gatetun (blått skilt med hus og lekende barn) er fartsgrensen alltid gangfart. Dette er et klassisk lurespørsmål på teoriprøven! Du skal aldri kjøre fortere enn at du kan stoppe på en femøring, og de gående har alltid førsteprioritet.\n\n30 km/t: Gjelder ofte nær skoler, barnehager og i tette boliggater. Husk at hvis du kjører inn i en "30-sone", gjelder grensen for hele området og alle sideveier, helt til et skilt opphever sonen.\n\n40 km/t: Vanlig i bymiljøer og ved lekeplasser. Fysiske fartsdumper er ofte plassert i 30- og 40-soner.'
             },
             {
                 title: 'Spesielle fartsgrenser du må huske',
                 type: 'warning',
-                content: 'Noen kjøretøy og situasjoner har egne regler — og disse er favoritter på teoriprøven.\n\n• Med tilhenger: Maks 80 km/t, selv om veien er skiltet 110 km/t. Eneste unntak er Tempo 100-godkjenning (se tilhenger-artikkelen).\n• Moped (45 km/t-moped): Maks 45 km/t uansett fartsgrense på veien.\n• Traktor: Maks 40 km/t.\n• Tunge kjøretøy over 3 500 kg: Maks 80 km/t på alle veier.'
+                content: 'Noen kjøretøy og situasjoner har egne regler — og disse er favoritter på teoriprøven.\n\nMed tilhenger (De nye reglene): Fartsgrensen avhenger av tilhengerens bremser og vekt:\n- Maks 60 km/t: Hvis tilhengeren er uten bremser, og den aktuelle totalvekten er over 300 kg.\n- Maks 80 km/t: Hvis tilhengeren har bremser (eller er uten bremser, men veier under 300 kg).\n- Maks 100 km/t (Tempo 100): Hvis både bil og tilhenger er spesialgodkjent for "Tempo 100", kan du kjøre i 100 km/t på motorvei som er skiltet med 100 eller 110.\n\n• Moped (45 km/t-moped): Maks 45 km/t uansett fartsgrense på veien.\n• Traktor: Maks 40 km/t.\n• Tunge kjøretøy over 3 500 kg: Maks 80 km/t på alle veier.'
             },
             {
                 title: '110 km/t på motorvei — hva gjelder?',
@@ -644,7 +791,7 @@ export const theoryArticles: TheoryTopic[] = [
             {
                 title: 'Fartsgrenser og bremselengde — sammenhengen',
                 type: 'text',
-                content: 'Dette er et klassisk teoriprøve-spørsmål. Fart har dramatisk effekt på bremselengde fordi bremseenergien øker med kvadratet av farten:\n\n• 50 km/t → bremselengde ca. 13 meter (tørr asfalt)\n• 80 km/t → bremselengde ca. 32 meter\n• 100 km/t → bremselengde ca. 50 meter\n\nDobler du farten, firedobles bremselengden — ikke dobbles. For total stopplengde (reaksjonstid + bremsing) blir forskjellen enda større.'
+                content: 'Dette er et klassisk teoriprøve-spørsmål. Fart har dramatisk effekt på bremselengde fordi bremseenergien øker med kvadratet av farten:\n\n• 50 km/t → bremselengde ca. 13 meter (tørr asfalt)\n• 80 km/t → bremselengde ca. 32 meter\n• 100 km/t → bremselengde ca. 50 meter\n\nDobler du farten, firedobles bremselengden — ikke dobbles. For total stopplengde (reaksjonstid + bremsing) blir forskjellen enda større.\n\nTest deg selv: Å regne ut nøyaktig stopplengde er en gjenganger på teoriprøven. [Prøv vår interaktive bremselengde-kalkulator](/laeringsressurser/bremselengde) for å se nøyaktig hvor mange meter bilen din trenger for å stoppe på ulike underlag!'
             },
             {
                 title: 'Tips for å huske fartsgrensene til teoriprøven',
