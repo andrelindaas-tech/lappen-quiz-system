@@ -1,6 +1,5 @@
-// Start Screen Component - Mode Selection
 import { useState, useEffect } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, Link } from 'react-router-dom'
 import { getWrongAnswersCount } from '../utils/wrongAnswersStore'
 import { Helmet } from 'react-helmet-async'
 
@@ -70,7 +69,7 @@ export default function StartScreen() {
             <h1>Gratis teoriprøve for personbil (Klasse B)</h1>
 
             <div className="hero-section">
-                <p className="hero-description" style={{ fontWeight: 'bold', color: 'var(--color-primary-light, #fff)' }}>
+                <p className="hero-description" style={{ fontWeight: 'bold', color: 'var(--color-primary)' }}>
                     Norges enkleste måte å øve til teoriprøven – helt gratis.
                 </p>
                 <p style={{ fontSize: '1.1rem', color: 'var(--color-text)', marginBottom: '1rem', maxWidth: '700px', margin: '0 auto 1rem auto', lineHeight: '1.6' }}>
@@ -175,6 +174,30 @@ export default function StartScreen() {
                         {fokusCount === 0 ? '0 feil' : `${fokusCount} feil`}
                     </span>
                 </button>
+            </div>
+
+            {/* Quick Links / Chips Layer */}
+            <div className="learning-resources-chips" style={{ marginTop: '3.5rem', marginBottom: '3rem', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                <h3 style={{ fontSize: '0.95rem', fontWeight: '500', color: 'var(--color-text-light)', marginBottom: '1.25rem' }}>
+                    💡 Lær mer om de vanligste fellene på teoriprøven:
+                </h3>
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.75rem', justifyContent: 'center', maxWidth: '700px' }}>
+                    <Link to="/laeringsressurser/myndighetspyramiden" className="theory-chip">
+                        👮 Myndighetspyramiden
+                    </Link>
+                    <Link to="/laeringsressurser/vognkort-og-vekt" className="theory-chip">
+                        ⚖️ Regn ut nyttelast
+                    </Link>
+                    <Link to="/laeringsressurser/fartsgrenser" className="theory-chip">
+                        🛑 Fartsgrenser & tilhenger
+                    </Link>
+                    <Link to="/laeringsressurser/skilt" className="theory-chip">
+                        🚸 Forstå skiltene
+                    </Link>
+                    <Link to="/laeringsressurser/vikeplikt" className="theory-chip">
+                        🔺 Alt om vikeplikt
+                    </Link>
+                </div>
             </div>
 
             {/* SEO Content Section */}

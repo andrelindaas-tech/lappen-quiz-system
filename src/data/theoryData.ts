@@ -10,7 +10,7 @@ export interface SignItem {
 export interface TheorySection {
     title: string
     content: string
-    type: 'text' | 'formula' | 'info' | 'warning' | 'tip' | 'example' | 'signs' | 'calculator'
+    type: 'text' | 'formula' | 'info' | 'warning' | 'tip' | 'example' | 'signs' | 'calculator' | 'pyramid'
     signs?: SignItem[]
 }
 
@@ -802,6 +802,71 @@ export const theoryArticles: TheoryTopic[] = [
                 title: 'Vanlige spørsmål om fartsgrenser (FAQ)',
                 type: 'info',
                 content: 'Q: Hva er fartsgrensen der det ikke er satt opp skilt?\nA: I tettbygd strøk er den 50 km/t, og utenfor tettbygd strøk er den 80 km/t. Dette følger av trafikkreglene § 13.\n\nQ: Kan kommunen sette lavere fartsgrenser?\nA: Ja. Kommunen kan skilte lavere grenser enn de nasjonale standardene, for eksempel 30 km/t i boliggater.\n\nQ: Mister man lappen første gang man kjører for fort?\nA: Ikke nødvendigvis, men ved alvorlig overskridelse (typisk 30+ km/t over) kan førerretten inndras selv første gang.\n\nQ: Gjelder 50 km/t også på riksveier gjennom tettsteder?\nA: Ja. Fartsgrensen følger veitype og bebyggelse, ikke om veien er en riksvei eller kommunal vei.'
+            }
+        ]
+    },
+    {
+        id: 'myndighetspyramiden',
+        title: 'Myndighetspyramiden: Hvem bestemmer egentlig i trafikken?',
+        icon: '👮',
+        shortDescription: 'I trafikken vil du ofte oppleve at ulike signaler gir deg motstridende beskjeder. Hvem skal du høre på? Lær hierarkiet for å unngå fellene på prøven.',
+        color: '#3b82f6',
+        seoTitle: 'Myndighetspyramiden: Hvem bestemmer i trafikken? (Klasse B)',
+        seoDescription: 'Lær myndighetspyramiden til teoriprøven. Vi forklarer rekkefølgen for politi, trafikklys, trafikkskilt og trafikkregler, og viser deg typiske eksamensfeller.',
+        sections: [
+            {
+                title: 'Myndighetspyramiden: Hvem bestemmer egentlig i trafikken?',
+                type: 'text',
+                content: 'I trafikken vil du ofte oppleve at ulike signaler gir deg motstridende beskjeder. Kanskje lyser trafikklyset grønt, samtidig som det står et vikepliktskilt i det samme krysset. Hvem skal du høre på?\n\nLøsningen på dette heter myndighetspyramiden. Dette er et hierarki i fire nivåer som forteller deg nøyaktig hvem eller hva som har høyest prioritet i trafikken. For å bestå teoriprøven må du kunne denne rekkefølgen utenat.'
+            },
+            {
+                title: 'Illustrasjon av pyramiden',
+                type: 'pyramid',
+                content: ''
+            },
+            {
+                title: 'Nivå 1: Politi (Øverste myndighet)',
+                type: 'warning',
+                content: 'På toppen av pyramiden finner vi manuell trafikkdirigering. Hvis en politibetjent står i krysset og dirigerer trafikken, overstyrer dette alt annet. Viser betjenten at du skal kjøre, så kjører du – selv om trafikklyset lyser rødt og det står et stoppskilt der.\n\nViktig detalj: Dette gjelder ikke bare politiet. Tolletaten, Statens vegvesen og militærpolitiet (MP) har også myndighet til å dirigere trafikk, og du plikter å følge deres anvisninger på lik linje med politiet.'
+            },
+            {
+                title: 'Nivå 2: Lyssignal (Trafikklys)',
+                type: 'info',
+                content: 'Hvis det ikke er noen som manuelt dirigerer trafikken, er det trafikklysene som gjelder. Lyssignaler overstyrer både trafikkskilt, vegoppmerking og generelle trafikkregler. Grunnen er enkel: Lyssignaler brukes i ulykkesutsatte eller komplekse kryss for å skape en trygg og styrt trafikkflyt.'
+            },
+            {
+                title: 'Nivå 3: Trafikkskilt og vegoppmerking',
+                type: 'text',
+                content: 'Hvis lyssignalet er slått av (eller blinker gult), faller du et hakk ned i pyramiden. Da er det trafikkskiltene og stripene i veien som bestemmer. Et vanlig eksempel er et kryss med et vikepliktskilt. Skiltet forteller deg at du må vike, noe som overstyrer den generelle høyreregelen. Trenger du en oppfriskning av de ulike skiltene, kan du se vår [komplette skiltoversikt](/laeringsressurser/skilt).'
+            },
+            {
+                title: 'Nivå 4: Trafikkregler (Nederst i pyramiden)',
+                type: 'text',
+                content: 'Helt i bunnen ligger de generelle trafikkreglene og forskriftene. Dette er "grunnmuren" i trafikken, som for eksempel høyreregelen og generelle fartsgrenser. Du forholder deg kun til disse reglene når det verken er politi, trafikklys eller skilt som regulerer situasjonen. (Les mer om [fartsgrenser](/laeringsressurser/fartsgrenser) og [vikeplikt](/laeringsressurser/vikeplikt) i våre egne guider).'
+            },
+            {
+                title: 'Typiske situasjoner på teoriprøven',
+                type: 'tip',
+                content: 'Grønt lys og vikepliktskilt: Du kommer mot et kryss. Lyset er grønt, men det står et vikepliktskilt på stolpen. Fasit: Du kan kjøre. Lyssignal (nivå 2) overstyrer skilt (nivå 3).\n\nBlinkende gult lys og vikepliktskilt: Lyset blinker gult. Fasit: Et blinkende gult lys betyr at anlegget er ute av drift eller at du skal vise ekstra varsomhet. Du må da flytte deg et hakk ned i pyramiden, og følge vikepliktskiltet (nivå 3).'
+            },
+            {
+                title: 'Har du kontroll på hierarkiet?',
+                type: 'info',
+                content: 'Ta en [Gratis teoriprøve](/quiz) og se om du klarer å sortere signalene riktig i praksis!'
+            }
+        ],
+        faq: [
+            {
+                question: 'Er det bare politiet som er på toppen av myndighetspyramiden?',
+                answer: 'Nei. Selv om politiet oftest brukes som eksempel, inkluderer det øverste nivået alle med offisiell myndighet til å dirigere trafikk. Dette gjelder Statens vegvesen, Tolletaten og militærpolitiet.'
+            },
+            {
+                question: 'Hva skjer hvis trafikklyset er defekt eller blinker gult?',
+                answer: 'Ved defekt eller blinkende gult lys, bortfaller lyssignalet fra pyramiden. Da må du forholde deg til neste nivå, som er trafikkskilt og vegoppmerking. Er det ingen skilt der, gjelder de vanlige trafikkreglene (som høyreregelen).'
+            },
+            {
+                question: 'Hvorfor overstyrer skilt de generelle trafikkreglene?',
+                answer: 'Skilt brukes for å regulere spesifikke og lokale utfordringer på en vei, for eksempel en farlig sving eller et kryss med mye trafikk. Spesielle lokale bestemmelser (skilt) veier alltid tyngre enn generelle regler.'
             }
         ]
     }

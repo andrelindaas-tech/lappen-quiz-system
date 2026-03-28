@@ -5,6 +5,7 @@ import type { TheoryTopic as TopicType } from '../data/theoryData'
 import BrakeCalculator from './BrakeCalculator'
 import { parseInlineLinks } from '../utils/textUtils'
 import { SignIllustration } from './SignIllustration'
+import AuthorityPyramid from './AuthorityPyramid'
 
 
 // Renders content string with support for paragraphs, bullet lists (- ) and numbered lists (1. )
@@ -143,6 +144,13 @@ export default function TheoryTopic({ topic, onBack, extraComponent }: TheoryTop
                 {topic.sections.map((section, index) => (
                     <div key={index} className={`theory-section theory-section-${section.type}`}>
                         <h3 className="theory-section-title">{section.title}</h3>
+
+                        {section.type === 'pyramid' && (
+                            <div className="theory-section-content">
+                                {section.content && renderContent(section.content)}
+                                <AuthorityPyramid />
+                            </div>
+                        )}
 
                         {section.type === 'signs' && section.signs ? (
                             <div className="theory-section-content">
