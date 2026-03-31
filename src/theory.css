@@ -161,11 +161,20 @@ body.dark-mode .theory-topic-header {
     box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.4);
 }
 
-.theory-topic-header h2 {
-    margin: 0;
+.theory-topic-header-text {
+    flex: 1;
+    min-width: 0;
+    max-width: 100%;
+}
+
+.theory-topic-title {
+    margin: 0 0 var(--spacing-sm) 0;
     font-size: var(--font-size-2xl);
     color: var(--color-text);
     letter-spacing: -0.02em;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
 }
 
 .theory-topic-desc {
@@ -173,6 +182,8 @@ body.dark-mode .theory-topic-header {
     margin: var(--spacing-xs) 0 0 0;
     font-size: 1.125rem;
     line-height: 1.6;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
 }
 
 .theory-topic-icon-lg {
@@ -238,6 +249,8 @@ body.dark-mode .theory-section {
     margin-bottom: var(--spacing-md);
     color: var(--color-text);
     letter-spacing: -0.01em;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
 }
 
 .theory-section-content p {
@@ -272,18 +285,7 @@ body.dark-mode .theory-section {
     list-style-type: decimal;
 }
 
-/* Formel-seksjons typography override */
-.theory-section-formula .theory-section-content p {
-    font-family: 'Courier New', monospace;
-    font-size: var(--font-size-lg);
-    font-weight: 600;
-}
-
-/* Eksempel-seksjons typography override */
-.theory-section-example .theory-section-content p {
-    font-family: 'Courier New', monospace;
-    font-weight: 500;
-}
+/* Formel-seksjons og Eksempel-seksjons typography benytter standard font */
 
 /* Adjust light mode to use slightly tinted backgrounds for context if desired,
    but keeping it clean and matched to dark mode philosophy */
@@ -609,6 +611,11 @@ body.dark-mode .theory-section-example {
         flex-direction: column;
         text-align: center;
         gap: var(--spacing-md);
+        padding: var(--spacing-lg);
+    }
+
+    .theory-topic-title {
+        font-size: 1.5rem;
     }
 
     .theory-topic-icon-lg {

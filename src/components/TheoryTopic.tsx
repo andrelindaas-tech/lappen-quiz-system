@@ -3,6 +3,7 @@ import React from 'react'
 import { Helmet } from 'react-helmet-async'
 import type { TheoryTopic as TopicType } from '../data/theoryData'
 import BrakeCalculator from './BrakeCalculator'
+import TrailerWeightSimulator from './TrailerWeightSimulator'
 import { parseInlineLinks } from '../utils/textUtils'
 import { SignIllustration } from './SignIllustration'
 import AuthorityPyramid from './AuthorityPyramid'
@@ -134,8 +135,8 @@ export default function TheoryTopic({ topic, onBack, extraComponent }: TheoryTop
                         ? <img src={topic.icon} alt={topic.title} style={{ width: '64px', height: '64px', objectFit: 'contain' }} /> 
                         : topic.icon}
                 </span>
-                <div>
-                    <h1 style={{ fontSize: '2rem', margin: '0 0 var(--spacing-sm)' }}>{topic.title}</h1>
+                <div className="theory-topic-header-text">
+                    <h1 className="theory-topic-title">{topic.title}</h1>
                     <p className="theory-topic-desc">{parseInlineLinks(topic.shortDescription)}</p>
                 </div>
             </div>
@@ -181,7 +182,8 @@ export default function TheoryTopic({ topic, onBack, extraComponent }: TheoryTop
                             <div className="theory-section-content">
                                 {renderContent(section.content)}
                                 <div style={{ marginTop: '1.5rem' }}>
-                                    <BrakeCalculator />
+                                    {topic.id === 'bremselengde' && <BrakeCalculator />}
+                                    {topic.id === 'vognkort-og-vekt' && <TrailerWeightSimulator />}
                                 </div>
                             </div>
                         ) : (

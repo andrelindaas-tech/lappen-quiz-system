@@ -1,0 +1,218 @@
+/* TrailerWeightSimulator.css */
+.trailer-sim-container {
+    background-color: var(--color-bg);
+    border: 2px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-xl);
+    margin: var(--spacing-xl) 0;
+    box-shadow: var(--shadow-md);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: var(--spacing-lg);
+}
+
+.trailer-sim-header {
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+    color: var(--color-text);
+    margin-bottom: var(--spacing-md);
+}
+
+/* Visualization Area */
+.trailer-sim-visual {
+    width: 100%;
+    max-width: 600px;
+    height: 150px;
+    background-color: var(--color-bg-secondary);
+    border-radius: var(--radius-lg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: var(--spacing-md);
+    position: relative;
+    overflow: hidden;
+    transition: background-color 0.3s ease;
+}
+
+.sim-svg-car,
+.sim-svg-trailer {
+    transition: fill 0.3s ease, stroke 0.3s ease;
+}
+
+/* Legal vs Illegal State Colors */
+.trailer-sim-visual.legal .sim-svg-car,
+.trailer-sim-visual.legal .sim-svg-trailer,
+.trailer-sim-visual.legal .sim-svg-towbar {
+    fill: transparent;
+    stroke: var(--color-success);
+}
+
+.trailer-sim-visual.illegal .sim-svg-trailer,
+.trailer-sim-visual.illegal .sim-svg-towbar {
+    fill: transparent;
+    stroke: var(--color-error);
+}
+
+.sim-image-car {
+    width: 200px;
+    height: 80px;
+    -webkit-mask-size: contain;
+    mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-position: center bottom;
+    mask-position: center bottom;
+    transition: background-color 0.3s ease;
+}
+
+.trailer-sim-visual.legal .sim-image-car {
+    background-color: var(--color-success);
+}
+
+.trailer-sim-visual.illegal .sim-image-car {
+    background-color: var(--color-error);
+}
+
+.sim-svg-wheel {
+    fill: transparent;
+    stroke: var(--color-text);
+}
+
+.sim-svg-wheel-hub {
+    fill: var(--color-text);
+}
+
+/* Details Section */
+.trailer-sim-details {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    text-align: center;
+    font-size: var(--font-size-base);
+    color: var(--color-text);
+}
+
+.trailer-sim-details-total {
+    font-size: var(--font-size-lg);
+    font-weight: 700;
+    color: var(--color-primary);
+}
+
+/* Explanation Box */
+.trailer-sim-explanation-box {
+    width: 100%;
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-md);
+    border-left: 6px solid transparent;
+    transition: all 0.3s ease;
+    background-color: var(--color-bg-secondary);
+    text-align: left;
+}
+
+.trailer-sim-explanation-box.legal {
+    border-left-color: var(--color-success);
+    background-color: rgba(5, 150, 105, 0.05);
+}
+
+.trailer-sim-explanation-box.illegal {
+    border-left-color: var(--color-error);
+    background-color: rgba(220, 38, 38, 0.05);
+}
+
+.trailer-sim-status-title {
+    font-size: var(--font-size-lg);
+    font-weight: 700;
+    margin-bottom: var(--spacing-sm);
+}
+
+.trailer-sim-status-title.legal {
+    color: var(--color-success);
+}
+
+.trailer-sim-status-title.illegal {
+    color: var(--color-error);
+}
+
+.trailer-sim-text {
+    font-size: var(--font-size-base);
+    color: var(--color-text);
+    line-height: 1.6;
+}
+
+/* Controls */
+.trailer-sim-controls {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+    background-color: var(--color-bg-secondary);
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-lg);
+    margin-top: var(--spacing-md);
+}
+
+.trailer-sim-control-group {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    gap: var(--spacing-xs);
+}
+
+.trailer-sim-control-label {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 600;
+    color: var(--color-text);
+}
+
+.trailer-sim-control-value {
+    color: var(--color-primary);
+    font-weight: 700;
+}
+
+.trailer-sim-slider {
+    width: 100%;
+    margin: var(--spacing-sm) 0;
+    -webkit-appearance: none;
+    appearance: none;
+    height: 8px;
+    background: var(--color-border);
+    border-radius: var(--radius-sm);
+    outline: none;
+    transition: background 0.2s;
+}
+
+.trailer-sim-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: var(--color-primary);
+    cursor: pointer;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.1s ease;
+}
+
+.trailer-sim-slider::-moz-range-thumb {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: var(--color-primary);
+    cursor: pointer;
+    border: none;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.1s ease;
+}
+
+.trailer-sim-slider::-webkit-slider-thumb:hover, .trailer-sim-slider::-moz-range-thumb:hover {
+    transform: scale(1.1);
+}
+
+body.dark-mode .trailer-sim-slider::-webkit-slider-thumb, body.dark-mode .trailer-sim-slider::-moz-range-thumb {
+    background: var(--color-accent-glow);
+    box-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+}

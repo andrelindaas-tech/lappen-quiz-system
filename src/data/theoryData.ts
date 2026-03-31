@@ -512,6 +512,7 @@ export const theoryTopics: TheoryTopic[] = [
         color: '#8b5cf6',
         seoTitle: 'Vognkort og vekter: Slik regner du ut nyttelast (Klasse B)',
         seoDescription: 'Lær å lese vognkortet til teoriprøven. Vi forklarer egenvekt, tillatt totalvekt, aktuell vekt, og hvordan du regner ut nøyaktig nyttelast for personbil.',
+        hasCalculator: true,
         sections: [
             {
                 title: 'Vognkort og vekter: Slik forstår du tallene til teoriprøven',
@@ -522,6 +523,11 @@ export const theoryTopics: TheoryTopic[] = [
                 title: '1. De fire viktigste vektbegrepene',
                 type: 'info',
                 content: 'Disse begrepene finner du under punkt 8 ("Vekter") i bilens vognkort. Dette er definisjonene du må pugge:\n\n- Egenvekt: Dette er hva bilen veier når den er "tom" for passasjerer og bagasje. Men, egenvekten inkluderer alltid full drivstofftank (eller batteri), standardutstyr og vekten av bilens fører (som er standardisert til 75 kg).\n- Tillatt totalvekt: Dette er den absolutt maksimale vekten bilen er bygget, registrert og godkjent for å tåle. Dette tallet kan aldri lovlig overskrides.\n- Aktuell totalvekt (Aktuell vekt): Dette er det bilen faktisk veier akkurat nå, i dette øyeblikket ute på veien. Altså bilens egenvekt pluss alle passasjerer og all bagasje du har lastet inn. Aktuell vekt må aldri være høyere enn tillatt totalvekt.\n- Nyttelast: Dette er den maksimale vekten du har lov til å putte inn i bilen (passasjerer og bagasje).'
+            },
+            {
+                title: 'Interaktiv Kalkulator for Tilhengervekt',
+                type: 'calculator',
+                content: 'Bruk kalkulatoren under for å se om du lovlig kan trekke tilhengeren med et vanlig Klasse B førerkort, eller om du trenger B96 eller BE. Test med ulike vekter for å se hvordan «campingvogn-regelen» fungerer i praksis:'
             },
             {
                 title: '2. Slik regner du ut nyttelast (Formelen)',
@@ -561,6 +567,47 @@ export const theoryTopics: TheoryTopic[] = [
             {
                 question: 'Hvor finner jeg bilens vekter?',
                 answer: 'Du finner alle vektbegrensninger under punkt 8 ("Vekter") i bilens vognkort del 1. Dette inkluderer også aksellast og tillatt tilhengervekt.'
+            }
+        ]
+    },
+    {
+        id: 'sikkerhetskontroll',
+        title: 'Sikkerhetskontroll klasse B: Den komplette guiden',
+        icon: '🔧',
+        shortDescription: 'Lær deg de tekniske kontrollspørsmålene til oppkjøringen. Slik sjekker du bremser, styring, lys og dekk på en enkel måte.',
+        color: '#f97316',
+        seoTitle: 'Sikkerhetskontroll klasse B: Den komplette guiden | Teori-test.no',
+        seoDescription: 'Lær deg de tekniske kontrollspørsmålene til oppkjøringen. Slik sjekker du bremser, styring, lys og dekk på en enkel måte.',
+        sections: [
+            {
+                title: 'Hva er sikkerhetskontroll?',
+                type: 'text',
+                content: 'På oppkjøringen vil sensor alltid starte med å gi deg en oppgave knyttet til bilens tekniske stand. Mange gruer seg til dette, men det er egentlig en veldig overkommelig oppgave når du kjenner systematikken.\n\nIfølge Vegtrafikklovens § 23 er det du som fører som har ansvaret for at kjøretøyet er i forsvarlig og forskriftsmessig stand før kjøringen begynner. Sikkerhetskontrollen gjennomføres alltid i to deler: Først ber sensor deg om å utføre en praktisk sjekk på bilen. Deretter stiller de et kontrollspørsmål om hva konsekvensen er dersom noe er feil.\n\nHer er de vanligste oppgavene du kan få på førerprøven, delt inn i kategorier.'
+            },
+            {
+                title: '1. Bremser',
+                type: 'info',
+                content: 'Bremsene er bilens viktigste sikkerhetssystem. Du kan bli bedt om å kontrollere flere deler av dette systemet.\n\nOppgave: Kontroller bremsekraftforsterkeren.\n\nSlik gjør du: Den tradisjonelle måten er å pumpe bremsepedalen 5-6 ganger mens motoren er av, til pedalen blir hard. Hold pedalen inne og start motoren. Pedalen skal da synke litt inn. På mange moderne biler med elektroniske løsninger fungerer ikke denne metoden; her må du bremse i lav fart og kjenne at bilen stopper effektivt med lite trykk på pedalen.\n\nSensors spørsmål: Er det forsvarlig å kjøre hvis den ikke virker?\n\nSvar: Nei, bremsepedalen blir veldig tung og bilen får dårligere bremseeffekt.\n\nOppgave: Kontroller om bremsene har skjevtrekk.\n\nSlik gjør du: Bygg opp litt fart (10-15 km/t) på en jevn og rett strekning, brems normalt, og hold bare løst i rattet. Bilen skal gå rett frem.\n\nSensors spørsmål: Hva kan være grunnen til skjevtrekk?\n\nSvar: Testen skal avdekke feil som gjør at hjulene bremser ulikt, noe som kan gjøre at man mister kontrollen under hard oppbremsing. (Merk at ulikt lufttrykk eller en svært sporete vei også kan gi skjevtrekk).\n\nOppgave: Varsellampe for to-krets bremsesystem.\n\nSlik gjør du: Skru på tenningen og finn den røde varsellampen med et utropstegn (!). Den skal lyse noen sekunder og så slukke.\n\nSensors spørsmål: Hva gjør du hvis lampen lyser under kjøring?\n\nSvar: Stopp umiddelbart og tilkall veihjelp, da den røde lampen indikerer en alvorlig mangel eller lekkasje med bremsesystemet.'
+            },
+            {
+                title: '2. Styring',
+                type: 'info',
+                content: 'Bilen skal lystre dine bevegelser presist og uten stor motstand.\n\nOppgave: Kontroller servostyringen.\n\nSlik gjør du: Prøv å svinge på rattet mens motoren er slått av; du vil raskt møte motstand og rattet vil føles tungt. Hold presset mot rattet mens du starter motoren. Rattet skal da gi etter og motstanden forsvinne.\n\nSensors spørsmål: Er det forsvarlig å kjøre dersom den ikke fungerer?\n\nSvar: På mange moderne biler blir styringen så tung at det regnes som uforsvarlig. En rød varsellampe for styringen indikerer også at man ikke skal kjøre bilen.\n\nOppgave: Sjekk at bilen er retningsstabil.\n\nSlik gjør du: Kjør i lav fart (ca. 20 km/t) rett frem på et flatt underlag, løsne grepet forsiktig og se om bilen fortsetter rett frem. Kjør deretter ut av en sving, slipp opp grepet, og sjekk at rattet går tilbake av seg selv (selvoppretting).'
+            },
+            {
+                title: '3. Dekk og hjul',
+                type: 'info',
+                content: 'Dekkene er bilens eneste kontakt med asfalten, og tilstanden deres er et svært vanlig eksamensspørsmål.\n\nOppgave: Kontroller slitasjen på hjulene.\n\nSlik gjør du: Se på mønsterdybden ytterst, innerst og på midten av dekket (slitebanen) og vurder om det er jevnt slitt.\n\nSensors spørsmål: Hva kan ulik slitasje fortelle deg?\n\nSvar: Er dekket mest slitt på midten, har du kjørt med for høyt lufttrykk. Er det slitt både innerst og ytterst, har lufttrykket vært for lavt. Hvis dekket kun er slitt på den ene siden, tyder det på at feil i hjulopphenget gjør at hjulet ikke ruller riktig på veien.\n\nOppgave: Mål mønsterdybden.\n\nSlik gjør du: Bruk et måleinstrument eller finn dekkets egne slitasjeindikatorer for å se at gummien ikke er slitt helt ned.\n\nSensors spørsmål: Hva er kravene?\n\nSvar: Minstekravet til sommerdekk er 1,6 mm, og for vinterdekk er kravet minimum 3,0 mm.'
+            },
+            {
+                title: '4. Lys og Sikt',
+                type: 'info',
+                content: 'Gode lys er avgjørende for at du ser andre, og at andre ser deg.\n\nOppgave: Kontroller bremselysene.\n\nSlik gjør du: Bruk en varseltrekantboks eller en snøkost til å skyve inn bremsepedalen, og flytt setet frem slik at det holder objektet på plass mot pedalen. Gå ut og sjekk at alle tre bremselysene bak virker.\n\nSensors spørsmål: Er det forsvarlig å kjøre dersom bremselysene ikke virker?\n\nSvar: Nei. Trafikken bak vil ikke oppfatte at du bremser, noe som raskt kan medføre farlige situasjoner.\n\nOppgave: Kontroller parkeringslyset.\n\nSlik gjør du: Vri lysbryteren til symbolet for parkeringslys. Gå ut og sjekk.\n\nSensors spørsmål: I hvilke situasjoner er det viktig å bruke parkeringslyset?\n\nSvar: Ved stans i mørket for å slippe av passasjerer. Dette gjør at du ikke forveksles med en kjørende bil, slik at andre kan passere deg med fjernlysene på og lettere se fotgjengerne som går ut av bilen.\n\nOppgave: Nødsignallyset (varselblink).\n\nSensors spørsmål: I hvilke situasjoner vil du bruke nødsignallyset?\n\nSvar: Ved nødstopp og trafikkuhell for å varsle andre trafikanter. Et viktig tilleggspoeng her er å huske å slå av bilens andre lys (spesielt i mørket) slik at varselblinkene synes best mulig.'
+            },
+            {
+                title: '5. Motorrom og Sikkerhetsutstyr',
+                type: 'warning',
+                content: 'Oppgave: Sjekk at batteriet sitter fast.\n\nSlik gjør du: Åpne panseret, ta et godt tak i batteriet (gjerne i håndtakene på toppen) og beveg det frem og tilbake for å kjenne at det sitter stramt.\n\nSensors spørsmål: Hva er risikoen med et løst batteri?\n\nSvar: Et løst batteri kan forårsake kortslutninger og tretthetsbrudd i ledningene. Det inneholder i tillegg batterisyre som kan gjøre stor skade på bilen dersom batteriet velter og syren renner ut.\n\nOppgave: Kontroller sikkerhetsbeltene.\n\nSlik gjør du: Dra beltet helt ut for å se etter flisete kanter eller skader i stoffet. Dra hardt i beltet for å sjekke at beltestrammeren låser seg, og slipp det for å se at rullen trekker beltet raskt tilbake.\n\nSensors spørsmål: Hva er risikoen ved slappe ruller?\n\nSvar: Beltet vil ikke holde seg godt nok inntil kroppen, og vil dermed ikke fungere som det skal ved en bråstopp eller ulykke.\n\nOppgave: Airbag.\n\nSensors spørsmål: Har det noen betydning for hvem du plasserer i forsetet når bilen har airbag?\n\nSvar: Barn i bakovervendt barnesete skal aldri sitte foran en aktiv airbag, fordi airbagen utløses med en så voldsom kraft at barnet og setet vil bli skadet. Personer under 140 cm bør heller ikke sitte foran en aktiv airbag på grunn av airbagens treffpunkt.'
             }
         ]
     }
