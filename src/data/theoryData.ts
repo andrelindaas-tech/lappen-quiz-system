@@ -505,7 +505,7 @@ export const theoryTopics: TheoryTopic[] = [
         ]
     },
     {
-        id: 'vognkort-og-vekt',
+        id: 'vognkort-vekter',
         title: 'Vognkort og vekter: Slik forstår du tallene til teoriprøven',
         icon: 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none"><rect x="10" y="6" width="44" height="52" rx="3" fill="%23F4F4F6" stroke="%23D1D1D6" stroke-width="2"/><rect x="11" y="7" width="42" height="50" rx="2" fill="%23FFFFFF"/><rect x="25" y="12" width="14" height="10" rx="1" fill="%23C8102E"/><path d="M28 15 L32 19 L36 15 Z" fill="%23FFD100"/><text x="44" y="20" font-family="Arial, sans-serif" font-weight="bold" font-size="14" fill="%231A1A1A">1</text><rect x="20" y="25" width="24" height="2" rx="1" fill="%238E8E93"/><rect x="16" y="29" width="32" height="1.5" rx="0.75" fill="%23AEAEB2"/><rect x="14" y="34" width="36" height="6" rx="1" fill="%23E5E5EA"/><rect x="16" y="36.5" width="10" height="1" rx="0.5" fill="%238E8E93"/><rect x="30" y="36.5" width="16" height="1" rx="0.5" fill="%23C7C7CC"/><rect x="14" y="42" width="36" height="6" rx="1" fill="%23E5E5EA"/><rect x="16" y="44.5" width="12" height="1" rx="0.5" fill="%238E8E93"/><rect x="30" y="44.5" width="12" height="1" rx="0.5" fill="%23C7C7CC"/><rect x="14" y="50" width="36" height="6" rx="1" fill="%23E5E5EA"/><rect x="16" y="52.5" width="8" height="1" rx="0.5" fill="%238E8E93"/><rect x="30" y="52.5" width="18" height="1" rx="0.5" fill="%23C7C7CC"/></svg>',
         shortDescription: 'Lær å lese vognkortet: egenvekt, tillatt totalvekt, aktuell vekt, og hvordan du regner ut nøyaktig nyttelast for personbil.',

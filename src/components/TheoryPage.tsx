@@ -28,14 +28,18 @@ export default function TheoryPage() {
         const path = `/laeringsressurser/${id}`
         navigate(path)
         if (typeof gtag !== 'undefined') {
-            gtag('event', 'page_view', { page_path: path, page_title: document.title })
+            setTimeout(() => {
+                gtag('event', 'page_view', { page_path: path, page_title: document.title })
+            }, 100)
         }
     }
 
     const handleBack = () => {
         navigate('/laeringsressurser')
         if (typeof gtag !== 'undefined') {
-            gtag('event', 'page_view', { page_path: '/laeringsressurser', page_title: document.title })
+            setTimeout(() => {
+                gtag('event', 'page_view', { page_path: '/laeringsressurser', page_title: document.title })
+            }, 100)
         }
     }
 

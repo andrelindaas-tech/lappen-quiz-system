@@ -183,7 +183,7 @@ export default function TheoryTopic({ topic, onBack, extraComponent }: TheoryTop
                                 {renderContent(section.content)}
                                 <div style={{ marginTop: '1.5rem' }}>
                                     {topic.id === 'bremselengde' && <BrakeCalculator />}
-                                    {topic.id === 'vognkort-og-vekt' && <TrailerWeightSimulator />}
+                                    {topic.id === 'vognkort-vekter' && <TrailerWeightSimulator />}
                                 </div>
                             </div>
                         ) : (

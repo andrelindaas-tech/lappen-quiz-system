@@ -55,10 +55,13 @@ export default function App() {
     // Send GA4 page_view for SPA navigation
     useEffect(() => {
         if (typeof gtag !== 'undefined') {
-            gtag('event', 'page_view', {
-                page_path: location.pathname + location.search,
-                page_title: document.title
-            })
+            // Use setTimeout to allow react-helmet-async to update the document.title first
+            setTimeout(() => {
+                gtag('event', 'page_view', {
+                    page_path: location.pathname + location.search,
+                    page_title: document.title
+                })
+            }, 100)
         }
     }, [location])
 
@@ -66,6 +69,7 @@ export default function App() {
         <>
             <Helmet>
                 <link rel="canonical" href={"https://teori-test.no" + location.pathname} />
+                <meta property="og:url" content={`https://teori-test.no${location.pathname}`} />
             </Helmet>
             <header style={{
                 position: 'sticky',
