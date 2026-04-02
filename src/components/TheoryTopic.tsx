@@ -86,7 +86,7 @@ export default function TheoryTopic({ topic, onBack, extraComponent }: TheoryTop
         },
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": `https://teori-test.no/teori/${topic.id}`
+            "@id": `https://teori-test.no/laeringsressurser/${topic.id}`
         }
     }
 
@@ -186,6 +186,8 @@ export default function TheoryTopic({ topic, onBack, extraComponent }: TheoryTop
                                     {topic.id === 'vognkort-vekter' && <TrailerWeightSimulator />}
                                 </div>
                             </div>
+                        ) : section.type === 'table' ? (
+                            <div className="theory-section-content" dangerouslySetInnerHTML={{ __html: section.content }} />
                         ) : (
                             <div className="theory-section-content">
                                 {renderContent(section.content)}

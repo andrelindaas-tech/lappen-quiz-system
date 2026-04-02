@@ -10,7 +10,7 @@ export interface SignItem {
 export interface TheorySection {
     title: string
     content: string
-    type: 'text' | 'formula' | 'info' | 'warning' | 'tip' | 'example' | 'signs' | 'calculator' | 'pyramid'
+    type: 'text' | 'formula' | 'info' | 'warning' | 'tip' | 'example' | 'signs' | 'calculator' | 'pyramid' | 'table'
     signs?: SignItem[]
 }
 
@@ -30,7 +30,7 @@ export interface TheoryTopic {
 export const theoryTopics: TheoryTopic[] = [
     {
         id: 'bremselengde',
-        title: 'Bremselengde',
+        title: 'Bremselengde kalkulator – regn ut stopplengde | Teori-test.no',
         icon: '🛑',
         shortDescription: 'Lær å beregne bremselengde, reaksjonslengde og stopplengde',
         color: '#dc2626',
@@ -47,6 +47,11 @@ export const theoryTopics: TheoryTopic[] = [
                 title: 'Prøv kalkulatoren!',
                 type: 'calculator',
                 content: 'Bruk kalkulatoren under for å se nøyaktig stopplengde ved din hastighet – på tørr vei, våt vei og is.\n\nBruk kalkulatoren nedenfor til å se hvordan ulike hastigheter påvirker bremselengden. Test med 30, 50, 80 og 100 km/t for å se forskjellen!'
+            },
+            {
+                title: 'Stopplengdetabell (Oversikt)',
+                type: 'table',
+                content: '<div style="overflow-x: auto; margin-top: 1rem;"><table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem;"><thead><tr style="background-color: var(--color-surface); border-bottom: 2px solid var(--color-border);"><th style="padding: 12px 8px;">Hastighet</th><th style="padding: 12px 8px;">Reaksjonslengde</th><th style="padding: 12px 8px;">Bremselengde (tørr)</th><th style="padding: 12px 8px;">Stopplengde (tørr)</th><th style="padding: 12px 8px;">Stopplengde (våt)</th></tr></thead><tbody><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">30 km/t</td><td style="padding: 12px 8px;">9 m</td><td style="padding: 12px 8px;">4,5 m</td><td style="padding: 12px 8px;"><b>13,5 m</b></td><td style="padding: 12px 8px;">18 m</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">50 km/t</td><td style="padding: 12px 8px;">15 m</td><td style="padding: 12px 8px;">12,5 m</td><td style="padding: 12px 8px;"><b>27,5 m</b></td><td style="padding: 12px 8px;">40 m</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">60 km/t</td><td style="padding: 12px 8px;">18 m</td><td style="padding: 12px 8px;">18 m</td><td style="padding: 12px 8px;"><b>36 m</b></td><td style="padding: 12px 8px;">54 m</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">80 km/t</td><td style="padding: 12px 8px;">24 m</td><td style="padding: 12px 8px;">32 m</td><td style="padding: 12px 8px;"><b>56 m</b></td><td style="padding: 12px 8px;">88 m</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">100 km/t</td><td style="padding: 12px 8px;">30 m</td><td style="padding: 12px 8px;">50 m</td><td style="padding: 12px 8px;"><b>80 m</b></td><td style="padding: 12px 8px;">130 m</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">110 km/t</td><td style="padding: 12px 8px;">33 m</td><td style="padding: 12px 8px;">60,5 m</td><td style="padding: 12px 8px;"><b>93,5 m</b></td><td style="padding: 12px 8px;">154 m</td></tr></tbody></table></div>'
             },
             {
                 title: 'Formler',
@@ -862,9 +867,34 @@ export const theoryArticles: TheoryTopic[] = [
         seoDescription: 'Lær myndighetspyramiden til teoriprøven. Vi forklarer rekkefølgen for politi, trafikklys, trafikkskilt og trafikkregler, og viser deg typiske eksamensfeller.',
         sections: [
             {
-                title: 'Myndighetspyramiden: Hvem bestemmer egentlig i trafikken?',
+                title: 'Hva er myndighetspyramiden?',
                 type: 'text',
-                content: 'I trafikken vil du ofte oppleve at ulike signaler gir deg motstridende beskjeder. Kanskje lyser trafikklyset grønt, samtidig som det står et vikepliktskilt i det samme krysset. Hvem skal du høre på?\n\nLøsningen på dette heter myndighetspyramiden. Dette er et hierarki i fire nivåer som forteller deg nøyaktig hvem eller hva som har høyest prioritet i trafikken. For å bestå teoriprøven må du kunne denne rekkefølgen utenat.'
+                content: 'I trafikken vil du ofte oppleve at ulike signaler gir deg motstridende beskjeder. Hvem skal du egentlig høre på? Kanskje ruller du frem mot et travelt veikryss hvor trafikklyset lyser knallgrønt, samtidig som det står et tydelig vikepliktskilt montert på den samme stolpen. For å gjøre det enda mer krevende, står det kanskje en politibetjent midt i krysset og signaliserer at du må stoppe.\n\nLøsningen på dette potensielle kaoset er et av de viktigste fundamentene i trafikkopplæringen. For å bestå teoriprøven, og for å bli en trygg og selvstendig sjåfør, må du kjenne til og forstå trafikkens rangordning.\n\nEnkelt forklart er myndighetspyramiden et strengt hierarki i fire nivåer. Dette systemet forteller deg nøyaktig hvem eller hva som har høyest prioritet i enhver gitt situasjon. I stedet for å måtte gjette når to signaler gir ulik beskjed, gir pyramiden deg en ufravikelig fasit på hvilket signal som overstyrer det andre.'
+            },
+            {
+                title: 'Slik er rangordningen bygget opp, fra øverste til nederste instans:',
+                type: 'info',
+                content: '1. POLITI (Manuell dirigering)\n2. LYSSIGNAL (Trafikklys)\n3. SKILT & OPPMERKING\n4. TRAFIKKREGLER & FORSKRIFTER'
+            },
+            {
+                title: 'Nivå 1: Politi og manuell dirigering (Øverste myndighet)',
+                type: 'warning',
+                content: 'På den absolutte toppen av pyramiden finner vi mennesker med formell myndighet til å dirigere trafikken. Deres tegn og anvisninger overstyrer absolutt alle andre reguleringer – inkludert røde trafikklys, stoppskilt, oppmerking i veien og generelle trafikkregler.\n\nHvem har denne myndigheten? Selv om vi gjerne refererer til dette som "politi", gjelder det ikke utelukkende dem. Statens vegvesen, Tolletaten og militærpolitiet (MP) har også lovhjemmel til å dirigere trafikk, og du plikter å følge deres anvisninger på nøyaktig lik linje med politiet. (Skolepatruljer har ikke samme formelle myndighet, men du har likevel en plikt til å stoppe for dem av hensyn til sikkerheten).\n\nHvorfor er det slik? Mennesker har evnen til å vurdere og tilpasse seg situasjoner i sanntid. Hvis det har skjedd en alvorlig ulykke, et lyskryss har hengt seg opp, eller det pågår veiarbeid, må autorisert personell kunne overstyre den forhåndsprogrammerte teknologien for å rydde opp i kaoset og ivareta sikkerheten. Viser betjenten at du skal kjøre, så kjører du, selv om lyset lyser rødt.'
+            },
+            {
+                title: 'Nivå 2: Lyssignal (Trafikklys)',
+                type: 'info',
+                content: 'Hvis det ikke er noen som manuelt dirigerer trafikken på stedet, er det trafikklysene som overtar rollen som øverste beslutningstaker. Et fungerende trafikklys overstyrer både trafikkskilt, all vegoppmerking og de generelle trafikkreglene.\n\nLogikken bak: Lyssignaler brukes bevisst i ulykkesutsatte, tungt trafikkerte eller spesielt komplekse kryss for å skape en trygg og mekanisk styrt trafikkflyt. Systemet er designet for å fjerne tvil. Har du grønt lys, kan du kjøre, selv om det står et vikepliktskilt under lyset. Lyssignalet (Nivå 2) nøytraliserer skiltet (Nivå 3).\n\nDet viktige unntaket (Blinkende gult lys): Et gult, blinkende lys betyr at anlegget er ute av drift, eller at krysset er ekstra farlig. Et blinkende gult lys gir deg ingen rettigheter eller forkjørsrett. Det er et varsel om at du må flytte deg et hakk ned i pyramiden og forholde deg til skiltingen på stedet i stedet.'
+            },
+            {
+                title: 'Nivå 3: Trafikkskilt og vegoppmerking',
+                type: 'text',
+                content: 'Når trafikklyset er slått av, blinker gult, eller du befinner deg i et kryss som ikke har lysregulering, er det trafikkskiltene og stripene malt i veibanen som regulerer trafikken. Disse overstyrer i sin tur de generelle trafikkreglene som ligger i bunnen av pyramiden.\n\nSkilt: Et vanlig eksempel er et kryss med et vikepliktskilt. Skiltet forteller deg utvetydig at du må vike for kryssende trafikk, noe som overstyrer den generelle høyreregelen.\n\nVegoppmerking: Det er viktig å huske at maling i veien har samme myndighet som skilt. Stopplinjer (heltrukken hvit linje på tvers) og vikepliktslinjer (hvite trekanter i asfalten) gjelder selv om selve metallskiltet skulle ha blåst ned eller er dekket av snø.'
+            },
+            {
+                title: 'Nivå 4: Trafikkregler (Nederst i pyramiden)',
+                type: 'text',
+                content: 'Helt i bunnen, som en grunnmur for all ferdsel i samfunnet, ligger de generelle trafikkreglene og forskriftene. Dette er basisreglene vi alltid forholder oss til når det verken er politi, trafikklys eller skilt til stede for å regulere situasjonen.\n\nHøyreregelen: Den aller viktigste og mest brukte regelen på dette nivået er høyreregelen. Hvis du kjører gjennom et rolig boligfelt uten lyskryss og uten noen form for vikepliktskilt, er det høyreregelen (Nivå 4) som dikterer at du har vikeplikt for all trafikk som kommer fra din høyre side. Les vår komplette guide til [vikeplikt](/laeringsressurser/vikeplikt).'
             },
             {
                 title: 'Illustrasjon av pyramiden',
@@ -872,34 +902,14 @@ export const theoryArticles: TheoryTopic[] = [
                 content: ''
             },
             {
-                title: 'Nivå 1: Politi (Øverste myndighet)',
-                type: 'warning',
-                content: 'På toppen av pyramiden finner vi manuell trafikkdirigering. Hvis en politibetjent står i krysset og dirigerer trafikken, overstyrer dette alt annet. Viser betjenten at du skal kjøre, så kjører du – selv om trafikklyset lyser rødt og det står et stoppskilt der.\n\nViktig detalj: Dette gjelder ikke bare politiet. Tolletaten, Statens vegvesen og militærpolitiet (MP) har også myndighet til å dirigere trafikk, og du plikter å følge deres anvisninger på lik linje med politiet.'
-            },
-            {
-                title: 'Nivå 2: Lyssignal (Trafikklys)',
-                type: 'info',
-                content: 'Hvis det ikke er noen som manuelt dirigerer trafikken, er det trafikklysene som gjelder. Lyssignaler overstyrer både trafikkskilt, vegoppmerking og generelle trafikkregler. Grunnen er enkel: Lyssignaler brukes i ulykkesutsatte eller komplekse kryss for å skape en trygg og styrt trafikkflyt.'
-            },
-            {
-                title: 'Nivå 3: Trafikkskilt og vegoppmerking',
-                type: 'text',
-                content: 'Hvis lyssignalet er slått av (eller blinker gult), faller du et hakk ned i pyramiden. Da er det trafikkskiltene og stripene i veien som bestemmer. Et vanlig eksempel er et kryss med et vikepliktskilt. Skiltet forteller deg at du må vike, noe som overstyrer den generelle høyreregelen. Trenger du en oppfriskning av de ulike skiltene, kan du se vår [komplette skiltoversikt](/laeringsressurser/skilt).'
-            },
-            {
-                title: 'Nivå 4: Trafikkregler (Nederst i pyramiden)',
-                type: 'text',
-                content: 'Helt i bunnen ligger de generelle trafikkreglene og forskriftene. Dette er "grunnmuren" i trafikken, som for eksempel høyreregelen og generelle fartsgrenser. Du forholder deg kun til disse reglene når det verken er politi, trafikklys eller skilt som regulerer situasjonen. (Les mer om [fartsgrenser](/laeringsressurser/fartsgrenser) og [vikeplikt](/laeringsressurser/vikeplikt) i våre egne guider).'
-            },
-            {
-                title: 'Typiske situasjoner på teoriprøven',
+                title: 'Hva er riktig om myndighetspyramiden på teoriprøven? De vanligste fellene',
                 type: 'tip',
-                content: 'Grønt lys og vikepliktskilt: Du kommer mot et kryss. Lyset er grønt, men det står et vikepliktskilt på stolpen. Fasit: Du kan kjøre. Lyssignal (nivå 2) overstyrer skilt (nivå 3).\n\nBlinkende gult lys og vikepliktskilt: Lyset blinker gult. Fasit: Et blinkende gult lys betyr at anlegget er ute av drift eller at du skal vise ekstra varsomhet. Du må da flytte deg et hakk ned i pyramiden, og følge vikepliktskiltet (nivå 3).'
+                content: 'Teoriprøven elsker å teste om du virkelig forstår og stoler på hierarkiet. Når du skal svare på hva som er riktig om myndighetspyramiden under eksamen, er det spesielt viktig å kjenne til disse typiske scenariene som ofte forvirrer elever:\n\n**1. Grønt lys og Stoppskilt**\nSituasjon: Du kommer frem til et kryss. Lyset viser grønt, men det står et knallrødt Stoppskilt plassert rett under trafikklyset på samme stolpe.\nFellen: Mange elever tror at et Stoppskilt er et så strengt og absolutt forbud at det alltid gjelder uansett.\nFasit: Du kan kjøre uten å stoppe. Lyssignalet befinner seg på Nivå 2, og overstyrer dermed Stoppskiltet som befinner seg på Nivå 3. Stoppskiltet har ingen funksjon så lenge lyset er grønt; det er plassert der utelukkende for den dagen trafikklyset går i svart eller blinker gult.\n\n**2. Blinkende gult lys og vikepliktskilt**\nSituasjon: Du nærmer deg et kryss hvor trafikklyset blinker gult. Du har et vikepliktskilt.\nFasit: Som nevnt under Nivå 2, betyr et blinkende gult lys at anlegget er satt ut av spill. Du må da umiddelbart falle ned til Nivå 3 i pyramiden og følge skiltet. Du har vikeplikt.\n\n**3. Grønn pil og møtende trafikk**\nSituasjon: Du skal svinge til venstre i et stort lyskryss. Du får et vanlig, rundt grønt lys. Samtidig får den møtende trafikken også grønt lys rett frem.\nFellen: Siden du har grønt lys, antar mange at de har fri bane og bare kan svinge.\nFasit: Her gjelder trafikkreglene innad i selve lyskrysset. Når du svinger til venstre, krysser du en annens kjørebane, og de generelle reglene sier da at du har vikeplikt for møtende trafikk. (Merk: Hadde du derimot fått en lysende grønn PIL som peker til venstre, er dette et signal om at krysset er tømt for all møtende trafikk, og du kunne kjørt uhindret).\n\n**4. Fotgjengerfelt uten lys**\nSituasjon: Du skal svinge inn på en ny vei. Det ligger et gangfelt i krysset, men det er ingen egne skilt eller lys for dette gangfeltet. Det står en person og vil over.\nFellen: Mange tror fotgjengeren må vente fordi bilen ikke har fått noe spesifikt vikepliktskilt for akkurat dette gangfeltet.\nFasit: De generelle trafikkreglene (Nivå 4) er krystallklare: Kjørende som skifter kjøreretning eller svinger inn på en ny vei, har alltid vikeplikt for gående eller syklende som skal krysse den nye veien. Du må stoppe.'
             },
             {
-                title: 'Har du kontroll på hierarkiet?',
+                title: 'Klar for å teste kunnskapen din?',
                 type: 'info',
-                content: 'Ta en [Gratis teoriprøve](/quiz) og se om du klarer å sortere signalene riktig i praksis!'
+                content: 'Å ha en dyp forståelse for trafikkens rangordning er helt avgjørende for å ferdes trygt på veien. Har du kontroll på alt som gjelder myndighetspyramiden og teoriprøve-oppgaver, er du ett stort skritt nærmere å bestå. Ta gjerne en [gratis teoriprøve](/quiz) hos oss for å se om du klarer å sortere signalene riktig i praksis.'
             }
         ],
         faq: [

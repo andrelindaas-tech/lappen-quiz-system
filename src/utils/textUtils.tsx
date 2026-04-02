@@ -1,7 +1,31 @@
 import { Link } from 'react-router-dom'
 
 /**
- * Helper function to safely parse markdown-style localized [links](/urls)
+ * Helper to parse bold markdown **text**
+ */
+function parseBoldText(text: string) {
+    const boldRegex = /\*\*([^*]+)\*\*/g
+    const parts = []
+    let lastIndex = 0
+    let match
+
+    while ((match = boldRegex.exec(text)) !== null) {
+        if (match.index > lastIndex) {
+            parts.push(text.substring(lastIndex, match.index))
+        }
+        parts.push(<strong key={`bold-${match.index}`}>{match[1]}</strong>)
+        lastIndex = boldRegex.lastIndex
+    }
+
+    if (lastIndex < text.length) {
+        parts.push(text.substring(lastIndex))
+    }
+
+    return parts.length > 0 ? parts : [text]
+}
+
+/**
+ * Helper function to safely parse markdown-style localized [links](/urls) and **bold** text
  */
 export function parseInlineLinks(text: string) {
     const linkRegex = /\[([^\]]+)\]\(([^)]+)\)/g
@@ -11,7 +35,7 @@ export function parseInlineLinks(text: string) {
 
     while ((match = linkRegex.exec(text)) !== null) {
         if (match.index > lastIndex) {
-            parts.push(text.substring(lastIndex, match.index))
+            parts.push(...parseBoldText(text.substring(lastIndex, match.index)))
         }
         const textContent = match[1]
         const url = match[2]
@@ -63,7 +87,7 @@ export function parseInlineLinks(text: string) {
     }
 
     if (lastIndex < text.length) {
-        parts.push(text.substring(lastIndex))
+        parts.push(...parseBoldText(text.substring(lastIndex)))
     }
 
     return parts.length > 0 ? parts : [text]
