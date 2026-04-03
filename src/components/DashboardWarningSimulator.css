@@ -1,0 +1,271 @@
+/* DashboardWarningSimulator.css */
+.dashboard-sim-container {
+    background-color: var(--color-bg);
+    border: 2px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-xl);
+    margin: var(--spacing-xl) 0;
+    box-shadow: var(--shadow-md);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: var(--spacing-lg);
+    animation: fadeIn 0.5s ease-out;
+}
+
+.dashboard-sim-header {
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+    color: var(--color-text);
+    margin-bottom: var(--spacing-md);
+}
+
+/* Instrument Cluster / Dashboard Display */
+.dashboard-display {
+    width: 100%;
+    max-width: 500px;
+    /* Default Light Mode Styles */
+    background: #f8f9fa;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    padding: 30px 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    justify-items: center;
+    align-items: center;
+    margin-bottom: 25px;
+    box-shadow: 
+        0 4px 12px rgba(0, 0, 0, 0.05),
+        inset 0 0 15px rgba(255, 255, 255, 1);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+/* Dark Mode Overrides for Dashboard */
+body.dark-mode .dashboard-display {
+    background: radial-gradient(circle at center, #1e2024 0%, #0a0a0a 100%);
+    border-color: rgba(255, 255, 255, 0.15);
+    box-shadow: 
+        0 20px 40px rgba(0, 0, 0, 0.4),
+        inset 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Subtle glass reflection (only in dark mode for realism) */
+body.dark-mode .dashboard-display::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        45deg,
+        transparent 0%,
+        rgba(255, 255, 255, 0.03) 45%,
+        rgba(255, 255, 255, 0.05) 50%,
+        rgba(255, 255, 255, 0.03) 55%,
+        transparent 100%
+    );
+    pointer-events: none;
+    transform: rotate(-20deg);
+}
+
+.dashboard-lamp-svg {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Active Lamp States */
+.dashboard-lamp-svg.active {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+.dashboard-lamp-svg.active.red {
+    color: #ff3b30;
+    filter: drop-shadow(0 0 10px rgba(255, 59, 48, 0.4));
+}
+
+.dashboard-lamp-svg.active.yellow {
+    color: #ffcc00;
+    filter: drop-shadow(0 0 10px rgba(255, 204, 0, 0.4));
+}
+
+/* Inactive States - Light Mode (Default) */
+.dashboard-lamp-svg.inactive {
+    color: #d1d5db; /* Light grey */
+    opacity: 0.8;
+}
+
+/* Inactive States - Dark Mode */
+body.dark-mode .dashboard-lamp-svg.inactive {
+    color: #2a2a2a; /* Dark grey */
+    opacity: 1;
+}
+
+/* Ensure local SVG colors behave correctly */
+.dashboard-lamp-svg .lamp-icon {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+/* Special handling for text (like ABS) to avoid thin outlines */
+.dashboard-lamp-svg .lamp-icon text {
+    stroke: none !important;
+}
+
+/* Controls & UI */
+.dashboard-sim-controls {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+    background-color: var(--color-bg-secondary);
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-lg);
+    margin-top: var(--spacing-sm);
+}
+
+.dashboard-question {
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+    color: var(--color-text);
+    margin-bottom: var(--spacing-sm);
+}
+
+.dashboard-action-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+    justify-content: center;
+}
+
+.dashboard-btn {
+    padding: 12px 24px;
+    border-radius: var(--radius-md);
+    font-weight: 700;
+    font-size: var(--font-size-base);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: 2px solid transparent;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex: 1;
+    min-width: 200px;
+    justify-content: center;
+}
+
+.dashboard-btn {
+    padding: 12px 24px;
+    border-radius: var(--radius-md);
+    font-weight: 700;
+    font-size: var(--font-size-base);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: 1px solid var(--color-border);
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex: 1;
+    min-width: 200px;
+    justify-content: center;
+}
+
+.dashboard-btn:hover:not(:disabled) {
+    background-color: var(--color-bg-secondary);
+    border-color: var(--color-primary);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-sm);
+}
+
+.dashboard-btn:active:not(:disabled) {
+    transform: translateY(0);
+}
+
+.dashboard-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    filter: grayscale(0.5);
+}
+
+.dashboard-reset-btn {
+    background: transparent;
+    border: 1px solid var(--color-border);
+    color: var(--color-text-secondary);
+    padding: 8px 16px;
+    border-radius: var(--radius-sm);
+    font-size: var(--font-size-sm);
+    cursor: pointer;
+    margin-top: var(--spacing-sm);
+}
+
+/* Feedback Panel (Matching TrailerWeightSimulator) */
+.dashboard-explanation-box {
+    width: 100%;
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-md);
+    border-left: 6px solid transparent;
+    transition: all 0.3s ease;
+    background-color: var(--color-bg-secondary);
+    text-align: left;
+    margin-top: var(--spacing-md);
+    animation: slideUp 0.3s ease-out;
+}
+
+.dashboard-explanation-box.correct {
+    border-left-color: var(--color-success);
+    background-color: rgba(5, 150, 105, 0.05);
+}
+
+.dashboard-explanation-box.incorrect {
+    border-left-color: var(--color-error);
+    background-color: rgba(220, 38, 38, 0.05);
+}
+
+.dashboard-status-title {
+    font-size: var(--font-size-lg);
+    font-weight: 700;
+    margin-bottom: var(--spacing-sm);
+}
+
+.dashboard-status-title.correct {
+    color: var(--color-success);
+}
+
+.dashboard-status-title.incorrect {
+    color: var(--color-error);
+}
+
+.dashboard-text {
+    font-size: var(--font-size-base);
+    color: var(--color-text);
+    line-height: 1.6;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from { transform: translateY(10px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@media (max-width: 600px) {
+    .dashboard-display {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+}

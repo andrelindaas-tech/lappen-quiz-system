@@ -10,7 +10,7 @@ import DailyStreak from './components/DailyStreak'
 import { recordCompletion } from './utils/streakStore'
 import './index.css'
 import './fokus.css'
-import './theory.css'
+import ScrollToTop from './components/ScrollToTop'
 import { Helmet } from 'react-helmet-async'
 
 // GA4 global type
@@ -67,6 +67,7 @@ export default function App() {
 
     return (
         <>
+            <ScrollToTop />
             <Helmet>
                 <link rel="canonical" href={"https://teori-test.no" + location.pathname} />
                 <meta property="og:url" content={`https://teori-test.no${location.pathname}`} />

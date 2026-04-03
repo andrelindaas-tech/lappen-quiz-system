@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { useNavigate, Link } from 'react-router-dom'
 import { getWrongAnswersCount } from '../utils/wrongAnswersStore'
 import { Helmet } from 'react-helmet-async'
+import { SignIllustration } from './SignIllustration'
 
 export default function StartScreen() {
     const [fokusCount, setFokusCount] = useState(0)
@@ -109,16 +110,6 @@ export default function StartScreen() {
 
             <div className="mode-cards">
                 <button
-                    className="mode-card mode-card-express"
-                    onClick={() => navigate('/quiz?mode=hurtig')}
-                >
-                    <div className="mode-icon">⚡️</div>
-                    <h2>Ekspresstest</h2>
-                    <p>10 spørsmål - Maks 2 feil</p>
-                    <span className="mode-badge mode-badge-express">Rask øving</span>
-                </button>
-
-                <button
                     className="mode-card mode-card-full"
                     onClick={() => navigate(`/quiz?mode=eksamen${useTimerForFull ? '&timer=true' : ''}`)}
                 >
@@ -148,10 +139,37 @@ export default function StartScreen() {
                 </button>
 
                 <button
+                    className="mode-card mode-card-vikeplikt"
+                    onClick={() => navigate('/quiz/vikeplikt')}
+                >
+                    <div className="card-badge-new">Ny</div>
+                    <div className="mode-icon">
+                        <img src="/signs/vikeplikt.svg" alt="Vikeplikt" style={{ height: '4.4rem', width: 'auto', display: 'block', margin: '0 auto' }} />
+                    </div>
+                    <h2>Vikeplikt</h2>
+                    <p>10 spørsmål – maks 2 feil</p>
+                    <span className="mode-badge" style={{ backgroundColor: 'var(--color-success)', color: 'white' }}>Tema-test</span>
+                </button>
+
+                <button
+                    className="mode-card mode-card-express"
+                    onClick={() => navigate('/quiz?mode=hurtig')}
+                >
+                    <div className="mode-icon">⚡️</div>
+                    <h2>Ekspresstest</h2>
+                    <p>10 spørsmål - Maks 2 feil</p>
+                    <span className="mode-badge mode-badge-express">Rask øving</span>
+                </button>
+
+                <button
                     className="mode-card mode-card-skilt"
                     onClick={() => navigate('/quiz/skilt')}
                 >
-                    <div className="mode-icon">🚥</div>
+                    <div className="mode-icon">
+                        <div style={{ height: '4.4rem', width: '4.4rem', margin: '0 auto' }}>
+                            <SignIllustration signId="speed-50" />
+                        </div>
+                    </div>
                     <h2>Skilt-test</h2>
                     <p>10 skilte spørsmål - Maks 1 feil</p>
                     <span className="mode-badge mode-badge-skilt">Kun skilter</span>
@@ -178,14 +196,14 @@ export default function StartScreen() {
 
             {/* Quick Links / Chips Layer */}
             <div className="learning-resources-chips" style={{ marginTop: '3.5rem', marginBottom: '3rem', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                <h3 style={{ fontSize: '0.95rem', fontWeight: '500', color: 'var(--color-text-light)', marginBottom: '1.25rem' }}>
+                <h3 style={{ fontSize: '1.05rem', fontWeight: '500', color: 'var(--color-text-light)', marginBottom: '1.25rem' }}>
                     💡 Lær mer om de vanligste fellene på teoriprøven:
                 </h3>
                 <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.75rem', justifyContent: 'center', maxWidth: '700px' }}>
                     <Link to="/laeringsressurser/myndighetspyramiden" className="theory-chip">
                         👮 Myndighetspyramiden
                     </Link>
-                    <Link to="/laeringsressurser/vognkort-og-vekt" className="theory-chip">
+                    <Link to="/laeringsressurser/vognkort-vekter" className="theory-chip">
                         ⚖️ Regn ut nyttelast
                     </Link>
                     <Link to="/laeringsressurser/fartsgrenser" className="theory-chip">

@@ -4,9 +4,11 @@ import { Helmet } from 'react-helmet-async'
 import type { TheoryTopic as TopicType } from '../data/theoryData'
 import BrakeCalculator from './BrakeCalculator'
 import TrailerWeightSimulator from './TrailerWeightSimulator'
+import DashboardWarningSimulator from './DashboardWarningSimulator'
 import { parseInlineLinks } from '../utils/textUtils'
 import { SignIllustration } from './SignIllustration'
 import AuthorityPyramid from './AuthorityPyramid'
+import ReaksjonstidTest from './ReaksjonstidTest'
 
 
 // Renders content string with support for paragraphs, bullet lists (- ) and numbered lists (1. )
@@ -74,15 +76,17 @@ export default function TheoryTopic({ topic, onBack, extraComponent }: TheoryTop
         "description": topic.shortDescription,
         "inLanguage": "nb",
         "datePublished": "2026-02-21",
+        "dateModified": "2026-02-21",
+        "image": topic.icon.startsWith('http') ? topic.icon : "https://teori-test.no/og-image.png",
         "author": {
             "@type": "Organization",
             "name": "Teori-test.no",
-            "url": "https://teori-test.no"
+            "url": "https://teori-test.no/"
         },
         "publisher": {
             "@type": "Organization",
             "name": "Teori-test.no",
-            "url": "https://teori-test.no"
+            "url": "https://teori-test.no/"
         },
         "mainEntityOfPage": {
             "@type": "WebPage",
@@ -184,6 +188,8 @@ export default function TheoryTopic({ topic, onBack, extraComponent }: TheoryTop
                                 <div style={{ marginTop: '1.5rem' }}>
                                     {topic.id === 'bremselengde' && <BrakeCalculator />}
                                     {topic.id === 'vognkort-vekter' && <TrailerWeightSimulator />}
+                                    {topic.id === 'sikkerhetskontroll' && <DashboardWarningSimulator />}
+                                    {topic.id === 'reaksjonstid' && <ReaksjonstidTest />}
                                 </div>
                             </div>
                         ) : section.type === 'table' ? (
@@ -195,6 +201,22 @@ export default function TheoryTopic({ topic, onBack, extraComponent }: TheoryTop
                         )}
                     </div>
                 ))}
+                
+                {topic.faq && (
+                    <div className="theory-faq-section">
+                        <h2 className="theory-section-title">Ofte stilte spørsmål</h2>
+                        <div className="theory-faq-list">
+                            {topic.faq.map((item, i) => (
+                                <div key={i} className="theory-faq-item">
+                                    <h3 className="theory-faq-question">{item.question}</h3>
+                                    <div className="theory-faq-answer">
+                                        {parseInlineLinks(item.answer)}
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                )}
                 
                 {extraComponent && (
                     <div className="theory-extra-component" style={{ marginTop: '2rem' }}>

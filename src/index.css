@@ -6,11 +6,11 @@
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    padding: 0.5rem 1rem;
+    padding: 0.55rem 1.1rem;
     background-color: var(--color-bg);
     border: 1px solid var(--color-border);
     border-radius: 9999px; /* Pill shape */
-    font-size: 0.9rem;
+    font-size: 1rem;
     font-weight: 500;
     color: var(--color-text);
     text-decoration: none;
@@ -892,6 +892,8 @@ body.dark-mode .hero-section {
 }
 
 .mode-card {
+  position: relative;
+  overflow: hidden;
   background-color: var(--color-bg);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
@@ -901,6 +903,27 @@ body.dark-mode .hero-section {
   text-align: center;
   font-family: var(--font-family);
   box-shadow: var(--shadow-md);
+}
+
+.mode-card-full {
+  grid-column: 1 / -1;
+}
+
+.card-badge-new {
+  position: absolute;
+  top: 15px;
+  right: -40px;
+  background-color: var(--color-success);
+  color: white;
+  padding: 5px 44px;
+  font-size: 0.85rem;
+  font-weight: 900;
+  transform: rotate(45deg);
+  z-index: 2;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  pointer-events: none;
 }
 
 .mode-card:hover {
@@ -919,8 +942,18 @@ body.dark-mode .hero-section {
   box-shadow: var(--shadow-xl);
 }
 
+.mode-card-vikeplikt:hover {
+  border-color: var(--color-success);
+  box-shadow: var(--shadow-xl);
+}
+
 .mode-card-skilt:hover {
   border-color: #eab308;
+  box-shadow: var(--shadow-xl);
+}
+
+.mode-card-fokus:hover {
+  border-color: var(--color-fokus);
   box-shadow: var(--shadow-xl);
 }
 
@@ -1293,4 +1326,46 @@ body.dark-mode .timer-warning {
   .article-grid {
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)) !important;
   }
+}
+
+/* FAQ Section in Theory Articles */
+.theory-faq-section {
+  margin-top: var(--spacing-2xl);
+  padding-top: var(--spacing-xl);
+  border-top: 1px solid var(--color-border);
+}
+
+.theory-faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+  margin-top: var(--spacing-lg);
+}
+
+.theory-faq-item {
+  background-color: var(--color-bg);
+  padding: var(--spacing-lg);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  transition: all 0.2s ease;
+}
+
+body.dark-mode .theory-faq-item {
+  background-color: rgba(255, 255, 255, 0.02);
+}
+
+.theory-faq-question {
+  font-size: var(--font-size-lg);
+  font-weight: 700;
+  margin-bottom: var(--spacing-xs);
+  color: var(--color-text);
+}
+
+.theory-faq-answer {
+  color: var(--color-text-light);
+  line-height: 1.6;
+}
+
+.theory-faq-answer p {
+  margin-bottom: 0;
 }

@@ -77,42 +77,71 @@ export const theoryTopics: TheoryTopic[] = [
     },
     {
         id: 'reaksjonstid',
-        title: 'Reaksjonstid og stopplengde',
+        title: 'Reaksjonstid og stopplengde – slik regner du det ut (Klasse B)',
         icon: '⏱️',
-        shortDescription: 'Forstå hvordan reaksjonstiden påvirker stopplengden',
+        shortDescription: 'Lær hva reaksjonstid er, hvordan du regner ut reaksjonslengde og stopplengde til teoriprøven. Tabeller, formler og interaktiv test for klasse B.',
         color: '#2563eb',
-        seoTitle: 'Reaksjonstid og stopplengde – beregning | Teori-test.no',
-        seoDescription: 'Forstå hvordan reaksjonstiden påvirker stopplengden. Lær formelen for reaksjonslengde til teoriprøven på tørr og glatt vei.',
+        seoTitle: 'Reaksjonstid og stopplengde – slik regner du det ut (Klasse B) | Teori-test.no',
+        seoDescription: 'Lær hva reaksjonstid er, hvordan du regner ut reaksjonslengde og stopplengde til teoriprøven. Tabeller, formler og interaktiv test for klasse B.',
         sections: [
             {
                 title: 'Hva er reaksjonstid?',
                 type: 'text',
-                content: 'Reaksjonstid er tiden det tar fra du oppdager en fare til du begynner å bremse. Normal reaksjonstid er ca. 1 sekund for en opplagt og frisk sjåfør. I løpet av dette sekundet fortsetter bilen med uforminsket fart.'
+                content: 'Før bilen begynner å bremse, har du allerede kjørt langt. Reaksjonstiden er den usynlige faren de fleste undervurderer — og en av de viktigste grunnene til ulykker på norske veier.\n\nReaksjonstid er tiden det tar fra du oppdager en fare til foten faktisk treffer bremsepedalen. For en uthvilt og edru sjåfør er dette normalt ca. 1 sekund. Det høres kort ut — men i løpet av det sekundet fortsetter bilen med full fart uten at du gjør noe som helst.'
             },
             {
-                title: 'Formel for reaksjonslengde',
-                type: 'formula',
-                content: 'Reaksjonslengde = (Fart ÷ 10) × 3 meter\n\nVed 50 km/t: (50 ÷ 10) × 3 = 15 meter\nVed 80 km/t: (80 ÷ 10) × 3 = 24 meter\nVed 100 km/t: (100 ÷ 10) × 3 = 30 meter'
+                title: 'Test din egen reaksjonstid:',
+                type: 'calculator',
+                content: 'Sjekk hvor raskt du reagerer! Testen under simulerer en nødbrems-situasjon i 80 km/t. Klarer du å reagere raskere enn gjennomsnittet?'
             },
             {
-                title: 'Hva påvirker reaksjonstiden?',
+                title: 'Reaksjonslengde — hvor langt kjører du før du bremser?',
+                type: 'table',
+                content: 'Formelen er: **Reaksjonslengde = (fart ÷ 10) × 3 meter**\n\n<div style="overflow-x: auto; margin-top: 1rem;"><table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem;"><thead><tr style="background-color: var(--color-surface); border-bottom: 2px solid var(--color-border);"><th style="padding: 12px 8px;">Hastighet</th><th style="padding: 12px 8px;">Reaksjonslengde</th></tr></thead><tbody><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">30 km/t</td><td style="padding: 12px 8px;">9 meter</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">50 km/t</td><td style="padding: 12px 8px;">15 meter</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">80 km/t</td><td style="padding: 12px 8px;">24 meter</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">100 km/t</td><td style="padding: 12px 8px;">30 meter</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">120 km/t</td><td style="padding: 12px 8px;">36 meter</td></tr></tbody></table></div>\n\nTenk på det slik: ved 80 km/t kjører du nesten tre bilengder før du i det hele tatt begynner å bremse.'
+            },
+            {
+                title: 'Hva øker reaksjonstiden din?',
                 type: 'info',
-                content: '• Tretthet — Kan doble eller tredoble reaksjonstiden\n• Alkohol — Selv små menger forsinker reaksjonene\n• Mobilbruk — Tak oppmerksomheten bort fra veien\n• Uoppmerksomhet — Snakking, radio, mat\n• Medisiner — Noen medisiner gir tretthet\n• Mørke — Vanskeligere å oppdage farer\n• Alder — Eldre sjåfører reagerer noe langsommere'
+                content: 'Dette er faktorer som gjør at du reagerer langsommere — og som teoriprøven elsker å spørre om:\n\n- **Tretthet** — kan doble eller tredoble reaksjonstiden. En sjåfør som har vært våken i 20 timer reagerer like sakte som en med 0,8 i promille\n- **Alkohol og medisiner** — selv små mengder forsinker signalene fra øynene til hjernen til foten\n- **Mobilbruk** — ikke bare hånden på telefonen, men selve tankene dine er et annet sted. Reaksjonstiden øker med opptil 40 % selv med handsfree\n- **Uoppmerksomhet** — samtale med passasjer, radio, tanker om andre ting\n- **Mørke og dårlig sikt** — du oppdager faren senere og må reagere raskere\n- **Alder** — eldre sjåfører reagerer noe langsommere, men kompenserer med erfaring'
             },
             {
-                title: 'Stopplengde = Reaksjon + Bremsing',
+                title: 'Stopplengde = reaksjonslengde + bremselengde',
+                type: 'table',
+                content: 'Stopplengden er den totale avstanden fra du oppdager faren til bilen faktisk stopper. Bremselengden øker kvadratisk med farten — det vil si at dobbel fart gir firedobbel bremselengde.\n\n<div style="overflow-x: auto; margin-top: 1rem;"><table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem;"><thead><tr style="background-color: var(--color-surface); border-bottom: 2px solid var(--color-border);"><th style="padding: 12px 8px;">Hastighet</th><th style="padding: 12px 8px;">Reaksjonslengde</th><th style="padding: 12px 8px;">Bremselengde (tørr)</th><th style="padding: 12px 8px;">Stopplengde</th></tr></thead><tbody><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">30 km/t</td><td style="padding: 12px 8px;">9 m</td><td style="padding: 12px 8px;">4,5 m</td><td style="padding: 12px 8px;">13,5 m</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">50 km/t</td><td style="padding: 12px 8px;">15 m</td><td style="padding: 12px 8px;">12,5 m</td><td style="padding: 12px 8px;">27,5 m</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">80 km/t</td><td style="padding: 12px 8px;">24 m</td><td style="padding: 12px 8px;">32 m</td><td style="padding: 12px 8px;">56 m</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">100 km/t</td><td style="padding: 12px 8px;">30 m</td><td style="padding: 12px 8px;">50 m</td><td style="padding: 12px 8px;">80 m</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">120 km/t</td><td style="padding: 12px 8px;">36 m</td><td style="padding: 12px 8px;">72 m</td><td style="padding: 12px 8px;">108 m</td></tr></tbody></table></div>'
+            },
+            {
+                title: 'Tips: Vil du regne på andre forhold?',
                 type: 'text',
-                content: 'Stopplengden er den totale avstanden bilen tilbakelegger fra du oppdager en fare til bilen står stille. Den består av to deler:\n\n1. Reaksjonslengde — avstanden du kjører mens hjernen behandler informasjonen\n2. Bremselengde — avstanden fra bremsing starter til bilen stopper\n\nBegge øker med hastigheten, men bremselengden øker mye raskere (kvadratisk).'
+                content: '[Bruk vår interaktive bremselengde-kalkulator for å beregne stopplengde ved ulike hastigheter og veiforhold](/laeringsressurser/bremselengde)'
             },
             {
-                title: 'Eksempler på stopplengde',
+                title: 'Praktisk eksempel',
                 type: 'example',
-                content: 'Ved 30 km/t (tørr vei): 9 + 4,5 = ca. 14 meter\nVed 50 km/t (tørr vei): 15 + 12,5 = ca. 28 meter\nVed 80 km/t (tørr vei): 24 + 32 = ca. 56 meter\nVed 100 km/t (tørr vei): 30 + 50 = ca. 80 meter\nVed 120 km/t (tørr vei): 36 + 72 = ca. 108 meter'
+                content: 'Du kjører i 80 km/t. Et barn løper ut i veien 50 meter foran deg. Du er uthvilt — reaksjonstiden din er 1 sekund. I løpet av det sekundet kjører du 24 meter. Da gjenstår 26 meter til barnet — men du trenger 32 meter for å stoppe. Du rekker det ikke.\n\nHadde du kjørt 60 km/t ville stopplengden vært 36 meter — du hadde stoppet med god margin.'
             },
             {
-                title: 'Tommelfingerregel',
+                title: '3-sekunders regelen',
                 type: 'tip',
-                content: 'Hold alltid minst 3 sekunders avstand til bilen foran. I dårlige forhold (regn, snø, is) bør avstanden økes til 4–6 sekunder.'
+                content: 'Hold alltid minst 3 sekunders avstand til bilen foran. Velg et fast punkt på veien. Når bilen foran passerer det, tell "én-og-tjue, to-og-tjue, tre-og-tjue". Passerer du punktet før du er ferdig, er du for tett. I dårlig vær, mørke eller ved tretthet — øk til 4–6 sekunder.'
+            },
+            {
+                title: 'Vanlige teoriprøvespørsmål',
+                type: 'text',
+                content: '• **Hva er normal reaksjonstid for en opplagt sjåfør?** → Ca. 1 sekund\n• **Hva skjer med reaksjonstiden ved tretthet?** → Den kan doble eller tredoble seg\n• **Hva er stopplengde?** → Reaksjonslengde + bremselengde\n• **Hva skjer med bremselengden når farten dobles?** → Den firedobles\n• **Hva er 3-sekunders regelen?** → Minimum avstand til bilen foran i normale forhold'
+            }
+        ],
+        faq: [
+            {
+                question: 'Hva er normal reaksjonstid?',
+                answer: 'For en uthvilt og opplagt fører er normal reaksjonstid ca. 1 sekund.'
+            },
+            {
+                question: 'Hva er forskjellen på reaksjonslengde og bremselengde?',
+                answer: 'Reaksjonslengde er avstanden du kjører fra du oppdager faren til du starter å bremse. Bremselengde er avstanden bilen bruker på å stoppe etter at du har truffet bremsen.'
+            },
+            {
+                question: 'Hvor mye øker bremselengden når farten dobles?',
+                answer: 'Bremselengden firedobles når farten dobles (eksempel: fra 40 til 80 km/t).'
             }
         ]
     },
@@ -613,6 +642,64 @@ export const theoryTopics: TheoryTopic[] = [
                 title: '5. Motorrom og Sikkerhetsutstyr',
                 type: 'warning',
                 content: 'Oppgave: Sjekk at batteriet sitter fast.\n\nSlik gjør du: Åpne panseret, ta et godt tak i batteriet (gjerne i håndtakene på toppen) og beveg det frem og tilbake for å kjenne at det sitter stramt.\n\nSensors spørsmål: Hva er risikoen med et løst batteri?\n\nSvar: Et løst batteri kan forårsake kortslutninger og tretthetsbrudd i ledningene. Det inneholder i tillegg batterisyre som kan gjøre stor skade på bilen dersom batteriet velter og syren renner ut.\n\nOppgave: Kontroller sikkerhetsbeltene.\n\nSlik gjør du: Dra beltet helt ut for å se etter flisete kanter eller skader i stoffet. Dra hardt i beltet for å sjekke at beltestrammeren låser seg, og slipp det for å se at rullen trekker beltet raskt tilbake.\n\nSensors spørsmål: Hva er risikoen ved slappe ruller?\n\nSvar: Beltet vil ikke holde seg godt nok inntil kroppen, og vil dermed ikke fungere som det skal ved en bråstopp eller ulykke.\n\nOppgave: Airbag.\n\nSensors spørsmål: Har det noen betydning for hvem du plasserer i forsetet når bilen har airbag?\n\nSvar: Barn i bakovervendt barnesete skal aldri sitte foran en aktiv airbag, fordi airbagen utløses med en så voldsom kraft at barnet og setet vil bli skadet. Personer under 140 cm bør heller ikke sitte foran en aktiv airbag på grunn av airbagens treffpunkt.'
+            },
+            {
+                title: 'Test deg selv: Det interaktive dashbordet',
+                type: 'calculator',
+                content: 'På oppkjøringen forventes det at du forstår den grunnleggende logikken bak varsellampene, og spesielt fargekoden. Rødt lys betyr at du må stanse bilen på et trygt sted og slå av motoren. Gult lys betyr som regel at du kan fortsette kjøringen, men at bilen må kontrolleres. Prøv simulatoren under for å teste refleksene dine.'
+            }
+        ]
+    },
+    {
+        id: 'stroket-teoriproven',
+        title: 'Strøket på teoriprøven? Her er grunnen og slik består du neste gang',
+        icon: '🎓',
+        shortDescription: '43% stryker på teoriprøven hvert år. Lær hvorfor så mange stryker, hva du må gjøre annerledes, og hvordan du består på neste forsøk.',
+        color: '#f97316',
+        seoTitle: 'Strøket på teoriprøven? Her er grunnen og slik består du neste gang',
+        seoDescription: '43% stryker på teoriprøven hvert år. Lær hvorfor så mange stryker, hva du må gjøre annerledes, og hvordan du består på neste forsøk.',
+        sections: [
+            {
+                title: 'Hvorfor stryker så mange?',
+                type: 'text',
+                content: 'Hvert år stryker over 90 000 nordmenn på teoriprøven. Det er ikke fordi de er dårlige sjåfører — det er fordi de forbereder seg på feil måte.\n\nHvis du nettopp har fått beskjeden "ikke bestått", er du i godt selskap. Og du har to uker på deg til å gjøre det annerledes.\n\nKjøreskolelærer Andreas Amundsen ved Wright trafikkskole i Porsgrunn har sett mønsteret many ganger: folk leser for å bestå, ikke for å forstå. Han peker på at overgangen fra lærebøker til apper har gjort at mange fokuserer på å trykke riktig svar fremfor å faktisk forstå trafikkreglene.\n\nEn annen overraskende faktor: mange elever bruker bare 15–20 minutter på en prøve de har 90 minutter til rådighet. Det er nok til å trykke seg gjennom 45 spørsmål — men ikke nok til å tenke seg om.\n\nStatens vegvesen har i tillegg innført et nytt digitalt system kalt eTeori, som gjør det vanskeligere å pugge seg til bestått. Systemet bruker større variasjon i spørsmålsstilling og oppgaveformer. Prosjektleder Gunn Marit Høistad i Statens vegvesen sa det rett ut: målet er at det skal lønne seg å forstå pensum fremfor å bare øve seg på å bestå prøven.'
+            },
+            {
+                title: 'Hva skjer etter stryk?',
+                type: 'warning',
+                content: 'Du må vente to uker før du kan ta teoriprøven på nytt. Du må bestille ny time og betale ny prøveavgift — sjekk gjeldende pris på vegvesen.no. Det er ingen grense på antall forsøk, men stryk koster deg både tid og penger.\n\nI Vestfold og Telemark strøk 46% av alle som tok prøven i 2024 — omtrent på linje med landsgjennomsnittet på 47%.'
+            },
+            {
+                title: 'De vanligste feilene — og hva du gjør med dem',
+                type: 'info',
+                content: 'Ifølge Amundsen er dette de typiske fallgruvene:\n\n• **Bremselengde og stopplengde** krever at du kan bruke litt matematikk, ikke bare gjenkjenne et svar du har sett før. Mange vet ikke at bremselengden firedobles når farten dobles. Bruk [vår interaktive bremselengde-kalkulator](/laeringsressurser/bremselengde) for å forstå sammenhengen mellom fart og stopplengde — det er langt mer effektivt enn å pugge tabeller.\n\n• **Vikepliktregler** i kryss og rundkjøringer er det temaet flest bommer på. Det handler ikke om å huske reglene utenat — det handler om å forstå logikken bak hvem som har forkjørsrett og hvorfor. Test deg selv med [vår gratis vikeplikt-quiz](/quiz/vikeplikt) — 10 spørsmål som dekker de vanligste situasjonene på teoriprøven.\n\n• **Trafikkskilt** du sjelden ser i hverdagen er en klassisk felle. Mange kjenner igjen de vanlige skiltene, men sliter med de mer uvanlige. [Vår skilt-quiz](/quiz/skilt) og [trafikkskilt-artikkel](/laeringsressurser/skilt) gir deg målrettet trening på nettopp dette.'
+            },
+            {
+                title: 'Slik gjør du det annerledes neste gang',
+                type: 'tip',
+                content: 'De to ukene du har til rådighet er nok — hvis du bruker dem riktig.\n\n1. **Les for å forstå, ikke for å bestå**: Som Amundsen sier: målet er ikke å trykke riktig — det er å forstå hvorfor det er riktig. [Myndighetspyramiden](/laeringsressurser/myndighetspyramiden) er et system med logikk. Vikeplikt handler om hvem som er i fare. Bremselengde er fysikk og matematikk. Forstår du prinsippet, klarer du spørsmålet uansett hvordan det er formulert i eTeori.\n\n2. **Bruk god tid på selve prøven**: Du har 90 minutter. Bruk dem. Les hvert spørsmål grundig og tenk gjennom hvert alternativ. De som stryker bruker gjennomsnittlig under 20 minutter. De som består bruker tiden de har.\n\n3. **Øv målrettet — ikke generelt**: Ikke generaløv — finn ut hva du er usikker på og angrip det. Hvis du bommet på vikeplikt, ta vikeplikt-quizen. Hvis du slet med bremselengde, bruk kalkulatoren til du forstår matematikken. Målrettet øving på svake punkter er langt mer effektivt enn å ta tilfeldige prøver på nytt.\n\n4. **Test deg selv under realistiske forhold**: Ta hele prøver på 45 spørsmål med tidsbegrensning. Nervøsitet og tidspress er faktorer — tren på dem. [Vår gratis fullprøve](/quiz?mode=eksamen) er bygget opp nøyaktig som den offisielle prøven hos Statens vegvesen.'
+            }
+        ],
+        faq: [
+            {
+                question: 'Hvor lenge må jeg vente etter stryk på teoriprøven?',
+                answer: 'To uker fra prøvedatoen.'
+            },
+            {
+                question: 'Hva koster det å ta teoriprøven på nytt?',
+                answer: 'Teoriprøven koster 480 kr (2026). Du betaler ny prøveavgift hver gang du tar prøven.'
+            },
+            {
+                question: 'Hvor mange ganger kan jeg ta teoriprøven?',
+                answer: 'Det er ingen grense på antall forsøk, men du må vente to uker mellom hver gang.'
+            },
+            {
+                question: 'Hva er de vanligste grunnene til stryk?',
+                answer: 'For kort forberedelsestid, pugging uten forståelse, og å bruke for lite tid på selve prøven.'
+            },
+            {
+                question: 'Hvilke temaer bør jeg fokusere på?',
+                answer: 'Vikeplikt, bremselengde og trafikkskilt er de vanligste feilkildene. Vi har gratis quiz og kalkulatorer for alle tre.'
             }
         ]
     }
@@ -649,12 +736,12 @@ export const theoryArticles: TheoryTopic[] = [
             {
                 title: '3. Fakta om prøven',
                 type: 'info',
-                content: 'Husk å forhåndsbestille time hos Statens vegvesen og ta med gyldig legitimasjon.\n• Krav: Prøven har 45 spørsmål. Du må ha minst 38 riktige (maks 7 feil) for å bestå.\n• Tid: Du har 90 minutter. Det er mer enn nok tid for de aller fleste, så unngå å stresse.\n• Før prøven: Møt opp uthvilt og ha spist på forhånd. En trøtt hjerne gjør lettere slurvefeil.'
+                content: 'Husk å forhåndsbestille time hos Statens vegvesen og ta med gyldig legitimasjon.\n• Krav: Prøven har 45 spørsmål. Du må ha minst 38 riktige (maks 7 feil) for å bestå.\n• Pris: Teoriprøven koster 680 kr hos Statens vegvesen (2026). Stryker du må du betale på nytt og vente minst 2 uker.\n• Gyldighet: Bestått teoriprøve er gyldig i 3 år — innen den tid må du ha bestått kjøreprøven (oppkjøringen).\n• Varighet: Teoriprøven varer 90 minutter. De fleste er ferdig på under en time.\n• Alderskrav: Du kan ta teoriprøven fra du er 16 år. Du kan søke om time 6 måneder før du fyller 16.\n• Før prøven: Møt opp uthvilt og ha spist på forhånd. En trøtt hjerne gjør lettere slurvefeil.'
             },
             {
                 title: '4. Øv målrettet og effektivt',
                 type: 'tip',
-                content: 'Den beste treningen er å simulere den ekte prøvesituasjonen. På Teori-test.no kan du øve gratis med verktøy som forbereder deg nøyaktig på det som møter deg:\n• [Full prøve-modus](/quiz?mode=eksamen): 45 spørsmål på 90 minutter – akkurat som på trafikkstasjonen.\n• [Ekspresstest](/quiz?mode=hurtig): Raske økter som passer perfekt på mobilen når du har noen minutter ledig.\n• [Fokus-modus](/quiz?mode=fokus): Et smart verktøy som husker hva du svarer feil på, slik at du kun trenger å terpe på svakhetene dine.'
+                content: 'Den beste og gratis treningen er å simulere den ekte prøvesituasjonen. På Teori-test.no kan du øve gratis med verktøy som forbereder deg nøyaktig på det som møter deg:\n• [Full prøve-modus](/quiz?mode=eksamen): 45 spørsmål på 90 minutter – akkurat som på trafikkstasjonen.\n• [Ekspresstest](/quiz?mode=hurtig): Raske økter som passer perfekt på mobilen når du har noen minutter ledig.\n• [Fokus-modus](/quiz?mode=fokus): Et smart verktøy som husker hva du svarer feil på, slik at du kun trenger å terpe på svakhetene dine.'
             }
         ]
     },

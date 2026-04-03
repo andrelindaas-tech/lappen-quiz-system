@@ -32,11 +32,14 @@ export default function QuizContainer({ onReturnHome, onQuizComplete }: QuizCont
     // This runs on init to figure out what type of quiz we are taking based on URL
     const mode: QuizMode = (() => {
         if (category) {
+            const isSkilt = category.toLowerCase() === 'skilt';
+            const isVikeplikt = category.toLowerCase() === 'vikeplikt';
+            
             return {
-                name: `${category.charAt(0).toUpperCase() + category.slice(1)}-test`,
-                questionCount: 15, // Default for category tests unless specified
-                maxErrors: 3,
-                description: `Øv på ${category} spørsmål`,
+                name: isSkilt ? 'Skilt-test' : (isVikeplikt ? 'Vikeplikt-test' : `${category.charAt(0).toUpperCase() + category.slice(1)}-test`),
+                questionCount: (isSkilt || isVikeplikt) ? 10 : 15,
+                maxErrors: isSkilt ? 1 : (isVikeplikt ? 2 : 3),
+                description: isSkilt ? '10 skilte spørsmål - Maks 1 feil' : (isVikeplikt ? '10 spørsmål – maks 2 feil' : `Øv på ${category} spørsmål`),
                 category: category
             }
         } else if (modeParam === 'hurtig') {
@@ -178,19 +181,30 @@ export default function QuizContainer({ onReturnHome, onQuizComplete }: QuizCont
     }
 
     // Dynamic SEO Metadata for Quiz Container
-    const metaTitle = category
-        ? `Teoriprøve: ${category.charAt(0).toUpperCase() + category.slice(1)} | Teori-test.no`
-        : `Start ${mode.name} | Teori-test.no`
+    const metaTitle = (() => {
+        if (category?.toLowerCase() === 'vikeplikt') return 'Vikeplikt-quiz – Øv til teoriprøven | Teori-test.no'
+        if (category?.toLowerCase() === 'skilt') return 'Skilt-quiz – Lær trafikkskilt | Teori-test.no'
+        return category
+            ? `Teoriprøve: ${category.charAt(0).toUpperCase() + category.slice(1)} | Teori-test.no`
+            : `Start ${mode.name} | Teori-test.no`
+    })()
 
-    const metaDescription = category
-        ? `Øv på ${category} spørsmål for førerkort klasse B. Spesialtilpasset øvingsprøve for ${category}.`
-        : `Forbered deg til teoriprøven med vår ${mode.name}.`
+    const metaDescription = (() => {
+        if (category?.toLowerCase() === 'vikeplikt') return 'Test kunnskapene dine om vikeplikt med 10 målrettede spørsmål. Gratis øving til teoriprøven for førerkort klasse B.'
+        if (category?.toLowerCase() === 'skilt') return 'Øv på trafikkskilt med 10 spørsmål. Gratis og uten registrering – perfekt forberedelse til teoriprøven klasse B.'
+        return category
+            ? `Øv på ${category} spørsmål for førerkort klasse B. Spesialtilpasset øvingsprøve for ${category}.`
+            : `Forbered deg til teoriprøven med vår ${mode.name}.`
+    })()
+
+    const canonicalUrl = `https://teori-test.no/quiz${category ? `/${category}` : ''}`
 
     if (loading) {
         return (
             <div className="container">
                 <Helmet>
                     <title>{metaTitle}</title>
+                    <link rel="canonical" href={canonicalUrl} />
                 </Helmet>
                 <div className="loading">
                     Laster spørsmål...
@@ -204,6 +218,7 @@ export default function QuizContainer({ onReturnHome, onQuizComplete }: QuizCont
             <div className="container">
                 <Helmet>
                     <title>Feil | Teori-test.no</title>
+                    <link rel="canonical" href={canonicalUrl} />
                 </Helmet>
                 <div className="error">
                     <h2>Feil ved lasting av quiz</h2>
@@ -226,6 +241,7 @@ export default function QuizContainer({ onReturnHome, onQuizComplete }: QuizCont
             <div className="container">
                 <Helmet>
                     <title>Gjennomgang av svar | Teori-test.no</title>
+                    <link rel="canonical" href={canonicalUrl} />
                 </Helmet>
                 <ReviewMode incorrectAnswers={incorrectAnswers} onRestart={handleRestart} />
             </div>
@@ -251,6 +267,7 @@ export default function QuizContainer({ onReturnHome, onQuizComplete }: QuizCont
             <div className="container">
                 <Helmet>
                     <title>Resultat: {result.passed ? 'Bestått' : 'Ikke bestått'} | Teori-test.no</title>
+                    <link rel="canonical" href={canonicalUrl} />
                 </Helmet>
                 <ResultScreen
                     result={result}
@@ -271,6 +288,7 @@ export default function QuizContainer({ onReturnHome, onQuizComplete }: QuizCont
             <Helmet>
                 <title>{metaTitle}</title>
                 <meta name="description" content={metaDescription} />
+                <link rel="canonical" href={canonicalUrl} />
             </Helmet>
 
             {mode.useTimer && mode.timeLimitMinutes && (
