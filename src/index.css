@@ -1,5 +1,4 @@
 /* Minimalist Design System - Teori-test.no Quiz */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
 
 /* --- Homepage UI Chips --- */
 .theory-chip {
@@ -40,6 +39,14 @@
   --color-bg-secondary: #f3f4f6;
   --color-border: #e5e7eb;
   --color-header-bg: rgba(255, 255, 255, 0.85);
+  
+  /* Motorrom Interactive - Light Mode */
+  --motorrom-bg: #f8fafc;
+  --motorrom-engine: #cbd5e1;
+  --motorrom-engine-front: #94a3b8;
+  --motorrom-wall: #e2e8f0;
+  --motorrom-text: #64748b;
+  --motorrom-label: #475569;
 
   /* Spacing - Enhanced for breathing room */
   --spacing-xs: 0.5rem;
@@ -87,6 +94,14 @@ body.dark-mode {
   /* Highly transparent borders */
   --color-header-bg: rgba(10, 10, 10, 0.75);
   --color-accent-glow: linear-gradient(to right, #3b82f6, #14b8a6);
+
+  /* Motorrom Interactive - Dark Mode */
+  --motorrom-bg: #111111;
+  --motorrom-engine: #333333;
+  --motorrom-engine-front: #1a1a1a;
+  --motorrom-wall: #1a1a1a;
+  --motorrom-text: #888888;
+  --motorrom-label: #aaaaaa;
 
   /* Soft, dark drop shadows and diffused glows */
   --shadow-sm: 0 4px 20px -2px rgba(0, 0, 0, 0.5);
@@ -825,7 +840,7 @@ body.dark-mode .hero-section {
 
 .hero-description {
   color: var(--color-text);
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   line-height: 1.8;
   margin-bottom: var(--spacing-xl);
   max-width: 650px;
@@ -1369,3 +1384,121 @@ body.dark-mode .theory-faq-item {
 .theory-faq-answer p {
   margin-bottom: 0;
 }
+
+/* Final overrides for mobile consistency */
+@media (max-width: 640px) {
+  .header-logo-text,
+  body.dark-mode .header-logo-text {
+    font-size: 0.95rem !important;
+    white-space: nowrap !important;
+  }
+
+  /* Reduce gaps in header to fit everything on one line */
+  header .container > div:first-child {
+    gap: var(--spacing-sm) !important;
+  }
+
+  .nav-tabs {
+    gap: var(--spacing-md) !important;
+    margin-left: var(--spacing-xs) !important;
+  }
+
+  table {
+    display: block !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    white-space: nowrap !important;
+  }
+}
+
+/* ===========================
+   SITE FOOTER
+   =========================== */
+.site-footer {
+  margin-top: 4rem;
+  padding: var(--spacing-xl) 0;
+  border-top: 1px solid var(--color-border);
+  background-color: var(--color-bg);
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.footer-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  max-width: 480px;
+}
+
+.footer-status {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  margin: 0;
+  letter-spacing: 0.01em;
+}
+
+.footer-source {
+  font-size: 0.78rem;
+  color: var(--color-text-light);
+  margin: 0;
+  line-height: 1.5;
+  opacity: 0.75;
+}
+
+.footer-links-block {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.6rem;
+}
+
+.footer-links {
+  display: flex;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.footer-link {
+  font-size: 0.82rem;
+  color: var(--color-text-light);
+  text-decoration: none;
+  opacity: 0.75;
+  transition: opacity 0.15s ease, color 0.15s ease;
+}
+
+.footer-link:hover {
+  opacity: 1;
+  color: var(--color-primary);
+}
+
+.footer-copyright {
+  font-size: 0.78rem;
+  color: var(--color-text-light);
+  opacity: 0.55;
+  margin: 0;
+}
+
+/* Mobile: stack vertically */
+@media (max-width: 640px) {
+  .footer-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.25rem;
+  }
+
+  .footer-links-block {
+    align-items: flex-start;
+  }
+
+  .footer-links {
+    justify-content: flex-start;
+  }
+}

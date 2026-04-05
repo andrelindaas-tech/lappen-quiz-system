@@ -133,16 +133,27 @@ export default function App() {
                 </Routes>
             </main>
 
-            <footer style={{
-                marginTop: 'auto',
-                padding: 'var(--spacing-xl) 0',
-                textAlign: 'center',
-                color: 'var(--color-text-light)',
-                fontSize: 'var(--font-size-sm)',
-                opacity: 0.8
-            }}>
+            <footer className="site-footer">
                 <div className="container">
-                    <p>© 2026 Teori-test.no - Øvingsprøve for førerkort</p>
+                    <div className="footer-inner">
+
+                        {/* Left: source & status */}
+                        <div className="footer-meta">
+                            <p className="footer-status">✓ Sist verifisert og oppdatert: April 2026</p>
+                            <p className="footer-source">Innholdet er basert på Statens vegvesens offisielle læreplan for førerkort klasse&nbsp;B.</p>
+                        </div>
+
+                        {/* Right: links & copyright */}
+                        <div className="footer-links-block">
+                            <nav className="footer-links" aria-label="Foterlenker">
+                                <Link to="/laeringsressurser/om-oss" className="footer-link">Om oss</Link>
+                                <Link to="/laeringsressurser/kontakt" className="footer-link">Kontakt</Link>
+                                <Link to="/laeringsressurser/personvern" className="footer-link">Personvern &amp; Cookies</Link>
+                            </nav>
+                            <p className="footer-copyright">© 2026 Teori-test.no</p>
+                        </div>
+
+                    </div>
                 </div>
             </footer>
         </>

@@ -9,6 +9,8 @@ import { parseInlineLinks } from '../utils/textUtils'
 import { SignIllustration } from './SignIllustration'
 import AuthorityPyramid from './AuthorityPyramid'
 import ReaksjonstidTest from './ReaksjonstidTest'
+import VeimerkingInteraktiv from './VeimerkingInteraktiv'
+import MotorromInteraktiv from './MotorromInteraktiv'
 
 
 // Renders content string with support for paragraphs, bullet lists (- ) and numbered lists (1. )
@@ -188,8 +190,11 @@ export default function TheoryTopic({ topic, onBack, extraComponent }: TheoryTop
                                 <div style={{ marginTop: '1.5rem' }}>
                                     {topic.id === 'bremselengde' && <BrakeCalculator />}
                                     {topic.id === 'vognkort-vekter' && <TrailerWeightSimulator />}
-                                    {topic.id === 'sikkerhetskontroll' && <DashboardWarningSimulator />}
+                                    {section.componentId === 'motorrom' && <MotorromInteraktiv />}
+                                    {section.componentId === 'dashboard' && <DashboardWarningSimulator />}
+                                    {topic.id === 'sikkerhetskontroll' && !section.componentId && <DashboardWarningSimulator />}
                                     {topic.id === 'reaksjonstid' && <ReaksjonstidTest />}
+                                    {topic.id === 'veimerking' && <VeimerkingInteraktiv />}
                                 </div>
                             </div>
                         ) : section.type === 'table' ? (

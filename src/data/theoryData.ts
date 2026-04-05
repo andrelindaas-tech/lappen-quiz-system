@@ -12,6 +12,7 @@ export interface TheorySection {
     content: string
     type: 'text' | 'formula' | 'info' | 'warning' | 'tip' | 'example' | 'signs' | 'calculator' | 'pyramid' | 'table'
     signs?: SignItem[]
+    componentId?: string
 }
 
 export interface TheoryTopic {
@@ -51,7 +52,7 @@ export const theoryTopics: TheoryTopic[] = [
             {
                 title: 'Stopplengdetabell (Oversikt)',
                 type: 'table',
-                content: '<div style="overflow-x: auto; margin-top: 1rem;"><table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem;"><thead><tr style="background-color: var(--color-surface); border-bottom: 2px solid var(--color-border);"><th style="padding: 12px 8px;">Hastighet</th><th style="padding: 12px 8px;">Reaksjonslengde</th><th style="padding: 12px 8px;">Bremselengde (tørr)</th><th style="padding: 12px 8px;">Stopplengde (tørr)</th><th style="padding: 12px 8px;">Stopplengde (våt)</th></tr></thead><tbody><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">30 km/t</td><td style="padding: 12px 8px;">9 m</td><td style="padding: 12px 8px;">4,5 m</td><td style="padding: 12px 8px;"><b>13,5 m</b></td><td style="padding: 12px 8px;">18 m</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">50 km/t</td><td style="padding: 12px 8px;">15 m</td><td style="padding: 12px 8px;">12,5 m</td><td style="padding: 12px 8px;"><b>27,5 m</b></td><td style="padding: 12px 8px;">40 m</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">60 km/t</td><td style="padding: 12px 8px;">18 m</td><td style="padding: 12px 8px;">18 m</td><td style="padding: 12px 8px;"><b>36 m</b></td><td style="padding: 12px 8px;">54 m</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">80 km/t</td><td style="padding: 12px 8px;">24 m</td><td style="padding: 12px 8px;">32 m</td><td style="padding: 12px 8px;"><b>56 m</b></td><td style="padding: 12px 8px;">88 m</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">100 km/t</td><td style="padding: 12px 8px;">30 m</td><td style="padding: 12px 8px;">50 m</td><td style="padding: 12px 8px;"><b>80 m</b></td><td style="padding: 12px 8px;">130 m</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">110 km/t</td><td style="padding: 12px 8px;">33 m</td><td style="padding: 12px 8px;">60,5 m</td><td style="padding: 12px 8px;"><b>93,5 m</b></td><td style="padding: 12px 8px;">154 m</td></tr></tbody></table></div>'
+                content: '<div style="overflow-x: auto; -webkit-overflow-scrolling: touch; margin-top: 1rem;"><table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem;"><thead><tr style="background-color: var(--color-surface); border-bottom: 2px solid var(--color-border);"><th style="padding: 12px 8px;">Hastighet</th><th style="padding: 12px 8px;">Reaksjonslengde</th><th style="padding: 12px 8px;">Bremselengde (tørr)</th><th style="padding: 12px 8px;">Stopplengde (tørr)</th><th style="padding: 12px 8px;">Stopplengde (våt)</th></tr></thead><tbody><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">30 km/t</td><td style="padding: 12px 8px;">9 m</td><td style="padding: 12px 8px;">4,5 m</td><td style="padding: 12px 8px;"><b>13,5 m</b></td><td style="padding: 12px 8px;">18 m</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">50 km/t</td><td style="padding: 12px 8px;">15 m</td><td style="padding: 12px 8px;">12,5 m</td><td style="padding: 12px 8px;"><b>27,5 m</b></td><td style="padding: 12px 8px;">40 m</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">60 km/t</td><td style="padding: 12px 8px;">18 m</td><td style="padding: 12px 8px;">18 m</td><td style="padding: 12px 8px;"><b>36 m</b></td><td style="padding: 12px 8px;">54 m</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">80 km/t</td><td style="padding: 12px 8px;">24 m</td><td style="padding: 12px 8px;">32 m</td><td style="padding: 12px 8px;"><b>56 m</b></td><td style="padding: 12px 8px;">88 m</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">100 km/t</td><td style="padding: 12px 8px;">30 m</td><td style="padding: 12px 8px;">50 m</td><td style="padding: 12px 8px;"><b>80 m</b></td><td style="padding: 12px 8px;">130 m</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">110 km/t</td><td style="padding: 12px 8px;">33 m</td><td style="padding: 12px 8px;">60,5 m</td><td style="padding: 12px 8px;"><b>93,5 m</b></td><td style="padding: 12px 8px;">154 m</td></tr></tbody></table></div>'
             },
             {
                 title: 'Formler',
@@ -97,7 +98,7 @@ export const theoryTopics: TheoryTopic[] = [
             {
                 title: 'Reaksjonslengde — hvor langt kjører du før du bremser?',
                 type: 'table',
-                content: 'Formelen er: **Reaksjonslengde = (fart ÷ 10) × 3 meter**\n\n<div style="overflow-x: auto; margin-top: 1rem;"><table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem;"><thead><tr style="background-color: var(--color-surface); border-bottom: 2px solid var(--color-border);"><th style="padding: 12px 8px;">Hastighet</th><th style="padding: 12px 8px;">Reaksjonslengde</th></tr></thead><tbody><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">30 km/t</td><td style="padding: 12px 8px;">9 meter</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">50 km/t</td><td style="padding: 12px 8px;">15 meter</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">80 km/t</td><td style="padding: 12px 8px;">24 meter</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">100 km/t</td><td style="padding: 12px 8px;">30 meter</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">120 km/t</td><td style="padding: 12px 8px;">36 meter</td></tr></tbody></table></div>\n\nTenk på det slik: ved 80 km/t kjører du nesten tre bilengder før du i det hele tatt begynner å bremse.'
+                content: 'Formelen er: **Reaksjonslengde = (fart ÷ 10) × 3 meter**\n\n<div style="overflow-x: auto; -webkit-overflow-scrolling: touch; margin-top: 1rem;"><table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem;"><thead><tr style="background-color: var(--color-surface); border-bottom: 2px solid var(--color-border);"><th style="padding: 12px 8px;">Hastighet</th><th style="padding: 12px 8px;">Reaksjonslengde</th></tr></thead><tbody><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">30 km/t</td><td style="padding: 12px 8px;">9 meter</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">50 km/t</td><td style="padding: 12px 8px;">15 meter</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">80 km/t</td><td style="padding: 12px 8px;">24 meter</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">100 km/t</td><td style="padding: 12px 8px;">30 meter</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">120 km/t</td><td style="padding: 12px 8px;">36 meter</td></tr></tbody></table></div>\n\nTenk på det slik: ved 80 km/t kjører du nesten tre bilengder før du i det hele tatt begynner å bremse.'
             },
             {
                 title: 'Hva øker reaksjonstiden din?',
@@ -107,7 +108,7 @@ export const theoryTopics: TheoryTopic[] = [
             {
                 title: 'Stopplengde = reaksjonslengde + bremselengde',
                 type: 'table',
-                content: 'Stopplengden er den totale avstanden fra du oppdager faren til bilen faktisk stopper. Bremselengden øker kvadratisk med farten — det vil si at dobbel fart gir firedobbel bremselengde.\n\n<div style="overflow-x: auto; margin-top: 1rem;"><table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem;"><thead><tr style="background-color: var(--color-surface); border-bottom: 2px solid var(--color-border);"><th style="padding: 12px 8px;">Hastighet</th><th style="padding: 12px 8px;">Reaksjonslengde</th><th style="padding: 12px 8px;">Bremselengde (tørr)</th><th style="padding: 12px 8px;">Stopplengde</th></tr></thead><tbody><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">30 km/t</td><td style="padding: 12px 8px;">9 m</td><td style="padding: 12px 8px;">4,5 m</td><td style="padding: 12px 8px;">13,5 m</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">50 km/t</td><td style="padding: 12px 8px;">15 m</td><td style="padding: 12px 8px;">12,5 m</td><td style="padding: 12px 8px;">27,5 m</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">80 km/t</td><td style="padding: 12px 8px;">24 m</td><td style="padding: 12px 8px;">32 m</td><td style="padding: 12px 8px;">56 m</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">100 km/t</td><td style="padding: 12px 8px;">30 m</td><td style="padding: 12px 8px;">50 m</td><td style="padding: 12px 8px;">80 m</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">120 km/t</td><td style="padding: 12px 8px;">36 m</td><td style="padding: 12px 8px;">72 m</td><td style="padding: 12px 8px;">108 m</td></tr></tbody></table></div>'
+                content: 'Stopplengden er den totale avstanden fra du oppdager faren til bilen faktisk stopper. Bremselengden øker kvadratisk med farten — det vil si at dobbel fart gir firedobbel bremselengde.\n\n<div style="overflow-x: auto; -webkit-overflow-scrolling: touch; margin-top: 1rem;"><table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem;"><thead><tr style="background-color: var(--color-surface); border-bottom: 2px solid var(--color-border);"><th style="padding: 12px 8px;">Hastighet</th><th style="padding: 12px 8px;">Reaksjonslengde</th><th style="padding: 12px 8px;">Bremselengde (tørr)</th><th style="padding: 12px 8px;">Stopplengde</th></tr></thead><tbody><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">30 km/t</td><td style="padding: 12px 8px;">9 m</td><td style="padding: 12px 8px;">4,5 m</td><td style="padding: 12px 8px;">13,5 m</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">50 km/t</td><td style="padding: 12px 8px;">15 m</td><td style="padding: 12px 8px;">12,5 m</td><td style="padding: 12px 8px;">27,5 m</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">80 km/t</td><td style="padding: 12px 8px;">24 m</td><td style="padding: 12px 8px;">32 m</td><td style="padding: 12px 8px;">56 m</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">100 km/t</td><td style="padding: 12px 8px;">30 m</td><td style="padding: 12px 8px;">50 m</td><td style="padding: 12px 8px;">80 m</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">120 km/t</td><td style="padding: 12px 8px;">36 m</td><td style="padding: 12px 8px;">72 m</td><td style="padding: 12px 8px;">108 m</td></tr></tbody></table></div>'
             },
             {
                 title: 'Tips: Vil du regne på andre forhold?',
@@ -616,7 +617,13 @@ export const theoryTopics: TheoryTopic[] = [
             {
                 title: 'Hva er sikkerhetskontroll?',
                 type: 'text',
-                content: 'På oppkjøringen vil sensor alltid starte med å gi deg en oppgave knyttet til bilens tekniske stand. Mange gruer seg til dette, men det er egentlig en veldig overkommelig oppgave når du kjenner systematikken.\n\nIfølge Vegtrafikklovens § 23 er det du som fører som har ansvaret for at kjøretøyet er i forsvarlig og forskriftsmessig stand før kjøringen begynner. Sikkerhetskontrollen gjennomføres alltid i to deler: Først ber sensor deg om å utføre en praktisk sjekk på bilen. Deretter stiller de et kontrollspørsmål om hva konsekvensen er dersom noe er feil.\n\nHer er de vanligste oppgavene du kan få på førerprøven, delt inn i kategorier.'
+                content: 'På oppkjøringen vil sensor alltid starte med å gi deg en oppgave knyttet til bilens tekniske stand. Mange gruer seg til dette, men det er egentlig en veldig overkommelig oppgave når du kjenner systematikken.\n\nIfølge Vegtrafikklovens § 23 er det du som fører som har ansvaret for at kjøretøyet er i forsvarlig og forskriftsmessig stand før kjøringen begynner. Sikkerhetskontrollen gjennomføres som regel i to deler: Først kan sensor be deg om å utføre en praktisk sjekk på bilen. Eller stille deg et teknisk spørsmål, og ofte et oppfølgingsspørsmål om hvordan man sjekker dette.\n\nHer er de vanligste oppgavene du kan få på førerprøven, delt inn i kategorier.'
+            },
+            {
+                title: 'Interaktiv Guide: Hva sjekker du i motorrommet?',
+                type: 'calculator',
+                componentId: 'motorrom',
+                content: 'Klikk på de ulike symbolene under for å lære deg de viktigste sjekkpunktene i motorrommet før oppkjøringen.'
             },
             {
                 title: '1. Bremser',
@@ -646,6 +653,7 @@ export const theoryTopics: TheoryTopic[] = [
             {
                 title: 'Test deg selv: Det interaktive dashbordet',
                 type: 'calculator',
+                componentId: 'dashboard',
                 content: 'På oppkjøringen forventes det at du forstår den grunnleggende logikken bak varsellampene, og spesielt fargekoden. Rødt lys betyr at du må stanse bilen på et trygt sted og slå av motoren. Gult lys betyr som regel at du kan fortsette kjøringen, men at bilen må kontrolleres. Prøv simulatoren under for å teste refleksene dine.'
             }
         ]
@@ -1013,5 +1021,166 @@ export const theoryArticles: TheoryTopic[] = [
                 answer: 'Skilt brukes for å regulere spesifikke og lokale utfordringer på en vei, for eksempel en farlig sving eller et kryss med mye trafikk. Spesielle lokale bestemmelser (skilt) veier alltid tyngre enn generelle regler.'
             }
         ]
+    },
+    {
+        id: 'veimerking',
+        title: 'Veimerking til teoriprøven – komplett visuell guide (Klasse B)',
+        icon: '🛣️',
+        shortDescription: 'Lær all norsk veimerking til teoriprøven med visuelle illustrasjoner. Sperrelinje, varselslinje, gangfelt, pilmerking og mer — med eksempler og forklaringer.',
+        color: '#0ea5e9',
+        seoTitle: 'Veimerking til teoriprøven – komplett visuell guide (Klasse B) | Teori-test.no',
+        seoDescription: 'Lær all norsk veimerking til teoriprøven med visuelle illustrasjoner. Sperrelinje, varselslinje, gangfelt, pilmerking og mer — med eksempler og forklaringer.',
+        sections: [
+            {
+                title: 'Veimerking til teoriprøven',
+                type: 'text',
+                content: 'Vegoppmerkingen er det mange undervurderer til teoriprøven. Skilt kan du lese — men linjene i veibanen krever at du forstår hva de betyr når du kjører forbi dem i 80 km/t uten tid til å tenke. Denne guiden gir deg oversikt over alle viktige markeringer med visuelle eksempler.'
+            },
+            {
+                title: 'Hva er veimerking?',
+                type: 'info',
+                content: 'Veimerking er striper, symboler og tekst som er malt direkte på veibanen. De forteller deg hva du kan og ikke kan gjøre i akkurat det punktet du befinner deg. I motsetning til skilt som varsler deg i forkant, gjelder vegoppmerkingen der og da — akkurat der linjen er.\n\nVegoppmerkingen er plassert under skilt og lyssignal i myndighetspyramiden — men den er likevel bindende å følge der den ikke overstyres av noe høyere opp.'
+            },
+            {
+                title: 'Hvite linjer — de vanligste',
+                type: 'table',
+                content: `<div style="display:flex;flex-direction:column;gap:1.5rem">
+  <div>
+    <strong style="font-size:1rem;color:var(--color-text)">Kjørefeltlinje (stiplet hvit)</strong>
+    <div style="background:#2d2d2d;border-radius:6px;padding:12px 16px;margin:8px 0;position:relative;overflow:hidden">
+      <div style="font-size:10px;color:#999;margin-bottom:6px">→ Felt A</div>
+      <div style="height:3px;background:repeating-linear-gradient(90deg,white 0px,white 20px,transparent 20px,transparent 32px);border-radius:2px"></div>
+      <div style="font-size:10px;color:#999;margin-top:6px">→ Felt B</div>
+    </div>
+    <p style="color:var(--color-text-light);line-height:1.6;margin:0">Den vanligste linjen på norske veier. Skiller kjørefelt i samme kjøreretning. Du kan krysse den når det er trygt og lovlig — for eksempel ved feltskifte eller forbikjøring der forholdene tillater det.</p>
+  </div>
+  <div>
+    <strong style="font-size:1rem;color:var(--color-text)">Sperrelinje (heltrukken hvit)</strong>
+    <div style="background:#2d2d2d;border-radius:6px;padding:12px 16px;margin:8px 0">
+      <div style="font-size:10px;color:#999;margin-bottom:6px">→ Felt A</div>
+      <div style="height:3px;background:white;border-radius:2px"></div>
+      <div style="font-size:10px;color:#999;margin-top:6px">→ Felt B</div>
+    </div>
+    <p style="color:var(--color-text-light);line-height:1.6;margin:0">Forbyr overkjøring. Du har ikke lov til å krysse en hvit sperrelinje, hverken for å bytte felt eller kjøre forbi andre. Den brukes der sikt eller trafikkforhold gjør forbikjøring farlig.</p>
+  </div>
+  <div>
+    <strong style="font-size:1rem;color:var(--color-text)">Dobbel heltrukken linje</strong>
+    <div style="background:#2d2d2d;border-radius:6px;padding:12px 16px;margin:8px 0">
+      <div style="font-size:10px;color:#999;margin-bottom:6px">→ Din retning</div>
+      <div style="height:2.5px;background:white;border-radius:2px;margin-bottom:4px"></div>
+      <div style="height:2.5px;background:white;border-radius:2px"></div>
+      <div style="font-size:10px;color:#999;margin-top:6px">← Motgående trafikk</div>
+    </div>
+    <p style="color:var(--color-text-light);line-height:1.6;margin:0">Absolutt forbud mot å krysse fra begge sider. Brukes på veier med mye trafikk eller særlig dårlig sikt. Ingen unntak.</p>
+  </div>
+  <div>
+    <strong style="font-size:1rem;color:var(--color-text)">Kombinerte linjer (én stiplet + én heltrukken)</strong>
+    <div style="background:#2d2d2d;border-radius:6px;padding:12px 16px;margin:8px 0">
+      <div style="font-size:10px;color:#9fe1cb;margin-bottom:6px">→ Kan krysse (stiplet side)</div>
+      <div style="height:2.5px;background:repeating-linear-gradient(90deg,white 0px,white 16px,transparent 16px,transparent 26px);border-radius:2px;margin-bottom:4px"></div>
+      <div style="height:2.5px;background:white;border-radius:2px"></div>
+      <div style="font-size:10px;color:#f09595;margin-top:6px">← Kan IKKE krysse (heltrukken side)</div>
+    </div>
+    <p style="color:var(--color-text-light);line-height:1.6;margin:0">Her gjelder regelen for linjen nærmest deg. Kjører du på siden med den stiplete linjen, kan du krysse om det er trygt. Kjører du på siden med den heltrukne, er det forbudt.</p>
+  </div>
+</div>`
+            },
+            {
+                title: 'Interaktiv guide — klikk og lær',
+                type: 'calculator',
+                content: 'Klikk på linjene under for å se hva de betyr:'
+            },
+            {
+                title: 'Gule linjer',
+                type: 'text',
+                content: '**Gul varsellinje**\nEn gul stiplet linje advarer om at sikten fremover er begrenset — for eksempel i en kurve eller over en bakketopp. Gul varsellinje betyr at det er risikabelt å kjøre forbi, men ikke nødvendigvis forbudt.\n\n**Gul sperrelinje**\nHeltrukken gul linje forbyr kjøring til venstre for linjen. Dette er spesielt viktig å kjenne til: det er forbudt å krysse eller kjøre til venstre for gul sperrelinje — selv om du har god sikt.\n\n**Kantlinje**\nMarkerer yttergrensen av kjørebanen mot veikanten eller skulder. Hvit kantlinje er standard — gul kantlinje langs fortau eller parkering indikerer stans- og parkeringsforbud.'
+            },
+            {
+                title: 'Tverrgående merking',
+                type: 'text',
+                content: '**Stopplinje**\nEn bred hvit tverrstrek som markerer nøyaktig hvor du skal stoppe — ved rødt lys, stoppskilt eller på annen måte når du er pålagt å stanse. Du skal stoppe før linjen, ikke på den.\n\n**Vikelinje (haifinner)**\nEn rekke hvite trekanter på tvers av kjøreretningen din. De peker mot deg og forteller deg at du har vikeplikt. Du skal stanse ved vikelinjen om nødvendig.\n\n**Gangfelt**\nBrede hvite striper på tvers av veien. Fotgjengere har forkjørsrett i gangfelt — du plikter å stanse for fotgjengere som er i gangfeltet eller på vei ut i det.\n\n**Sykkelkryssing**\nStiplet oppmerking som ligner gangfelt men for syklister. Syklister har ikke automatisk forkjørsrett her — du må vurdere situasjonen.'
+            },
+            {
+                title: 'Pilmerking',
+                type: 'info',
+                content: 'Piler i kjørefeltet forteller deg hvilken retning du skal kjøre. Der det er sperrelinjer er pilene påbud — du må kjøre i den retningen pilen viser. Der det bare er feltlinjer er pilen en anbefaling, men du bør følge den.\n\nTypiske kombinasjoner du ser i kryss: rett frem, venstre, høyre, eller kombinasjoner som "rett frem eller høyre".'
+            },
+            {
+                title: 'Symboler i veibanen',
+                type: 'text',
+                content: 'Vikesymbol (omvendt trekant malt i asfalten) varsler deg om kommende vikeplikt — det gir deg ekstra tid til å forberede deg, og brukes ofte i forkant av vikelinjen.\n\nGangsymbol viser at fotgjengere bruker det området. Sykkelsymbol markerer sykkelfelt — her gjelder trafikkreglenes bestemmelser om sykkelfelt.\n\nTekst som "STOPP", "BUSS", "TAXI" og "SKOLE" gir stedsspesifikk informasjon. "STOPP" hører sammen med stoppskilt. "BUSS" markerer kollektivfelt.'
+            },
+            {
+                title: 'De vanligste feilene på teoriprøven',
+                type: 'warning',
+                content: 'Disse scenarioene dukker jevnlig opp:\n\n- **Kombinerte linjer** er den hyppigste kilden til feil — mange tror begge sider av en kombinert linje har samme regler. Husk: linjen nærmest deg bestemmer.\n- **Gul sperrelinje** forveksles med hvit sperrelinje. Gul gjelder spesielt mot venstre — du kan ikke krysse eller kjøre til venstre for den uansett sikt.\n- **Gangfelt vs. sykkelkryssing** — fotgjengere har forkjørsrett i gangfelt, syklister har det ikke automatisk i sykkelkryssing.\n- **Vikelinje vs. stopplinje** — ved vikelinje kan du kjøre sakte forbi hvis veien er fri. Ved stopplinje skal du alltid stanse helt.'
+            },
+            {
+                title: 'Klar til å teste?',
+                type: 'tip',
+                content: 'Veimerking er en fast del av teoriprøven. Kombiner denne artikkelen med [vår gratis øvingsprøve](/quiz) for å se om du klarer å identifisere riktig linje i typiske situasjonsbilder. Sjekk også [trafikkskilt-guiden](/laeringsressurser/skilt) for å forstå samspillet mellom skilt og veimerking.'
+            }
+        ],
+        faq: [
+            {
+                question: 'Hva er forskjellen på sperrelinje og varsellinje?',
+                answer: 'Sperrelinje (heltrukken) forbyr overkjøring fullstendig. Varsellinje (stiplet, lengre streker enn normal feltlinje) advarer om dårlig sikt og anbefaler å ikke kjøre forbi, men forbyr det ikke direkte.'
+            },
+            {
+                question: 'Kan jeg krysse en hvit sperrelinje for å svinge inn i en avkjørsel?',
+                answer: 'Ja — du kan krysse en hvit sperrelinje for å kjøre inn eller ut av en eiendom, men du kan ikke krysse den for forbikjøring.'
+            },
+            {
+                question: 'Hva betyr gul varsellinje kontra hvit varsellinje?',
+                answer: 'Gul varsellinje varsler om begrenset sikt for sikker forbikjøring. Hvit varsellinje indikerer risiko ved feltskifte. Begge er stiplete linjer med lengre streker enn vanlig feltlinje.'
+            },
+            {
+                question: 'Hva er et sperreområde?',
+                answer: 'Et sperreområde er avgrenset av heltrukne linjer med skravering inni. Det er forbudt å kjøre inn i et sperreområde.'
+            },
+            {
+                question: 'Må jeg stoppe ved vikelinje?',
+                answer: 'Ikke alltid — du skal stoppe dersom det er nødvendig for å overholde vikeplikten. Er veien fri, kan du passere vikelinjen uten å stanse.'
+            }
+        ]
     }
-]
+];
+
+export const theoryUtilityPages: TheoryTopic[] = [
+    {
+        id: 'personvern',
+        title: 'Personvern & Cookies – Slik tar vi vare på dine data',
+        icon: '🛡️',
+        shortDescription: 'Teori-test.no er bygget på personvern. Vi samler ikke inn personopplysninger og lagrer dine resultater lokalt i din egen nettleser.',
+        color: '#6366f1',
+        seoTitle: 'Personvern & Cookies | Teori-test.no',
+        seoDescription: 'Les om hvordan Teori-test.no håndterer personvern og cookies. Vi samler ikke inn personopplysninger og lagrer dine resultater lokalt i nettleseren din.',
+        sections: [
+            {
+                title: 'Kort oppsummert',
+                type: 'info',
+                content: '• Vi krever **ingen registrering** eller innlogging.\n• Vi samler **ikke** inn navn, e-post eller telefonnummer.\n• Dine feilsvar i "Fokus mode" lagres **kun lokalt** i din egen nettleser.\n• Vi bruker kun anonymisert statistikk for å forbedre tjenesten.'
+            },
+            {
+                title: 'Hva vi samler inn',
+                type: 'text',
+                content: 'Teori-test.no er designet for å være så anonym som overhodet mulig. Du kan bruke hele tjenesten uten å oppgi en eneste personopplysning. Vi har ingen database som lagrer hvem du er eller hva du svarer på prøvene våre.'
+            },
+            {
+                title: 'Lokal lagring (localStorage)',
+                type: 'tip',
+                content: 'Når du svarer feil på et spørsmål, lagres dette spørsmålet i nettleseren din slik at du kan øve på det i "Fokus mode". Dette lagres i det som kalles *localStorage*. Dette er data som aldri forlater din maskin, og som vi ikke har tilgang til. Du kan når som helst slette disse dataene ved å tømme nettleserdataene dine.'
+            },
+            {
+                title: 'Cookies og statistikk',
+                type: 'text',
+                content: 'Vi bruker Google Analytics for å forstå hvordan nettstedet vårt blir brukt (f.eks. hvilke artikler som er mest populære). Dataene som sendes til Google er anonymisert (IP-maskering), og kan ikke spores tilbake til deg som enkeltperson.'
+            },
+            {
+                title: 'Kontakt oss',
+                type: 'text',
+                content: 'Dersom du har spørsmål om personvern, er du velkommen til å sende oss en e-post. Vi svarer så raskt vi kan.'
+            }
+        ]
+    }
+];

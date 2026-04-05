@@ -77,7 +77,7 @@ export default function StartScreen() {
                     Teori-test.no er laget for deg som snart skal ta teoriprøven for klasse B. Her finner du kvalitetssikrede teorioppgaver som dekker hele pensum – fra fartsgrenser og vikeplikt til vegoppmerking og trafikkskilt.
                 </p>
                 <p style={{ fontSize: '1.1rem', color: 'var(--color-text)', marginBottom: '2.5rem', maxWidth: '700px', margin: '0 auto 2.5rem auto', lineHeight: '1.6' }}>
-                    Vi oppdaterer stadig siden med nye spørsmål og smarte funksjoner for å hjelpe deg på vei mot førerkortet. Du trenger ikke å lage bruker, betale, eller laste ned noe. Det er bare å sette i gang.
+                    I tillegg til øvingsprøver finner du interaktive læringsartikler med visuelle guider og simulatorer — for temaer som veimerking, <Link to="/laeringsressurser/bremselengde" style={{ color: 'var(--color-primary)', textDecoration: 'underline' }}>bremselengde</Link> og vikeplikt. Du trenger ikke å lage bruker, betale, eller laste ned noe.
                 </p>
                 
                 <button 
@@ -93,12 +93,12 @@ export default function StartScreen() {
                         <span>Gratis øving</span>
                     </div>
                     <div className="feature-item">
-                        <span className="feature-icon">🆕</span>
-                        <span>Nye spørsmål</span>
+                        <span className="feature-icon">📚</span>
+                        <span>Interaktive guider</span>
                     </div>
                     <div className="feature-item">
-                        <span className="feature-icon" style={{ transform: 'scale(1.2)', display: 'inline-block' }}>🇳🇴</span>
-                        <span>Norske forhold</span>
+                        <img src="/norway-flag.svg" alt="Norsk flagg" style={{ height: '1.1rem', width: 'auto', verticalAlign: 'middle', borderRadius: '2px' }} />
+                        <span>Offisielt Pensum</span>
                     </div>
                 </div>
             </div>

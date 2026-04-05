@@ -1,7 +1,7 @@
 // Teori-siden — Oversikt over alle emner
 import { useParams, useNavigate } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
-import { theoryTopics, theoryArticles } from '../data/theoryData'
+import { theoryTopics, theoryArticles, theoryUtilityPages } from '../data/theoryData'
 import TheoryTopic from './TheoryTopic'
 import { TilhengerKalkulator } from './TilhengerKalkulator'
 import { parseInlineLinks } from '../utils/textUtils'
@@ -17,7 +17,7 @@ export default function TheoryPage() {
     const selectedTopicId = articleId || null
 
     // Combine topics and articles for content lookup
-    const allContent = [...theoryTopics, ...theoryArticles]
+    const allContent = [...theoryTopics, ...theoryArticles, ...theoryUtilityPages]
     const selectedTopic = allContent.find(t => t.id === selectedTopicId)
 
     // Determine base metadata (overridden by TheoryTopic if one is selected)
