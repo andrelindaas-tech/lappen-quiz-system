@@ -152,8 +152,8 @@ export const theoryTopics: TheoryTopic[] = [
         shortDescription: 'Vikeplikt er et av de vanligste stryketemaene på teoriprøven. Her får du en oversiktlig gjennomgang av de viktigste reglene du må kunne for førerkort klasse B. Tren på vikeplikt med våre øvingsspørsmål når du har lest gjennom.',
         icon: '🔺',
         color: '#ea580c',
-        seoTitle: 'Vikeplikt – høyreregelen, myndighetspyramiden og rundkjøring | Teori-test.no',
-        seoDescription: 'Lær alle vikepliktreglene til teoriprøven. Høyreregelen, myndighetspyramiden, rundkjøring, trikk og fotgjengere – med eksempelspørsmål.',
+        seoTitle: 'Vikeplikt i trafikken – høyreregelen, rundkjøring og gangfelt | Teori-test.no',
+        seoDescription: 'Lær vikepliktreglene til teoriprøven: høyreregelen, vikeplikt i rundkjøring, gangfelt og fotgjengere – med eksempelspørsmål og forklaringer.',
         sections: [
             {
                 title: '1. Grunnregelen: Høyreregelen',
