@@ -1,4 +1,4 @@
-// Teoridata — Alt innhold på norsk
+﻿// Teoridata — Alt innhold på norsk
 
 export interface SignItem {
     name: string
@@ -1207,6 +1207,96 @@ export const theoryArticles: TheoryTopic[] = [
                 answer: 'Ikke alltid — du skal stoppe dersom det er nødvendig for å overholde vikeplikten. Er veien fri, kan du passere vikelinjen uten å stanse.'
             }
         ]
+    },
+    {
+        id: 'rundkjoring',
+        title: 'Vikeplikt i rundkjøring',
+        icon: '🔄',
+        shortDescription: 'Lær reglene for vikeplikt, blinking og plassering i rundkjøring',
+        color: '#2563eb',
+        seoTitle: 'Vikeplikt i rundkjøring – regler, blinking og vanlige feil | Teori-test.no',
+        seoDescription: 'Hvem har vikeplikt i rundkjøring? Lær reglene for innkjøring, feltskifte og blinking – med vanlige teoriprøve-feller og eksempler fra Statens vegvesen.',
+        sections: [
+            {
+                title: 'Vikeplikt i rundkjøring',
+                type: 'text',
+                content: 'Rundkjøringen er ett av de temaene flest gjør feil på i teoriprøven. Reglene er enkle i teorien, men i praksis er det mange situasjoner som forvirrer — særlig feltskifte inne i rundkjøringen, riktig bruk av blinklys og hva som gjelder når du kjører ut.\n\nDenne artikkelen går gjennom alle vikepliktreglene i rundkjøring, svarer på de vanligste spørsmålene og hjelper deg å unngå fellene på teoriprøven.'
+            },
+            {
+                title: 'Hovedregelen: Du har alltid vikeplikt ved innkjøring',
+                type: 'info',
+                content: 'Når du kjører inn i en rundkjøring, har du vikeplikt for all trafikk som allerede befinner seg inne i rundkjøringen. Dette gjelder uansett hvilken retning de kommer fra — høyreregelen gjelder ikke her.\n\nDu skal senke farten når du nærmer deg rundkjøringen, stoppe om nødvendig ved vikepliktlinjen, og vente til det er trygt å kjøre inn. Vikepliktskiltet ved inngangen bekrefter dette. I Norge er alle rundkjøringer skiltet med vikeplikt ved innkjøringen.'
+            },
+            {
+                title: 'Slik bruker du blinklys i rundkjøring',
+                type: 'warning',
+                content: 'Blinklys er et av de vanligste feilpunktene i rundkjøring. Her er reglene:\n\n**Ved høyresving (første avkjøring):** Blink til høyre i god tid før du kjører inn i rundkjøringen. Behold blinklyset på til du har kjørt ut.\n\n**Ved kjøring rett frem:** Ikke blink ved innkjøring. Blink til høyre når du er på høyde med utkjøringen rett før din egen.\n\n**Ved venstresving (mer enn halvveis rundt):** Det er ikke påbudt, men det anbefales å blinke til venstre ved innkjøring for å vise at du skal langt rundt. Bytt til høyre blink når du er på høyde med utkjøringen rett før din egen.\n\n**Tidspunkt:** I tettbygd strøk bør du blinke 50–80 meter før. Utenfor tettbygd strøk 150–250 meter før.'
+            },
+            {
+                title: 'Feltskifte inne i rundkjøringen',
+                type: 'warning',
+                content: 'Dette er det temaet som forvirrer flest. Når du allerede er inne i rundkjøringen og skal skifte felt, har du vikeplikt for trafikk i feltet du skal inn i. Flettereglene gjelder ikke i rundkjøringer.\n\nEksempel: Du kjører i ytre felt og vil inn i indre felt — da har du vikeplikt for biler i indre felt.\n\nHusk alltid å blinke ved feltskifte, også inne i rundkjøringen, og sjekk blindsonen.'
+            },
+            {
+                title: 'Riktig plassering i rundkjøringen',
+                type: 'info',
+                content: 'Plassering og blinking henger tett sammen — du skal plassere deg slik at det er lett for andre å forstå hvor du skal.\n\nI rundkjøringer med to kjørefelt gjelder følgende tommelfingerregel:\n\n- **Høyre kjørefelt:** For høyresving og kjøring rett frem (1. og 2. avkjøring)\n- **Venstre kjørefelt:** For venstresving og U-sving (3. og 4. avkjøring)\n\nI mini-rundkjøringer med ett kjørefelt gjelder de samme vikepliktreglene. Store kjøretøy kan kjøre over den lave midtøyen om nødvendig.'
+            },
+            {
+                title: 'Vikeplikt når du kjører ut',
+                type: 'info',
+                content: 'Når du kjører ut av rundkjøringen har du vikeplikt for fotgjengere og syklister i gangfelt og sykkelfelt ved utkjøringen. Du har ikke vikeplikt for biler som fortsatt kjører inne i rundkjøringen.\n\nHusk å blinke til høyre i god tid — begynn når du passerer utkjøringen rett før din egen. Sjekk alltid blindsonen før du svinger ut.'
+            },
+            {
+                title: 'Trikk, buss og utrykningskjøretøy',
+                type: 'text',
+                content: 'Trikk har ikke vikeplikt i rundkjøring. Du skal alltid gi vikeplikt for trikk, siden trikken kjører på skinner og ikke kan svinge unna.\n\nBuss følger de samme reglene som andre kjøretøy i rundkjøringen.\n\nUtrykningskjøretøy med blålys og sirene har alltid forkjørsrett. Kjør til høyre og stopp for å gi fri passasje.'
+            },
+            {
+                title: 'De vanligste feilene på teoriprøven',
+                type: 'tip',
+                content: '- Tror høyreregelen gjelder ved innkjøring — den gjør det ikke\n- Glemmer å blinke til høyre ved utkjøring\n- Tror venstreblink ved innkjøring er påbudt — det er anbefalt, ikke lovpålagt\n- Glemmer vikeplikt for fotgjengere ved utkjøring\n- Tror trikk har vikeplikt i rundkjøring — det har den ikke\n- Glemmer blinklys og vikeplikt ved feltskifte inne i rundkjøringen\n- Tror flettereglene gjelder inne i rundkjøringen — de gjør det ikke'
+            },
+            {
+                title: 'Klar til å teste kunnskapen?',
+                type: 'info',
+                content: 'Ta vikeplikt-quizen og se om du kan svare rett på de vanligste rundkjøringsspmålene fra teoriprøven.'
+            }
+        ],
+        faq: [
+            {
+                question: 'Hvem har vikeplikt i rundkjøring?',
+                answer: 'Den som kjører inn i rundkjøringen har alltid vikeplikt for trafikk som allerede er inne i rundkjøringen. Høyreregelen gjelder ikke i rundkjøringer.'
+            },
+            {
+                question: 'Har man vikeplikt fra venstre i rundkjøring?',
+                answer: 'Nei. Inne i rundkjøringen gjelder ikke høyreregelen. All trafikk som allerede er inne har forkjørsrett over deg som kjører inn, uansett hvilken side de kommer fra.'
+            },
+            {
+                question: 'Hvem har vikeplikt ved feltskifte i rundkjøring?',
+                answer: 'Den som skifter felt har vikeplikt for trafikk i feltet han skal inn i. Flettereglene gjelder ikke i rundkjøringer. Husk å bruke blinklys og sjekk blindsonen.'
+            },
+            {
+                question: 'Skal man blinke til venstre inn i rundkjøringen?',
+                answer: 'Det er ikke påbudt, men anbefalt hvis du skal mer enn halvveis rundt. Det hjelper andre trafikanter å forstå at du ikke skal umiddelbart til høyre. Blink alltid til høyre når du nærmer deg din utkjøring.'
+            },
+            {
+                question: 'Har trikk vikeplikt i rundkjøring?',
+                answer: 'Nei. Trikk har ikke vikeplikt i rundkjøring. Du skal alltid gi vikeplikt for trikk, siden trikken kjører på skinner og ikke kan svinge unna.'
+            },
+            {
+                question: 'Hvem har vikeplikt ut av rundkjøring?',
+                answer: 'Den som kjører ut av rundkjøringen har vikeplikt for fotgjengere og syklister i gangfelt og sykkelfelt ved utkjøringen. Husk å blinke til høyre og sjekk blindsonen.'
+            },
+            {
+                question: 'Har man alltid vikeplikt fra høyre?',
+                answer: 'Høyreregelen gjelder i vanlige kryss uten skilt, men ikke i rundkjøringer. I rundkjøringen er det alltid de som allerede er inne som har forkjørsrett.'
+            },
+            {
+                question: 'Gjelder flettereglene i rundkjøring?',
+                answer: 'Nei. Flettereglene gjelder ikke i rundkjøringer. Den som skifter felt har alltid vikeplikt, uansett posisjon.'
+            }
+        ]
     }
 ];
 
@@ -1244,96 +1334,6 @@ export const theoryUtilityPages: TheoryTopic[] = [
                 title: 'Kontakt oss',
                 type: 'text',
                 content: 'Dersom du har spørsmål om personvern, er du velkommen til å sende oss en e-post. Vi svarer så raskt vi kan.'
-            }
-        ]
-    },
-    {
-        id: 'rundkjoring',
-        title: 'Vikeplikt i rundkjøring',
-        icon: '🔄',
-        shortDescription: 'Lær reglene for vikeplikt, blinking og plassering i rundkjøring',
-        color: '#2563eb',
-        seoTitle: 'Vikeplikt i rundkjøring – regler, blinking og vanlige feil | Teori-test.no',
-        seoDescription: 'Hvem har vikeplikt i rundkjøring? Lær reglene for innkjøring, feltskifte og blinking – med vanlige teoriprøve-feller og eksempler fra Statens vegvesen.',
-        sections: [
-            {
-                title: 'Vikeplikt i rundkjøring',
-                type: 'text',
-                content: 'Rundkjøringen er ett av de temaene flest gjør feil på i teoriprøven. Reglene er enkle i teorien, men i praksis er det mange situasjoner som forvirrer — særlig feltskifte inne i rundkjøringen, riktig bruk av blinklys og hva som gjelder når du kjører ut.\n\nDenne artikkelen går gjennom alle vikepliktreglene i rundkjøring, svarer på de vanligste spørsmålene og hjelper deg å unngå fellene på teoriprøven.'
-            },
-            {
-                title: 'Hovedregelen: Du har alltid vikeplikt ved innkjøring',
-                type: 'info',
-                content: 'Når du kjører inn i en rundkjøring, har du vikeplikt for all trafikk som allerede befinner seg inne i rundkjøringen. Dette gjelder uansett hvilken retning de kommer fra — høyreregelen gjelder ikke her.\n\nDu skal senke farten når du nærmer deg rundkjøringen, stoppe om nødvendig ved vikepliktlinjen, og vente til det er trygt å kjøre inn. Vikepliktskiltet ved inngangen bekrefter dette. I Norge er alle rundkjøringer skiltet med vikeplikt ved innkjøringen.'
-            },
-            {
-                title: 'Slik bruker du blinklys i rundkjøring',
-                type: 'warning',
-                content: 'Blinklys er et av de vanligste feilpunktene i rundkjøring. Her er reglene:\n\n**Ved høyresving (første avkjøring):** Blink til høyre i god tid før du kjører inn i rundkjøringen. Behold blinklyset på til du har kjørt ut.\n\n**Ved kjøring rett frem:** Ikke blink ved innkjøring. Blink til høyre når du er på høyde med utkjøringen rett før din egen.\n\n**Ved venstresving (mer enn halvveis rundt):** Det er ikke påbudt, men det anbefales å blinke til venstre ved innkjøring for å vise at du skal langt rundt. Bytt til høyre blink når du er på høyde med utkjøringen rett før din egen.\n\n**Tidspunkt:** I tettbygd strøk bør du blinke 50–80 meter før. Utenfor tettbygd strøk 150–250 meter før.\n\n**Unntak:** Hvis det er flere avkjøringer inne i blinklysperioden som du ikke skal bruke, vent med å blinke til rett etter den siste avkjøringen du passerer.'
-            },
-            {
-                title: 'Feltskifte inne i rundkjøringen',
-                type: 'warning',
-                content: 'Dette er det temaet som forvirrer flest. Når du allerede er inne i rundkjøringen og skal skifte felt, har du vikeplikt for trafikk i feltet du skal inn i. Flettereglene gjelder ikke i rundkjøringer.\n\nEksempel: Du kjører i ytre felt og vil inn i indre felt — da har du vikeplikt for biler i indre felt.\n\nHusk alltid å blinke ved feltskifte, også inne i rundkjøringen, og sjekk blindsonen.'
-            },
-            {
-                title: 'Riktig plassering i rundkjøringen',
-                type: 'info',
-                content: 'Plassering og blinking henger tett sammen — du skal plassere deg slik at det er lett for andre å forstå hvor du skal.\n\nI rundkjøringer med to kjørefelt gjelder følgende tommelfingerregel:\n\n- **Høyre kjørefelt:** For høyresving og kjøring rett frem (1. og 2. avkjøring)\n- **Venstre kjørefelt:** For venstresving og U-sving (3. og 4. avkjøring)\n\nI mini-rundkjøringer med ett kjørefelt gjelder de samme vikepliktreglene. Store kjøretøy kan kjøre over den lave midtøyen om nødvendig.'
-            },
-            {
-                title: 'Vikeplikt når du kjører ut',
-                type: 'info',
-                content: 'Når du kjører ut av rundkjøringen har du vikeplikt for fotgjengere og syklister i gangfelt og sykkelfelt ved utkjøringen. Du har ikke vikeplikt for biler som fortsatt kjører inne i rundkjøringen.\n\nHusk å blinke til høyre i god tid — begynn når du passerer utkjøringen rett før din egen. Sjekk alltid blindsonen før du svinger ut.'
-            },
-            {
-                title: 'Trikk, buss og utrykningskjøretøy',
-                type: 'text',
-                content: 'Trikk har ikke vikeplikt i rundkjøring. Du skal alltid gi vikeplikt for trikk, siden trikken kjører på skinner og ikke kan svinge unna.\n\nBuss følger de samme reglene som andre kjøretøy i rundkjøringen.\n\nUtrykningskjøretøy med blålys og sirene har alltid forkjørsrett. Kjør til høyre og stopp for å gi fri passasje.'
-            },
-            {
-                title: 'De vanligste feilene på teoriprøven',
-                type: 'tip',
-                content: '- Tror høyreregelen gjelder ved innkjøring — den gjør det ikke\n- Glemmer å blinke til høyre ved utkjøring\n- Tror venstreblink ved innkjøring er påbudt — det er anbefalt, ikke lovpålagt\n- Glemmer vikeplikt for fotgjengere ved utkjøring\n- Tror trikk har vikeplikt i rundkjøring — det har den ikke\n- Glemmer blinklys og vikeplikt ved feltskifte inne i rundkjøringen\n- Tror flettereglene gjelder inne i rundkjøringen — de gjør det ikke'
-            },
-            {
-                title: 'Klar til å teste kunnskapen?',
-                type: 'info',
-                content: 'Ta vikeplikt-quizen og se om du kan svare rett på de vanligste rundkjøringsspørsmålene fra teoriprøven.'
-            }
-        ],
-        faq: [
-            {
-                question: 'Hvem har vikeplikt i rundkjøring?',
-                answer: 'Den som kjører inn i rundkjøringen har alltid vikeplikt for trafikk som allerede er inne i rundkjøringen. Høyreregelen gjelder ikke i rundkjøringer.'
-            },
-            {
-                question: 'Har man vikeplikt fra venstre i rundkjøring?',
-                answer: 'Nei. Inne i rundkjøringen gjelder ikke høyreregelen. All trafikk som allerede er inne har forkjørsrett over deg som kjører inn, uansett hvilken side de kommer fra.'
-            },
-            {
-                question: 'Hvem har vikeplikt ved feltskifte i rundkjøring?',
-                answer: 'Den som skifter felt har vikeplikt for trafikk i feltet han skal inn i. Flettereglene gjelder ikke i rundkjøringer. Husk å bruke blinklys og sjekk blindsonen.'
-            },
-            {
-                question: 'Skal man blinke til venstre inn i rundkjøringen?',
-                answer: 'Det er ikke påbudt, men anbefalt hvis du skal mer enn halvveis rundt. Det hjelper andre trafikanter å forstå at du ikke skal umiddelbart til høyre. Blink alltid til høyre når du nærmer deg din utkjøring.'
-            },
-            {
-                question: 'Har trikk vikeplikt i rundkjøring?',
-                answer: 'Nei. Trikk har ikke vikeplikt i rundkjøring. Du skal alltid gi vikeplikt for trikk, siden trikken kjører på skinner og ikke kan svinge unna.'
-            },
-            {
-                question: 'Hvem har vikeplikt ut av rundkjøring?',
-                answer: 'Den som kjører ut av rundkjøringen har vikeplikt for fotgjengere og syklister i gangfelt og sykkelfelt ved utkjøringen. Husk å blinke til høyre og sjekk blindsonen.'
-            },
-            {
-                question: 'Har man alltid vikeplikt fra høyre?',
-                answer: 'Høyreregelen gjelder i vanlige kryss uten skilt, men ikke i rundkjøringer. I rundkjøringen er det alltid de som allerede er inne som har forkjørsrett.'
-            },
-            {
-                question: 'Gjelder flettereglene i rundkjøring?',
-                answer: 'Nei. Flettereglene gjelder ikke i rundkjøringer. Den som skifter felt har alltid vikeplikt, uansett posisjon.'
             }
         ]
     }
