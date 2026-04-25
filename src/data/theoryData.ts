@@ -35,7 +35,7 @@ export const theoryTopics: TheoryTopic[] = [
         icon: '🛑',
         shortDescription: 'Lær å beregne bremselengde, reaksjonslengde og stopplengde',
         color: '#dc2626',
-        seoTitle: 'Bremselengde kalkulator – regn ut stopplengde | Teori-test.no',
+        seoTitle: 'Bremselengde og stopplengde – formel og kalkulator | Teori-test.no',
         seoDescription: 'Bruk vår interaktive kalkulator og regn ut bremselengde og stopplengde for 30–120 km/t på tørr vei, våt vei og is. Med formel og eksempler.',
         hasCalculator: true,
         sections: [
@@ -958,8 +958,8 @@ export const theoryArticles: TheoryTopic[] = [
         icon: '👮',
         shortDescription: 'I trafikken vil du ofte oppleve at ulike signaler gir deg motstridende beskjeder. Hvem skal du høre på? Lær hierarkiet for å unngå fellene på prøven.',
         color: '#3b82f6',
-        seoTitle: 'Myndighetspyramiden: Hvem bestemmer i trafikken? (Klasse B)',
-        seoDescription: 'Lær myndighetspyramiden til teoriprøven. Vi forklarer rekkefølgen for politi, trafikklys, trafikkskilt og trafikkregler, og viser deg typiske eksamensfeller.',
+        seoTitle: 'Myndighetspyramiden i trafikken – rekkefølge og regler | Teori-test.no',
+        seoDescription: 'Myndighetspyramiden viser hvem som har høyest myndighet i trafikken: politi øverst, deretter trafikklys, skilt og trafikkregler. Se rekkefølgen med eksempler fra teoriprøven.',
         sections: [
             {
                 title: 'Hva er myndighetspyramiden?',
@@ -1029,7 +1029,7 @@ export const theoryArticles: TheoryTopic[] = [
         shortDescription: 'Lær all norsk veimerking til teoriprøven med visuelle illustrasjoner. Sperrelinje, varselslinje, gangfelt, pilmerking og mer — med eksempler og forklaringer.',
         color: '#0ea5e9',
         seoTitle: 'Veimerking til teoriprøven – komplett visuell guide (Klasse B) | Teori-test.no',
-        seoDescription: 'Lær all norsk veimerking til teoriprøven med visuelle illustrasjoner. Sperrelinje, varselslinje, gangfelt, pilmerking og mer — med eksempler og forklaringer.',
+        seoDescription: 'Hva betyr hvit sperrelinje, varsellinje, kombinert linje eller vikelinje? Komplett guide til norsk veimerking med visuelle illustrasjoner – til teoriprøven.',
         sections: [
             {
                 title: 'Veimerking til teoriprøven',
