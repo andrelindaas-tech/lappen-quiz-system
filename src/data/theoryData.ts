@@ -74,6 +74,32 @@ export const theoryTopics: TheoryTopic[] = [
                 type: 'info',
                 content: '• Fart — Dobbel fart gir 4 ganger lengre bremselengde\n• Veidekke — Is, snø, regn øker bremselengden betydelig\n• Dekkenes tilstand — Slitte dekk gir dårligere grep\n• Bremsenes tilstand — Slitte bremser reduserer bremsekraften\n• Bilens vekt — Tung bil trenger lengre avstand\n• Helning — Nedoverbakke øker bremselengden\n\nKlar til å teste kunnskapen? Ta [øvingsprøven om fartsregler](/quiz/fartsregler) eller les om [vikeplikt](/laeringsressurser/vikeplikt).'
             }
+        ],
+        faq: [
+            {
+                question: "Hva er bremselengden ved 80 km/t på tørr vei?",
+                answer: "Ved 80 km/t er bremselengden 32 meter på tørr vei. Reaksjonslengden er 24 meter, så total stopplengde blir 56 meter."
+            },
+            {
+                question: "Hva er forskjellen på bremselengde og stopplengde?",
+                answer: "Bremselengde er avstanden fra du begynner å bremse til bilen stopper helt. Stopplengde er bremselengde pluss reaksjonslengde — altså hele avstanden fra du oppdager faren til bilen står stille."
+            },
+            {
+                question: "Hvordan regner man ut bremselengde?",
+                answer: "Formelen er: (fart ÷ 10)² ÷ 2. Eksempel ved 80 km/t: (80 ÷ 10)² ÷ 2 = 64 ÷ 2 = 32 meter."
+            },
+            {
+                question: "Hvor lang er stopplengden ved 80 km/t på is?",
+                answer: "På is er bremselengden opptil 10 ganger lengre enn på tørr vei. Ved 80 km/t blir stopplengden på is over 344 meter."
+            },
+            {
+                question: "Hva påvirker bremselengden?",
+                answer: "Bremselengden påvirkes av fart, veidekke (tørr/våt/is/snø), dekkenes tilstand, bremsenes tilstand, bilens vekt og om du kjører i bakke."
+            },
+            {
+                question: "Hva er stopplengden ved 50 km/t?",
+                answer: "Ved 50 km/t er reaksjonslengden 15 meter og bremselengden 12,5 meter på tørr vei. Total stopplengde er 27,5 meter."
+            }
         ]
     },
     {
@@ -206,6 +232,28 @@ export const theoryTopics: TheoryTopic[] = [
                 title: '7. Utkjøring fra privat vei',
                 type: 'text',
                 content: 'Du har alltid vikeplikt for all trafikk (inkludert fotgjengere og syklister) når du kjører ut fra parkeringsplasser og garasjer, privat eiendom eller gårdsplass, bensinstasjoner, og gang- og sykkelvei.\n\nEr du i tvil i trafikken, er det beste rådet å ta det rolig og la den andre passere. Det er alltid bedre å vente litt enn å skape en farlig situasjon.\n\nKlar til å teste kunnskapen? [Les også hvordan du består teoriprøven på første forsøk](/laeringsressurser/tips-eksamen) når eksamensdagen nærmer seg.'
+            }
+        ],
+        faq: [
+            {
+                question: 'Hva er vikeplikt?',
+                answer: 'Vikeplikt betyr at du må vente og la andre trafikanter passere før du kan kjøre videre. Du har vikeplikt når skilt, trafikklys, oppmerking eller trafikkregler krever det.'
+            },
+            {
+                question: 'Hva er høyreregelen?',
+                answer: 'Høyreregelen sier at du skal gi vikeplikt for trafikk som kommer fra høyre, når det ikke er skiltet eller oppmerkert noe annet. Regelen gjelder i kryss der ingen har forkjørsrett.'
+            },
+            {
+                question: 'Har man vikeplikt i rundkjøring?',
+                answer: 'Ja, du har vikeplikt for trafikk som allerede er inne i rundkjøringen. Du skal stoppe eller vike for biler som kjører i selve rundkjøringen før du kjører inn.'
+            },
+            {
+                question: 'Hva betyr vikeplikt for fotgjengere?',
+                answer: 'Du skal alltid gi fotgjengere vikeplikt i gangfelt. Du må også gi vikeplikt for fotgjengere når du svinger inn på en sidevei eller ut fra en parkeringsplass.'
+            },
+            {
+                question: 'Hvem har vikeplikt i et T-kryss?',
+                answer: 'I et T-kryss uten skilt gjelder høyreregelen normalt. Den som kjører inn i krysset fra sidevei har vikeplikt for trafikk på hovedveien, men høyreregelen avgjør ellers.'
             }
         ]
     },
@@ -1019,6 +1067,22 @@ export const theoryArticles: TheoryTopic[] = [
             {
                 question: 'Hvorfor overstyrer skilt de generelle trafikkreglene?',
                 answer: 'Skilt brukes for å regulere spesifikke og lokale utfordringer på en vei, for eksempel en farlig sving eller et kryss med mye trafikk. Spesielle lokale bestemmelser (skilt) veier alltid tyngre enn generelle regler.'
+            },
+            {
+                question: 'Hva er myndighetspyramiden i trafikken?',
+                answer: 'Myndighetspyramiden viser hvem som har høyest myndighet i trafikken. Rekkefølgen fra øverst til nederst er: 1) Politi og dirigering, 2) Trafikklys, 3) Trafikkskilt og vegoppmerking, 4) Trafikkregler.'
+            },
+            {
+                question: 'Hvem har høyest myndighet i trafikken?',
+                answer: 'Politiet har høyest myndighet i trafikken. Hvis en politibetjent dirigerer trafikken, skal du følge politiets anvisninger selv om trafikklyset viser grønt.'
+            },
+            {
+                question: 'Hva overstyrer hva i myndighetspyramiden?',
+                answer: 'Politidirigeringen overstyrer trafikklys. Trafikklys overstyrer trafikkskilt. Trafikkskilt overstyrer de generelle trafikkreglene. Politiet er alltid øverst.'
+            },
+            {
+                question: 'Hva er riktig om myndighetspyramiden på teoriprøven?',
+                answer: 'På teoriprøven er det vanlig å bli testet på rekkefølgen: politi øverst, deretter trafikklys, så skilt og vegoppmerking, og til slutt trafikkregler nederst. Politiets anvisninger gjelder alltid, uansett hva skilt eller lys viser.'
             }
         ]
     },
