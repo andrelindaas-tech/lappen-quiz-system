@@ -1,4 +1,4 @@
-﻿// Teoridata — Alt innhold på norsk
+// Teoridata — Alt innhold på norsk
 
 export interface SignItem {
     name: string
@@ -1020,6 +1020,11 @@ export const theoryArticles: TheoryTopic[] = [
                 content: '1. POLITI (Manuell dirigering)\n2. LYSSIGNAL (Trafikklys)\n3. SKILT & OPPMERKING\n4. TRAFIKKREGLER & FORSKRIFTER'
             },
             {
+                title: 'Illustrasjon av pyramiden',
+                type: 'pyramid',
+                content: ''
+            },
+            {
                 title: 'Nivå 1: Politi og manuell dirigering (Øverste myndighet)',
                 type: 'warning',
                 content: 'På den absolutte toppen av pyramiden finner vi mennesker med formell myndighet til å dirigere trafikken. Deres tegn og anvisninger overstyrer absolutt alle andre reguleringer – inkludert røde trafikklys, stoppskilt, oppmerking i veien og generelle trafikkregler.\n\nHvem har denne myndigheten? Selv om vi gjerne refererer til dette som "politi", gjelder det ikke utelukkende dem. Statens vegvesen, Tolletaten og militærpolitiet (MP) har også lovhjemmel til å dirigere trafikk, og du plikter å følge deres anvisninger på nøyaktig lik linje med politiet. (Skolepatruljer har ikke samme formelle myndighet, men du har likevel en plikt til å stoppe for dem av hensyn til sikkerheten).\n\nHvorfor er det slik? Mennesker har evnen til å vurdere og tilpasse seg situasjoner i sanntid. Hvis det har skjedd en alvorlig ulykke, et lyskryss har hengt seg opp, eller det pågår veiarbeid, må autorisert personell kunne overstyre den forhåndsprogrammerte teknologien for å rydde opp i kaoset og ivareta sikkerheten. Viser betjenten at du skal kjøre, så kjører du, selv om lyset lyser rødt.'
@@ -1038,11 +1043,6 @@ export const theoryArticles: TheoryTopic[] = [
                 title: 'Nivå 4: Trafikkregler (Nederst i pyramiden)',
                 type: 'text',
                 content: 'Helt i bunnen, som en grunnmur for all ferdsel i samfunnet, ligger de generelle trafikkreglene og forskriftene. Dette er basisreglene vi alltid forholder oss til når det verken er politi, trafikklys eller skilt til stede for å regulere situasjonen.\n\nHøyreregelen: Den aller viktigste og mest brukte regelen på dette nivået er høyreregelen. Hvis du kjører gjennom et rolig boligfelt uten lyskryss og uten noen form for vikepliktskilt, er det høyreregelen (Nivå 4) som dikterer at du har vikeplikt for all trafikk som kommer fra din høyre side. Les vår komplette guide til [vikeplikt](/laeringsressurser/vikeplikt).'
-            },
-            {
-                title: 'Illustrasjon av pyramiden',
-                type: 'pyramid',
-                content: ''
             },
             {
                 title: 'Hva er riktig om myndighetspyramiden på teoriprøven? De vanligste fellene',

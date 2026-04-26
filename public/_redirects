@@ -1,4 +1,26 @@
-/teori/vognkort-og-vekt    /laeringsressurser/vognkort-vekter    301
-/laeringsressurser/vognkort-og-vekt    /laeringsressurser/vognkort-vekter    301
-/teori/tips-eksamen    /laeringsressurser/tips-eksamen    301
+# Redirects fra gamle /teori/-stier til /laeringsressurser/
+/teori/bremselengde                /laeringsressurser/bremselengde             301
+/teori/reaksjonstid                /laeringsressurser/reaksjonstid             301
+/teori/vikeplikt                   /laeringsressurser/vikeplikt                301
+/teori/skilt                       /laeringsressurser/skilt                    301
+/teori/sikkerhet                   /laeringsressurser/sikkerhet                301
+/teori/miljo                       /laeringsressurser/miljo                    301
+/teori/stans-og-parkering          /laeringsressurser/stans-og-parkering       301
+/teori/vognkort-vekter             /laeringsressurser/vognkort-vekter          301
+/teori/vognkort-og-vekt            /laeringsressurser/vognkort-vekter          301
+/teori/sikkerhetskontroll          /laeringsressurser/sikkerhetskontroll       301
+/teori/stroket-teoriproven         /laeringsressurser/stroket-teoriproven      301
+/teori/oppkjoring                  /laeringsressurser/oppkjoring               301
+/teori/tips-eksamen                /laeringsressurser/tips-eksamen             301
+/teori/ovingskjoring               /laeringsressurser/ovingskjoring            301
+/teori/promille                    /laeringsressurser/promille                 301
+/teori/tilhenger                   /laeringsressurser/tilhenger                301
+/teori/fartsgrenser                /laeringsressurser/fartsgrenser             301
+/teori/myndighetspyramiden         /laeringsressurser/myndighetspyramiden      301
+/teori/veimerking                  /laeringsressurser/veimerking               301
+/teori/rundkjoring                 /laeringsressurser/rundkjoring              301
+
+# Intern redirect (gammel URL-variant)
+/laeringsressurser/vognkort-og-vekt    /laeringsressurser/vognkort-vekter      301
+
 /*    /index.html   200
