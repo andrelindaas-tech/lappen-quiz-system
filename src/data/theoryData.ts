@@ -1,5 +1,12 @@
 // Teoridata — Alt innhold på norsk
 
+export interface MiniQuizQuestion {
+    question: string
+    options: string[]
+    correct: string
+    explanation: string
+}
+
 export interface SignItem {
     name: string
     description: string
@@ -10,9 +17,10 @@ export interface SignItem {
 export interface TheorySection {
     title: string
     content: string
-    type: 'text' | 'formula' | 'info' | 'warning' | 'tip' | 'example' | 'signs' | 'calculator' | 'pyramid' | 'table'
+    type: 'text' | 'formula' | 'info' | 'warning' | 'tip' | 'example' | 'signs' | 'calculator' | 'pyramid' | 'table' | 'component'
     signs?: SignItem[]
     componentId?: string
+    component?: string
 }
 
 export interface TheoryTopic {
@@ -26,17 +34,18 @@ export interface TheoryTopic {
     seoTitle?: string
     seoDescription?: string
     faq?: { question: string, answer: string }[]
+    miniQuiz?: MiniQuizQuestion[]
 }
 
 export const theoryTopics: TheoryTopic[] = [
     {
         id: 'bremselengde',
         title: 'Bremselengde kalkulator – regn ut stopplengde | Teori-test.no',
-        icon: '🛑',
-        shortDescription: 'Lær å beregne bremselengde, reaksjonslengde og stopplengde',
+        icon: '🚗',
+        shortDescription: 'Bruk kalkulatoren og tast inn hastighet — se bremselengde og stopplengde for tørr vei, våt vei og is. Med formel og øvingsoppgaver til teoriprøven.',
         color: '#dc2626',
         seoTitle: 'Bremselengde og stopplengde – formel og kalkulator | Teori-test.no',
-        seoDescription: 'Bruk vår interaktive kalkulator og regn ut bremselengde og stopplengde for 30–120 km/t på tørr vei, våt vei og is. Med formel og eksempler.',
+        seoDescription: 'Tast inn hastighet og se bremselengde for tørr vei, våt vei og is — direkte i kalkulatoren. Med formel, bremsefaktorer, vannplaning og øvingsoppgaver til teoriprøven.',
         hasCalculator: true,
         sections: [
             {
@@ -47,7 +56,7 @@ export const theoryTopics: TheoryTopic[] = [
             {
                 title: 'Prøv kalkulatoren!',
                 type: 'calculator',
-                content: 'Bruk kalkulatoren under for å se nøyaktig stopplengde ved din hastighet – på tørr vei, våt vei og is.\n\nBruk kalkulatoren nedenfor til å se hvordan ulike hastigheter påvirker bremselengden. Test med 30, 50, 80 og 100 km/t for å se forskjellen!'
+                content: 'Kalkulatoren nedenfor viser stopplengde (bremselengde + reaksjonslengde) for ulike hastigheter og veiforhold. Bremselengden alene er stopplengden minus reaksjonslengden. **Er du kun ute etter bremselengden, finner du den i den grønnmarkerte raden i tabellen nederst.**'
             },
             {
                 title: 'Stopplengdetabell (Oversikt)',
@@ -73,6 +82,21 @@ export const theoryTopics: TheoryTopic[] = [
                 title: 'Faktorer som påvirker bremselengden',
                 type: 'info',
                 content: '• Fart — Dobbel fart gir 4 ganger lengre bremselengde\n• Veidekke — Is, snø, regn øker bremselengden betydelig\n• Dekkenes tilstand — Slitte dekk gir dårligere grep\n• Bremsenes tilstand — Slitte bremser reduserer bremsekraften\n• Bilens vekt — Tung bil trenger lengre avstand\n• Helning — Nedoverbakke øker bremselengden\n\nKlar til å teste kunnskapen? Ta [øvingsprøven om fartsregler](/quiz/fartsregler) eller les om [vikeplikt](/laeringsressurser/vikeplikt).'
+            },
+            {
+                title: 'Slik endres bremselengden med veiforhold',
+                type: 'table',
+                content: '<div style="overflow-x: auto; -webkit-overflow-scrolling: touch; margin-top: 1rem;"><table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem;"><thead><tr style="background-color: var(--color-surface); border-bottom: 2px solid var(--color-border);"><th style="padding: 12px 8px;">Veiforhold</th><th style="padding: 12px 8px;">Bremsefaktor</th><th style="padding: 12px 8px;">Eksempel: 80 km/t (32 m tørr)</th></tr></thead><tbody><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">Tørr asfalt</td><td style="padding: 12px 8px;"><b>1×</b></td><td style="padding: 12px 8px;">32 m</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">Våt asfalt</td><td style="padding: 12px 8px;"><b>2×</b></td><td style="padding: 12px 8px;">64 m</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">Vått vinterføre</td><td style="padding: 12px 8px;"><b>4×</b></td><td style="padding: 12px 8px;">128 m</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">Is / snø</td><td style="padding: 12px 8px;"><b>8–10×</b></td><td style="padding: 12px 8px;">256–320 m</td></tr><tr><td style="padding: 12px 8px;">Vannplaning</td><td style="padding: 12px 8px;"><b>∞</b></td><td style="padding: 12px 8px;">Bremser virker ikke</td></tr></tbody></table></div>'
+            },
+            {
+                title: 'Øvingsoppgaver — fart og føre kombinert',
+                type: 'text',
+                content: 'Test deg selv på disse to kombinasjonsoppgavene:\n\n**Oppgave 1:** Du kjører 60 km/t på vått vinterføre. Hva er bremselengden?\nBremselengde tørr = (60÷10)² ÷ 2 = 18 m. Vått vinterføre = 4×: **18 × 4 = 72 meter**\n\n**Oppgave 2:** Du dobler farten fra 50 til 100 km/t på tørr asfalt. Hva skjer med bremselengden?\nVed 50 km/t: (50÷10)² ÷ 2 = 12,5 m. Ved 100 km/t: (100÷10)² ÷ 2 = 50 m. **Bremselengden firedobles.**\n\nHusk: Dobbel fart = firedobbel bremselengde. Dette er den viktigste huskeregelen på teoriprøven.'
+            },
+            {
+                title: 'Vannplaning — når bremselengden blir uendelig',
+                type: 'warning',
+                content: 'Vannplaning oppstår når vannet ikke rekker å presses vekk under dekket, og bilen begynner å gli på et vannlag. Dette skjer typisk ved høy fart, slitte dekk eller mye vann på veien.\n\nNår du hydraplaner (vannplaner):\n- Dekket mister kontakt med veibanen\n- Bremsene virker ikke\n- Rattet responderer ikke\n- Bilen lar seg ikke styres\n\n**Hva du skal gjøre:** Ikke brems hardt. Ta foten av gassen, hold rattet stødig og la bilen sakke av seg selv til dekket får kontakt igjen.\n\n**Forebygging:** Reduser farten ved kraftig regn, skift dekk i tide og kjør i hjulsporene til bilen foran (der vannet er presset vekk).'
             }
         ],
         faq: [
@@ -99,6 +123,38 @@ export const theoryTopics: TheoryTopic[] = [
             {
                 question: "Hva er stopplengden ved 50 km/t?",
                 answer: "Ved 50 km/t er reaksjonslengden 15 meter og bremselengden 12,5 meter på tørr vei. Total stopplengde er 27,5 meter."
+            }
+        ],
+        miniQuiz: [
+            {
+                question: "Hva er bremselengden din om du nødbremser på tørr asfalt og kjører 60 km/t?",
+                options: ["18 meter", "25 meter", "36 meter", "64 meter"],
+                correct: "18 meter",
+                explanation: "Bruk huskeregelen: hastighet × hastighet ÷ 200.\n\n60 × 60 = 3600\n3600 ÷ 200 = 18 meter\n\nMerk: stopplengden er 36 meter (18m bremselengde + 18m reaksjonslengde), men spørsmålet gjelder kun bremselengden."
+            },
+            {
+                question: "Bremselengden er 20 meter på tørr asfalt. Hva blir den på våt asfalt?",
+                options: ["10 meter", "20 meter", "40 meter", "80 meter"],
+                correct: "40 meter",
+                explanation: "Våt asfalt dobler alltid bremselengden sammenlignet med tørr asfalt.\n\n20 meter × 2 = 40 meter\n\nHuskeregel: tørr → våt = gang med 2."
+            },
+            {
+                question: "Du dobler farten fra 50 til 100 km/t. Hva skjer med bremselengden?",
+                options: ["Den dobles", "Den tredobles", "Den firedobles", "Den blir åtte ganger lengre"],
+                correct: "Den firedobles",
+                explanation: "Når farten dobles, firedobles bremselengden. Dette er den viktigste huskeregelen.\n\nVed 50 km/t: 50 × 50 ÷ 200 = 12,5 meter\nVed 100 km/t: 100 × 100 ÷ 200 = 50 meter\n12,5 × 4 = 50 meter ✓"
+            },
+            {
+                question: "Hva skjer med bremselengden ved vannplaning?",
+                options: ["Den dobles", "Den firedobles", "Den blir ti ganger lengre", "Bremselengden er uendelig"],
+                correct: "Bremselengden er uendelig",
+                explanation: "Ved vannplaning mister dekket kontakt med veien og bilen flyter på et vannlag.\n\nBremsene virker ikke — bremselengden er i praksis uendelig.\n\nHva gjør du? Slipp gassen rolig, ikke brems brått, hold rattet rett."
+            },
+            {
+                question: "Bremselengden er 32 meter på tørr asfalt ved 80 km/t. Hva blir den på vått vinterføre?",
+                options: ["64 meter", "96 meter", "128 meter", "256 meter"],
+                correct: "128 meter",
+                explanation: "Vått vinterføre gir 4 ganger lengre bremselengde enn tørr asfalt.\n\n32 meter × 4 = 128 meter\n\nHuskeregel: tørr → vinterføre = gang med 4."
             }
         ]
     },
@@ -516,8 +572,8 @@ export const theoryTopics: TheoryTopic[] = [
         icon: '🅿️',
         shortDescription: 'Lær forskjellen mellom stans og parkering, avstandsreglene (kryss, gangfelt, busslomme) og unngå fellene på teoriprøven.',
         color: '#dc2626',
-        seoTitle: 'Stans og parkering: Forskjellen du må kunne til teoriprøven',
-        seoDescription: 'Sliter du med reglene for stans og parkering? Lær forskjellen, avstandsreglene (kryss, gangfelt, busslomme) og unngå fellene på teoriprøven for bil.',
+        seoTitle: 'Stans og parkering – regler og avstander til teoriprøven | Teori-test.no',
+        seoDescription: 'Lær forskjellen på stans og parkering, avstandsreglene ved kryss, gangfelt og busslomme — og hva som gjelder på forkjørsvei. Unngå fellene på teoriprøven.',
         sections: [
             {
                 title: 'Stans og parkering: Hva er egentlig forskjellen?',
@@ -1223,6 +1279,12 @@ export const theoryArticles: TheoryTopic[] = [
                 content: 'Rundkjøringen er ett av de temaene flest gjør feil på i teoriprøven. Reglene er enkle i teorien, men i praksis er det mange situasjoner som forvirrer — særlig feltskifte inne i rundkjøringen, riktig bruk av blinklys og hva som gjelder når du kjører ut.\n\nDenne artikkelen går gjennom alle vikepliktreglene i rundkjøring, svarer på de vanligste spørsmålene og hjelper deg å unngå fellene på teoriprøven.'
             },
             {
+                title: 'Se det i praksis',
+                type: 'component',
+                content: '',
+                component: 'RundkjoringAnimasjon'
+            },
+            {
                 title: 'Hovedregelen: Du har alltid vikeplikt ved innkjøring',
                 type: 'info',
                 content: 'Når du kjører inn i en rundkjøring, har du vikeplikt for all trafikk som allerede befinner seg inne i rundkjøringen. Dette gjelder uansett hvilken retning de kommer fra — høyreregelen gjelder ikke her.\n\nDu skal senke farten når du nærmer deg rundkjøringen, stoppe om nødvendig ved vikepliktlinjen, og vente til det er trygt å kjøre inn. Vikepliktskiltet ved inngangen bekrefter dette. I Norge er alle rundkjøringer skiltet med vikeplikt ved innkjøringen.'
@@ -1260,7 +1322,7 @@ export const theoryArticles: TheoryTopic[] = [
             {
                 title: 'Klar til å teste kunnskapen?',
                 type: 'info',
-                content: 'Ta vikeplikt-quizen og se om du kan svare rett på de vanligste rundkjøringsspmålene fra teoriprøven.'
+                content: 'Ta vikeplikt-quizen og se om du kan svare rett på de vanligste rundkjøringsspørsmålene fra teoriprøven. Les også vår komplette guide om [vikeplikt generelt](/laeringsressurser/vikeplikt).'
             }
         ],
         faq: [

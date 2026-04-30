@@ -11,6 +11,8 @@ import AuthorityPyramid from './AuthorityPyramid'
 import ReaksjonstidTest from './ReaksjonstidTest'
 import VeimerkingInteraktiv from './VeimerkingInteraktiv'
 import MotorromInteraktiv from './MotorromInteraktiv'
+import RundkjoringAnimasjon from './RundkjoringAnimasjon'
+import MiniQuiz from './MiniQuiz'
 
 
 // Renders content string with support for paragraphs, bullet lists (- ) and numbered lists (1. )
@@ -197,6 +199,10 @@ export default function TheoryTopic({ topic, onBack, extraComponent }: TheoryTop
                                     {topic.id === 'veimerking' && <VeimerkingInteraktiv />}
                                 </div>
                             </div>
+                        ) : section.type === 'component' ? (
+                            <div className="theory-section-content">
+                                {section.component === 'RundkjoringAnimasjon' && <RundkjoringAnimasjon />}
+                            </div>
                         ) : section.type === 'table' ? (
                             <div className="theory-section-content" dangerouslySetInnerHTML={{ __html: section.content }} />
                         ) : (
@@ -223,6 +229,15 @@ export default function TheoryTopic({ topic, onBack, extraComponent }: TheoryTop
                     </div>
                 )}
                 
+                {topic.miniQuiz && topic.miniQuiz.length > 0 && (
+                    <div className="theory-section theory-section-info" style={{ marginTop: '0' }}>
+                        <h3 className="theory-section-title">Test deg selv</h3>
+                        <div className="theory-section-content">
+                            <MiniQuiz questions={topic.miniQuiz} />
+                        </div>
+                    </div>
+                )}
+
                 {extraComponent && (
                     <div className="theory-extra-component" style={{ marginTop: '2rem' }}>
                         {extraComponent}

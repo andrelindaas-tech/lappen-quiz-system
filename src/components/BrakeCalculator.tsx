@@ -92,7 +92,7 @@ export default function BrakeCalculator() {
                 <div className="calc-result-row">
                     <div className="calc-result-label">
                         <span className="calc-dot" style={{ backgroundColor: '#22c55e' }}></span>
-                        Tørr vei
+                        Stopplengde tørr vei
                     </div>
                     <div className="calc-bar-container">
                         <div
@@ -109,7 +109,7 @@ export default function BrakeCalculator() {
                 <div className="calc-result-row">
                     <div className="calc-result-label">
                         <span className="calc-dot" style={{ backgroundColor: '#f59e0b' }}></span>
-                        Våt vei
+                        Stopplengde våt vei
                     </div>
                     <div className="calc-bar-container">
                         <div
@@ -126,7 +126,7 @@ export default function BrakeCalculator() {
                 <div className="calc-result-row">
                     <div className="calc-result-label">
                         <span className="calc-dot" style={{ backgroundColor: '#ef4444' }}></span>
-                        Is/snø
+                        Stopplengde is/snø
                     </div>
                     <div className="calc-bar-container">
                         <div
@@ -147,9 +147,9 @@ export default function BrakeCalculator() {
                     <thead>
                         <tr>
                             <th>Komponent</th>
-                            <th>Tørr vei</th>
-                            <th>Våt vei</th>
-                            <th>Is/snø</th>
+                            <th>Stopplengde tørr vei</th>
+                            <th>Stopplengde våt vei</th>
+                            <th>Stopplengde is/snø</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -159,11 +159,11 @@ export default function BrakeCalculator() {
                             <td>{result.reactionDistance} m</td>
                             <td>{result.reactionDistance} m</td>
                         </tr>
-                        <tr>
-                            <td>Bremselengde</td>
-                            <td>{result.brakingDistanceDry} m</td>
-                            <td>{result.brakingDistanceWet} m</td>
-                            <td>{result.brakingDistanceIcy} m</td>
+                        <tr style={{ backgroundColor: 'rgba(34, 197, 94, 0.12)' }}>
+                            <td style={{ borderTop: '2px solid #22c55e', borderBottom: '2px solid #22c55e', borderLeft: '2px solid #22c55e', borderTopLeftRadius: '6px', borderBottomLeftRadius: '6px', fontWeight: 700, color: '#4ade80' }}>Bremselengde</td>
+                            <td style={{ borderTop: '2px solid #22c55e', borderBottom: '2px solid #22c55e', fontWeight: 700, color: '#4ade80' }}>{result.brakingDistanceDry} m</td>
+                            <td style={{ borderTop: '2px solid #22c55e', borderBottom: '2px solid #22c55e', fontWeight: 700, color: '#4ade80' }}>{result.brakingDistanceWet} m</td>
+                            <td style={{ borderTop: '2px solid #22c55e', borderBottom: '2px solid #22c55e', borderRight: '2px solid #22c55e', borderTopRightRadius: '6px', borderBottomRightRadius: '6px', fontWeight: 700, color: '#4ade80' }}>{result.brakingDistanceIcy} m</td>
                         </tr>
                         <tr className="calc-total-row">
                             <td><strong>Stopplengde</strong></td>

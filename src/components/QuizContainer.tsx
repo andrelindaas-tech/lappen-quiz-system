@@ -183,7 +183,7 @@ export default function QuizContainer({ onReturnHome, onQuizComplete }: QuizCont
     // Dynamic SEO Metadata for Quiz Container
     const metaTitle = (() => {
         if (category?.toLowerCase() === 'vikeplikt') return 'Vikeplikt-quiz – Øv til teoriprøven | Teori-test.no'
-        if (category?.toLowerCase() === 'skilt') return 'Skilt-quiz – Lær trafikkskilt | Teori-test.no'
+        if (category?.toLowerCase() === 'skilt') return 'Skilt-quiz – Test deg på trafikkskilt | Teori-test.no'
         return category
             ? `Teoriprøve: ${category.charAt(0).toUpperCase() + category.slice(1)} | Teori-test.no`
             : `Start ${mode.name} | Teori-test.no`
@@ -191,7 +191,7 @@ export default function QuizContainer({ onReturnHome, onQuizComplete }: QuizCont
 
     const metaDescription = (() => {
         if (category?.toLowerCase() === 'vikeplikt') return 'Test kunnskapene dine om vikeplikt med 10 målrettede spørsmål. Gratis øving til teoriprøven for førerkort klasse B.'
-        if (category?.toLowerCase() === 'skilt') return 'Øv på trafikkskilt med 10 spørsmål. Gratis og uten registrering – perfekt forberedelse til teoriprøven klasse B.'
+        if (category?.toLowerCase() === 'skilt') return 'Test deg på trafikkskilt med 10 spørsmål — gratis og uten registrering. Øv på fareskilt, forbudsskilt og vikepliktskilt til teoriprøven klasse B.'
         return category
             ? `Øv på ${category} spørsmål for førerkort klasse B. Spesialtilpasset øvingsprøve for ${category}.`
             : `Forbered deg til teoriprøven med vår ${mode.name}.`
