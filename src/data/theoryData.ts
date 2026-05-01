@@ -16,7 +16,7 @@ export interface SignItem {
 
 export interface TheorySection {
     title: string
-    content: string
+    content?: string
     type: 'text' | 'formula' | 'info' | 'warning' | 'tip' | 'example' | 'signs' | 'calculator' | 'pyramid' | 'table' | 'component'
     signs?: SignItem[]
     componentId?: string
@@ -1092,7 +1092,7 @@ export const theoryTopics: TheoryTopic[] = [
             {
                 title: 'Kort forklart: tilhenger og førerkort',
                 type: 'info',
-                content: 'Med klasse B kan du trekke tilhenger på maks 750 kg tillatt totalvekt, eller tyngre tilhenger hvis bil + tilhenger har samlet tillatt totalvekt på maks 3500 kg. B96 gjelder opp til 4250 kg. BE kreves over dette.'
+                content: 'Med klasse B kan du trekke tilhenger på maks 750 kg tillatt totalvekt, eller tyngre tilhenger hvis bil + tilhenger har samlet tillatt totalvekt på maks 3500 kg. B96 gjelder opp til 4250 kg. BE kreves over dette. [Les om automatlappen og elbil med tilhenger](/laeringsressurser/automatlappen)'
             },
             {
                 title: 'Førerkortklasser for tilhenger',
@@ -1364,6 +1364,121 @@ export const theoryTopics: TheoryTopic[] = [
 ]
 
 export const theoryArticles: TheoryTopic[] = [
+    {
+        id: 'automatlappen',
+        title: 'Automatlappen og elbil',
+        icon: '🚗',
+        shortDescription: 'Forstå kode 78, elbilens særegenheter og hva automatlappen faktisk betyr i 2026.',
+        color: '#10b981', // Emerald
+        seoTitle: 'Automatlappen og elbil: kode 78, regler og oppkjøring i 2026 | Teori-test.no',
+        seoDescription: 'Skal du ta lappen på elbil eller automatgir? Lær hva kode 78 betyr, om du kan kjøre tilhenger, hvordan regenerering fungerer og om automatlappen er en begrensning i 2026.',
+        sections: [
+            {
+                title: 'Kort forklart: Hva er automatlappen?',
+                type: 'info',
+                content: 'Automatlappen er vanlig førerkort klasse B, men oppkjøringen tas i bil med automatgir. Når du består, får du førerrett for personbil, men med kode 78 i førerkortet.\n\nDet betyr:\n• Du kan kjøre personbil med automatgir.\n• Du kan kjøre elbil, siden elbiler i praksis kjøres som automat.\n• Du kan ikke kjøre bil med manuelt gir.\n• Vil du senere kjøre manuell bil, må du ta ny oppkjøring med manuelt gir.\n\nStatens vegvesen skriver at hvis du kjører opp med automatgir, får førerkortet en kode som viser at du kun kan kjøre automatgir. Hvis du senere trenger manuell bil, må du kjøre opp på nytt med manuelt gir.'
+            },
+            {
+                title: 'Automat eller manuell?',
+                type: 'component',
+                component: 'AutomatVsManuellSammenligning'
+            },
+            {
+                title: 'Er automatlappen en begrensning i 2026?',
+                type: 'text',
+                content: 'For mange er svaret: mindre enn før.\n\nAutomatgir er blitt mye vanligere, og elbiler har gjort automatlappen langt mer praktisk enn den var for noen år siden. Statens vegvesen opplyste at 62 prosent av alle oppkjøringer i 2024 ble gjennomført med automatgir, mot bare 6 prosent i 2016. For klasse B var andelen 61 prosent.\n\nDet betyr ikke at manuell er ubrukelig. Det betyr bare at automat ikke lenger er “litt spesielt”. Det er blitt normalen for veldig mange.\n\nDu bør likevel vurdere manuell hvis du:\n• ofte skal låne eldre biler\n• skal kjøre varebil eller firmabil med manuelt gir\n• vil ha maksimal fleksibilitet ved bilutleie i utlandet\n• ønsker å slippe kode 78 i førerkortet\n\nDu kan fint velge automat hvis du:\n• primært skal kjøre elbil\n• vil bruke mer energi på trafikkforståelse enn giring\n• ikke har behov for manuell bil\n• vil gjøre opplæringen litt enklere i starten'
+            },
+            {
+                title: 'Lappen på elbil: Hva er annerledes?',
+                type: 'text',
+                content: 'Å ta lappen på elbil ligner mye på å ta lappen i annen automatbil. Du må fortsatt kunne trafikkregler, vikeplikt, skilt, plassering, fartstilpasning, observasjon og sikker kjøring. Sensor vurderer ikke om bilen er kul og stillegående. Sensor vurderer deg.\n\nMen elbil har noen praktiske forskjeller du bør kjenne til.\n\n1. Elbil har umiddelbar kraft\nElmotoren gir kraft med en gang du trykker på pedalen. Det kan gjøre bilen lettkjørt, men også litt brå hvis du ikke er myk med høyrefoten.\n\n2. Regenerering: Bilen bremser når du slipper gassen\nMange elbiler har regenerativ bremsing. Det betyr at bilen gjenvinner energi når du slipper gasspedalen, og bruker motoren til å bremse bilen. På noen elbiler kan dette være så kraftig at bilen føles som den “bremser selv”.\n\n3. Elbiler er ofte tyngre\nElbiler har store batterier, og mange elbiler veier mer enn tilsvarende bensin- eller dieselbiler. Det påvirker blant annet bremselengde, dekk, energibruk og hvor mye bilen kan laste eller trekke. [Les om bremselengde og stopplengde](/laeringsressurser/bremselengde)'
+            },
+            {
+                title: 'Elbil + tilhenger: Hva er reglene?',
+                type: 'info',
+                content: 'Du kan trekke tilhenger med elbil, men du må sjekke to ting: Hva førerkortet ditt gir deg lov til, og hva bilen faktisk er godkjent for i vognkortet. Med førerkort klasse B kan du trekke tilhenger på maks 750 kg, eller tyngre hvis samlet vekt er maks 3500 kg. [Les vår komplette tilhenger-guide](/laeringsressurser/tilhenger)'
+            },
+            {
+                title: 'Kan du kjøre tilhenger med automatlappen?',
+                type: 'warning',
+                content: 'Ja, kode 78 handler om girtype, ikke om tilhenger i seg selv. Har du klasse B med kode 78, kan du kjøre bil med automatgir og tilhenger innenfor reglene for klasse B. Men bilen må være automat, og tilhengeren må være lovlig etter vognkort og førerkortklasse.'
+            },
+            {
+                title: 'Støttesystemer i elbil: Hjelp, ikke autopilot',
+                type: 'tip',
+                content: 'Bilen kan hjelpe deg med adaptiv cruisekontroll og filholder, men den er ikke en kjørelærer med superkrefter. Du må fortsatt ha full kontroll. Stol ikke blindt på systemene, spesielt ved snø eller dårlig veimerking.'
+            },
+            {
+                title: 'Bør du velge automat eller manuell?',
+                type: 'text',
+                content: 'Velg automat hvis du hovedsakelig skal kjøre moderne biler eller elbil. Velg manuell hvis du ønsker full fleksibilitet for eldre biler, jobb-biler eller leiebiler i utlandet.\n\nEn praktisk fordel med automatopplæringen er at den ofte koster noe mindre enn manuell. Når du slipper å bruke tid på å lære clutch og girskift, kan du bruke kjøretimene på trafikkforståelse, plassering og samhandling i stedet. Mange elever trenger derfor færre timer totalt. Det er ikke en garanti — det avhenger av eleven — men det er et reelt argument for automat hvis du primært skal kjøre moderne biler uansett.'
+            },
+            {
+                title: 'Hvordan fjerner du kode 78?',
+                type: 'info',
+                content: 'Hvis du har automatlappen og senere vil kunne kjøre manuelt gir, må du kjøre opp på nytt med manuell bil. Når du består oppkjøring med manuelt gir, kan begrensningen fjernes. [Les vår guide til oppkjøringen](/laeringsressurser/oppkjoring)'
+            }
+        ],
+        miniQuiz: [
+            {
+                question: 'Hva betyr kode 78 på førerkortet?',
+                options: ['Du kan bare kjøre elbil', 'Du kan bare kjøre automatgir', 'Du kan ikke kjøre tilhenger', 'Du må fornye førerkortet hvert år'],
+                correct: 'Du kan bare kjøre automatgir',
+                explanation: 'Kode 78 betyr at førerkortet er begrenset til biler med automatgir. Du får denne koden hvis du kjører opp med automatgir.'
+            },
+            {
+                question: 'Kan du kjøre elbil med kode 78 i førerkortet?',
+                options: ['Nei, elbil krever spesielt førerkort', 'Ja, elbiler kjøres som automatbiler', 'Bare hvis elbilen er under 3500 kg', 'Nei, du trenger kode 100'],
+                correct: 'Ja, elbiler kjøres som automatbiler',
+                explanation: 'Elbiler har ikke manuell girkasse og kjøres som automatbiler. Du kan derfor kjøre elbil med kode 78.'
+            },
+            {
+                question: 'Kan du trekke tilhenger med automatlappen (kode 78)?',
+                options: ['Nei, kode 78 forbyr tilhenger', 'Ja, så lenge bilen er automat og du holder deg innenfor klasse B-reglene', 'Bare tilhenger under 500 kg', 'Bare med spesialgodkjenning'],
+                correct: 'Ja, så lenge bilen er automat og du holder deg innenfor klasse B-reglene',
+                explanation: 'Kode 78 handler om girtype, ikke tilhenger. Du kan kjøre tilhenger med automatlappen så lenge bilen er automat og du følger reglene for klasse B.'
+            },
+            {
+                question: 'Hva er regenerativ bremsing på elbil?',
+                options: ['En ekstra bremsepedal', 'Bilen bremser og gjenvinner energi når du slipper gasspedalen', 'Automatisk nødbrems', 'En type ABS-system'],
+                correct: 'Bilen bremser og gjenvinner energi når du slipper gasspedalen',
+                explanation: 'Regenerativ bremsing betyr at elmotoren brukes til å bremse bilen og samtidig lade batteriet. På glatt føre bør du være ekstra jevn med pedalene.'
+            },
+            {
+                question: 'Hva må du gjøre for å fjerne kode 78 fra førerkortet?',
+                options: ['Søke skriftlig til Statens vegvesen', 'Ta ny teoriprøve', 'Bestå ny oppkjøring med manuelt gir', 'Vente 2 år'],
+                correct: 'Bestå ny oppkjøring med manuelt gir',
+                explanation: 'For å fjerne kode 78 må du kjøre opp på nytt med manuell bil og bestå. Du trenger ikke ta teoriprøven på nytt.'
+            }
+        ],
+        faq: [
+            {
+                question: 'Hva betyr kode 78 på førerkortet?',
+                answer: 'Kode 78 betyr at førerkortet ditt er begrenset til biler med automatgir. Du får denne koden hvis du kjører opp med automatgir.'
+            },
+            {
+                question: 'Kan jeg kjøre elbil med automatlappen?',
+                answer: 'Ja. Elbiler kjøres som automatbiler, så du kan kjøre elbil med førerkort klasse B med kode 78.'
+            },
+            {
+                question: 'Kan jeg kjøre manuell bil med automatlappen?',
+                answer: 'Nei. Har du kode 78, kan du ikke kjøre bil med manuelt gir. Da må du først bestå ny oppkjøring med manuelt gir.'
+            },
+            {
+                question: 'Kan jeg trekke tilhenger med automatlappen?',
+                answer: 'Ja, så lenge bilen har automatgir og du holder deg innenfor reglene for klasse B, B96 eller BE. Du må også sjekke bilens vognkort.'
+            },
+            {
+                question: 'Er automatlappen dumt hvis jeg skal jobbe med bil?',
+                answer: 'Ikke nødvendigvis, men det kommer an på jobben. Noen arbeidsgivere bruker bare biler med automatgir. Andre har varebiler eller eldre biler med manuelt gir. Hvis du vil ha maksimal fleksibilitet, er manuell fortsatt tryggest.'
+            },
+            {
+                question: 'Er elbil annerledes på oppkjøring?',
+                answer: 'Ja og nei. Du vurderes etter samme grunnleggende ferdigheter: sikkerhet, trafikkforståelse, observasjon og samhandling. Men du bør være trygg på elbilens kraft, regenerering, støttesystemer og hvordan bilen oppfører seg i lav fart.'
+            }
+        ]
+    },
+
     {
         id: 'sikkerhetskontroll',
         title: 'Sikkerhetskontroll klasse B: Den komplette guiden',

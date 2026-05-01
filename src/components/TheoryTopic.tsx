@@ -13,6 +13,7 @@ import VeimerkingInteraktiv from './VeimerkingInteraktiv'
 import MotorromInteraktiv from './MotorromInteraktiv'
 import RundkjoringAnimasjon from './RundkjoringAnimasjon'
 import MiniQuiz from './MiniQuiz'
+import AutomatVsManuellSammenligning from './AutomatVsManuellSammenligning'
 
 
 // Renders content string with support for paragraphs, bullet lists (- ) and numbered lists (1. )
@@ -163,7 +164,7 @@ export default function TheoryTopic({ topic, onBack, extraComponent }: TheoryTop
 
                         {section.type === 'signs' && section.signs ? (
                             <div className="theory-section-content">
-                                {renderContent(section.content)}
+                                {section.content && renderContent(section.content)}
                                 <div className="theory-signs-grid">
                                     {section.signs.map((sign, i) => (
                                         <div key={i} className="theory-sign-item">
@@ -188,7 +189,7 @@ export default function TheoryTopic({ topic, onBack, extraComponent }: TheoryTop
                             </div>
                         ) : section.type === 'calculator' ? (
                             <div className="theory-section-content">
-                                {renderContent(section.content)}
+                                {section.content && renderContent(section.content)}
                                 <div style={{ marginTop: '1.5rem' }}>
                                     {topic.id === 'bremselengde' && <BrakeCalculator />}
                                     {topic.id === 'vognkort-vekter' && <TrailerWeightSimulator />}
@@ -202,12 +203,13 @@ export default function TheoryTopic({ topic, onBack, extraComponent }: TheoryTop
                         ) : section.type === 'component' ? (
                             <div className="theory-section-content">
                                 {section.component === 'RundkjoringAnimasjon' && <RundkjoringAnimasjon />}
+                                {section.component === 'AutomatVsManuellSammenligning' && <AutomatVsManuellSammenligning />}
                             </div>
                         ) : section.type === 'table' ? (
-                            <div className="theory-section-content" dangerouslySetInnerHTML={{ __html: section.content }} />
+                            <div className="theory-section-content" dangerouslySetInnerHTML={{ __html: section.content || '' }} />
                         ) : (
                             <div className="theory-section-content">
-                                {renderContent(section.content)}
+                                {section.content && renderContent(section.content)}
                             </div>
                         )}
                     </div>
