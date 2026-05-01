@@ -39,6 +39,92 @@ export interface TheoryTopic {
 
 export const theoryTopics: TheoryTopic[] = [
     {
+        id: 'vikeplikt',
+        title: 'Vikeplikt – komplett guide til teoriprøven',
+        shortDescription: 'Vikeplikt er et av de vanligste stryketemaene på teoriprøven. Her får du en oversiktlig gjennomgang av de viktigste reglene du må kunne for førerkort klasse B. Tren på vikeplikt med våre øvingsspørsmål når du har lest gjennom.',
+        icon: '🔺',
+        color: '#ea580c',
+        seoTitle: 'Vikeplikt i trafikken – høyreregelen, rundkjøring og gangfelt | Teori-test.no',
+        seoDescription: 'Lær vikepliktreglene til teoriprøven: høyreregelen, vikeplikt i rundkjøring, gangfelt og fotgjengere – med eksempelspørsmål og forklaringer.',
+        sections: [
+            {
+                title: '1. Grunnregelen: Høyreregelen',
+                type: 'text',
+                content: 'Den viktigste regelen i trafikken er høyreregelen: Du har vikeplikt for kjøretøy som kommer fra høyre, med mindre noe annet er bestemt av skilt eller oppmerking.\n- Hvor gjelder den? I alle kryss uten vikepliktskilt, stoppskilt eller forkjørsvei.\n- Viktig om T-kryss: Høyreregelen gjelder også i umerkede T-kryss. Selv om du kjører rett frem på den gjennomgående veien, må du vike for biler som kommer fra høyre i krysset.'
+            },
+            {
+                title: '2. Myndighetspyramiden: Hva gjelder når?',
+                type: 'info',
+                content: 'I trafikken oppstår det ofte situasjoner der skilt, lys og generelle regler sier forskjellige ting. Da bruker vi myndighetspyramiden for å vite hva som gjelder. Reglene følges i denne rekkefølgen:\n1. Politi og manuelle dirigenter: Deres anvisninger overstyrer alt annet.\n2. Trafikklys: Grønt lys overstyrer skilt. (Blinker lyset gult, eller er slukket, er det skiltene som gjelder).\n3. Trafikkskilt og oppmerking: Vikepliktskilt og forkjørsvei overstyrer de generelle trafikkreglene.\n4. Trafikkregler (Høyreregelen): Dette er bunnen av pyramiden. Den gjelder bare når det ikke finnes politi, lys eller skilt som sier noe annet.\n\nKlassisk teoriprøvespørsmål: «Du ankommer et kryss der trafikklyset viser grønt, men det er også satt opp et vikepliktskilt. Hva er riktig?»\nA) Jeg har vikeplikt fordi skiltet gjelder.\nB) Jeg kan kjøre fordi trafikklyset gjelder foran skiltet.\nC) Høyreregelen gjelder.\n\nRiktig svar: B. Trafikklys (nivå 2 i pyramiden) står over trafikkskilt (nivå 3).'
+            },
+            {
+                title: '3. Skilt som overstyrer høyreregelen',
+                type: 'signs',
+                content: 'Skilt forteller deg når høyreregelen ikke gjelder. Du må kjenne til disse tre:\n\n[Les vår guide til vikeplikt i rundkjøring](/laeringsressurser/rundkjoring)',
+                signs: [
+                    {
+                        name: 'Vikepliktskilt',
+                        description: 'Trekant med spissen ned og rød kant. Du skal vike for all kryssende trafikk. Senk farten og vær klar til å stoppe. Veien må være klar før du kjører.',
+                        imageUrl: '/signs/vikeplikt.svg'
+                    },
+                    {
+                        name: 'Stoppskilt',
+                        description: 'Rød åttekant. Du MÅ stoppe helt opp (hjulene skal stå stille) ved stopplinjen, selv om krysset virker tomt. Se deg godt for til begge sider før du kjører videre.',
+                        imageUrl: '/signs/stopp.svg'
+                    },
+                    {
+                        name: 'Forkjørsvei',
+                        description: 'Gul rute. Du har forkjørsrett. Kryssende trafikk har vikeplikt for deg. Dette gjelder helt til du ser skiltet for "Slutt på forkjørsvei".',
+                        imageUrl: '/signs/forkjorsvei.svg'
+                    }
+                ]
+            },
+            {
+                title: '4. Rundkjøringer',
+                type: 'text',
+                content: 'I norske rundkjøringer har du vikeplikt for trafikken som allerede befinner seg inne i rundkjøringen.\n- Vent ved vikepliktslinjen til du har en trygg luke.\n- Bruk alltid blinklys når du skal ut av rundkjøringen.\n\nVanlig misforståelse: Mange tror høyreregelen gjelder i rundkjøring. Det gjør den ikke – rundkjøringsskiltet opphever høyreregelen.'
+            },
+            {
+                title: '5. Trikk og buss',
+                type: 'warning',
+                content: 'Det gjelder egne regler for kollektivtrafikk:\n- Trikk: Du har vikeplikt for trikken, selv om den kommer fra venstre. Dette er et viktig unntak fra høyreregelen.\n- Buss: Hvis en buss blinker seg ut fra en holdeplass i en 60-sone (eller lavere), har du vikeplikt og må la bussen kjøre ut.'
+            },
+            {
+                title: '6. Fotgjengere og syklister',
+                type: 'text',
+                content: 'Som bilist må du alltid ta hensyn til myke trafikanter:\n- Fotgjengere: Du har vikeplikt for gående i gangfelt, enten du kjører rett frem eller svinger.\n- Syklister: Hvis du skal svinge og krysser et sykkelfelt, har du vikeplikt for syklister som befinner seg i feltet.'
+            },
+            {
+                title: '7. Utkjøring fra privat vei',
+                type: 'text',
+                content: 'Du har alltid vikeplikt for all trafikk (inkludert fotgjengere og syklister) når du kjører ut fra parkeringsplasser og garasjer, privat eiendom eller gårdsplass, bensinstasjoner, og gang- og sykkelvei.\n\nEr du i tvil i trafikken, er det beste rådet å ta det rolig og la den andre passere. Det er alltid bedre å vente litt enn å skape en farlig situasjon.\n\nKlar til å teste kunnskapen? [Les også hvordan du består teoriprøven på første forsøk](/laeringsressurser/tips-eksamen) når eksamensdagen nærmer seg.'
+            }
+        ],
+        faq: [
+            {
+                question: 'Hva er vikeplikt?',
+                answer: 'Vikeplikt betyr at du må vente og la andre trafikanter passere før du kan kjøre videre. Du har vikeplikt når skilt, trafikklys, oppmerking eller trafikkregler krever det.'
+            },
+            {
+                question: 'Hva er høyreregelen?',
+                answer: 'Høyreregelen sier at du skal gi vikeplikt for trafikk som kommer fra høyre, når det ikke er skiltet eller oppmerkert noe annet. Regelen gjelder i kryss der ingen har forkjørsrett.'
+            },
+            {
+                question: 'Har man vikeplikt i rundkjøring?',
+                answer: 'Ja, du har vikeplikt for trafikk som allerede er inne i rundkjøringen. Du skal stoppe eller vike for biler som kjører i selve rundkjøringen før du kjører inn.'
+            },
+            {
+                question: 'Hva betyr vikeplikt for fotgjengere?',
+                answer: 'Du skal alltid gi fotgjengere vikeplikt i gangfelt. Du må også gi vikeplikt for fotgjengere når du svinger inn på en sidevei eller ut fra en parkeringsplass.'
+            },
+            {
+                question: 'Hvem har vikeplikt i et T-kryss?',
+                answer: 'I et T-kryss uten skilt gjelder høyreregelen normalt. Den som kjører inn i krysset fra sidevei har vikeplikt for trafikk på hovedveien, men høyreregelen avgjør ellers.'
+            }
+        ]
+    },
+
+    {
         id: 'bremselengde',
         title: 'Bremselengde kalkulator – regn ut stopplengde | Teori-test.no',
         icon: '🚗',
@@ -96,7 +182,7 @@ export const theoryTopics: TheoryTopic[] = [
             {
                 title: 'Vannplaning — når bremselengden blir uendelig',
                 type: 'warning',
-                content: 'Vannplaning oppstår når vannet ikke rekker å presses vekk under dekket, og bilen begynner å gli på et vannlag. Dette skjer typisk ved høy fart, slitte dekk eller mye vann på veien.\n\nNår du hydraplaner (vannplaner):\n- Dekket mister kontakt med veibanen\n- Bremsene virker ikke\n- Rattet responderer ikke\n- Bilen lar seg ikke styres\n\n**Hva du skal gjøre:** Ikke brems hardt. Ta foten av gassen, hold rattet stødig og la bilen sakke av seg selv til dekket får kontakt igjen.\n\n**Forebygging:** Reduser farten ved kraftig regn, skift dekk i tide og kjør i hjulsporene til bilen foran (der vannet er presset vekk).'
+                content: 'Vannplaning oppstår når vannet ikke rekker å presses vekk under dekket, og bilen begynner å gli på et vannlag. Dette skjer typisk ved høy fart, slitte dekk eller mye vann på veien.\n\nNår du hydraplaner (vannplaner):\n- Dekket mister kontakt med veibanen\n- Bremsene virker ikke\n- Rattet responderer ikke\n- Bilen lar seg ikke styres\n\n**Hva du skal gjøre:** Ikke brems hardt. Ta foten av gassen, hold rattet stødig og la bilen sakke av seg selv til dekket får kontakt igjen.\n\n**Forebygging:** Reduser farten ved kraftig regn, skift dekk i tide og kjør i hjulsporene til bilen foran (der vannet er presset vekk).\n\n[Les om reaksjonstid og reaksjonslengde](/laeringsressurser/reaksjonstid)'
             }
         ],
         faq: [
@@ -158,158 +244,310 @@ export const theoryTopics: TheoryTopic[] = [
             }
         ]
     },
+
     {
-        id: 'reaksjonstid',
-        title: 'Reaksjonstid og stopplengde – slik regner du det ut (Klasse B)',
-        icon: '⏱️',
-        shortDescription: 'Lær hva reaksjonstid er, hvordan du regner ut reaksjonslengde og stopplengde til teoriprøven. Tabeller, formler og interaktiv test for klasse B.',
-        color: '#2563eb',
-        seoTitle: 'Reaksjonstid og stopplengde – slik regner du det ut (Klasse B) | Teori-test.no',
-        seoDescription: 'Lær hva reaksjonstid er, hvordan du regner ut reaksjonslengde og stopplengde til teoriprøven. Tabeller, formler og interaktiv test for klasse B.',
+        id: 'myndighetspyramiden',
+        title: 'Myndighetspyramiden: Hvem bestemmer egentlig i trafikken?',
+        icon: '👮',
+        shortDescription: 'I trafikken vil du ofte oppleve at ulike signaler gir deg motstridende beskjeder. Hvem skal du høre på? Lær hierarkiet for å unngå fellene på prøven.',
+        color: '#3b82f6',
+        seoTitle: 'Myndighetspyramiden i trafikken – rekkefølge og regler | Teori-test.no',
+        seoDescription: 'Myndighetspyramiden viser hvem som har høyest myndighet i trafikken: politi øverst, deretter trafikklys, skilt og trafikkregler. Se rekkefølgen med eksempler fra teoriprøven.',
         sections: [
             {
-                title: 'Hva er reaksjonstid?',
+                title: 'Hva er myndighetspyramiden?',
                 type: 'text',
-                content: 'Før bilen begynner å bremse, har du allerede kjørt langt. Reaksjonstiden er den usynlige faren de fleste undervurderer — og en av de viktigste grunnene til ulykker på norske veier.\n\nReaksjonstid er tiden det tar fra du oppdager en fare til foten faktisk treffer bremsepedalen. For en uthvilt og edru sjåfør er dette normalt ca. 1 sekund. Det høres kort ut — men i løpet av det sekundet fortsetter bilen med full fart uten at du gjør noe som helst.'
+                content: 'I trafikken vil du ofte oppleve at ulike signaler gir deg motstridende beskjeder. Hvem skal du egentlig høre på? Kanskje ruller du frem mot et travelt veikryss hvor trafikklyset lyser knallgrønt, samtidig som det står et tydelig vikepliktskilt montert på den samme stolpen. For å gjøre det enda mer krevende, står det kanskje en politibetjent midt i krysset og signaliserer at du må stoppe.\n\nLøsningen på dette potensielle kaoset er et av de viktigste fundamentene i trafikkopplæringen. For å bestå teoriprøven, og for å bli en trygg og selvstendig sjåfør, må du kjenne til og forstå trafikkens rangordning.\n\nEnkelt forklart er myndighetspyramiden et strengt hierarki i fire nivåer. Dette systemet forteller deg nøyaktig hvem eller hva som har høyest prioritet i enhver gitt situasjon. I stedet for å måtte gjette når to signaler gir ulik beskjed, gir pyramiden deg en ufravikelig fasit på hvilket signal som overstyrer det andre.'
             },
             {
-                title: 'Test din egen reaksjonstid:',
-                type: 'calculator',
-                content: 'Sjekk hvor raskt du reagerer! Testen under simulerer en nødbrems-situasjon i 80 km/t. Klarer du å reagere raskere enn gjennomsnittet?'
-            },
-            {
-                title: 'Reaksjonslengde — hvor langt kjører du før du bremser?',
-                type: 'table',
-                content: 'Formelen er: **Reaksjonslengde = (fart ÷ 10) × 3 meter**\n\n<div style="overflow-x: auto; -webkit-overflow-scrolling: touch; margin-top: 1rem;"><table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem;"><thead><tr style="background-color: var(--color-surface); border-bottom: 2px solid var(--color-border);"><th style="padding: 12px 8px;">Hastighet</th><th style="padding: 12px 8px;">Reaksjonslengde</th></tr></thead><tbody><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">30 km/t</td><td style="padding: 12px 8px;">9 meter</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">50 km/t</td><td style="padding: 12px 8px;">15 meter</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">80 km/t</td><td style="padding: 12px 8px;">24 meter</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">100 km/t</td><td style="padding: 12px 8px;">30 meter</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">120 km/t</td><td style="padding: 12px 8px;">36 meter</td></tr></tbody></table></div>\n\nTenk på det slik: ved 80 km/t kjører du nesten tre bilengder før du i det hele tatt begynner å bremse.'
-            },
-            {
-                title: 'Hva øker reaksjonstiden din?',
+                title: 'Slik er rangordningen bygget opp, fra øverste til nederste instans:',
                 type: 'info',
-                content: 'Dette er faktorer som gjør at du reagerer langsommere — og som teoriprøven elsker å spørre om:\n\n- **Tretthet** — kan doble eller tredoble reaksjonstiden. En sjåfør som har vært våken i 20 timer reagerer like sakte som en med 0,8 i promille\n- **Alkohol og medisiner** — selv små mengder forsinker signalene fra øynene til hjernen til foten\n- **Mobilbruk** — ikke bare hånden på telefonen, men selve tankene dine er et annet sted. Reaksjonstiden øker med opptil 40 % selv med handsfree\n- **Uoppmerksomhet** — samtale med passasjer, radio, tanker om andre ting\n- **Mørke og dårlig sikt** — du oppdager faren senere og må reagere raskere\n- **Alder** — eldre sjåfører reagerer noe langsommere, men kompenserer med erfaring'
+                content: '1. POLITI (Manuell dirigering)\n2. LYSSIGNAL (Trafikklys)\n3. SKILT & OPPMERKING\n4. TRAFIKKREGLER & FORSKRIFTER'
             },
             {
-                title: 'Stopplengde = reaksjonslengde + bremselengde',
-                type: 'table',
-                content: 'Stopplengden er den totale avstanden fra du oppdager faren til bilen faktisk stopper. Bremselengden øker kvadratisk med farten — det vil si at dobbel fart gir firedobbel bremselengde.\n\n<div style="overflow-x: auto; -webkit-overflow-scrolling: touch; margin-top: 1rem;"><table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem;"><thead><tr style="background-color: var(--color-surface); border-bottom: 2px solid var(--color-border);"><th style="padding: 12px 8px;">Hastighet</th><th style="padding: 12px 8px;">Reaksjonslengde</th><th style="padding: 12px 8px;">Bremselengde (tørr)</th><th style="padding: 12px 8px;">Stopplengde</th></tr></thead><tbody><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">30 km/t</td><td style="padding: 12px 8px;">9 m</td><td style="padding: 12px 8px;">4,5 m</td><td style="padding: 12px 8px;">13,5 m</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">50 km/t</td><td style="padding: 12px 8px;">15 m</td><td style="padding: 12px 8px;">12,5 m</td><td style="padding: 12px 8px;">27,5 m</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">80 km/t</td><td style="padding: 12px 8px;">24 m</td><td style="padding: 12px 8px;">32 m</td><td style="padding: 12px 8px;">56 m</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">100 km/t</td><td style="padding: 12px 8px;">30 m</td><td style="padding: 12px 8px;">50 m</td><td style="padding: 12px 8px;">80 m</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">120 km/t</td><td style="padding: 12px 8px;">36 m</td><td style="padding: 12px 8px;">72 m</td><td style="padding: 12px 8px;">108 m</td></tr></tbody></table></div>'
+                title: 'Illustrasjon av pyramiden',
+                type: 'pyramid',
+                content: ''
             },
             {
-                title: 'Tips: Vil du regne på andre forhold?',
+                title: 'Nivå 1: Politi og manuell dirigering (Øverste myndighet)',
+                type: 'warning',
+                content: 'På den absolutte toppen av pyramiden finner vi mennesker med formell myndighet til å dirigere trafikken. Deres tegn og anvisninger overstyrer absolutt alle andre reguleringer – inkludert røde trafikklys, stoppskilt, oppmerking i veien og generelle trafikkregler.\n\nHvem har denne myndigheten? Selv om vi gjerne refererer til dette som "politi", gjelder det ikke utelukkende dem. Statens vegvesen, Tolletaten og militærpolitiet (MP) har også lovhjemmel til å dirigere trafikk, og du plikter å følge deres anvisninger på nøyaktig lik linje med politiet. (Skolepatruljer har ikke samme formelle myndighet, men du har likevel en plikt til å stoppe for dem av hensyn til sikkerheten).\n\nHvorfor er det slik? Mennesker har evnen til å vurdere og tilpasse seg situasjoner i sanntid. Hvis det har skjedd en alvorlig ulykke, et lyskryss har hengt seg opp, eller det pågår veiarbeid, må autorisert personell kunne overstyre den forhåndsprogrammerte teknologien for å rydde opp i kaoset og ivareta sikkerheten. Viser betjenten at du skal kjøre, så kjører du, selv om lyset lyser rødt.'
+            },
+            {
+                title: 'Nivå 2: Lyssignal (Trafikklys)',
+                type: 'info',
+                content: 'Hvis det ikke er noen som manuelt dirigerer trafikken på stedet, er det trafikklysene som overtar rollen som øverste beslutningstaker. Et fungerende trafikklys overstyrer både trafikkskilt, all vegoppmerking og de generelle trafikkreglene.\n\nLogikken bak: Lyssignaler brukes bevisst i ulykkesutsatte, tungt trafikkerte eller spesielt komplekse kryss for å skape en trygg og mekanisk styrt trafikkflyt. Systemet er designet for å fjerne tvil. Har du grønt lys, kan du kjøre, selv om det står et vikepliktskilt under lyset. Lyssignalet (Nivå 2) nøytraliserer skiltet (Nivå 3).\n\nDet viktige unntaket (Blinkende gult lys): Et gult, blinkende lys betyr at anlegget er ute av drift, eller at krysset er ekstra farlig. Et blinkende gult lys gir deg ingen rettigheter eller forkjørsrett. Det er et varsel om at du må flytte deg et hakk ned i pyramiden og forholde deg til skiltingen på stedet i stedet.'
+            },
+            {
+                title: 'Nivå 3: Trafikkskilt og vegoppmerking',
                 type: 'text',
-                content: '[Bruk vår interaktive bremselengde-kalkulator for å beregne stopplengde ved ulike hastigheter og veiforhold](/laeringsressurser/bremselengde)'
+                content: 'Når trafikklyset er slått av, blinker gult, eller du befinner deg i et kryss som ikke har lysregulering, er det trafikkskiltene og stripene malt i veibanen som regulerer trafikken. Disse overstyrer i sin tur de generelle trafikkreglene som ligger i bunnen av pyramiden.\n\nSkilt: Et vanlig eksempel er et kryss med et vikepliktskilt. Skiltet forteller deg utvetydig at du må vike for kryssende trafikk, noe som overstyrer den generelle høyreregelen.\n\nVegoppmerking: Det er viktig å huske at maling i veien har samme myndighet som skilt. Stopplinjer (heltrukken hvit linje på tvers) og vikepliktslinjer (hvite trekanter i asfalten) gjelder selv om selve metallskiltet skulle ha blåst ned eller er dekket av snø.'
             },
             {
-                title: 'Praktisk eksempel',
-                type: 'example',
-                content: 'Du kjører i 80 km/t. Et barn løper ut i veien 50 meter foran deg. Du er uthvilt — reaksjonstiden din er 1 sekund. I løpet av det sekundet kjører du 24 meter. Da gjenstår 26 meter til barnet — men du trenger 32 meter for å stoppe. Du rekker det ikke.\n\nHadde du kjørt 60 km/t ville stopplengden vært 36 meter — du hadde stoppet med god margin.'
+                title: 'Nivå 4: Trafikkregler (Nederst i pyramiden)',
+                type: 'text',
+                content: 'Helt i bunnen, som en grunnmur for all ferdsel i samfunnet, ligger de generelle trafikkreglene og forskriftene. Dette er basisreglene vi alltid forholder oss til når det verken er politi, trafikklys eller skilt til stede for å regulere situasjonen.\n\nHøyreregelen: Den aller viktigste og mest brukte regelen på dette nivået er høyreregelen. Hvis du kjører gjennom et rolig boligfelt uten lyskryss og uten noen form for vikepliktskilt, er det høyreregelen (Nivå 4) som dikterer at du har vikeplikt for all trafikk som kommer fra din høyre side. Les vår komplette guide til [vikeplikt](/laeringsressurser/vikeplikt).'
             },
             {
-                title: '3-sekunders regelen',
+                title: 'Hva er riktig om myndighetspyramiden på teoriprøven? De vanligste fellene',
                 type: 'tip',
-                content: 'Hold alltid minst 3 sekunders avstand til bilen foran. Velg et fast punkt på veien. Når bilen foran passerer det, tell "én-og-tjue, to-og-tjue, tre-og-tjue". Passerer du punktet før du er ferdig, er du for tett. I dårlig vær, mørke eller ved tretthet — øk til 4–6 sekunder.'
+                content: 'Teoriprøven elsker å teste om du virkelig forstår og stoler på hierarkiet. Når du skal svare på hva som er riktig om myndighetspyramiden under eksamen, er det spesielt viktig å kjenne til disse typiske scenariene som ofte forvirrer elever:\n\n**1. Grønt lys og Stoppskilt**\nSituasjon: Du kommer frem til et kryss. Lyset viser grønt, men det står et knallrødt Stoppskilt plassert rett under trafikklyset på samme stolpe.\nFellen: Mange elever tror at et Stoppskilt er et så strengt og absolutt forbud at det alltid gjelder uansett.\nFasit: Du kan kjøre uten å stoppe. Lyssignalet befinner seg på Nivå 2, og overstyrer dermed Stoppskiltet som befinner seg på Nivå 3. Stoppskiltet har ingen funksjon så lenge lyset er grønt; det er plassert der utelukkende for den dagen trafikklyset går i svart eller blinker gult.\n\n**2. Blinkende gult lys og vikepliktskilt**\nSituasjon: Du nærmer deg et kryss hvor trafikklyset blinker gult. Du har et vikepliktskilt.\nFasit: Som nevnt under Nivå 2, betyr et blinkende gult lys at anlegget er satt ut av spill. Du må da umiddelbart falle ned til Nivå 3 i pyramiden og følge skiltet. Du har vikeplikt.\n\n**3. Grønn pil og møtende trafikk**\nSituasjon: Du skal svinge til venstre i et stort lyskryss. Du får et vanlig, rundt grønt lys. Samtidig får den møtende trafikken også grønt lys rett frem.\nFellen: Siden du har grønt lys, antar mange at de har fri bane og bare kan svinge.\nFasit: Her gjelder trafikkreglene innad i selve lyskrysset. Når du svinger til venstre, krysser du en annens kjørebane, og de generelle reglene sier da at du har vikeplikt for møtende trafikk. (Merk: Hadde du derimot fått en lysende grønn PIL som peker til venstre, er dette et signal om at krysset er tømt for all møtende trafikk, og du kunne kjørt uhindret).\n\n**4. Fotgjengerfelt uten lys**\nSituasjon: Du skal svinge inn på en ny vei. Det ligger et gangfelt i krysset, men det er ingen egne skilt eller lys for dette gangfeltet. Det står en person og vil over.\nFellen: Mange tror fotgjengeren må vente fordi bilen ikke har fått noe spesifikt vikepliktskilt for akkurat dette gangfeltet.\nFasit: De generelle trafikkreglene (Nivå 4) er krystallklare: Kjørende som skifter kjøreretning eller svinger inn på en ny vei, har alltid vikeplikt for gående eller syklende som skal krysse den nye veien. Du må stoppe.'
             },
             {
-                title: 'Vanlige teoriprøvespørsmål',
-                type: 'text',
-                content: '• **Hva er normal reaksjonstid for en opplagt sjåfør?** → Ca. 1 sekund\n• **Hva skjer med reaksjonstiden ved tretthet?** → Den kan doble eller tredoble seg\n• **Hva er stopplengde?** → Reaksjonslengde + bremselengde\n• **Hva skjer med bremselengden når farten dobles?** → Den firedobles\n• **Hva er 3-sekunders regelen?** → Minimum avstand til bilen foran i normale forhold'
+                title: 'Klar for å teste kunnskapen din?',
+                type: 'info',
+                content: 'Å ha en dyp forståelse for trafikkens rangordning er helt avgjørende for å ferdes trygt på veien. Har du kontroll på alt som gjelder myndighetspyramiden og teoriprøve-oppgaver, er du ett stort skritt nærmere å bestå. Ta gjerne en [gratis teoriprøve](/quiz) hos oss for å se om du klarer å sortere signalene riktig i praksis.'
             }
         ],
         faq: [
             {
-                question: 'Hva er normal reaksjonstid?',
-                answer: 'For en uthvilt og opplagt fører er normal reaksjonstid ca. 1 sekund.'
+                question: 'Er det bare politiet som er på toppen av myndighetspyramiden?',
+                answer: 'Nei. Selv om politiet oftest brukes som eksempel, inkluderer det øverste nivået alle med offisiell myndighet til å dirigere trafikk. Dette gjelder Statens vegvesen, Tolletaten og militærpolitiet.'
             },
             {
-                question: 'Hva er forskjellen på reaksjonslengde og bremselengde?',
-                answer: 'Reaksjonslengde er avstanden du kjører fra du oppdager faren til du starter å bremse. Bremselengde er avstanden bilen bruker på å stoppe etter at du har truffet bremsen.'
+                question: 'Hva skjer hvis trafikklyset er defekt eller blinker gult?',
+                answer: 'Ved defekt eller blinkende gult lys, bortfaller lyssignalet fra pyramiden. Da må du forholde deg til neste nivå, som er trafikkskilt og vegoppmerking. Er det ingen skilt der, gjelder de vanlige trafikkreglene (som høyreregelen).'
             },
             {
-                question: 'Hvor mye øker bremselengden når farten dobles?',
-                answer: 'Bremselengden firedobles når farten dobles (eksempel: fra 40 til 80 km/t).'
+                question: 'Hvorfor overstyrer skilt de generelle trafikkreglene?',
+                answer: 'Skilt brukes for å regulere spesifikke og lokale utfordringer på en vei, for eksempel en farlig sving eller et kryss med mye trafikk. Spesielle lokale bestemmelser (skilt) veier alltid tyngre enn generelle regler.'
+            },
+            {
+                question: 'Hva er myndighetspyramiden i trafikken?',
+                answer: 'Myndighetspyramiden viser hvem som har høyest myndighet i trafikken. Rekkefølgen fra øverst til nederst er: 1) Politi og dirigering, 2) Trafikklys, 3) Trafikkskilt og vegoppmerking, 4) Trafikkregler.'
+            },
+            {
+                question: 'Hvem har høyest myndighet i trafikken?',
+                answer: 'Politiet har høyest myndighet i trafikken. Hvis en politibetjent dirigerer trafikken, skal du følge politiets anvisninger selv om trafikklyset viser grønt.'
+            },
+            {
+                question: 'Hva overstyrer hva i myndighetspyramiden?',
+                answer: 'Politidirigeringen overstyrer trafikklys. Trafikklys overstyrer trafikkskilt. Trafikkskilt overstyrer de generelle trafikkreglene. Politiet er alltid øverst.'
+            },
+            {
+                question: 'Hva er riktig om myndighetspyramiden på teoriprøven?',
+                answer: 'På teoriprøven er det vanlig å bli testet på rekkefølgen: politi øverst, deretter trafikklys, så skilt og vegoppmerking, og til slutt trafikkregler nederst. Politiets anvisninger gjelder alltid, uansett hva skilt eller lys viser.'
             }
         ]
     },
+
     {
-        id: 'vikeplikt',
-        title: 'Vikeplikt – komplett guide til teoriprøven',
-        shortDescription: 'Vikeplikt er et av de vanligste stryketemaene på teoriprøven. Her får du en oversiktlig gjennomgang av de viktigste reglene du må kunne for førerkort klasse B. Tren på vikeplikt med våre øvingsspørsmål når du har lest gjennom.',
-        icon: '🔺',
-        color: '#ea580c',
-        seoTitle: 'Vikeplikt i trafikken – høyreregelen, rundkjøring og gangfelt | Teori-test.no',
-        seoDescription: 'Lær vikepliktreglene til teoriprøven: høyreregelen, vikeplikt i rundkjøring, gangfelt og fotgjengere – med eksempelspørsmål og forklaringer.',
+        id: 'veimerking',
+        title: 'Veimerking til teoriprøven – komplett visuell guide (Klasse B)',
+        icon: '🛣️',
+        shortDescription: 'Lær all norsk veimerking til teoriprøven med visuelle illustrasjoner. Sperrelinje, varselslinje, gangfelt, pilmerking og mer — med eksempler og forklaringer.',
+        color: '#0ea5e9',
+        seoTitle: 'Veimerking til teoriprøven – komplett visuell guide (Klasse B) | Teori-test.no',
+        seoDescription: 'Hva betyr hvit sperrelinje, varsellinje, kombinert linje eller vikelinje? Komplett guide til norsk veimerking med visuelle illustrasjoner – til teoriprøven.',
         sections: [
             {
-                title: '1. Grunnregelen: Høyreregelen',
+                title: 'Veimerking til teoriprøven',
                 type: 'text',
-                content: 'Den viktigste regelen i trafikken er høyreregelen: Du har vikeplikt for kjøretøy som kommer fra høyre, med mindre noe annet er bestemt av skilt eller oppmerking.\n- Hvor gjelder den? I alle kryss uten vikepliktskilt, stoppskilt eller forkjørsvei.\n- Viktig om T-kryss: Høyreregelen gjelder også i umerkede T-kryss. Selv om du kjører rett frem på den gjennomgående veien, må du vike for biler som kommer fra høyre i krysset.'
+                content: 'Vegoppmerkingen er det mange undervurderer til teoriprøven. Skilt kan du lese — men linjene i veibanen krever at du forstår hva de betyr når du kjører forbi dem i 80 km/t uten tid til å tenke. Denne guiden gir deg oversikt over alle viktige markeringer med visuelle eksempler.'
             },
             {
-                title: '2. Myndighetspyramiden: Hva gjelder når?',
+                title: 'Hva er veimerking?',
                 type: 'info',
-                content: 'I trafikken oppstår det ofte situasjoner der skilt, lys og generelle regler sier forskjellige ting. Da bruker vi myndighetspyramiden for å vite hva som gjelder. Reglene følges i denne rekkefølgen:\n1. Politi og manuelle dirigenter: Deres anvisninger overstyrer alt annet.\n2. Trafikklys: Grønt lys overstyrer skilt. (Blinker lyset gult, eller er slukket, er det skiltene som gjelder).\n3. Trafikkskilt og oppmerking: Vikepliktskilt og forkjørsvei overstyrer de generelle trafikkreglene.\n4. Trafikkregler (Høyreregelen): Dette er bunnen av pyramiden. Den gjelder bare når det ikke finnes politi, lys eller skilt som sier noe annet.\n\nKlassisk teoriprøvespørsmål: «Du ankommer et kryss der trafikklyset viser grønt, men det er også satt opp et vikepliktskilt. Hva er riktig?»\nA) Jeg har vikeplikt fordi skiltet gjelder.\nB) Jeg kan kjøre fordi trafikklyset gjelder foran skiltet.\nC) Høyreregelen gjelder.\n\nRiktig svar: B. Trafikklys (nivå 2 i pyramiden) står over trafikkskilt (nivå 3).'
+                content: 'Veimerking er striper, symboler og tekst som er malt direkte på veibanen. De forteller deg hva du kan og ikke kan gjøre i akkurat det punktet du befinner deg. I motsetning til skilt som varsler deg i forkant, gjelder vegoppmerkingen der og da — akkurat der linjen er.\n\nVegoppmerkingen er plassert under skilt og lyssignal i myndighetspyramiden — men den er likevel bindende å følge der den ikke overstyres av noe høyere opp.'
             },
             {
-                title: '3. Skilt som overstyrer høyreregelen',
-                type: 'signs',
-                content: 'Skilt forteller deg når høyreregelen ikke gjelder. Du må kjenne til disse tre:',
-                signs: [
-                    {
-                        name: 'Vikepliktskilt',
-                        description: 'Trekant med spissen ned og rød kant. Du skal vike for all kryssende trafikk. Senk farten og vær klar til å stoppe. Veien må være klar før du kjører.',
-                        imageUrl: '/signs/vikeplikt.svg'
-                    },
-                    {
-                        name: 'Stoppskilt',
-                        description: 'Rød åttekant. Du MÅ stoppe helt opp (hjulene skal stå stille) ved stopplinjen, selv om krysset virker tomt. Se deg godt for til begge sider før du kjører videre.',
-                        imageUrl: '/signs/stopp.svg'
-                    },
-                    {
-                        name: 'Forkjørsvei',
-                        description: 'Gul rute. Du har forkjørsrett. Kryssende trafikk har vikeplikt for deg. Dette gjelder helt til du ser skiltet for "Slutt på forkjørsvei".',
-                        imageUrl: '/signs/forkjorsvei.svg'
-                    }
-                ]
+                title: 'Hvite linjer — de vanligste',
+                type: 'table',
+                content: `<div style="display:flex;flex-direction:column;gap:1.5rem">
+  <div>
+    <strong style="font-size:1rem;color:var(--color-text)">Kjørefeltlinje (stiplet hvit)</strong>
+    <div style="background:#2d2d2d;border-radius:6px;padding:12px 16px;margin:8px 0;position:relative;overflow:hidden">
+      <div style="font-size:10px;color:#999;margin-bottom:6px">→ Felt A</div>
+      <div style="height:3px;background:repeating-linear-gradient(90deg,white 0px,white 20px,transparent 20px,transparent 32px);border-radius:2px"></div>
+      <div style="font-size:10px;color:#999;margin-top:6px">→ Felt B</div>
+    </div>
+    <p style="color:var(--color-text-light);line-height:1.6;margin:0">Den vanligste linjen på norske veier. Skiller kjørefelt i samme kjøreretning. Du kan krysse den når det er trygt og lovlig — for eksempel ved feltskifte eller forbikjøring der forholdene tillater det.</p>
+  </div>
+  <div>
+    <strong style="font-size:1rem;color:var(--color-text)">Sperrelinje (heltrukken hvit)</strong>
+    <div style="background:#2d2d2d;border-radius:6px;padding:12px 16px;margin:8px 0">
+      <div style="font-size:10px;color:#999;margin-bottom:6px">→ Felt A</div>
+      <div style="height:3px;background:white;border-radius:2px"></div>
+      <div style="font-size:10px;color:#999;margin-top:6px">→ Felt B</div>
+    </div>
+    <p style="color:var(--color-text-light);line-height:1.6;margin:0">Forbyr overkjøring. Du har ikke lov til å krysse en hvit sperrelinje, hverken for å bytte felt eller kjøre forbi andre. Den brukes der sikt eller trafikkforhold gjør forbikjøring farlig.</p>
+  </div>
+  <div>
+    <strong style="font-size:1rem;color:var(--color-text)">Dobbel heltrukken linje</strong>
+    <div style="background:#2d2d2d;border-radius:6px;padding:12px 16px;margin:8px 0">
+      <div style="font-size:10px;color:#999;margin-bottom:6px">→ Din retning</div>
+      <div style="height:2.5px;background:white;border-radius:2px;margin-bottom:4px"></div>
+      <div style="height:2.5px;background:white;border-radius:2px"></div>
+      <div style="font-size:10px;color:#999;margin-top:6px">← Motgående trafikk</div>
+    </div>
+    <p style="color:var(--color-text-light);line-height:1.6;margin:0">Absolutt forbud mot å krysse fra begge sider. Brukes på veier med mye trafikk eller særlig dårlig sikt. Ingen unntak.</p>
+  </div>
+  <div>
+    <strong style="font-size:1rem;color:var(--color-text)">Kombinerte linjer (én stiplet + én heltrukken)</strong>
+    <div style="background:#2d2d2d;border-radius:6px;padding:12px 16px;margin:8px 0">
+      <div style="font-size:10px;color:#9fe1cb;margin-bottom:6px">→ Kan krysse (stiplet side)</div>
+      <div style="height:2.5px;background:repeating-linear-gradient(90deg,white 0px,white 16px,transparent 16px,transparent 26px);border-radius:2px;margin-bottom:4px"></div>
+      <div style="height:2.5px;background:white;border-radius:2px"></div>
+      <div style="font-size:10px;color:#f09595;margin-top:6px">← Kan IKKE krysse (heltrukken side)</div>
+    </div>
+    <p style="color:var(--color-text-light);line-height:1.6;margin:0">Her gjelder regelen for linjen nærmest deg. Kjører du på siden med den stiplete linjen, kan du krysse om det er trygt. Kjører du på siden med den heltrukne, er det forbudt.</p>
+  </div>
+</div>`
             },
             {
-                title: '4. Rundkjøringer',
+                title: 'Interaktiv guide — klikk og lær',
+                type: 'calculator',
+                content: 'Klikk på linjene under for å se hva de betyr:'
+            },
+            {
+                title: 'Gule linjer',
                 type: 'text',
-                content: 'I norske rundkjøringer har du vikeplikt for trafikken som allerede befinner seg inne i rundkjøringen.\n- Vent ved vikepliktslinjen til du har en trygg luke.\n- Bruk alltid blinklys når du skal ut av rundkjøringen.\n\nVanlig misforståelse: Mange tror høyreregelen gjelder i rundkjøring. Det gjør den ikke – rundkjøringsskiltet opphever høyreregelen.'
+                content: '**Gul varsellinje**\nEn gul stiplet linje advarer om at sikten fremover er begrenset — for eksempel i en kurve eller over en bakketopp. Gul varsellinje betyr at det er risikabelt å kjøre forbi, men ikke nødvendigvis forbudt.\n\n**Gul sperrelinje**\nHeltrukken gul linje forbyr kjøring til venstre for linjen. Dette er spesielt viktig å kjenne til: det er forbudt å krysse eller kjøre til venstre for gul sperrelinje — selv om du har god sikt.\n\n**Kantlinje**\nMarkerer yttergrensen av kjørebanen mot veikanten eller skulder. Hvit kantlinje er standard — gul kantlinje langs fortau eller parkering indikerer stans- og parkeringsforbud.'
             },
             {
-                title: '5. Trikk og buss',
+                title: 'Tverrgående merking',
+                type: 'text',
+                content: '**Stopplinje**\nEn bred hvit tverrstrek som markerer nøyaktig hvor du skal stoppe — ved rødt lys, stoppskilt eller på annen måte når du er pålagt å stanse. Du skal stoppe før linjen, ikke på den.\n\n**Vikelinje (haifinner)**\nEn rekke hvite trekanter på tvers av kjøreretningen din. De peker mot deg og forteller deg at du har vikeplikt. Du skal stanse ved vikelinjen om nødvendig.\n\n**Gangfelt**\nBrede hvite striper på tvers av veien. Fotgjengere har forkjørsrett i gangfelt — du plikter å stanse for fotgjengere som er i gangfeltet eller på vei ut i det.\n\n**Sykkelkryssing**\nStiplet oppmerking som ligner gangfelt men for syklister. Syklister har ikke automatisk forkjørsrett her — du må vurdere situasjonen.'
+            },
+            {
+                title: 'Pilmerking',
+                type: 'info',
+                content: 'Piler i kjørefeltet forteller deg hvilken retning du skal kjøre. Der det er sperrelinjer er pilene påbud — du må kjøre i den retningen pilen viser. Der det bare er feltlinjer er pilen en anbefaling, men du bør følge den.\n\nTypiske kombinasjoner du ser i kryss: rett frem, venstre, høyre, eller kombinasjoner som "rett frem eller høyre".'
+            },
+            {
+                title: 'Symboler i veibanen',
+                type: 'text',
+                content: 'Vikesymbol (omvendt trekant malt i asfalten) varsler deg om kommende vikeplikt — det gir deg ekstra tid til å forberede deg, og brukes ofte i forkant av vikelinjen.\n\nGangsymbol viser at fotgjengere bruker det området. Sykkelsymbol markerer sykkelfelt — her gjelder trafikkreglenes bestemmelser om sykkelfelt.\n\nTekst som "STOPP", "BUSS", "TAXI" og "SKOLE" gir stedsspesifikk informasjon. "STOPP" hører sammen med stoppskilt. "BUSS" markerer kollektivfelt.'
+            },
+            {
+                title: 'De vanligste feilene på teoriprøven',
                 type: 'warning',
-                content: 'Det gjelder egne regler for kollektivtrafikk:\n- Trikk: Du har vikeplikt for trikken, selv om den kommer fra venstre. Dette er et viktig unntak fra høyreregelen.\n- Buss: Hvis en buss blinker seg ut fra en holdeplass i en 60-sone (eller lavere), har du vikeplikt og må la bussen kjøre ut.'
+                content: 'Disse scenarioene dukker jevnlig opp:\n\n- **Kombinerte linjer** er den hyppigste kilden til feil — mange tror begge sider av en kombinert linje har samme regler. Husk: linjen nærmest deg bestemmer.\n- **Gul sperrelinje** forveksles med hvit sperrelinje. Gul gjelder spesielt mot venstre — du kan ikke krysse eller kjøre til venstre for den uansett sikt.\n- **Gangfelt vs. sykkelkryssing** — fotgjengere har forkjørsrett i gangfelt, syklister har det ikke automatisk i sykkelkryssing.\n- **Vikelinje vs. stopplinje** — ved vikelinje kan du kjøre sakte forbi hvis veien er fri. Ved stopplinje skal du alltid stanse helt.'
             },
             {
-                title: '6. Fotgjengere og syklister',
-                type: 'text',
-                content: 'Som bilist må du alltid ta hensyn til myke trafikanter:\n- Fotgjengere: Du har vikeplikt for gående i gangfelt, enten du kjører rett frem eller svinger.\n- Syklister: Hvis du skal svinge og krysser et sykkelfelt, har du vikeplikt for syklister som befinner seg i feltet.'
-            },
-            {
-                title: '7. Utkjøring fra privat vei',
-                type: 'text',
-                content: 'Du har alltid vikeplikt for all trafikk (inkludert fotgjengere og syklister) når du kjører ut fra parkeringsplasser og garasjer, privat eiendom eller gårdsplass, bensinstasjoner, og gang- og sykkelvei.\n\nEr du i tvil i trafikken, er det beste rådet å ta det rolig og la den andre passere. Det er alltid bedre å vente litt enn å skape en farlig situasjon.\n\nKlar til å teste kunnskapen? [Les også hvordan du består teoriprøven på første forsøk](/laeringsressurser/tips-eksamen) når eksamensdagen nærmer seg.'
+                title: 'Klar til å teste?',
+                type: 'tip',
+                content: 'Veimerking er en fast del av teoriprøven. Kombiner denne artikkelen med [vår gratis øvingsprøve](/quiz) for å se om du klarer å identifisere riktig linje i typiske situasjonsbilder. Sjekk også [trafikkskilt-guiden](/laeringsressurser/skilt) for å forstå samspillet mellom skilt og veimerking.\n\n[Les om vikeplikt og høyreregelen](/laeringsressurser/vikeplikt)'
             }
         ],
         faq: [
             {
-                question: 'Hva er vikeplikt?',
-                answer: 'Vikeplikt betyr at du må vente og la andre trafikanter passere før du kan kjøre videre. Du har vikeplikt når skilt, trafikklys, oppmerking eller trafikkregler krever det.'
+                question: 'Hva er forskjellen på sperrelinje og varsellinje?',
+                answer: 'Sperrelinje (heltrukken) forbyr overkjøring fullstendig. Varsellinje (stiplet, lengre streker enn normal feltlinje) advarer om dårlig sikt og anbefaler å ikke kjøre forbi, men forbyr det ikke direkte.'
             },
             {
-                question: 'Hva er høyreregelen?',
-                answer: 'Høyreregelen sier at du skal gi vikeplikt for trafikk som kommer fra høyre, når det ikke er skiltet eller oppmerkert noe annet. Regelen gjelder i kryss der ingen har forkjørsrett.'
+                question: 'Kan jeg krysse en hvit sperrelinje for å svinge inn i en avkjørsel?',
+                answer: 'Ja — du kan krysse en hvit sperrelinje for å kjøre inn eller ut av en eiendom, men du kan ikke krysse den for forbikjøring.'
             },
             {
-                question: 'Har man vikeplikt i rundkjøring?',
-                answer: 'Ja, du har vikeplikt for trafikk som allerede er inne i rundkjøringen. Du skal stoppe eller vike for biler som kjører i selve rundkjøringen før du kjører inn.'
+                question: 'Hva betyr gul varsellinje kontra hvit varsellinje?',
+                answer: 'Gul varsellinje varsler om begrenset sikt for sikker forbikjøring. Hvit varsellinje indikerer risiko ved feltskifte. Begge er stiplete linjer med lengre streker enn vanlig feltlinje.'
             },
             {
-                question: 'Hva betyr vikeplikt for fotgjengere?',
-                answer: 'Du skal alltid gi fotgjengere vikeplikt i gangfelt. Du må også gi vikeplikt for fotgjengere når du svinger inn på en sidevei eller ut fra en parkeringsplass.'
+                question: 'Hva er et sperreområde?',
+                answer: 'Et sperreområde er avgrenset av heltrukne linjer med skravering inni. Det er forbudt å kjøre inn i et sperreområde.'
             },
             {
-                question: 'Hvem har vikeplikt i et T-kryss?',
-                answer: 'I et T-kryss uten skilt gjelder høyreregelen normalt. Den som kjører inn i krysset fra sidevei har vikeplikt for trafikk på hovedveien, men høyreregelen avgjør ellers.'
+                question: 'Må jeg stoppe ved vikelinje?',
+                answer: 'Ikke alltid — du skal stoppe dersom det er nødvendig for å overholde vikeplikten. Er veien fri, kan du passere vikelinjen uten å stanse.'
+            }
+        ]
+    },
+
+    {
+        id: 'rundkjoring',
+        title: 'Vikeplikt i rundkjøring',
+        icon: '🔄',
+        shortDescription: 'Lær reglene for vikeplikt, blinking og plassering i rundkjøring',
+        color: '#2563eb',
+        seoTitle: 'Vikeplikt i rundkjøring – regler, blinking og vanlige feil | Teori-test.no',
+        seoDescription: 'Hvem har vikeplikt i rundkjøring? Lær reglene for innkjøring, feltskifte og blinking – med vanlige teoriprøve-feller og eksempler fra Statens vegvesen.',
+        sections: [
+            {
+                title: 'Vikeplikt i rundkjøring',
+                type: 'text',
+                content: 'Rundkjøringen er ett av de temaene flest gjør feil på i teoriprøven. Reglene er enkle i teorien, men i praksis er det mange situasjoner som forvirrer — særlig feltskifte inne i rundkjøringen, riktig bruk av blinklys og hva som gjelder når du kjører ut.\n\nDenne artikkelen går gjennom alle vikepliktreglene i rundkjøring, svarer på de vanligste spørsmålene og hjelper deg å unngå fellene på teoriprøven.'
+            },
+            {
+                title: 'Se det i praksis',
+                type: 'component',
+                content: '',
+                component: 'RundkjoringAnimasjon'
+            },
+            {
+                title: 'Hovedregelen: Du har alltid vikeplikt ved innkjøring',
+                type: 'info',
+                content: 'Når du kjører inn i en rundkjøring, har du vikeplikt for all trafikk som allerede befinner seg inne i rundkjøringen. Dette gjelder uansett hvilken retning de kommer fra — høyreregelen gjelder ikke her.\n\nDu skal senke farten når du nærmer deg rundkjøringen, stoppe om nødvendig ved vikepliktlinjen, og vente til det er trygt å kjøre inn. Vikepliktskiltet ved inngangen bekrefter dette. I Norge er alle rundkjøringer skiltet med vikeplikt ved innkjøringen.'
+            },
+            {
+                title: 'Slik bruker du blinklys i rundkjøring',
+                type: 'warning',
+                content: 'Blinklys er et av de vanligste feilpunktene i rundkjøring. Her er reglene:\n\n**Ved høyresving (første avkjøring):** Blink til høyre i god tid før du kjører inn i rundkjøringen. Behold blinklyset på til du har kjørt ut.\n\n**Ved kjøring rett frem:** Ikke blink ved innkjøring. Blink til høyre når du er på høyde med utkjøringen rett før din egen.\n\n**Ved venstresving (mer enn halvveis rundt):** Det er ikke påbudt, men det anbefales å blinke til venstre ved innkjøring for å vise at du skal langt rundt. Bytt til høyre blink når du er på høyde med utkjøringen rett før din egen.\n\n**Tidspunkt:** I tettbygd strøk bør du blinke 50–80 meter før. Utenfor tettbygd strøk 150–250 meter før.'
+            },
+            {
+                title: 'Feltskifte inne i rundkjøringen',
+                type: 'warning',
+                content: 'Dette er det temaet som forvirrer flest. Når du allerede er inne i rundkjøringen og skal skifte felt, har du vikeplikt for trafikk i feltet du skal inn i. Flettereglene gjelder ikke i rundkjøringer.\n\nEksempel: Du kjører i ytre felt og vil inn i indre felt — da har du vikeplikt for biler i indre felt.\n\nHusk alltid å blinke ved feltskifte, også inne i rundkjøringen, og sjekk blindsonen.'
+            },
+            {
+                title: 'Riktig plassering i rundkjøringen',
+                type: 'info',
+                content: 'Plassering og blinking henger tett sammen — du skal plassere deg slik at det er lett for andre å forstå hvor du skal.\n\nI rundkjøringer med to kjørefelt gjelder følgende tommelfingerregel:\n\n- **Høyre kjørefelt:** For høyresving og kjøring rett frem (1. og 2. avkjøring)\n- **Venstre kjørefelt:** For venstresving og U-sving (3. og 4. avkjøring)\n\nI mini-rundkjøringer med ett kjørefelt gjelder de samme vikepliktreglene. Store kjøretøy kan kjøre over den lave midtøyen om nødvendig.'
+            },
+            {
+                title: 'Vikeplikt når du kjører ut',
+                type: 'info',
+                content: 'Når du kjører ut av rundkjøringen har du vikeplikt for fotgjengere og syklister i gangfelt og sykkelfelt ved utkjøringen. Du har ikke vikeplikt for biler som fortsatt kjører inne i rundkjøringen.\n\nHusk å blinke til høyre i god tid — begynn når du passerer utkjøringen rett før din egen. Sjekk alltid blindsonen før du svinger ut.'
+            },
+            {
+                title: 'Trikk, buss og utrykningskjøretøy',
+                type: 'text',
+                content: 'Trikk har ikke vikeplikt i rundkjøring. Du skal alltid gi vikeplikt for trikk, siden trikken kjører på skinner og ikke kan svinge unna.\n\nBuss følger de samme reglene som andre kjøretøy i rundkjøringen.\n\nUtrykningskjøretøy med blålys og sirene har alltid forkjørsrett. Kjør til høyre og stopp for å gi fri passasje.'
+            },
+            {
+                title: 'De vanligste feilene på teoriprøven',
+                type: 'tip',
+                content: '- Tror høyreregelen gjelder ved innkjøring — den gjør det ikke\n- Glemmer å blinke til høyre ved utkjøring\n- Tror venstreblink ved innkjøring er påbudt — det er anbefalt, ikke lovpålagt\n- Glemmer vikeplikt for fotgjengere ved utkjøring\n- Tror trikk har vikeplikt i rundkjøring — det har den ikke\n- Glemmer blinklys og vikeplikt ved feltskifte inne i rundkjøringen\n- Tror flettereglene gjelder inne i rundkjøringen — de gjør det ikke'
+            },
+            {
+                title: 'Klar til å teste kunnskapen?',
+                type: 'info',
+                content: 'Ta vikeplikt-quizen og se om du kan svare rett på de vanligste rundkjøringsspørsmålene fra teoriprøven. Les også vår komplette guide om [vikeplikt generelt](/laeringsressurser/vikeplikt).'
+            }
+        ],
+        faq: [
+            {
+                question: 'Hvem har vikeplikt i rundkjøring?',
+                answer: 'Den som kjører inn i rundkjøringen har alltid vikeplikt for trafikk som allerede er inne i rundkjøringen. Høyreregelen gjelder ikke i rundkjøringer.'
+            },
+            {
+                question: 'Har man vikeplikt fra venstre i rundkjøring?',
+                answer: 'Nei. Inne i rundkjøringen gjelder ikke høyreregelen. All trafikk som allerede er inne har forkjørsrett over deg som kjører inn, uansett hvilken side de kommer fra.'
+            },
+            {
+                question: 'Hvem har vikeplikt ved feltskifte i rundkjøring?',
+                answer: 'Den som skifter felt har vikeplikt for trafikk i feltet han skal inn i. Flettereglene gjelder ikke i rundkjøringer. Husk å bruke blinklys og sjekk blindsonen.'
+            },
+            {
+                question: 'Skal man blinke til venstre inn i rundkjøringen?',
+                answer: 'Det er ikke påbudt, men anbefalt hvis du skal mer enn halvveis rundt. Det hjelper andre trafikanter å forstå at du ikke skal umiddelbart til høyre. Blink alltid til høyre når du nærmer deg din utkjøring.'
+            },
+            {
+                question: 'Har trikk vikeplikt i rundkjøring?',
+                answer: 'Nei. Trikk har ikke vikeplikt i rundkjøring. Du skal alltid gi vikeplikt for trikk, siden trikken kjører på skinner og ikke kan svinge unna.'
+            },
+            {
+                question: 'Hvem har vikeplikt ut av rundkjøring?',
+                answer: 'Den som kjører ut av rundkjøringen har vikeplikt for fotgjengere og syklister i gangfelt og sykkelfelt ved utkjøringen. Husk å blinke til høyre og sjekk blindsonen.'
+            },
+            {
+                question: 'Har man alltid vikeplikt fra høyre?',
+                answer: 'Høyreregelen gjelder i vanlige kryss uten skilt, men ikke i rundkjøringer. I rundkjøringen er det alltid de som allerede er inne som har forkjørsrett.'
+            },
+            {
+                question: 'Gjelder flettereglene i rundkjøring?',
+                answer: 'Nei. Flettereglene gjelder ikke i rundkjøringer. Den som skifter felt har alltid vikeplikt, uansett posisjon.'
             }
         ]
     },
@@ -494,78 +732,135 @@ export const theoryTopics: TheoryTopic[] = [
             }
         ]
     },
+
     {
-        id: 'sikkerhet',
-        title: 'Sikkerhetsutstyr',
-        icon: '🦺',
-        shortDescription: 'Bilbelte, barneseter, varseltrekant og førstehjelp',
-        color: '#7c3aed',
-        seoTitle: 'Sikkerhetsutstyr og bilbelte | Teori-test.no',
-        seoDescription: 'Sikkerhetsutstyr i bil: bilbelte, barneseter, airbag, varseltrekant og førstehjelp for en trygg biltur.',
+        id: 'fartsgrenser',
+        title: 'Fartsgrenser i Norge: Alt du må vite til teoriprøven',
+        icon: '⚡',
+        shortDescription: 'Lær alle fartsgrenser i Norge til teoriprøven: 30, 50, 80 og 110 km/t, regler for skole og tilhenger, hva fartsbøter koster og prikker i førerkortet.',
+        color: '#ef4444',
+        seoTitle: 'Fartsgrenser i Norge: Alt du må vite til teoriprøven',
+        seoDescription: 'Lær alle fartsgrenser i Norge til teoriprøven: 30, 50, 80 og 110 km/t, regler for skole og tilhenger, hva fartsbøter koster og prikker i førerkortet.',
         sections: [
             {
-                title: 'Bilbelte',
+                title: 'Fartsgrenser i Norge: Alt du må vite til teoriprøven',
                 type: 'text',
-                content: 'Alle i bilen skal bruke bilbelte — både fører og passasjerer. Det er førerens ansvar at passasjerer under 15 år bruker belte. Bilbeltet reduserer risikoen for alvorlig skade med opptil 50 % ved en kollisjon.'
+                content: 'Fartsgrenser er ett av de temaene du garantert møter på teoriprøven. Her får du en fullstendig oversikt over alle gjeldende fartsgrenser, hva bøtene koster, og hvordan prikkesystemet fungerer.'
             },
             {
-                title: 'Barnesikring',
-                type: 'warning',
-                content: 'Barn under 135 cm skal bruke godkjent barnesikringsutstyr (barnesete, pute eller sele tilpasset barnets vekt og høyde). Barn bør sitte bakovervendt så lenge som mulig, helst til 4 års alder. Det er ALDRI lov å plassere bakovervendt barnestol i forsetet dersom det er aktiv airbag.'
-            },
-            {
-                title: 'Obligatorisk utstyr i bilen',
+                title: 'De generelle fartsgrensene',
                 type: 'info',
-                content: '• Varseltrekant — Skal plasseres minst 100 meter bak bilen ved stopp på veien\n• Refleksvest — Skal brukes når du står utenfor bilen langs veien\n• Førstehjelpsutstyr — Anbefalt å ha i bilen\n• Brannslukkingsapparat — Anbefalt, men ikke påbudt for personbil\n• Reservehjul eller dekkverktøy — For å skifte punktert dekk'
+                content: 'I Norge gjelder disse standardfartsgrensene der ingen skilt sier noe annet:\n\n• Tettbygd strøk: 50 km/t\n• Utenfor tettbygd strøk: 80 km/t\n• Motorvei: 100 eller 110 km/t\n\nHuskeregel: Ser du ingen fartsgrenseskilt og er i tettbygd strøk → 50 km/t. Er du utenfor tettbygd strøk → 80 km/t.'
             },
             {
-                title: 'Airbag',
+                title: 'Lavere fartsgrenser og gangfart — når gjelder de?',
                 type: 'text',
-                content: 'Airbagen fungerer sammen med bilbeltet. Den utløses ved kraftig kollisjon og reduserer skade på hode og overkropp. Viktig å vite:\n\n• Airbag uten bilbelte kan gi alvorlige skader\n• Sittestillingen bør være riktig — minst 25 cm fra rattet\n• Bakovervendt barnesete skal ALDRI brukes foran aktiv airbag'
+                content: 'På mange veier er fartsgrensen lavere enn standarden på 50 km/t. Dette er typisk i:\n\nGangfart (ca. 5-7 km/t): I gågater og på gatetun (blått skilt med hus og lekende barn) er fartsgrensen alltid gangfart. Dette er et klassisk lurespørsmål på teoriprøven! Du skal aldri kjøre fortere enn at du kan stoppe på en femøring, og de gående har alltid førsteprioritet.\n\n30 km/t: Gjelder ofte nær skoler, barnehager og i tette boliggater. Husk at hvis du kjører inn i en "30-sone", gjelder grensen for hele området og alle sideveier, helt til et skilt opphever sonen.\n\n40 km/t: Vanlig i bymiljøer og ved lekeplasser. Fysiske fartsdumper er ofte plassert i 30- og 40-soner.'
             },
             {
-                title: 'Førstehjelp — ABC',
+                title: 'Spesielle fartsgrenser du må huske',
+                type: 'warning',
+                content: 'Noen kjøretøy og situasjoner har egne regler — og disse er favoritter på teoriprøven.\n\nMed tilhenger (De nye reglene): Fartsgrensen avhenger av tilhengerens bremser og vekt:\n- Maks 60 km/t: Hvis tilhengeren er uten bremser, og den aktuelle totalvekten er over 300 kg.\n- Maks 80 km/t: Hvis tilhengeren har bremser (eller er uten bremser, men veier under 300 kg).\n- Maks 100 km/t (Tempo 100): Hvis både bil og tilhenger er spesialgodkjent for "Tempo 100", kan du kjøre i 100 km/t på motorvei som er skiltet med 100 eller 110.\n\n• Moped (45 km/t-moped): Maks 45 km/t uansett fartsgrense på veien.\n• Traktor: Maks 40 km/t.\n• Tunge kjøretøy over 3 500 kg: Maks 80 km/t på alle veier.'
+            },
+            {
+                title: '110 km/t på motorvei — hva gjelder?',
+                type: 'info',
+                content: '110 km/t er den høyeste fartsgrensen i Norge og gjelder kun på utvalgte motorveistrekninger der det er skiltet. Det er ikke automatisk 110 km/t på alle motorveier — sjekk alltid skiltene.\n\nDe fleste motorveier er skiltet 100 km/t. Noen strekninger, særlig rundt Oslo og Bergen, er hevet til 110 km/t etter dokumenterte sikkerhetsvurderinger.'
+            },
+            {
+                title: 'Fartsbøter og prikker i førerkortet (ved 50 km/t grense)',
+                type: 'warning',
+                content: 'Dette er noe veldig mange unge lurer på — og det er god grunn til det.\n\nPrikker i førerkortet:\nDu får prikker når du kjører mer enn 10 km/t over fartsgrensen (der grensen er 60 km/t eller lavere) eller mer enn 15 km/t over (der grensen er 70 km/t eller høyere). Samler du 8 prikker på 3 år mister du førerretten i 6 måneder.\n\nBøtesatser 2025 (ved 50 km/t fartsgrense):\n• Inntil 5 km/t over: 1 250 kr\n• 6–10 km/t over: 3 350 kr\n• 11–15 km/t over: 5 950 kr\n• 16–20 km/t over: 8 650 kr\n• Over 25 km/t over: Fra 13 450 kr + mulig tap av lappen\n\nVed kraftig overskridelse (vanligvis 30+ km/t over) mister du førerkortet og saken kan gå til retten.\n\nViktig for deg under 18 år: Du er på prøveperiode de to første årene. Én alvorlig forseelse kan bety at du mister lappen og må ta den på nytt.'
+            },
+            {
+                title: 'Fartsgrenser og bremselengde — sammenhengen',
+                type: 'text',
+                content: 'Dette er et klassisk teoriprøve-spørsmål. Fart har dramatisk effekt på bremselengde fordi bremseenergien øker med kvadratet av farten:\n\n• 50 km/t → bremselengde ca. 13 meter (tørr asfalt)\n• 80 km/t → bremselengde ca. 32 meter\n• 100 km/t → bremselengde ca. 50 meter\n\nDobler du farten, firedobles bremselengden — ikke dobbles. For total stopplengde (reaksjonstid + bremsing) blir forskjellen enda større.\n\nTest deg selv: Å regne ut nøyaktig stopplengde er en gjenganger på teoriprøven. [Prøv vår interaktive bremselengde-kalkulator](/laeringsressurser/bremselengde) for å se nøyaktig hvor mange meter bilen din trenger for å stoppe på ulike underlag!'
+            },
+            {
+                title: 'Tips for å huske fartsgrensene til teoriprøven',
                 type: 'tip',
-                content: 'Ved ulykke, husk ABC:\n\nA — Airways (Luftveier): Sjekk at luftveiene er frie\nB — Breathing (Pust): Se, lytt og kjenn etter pust\nC — Circulation (Sirkulasjon): Start hjerte-lungeredning (HLR) ved behov\n\nRing 113 (AMK) ved alvorlige skader. Sikre ulykkesstedet først!'
+                content: '• Ingen skilt i by = 50. Det er alltid utgangspunktet i tettbygd strøk.\n• Ingen skilt på landet = 80. Gjelder utenfor tettbygd strøk.\n• Tilhenger = alltid maks 80, uansett hva veien er skiltet (uten Tempo 100).\n• Skolen er ofte 30, med eller uten fartsdump.\n• 110 km/t finnes bare der det er skiltet — anta aldri 110.'
+            },
+            {
+                title: 'Vanlige spørsmål om fartsgrenser (FAQ)',
+                type: 'info',
+                content: 'Q: Hva er fartsgrensen der det ikke er satt opp skilt?\nA: I tettbygd strøk er den 50 km/t, og utenfor tettbygd strøk er den 80 km/t. Dette følger av trafikkreglene § 13.\n\nQ: Kan kommunen sette lavere fartsgrenser?\nA: Ja. Kommunen kan skilte lavere grenser enn de nasjonale standardene, for eksempel 30 km/t i boliggater.\n\nQ: Mister man lappen første gang man kjører for fort?\nA: Ikke nødvendigvis, men ved alvorlig overskridelse (typisk 30+ km/t over) kan førerretten inndras selv første gang.\n\nQ: Gjelder 50 km/t også på riksveier gjennom tettsteder?\nA: Ja. Fartsgrensen følger veitype og bebyggelse, ikke om veien er en riksvei eller kommunal vei.'
             }
         ]
     },
+
     {
-        id: 'miljo',
-        title: 'Miljøvennlig kjøring',
-        icon: '🌿',
-        shortDescription: 'Spar drivstoff og reduser utslipp med riktig kjørestil',
-        color: '#16a34a',
-        seoTitle: 'Miljøvennlig kjøring – spar drivstoff | Teori-test.no',
-        seoDescription: 'Lær hvordan du kjører miljøvennlig, sparer drivstoff og reduserer utslipp for å bestå teoriprøven klasse B.',
+        id: 'reaksjonstid',
+        title: 'Reaksjonstid og stopplengde – slik regner du det ut (Klasse B)',
+        icon: '⏱️',
+        shortDescription: 'Lær hva reaksjonstid er, hvordan du regner ut reaksjonslengde og stopplengde til teoriprøven. Tabeller, formler og interaktiv test for klasse B.',
+        color: '#2563eb',
+        seoTitle: 'Reaksjonstid og stopplengde – slik regner du det ut (Klasse B) | Teori-test.no',
+        seoDescription: 'Lær hva reaksjonstid er, hvordan du regner ut reaksjonslengde og stopplengde til teoriprøven. Tabeller, formler og interaktiv test for klasse B.',
         sections: [
             {
-                title: 'Økonomisk kjøring',
+                title: 'Hva er reaksjonstid?',
                 type: 'text',
-                content: 'Miljøvennlig kjøring handler om å redusere drivstofforbruk og utslipp gjennom smart kjørestil. En jevn og forutseende kjørestil kan redusere forbruket med 10–30 %.'
+                content: 'Før bilen begynner å bremse, har du allerede kjørt langt. Reaksjonstiden er den usynlige faren de fleste undervurderer — og en av de viktigste grunnene til ulykker på norske veier.\n\nReaksjonstid er tiden det tar fra du oppdager en fare til foten faktisk treffer bremsepedalen. For en uthvilt og edru sjåfør er dette normalt ca. 1 sekund. Det høres kort ut — men i løpet av det sekundet fortsetter bilen med full fart uten at du gjør noe som helst.'
             },
             {
-                title: 'Tips for miljøvennlig kjøring',
+                title: 'Test din egen reaksjonstid:',
+                type: 'calculator',
+                content: 'Sjekk hvor raskt du reagerer! Testen under simulerer en nødbrems-situasjon i 80 km/t. Klarer du å reagere raskere enn gjennomsnittet?'
+            },
+            {
+                title: 'Reaksjonslengde — hvor langt kjører du før du bremser?',
+                type: 'table',
+                content: 'Formelen er: **Reaksjonslengde = (fart ÷ 10) × 3 meter**\n\n<div style="overflow-x: auto; -webkit-overflow-scrolling: touch; margin-top: 1rem;"><table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem;"><thead><tr style="background-color: var(--color-surface); border-bottom: 2px solid var(--color-border);"><th style="padding: 12px 8px;">Hastighet</th><th style="padding: 12px 8px;">Reaksjonslengde</th></tr></thead><tbody><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">30 km/t</td><td style="padding: 12px 8px;">9 meter</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">50 km/t</td><td style="padding: 12px 8px;">15 meter</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">80 km/t</td><td style="padding: 12px 8px;">24 meter</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">100 km/t</td><td style="padding: 12px 8px;">30 meter</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">120 km/t</td><td style="padding: 12px 8px;">36 meter</td></tr></tbody></table></div>\n\nTenk på det slik: ved 80 km/t kjører du nesten tre bilengder før du i det hele tatt begynner å bremse.'
+            },
+            {
+                title: 'Hva øker reaksjonstiden din?',
                 type: 'info',
-                content: '• Kjør jevnt — Unngå brå akselerasjon og hard bremsing\n• Gir opp tidlig — Bruk høyest mulig gir ved lav turtall\n• Bruk motorbremsen — Slipp gassen i god tid før stopp\n• Hold jevn fart — Bruk cruisekontroll på motorvei\n• Unngå tomgangskjøring — Slå av motoren ved lengre stopp\n• Planlegg turen — Velg korteste og mest effektive rute'
+                content: 'Dette er faktorer som gjør at du reagerer langsommere — og som teoriprøven elsker å spørre om:\n\n- **Tretthet** — kan doble eller tredoble reaksjonstiden. En sjåfør som har vært våken i 20 timer reagerer like sakte som en med 0,8 i promille\n- **Alkohol og medisiner** — selv små mengder forsinker signalene fra øynene til hjernen til foten\n- **Mobilbruk** — ikke bare hånden på telefonen, men selve tankene dine er et annet sted. Reaksjonstiden øker med opptil 40 % selv med handsfree\n- **Uoppmerksomhet** — samtale med passasjer, radio, tanker om andre ting\n- **Mørke og dårlig sikt** — du oppdager faren senere og må reagere raskere\n- **Alder** — eldre sjåfører reagerer noe langsommere, men kompenserer med erfaring'
             },
             {
-                title: 'Dekktrykk',
-                type: 'warning',
-                content: 'For lavt dekktrykk øker drivstofforbruket med opptil 5 % og sliter dekkene ujevnt. Sjekk dekktrykket minst én gang i måneden og alltid før lengre turer. Riktig dekktrykk finner du i bilens brukerveiledning eller på en plate i dørkarmen.'
+                title: 'Stopplengde = reaksjonslengde + bremselengde',
+                type: 'table',
+                content: 'Stopplengden er den totale avstanden fra du oppdager faren til bilen faktisk stopper. Bremselengden øker kvadratisk med farten — det vil si at dobbel fart gir firedobbel bremselengde.\n\n<div style="overflow-x: auto; -webkit-overflow-scrolling: touch; margin-top: 1rem;"><table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem;"><thead><tr style="background-color: var(--color-surface); border-bottom: 2px solid var(--color-border);"><th style="padding: 12px 8px;">Hastighet</th><th style="padding: 12px 8px;">Reaksjonslengde</th><th style="padding: 12px 8px;">Bremselengde (tørr)</th><th style="padding: 12px 8px;">Stopplengde</th></tr></thead><tbody><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">30 km/t</td><td style="padding: 12px 8px;">9 m</td><td style="padding: 12px 8px;">4,5 m</td><td style="padding: 12px 8px;">13,5 m</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">50 km/t</td><td style="padding: 12px 8px;">15 m</td><td style="padding: 12px 8px;">12,5 m</td><td style="padding: 12px 8px;">27,5 m</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">80 km/t</td><td style="padding: 12px 8px;">24 m</td><td style="padding: 12px 8px;">32 m</td><td style="padding: 12px 8px;">56 m</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">100 km/t</td><td style="padding: 12px 8px;">30 m</td><td style="padding: 12px 8px;">50 m</td><td style="padding: 12px 8px;">80 m</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">120 km/t</td><td style="padding: 12px 8px;">36 m</td><td style="padding: 12px 8px;">72 m</td><td style="padding: 12px 8px;">108 m</td></tr></tbody></table></div>'
             },
             {
-                title: 'Ekstrautstyr som øker forbruket',
+                title: 'Tips: Vil du regne på andre forhold?',
                 type: 'text',
-                content: 'Noen ting øker drivstofforbruket betydelig:\n\n• Takboks/takstativ — Øker luftmotstanden med opptil 20 %\n• Aircondition — Bruker ekstra energi, spesielt i bykjøring\n• Ekstra vekt — 100 kg ekstra øker forbruket med ca. 5 %\n• Åpne vinduer ved høy fart — Øker luftmotstanden\n\nFjern takboks og takstativ når det ikke er i bruk!'
+                content: '[Bruk vår interaktive bremselengde-kalkulator for å beregne stopplengde ved ulike hastigheter og veiforhold](/laeringsressurser/bremselengde)'
             },
             {
-                title: 'Elektrisk bil',
+                title: 'Praktisk eksempel',
+                type: 'example',
+                content: 'Du kjører i 80 km/t. Et barn løper ut i veien 50 meter foran deg. Du er uthvilt — reaksjonstiden din er 1 sekund. I løpet av det sekundet kjører du 24 meter. Da gjenstår 26 meter til barnet — men du trenger 32 meter for å stoppe. Du rekker det ikke.\n\nHadde du kjørt 60 km/t ville stopplengden vært 36 meter — du hadde stoppet med god margin.'
+            },
+            {
+                title: '3-sekunders regelen',
                 type: 'tip',
-                content: 'Elbiler har null lokale utslipp og lavere driftskostnader. Regenerativ bremsing (energigjenvinning) gjør at bilen lader batteriet når du slipper gassen. For å maksimere rekkevidden: bruk varme- og klimaanlegg med måte, og kjør jevnt.'
+                content: 'Hold alltid minst 3 sekunders avstand til bilen foran. Velg et fast punkt på veien. Når bilen foran passerer det, tell "én-og-tjue, to-og-tjue, tre-og-tjue". Passerer du punktet før du er ferdig, er du for tett. I dårlig vær, mørke eller ved tretthet — øk til 4–6 sekunder.'
+            },
+            {
+                title: 'Vanlige teoriprøvespørsmål',
+                type: 'text',
+                content: '• **Hva er normal reaksjonstid for en opplagt sjåfør?** → Ca. 1 sekund\n• **Hva skjer med reaksjonstiden ved tretthet?** → Den kan doble eller tredoble seg\n• **Hva er stopplengde?** → Reaksjonslengde + bremselengde\n• **Hva skjer med bremselengden når farten dobles?** → Den firedobles\n• **Hva er 3-sekunders regelen?** → Minimum avstand til bilen foran i normale forhold\n\n[Les også vår bremselengde-kalkulator](/laeringsressurser/bremselengde)'
+            }
+        ],
+        faq: [
+            {
+                question: 'Hva er normal reaksjonstid?',
+                answer: 'For en uthvilt og opplagt fører er normal reaksjonstid ca. 1 sekund.'
+            },
+            {
+                question: 'Hva er forskjellen på reaksjonslengde og bremselengde?',
+                answer: 'Reaksjonslengde er avstanden du kjører fra du oppdager faren til du starter å bremse. Bremselengde er avstanden bilen bruker på å stoppe etter at du har truffet bremsen.'
+            },
+            {
+                question: 'Hvor mye øker bremselengden når farten dobles?',
+                answer: 'Bremselengden firedobles når farten dobles (eksempel: fra 40 til 80 km/t).'
             }
         ]
     },
+
     {
         id: 'stans-og-parkering',
         title: 'Stans og parkering: Forskjellen du må kunne til teoriprøven',
@@ -643,6 +938,363 @@ export const theoryTopics: TheoryTopic[] = [
             }
         ]
     },
+
+    {
+        id: 'promille',
+        title: 'Alkohol og promille i trafikken',
+        icon: '🚫',
+        shortDescription: 'Visste du at du kan være straffbart påvirket selv om du føler deg edru? Lær promillegrensene, hva som skjer i kroppen og hvilke konsekvenser promillekjøring kan få.',
+        color: '#3b82f6', // AG Blue
+        seoTitle: 'Promillegrense i Norge: 0,2, straff og teoriprøve-regler | Teori-test.no',
+        seoDescription: 'Lær promillegrensen i Norge: 0,2 promille, straff, reaksjonstid, legemidler og vanlige teoriprøve-feller. Kort forklart for klasse B.',
+        sections: [
+            {
+                title: 'Kort forklart: promillegrensen i Norge',
+                type: 'info',
+                content: 'Promillegrensen i Norge er 0,2 for alle motorvognførere. Det finnes ingen egen 0,0-grense for unge sjåfører eller øvelseskjøring — 0,2 gjelder alle. Fra 0,5 promille mister du normalt førerretten. Over 1,2 promille er det fare for fengsel.'
+            },
+            {
+                title: 'Straff etter promillenivå',
+                type: 'table',
+                content: `<table>
+    <thead>
+        <tr>
+            <th>Promillenivå</th>
+            <th>Straff</th>
+            <th>Tap av førerkort</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>0,2–0,5</td>
+            <td>Stor bot</td>
+            <td>Normalt ikke</td>
+        </tr>
+        <tr>
+            <td>0,5–1,2</td>
+            <td>Bot + betinget fengsel</td>
+            <td>Ja, midlertidig</td>
+        </tr>
+        <tr>
+            <td>Over 1,2</td>
+            <td>Bot + ubetinget fengsel</td>
+            <td>Ja, langvarig inndragning</td>
+        </tr>
+    </tbody>
+</table>`
+            },
+            {
+                title: 'Kan jeg kjøre dagen derpå?',
+                type: 'warning',
+                content: 'Mange tror de er edru dagen etter, men kroppen forbrenner alkohol i eget tempo — ca. 0,1–0,15 promille per time, og dette varierer fra person til person. Du kan ha promille selv om du føler deg fin.\n\nIkke bruk en kalkulator alene for å avgjøre om du kan kjøre. Forbrenning varierer mellom personer, og alkohol påvirker konsentrasjon og reaksjonstid selv ved lave nivåer. Er du i tvil — ikke kjør.'
+            },
+            {
+                title: 'Promillegrensen i Norge',
+                type: 'text',
+                content: 'I Norge er promillegrensen 0,2 promille blodalkohol. Dette er en av de laveste grensene i Europa og gjelder alle bilførere. Selv et lite glass vin eller en flaske øl kan ta deg over grensen — spesielt på tom mage eller hvis du er sliten.'
+            },
+            {
+                title: '⚠️ Teoriprøve-felle: Ingen strengere grense for unge',
+                type: 'warning',
+                content: 'Det er ingen strengere promillegrense for sjåfører under 20 år eller for øvelseskjøring i Norge. Grensen på 0,2 promille gjelder absolutt for alle motorvognførere, uansett alder eller erfaring.\n\nÅ tro at det er «nulltoleranse for de under 20» er en klassisk stryk-felle på teoriprøven. Husk: 0,2 promille gjelder for alle.'
+            },
+            {
+                title: 'Slik påvirker alkohol kjøreevnen',
+                type: 'info',
+                content: '• 0,2–0,5 promille: Redusert konsentrasjonsevne og vanskeligere å bedømme fart og avstand\n• 0,5–1,0 promille: Klart svekket reaksjonstid, dårligere koordinasjon og overdreven selvtillit\n• Over 1,0 promille: Kraftig nedsatt kjøreevne — ekstrem ulykkesrisiko\n\nReaksjonstiden kan bli to til tre ganger lengre enn normalt. På motorvei ved 100 km/t betyr det 20–30 meter ekstra før du begynner å bremse.'
+            },
+            {
+                title: 'Straff og konsekvenser',
+                type: 'warning',
+                content: 'Straffene øker med promillenivået:\n\n0,2–0,5 promille: Normalt kun en svært stor bot — du mister vanligvis ikke førerkortet (med mindre det er skjerpende omstendigheter som en ulykke)\n0,5–1,2 promille: Bot + automatisk tap av førerrett. Automatisk inndragning starter på 0,5 promille\nOver 1,2 promille: Fengsel opptil 1 år + tap av førerrett i lang tid\n\nI tillegg kan forsikringen din nekte å dekke skader ved promillekjøring, noe som kan føre til enorme erstatningskrav.'
+            },
+            {
+                title: 'Ruskjøring og legemidler — den røde trekanten',
+                type: 'warning',
+                content: 'Promilleloven gjelder ikke bare alkohol. Det er også straffbart å kjøre under påvirkning av:\n• Narkotika (cannabis, kokain, amfetamin m.fl.)\n• Visse reseptbelagte legemidler (beroligende midler, sovemedisiner, smertestillende)\n\n🔺 Den røde trekanten: På medisinemballasje betyr en rød advarselstrekant at preparatet kan svekke kjøreevnen. Dette symbolet er et av de mest testede visuelle elementene på teoriprøven knyttet til rus og kjøring. Kjenn igjen dette skiltet!\n\nDin lege er pliktig til å informere deg hvis medisinene dine kan påvirke kjøreevnen. Sjekk alltid pakningsvedlegget.'
+            },
+            {
+                title: 'Viktig å vite til teoriprøven',
+                type: 'tip',
+                content: 'Promillespørsmål er blant de hyppigst stilte på teoriprøven. Husk disse nøkkeltallene:\n\n• Promillegrense: 0,2 promille\n• Reaksjonstiden kan bli 2–3 ganger lengre\n• Alkohol øker selvtilliten mens den reduserer evnen\n• Straff starter allerede ved 0,2 promille\n\nLes spørsmålene nøye — de tester ofte om du kjenner til de eksakte grensene, ikke bare at alkohol er farlig.'
+            },
+            {
+                title: 'Test kunnskapen din!',
+                type: 'tip',
+                content: 'Promille og ruspåvirkning er et av de temaene det oftest stilles spørsmål om på den ekte teoriprøven. Her på Teori-test.no kan du øve på akkurat disse spørsmålene i Ekspresstest eller Full prøve — helt gratis. Jo mer du øver, desto tryggere blir du på eksamensdagen. 🎯\n\n[Les om fartsgrenser i Norge](/laeringsressurser/fartsgrenser)'
+            }
+        ],
+        miniQuiz: [
+  {
+    question: "Hva er promillegrensen i Norge for bilførere?",
+    options: ["0,0 promille", "0,2 promille", "0,5 promille", "1,0 promille"],
+    correct: "0,2 promille",
+    explanation: "Promillegrensen i Norge er 0,2 for alle motorvognførere. Dette gjelder uansett alder og erfaring."
+  },
+  {
+    question: "Gjelder det en strengere promillegrense for unge sjåfører?",
+    options: ["Ja, 0,0 promille", "Ja, 0,1 promille", "Nei, 0,2 gjelder alle", "Ja, 0,5 promille"],
+    correct: "Nei, 0,2 gjelder alle",
+    explanation: "Det finnes ingen egen nullgrense for unge eller nyutdannede sjåfører i Norge. 0,2 promille gjelder alle motorvognførere."
+  },
+  {
+    question: "Hva skjer normalt fra 0,5 promille?",
+    options: ["Bare en advarsel", "Bot uten tap av førerkort", "Tap av førerretten", "Ingenting første gang"],
+    correct: "Tap av førerretten",
+    explanation: "Fra 0,5 promille mister du normalt førerretten midlertidig. Over 1,2 promille risikerer du ubetinget fengsel og langvarig inndragning."
+  },
+  {
+    question: "Hva betyr en rød trekant på medisinpakningen?",
+    options: ["Medisinen er farlig giftig", "Medisinen kan påvirke kjøreevnen", "Medisinen krever resept", "Medisinen er reseptfri"],
+    correct: "Medisinen kan påvirke kjøreevnen",
+    explanation: "Rød trekant på medisiner betyr at medisinen kan påvirke kjøreevnen. Du bør ikke kjøre bil uten å sjekke med lege eller apotek."
+  },
+  {
+    question: "Hvordan påvirker alkohol reaksjonstiden?",
+    options: ["Den forbedres litt", "Den påvirkes ikke", "Den forlenges betydelig", "Den halveres"],
+    correct: "Den forlenges betydelig",
+    explanation: "Alkohol forlenger reaksjonstiden betydelig. Selv ved lave promillenivåer er konsentrasjonen og reaksjonsevnen svekket — du oppdager farer senere og bremser tregere."
+  }
+],
+        faq: [
+  {
+    question: "Hva er promillegrensen i Norge?",
+    answer: "Promillegrensen i Norge er 0,2 for alle motorvognførere. Dette gjelder uansett alder og erfaring."
+  },
+  {
+    question: "Er det nulltoleranse for unge sjåfører?",
+    answer: "Nei. Det finnes ingen egen nullgrense for unge sjåfører i Norge. 0,2 promille gjelder alle motorvognførere."
+  },
+  {
+    question: "Mister man førerkortet ved 0,5 promille?",
+    answer: "Ja, normalt mister du førerretten midlertidig fra 0,5 promille. Over 1,2 promille risikerer du ubetinget fengsel og langvarig inndragning av førerkortet."
+  },
+  {
+    question: "Kan medisiner påvirke kjøreevnen?",
+    answer: "Ja. Medisiner med rød trekant på pakningen kan påvirke kjøreevnen. Sjekk alltid med lege eller apotek før du kjører."
+  },
+  {
+    question: "Hvor lenge må man vente etter å ha drukket?",
+    answer: "Kroppen forbrenner ca. 0,1–0,15 promille per time, men dette varierer mellom personer. Er du i tvil — ikke kjør. Bruk ikke kalkulator alene for å avgjøre om du er edru nok."
+  }
+]
+    },
+
+    {
+        id: 'tilhenger',
+        title: 'Tilhenger og henger: Regler, klasser og kalkulator',
+        icon: '🚗',
+        shortDescription: 'Alt du trenger om tilhenger til teoriprøven. 750 kg-regelen, campingvogn-regelen, klasse B96 og BE forklart enkelt med [gratis kalkulator](/laeringsressurser/tilhenger#henger-kalkulator).',
+        color: '#3b82f6', // AG Blue
+        seoTitle: 'Tilhenger klasse B: regler, vekt, B96, BE og kalkulator | Teori-test.no',
+        seoDescription: 'Finn ut om du kan kjøre med tilhenger på klasse B. Se 750 kg-regelen, 3500 kg-regelen, B96, BE, fartsgrenser og bruk kalkulatoren.',
+        sections: [
+            {
+                title: 'Kort forklart: tilhenger og førerkort',
+                type: 'info',
+                content: 'Med klasse B kan du trekke tilhenger på maks 750 kg tillatt totalvekt, eller tyngre tilhenger hvis bil + tilhenger har samlet tillatt totalvekt på maks 3500 kg. B96 gjelder opp til 4250 kg. BE kreves over dette.'
+            },
+            {
+                title: 'Førerkortklasser for tilhenger',
+                type: 'table',
+                content: `<table>
+    <thead>
+        <tr>
+            <th>Klasse</th>
+            <th>Når gjelder det?</th>
+            <th>Maks samlet tillatt totalvekt</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Klasse B</td>
+            <td>Tilhenger maks 750 kg, eller vogntog maks 3500 kg</td>
+            <td>3500 kg</td>
+        </tr>
+        <tr>
+            <td>B96</td>
+            <td>Vogntog over 3500 kg</td>
+            <td>4250 kg</td>
+        </tr>
+        <tr>
+            <td>BE</td>
+            <td>Tyngre kombinasjoner</td>
+            <td>opptil 7000 kg</td>
+        </tr>
+    </tbody>
+</table>`
+            },
+            {
+                title: 'Hva betyr "tillatt totalvekt"?',
+                type: 'text',
+                content: 'Når vi snakker om vekt for tilhenger og bil i dette regelverket, er det alltid "tillatt totalvekt" (også kalt registrert totalvekt) som gjelder – IKKE faktisk lastet vekt. Tillatt totalvekt finner du i vognkortet (del I og II).\n\nEksempel: Campingvognen din veier 800 kg lastet, men tillatt totalvekt i vognkortet er 1300 kg. Da bruker du 1300 kg i alle beregninger.\n\nTIP: Sjekk alltid vognkortet – ikke stol på gjetning.'
+            },
+            {
+                title: 'Klasse B – grunnreglene for tilhenger',
+                type: 'info',
+                content: 'Med vanlig klasse B (personbil) kan du trekke tilhenger i to situasjoner:\n\n1. 750 kg-regelen:\nTilhengeren har tillatt totalvekt på 750 kg eller mindre. Kombinert vekt kan da være hva som helst.\n\n2. Campingvogn-regelen (også kalt 3500 kg-regelen):\nTilhengeren er TYNGRE enn 750 kg, men bilens tillatte totalvekt pluss tilhengerens tillatte totalvekt overstiger IKKE 3500 kg.\n\nEksempel: Bil med tillatt totalvekt 2200 kg + tilhenger 1100 kg = 3300 kg. Tilhengeren er over 750 kg, men kombinasjonen er under 3500 kg → Klasse B holder!'
+            },
+            {
+                title: '⚠️ Husk bilens begrensninger',
+                type: 'warning',
+                content: 'Husk: selv om førerkortklassen din tillater en viss vekt, må du også sjekke bilens maksimale tillatte tilhengervekt i vognkortet. Denne grensen kan være lavere enn det klassereglene tillater, og varierer fra bil til bil. Vekten av tilhengeren må være innenfor det bilen har lov å trekke.'
+            },
+            {
+                title: 'Klasse B96 – mellomklassen',
+                type: 'text',
+                content: 'B96 er en utvidelse av klasse B som gjelder når:\n- Tilhengeren veier MER enn 750 kg, OG\n- Kombinert tillatt totalvekt (bil + tilhenger) er MELLOM 3500 kg og 4250 kg.\n\nKrav for B96:\n- Bestå et 7-timers obligatorisk kurs (5 t teori + 2 t kjøring)\n- INGEN oppkjøring/praktisk prøve kreves\n- B96 "stemplet" i førerkortet etter bestått kurs\n\nEksempel: Bil with tillatt totalvekt 2500 kg + tilhenger 1200 kg = 3700 kg → B96.'
+            },
+            {
+                title: 'Klasse BE – for de tyngste kombinasjonene',
+                type: 'text',
+                content: 'BE kreves når kombinert tillatt totalvekt overstiger 4250 kg.\n- Tilhengeren kan ha tillatt totalvekt opp til 3500 kg\n- Kombinert vekt kan gå opp til 7000 kg\n- Krever full teoriprøve for BE + praktisk oppkjøring\n\nEksempel: Bil 3000 kg + tilhenger 1500 kg = 4500 kg → Klasse BE.\n\nNB: Hestehengere og større båthengere havner ofte i BE-kategorien.'
+            },
+            {
+                title: 'Fartsgrenser med tilhenger',
+                type: 'info',
+                content: 'Alle tilhengere kan kjøres i inntil 80 km/t der fartsgrensen tillater det — uavhengig av om tilhengeren har bremser eller ikke. Den gamle 60 km/t-grensen for tilhengere uten bremser gjelder ikke lenger.\n\nTempo 100: Noen tilhengere kan etter en egen teknisk godkjenning hos Statens vegvesen kjøres i inntil 100 km/t. Du får da et godkjenningsdokument og et merke som skal monteres på tilhengeren. Bruk Statens vegvesens egen kalkulator på vegvesen.no/tempo100 for å sjekke om din bil og tilhenger kvalifiserer.'
+            },
+            {
+                title: 'Sjekkliste før avgang med tilhenger',
+                type: 'tip',
+                content: 'Bruk denne sjekklisten FØR du kjører – dette er pensumstoff på teoriprøven:\n- Koblingen: Henger/kule er låst og sikret (klikk-lyd)\n- Låsekabel: Nødbremsewire er festet til bilen (IKKE lås/kule)\n- Lys: Brems-, bak-, og blinklys fungerer (sjekk via bakspeil mens noen trykker)\n- Last: 100% sikret mot fremover – 50% sikret mot sideveis og bakover\n- Dekk: Riktig lufttrykk på tilhengerdekk (se vognkort)\n- Nummerskilt: Synlig, rent, og belyst (samme nr. som bil der tilhenger mangler eget)\n- Lastfordeling: Tyngde av last FORAN tilhengernes aksling → gir stabilitet\n\nHusk: Overvekt bakerst = svaiing og ustabilitet i høy hastighet.'
+            },
+            {
+                title: 'Vanlige spørsmål om tilhenger (FAQ)',
+                type: 'info',
+                content: 'Q: Kan jeg øvelseskjøre med tilhenger hvis jeg bare har klasse B?\nA: Ja, du kan øvelseskjøre med tilhenger så lenge du følger reglene for klassen du skal ta (f.eks. BE). Ledsageren må ha hatt førerrett for den aktuelle klassen sammenhengende de siste 5 årene og være over 25 år. Husk «L»-skilt og ekstra speil.\n\nQ: Hva skjer hvis kombinert vekt overstiger 3500 kg og jeg bare har klasse B?\nA: Da kjører du uten gyldig førerkort for kjøretøyet. Dette kan føre til bøter og tap av førerretten. I verste fall kan forsikringsselskapet kreve at du må betale skaden selv ved en ulykke.\n\nQ: Trenger jeg ekstra speil for tilhenger?\nA: Ja, dersom tilhengeren eller lasten er så bred at den hindrer sikt bakover i bilens vanlige speil. Du skal kunne se langs hele siden av tilhengeren.\n\nQ: Gjelder 80 km/t-regelen også i 50-sonen?\nA: Nei, i tettbygd strøk følger du alltid de lokale fartsgrensene (skiltingen). 80 km/t-grensen er en maksgrense for tilhenger på veier der skiltingen ellers ville tillatt høyere fart.'
+            }
+        ],
+        miniQuiz: [
+  {
+    question: "Bil veier 2200 kg og tilhenger har tillatt totalvekt 1100 kg. Holder klasse B?",
+    options: ["Ja, klasse B holder", "Nei, du trenger B96", "Nei, du trenger BE", "Avhenger av bilens egenvekt"],
+    correct: "Ja, klasse B holder",
+    explanation: "Samlet tillatt totalvekt er 2200 + 1100 = 3300 kg. Dette er under 3500 kg — og siden det er under 3500 kg-grensen, holder det med vanlig klasse B selv om tilhengeren er over 750 kg."
+  },
+  {
+    question: "Hva er maks tillatt totalvekt for tilhenger med klasse B (enkel regel)?",
+    options: ["500 kg", "750 kg", "1000 kg", "3500 kg"],
+    correct: "750 kg",
+    explanation: "Med klasse B kan du trekke tilhenger med tillatt totalvekt på maks 750 kg. Vil du trekke tyngre, gjelder 3500 kg-regelen for hele kombinasjonen — eller du trenger B96/BE."
+  },
+  {
+    question: "Hva er maks fart med tilhenger uten Tempo 100-godkjenning?",
+    options: ["60 km/t", "70 km/t", "80 km/t", "100 km/t"],
+    correct: "80 km/t",
+    explanation: "Etter regelendringen i mars 2022 kan alle tilhengere kjøres i inntil 80 km/t der fartsgrensen tillater det. Den gamle 60 km/t-grensen for tilhengere uten bremser gjelder ikke lenger."
+  },
+  {
+    question: "Hva trengs for å kjøre med tilhenger i 100 km/t?",
+    options: ["Bare BE-kort", "Tempo 100-godkjenning fra Statens vegvesen", "Ingenting ekstra", "Spesialdekk"],
+    correct: "Tempo 100-godkjenning fra Statens vegvesen",
+    explanation: "For å kjøre i 100 km/t med tilhenger trenger du en egen teknisk godkjenning fra Statens vegvesen. Du får da et godkjenningsdokument og et merke som monteres på tilhengeren."
+  },
+  {
+    question: "Hva betyr tillatt totalvekt på tilhengeren?",
+    options: ["Vekten av selve tilhengeren tom", "Maks vekt tilhengeren kan veie med last", "Vekten av lasten alene", "Kombinert vekt av bil og tilhenger"],
+    correct: "Maks vekt tilhengeren kan veie med last",
+    explanation: "Tillatt totalvekt er den maksimale vekten tilhengeren lovlig kan veie inkludert all last. Det er denne vekten du bruker når du beregner om klasse B, B96 eller BE gjelder."
+  }
+],
+        faq: [
+  {
+    question: "Hvor tung tilhenger kan jeg kjøre med klasse B?",
+    answer: "Med klasse B kan du trekke tilhenger med tillatt totalvekt på maks 750 kg. Alternativt kan du trekke tyngre tilhenger hvis samlet tillatt totalvekt for bil og tilhenger ikke overstiger 3500 kg."
+  },
+  {
+    question: "Når trenger jeg B96?",
+    answer: "Du trenger B96 når samlet tillatt totalvekt for bil og tilhenger er mellom 3500 og 4250 kg."
+  },
+  {
+    question: "Når trenger jeg BE?",
+    answer: "Du trenger BE når samlet tillatt totalvekt for bil og tilhenger overstiger 4250 kg, eller når tilhengeren er tyngre enn bilen."
+  },
+  {
+    question: "Hvor fort kan man kjøre med tilhenger?",
+    answer: "Etter regelendringen i mars 2022 kan alle tilhengere kjøres i inntil 80 km/t der fartsgrensen tillater det. Med Tempo 100-godkjenning fra Statens vegvesen kan du kjøre i inntil 100 km/t."
+  },
+  {
+    question: "Er det faktisk vekt eller tillatt totalvekt som gjelder?",
+    answer: "Det er alltid tillatt totalvekt (også kalt teknisk tillatt totalvekt) som gjelder — ikke faktisk vekt. Tillatt totalvekt finner du i vognkortet og på et skilt på tilhengeren."
+  }
+]
+    },
+
+    {
+        id: 'sikkerhet',
+        title: 'Sikkerhetsutstyr',
+        icon: '🦺',
+        shortDescription: 'Bilbelte, barneseter, varseltrekant og førstehjelp',
+        color: '#7c3aed',
+        seoTitle: 'Sikkerhetsutstyr og bilbelte | Teori-test.no',
+        seoDescription: 'Sikkerhetsutstyr i bil: bilbelte, barneseter, airbag, varseltrekant og førstehjelp for en trygg biltur.',
+        sections: [
+            {
+                title: 'Bilbelte',
+                type: 'text',
+                content: 'Alle i bilen skal bruke bilbelte — både fører og passasjerer. Det er førerens ansvar at passasjerer under 15 år bruker belte. Bilbeltet reduserer risikoen for alvorlig skade med opptil 50 % ved en kollisjon.'
+            },
+            {
+                title: 'Barnesikring',
+                type: 'warning',
+                content: 'Barn under 135 cm skal bruke godkjent barnesikringsutstyr (barnesete, pute eller sele tilpasset barnets vekt og høyde). Barn bør sitte bakovervendt så lenge som mulig, helst til 4 års alder. Det er ALDRI lov å plassere bakovervendt barnestol i forsetet dersom det er aktiv airbag.'
+            },
+            {
+                title: 'Obligatorisk utstyr i bilen',
+                type: 'info',
+                content: '• Varseltrekant — Skal plasseres minst 100 meter bak bilen ved stopp på veien\n• Refleksvest — Skal brukes når du står utenfor bilen langs veien\n• Førstehjelpsutstyr — Anbefalt å ha i bilen\n• Brannslukkingsapparat — Anbefalt, men ikke påbudt for personbil\n• Reservehjul eller dekkverktøy — For å skifte punktert dekk'
+            },
+            {
+                title: 'Airbag',
+                type: 'text',
+                content: 'Airbagen fungerer sammen med bilbeltet. Den utløses ved kraftig kollisjon og reduserer skade på hode og overkropp. Viktig å vite:\n\n• Airbag uten bilbelte kan gi alvorlige skader\n• Sittestillingen bør være riktig — minst 25 cm fra rattet\n• Bakovervendt barnesete skal ALDRI brukes foran aktiv airbag'
+            },
+            {
+                title: 'Førstehjelp — ABC',
+                type: 'tip',
+                content: 'Ved ulykke, husk ABC:\n\nA — Airways (Luftveier): Sjekk at luftveiene er frie\nB — Breathing (Pust): Se, lytt og kjenn etter pust\nC — Circulation (Sirkulasjon): Start hjerte-lungeredning (HLR) ved behov\n\nRing 113 (AMK) ved alvorlige skader. Sikre ulykkesstedet først!'
+            }
+        ]
+    },
+
+    {
+        id: 'miljo',
+        title: 'Miljøvennlig kjøring',
+        icon: '🌿',
+        shortDescription: 'Spar drivstoff og reduser utslipp med riktig kjørestil',
+        color: '#16a34a',
+        seoTitle: 'Miljøvennlig kjøring – spar drivstoff | Teori-test.no',
+        seoDescription: 'Lær hvordan du kjører miljøvennlig, sparer drivstoff og reduserer utslipp for å bestå teoriprøven klasse B.',
+        sections: [
+            {
+                title: 'Økonomisk kjøring',
+                type: 'text',
+                content: 'Miljøvennlig kjøring handler om å redusere drivstofforbruk og utslipp gjennom smart kjørestil. En jevn og forutseende kjørestil kan redusere forbruket med 10–30 %.'
+            },
+            {
+                title: 'Tips for miljøvennlig kjøring',
+                type: 'info',
+                content: '• Kjør jevnt — Unngå brå akselerasjon og hard bremsing\n• Gir opp tidlig — Bruk høyest mulig gir ved lav turtall\n• Bruk motorbremsen — Slipp gassen i god tid før stopp\n• Hold jevn fart — Bruk cruisekontroll på motorvei\n• Unngå tomgangskjøring — Slå av motoren ved lengre stopp\n• Planlegg turen — Velg korteste og mest effektive rute'
+            },
+            {
+                title: 'Dekktrykk',
+                type: 'warning',
+                content: 'For lavt dekktrykk øker drivstofforbruket med opptil 5 % og sliter dekkene ujevnt. Sjekk dekktrykket minst én gang i måneden og alltid før lengre turer. Riktig dekktrykk finner du i bilens brukerveiledning eller på en plate i dørkarmen.'
+            },
+            {
+                title: 'Ekstrautstyr som øker forbruket',
+                type: 'text',
+                content: 'Noen ting øker drivstofforbruket betydelig:\n\n• Takboks/takstativ — Øker luftmotstanden med opptil 20 %\n• Aircondition — Bruker ekstra energi, spesielt i bykjøring\n• Ekstra vekt — 100 kg ekstra øker forbruket med ca. 5 %\n• Åpne vinduer ved høy fart — Øker luftmotstanden\n\nFjern takboks og takstativ når det ikke er i bruk!'
+            },
+            {
+                title: 'Elektrisk bil',
+                type: 'tip',
+                content: 'Elbiler har null lokale utslipp og lavere driftskostnader. Regenerativ bremsing (energigjenvinning) gjør at bilen lader batteriet når du slipper gassen. For å maksimere rekkevidden: bruk varme- og klimaanlegg med måte, og kjør jevnt.\n\n[Les om fartsgrenser i Norge](/laeringsressurser/fartsgrenser)'
+            }
+        ]
+    },
+
     {
         id: 'vognkort-vekter',
         title: 'Vognkort og vekter: Slik forstår du tallene til teoriprøven',
@@ -708,16 +1360,29 @@ export const theoryTopics: TheoryTopic[] = [
                 answer: 'Du finner alle vektbegrensninger under punkt 8 ("Vekter") i bilens vognkort del 1. Dette inkluderer også aksellast og tillatt tilhengervekt.'
             }
         ]
-    },
+    }
+]
+
+export const theoryArticles: TheoryTopic[] = [
     {
         id: 'sikkerhetskontroll',
         title: 'Sikkerhetskontroll klasse B: Den komplette guiden',
         icon: '🔧',
         shortDescription: 'Lær deg de tekniske kontrollspørsmålene til oppkjøringen. Slik sjekker du bremser, styring, lys og dekk på en enkel måte.',
         color: '#f97316',
-        seoTitle: 'Sikkerhetskontroll klasse B: Den komplette guiden | Teori-test.no',
-        seoDescription: 'Lær deg de tekniske kontrollspørsmålene til oppkjøringen. Slik sjekker du bremser, styring, lys og dekk på en enkel måte.',
+        seoTitle: 'Sikkerhetskontroll oppkjøring klasse B – spørsmål med fasit | Teori-test.no',
+        seoDescription: 'Se vanlige sikkerhetskontroll-spørsmål til oppkjøring klasse B med svar og fasit. Øv på bremser, dekk, lys, styring, motorrom og varsellamper.',
         sections: [
+            {
+                title: 'Hva skjer på sikkerhetskontrollen?',
+                type: 'info',
+                content: 'Kort forklart: På oppkjøringen får du vanligvis ett sikkerhetskontroll-spørsmål før kjøringen starter. Du må kunne vise eller forklare kontroll av for eksempel bremser, dekk, lys, styring, vognkort eller varsellamper. Sensor vil enten be deg utføre kontrollen praktisk eller forklare hvordan du ville gjort det.'
+            },
+            {
+                title: 'Vanlige sikkerhetskontroll-spørsmål med fasit',
+                type: 'table',
+                content: `<table>\n    <thead>\n        <tr>\n            <th>Sensor spør</th>\n            <th>Slik kontrollerer du</th>\n            <th>Kort fasit</th>\n        </tr>\n    </thead>\n    <tbody>\n        <tr>\n            <td>Kontroller dekktrykket</td>\n            <td>Se i vognkortet eller dørkarmen for anbefalt trykk. Bruk trykkmåler på ventilen.</td>\n            <td>Riktig trykk = trygt. Lavt trykk = dårligere grep og høyere forbruk.</td>\n        </tr>\n        <tr>\n            <td>Kontroller mønsterdybden</td>\n            <td>Bruk mønsterdybdemåler eller 20-kroningen. Minimum 1,6 mm — anbefalt 3 mm.</td>\n            <td>Under 1,6 mm er ulovlig og farlig.</td>\n        </tr>\n        <tr>\n            <td>Kontroller bremsene</td>\n            <td>Trykk bremsepedalen ned. Den skal være fast og ikke synke. Sjekk bremsevæskenivå i motorrommet.</td>\n            <td>Myk pedal = luftboble i systemet.</td>\n        </tr>\n        <tr>\n            <td>Kontroller styringen</td>\n            <td>Kjør sakte og kjenn at bilen følger rattet uten å trekke til siden.</td>\n            <td>Trekking = feil hjulstilling eller dekk.</td>\n        </tr>\n        <tr>\n            <td>Kontroller lys foran</td>\n            <td>Slå på tenning. Sjekk nærlys, fjernlys og parkeringslys visuelt foran bilen.</td>\n            <td>Defekt lys = bot og fare for andre.</td>\n        </tr>\n        <tr>\n            <td>Kontroller bremselys</td>\n            <td>Slå på tenning. Be noen se bakpå mens du tråkker bremsepedalen.</td>\n            <td>Eller bruk refleksjonen i en vegg/garasjeport.</td>\n        </tr>\n        <tr>\n            <td>Kontroller motorolje</td>\n            <td>Trekk ut oljepinnen, tørk, sett inn igjen og sjekk nivået. Skal være mellom min og max.</td>\n            <td>For lite olje = motorskade.</td>\n        </tr>\n        <tr>\n            <td>Kontroller kjølevæske</td>\n            <td>Sjekk nivå i ekspansjonsbeholderen. Skal være mellom min og max når motoren er kald.</td>\n            <td>Aldri åpne lokket på varm motor.</td>\n        </tr>\n        <tr>\n            <td>Kontroller bremsevæske</td>\n            <td>Se nivå i beholderne under panseret. Skal være mellom min og max.</td>\n            <td>Lavt nivå kan bety slitte bremser eller lekkasje.</td>\n        </tr>\n        <tr>\n            <td>Kontroller vindusvaskervæske</td>\n            <td>Sjekk beholdernivå. Fyll på ved behov.</td>\n            <td>Tomt = dårlig sikt = farlig.</td>\n        </tr>\n        <tr>\n            <td>Kontroller varsellamper</td>\n            <td>Start bilen og sjekk at alle varsellamper slukker etter oppstart.</td>\n            <td>Lamper som lyser = feil som må sjekkes.</td>\n        </tr>\n        <tr>\n            <td>Hva betyr ABS-lampen?</td>\n            <td>ABS-systemet er feil. Bremser fungerer normalt men uten ABS-funksjon.</td>\n            <td>Kjør til verksted snart.</td>\n        </tr>\n        <tr>\n            <td>Hva betyr oljelampen?</td>\n            <td>Lavt oljetrykk. Stopp umiddelbart og slå av motoren.</td>\n            <td>Fortsetter du å kjøre kan motoren bli ødelagt.</td>\n        </tr>\n        <tr>\n            <td>Kontroller sikkerhetsbeltene</td>\n            <td>Dra beltet ut raskt — det skal låse seg. Sjekk at det klikker skikkelig i låsen.</td>\n            <td>Defekt belte = ikke godkjent.</td>\n        </tr>\n        <tr>\n            <td>Les av vognkortet</td>\n            <td>Finn egenvekt, tillatt totalvekt og nyttelast. Nyttelast = totalvekt minus egenvekt.</td>\n            <td>Viktig for tilhenger og lastberegning.</td>\n        </tr>\n        <tr>\n            <td>Hva er største tillatte tilhengervekt?</td>\n            <td>Se vognkortets felt for største tilhengervekt.</td>\n            <td>Avhenger av bilmodell — alltid sjekk vognkortet.</td>\n        </tr>\n    </tbody>\n</table>`
+            },
             {
                 title: 'Hva er sikkerhetskontroll?',
                 type: 'text',
@@ -758,10 +1423,20 @@ export const theoryTopics: TheoryTopic[] = [
                 title: 'Test deg selv: Det interaktive dashbordet',
                 type: 'calculator',
                 componentId: 'dashboard',
-                content: 'På oppkjøringen forventes det at du forstår den grunnleggende logikken bak varsellampene, og spesielt fargekoden. Rødt lys betyr at du må stanse bilen på et trygt sted og slå av motoren. Gult lys betyr som regel at du kan fortsette kjøringen, men at bilen må kontrolleres. Prøv simulatoren under for å teste refleksene dine.'
+                content: 'På oppkjøringen forventes det at du forstår den grunnleggende logikken bak varsellampene, og spesielt fargekoden. Rødt lys betyr at du må stanse bilen på et trygt sted og slå av motoren. Gult lys betyr som regel at du kan fortsette kjøringen, men at bilen må kontrolleres. Prøv simulatoren under for å teste refleksene dine.\n\n[Les vår komplette guide til oppkjøringen](/laeringsressurser/oppkjoring)'
             }
         ]
     },
+
+    {
+        id: 'oppkjoring',
+        title: 'Oppkjøring klasse B: Komplett guide',
+        icon: '🚗',
+        shortDescription: 'Du har bestått teoriprøven – nå er det bare oppkjøringen igjen. Lær hva det koster, hva som skjer på sikkerhetskontrollen og hva sensor faktisk ser etter. Ekspert-tips som hjelper deg bestå på første forsøk.',
+        color: '#f59e0b',
+        sections: []
+    },
+
     {
         id: 'stroket-teoriproven',
         title: 'Strøket på teoriprøven? Her er grunnen og slik består du neste gang',
@@ -814,49 +1489,8 @@ export const theoryTopics: TheoryTopic[] = [
                 answer: 'Vikeplikt, bremselengde og trafikkskilt er de vanligste feilkildene. Vi har gratis quiz og kalkulatorer for alle tre.'
             }
         ]
-    }
-]
+    },
 
-export const theoryArticles: TheoryTopic[] = [
-    {
-        id: 'oppkjoring',
-        title: 'Oppkjøring klasse B: Komplett guide',
-        icon: '🚗',
-        shortDescription: 'Du har bestått teoriprøven – nå er det bare oppkjøringen igjen. Lær hva det koster, hva som skjer på sikkerhetskontrollen og hva sensor faktisk ser etter. Ekspert-tips som hjelper deg bestå på første forsøk.',
-        color: '#f59e0b',
-        sections: []
-    },
-    {
-        id: 'tips-eksamen',
-        title: 'Hvordan bestå teoriprøven på første forsøk (Klasse B)',
-        icon: '💡',
-        shortDescription: 'Å stryke koster både tid og penger. Faktisk stryker omtrent halvparten av alle som tar teoriprøven for bil. Slik forbereder du deg riktig, unngår fellene og består på første forsøk.',
-        color: '#fb923c', // AG Bright Orange/Yellow
-        seoTitle: 'Slik består du teoriprøven på første forsøk | Teori-test.no',
-        seoDescription: 'Omtrent halvparten stryker på teoriprøven. Lær hvordan du unngår de vanligste fellene, forstår logikken og består på første forsøk. Øv gratis her.',
-        sections: [
-            {
-                title: '1. Forstå logikken (ikke bare pugg)',
-                type: 'text',
-                content: 'Vegvesenet endrer ofte ordlyden i spørsmålene sine. Lærer du deg bare fasiten utenat, vil du slite når spørsmålet stilles på en ny måte. Fokuser på å forstå hvorfor reglene er som de er. Forstår du logikken bak trafikkreglene, som for eksempel [vikeplikt](/laeringsressurser/vikeplikt), kan du resonnere deg frem til riktig svar uansett hvordan oppgaven er formulert.'
-            },
-            {
-                title: '2. Unngå de vanligste fellene',
-                type: 'warning',
-                content: 'Den vanligste årsaken til unødvendige feil er uoppmerksomhet. Ha dette i bakhodet under selve prøven:\n• Les spørsmålet to ganger: Se opp for små, avgjørende ord som "IKKE" eller "UNNTATT".\n• Bruk eliminasjonsmetoden: Fjern svaralternativene du vet med sikkerhet er feil først.\n• Studer bildene: De er ikke bare illustrasjoner, men inneholder ofte viktige hint om fartsgrenser, [skilt](/quiz/skilt) eller blindsoner.\n• Tenk trafikksikkerhet: Er du i tvil, velg alltid det alternativet som gir lavest risiko.'
-            },
-            {
-                title: '3. Fakta om prøven',
-                type: 'info',
-                content: 'Husk å forhåndsbestille time hos Statens vegvesen og ta med gyldig legitimasjon.\n• Krav: Prøven har 45 spørsmål. Du må ha minst 38 riktige (maks 7 feil) for å bestå.\n• Pris: Teoriprøven koster 680 kr hos Statens vegvesen (2026). Stryker du må du betale på nytt og vente minst 2 uker.\n• Gyldighet: Bestått teoriprøve er gyldig i 3 år — innen den tid må du ha bestått kjøreprøven (oppkjøringen).\n• Varighet: Teoriprøven varer 90 minutter. De fleste er ferdig på under en time.\n• Alderskrav: Du kan ta teoriprøven fra du er 16 år. Du kan søke om time 6 måneder før du fyller 16.\n• Før prøven: Møt opp uthvilt og ha spist på forhånd. En trøtt hjerne gjør lettere slurvefeil.'
-            },
-            {
-                title: '4. Øv målrettet og effektivt',
-                type: 'tip',
-                content: 'Den beste og gratis treningen er å simulere den ekte prøvesituasjonen. På Teori-test.no kan du øve gratis med verktøy som forbereder deg nøyaktig på det som møter deg:\n• [Full prøve-modus](/quiz?mode=eksamen): 45 spørsmål på 90 minutter – akkurat som på trafikkstasjonen.\n• [Ekspresstest](/quiz?mode=hurtig): Raske økter som passer perfekt på mobilen når du har noen minutter ledig.\n• [Fokus-modus](/quiz?mode=fokus): Et smart verktøy som husker hva du svarer feil på, slik at du kun trenger å terpe på svakhetene dine.'
-            }
-        ]
-    },
     {
         id: 'ovingskjoring',
         title: 'Guide til øvingskjøring',
@@ -903,460 +1537,35 @@ export const theoryArticles: TheoryTopic[] = [
             }
         ]
     },
+
     {
-        id: 'promille',
-        title: 'Alkohol og promille i trafikken',
-        icon: '🚫',
-        shortDescription: 'Visste du at du kan være straffbart påvirket selv om du føler deg edru? Lær promillegrensene, hva som skjer i kroppen og hvilke konsekvenser promillekjøring kan få.',
-        color: '#3b82f6', // AG Blue
-        seoTitle: 'Alkohol og promille i trafikken – regler og konsekvenser | Teori-test.no',
-        seoDescription: 'Lær alt om promillegrenser, straff og hvordan rus påvirker kjøreevnen din. Avgjørende for teoriprøven.',
+        id: 'tips-eksamen',
+        title: 'Hvordan bestå teoriprøven på første forsøk (Klasse B)',
+        icon: '💡',
+        shortDescription: 'Å stryke koster både tid og penger. Faktisk stryker omtrent halvparten av alle som tar teoriprøven for bil. Slik forbereder du deg riktig, unngår fellene og består på første forsøk.',
+        color: '#fb923c', // AG Bright Orange/Yellow
+        seoTitle: 'Slik består du teoriprøven på første forsøk | Teori-test.no',
+        seoDescription: 'Omtrent halvparten stryker på teoriprøven. Lær hvordan du unngår de vanligste fellene, forstår logikken og består på første forsøk. Øv gratis her.',
         sections: [
             {
-                title: 'Promillegrensen i Norge',
+                title: '1. Forstå logikken (ikke bare pugg)',
                 type: 'text',
-                content: 'I Norge er promillegrensen 0,2 promille blodalkohol. Dette er en av de laveste grensene i Europa og gjelder alle bilførere. Selv et lite glass vin eller en flaske øl kan ta deg over grensen — spesielt på tom mage eller hvis du er sliten.'
+                content: 'Vegvesenet endrer ofte ordlyden i spørsmålene sine. Lærer du deg bare fasiten utenat, vil du slite når spørsmålet stilles på en ny måte. Fokuser på å forstå hvorfor reglene er som de er. Forstår du logikken bak trafikkreglene, som for eksempel [vikeplikt](/laeringsressurser/vikeplikt), kan du resonnere deg frem til riktig svar uansett hvordan oppgaven er formulert.'
             },
             {
-                title: '⚠️ Teoriprøve-felle: Ingen strengere grense for unge',
+                title: '2. Unngå de vanligste fellene',
                 type: 'warning',
-                content: 'Det er ingen strengere promillegrense for sjåfører under 20 år eller for øvelseskjøring i Norge. Grensen på 0,2 promille gjelder absolutt for alle motorvognførere, uansett alder eller erfaring.\n\nÅ tro at det er «nulltoleranse for de under 20» er en klassisk stryk-felle på teoriprøven. Husk: 0,2 promille gjelder for alle.'
+                content: 'Den vanligste årsaken til unødvendige feil er uoppmerksomhet. Ha dette i bakhodet under selve prøven:\n• Les spørsmålet to ganger: Se opp for små, avgjørende ord som "IKKE" eller "UNNTATT".\n• Bruk eliminasjonsmetoden: Fjern svaralternativene du vet med sikkerhet er feil først.\n• Studer bildene: De er ikke bare illustrasjoner, men inneholder ofte viktige hint om fartsgrenser, [skilt](/quiz/skilt) eller blindsoner.\n• Tenk trafikksikkerhet: Er du i tvil, velg alltid det alternativet som gir lavest risiko.'
             },
             {
-                title: 'Slik påvirker alkohol kjøreevnen',
+                title: '3. Fakta om prøven',
                 type: 'info',
-                content: '• 0,2–0,5 promille: Redusert konsentrasjonsevne og vanskeligere å bedømme fart og avstand\n• 0,5–1,0 promille: Klart svekket reaksjonstid, dårligere koordinasjon og overdreven selvtillit\n• Over 1,0 promille: Kraftig nedsatt kjøreevne — ekstrem ulykkesrisiko\n\nReaksjonstiden kan bli to til tre ganger lengre enn normalt. På motorvei ved 100 km/t betyr det 20–30 meter ekstra før du begynner å bremse.'
+                content: 'Husk å forhåndsbestille time hos Statens vegvesen og ta med gyldig legitimasjon.\n• Krav: Prøven har 45 spørsmål. Du må ha minst 38 riktige (maks 7 feil) for å bestå.\n• Pris: Teoriprøven koster 680 kr hos Statens vegvesen (2026). Stryker du må du betale på nytt og vente minst 2 uker.\n• Gyldighet: Bestått teoriprøve er gyldig i 3 år — innen den tid må du ha bestått kjøreprøven (oppkjøringen).\n• Varighet: Teoriprøven varer 90 minutter. De fleste er ferdig på under en time.\n• Alderskrav: Du kan ta teoriprøven fra du er 16 år. Du kan søke om time 6 måneder før du fyller 16.\n• Før prøven: Møt opp uthvilt og ha spist på forhånd. En trøtt hjerne gjør lettere slurvefeil.'
             },
             {
-                title: 'Straff og konsekvenser',
-                type: 'warning',
-                content: 'Straffene øker med promillenivået:\n\n0,2–0,5 promille: Normalt kun en svært stor bot — du mister vanligvis ikke førerkortet (med mindre det er skjerpende omstendigheter som en ulykke)\n0,5–1,2 promille: Bot + automatisk tap av førerrett. Automatisk inndragning starter på 0,5 promille\nOver 1,2 promille: Fengsel opptil 1 år + tap av førerrett i lang tid\n\nI tillegg kan forsikringen din nekte å dekke skader ved promillekjøring, noe som kan føre til enorme erstatningskrav.'
-            },
-            {
-                title: 'Ruskjøring og legemidler — den røde trekanten',
-                type: 'warning',
-                content: 'Promilleloven gjelder ikke bare alkohol. Det er også straffbart å kjøre under påvirkning av:\n• Narkotika (cannabis, kokain, amfetamin m.fl.)\n• Visse reseptbelagte legemidler (beroligende midler, sovemedisiner, smertestillende)\n\n🔺 Den røde trekanten: På medisinemballasje betyr en rød advarselstrekant at preparatet kan svekke kjøreevnen. Dette symbolet er et av de mest testede visuelle elementene på teoriprøven knyttet til rus og kjøring. Kjenn igjen dette skiltet!\n\nDin lege er pliktig til å informere deg hvis medisinene dine kan påvirke kjøreevnen. Sjekk alltid pakningsvedlegget.'
-            },
-            {
-                title: 'Viktig å vite til teoriprøven',
+                title: '4. Øv målrettet og effektivt',
                 type: 'tip',
-                content: 'Promillespørsmål er blant de hyppigst stilte på teoriprøven. Husk disse nøkkeltallene:\n\n• Promillegrense: 0,2 promille\n• Reaksjonstiden kan bli 2–3 ganger lengre\n• Alkohol øker selvtilliten mens den reduserer evnen\n• Straff starter allerede ved 0,2 promille\n\nLes spørsmålene nøye — de tester ofte om du kjenner til de eksakte grensene, ikke bare at alkohol er farlig.'
-            },
-            {
-                title: 'Test kunnskapen din!',
-                type: 'tip',
-                content: 'Promille og ruspåvirkning er et av de temaene det oftest stilles spørsmål om på den ekte teoriprøven. Her på Teori-test.no kan du øve på akkurat disse spørsmålene i Ekspresstest eller Full prøve — helt gratis. Jo mer du øver, desto tryggere blir du på eksamensdagen. 🎯'
-            }
-        ]
-    },
-    {
-        id: 'tilhenger',
-        title: 'Tilhenger og henger: Regler, klasser og kalkulator',
-        icon: '🚗',
-        shortDescription: 'Alt du trenger om tilhenger til teoriprøven. 750 kg-regelen, campingvogn-regelen, klasse B96 og BE forklart enkelt med [gratis kalkulator](/laeringsressurser/tilhenger#henger-kalkulator).',
-        color: '#3b82f6', // AG Blue
-        seoTitle: 'Tilhenger og henger: Regler, klasser og kalkulator | Teori-test.no',
-        seoDescription: 'Alt du trenger om tilhenger til teoriprøven. 750 kg-regelen, campingvogn-regelen, klasse B96 og BE forklart enkelt. Bruk vår gratis kalkulator for å finne rett klasse.',
-        sections: [
-            {
-                title: 'Hva betyr "tillatt totalvekt"?',
-                type: 'text',
-                content: 'Når vi snakker om vekt for tilhenger og bil i dette regelverket, er det alltid "tillatt totalvekt" (også kalt registrert totalvekt) som gjelder – IKKE faktisk lastet vekt. Tillatt totalvekt finner du i vognkortet (del I og II).\n\nEksempel: Campingvognen din veier 800 kg lastet, men tillatt totalvekt i vognkortet er 1300 kg. Da bruker du 1300 kg i alle beregninger.\n\nTIP: Sjekk alltid vognkortet – ikke stol på gjetning.'
-            },
-            {
-                title: 'Klasse B – grunnreglene for tilhenger',
-                type: 'info',
-                content: 'Med vanlig klasse B (personbil) kan du trekke tilhenger i to situasjoner:\n\n1. 750 kg-regelen:\nTilhengeren har tillatt totalvekt på 750 kg eller mindre. Kombinert vekt kan da være hva som helst.\n\n2. Campingvogn-regelen (også kalt 3500 kg-regelen):\nTilhengeren er TYNGRE enn 750 kg, men bilens tillatte totalvekt pluss tilhengerens tillatte totalvekt overstiger IKKE 3500 kg.\n\nEksempel: Bil med tillatt totalvekt 2200 kg + tilhenger 1100 kg = 3300 kg. Tilhengeren er over 750 kg, men kombinasjonen er under 3500 kg → Klasse B holder!'
-            },
-            {
-                title: '⚠️ Husk bilens begrensninger',
-                type: 'warning',
-                content: 'Husk: selv om førerkortklassen din tillater en viss vekt, må du også sjekke bilens maksimale tillatte tilhengervekt i vognkortet. Denne grensen kan være lavere enn det klassereglene tillater, og varierer fra bil til bil. Vekten av tilhengeren må være innenfor det bilen har lov å trekke.'
-            },
-            {
-                title: 'Klasse B96 – mellomklassen',
-                type: 'text',
-                content: 'B96 er en utvidelse av klasse B som gjelder når:\n- Tilhengeren veier MER enn 750 kg, OG\n- Kombinert tillatt totalvekt (bil + tilhenger) er MELLOM 3500 kg og 4250 kg.\n\nKrav for B96:\n- Bestå et 7-timers obligatorisk kurs (5 t teori + 2 t kjøring)\n- INGEN oppkjøring/praktisk prøve kreves\n- B96 "stemplet" i førerkortet etter bestått kurs\n\nEksempel: Bil with tillatt totalvekt 2500 kg + tilhenger 1200 kg = 3700 kg → B96.'
-            },
-            {
-                title: 'Klasse BE – for de tyngste kombinasjonene',
-                type: 'text',
-                content: 'BE kreves når kombinert tillatt totalvekt overstiger 4250 kg.\n- Tilhengeren kan ha tillatt totalvekt opp til 3500 kg\n- Kombinert vekt kan gå opp til 7000 kg\n- Krever full teoriprøve for BE + praktisk oppkjøring\n\nEksempel: Bil 3000 kg + tilhenger 1500 kg = 4500 kg → Klasse BE.\n\nNB: Hestehengere og større båthengere havner ofte i BE-kategorien.'
-            },
-            {
-                title: 'Fartsgrenser med tilhenger',
-                type: 'info',
-                content: 'VIKTIG: Når du kjører med tilhenger, gjelder særlige fartsgrenser.\n\nStandard regel (2022-reglene):\n- Motorvei skiltet 110 km/t → Du kjører maks 80 km/t med tilhenger\n- Motorvei skiltet 100 km/t → Du kjører maks 80 km/t med tilhenger\n- Øvrige veier → Følg skiltede grenser opp til maks 80 km/t\n\nTempo 100-ordningen (100 km/t tillatt):\nBilen og tilhengeren MÅ begge være Tempo 100-godkjente. Godkjenning vises i vognkortet. Da kan du kjøre 100 km/t der skiltet tillater det.\n\nHuskeregel: Med tilhenger = maks 80 km/t, med mindre du har Tempo 100-godkjenning.'
-            },
-            {
-                title: 'Sjekkliste før avgang med tilhenger',
-                type: 'tip',
-                content: 'Bruk denne sjekklisten FØR du kjører – dette er pensumstoff på teoriprøven:\n- Koblingen: Henger/kule er låst og sikret (klikk-lyd)\n- Låsekabel: Nødbremsewire er festet til bilen (IKKE lås/kule)\n- Lys: Brems-, bak-, og blinklys fungerer (sjekk via bakspeil mens noen trykker)\n- Last: 100% sikret mot fremover – 50% sikret mot sideveis og bakover\n- Dekk: Riktig lufttrykk på tilhengerdekk (se vognkort)\n- Nummerskilt: Synlig, rent, og belyst (samme nr. som bil der tilhenger mangler eget)\n- Lastfordeling: Tyngde av last FORAN tilhengernes aksling → gir stabilitet\n\nHusk: Overvekt bakerst = svaiing og ustabilitet i høy hastighet.'
-            },
-            {
-                title: 'Vanlige spørsmål om tilhenger (FAQ)',
-                type: 'info',
-                content: 'Q: Kan jeg øvelseskjøre med tilhenger hvis jeg bare har klasse B?\nA: Ja, du kan øvelseskjøre med tilhenger så lenge du følger reglene for klassen du skal ta (f.eks. BE). Ledsageren må ha hatt førerrett for den aktuelle klassen sammenhengende de siste 5 årene og være over 25 år. Husk «L»-skilt og ekstra speil.\n\nQ: Hva skjer hvis kombinert vekt overstiger 3500 kg og jeg bare har klasse B?\nA: Da kjører du uten gyldig førerkort for kjøretøyet. Dette kan føre til bøter og tap av førerretten. I verste fall kan forsikringsselskapet kreve at du må betale skaden selv ved en ulykke.\n\nQ: Trenger jeg ekstra speil for tilhenger?\nA: Ja, dersom tilhengeren eller lasten er så bred at den hindrer sikt bakover i bilens vanlige speil. Du skal kunne se langs hele siden av tilhengeren.\n\nQ: Gjelder 80 km/t-regelen også i 50-sonen?\nA: Nei, i tettbygd strøk følger du alltid de lokale fartsgrensene (skiltingen). 80 km/t-grensen er en maksgrense for tilhenger på veier der skiltingen ellers ville tillatt høyere fart.'
-            }
-        ]
-    },
-    {
-        id: 'fartsgrenser',
-        title: 'Fartsgrenser i Norge: Alt du må vite til teoriprøven',
-        icon: '⚡',
-        shortDescription: 'Lær alle fartsgrenser i Norge til teoriprøven: 30, 50, 80 og 110 km/t, regler for skole og tilhenger, hva fartsbøter koster og prikker i førerkortet.',
-        color: '#ef4444',
-        seoTitle: 'Fartsgrenser i Norge: Alt du må vite til teoriprøven',
-        seoDescription: 'Lær alle fartsgrenser i Norge til teoriprøven: 30, 50, 80 og 110 km/t, regler for skole og tilhenger, hva fartsbøter koster og prikker i førerkortet.',
-        sections: [
-            {
-                title: 'Fartsgrenser i Norge: Alt du må vite til teoriprøven',
-                type: 'text',
-                content: 'Fartsgrenser er ett av de temaene du garantert møter på teoriprøven. Her får du en fullstendig oversikt over alle gjeldende fartsgrenser, hva bøtene koster, og hvordan prikkesystemet fungerer.'
-            },
-            {
-                title: 'De generelle fartsgrensene',
-                type: 'info',
-                content: 'I Norge gjelder disse standardfartsgrensene der ingen skilt sier noe annet:\n\n• Tettbygd strøk: 50 km/t\n• Utenfor tettbygd strøk: 80 km/t\n• Motorvei: 100 eller 110 km/t\n\nHuskeregel: Ser du ingen fartsgrenseskilt og er i tettbygd strøk → 50 km/t. Er du utenfor tettbygd strøk → 80 km/t.'
-            },
-            {
-                title: 'Lavere fartsgrenser og gangfart — når gjelder de?',
-                type: 'text',
-                content: 'På mange veier er fartsgrensen lavere enn standarden på 50 km/t. Dette er typisk i:\n\nGangfart (ca. 5-7 km/t): I gågater og på gatetun (blått skilt med hus og lekende barn) er fartsgrensen alltid gangfart. Dette er et klassisk lurespørsmål på teoriprøven! Du skal aldri kjøre fortere enn at du kan stoppe på en femøring, og de gående har alltid førsteprioritet.\n\n30 km/t: Gjelder ofte nær skoler, barnehager og i tette boliggater. Husk at hvis du kjører inn i en "30-sone", gjelder grensen for hele området og alle sideveier, helt til et skilt opphever sonen.\n\n40 km/t: Vanlig i bymiljøer og ved lekeplasser. Fysiske fartsdumper er ofte plassert i 30- og 40-soner.'
-            },
-            {
-                title: 'Spesielle fartsgrenser du må huske',
-                type: 'warning',
-                content: 'Noen kjøretøy og situasjoner har egne regler — og disse er favoritter på teoriprøven.\n\nMed tilhenger (De nye reglene): Fartsgrensen avhenger av tilhengerens bremser og vekt:\n- Maks 60 km/t: Hvis tilhengeren er uten bremser, og den aktuelle totalvekten er over 300 kg.\n- Maks 80 km/t: Hvis tilhengeren har bremser (eller er uten bremser, men veier under 300 kg).\n- Maks 100 km/t (Tempo 100): Hvis både bil og tilhenger er spesialgodkjent for "Tempo 100", kan du kjøre i 100 km/t på motorvei som er skiltet med 100 eller 110.\n\n• Moped (45 km/t-moped): Maks 45 km/t uansett fartsgrense på veien.\n• Traktor: Maks 40 km/t.\n• Tunge kjøretøy over 3 500 kg: Maks 80 km/t på alle veier.'
-            },
-            {
-                title: '110 km/t på motorvei — hva gjelder?',
-                type: 'info',
-                content: '110 km/t er den høyeste fartsgrensen i Norge og gjelder kun på utvalgte motorveistrekninger der det er skiltet. Det er ikke automatisk 110 km/t på alle motorveier — sjekk alltid skiltene.\n\nDe fleste motorveier er skiltet 100 km/t. Noen strekninger, særlig rundt Oslo og Bergen, er hevet til 110 km/t etter dokumenterte sikkerhetsvurderinger.'
-            },
-            {
-                title: 'Fartsbøter og prikker i førerkortet (ved 50 km/t grense)',
-                type: 'warning',
-                content: 'Dette er noe veldig mange unge lurer på — og det er god grunn til det.\n\nPrikker i førerkortet:\nDu får prikker når du kjører mer enn 10 km/t over fartsgrensen (der grensen er 60 km/t eller lavere) eller mer enn 15 km/t over (der grensen er 70 km/t eller høyere). Samler du 8 prikker på 3 år mister du førerretten i 6 måneder.\n\nBøtesatser 2025 (ved 50 km/t fartsgrense):\n• Inntil 5 km/t over: 1 250 kr\n• 6–10 km/t over: 3 350 kr\n• 11–15 km/t over: 5 950 kr\n• 16–20 km/t over: 8 650 kr\n• Over 25 km/t over: Fra 13 450 kr + mulig tap av lappen\n\nVed kraftig overskridelse (vanligvis 30+ km/t over) mister du førerkortet og saken kan gå til retten.\n\nViktig for deg under 18 år: Du er på prøveperiode de to første årene. Én alvorlig forseelse kan bety at du mister lappen og må ta den på nytt.'
-            },
-            {
-                title: 'Fartsgrenser og bremselengde — sammenhengen',
-                type: 'text',
-                content: 'Dette er et klassisk teoriprøve-spørsmål. Fart har dramatisk effekt på bremselengde fordi bremseenergien øker med kvadratet av farten:\n\n• 50 km/t → bremselengde ca. 13 meter (tørr asfalt)\n• 80 km/t → bremselengde ca. 32 meter\n• 100 km/t → bremselengde ca. 50 meter\n\nDobler du farten, firedobles bremselengden — ikke dobbles. For total stopplengde (reaksjonstid + bremsing) blir forskjellen enda større.\n\nTest deg selv: Å regne ut nøyaktig stopplengde er en gjenganger på teoriprøven. [Prøv vår interaktive bremselengde-kalkulator](/laeringsressurser/bremselengde) for å se nøyaktig hvor mange meter bilen din trenger for å stoppe på ulike underlag!'
-            },
-            {
-                title: 'Tips for å huske fartsgrensene til teoriprøven',
-                type: 'tip',
-                content: '• Ingen skilt i by = 50. Det er alltid utgangspunktet i tettbygd strøk.\n• Ingen skilt på landet = 80. Gjelder utenfor tettbygd strøk.\n• Tilhenger = alltid maks 80, uansett hva veien er skiltet (uten Tempo 100).\n• Skolen er ofte 30, med eller uten fartsdump.\n• 110 km/t finnes bare der det er skiltet — anta aldri 110.'
-            },
-            {
-                title: 'Vanlige spørsmål om fartsgrenser (FAQ)',
-                type: 'info',
-                content: 'Q: Hva er fartsgrensen der det ikke er satt opp skilt?\nA: I tettbygd strøk er den 50 km/t, og utenfor tettbygd strøk er den 80 km/t. Dette følger av trafikkreglene § 13.\n\nQ: Kan kommunen sette lavere fartsgrenser?\nA: Ja. Kommunen kan skilte lavere grenser enn de nasjonale standardene, for eksempel 30 km/t i boliggater.\n\nQ: Mister man lappen første gang man kjører for fort?\nA: Ikke nødvendigvis, men ved alvorlig overskridelse (typisk 30+ km/t over) kan førerretten inndras selv første gang.\n\nQ: Gjelder 50 km/t også på riksveier gjennom tettsteder?\nA: Ja. Fartsgrensen følger veitype og bebyggelse, ikke om veien er en riksvei eller kommunal vei.'
-            }
-        ]
-    },
-    {
-        id: 'myndighetspyramiden',
-        title: 'Myndighetspyramiden: Hvem bestemmer egentlig i trafikken?',
-        icon: '👮',
-        shortDescription: 'I trafikken vil du ofte oppleve at ulike signaler gir deg motstridende beskjeder. Hvem skal du høre på? Lær hierarkiet for å unngå fellene på prøven.',
-        color: '#3b82f6',
-        seoTitle: 'Myndighetspyramiden i trafikken – rekkefølge og regler | Teori-test.no',
-        seoDescription: 'Myndighetspyramiden viser hvem som har høyest myndighet i trafikken: politi øverst, deretter trafikklys, skilt og trafikkregler. Se rekkefølgen med eksempler fra teoriprøven.',
-        sections: [
-            {
-                title: 'Hva er myndighetspyramiden?',
-                type: 'text',
-                content: 'I trafikken vil du ofte oppleve at ulike signaler gir deg motstridende beskjeder. Hvem skal du egentlig høre på? Kanskje ruller du frem mot et travelt veikryss hvor trafikklyset lyser knallgrønt, samtidig som det står et tydelig vikepliktskilt montert på den samme stolpen. For å gjøre det enda mer krevende, står det kanskje en politibetjent midt i krysset og signaliserer at du må stoppe.\n\nLøsningen på dette potensielle kaoset er et av de viktigste fundamentene i trafikkopplæringen. For å bestå teoriprøven, og for å bli en trygg og selvstendig sjåfør, må du kjenne til og forstå trafikkens rangordning.\n\nEnkelt forklart er myndighetspyramiden et strengt hierarki i fire nivåer. Dette systemet forteller deg nøyaktig hvem eller hva som har høyest prioritet i enhver gitt situasjon. I stedet for å måtte gjette når to signaler gir ulik beskjed, gir pyramiden deg en ufravikelig fasit på hvilket signal som overstyrer det andre.'
-            },
-            {
-                title: 'Slik er rangordningen bygget opp, fra øverste til nederste instans:',
-                type: 'info',
-                content: '1. POLITI (Manuell dirigering)\n2. LYSSIGNAL (Trafikklys)\n3. SKILT & OPPMERKING\n4. TRAFIKKREGLER & FORSKRIFTER'
-            },
-            {
-                title: 'Illustrasjon av pyramiden',
-                type: 'pyramid',
-                content: ''
-            },
-            {
-                title: 'Nivå 1: Politi og manuell dirigering (Øverste myndighet)',
-                type: 'warning',
-                content: 'På den absolutte toppen av pyramiden finner vi mennesker med formell myndighet til å dirigere trafikken. Deres tegn og anvisninger overstyrer absolutt alle andre reguleringer – inkludert røde trafikklys, stoppskilt, oppmerking i veien og generelle trafikkregler.\n\nHvem har denne myndigheten? Selv om vi gjerne refererer til dette som "politi", gjelder det ikke utelukkende dem. Statens vegvesen, Tolletaten og militærpolitiet (MP) har også lovhjemmel til å dirigere trafikk, og du plikter å følge deres anvisninger på nøyaktig lik linje med politiet. (Skolepatruljer har ikke samme formelle myndighet, men du har likevel en plikt til å stoppe for dem av hensyn til sikkerheten).\n\nHvorfor er det slik? Mennesker har evnen til å vurdere og tilpasse seg situasjoner i sanntid. Hvis det har skjedd en alvorlig ulykke, et lyskryss har hengt seg opp, eller det pågår veiarbeid, må autorisert personell kunne overstyre den forhåndsprogrammerte teknologien for å rydde opp i kaoset og ivareta sikkerheten. Viser betjenten at du skal kjøre, så kjører du, selv om lyset lyser rødt.'
-            },
-            {
-                title: 'Nivå 2: Lyssignal (Trafikklys)',
-                type: 'info',
-                content: 'Hvis det ikke er noen som manuelt dirigerer trafikken på stedet, er det trafikklysene som overtar rollen som øverste beslutningstaker. Et fungerende trafikklys overstyrer både trafikkskilt, all vegoppmerking og de generelle trafikkreglene.\n\nLogikken bak: Lyssignaler brukes bevisst i ulykkesutsatte, tungt trafikkerte eller spesielt komplekse kryss for å skape en trygg og mekanisk styrt trafikkflyt. Systemet er designet for å fjerne tvil. Har du grønt lys, kan du kjøre, selv om det står et vikepliktskilt under lyset. Lyssignalet (Nivå 2) nøytraliserer skiltet (Nivå 3).\n\nDet viktige unntaket (Blinkende gult lys): Et gult, blinkende lys betyr at anlegget er ute av drift, eller at krysset er ekstra farlig. Et blinkende gult lys gir deg ingen rettigheter eller forkjørsrett. Det er et varsel om at du må flytte deg et hakk ned i pyramiden og forholde deg til skiltingen på stedet i stedet.'
-            },
-            {
-                title: 'Nivå 3: Trafikkskilt og vegoppmerking',
-                type: 'text',
-                content: 'Når trafikklyset er slått av, blinker gult, eller du befinner deg i et kryss som ikke har lysregulering, er det trafikkskiltene og stripene malt i veibanen som regulerer trafikken. Disse overstyrer i sin tur de generelle trafikkreglene som ligger i bunnen av pyramiden.\n\nSkilt: Et vanlig eksempel er et kryss med et vikepliktskilt. Skiltet forteller deg utvetydig at du må vike for kryssende trafikk, noe som overstyrer den generelle høyreregelen.\n\nVegoppmerking: Det er viktig å huske at maling i veien har samme myndighet som skilt. Stopplinjer (heltrukken hvit linje på tvers) og vikepliktslinjer (hvite trekanter i asfalten) gjelder selv om selve metallskiltet skulle ha blåst ned eller er dekket av snø.'
-            },
-            {
-                title: 'Nivå 4: Trafikkregler (Nederst i pyramiden)',
-                type: 'text',
-                content: 'Helt i bunnen, som en grunnmur for all ferdsel i samfunnet, ligger de generelle trafikkreglene og forskriftene. Dette er basisreglene vi alltid forholder oss til når det verken er politi, trafikklys eller skilt til stede for å regulere situasjonen.\n\nHøyreregelen: Den aller viktigste og mest brukte regelen på dette nivået er høyreregelen. Hvis du kjører gjennom et rolig boligfelt uten lyskryss og uten noen form for vikepliktskilt, er det høyreregelen (Nivå 4) som dikterer at du har vikeplikt for all trafikk som kommer fra din høyre side. Les vår komplette guide til [vikeplikt](/laeringsressurser/vikeplikt).'
-            },
-            {
-                title: 'Hva er riktig om myndighetspyramiden på teoriprøven? De vanligste fellene',
-                type: 'tip',
-                content: 'Teoriprøven elsker å teste om du virkelig forstår og stoler på hierarkiet. Når du skal svare på hva som er riktig om myndighetspyramiden under eksamen, er det spesielt viktig å kjenne til disse typiske scenariene som ofte forvirrer elever:\n\n**1. Grønt lys og Stoppskilt**\nSituasjon: Du kommer frem til et kryss. Lyset viser grønt, men det står et knallrødt Stoppskilt plassert rett under trafikklyset på samme stolpe.\nFellen: Mange elever tror at et Stoppskilt er et så strengt og absolutt forbud at det alltid gjelder uansett.\nFasit: Du kan kjøre uten å stoppe. Lyssignalet befinner seg på Nivå 2, og overstyrer dermed Stoppskiltet som befinner seg på Nivå 3. Stoppskiltet har ingen funksjon så lenge lyset er grønt; det er plassert der utelukkende for den dagen trafikklyset går i svart eller blinker gult.\n\n**2. Blinkende gult lys og vikepliktskilt**\nSituasjon: Du nærmer deg et kryss hvor trafikklyset blinker gult. Du har et vikepliktskilt.\nFasit: Som nevnt under Nivå 2, betyr et blinkende gult lys at anlegget er satt ut av spill. Du må da umiddelbart falle ned til Nivå 3 i pyramiden og følge skiltet. Du har vikeplikt.\n\n**3. Grønn pil og møtende trafikk**\nSituasjon: Du skal svinge til venstre i et stort lyskryss. Du får et vanlig, rundt grønt lys. Samtidig får den møtende trafikken også grønt lys rett frem.\nFellen: Siden du har grønt lys, antar mange at de har fri bane og bare kan svinge.\nFasit: Her gjelder trafikkreglene innad i selve lyskrysset. Når du svinger til venstre, krysser du en annens kjørebane, og de generelle reglene sier da at du har vikeplikt for møtende trafikk. (Merk: Hadde du derimot fått en lysende grønn PIL som peker til venstre, er dette et signal om at krysset er tømt for all møtende trafikk, og du kunne kjørt uhindret).\n\n**4. Fotgjengerfelt uten lys**\nSituasjon: Du skal svinge inn på en ny vei. Det ligger et gangfelt i krysset, men det er ingen egne skilt eller lys for dette gangfeltet. Det står en person og vil over.\nFellen: Mange tror fotgjengeren må vente fordi bilen ikke har fått noe spesifikt vikepliktskilt for akkurat dette gangfeltet.\nFasit: De generelle trafikkreglene (Nivå 4) er krystallklare: Kjørende som skifter kjøreretning eller svinger inn på en ny vei, har alltid vikeplikt for gående eller syklende som skal krysse den nye veien. Du må stoppe.'
-            },
-            {
-                title: 'Klar for å teste kunnskapen din?',
-                type: 'info',
-                content: 'Å ha en dyp forståelse for trafikkens rangordning er helt avgjørende for å ferdes trygt på veien. Har du kontroll på alt som gjelder myndighetspyramiden og teoriprøve-oppgaver, er du ett stort skritt nærmere å bestå. Ta gjerne en [gratis teoriprøve](/quiz) hos oss for å se om du klarer å sortere signalene riktig i praksis.'
-            }
-        ],
-        faq: [
-            {
-                question: 'Er det bare politiet som er på toppen av myndighetspyramiden?',
-                answer: 'Nei. Selv om politiet oftest brukes som eksempel, inkluderer det øverste nivået alle med offisiell myndighet til å dirigere trafikk. Dette gjelder Statens vegvesen, Tolletaten og militærpolitiet.'
-            },
-            {
-                question: 'Hva skjer hvis trafikklyset er defekt eller blinker gult?',
-                answer: 'Ved defekt eller blinkende gult lys, bortfaller lyssignalet fra pyramiden. Da må du forholde deg til neste nivå, som er trafikkskilt og vegoppmerking. Er det ingen skilt der, gjelder de vanlige trafikkreglene (som høyreregelen).'
-            },
-            {
-                question: 'Hvorfor overstyrer skilt de generelle trafikkreglene?',
-                answer: 'Skilt brukes for å regulere spesifikke og lokale utfordringer på en vei, for eksempel en farlig sving eller et kryss med mye trafikk. Spesielle lokale bestemmelser (skilt) veier alltid tyngre enn generelle regler.'
-            },
-            {
-                question: 'Hva er myndighetspyramiden i trafikken?',
-                answer: 'Myndighetspyramiden viser hvem som har høyest myndighet i trafikken. Rekkefølgen fra øverst til nederst er: 1) Politi og dirigering, 2) Trafikklys, 3) Trafikkskilt og vegoppmerking, 4) Trafikkregler.'
-            },
-            {
-                question: 'Hvem har høyest myndighet i trafikken?',
-                answer: 'Politiet har høyest myndighet i trafikken. Hvis en politibetjent dirigerer trafikken, skal du følge politiets anvisninger selv om trafikklyset viser grønt.'
-            },
-            {
-                question: 'Hva overstyrer hva i myndighetspyramiden?',
-                answer: 'Politidirigeringen overstyrer trafikklys. Trafikklys overstyrer trafikkskilt. Trafikkskilt overstyrer de generelle trafikkreglene. Politiet er alltid øverst.'
-            },
-            {
-                question: 'Hva er riktig om myndighetspyramiden på teoriprøven?',
-                answer: 'På teoriprøven er det vanlig å bli testet på rekkefølgen: politi øverst, deretter trafikklys, så skilt og vegoppmerking, og til slutt trafikkregler nederst. Politiets anvisninger gjelder alltid, uansett hva skilt eller lys viser.'
-            }
-        ]
-    },
-    {
-        id: 'veimerking',
-        title: 'Veimerking til teoriprøven – komplett visuell guide (Klasse B)',
-        icon: '🛣️',
-        shortDescription: 'Lær all norsk veimerking til teoriprøven med visuelle illustrasjoner. Sperrelinje, varselslinje, gangfelt, pilmerking og mer — med eksempler og forklaringer.',
-        color: '#0ea5e9',
-        seoTitle: 'Veimerking til teoriprøven – komplett visuell guide (Klasse B) | Teori-test.no',
-        seoDescription: 'Hva betyr hvit sperrelinje, varsellinje, kombinert linje eller vikelinje? Komplett guide til norsk veimerking med visuelle illustrasjoner – til teoriprøven.',
-        sections: [
-            {
-                title: 'Veimerking til teoriprøven',
-                type: 'text',
-                content: 'Vegoppmerkingen er det mange undervurderer til teoriprøven. Skilt kan du lese — men linjene i veibanen krever at du forstår hva de betyr når du kjører forbi dem i 80 km/t uten tid til å tenke. Denne guiden gir deg oversikt over alle viktige markeringer med visuelle eksempler.'
-            },
-            {
-                title: 'Hva er veimerking?',
-                type: 'info',
-                content: 'Veimerking er striper, symboler og tekst som er malt direkte på veibanen. De forteller deg hva du kan og ikke kan gjøre i akkurat det punktet du befinner deg. I motsetning til skilt som varsler deg i forkant, gjelder vegoppmerkingen der og da — akkurat der linjen er.\n\nVegoppmerkingen er plassert under skilt og lyssignal i myndighetspyramiden — men den er likevel bindende å følge der den ikke overstyres av noe høyere opp.'
-            },
-            {
-                title: 'Hvite linjer — de vanligste',
-                type: 'table',
-                content: `<div style="display:flex;flex-direction:column;gap:1.5rem">
-  <div>
-    <strong style="font-size:1rem;color:var(--color-text)">Kjørefeltlinje (stiplet hvit)</strong>
-    <div style="background:#2d2d2d;border-radius:6px;padding:12px 16px;margin:8px 0;position:relative;overflow:hidden">
-      <div style="font-size:10px;color:#999;margin-bottom:6px">→ Felt A</div>
-      <div style="height:3px;background:repeating-linear-gradient(90deg,white 0px,white 20px,transparent 20px,transparent 32px);border-radius:2px"></div>
-      <div style="font-size:10px;color:#999;margin-top:6px">→ Felt B</div>
-    </div>
-    <p style="color:var(--color-text-light);line-height:1.6;margin:0">Den vanligste linjen på norske veier. Skiller kjørefelt i samme kjøreretning. Du kan krysse den når det er trygt og lovlig — for eksempel ved feltskifte eller forbikjøring der forholdene tillater det.</p>
-  </div>
-  <div>
-    <strong style="font-size:1rem;color:var(--color-text)">Sperrelinje (heltrukken hvit)</strong>
-    <div style="background:#2d2d2d;border-radius:6px;padding:12px 16px;margin:8px 0">
-      <div style="font-size:10px;color:#999;margin-bottom:6px">→ Felt A</div>
-      <div style="height:3px;background:white;border-radius:2px"></div>
-      <div style="font-size:10px;color:#999;margin-top:6px">→ Felt B</div>
-    </div>
-    <p style="color:var(--color-text-light);line-height:1.6;margin:0">Forbyr overkjøring. Du har ikke lov til å krysse en hvit sperrelinje, hverken for å bytte felt eller kjøre forbi andre. Den brukes der sikt eller trafikkforhold gjør forbikjøring farlig.</p>
-  </div>
-  <div>
-    <strong style="font-size:1rem;color:var(--color-text)">Dobbel heltrukken linje</strong>
-    <div style="background:#2d2d2d;border-radius:6px;padding:12px 16px;margin:8px 0">
-      <div style="font-size:10px;color:#999;margin-bottom:6px">→ Din retning</div>
-      <div style="height:2.5px;background:white;border-radius:2px;margin-bottom:4px"></div>
-      <div style="height:2.5px;background:white;border-radius:2px"></div>
-      <div style="font-size:10px;color:#999;margin-top:6px">← Motgående trafikk</div>
-    </div>
-    <p style="color:var(--color-text-light);line-height:1.6;margin:0">Absolutt forbud mot å krysse fra begge sider. Brukes på veier med mye trafikk eller særlig dårlig sikt. Ingen unntak.</p>
-  </div>
-  <div>
-    <strong style="font-size:1rem;color:var(--color-text)">Kombinerte linjer (én stiplet + én heltrukken)</strong>
-    <div style="background:#2d2d2d;border-radius:6px;padding:12px 16px;margin:8px 0">
-      <div style="font-size:10px;color:#9fe1cb;margin-bottom:6px">→ Kan krysse (stiplet side)</div>
-      <div style="height:2.5px;background:repeating-linear-gradient(90deg,white 0px,white 16px,transparent 16px,transparent 26px);border-radius:2px;margin-bottom:4px"></div>
-      <div style="height:2.5px;background:white;border-radius:2px"></div>
-      <div style="font-size:10px;color:#f09595;margin-top:6px">← Kan IKKE krysse (heltrukken side)</div>
-    </div>
-    <p style="color:var(--color-text-light);line-height:1.6;margin:0">Her gjelder regelen for linjen nærmest deg. Kjører du på siden med den stiplete linjen, kan du krysse om det er trygt. Kjører du på siden med den heltrukne, er det forbudt.</p>
-  </div>
-</div>`
-            },
-            {
-                title: 'Interaktiv guide — klikk og lær',
-                type: 'calculator',
-                content: 'Klikk på linjene under for å se hva de betyr:'
-            },
-            {
-                title: 'Gule linjer',
-                type: 'text',
-                content: '**Gul varsellinje**\nEn gul stiplet linje advarer om at sikten fremover er begrenset — for eksempel i en kurve eller over en bakketopp. Gul varsellinje betyr at det er risikabelt å kjøre forbi, men ikke nødvendigvis forbudt.\n\n**Gul sperrelinje**\nHeltrukken gul linje forbyr kjøring til venstre for linjen. Dette er spesielt viktig å kjenne til: det er forbudt å krysse eller kjøre til venstre for gul sperrelinje — selv om du har god sikt.\n\n**Kantlinje**\nMarkerer yttergrensen av kjørebanen mot veikanten eller skulder. Hvit kantlinje er standard — gul kantlinje langs fortau eller parkering indikerer stans- og parkeringsforbud.'
-            },
-            {
-                title: 'Tverrgående merking',
-                type: 'text',
-                content: '**Stopplinje**\nEn bred hvit tverrstrek som markerer nøyaktig hvor du skal stoppe — ved rødt lys, stoppskilt eller på annen måte når du er pålagt å stanse. Du skal stoppe før linjen, ikke på den.\n\n**Vikelinje (haifinner)**\nEn rekke hvite trekanter på tvers av kjøreretningen din. De peker mot deg og forteller deg at du har vikeplikt. Du skal stanse ved vikelinjen om nødvendig.\n\n**Gangfelt**\nBrede hvite striper på tvers av veien. Fotgjengere har forkjørsrett i gangfelt — du plikter å stanse for fotgjengere som er i gangfeltet eller på vei ut i det.\n\n**Sykkelkryssing**\nStiplet oppmerking som ligner gangfelt men for syklister. Syklister har ikke automatisk forkjørsrett her — du må vurdere situasjonen.'
-            },
-            {
-                title: 'Pilmerking',
-                type: 'info',
-                content: 'Piler i kjørefeltet forteller deg hvilken retning du skal kjøre. Der det er sperrelinjer er pilene påbud — du må kjøre i den retningen pilen viser. Der det bare er feltlinjer er pilen en anbefaling, men du bør følge den.\n\nTypiske kombinasjoner du ser i kryss: rett frem, venstre, høyre, eller kombinasjoner som "rett frem eller høyre".'
-            },
-            {
-                title: 'Symboler i veibanen',
-                type: 'text',
-                content: 'Vikesymbol (omvendt trekant malt i asfalten) varsler deg om kommende vikeplikt — det gir deg ekstra tid til å forberede deg, og brukes ofte i forkant av vikelinjen.\n\nGangsymbol viser at fotgjengere bruker det området. Sykkelsymbol markerer sykkelfelt — her gjelder trafikkreglenes bestemmelser om sykkelfelt.\n\nTekst som "STOPP", "BUSS", "TAXI" og "SKOLE" gir stedsspesifikk informasjon. "STOPP" hører sammen med stoppskilt. "BUSS" markerer kollektivfelt.'
-            },
-            {
-                title: 'De vanligste feilene på teoriprøven',
-                type: 'warning',
-                content: 'Disse scenarioene dukker jevnlig opp:\n\n- **Kombinerte linjer** er den hyppigste kilden til feil — mange tror begge sider av en kombinert linje har samme regler. Husk: linjen nærmest deg bestemmer.\n- **Gul sperrelinje** forveksles med hvit sperrelinje. Gul gjelder spesielt mot venstre — du kan ikke krysse eller kjøre til venstre for den uansett sikt.\n- **Gangfelt vs. sykkelkryssing** — fotgjengere har forkjørsrett i gangfelt, syklister har det ikke automatisk i sykkelkryssing.\n- **Vikelinje vs. stopplinje** — ved vikelinje kan du kjøre sakte forbi hvis veien er fri. Ved stopplinje skal du alltid stanse helt.'
-            },
-            {
-                title: 'Klar til å teste?',
-                type: 'tip',
-                content: 'Veimerking er en fast del av teoriprøven. Kombiner denne artikkelen med [vår gratis øvingsprøve](/quiz) for å se om du klarer å identifisere riktig linje i typiske situasjonsbilder. Sjekk også [trafikkskilt-guiden](/laeringsressurser/skilt) for å forstå samspillet mellom skilt og veimerking.'
-            }
-        ],
-        faq: [
-            {
-                question: 'Hva er forskjellen på sperrelinje og varsellinje?',
-                answer: 'Sperrelinje (heltrukken) forbyr overkjøring fullstendig. Varsellinje (stiplet, lengre streker enn normal feltlinje) advarer om dårlig sikt og anbefaler å ikke kjøre forbi, men forbyr det ikke direkte.'
-            },
-            {
-                question: 'Kan jeg krysse en hvit sperrelinje for å svinge inn i en avkjørsel?',
-                answer: 'Ja — du kan krysse en hvit sperrelinje for å kjøre inn eller ut av en eiendom, men du kan ikke krysse den for forbikjøring.'
-            },
-            {
-                question: 'Hva betyr gul varsellinje kontra hvit varsellinje?',
-                answer: 'Gul varsellinje varsler om begrenset sikt for sikker forbikjøring. Hvit varsellinje indikerer risiko ved feltskifte. Begge er stiplete linjer med lengre streker enn vanlig feltlinje.'
-            },
-            {
-                question: 'Hva er et sperreområde?',
-                answer: 'Et sperreområde er avgrenset av heltrukne linjer med skravering inni. Det er forbudt å kjøre inn i et sperreområde.'
-            },
-            {
-                question: 'Må jeg stoppe ved vikelinje?',
-                answer: 'Ikke alltid — du skal stoppe dersom det er nødvendig for å overholde vikeplikten. Er veien fri, kan du passere vikelinjen uten å stanse.'
-            }
-        ]
-    },
-    {
-        id: 'rundkjoring',
-        title: 'Vikeplikt i rundkjøring',
-        icon: '🔄',
-        shortDescription: 'Lær reglene for vikeplikt, blinking og plassering i rundkjøring',
-        color: '#2563eb',
-        seoTitle: 'Vikeplikt i rundkjøring – regler, blinking og vanlige feil | Teori-test.no',
-        seoDescription: 'Hvem har vikeplikt i rundkjøring? Lær reglene for innkjøring, feltskifte og blinking – med vanlige teoriprøve-feller og eksempler fra Statens vegvesen.',
-        sections: [
-            {
-                title: 'Vikeplikt i rundkjøring',
-                type: 'text',
-                content: 'Rundkjøringen er ett av de temaene flest gjør feil på i teoriprøven. Reglene er enkle i teorien, men i praksis er det mange situasjoner som forvirrer — særlig feltskifte inne i rundkjøringen, riktig bruk av blinklys og hva som gjelder når du kjører ut.\n\nDenne artikkelen går gjennom alle vikepliktreglene i rundkjøring, svarer på de vanligste spørsmålene og hjelper deg å unngå fellene på teoriprøven.'
-            },
-            {
-                title: 'Se det i praksis',
-                type: 'component',
-                content: '',
-                component: 'RundkjoringAnimasjon'
-            },
-            {
-                title: 'Hovedregelen: Du har alltid vikeplikt ved innkjøring',
-                type: 'info',
-                content: 'Når du kjører inn i en rundkjøring, har du vikeplikt for all trafikk som allerede befinner seg inne i rundkjøringen. Dette gjelder uansett hvilken retning de kommer fra — høyreregelen gjelder ikke her.\n\nDu skal senke farten når du nærmer deg rundkjøringen, stoppe om nødvendig ved vikepliktlinjen, og vente til det er trygt å kjøre inn. Vikepliktskiltet ved inngangen bekrefter dette. I Norge er alle rundkjøringer skiltet med vikeplikt ved innkjøringen.'
-            },
-            {
-                title: 'Slik bruker du blinklys i rundkjøring',
-                type: 'warning',
-                content: 'Blinklys er et av de vanligste feilpunktene i rundkjøring. Her er reglene:\n\n**Ved høyresving (første avkjøring):** Blink til høyre i god tid før du kjører inn i rundkjøringen. Behold blinklyset på til du har kjørt ut.\n\n**Ved kjøring rett frem:** Ikke blink ved innkjøring. Blink til høyre når du er på høyde med utkjøringen rett før din egen.\n\n**Ved venstresving (mer enn halvveis rundt):** Det er ikke påbudt, men det anbefales å blinke til venstre ved innkjøring for å vise at du skal langt rundt. Bytt til høyre blink når du er på høyde med utkjøringen rett før din egen.\n\n**Tidspunkt:** I tettbygd strøk bør du blinke 50–80 meter før. Utenfor tettbygd strøk 150–250 meter før.'
-            },
-            {
-                title: 'Feltskifte inne i rundkjøringen',
-                type: 'warning',
-                content: 'Dette er det temaet som forvirrer flest. Når du allerede er inne i rundkjøringen og skal skifte felt, har du vikeplikt for trafikk i feltet du skal inn i. Flettereglene gjelder ikke i rundkjøringer.\n\nEksempel: Du kjører i ytre felt og vil inn i indre felt — da har du vikeplikt for biler i indre felt.\n\nHusk alltid å blinke ved feltskifte, også inne i rundkjøringen, og sjekk blindsonen.'
-            },
-            {
-                title: 'Riktig plassering i rundkjøringen',
-                type: 'info',
-                content: 'Plassering og blinking henger tett sammen — du skal plassere deg slik at det er lett for andre å forstå hvor du skal.\n\nI rundkjøringer med to kjørefelt gjelder følgende tommelfingerregel:\n\n- **Høyre kjørefelt:** For høyresving og kjøring rett frem (1. og 2. avkjøring)\n- **Venstre kjørefelt:** For venstresving og U-sving (3. og 4. avkjøring)\n\nI mini-rundkjøringer med ett kjørefelt gjelder de samme vikepliktreglene. Store kjøretøy kan kjøre over den lave midtøyen om nødvendig.'
-            },
-            {
-                title: 'Vikeplikt når du kjører ut',
-                type: 'info',
-                content: 'Når du kjører ut av rundkjøringen har du vikeplikt for fotgjengere og syklister i gangfelt og sykkelfelt ved utkjøringen. Du har ikke vikeplikt for biler som fortsatt kjører inne i rundkjøringen.\n\nHusk å blinke til høyre i god tid — begynn når du passerer utkjøringen rett før din egen. Sjekk alltid blindsonen før du svinger ut.'
-            },
-            {
-                title: 'Trikk, buss og utrykningskjøretøy',
-                type: 'text',
-                content: 'Trikk har ikke vikeplikt i rundkjøring. Du skal alltid gi vikeplikt for trikk, siden trikken kjører på skinner og ikke kan svinge unna.\n\nBuss følger de samme reglene som andre kjøretøy i rundkjøringen.\n\nUtrykningskjøretøy med blålys og sirene har alltid forkjørsrett. Kjør til høyre og stopp for å gi fri passasje.'
-            },
-            {
-                title: 'De vanligste feilene på teoriprøven',
-                type: 'tip',
-                content: '- Tror høyreregelen gjelder ved innkjøring — den gjør det ikke\n- Glemmer å blinke til høyre ved utkjøring\n- Tror venstreblink ved innkjøring er påbudt — det er anbefalt, ikke lovpålagt\n- Glemmer vikeplikt for fotgjengere ved utkjøring\n- Tror trikk har vikeplikt i rundkjøring — det har den ikke\n- Glemmer blinklys og vikeplikt ved feltskifte inne i rundkjøringen\n- Tror flettereglene gjelder inne i rundkjøringen — de gjør det ikke'
-            },
-            {
-                title: 'Klar til å teste kunnskapen?',
-                type: 'info',
-                content: 'Ta vikeplikt-quizen og se om du kan svare rett på de vanligste rundkjøringsspørsmålene fra teoriprøven. Les også vår komplette guide om [vikeplikt generelt](/laeringsressurser/vikeplikt).'
-            }
-        ],
-        faq: [
-            {
-                question: 'Hvem har vikeplikt i rundkjøring?',
-                answer: 'Den som kjører inn i rundkjøringen har alltid vikeplikt for trafikk som allerede er inne i rundkjøringen. Høyreregelen gjelder ikke i rundkjøringer.'
-            },
-            {
-                question: 'Har man vikeplikt fra venstre i rundkjøring?',
-                answer: 'Nei. Inne i rundkjøringen gjelder ikke høyreregelen. All trafikk som allerede er inne har forkjørsrett over deg som kjører inn, uansett hvilken side de kommer fra.'
-            },
-            {
-                question: 'Hvem har vikeplikt ved feltskifte i rundkjøring?',
-                answer: 'Den som skifter felt har vikeplikt for trafikk i feltet han skal inn i. Flettereglene gjelder ikke i rundkjøringer. Husk å bruke blinklys og sjekk blindsonen.'
-            },
-            {
-                question: 'Skal man blinke til venstre inn i rundkjøringen?',
-                answer: 'Det er ikke påbudt, men anbefalt hvis du skal mer enn halvveis rundt. Det hjelper andre trafikanter å forstå at du ikke skal umiddelbart til høyre. Blink alltid til høyre når du nærmer deg din utkjøring.'
-            },
-            {
-                question: 'Har trikk vikeplikt i rundkjøring?',
-                answer: 'Nei. Trikk har ikke vikeplikt i rundkjøring. Du skal alltid gi vikeplikt for trikk, siden trikken kjører på skinner og ikke kan svinge unna.'
-            },
-            {
-                question: 'Hvem har vikeplikt ut av rundkjøring?',
-                answer: 'Den som kjører ut av rundkjøringen har vikeplikt for fotgjengere og syklister i gangfelt og sykkelfelt ved utkjøringen. Husk å blinke til høyre og sjekk blindsonen.'
-            },
-            {
-                question: 'Har man alltid vikeplikt fra høyre?',
-                answer: 'Høyreregelen gjelder i vanlige kryss uten skilt, men ikke i rundkjøringer. I rundkjøringen er det alltid de som allerede er inne som har forkjørsrett.'
-            },
-            {
-                question: 'Gjelder flettereglene i rundkjøring?',
-                answer: 'Nei. Flettereglene gjelder ikke i rundkjøringer. Den som skifter felt har alltid vikeplikt, uansett posisjon.'
+                content: 'Den beste og gratis treningen er å simulere den ekte prøvesituasjonen. På Teori-test.no kan du øve gratis med verktøy som forbereder deg nøyaktig på det som møter deg:\n• [Full prøve-modus](/quiz?mode=eksamen): 45 spørsmål på 90 minutter – akkurat som på trafikkstasjonen.\n• [Ekspresstest](/quiz?mode=hurtig): Raske økter som passer perfekt på mobilen når du har noen minutter ledig.\n• [Fokus-modus](/quiz?mode=fokus): Et smart verktøy som husker hva du svarer feil på, slik at du kun trenger å terpe på svakhetene dine.'
             }
         ]
     }
