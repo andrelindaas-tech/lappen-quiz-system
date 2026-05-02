@@ -22,8 +22,8 @@ export default function StartScreen() {
     return (
         <div className="start-screen">
             <Helmet>
-                <title>Gratis teoriprøve klasse B 2026 | Teori-test.no</title>
-                <meta name="description" content="Øv gratis på teoriprøven for førerkort klasse B. 45 spørsmål i offisielt format — ingen registrering, ingen betaling." />
+                <title>Gratis teoriprøve klasse B 2026 – 45 spørsmål og fasit | Teori-test.no</title>
+                <meta name="description" content="Øv gratis til teoriprøven for klasse B. Ta full prøve med 45 spørsmål, vikeplikt-test, skilt-test og interaktive guider. Ingen registrering." />
                 <script type="application/ld+json">
                     {`
 {
@@ -98,9 +98,37 @@ export default function StartScreen() {
                     </div>
                     <div className="feature-item">
                         <img src="/norway-flag.svg" alt="Norsk flagg" style={{ height: '1.1rem', width: 'auto', verticalAlign: 'middle', borderRadius: '2px' }} />
-                        <span>Offisielt Pensum</span>
+                        <span>Basert på Statens vegvesens temaliste for klasse B</span>
                     </div>
                 </div>
+            </div>
+
+            <div className="trust-badges-row" style={{ 
+                display: 'flex', 
+                flexWrap: 'wrap', 
+                justifyContent: 'center', 
+                gap: 'var(--spacing-sm)', 
+                marginTop: '1.5rem', 
+                marginBottom: '2.5rem' 
+            }}>
+                {['100% gratis', 'Ingen registrering', '45 spørsmål', 'Oppdatert 2026', 'Klasse B-pensum'].map((text, i) => (
+                    <div key={i} style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '6px',
+                        backgroundColor: 'var(--color-bg-secondary)',
+                        padding: '6px 14px',
+                        borderRadius: '20px',
+                        fontSize: '0.9rem',
+                        color: 'var(--color-text-light)',
+                        border: '1px solid var(--color-border)',
+                        whiteSpace: 'nowrap',
+                        fontWeight: 500
+                    }}>
+                        <span style={{ color: 'var(--color-success)', fontWeight: 'bold' }}>✓</span>
+                        {text}
+                    </div>
+                ))}
             </div>
 
             <div id="mode-selection" className="mode-selection-header">
@@ -115,7 +143,7 @@ export default function StartScreen() {
                 >
                     <div className="mode-icon">📝</div>
                     <h2>Full prøve</h2>
-                    <p>45 spørsmål - Maks 7 feil</p>
+                    <p>45 spørsmål som ekte prøve — maks 7 feil</p>
                     <span className="mode-badge mode-badge-full">Offisiell format</span>
 
                     {/* Timer toggle checkbox */}
@@ -147,7 +175,7 @@ export default function StartScreen() {
                         <img src="/signs/vikeplikt.svg" alt="Vikeplikt" style={{ height: '4.4rem', width: 'auto', display: 'block', margin: '0 auto' }} />
                     </div>
                     <h2>Vikeplikt</h2>
-                    <p>10 spørsmål – maks 2 feil</p>
+                    <p>Målrettet øving på en vanlig strykfelle</p>
                     <span className="mode-badge" style={{ backgroundColor: 'var(--color-success)', color: 'white' }}>Tema-test</span>
                 </button>
 
@@ -157,7 +185,7 @@ export default function StartScreen() {
                 >
                     <div className="mode-icon">⚡️</div>
                     <h2>Ekspresstest</h2>
-                    <p>10 spørsmål - Maks 2 feil</p>
+                    <p>Rask 10-spørsmåls sjekk av kunnskapen</p>
                     <span className="mode-badge mode-badge-express">Rask øving</span>
                 </button>
 
@@ -171,7 +199,7 @@ export default function StartScreen() {
                         </div>
                     </div>
                     <h2>Skilt-test</h2>
-                    <p>10 skilte spørsmål - Maks 1 feil</p>
+                    <p>Øv på trafikkskilt og vikepliktskilt</p>
                     <span className="mode-badge mode-badge-skilt">Kun skilter</span>
                 </button>
 
@@ -185,42 +213,135 @@ export default function StartScreen() {
                     <p>
                         {fokusCount === 0
                             ? 'Ingen feil å øve på ennå'
-                            : `Øv på feil du har gjort`
+                            : 'Øv på spørsmål du har svart feil på'
                         }
                     </p>
                     <span className="mode-badge mode-badge-fokus">
                         {fokusCount === 0 ? '0 feil' : `${fokusCount} feil`}
                     </span>
                 </button>
+
             </div>
 
-            {/* Quick Links / Chips Layer */}
-            <div className="learning-resources-chips" style={{ marginTop: '3.5rem', marginBottom: '3rem', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                <h3 style={{ fontSize: '1.05rem', fontWeight: '500', color: 'var(--color-text-light)', marginBottom: '1.25rem' }}>
-                    💡 Lær mer om de vanligste fellene på teoriprøven:
-                </h3>
-                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.75rem', justifyContent: 'center', maxWidth: '700px' }}>
-                    <Link to="/laeringsressurser/myndighetspyramiden" className="theory-chip">
-                        👮 Myndighetspyramiden
-                    </Link>
-                    <Link to="/laeringsressurser/vognkort-vekter" className="theory-chip">
-                        ⚖️ Regn ut nyttelast
-                    </Link>
-                    <Link to="/laeringsressurser/fartsgrenser" className="theory-chip">
-                        🛑 Fartsgrenser & tilhenger
-                    </Link>
-                    <Link to="/laeringsressurser/skilt" className="theory-chip">
-                        🚸 Forstå skiltene
-                    </Link>
-                    <Link to="/laeringsressurser/vikeplikt" className="theory-chip">
-                        🔺 Alt om vikeplikt
-                    </Link>
+            <div className="theory-full-width-tile" style={{
+                marginTop: '3.5rem',
+                marginBottom: '3rem',
+                backgroundColor: 'var(--color-bg)',
+                borderRadius: 'var(--radius-lg)',
+                padding: '3rem',
+                border: '1px solid var(--color-border)',
+                boxShadow: 'var(--shadow-md)',
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                textAlign: 'center'
+            }}>
+                <h2 style={{ fontSize: '1.75rem', fontWeight: '800', marginBottom: '0.5rem' }}>Interaktive læringsguider</h2>
+                <p style={{ color: 'var(--color-text-light)', marginBottom: '2rem', maxWidth: '600px' }}>
+                    Forstå teorien bak reglene — med kalkulatorer, visuelle guider og forklaringer
+                </p>
+
+                <div style={{ 
+                    display: 'flex', 
+                    flexWrap: 'wrap', 
+                    gap: '12px', 
+                    justifyContent: 'center', 
+                    marginBottom: '2rem' 
+                }}>
+                    {[
+                        { label: '🔺 Vikeplikt og rundkjøring', path: '/laeringsressurser/vikeplikt' },
+                        { label: '🚗 Bremselengde og stopplengde', path: '/laeringsressurser/bremselengde' },
+                        { label: '👮 Myndighetspyramiden', path: '/laeringsressurser/myndighetspyramiden' },
+                        { label: '🛣️ Veimerking', path: '/laeringsressurser/veimerking' },
+                        { label: '🚦 Trafikkskilt', path: '/laeringsressurser/skilt' },
+                        { label: '⚡ Fartsgrenser', path: '/laeringsressurser/fartsgrenser' },
+                        { label: '🍺 Promille og rus', path: '/laeringsressurser/promille' },
+                        { label: '🚛 Tilhenger og vekt', path: '/laeringsressurser/tilhenger' },
+                        { label: '🔧 Sikkerhetskontroll', path: '/laeringsressurser/sikkerhetskontroll' }
+                    ].map((topic, i) => (
+                        <Link 
+                            key={i} 
+                            to={topic.path} 
+                            className="theory-chip" 
+                            style={{ 
+                                backgroundColor: 'var(--color-bg)', 
+                                padding: '8px 16px', 
+                                fontSize: '0.9rem' 
+                            }}
+                        >
+                            {topic.label}
+                        </Link>
+                    ))}
                 </div>
+
+                <Link 
+                    to="/laeringsressurser" 
+                    className="cta-button" 
+                    style={{ 
+                        fontSize: '1rem', 
+                        padding: '12px 24px', 
+                        backgroundColor: 'transparent', 
+                        border: '2px solid var(--color-primary)', 
+                        color: 'var(--color-primary)',
+                        fontWeight: '700',
+                        textDecoration: 'none',
+                        borderRadius: '8px'
+                    }}
+                >
+                    Se alle guider →
+                </Link>
             </div>
+            <section className="how-it-works" style={{
+                marginTop: '4rem',
+                marginBottom: '4rem',
+                padding: '0 20px'
+            }}>
+                <h2 style={{ textAlign: 'center', marginBottom: '3rem', fontSize: '2rem', fontWeight: '800' }}>Slik fungerer det</h2>
+                <div className="how-it-works-grid">
+                    {[
+                        { icon: '📋', title: 'Velg prøve eller tema', desc: 'Full prøve, tematest eller interaktiv guide' },
+                        { icon: '✏️', title: 'Svar på spørsmål', desc: '45 spørsmål som ekte teoriprøve' },
+                        { icon: '💡', title: 'Se fasit og forklaring', desc: 'Forstå hvorfor svaret er riktig eller feil' },
+                        { icon: '🎯', title: 'Øv på feilene dine', desc: 'Fokus mode husker hva du bør øve mer på' }
+                    ].map((step, i) => (
+                        <div key={i} style={{
+                            backgroundColor: 'var(--color-bg)',
+                            padding: '2rem',
+                            borderRadius: 'var(--radius-lg)',
+                            border: '1px solid var(--color-border)',
+                            boxShadow: 'var(--shadow-md)',
+                            display: 'flex',
+                            flexDirection: 'column',
+                            alignItems: 'center',
+                            textAlign: 'center',
+                            position: 'relative'
+                        }}>
+                            <div style={{
+                                position: 'absolute',
+                                top: '-15px',
+                                left: '20px',
+                                backgroundColor: 'var(--color-primary)',
+                                color: '#fff',
+                                width: '30px',
+                                height: '30px',
+                                borderRadius: '50%',
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                fontWeight: 'bold',
+                                fontSize: '0.9rem'
+                            }}>{i + 1}</div>
+                            <div style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>{step.icon}</div>
+                            <h3 style={{ fontSize: '1.2rem', fontWeight: '700', marginBottom: '0.5rem' }}>{step.title}</h3>
+                            <p style={{ color: 'var(--color-text-light)', fontSize: '0.95rem', lineHeight: '1.5', margin: 0 }}>{step.desc}</p>
+                        </div>
+                    ))}
+                </div>
+            </section>
 
             {/* SEO Content Section */}
             <div className="seo-section">
-                <h2>Norges enkleste måte å øve til teoriprøven</h2>
+                <h2>Om Teori-test.no</h2>
                 <p>
                     Teori-test.no er laget for deg som snart skal ta teoriprøven for klasse B (personbil). Her finner du hundrevis av øvingsspørsmål som dekker hele pensum – fra fartsgrenser og vikeplikt til vegoppmerking og trafikkskilt. Du trenger ikke lage bruker, betale, eller laste ned noe.
                 </p>

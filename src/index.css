@@ -24,6 +24,38 @@
     box-shadow: var(--shadow-md);
 }
 
+/* Practice Grid Cards */
+.practice-card {
+    transition: all 0.2s ease-in-out;
+}
+
+.practice-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--color-primary) !important;
+}
+
+/* How It Works Grid */
+.how-it-works-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+@media (max-width: 1100px) {
+    .how-it-works-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .how-it-works-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 /* Design Tokens - Modern Card-Based Design */
 :root {
   /* Colors - Light Mode */

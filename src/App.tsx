@@ -140,7 +140,7 @@ export default function App() {
                         {/* Left: source & status */}
                         <div className="footer-meta">
                             <p className="footer-status">✓ Sist verifisert og oppdatert: Mai 2026</p>
-                            <p className="footer-source">Innholdet er basert på Statens vegvesens offisielle læreplan for førerkort klasse&nbsp;B.</p>
+                            <p className="footer-source">Innholdet er basert på Statens vegvesens temaliste for klasse B.</p>
                         </div>
 
                         {/* Right: links & copyright */}
