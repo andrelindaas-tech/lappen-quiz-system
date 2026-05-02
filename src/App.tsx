@@ -1,10 +1,11 @@
 // Main App Component
-import { useState, useEffect, useCallback } from 'react'
+import { useState, useEffect, useCallback, Suspense, lazy } from 'react'
 import { Routes, Route, NavLink, Link, useNavigate, useLocation } from 'react-router-dom'
-import QuizContainer from './components/QuizContainer'
-import StartScreen from './components/StartScreen'
-import TheoryPage from './components/TheoryPage'
-import OppkjoringPage from './components/OppkjoringPage'
+
+const QuizContainer = lazy(() => import('./components/QuizContainer'))
+const StartScreen = lazy(() => import('./components/StartScreen'))
+const TheoryPage = lazy(() => import('./components/TheoryPage'))
+const OppkjoringPage = lazy(() => import('./components/OppkjoringPage'))
 import ThemeToggle from './components/ThemeToggle'
 import DailyStreak from './components/DailyStreak'
 import { recordCompletion } from './utils/streakStore'
@@ -122,15 +123,17 @@ export default function App() {
             </header>
 
             <main>
-                <Routes>
-                    <Route path="/" element={<StartScreen />} />
-                    <Route path="/quiz" element={<QuizContainer onReturnHome={handleReturnHome} onQuizComplete={handleQuizComplete} />} />
-                    <Route path="/quiz/:category" element={<QuizContainer onReturnHome={handleReturnHome} onQuizComplete={handleQuizComplete} />} />
-                    <Route path="/laeringsressurser/oppkjoring" element={<OppkjoringPage />} />
-                    <Route path="/laeringsressurser/:articleId?" element={<TheoryPage />} />
-                    {/* Fallback route */}
-                    <Route path="*" element={<StartScreen />} />
-                </Routes>
+                <Suspense fallback={<div style={{ display: 'flex', justifyContent: 'center', padding: '4rem', color: 'var(--color-text-light)' }}>Laster...</div>}>
+                    <Routes>
+                        <Route path="/" element={<StartScreen />} />
+                        <Route path="/quiz" element={<QuizContainer onReturnHome={handleReturnHome} onQuizComplete={handleQuizComplete} />} />
+                        <Route path="/quiz/:category" element={<QuizContainer onReturnHome={handleReturnHome} onQuizComplete={handleQuizComplete} />} />
+                        <Route path="/laeringsressurser/oppkjoring" element={<OppkjoringPage />} />
+                        <Route path="/laeringsressurser/:articleId?" element={<TheoryPage />} />
+                        {/* Fallback route */}
+                        <Route path="*" element={<StartScreen />} />
+                    </Routes>
+                </Suspense>
             </main>
 
             <footer className="site-footer">
