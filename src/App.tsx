@@ -1,9 +1,9 @@
 // Main App Component
 import { useState, useEffect, useCallback, Suspense, lazy } from 'react'
 import { Routes, Route, NavLink, Link, useNavigate, useLocation } from 'react-router-dom'
+import StartScreen from './components/StartScreen'
 
 const QuizContainer = lazy(() => import('./components/QuizContainer'))
-const StartScreen = lazy(() => import('./components/StartScreen'))
 const TheoryPage = lazy(() => import('./components/TheoryPage'))
 const OppkjoringPage = lazy(() => import('./components/OppkjoringPage'))
 import ThemeToggle from './components/ThemeToggle'
