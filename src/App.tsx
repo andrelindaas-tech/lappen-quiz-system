@@ -11,6 +11,7 @@ import DailyStreak from './components/DailyStreak'
 import { recordCompletion } from './utils/streakStore'
 import './index.css'
 import './fokus.css'
+import './theory.css'
 import ScrollToTop from './components/ScrollToTop'
 import { Helmet } from 'react-helmet-async'
 
