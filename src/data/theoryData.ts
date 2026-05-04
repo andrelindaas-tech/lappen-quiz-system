@@ -92,7 +92,7 @@ export const theoryTopics: TheoryTopic[] = [
             {
                 title: '6. Fotgjengere og syklister',
                 type: 'text',
-                content: 'Som bilist må du alltid ta hensyn til myke trafikanter:\n- Fotgjengere: Du har vikeplikt for gående i gangfelt, enten du kjører rett frem eller svinger.\n- Syklister: Hvis du skal svinge og krysser et sykkelfelt, har du vikeplikt for syklister som befinner seg i feltet.'
+                content: 'Som bilist må du alltid ta hensyn til myke trafikanter:\n- Fotgjengere: Du har vikeplikt for gående i gangfelt, enten du kjører rett frem eller svinger. Husk at det er strengt forbudt å kjøre forbi foran et gangfelt hvis du ikke har full oversikt — [les mer om regler for forbikjøring](/laeringsressurser/forbikjoring).\n- Syklister: Hvis du skal svinge og krysser et sykkelfelt, har du vikeplikt for syklister som befinner seg i feltet.'
             },
             {
                 title: '7. Utkjøring fra privat vei',
@@ -371,7 +371,7 @@ export const theoryTopics: TheoryTopic[] = [
       <div style="height:3px;background:white;border-radius:2px"></div>
       <div style="font-size:10px;color:#999;margin-top:6px">→ Felt B</div>
     </div>
-    <p style="color:var(--color-text-light);line-height:1.6;margin:0">Forbyr overkjøring. Du har ikke lov til å krysse en hvit sperrelinje, hverken for å bytte felt eller kjøre forbi andre. Den brukes der sikt eller trafikkforhold gjør forbikjøring farlig.</p>
+    <p style="color:var(--color-text-light);line-height:1.6;margin:0">Forbyr overkjøring. Du har ikke lov til å krysse en hvit sperrelinje, hverken for å bytte felt eller kjøre forbi andre. Den brukes der sikt eller trafikkforhold gjør forbikjøring farlig. [Les mer om når forbikjøring er forbudt](/laeringsressurser/forbikjoring).</p>
   </div>
   <div>
     <strong style="font-size:1rem;color:var(--color-text)">Dobbel heltrukken linje</strong>
@@ -548,6 +548,140 @@ export const theoryTopics: TheoryTopic[] = [
             {
                 question: 'Gjelder flettereglene i rundkjøring?',
                 answer: 'Nei. Flettereglene gjelder ikke i rundkjøringer. Den som skifter felt har alltid vikeplikt, uansett posisjon.'
+            }
+        ]
+    },
+
+    {
+        id: 'forbikjoring',
+        title: 'Forbikjøring – regler, forbud og feller | Teori-test.no',
+        icon: '🚗',
+        shortDescription: 'Lær reglene for forbikjøring til teoriprøven klasse B: gangfelt, kryss, høyre side, forbikjøringsforbud, syklist, buss, traktor og motorvei.',
+        color: '#eab308',
+        seoTitle: 'Forbikjøring – regler, forbud og feller | Teori-test.no',
+        seoDescription: 'Lær reglene for forbikjøring til teoriprøven klasse B: gangfelt, kryss, høyre side, forbikjøringsforbud, syklist, buss, traktor og motorvei.',
+        sections: [
+            {
+                title: 'Forbikjøring på teoriprøven: når er det lov, og når må du vente?',
+                type: 'text',
+                content: 'Forbikjøring virker enkelt: du tar igjen et kjøretøy, kjører forbi og legger deg inn igjen. På teoriprøven er det sjelden så enkelt. Der testes du på om du forstår sikt, fart, plassering, skilt, veimerking og risiko samtidig.\n\nDen tryggeste huskeregelen er denne:\n\nDu skal bare kjøre forbi når du ser langt nok, har plass nok, ikke bryter skilt eller oppmerking, og kan komme trygt inn igjen uten å forstyrre andre.\n\nEr du i tvil, er riktig svar som regel: vent.'
+            },
+            {
+                title: 'Kort forklart: hovedregelen',
+                type: 'info',
+                content: 'Hovedregelen i trafikkreglene er at forbikjøring skal skje til venstre.\n\nFør du starter en forbikjøring må du forsikre deg om at:\n• veien er fri langt nok fremover\n• kjøretøyet foran ikke selv har gitt tegn til forbikjøring\n• ingen bakfra allerede har begynt å kjøre forbi deg\n• du kan komme inn igjen uten fare, hindring eller unødig forstyrrelse\n\nEtter forbikjøringen skal du legge deg tilbake til høyre når det kan skje trygt.'
+            },
+            {
+                title: 'Sjekklisten før du kjører forbi',
+                type: 'tip',
+                content: 'Før en forbikjøring bør du tenke:\n\nSikt: Ser jeg langt nok frem?\nPlass: Har jeg plass til å komme inn igjen?\nFart: Rekker jeg forbikjøringen uten å skape fare?\nBakover: Er noen allerede i ferd med å kjøre forbi meg?\nSkilt og linjer: Er det forbikjøringsforbud, sperrelinje eller dårlig sikt?\nMyke trafikanter: Kan fotgjengere, syklister eller barn være skjult?\n\nHusk også at høy fart gir lengre bremselengde, så du trenger mer plass enn du tror. På teoriprøven er det ofte ikke nok at forbikjøringen “kan gå”. Den må være trygg og lovlig.'
+            },
+            {
+                title: 'Når er forbikjøring på høyre side lov?',
+                type: 'warning',
+                content: 'Forbikjøring på høyre side er unntaket, ikke hovedregelen.\n\nDet kan være lov i noen situasjoner:\n• kjøretøyet foran svinger til venstre eller tydelig forbereder venstresving\n• trafikken er så tett at alle felt i samme retning er opptatt og felt beveger seg ulikt\n• du kjører lovlig i et felt for bestemte trafikanter, for eksempel kollektivfelt der du har lov å kjøre\n• forbikjøring av sporvogn kan i noen tilfeller skje til høyre\n\nDet betyr ikke at du kan bruke høyre felt som en “snarvei” fordi bilen foran kjører sakte i venstre felt. I vanlig fri trafikk skal forbikjøring skje til venstre.'
+            },
+            {
+                title: 'Forbikjøring ved gangfelt',
+                type: 'warning',
+                content: 'Dette er en klassisk teoriprøvefelle.\n\nDu må ikke kjøre forbi et kjøretøy som hindrer sikten til et gangfelt. Grunnen er enkel: det kan være en fotgjenger foran bilen du ikke ser.\n\nTypisk situasjon:\nEn bil foran deg senker farten eller stopper før et gangfelt. Du ser ikke hele gangfeltet. Da skal du ikke kjøre forbi. Du skal senke farten og være klar til å stoppe.\n\nDette henger tett sammen med vikeplikt og høyreregelen, spesielt når du vurderer fotgjengere, kryss og sideveier.\n\nKort fasit:\nHvis kjøretøyet foran skjuler sikten til gangfeltet, skal du vente.'
+            },
+            {
+                title: 'Forbikjøring i kryss',
+                type: 'text',
+                content: 'Forbikjøring like foran eller i veikryss er som hovedregel forbudt.\n\nDet finnes unntak, for eksempel hvis:\n• det er flere kjørefelt i samme retning\n• kjøretøyet foran tydelig skal svinge til venstre, og du passerer til høyre\n• krysset er regulert av trafikklys eller politi\n• trafikk fra sidevei har vikeplikt etter skilt\n\nMen på teoriprøven bør du være varsom: selv om et unntak kan gjøre forbikjøring lovlig, kan situasjonen fortsatt være utrygg. Ser du ikke godt nok, venter du.'
+            },
+            {
+                title: 'Bakketopp, sving og dårlig sikt',
+                type: 'warning',
+                content: 'Du skal ikke kjøre forbi der sikten er hindret av bakketopp, kurve eller andre forhold.\n\nHvis du ikke ser langt nok til å fullføre forbikjøringen og komme inn igjen trygt, er riktig valg å vente.\n\nDette gjelder særlig på landevei. En traktor eller saktegående bil kan friste deg til å kjøre forbi, men hvis veien svinger eller går over en topp, vet du ikke hva som kommer imot.'
+            },
+            {
+                title: 'Forbikjøringsforbud-skiltet',
+                type: 'info',
+                content: 'Skilt 334, forbikjøringsforbud, betyr at du ikke har lov til å kjøre forbi motorvogn med flere enn to hjul.\n\nForbudet gjelder frem til det blir opphevet av skilt, eller over strekningen som er angitt med underskilt.\n\nViktig nyanse:\nForbudsskiltet gjelder forbikjøring av motorvogn med flere enn to hjul. Det betyr ikke automatisk at enhver passering av en tohjuling er forbudt. Men du må fortsatt følge alle andre regler: sikt, avstand, fart, veimerking og sikkerhet.'
+            },
+            {
+                title: 'Sperrelinje og varsellinje',
+                type: 'text',
+                content: 'Veimerking kan gjøre forbikjøring forbudt eller sterkt frarådet.\n\n• Sperrelinje: skal ikke krysses for forbikjøring.\n• Gul varsellinje: varsler at sikten fremover er for kort til vanlig forbikjøring.\n• Kombinert linje: du må følge linjen på din side.\n\nHvis du møter både et ønske om å kjøre forbi og en sperrelinje i veien, er svaret enkelt: du venter.\n\n[Les mer om sperrelinje, varsellinje og veimerking](/laeringsressurser/veimerking).'
+            },
+            {
+                title: 'Forbikjøring av syklist, moped og traktor',
+                type: 'tip',
+                content: 'Du kan bare kjøre forbi en syklist, moped eller traktor når det kan skje trygt.\n\nFor syklist må du ha god sideavstand. En vanlig tommelfingerregel er å holde minst 1,5 meter sideavstand ved forbikjøring av syklist, og mer hvis farten er høy eller forholdene er trange. Er veien smal, det kommer møtende trafikk, eller sikten er dårlig, skal du vente. Ikke press deg forbi.\n\nVed traktor og saktegående kjøretøy er feilen ofte utålmodighet. Husk at traktoren kan svinge inn på en gårdsvei, være bredere enn du tror, eller skjule sikten fremover.'
+            },
+            {
+                title: 'Buss ved holdeplass',
+                type: 'warning',
+                content: 'Buss ved holdeplass krever ekstra aktsomhet.\n\nI tettbygd strøk med fartsgrense 60 km/t eller lavere har du vikeplikt når bussen gir tegn for å kjøre ut fra holdeplass, så lenge du kan slippe den ut uten fare.\n\nDu må også være forberedt på at passasjerer kan komme foran eller bak bussen. Barn og fotgjengere kan være skjult.'
+            },
+            {
+                title: 'Vanlige teoriprøvefeller',
+                type: 'info',
+                content: '• Du kjører forbi fordi bilen foran kjører sakte, men overser dårlig sikt.\n• Du passerer ved gangfelt fordi “det ser klart ut”.\n• Du bruker høyre felt som forbikjøringsfelt på motorvei.\n• Du glemmer at sperrelinje forbyr forbikjøring.\n• Du kjører forbi traktor rett før sving eller bakketopp.\n• Du ser forbikjøringsforbud-skilt, men tenker ikke over hva skiltet faktisk gjelder.\n\nNår du har lest reglene, kan du teste deg med [gratis teoriprøve](/quiz) eller [skilt-testen](/quiz/skilt).'
+            }
+        ],
+        miniQuiz: [
+            {
+                question: 'Bilen foran stopper før et gangfelt. Du ser ikke hele gangfeltet. Hva gjør du?',
+                options: ['Kjører forbi raskt', 'Senker farten og venter', 'Tut så bilen foran flytter seg', 'Kjører forbi på høyre side'],
+                correct: 'Senker farten og venter',
+                explanation: 'Du må ikke kjøre forbi når kjøretøyet foran skjuler sikten til gangfeltet.'
+            },
+            {
+                question: 'Du kjører på motorvei. Bilen foran ligger sakte i venstre felt. Kan du kjøre forbi på høyre side?',
+                options: ['Ja, alltid', 'Ja, hvis du holder fartsgrensen', 'Nei, ikke i vanlig fri trafikk', 'Bare hvis bilen foran kjører under 80 km/t'],
+                correct: 'Nei, ikke i vanlig fri trafikk',
+                explanation: 'Forbikjøring skal som hovedregel skje til venstre. Høyre side er bare unntak i bestemte situasjoner.'
+            },
+            {
+                question: 'Du ligger bak en traktor før en bakketopp. Hva er tryggest?',
+                options: ['Kjøre forbi før toppen', 'Vente til du har fri sikt', 'Blink med lysene', 'Kjøre tett bak traktoren'],
+                correct: 'Vente til du har fri sikt',
+                explanation: 'Ved bakketopp ser du ikke langt nok frem. Du må vente.'
+            },
+            {
+                question: 'Kjøretøyet foran blinker til venstre og skal svinge. Hvilken side kan du passere på hvis det er trygt?',
+                options: ['Venstre', 'Høyre', 'Midt i veien', 'Du må alltid vente'],
+                correct: 'Høyre',
+                explanation: 'Når forankjørende tydelig skal svinge til venstre, kan forbikjøring skje til høyre hvis det er trygt.'
+            },
+            {
+                question: 'Hva betyr skiltet forbikjøringsforbud?',
+                options: ['Du kan ikke kjøre forbi noen trafikanter', 'Du kan ikke kjøre forbi motorvogn med flere enn to hjul', 'Du kan bare kjøre forbi i 50-soner', 'Du kan bare kjøre forbi på høyre side'],
+                correct: 'Du kan ikke kjøre forbi motorvogn med flere enn to hjul',
+                explanation: 'Skilt 334 gjelder forbikjøring av motorvogn med flere enn to hjul.'
+            }
+        ],
+        faq: [
+            {
+                question: 'Er forbikjøring på høyre side lov?',
+                answer: 'Som hovedregel nei. Det er bare lov i bestemte unntak, for eksempel når kjøretøyet foran tydelig skal svinge til venstre, ved tett feltvis kø eller i felt for bestemte trafikanter.'
+            },
+            {
+                question: 'Er forbikjøring i kryss lov?',
+                answer: 'Som hovedregel er forbikjøring like foran eller i veikryss forbudt. Det finnes unntak, men på teoriprøven må du alltid vurdere sikt, plassering, skilt og risiko.'
+            },
+            {
+                question: 'Kan jeg kjøre forbi ved gangfelt?',
+                answer: 'Ikke hvis kjøretøyet foran eller ved siden av deg hindrer sikten til gangfeltet. Da kan en fotgjenger være skjult.'
+            },
+            {
+                question: 'Kan jeg kjøre forbi en syklist ved sperrelinje?',
+                answer: 'Du må være svært forsiktig. Sperrelinje skal ikke krysses for forbikjøring, og du må bare passere syklist hvis du kan holde trygg avstand og følge reglene.'
+            },
+            {
+                question: 'Hva betyr forbikjøringsforbud-skiltet?',
+                answer: 'Det betyr at du ikke kan kjøre forbi motorvogn med flere enn to hjul. Forbudet gjelder til det oppheves av skilt eller etter angitt strekning.'
+            },
+            {
+                question: 'Hva testes ofte om forbikjøring på teoriprøven?',
+                answer: 'Teoriprøven tester ofte om du forstår sikt, gangfelt, kryss, sperrelinje, forbikjøring på høyre side og faren ved å kjøre forbi saktegående kjøretøy på uoversiktlig vei.'
+            },
+            {
+                question: 'Hvor stor avstand bør du holde ved forbikjøring av syklist?',
+                answer: 'En vanlig tommelfingerregel er minst 1,5 meter sideavstand, og mer hvis farten er høy, veien er smal eller forholdene er uoversiktlige.'
             }
         ]
     },
