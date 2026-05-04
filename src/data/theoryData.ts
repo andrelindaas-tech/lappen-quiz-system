@@ -137,7 +137,7 @@ export const theoryTopics: TheoryTopic[] = [
             {
                 title: 'Hva er bremselengde?',
                 type: 'text',
-                content: 'Bremselengde er den avstanden bilen tilbakelegger fra du begynner å bremse til bilen står stille. Bremselengden avhenger av farten, veidekke, bremsenes tilstand og bilens vekt.'
+                content: 'Bremselengde er den avstanden bilen tilbakelegger fra du begynner å bremse til bilen står stille. Bremselengden avhenger av farten, veidekke, bremsenes tilstand og bilens vekt.\n\nLes mer om hvordan sikt påvirker farten i [lysbruk og mørkekjøring](/laeringsressurser/lysbruk-morkekjoring).'
             },
             {
                 title: 'Prøv kalkulatoren!',
@@ -599,7 +599,7 @@ export const theoryTopics: TheoryTopic[] = [
             {
                 title: 'Forbikjøringsforbud-skiltet',
                 type: 'info',
-                content: 'Skilt 334, forbikjøringsforbud, betyr at du ikke har lov til å kjøre forbi motorvogn med flere enn to hjul.\n\nForbudet gjelder frem til det blir opphevet av skilt, eller over strekningen som er angitt med underskilt.\n\nViktig nyanse:\nForbudsskiltet gjelder forbikjøring av motorvogn med flere enn to hjul. Det betyr ikke automatisk at enhver passering av en tohjuling er forbudt. Men du må fortsatt følge alle andre regler: sikt, avstand, fart, veimerking og sikkerhet.'
+                content: 'Skilt 334, forbikjøringsforbud, betyr at du ikke har lov til å kjøre forbi motorvogn med flere enn to hjul.\n\n![Forbikjøringsforbud skilt 334 med rød bil og svart bil](/signs/skilt-334.svg)\n*Skilt 334: Forbikjøringsforbud. Du kan ikke kjøre forbi motorvogn med flere enn to hjul.*\n\nForbudet gjelder frem til det blir opphevet av skilt, eller over strekningen som er angitt med underskilt.\n\nViktig nyanse:\nForbudsskiltet gjelder forbikjøring av motorvogn med flere enn to hjul. Det betyr ikke automatisk at enhver passering av en tohjuling er forbudt. Men du må fortsatt følge alle andre regler: sikt, avstand, fart, veimerking og sikkerhet.\n\nLurer du på flere trafikkskilt? Se vår [komplette skiltguide](/laeringsressurser/skilt) eller prøv [skilt-testen](/quiz/skilt).'
             },
             {
                 title: 'Sperrelinje og varsellinje',
@@ -609,7 +609,7 @@ export const theoryTopics: TheoryTopic[] = [
             {
                 title: 'Forbikjøring av syklist, moped og traktor',
                 type: 'tip',
-                content: 'Du kan bare kjøre forbi en syklist, moped eller traktor når det kan skje trygt.\n\nFor syklist må du ha god sideavstand. En vanlig tommelfingerregel er å holde minst 1,5 meter sideavstand ved forbikjøring av syklist, og mer hvis farten er høy eller forholdene er trange. Er veien smal, det kommer møtende trafikk, eller sikten er dårlig, skal du vente. Ikke press deg forbi.\n\nVed traktor og saktegående kjøretøy er feilen ofte utålmodighet. Husk at traktoren kan svinge inn på en gårdsvei, være bredere enn du tror, eller skjule sikten fremover.'
+                content: 'Du kan bare kjøre forbi en syklist, moped eller traktor når det kan skje trygt.\n\nFor syklist må du ha god sideavstand. En vanlig tommelfingerregel er å holde minst 1,5 meter sideavstand ved forbikjøring av syklist, og mer hvis farten er høy eller forholdene er trange.\n\n![Forbikjøring av syklist med minst 1,5 meter sideavstand](/forbikjoring-syklist.png)\n*Hold minst 1,5 meter sideavstand som tommelfingerregel, og mer ved høy fart eller trange forhold.*\n\nEr veien smal, det kommer møtende trafikk, eller sikten er dårlig, skal du vente. Ikke press deg forbi.\n\nVed traktor og saktegående kjøretøy er feilen ofte utålmodighet. Husk at traktoren kan svinge inn på en gårdsvei, være bredere enn du tror, eller skjule sikten fremover.'
             },
             {
                 title: 'Buss ved holdeplass',
@@ -682,6 +682,182 @@ export const theoryTopics: TheoryTopic[] = [
             {
                 question: 'Hvor stor avstand bør du holde ved forbikjøring av syklist?',
                 answer: 'En vanlig tommelfingerregel er minst 1,5 meter sideavstand, og mer hvis farten er høy, veien er smal eller forholdene er uoversiktlige.'
+            }
+        ]
+    },
+
+    {
+        id: 'lysbruk-morkekjoring',
+        title: 'Lysbruk og mørkekjøring til teoriprøven',
+        icon: '💡',
+        shortDescription: 'Lær reglene for lysbruk til teoriprøven: nærlys, fjernlys, tåkelys, baklys i tunnel, blending, mørkesyn, refleks og vanlige feller.',
+        color: '#f59e0b',
+        seoTitle: 'Lysbruk og mørkekjøring – regler og feller | Teori-test.no',
+        seoDescription: 'Lær reglene for lysbruk til teoriprøven: nærlys, fjernlys, tåkelys, baklys i tunnel, blending, mørkesyn, refleks og vanlige feller.',
+        sections: [
+            {
+                title: 'Hovedregel for lysbruk',
+                type: 'info',
+                content: 'Lysbruk handler ikke bare om å se veien. Det handler like mye om å bli sett av andre. På teoriprøven får du ofte spørsmål der du må velge riktig lys ut fra situasjonen: mørke, tunnel, tåke, møtende trafikk, parkering eller dårlig sikt.\n\nDen korte huskeregelen er:\n\n**Du skal bruke lys som gjør at du ser nok, blir sett av andre, og ikke blender noen.**\n\nModerne biler har automatisk lys, men det betyr ikke at bilen alltid velger riktig. Føreren har fortsatt ansvaret.'
+            },
+            {
+                title: 'Kort fasit: hvilket lys bruker du når?',
+                type: 'table',
+                content: `<table class="theory-table">
+                    <thead><tr><th>Situasjon</th><th>Riktig lys</th><th>Typisk feil</th></tr></thead>
+                    <tbody>
+                        <tr><td>Vanlig kjøring i dagslys</td><td>Kjørelys eller nærlys</td><td>Tro at baklys alltid er tent</td></tr>
+                        <tr><td>Tunnel</td><td>Nærlys/baklys tent</td><td>Kjøre med bare automatisk kjørelys</td></tr>
+                        <tr><td>Mørk landevei uten trafikk</td><td>Fjernlys</td><td>Glemme å blende ned</td></tr>
+                        <tr><td>Møtende trafikk</td><td>Nærlys</td><td>Blende møtende bil med fjernlys</td></tr>
+                        <tr><td>Kjøring bak annen bil</td><td>Nærlys</td><td>Fjernlys i speilene til bilen foran</td></tr>
+                        <tr><td>Tåke, kraftig regn eller snø</td><td>Riktig tåkelys etter forholdene</td><td>Bruke fjernlys i tett tåke</td></tr>
+                        <tr><td>Stans/parkering i mørket</td><td>Parkeringslys</td><td>La nærlys/fjernlys stå på</td></tr>
+                    </tbody>
+                </table>`
+            },
+            {
+                title: 'Kjørelys, nærlys og baklys',
+                type: 'text',
+                content: 'Motorvogn skal ha påbudt fjernlys, nærlys eller godkjent kjørelys tent under kjøring.\n\nPå dagtid kan kjørelys være nok. Men viktig: baklys trenger ikke alltid være tent når bilen bare bruker kjørelys. Det betyr at bilen kan være synlig forfra, men dårlig synlig bakfra.\n\nDette er spesielt viktig i:\n- tunnel\n- skumring\n- regn\n- tåke\n- snøvær\n- mørke\n\nHvis du er usikker, bør du velge en lysinnstilling som tenner både lys foran og bak.\n\n**Automatisk kjørelys: bilen tenker ikke alltid for deg**\nMange biler har AUTO-innstilling. Den kan fungere godt, men den er ikke en garanti.\n\nSensoren kan feilvurdere lysforhold, særlig i:\n- tunnel\n- regnvær\n- tåke\n- snøvær\n- skumring\n- sterkt motlys\n\nPå teoriprøven er poenget ofte at føreren har ansvaret, ikke bilen. Du må vite hvilke lys som faktisk er tent.'
+            },
+            {
+                title: 'Kjøring i tunnel: husk baklys',
+                type: 'tip',
+                content: 'Når du kjører inn i tunnel, skal baklysene være tent. Dette er en vanlig felle fordi mange biler bruker automatisk kjørelys der baklysene ikke nødvendigvis er på.\n\n![Automatisk kjørelys og nærlys i tunnel med baklys tent](/tunnel-lys.png)\n*Automatisk kjørelys tenner ikke alltid baklys. I tunnel må bilen være synlig bakfra.*\n\nRiktig handling:\n- sjekk at bilen har riktig lysinnstilling\n- sørg for at baklysene er tent\n- bruk lys som gjør bilen synlig for trafikken bak\n\nEn enkel regel: Hvis du er i tvil i tunnel, bruk nærlys.'
+            },
+            {
+                title: 'Fjernlys: når skal du blende ned?',
+                type: 'warning',
+                content: 'Fjernlys gir best sikt på mørke veier, men du må blende ned når lyset kan blende andre.\n\nDu skal blende ned når:\n- du møter en annen bil\n- du kjører bak en annen bil\n- du møter gående, syklende eller andre trafikanter som kan bli blendet\n- veien er godt opplyst og fjernlys ikke er nødvendig\n\nNår fjernlys ikke er nødvendig eller ikke er lov å bruke, skal du bruke nærlys.\n\n**Hva gjør du hvis du blir blendet?**\nHvis en møtende bil blender deg, skal du ikke stirre rett inn i lysene. Se heller mot høyre veikant, senk farten og hold god avstand.\n\nIkke svar med å blende tilbake. Unødig eller hensynsløs bruk av lyssignal er forbudt, og det gjør situasjonen farligere.'
+            },
+            {
+                title: 'Tåkelys: når er det lov?',
+                type: 'info',
+                content: 'Tåkelys er laget for dårlig sikt, men brukes ofte feil.\n\nViktig regel for klasse B:\n**Du kan ikke bruke tåkelys sammen med nærlys.**\n\nPå dagtid kan tåkelys foran brukes som kjørelys i stedet for nærlys. Men tåkelys skal ikke brukes som pynt, eller fordi det “ser kult ut”. Den lille show-offen er kanskje kul på parkeringsplassen, men på veien kan den blende andre og gi feil lysbilde.\n\nTåkelys er mest aktuelt ved:\n- tett tåke\n- kraftig regn\n- snøvær\n- svært dårlig sikt\n\nFjernlys i tett tåke er ofte en dårlig idé, fordi lyset reflekteres tilbake og gjør sikten verre.\n\n**Kan du bruke tåkelys sammen med nærlys?**\nNei. For bil klasse B er hovedregelen at kurve-/tåkelys ikke kan brukes sammen med nærlys.\n\nDette er en typisk teoriprøvefelle. Mange tror at “mer lys alltid er bedre”, men feil kombinasjon kan blende andre eller gi dårligere sikt.'
+            },
+            {
+                title: 'Parkeringslys og stans i mørket',
+                type: 'text',
+                content: 'Parkeringslys brukes når bilen står stille eller er parkert på vei og må være synlig for andre trafikanter.\n\nVed stans eller parkering i mørke skal du ikke la fjernlys eller nærlys stå på slik at de blender andre. Da er parkeringslys riktig.\n\nParkeringslys er derimot ikke vanlig kjørelys. Når du kjører, trenger du fjernlys, nærlys eller godkjent kjørelys etter forholdene.'
+            },
+            {
+                title: 'Mørkekjøring: sikt, fart og risiko',
+                type: 'warning',
+                content: 'Mørkekjøring handler ikke bare om lys. Det handler om å forstå hvor lite du faktisk ser.\n\nFarten må alltid tilpasses sikten. Du skal kunne stanse på den veistrekningen du har oversikt over. Hvis du bare ser 40 meter frem, men trenger mer enn 40 meter for å stoppe, kjører du for fort for forholdene.\n\nDette henger tett sammen med [bremselengde](/laeringsressurser/bremselengde) og [reaksjonstid](/laeringsressurser/reaksjonstid). I mørket må du oppdage faren, reagere og rekke å stoppe.'
+            },
+            {
+                title: 'Refleks sett fra bilførerens perspektiv',
+                type: 'tip',
+                content: 'Statens vegvesen oppgir at en bilfører som kjører i 50 km/t med nærlys, bare har rundt 2 sekunder på å oppdage en fotgjenger uten refleks. Med refleks blir det rundt 10 sekunder.\n\nDet betyr at refleks ikke bare er “lurt”. Det kan være forskjellen mellom å rekke å reagere og å oppdage personen for sent.\n\nSom bilfører må du derfor:\n- senke farten i mørke områder\n- være ekstra oppmerksom ved gangfelt og bussholdeplasser\n- se etter bevegelser i veikanten\n- huske at mørke klær er vanskelige å oppdage'
+            },
+            {
+                title: 'Trafikant i mørket: hva er mørkekjøring?',
+                type: 'info',
+                content: '“Trafikant i mørket” kalles ofte mørkekjøring. Det er en del av trafikalt grunnkurs og handler om å forstå risiko ved kjøring i mørke.\n\nKurset gjennomføres i perioden der det er mørkt nok ute, og Statens vegvesen opplyser at det varer 3 timer. Du er passasjer i bil, deltar i demonstrasjoner og reflekterer over erfaringene med lærer og andre elever.\n\nPå teoriprøven er det ikke selve kurset som er viktigst, men forståelsen:\n- du ser mindre enn du tror\n- farten må ned når sikten blir kortere\n- riktig lysbruk er avgjørende\n- refleks og synlighet redder tid'
+            },
+            {
+                title: 'Vanlige teoriprøvefeller om lysbruk',
+                type: 'warning',
+                content: '- Du tror automatisk kjørelys alltid tenner baklys.\n- Du bruker tåkelys sammen med nærlys.\n- Du glemmer å blende ned fra fjernlys.\n- Du bruker fjernlys i tett tåke.\n- Du kjører for fort i mørket fordi veien virker kjent.\n- Du glemmer at mørke klær uten refleks er vanskelig å oppdage.\n- Du bruker parkeringslys som om det var kjørelys.\n- Du stoler mer på bilens automatikk enn på egen kontroll.\n\nNår du har lest reglene, kan du teste deg med [gratis teoriprøve](/quiz).'
+            }
+        ],
+        faq: [
+            {
+                question: 'Kan man bruke tåkelys og nærlys samtidig?',
+                answer: 'Nei. For vanlig personbil kan kurve-/tåkelys ikke brukes sammen med nærlys.'
+            },
+            {
+                question: 'Når skal man bruke fjernlys?',
+                answer: 'Fjernlys brukes på mørke veier når det gir bedre sikt og ikke blender andre trafikanter.'
+            },
+            {
+                question: 'Når skal man blende ned fjernlys?',
+                answer: 'Du skal blende ned når fjernlyset kan blende møtende trafikk, forankjørende eller andre trafikanter.'
+            },
+            {
+                question: 'Må baklys være tent i tunnel?',
+                answer: 'Ja. Når du kjører inn i tunnel, skal baklysene være tent slik at bilen er synlig bakfra.'
+            },
+            {
+                question: 'Er automatisk kjørelys nok?',
+                answer: 'Ikke alltid. Automatisk kjørelys kan fungere i mange situasjoner, men føreren har ansvaret for at riktig lys er tent.'
+            },
+            {
+                question: 'Hva er mørkekjøring?',
+                answer: 'Mørkekjøring, eller Trafikant i mørket, er en del av trafikalt grunnkurs. Det handler om risiko, sikt, lysbruk og synlighet i mørket.'
+            },
+            {
+                question: 'Hvorfor er refleks viktig for bilføreren?',
+                answer: 'Refleks gjør at bilføreren oppdager fotgjengere tidligere. Ifølge Statens vegvesen kan føreren i 50 km/t med nærlys ha rundt 2 sekunder på å oppdage en fotgjenger uten refleks, men rundt 10 sekunder med refleks.'
+            }
+        ],
+        miniQuiz: [
+            {
+                question: 'Kan du bruke tåkelys foran sammen med nærlys på vanlig personbil?',
+                options: [
+                    'Ja, alltid',
+                    'Ja, men bare i mørket',
+                    'Nei',
+                    'Bare på motorvei'
+                ],
+                correct: 'Nei',
+                explanation: 'Kurve-/tåkelys kan ikke brukes sammen med nærlys for bil klasse B.'
+            },
+            {
+                question: 'Du kjører inn i en tunnel med automatisk kjørelys. Hva må du passe på?',
+                options: [
+                    'At fjernlyset er på',
+                    'At baklysene er tent',
+                    'At tåkelysene er tent',
+                    'At parkeringslysene er av'
+                ],
+                correct: 'At baklysene er tent',
+                explanation: 'Ved kjøring i tunnel skal bilen være synlig også bakfra. Automatisk kjørelys tenner ikke alltid baklys.'
+            },
+            {
+                question: 'Når skal du blende ned fra fjernlys?',
+                options: [
+                    'Når lyset kan blende andre trafikanter',
+                    'Bare når du kjører i by',
+                    'Bare når bilen foran blinker',
+                    'Aldri på landevei'
+                ],
+                correct: 'Når lyset kan blende andre trafikanter',
+                explanation: 'Fjernlys må ikke brukes slik at andre blir blendet.'
+            },
+            {
+                question: 'Hva er riktig hvis du blir blendet av en møtende bil?',
+                options: [
+                    'Se rett på lysene',
+                    'Blende tilbake med fjernlys',
+                    'Se mot høyre veikant og senk farten',
+                    'Lukke øynene et øyeblikk'
+                ],
+                correct: 'Se mot høyre veikant og senk farten',
+                explanation: 'Se bort fra lysene, reduser farten og hold kontroll.'
+            },
+            {
+                question: 'Hvorfor kan fjernlys være dårlig i tett tåke?',
+                options: [
+                    'Det bruker for mye strøm',
+                    'Lyset kan reflekteres tilbake og gi dårligere sikt',
+                    'Det slår av baklysene',
+                    'Det virker bare på motorvei'
+                ],
+                correct: 'Lyset kan reflekteres tilbake og gi dårligere sikt',
+                explanation: 'Kraftig lys i tåke kan reflekteres tilbake mot deg og gjøre sikten dårligere.'
+            },
+            {
+                question: 'Hva er en vanlig feil med automatisk kjørelys?',
+                options: [
+                    'At nærlys alltid er for sterkt',
+                    'At baklysene ikke nødvendigvis er tent',
+                    'At bilen ikke kan bruke fjernlys',
+                    'At bremselysene slutter å virke'
+                ],
+                correct: 'At baklysene ikke nødvendigvis er tent',
+                explanation: 'Mange biler har kjørelys foran uten at baklysene er tent i dagslys.'
             }
         ]
     },
@@ -936,7 +1112,7 @@ export const theoryTopics: TheoryTopic[] = [
             {
                 title: 'Hva er reaksjonstid?',
                 type: 'text',
-                content: 'Før bilen begynner å bremse, har du allerede kjørt langt. Reaksjonstiden er den usynlige faren de fleste undervurderer — og en av de viktigste grunnene til ulykker på norske veier.\n\nReaksjonstid er tiden det tar fra du oppdager en fare til foten faktisk treffer bremsepedalen. For en uthvilt og edru sjåfør er dette normalt ca. 1 sekund. Det høres kort ut — men i løpet av det sekundet fortsetter bilen med full fart uten at du gjør noe som helst.'
+                content: 'Før bilen begynner å bremse, har du allerede kjørt langt. Reaksjonstiden er den usynlige faren de fleste undervurderer — og en av de viktigste grunnene til ulykker på norske veier.\n\nReaksjonstid er tiden det tar fra du oppdager en fare til foten faktisk treffer bremsepedalen. For en uthvilt og edru sjåfør er dette normalt ca. 1 sekund. Det høres kort ut — men i løpet av det sekundet fortsetter bilen med full fart uten at du gjør noe som helst.\n\nI mørket er det spesielt viktig å huske på dette. Se også [lysbruk og mørkekjøring](/laeringsressurser/lysbruk-morkekjoring).'
             },
             {
                 title: 'Test din egen reaksjonstid:',
@@ -1630,7 +1806,7 @@ export const theoryArticles: TheoryTopic[] = [
             {
                 title: 'Vanlige sikkerhetskontroll-spørsmål med fasit',
                 type: 'table',
-                content: `<table>\n    <thead>\n        <tr>\n            <th>Sensor spør</th>\n            <th>Slik kontrollerer du</th>\n            <th>Kort fasit</th>\n        </tr>\n    </thead>\n    <tbody>\n        <tr>\n            <td>Kontroller dekktrykket</td>\n            <td>Se i vognkortet eller dørkarmen for anbefalt trykk. Bruk trykkmåler på ventilen.</td>\n            <td>Riktig trykk = trygt. Lavt trykk = dårligere grep og høyere forbruk.</td>\n        </tr>\n        <tr>\n            <td>Kontroller mønsterdybden</td>\n            <td>Bruk mønsterdybdemåler eller 20-kroningen. Minimum 1,6 mm — anbefalt 3 mm.</td>\n            <td>Under 1,6 mm er ulovlig og farlig.</td>\n        </tr>\n        <tr>\n            <td>Kontroller bremsene</td>\n            <td>Trykk bremsepedalen ned. Den skal være fast og ikke synke. Sjekk bremsevæskenivå i motorrommet.</td>\n            <td>Myk pedal = luftboble i systemet.</td>\n        </tr>\n        <tr>\n            <td>Kontroller styringen</td>\n            <td>Kjør sakte og kjenn at bilen følger rattet uten å trekke til siden.</td>\n            <td>Trekking = feil hjulstilling eller dekk.</td>\n        </tr>\n        <tr>\n            <td>Kontroller lys foran</td>\n            <td>Slå på tenning. Sjekk nærlys, fjernlys og parkeringslys visuelt foran bilen.</td>\n            <td>Defekt lys = bot og fare for andre.</td>\n        </tr>\n        <tr>\n            <td>Kontroller bremselys</td>\n            <td>Slå på tenning. Be noen se bakpå mens du tråkker bremsepedalen.</td>\n            <td>Eller bruk refleksjonen i en vegg/garasjeport.</td>\n        </tr>\n        <tr>\n            <td>Kontroller motorolje</td>\n            <td>Trekk ut oljepinnen, tørk, sett inn igjen og sjekk nivået. Skal være mellom min og max.</td>\n            <td>For lite olje = motorskade.</td>\n        </tr>\n        <tr>\n            <td>Kontroller kjølevæske</td>\n            <td>Sjekk nivå i ekspansjonsbeholderen. Skal være mellom min og max når motoren er kald.</td>\n            <td>Aldri åpne lokket på varm motor.</td>\n        </tr>\n        <tr>\n            <td>Kontroller bremsevæske</td>\n            <td>Se nivå i beholderne under panseret. Skal være mellom min og max.</td>\n            <td>Lavt nivå kan bety slitte bremser eller lekkasje.</td>\n        </tr>\n        <tr>\n            <td>Kontroller vindusvaskervæske</td>\n            <td>Sjekk beholdernivå. Fyll på ved behov.</td>\n            <td>Tomt = dårlig sikt = farlig.</td>\n        </tr>\n        <tr>\n            <td>Kontroller varsellamper</td>\n            <td>Start bilen og sjekk at alle varsellamper slukker etter oppstart.</td>\n            <td>Lamper som lyser = feil som må sjekkes.</td>\n        </tr>\n        <tr>\n            <td>Hva betyr ABS-lampen?</td>\n            <td>ABS-systemet er feil. Bremser fungerer normalt men uten ABS-funksjon.</td>\n            <td>Kjør til verksted snart.</td>\n        </tr>\n        <tr>\n            <td>Hva betyr oljelampen?</td>\n            <td>Lavt oljetrykk. Stopp umiddelbart og slå av motoren.</td>\n            <td>Fortsetter du å kjøre kan motoren bli ødelagt.</td>\n        </tr>\n        <tr>\n            <td>Kontroller sikkerhetsbeltene</td>\n            <td>Dra beltet ut raskt — det skal låse seg. Sjekk at det klikker skikkelig i låsen.</td>\n            <td>Defekt belte = ikke godkjent.</td>\n        </tr>\n        <tr>\n            <td>Les av vognkortet</td>\n            <td>Finn egenvekt, tillatt totalvekt og nyttelast. Nyttelast = totalvekt minus egenvekt.</td>\n            <td>Viktig for tilhenger og lastberegning.</td>\n        </tr>\n        <tr>\n            <td>Hva er største tillatte tilhengervekt?</td>\n            <td>Se vognkortets felt for største tilhengervekt.</td>\n            <td>Avhenger av bilmodell — alltid sjekk vognkortet.</td>\n        </tr>\n    </tbody>\n</table>`
+                content: `<table>\n    <thead>\n        <tr>\n            <th>Sensor spør</th>\n            <th>Slik kontrollerer du</th>\n            <th>Kort fasit</th>\n        </tr>\n    </thead>\n    <tbody>\n        <tr>\n            <td>Kontroller dekktrykket</td>\n            <td>Se i vognkortet eller dørkarmen for anbefalt trykk. Bruk trykkmåler på ventilen.</td>\n            <td>Riktig trykk = trygt. Lavt trykk = dårligere grep og høyere forbruk.</td>\n        </tr>\n        <tr>\n            <td>Kontroller mønsterdybden</td>\n            <td>Bruk mønsterdybdemåler eller 20-kroningen. Minimum 1,6 mm — anbefalt 3 mm.</td>\n            <td>Under 1,6 mm er ulovlig og farlig.</td>\n        </tr>\n        <tr>\n            <td>Kontroller bremsene</td>\n            <td>Trykk bremsepedalen ned. Den skal være fast og ikke synke. Sjekk bremsevæskenivå i motorrommet.</td>\n            <td>Myk pedal = luftboble i systemet.</td>\n        </tr>\n        <tr>\n            <td>Kontroller styringen</td>\n            <td>Kjør sakte og kjenn at bilen følger rattet uten å trekke til siden.</td>\n            <td>Trekking = feil hjulstilling eller dekk.</td>\n        </tr>\n        <tr>\n            <td>Kontroller lys foran</td>\n            <td>Slå på tenning. Sjekk nærlys, fjernlys og parkeringslys visuelt foran bilen.</td>\n            <td>Defekt lys = bot. Se [lysbruk](/laeringsressurser/lysbruk-morkekjoring).</td>\n        </tr>\n        <tr>\n            <td>Kontroller bremselys</td>\n            <td>Slå på tenning. Be noen se bakpå mens du tråkker bremsepedalen.</td>\n            <td>Eller bruk refleksjonen i en vegg/garasjeport.</td>\n        </tr>\n        <tr>\n            <td>Kontroller motorolje</td>\n            <td>Trekk ut oljepinnen, tørk, sett inn igjen og sjekk nivået. Skal være mellom min og max.</td>\n            <td>For lite olje = motorskade.</td>\n        </tr>\n        <tr>\n            <td>Kontroller kjølevæske</td>\n            <td>Sjekk nivå i ekspansjonsbeholderen. Skal være mellom min og max når motoren er kald.</td>\n            <td>Aldri åpne lokket på varm motor.</td>\n        </tr>\n        <tr>\n            <td>Kontroller bremsevæske</td>\n            <td>Se nivå i beholderne under panseret. Skal være mellom min og max.</td>\n            <td>Lavt nivå kan bety slitte bremser eller lekkasje.</td>\n        </tr>\n        <tr>\n            <td>Kontroller vindusvaskervæske</td>\n            <td>Sjekk beholdernivå. Fyll på ved behov.</td>\n            <td>Tomt = dårlig sikt = farlig.</td>\n        </tr>\n        <tr>\n            <td>Kontroller varsellamper</td>\n            <td>Start bilen og sjekk at alle varsellamper slukker etter oppstart.</td>\n            <td>Lamper som lyser = feil som må sjekkes.</td>\n        </tr>\n        <tr>\n            <td>Hva betyr ABS-lampen?</td>\n            <td>ABS-systemet er feil. Bremser fungerer normalt men uten ABS-funksjon.</td>\n            <td>Kjør til verksted snart.</td>\n        </tr>\n        <tr>\n            <td>Hva betyr oljelampen?</td>\n            <td>Lavt oljetrykk. Stopp umiddelbart og slå av motoren.</td>\n            <td>Fortsetter du å kjøre kan motoren bli ødelagt.</td>\n        </tr>\n        <tr>\n            <td>Kontroller sikkerhetsbeltene</td>\n            <td>Dra beltet ut raskt — det skal låse seg. Sjekk at det klikker skikkelig i låsen.</td>\n            <td>Defekt belte = ikke godkjent.</td>\n        </tr>\n        <tr>\n            <td>Les av vognkortet</td>\n            <td>Finn egenvekt, tillatt totalvekt og nyttelast. Nyttelast = totalvekt minus egenvekt.</td>\n            <td>Viktig for tilhenger og lastberegning.</td>\n        </tr>\n        <tr>\n            <td>Hva er største tillatte tilhengervekt?</td>\n            <td>Se vognkortets felt for største tilhengervekt.</td>\n            <td>Avhenger av bilmodell — alltid sjekk vognkortet.</td>\n        </tr>\n    </tbody>\n</table>`
             },
             {
                 title: 'Hva er sikkerhetskontroll?',

@@ -1,46 +1,94 @@
+import React from 'react'
 import { Link } from 'react-router-dom'
 
 /**
- * Helper to parse bold markdown **text**
+ * Helper to parse bold markdown **text** and italic *text*
  */
-function parseBoldText(text: string) {
+function parseBoldAndItalicText(text: string) {
+    // Parse bold first
     const boldRegex = /\*\*([^*]+)\*\*/g
-    const parts = []
+    let boldParts = []
     let lastIndex = 0
     let match
 
     while ((match = boldRegex.exec(text)) !== null) {
         if (match.index > lastIndex) {
-            parts.push(text.substring(lastIndex, match.index))
+            boldParts.push(text.substring(lastIndex, match.index))
         }
-        parts.push(<strong key={`bold-${match.index}`}>{match[1]}</strong>)
+        boldParts.push(<strong key={`bold-${match.index}`}>{match[1]}</strong>)
         lastIndex = boldRegex.lastIndex
     }
 
     if (lastIndex < text.length) {
-        parts.push(text.substring(lastIndex))
+        boldParts.push(text.substring(lastIndex))
     }
+    
+    // Then parse italic out of the remaining string parts
+    let finalParts: React.ReactNode[] = []
+    boldParts.forEach((part, i) => {
+        if (typeof part === 'string') {
+            const italicRegex = /\*([^*]+)\*/g
+            let itLastIndex = 0
+            let itMatch
+            while ((itMatch = italicRegex.exec(part)) !== null) {
+                if (itMatch.index > itLastIndex) {
+                    finalParts.push(part.substring(itLastIndex, itMatch.index))
+                }
+                // Use caption-like styling for italic text to look great under images
+                finalParts.push(
+                    <em key={`italic-${i}-${itMatch.index}`} style={{ display: 'block', textAlign: 'center', fontSize: '0.9rem', color: 'var(--color-text-light)', marginTop: '-0.5rem', marginBottom: '1.5rem' }}>
+                        {itMatch[1]}
+                    </em>
+                )
+                itLastIndex = italicRegex.lastIndex
+            }
+            if (itLastIndex < part.length) {
+                finalParts.push(part.substring(itLastIndex))
+            }
+        } else {
+            finalParts.push(part)
+        }
+    })
 
-    return parts.length > 0 ? parts : [text]
+    return finalParts.length > 0 ? finalParts : [text]
 }
 
 /**
- * Helper function to safely parse markdown-style localized [links](/urls) and **bold** text
+ * Helper function to safely parse markdown-style localized [links](/urls), ![images](/img.jpg) and **bold** / *italic* text
  */
 export function parseInlineLinks(text: string) {
-    const linkRegex = /\[([^\]]+)\]\(([^)]+)\)/g
+    const linkRegex = /(!?)\[([^\]]+)\]\(([^)]+)\)/g
     const parts = []
     let lastIndex = 0
     let match
 
     while ((match = linkRegex.exec(text)) !== null) {
         if (match.index > lastIndex) {
-            parts.push(...parseBoldText(text.substring(lastIndex, match.index)))
+            parts.push(...parseBoldAndItalicText(text.substring(lastIndex, match.index)))
         }
-        const textContent = match[1]
-        const url = match[2]
+        
+        const isImage = match[1] === '!'
+        const textContent = match[2]
+        const url = match[3]
 
-        if (url.startsWith('/') || url.startsWith('#')) {
+        if (isImage) {
+            // Apply different styling if it's a sign (needs smaller width) vs regular illustration
+            const isSign = url.includes('/signs/') || url.includes('skilt');
+            parts.push(
+                <img 
+                    key={match.index} 
+                    src={url} 
+                    alt={textContent} 
+                    style={{ 
+                        maxWidth: isSign ? '300px' : '100%', 
+                        height: 'auto', 
+                        borderRadius: '8px', 
+                        margin: '1rem auto', 
+                        display: 'block' 
+                    }} 
+                />
+            )
+        } else if (url.startsWith('/') || url.startsWith('#')) {
             parts.push(
                 <Link 
                     key={match.index} 
@@ -87,7 +135,7 @@ export function parseInlineLinks(text: string) {
     }
 
     if (lastIndex < text.length) {
-        parts.push(...parseBoldText(text.substring(lastIndex)))
+        parts.push(...parseBoldAndItalicText(text.substring(lastIndex)))
     }
 
     return parts.length > 0 ? parts : [text]
