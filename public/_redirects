@@ -3,7 +3,7 @@
 /teori/reaksjonstid                /laeringsressurser/reaksjonstid             301
 /teori/vikeplikt                   /laeringsressurser/vikeplikt                301
 /teori/skilt                       /laeringsressurser/skilt                    301
-/teori/sikkerhet                   /laeringsressurser/sikkerhet                301
+/teori/sikkerhet                   /laeringsressurser/sikkerhetsutstyr       301
 /teori/miljo                       /laeringsressurser/miljo                    301
 /teori/stans-og-parkering          /laeringsressurser/stans-og-parkering       301
 /teori/vognkort-vekter             /laeringsressurser/vognkort-vekter          301
@@ -22,5 +22,6 @@
 
 # Intern redirect (gammel URL-variant)
 /laeringsressurser/vognkort-og-vekt    /laeringsressurser/vognkort-vekter      301
+/laeringsressurser/sikkerhet          /laeringsressurser/sikkerhetsutstyr      301
 
 /*    /index.html   200

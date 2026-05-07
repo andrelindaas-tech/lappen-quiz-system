@@ -1603,43 +1603,6 @@ export const theoryTopics: TheoryTopic[] = [
     },
 
     {
-        id: 'sikkerhet',
-        title: 'Sikkerhetsutstyr',
-        icon: '🦺',
-        shortDescription: 'Bilbelte, barneseter, varseltrekant og førstehjelp',
-        color: '#7c3aed',
-        seoTitle: 'Sikkerhetsutstyr og bilbelte | Teori-test.no',
-        seoDescription: 'Sikkerhetsutstyr i bil: bilbelte, barneseter, airbag, varseltrekant og førstehjelp for en trygg biltur.',
-        sections: [
-            {
-                title: 'Bilbelte',
-                type: 'text',
-                content: 'Alle i bilen skal bruke bilbelte — både fører og passasjerer. Det er førerens ansvar at passasjerer under 15 år bruker belte. Bilbeltet reduserer risikoen for alvorlig skade med opptil 50 % ved en kollisjon.'
-            },
-            {
-                title: 'Barnesikring',
-                type: 'warning',
-                content: 'Barn under 135 cm skal bruke godkjent barnesikringsutstyr (barnesete, pute eller sele tilpasset barnets vekt og høyde). Barn bør sitte bakovervendt så lenge som mulig, helst til 4 års alder. Det er ALDRI lov å plassere bakovervendt barnestol i forsetet dersom det er aktiv airbag.'
-            },
-            {
-                title: 'Obligatorisk utstyr i bilen',
-                type: 'info',
-                content: '• Varseltrekant — Skal plasseres minst 100 meter bak bilen ved stopp på veien\n• Refleksvest — Skal brukes når du står utenfor bilen langs veien\n• Førstehjelpsutstyr — Anbefalt å ha i bilen\n• Brannslukkingsapparat — Anbefalt, men ikke påbudt for personbil\n• Reservehjul eller dekkverktøy — For å skifte punktert dekk'
-            },
-            {
-                title: 'Airbag',
-                type: 'text',
-                content: 'Airbagen fungerer sammen med bilbeltet. Den utløses ved kraftig kollisjon og reduserer skade på hode og overkropp. Viktig å vite:\n\n• Airbag uten bilbelte kan gi alvorlige skader\n• Sittestillingen bør være riktig — minst 25 cm fra rattet\n• Bakovervendt barnesete skal ALDRI brukes foran aktiv airbag'
-            },
-            {
-                title: 'Førstehjelp — ABC',
-                type: 'tip',
-                content: 'Ved ulykke, husk ABC:\n\nA — Airways (Luftveier): Sjekk at luftveiene er frie\nB — Breathing (Pust): Se, lytt og kjenn etter pust\nC — Circulation (Sirkulasjon): Start hjerte-lungeredning (HLR) ved behov\n\nRing 113 (AMK) ved alvorlige skader. Sikre ulykkesstedet først!'
-            }
-        ]
-    },
-
-    {
         id: 'miljo',
         title: 'Miljøvennlig kjøring',
         icon: '🌿',
@@ -1765,103 +1728,109 @@ export const theoryTopics: TheoryTopic[] = [
             {
                 title: '7 hovedtemaer – temakart for teoriprøven klasse B',
                 type: 'table',
-                content: `<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:0.85rem">
-<div style="border:1px solid var(--color-border);border-radius:12px;padding:1rem 1.1rem">
-  <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:0.5rem;margin-bottom:0.6rem;flex-wrap:wrap">
-    <strong style="font-size:0.95rem;color:var(--color-text)">🚗 A – Fart, plassering og samhandling</strong>
-    <span style="background:#f59e0b;color:#fff;font-size:0.7rem;font-weight:700;padding:2px 10px;border-radius:99px;white-space:nowrap">Delvis dekket</span>
+                content: `<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:1.25rem">
+<!-- Tema A -->
+<div style="border:1px solid var(--color-border);border-radius:14px;padding:1.5rem;background:var(--color-bg);display:flex;flex-direction:column;height:100%">
+  <div style="display:grid;grid-template-columns:28px 1fr auto;gap:0.75rem;align-items:start;margin-bottom:1.25rem">
+    <div style="background:var(--color-primary);color:#fff;width:28px;height:26px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:0.9rem;font-weight:800;margin-top:2px">A</div>
+    <strong style="font-size:1.05rem;color:var(--color-text);line-height:1.3">Fart, plassering og samhandling</strong>
+    <span style="background:#f59e0b;color:#fff;font-size:0.6rem;font-weight:700;padding:3px 10px;border-radius:99px;text-transform:uppercase;margin-top:4px">Delvis</span>
   </div>
-  <ul style="margin:0 0 0.75rem 0;padding-left:1.1rem;color:var(--color-text-light);font-size:0.85rem;line-height:1.65">
+  <ul style="margin:0 0 1.5rem 0;padding-left:1.3rem;color:var(--color-text-light);font-size:0.875rem;line-height:1.7;flex-grow:1">
     <li>Avstand til forankjørende</li><li>Feltvalg og kollektivfelt</li><li>Rundkjøring og envegskjøring</li><li>Forbikjøring og fletting</li><li>Hest i trafikken og planovergang</li>
   </ul>
-  <div style="display:flex;flex-wrap:wrap;gap:0.35rem">
-    <a href="/laeringsressurser/fartsgrenser" style="font-size:0.78rem;color:var(--color-primary);text-decoration:none;border:1px solid var(--color-border);border-radius:6px;padding:2px 9px;background:var(--color-bg)">→ Fartsgrenser</a>
-    <a href="/laeringsressurser/rundkjoring" style="font-size:0.78rem;color:var(--color-primary);text-decoration:none;border:1px solid var(--color-border);border-radius:6px;padding:2px 9px;background:var(--color-bg)">→ Rundkjøring</a>
-    <a href="/laeringsressurser/forbikjoring" style="font-size:0.78rem;color:var(--color-primary);text-decoration:none;border:1px solid var(--color-border);border-radius:6px;padding:2px 9px;background:var(--color-bg)">→ Forbikjøring</a>
+  <div style="font-size:0.82rem;color:var(--color-text-light);border-top:1px solid var(--color-border);padding-top:1rem">
+    <span style="opacity:0.7;font-weight:600">Les:</span> <a href="/laeringsressurser/fartsgrenser" style="color:var(--color-primary);text-decoration:none">Fartsgrenser</a> · <a href="/laeringsressurser/rundkjoring" style="color:var(--color-primary);text-decoration:none">Rundkjøring</a> · <a href="/laeringsressurser/forbikjoring" style="color:var(--color-primary);text-decoration:none">Forbikjøring</a>
   </div>
 </div>
-<div style="border:1px solid var(--color-border);border-radius:12px;padding:1rem 1.1rem">
-  <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:0.5rem;margin-bottom:0.6rem;flex-wrap:wrap">
-    <strong style="font-size:0.95rem;color:var(--color-text)">💡 B – Sikt, føre og lys</strong>
-    <span style="background:#22c55e;color:#fff;font-size:0.7rem;font-weight:700;padding:2px 10px;border-radius:99px;white-space:nowrap">Dekket godt</span>
+
+<!-- Tema B -->
+<div style="border:1px solid var(--color-border);border-radius:14px;padding:1.5rem;background:var(--color-bg);display:flex;flex-direction:column;height:100%">
+  <div style="display:grid;grid-template-columns:28px 1fr auto;gap:0.75rem;align-items:start;margin-bottom:1.25rem">
+    <div style="background:var(--color-primary);color:#fff;width:28px;height:26px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:0.9rem;font-weight:800;margin-top:2px">B</div>
+    <strong style="font-size:1.05rem;color:var(--color-text);line-height:1.3">Sikt, føre og lys</strong>
+    <span style="background:#22c55e;color:#fff;font-size:0.6rem;font-weight:700;padding:3px 10px;border-radius:99px;text-transform:uppercase;margin-top:4px">Godt</span>
   </div>
-  <ul style="margin:0 0 0.75rem 0;padding-left:1.1rem;color:var(--color-text-light);font-size:0.85rem;line-height:1.65">
+  <ul style="margin:0 0 1.5rem 0;padding-left:1.3rem;color:var(--color-text-light);font-size:0.875rem;line-height:1.7;flex-grow:1">
     <li>Sikt, vær og mørke</li><li>Bruk av lys</li><li>Bremselengde og stopplengde</li><li>Reaksjonslengde og veggrep</li>
   </ul>
-  <div style="display:flex;flex-wrap:wrap;gap:0.35rem">
-    <a href="/laeringsressurser/morkekjoring" style="font-size:0.78rem;color:var(--color-primary);text-decoration:none;border:1px solid var(--color-border);border-radius:6px;padding:2px 9px;background:var(--color-bg)">→ Mørkekjøring</a>
-    <a href="/laeringsressurser/bremselengde" style="font-size:0.78rem;color:var(--color-primary);text-decoration:none;border:1px solid var(--color-border);border-radius:6px;padding:2px 9px;background:var(--color-bg)">→ Bremselengde</a>
-    <a href="/laeringsressurser/reaksjonstid" style="font-size:0.78rem;color:var(--color-primary);text-decoration:none;border:1px solid var(--color-border);border-radius:6px;padding:2px 9px;background:var(--color-bg)">→ Reaksjonstid</a>
+  <div style="font-size:0.82rem;color:var(--color-text-light);border-top:1px solid var(--color-border);padding-top:1rem">
+    <span style="opacity:0.7;font-weight:600">Les:</span> <a href="/laeringsressurser/morkekjoring" style="color:var(--color-primary);text-decoration:none">Mørkekjøring</a> · <a href="/laeringsressurser/bremselengde" style="color:var(--color-primary);text-decoration:none">Bremselengde</a> · <a href="/laeringsressurser/reaksjonstid" style="color:var(--color-primary);text-decoration:none">Reaksjonstid</a>
   </div>
 </div>
-<div style="border:1px solid var(--color-border);border-radius:12px;padding:1rem 1.1rem">
-  <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:0.5rem;margin-bottom:0.6rem;flex-wrap:wrap">
-    <strong style="font-size:0.95rem;color:var(--color-text)">🚦 C – Skilt, oppmerking og vikeplikt</strong>
-    <span style="background:#22c55e;color:#fff;font-size:0.7rem;font-weight:700;padding:2px 10px;border-radius:99px;white-space:nowrap">Dekket godt</span>
+
+<!-- Tema C -->
+<div style="border:1px solid var(--color-border);border-radius:14px;padding:1.5rem;background:var(--color-bg);display:flex;flex-direction:column;height:100%">
+  <div style="display:grid;grid-template-columns:28px 1fr auto;gap:0.75rem;align-items:start;margin-bottom:1.25rem">
+    <div style="background:var(--color-primary);color:#fff;width:28px;height:26px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:0.9rem;font-weight:800;margin-top:2px">C</div>
+    <strong style="font-size:1.05rem;color:var(--color-text);line-height:1.3">Skilt, oppmerking og vikeplikt</strong>
+    <span style="background:#22c55e;color:#fff;font-size:0.6rem;font-weight:700;padding:3px 10px;border-radius:99px;text-transform:uppercase;margin-top:4px">Godt</span>
   </div>
-  <ul style="margin:0 0 0.75rem 0;padding-left:1.1rem;color:var(--color-text-light);font-size:0.85rem;line-height:1.65">
+  <ul style="margin:0 0 1.5rem 0;padding-left:1.3rem;color:var(--color-text-light);font-size:0.875rem;line-height:1.7;flex-grow:1">
     <li>Skilt og skiltgrupper</li><li>Vegoppmerking</li><li>Vikeplikt og høyreregel</li><li>Lysregulering og politimannens tegn</li><li>Stoppeplikt</li>
   </ul>
-  <div style="display:flex;flex-wrap:wrap;gap:0.35rem">
-    <a href="/laeringsressurser/skilt" style="font-size:0.78rem;color:var(--color-primary);text-decoration:none;border:1px solid var(--color-border);border-radius:6px;padding:2px 9px;background:var(--color-bg)">→ Skilt</a>
-    <a href="/laeringsressurser/veimerking" style="font-size:0.78rem;color:var(--color-primary);text-decoration:none;border:1px solid var(--color-border);border-radius:6px;padding:2px 9px;background:var(--color-bg)">→ Vegoppmerking</a>
-    <a href="/laeringsressurser/vikeplikt" style="font-size:0.78rem;color:var(--color-primary);text-decoration:none;border:1px solid var(--color-border);border-radius:6px;padding:2px 9px;background:var(--color-bg)">→ Vikeplikt</a>
-    <a href="/laeringsressurser/myndighetspyramiden" style="font-size:0.78rem;color:var(--color-primary);text-decoration:none;border:1px solid var(--color-border);border-radius:6px;padding:2px 9px;background:var(--color-bg)">→ Myndighetspyramiden</a>
+  <div style="font-size:0.82rem;color:var(--color-text-light);border-top:1px solid var(--color-border);padding-top:1rem">
+    <span style="opacity:0.7;font-weight:600">Les:</span> <a href="/laeringsressurser/skilt" style="color:var(--color-primary);text-decoration:none">Skilt</a> · <a href="/laeringsressurser/veimerking" style="color:var(--color-primary);text-decoration:none">Vegoppmerking</a> · <a href="/laeringsressurser/vikeplikt" style="color:var(--color-primary);text-decoration:none">Vikeplikt</a> · <a href="/laeringsressurser/myndighetspyramiden" style="color:var(--color-primary);text-decoration:none">Myndighetspyramiden</a>
   </div>
 </div>
-<div style="border:1px solid var(--color-border);border-radius:12px;padding:1rem 1.1rem">
-  <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:0.5rem;margin-bottom:0.6rem;flex-wrap:wrap">
-    <strong style="font-size:0.95rem;color:var(--color-text)">🧠 D – Fører, ansvar og risiko</strong>
-    <span style="background:#f59e0b;color:#fff;font-size:0.7rem;font-weight:700;padding:2px 10px;border-radius:99px;white-space:nowrap">Delvis dekket</span>
+
+<!-- Tema D -->
+<div style="border:1px solid var(--color-border);border-radius:14px;padding:1.5rem;background:var(--color-bg);display:flex;flex-direction:column;height:100%">
+  <div style="display:grid;grid-template-columns:28px 1fr auto;gap:0.75rem;align-items:start;margin-bottom:1.25rem">
+    <div style="background:var(--color-primary);color:#fff;width:28px;height:26px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:0.9rem;font-weight:800;margin-top:2px">D</div>
+    <strong style="font-size:1.05rem;color:var(--color-text);line-height:1.3">Fører, ansvar og risiko</strong>
+    <span style="background:#f59e0b;color:#fff;font-size:0.6rem;font-weight:700;padding:3px 10px;border-radius:99px;text-transform:uppercase;margin-top:4px">Delvis</span>
   </div>
-  <ul style="margin:0 0 0.75rem 0;padding-left:1.1rem;color:var(--color-text-light);font-size:0.85rem;line-height:1.65">
+  <ul style="margin:0 0 1.5rem 0;padding-left:1.3rem;color:var(--color-text-light);font-size:0.875rem;line-height:1.7;flex-grow:1">
     <li>Reaksjonstid og sanser</li><li>Tretthet og uoppmerksomhet</li><li>Rus og pliktmessig avhold</li><li>Helsekrav og førerrett</li><li>Øvelseskjøring</li>
   </ul>
-  <div style="display:flex;flex-wrap:wrap;gap:0.35rem">
-    <a href="/laeringsressurser/promille" style="font-size:0.78rem;color:var(--color-primary);text-decoration:none;border:1px solid var(--color-border);border-radius:6px;padding:2px 9px;background:var(--color-bg)">→ Promille</a>
-    <a href="/laeringsressurser/reaksjonstid" style="font-size:0.78rem;color:var(--color-primary);text-decoration:none;border:1px solid var(--color-border);border-radius:6px;padding:2px 9px;background:var(--color-bg)">→ Reaksjonstid</a>
-    <a href="/laeringsressurser/ovingskjoring" style="font-size:0.78rem;color:var(--color-primary);text-decoration:none;border:1px solid var(--color-border);border-radius:6px;padding:2px 9px;background:var(--color-bg)">→ Øvingskjøring</a>
+  <div style="font-size:0.82rem;color:var(--color-text-light);border-top:1px solid var(--color-border);padding-top:1rem">
+    <span style="opacity:0.7;font-weight:600">Les:</span> <a href="/laeringsressurser/promille" style="color:var(--color-primary);text-decoration:none">Promille</a> · <a href="/laeringsressurser/reaksjonstid" style="color:var(--color-primary);text-decoration:none">Reaksjonstid</a> · <a href="/laeringsressurser/ovingskjoring" style="color:var(--color-primary);text-decoration:none">Øvelseskjøring</a>
   </div>
 </div>
-<div style="border:1px solid var(--color-border);border-radius:12px;padding:1rem 1.1rem">
-  <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:0.5rem;margin-bottom:0.6rem;flex-wrap:wrap">
-    <strong style="font-size:0.95rem;color:var(--color-text)">🔧 E – Kjøretøyet</strong>
-    <span style="background:#f59e0b;color:#fff;font-size:0.7rem;font-weight:700;padding:2px 10px;border-radius:99px;white-space:nowrap">Delvis dekket</span>
+
+<!-- Tema E -->
+<div style="border:1px solid var(--color-border);border-radius:14px;padding:1.5rem;background:var(--color-bg);display:flex;flex-direction:column;height:100%">
+  <div style="display:grid;grid-template-columns:28px 1fr auto;gap:0.75rem;align-items:start;margin-bottom:1.25rem">
+    <div style="background:var(--color-primary);color:#fff;width:28px;height:26px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:0.9rem;font-weight:800;margin-top:2px">E</div>
+    <strong style="font-size:1.05rem;color:var(--color-text);line-height:1.3">Kjøretøyet</strong>
+    <span style="background:#f59e0b;color:#fff;font-size:0.6rem;font-weight:700;padding:3px 10px;border-radius:99px;text-transform:uppercase;margin-top:4px">Delvis</span>
   </div>
-  <ul style="margin:0 0 0.75rem 0;padding-left:1.1rem;color:var(--color-text-light);font-size:0.85rem;line-height:1.65">
+  <ul style="margin:0 0 1.5rem 0;padding-left:1.3rem;color:var(--color-text-light);font-size:0.875rem;line-height:1.7;flex-grow:1">
     <li>Dekk, bremser og styring</li><li>Instrumentpanel og varsellys</li><li>Drivstoff og energikilde</li><li>Sikkerhetskontroll og kjetting</li><li>Førerstøttesystemer</li>
   </ul>
-  <div style="display:flex;flex-wrap:wrap;gap:0.35rem">
-    <a href="/laeringsressurser/sikkerhetskontroll" style="font-size:0.78rem;color:var(--color-primary);text-decoration:none;border:1px solid var(--color-border);border-radius:6px;padding:2px 9px;background:var(--color-bg)">→ Sikkerhetskontroll</a>
-    <a href="/laeringsressurser/tilhenger" style="font-size:0.78rem;color:var(--color-primary);text-decoration:none;border:1px solid var(--color-border);border-radius:6px;padding:2px 9px;background:var(--color-bg)">→ Tilhenger</a>
-    <a href="/laeringsressurser/automatlappen" style="font-size:0.78rem;color:var(--color-primary);text-decoration:none;border:1px solid var(--color-border);border-radius:6px;padding:2px 9px;background:var(--color-bg)">→ Automatlappen</a>
+  <div style="font-size:0.82rem;color:var(--color-text-light);border-top:1px solid var(--color-border);padding-top:1rem">
+    <span style="opacity:0.7;font-weight:600">Les:</span> <a href="/laeringsressurser/sikkerhetskontroll" style="color:var(--color-primary);text-decoration:none">Sikkerhetskontroll</a> · <a href="/laeringsressurser/tilhenger" style="color:var(--color-primary);text-decoration:none">Tilhenger</a> · <a href="/laeringsressurser/automatlappen" style="color:var(--color-primary);text-decoration:none">Automatlappen</a>
   </div>
 </div>
-<div style="border:1px solid var(--color-border);border-radius:12px;padding:1rem 1.1rem">
-  <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:0.5rem;margin-bottom:0.6rem;flex-wrap:wrap">
-    <strong style="font-size:0.95rem;color:var(--color-text)">⚖️ F – Lover, regler og myndighet</strong>
-    <span style="background:#f59e0b;color:#fff;font-size:0.7rem;font-weight:700;padding:2px 10px;border-radius:99px;white-space:nowrap">Delvis dekket</span>
+
+<!-- Tema F -->
+<div style="border:1px solid var(--color-border);border-radius:14px;padding:1.5rem;background:var(--color-bg);display:flex;flex-direction:column;height:100%">
+  <div style="display:grid;grid-template-columns:28px 1fr auto;gap:0.75rem;align-items:start;margin-bottom:1.25rem">
+    <div style="background:var(--color-primary);color:#fff;width:28px;height:26px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:0.9rem;font-weight:800;margin-top:2px">F</div>
+    <strong style="font-size:1.05rem;color:var(--color-text);line-height:1.3">Lover, regler og myndighet</strong>
+    <span style="background:#f59e0b;color:#fff;font-size:0.6rem;font-weight:700;padding:3px 10px;border-radius:99px;text-transform:uppercase;margin-top:4px">Delvis</span>
   </div>
-  <ul style="margin:0 0 0.75rem 0;padding-left:1.1rem;color:var(--color-text-light);font-size:0.85rem;line-height:1.65">
+  <ul style="margin:0 0 1.5rem 0;padding-left:1.3rem;color:var(--color-text-light);font-size:0.875rem;line-height:1.7;flex-grow:1">
     <li>Trafikkregler og vegtrafikkloven</li><li>Offentlige reaksjoner og bøter</li><li>Registrering, vognkort og forsikring</li>
   </ul>
-  <div style="display:flex;flex-wrap:wrap;gap:0.35rem">
-    <a href="/laeringsressurser/myndighetspyramiden" style="font-size:0.78rem;color:var(--color-primary);text-decoration:none;border:1px solid var(--color-border);border-radius:6px;padding:2px 9px;background:var(--color-bg)">→ Myndighetspyramiden</a>
-    <a href="/laeringsressurser/vognkort-vekter" style="font-size:0.78rem;color:var(--color-primary);text-decoration:none;border:1px solid var(--color-border);border-radius:6px;padding:2px 9px;background:var(--color-bg)">→ Vognkort</a>
-    <a href="/laeringsressurser/promille" style="font-size:0.78rem;color:var(--color-primary);text-decoration:none;border:1px solid var(--color-border);border-radius:6px;padding:2px 9px;background:var(--color-bg)">→ Promille</a>
+  <div style="font-size:0.82rem;color:var(--color-text-light);border-top:1px solid var(--color-border);padding-top:1rem">
+    <span style="opacity:0.7;font-weight:600">Les:</span> <a href="/laeringsressurser/myndighetspyramiden" style="color:var(--color-primary);text-decoration:none">Myndighetspyramiden</a> · <a href="/laeringsressurser/vognkort-vekter" style="color:var(--color-primary);text-decoration:none">Vognkort</a> · <a href="/laeringsressurser/promille" style="color:var(--color-primary);text-decoration:none">Promille</a>
   </div>
 </div>
-<div style="border:1px solid var(--color-border);border-radius:12px;padding:1rem 1.1rem">
-  <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:0.5rem;margin-bottom:0.6rem;flex-wrap:wrap">
-    <strong style="font-size:0.95rem;color:var(--color-text)">🚨 G – Uhell, førstehjelp og sikkerhet</strong>
-    <span style="background:#94a3b8;color:#fff;font-size:0.7rem;font-weight:700;padding:2px 10px;border-radius:99px;white-space:nowrap">Kommer</span>
+
+<!-- Tema G -->
+<div style="border:1px solid var(--color-border);border-radius:14px;padding:1.5rem;background:var(--color-bg);display:flex;flex-direction:column;height:100%">
+  <div style="display:grid;grid-template-columns:28px 1fr auto;gap:0.75rem;align-items:start;margin-bottom:1.25rem">
+    <div style="background:var(--color-primary);color:#fff;width:28px;height:26px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:0.9rem;font-weight:800;margin-top:2px">G</div>
+    <strong style="font-size:1.05rem;color:var(--color-text);line-height:1.3">Uhell, førstehjelp og sikkerhet</strong>
+    <span style="background:#22c55e;color:#fff;font-size:0.6rem;font-weight:700;padding:3px 10px;border-radius:99px;text-transform:uppercase;margin-top:4px">Godt</span>
   </div>
-  <ul style="margin:0 0 0.75rem 0;padding-left:1.1rem;color:var(--color-text-light);font-size:0.85rem;line-height:1.65">
-    <li>Førstehjelp og trafikkuhell</li><li>Sikringsutstyr og varseltrekant</li><li>Tunnelsikkerhet</li><li>Snø på tak og isfrie ruter</li>
+  <ul style="margin:0 0 1.5rem 0;padding-left:1.3rem;color:var(--color-text-light);font-size:0.875rem;line-height:1.7;flex-grow:1">
+    <li><a href="/laeringsressurser/trafikkuhell-forstehjelp" style="color:inherit;text-decoration:none;border-bottom:1px dashed var(--color-border)">Førstehjelp og trafikkuhell</a></li><li><a href="/laeringsressurser/sikkerhetsutstyr" style="color:inherit;text-decoration:none;border-bottom:1px dashed var(--color-border)">Sikringsutstyr og varseltrekant</a></li><li><a href="/laeringsressurser/trafikkuhell-forstehjelp" style="color:inherit;text-decoration:none;border-bottom:1px dashed var(--color-border)">Tunnelsikkerhet</a></li><li>Snø på tak og isfrie ruter</li>
   </ul>
-  <div style="display:flex;flex-wrap:wrap;gap:0.35rem">
-    <a href="/laeringsressurser/sikkerhetskontroll" style="font-size:0.78rem;color:var(--color-primary);text-decoration:none;border:1px solid var(--color-border);border-radius:6px;padding:2px 9px;background:var(--color-bg)">→ Sikkerhetskontroll</a>
-    <a href="/laeringsressurser/morkekjoring" style="font-size:0.78rem;color:var(--color-primary);text-decoration:none;border:1px solid var(--color-border);border-radius:6px;padding:2px 9px;background:var(--color-bg)">→ Mørkekjøring</a>
+  <div style="font-size:0.82rem;color:var(--color-text-light);border-top:1px solid var(--color-border);padding-top:1rem">
+    <span style="opacity:0.7;font-weight:600">Les:</span> <a href="/laeringsressurser/trafikkuhell-forstehjelp" style="color:var(--color-primary);text-decoration:none">Trafikkuhell</a> · <a href="/laeringsressurser/sikkerhetsutstyr" style="color:var(--color-primary);text-decoration:none">Sikkerhetsutstyr</a> · <a href="/laeringsressurser/morkekjoring" style="color:var(--color-primary);text-decoration:none">Mørkekjøring</a>
   </div>
 </div>
 </div>`
@@ -1874,7 +1843,7 @@ export const theoryTopics: TheoryTopic[] = [
             {
                 title: 'Dekkingsoversikt – Statens vegvesen temaliste klasse B',
                 type: 'table',
-                content: `<table style="width:100%;border-collapse:collapse;font-size:0.875rem">
+                content: `<div style="margin-bottom:1.5rem;padding:1rem;border-radius:10px;background:rgba(0,0,0,0.02);border:1px solid var(--color-border);color:var(--color-text-light);font-size:0.875rem;line-height:1.6">Vi bygger ut siden fortløpende. Nye artikler, guider og oppgaver legges til etter hvert for å dekke hele temalisten på en god måte.</div><table style="width:100%;border-collapse:collapse;font-size:0.875rem">
 <thead><tr style="border-bottom:2px solid var(--color-border)">
 <th style="padding:8px 10px;text-align:left;color:var(--color-text-light);font-size:0.75rem;text-transform:uppercase;letter-spacing:0.05em">Tema</th>
 <th style="padding:8px 10px;text-align:left;color:var(--color-text-light);font-size:0.75rem;text-transform:uppercase;letter-spacing:0.05em">Status</th>
@@ -1887,7 +1856,7 @@ export const theoryTopics: TheoryTopic[] = [
 <tr style="border-bottom:1px solid var(--color-border)"><td style="padding:8px 10px;color:var(--color-text)">D – Fører og risiko</td><td style="padding:8px 10px"><span style="background:#f59e0b;color:#fff;font-size:0.68rem;font-weight:700;padding:2px 8px;border-radius:99px">Delvis</span></td><td style="padding:8px 10px;color:var(--color-text-light)">Promille, Reaksjonstid, Øvingskjøring</td></tr>
 <tr style="border-bottom:1px solid var(--color-border)"><td style="padding:8px 10px;color:var(--color-text)">E – Kjøretøyet</td><td style="padding:8px 10px"><span style="background:#f59e0b;color:#fff;font-size:0.68rem;font-weight:700;padding:2px 8px;border-radius:99px">Delvis</span></td><td style="padding:8px 10px;color:var(--color-text-light)">Sikkerhetskontroll, Tilhenger, Vognkort</td></tr>
 <tr style="border-bottom:1px solid var(--color-border)"><td style="padding:8px 10px;color:var(--color-text)">F – Lover og myndighet</td><td style="padding:8px 10px"><span style="background:#f59e0b;color:#fff;font-size:0.68rem;font-weight:700;padding:2px 8px;border-radius:99px">Delvis</span></td><td style="padding:8px 10px;color:var(--color-text-light)">Myndighetspyramiden, Vognkort, Promille</td></tr>
-<tr><td style="padding:8px 10px;color:var(--color-text)">G – Uhell og sikkerhet</td><td style="padding:8px 10px"><span style="background:#94a3b8;color:#fff;font-size:0.68rem;font-weight:700;padding:2px 8px;border-radius:99px">Kommer</span></td><td style="padding:8px 10px;color:var(--color-text-light)">Sikkerhetskontroll, Mørkekjøring</td></tr>
+<tr><td style="padding:8px 10px;color:var(--color-text)">G – Uhell og sikkerhet</td><td style="padding:8px 10px"><span style="background:#22c55e;color:#fff;font-size:0.68rem;font-weight:700;padding:2px 8px;border-radius:99px">Godt</span></td><td style="padding:8px 10px;color:var(--color-text-light)">Trafikkuhell & Førstehjelp, Sikkerhetsutstyr, Mørkekjøring</td></tr>
 </tbody></table>`
             },
             {
@@ -2243,6 +2212,230 @@ export const theoryArticles: TheoryTopic[] = [
                 title: '4. Øv målrettet og effektivt',
                 type: 'tip',
                 content: 'Den beste og gratis treningen er å simulere den ekte prøvesituasjonen. På Teori-test.no kan du øve gratis med verktøy som forbereder deg nøyaktig på det som møter deg:\n• [Full prøve-modus](/quiz?mode=eksamen): 45 spørsmål på 90 minutter – akkurat som på trafikkstasjonen.\n• [Ekspresstest](/quiz?mode=hurtig): Raske økter som passer perfekt på mobilen når du har noen minutter ledig.\n• [Fokus-modus](/quiz?mode=fokus): Et smart verktøy som husker hva du svarer feil på, slik at du kun trenger å terpe på svakhetene dine.'
+            }
+        ]
+    },
+
+    {
+        id: 'trafikkuhell-forstehjelp',
+        title: 'Trafikkuhell og førstehjelp: Hva gjør du først?',
+        icon: '🚑',
+        shortDescription: 'Lær den livsviktige rekkefølgen ved trafikkuhell: Stans, sikre, varsle og hjelpe. Dette må du kunne til teoriprøven klasse B.',
+        color: '#ef4444',
+        seoTitle: 'Trafikkuhell og førstehjelp – hva gjør du først? | Teori-test.no',
+        seoDescription: 'Hva gjør du først ved trafikkuhell? Lær riktig rekkefølge: stans, sikre, varsle og hjelpe. Kort forklart for teoriprøven klasse B.',
+        sections: [
+            {
+                title: 'Hva gjør du først?',
+                type: 'text',
+                content: 'Du kommer rundt en sving og ser at en bil har kjørt av veien. En person står ved veikanten, en annen sitter fortsatt i bilen, og trafikken passerer tett forbi. Hva gjør du først?\n\nPå teoriprøven handler dette temaet ikke om at du skal være ambulansearbeider. Det handler om at du forstår rekkefølgen: stans, sikre, varsle og hjelpe. Gjør du ting i feil rekkefølge, kan situasjonen bli farligere for både deg, de skadde og andre trafikanter.'
+            },
+            {
+                title: 'Kort forklart: Riktig rekkefølge ved trafikkuhell',
+                type: 'info',
+                content: 'Ved trafikkuhell bør du tenke slik:\n\n1. Stans hvis du er innblandet eller kommer først til stedet.\n2. Sikre deg selv og skadestedet før du går inn i situasjonen.\n3. Varsle 113 ved personskade eller alvorlig uhell.\n4. Hjelp skadde så godt du kan.\n5. Bli på stedet til politiet eller nødetatene sier noe annet, hvis det er personskade.\n\nDen korte versjonen er: Ikke skap en ny ulykke mens du prøver å hjelpe i den første.'
+            },
+            {
+                title: 'Riktig rekkefølge ved trafikkuhell',
+                type: 'table',
+                content: '<div style="margin: 1rem 0; border-radius: 12px; overflow: hidden; border: 1px solid var(--border-color); box-shadow: 0 4px 12px rgba(0,0,0,0.1);"><img src="/trafikkuhell-prosedyre.jpg" alt="Illustrasjon av rekkefølge ved trafikkuhell: Stans, sikre, varsle og hjelpe" style="width: 100%; display: block;" /></div>'
+            },
+            {
+                title: 'Dette er ikke bare teori',
+                type: 'text',
+                content: 'I 2024 ble det registrert 3 166 politirapporterte trafikkulykker med personskade i Norge. I disse ulykkene ble 4 061 personer skadd, 578 hardt skadd og 87 personer mistet livet, ifølge SSB. Tallene er ikke med her for å skremme deg, men for å vise at de første minuttene betyr mye. Derfor må du vite rekkefølgen.'
+            },
+            {
+                title: 'Plikter ved trafikkuhell',
+                type: 'warning',
+                content: 'Hvis du er innblandet i et trafikkuhell, skal du stanse straks. Det gjelder uansett om du mener ulykken var din skyld eller ikke. Du har også plikt til å hjelpe personer og dyr som er kommet til skade. På teoriprøven er dette en klassisk felle: skyldspørsmålet kommer etterpå. Først kommer plikten til å stanse og hjelpe.'
+            },
+            {
+                title: '1. Stans og gjør deg synlig',
+                type: 'tip',
+                content: 'Stans på et trygt sted hvis du kan. Sett på nødblink, og ta på refleksvest før du går ut av bilen.\n\nRefleksvesten skal være lett tilgjengelig fra førerplassen, for eksempel i bildøren eller hanskerommet. Hvis vesten ligger nederst i bagasjerommet, hjelper den lite akkurat når du trenger den. Dette henger også sammen med [sikkerhetskontroll](/laeringsressurser/sikkerhetskontroll) av bilen og hvilket utstyr du skal ha tilgjengelig.'
+            },
+            {
+                title: '2. Sikre skadestedet',
+                type: 'text',
+                content: 'Før du hjelper andre, må du sørge for at situasjonen ikke blir farligere. En ulykke kan bli verre hvis andre kjøretøy kjører inn i ulykkesstedet.\n\nSjekk:\n- Kommer det trafikk bakfra?\n- Er det dårlig sikt, sving eller bakketopp? I mørke blir det ekstra viktig å forstå lysbruk, refleks og sikt.\n- Er det fare for brann?\n- Står bilen farlig plassert?\n\nSett ut varseltrekant hvis kjøretøyet står til fare eller hinder. Varseltrekanten må stå langt nok unna til at andre førere får tid til å oppdage faren og reagere. Se vår guide om [reaksjonstid](/laeringsressurser/reaksjonstid). På vei med høy fart bør den stå minst 150 meter fra stedet. Hvis ulykken ligger rett etter en sving, skal varslingen komme før svingen.'
+            },
+            {
+                title: '3. Varsle 113 ved personskade',
+                type: 'text',
+                content: 'Ved personskade eller alvorlig uhell skal du ringe 113. Operatøren hjelper deg med hva du skal se etter og hva du bør gjøre videre.\n\nHvis du er usikker på om det er alvorlig nok, er det bedre å ringe én gang for mye enn én gang for lite.'
+            },
+            {
+                title: '4. Hjelp skadde så godt du kan',
+                type: 'info',
+                content: 'Du skal hjelpe, men du skal ikke gjøre mer enn du har forutsetning for. Det viktigste er:\n- Sjekk om personen er våken og puster normalt\n- Sørg for frie luftveier hos bevisstløse\n- Stanse store blødninger med trykk\n- Holde skadde varme\n- Ikke flytt hardt skadde unødvendig (unntatt ved brann eller akutt livsfare)'
+            },
+            {
+                title: 'Hva bør du ikke gjøre?',
+                type: 'warning',
+                content: 'Unngå disse vanlige feilene:\n- Løpe rett inn i fare uten å sikre stedet\n- Flytte hardt skadde uten grunn\n- Gi mat eller drikke til en alvorlig skadet person\n- Vente for lenge med å ringe 113\n- Sette varseltrekanten for nær ulykkesstedet'
+            },
+            {
+                title: 'Trafikkuhell uten personskade',
+                type: 'text',
+                content: 'Hvis det bare er materielle skader:\n- Sikre stedet\n- Flytte kjøretøy hvis det er trygt og nødvendig\n- Utveksle navn, adresse og registreringsnummer\n- Fylle ut skademelding\n- Kontakte politiet hvis situasjonen er uklar.'
+            },
+            {
+                title: 'Ulykke i tunnel',
+                type: 'warning',
+                content: 'I tunnel må du tenke på brann og røyk. Sett bilen til siden, slå på nødblink og forlat bilen hvis nødvendig. Bruk tunnelens nødtelefon – da får veitrafikksentralen vite nøyaktig hvor du er. Ved brann: kom deg bort fra røyken.'
+            },
+            {
+                title: 'Oppsummert',
+                type: 'text',
+                content: 'Ved trafikkuhell er riktig rekkefølge avgjørende: Stans. Sikre. Varsle. Hjelp. Bli på stedet.\n\nPå teoriprøven bør du alltid tenke sikkerhet først. Du skal forstå ansvaret ditt som fører.'
+            }
+        ],
+        faq: [
+            {
+                question: 'Hva gjør du først ved trafikkuhell?',
+                answer: 'Først må du sikre deg selv og skadestedet. Deretter varsler du og hjelper skadde.'
+            },
+            {
+                question: 'Skal du ringe 113 eller 112 ved trafikkulykke?',
+                answer: 'Ved personskade ringer du 113. Ved brann, fare eller behov for politi kan nødetatene koble deg videre.'
+            },
+            {
+                question: 'Har du plikt til å hjelpe hvis du bare kommer forbi?',
+                answer: 'Ja, hvis det er nødvendig og du kan hjelpe uten å utsette deg selv eller andre for fare.'
+            },
+            {
+                question: 'Kan du flytte en skadet person?',
+                answer: 'Som hovedregel bør du ikke flytte hardt skadde unødvendig. Flytt bare hvis personen er i umiddelbar livsfare.'
+            },
+            {
+                question: 'Hvor skal varseltrekanten stå?',
+                answer: 'Den skal stå slik at andre trafikanter rekker å oppdage faren. På vei med høy fart betyr det minst 150 meter.'
+            },
+            {
+                question: 'Hva gjør du ved trafikkuhell uten personskade?',
+                answer: 'Sikre stedet, flytt kjøretøy hvis det er trygt, og utveksle opplysninger med de involverte.'
+            }
+        ],
+        miniQuiz: [
+            {
+                question: "Du kommer først til en bil som har kjørt ut etter en uoversiktlig sving. Hva er riktig første tanke?",
+                options: ["Løpe rett bort til bilen", "Sikre deg selv og varsle andre trafikanter", "Flytte den skadde ut med en gang", "Ringe forsikringsselskapet"],
+                correct: "Sikre deg selv og varsle andre trafikanter",
+                explanation: "Du må hindre at ulykken blir verre før du hjelper."
+            },
+            {
+                question: "En skadet person sitter fast i bilen, men bilen brenner ikke. Hva bør du gjøre?",
+                options: ["Dra personen raskt ut", "Gi personen noe å drikke", "La personen sitte, ring 113 og følg instruksene", "Be personen gå litt rundt"],
+                correct: "La personen sitte, ring 113 og følg instruksene",
+                explanation: "Hardt skadde bør ikke flyttes unødvendig."
+            },
+            {
+                question: "Hvor bør varseltrekanten stå ved ulykke etter en uoversiktlig sving?",
+                options: ["Rett bak bilen", "Før svingen, slik at trafikken varsles i tide", "Ved siden av bilen", "Den trengs ikke hvis nødblink er på"],
+                correct: "Før svingen, slik at trafikken varsles i tide",
+                explanation: "Varslingen må komme før faren."
+            },
+            {
+                question: "En person er bevisstløs etter en trafikkulykke og puster snorkende eller unormalt. Hva er riktig?",
+                options: ["Vente og se om det går over", "Gi personen noe å drikke", "Ring 113 og sørg for frie luftveier etter veiledning", "Flytte personen langt bort fra bilen uansett"],
+                correct: "Ring 113 og sørg for frie luftveier etter veiledning",
+                explanation: "Ved bevisstløshet og unormal pust er frie luftveier kritisk."
+            },
+            {
+                question: "Du er innblandet i et uhell, men mener den andre hadde all skyld. Hva gjelder?",
+                options: ["Du kan kjøre videre", "Du må stanse og hjelpe ved behov", "Du trenger bare å ta bilde", "Du skal vente hjemme på telefon"],
+                correct: "Du må stanse og hjelpe ved behov",
+                explanation: "Plikten til å stanse og hjelpe gjelder uavhengig av skyld."
+            },
+            {
+                question: "Ved trafikkuhell uten personskade, hva er vanligvis riktig?",
+                options: ["La bilene stå farlig for å bevare bevis", "Sikre stedet, flytt kjøretøy hvis trygt, og utveksle opplysninger", "Ring alltid 113", "Kjør videre hvis skaden er liten"],
+                correct: "Sikre stedet, flytt kjøretøy hvis trygt, og utveksle opplysninger",
+                explanation: "Ved materielle skader handler det om sikkerhet og opplysninger."
+            }
+        ]
+    },
+
+    {
+        id: 'sikkerhetsutstyr',
+        title: 'Sikkerhetsutstyr i bilen',
+        icon: '🛡️',
+        shortDescription: 'Lær om bilbelte, barnesikring, airbag, varseltrekant og refleksvest. Alt du trenger å vite om påbudt og anbefalt utstyr.',
+        color: '#3b82f6',
+        seoTitle: 'Sikkerhetsutstyr i bil: regler for bilbelte, barnesikring og airbag | Teori-test.no',
+        seoDescription: 'Hva er påbudt sikkerhetsutstyr i bilen? Lær reglene for bilbelte, barnesikring og airbag. Se også krav til varseltrekant og refleksvest.',
+        sections: [
+            {
+                title: 'Sikkerhetsutstyr i bilen',
+                type: 'text',
+                content: 'Sikkerhetsutstyr handler om to ting: å beskytte dem som sitter i bilen, og å gjøre deg synlig og trygg hvis noe skjer langs veien.\n\nPå teoriprøven kan du få spørsmål om bilbelte, barnesikring, airbag, refleksvest, varseltrekant og hva du bør gjøre ved stans eller trafikkuhell.'
+            },
+            {
+                title: 'Kort forklart',
+                type: 'info',
+                content: 'Dette bør du kunne:\n\n• Alle skal bruke bilbelte.\n• Barn under 135 cm skal bruke godkjent barnesikring.\n• Bakovervendt barnesete må aldri brukes foran aktiv airbag.\n• Bilen skal ha varseltrekant.\n• Refleksvest skal ligge lett tilgjengelig fra førerplassen.\n• Førstehjelpsutstyr og brannslukker er lurt å ha, men ikke påbudt i vanlig personbil.'
+            },
+            {
+                title: 'Bilbelte',
+                type: 'text',
+                content: 'Alle i bilen skal bruke bilbelte, både fører og passasjerer. Bilbeltet holder kroppen på plass ved bråbrems or kollisjon, og fungerer sammen med airbag og bilens øvrige sikkerhetssystemer.\n\nSom fører har du ansvar for at passasjerer under 15 år er riktig sikret. Voksne passasjerer har selv ansvar for å bruke bilbelte, men som fører bør du likevel passe på at alle er sikret før du kjører.\n\nVanlige feil:\n- beltet ligger under armen\n- beltet ligger over halsen\n- beltet er vridd\n- passasjerer dropper belte “bare på en kort tur”\n\nKorte turer er ikke et unntak. Ulykker bestiller ikke langkjøring først.'
+            },
+            {
+                title: 'Barnesikring',
+                type: 'text',
+                content: 'Barn under 135 cm skal bruke godkjent barnesikringsutstyr som passer barnets høyde og vekt. Det kan være barnesete, beltestol eller pute, avhengig av barnet.\n\nBarn bør sitte bakovervendt så lenge som mulig. Det gir bedre beskyttelse for hode, nakke og rygg ved en kollisjon.\n\nViktig regel: Bakovervendt barnesete skal aldri plasseres foran en aktiv airbag. Hvis airbagen utløses, kan det være svært farlig for barnet.'
+            },
+            {
+                title: 'Airbag',
+                type: 'info',
+                content: 'Airbag er laget for å fungere sammen med bilbeltet. Den skal dempe slag mot hode og overkropp ved kraftig kollisjon, men den erstatter aldri bilbeltet.\n\nDette bør du kunne:\n• Airbag + bilbelte gir best beskyttelse.\n• Airbag uten bilbelte kan gi alvorlige skader.\n• Du bør sitte riktig og ha god avstand til rattet.\n• Bakovervendt barnesete må ikke brukes foran aktiv airbag.'
+            },
+            {
+                title: 'Varseltrekant',
+                type: 'warning',
+                content: 'Bilen skal ha minst én varseltrekant. Den brukes hvis bilen står til fare eller hinder for trafikken og ikke kan flyttes trygt med en gang.\n\nVarseltrekanten skal plasseres slik at andre trafikanter rekker å oppdage faren. Ved høy fart, sving eller bakketopp må den stå i god avstand før bilen eller ulykkesstedet.\n\nIkke tenk bare “bak bilen”. Tenk: Hvor må varslingen stå for at andre rekker å reagere?'
+            },
+            {
+                title: 'Refleksvest',
+                type: 'tip',
+                content: 'Refleksvesten skal ligge lett tilgjengelig fra førerplassen, for eksempel i bildøren eller hanskerommet. Poenget er at du skal kunne ta den på før du går ut av bilen.\n\nDen bør brukes hvis du må forlate bilen langs veien, særlig ved motorstopp, punktering, trafikkuhell, mørke eller dårlig sikt.'
+            },
+            {
+                title: 'Anbefalt utstyr i bilen',
+                type: 'text',
+                content: 'Dette er smart å ha, selv om alt ikke er påbudt i vanlig personbil:\n\n- førstehjelpsutstyr\n- brannslukker\n- lommelykt\n- varme klær eller teppe\n- isskrape og snøkost\n- dekkreparasjonssett eller reservehjul hvis bilen har det\n- startkabler eller ladet startbooster\n- mobiltelefon med strøm\n\nPoenget er ikke å fylle bilen som en ekspedisjon. Poenget er å kunne håndtere en vanlig nødsituasjon uten å stå helt hjelpeløs.'
+            },
+            {
+                title: 'Ved trafikkuhell',
+                type: 'text',
+                content: 'Ved trafikkuhell er riktig rekkefølge:\n\n**Stans – sikre – varsle – hjelpe**\n\nSikre deg selv og stedet først. Bruk refleksvest, nødblink og varseltrekant. Ved personskade ringer du 113 og følger instruksene du får.\n\n[Les mer om trafikkuhell og førstehjelp](/laeringsressurser/trafikkuhell-forstehjelp)'
+            }
+        ],
+        miniQuiz: [
+            {
+                question: 'Hva er påbudt å ha i bilen?',
+                options: ['Førstehjelpsutstyr og brannslukker', 'Varseltrekant og refleksvest', 'Reservehjul og jekk', 'Startkabler og lommelykt'],
+                correct: 'Varseltrekant og refleksvest',
+                explanation: 'I en vanlig personbil er varseltrekant og refleksvest påbudt utstyr.'
+            },
+            {
+                question: 'Hvor bør refleksvesten ligge?',
+                options: ['I bagasjerommet', 'I hanskerommet eller bildøren', 'Under reservehjulet', 'Hjemme i garasjen'],
+                correct: 'I hanskerommet eller bildøren',
+                explanation: 'Refleksvesten skal ligge lett tilgjengelig fra førerplassen slik at du kan ta den på før du går ut av bilen.'
+            },
+            {
+                question: 'Kan bakovervendt barnesete stå foran aktiv airbag?',
+                options: ['Ja, det er tryggest', 'Bare hvis barnet er over 10 kg', 'Nei, det kan være svært farlig', 'Ja, hvis stolen er godkjent'],
+                correct: 'Nei, det kan være svært farlig',
+                explanation: 'Airbagen utløses med voldsom kraft og kan skade barnet alvorlig hvis det sitter i bakovervendt sete.'
+            },
+            {
+                question: 'Hva gjør du først hvis bilen stanser farlig langs veien?',
+                options: ['Ringer etter veihjelp', 'Gjør deg synlig og sikre stedet', 'Begynner å reparere feilen', 'Går ut og vinker til andre biler'],
+                correct: 'Gjør deg synlig og sikre stedet',
+                explanation: 'Ta på refleksvest, sett ut varseltrekant og bruk nødblink for å hindre påkjørsel.'
             }
         ]
     }
