@@ -1741,6 +1741,187 @@ export const theoryTopics: TheoryTopic[] = [
                 answer: 'Du finner alle vektbegrensninger under punkt 8 ("Vekter") i bilens vognkort del 1. Dette inkluderer også aksellast og tillatt tilhengervekt.'
             }
         ]
+    },
+
+    {
+        id: 'temaliste-teoriproven-klasse-b',
+        title: 'Temaliste teoriprøven klasse B – dette må du kunne',
+        icon: '📋',
+        shortDescription: 'Finn ut hva du kan bli spurt om på teoriprøven for klasse B. Komplett temakart med guider og forklaringer om vikeplikt, skilt, bremselengde, lys, kjøretøy og mer.',
+        color: '#6366f1',
+        seoTitle: 'Temaliste teoriprøven klasse B – dette må du kunne | Teori-test.no',
+        seoDescription: 'Se hva du kan få på teoriprøven for klasse B. Praktisk temaliste med guider og forklaringer om vikeplikt, skilt, bremselengde, lys, sikkerhetskontroll og mer.',
+        sections: [
+            {
+                title: 'Kort forklart',
+                type: 'info',
+                content: 'Temalisten viser hvilke områder du kan bli testet i på teoriprøven for klasse B. Bruk den som en sjekkliste: Forstår du temaet, kan du forklare regelen, og klarer du å bruke den i en trafikksituasjon?\n\nTeoriprøven klasse B tema dekker langt mer enn bare skilt og vikeplikt. Statens vegvesen temaliste klasse B inkluderer også kjøretøy, føreransvar, rus, mørke, bremselengde, ulykker og samhandling – alt er pensum til teoriprøven bil.'
+            },
+            {
+                title: 'Slik bruker du temalisten',
+                type: 'tip',
+                content: '1. Finn temaet du er usikker på\n2. Les relevant guide eller forklaring på Teori-test.no\n3. Test deg med øvingsprøve eller tematest etterpå\n\nHva bør jeg øve på først? Start med temaene der du er mest usikker. Hva kommer på teoriprøven er ikke alltid åpenbart – mange stryker på temaer de trodde de hadde kontroll på. Bruk temaoversikten nedenfor til å kartlegge hullene i kunnskapen din.'
+            },
+            {
+                title: '7 hovedtemaer – temakart for teoriprøven klasse B',
+                type: 'table',
+                content: `<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:0.85rem">
+<div style="border:1px solid var(--color-border);border-radius:12px;padding:1rem 1.1rem">
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:0.5rem;margin-bottom:0.6rem;flex-wrap:wrap">
+    <strong style="font-size:0.95rem;color:var(--color-text)">🚗 A – Fart, plassering og samhandling</strong>
+    <span style="background:#f59e0b;color:#fff;font-size:0.7rem;font-weight:700;padding:2px 10px;border-radius:99px;white-space:nowrap">Delvis dekket</span>
+  </div>
+  <ul style="margin:0 0 0.75rem 0;padding-left:1.1rem;color:var(--color-text-light);font-size:0.85rem;line-height:1.65">
+    <li>Avstand til forankjørende</li><li>Feltvalg og kollektivfelt</li><li>Rundkjøring og envegskjøring</li><li>Forbikjøring og fletting</li><li>Hest i trafikken og planovergang</li>
+  </ul>
+  <div style="display:flex;flex-wrap:wrap;gap:0.35rem">
+    <a href="/laeringsressurser/fartsgrenser" style="font-size:0.78rem;color:var(--color-primary);text-decoration:none;border:1px solid var(--color-border);border-radius:6px;padding:2px 9px;background:var(--color-bg)">→ Fartsgrenser</a>
+    <a href="/laeringsressurser/rundkjoring" style="font-size:0.78rem;color:var(--color-primary);text-decoration:none;border:1px solid var(--color-border);border-radius:6px;padding:2px 9px;background:var(--color-bg)">→ Rundkjøring</a>
+    <a href="/laeringsressurser/forbikjoring" style="font-size:0.78rem;color:var(--color-primary);text-decoration:none;border:1px solid var(--color-border);border-radius:6px;padding:2px 9px;background:var(--color-bg)">→ Forbikjøring</a>
+  </div>
+</div>
+<div style="border:1px solid var(--color-border);border-radius:12px;padding:1rem 1.1rem">
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:0.5rem;margin-bottom:0.6rem;flex-wrap:wrap">
+    <strong style="font-size:0.95rem;color:var(--color-text)">💡 B – Sikt, føre og lys</strong>
+    <span style="background:#22c55e;color:#fff;font-size:0.7rem;font-weight:700;padding:2px 10px;border-radius:99px;white-space:nowrap">Dekket godt</span>
+  </div>
+  <ul style="margin:0 0 0.75rem 0;padding-left:1.1rem;color:var(--color-text-light);font-size:0.85rem;line-height:1.65">
+    <li>Sikt, vær og mørke</li><li>Bruk av lys</li><li>Bremselengde og stopplengde</li><li>Reaksjonslengde og veggrep</li>
+  </ul>
+  <div style="display:flex;flex-wrap:wrap;gap:0.35rem">
+    <a href="/laeringsressurser/morkekjoring" style="font-size:0.78rem;color:var(--color-primary);text-decoration:none;border:1px solid var(--color-border);border-radius:6px;padding:2px 9px;background:var(--color-bg)">→ Mørkekjøring</a>
+    <a href="/laeringsressurser/bremselengde" style="font-size:0.78rem;color:var(--color-primary);text-decoration:none;border:1px solid var(--color-border);border-radius:6px;padding:2px 9px;background:var(--color-bg)">→ Bremselengde</a>
+    <a href="/laeringsressurser/reaksjonstid" style="font-size:0.78rem;color:var(--color-primary);text-decoration:none;border:1px solid var(--color-border);border-radius:6px;padding:2px 9px;background:var(--color-bg)">→ Reaksjonstid</a>
+  </div>
+</div>
+<div style="border:1px solid var(--color-border);border-radius:12px;padding:1rem 1.1rem">
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:0.5rem;margin-bottom:0.6rem;flex-wrap:wrap">
+    <strong style="font-size:0.95rem;color:var(--color-text)">🚦 C – Skilt, oppmerking og vikeplikt</strong>
+    <span style="background:#22c55e;color:#fff;font-size:0.7rem;font-weight:700;padding:2px 10px;border-radius:99px;white-space:nowrap">Dekket godt</span>
+  </div>
+  <ul style="margin:0 0 0.75rem 0;padding-left:1.1rem;color:var(--color-text-light);font-size:0.85rem;line-height:1.65">
+    <li>Skilt og skiltgrupper</li><li>Vegoppmerking</li><li>Vikeplikt og høyreregel</li><li>Lysregulering og politimannens tegn</li><li>Stoppeplikt</li>
+  </ul>
+  <div style="display:flex;flex-wrap:wrap;gap:0.35rem">
+    <a href="/laeringsressurser/skilt" style="font-size:0.78rem;color:var(--color-primary);text-decoration:none;border:1px solid var(--color-border);border-radius:6px;padding:2px 9px;background:var(--color-bg)">→ Skilt</a>
+    <a href="/laeringsressurser/veimerking" style="font-size:0.78rem;color:var(--color-primary);text-decoration:none;border:1px solid var(--color-border);border-radius:6px;padding:2px 9px;background:var(--color-bg)">→ Vegoppmerking</a>
+    <a href="/laeringsressurser/vikeplikt" style="font-size:0.78rem;color:var(--color-primary);text-decoration:none;border:1px solid var(--color-border);border-radius:6px;padding:2px 9px;background:var(--color-bg)">→ Vikeplikt</a>
+    <a href="/laeringsressurser/myndighetspyramiden" style="font-size:0.78rem;color:var(--color-primary);text-decoration:none;border:1px solid var(--color-border);border-radius:6px;padding:2px 9px;background:var(--color-bg)">→ Myndighetspyramiden</a>
+  </div>
+</div>
+<div style="border:1px solid var(--color-border);border-radius:12px;padding:1rem 1.1rem">
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:0.5rem;margin-bottom:0.6rem;flex-wrap:wrap">
+    <strong style="font-size:0.95rem;color:var(--color-text)">🧠 D – Fører, ansvar og risiko</strong>
+    <span style="background:#f59e0b;color:#fff;font-size:0.7rem;font-weight:700;padding:2px 10px;border-radius:99px;white-space:nowrap">Delvis dekket</span>
+  </div>
+  <ul style="margin:0 0 0.75rem 0;padding-left:1.1rem;color:var(--color-text-light);font-size:0.85rem;line-height:1.65">
+    <li>Reaksjonstid og sanser</li><li>Tretthet og uoppmerksomhet</li><li>Rus og pliktmessig avhold</li><li>Helsekrav og førerrett</li><li>Øvelseskjøring</li>
+  </ul>
+  <div style="display:flex;flex-wrap:wrap;gap:0.35rem">
+    <a href="/laeringsressurser/promille" style="font-size:0.78rem;color:var(--color-primary);text-decoration:none;border:1px solid var(--color-border);border-radius:6px;padding:2px 9px;background:var(--color-bg)">→ Promille</a>
+    <a href="/laeringsressurser/reaksjonstid" style="font-size:0.78rem;color:var(--color-primary);text-decoration:none;border:1px solid var(--color-border);border-radius:6px;padding:2px 9px;background:var(--color-bg)">→ Reaksjonstid</a>
+    <a href="/laeringsressurser/ovingskjoring" style="font-size:0.78rem;color:var(--color-primary);text-decoration:none;border:1px solid var(--color-border);border-radius:6px;padding:2px 9px;background:var(--color-bg)">→ Øvingskjøring</a>
+  </div>
+</div>
+<div style="border:1px solid var(--color-border);border-radius:12px;padding:1rem 1.1rem">
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:0.5rem;margin-bottom:0.6rem;flex-wrap:wrap">
+    <strong style="font-size:0.95rem;color:var(--color-text)">🔧 E – Kjøretøyet</strong>
+    <span style="background:#f59e0b;color:#fff;font-size:0.7rem;font-weight:700;padding:2px 10px;border-radius:99px;white-space:nowrap">Delvis dekket</span>
+  </div>
+  <ul style="margin:0 0 0.75rem 0;padding-left:1.1rem;color:var(--color-text-light);font-size:0.85rem;line-height:1.65">
+    <li>Dekk, bremser og styring</li><li>Instrumentpanel og varsellys</li><li>Drivstoff og energikilde</li><li>Sikkerhetskontroll og kjetting</li><li>Førerstøttesystemer</li>
+  </ul>
+  <div style="display:flex;flex-wrap:wrap;gap:0.35rem">
+    <a href="/laeringsressurser/sikkerhetskontroll" style="font-size:0.78rem;color:var(--color-primary);text-decoration:none;border:1px solid var(--color-border);border-radius:6px;padding:2px 9px;background:var(--color-bg)">→ Sikkerhetskontroll</a>
+    <a href="/laeringsressurser/tilhenger" style="font-size:0.78rem;color:var(--color-primary);text-decoration:none;border:1px solid var(--color-border);border-radius:6px;padding:2px 9px;background:var(--color-bg)">→ Tilhenger</a>
+    <a href="/laeringsressurser/automatlappen" style="font-size:0.78rem;color:var(--color-primary);text-decoration:none;border:1px solid var(--color-border);border-radius:6px;padding:2px 9px;background:var(--color-bg)">→ Automatlappen</a>
+  </div>
+</div>
+<div style="border:1px solid var(--color-border);border-radius:12px;padding:1rem 1.1rem">
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:0.5rem;margin-bottom:0.6rem;flex-wrap:wrap">
+    <strong style="font-size:0.95rem;color:var(--color-text)">⚖️ F – Lover, regler og myndighet</strong>
+    <span style="background:#f59e0b;color:#fff;font-size:0.7rem;font-weight:700;padding:2px 10px;border-radius:99px;white-space:nowrap">Delvis dekket</span>
+  </div>
+  <ul style="margin:0 0 0.75rem 0;padding-left:1.1rem;color:var(--color-text-light);font-size:0.85rem;line-height:1.65">
+    <li>Trafikkregler og vegtrafikkloven</li><li>Offentlige reaksjoner og bøter</li><li>Registrering, vognkort og forsikring</li>
+  </ul>
+  <div style="display:flex;flex-wrap:wrap;gap:0.35rem">
+    <a href="/laeringsressurser/myndighetspyramiden" style="font-size:0.78rem;color:var(--color-primary);text-decoration:none;border:1px solid var(--color-border);border-radius:6px;padding:2px 9px;background:var(--color-bg)">→ Myndighetspyramiden</a>
+    <a href="/laeringsressurser/vognkort-vekter" style="font-size:0.78rem;color:var(--color-primary);text-decoration:none;border:1px solid var(--color-border);border-radius:6px;padding:2px 9px;background:var(--color-bg)">→ Vognkort</a>
+    <a href="/laeringsressurser/promille" style="font-size:0.78rem;color:var(--color-primary);text-decoration:none;border:1px solid var(--color-border);border-radius:6px;padding:2px 9px;background:var(--color-bg)">→ Promille</a>
+  </div>
+</div>
+<div style="border:1px solid var(--color-border);border-radius:12px;padding:1rem 1.1rem">
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:0.5rem;margin-bottom:0.6rem;flex-wrap:wrap">
+    <strong style="font-size:0.95rem;color:var(--color-text)">🚨 G – Uhell, førstehjelp og sikkerhet</strong>
+    <span style="background:#94a3b8;color:#fff;font-size:0.7rem;font-weight:700;padding:2px 10px;border-radius:99px;white-space:nowrap">Kommer</span>
+  </div>
+  <ul style="margin:0 0 0.75rem 0;padding-left:1.1rem;color:var(--color-text-light);font-size:0.85rem;line-height:1.65">
+    <li>Førstehjelp og trafikkuhell</li><li>Sikringsutstyr og varseltrekant</li><li>Tunnelsikkerhet</li><li>Snø på tak og isfrie ruter</li>
+  </ul>
+  <div style="display:flex;flex-wrap:wrap;gap:0.35rem">
+    <a href="/laeringsressurser/sikkerhetskontroll" style="font-size:0.78rem;color:var(--color-primary);text-decoration:none;border:1px solid var(--color-border);border-radius:6px;padding:2px 9px;background:var(--color-bg)">→ Sikkerhetskontroll</a>
+    <a href="/laeringsressurser/morkekjoring" style="font-size:0.78rem;color:var(--color-primary);text-decoration:none;border:1px solid var(--color-border);border-radius:6px;padding:2px 9px;background:var(--color-bg)">→ Mørkekjøring</a>
+  </div>
+</div>
+</div>`
+            },
+            {
+                title: 'Hva bør du øve på først?',
+                type: 'tip',
+                content: '1. Vikeplikt, skilt og myndighetspyramiden\nDette er typiske feiltemaer fordi flere regler virker samtidig. Les: [Vikeplikt](/laeringsressurser/vikeplikt), [Skilt](/laeringsressurser/skilt), [Myndighetspyramiden](/laeringsressurser/myndighetspyramiden)\n\n2. Fart, sikt og stopping\nBremselengde, reaksjonstid og mørke handler om å forstå risiko – ikke bare huske tall. Les: [Bremselengde](/laeringsressurser/bremselengde), [Reaksjonstid](/laeringsressurser/reaksjonstid), [Mørkekjøring](/laeringsressurser/morkekjoring)\n\n3. Kjøretøy, ansvar og sikkerhetskontroll\nDu må vite hva føreren har ansvar for, og forstå bilens tilstand og utstyr. Les: [Sikkerhetskontroll](/laeringsressurser/sikkerhetskontroll), [Vognkort](/laeringsressurser/vognkort-vekter), [Tilhenger](/laeringsressurser/tilhenger)'
+            },
+            {
+                title: 'Dekkingsoversikt – Statens vegvesen temaliste klasse B',
+                type: 'table',
+                content: `<table style="width:100%;border-collapse:collapse;font-size:0.875rem">
+<thead><tr style="border-bottom:2px solid var(--color-border)">
+<th style="padding:8px 10px;text-align:left;color:var(--color-text-light);font-size:0.75rem;text-transform:uppercase;letter-spacing:0.05em">Tema</th>
+<th style="padding:8px 10px;text-align:left;color:var(--color-text-light);font-size:0.75rem;text-transform:uppercase;letter-spacing:0.05em">Status</th>
+<th style="padding:8px 10px;text-align:left;color:var(--color-text-light);font-size:0.75rem;text-transform:uppercase;letter-spacing:0.05em">Sider på Teori-test.no</th>
+</tr></thead>
+<tbody>
+<tr style="border-bottom:1px solid var(--color-border)"><td style="padding:8px 10px;color:var(--color-text)">A – Fart og samhandling</td><td style="padding:8px 10px"><span style="background:#f59e0b;color:#fff;font-size:0.68rem;font-weight:700;padding:2px 8px;border-radius:99px">Delvis</span></td><td style="padding:8px 10px;color:var(--color-text-light)">Fartsgrenser, Rundkjøring</td></tr>
+<tr style="border-bottom:1px solid var(--color-border)"><td style="padding:8px 10px;color:var(--color-text)">B – Sikt, føre og lys</td><td style="padding:8px 10px"><span style="background:#22c55e;color:#fff;font-size:0.68rem;font-weight:700;padding:2px 8px;border-radius:99px">Godt</span></td><td style="padding:8px 10px;color:var(--color-text-light)">Bremselengde, Reaksjonstid, Mørkekjøring</td></tr>
+<tr style="border-bottom:1px solid var(--color-border)"><td style="padding:8px 10px;color:var(--color-text)">C – Skilt og vikeplikt</td><td style="padding:8px 10px"><span style="background:#22c55e;color:#fff;font-size:0.68rem;font-weight:700;padding:2px 8px;border-radius:99px">Godt</span></td><td style="padding:8px 10px;color:var(--color-text-light)">Vikeplikt, Skilt, Vegoppmerking, Myndighetspyramiden</td></tr>
+<tr style="border-bottom:1px solid var(--color-border)"><td style="padding:8px 10px;color:var(--color-text)">D – Fører og risiko</td><td style="padding:8px 10px"><span style="background:#f59e0b;color:#fff;font-size:0.68rem;font-weight:700;padding:2px 8px;border-radius:99px">Delvis</span></td><td style="padding:8px 10px;color:var(--color-text-light)">Promille, Reaksjonstid, Øvingskjøring</td></tr>
+<tr style="border-bottom:1px solid var(--color-border)"><td style="padding:8px 10px;color:var(--color-text)">E – Kjøretøyet</td><td style="padding:8px 10px"><span style="background:#f59e0b;color:#fff;font-size:0.68rem;font-weight:700;padding:2px 8px;border-radius:99px">Delvis</span></td><td style="padding:8px 10px;color:var(--color-text-light)">Sikkerhetskontroll, Tilhenger, Vognkort</td></tr>
+<tr style="border-bottom:1px solid var(--color-border)"><td style="padding:8px 10px;color:var(--color-text)">F – Lover og myndighet</td><td style="padding:8px 10px"><span style="background:#f59e0b;color:#fff;font-size:0.68rem;font-weight:700;padding:2px 8px;border-radius:99px">Delvis</span></td><td style="padding:8px 10px;color:var(--color-text-light)">Myndighetspyramiden, Vognkort, Promille</td></tr>
+<tr><td style="padding:8px 10px;color:var(--color-text)">G – Uhell og sikkerhet</td><td style="padding:8px 10px"><span style="background:#94a3b8;color:#fff;font-size:0.68rem;font-weight:700;padding:2px 8px;border-radius:99px">Kommer</span></td><td style="padding:8px 10px;color:var(--color-text-light)">Sikkerhetskontroll, Mørkekjøring</td></tr>
+</tbody></table>`
+            },
+            {
+                title: 'Klar for å øve?',
+                type: 'info',
+                content: 'Bruk læringsressursene ovenfor til å jobbe deg gjennom hvert tema, og test deg etterpå:\n- [Ta gratis teoriprøve](/quiz)\n- [Se alle læringsressurser](/laeringsressurser)\n- [Øv på skilt](/quiz/skilt)\n- [Øv på vikeplikt](/laeringsressurser/vikeplikt)'
+            }
+        ],
+        faq: [
+            {
+                question: 'Hva kommer på teoriprøven klasse B?',
+                answer: 'Teoriprøven klasse B dekker 7 hovedtemaer: fart og samhandling, sikt og lys, skilt og vikeplikt, føreransvar og risiko, kjøretøyet, lover og regler, samt ulykker og sikkerhet. Du får 45 spørsmål og kan ha maks 7 feil for å bestå.'
+            },
+            {
+                question: 'Er temalisten det samme som pensum?',
+                answer: 'Ja, i praksis. Statens vegvesen sin temaliste for klasse B beskriver hvilke emner du kan bli testet på. Det er ikke en fasit på hvilke spørsmål du får, men en oversikt over hva du må forstå for å bestå.'
+            },
+            {
+                question: 'Må jeg kunne alle temaene på temalisten?',
+                answer: 'Ja. Teoriprøven kan inneholde spørsmål fra alle temaene. Det er ikke mulig å velge bort noen områder. Fokuser ekstra på temaer der du er usikker.'
+            },
+            {
+                question: 'Hva er vanskeligst på teoriprøven?',
+                answer: 'De vanligste feilkildene er vikeplikt (spesielt i komplekse kryss), skiltgjenkjenning, bremselengde og myndighetspyramiden. Mange stryker fordi de pugger svar uten å forstå logikken bak reglene.'
+            },
+            {
+                question: 'Hvordan bør jeg bruke temalisten når jeg øver?',
+                answer: 'Gå gjennom hvert tema og spør deg selv: forstår jeg regelen, kan jeg forklare den, og vet jeg hvordan jeg bruker den i trafikken? Les relevant guide på Teori-test.no og test deg med øvingsspørsmål etterpå.'
+            },
+            {
+                question: 'Hvor finner jeg Statens vegvesen sin temaliste?',
+                answer: 'Statens vegvesen publiserer temalisten på sine nettsider under informasjon om teoriprøven for klasse B. Teori-test.no er bygget rundt denne temalisten og dekker de sentrale temaene systematisk.'
+            }
+        ]
     }
 ]
 
