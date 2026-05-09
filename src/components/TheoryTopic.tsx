@@ -112,27 +112,32 @@ export default function TheoryTopic({ topic, onBack, extraComponent }: TheoryTop
         }))
     } : null
 
+    const seoTitle = topic.seoTitle || `${topic.title} | Teori-test.no`
+    const seoDesc = topic.seoDescription || topic.shortDescription
+    const canonicalUrl = `https://teori-test.no/laeringsressurser/${topic.id}`
+
     return (
         <div className="theory-topic-detail">
-            {/* Inject JSON-LD */}
-            <script type="application/ld+json">
-                {JSON.stringify(structuredData)}
-            </script>
-            {faqData && (
-                <script type="application/ld+json">
-                    {JSON.stringify(faqData)}
-                </script>
-            )}
-
-            {/* Dynamic SEO Header Tags */}
+            {/* All head management in one Helmet block to prevent race conditions */}
             <Helmet>
-                <title>{topic.seoTitle || `${topic.title} | Teori-test.no`}</title>
-                <meta name="description" content={topic.seoDescription || topic.shortDescription} />
-                <meta property="og:title" content={topic.seoTitle || `${topic.title} | Teori-test.no`} />
-                <meta property="og:description" content={topic.seoDescription || topic.shortDescription} />
-                <meta name="twitter:title" content={topic.seoTitle || `${topic.title} | Teori-test.no`} />
-                <meta name="twitter:description" content={topic.seoDescription || topic.shortDescription} />
+                <title>{seoTitle}</title>
+                <meta name="description" content={seoDesc} />
+                <link rel="canonical" href={canonicalUrl} />
+                <meta property="og:type" content="article" />
+                <meta property="og:title" content={seoTitle} />
+                <meta property="og:description" content={seoDesc} />
+                <meta property="og:url" content={canonicalUrl} />
+                <meta name="twitter:card" content="summary" />
+                <meta name="twitter:title" content={seoTitle} />
+                <meta name="twitter:description" content={seoDesc} />
+                <script type="application/ld+json">{`${JSON.stringify(structuredData)}`}</script>
             </Helmet>
+            {/* FAQ JSON-LD must be in a separate Helmet block if rendered conditionally */}
+            {faqData && (
+                <Helmet>
+                    <script type="application/ld+json">{`${JSON.stringify(faqData)}`}</script>
+                </Helmet>
+            )}
 
             <button className="theory-back-btn" onClick={onBack}>
                 ← Tilbake til emner

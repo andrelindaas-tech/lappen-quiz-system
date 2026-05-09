@@ -43,7 +43,7 @@ export const theoryTopics: TheoryTopic[] = [
         title: 'Vikeplikt – komplett guide til teoriprøven',
         shortDescription: 'Vikeplikt er et av de vanligste stryketemaene på teoriprøven. Her får du en oversiktlig gjennomgang av de viktigste reglene du må kunne for førerkort klasse B. Tren på vikeplikt med våre øvingsspørsmål når du har lest gjennom.',
         icon: '🔺',
-        color: '#ea580c',
+        color: 'var(--apple-blue)',
         seoTitle: 'Vikeplikt i trafikken – høyreregelen, rundkjøring og gangfelt | Teori-test.no',
         seoDescription: 'Lær vikepliktreglene til teoriprøven: høyreregelen, vikeplikt i rundkjøring, gangfelt og fotgjengere – med eksempelspørsmål og forklaringer.',
         sections: [
@@ -129,7 +129,7 @@ export const theoryTopics: TheoryTopic[] = [
         title: 'Bremselengde kalkulator – regn ut stopplengde | Teori-test.no',
         icon: '🚗',
         shortDescription: 'Bruk kalkulatoren og tast inn hastighet — se bremselengde og stopplengde for tørr vei, våt vei og is. Med formel og øvingsoppgaver til teoriprøven.',
-        color: '#dc2626',
+        color: 'var(--apple-red)',
         seoTitle: 'Bremselengde og stopplengde – formel og kalkulator | Teori-test.no',
         seoDescription: 'Tast inn hastighet og se bremselengde for tørr vei, våt vei og is — direkte i kalkulatoren. Med formel, bremsefaktorer, vannplaning og øvingsoppgaver til teoriprøven.',
         hasCalculator: true,
@@ -250,7 +250,7 @@ export const theoryTopics: TheoryTopic[] = [
         title: 'Myndighetspyramiden: Hvem bestemmer egentlig i trafikken?',
         icon: '👮',
         shortDescription: 'I trafikken vil du ofte oppleve at ulike signaler gir deg motstridende beskjeder. Hvem skal du høre på? Lær hierarkiet for å unngå fellene på prøven.',
-        color: '#3b82f6',
+        color: 'var(--apple-blue)',
         seoTitle: 'Myndighetspyramiden – hvem bestemmer? | Teori-test.no',
         seoDescription: 'Myndighetspyramiden viser hva som gjelder først i trafikken: politi, trafikklys, skilt/vegoppmerking og trafikkregler. Se rekkefølgen, eksempler og vanlige feller på teoriprøven.',
         sections: [
@@ -408,7 +408,7 @@ export const theoryTopics: TheoryTopic[] = [
         title: 'Veimerking til teoriprøven – komplett visuell guide (Klasse B)',
         icon: '🛣️',
         shortDescription: 'Lær all norsk veimerking til teoriprøven med visuelle illustrasjoner. Sperrelinje, varselslinje, gangfelt, pilmerking og mer — med eksempler og forklaringer.',
-        color: '#0ea5e9',
+        color: 'var(--apple-indigo)',
         seoTitle: 'Veimerking til teoriprøven – komplett visuell guide (Klasse B) | Teori-test.no',
         seoDescription: 'Hva betyr hvit sperrelinje, varsellinje, kombinert linje eller vikelinje? Komplett guide til norsk veimerking med visuelle illustrasjoner – til teoriprøven.',
         sections: [
@@ -531,7 +531,7 @@ export const theoryTopics: TheoryTopic[] = [
         title: 'Vikeplikt i rundkjøring',
         icon: '🔄',
         shortDescription: 'Lær reglene for vikeplikt, blinking og plassering i rundkjøring',
-        color: '#2563eb',
+        color: 'var(--apple-blue)',
         seoTitle: 'Vikeplikt i rundkjøring – regler, blinking og vanlige feil | Teori-test.no',
         seoDescription: 'Hvem har vikeplikt i rundkjøring? Lær reglene for innkjøring, feltskifte og blinking – med vanlige teoriprøve-feller og eksempler fra Statens vegvesen.',
         sections: [
@@ -628,7 +628,7 @@ export const theoryTopics: TheoryTopic[] = [
         title: 'Forbikjøring – regler, forbud og feller | Teori-test.no',
         icon: '🚗',
         shortDescription: 'Lær reglene for forbikjøring til teoriprøven klasse B: gangfelt, kryss, høyre side, forbikjøringsforbud, syklist, buss, traktor og motorvei.',
-        color: '#eab308',
+        color: 'var(--apple-orange)',
         seoTitle: 'Forbikjøring – regler, forbud og feller | Teori-test.no',
         seoDescription: 'Lær reglene for forbikjøring til teoriprøven klasse B: gangfelt, kryss, høyre side, forbikjøringsforbud, syklist, buss, traktor og motorvei.',
         sections: [
@@ -762,7 +762,7 @@ export const theoryTopics: TheoryTopic[] = [
         title: 'Lysbruk og mørkekjøring til teoriprøven',
         icon: '💡',
         shortDescription: 'Lær reglene for lysbruk til teoriprøven: nærlys, fjernlys, tåkelys, baklys i tunnel, blending, mørkesyn, refleks og vanlige feller.',
-        color: '#f59e0b',
+        color: 'var(--apple-orange)',
         seoTitle: 'Lysbruk og mørkekjøring – regler og feller | Teori-test.no',
         seoDescription: 'Lær reglene for lysbruk til teoriprøven: nærlys, fjernlys, tåkelys, baklys i tunnel, blending, mørkesyn, refleks og vanlige feller.',
         sections: [
@@ -938,7 +938,7 @@ export const theoryTopics: TheoryTopic[] = [
         title: 'Trafikkskilt – Komplett oversikt til teoriprøven for bil',
         icon: '🚦',
         shortDescription: 'Trafikkskilt er hjørnesteinen i trafikksikkerhet. Her får du vår komplette guide til de norske trafikkskiltene du må kjenne til for klasse B.',
-        color: '#059669',
+        color: 'var(--apple-blue)',
         seoTitle: 'Trafikkskilt til teoriprøven (Klasse B): Komplett oversikt 2026 | Teori-test.no',
         seoDescription: 'Sliter du med å huske trafikkskiltene? Få en enkel og komplett oversikt over forbudsskilt, fareskilt og vikeplikt. Lær de vanligste eksamensfellene her!',
         sections: [
@@ -1119,7 +1119,7 @@ export const theoryTopics: TheoryTopic[] = [
         title: 'Fartsgrenser i Norge: Alt du må vite til teoriprøven',
         icon: '⚡',
         shortDescription: 'Lær alle fartsgrenser i Norge til teoriprøven: 30, 50, 80 og 110 km/t, regler for skole og tilhenger, hva fartsbøter koster og prikker i førerkortet.',
-        color: '#ef4444',
+        color: 'var(--apple-red)',
         seoTitle: 'Fartsgrenser i Norge: Alt du må vite til teoriprøven',
         seoDescription: 'Lær alle fartsgrenser i Norge til teoriprøven: 30, 50, 80 og 110 km/t, regler for skole og tilhenger, hva fartsbøter koster og prikker i førerkortet.',
         sections: [
@@ -1176,7 +1176,7 @@ export const theoryTopics: TheoryTopic[] = [
         title: 'Reaksjonstid og stopplengde – slik regner du det ut (Klasse B)',
         icon: '⏱️',
         shortDescription: 'Lær hva reaksjonstid er, hvordan du regner ut reaksjonslengde og stopplengde til teoriprøven. Tabeller, formler og interaktiv test for klasse B.',
-        color: '#2563eb',
+        color: 'var(--apple-blue)',
         seoTitle: 'Reaksjonstid og stopplengde – slik regner du det ut (Klasse B) | Teori-test.no',
         seoDescription: 'Lær hva reaksjonstid er, hvordan du regner ut reaksjonslengde og stopplengde til teoriprøven. Tabeller, formler og interaktiv test for klasse B.',
         sections: [
@@ -1247,7 +1247,7 @@ export const theoryTopics: TheoryTopic[] = [
         title: 'Stans og parkering: Forskjellen du må kunne til teoriprøven',
         icon: '🅿️',
         shortDescription: 'Lær forskjellen mellom stans og parkering, avstandsreglene (kryss, gangfelt, busslomme) og unngå fellene på teoriprøven.',
-        color: '#dc2626',
+        color: 'var(--apple-red)',
         seoTitle: 'Stans og parkering – regler og avstander til teoriprøven | Teori-test.no',
         seoDescription: 'Lær forskjellen på stans og parkering, avstandsreglene ved kryss, gangfelt og busslomme — og hva som gjelder på forkjørsvei. Unngå fellene på teoriprøven.',
         sections: [
@@ -1325,7 +1325,7 @@ export const theoryTopics: TheoryTopic[] = [
         title: 'Alkohol og promille i trafikken',
         icon: '🚫',
         shortDescription: 'Visste du at du kan være straffbart påvirket selv om du føler deg edru? Lær promillegrensene, hva som skjer i kroppen og hvilke konsekvenser promillekjøring kan få.',
-        color: '#3b82f6', // AG Blue
+        color: 'var(--apple-red)',
         seoTitle: 'Promillegrense i Norge: 0,2, straff og teoriprøve-regler | Teori-test.no',
         seoDescription: 'Lær promillegrensen i Norge: 0,2 promille, straff, reaksjonstid, legemidler og vanlige teoriprøve-feller. Kort forklart for klasse B.',
         sections: [
@@ -1466,7 +1466,7 @@ export const theoryTopics: TheoryTopic[] = [
         title: 'Tilhenger og henger: Regler, klasser og kalkulator',
         icon: '🚗',
         shortDescription: 'Alt du trenger om tilhenger til teoriprøven. 750 kg-regelen, campingvogn-regelen, klasse B96 og BE forklart enkelt med [gratis kalkulator](/laeringsressurser/tilhenger#henger-kalkulator).',
-        color: '#3b82f6', // AG Blue
+        color: 'var(--apple-red)',
         seoTitle: 'Tilhenger klasse B: regler, vekt, B96, BE og kalkulator | Teori-test.no',
         seoDescription: 'Finn ut om du kan kjøre med tilhenger på klasse B. Se 750 kg-regelen, 3500 kg-regelen, B96, BE, fartsgrenser og bruk kalkulatoren.',
         sections: [
@@ -1607,7 +1607,7 @@ export const theoryTopics: TheoryTopic[] = [
         title: 'Miljøvennlig kjøring',
         icon: '🌿',
         shortDescription: 'Spar drivstoff og reduser utslipp med riktig kjørestil',
-        color: '#16a34a',
+        color: 'var(--apple-green)',
         seoTitle: 'Miljøvennlig kjøring – spar drivstoff | Teori-test.no',
         seoDescription: 'Lær hvordan du kjører miljøvennlig, sparer drivstoff og reduserer utslipp for å bestå teoriprøven klasse B.',
         sections: [
@@ -1644,7 +1644,7 @@ export const theoryTopics: TheoryTopic[] = [
         title: 'Vognkort og vekter: Slik forstår du tallene til teoriprøven',
         icon: 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none"><rect x="10" y="6" width="44" height="52" rx="3" fill="%23F4F4F6" stroke="%23D1D1D6" stroke-width="2"/><rect x="11" y="7" width="42" height="50" rx="2" fill="%23FFFFFF"/><rect x="25" y="12" width="14" height="10" rx="1" fill="%23C8102E"/><path d="M28 15 L32 19 L36 15 Z" fill="%23FFD100"/><text x="44" y="20" font-family="Arial, sans-serif" font-weight="bold" font-size="14" fill="%231A1A1A">1</text><rect x="20" y="25" width="24" height="2" rx="1" fill="%238E8E93"/><rect x="16" y="29" width="32" height="1.5" rx="0.75" fill="%23AEAEB2"/><rect x="14" y="34" width="36" height="6" rx="1" fill="%23E5E5EA"/><rect x="16" y="36.5" width="10" height="1" rx="0.5" fill="%238E8E93"/><rect x="30" y="36.5" width="16" height="1" rx="0.5" fill="%23C7C7CC"/><rect x="14" y="42" width="36" height="6" rx="1" fill="%23E5E5EA"/><rect x="16" y="44.5" width="12" height="1" rx="0.5" fill="%238E8E93"/><rect x="30" y="44.5" width="12" height="1" rx="0.5" fill="%23C7C7CC"/><rect x="14" y="50" width="36" height="6" rx="1" fill="%23E5E5EA"/><rect x="16" y="52.5" width="8" height="1" rx="0.5" fill="%238E8E93"/><rect x="30" y="52.5" width="18" height="1" rx="0.5" fill="%23C7C7CC"/></svg>',
         shortDescription: 'Lær å lese vognkortet: egenvekt, tillatt totalvekt, aktuell vekt, og hvordan du regner ut nøyaktig nyttelast for personbil.',
-        color: '#8b5cf6',
+        color: 'var(--apple-indigo)',
         seoTitle: 'Vognkort og vekter: Slik regner du ut nyttelast (Klasse B)',
         seoDescription: 'Lær å lese vognkortet til teoriprøven. Vi forklarer egenvekt, tillatt totalvekt, aktuell vekt, og hvordan du regner ut nøyaktig nyttelast for personbil.',
         hasCalculator: true,
@@ -1711,7 +1711,7 @@ export const theoryTopics: TheoryTopic[] = [
         title: 'Temaliste teoriprøven klasse B – dette må du kunne',
         icon: '📋',
         shortDescription: 'Finn ut hva du kan bli spurt om på teoriprøven for klasse B. Komplett temakart med guider og forklaringer om vikeplikt, skilt, bremselengde, lys, kjøretøy og mer.',
-        color: '#6366f1',
+        color: 'var(--apple-blue)',
         seoTitle: 'Temaliste teoriprøven klasse B – dette må du kunne | Teori-test.no',
         seoDescription: 'Se hva du kan få på teoriprøven for klasse B. Praktisk temaliste med guider og forklaringer om vikeplikt, skilt, bremselengde, lys, sikkerhetskontroll og mer.',
         sections: [
@@ -1900,7 +1900,7 @@ export const theoryArticles: TheoryTopic[] = [
         title: 'Automatlappen og elbil',
         icon: '🚗',
         shortDescription: 'Forstå kode 78, elbilens særegenheter og hva automatlappen faktisk betyr i 2026.',
-        color: '#10b981', // Emerald
+        color: 'var(--apple-green)',
         seoTitle: 'Automatlappen og elbil: kode 78, regler og oppkjøring i 2026 | Teori-test.no',
         seoDescription: 'Skal du ta lappen på elbil eller automatgir? Lær hva kode 78 betyr, om du kan kjøre tilhenger, hvordan regenerering fungerer og om automatlappen er en begrensning i 2026.',
         sections: [
@@ -2015,7 +2015,7 @@ export const theoryArticles: TheoryTopic[] = [
         title: 'Sikkerhetskontroll klasse B: Den komplette guiden',
         icon: '🔧',
         shortDescription: 'Lær deg de tekniske kontrollspørsmålene til oppkjøringen. Slik sjekker du bremser, styring, lys og dekk på en enkel måte.',
-        color: '#f97316',
+        color: 'var(--apple-indigo)',
         seoTitle: 'Sikkerhetskontroll oppkjøring klasse B – spørsmål med fasit | Teori-test.no',
         seoDescription: 'Se vanlige sikkerhetskontroll-spørsmål til oppkjøring klasse B med svar og fasit. Øv på bremser, dekk, lys, styring, motorrom og varsellamper.',
         sections: [
@@ -2079,7 +2079,7 @@ export const theoryArticles: TheoryTopic[] = [
         title: 'Oppkjøring klasse B: Komplett guide',
         icon: '🚗',
         shortDescription: 'Du har bestått teoriprøven – nå er det bare oppkjøringen igjen. Lær hva det koster, hva som skjer på sikkerhetskontrollen og hva sensor faktisk ser etter. Ekspert-tips som hjelper deg bestå på første forsøk.',
-        color: '#f59e0b',
+        color: 'var(--apple-orange)',
         sections: []
     },
 
@@ -2088,7 +2088,7 @@ export const theoryArticles: TheoryTopic[] = [
         title: 'Strøket på teoriprøven? Her er grunnen og slik består du neste gang',
         icon: '🎓',
         shortDescription: '43% stryker på teoriprøven hvert år. Lær hvorfor så mange stryker, hva du må gjøre annerledes, og hvordan du består på neste forsøk.',
-        color: '#f97316',
+        color: 'var(--apple-indigo)',
         seoTitle: 'Strøket på teoriprøven? Her er grunnen og slik består du neste gang',
         seoDescription: '43% stryker på teoriprøven hvert år. Lær hvorfor så mange stryker, hva du må gjøre annerledes, og hvordan du består på neste forsøk.',
         sections: [
@@ -2142,7 +2142,7 @@ export const theoryArticles: TheoryTopic[] = [
         title: 'Guide til øvingskjøring',
         icon: '🚗',
         shortDescription: 'Skal du lære bort kjøring til egne barn? Lær hvordan du formidler erfaring, hva du bør øve på først, de vanskeligste situasjonene – og hvordan du sparer penger på trafikkskolen.',
-        color: '#10b981', // AG Green
+        color: 'var(--apple-green)',
         seoTitle: 'Guide til øvingskjøring – krav og regler | Teori-test.no',
         seoDescription: 'Alt du trenger å vite om øvingskjøring: krav til ledsager, elev og bil for klasse B førerkort.',
         sections: [
@@ -2189,7 +2189,7 @@ export const theoryArticles: TheoryTopic[] = [
         title: 'Hvordan bestå teoriprøven på første forsøk (Klasse B)',
         icon: '💡',
         shortDescription: 'Å stryke koster både tid og penger. Faktisk stryker omtrent halvparten av alle som tar teoriprøven for bil. Slik forbereder du deg riktig, unngår fellene og består på første forsøk.',
-        color: '#fb923c', // AG Bright Orange/Yellow
+        color: 'var(--apple-yellow)',
         seoTitle: 'Slik består du teoriprøven på første forsøk | Teori-test.no',
         seoDescription: 'Omtrent halvparten stryker på teoriprøven. Lær hvordan du unngår de vanligste fellene, forstår logikken og består på første forsøk. Øv gratis her.',
         sections: [
@@ -2221,7 +2221,7 @@ export const theoryArticles: TheoryTopic[] = [
         title: 'Trafikkuhell og førstehjelp: Hva gjør du først?',
         icon: '🚑',
         shortDescription: 'Lær den livsviktige rekkefølgen ved trafikkuhell: Stans, sikre, varsle og hjelpe. Dette må du kunne til teoriprøven klasse B.',
-        color: '#ef4444',
+        color: 'var(--apple-red)',
         seoTitle: 'Trafikkuhell og førstehjelp – hva gjør du først? | Teori-test.no',
         seoDescription: 'Hva gjør du først ved trafikkuhell? Lær riktig rekkefølge: stans, sikre, varsle og hjelpe. Kort forklart for teoriprøven klasse B.',
         sections: [
@@ -2362,7 +2362,7 @@ export const theoryArticles: TheoryTopic[] = [
         title: 'Sikkerhetsutstyr i bilen',
         icon: '🛡️',
         shortDescription: 'Lær om bilbelte, barnesikring, airbag, varseltrekant og refleksvest. Alt du trenger å vite om påbudt og anbefalt utstyr.',
-        color: '#3b82f6',
+        color: 'var(--apple-blue)',
         seoTitle: 'Sikkerhetsutstyr i bil: regler for bilbelte, barnesikring og airbag | Teori-test.no',
         seoDescription: 'Hva er påbudt sikkerhetsutstyr i bilen? Lær reglene for bilbelte, barnesikring og airbag. Se også krav til varseltrekant og refleksvest.',
         sections: [
@@ -2447,7 +2447,7 @@ export const theoryUtilityPages: TheoryTopic[] = [
         title: 'Personvern & Cookies – Slik tar vi vare på dine data',
         icon: '🛡️',
         shortDescription: 'Teori-test.no er bygget på personvern. Vi samler ikke inn personopplysninger og lagrer dine resultater lokalt i din egen nettleser.',
-        color: '#6366f1',
+        color: 'var(--apple-blue)',
         seoTitle: 'Personvern & Cookies | Teori-test.no',
         seoDescription: 'Les om hvordan Teori-test.no håndterer personvern og cookies. Vi samler ikke inn personopplysninger og lagrer dine resultater lokalt i nettleseren din.',
         sections: [

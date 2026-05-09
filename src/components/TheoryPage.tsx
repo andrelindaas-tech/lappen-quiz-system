@@ -44,9 +44,16 @@ export default function TheoryPage() {
     }
 
     if (selectedTopic) {
+        // Set an intermediate Helmet here so the title updates immediately,
+        // before TheoryTopic's own Helmet mounts and takes over.
+        const articleSeoTitle = selectedTopic.seoTitle || `${selectedTopic.title} | Teori-test.no`
+        const articleSeoDesc = selectedTopic.seoDescription || selectedTopic.shortDescription
         return (
             <div className="container">
-                {/* TheoryTopic internal Helmet tag will override the base Helmet tag */}
+                <Helmet>
+                    <title>{articleSeoTitle}</title>
+                    <meta name="description" content={articleSeoDesc} />
+                </Helmet>
                 <TheoryTopic
                     key={selectedTopic.id}
                     topic={selectedTopic}
@@ -76,19 +83,11 @@ export default function TheoryPage() {
                             key={topic.id}
                             className="theory-card"
                             onClick={() => handleSelectTopic(topic.id)}
-                            style={{ borderLeftColor: topic.color, cursor: 'pointer' }}
+                            style={{ '--card-accent-color': topic.color } as React.CSSProperties}
                         >
-                            <span className="theory-card-icon">
-                                {topic.icon.startsWith('data:image') 
-                                    ? <img src={topic.icon} alt={topic.title} style={{ width: '32px', height: '32px', objectFit: 'contain' }} /> 
-                                    : topic.icon}
-                            </span>
                             <h2 className="theory-card-title">{topic.title}</h2>
                             <p className="theory-card-desc">{parseInlineLinks(topic.shortDescription)}</p>
-                            <span
-                                className="theory-card-badge"
-                                style={{ backgroundColor: topic.color }}
-                            >
+                            <span className="theory-card-badge">
                                 Les mer →
                             </span>
                         </div>
@@ -108,19 +107,11 @@ export default function TheoryPage() {
                             key={article.id}
                             className="theory-card article-card"
                             onClick={() => handleSelectTopic(article.id)}
-                            style={{ borderLeftColor: article.color, cursor: 'pointer' }}
+                            style={{ '--card-accent-color': article.color } as React.CSSProperties}
                         >
-                            <div className="article-card-content">
-                                <span className="theory-card-icon">{article.icon}</span>
-                                <div>
-                                    <h3 className="theory-card-title">{article.title}</h3>
-                                    <p className="theory-card-desc">{parseInlineLinks(article.shortDescription)}</p>
-                                </div>
-                            </div>
-                            <span
-                                className="theory-card-badge"
-                                style={{ backgroundColor: article.color }}
-                            >
+                            <h3 className="theory-card-title">{article.title}</h3>
+                            <p className="theory-card-desc">{parseInlineLinks(article.shortDescription)}</p>
+                            <span className="theory-card-badge">
                                 Les artikkel →
                             </span>
                         </div>

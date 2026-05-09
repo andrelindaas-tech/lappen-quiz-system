@@ -2,112 +2,152 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
         <loc>https://teori-test.no/</loc>
-        <lastmod>2026-04-02</lastmod>
+        <lastmod>2026-05-09</lastmod>
         <changefreq>weekly</changefreq>
     </url>
     <url>
         <loc>https://teori-test.no/laeringsressurser</loc>
-        <lastmod>2026-04-02</lastmod>
-        <changefreq>monthly</changefreq>
-    </url>
-    <url>
-        <loc>https://teori-test.no/laeringsressurser/bremselengde</loc>
-        <lastmod>2026-04-02</lastmod>
-        <changefreq>monthly</changefreq>
-    </url>
-    <url>
-        <loc>https://teori-test.no/laeringsressurser/reaksjonstid</loc>
-        <lastmod>2026-04-02</lastmod>
+        <lastmod>2026-05-09</lastmod>
         <changefreq>monthly</changefreq>
     </url>
     <url>
         <loc>https://teori-test.no/laeringsressurser/vikeplikt</loc>
-        <lastmod>2026-04-02</lastmod>
+        <lastmod>2026-05-09</lastmod>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://teori-test.no/laeringsressurser/bremselengde</loc>
+        <lastmod>2026-05-09</lastmod>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://teori-test.no/laeringsressurser/reaksjonstid</loc>
+        <lastmod>2026-05-09</lastmod>
         <changefreq>monthly</changefreq>
     </url>
     <url>
         <loc>https://teori-test.no/laeringsressurser/skilt</loc>
-        <lastmod>2026-04-02</lastmod>
+        <lastmod>2026-05-09</lastmod>
         <changefreq>monthly</changefreq>
     </url>
     <url>
-        <loc>https://teori-test.no/laeringsressurser/sikkerhet</loc>
-        <lastmod>2026-04-02</lastmod>
-        <changefreq>monthly</changefreq>
-    </url>
-    <url>
-        <loc>https://teori-test.no/laeringsressurser/miljo</loc>
-        <lastmod>2026-04-02</lastmod>
-        <changefreq>monthly</changefreq>
-    </url>
-    <url>
-        <loc>https://teori-test.no/laeringsressurser/stans-og-parkering</loc>
-        <lastmod>2026-04-02</lastmod>
-        <changefreq>monthly</changefreq>
-    </url>
-    <url>
-        <loc>https://teori-test.no/laeringsressurser/vognkort-vekter</loc>
-        <lastmod>2026-04-02</lastmod>
-        <changefreq>monthly</changefreq>
-    </url>
-    <url>
-        <loc>https://teori-test.no/laeringsressurser/sikkerhetskontroll</loc>
-        <lastmod>2026-04-02</lastmod>
-        <changefreq>monthly</changefreq>
-    </url>
-    <url>
-        <loc>https://teori-test.no/laeringsressurser/tips-eksamen</loc>
-        <lastmod>2026-04-02</lastmod>
-        <changefreq>monthly</changefreq>
-    </url>
-    <url>
-        <loc>https://teori-test.no/laeringsressurser/ovingskjoring</loc>
-        <lastmod>2026-04-02</lastmod>
-        <changefreq>monthly</changefreq>
-    </url>
-    <url>
-        <loc>https://teori-test.no/laeringsressurser/promille</loc>
-        <lastmod>2026-04-02</lastmod>
-        <changefreq>monthly</changefreq>
-    </url>
-    <url>
-        <loc>https://teori-test.no/laeringsressurser/tilhenger</loc>
-        <lastmod>2026-04-02</lastmod>
-        <changefreq>monthly</changefreq>
-    </url>
-    <url>
-        <loc>https://teori-test.no/laeringsressurser/fartsgrenser</loc>
-        <lastmod>2026-04-02</lastmod>
+        <loc>https://teori-test.no/laeringsressurser/veimerking</loc>
+        <lastmod>2026-05-09</lastmod>
         <changefreq>monthly</changefreq>
     </url>
     <url>
         <loc>https://teori-test.no/laeringsressurser/myndighetspyramiden</loc>
-        <lastmod>2026-04-02</lastmod>
+        <lastmod>2026-05-09</lastmod>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://teori-test.no/laeringsressurser/fartsgrenser</loc>
+        <lastmod>2026-05-09</lastmod>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://teori-test.no/laeringsressurser/stans-og-parkering</loc>
+        <lastmod>2026-05-09</lastmod>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://teori-test.no/laeringsressurser/promille</loc>
+        <lastmod>2026-05-09</lastmod>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://teori-test.no/laeringsressurser/tilhenger</loc>
+        <lastmod>2026-05-09</lastmod>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://teori-test.no/laeringsressurser/miljo</loc>
+        <lastmod>2026-05-09</lastmod>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://teori-test.no/laeringsressurser/vognkort-vekter</loc>
+        <lastmod>2026-05-09</lastmod>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://teori-test.no/laeringsressurser/temaliste-teoriproven-klasse-b</loc>
+        <lastmod>2026-05-09</lastmod>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://teori-test.no/laeringsressurser/automatlappen</loc>
+        <lastmod>2026-05-09</lastmod>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://teori-test.no/laeringsressurser/sikkerhetskontroll</loc>
+        <lastmod>2026-05-09</lastmod>
         <changefreq>monthly</changefreq>
     </url>
     <url>
         <loc>https://teori-test.no/laeringsressurser/oppkjoring</loc>
-        <lastmod>2026-04-02</lastmod>
+        <lastmod>2026-05-09</lastmod>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://teori-test.no/laeringsressurser/stroket-teoriproven</loc>
+        <lastmod>2026-05-09</lastmod>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://teori-test.no/laeringsressurser/ovingskjoring</loc>
+        <lastmod>2026-05-09</lastmod>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://teori-test.no/laeringsressurser/tips-eksamen</loc>
+        <lastmod>2026-05-09</lastmod>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://teori-test.no/laeringsressurser/trafikkuhell-forstehjelp</loc>
+        <lastmod>2026-05-09</lastmod>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://teori-test.no/laeringsressurser/sikkerhetsutstyr</loc>
+        <lastmod>2026-05-09</lastmod>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://teori-test.no/laeringsressurser/forbikjoring</loc>
+        <lastmod>2026-05-09</lastmod>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://teori-test.no/laeringsressurser/rundkjoring</loc>
+        <lastmod>2026-05-09</lastmod>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://teori-test.no/laeringsressurser/morkekjoring</loc>
+        <lastmod>2026-05-09</lastmod>
         <changefreq>monthly</changefreq>
     </url>
     <url>
         <loc>https://teori-test.no/quiz/vikeplikt</loc>
-        <lastmod>2026-04-02</lastmod>
+        <lastmod>2026-05-09</lastmod>
         <changefreq>monthly</changefreq>
     </url>
     <url>
         <loc>https://teori-test.no/quiz/skilt</loc>
-        <lastmod>2026-04-02</lastmod>
+        <lastmod>2026-05-09</lastmod>
         <changefreq>monthly</changefreq>
     </url>
     <url>
         <loc>https://teori-test.no/quiz/fartsregler</loc>
-        <lastmod>2026-04-02</lastmod>
+        <lastmod>2026-05-09</lastmod>
         <changefreq>monthly</changefreq>
     </url>
     <url>
         <loc>https://teori-test.no/quiz/veimerking</loc>
-        <lastmod>2026-04-02</lastmod>
+        <lastmod>2026-05-09</lastmod>
         <changefreq>monthly</changefreq>
     </url>
 </urlset>
