@@ -42,7 +42,7 @@ export const theoryTopics: TheoryTopic[] = [
         id: 'vikeplikt',
         title: 'Vikeplikt – komplett guide til teoriprøven',
         shortDescription: 'Vikeplikt er et av de vanligste stryketemaene på teoriprøven. Her får du en oversiktlig gjennomgang av de viktigste reglene du må kunne for førerkort klasse B. Tren på vikeplikt med våre øvingsspørsmål når du har lest gjennom.',
-        icon: '🔺',
+        icon: '/signs/vikeplikt.svg',
         color: 'var(--apple-blue)',
         seoTitle: 'Vikeplikt i trafikken – høyreregelen, rundkjøring og gangfelt | Teori-test.no',
         seoDescription: 'Lær vikepliktreglene til teoriprøven: høyreregelen, vikeplikt i rundkjøring, gangfelt og fotgjengere – med eksempelspørsmål og forklaringer.',
@@ -50,7 +50,7 @@ export const theoryTopics: TheoryTopic[] = [
             {
                 title: '1. Grunnregelen: Høyreregelen',
                 type: 'text',
-                content: 'Den viktigste regelen i trafikken er høyreregelen: Du har vikeplikt for kjøretøy som kommer fra høyre, med mindre noe annet er bestemt av skilt eller oppmerking.\n- Hvor gjelder den? I alle kryss uten vikepliktskilt, stoppskilt eller forkjørsvei.\n- Viktig om T-kryss: Høyreregelen gjelder også i umerkede T-kryss. Selv om du kjører rett frem på den gjennomgående veien, må du vike for biler som kommer fra høyre i krysset.'
+                content: 'Den viktigste regelen i trafikken er høyreregelen: Du har vikeplikt for kjøretøy som kommer fra høyre, med mindre noe annet er bestemt av skilt eller oppmerking.\n- Hvor gjelder den? I alle kryss uten vikepliktskilt, stoppskilt eller forkjørsvei.\n- Viktig om T-kryss: Høyreregelen gjelder også i umerkede T-kryss. Selv om du kjører rett frem på den gjennomgående veien, må du vike for biler som kommer fra høyre i krysset.\n\n![Illustrasjon av høyreregelen der grønn bil viker for blå bil fra høyre](/hoyreregelen.png)'
             },
             {
                 title: '2. Myndighetspyramiden: Hva gjelder når?',
@@ -58,23 +58,23 @@ export const theoryTopics: TheoryTopic[] = [
                 content: 'I trafikken oppstår det ofte situasjoner der skilt, lys og generelle regler sier forskjellige ting. Da bruker vi myndighetspyramiden for å vite hva som gjelder. Reglene følges i denne rekkefølgen:\n1. Politi og manuelle dirigenter: Deres anvisninger overstyrer alt annet.\n2. Trafikklys: Grønt lys overstyrer skilt. (Blinker lyset gult, eller er slukket, er det skiltene som gjelder).\n3. Trafikkskilt og oppmerking: Vikepliktskilt og forkjørsvei overstyrer de generelle trafikkreglene.\n4. Trafikkregler (Høyreregelen): Dette er bunnen av pyramiden. Den gjelder bare når det ikke finnes politi, lys eller skilt som sier noe annet.\n\nKlassisk teoriprøvespørsmål: «Du ankommer et kryss der trafikklyset viser grønt, men det er også satt opp et vikepliktskilt. Hva er riktig?»\nA) Jeg har vikeplikt fordi skiltet gjelder.\nB) Jeg kan kjøre fordi trafikklyset gjelder foran skiltet.\nC) Høyreregelen gjelder.\n\nRiktig svar: B. Trafikklys (nivå 2 i pyramiden) står over trafikkskilt (nivå 3).'
             },
             {
-                title: '3. Skilt som overstyrer høyreregelen',
+                title: '3. Når skilt bestemmer vikeplikten',
                 type: 'signs',
-                content: 'Skilt forteller deg når høyreregelen ikke gjelder. Du må kjenne til disse tre:\n\n[Les vår guide til vikeplikt i rundkjøring](/laeringsressurser/rundkjoring)',
+                content: 'Høyreregelen gjelder bare når ingenting annet er bestemt. Hvis det står skilt eller er vegoppmerking som regulerer krysset, skal du følge dette først.',
                 signs: [
                     {
                         name: 'Vikepliktskilt',
-                        description: 'Trekant med spissen ned og rød kant. Du skal vike for all kryssende trafikk. Senk farten og vær klar til å stoppe. Veien må være klar før du kjører.',
+                        description: 'Trekant med spissen ned betyr at du har vikeplikt. Du må senke farten, vurdere trafikken på veien du skal inn på, og bare kjøre når det er klart.',
                         imageUrl: '/signs/vikeplikt.svg'
                     },
                     {
                         name: 'Stoppskilt',
-                        description: 'Rød åttekant. Du MÅ stoppe helt opp (hjulene skal stå stille) ved stopplinjen, selv om krysset virker tomt. Se deg godt for til begge sider før du kjører videre.',
+                        description: 'Rødt åttekantet skilt betyr at du alltid skal stoppe helt. Hjulene skal stå stille ved stopplinjen, eller før krysset hvis det ikke er stopplinje. Etterpå kjører du først når det er trygt.',
                         imageUrl: '/signs/stopp.svg'
                     },
                     {
                         name: 'Forkjørsvei',
-                        description: 'Gul rute. Du har forkjørsrett. Kryssende trafikk har vikeplikt for deg. Dette gjelder helt til du ser skiltet for "Slutt på forkjørsvei".',
+                        description: 'Gult diamantformet skilt betyr at du kjører på forkjørsvei. Trafikk fra sideveier har som regel vikeplikt for deg, men du må fortsatt følge med og tilpasse farten.',
                         imageUrl: '/signs/forkjorsvei.svg'
                     }
                 ]
@@ -82,12 +82,12 @@ export const theoryTopics: TheoryTopic[] = [
             {
                 title: '4. Rundkjøringer',
                 type: 'text',
-                content: 'I norske rundkjøringer har du vikeplikt for trafikken som allerede befinner seg inne i rundkjøringen.\n- Vent ved vikepliktslinjen til du har en trygg luke.\n- Bruk alltid blinklys når du skal ut av rundkjøringen.\n\nVanlig misforståelse: Mange tror høyreregelen gjelder i rundkjøring. Det gjør den ikke – rundkjøringsskiltet opphever høyreregelen.'
+                content: 'I norske rundkjøringer har du vikeplikt for trafikken som allerede befinner seg inne i rundkjøringen.\n- Vent ved vikepliktslinjen til du har en trygg luke.\n- Bruk alltid blinklys når du skal ut av rundkjøringen.\n\nVanlig misforståelse: Mange tror høyreregelen gjelder i rundkjøring. I praksis møter du normalt vikepliktskilt før rundkjøringen, og da skal du vike for trafikk som allerede er inne i rundkjøringen.\n\n[Usikker på rundkjøringer? Les guiden om vikeplikt i rundkjøring](/laeringsressurser/rundkjoring)'
             },
             {
                 title: '5. Trikk og buss',
                 type: 'warning',
-                content: 'Det gjelder egne regler for kollektivtrafikk:\n- Trikk: Du har vikeplikt for trikken, selv om den kommer fra venstre. Dette er et viktig unntak fra høyreregelen.\n- Buss: Hvis en buss blinker seg ut fra en holdeplass i en 60-sone (eller lavere), har du vikeplikt og må la bussen kjøre ut.'
+                content: 'Det gjelder egne regler for kollektivtrafikk:\n- Trikk: Du har vikeplikt for trikken, selv om den kommer fra venstre. Dette er et viktig unntak fra høyreregelen.\n- Buss: Hvis en buss blinker seg ut fra en holdeplass i en 60-sone (eller lavere), skal du senke farten og gi bussen mulighet til å kjøre ut, så lenge det kan skje uten fare.'
             },
             {
                 title: '6. Fotgjengere og syklister',
@@ -119,7 +119,57 @@ export const theoryTopics: TheoryTopic[] = [
             },
             {
                 question: 'Hvem har vikeplikt i et T-kryss?',
-                answer: 'I et T-kryss uten skilt gjelder høyreregelen normalt. Den som kjører inn i krysset fra sidevei har vikeplikt for trafikk på hovedveien, men høyreregelen avgjør ellers.'
+                answer: 'I et T-kryss uten skilt eller oppmerking gjelder høyreregelen. Det betyr at du kan måtte vike for trafikk fra høyre, selv om veien du kjører på virker større eller går rett frem.'
+            }
+        ],
+        miniQuiz: [
+            {
+                question: 'Du kommer til et uregulert kryss uten skilt eller trafikklys. En bil kommer fra høyre. Hva gjør du?',
+                options: ['Kjører først hvis du er på den bredeste veien', 'Viker for bilen fra høyre', 'Kjører først hvis du skal rett frem', 'Viker bare hvis bilen fra høyre allerede er inne i krysset'],
+                correct: 'Viker for bilen fra høyre',
+                explanation: 'I uregulerte kryss gjelder høyreregelen. Du skal vike for trafikk fra høyre, selv om din vei virker større.'
+            },
+            {
+                question: 'Du har grønt lys, men det står også et vikepliktskilt ved krysset. Hva gjelder?',
+                options: ['Vikepliktskiltet gjelder alltid', 'Høyreregelen gjelder', 'Trafikklyset gjelder så lenge det fungerer', 'Du må alltid stoppe helt opp'],
+                correct: 'Trafikklyset gjelder så lenge det fungerer',
+                explanation: 'Trafikklys står høyere enn skilt i myndighetspyramiden. Så lenge lyset fungerer, følger du lyssignalet.'
+            },
+            {
+                question: 'Trafikklyset blinker gult, og du har vikepliktskilt. Hva må du gjøre?',
+                options: ['Kjøre som om du har grønt lys', 'Følge vikepliktskiltet', 'Følge høyreregelen selv om skiltet står der', 'Stoppe uansett, som ved stoppskilt'],
+                correct: 'Følge vikepliktskiltet',
+                explanation: 'Blinkende gult betyr at trafikklyset ikke regulerer trafikken på vanlig måte. Da må du følge skilt og oppmerking.'
+            },
+            {
+                question: 'Du skal kjøre inn i en rundkjøring. Det kommer en bil fra venstre som allerede er inne i rundkjøringen. Hva er riktig?',
+                options: ['Du kan kjøre først fordi bilen kommer fra venstre', 'Du må vike for bilen som allerede er i rundkjøringen', 'Høyreregelen gjelder alltid i rundkjøringer', 'Du kan kjøre hvis du skal ta første avkjøring'],
+                correct: 'Du må vike for bilen som allerede er i rundkjøringen',
+                explanation: 'Ved innkjøring i rundkjøring har du normalt vikepliktskilt. Du skal vike for trafikk som allerede er i rundkjøringen.'
+            },
+            {
+                question: 'Du kjører i 50-sone og en buss på bussholdeplass blinker ut. Hva er riktig?',
+                options: ['Du skal gi bussen mulighet til å kjøre ut hvis det kan skje uten fare', 'Bussen har aldri prioritet fra holdeplass', 'Du må alltid bråbremse for bussen', 'Regelen gjelder bare i 80-sone'],
+                correct: 'Du skal gi bussen mulighet til å kjøre ut hvis det kan skje uten fare',
+                explanation: 'I områder med fartsgrense 60 km/t eller lavere skal du gi buss mulighet til å kjøre ut fra holdeplass, så lenge det kan skje uten fare.'
+            },
+            {
+                question: 'Du skal svinge til høyre inn i en sidevei. En fotgjenger skal krysse sideveien du svinger inn i. Hva gjør du?',
+                options: ['Kjører først fordi du allerede er på kjørebanen', 'Viker for fotgjengeren', 'Tut for å varsle og kjører forsiktig forbi', 'Viker bare hvis det er gangfelt med skilt'],
+                correct: 'Viker for fotgjengeren',
+                explanation: 'Når du svinger inn på en ny vei, skal du vike for gående og syklende som skal krysse den veien du svinger inn i.'
+            },
+            {
+                question: 'Du kjører ut fra en parkeringsplass og skal inn på en vanlig vei. Hva gjelder?',
+                options: ['Høyreregelen gjelder, så biler fra venstre må vike for deg', 'Du har vikeplikt for trafikken på veien du kjører inn på', 'Du har forkjørsrett hvis du kommer sakte', 'Du har bare vikeplikt hvis det står skilt'],
+                correct: 'Du har vikeplikt for trafikken på veien du kjører inn på',
+                explanation: 'Når du kjører ut fra parkeringsplass, privat vei, gårdsplass eller lignende, har du vikeplikt for trafikken på veien du kjører inn på.'
+            },
+            {
+                question: 'Du nærmer deg et gangfelt. En bil i feltet ved siden av har stanset rett før gangfeltet. Hva bør du gjøre?',
+                options: ['Kjøre forbi hvis du ikke ser noen fotgjengere', 'Senke farten og være forberedt på å stoppe', 'Kjøre raskt forbi før fotgjengeren kommer', 'Bare stoppe hvis det står gangfeltskilt'],
+                correct: 'Senke farten og være forberedt på å stoppe',
+                explanation: 'En stanset bil kan skjule fotgjengere. Du må være ekstra forsiktig og klar til å stoppe før gangfelt.'
             }
         ]
     },
@@ -2186,32 +2236,125 @@ export const theoryArticles: TheoryTopic[] = [
 
     {
         id: 'tips-eksamen',
-        title: 'Hvordan bestå teoriprøven på første forsøk (Klasse B)',
+        title: 'Hvordan bestå teoriprøven på første forsøk (klasse B)',
         icon: '💡',
-        shortDescription: 'Å stryke koster både tid og penger. Faktisk stryker omtrent halvparten av alle som tar teoriprøven for bil. Slik forbereder du deg riktig, unngår fellene og består på første forsøk.',
+        shortDescription: 'Å bestå teoriprøven handler ikke bare om å pugge flest mulig spørsmål. Du må forstå hvorfor reglene finnes, kjenne igjen typiske feller og øve på en måte som ligner den ekte prøven.',
         color: 'var(--apple-yellow)',
-        seoTitle: 'Slik består du teoriprøven på første forsøk | Teori-test.no',
-        seoDescription: 'Omtrent halvparten stryker på teoriprøven. Lær hvordan du unngår de vanligste fellene, forstår logikken og består på første forsøk. Øv gratis her.',
+        seoTitle: 'Bestå teoriprøven – tips for klasse B | Teori-test.no',
+        seoDescription: 'Slik øver du smartere til teoriprøven klasse B. Få fakta om 45 spørsmål, maks 7 feil, pris, vanlige feller, prøvedagen og miniQuiz.',
         sections: [
             {
-                title: '1. Forstå logikken (ikke bare pugg)',
+                title: 'Kort forklart: Slik øker du sjansen for å bestå',
                 type: 'text',
-                content: 'Vegvesenet endrer ofte ordlyden i spørsmålene sine. Lærer du deg bare fasiten utenat, vil du slite når spørsmålet stilles på en ny måte. Fokuser på å forstå hvorfor reglene er som de er. Forstår du logikken bak trafikkreglene, som for eksempel [vikeplikt](/laeringsressurser/vikeplikt), kan du resonnere deg frem til riktig svar uansett hvordan oppgaven er formulert.'
+                content: 'Det viktigste er dette:\n1. Øv på full prøve med 45 spørsmål.\n2. Gå gjennom feilene dine etter hver prøve.\n3. Prioriter temaene du bommer mest på.\n4. Lær reglene bak svarene, ikke bare riktig alternativ.\n5. Ta prøven når du jevnlig klarer maks 7 feil.\n\nPå [Teori-test.no](/) kan du øve gratis med full prøve, temaprøver og forklaringer som hjelper deg å forstå hvorfor svaret er riktig.'
             },
             {
-                title: '2. Unngå de vanligste fellene',
-                type: 'warning',
-                content: 'Den vanligste årsaken til unødvendige feil er uoppmerksomhet. Ha dette i bakhodet under selve prøven:\n• Les spørsmålet to ganger: Se opp for små, avgjørende ord som "IKKE" eller "UNNTATT".\n• Bruk eliminasjonsmetoden: Fjern svaralternativene du vet med sikkerhet er feil først.\n• Studer bildene: De er ikke bare illustrasjoner, men inneholder ofte viktige hint om fartsgrenser, [skilt](/quiz/skilt) eller blindsoner.\n• Tenk trafikksikkerhet: Er du i tvil, velg alltid det alternativet som gir lavest risiko.'
-            },
-            {
-                title: '3. Fakta om prøven',
+                title: 'Fakta om teoriprøven klasse B',
                 type: 'info',
-                content: 'Husk å forhåndsbestille time hos Statens vegvesen og ta med gyldig legitimasjon.\n• Krav: Prøven har 45 spørsmål. Du må ha minst 38 riktige (maks 7 feil) for å bestå.\n• Pris: Teoriprøven koster 680 kr hos Statens vegvesen (2026). Stryker du må du betale på nytt og vente minst 2 uker.\n• Gyldighet: Bestått teoriprøve er gyldig i 3 år — innen den tid må du ha bestått kjøreprøven (oppkjøringen).\n• Varighet: Teoriprøven varer 90 minutter. De fleste er ferdig på under en time.\n• Alderskrav: Du kan ta teoriprøven fra du er 16 år. Du kan søke om time 6 måneder før du fyller 16.\n• Før prøven: Møt opp uthvilt og ha spist på forhånd. En trøtt hjerne gjør lettere slurvefeil.'
+                content: 'For klasse B gjelder dette:\n• Antall spørsmål: 45 spørsmål\n• Krav for å bestå: Minst 38 riktige\n• Maks antall feil: 7 feil\n• Tid: 90 minutter\n• Pris: 480 kr hos Statens vegvesen fra 1. februar 2026\n• Ved stryk: Du kan ta ny prøve tidligst etter 2 uker\n• Gyldighet: Bestått teoriprøve er gyldig i 3 år\n• Når kan du ta prøven?: Tidligst 6 måneder før alderskravet, altså 17,5 år for klasse B\n\nDu må bestille time hos Statens vegvesen og ta med gyldig legitimasjon. Møt heller litt tidlig enn å starte prøven med puls som en nødblink.'
             },
             {
-                title: '4. Øv målrettet og effektivt',
+                title: 'Hva bør du øve mest på?',
+                type: 'text',
+                content: 'Noen temaer går igjen fordi de tester forståelse, ikke bare hukommelse.\n\n**Vikeplikt og høyreregelen**\nVikeplikt er et av de viktigste temaene. Du bør kunne høyreregelen, vikepliktskilt, rundkjøringer, gangfelt, buss fra holdeplass og utkjøring fra parkering eller privat vei.\nLes mer: [komplett guide til vikeplikt](/laeringsressurser/vikeplikt)\n\n**Skilt og vegoppmerking**\nDu må kjenne igjen skilt, men også forstå hva de betyr i praksis. Sperrelinjer, vikelinjer, stopplinjer og kjørefeltpiler kan være avgjørende i bildeoppgaver.\nLes mer: [guide til trafikkskilt](/laeringsressurser/skilt) og [veimerking](/laeringsressurser/veimerking)\n\n**Bremselengde og reaksjonstid**\nDette er klassiske teoriprøve-temaer. Du bør forstå forskjellen på reaksjonslengde, bremselengde og stopplengde, og hvordan fart, føre og dekk påvirker risikoen.\nLes mer: [kalkulator for bremselengde](/laeringsressurser/bremselengde)\n\n**Lys, mørke og sikt**\nMørkekjøring, refleks, nærlys, fjernlys og tåkelys handler om å se og bli sett. Husk at moderne autolys ikke alltid betyr at baklysene er tent.\n\n**Sikkerhetskontroll og kjøretøy**\nDu bør kunne grunnleggende kontroll av dekk, lys, bremser, varsellamper og sikkerhetsutstyr. Dette er nyttig både til teoriprøven og oppkjøringen.'
+            },
+            {
+                title: 'Vanlige feil på teoriprøven',
+                type: 'warning',
+                content: 'Mange feil kommer ikke av at eleven ikke kan trafikkreglene, men av at spørsmålet leses for raskt.\n\nSe spesielt etter ord som:\n- ikke\n- alltid\n- aldri\n- må\n- kan\n- bør\n- unntatt\n\nEt spørsmål kan virke lett, men ett lite ord kan snu hele betydningen.\n\nEksempel: "Du kan alltid kjøre forbi en syklist hvis du holder god avstand."\nDette høres nesten riktig ut, men "alltid" gjør påstanden feil. Du må også ha fri sikt, nok plass, riktig fart og ingen hindringer som gjør forbikjøringen farlig.'
+            },
+            {
+                title: 'Slik bør du øve de siste 7 dagene',
                 type: 'tip',
-                content: 'Den beste og gratis treningen er å simulere den ekte prøvesituasjonen. På Teori-test.no kan du øve gratis med verktøy som forbereder deg nøyaktig på det som møter deg:\n• [Full prøve-modus](/quiz?mode=eksamen): 45 spørsmål på 90 minutter – akkurat som på trafikkstasjonen.\n• [Ekspresstest](/quiz?mode=hurtig): Raske økter som passer perfekt på mobilen når du har noen minutter ledig.\n• [Fokus-modus](/quiz?mode=fokus): Et smart verktøy som husker hva du svarer feil på, slik at du kun trenger å terpe på svakhetene dine.'
+                content: '**7–5 dager før prøven**\nTa en full prøve og finn ut hvilke temaer du faktisk sliter med. Ikke bruk all tiden på det du allerede kan.\nFokuser på: vikeplikt, skilt og oppmerking, fart og bremselengde, rus, tretthet og reaksjonstid, og sikkerhetskontroll.\n\n**4–2 dager før prøven**\nTa flere korte økter. Gå gjennom feilene dine nøye. Målet er ikke bare å se riktig svar, men å forstå hvorfor de andre alternativene er feil.\n\n**Dagen før prøven**\nTa én full prøve. Hvis du består komfortabelt, stopp mens hjernen fortsatt er samarbeidsvillig. Sov godt. Ikke sitt oppe til klokken 02 og pugger stopplengde med panikk i blikket.\n\n**På prøvedagen**\nMøt uthvilt, spis litt på forhånd og ha med legitimasjon. Les hvert spørsmål rolig. Bruk tiden du har. 90 minutter er mer enn nok for de fleste.'
+            },
+            {
+                title: 'På selve prøven: slik tenker du',
+                type: 'text',
+                content: 'Når du får et spørsmål, bruk denne rekkefølgen:\n1. Hva spør de egentlig om?\n2. Finnes det skilt, lys eller oppmerking i bildet?\n3. Er det noen myke trafikanter?\n4. Hvilket svar gir lavest risiko?\n5. Kan noen av alternativene elimineres?\n\nHvis du er usikker, velg ofte det tryggeste og mest forutsigbare alternativet. Teoriprøven tester i stor grad om du tenker trafikksikkert.'
+            },
+            {
+                title: 'Hvis du stryker',
+                type: 'info',
+                content: 'Hvis du stryker, må du vente minst 2 uker før du kan ta ny teoriprøve. Det viktigste er å bruke perioden riktig.\n\nIkke bare ta samme type prøve om og om igjen. Se på hvilke temaer du bommet på, og øv målrettet. Hvis du for eksempel bommer på vikeplikt og skilt, hjelper det lite å bare øve på promille og miljø.\n\nStryk er kjedelig, men det er også veldig konkret: det viser deg hva du bør øve på før neste forsøk.'
+            },
+            {
+                title: 'Når er du klar?',
+                type: 'text',
+                content: 'Du er trolig klar når du:\n- består flere fullprøver på rad\n- har maks 5–6 feil, ikke akkurat 7 hver gang\n- forstår hvorfor svarene er riktige\n- kjenner igjen typiske bildeoppgaver\n- ikke blir stresset av vanskelige formuleringer\n\nDa har du et godt utgangspunkt for å bestå den ekte teoriprøven. [Ta en gratis øvingsprøve nå for å sjekke om du er klar](/quiz?mode=eksamen).'
+            },
+            {
+                title: 'Kildeinformasjon',
+                type: 'text',
+                content: 'Kilde for gjennomføring, regelverk og priser i denne guiden er hentet direkte fra [Statens vegvesen sine offisielle nettsider](https://www.vegvesen.no/).'
+            }
+        ],
+        miniQuiz: [
+            {
+                question: 'Hvor mange feil kan du ha på teoriprøven for klasse B?',
+                options: ['5 feil', '7 feil', '10 feil', '12 feil'],
+                correct: '7 feil',
+                explanation: 'Du får 45 spørsmål og må ha minst 38 riktige. Det betyr maks 7 feil.'
+            },
+            {
+                question: 'Hva er den smarteste måten å øve på?',
+                options: ['Bare pugge riktige svar', 'Bare lese skiltlisten én gang', 'Øve på full prøve og gå gjennom feilene', 'Kun øve dagen før prøven'],
+                correct: 'Øve på full prøve og gå gjennom feilene',
+                explanation: 'Du lærer mest når du ser hvilke temaer du bommer på og forstår hvorfor.'
+            },
+            {
+                question: 'Hva bør du gjøre hvis et spørsmål virker lett?',
+                options: ['Svare med én gang uten å lese alt', 'Se etter ord som "ikke", "alltid" og "unntatt"', 'Hoppe over spørsmålet', 'Velge det lengste svaret'],
+                correct: 'Se etter ord som "ikke", "alltid" og "unntatt"',
+                explanation: 'Små ord kan endre hele betydningen av spørsmålet.'
+            },
+            {
+                question: 'Når kan du tidligst ta teoriprøven for klasse B?',
+                options: ['Når du er 16 år', 'Når du er 17 år', '6 måneder før alderskravet for førerkortet', 'Før du har startet opplæring'],
+                correct: '6 måneder før alderskravet for førerkortet',
+                explanation: 'For klasse B betyr det tidligst 17,5 år.'
+            },
+            {
+                question: 'Hva bør du gjøre hvis du stryker?',
+                options: ['Ta ny prøve samme dag', 'Vente minst 2 uker og øve på temaene du bommet på', 'Bare lese gjennom fasiten én gang', 'Bestille oppkjøring i stedet'],
+                correct: 'Vente minst 2 uker og øve på temaene du bommet på',
+                explanation: 'Ved stryk kan du ta ny prøve tidligst etter 2 uker.'
+            },
+            {
+                question: 'Hva er ofte det tryggeste valget hvis du er usikker i en trafikkoppgave?',
+                options: ['Det raskeste alternativet', 'Det alternativet som gir lavest risiko', 'Det alternativet som lar deg komme først frem', 'Det mest aggressive alternativet'],
+                correct: 'Det alternativet som gir lavest risiko',
+                explanation: 'Teoriprøven tester om du tenker trafikksikkert og forutsigbart.'
+            }
+        ],
+        faq: [
+            {
+                question: 'Hvor mange spørsmål er det på teoriprøven klasse B?',
+                answer: 'Teoriprøven for klasse B har 45 spørsmål.'
+            },
+            {
+                question: 'Hvor mange feil kan man ha på teoriprøven?',
+                answer: 'Du kan ha maks 7 feil. Du må ha minst 38 riktige for å bestå.'
+            },
+            {
+                question: 'Hvor lenge varer teoriprøven?',
+                answer: 'Du har 90 minutter på teoriprøven for klasse B.'
+            },
+            {
+                question: 'Hva koster teoriprøven i 2026?',
+                answer: 'Hos Statens vegvesen koster teoriprøven 480 kr fra 1. februar 2026.'
+            },
+            {
+                question: 'Hvor lenge er teoriprøven gyldig?',
+                answer: 'Bestått teoriprøve er gyldig i 3 år.'
+            },
+            {
+                question: 'Hva skjer hvis jeg stryker?',
+                answer: 'Hvis du stryker, kan du ta ny teoriprøve tidligst etter 2 uker. Du må betale for ny prøve.'
+            },
+            {
+                question: 'Hvordan øver jeg best til teoriprøven?',
+                answer: 'Ta fullprøver, gå gjennom feilene dine og øv ekstra på temaene du sliter med. Det viktigste er å forstå reglene, ikke bare pugge svar.'
             }
         ]
     },

@@ -52,6 +52,17 @@ function renderContent(text: string) {
         } else if (/^\d+\.\s/.test(line)) {
             flushUl()
             olItems.push(line.replace(/^\d+\.\s/, ''))
+        } else if (line.trim().startsWith('![')) {
+            flushUl()
+            flushOl()
+            const match = line.trim().match(/^!\[(.*?)\]\((.*?)\)$/)
+            if (match) {
+                output.push(<img key={key++} src={match[2]} alt={match[1]} style={{ maxWidth: '100%', height: 'auto', borderRadius: '8px', margin: '1rem 0' }} />)
+            } else {
+                if (line.trim() !== '') {
+                    output.push(<p key={key++}>{parseInlineLinks(line)}</p>)
+                }
+            }
         } else {
             flushUl()
             flushOl()
@@ -145,7 +156,7 @@ export default function TheoryTopic({ topic, onBack, extraComponent }: TheoryTop
 
             <div className="theory-topic-header">
                 <span className="theory-topic-icon-lg">
-                    {topic.icon.startsWith('data:image') 
+                    {topic.icon.startsWith('data:image') || topic.icon.startsWith('/')
                         ? <img src={topic.icon} alt={topic.title} style={{ width: '64px', height: '64px', objectFit: 'contain' }} /> 
                         : topic.icon}
                 </span>
