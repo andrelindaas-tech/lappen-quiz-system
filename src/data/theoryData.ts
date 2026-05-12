@@ -1724,37 +1724,191 @@ export const theoryTopics: TheoryTopic[] = [
 
     {
         id: 'miljo',
-        title: 'Miljøvennlig kjøring',
+        title: 'Miljøvennlig kjøring – økonomisk kjøring til teoriprøven',
         icon: '🌿',
         shortDescription: 'Spar drivstoff og reduser utslipp med riktig kjørestil',
         color: 'var(--apple-green)',
-        seoTitle: 'Miljøvennlig kjøring – spar drivstoff | Teori-test.no',
-        seoDescription: 'Lær hvordan du kjører miljøvennlig, sparer drivstoff og reduserer utslipp for å bestå teoriprøven klasse B.',
+        seoTitle: 'Miljøvennlig kjøring – økonomisk kjøring til teoriprøven | Teori-test.no',
+        seoDescription: 'Lær miljøvennlig og økonomisk kjøring til teoriprøven: jevn fart, riktig gir, dekktrykk, tomgang, takboks, elbil og vanlige teorifeller.',
         sections: [
             {
-                title: 'Økonomisk kjøring',
+                title: 'Miljøvennlig kjøring – økonomisk kjøring til teoriprøven',
                 type: 'text',
-                content: 'Miljøvennlig kjøring handler om å redusere drivstofforbruk og utslipp gjennom smart kjørestil. En jevn og forutseende kjørestil kan redusere forbruket med 10–30 %.'
+                content: 'Miljøvennlig kjøring handler om å bruke bilen på en måte som gir lavere forbruk, mindre utslipp og mindre slitasje. På teoriprøven kan du få spørsmål om kjørestil, dekktrykk, tomgang, takboks, girvalg, fart og hvordan du kan spare energi med elbil.\n\nDen korte versjonen er enkel: Kjør jevnt, planlegg tidlig, unngå unødvendig bremsing og ikke frakt rundt på ting du ikke trenger. Bilen din er ikke et rullende bodrom, selv om det av og til føles praktisk.\n\n![Miljøvennlig kjøring med bil og fornybar energi](/Mijovennlig_kjoring_artikel_bilde.png)'
             },
             {
-                title: 'Tips for miljøvennlig kjøring',
+                title: 'Kort forklart',
                 type: 'info',
-                content: '• Kjør jevnt — Unngå brå akselerasjon og hard bremsing\n• Gir opp tidlig — Bruk høyest mulig gir ved lav turtall\n• Bruk motorbremsen — Slipp gassen i god tid før stopp\n• Hold jevn fart — Bruk cruisekontroll på motorvei\n• Unngå tomgangskjøring — Slå av motoren ved lengre stopp\n• Planlegg turen — Velg korteste og mest effektive rute'
+                content: 'Miljøvennlig og økonomisk kjøring betyr at du:\n\n- kjører jevnt og forutseende\n- holder riktig fart\n- unngår brå akselerasjon og hard bremsing\n- bruker riktig gir\n- slipper gassen tidlig og bruker motorbrems\n- har riktig dekktrykk\n- unngår unødvendig tomgang\n- fjerner takboks og ekstra vekt når du ikke trenger det\n\nMålet er ikke å kjøre saktest mulig. Målet er å kjøre smart, trygt og forutsigbart.'
             },
             {
-                title: 'Dekktrykk',
-                type: 'warning',
-                content: 'For lavt dekktrykk øker drivstofforbruket med opptil 5 % og sliter dekkene ujevnt. Sjekk dekktrykket minst én gang i måneden og alltid før lengre turer. Riktig dekktrykk finner du i bilens brukerveiledning eller på en plate i dørkarmen.'
-            },
-            {
-                title: 'Ekstrautstyr som øker forbruket',
+                title: 'Hva betyr økonomisk kjøring?',
                 type: 'text',
-                content: 'Noen ting øker drivstofforbruket betydelig:\n\n• Takboks/takstativ — Øker luftmotstanden med opptil 20 %\n• Aircondition — Bruker ekstra energi, spesielt i bykjøring\n• Ekstra vekt — 100 kg ekstra øker forbruket med ca. 5 %\n• Åpne vinduer ved høy fart — Øker luftmotstanden\n\nFjern takboks og takstativ når det ikke er i bruk!'
+                content: 'Økonomisk kjøring er en kjørestil som reduserer energibruk. For bensin- og dieselbiler betyr det lavere drivstofforbruk. For elbiler betyr det bedre rekkevidde og mindre behov for lading.\n\nEn jevn kjørestil kan redusere forbruket betydelig, særlig i bytrafikk der mange akselererer og bremser unødvendig. På teoriprøven handler dette ofte om å velge det alternativet som gir roligst og mest forutseende kjøring.'
             },
             {
-                title: 'Elektrisk bil',
-                type: 'tip',
-                content: 'Elbiler har null lokale utslipp og lavere driftskostnader. Regenerativ bremsing (energigjenvinning) gjør at bilen lader batteriet når du slipper gassen. For å maksimere rekkevidden: bruk varme- og klimaanlegg med måte, og kjør jevnt.\n\n[Les om fartsgrenser i Norge](/laeringsressurser/fartsgrenser)'
+                title: 'Kjør jevnt og planlegg tidlig',
+                type: 'warning',
+                content: 'Den viktigste regelen er å se langt frem og planlegge i god tid.\n\nHvis du ser at trafikklyset blir rødt, slipper du gassen tidlig i stedet for å kjøre helt frem og bremse hardt. Hvis trafikken foran sakker ned, tilpasser du farten rolig. Hvis du nærmer deg rundkjøring eller kø, reduserer du farten tidlig.\n\nDette sparer drivstoff og energi fordi bilen bruker mindre kraft på akselerasjon og mindre energi går tapt i bremsing.\n\nGod økonomisk kjøring er derfor også god trafikksikkerhet: Du får bedre tid til å oppdage farer og reagere riktig.'
+            },
+            {
+                title: 'Riktig gir og lavt turtall',
+                type: 'text',
+                content: 'I bil med manuelt gir bør du gire opp tidlig og bruke høyest mulig gir uten at motoren lugger. Høyt turtall gir ofte høyere forbruk.\n\nSom hovedregel:\n\n- akselerer rolig\n- gir opp tidlig\n- unngå å kjøre lenge på unødvendig høyt turtall\n- gir ned når motoren begynner å trekke dårlig\n\nI automatbil gjør bilen mye av dette selv, men kjørestilen din betyr fortsatt mye. Brå gasspådrag og hard bremsing øker forbruket uansett girkasse.'
+            },
+            {
+                title: 'Bruk motorbrems og slipp gassen tidlig',
+                type: 'info',
+                content: 'Motorbrems betyr at du slipper gassen og lar bilen bremse gradvis ved hjelp av motoren. I moderne biler kan dette redusere eller stoppe drivstofftilførselen mens bilen ruller.\n\nDette er spesielt nyttig når du nærmer deg:\n\n- kryss\n- rundkjøring\n- rødt lys\n- kø\n- nedoverbakker\n\nDu skal likevel alltid ha kontroll. Motorbrems er ikke en erstatning for bremsene når du faktisk må stoppe raskt.'
+            },
+            {
+                title: 'Tomgangskjøring',
+                type: 'warning',
+                content: 'Unngå unødvendig tomgang. Hvis du står stille over tid, bruker bilen drivstoff uten å frakte deg noe sted. Det gir utslipp, støy og dårlig luft, særlig i tettbygde områder.\n\nPå teoriprøven er riktig svar ofte å slå av motoren ved lengre stopp, så lenge det er praktisk og trygt.'
+            },
+            {
+                title: 'Dekktrykk påvirker forbruket',
+                type: 'text',
+                content: 'For lavt dekktrykk gjør at bilen ruller tyngre. Det kan gi høyere forbruk, dårligere kjøreegenskaper og mer dekkslitasje.\n\n![Dekktrykk og miljøpåvirkning – lavt dekktrykk gir økt forbruk, dårligere grep og lengre bremselengde](/Mijovennlig_kjoring_artikel_bilde_2.png)\n\nDu bør sjekke dekktrykket jevnlig, og alltid før langtur eller tung last. Riktig dekktrykk finner du vanligvis:\n\n- i bilens instruksjonsbok\n- på innsiden av dørkarmen\n- ved tanklokk eller ladeluke på enkelte biler\n\nHusk at dekktrykket ofte skal justeres når bilen er tungt lastet. For lavt dekktrykk kan også gi lengre bremselengde og dårligere grep, særlig på våt vei.\n\nLes også om [sikkerhetskontroll](/laeringsressurser/sikkerhetskontroll) hvis du vil lære mer om dekk, lys og kontroll av bilen.'
+            },
+            {
+                title: 'Takboks, last og luftmotstand',
+                type: 'info',
+                content: 'Takboks og takstativ øker luftmotstanden. Det kan gi merkbart høyere forbruk, spesielt i høy fart.\n\nEkstra vekt påvirker også forbruket. Jo tyngre bilen er, desto mer energi trengs for å akselerere og holde farten.\n\nDette bør du gjøre:\n\n- ta av takboks når den ikke er i bruk\n- fjern unødvendig tung last\n- pakk smart og lavt\n- hold vinduer lukket i høy fart hvis mulig\n\nEn tom takboks på motorveien er i praksis en liten motvind du selv har skrudd fast på taket. Lite elegant. Ganske dyrt.'
+            },
+            {
+                title: 'Aircondition og varme',
+                type: 'text',
+                content: 'Klimaanlegg, setevarme, bakrutevarme og kupévarme bruker energi. Det betyr mest i elbil, men også fossilbiler bruker mer energi når utstyr belaster motoren eller det elektriske systemet.\n\nDu skal selvfølgelig bruke varme og ventilasjon når det trengs for sikt og sikkerhet. Isfrie ruter og god sikt er viktigere enn å spare noen få prosent strøm eller drivstoff.\n\nRiktig prioritering er:\n\n1. Sikker sikt først\n2. Komfort etterpå\n3. Sparing når det er praktisk'
+            },
+            {
+                title: 'Fart og forbruk',
+                type: 'text',
+                content: 'Høy fart gir betydelig mer luftmotstand. Derfor øker forbruket mye når farten blir høy, spesielt på motorvei. Selv små økninger i hastighet kan gi merkbart høyere drivstofforbruk eller kortere rekkevidde for elbil.\n\nTabellen under viser et forenklet eksempel på hvordan forbruket kan øke ved høyere hastighet:\n\n| Hastighet | Økt forbruk |\n|---|---:|\n| 80 km/t | Referanse |\n| 90 km/t | ca. +10 % |\n| 100 km/t | ca. +20 % |\n| 110 km/t | ca. +30 % |\n| 120 km/t | ca. +40 % |\n\nTallene er omtrentlige og vil variere med biltype, vær, last, dekk, takboks og kjørestil. Poenget er likevel viktig til teoriprøven: Høyere fart gir høyere luftmotstand og økt energibruk.\n\n### Tips for hastighetstilpasning\n\n- Hold jevn fart når forholdene tillater det.\n- Unngå unødvendig høy fart, særlig på motorvei.\n- Slipp gassen tidlig når du ser at trafikken foran bremser.\n- Bruk cruisekontroll der det passer, men ikke når føret krever ekstra aktiv kontroll.\n- Tilpass farten etter sikt, føre, trafikk og fartsgrense.\n\nLes også om [fartsgrenser i Norge](/laeringsressurser/fartsgrenser).'
+            },
+            {
+                title: 'Miljøvennlig kjøring med elbil',
+                type: 'info',
+                content: 'Elbiler har ingen lokale utslipp under kjøring, men energibruk og rekkevidde påvirkes fortsatt av kjørestilen din.\n\n![Elbil på vei med vindkraft – miljøvennlig kjøring og energieffektiv kjørestil](/Mijovennlig_kjoring_artikel_bilde_3.png)\n\nFor å kjøre mer økonomisk med elbil bør du:\n\n- akselerere rolig\n- holde jevn fart\n- bruke regenerativ bremsing smart\n- forvarme bilen mens den står til lading når det er mulig\n- unngå unødvendig høy fart\n- bruke varme og klimaanlegg fornuftig\n- ha riktig dekktrykk\n\nRegenerativ bremsing betyr at bilen kan hente tilbake energi når du slipper gassen eller bremser lett. Men det beste er fortsatt å planlegge tidlig, slik at du slipper unødvendige oppbremsinger.'
+            },
+            {
+                title: 'Typiske teorifeller',
+                type: 'warning',
+                content: 'På teoriprøven kan miljøvennlig kjøring dukke opp i spørsmål som handler om både miljø, sikkerhet og kjøretøyteknikk.\n\nVanlige feller:\n\n- Å tro at miljøvennlig kjøring betyr å kjøre saktest mulig\n- Å bremse hardt i stedet for å slippe gassen tidlig\n- Å kjøre med for lavt dekktrykk\n- Å la takboksen stå på hele året\n- Å la motoren gå unødvendig på tomgang\n- Å spare strøm eller drivstoff på bekostning av sikt og sikkerhet\n- Å tro at elbil ikke påvirkes av fart, kulde eller kjørestil'
+            },
+            {
+                title: 'Oppsummering',
+                type: 'info',
+                content: 'Miljøvennlig kjøring er egentlig bare smart kjøring. Du sparer energi, reduserer utslipp, sliter mindre på bilen og får bedre kontroll i trafikken.\n\nHusk dette til teoriprøven:\n\n- Se langt frem\n- Kjør jevnt\n- Slipp gassen tidlig\n- Bruk riktig gir\n- Hold riktig dekktrykk\n- Fjern unødvendig last og takboks\n- Unngå tomgang\n- Prioriter alltid sikkerhet og sikt'
+            }
+        ],
+        faq: [
+            {
+                question: 'Hva er miljøvennlig kjøring?',
+                answer: 'Miljøvennlig kjøring betyr å kjøre på en måte som reduserer energibruk, utslipp og slitasje. Det handler blant annet om jevn fart, riktig gir, riktig dekktrykk og å unngå unødvendig tomgang.'
+            },
+            {
+                question: 'Hva er økonomisk kjøring?',
+                answer: 'Økonomisk kjøring er en kjørestil som bruker minst mulig drivstoff eller strøm uten at det går ut over sikkerheten.'
+            },
+            {
+                question: 'Hvordan kan jeg redusere drivstofforbruket?',
+                answer: 'Du kan redusere forbruket ved å kjøre jevnt, planlegge tidlig, bruke riktig gir, holde riktig dekktrykk, unngå tomgang og fjerne takboks eller unødvendig last.'
+            },
+            {
+                question: 'Hvorfor bruker bilen mer drivstoff i høy fart?',
+                answer: 'I høy fart øker luftmotstanden kraftig. Bilen må bruke mer energi på å presse seg gjennom luften, og forbruket øker.'
+            },
+            {
+                question: 'Hvorfor øker takboks drivstofforbruket?',
+                answer: 'Takboks øker luftmotstanden. Jo høyere fart du kjører i, desto mer energi bruker bilen.'
+            },
+            {
+                question: 'Er elbil alltid miljøvennlig å kjøre?',
+                answer: 'Elbil har ingen lokale utslipp under kjøring, men energibruken påvirkes fortsatt av fart, temperatur, dekktrykk, last og kjørestil.'
+            },
+            {
+                question: 'Skal man slå av motoren ved tomgang?',
+                answer: 'Ved lengre stopp bør du slå av motoren hvis det er praktisk og trygt. Unødvendig tomgang gir forbruk, utslipp og støy.'
+            }
+        ],
+        miniQuiz: [
+            {
+                question: 'Hva er det viktigste prinsippet i økonomisk og miljøvennlig kjøring?',
+                options: [
+                    'Å kjøre saktest mulig hele tiden',
+                    'Å kjøre jevnt og forutseende',
+                    'Å bremse sent og hardt',
+                    'Å bruke lavest mulig gir'
+                ],
+                correct: 'Å kjøre jevnt og forutseende',
+                explanation: 'Jevn og forutseende kjøring reduserer unødvendig akselerasjon og bremsing. Det gir lavere forbruk og bedre trafikksikkerhet.'
+            },
+            {
+                question: 'Du ser at trafikklyset foran blir rødt. Hva er mest miljøvennlig?',
+                options: [
+                    'Holde farten helt frem og bremse hardt',
+                    'Slippe gassen tidlig og la bilen rulle rolig ned i fart',
+                    'Gire ned kraftig og øke turtallet',
+                    'Akselerere for å komme nærmere køen'
+                ],
+                correct: 'Slippe gassen tidlig og la bilen rulle rolig ned i fart',
+                explanation: 'Når du slipper gassen tidlig, bruker bilen mindre energi og du unngår unødvendig hard bremsing.'
+            },
+            {
+                question: 'Hva kan for lavt dekktrykk føre til?',
+                options: [
+                    'Lavere forbruk og bedre komfort',
+                    'Høyere forbruk, mer dekkslitasje og dårligere grep',
+                    'Kortere bremselengde på alle underlag',
+                    'At bilen bruker mindre energi i høy fart'
+                ],
+                correct: 'Høyere forbruk, mer dekkslitasje og dårligere grep',
+                explanation: 'For lavt dekktrykk gir høyere rullemotstand. Det kan øke forbruket, gi dårligere kjøreegenskaper og slite dekkene mer.'
+            },
+            {
+                question: 'Hvorfor bør du ta av takboks når du ikke bruker den?',
+                options: [
+                    'Fordi den øker luftmotstanden og forbruket',
+                    'Fordi den gjør bilen lettere å parkere, men påvirker ikke forbruket',
+                    'Fordi den bare er lovlig om vinteren',
+                    'Fordi den reduserer dekktrykket'
+                ],
+                correct: 'Fordi den øker luftmotstanden og forbruket',
+                explanation: 'Takboks og takstativ øker luftmotstanden. Det kan gi merkbart høyere energibruk, særlig i høy fart.'
+            },
+            {
+                question: 'Hva er riktig om klimaanlegg, varme og energisparing?',
+                options: [
+                    'Du bør aldri bruke det hvis du vil spare energi',
+                    'Sikt og sikkerhet går foran energisparing',
+                    'Aircondition påvirker bare elbiler',
+                    'Bakrutevarme er forbudt under kjøring'
+                ],
+                correct: 'Sikt og sikkerhet går foran energisparing',
+                explanation: 'Du skal alltid prioritere sikt og sikkerhet. Bruk varme, ventilasjon og klimaanlegg når det trengs for trygg kjøring.'
+            },
+            {
+                question: 'Hva skjer vanligvis med forbruket når farten øker mye på motorvei?',
+                options: [
+                    'Forbruket går ned fordi motoren jobber jevnere',
+                    'Forbruket øker fordi luftmotstanden blir større',
+                    'Forbruket er alltid likt uansett hastighet',
+                    'Forbruket påvirkes bare av dekktrykk'
+                ],
+                correct: 'Forbruket øker fordi luftmotstanden blir større',
+                explanation: 'Høyere fart gir mer luftmotstand. Derfor øker energibruken betydelig når farten blir høy.'
+            },
+            {
+                question: 'Hva betyr regenerativ bremsing i en elbil?',
+                options: [
+                    'At bilen bruker mer drivstoff når du bremser',
+                    'At bilen kan hente tilbake noe energi når du slipper gassen eller bremser lett',
+                    'At bremsene ikke slites i det hele tatt',
+                    'At bilen lader raskere jo hardere du bremser'
+                ],
+                correct: 'At bilen kan hente tilbake noe energi når du slipper gassen eller bremser lett',
+                explanation: 'Regenerativ bremsing gjør at elbilen kan hente tilbake noe energi ved lett bremsing eller når du slipper gassen.'
             }
         ]
     },
@@ -2649,6 +2803,145 @@ export const theoryArticles: TheoryTopic[] = [
                 options: ['Ringer etter veihjelp', 'Gjør deg synlig og sikre stedet', 'Begynner å reparere feilen', 'Går ut og vinker til andre biler'],
                 correct: 'Gjør deg synlig og sikre stedet',
                 explanation: 'Ta på refleksvest, sett ut varseltrekant og bruk nødblink for å hindre påkjørsel.'
+            }
+        ]
+    },
+
+    {
+        id: 'bilens-lys',
+        title: 'Bilens lys til teoriprøven klasse B',
+        icon: '💡',
+        shortDescription: 'Lær riktig bruk av bilens lys til teoriprøven: nærlys, fjernlys, tåkelys, nødblink og autolys. Lær også typiske feller du bør unngå.',
+        color: 'var(--apple-yellow)',
+        seoTitle: 'Bilens lys – nærlys, fjernlys og tåkelys | Teori-test.no',
+        seoDescription: 'Lær riktig bruk av bilens lys til teoriprøven klasse B: nærlys, fjernlys, kjørelys, tåkelys, baklys, bremselys, blinklys, nødblink og autolys i tunnel.',
+        sections: [
+            {
+                title: 'Bilens lys til teoriprøven klasse B',
+                type: 'text',
+                content: 'Bilens lys handler ikke bare om å se veien. Like viktig er det at andre ser deg, forstår hva du skal gjøre, og ikke blir blendet.\n\nPå teoriprøven klasse B kan du få spørsmål om nærlys, fjernlys, kjørelys, tåkelys, baklys, bremselys, blinklys, nødblink, parkeringslys, skiltlys og ryggelys. Ofte handler spørsmålet ikke bare om hva lyset heter, men om når du skal bruke det.'
+            },
+            {
+                title: 'Kort forklart',
+                type: 'info',
+                content: 'Nærlys eller kjørelys skal være tent under kjøring. Fjernlys gir best sikt, men må ikke blende andre trafikanter. Tåkelys foran skal ikke brukes sammen med nærlys. Baklys må være tent når forholdene krever det, for eksempel i mørke, tunnel og dårlig sikt.\n\nHusk dette til teoriprøven:\n\n- Du skal bruke lys etter forholdene.\n- Kjørelys foran betyr ikke alltid at baklysene er tent.\n- Fjernlys må blendes ned når det kan blende andre.\n- Tåkelys foran kan brukes som kjørelys på dagtid, men ikke sammen med nærlys.\n- Nødblink brukes ved fare, ikke som parkeringslys.\n- Føreren har ansvaret, også når bilen har autolys.\n\n![Bilens frontlys på personbil – nærlys, kjørelys og riktig lysbruk til teoriprøven klasse B](/bilens_lys_hovedbilde.png)'
+            },
+            {
+                title: 'Oversikt: bilens lys og typiske teorifeller',
+                type: 'text',
+                content: 'Les også:\n- [Mørkekjøring](/laeringsressurser/morkekjoring)\n- [Sikkerhetskontroll](/laeringsressurser/sikkerhetskontroll)\n- [Trafikkuhell og førstehjelp](/laeringsressurser/trafikkuhell)\n\n| Lys | Når brukes det? | Typisk teorifelle |\n|---|---|---|\n| Nærlys | Ved kjøring i mørke, tunnel, regn, snø, tåke eller dårlig sikt | Å tro at kjørelys alltid er nok |\n| Kjørelys | På dagtid og ved gode siktforhold | Baklys er ikke alltid tent sammen med kjørelys |\n| Fjernlys | På mørke veier når det ikke blender andre | Å glemme å blende ned for møtende eller forankjørende |\n| Tåkelys foran | Ved tåke/svært dårlig sikt, eller som kjørelys på dagtid i stedet for nærlys | Skal ikke brukes sammen med nærlys |\n| Kurvelys | Ved lav fart i svinger, avhengig av bilens system | Å tro at det er ekstra lys du kan bruke fritt |\n| Baklys | Gjør bilen synlig bakfra, særlig i mørke, tunnel og dårlig sikt | Mange biler har ikke baklys tent med bare kjørelys |\n| Bremselys | Lyser automatisk når du bremser | Defekte bremselys gjør at bilen bak får mindre tid til å reagere |\n| Blinklys/retningslys | Ved sving, feltskifte, forbikjøring og ut av rundkjøring | Å blinke for sent, eller glemme å blinke ut av rundkjøring |\n| Nødblink/nødsignallys | Ved fare, stans, ulykke eller motorstopp | Å bruke nødblink som “parkeringstillatelse” |\n| Parkeringslys | Når bilen står parkert eller stanset og må være synlig | Å kjøre med bare parkeringslys |\n| Skiltlys | Lyser opp registreringsskiltet bak | Lett å glemme ved sikkerhetskontroll |\n| Ryggelys | Lyser når bilen settes i revers | Det varsler rygging, men gir deg ikke forkjørsrett |\n| Autolys | Automatisk lysfunksjon på nyere biler | Kan lure deg i tunnel, regn, tåke eller skumring |'
+            },
+            {
+                title: 'Nærlys og kjørelys',
+                type: 'text',
+                content: 'Nærlys er det vanlige lyset du bruker når du kjører i mørke, i tunnel eller når sikten er dårlig. Nærlys gjør bilen synlig og lyser opp veien uten å blende møtende trafikk slik fjernlys kan gjøre.\n\nKjørelys brukes typisk på dagtid når sikten er god. Mange moderne biler har automatiske kjørelys foran. Men her kommer en viktig teorifelle: baklysene er ikke nødvendigvis tent når du kjører med kjørelys.\n\nDerfor må du selv vurdere forholdene. Er det tunnel, regn, snø, tåke, skumring eller mørkt, bør du sørge for at både lys foran og bak er tent.'
+            },
+            {
+                title: 'Fjernlys',
+                type: 'warning',
+                content: 'Fjernlys gir mye bedre sikt på mørke veier. Det er lurt å bruke fjernlys når det hjelper deg å se lenger frem, særlig på landevei uten møtende trafikk.\n\nNærlys kan brukes sammen med fjernlys, men fjernlys må ikke brukes slik at du blender eller forstyrrer andre trafikanter.\n\nDu må blende ned når fjernlyset kan blende:\n\n- møtende trafikk\n- bilen foran deg\n- ved bakketopper\n- i svinger der noen plutselig kan komme imot\n- når andre trafikanter kan bli forstyrret av lyset\n\nRiktig tankegang er: Bruk fjernlys når det gir bedre sikt, men blend ned i tide.'
+            },
+            {
+                title: 'Tåkelys og kurvelys',
+                type: 'text',
+                content: 'Tåkelys foran lyser lavt og bredt. De kan være nyttige ved tåke, kraftig snøvær eller svært dårlig sikt.\n\nDen viktige regelen er enkel: Tåkelys foran skal ikke brukes sammen med nærlys.\n\nPå dagtid kan tåkelys brukes som kjørelys i stedet for nærlys, men ikke som “ekstra lys” sammen med nærlys. Det kan blende og forstyrrer andre trafikanter.\n\nKurvelys hjelper bilen å lyse opp svingen ved lav fart. På nyere biler styres dette ofte automatisk. Det er ikke et lys du bruker fritt for å få mer lys i vanlig kjøring.'
+            },
+            {
+                title: 'Baklys, bremselys og skiltlys',
+                type: 'info',
+                content: 'Baklys gjør bilen synlig bakfra. Dette er ekstra viktig i tunnel, mørke og dårlig sikt.\n\nBremselys tennes automatisk når du bremser. De forteller trafikken bak deg at farten reduseres. Defekte bremselys er farlig fordi føreren bak får mindre tid til å reagere.\n\nSkiltlys lyser opp registreringsskiltet bak. Det er lett å glemme, men det hører med til bilens lysutstyr og kan komme i spørsmål om sikkerhetskontroll.'
+            },
+            {
+                title: 'Blinklys og nødblink',
+                type: 'warning',
+                content: 'Blinklys, også kalt retningslys, brukes for å vise andre trafikanter hvor du har tenkt deg.\n\nDu bruker blinklys ved:\n\n- svinging\n- feltskifte\n- forbikjøring\n- utkjøring fra veikant\n- kjøring ut av rundkjøring\n\nBlink i god tid, men ikke så tidlig at andre misforstår deg.\n\nNødblink brukes når bilen eller situasjonen skaper fare. Det kan være ved motorstopp, trafikkuhell, farlig stans eller plutselig kø.\n\nNødblink gjør deg mer synlig, men det gjør ikke en ulovlig stans lovlig.'
+            },
+            {
+                title: 'Parkeringslys og ryggelys',
+                type: 'text',
+                content: 'Parkeringslys brukes når bilen står parkert eller stanset og må være synlig. De lyser svakere enn nærlys.\n\nDu skal ikke kjøre vanlig med bare parkeringslys. De gir for lite lys og gjør deg dårlig synlig.\n\nRyggelys tennes når bilen settes i revers. Det varsler andre om at bilen rygger eller kan komme bakover. Men ryggelys betyr ikke at du har forkjørsrett. Du har fortsatt ansvar for å rygge forsiktig.'
+            },
+            {
+                title: 'Autolys i tunnel og dårlig sikt',
+                type: 'tip',
+                content: 'Autolys er praktisk, men du kan ikke stole blindt på automatikken. Sensoren kan reagere for sent, eller bilen kan ha lys foran uten at baklysene er tent.\n\nDette er spesielt viktig ved:\n\n- tunnel\n- regn\n- snø\n- tåke\n- skumring\n- gråvær\n- mørk vei med mye skygge\n\nEt godt eksempel er når du kjører inn i tunnel på dagtid. Bilen kan se “opplyst” ut foran, men baklysene kan fortsatt være av. Da blir du vanskeligere å se bakfra.\n\nTil teoriprøven bør du huske dette: Føreren har ansvaret, ikke automatikken. Er du usikker, slå på nærlys manuelt.'
+            },
+            {
+                title: 'Typiske teoriprøve-feller om bilens lys',
+                type: 'warning',
+                content: '1. “Kjørelys er alltid nok.”\n\nFeil. I tunnel, mørke og dårlig sikt må du passe på at også baklysene er tent.\n\n2. “Tåkelys og nærlys gir ekstra god sikt.”\n\nFeil. Tåkelys foran skal ikke brukes sammen med nærlys.\n\n3. “Fjernlys er best når det er mørkt.”\n\nBare hvis du ikke blender andre.\n\n4. “Nødblink betyr at jeg kan stoppe hvor jeg vil.”\n\nFeil. Nødblink varsler fare, men gjør ikke en farlig eller ulovlig stans grei.\n\n5. “Autolys ordner alt.”\n\nFeil. Du som fører må kontrollere at riktig lys er tent.'
+            }
+        ],
+        faq: [
+            {
+                question: 'Hva er forskjellen på nærlys og kjørelys?',
+                answer: 'Kjørelys brukes ofte på dagtid i gode siktforhold. Nærlys brukes når du trenger bedre synlighet, for eksempel i mørke, tunnel eller dårlig sikt.'
+            },
+            {
+                question: 'Er baklys alltid tent når kjørelys er på?',
+                answer: 'Nei. På mange biler er baklysene ikke tent med bare kjørelys. Dette er en viktig teoriprøvefelle.'
+            },
+            {
+                question: 'Når skal jeg bruke fjernlys?',
+                answer: 'Bruk fjernlys på mørke veier når det gir bedre sikt, men blend ned når du kan blende andre trafikanter.'
+            },
+            {
+                question: 'Kan jeg bruke tåkelys sammen med nærlys?',
+                answer: 'Nei. Tåkelys foran skal ikke brukes sammen med nærlys.'
+            },
+            {
+                question: 'Når bruker jeg nødblink?',
+                answer: 'Når bilen eller situasjonen skaper fare, for eksempel ved motorstopp, ulykke eller farlig stans. Nødblink er ikke en unnskyldning for ulovlig parkering.'
+            },
+            {
+                question: 'Hva bør jeg gjøre med autolys i tunnel?',
+                answer: 'Sjekk at riktig lys er tent, også baklys. Er du usikker, slå på nærlys manuelt.'
+            },
+            {
+                question: 'Hvilke lys er røde bak på bilen?',
+                answer: 'Baklys og bremselys er røde. Ryggelys er hvitt, og blinklys/retningslys er oransje.'
+            },
+            {
+                question: 'Kan dette komme på teoriprøven klasse B?',
+                answer: 'Ja. Bruk av lys, mørke, siktforhold og kontroll av bilens lys er relevante temaer til teoriprøven klasse B.'
+            }
+        ],
+        miniQuiz: [
+            {
+                question: 'Du kjører inn i en tunnel på dagtid. Bilen står på autolys/kjørelys. Hva bør du sjekke?',
+                options: ['Om baklysene er tent', 'Om fjernlyset er på hele tiden', 'Om du kan slå av alle lys', 'Om nødblink bør brukes i tunnelen'],
+                correct: 'Om baklysene er tent',
+                explanation: 'I tunnel må bilen være synlig også bakfra. Autolys/kjørelys kan lure deg hvis baklysene ikke er tent.'
+            },
+            {
+                question: 'Kan du bruke tåkelys foran sammen med nærlys?',
+                options: ['Ja, alltid', 'Ja, men bare i mørke', 'Nei', 'Bare på motorvei'],
+                correct: 'Nei',
+                explanation: 'Tåkelys foran skal ikke brukes sammen med nærlys.'
+            },
+            {
+                question: 'Når må du blende ned fra fjernlys?',
+                options: ['Når fjernlyset kan blende møtende eller forankjørende trafikk', 'Bare når du kjører i by', 'Aldri hvis veien er mørk', 'Bare hvis bilen foran blinker med nødblink'],
+                correct: 'Når fjernlyset kan blende møtende eller forankjørende trafikk',
+                explanation: 'Fjernlys er nyttig, men skal ikke brukes slik at andre blir blendet.'
+            },
+            {
+                question: 'Hvilke lys viser bilen bak at du bremser?',
+                options: ['Skiltlys', 'Bremselys', 'Ryggelys', 'Parkeringslys'],
+                correct: 'Bremselys',
+                explanation: 'Bremselysene tennes når du bremser, slik at trafikken bak ser at farten reduseres.'
+            },
+            {
+                question: 'Hva bør du bruke ved motorstopp eller farlig stans?',
+                options: ['Nødblink, og eventuelt varseltrekant hvis bilen står farlig', 'Bare fjernlys', 'Bare parkeringslys', 'Ryggelys'],
+                correct: 'Nødblink, og eventuelt varseltrekant hvis bilen står farlig',
+                explanation: 'Nødblink varsler fare. Står bilen til fare eller hinder, må du også tenke sikring av stedet.'
+            },
+            {
+                question: 'Hva betyr ryggelys for andre trafikanter?',
+                options: ['At bilen kan komme bakover', 'At bilen har forkjørsrett', 'At bilen står parkert', 'At føreren gir deg tegn til å kjøre først'],
+                correct: 'At bilen kan komme bakover',
+                explanation: 'Ryggelys varsler at bilen rygger eller kan rygge, men føreren har fortsatt ansvar.'
             }
         ]
     }
