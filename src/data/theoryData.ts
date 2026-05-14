@@ -1055,184 +1055,283 @@ export const theoryTopics: TheoryTopic[] = [
 
     {
         id: 'skilt',
-        title: 'Trafikkskilt – Komplett oversikt til teoriprøven for bil',
+        title: 'Trafikkskilt til teoriprøven klasse B',
         icon: '🚦',
-        shortDescription: 'Trafikkskilt er hjørnesteinen i trafikksikkerhet. Her får du vår komplette guide til de norske trafikkskiltene du må kjenne til for klasse B.',
+        shortDescription: 'Lær trafikkskilt til teoriprøven klasse B: fareskilt, vikeplikt, forbudsskilt, påbudsskilt, opplysningsskilt, underskilt og vanlige skiltfeller.',
         color: 'var(--apple-blue)',
-        seoTitle: 'Trafikkskilt til teoriprøven (Klasse B): Komplett oversikt 2026 | Teori-test.no',
-        seoDescription: 'Sliter du med å huske trafikkskiltene? Få en enkel og komplett oversikt over forbudsskilt, fareskilt og vikeplikt. Lær de vanligste eksamensfellene her!',
+        seoTitle: 'Trafikkskilt til teoriprøven – skiltgrupper og vanlige feil | Teori-test.no',
+        seoDescription: 'Lær trafikkskilt til teoriprøven klasse B: fareskilt, vikeplikt, forbudsskilt, påbudsskilt, opplysningsskilt, underskilt og vanlige skiltfeller.',
         sections: [
             {
-                title: '1. Knekk koden: Slik er norske trafikkskilt organisert',
+                title: 'Trafikkskilt til teoriprøven klasse B',
+                type: 'text',
+                content: 'Trafikkskilt handler ikke bare om å kjenne igjen et symbol. På teoriprøven må du forstå hva skiltet betyr i en konkret situasjon: Skal du bremse, vike, stoppe, svinge, la være å kjøre inn eller bare være ekstra oppmerksom?\n\nDet smarteste er å lære systemet først. Form og farge forteller ofte hvilken type regel som gjelder før du rekker å lese detaljene.'
+            },
+            {
+                title: 'Direkte svar',
+                type: 'info',
+                content: 'Norske trafikkskilt er delt inn i hovedgrupper som fareskilt, vikeplikt- og forkjørsskilt, forbudsskilt, påbudsskilt, opplysningsskilt, serviceskilt, vegvisningsskilt, underskilt og markeringsskilt. Til teoriprøven klasse B bør du først lære form og farge, deretter hva skiltet betyr i trafikken.'
+            },
+            {
+                title: 'Kort forklart',
+                type: 'warning',
+                content: '- Trekant med rød kant varsler fare.\n- Rundt skilt med rød kant betyr ofte forbud.\n- Blått rundt skilt betyr påbud.\n- Blå firkant gir ofte opplysning.\n- STOPP-skiltet er åttekantet og krever full stans.\n- Underskilt endrer eller presiserer hovedskiltet.\n- Teoriprøven spør ofte om hva du skal gjøre, ikke bare hva skiltet heter.\n\nLes også:\n[Vikeplikt](/laeringsressurser/vikeplikt), [rundkjøring](/laeringsressurser/rundkjoring), [forbikjøring](/laeringsressurser/forbikjoring) og [veimerking](/laeringsressurser/veimerking).'
+            },
+            {
+                title: 'Form og farge: slik kjenner du igjen skilt',
+                type: 'text',
+                content: '| Form/farge | Betyr ofte | Eksempel |\n|---|---|---|\n| Trekant med rød kant | Fare | Barn, elg, glatt vei |\n| Omvendt trekant | Vikeplikt | Vikeplikt |\n| Åttekant | Full stans | STOPP |\n| Gul diamant | Forkjørsvei | Forkjørsveg |\n| Rundt med rød kant | Forbud | Innkjøring forbudt, fartsgrense |\n| Rundt blått | Påbud | Påbudt rundkjøring |\n| Blå firkant | Opplysning | Gangfelt |\n| Hvitt underskilt | Presisering | Avstand, tid, kjøretøygruppe |\n| Gul/svart markering | Veiforløp eller hindring | Retningsmarkering |'
+            },
+            {
+                title: 'De 9 skiltkategoriene',
                 type: 'signs',
-                content: 'Norske trafikkskilt er delt inn i faste kategorier basert på farge og form. Kjenner du fargekoden og formen, kan du ofte gjette deg til hva et ukjent skilt betyr på teoritentamen:',
+                content: 'Kjenner du form og farge, kan du ofte plassere et ukjent skilt i riktig gruppe – før du leser detaljene.',
                 signs: [
                     {
+                        name: 'Fareskilt',
+                        description: '100-serien\nVarsler fare på eller ved veien. Skiltet betyr ikke automatisk ny fartsgrense, men du må tilpasse farten.\nEksempler: Barn (142), Elg (146), Glatt kjørebane (116)\nTeorifelle: Fareskilt varsler fare, men regulerer ikke farten alene.',
+                        imageUrl: '/signs/fareskilt/skilt-142-barn.jpg'
+                    },
+                    {
+                        name: 'Vikeplikt- og forkjørsskilt',
+                        description: '200-serien\nBestemmer hvem som skal vike, stoppe eller har prioritet. STOPP (204) krever alltid full stans.\nEksempler: Vikeplikt (202), STOPP (204), Forkjørsveg (206)\nTeorifelle: Vikeplikt og stopplikt er ikke det samme.',
+                        imageUrl: '/signs/vikeplikt-og-forkjorsskilt/skilt-202-vikeplikt.jpg'
+                    },
+                    {
                         name: 'Forbudsskilt',
-                        description: 'Runde med rød kant: Forteller deg strengt hva du ikke har lov til.',
-                        signId: 'prohibition-template'
+                        description: '300-serien\nForteller hva som er forbudt. Diagonal strek betyr ofte at forbudet eller reguleringen opphører.\nEksempler: Innkjøring forbudt (302), Forbikjøring forbudt (334), Fartsgrense (362)\nTeorifelle: Opphørsskilt betyr at forbudet slutter, ikke at et nytt forbud starter.',
+                        imageUrl: '/signs/forbudsskilt/skilt-302-innkjoring-forbudt.jpg'
                     },
                     {
                         name: 'Påbudsskilt',
-                        description: 'Runde med blå bunn: Forteller deg hva du må gjøre.',
-                        signId: 'mandatory-template'
-                    },
-                    {
-                        name: 'Fareskilt',
-                        description: 'Trekantede med rød kant: Varsler om fare fremover, slik at du kan senke farten.',
-                        signId: 'danger-template'
-                    },
-                    {
-                        name: 'Vikepliktsskilt',
-                        description: 'Ulike former: Forteller hvem som skal vike for hvem i et veikryss eller på en strekning.',
-                        signId: 'yield'
+                        description: '400-serien\nForteller hva du må gjøre. Skiltene er runde og blå med hvitt symbol.\nEksempler: Påbudt kjøreretning (402), Påbudt rundkjøring (406)\nTeorifelle: Påbudt rundkjøring viser kjøreretning. Vikeplikt reguleres normalt med eget skilt.',
+                        imageUrl: '/signs/pabudsskilt/skilt-406-pabudt-rundkjoring.jpg'
                     },
                     {
                         name: 'Opplysningsskilt',
-                        description: 'Firkantede: Gir deg nyttig informasjon, uten å forby eller påby noe.',
-                        signId: 'info-template'
+                        description: '500-serien\nGir informasjon om regler, steder eller trafikale forhold. Noen opplysningsskilt er også regulerende.\nEksempler: Motorveg (502), Gangfelt (516), Envegskjøring (526)\nTeorifelle: Noen opplysningsskilt betyr at en bestemt regel gjelder fra skiltet.',
+                        imageUrl: '/signs/opplysningsskilt/skilt-516-gangfelt.jpg'
+                    },
+                    {
+                        name: 'Serviceskilt',
+                        description: '600-serien\nViser service og tilbud langs veien, som bensinstasjon, rasteplass eller førstehjelp.\nEksempler: Førstehjelp (602), Bensinstasjon (605), Rasteplass (613)',
+                        imageUrl: '/signs/serviceskilt/skilt-605-bensinstasjon.jpg'
+                    },
+                    {
+                        name: 'Vegvisningsskilt',
+                        description: '700-serien\nHjelper deg å finne retning, sted, avstand og veitype. Farge kan vise hvilken type vei eller mål skiltet gjelder.\nEksempler: Vegviser (713), stedsnavnskilt, avkjøringsviser',
+                        imageUrl: '/signs/vegvisningsskilt/skilt-713-vegviser.jpg'
                     },
                     {
                         name: 'Underskilt',
-                        description: 'Rektangulære små skilt: Står alltid under et hovedskilt for å presisere når eller for hvem hovedskiltet gjelder.',
-                        signId: 'sub-sign-template'
+                        description: '800-serien\nPresiserer hovedskiltet. Det kan vise avstand, tid, kjøretøygruppe eller unntak.\nEksempler: Avstand (802), Tid (806), Kjøretøygruppe (808)\nTeorifelle: Underskilt må alltid leses sammen med hovedskiltet.',
+                        imageUrl: '/signs/underskilt/skilt-802-avstand.jpg'
+                    },
+                    {
+                        name: 'Markeringsskilt',
+                        description: '900-serien\nMarkerer hindringer, veiforløp, svinger eller midlertidige endringer. De hjelper deg å plassere bilen riktig.\nEksempler: Retningsmarkering (904), bakgrunnsmarkering, hindermarkering',
+                        imageUrl: '/signs/markeringsskilt/skilt-904-retningsmarkering.jpg'
                     }
                 ]
             },
             {
-                title: '2. Vikepliktsskilt og forkjørsregulering',
+                title: 'Fareskilt',
                 type: 'signs',
-                content: 'Dette er skiltene som styrer hvem som har retten på sin side. Fordi konsekvensene er så store ved feil, har disse skiltene unike former, slik at du kjenner dem igjen selv om de er dekket av snø:\n\n[Les mer i vår komplette guide til vikeplikt og høyreregelen](/laeringsressurser/vikeplikt)',
+                content: 'Fareskilt varsler fare på eller ved veien. De er vanligvis trekantede med rød kant og hvit bunn.\n\nEksempler: Barn, Elg, Glatt vei, Farlig sving\n\n**Viktig teorifelle:** Et fareskilt betyr ikke automatisk lavere fartsgrense. Det betyr at du må tilpasse farten etter faren.',
                 signs: [
                     {
-                        name: 'Vikeplikt',
-                        description: 'Trekant med spissen ned: Du skal vike for all trafikk på kryssende vei.',
-                        signId: 'yield'
-                    },
-                    {
-                        name: 'Stopp',
-                        description: 'Rød åttekant: Du MÅ stoppe helt opp ved stopplinjen (eller før krysset), selv om veien virker helt klar. Bilen skal stå helt stille.',
-                        signId: 'stop'
-                    },
-                    {
-                        name: 'Forkjørsvei',
-                        description: 'Gul rute / Diamant: Du har forkjørsrett. Trafikk fra sideveier har vikeplikt for deg.',
-                        signId: 'priority-road'
-                    },
-                    {
-                        name: 'Slutt på forkjørsvei',
-                        description: 'Gul rute med grå skravering: Forkjørsretten din er over, og du må vanligvis forholde deg til høyreregelen igjen.',
-                        signId: 'end-priority-road'
+                        name: 'Fareskilt 142 Barn',
+                        description: 'Varsler om barn i nærheten av veien. Tilpass farten.',
+                        imageUrl: '/signs/fareskilt/skilt-142-barn.jpg'
                     }
                 ]
             },
             {
-                title: '3. Forbudsskilt – Hva du ikke har lov til',
+                title: 'Vikeplikt- og forkjørsskilt',
                 type: 'signs',
-                content: 'Disse skiltene er runde med en tydelig rød kant på hvit bunn.',
+                content: 'Disse skiltene bestemmer hvem som skal kjøre først, hvem som skal vike, og når du må stanse helt.\n\nViktige skilt: Vikeplikt, STOPP, Forkjørsveg, Slutt på forkjørsveg, Vikeplikt overfor møtende kjørende\n\n**Viktig teorifelle:** Vikeplikt og stopplikt er ikke det samme. Ved STOPP-skilt må bilen stanse helt, også hvis veien ser klar ut.',
                 signs: [
                     {
-                        name: 'Fartsgrense 50',
-                        description: 'Viser maksimal lovlig hastighet. Dette skiltet gjelder frem til du passerer et nytt fartsgrenseskilt.',
-                        signId: 'speed-50'
+                        name: 'Skilt 202 Vikeplikt',
+                        description: 'Omvendt trekant. Du skal vike for trafikk på veien du kjører inn på.',
+                        imageUrl: '/signs/vikeplikt-og-forkjorsskilt/skilt-202-vikeplikt.jpg'
                     },
                     {
-                        name: 'Innkjøring forbudt',
-                        description: 'Gjelder kun i den retningen du ser skiltet. Det betyr vanligvis at det er en enveiskjørt gate du forsøker å kjøre inn i fra feil side.',
-                        signId: 'no-entry'
-                    },
-                    {
-                        name: 'Parkering forbudt',
-                        description: 'Du kan stoppe for å slippe av en passasjer, men du kan ikke forlate bilen.',
-                        signId: 'no-parking'
-                    },
-                    {
-                        name: 'All stans forbudt',
-                        description: 'Her har du ikke engang lov til å stoppe for å slippe av eller plukke opp noen.',
-                        signId: 'no-stopping'
+                        name: 'Skilt 204 STOPP',
+                        description: 'Åttekantet. Du må stanse helt før du kjører videre, uansett om veien er klar.',
+                        imageUrl: '/signs/vikeplikt-og-forkjorsskilt/skilt-204-stopp.jpg'
                     }
                 ]
             },
             {
-                title: '4. Fareskilt – Vær forberedt',
+                title: 'Forbudsskilt',
                 type: 'signs',
-                content: 'Fareskiltene varsler om farlige forhold fremover. Avstanden fra skiltet til faren avhenger av fartsgrensen:\n- Inntil 60 km/t: ca. 50–150 meter før faren.\n- 70 km/t eller mer: ca. 150–250 meter før faren.\n- 90 km/t eller mer: ofte inntil 400 meter før faren.',
+                content: 'Forbudsskilt forteller hva som er forbudt. De er ofte runde med rød kant.\n\nEksempler: Innkjøring forbudt, Forbikjøring forbudt, Fartsgrense, Parkering forbudt\n\n**Viktig teorifelle:** Et opphørsskilt betyr at et tidligere forbud slutter å gjelde. Det er ikke et nytt forbud.',
                 signs: [
                     {
-                        name: 'Farlig sving (Høyre)',
-                        description: 'Varsler om en sving som er skarpere enn veien ellers gir inntrykk av.',
-                        signId: 'dangerous-curve-right'
+                        name: 'Skilt 302 Innkjøring forbudt',
+                        description: 'Rund med rød kant. Du har ikke lov til å kjøre inn.',
+                        imageUrl: '/signs/forbudsskilt/skilt-302-innkjoring-forbudt.jpg'
                     },
                     {
-                        name: 'Glatt vei',
-                        description: 'Vær forberedt på at underlaget kan være spesielt glatt, for eksempel ved regn eller frost.',
-                        signId: 'slippery-road'
+                        name: 'Skilt 362 Fartsgrense 50',
+                        description: 'Fartsgrensen gjelder fra skiltet og frem til nytt skilt eller tettsted.',
+                        imageUrl: '/signs/forbudsskilt/skilt-362-50-fartsgrense.jpg'
                     },
                     {
-                        name: 'Vegarbeid',
-                        description: 'Betyr at du må forvente nedsatt fartsgrense, arbeidere i veibanen og endret kjøremønster.',
-                        signId: 'road-work'
-                    },
-                    {
-                        name: 'Elg / Vilt',
-                        description: 'Vær ekstremt oppmerksom på dyr i vegbanen, spesielt i skumring og demring.',
-                        signId: 'moose'
+                        name: 'Skilt 364 Slutt på særskilt fartsgrense',
+                        description: 'Diagonal strek betyr at den særskilte fartsgrensen opphører.',
+                        imageUrl: '/signs/forbudsskilt/skilt-364-50-slutt-pa-saerskilt-fartsgrense.jpg'
                     }
                 ]
             },
             {
-                title: '5. Påbudsskilt – Ting du må gjøre',
+                title: 'Påbudsskilt',
                 type: 'signs',
-                content: 'Hvordan ser påbudsskilt ut? Påbudsskiltene er runde med blå bunn, hvit bord/kant og hvite symboler. Skiltene gir påbud om kjøreretning, bruk av kjørefelt og bestemte kjøremåter.',
+                content: 'Påbudsskilt forteller hva du må gjøre. De er runde, blå og har hvitt symbol.\n\nEksempel: Påbudt rundkjøring, Påbudt kjøreretning, Påbudt kjørefelt\n\n**Viktig teorifelle:** Påbudt rundkjøring viser hvilken retning du skal kjøre rundt trafikkøya. Vikeplikt inn i rundkjøringen reguleres normalt med eget vikepliktskilt.',
                 signs: [
                     {
-                        name: 'Påbudt kjøreretning (Rett frem)',
-                        description: 'Viser deg hvilken vei du må svinge i et kryss. Du kan ikke velge andre retninger.',
-                        signId: 'mandatory-straight'
-                    },
-                    {
-                        name: 'Påbudt rundkjøring',
-                        description: 'Viser at du nærmer deg en rundkjøring og må følge kjøreretningen mot klokka.',
-                        signId: 'roundabout'
+                        name: 'Påbudsskilt 406 Påbudt rundkjøring',
+                        description: 'Blå sirkel med pil. Du skal kjøre i pilens retning rundt trafikkøya.',
+                        imageUrl: '/signs/pabudsskilt/skilt-406-pabudt-rundkjoring.jpg'
                     }
                 ]
             },
             {
-                title: '6. Veivisningsskilt – Finn frem i trafikken',
-                type: 'info',
-                content: 'Veivisningsskilt hjelper deg å finne frem til riktig sted. Fargen på bakgrunnen forteller deg hva slags type mål skiltet peker mot:\n- Blå bakgrunn: Geografiske mål på motorvei.\n- Gul bakgrunn: Geografiske mål på vanlige veier.\n- Hvit bakgrunn: Lokale mål og bedrifter.\n- Oransje bakgrunn: Midlertidig omkjøring.\n- Brun bakgrunn: Turistmål og severdigheter.'
+                title: 'Opplysningsskilt',
+                type: 'signs',
+                content: 'Opplysningsskilt gir informasjon om regler, steder eller situasjoner på veien. Mange er blå firkanter eller rektangler.\n\nEksempel: Gangfelt, Envegskjøring, Motorveg, Tettbygd strøk\n\n**Viktig teorifelle:** Noen opplysningsskilt gir mer enn informasjon. De kan også fortelle at en bestemt trafikkregel gjelder fra skiltet.',
+                signs: [
+                    {
+                        name: 'Opplysningsskilt 516 Gangfelt',
+                        description: 'Du har vikeplikt for gående som er i gangfeltet eller på vei ut i det.',
+                        imageUrl: '/signs/opplysningsskilt/skilt-516-gangfelt.jpg'
+                    }
+                ]
             },
             {
-                title: 'Viktig: Midlertidig skilting overstyrer alt',
+                title: 'Serviceskilt og vegvisningsskilt',
+                type: 'signs',
+                content: 'Serviceskilt viser tilbud langs veien, som bensinstasjon, rasteplass eller førstehjelp. Vegvisningsskilt hjelper deg å finne retning, sted og veitype.\n\nDisse er vanligvis ikke de vanskeligste teoriskiltene, men du bør kjenne hovedprinsippet.',
+                signs: [
+                    {
+                        name: 'Serviceskilt 605 Bensinstasjon',
+                        description: 'Viser at det finnes bensinstasjon i nærheten.',
+                        imageUrl: '/signs/serviceskilt/skilt-605-bensinstasjon.jpg'
+                    },
+                    {
+                        name: 'Vegvisningsskilt 713 Vegviser',
+                        description: 'Viser retning og avstand til steder og veier.',
+                        imageUrl: '/signs/vegvisningsskilt/skilt-713-vegviser.jpg'
+                    }
+                ]
+            },
+            {
+                title: 'Underskilt',
+                type: 'signs',
+                content: 'Underskilt står under et hovedskilt og presiserer betydningen. Det kan handle om avstand, tid, kjøretøytype eller hvem regelen gjelder for.\n\nEksempel: Et parkering forbudt-skilt med underskilt om tid kan bety at forbudet bare gjelder bestemte klokkeslett.\n\n**Viktig teorifelle:** Mange leser hovedskiltet og glemmer underskiltet. På teoriprøven er underskilt ofte nøkkelen til riktig svar.',
+                signs: [
+                    {
+                        name: 'Underskilt 802 Avstand',
+                        description: 'Angir avstand fra skiltet til stedet regelen gjelder.',
+                        imageUrl: '/signs/underskilt/skilt-802-avstand.jpg'
+                    },
+                    {
+                        name: 'Underskilt 806 Tid',
+                        description: 'Angir tidsrommet en regel gjelder. For eksempel parkeringsforbud i bestemte timer.',
+                        imageUrl: '/signs/underskilt/skilt-806-tid.jpg'
+                    }
+                ]
+            },
+            {
+                title: 'Markeringsskilt',
+                type: 'signs',
+                content: 'Markeringsskilt viser hindringer, veiforløp eller farlige steder. De hjelper deg å forstå hvor veien går, særlig i svinger, ved innsnevring eller ved arbeid på veien.',
+                signs: [
+                    {
+                        name: 'Markeringsskilt 904 Retningsmarkering',
+                        description: 'Viser veiforløpets retning, særlig i skarpe svinger.',
+                        imageUrl: '/signs/markeringsskilt/skilt-904-retningsmarkering.jpg'
+                    }
+                ]
+            },
+            {
+                title: 'Vanlige feil med trafikkskilt',
                 type: 'warning',
-                content: 'Trafikkskilt med gul bakgrunn (gule skilt) betyr at det er en midlertidig situasjon, for eksempel på grunn av vegarbeid. Disse skiltene overstyrer ALLTID de permanente skiltene på strekningen. Pass ekstremt godt på midlertidige fartsgrenser og vikeplikt her!'
+                content: '| Feil | Hvorfor det er en felle | Slik unngår du den |\n|---|---|---|\n| Overser underskilt | Underskilt kan endre når eller hvem skiltet gjelder for | Les alltid hovedskilt og underskilt sammen |\n| Blander STOPP og vikeplikt | STOPP krever full stans, vikeplikt gjør ikke alltid det | Se etter åttekantet form |\n| Tror fareskilt endrer fartsgrensen | Fareskilt varsler fare, men setter ikke automatisk ny grense | Tilpass farten etter forholdene |\n| Leser opphørsskilt som forbud | Diagonal strek betyr ofte at forbudet slutter | Se etter streken og spør: opphører regelen her? |\n| Glemmer situasjonen rundt skiltet | Teoriprøven spør ofte hva du skal gjøre, ikke bare navnet | Se på vei, felt, trafikk og eventuelle underskilt |'
             },
             {
-                title: 'De 3 vanligste skilt-feilene på teoriprøven',
-                type: 'warning',
-                content: 'For å bestå teoriprøven hos Statens vegvesen på første forsøk, må du unngå disse klassiske tabbene:\n\n1. Forveksle stans og parkering: Mange blander «Parkering forbudt» (én skråstrek) med «All stans forbudt» (to skråstreker i kryss).\n2. Glemme hvor fareskilt gjelder: Fareskiltet gjelder ikke nøyaktig der stolpen står, det varsler om en fare et stykke lengre fremme.\n3. Misforstå fartsgrenser for gågate og gatetun: Fartsgrensen her er ikke 30 km/t, men gangfart (altså at du skal kjøre i samme tempo som folk går).'
+                title: 'Slik lærer du trafikkskilt effektivt',
+                type: 'tip',
+                content: '**Start med form og farge**\n\nIkke begynn med å pugge alle skilt enkeltvis. Lær først hva form og farge betyr. Da kan du plassere skiltet i riktig gruppe før du husker detaljene.\n\n**Øv i korte økter**\n\nDet er bedre å ta korte skiltøkter ofte enn én lang økt sjelden. Bruk gjerne 10–15 minutter på skiltquiz og repeter skiltene du bommer på.\n\n**Lær skilt i situasjon**\n\nPå teoriprøven er spørsmålet ofte: "Hva skal du gjøre her?" Ikke bare: "Hva heter skiltet?" Øv derfor på bilder og situasjoner der skiltet står sammen med vei, trafikk og oppmerking.\n\n**Prioriter de viktigste skiltene først**\n\nTil klasse B bør du prioritere:\n- vikeplikt og STOPP\n- fareskilt\n- forbudsskilt\n- påbudsskilt\n- underskilt\n- skilt som påvirker fart, plassering og vikeplikt'
             },
             {
-                title: 'Ofte stilte spørsmål om trafikkskilt (FAQ)',
+                title: 'Vil du øve på skilt?',
                 type: 'info',
-                content: 'Hvor mange spørsmål om skilt får jeg på teoriprøven?\nDu får 45 spørsmål totalt på teoriprøven for bil. Skilt, vikeplikt og vegoppmerking utgjør en svært stor del av disse oppgavene. Du kan maksimalt ha 7 feil for å bestå.\n\nHva er standard fartsgrense i Norge hvis det ikke er skiltet?\nDersom du ikke ser noen fartsgrenseskilt, er hovedregelen at fartsgrensen er 50 km/t i tettbygd strøk, og 80 km/t utenfor tettbygd strøk.\n\nHvilket trafikkskilt overstyrer alt annet?\nTrafikkskilt overstyres alltid av trafikklys og av manuell dirigering fra politiet. Hvis et lyskryss derimot slutter å fungere (blinker gult), er det skiltene som gjelder.\n\nFøler du deg klar? [Prøv skilt-quizen her](/quiz/skilt)'
+                content: '[Ta skiltquiz](/quiz/skilt)'
+            },
+            {
+                title: 'Kilder',
+                type: 'text',
+                content: '- Statens vegvesen: Trafikkskilt\n- Statens vegvesen: Filer og fargekoder for trafikkskilt\n- Lovdata: Skiltforskriften'
             }
         ],
         faq: [
             {
-                question: 'Hvor mange spørsmål om skilt får jeg på teoriprøven?',
-                answer: 'Du får 45 spørsmål totalt på teoriprøven for bil. Skilt, vikeplikt og vegoppmerking utgjør en svært stor del av disse oppgavene. Du kan maksimalt ha 7 feil for å bestå.'
+                question: 'Hvor mange trafikkskilt finnes i Norge?',
+                answer: 'Det finnes over 300 offentlige trafikkskilt og skiltvarianter i Norge. Skiltene er regulert i skiltforskriften, som også omfatter trafikklyssignaler og vegoppmerking.'
             },
             {
-                question: 'Hva er standard fartsgrense i Norge hvis det ikke er skiltet?',
-                answer: 'Dersom du ikke ser noen fartsgrenseskilt, er hovedregelen at fartsgrensen er 50 km/t i tettbygd strøk, og 80 km/t utenfor tettbygd strøk.'
+                question: 'Må jeg kunne alle skilt til teoriprøven?',
+                answer: 'Du bør ikke prøve å pugge alle skilt uten system. Lær først skiltgruppene, formene og fargene. Deretter bør du øve ekstra på skilt som handler om vikeplikt, fare, forbud, påbud, fart og underskilt.'
             },
             {
-                question: 'Hvilket trafikkskilt overstyrer alt annet?',
-                answer: 'Trafikkskilt overstyres alltid av trafikklys og av manuell dirigering fra politiet. Hvis et lyskryss derimot slutter å fungere (blinker gult), er det skiltene som gjelder.'
+                question: 'Hva er forskjellen på fareskilt og forbudsskilt?',
+                answer: 'Fareskilt varsler fare og er vanligvis trekantede med rød kant. Forbudsskilt forteller hva som er forbudt og er ofte runde med rød kant.'
+            },
+            {
+                question: 'Hva er forskjellen på vikeplikt og STOPP?',
+                answer: 'Vikeplikt betyr at du ikke skal hindre eller forstyrre trafikken du skal vike for. STOPP betyr at du i tillegg må stanse helt før du kjører videre.'
+            },
+            {
+                question: 'Hvordan lærer jeg trafikkskilt raskest?',
+                answer: 'Start med form og farge, ta korte skiltquiz-økter, og øv på skilt i trafikale situasjoner. Det viktigste er å forstå hva du skal gjøre når du møter skiltet.'
+            }
+        ],
+        miniQuiz: [
+            {
+                question: 'Hva betyr et trekantet skilt med rød kant?',
+                options: ['Forbud', 'Fare', 'Påbud', 'Opplysning'],
+                correct: 'Fare',
+                explanation: 'Trekantede skilt med rød kant er fareskilt. De varsler fare og betyr at du må være ekstra oppmerksom.'
+            },
+            {
+                question: 'Hva er forskjellen på vikepliktskilt og STOPP-skilt?',
+                options: ['Begge krever alltid full stans', 'Bare STOPP-skilt krever full stans', 'Vikepliktskilt gjelder bare i rundkjøringer', 'STOPP-skilt betyr bare at du skal senke farten'],
+                correct: 'Bare STOPP-skilt krever full stans',
+                explanation: 'Ved STOPP-skilt må du stanse helt. Ved vikeplikt må du vike, men du må ikke alltid stoppe hvis situasjonen er klar.'
+            },
+            {
+                question: 'Hva betyr et underskilt?',
+                options: ['Det gjelder alene uten hovedskilt', 'Det opphever alltid hovedskiltet', 'Det presiserer eller begrenser hovedskiltet', 'Det er bare informasjon uten betydning'],
+                correct: 'Det presiserer eller begrenser hovedskiltet',
+                explanation: 'Underskilt må leses sammen med hovedskiltet. Det kan fortelle når, hvor langt eller hvem skiltet gjelder for.'
+            },
+            {
+                question: 'Hva betyr et rundt blått skilt?',
+                options: ['Fare', 'Forbud', 'Påbud', 'Slutt på forbud'],
+                correct: 'Påbud',
+                explanation: 'Runde blå skilt er påbudsskilt. De forteller hva du må gjøre.'
+            },
+            {
+                question: 'Et fartsgrenseskilt med diagonal strek betyr vanligvis at:',
+                options: ['fartsgrensen blir strengere', 'den særskilte fartsgrensen opphører', 'du alltid må kjøre saktere enn 50 km/t', 'skiltet bare gjelder tunge kjøretøy'],
+                correct: 'den særskilte fartsgrensen opphører',
+                explanation: 'Diagonal strek gjennom et forbudsskilt betyr ofte at forbudet eller reguleringen opphører.'
             }
         ]
     },
+
 
     {
         id: 'fartsgrenser',
@@ -2942,6 +3041,168 @@ export const theoryArticles: TheoryTopic[] = [
                 options: ['At bilen kan komme bakover', 'At bilen har forkjørsrett', 'At bilen står parkert', 'At føreren gir deg tegn til å kjøre først'],
                 correct: 'At bilen kan komme bakover',
                 explanation: 'Ryggelys varsler at bilen rygger eller kan rygge, men føreren har fortsatt ansvar.'
+            }
+        ]
+    },
+
+    {
+        id: 'vanlige-feil-teoriproven',
+        title: '10 vanlige feil på teoriprøven klasse B',
+        icon: '⚠️',
+        shortDescription: 'Se 10 vanlige feil på teoriprøven klasse B. Lær hva du bør øve på.',
+        color: 'var(--apple-red)',
+        seoTitle: '10 vanlige feil på teoriprøven klasse B | Teori-test.no',
+        seoDescription: '43 % stryker på teoriprøven klasse B hvert år. Se de 10 vanligste feilene: vikeplikt, rundkjøring, skilt og bremselengde – og lær hva du bør øve på.',
+        sections: [
+            {
+                title: '10 vanlige feil på teoriprøven klasse B',
+                type: 'text',
+                content: 'Mange stryker ikke fordi de aldri har øvd, men fordi de bommer på typiske teorifeller. På teoriprøven klasse B må du forstå reglene i konkrete situasjoner, ikke bare kjenne ordene.\n\nI 2024 ble det gjennomført 218 460 teoriprøver i Norge, og 57 prosent ble bestått, ifølge Statens vegvesen. For klasse B har prøven 45 spørsmål, du får 90 minutter, og du må ha minst 38 riktige. Det betyr at du kan ha maks 7 feil.'
+            },
+            {
+                title: 'Direkte svar',
+                type: 'info',
+                content: 'Vanlige feil på teoriprøven klasse B handler ofte om vikeplikt, rundkjøring, privat vei og parkering, skilt, stopplikt, buss og trikk, bremselengde, følgeavstand, vegoppmerking og lesing av spørsmål. Listen under er basert på typiske teorifeller, Statens vegvesens temalister og research, ikke offisiell feilstatistikk per tema.\n\n![Infografikk med 10 vanlige feil på teoriprøven klasse B, blant annet vikeplikt, rundkjøring, skilt, bremselengde, følgeavstand og lesefeil](/vanlige-feil-teoriproven-infografikk.png)'
+            },
+            {
+                title: 'Kort forklart',
+                type: 'warning',
+                content: 'Dette bør du øve ekstra på:\n\n- vikeplikt i kryss uten skilt\n- rundkjøring, feltvalg og blinklys\n- utkjøring fra privat vei, parkering og bensinstasjon\n- skiltgrupper og prioritetsskilt\n- bremselengde, reaksjonslengde og stoppavstand\n- følgeavstand og fartstilpasning\n- vegoppmerking og feltskifte\n- nøkkelord i spørsmålene, som “ikke”, “alltid”, “kan” og “må”\n\nLes også:\n[Vikeplikt](/laeringsressurser/vikeplikt), [rundkjøring](/laeringsressurser/rundkjoring), [skilt](/laeringsressurser/skilt) og [bremselengde](/laeringsressurser/bremselengde).'
+            },
+            {
+                title: 'Oversikt: 10 vanlige feil og øvetiltak',
+                type: 'text',
+                content: '| Rang | Feiltype | Estimert hyppighet | Slik øver du |\n|---|---|---|---|\n| 1 | Høyreregelen i kryss uten skilt | Svært høy | Øv på uregulerte kryss og spør alltid: kommer noen fra høyre? |\n| 2 | Rundkjøring | Svært høy | Del opp øvingen: innkjøring, feltvalg, vikeplikt, blinklys og utkjøring |\n| 3 | Utkjøring fra privat vei, parkering eller bensinstasjon | Høy | Husk hovedregelen: ut fra område betyr ofte vikeplikt |\n| 4 | Skiltforveksling | Høy | Lær skiltgruppene først: fare, forbud, påbud, opplysning og vikeplikt |\n| 5 | Stopplikt og prioritetsskilt | Høy | Tren på forskjellen mellom vikeplikt, stopplikt og forkjørsvei |\n| 6 | Buss, trikk og særregler | Middels–høy | Repeter buss fra holdeplass, trikk og situasjoner der særregler gjelder |\n| 7 | Bremselengde, reaksjonslengde og stoppavstand | Høy | Forstå forskjellen på reaksjon, bremsing og total stoppavstand |\n| 8 | Følgeavstand og fartstilpasning | Middels–høy | Bruk tresekundersregelen og øk avstanden ved dårlig sikt eller glatt vei |\n| 9 | Vegoppmerking, sperrelinje og feltskifte | Middels–høy | Sammenlign sperrelinje, varsellinje, feltpiler og regler for feltskifte |\n| 10 | Leser feil, overser nøkkelord eller gjetter for tidlig | Middels–høy | Les spørsmålet to ganger og se etter ord som "ikke", "alltid", "kan" og "må" |'
+            },
+            {
+                title: '1. Høyreregelen i kryss uten skilt',
+                type: 'text',
+                content: 'En vanlig feil er å tro at den største eller retteste veien automatisk har prioritet. Det stemmer ikke.\n\nI kryss uten skilt, trafikklys eller oppmerking gjelder høyreregelen. Da skal du vike for trafikk fra høyre, selv om veien du kjører på virker større.\n\n**Hvorfor mange bommer:**\nKandidaten ser på veibredde, retning eller “hvem som virker mest naturlig først”, i stedet for å spørre: finnes det regulering her?\n\n**Slik tenker du riktig:**\nFinn først ut om krysset er regulert. Hvis det ikke er skilt, lys eller oppmerking, sjekk høyre side.'
+            },
+            {
+                title: '2. Rundkjøring: vikeplikt, feltvalg og blinklys',
+                type: 'text',
+                content: 'Rundkjøring er vanskelig fordi flere regler brukes samtidig. Du må tenke på plassering, vikeplikt, feltvalg, blinklys og andre trafikanter.\n\nSom hovedregel skal du vike for trafikk som allerede er inne i rundkjøringen når du møter vikepliktskilt før innkjøring. Du skal også blinke tydelig når du skal ut.\n\n**Hvorfor mange bommer:**\nDe blander innkjøring, feltvalg og utkjøring i én vurdering. Da blir spørsmålet fort mer komplisert enn det ser ut.\n\n**Slik tenker du riktig:**\nDel rundkjøringen i fire: før innkjøring, inne i rundkjøringen, eventuelt feltskifte, og utkjøring.'
+            },
+            {
+                title: '3. Utkjøring fra privat vei, parkering eller bensinstasjon',
+                type: 'text',
+                content: 'Mange glemmer at utkjøring fra privat område ofte gir vikeplikt. Det gjelder for eksempel når du kjører ut fra parkeringsplass, bensinstasjon, gårdsplass eller privat vei.\n\n**Hvorfor mange bommer:**\nSituasjonen ser “ledig” ut, og da svarer noen ut fra magefølelse i stedet for regel.\n\n**Slik tenker du riktig:**\nHusk denne regelen: ut fra område = regn med vikeplikt.'
+            },
+            {
+                title: '4. Forveksler skiltgrupper',
+                type: 'text',
+                content: 'Skilt handler ikke bare om å pugge enkeltskilt. Du må forstå systemet.\n\nFareskilt varsler fare. Forbudsskilt forteller hva som er forbudt. Påbudsskilt forteller hva du må gjøre. Opplysningsskilt gir informasjon.\n\n**Hvorfor mange bommer:**\nDe prøver å huske hvert skilt alene, uten å forstå form og farge først.\n\n**Slik tenker du riktig:**\nLær rekkefølgen: form → kategori → betydning. Da blir enkeltskiltene lettere.'
+            },
+            {
+                title: '5. Glemmer full stans ved STOPP-skilt',
+                type: 'text',
+                content: 'STOPP-skilt betyr at du skal stanse helt. Det gjelder selv om du ikke ser trafikk akkurat der og da.\n\n**Hvorfor mange bommer:**\nDe blander vikeplikt og stopplikt. Ved vikeplikt må du gi plass. Ved stopplikt må du først stanse helt.\n\n**Slik tenker du riktig:**\nSTOPP betyr full stopp først, vurdering etterpå.'
+            },
+            {
+                title: '6. Buss og trikk',
+                type: 'text',
+                content: 'Buss og trikk har særregler som ofte skaper usikkerhet. Når fartsgrensen er 60 km/t eller lavere, skal du normalt gi buss mulighet til å kjøre ut fra holdeplass når den gir tegn. Det må likevel skje uten fare.\n\nFor trikk må du være ekstra oppmerksom, fordi trikk ofte har prioritet og ikke kan svinge unna slik en bil kan.\n\n**Hvorfor mange bommer:**\nDe svarer enten for absolutt eller for passivt: “bussen kan alltid kjøre” eller “jeg trenger aldri å slippe den ut”.\n\n**Slik tenker du riktig:**\nSe etter fartsgrense, tegn fra bussen og om situasjonen kan løses trygt.'
+            },
+            {
+                title: '7. Bremselengde, reaksjonslengde og stoppavstand',
+                type: 'text',
+                content: 'Dette er en klassisk teorifelle. Reaksjonslengde er strekningen bilen kjører mens du oppfatter fare og reagerer. Bremselengde er strekningen bilen bruker på å stoppe etter at du bremser. Stoppavstand er summen av begge.\n\n**Hvorfor mange bommer:**\nDe tror bremselengden øker litt når farten øker. I virkeligheten øker bremselengden kraftig. Dobbel fart kan gi omtrent firedoblet bremselengde under like forhold.\n\n**Slik tenker du riktig:**\nSkille alltid mellom reaksjon, bremsing og total stoppavstand.'
+            },
+            {
+                title: '8. Følgeavstand og fartstilpasning',
+                type: 'text',
+                content: 'For kort avstand gir mindre tid til å oppdage fare og reagere. En vanlig huskeregel er tresekundersregelen: Når bilen foran passerer et punkt, bør det gå minst tre sekunder før du passerer samme punkt.\n\n**Hvorfor mange bommer:**\nDe tenker meter i stedet for tid, og glemmer at avstanden må økes ved høy fart, mørke, regn, snø eller glatt vei.\n\n**Slik tenker du riktig:**\nBruk tre sekunder som minimum under gode forhold. Øk avstanden når forholdene blir dårligere.'
+            },
+            {
+                title: '9. Vegoppmerking, sperrelinje og feltskifte',
+                type: 'text',
+                content: 'Vegoppmerking kan avgjøre hva du har lov til å gjøre. Sperrelinje, varsellinje, kjørefelt, piler og gangfelt kan endre hele situasjonen.\n\n**Hvorfor mange bommer:**\nDe ser på trafikken, men overser linjene i veien. På teoriprøven er oppmerkingen ofte nøkkelen.\n\n**Slik tenker du riktig:**\nLes veien som et skilt. Spør: Hva forteller linjene meg før jeg velger svar?'
+            },
+            {
+                title: '10. Leser spørsmålet for fort',
+                type: 'text',
+                content: 'Noen feil skyldes ikke at du mangler kunnskap, men at du svarer for raskt. Teoriprøven bruker ofte små ord som endrer hele betydningen.\n\nSe ekstra nøye etter:\n\n- ikke\n- alltid\n- aldri\n- kan\n- må\n- bør\n- først\n- bare\n\n**Hvorfor mange bommer:**\nDe kjenner igjen temaet og klikker på et svar før de har lest hele situasjonen.\n\n**Slik tenker du riktig:**\nLes spørsmålet to ganger. Finn ut hva situasjonen faktisk spør om, ikke bare hvilket tema den ligner på.'
+            },
+            {
+                title: 'Hvorfor skjer disse feilene?',
+                type: 'info',
+                content: '![Tekstkort om at de vanskeligste spørsmålene på teoriprøven kombinerer flere regler samtidig](/teoriproven-flere-regler-samtidig.png)\n\nDe vanskeligste spørsmålene på teoriprøven kombinerer ofte flere regler samtidig. Det er derfor vikeplikt, rundkjøring og vegoppmerking kan føles vanskeligere enn rene faktaspørsmål.\n\nEt skiltspørsmål kan handle om ett skilt. En rundkjøring kan derimot handle om skilt, vikeplikt, feltvalg, blinklys, fotgjengere og trafikkflyt samtidig.\n\nDerfor bør du ikke bare pugge regler. Du bør øve på situasjoner.\n\n### Hva bør du prioritere først?\n\n| Tema | Hvorfor viktig | Slik øver du |\n|---|---|---|\n| Vikeplikt | Mange spørsmål handler om hvem som skal kjøre først | Øv på kryss uten skilt og kryss med vikepliktskilt |\n| Rundkjøring | Flere regler brukes samtidig | Del opp i innkjøring, feltvalg og utkjøring |\n| Skilt | Skilt styrer mange situasjoner | Lær form og kategori før enkeltskilt |\n| Bremselengde | Fart påvirker risiko kraftig | Øv på forskjellen mellom reaksjonslengde, bremselengde og stoppavstand |\n| Vegoppmerking | Linjer og felt avgjør hva du kan gjøre | Sammenlign sperrelinje, varsellinje og feltskifte |'
+            },
+            {
+                title: 'Snart: feilstatistikk fra Teori-test.no',
+                type: 'text',
+                content: 'Etter hvert ønsker vi å vise anonymisert statistikk fra quizene på Teori-test.no. Da kan du se hvilke temaer brukerne faktisk bommer mest på når de øver.\n\nDette vil ikke være offisiell statistikk fra Statens vegvesens teoriprøve, men det kan gjøre øvingen mer presis. Målet er enkelt: hjelpe deg å bruke tiden på det som gir størst effekt.'
+            },
+            {
+                title: 'Klar for å teste deg?',
+                type: 'tip',
+                content: '[Ta en gratis teoriprøve](/prove)'
+            },
+            {
+                title: 'Kilder og research',
+                type: 'text',
+                content: 'Artikkelen bygger på informasjon fra Statens vegvesen om gjennomføring av teoriprøven, offentlig statistikk om teoriprøver i 2024 og temalister for klasse B.\n\n*Artikkelen er skrevet og redigert av Teori-test.no, med researchbidrag fra Ingrid Johansen.*'
+            }
+        ],
+        faq: [
+            {
+                question: 'Hva er de vanligste feilene på teoriprøven?',
+                answer: 'Vanlige feil handler ofte om vikeplikt, rundkjøring, skilt, stopplikt, bremselengde, følgeavstand, vegoppmerking og lesing av spørsmål. Det er særlig situasjoner der flere regler må brukes samtidig som skaper problemer.'
+            },
+            {
+                question: 'Hvor mange feil kan man ha på teoriprøven klasse B?',
+                answer: 'Du kan ha maks 7 feil. Teoriprøven klasse B har 45 spørsmål, og du må ha minst 38 riktige for å bestå.'
+            },
+            {
+                question: 'Hva er vanskeligst på teoriprøven?',
+                answer: 'Mange synes vikeplikt, rundkjøring, skilt og bremselengde er vanskeligst. Disse temaene krever ofte at du forstår situasjonen, ikke bare husker en regel.'
+            },
+            {
+                question: 'Hva skjer hvis jeg stryker på teoriprøven?',
+                answer: 'Hvis du stryker, må du vente før du kan ta ny prøve. Bruk ventetiden til å øve målrettet på temaene du fikk problemer med, i stedet for å bare ta tilfeldige prøver.'
+            },
+            {
+                question: 'Er dette offisiell feilstatistikk fra Statens vegvesen?',
+                answer: 'Nei. Listen er en praktisk oversikt over typiske teorifeller, basert på temalister, offentlig informasjon og research. Når Teori-test.no har nok anonymiserte quizdata, kan artikkelen oppdateres med egne feiltrender.'
+            }
+        ],
+        miniQuiz: [
+            {
+                question: 'Du kommer til et kryss uten skilt, lys eller oppmerking. En bil kommer fra høyre. Hva er riktig?',
+                options: ['Du kjører først hvis din vei virker større', 'Bilen fra høyre skal normalt få kjøre først', 'Den som kjører rett frem har alltid prioritet', 'Den som kommer først til krysset bestemmer'],
+                correct: 'Bilen fra høyre skal normalt få kjøre først',
+                explanation: 'I uregulerte kryss gjelder høyreregelen. Veibredde eller “følelse av hovedvei” avgjør ikke alene.'
+            },
+            {
+                question: 'Du møter STOPP-skilt, men ser ingen andre trafikanter. Hva må du gjøre?',
+                options: ['Senke farten og kjøre videre hvis det er klart', 'Stanse helt før du vurderer å kjøre videre', 'Bare stanse hvis det kommer trafikk fra høyre', 'Behandle det som vanlig vikepliktskilt'],
+                correct: 'Stanse helt før du vurderer å kjøre videre',
+                explanation: 'STOPP-skilt betyr full stans. Det gjelder også når du ikke ser trafikk.'
+            },
+            {
+                question: 'Hvorfor er rundkjøringer ofte vanskelige på teoriprøven?',
+                options: ['Fordi alle rundkjøringer har samme feltregel', 'Fordi blinklys aldri er nødvendig', 'Fordi vikeplikt, feltvalg, plassering og tegn kan komme samtidig', 'Fordi trafikk inne i rundkjøringen alltid har vikeplikt'],
+                correct: 'Fordi vikeplikt, feltvalg, plassering og tegn kan komme samtidig',
+                explanation: 'Rundkjøring blir vanskelig fordi flere regler må brukes i samme situasjon.'
+            },
+            {
+                question: 'Hva skjer med bremselengden hvis farten dobles, under like forhold?',
+                options: ['Den blir omtrent halvparten så lang', 'Den blir omtrent lik', 'Den blir omtrent dobbelt så lang', 'Den kan bli omtrent fire ganger så lang'],
+                correct: 'Den kan bli omtrent fire ganger så lang',
+                explanation: 'Bremselengden øker kraftig med fart. Dobbel fart kan gi omtrent firedoblet bremselengde.'
+            },
+            {
+                question: 'Du kjører ut fra en bensinstasjon og inn på en vei. Hva bør du regne med?',
+                options: ['At du normalt har vikeplikt', 'At trafikken på veien alltid har vikeplikt for deg', 'At høyreregelen alltid gir deg prioritet', 'At blinklys gir deg rett til å kjøre først'],
+                correct: 'At du normalt har vikeplikt',
+                explanation: 'Utkjøring fra parkeringsplass, bensinstasjon, privat vei eller lignende er en typisk vikepliktssituasjon.'
+            },
+            {
+                question: 'Hva er en vanlig prøvefelle i teorispørsmål?',
+                options: ['At alle svar alltid er like riktige', 'At små ord som “ikke”, “alltid” og “kan” endrer betydningen', 'At spørsmål om skilt aldri handler om situasjon', 'At du bør svare raskest mulig'],
+                correct: 'At små ord som “ikke”, “alltid” og “kan” endrer betydningen',
+                explanation: 'Mange feil skjer fordi kandidaten leser for raskt og overser nøkkelord.'
             }
         ]
     }

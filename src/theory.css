@@ -374,15 +374,21 @@ body.dark-mode .theory-section-example {
 }
 
 .theory-signs-grid {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     gap: var(--spacing-lg);
+}
+
+@media (max-width: 600px) {
+    .theory-signs-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 .theory-sign-item {
     display: flex;
-    align-items: center;
-    gap: var(--spacing-xl);
+    align-items: flex-start;
+    gap: var(--spacing-md);
     padding: var(--spacing-lg);
     border-radius: var(--radius-lg);
     background-color: var(--color-bg);
@@ -391,14 +397,15 @@ body.dark-mode .theory-section-example {
 }
 
 .theory-sign-item:hover {
-    transform: translateX(8px);
+    transform: translateY(-2px);
     box-shadow: var(--shadow-md);
-    border-color: rgba(255, 255, 255, 0.1);
+    border-color: var(--color-primary);
 }
 
 .theory-sign-visual {
     width: 80px;
     height: 80px;
+    min-width: 80px;
     background-color: var(--color-bg-secondary);
     border-radius: var(--radius-md);
     padding: var(--spacing-sm);
@@ -417,20 +424,22 @@ body.dark-mode .theory-section-example {
 
 .theory-sign-text {
     flex-grow: 1;
+    min-width: 0;
 }
 
 .theory-sign-text strong {
     display: block;
     font-size: var(--font-size-base);
     color: var(--color-text);
-    margin-bottom: 2px;
+    margin-bottom: 4px;
 }
 
 .theory-sign-text p {
     color: var(--color-text-light);
     font-size: var(--font-size-sm);
     margin: 0;
-    line-height: 1.5;
+    line-height: 1.6;
+    white-space: pre-line;
 }
 
 /* ===== Bremselengde-kalkulator ===== */
@@ -910,7 +919,58 @@ body.dark-mode .theory-section-example {
     color: var(--color-primary);
 }
 
-/* Styling for raw HTML tables in theory content */
+/* ===== Theory tables (markdown-rendered) ===== */
+.theory-table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    margin: var(--spacing-md) 0;
+}
+
+.theory-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+}
+
+.theory-table thead tr {
+    border-bottom: 2px solid var(--color-border);
+}
+
+.theory-table th {
+    padding: 10px 16px 12px 16px;
+    text-align: left;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    background: none;
+    white-space: nowrap;
+}
+
+.theory-table tbody tr {
+    border-bottom: 1px solid var(--color-border);
+}
+
+.theory-table tbody tr:last-child {
+    border-bottom: none;
+}
+
+.theory-table td {
+    padding: 14px 16px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.6;
+    color: var(--color-text-primary);
+}
+
+/* First column (Rang) is narrow and slightly muted */
+.theory-table td:first-child,
+.theory-table th:first-child {
+    font-weight: 600;
+    width: 48px;
+    min-width: 40px;
+    color: var(--color-text-light);
+}
+
+/* Styling for raw HTML tables in theory content (legacy) */
 .theory-section-content table {
     width: 100%;
     border-collapse: collapse;
@@ -919,7 +979,7 @@ body.dark-mode .theory-section-example {
 
 .theory-section-content th,
 .theory-section-content td {
-    padding: 16px 32px; /* Extra horizontal padding for column spacing */
+    padding: 12px 16px;
     text-align: left;
     border-bottom: 1px solid var(--color-border);
     vertical-align: top;
@@ -927,7 +987,14 @@ body.dark-mode .theory-section-example {
 }
 
 .theory-section-content th {
-    font-weight: 600;
+    font-weight: 700;
     color: var(--color-text-primary);
-    background-color: var(--color-bg-alt);
+}
+
+/* Inline heading inside content sections */
+.theory-content-heading {
+    font-size: 1rem;
+    font-weight: 700;
+    margin: 1.25rem 0 0.5rem;
+    color: var(--color-text-primary);
 }

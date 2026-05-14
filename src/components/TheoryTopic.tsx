@@ -16,12 +16,13 @@ import MiniQuiz from './MiniQuiz'
 import AutomatVsManuellSammenligning from './AutomatVsManuellSammenligning'
 
 
-// Renders content string with support for paragraphs, bullet lists (- ) and numbered lists (1. )
+// Renders content string with support for paragraphs, bullet lists (- ), numbered lists (1. ), images, headings (###) and markdown tables (| col |)
 function renderContent(text: string) {
     const lines = text.split('\n')
     const output: React.ReactNode[] = []
     let ulItems: string[] = []
     let olItems: string[] = []
+    let tableLines: string[] = []
     let key = 0
 
     const flushUl = () => {
@@ -44,33 +45,70 @@ function renderContent(text: string) {
             olItems = []
         }
     }
+    const flushTable = () => {
+        if (tableLines.length === 0) return
+        const rows = tableLines.filter(l => !l.match(/^\|[\s\-|:]+\|$/))
+        if (rows.length === 0) { tableLines = []; return }
+        const parseRow = (row: string) =>
+            row.split('|').map(c => c.trim()).filter((_, i, arr) => i > 0 && i < arr.length - 1)
+        const headers = parseRow(rows[0])
+        const body = rows.slice(1)
+        output.push(
+            <div key={key++} className="theory-table-wrapper">
+                <table className="theory-table">
+                    <thead>
+                        <tr>{headers.map((h, i) => <th key={i}>{parseInlineLinks(h)}</th>)}</tr>
+                    </thead>
+                    <tbody>
+                        {body.map((row, ri) => (
+                            <tr key={ri}>{parseRow(row).map((cell, ci) => <td key={ci}>{parseInlineLinks(cell)}</td>)}</tr>
+                        ))}
+                    </tbody>
+                </table>
+            </div>
+        )
+        tableLines = []
+    }
 
     for (const line of lines) {
-        if (line.startsWith('- ')) {
+        const trimmed = line.trim()
+        if (trimmed.startsWith('|')) {
+            flushUl()
+            flushOl()
+            tableLines.push(trimmed)
+        } else if (line.startsWith('- ')) {
+            flushTable()
             flushOl()
             ulItems.push(line.slice(2))
         } else if (/^\d+\.\s/.test(line)) {
+            flushTable()
             flushUl()
             olItems.push(line.replace(/^\d+\.\s/, ''))
-        } else if (line.trim().startsWith('![')) {
+        } else if (trimmed.startsWith('![')) {
+            flushTable()
             flushUl()
             flushOl()
-            const match = line.trim().match(/^!\[(.*?)\]\((.*?)\)$/)
+            const match = trimmed.match(/^!\[(.*?)\]\((.*?)\)$/)
             if (match) {
                 output.push(<img key={key++} src={match[2]} alt={match[1]} style={{ maxWidth: '100%', height: 'auto', borderRadius: '8px', margin: '1rem 0' }} />)
             } else {
-                if (line.trim() !== '') {
-                    output.push(<p key={key++}>{parseInlineLinks(line)}</p>)
-                }
+                if (trimmed !== '') output.push(<p key={key++}>{parseInlineLinks(line)}</p>)
             }
-        } else {
+        } else if (trimmed.startsWith('### ')) {
+            flushTable()
             flushUl()
             flushOl()
-            if (line.trim() !== '') {
+            output.push(<h3 key={key++} className="theory-content-heading">{trimmed.slice(4)}</h3>)
+        } else {
+            flushTable()
+            flushUl()
+            flushOl()
+            if (trimmed !== '') {
                 output.push(<p key={key++}>{parseInlineLinks(line)}</p>)
             }
         }
     }
+    flushTable()
     flushUl()
     flushOl()
 

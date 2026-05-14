@@ -150,4 +150,14 @@
         <lastmod>2026-05-09</lastmod>
         <changefreq>monthly</changefreq>
     </url>
+    <url>
+        <loc>https://teori-test.no/laeringsressurser/bilens-lys</loc>
+        <lastmod>2026-05-14</lastmod>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://teori-test.no/laeringsressurser/vanlige-feil-teoriproven</loc>
+        <lastmod>2026-05-14</lastmod>
+        <changefreq>monthly</changefreq>
+    </url>
 </urlset>
