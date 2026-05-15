@@ -13,6 +13,8 @@ import ReviewMode from './ReviewMode'
 import Timer from './Timer'
 import { useImagePrefetch } from '../hooks/useImagePrefetch'
 import { getWrongAnswers, removeWrongAnswer, addWrongAnswers, getWrongAnswersCount } from '../utils/wrongAnswersStore'
+import { logQuizAnswer } from "../services/supabase";
+import { getSessionId } from "../utils/session";
 
 interface QuizContainerProps {
     onReturnHome: () => void
@@ -134,6 +136,16 @@ export default function QuizContainer({ onReturnHome, onQuizComplete }: QuizCont
     function handleAnswer(answer: string) {
         const currentQuestion = questions[currentIndex]
         engine.recordAnswer(currentQuestion.id, answer)
+        
+        // Log answer to Supabase (fire-and-forget)
+        logQuizAnswer({
+            questionId: currentQuestion.id,
+            topic: (currentQuestion as any).topic ?? currentQuestion.category ?? "ukjent",
+            selectedAnswer: answer,
+            correctAnswer: currentQuestion.correct_answer,
+            isCorrect: answer === currentQuestion.correct_answer,
+            sessionId: getSessionId(),
+        });
 
         // If in Fokus mode and answer is correct, remove from wrong answers
         if (mode.isFokusMode && answer === currentQuestion.correct_answer) {

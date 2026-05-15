@@ -185,7 +185,12 @@ export const theoryTopics: TheoryTopic[] = [
         hasCalculator: true,
         sections: [
             {
-                title: 'Hva er bremselengde?',
+                title: 'Kort svar: Formel for bremselengde',
+                type: 'text',
+                content: 'På teoriprøven for klasse B kan du på tørr vei ved nødbremsing bruke denne huskeregelen:\n\n**Bremselengde = (fart / 10) × (fart / 10) / 2**\n\nEksempel ved 80 km/t:\n\n**8 × 8 / 2 = 32 meter**\n\nDet betyr at bremselengden ved 80 km/t på tørr vei er omtrent 32 meter. Husk at dette bare er selve bremselengden. Total stopplengde blir lengre, fordi du også må legge til reaksjonslengden.'
+            },
+            {
+                                title: 'Hva er bremselengde?',
                 type: 'text',
                 content: 'Bremselengde er den avstanden bilen tilbakelegger fra du begynner å bremse til bilen står stille. Bremselengden avhenger av farten, veidekke, bremsenes tilstand og bilens vekt.\n\nLes mer om hvordan sikt påvirker farten i [lysbruk og mørkekjøring](/laeringsressurser/lysbruk-morkekjoring).'
             },
@@ -200,7 +205,7 @@ export const theoryTopics: TheoryTopic[] = [
                 content: '<div style="overflow-x: auto; -webkit-overflow-scrolling: touch; margin-top: 1rem;"><table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem;"><thead><tr style="background-color: var(--color-surface); border-bottom: 2px solid var(--color-border);"><th style="padding: 12px 8px;">Hastighet</th><th style="padding: 12px 8px;">Reaksjonslengde</th><th style="padding: 12px 8px;">Bremselengde (tørr)</th><th style="padding: 12px 8px;">Stopplengde (tørr)</th><th style="padding: 12px 8px;">Stopplengde (våt)</th></tr></thead><tbody><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">30 km/t</td><td style="padding: 12px 8px;">9 m</td><td style="padding: 12px 8px;">4,5 m</td><td style="padding: 12px 8px;"><b>13,5 m</b></td><td style="padding: 12px 8px;">18 m</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">50 km/t</td><td style="padding: 12px 8px;">15 m</td><td style="padding: 12px 8px;">12,5 m</td><td style="padding: 12px 8px;"><b>27,5 m</b></td><td style="padding: 12px 8px;">40 m</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">60 km/t</td><td style="padding: 12px 8px;">18 m</td><td style="padding: 12px 8px;">18 m</td><td style="padding: 12px 8px;"><b>36 m</b></td><td style="padding: 12px 8px;">54 m</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">80 km/t</td><td style="padding: 12px 8px;">24 m</td><td style="padding: 12px 8px;">32 m</td><td style="padding: 12px 8px;"><b>56 m</b></td><td style="padding: 12px 8px;">88 m</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">100 km/t</td><td style="padding: 12px 8px;">30 m</td><td style="padding: 12px 8px;">50 m</td><td style="padding: 12px 8px;"><b>80 m</b></td><td style="padding: 12px 8px;">130 m</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">110 km/t</td><td style="padding: 12px 8px;">33 m</td><td style="padding: 12px 8px;">60,5 m</td><td style="padding: 12px 8px;"><b>93,5 m</b></td><td style="padding: 12px 8px;">154 m</td></tr></tbody></table></div>'
             },
             {
-                title: 'Formler',
+                title: 'Formel for bremselengde, reaksjonslengde og stopplengde',
                 type: 'formula',
                 content: 'Reaksjonslengde = (Fart ÷ 10) × 3 meter\n\nBremselengde (tørr vei) = (Fart ÷ 10)² ÷ 2 meter\n\nStopplengde = Reaksjonslengde + Bremselengde'
             },
@@ -212,7 +217,7 @@ export const theoryTopics: TheoryTopic[] = [
             {
                 title: 'Viktig å huske',
                 type: 'warning',
-                content: 'På våt vei dobles bremselengden. På is kan den bli opptil 10 ganger lengre! Ved 80 km/t på is kan stopplengden bli over 300 meter.'
+                content: 'Det er særlig to ting som gjør bremselengden mye lengre: høyere fart og dårligere veigrep.\n\n### 1. Når farten dobles, firedobles bremselengden\n\nPå tørr vei øker bremselengden kraftig når farten øker. Dobler du farten, blir bremselengden omtrent fire ganger så lang.\n\n![Illustrasjon som viser at når farten dobles, firedobles bremselengden](/bremselengde-dobbel-fart.png)\n\n*Når farten dobles, blir bremselengden fire ganger så lang. Dette er en av de viktigste huskereglene til teoriprøven.*\n\n### 2. Dårlig føre gjør bremselengden enda lengre\n\nPå våt vei kan bremselengden bli omtrent dobbelt så lang som på tørr vei. På snø og is kan den bli mange ganger lengre. Ved 80 km/t kan stopplengden på is bli over 300 meter.\n\n**Husk forskjellen:**\n\n* Høyere fart øker bremselengden fordi bilen har mer bevegelsesenergi.\n* Dårlig føre øker bremselengden fordi dekkene får dårligere grep.'
             },
             {
                 title: 'Faktorer som påvirker bremselengden',
@@ -457,7 +462,7 @@ export const theoryTopics: TheoryTopic[] = [
         id: 'veimerking',
         title: 'Veimerking til teoriprøven – komplett visuell guide (Klasse B)',
         icon: '🛣️',
-        shortDescription: 'Lær all norsk veimerking til teoriprøven med visuelle illustrasjoner. Sperrelinje, varselslinje, gangfelt, pilmerking og mer — med eksempler og forklaringer.',
+        shortDescription: 'Lær all norsk veimerking til teoriprøven med visuelle illustrasjoner. Sperrelinje, varsellinje, gangfelt, pilmerking og mer — med eksempler og forklaringer.',
         color: 'var(--apple-indigo)',
         seoTitle: 'Veimerking til teoriprøven – komplett visuell guide (Klasse B) | Teori-test.no',
         seoDescription: 'Hva betyr hvit sperrelinje, varsellinje, kombinert linje eller vikelinje? Komplett guide til norsk veimerking med visuelle illustrasjoner – til teoriprøven.',
@@ -467,6 +472,12 @@ export const theoryTopics: TheoryTopic[] = [
                 type: 'text',
                 content: 'Vegoppmerkingen er det mange undervurderer til teoriprøven. Skilt kan du lese — men linjene i veibanen krever at du forstår hva de betyr når du kjører forbi dem i 80 km/t uten tid til å tenke. Denne guiden gir deg oversikt over alle viktige markeringer med visuelle eksempler.'
             },
+            {
+                title: 'Kort forklart: De viktigste linjene',
+                type: 'table',
+                content: '<div style="overflow-x: auto; -webkit-overflow-scrolling: touch; margin-top: 1rem;"><table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem;"><thead><tr style="background-color: var(--color-surface); border-bottom: 2px solid var(--color-border);"><th style="padding: 12px 8px;">Veimerking</th><th style="padding: 12px 8px;">Hva betyr det?</th><th style="padding: 12px 8px;">Typisk teorifelle</th></tr></thead><tbody><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Kjørefeltlinje</b></td><td style="padding: 12px 8px;">Kort stiplet hvit linje som skiller kjørefelt. Kan krysses når det er trygt og lovlig.</td><td style="padding: 12px 8px;">Mange forveksler den med varsellinje.</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Varsellinje</b></td><td style="padding: 12px 8px;">Lang stiplet linje som varsler fare, dårlig sikt eller et sted der du bør være ekstra forsiktig.</td><td style="padding: 12px 8px;">Varsler risiko, men er ikke alltid et direkte forbud.</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Hvit sperrelinje</b></td><td style="padding: 12px 8px;">Heltrukken hvit linje. Skal ikke krysses for feltskifte eller forbikjøring.</td><td style="padding: 12px 8px;">Kan i noen tilfeller krysses for inn- og utkjøring fra eiendom, men ikke for forbikjøring.</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Dobbel sperrelinje</b></td><td style="padding: 12px 8px;">To heltrukne linjer. Du skal ikke krysse for feltskifte eller forbikjøring.</td><td style="padding: 12px 8px;">Brukes på veier med mye trafikk eller dårlig sikt.</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Gul varsellinje</b></td><td style="padding: 12px 8px;">Stiplet gul linje som varsler begrenset sikt for forbikjøring i motgående kjørefelt.</td><td style="padding: 12px 8px;">Betyr ikke automatisk forbud, men du må vurdere sikten svært nøye.</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Gul sperrelinje</b></td><td style="padding: 12px 8px;">Heltrukken gul linje. Du skal ikke krysse eller kjøre til venstre for den.</td><td style="padding: 12px 8px;">Gjelder selv om du mener du har god sikt.</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Kombinert linje</b></td><td style="padding: 12px 8px;">Én stiplet og én heltrukken linje ved siden av hverandre.</td><td style="padding: 12px 8px;">Linjen nærmest deg bestemmer om du kan krysse.</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Vikelinje</b></td><td style="padding: 12px 8px;">Hvite trekanter på tvers av kjøreretningen. Du har vikeplikt.</td><td style="padding: 12px 8px;">Du må bare stoppe hvis det er nødvendig for å overholde vikeplikten.</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Stopplinje</b></td><td style="padding: 12px 8px;">Bred hvit tverrlinje. Viser hvor du skal stoppe ved stoppskilt, rødt lys eller annen stans.</td><td style="padding: 12px 8px;">Ved stoppskilt skal du alltid stoppe helt før linjen.</td></tr></tbody></table></div>'
+            },
+            
             {
                 title: 'Hva er veimerking?',
                 type: 'info',
@@ -502,7 +513,7 @@ export const theoryTopics: TheoryTopic[] = [
       <div style="height:2.5px;background:white;border-radius:2px"></div>
       <div style="font-size:10px;color:#999;margin-top:6px">← Motgående trafikk</div>
     </div>
-    <p style="color:var(--color-text-light);line-height:1.6;margin:0">Absolutt forbud mot å krysse fra begge sider. Brukes på veier med mye trafikk eller særlig dårlig sikt. Ingen unntak.</p>
+    <p style="color:var(--color-text-light);line-height:1.6;margin:0">Dobbel heltrukken linje betyr at trafikk fra begge retninger skal holde seg på sin side av linjen. Du skal ikke krysse den for feltskifte eller forbikjøring.</p>
   </div>
   <div>
     <strong style="font-size:1rem;color:var(--color-text)">Kombinerte linjer (én stiplet + én heltrukken)</strong>
@@ -517,6 +528,11 @@ export const theoryTopics: TheoryTopic[] = [
 </div>`
             },
             {
+                title: 'Hva betyr kombinert linje?',
+                type: 'text',
+                content: 'Kombinert linje, også kalt kombinerte linjer, består av en sperrelinje og en kjørefeltlinje eller varsellinje ved siden av hverandre. Det er linjen på din side (nærmest deg) som bestemmer om du har lov til å krysse eller ikke.'
+            },
+            {
                 title: 'Interaktiv guide — klikk og lær',
                 type: 'calculator',
                 content: 'Klikk på linjene under for å se hva de betyr:'
@@ -529,7 +545,7 @@ export const theoryTopics: TheoryTopic[] = [
             {
                 title: 'Tverrgående merking',
                 type: 'text',
-                content: '**Stopplinje**\nEn bred hvit tverrstrek som markerer nøyaktig hvor du skal stoppe — ved rødt lys, stoppskilt eller på annen måte når du er pålagt å stanse. Du skal stoppe før linjen, ikke på den.\n\n**Vikelinje (haifinner)**\nEn rekke hvite trekanter på tvers av kjøreretningen din. De peker mot deg og forteller deg at du har vikeplikt. Du skal stanse ved vikelinjen om nødvendig.\n\n**Gangfelt**\nBrede hvite striper på tvers av veien. Fotgjengere har forkjørsrett i gangfelt — du plikter å stanse for fotgjengere som er i gangfeltet eller på vei ut i det.\n\n**Sykkelkryssing**\nStiplet oppmerking som ligner gangfelt men for syklister. Syklister har ikke automatisk forkjørsrett her — du må vurdere situasjonen.'
+                content: '**Stopplinje**\nEn bred hvit tverrstrek som markerer nøyaktig hvor du skal stoppe — ved rødt lys, stoppskilt eller på annen måte når du er pålagt å stanse. Du skal stoppe før linjen, ikke på den.\n\n**Vikelinje (haifinner)**\nEn rekke hvite trekanter på tvers av kjøreretningen din. De peker mot deg og forteller deg at du har vikeplikt. Du skal stanse ved vikelinjen om nødvendig.\n\n**Gangfelt**\nBrede hvite striper på tvers av veien. Som bilfører har du vikeplikt for gående som er i gangfeltet eller på vei ut i det.\n\n**Sykkelkryssing**\nStiplet oppmerking som ligner gangfelt men for syklister. Syklister har ikke automatisk forkjørsrett her — du må vurdere situasjonen.'
             },
             {
                 title: 'Pilmerking',
@@ -544,7 +560,7 @@ export const theoryTopics: TheoryTopic[] = [
             {
                 title: 'De vanligste feilene på teoriprøven',
                 type: 'warning',
-                content: 'Disse scenarioene dukker jevnlig opp:\n\n- **Kombinerte linjer** er den hyppigste kilden til feil — mange tror begge sider av en kombinert linje har samme regler. Husk: linjen nærmest deg bestemmer.\n- **Gul sperrelinje** forveksles med hvit sperrelinje. Gul gjelder spesielt mot venstre — du kan ikke krysse eller kjøre til venstre for den uansett sikt.\n- **Gangfelt vs. sykkelkryssing** — fotgjengere har forkjørsrett i gangfelt, syklister har det ikke automatisk i sykkelkryssing.\n- **Vikelinje vs. stopplinje** — ved vikelinje kan du kjøre sakte forbi hvis veien er fri. Ved stopplinje skal du alltid stanse helt.'
+                content: 'Disse scenarioene dukker jevnlig opp:\n\n- **Kombinerte linjer** er den hyppigste kilden til feil — mange tror begge sider av en kombinert linje har samme regler. Husk: linjen nærmest deg bestemmer.\n- **Gul sperrelinje** forveksles med hvit sperrelinje. Gul gjelder spesielt mot venstre — du kan ikke krysse eller kjøre til venstre for den uansett sikt.\n- **Gangfelt vs. sykkelkryssing** — som bilfører har du vikeplikt for gående i gangfelt, mens syklister ikke automatisk har samme prioritet i sykkelkryssing.\n- **Vikelinje vs. stopplinje** — ved vikelinje kan du kjøre sakte forbi hvis veien er fri. Ved stopplinje skal du alltid stanse helt.'
             },
             {
                 title: 'Klar til å teste?',
@@ -574,6 +590,86 @@ export const theoryTopics: TheoryTopic[] = [
                 answer: 'Ikke alltid — du skal stoppe dersom det er nødvendig for å overholde vikeplikten. Er veien fri, kan du passere vikelinjen uten å stanse.'
             }
         ]
+    ,
+        miniQuiz: [
+    {
+        "question": "Du kjører langs en hvit sperrelinje. Hva betyr det?",
+        "options": [
+            "Du kan krysse linjen hvis det er lite trafikk",
+            "Du skal ikke krysse linjen for feltskifte eller forbikjøring",
+            "Linjen gjelder bare for motgående trafikk",
+            "Linjen betyr at du må stoppe"
+        ],
+        "correct": "Du skal ikke krysse linjen for feltskifte eller forbikjøring",
+        "explanation": "Hvit sperrelinje er heltrukken og skal ikke krysses for feltskifte eller forbikjøring."
+    },
+    {
+        "question": "Du ser en gul varsellinje før en bakketopp. Hva betyr den?",
+        "options": [
+            "Forbikjøring er alltid forbudt",
+            "Du har forkjørsrett",
+            "Den varsler begrenset sikt og økt risiko ved forbikjøring",
+            "Du må stoppe før linjen"
+        ],
+        "correct": "Den varsler begrenset sikt og økt risiko ved forbikjøring",
+        "explanation": "Gul varsellinje varsler om dårlig sikt eller fare. Den betyr ikke alltid direkte forbud, men du må vurdere sikten svært nøye."
+    },
+    {
+        "question": "Du kjører ved siden av en kombinert linje. Hvilken del av linjen bestemmer om du kan krysse?",
+        "options": [
+            "Linjen lengst fra deg",
+            "Linjen nærmest deg",
+            "Den gule linjen uansett plassering",
+            "Den bredeste linjen"
+        ],
+        "correct": "Linjen nærmest deg",
+        "explanation": "Ved kombinert linje er det linjen nærmest deg som bestemmer om du kan krysse eller ikke."
+    },
+    {
+        "question": "Hva betyr en vikelinje med hvite trekanter på tvers av kjøreretningen?",
+        "options": [
+            "Du har vikeplikt og må stoppe hvis det er nødvendig",
+            "Du må alltid stoppe helt",
+            "Du har forkjørsrett",
+            "Du kan bare kjøre rett frem"
+        ],
+        "correct": "Du har vikeplikt og må stoppe hvis det er nødvendig",
+        "explanation": "Vikelinje viser at du har vikeplikt. Du må stoppe dersom det er nødvendig for å overholde vikeplikten."
+    },
+    {
+        "question": "Hva er forskjellen på vikelinje og stopplinje?",
+        "options": [
+            "Det er ingen forskjell",
+            "Ved vikelinje må du alltid stoppe, ved stopplinje kan du kjøre hvis det er klart",
+            "Ved stopplinje skal du stoppe helt når du er pålagt å stanse, mens ved vikelinje stopper du bare hvis vikeplikten krever det",
+            "Stopplinje gjelder bare for fotgjengere"
+        ],
+        "correct": "Ved stopplinje skal du stoppe helt når du er pålagt å stanse, mens ved vikelinje stopper du bare hvis vikeplikten krever det",
+        "explanation": "Ved stopplinje, for eksempel ved stoppskilt, skal du stoppe helt. Ved vikelinje stopper du bare hvis det er nødvendig for å overholde vikeplikten."
+    },
+    {
+        "question": "Du ser et gangfelt. Hva er riktig?",
+        "options": [
+            "Fotgjengere må alltid vente på bilene",
+            "Som bilfører har du vikeplikt for gående i gangfeltet eller på vei ut i det",
+            "Gangfelt gjelder bare hvis det også er trafikklys",
+            "Du har bare vikeplikt hvis fotgjengeren allerede er midt i veien"
+        ],
+        "correct": "Som bilfører har du vikeplikt for gående i gangfeltet eller på vei ut i det",
+        "explanation": "Som bilfører har du vikeplikt for gående som er i gangfeltet eller på vei ut i det."
+    },
+    {
+        "question": "Hva betyr gul sperrelinje?",
+        "options": [
+            "Du kan krysse hvis du har god sikt",
+            "Du skal ikke krysse eller kjøre til venstre for linjen",
+            "Den gjelder bare for tunge kjøretøy",
+            "Den viser kanten av kjørebanen"
+        ],
+        "correct": "Du skal ikke krysse eller kjøre til venstre for linjen",
+        "explanation": "Gul sperrelinje er heltrukken. Du skal ikke krysse eller kjøre til venstre for den, selv om du mener sikten er god."
+    }
+]
     },
 
     {
