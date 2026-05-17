@@ -62,7 +62,7 @@ export default function TrailerWeightSimulator() {
     if (trailerWeight <= 750) {
         isLegal = true;
         statusText = 'Status: ✅ Lovlig';
-        explanationText = 'Dette er lovlig. Tilhengerens tillatte totalvekt er 750 kg eller lavere. Da kan du alltid trekke den med klasse B, uansett om den samlede vekten for bil og henger overstiger 3500 kg (opptil maks 4250 kg).';
+        explanationText = 'Dette er lovlig med klasse B så lenge bilen er godkjent for å trekke tilhengeren. En tilhenger med tillatt totalvekt på maks 750 kg kan trekkes med klasse B selv om samlet tillatt totalvekt for bil og tilhenger overstiger 3500 kg, men samlet kombinasjon kan ikke overstige 4250 kg.';
     } else if (totalWeight <= 3500) {
         isLegal = true;
         statusText = 'Status: ✅ Lovlig';

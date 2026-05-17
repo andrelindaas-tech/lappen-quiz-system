@@ -1559,78 +1559,242 @@ export const theoryTopics: TheoryTopic[] = [
 
     {
         id: 'stans-og-parkering',
-        title: 'Stans og parkering: Forskjellen du må kunne til teoriprøven',
+        title: 'Stans og parkering: forskjellen og reglene du må kunne til teoriprøven',
         icon: '🅿️',
-        shortDescription: 'Lær forskjellen mellom stans og parkering, avstandsreglene (kryss, gangfelt, busslomme) og unngå fellene på teoriprøven.',
-        color: 'var(--apple-red)',
-        seoTitle: 'Stans og parkering – regler og avstander til teoriprøven | Teori-test.no',
-        seoDescription: 'Lær forskjellen på stans og parkering, avstandsreglene ved kryss, gangfelt og busslomme — og hva som gjelder på forkjørsvei. Unngå fellene på teoriprøven.',
+        shortDescription: 'Reglene for stans og parkering er en klassisk gjenganger på teoriprøven for klasse B. Mange mister unødvendige poeng her fordi de blander sammen de to begrepene, eller glemmer de eksakte avstandsreglene for gangfelt og veikryss.',
+        color: 'var(--apple-blue)',
+        seoTitle: 'Stans og parkering – 5-metersregelen og teorifeller | Teori-test.no',
+        seoDescription: 'Lær forskjellen på stans og parkering, 5-metersregelen ved gangfelt og veikryss, og vanlige feller på teoriprøven. Med eksempler og miniQuiz.',
         sections: [
             {
-                title: 'Stans og parkering: Hva er egentlig forskjellen?',
+                title: 'Kort forklart: forskjellen på stans og parkering',
                 type: 'text',
-                content: 'Reglene for stans og parkering er en klassisk gjenganger på teoriprøven for klasse B. Mange mister unødvendige poeng her fordi de blander sammen de to begrepene, eller glemmer de eksakte avstandsreglene for gangfelt og veikryss. Her gir vi deg en komplett og enkel oversikt over hva trafikkreglene faktisk sier, slik at du er trygg når disse oppgavene dukker opp på eksamen.'
+                content: 'Forskjellen på stans og parkering er at stans er et kort opphold, for eksempel for av- og påstigning eller av- og pålessing. Parkering er når bilen blir stående av andre grunner, selv om føreren sitter i bilen. Stopper du for å handle, hente en pakke eller ringe, regnes det normalt som parkering.'
             },
             {
-                title: '1. Definisjonen på stans',
-                type: 'info',
-                content: 'For å forstå reglene, må vi først vite hva "stans" betyr i juridisk forstand. Stans er en kortvarig stans av kjøretøyet for å:\n\n- Slippe av eller ta på passasjerer (av- og påstigning).\n- Laste inn eller ut varer (av- og pålessing).\n\nSå lenge du gjør dette aktivt, regnes det som stans. Det er viktig å merke seg at hvis du stopper fordi trafikken krever det (for eksempel i kø, for rødt lys, eller for å overholde vikeplikt), regnes ikke dette som stans i lovens forstand. Det er rett og slett en del av det å kjøre bil.'
+                title: '',
+                type: 'table',
+                content: `<div style="overflow-x:auto; margin: 1rem 0;"><table style="width:100%;border-collapse:collapse;font-size:0.9rem;text-align:left">
+<thead>
+<tr style="border-bottom:2px solid var(--color-border)">
+<th style="padding:12px 8px;color:var(--color-text-light)">Begrep</th>
+<th style="padding:12px 8px;color:var(--color-text-light)">Hva betyr det?</th>
+</tr>
+</thead>
+<tbody>
+<tr style="border-bottom:1px solid var(--color-border)"><td style="padding:12px 8px;font-weight:500;color:var(--color-text)">Stans</td><td style="padding:12px 8px;color:var(--color-text-light)">Kortvarig stopp, typisk for å slippe av eller på passasjerer, eller laste av/på</td></tr>
+<tr style="border-bottom:1px solid var(--color-border)"><td style="padding:12px 8px;font-weight:500;color:var(--color-text)">Parkering</td><td style="padding:12px 8px;color:var(--color-text-light)">Bilen blir stående av andre grunner, også hvis føreren sitter i bilen</td></tr>
+<tr style="border-bottom:1px solid var(--color-border)"><td style="padding:12px 8px;font-weight:500;color:var(--color-text)">Trafikal stans</td><td style="padding:12px 8px;color:var(--color-text-light)">Stopp på grunn av trafikken, for eksempel kø, rødt lys eller vikeplikt</td></tr>
+<tr style="border-bottom:1px solid var(--color-border)"><td style="padding:12px 8px;font-weight:500;color:var(--color-text)">Stans forbudt</td><td style="padding:12px 8px;color:var(--color-text-light)">Verken stans eller parkering er tillatt</td></tr>
+<tr style="border-bottom:1px solid var(--color-border)"><td style="padding:12px 8px;font-weight:500;color:var(--color-text)">Parkering forbudt</td><td style="padding:12px 8px;color:var(--color-text-light)">Du kan stanse kort, men ikke parkere</td></tr>
+</tbody>
+</table></div>`
             },
             {
-                title: '2. Definisjonen på parkering',
+                title: '',
                 type: 'text',
-                content: 'Hva skiller så stans fra parkering? Trafikkreglene er veldig tydelige: Enhver hensetting av kjøretøyet, selv for en kort stund, regnes som parkering hvis det varer lenger enn det som kreves for å slippe av/på passasjerer eller laste av/på varer.\n\nTommelfingerregel: Hvis du forlater bilen for å stikke inn på kiosken for å kjøpe en pølse, har du parkert – selv om motoren går og det bare tar ett minutt.'
+                content: 'Det viktigste på teoriprøven er å forstå forskjellen mellom et lovlig kort stopp og en ulovlig parkering.'
             },
             {
-                title: '3. Kjenn igjen skiltene',
-                type: 'signs',
-                content: 'Det finnes to hovedskilt som regulerer dette, og du må ikke forveksle dem (se vår [komplette skilt-oversikt](/laeringsressurser/skilt) for mer):',
-                signs: [
-                    {
-                        name: 'Parkering forbudt',
-                        description: '(Én skråstrek): Skiltet er en blå sirkel med rød kant og én rød skråstrek. Her har du ikke lov til å parkere, men du har lov til å foreta en kort stans for å slippe av en venn eller lesse ut noen kasser.',
-                        signId: 'no-parking'
-                    },
-                    {
-                        name: 'All stans forbudt',
-                        description: '(To skråstreker / et kryss): Skiltet har blå bunn, rød kant og to røde streker som danner et kryss. Her kan du verken parkere eller stoppe for å slippe av passasjerer. Det er totalt forbudt å stanse frivillig.',
-                        signId: 'no-stopping'
-                    }
-                ]
+                title: 'Hva er trafikal stans?',
+                type: 'text',
+                content: 'Trafikal stans betyr at du stopper fordi trafikken krever det. Dette regnes ikke som vanlig stans eller parkering.\n\nEksempler på trafikal stans:\n\n- Du stopper for rødt lys\n- Du venter i kø\n- Du stanser for å overholde vikeplikt\n- Du stopper for fotgjengere i gangfelt\n- Du venter fordi trafikken foran deg står stille\n\nDette er viktig fordi et skilt med stans forbudt ikke betyr at du kan ignorere rødt lys eller vikeplikt. Trafikken går alltid først.'
             },
             {
-                title: '4. Avstandsreglene (Puggestoff til eksamen!)',
+                title: 'Må du alltid kunne stanse?',
+                type: 'text',
+                content: 'Ja. Etter trafikkreglene skal du alltid kjøre slik at du kan stanse for enhver påregnelig hindring. Det betyr at fart, sikt, føre og trafikkforhold bestemmer hvor fort du kan kjøre. Dette gjelder selv om fartsgrensen er høyere.\n\nDenne regelen henger tett sammen med bremselengde, reaksjonstid og sikt. Du må kunne stoppe trygt hvis det dukker opp en fotgjenger, syklist, bil eller annen hindring foran deg.'
+            },
+            {
+                title: '5-metersregelen ved gangfelt og veikryss',
+                type: 'text',
+                content: '5-metersregelen er en av de viktigste reglene du må kunne.\n\nDu har ikke lov til å stanse eller parkere:\n\n- på gangfelt\n- nærmere enn 5 meter foran gangfelt\n- i veikryss\n- nærmere enn 5 meter fra veikryss\n\nPoenget er sikt. Hvis du stanser for nær et gangfelt eller veikryss, kan du skjule fotgjengere, syklister eller biler for andre trafikanter.\n\n![5-metersregelen ved gangfelt – parkering foran og etter gangfelt](/stans-og-parkering-5-meter.png)\n*Du må holde minst 5 meter foran gangfeltet. Etter gangfeltet kan parkering være lovlig hvis det ellers er trygt og tillatt.*\n\n### Hvor mange meter fra gangfelt kan jeg parkere?\n\nDet er ulovlig å stanse eller parkere på gangfeltet, eller nærmere enn 5 meter foran gangfeltet i kjøreretningen. Etter gangfeltet kan du derimot parkere lovlig, så lenge det ikke finnes andre forbud eller forhold som gjør parkeringen farlig.\n\nRegelen finnes for å sikre god sikt. Hvis biler står tett inntil gangfeltet før kryssingen, kan de skjule fotgjengere for andre trafikanter. Da rekker ikke føreren nødvendigvis å oppdage personen i tide.\n\n### Gjelder 5-metersregelen i T-kryss?\n\nJa, T-kryss er også veikryss. Du må ikke stanse eller parkere i selve krysset eller slik at du hindrer sikt og ferdsel.\n\nI et T-kryss kan målingen være litt mer forvirrende enn i et vanlig kryss, fordi den rette siden av veien ikke alltid har en tydelig avrunding i kantstein eller veikant. På teoriprøven er hovedpoenget likevel enkelt: Ikke parker i eller tett ved munningen av et T-kryss.\n\n### 5-metersregelen i vegkryss\n\nDet er ikke lov å stanse eller parkere i et vegkryss, eller nærmere enn 5 meter fra vegkrysset. Avstanden måles fra punktet der fortauskant, kantlinje eller vegkant begynner å runde.\n\n5-metersregelen gjelder i begge retninger, uansett om gata er enveiskjørt eller toveiskjørt. Målet er å sikre sikt og plass til trafikk som skal inn og ut av krysset.\n\n![5-metersregelen i vegkryss – parkering minst 5 meter fra kryss](/stans-og-parkering-5-meter-kryss.png)\n*Du må holde minst 5 meter avstand fra vegkrysset, målt fra der kanten begynner å runde.*'
+            },
+            {
+                title: 'Forbudt å stanse vs. forbudt å parkere',
+                type: 'table',
+                content: `<div style="overflow-x:auto; margin: 1rem 0;"><table style="width:100%;border-collapse:collapse;font-size:0.9rem;text-align:left">
+<thead>
+<tr style="border-bottom:2px solid var(--color-border)">
+<th style="padding:12px 8px;color:var(--color-text-light)">Situasjon</th>
+<th style="padding:12px 8px;color:var(--color-text-light)">Forbudt å stanse</th>
+<th style="padding:12px 8px;color:var(--color-text-light)">Forbudt å parkere</th>
+</tr>
+</thead>
+<tbody>
+<tr style="border-bottom:1px solid var(--color-border)"><td style="padding:12px 8px;color:var(--color-text)">På gangfelt eller sykkelkryssing</td><td style="padding:12px 8px;color:var(--color-error)">Ja</td><td style="padding:12px 8px;color:var(--color-error)">Ja</td></tr>
+<tr style="border-bottom:1px solid var(--color-border)"><td style="padding:12px 8px;color:var(--color-text)">Nærmere enn 5 meter foran gangfelt</td><td style="padding:12px 8px;color:var(--color-error)">Ja</td><td style="padding:12px 8px;color:var(--color-error)">Ja</td></tr>
+<tr style="border-bottom:1px solid var(--color-border)"><td style="padding:12px 8px;color:var(--color-text)">I veikryss eller nærmere enn 5 meter fra kryss</td><td style="padding:12px 8px;color:var(--color-error)">Ja</td><td style="padding:12px 8px;color:var(--color-error)">Ja</td></tr>
+<tr style="border-bottom:1px solid var(--color-border)"><td style="padding:12px 8px;color:var(--color-text)">På fortau, gangvei eller sykkelvei</td><td style="padding:12px 8px;color:var(--color-error)">Ja</td><td style="padding:12px 8px;color:var(--color-error)">Ja</td></tr>
+<tr style="border-bottom:1px solid var(--color-border)"><td style="padding:12px 8px;color:var(--color-text)">I uoversiktlig kurve eller på bakketopp</td><td style="padding:12px 8px;color:var(--color-error)">Ja</td><td style="padding:12px 8px;color:var(--color-error)">Ja</td></tr>
+<tr style="border-bottom:1px solid var(--color-border)"><td style="padding:12px 8px;color:var(--color-text)">I tunnel</td><td style="padding:12px 8px;color:var(--color-error)">Ja</td><td style="padding:12px 8px;color:var(--color-error)">Ja</td></tr>
+<tr style="border-bottom:1px solid var(--color-border)"><td style="padding:12px 8px;color:var(--color-text)">På motorvei</td><td style="padding:12px 8px;color:var(--color-error)">Ja</td><td style="padding:12px 8px;color:var(--color-error)">Ja</td></tr>
+<tr style="border-bottom:1px solid var(--color-border)"><td style="padding:12px 8px;color:var(--color-text)">Der skiltet viser “Stans forbudt”</td><td style="padding:12px 8px;color:var(--color-error)">Ja</td><td style="padding:12px 8px;color:var(--color-error)">Ja</td></tr>
+<tr style="border-bottom:1px solid var(--color-border)"><td style="padding:12px 8px;color:var(--color-text)">Der skiltet viser “Parkering forbudt”</td><td style="padding:12px 8px;color:var(--color-success)">Nei, kort stans kan være lov</td><td style="padding:12px 8px;color:var(--color-error)">Ja</td></tr>
+<tr style="border-bottom:1px solid var(--color-border)"><td style="padding:12px 8px;color:var(--color-text)">Foran inn- eller utkjørsel</td><td style="padding:12px 8px;color:var(--color-success)">Ofte kort stans mulig hvis du ikke hindrer</td><td style="padding:12px 8px;color:var(--color-error)">Ja, hvis du hindrer adkomst</td></tr>
+</tbody>
+</table></div>`
+            },
+            {
+                title: '',
+                type: 'text',
+                content: 'Hvis det er forbudt å stanse, er parkering også forbudt. Men hvis det bare er parkering forbudt, kan kort stans være lov.\n\nLes også guiden om [trafikkskilt](/laeringsressurser/skilt) hvis du vil lære forskjellen på stans forbudt-skiltet og parkering forbudt-skiltet.'
+            },
+            {
+                title: 'Kan du stanse på venstre side av veien?',
+                type: 'text',
+                content: 'Som hovedregel skal stans og parkering skje på høyre side av veien i kjøreretningen. Å stanse eller parkere på venstre side kan være farlig fordi bilen står mot trafikkretningen og kan skape dårlig sikt eller uventede situasjoner.\n\nPå enveiskjørt vei kan venstre side være tillatt hvis det ellers er lovlig.'
+            },
+            {
+                title: 'Kan man parkere på forkjørsvei?',
+                type: 'text',
+                content: 'Ja, det kan være lov å parkere på forkjørsvei hvis det ikke er skiltet forbud og du ikke bryter andre regler. Du kan likevel ikke parkere der bilen hindrer sikt, skaper fare, står for nær veikryss eller gangfelt, eller sperrer trafikken.\n\nForkjørsvei betyr ikke automatisk parkeringsforbud. Du må alltid se etter skilt, vegoppmerking og om bilen står trygt.'
+            },
+            {
+                title: 'Skilt for stans og parkering',
+                type: 'text',
+                content: 'Det er spesielt to skilt du må kjenne:\n\n### Stans forbudt\n\nDette skiltet betyr at du ikke kan stanse frivillig. Du kan altså ikke stoppe for å slippe av en passasjer, hente noen, laste av varer eller vente.\n\nUnntak: Du må selvfølgelig fortsatt stanse ved trafikal stans, for eksempel rødt lys, kø eller vikeplikt.\n\n### Parkering forbudt\n\nDette skiltet betyr at du ikke kan parkere, men du kan normalt stanse kort for av- og påstigning eller av- og pålessing.\n\nTypisk teorifelle: Mange tror parkering forbudt betyr at bilen aldri kan stoppe. Det er feil. Kort stans kan være lov, men bilen skal ikke bli stående.'
+            },
+            {
+                title: 'Veimerking og parkering',
+                type: 'text',
+                content: 'Skilt er ikke det eneste som regulerer stans og parkering. Også vegoppmerking kan fortelle deg hva som er lov.\n\nEksempler:\n\n- Gangfelt viser hvor du må være ekstra oppmerksom på fotgjengere\n- Gul kantlinje kan bety stans- eller parkeringsforbud\n- Oppmerkede parkeringsfelt viser hvor bilen skal stå\n- Sykkelfelt og kollektivfelt har egne regler\n\nLes mer i guiden om [veimerking til teoriprøven](/laeringsressurser/veimerking).'
+            },
+            {
+                title: 'Kan jeg parkere mot kjøreretningen?',
+                type: 'text',
+                content: 'Som hovedregel skal kjøretøy parkeres på høyre side av veien i kjøreretningen. På enveiskjørte veier kan det være tillatt å parkere på venstre side dersom det ellers er lovlig og ikke skaper fare.\n\nPå teoriprøven bør du alltid tenke: Er bilen plassert slik at andre trafikanter ser den tydelig, og kommer trygt forbi?'
+            },
+            {
+                title: 'Typiske teorifeller',
                 type: 'warning',
-                content: 'Dette er tallene du rett og slett må pugge. Du har verken lov til å stanse eller parkere på følgende steder:\n\n- Gangfelt og sykkelkryssing: På selve feltet, og nærmere enn 5 meter foran feltet. (Du har imidlertid lov til å parkere umiddelbart etter feltet).\n- Veikryss: I selve krysset, eller nærmere enn 5 meter fra krysset. (Avstanden måles fra det punktet hvor fortauskanten, eller kanten av veibanen, begynner å runde).\n- Jernbane- og sporveiskryssing: Nærmere planovergangen enn 5 meter.\n- Uoversiktlige steder: I uoversiktlige svinger, bakketopper eller tunneler.\n- Motorvei og motortrafikkvei: Det er totalt forbudt å stanse eller parkere (unntatt på oppmerkede rasteplasser eller ved nødstopp).'
+                content: '### 1. “Jeg stopper bare i ett minutt”\n\nKort tid hjelper ikke hvis stedet har stanseforbud. På gangfelt, foran gangfelt, i veikryss eller der skiltet viser stans forbudt, kan selv et kort stopp være feil.\n\n### 2. Parkering forbudt betyr ikke stans forbudt\n\nVed parkering forbudt kan du normalt stanse kort for av- og påstigning. Men du kan ikke bli stående og vente.\n\n### 3. 5 meter foran gangfelt\n\nDu skal ikke stanse eller parkere nærmere enn 5 meter foran gangfeltet. Etter gangfeltet kan parkering være lovlig, men bare hvis det ellers er trygt og tillatt.\n\n### 4. T-kryss teller også som kryss\n\nMange glemmer T-kryss. Ikke parker i eller tett ved munningen av et T-kryss, selv om det ikke ser ut som et “vanlig” fireveis kryss.\n\n### 5. Trafikal stans er ikke parkering\n\nHvis du stopper for rødt lys, kø eller vikeplikt, er det trafikal stans. Det er noe annet enn å stoppe frivillig for å vente, handle eller slippe av noen.\n\n### 6. Fortau er ikke en nødløsning\n\nDu kan ikke parkere på fortau, gangvei eller sykkelvei bare fordi veien er trang. Det kan hindre gående, syklister, barnevogner og rullestolbrukere.\n\n### 7. Forkjørsvei betyr ikke automatisk parkeringsforbud\n\nDet kan være lov å parkere på forkjørsvei, men bare hvis det ikke er skiltet forbud og bilen ikke skaper fare, hindrer sikt eller står ulovlig nær kryss eller gangfelt.'
             },
             {
-                title: '5. Spesialregel for busslommer',
-                type: 'info',
-                content: 'Busslommer har en egen avstandsregel som ofte testes. Du har ikke lov til å parkere i en busslomme (holdeplass for buss, taxi eller trikk), eller nærmere enn 20 meter før og 15 meter etter skiltet for holdeplassen.\n\nUnntak: Du har lov til å stanse kort for å slippe av eller på passasjerer i en busslomme, men kun hvis det ikke er til hinder for bussen eller taxien.'
-            },
-            {
-                title: 'De 3 vanligste fellene på teoriprøven',
-                type: 'warning',
-                content: '1. Parkering ETTER gangfelt: På et bilde står en bil parkert rett etter et gangfelt. Mange svarer at dette er ulovlig på grunn av 5-metersregelen. Fasit: Dette er lovlig. Forbudet gjelder bare på og 5 meter foran gangfeltet.\n\n2. Forlate bilen "et lite øyeblikk": Du står i en sone med "Parkering forbudt", men går ut for å poste et brev. Er det stans eller parkering? Fasit: Du har parkert, og handlingen er ulovlig. Du forlot bilen for et annet ærend enn av/på-stigning eller lasting.\n\n3. Stans på forkjørsvei: Mange tror det er lov å parkere på en forkjørsvei hvis man står helt i kanten. Fasit: Hvis fartsgrensen på forkjørsveien er høyere enn 50 km/t, er det forbudt å parkere på kjørebanen.'
-            },
-            {
-                title: 'Test dine kunnskaper',
+                title: 'Hva bør du kunne til teoriprøven?',
                 type: 'tip',
-                content: 'Klarer du å skille skilt og situasjoner i praksis? Ta en [Gratis ekspresstest](/quiz?mode=hurtig) og se om du unngår fellene!'
+                content: 'Du bør kunne:\n\n- forskjellen på stans og parkering\n- hva trafikal stans betyr\n- 5-metersregelen ved gangfelt og veikryss\n- forskjellen på stans forbudt og parkering forbudt\n- når kort stans er lov\n- hvor du aldri må stanse\n- hvordan skilt og veimerking regulerer parkering\n\nSe også [temalisten for teoriprøven klasse B](/laeringsressurser/temaliste-teoriproven-klasse-b) for å få oversikt over hvilke temaer du bør kunne.'
             }
         ],
         faq: [
             {
-                question: 'Er det lov å stanse på et fortau eller en gang- og sykkelvei?',
-                answer: 'Nei, det er strengt forbudt å både stanse og parkere på fortau, gangveier og sykkelveier. Dette er for å sikre at myke trafikanter kan ferdes trygt uten å måtte gå ut i bilveien.'
+                question: 'Hva er forskjellen på stans og parkering?',
+                answer: 'Stans er et kort opphold, for eksempel for av- og påstigning eller av- og pålessing. Parkering er når bilen blir stående av andre grunner, også hvis føreren sitter i bilen.'
             },
             {
-                question: 'Hva skjer hvis jeg får motorstopp der det er stans forbudt?',
-                answer: 'Motorstopp eller trafikkulykke regnes som "nødstopp". Da skal du sette på varselblinkere, få bilen så langt ut til siden som mulig, og sette ut varseltrekant (150-250 meter unna utenfor tettbygd strøk).'
+                question: 'Hva betyr trafikal stans?',
+                answer: 'Trafikal stans er når du stopper på grunn av trafikken, for eksempel rødt lys, kø, vikeplikt eller fotgjengere i gangfelt.'
             },
             {
-                question: 'Kan jeg parkere mot kjøreretningen?',
-                answer: 'Hovedregelen i Norge er at man skal parkere på høyre side av veien (i kjøreretningen). Unntaket er i enveiskjørte gater, hvor du kan parkere på venstre side hvis det er plass og ikke skiltet med forbud.'
+                question: 'Hvor mange meter fra gangfelt kan man parkere?',
+                answer: 'Du må stå minst 5 meter foran gangfeltet i kjøreretningen. Etter gangfeltet kan parkering være lovlig hvis det ellers er trygt og tillatt.'
+            },
+            {
+                question: 'Hvor mange meter fra veikryss kan man parkere?',
+                answer: 'Du skal ikke stanse eller parkere i veikryss eller nærmere enn 5 meter fra veikryss.'
+            },
+            {
+                question: 'Er det tillatt å stanse på venstre side av veien?',
+                answer: 'Som hovedregel skal stans og parkering skje på høyre side i kjøreretningen. På enveiskjørt vei kan venstre side være tillatt hvis det ellers er lovlig.'
+            },
+            {
+                question: 'Har du lov til å stanse i tunnel?',
+                answer: 'Nei, du skal ikke stanse eller parkere i tunnel med mindre trafikken eller en nødsituasjon gjør det nødvendig.'
+            },
+            {
+                question: 'Kan man parkere på forkjørsvei?',
+                answer: 'Ja, det kan være lov hvis det ikke er skiltet forbud og bilen ikke står farlig, hindrer sikt eller bryter andre regler.'
+            },
+            {
+                question: 'Kan jeg stanse der det er parkering forbudt?',
+                answer: 'Ja, kort stans for av- og påstigning eller av- og pålessing kan normalt være lov. Men du kan ikke parkere eller bli stående.'
+            },
+            {
+                question: 'Kan jeg stanse der det er stans forbudt?',
+                answer: 'Nei, ikke frivillig. Stans forbudt betyr at både stans og parkering er forbudt. Trafikal stans, som kø eller rødt lys, er noe annet.'
+            },
+            {
+                question: 'Kan jeg parkere på fortau?',
+                answer: 'Nei, du skal ikke parkere på fortau, gangvei eller sykkelvei. Det kan hindre og skape fare for myke trafikanter.'
+            }
+        ],
+        miniQuiz: [
+            {
+                question: "Hva er riktig forskjell på stans og parkering?",
+                options: [
+                    "Stans er alltid ulovlig, parkering er alltid lovlig",
+                    "Parkering er når bilen blir stående av andre grunner enn kort av- og påstigning eller lasting",
+                    "Parkering er bare når føreren forlater bilen",
+                    "Stans og parkering betyr det samme"
+                ],
+                correct: "Parkering er når bilen blir stående av andre grunner enn kort av- og påstigning eller lasting",
+                explanation: "Parkering kan være parkering selv om føreren sitter i bilen. Det avgjørende er hvorfor bilen står der."
+            },
+            {
+                question: "Du stanser fordi trafikklyset viser rødt. Hva kalles dette?",
+                options: [
+                    "Ulovlig parkering",
+                    "Trafikal stans",
+                    "Parkering forbudt",
+                    "Frivillig stans"
+                ],
+                correct: "Trafikal stans",
+                explanation: "Når trafikken tvinger deg til å stoppe, er det trafikal stans."
+            },
+            {
+                question: "Hvor nærme foran et gangfelt kan du stanse eller parkere?",
+                options: [
+                    "1 meter",
+                    "3 meter",
+                    "5 meter",
+                    "Du kan stå helt inntil hvis du bare skal være rask"
+                ],
+                correct: "5 meter",
+                explanation: "Du skal ikke stanse eller parkere på eller nærmere enn 5 meter foran gangfelt."
+            },
+            {
+                question: "Hva betyr skiltet “Parkering forbudt”?",
+                options: [
+                    "Du kan aldri stoppe bilen",
+                    "Du kan stanse kort, men ikke parkere",
+                    "Du kan parkere hvis du sitter i bilen",
+                    "Det gjelder bare om natten"
+                ],
+                correct: "Du kan stanse kort, men ikke parkere",
+                explanation: "Parkering forbudt betyr at parkering er forbudt, men kort stans kan være lov."
+            },
+            {
+                question: "Hva betyr “Stans forbudt”?",
+                options: [
+                    "Du kan stoppe i maks 2 minutter",
+                    "Du kan stoppe hvis du blir sittende i bilen",
+                    "Du kan ikke stanse frivillig",
+                    "Du kan parkere, men ikke laste av varer"
+                ],
+                correct: "Du kan ikke stanse frivillig",
+                explanation: "Ved stans forbudt er både stans og parkering forbudt, bortsett fra trafikal stans."
+            },
+            {
+                question: "Hva er en vanlig teorifelle i T-kryss?",
+                options: [
+                    "At T-kryss ikke regnes som kryss",
+                    "At du alltid kan parkere på den rette veien",
+                    "At T-kryss også kan ha stans- og parkeringsforbud nær krysset",
+                    "At 5-metersregelen bare gjelder motorvei"
+                ],
+                correct: "At T-kryss også kan ha stans- og parkeringsforbud nær krysset",
+                explanation: "T-kryss er også veikryss, og du må ikke parkere slik at du hindrer sikt eller ferdsel."
+            },
+            {
+                question: "Du stopper på et sted med parkering forbudt for å slippe av en passasjer. Er det alltid feil?",
+                options: [
+                    "Ja, bilen kan aldri stoppe der",
+                    "Nei, kort stans for av- og påstigning kan være lov",
+                    "Ja, hvis motoren er på",
+                    "Nei, du kan stå der så lenge du vil hvis du sitter i bilen"
+                ],
+                correct: "Nei, kort stans for av- og påstigning kan være lov",
+                explanation: "Ved parkering forbudt kan kort stans være lov, men bilen skal ikke bli stående."
             }
         ]
     },
@@ -2110,67 +2274,190 @@ export const theoryTopics: TheoryTopic[] = [
 
     {
         id: 'vognkort-vekter',
-        title: 'Vognkort og vekter: Slik forstår du tallene til teoriprøven',
-        icon: 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none"><rect x="10" y="6" width="44" height="52" rx="3" fill="%23F4F4F6" stroke="%23D1D1D6" stroke-width="2"/><rect x="11" y="7" width="42" height="50" rx="2" fill="%23FFFFFF"/><rect x="25" y="12" width="14" height="10" rx="1" fill="%23C8102E"/><path d="M28 15 L32 19 L36 15 Z" fill="%23FFD100"/><text x="44" y="20" font-family="Arial, sans-serif" font-weight="bold" font-size="14" fill="%231A1A1A">1</text><rect x="20" y="25" width="24" height="2" rx="1" fill="%238E8E93"/><rect x="16" y="29" width="32" height="1.5" rx="0.75" fill="%23AEAEB2"/><rect x="14" y="34" width="36" height="6" rx="1" fill="%23E5E5EA"/><rect x="16" y="36.5" width="10" height="1" rx="0.5" fill="%238E8E93"/><rect x="30" y="36.5" width="16" height="1" rx="0.5" fill="%23C7C7CC"/><rect x="14" y="42" width="36" height="6" rx="1" fill="%23E5E5EA"/><rect x="16" y="44.5" width="12" height="1" rx="0.5" fill="%238E8E93"/><rect x="30" y="44.5" width="12" height="1" rx="0.5" fill="%23C7C7CC"/><rect x="14" y="50" width="36" height="6" rx="1" fill="%23E5E5EA"/><rect x="16" y="52.5" width="8" height="1" rx="0.5" fill="%238E8E93"/><rect x="30" y="52.5" width="18" height="1" rx="0.5" fill="%23C7C7CC"/></svg>',
-        shortDescription: 'Lær å lese vognkortet: egenvekt, tillatt totalvekt, aktuell vekt, og hvordan du regner ut nøyaktig nyttelast for personbil.',
-        color: 'var(--apple-indigo)',
-        seoTitle: 'Vognkort og vekter: Slik regner du ut nyttelast (Klasse B)',
-        seoDescription: 'Lær å lese vognkortet til teoriprøven. Vi forklarer egenvekt, tillatt totalvekt, aktuell vekt, og hvordan du regner ut nøyaktig nyttelast for personbil.',
-        hasCalculator: true,
+        title: 'Vognkort og vekter',
+        shortDescription: 'Lær å lese vognkortet til teoriprøven: egenvekt, tillatt totalvekt, nyttelast, aksellast, vogntogvekt og tilhengervekt.',
+        icon: '📋',
+        color: 'var(--apple-teal)',
+        seoTitle: 'Vognkort og vekter – egenvekt, nyttelast og totalvekt | Teori-test.no',
+        seoDescription: 'Lær å lese vognkortet til teoriprøven: egenvekt, tillatt totalvekt, nyttelast, aksellast, vogntogvekt og tilhengervekt. Med eksempler og miniQuiz.',
         sections: [
+            {
+                title: 'Kort forklart: hva viser vognkortet?',
+                type: 'text',
+                content: 'Vognkortet viser bilens tekniske data og lovlige vektgrenser. De viktigste tallene til teoriprøven er egenvekt, tillatt totalvekt, nyttelast, tillatt vogntogvekt, aksellast og tillatt hengervekt med eller uten brems. Det er den tekniske delen av vognkortet, del 1, som skal ligge i bilen under kjøring. Del 2 er eierdelen og bør oppbevares trygt hjemme.'
+            },
             {
                 title: 'Vognkort og vekter: Slik forstår du tallene til teoriprøven',
                 type: 'text',
-                content: 'Vognkortet (spesielt del 1) inneholder avgjørende teknisk informasjon om bilen. På teoriprøven får du ofte se et bilde av et vognkort, etterfulgt av et spørsmål om hvor mye bagasje eller hvor mange passasjerer du kan ha med. For å løse disse oppgavene, må du forstå de fire viktigste vektbegrepene.'
+                content: 'Vognkortet forteller deg hva bilen er godkjent for: hvor mye den kan veie, hvor mye du kan laste, hvor mye den kan trekke, og hvilke tekniske grenser du må følge. På teoriprøven får du ofte et bilde av et vognkort og må regne ut nyttelast, tilhengervekt eller om bilen er lovlig lastet.'
             },
             {
-                title: '1. De fire viktigste vektbegrepene',
-                type: 'info',
-                content: 'Disse begrepene finner du under punkt 8 ("Vekter") i bilens vognkort. Dette er definisjonene du må pugge:\n\n- Egenvekt: Dette er hva bilen veier når den er "tom" for passasjerer og bagasje. Men, egenvekten inkluderer alltid full drivstofftank (eller batteri), standardutstyr og vekten av bilens fører (som er standardisert til 75 kg).\n- Tillatt totalvekt: Dette er den absolutt maksimale vekten bilen er bygget, registrert og godkjent for å tåle. Dette tallet kan aldri lovlig overskrides.\n- Aktuell totalvekt (Aktuell vekt): Dette er det bilen faktisk veier akkurat nå, i dette øyeblikket ute på veien. Altså bilens egenvekt pluss alle passasjerer og all bagasje du har lastet inn. Aktuell vekt må aldri være høyere enn tillatt totalvekt.\n- Nyttelast: Dette er den maksimale vekten du har lov til å putte inn i bilen (passasjerer og bagasje).'
+                title: '',
+                type: 'table',
+                content: `<div style="overflow-x:auto; margin: 1rem 0;">\n<table style="width: 100%; border-collapse: collapse; margin-bottom: 2rem;">\n    <thead>\n        <tr style="border-bottom: 2px solid var(--color-border);">\n            <th style="padding: 1rem 0.5rem; text-align: left; font-weight: 700;">Begrep</th>\n            <th style="padding: 1rem 0.5rem; text-align: left; font-weight: 700;">Hva betyr det?</th>\n            <th style="padding: 1rem 0.5rem; text-align: left; font-weight: 700;">Typisk teorifelle</th>\n        </tr>\n    </thead>\n    <tbody>\n        <tr style="border-bottom: 1px solid var(--color-border);">\n            <td style="padding: 1rem 0.5rem; font-weight: 600;">Egenvekt med fører</td>\n            <td style="padding: 1rem 0.5rem;">Bilens vekt uten passasjerer og bagasje, men med fører på 75 kg</td>\n            <td style="padding: 1rem 0.5rem;">Mange trekker fra føreren én gang til</td>\n        </tr>\n        <tr style="border-bottom: 1px solid var(--color-border);">\n            <td style="padding: 1rem 0.5rem; font-weight: 600;">Tillatt totalvekt</td>\n            <td style="padding: 1rem 0.5rem;">Maks lovlig vekt for bilen med last og passasjerer</td>\n            <td style="padding: 1rem 0.5rem;">Må aldri overskrides</td>\n        </tr>\n        <tr style="border-bottom: 1px solid var(--color-border);">\n            <td style="padding: 1rem 0.5rem; font-weight: 600;">Aktuell totalvekt</td>\n            <td style="padding: 1rem 0.5rem;">Det bilen faktisk veier akkurat nå</td>\n            <td style="padding: 1rem 0.5rem;">Endrer seg med passasjerer og last</td>\n        </tr>\n        <tr style="border-bottom: 1px solid var(--color-border);">\n            <td style="padding: 1rem 0.5rem; font-weight: 600;">Nyttelast</td>\n            <td style="padding: 1rem 0.5rem;">Hvor mye bilen kan laste av passasjerer og bagasje</td>\n            <td style="padding: 1rem 0.5rem;">Takboks og bagasje teller med</td>\n        </tr>\n        <tr style="border-bottom: 1px solid var(--color-border);">\n            <td style="padding: 1rem 0.5rem; font-weight: 600;">Tillatt vogntogvekt</td>\n            <td style="padding: 1rem 0.5rem;">Maks samlet vekt for bil og tilhenger</td>\n            <td style="padding: 1rem 0.5rem;">Kan begrense selv om hengervekten ser høy nok ut</td>\n        </tr>\n        <tr style="border-bottom: 1px solid var(--color-border);">\n            <td style="padding: 1rem 0.5rem; font-weight: 600;">Tillatt hengervekt med brems</td>\n            <td style="padding: 1rem 0.5rem;">Maks tilhenger bilen kan trekke når tilhengeren har brems</td>\n            <td style="padding: 1rem 0.5rem;">Må sjekkes mot førerkortklasse</td>\n        </tr>\n        <tr style="border-bottom: 1px solid var(--color-border);">\n            <td style="padding: 1rem 0.5rem; font-weight: 600;">Tillatt hengervekt uten brems</td>\n            <td style="padding: 1rem 0.5rem;">Maks tilhenger bilen kan trekke uten tilhengerbrems</td>\n            <td style="padding: 1rem 0.5rem;">Er ofte mye lavere</td>\n        </tr>\n        <tr style="border-bottom: 1px solid var(--color-border);">\n            <td style="padding: 1rem 0.5rem; font-weight: 600;">Tillatt taklast</td>\n            <td style="padding: 1rem 0.5rem;">Maks vekt på taket, inkludert takstativ og takboks</td>\n            <td style="padding: 1rem 0.5rem;">Takboksen veier også noe</td>\n        </tr>\n    </tbody>\n</table>\n</div>`
             },
             {
-                title: 'Interaktiv Kalkulator for Tilhengervekt',
-                type: 'calculator',
-                content: 'Bruk kalkulatoren under for å se om du lovlig kan trekke tilhengeren med et vanlig Klasse B førerkort, eller om du trenger B96 eller BE. Test med ulike vekter for å se hvordan «campingvogn-regelen» fungerer i praksis:'
+                title: 'De fire viktigste vektbegrepene',
+                type: 'text',
+                content: '### Egenvekt\n\nEgenvekt er hva bilen veier når den er tom for passasjerer og bagasje. I vognkortet er føreren normalt inkludert med 75 kg. Det betyr at du ikke skal trekke fra føreren en gang til når du regner nyttelast.\n\n### Tillatt totalvekt\n\nTillatt totalvekt er den maksimale vekten bilen er godkjent for. Dette er grensen bilen aldri lovlig kan overstige.\n\nEksempel: Hvis tillatt totalvekt er 2000 kg, kan bilen aldri veie mer enn 2000 kg med passasjerer, bagasje, takboks og last.\n\n### Aktuell totalvekt\n\nAktuell totalvekt er det bilen faktisk veier akkurat nå. Den endrer seg etter hvor mange passasjerer du har, hvor mye bagasje du har lastet, og om du har utstyr på taket.\n\n### Nyttelast\n\nNyttelast er hvor mye du kan laste i bilen. Det inkluderer passasjerer og bagasje, og ofte også ekstrautstyr som takboks og last på taket.\n\nFormelen er:\n\n**Tillatt totalvekt - egenvekt = nyttelast**'
             },
             {
-                title: '2. Slik regner du ut nyttelast (Formelen)',
-                type: 'formula',
-                content: 'Det klassiske regnestykket på eksamen er å finne ut hvor mange kilo bagasje du har plass til, hvis du for eksempel har med deg tre venner i bilen.\n\nFormelen er alltid den samme:\nTillatt totalvekt - Egenvekt = Nyttelast'
-            },
-            {
-                title: 'Praktisk eksempel',
+                title: 'Slik regner du ut nyttelast',
                 type: 'example',
-                content: 'I vognkortet står det at bilens Tillatte totalvekt er 2000 kg.\nBilens Egenvekt er 1500 kg.\n\nNyttelasten er da: 2000 - 1500 = 500 kg.\n\nDu skal ha med deg 3 passasjerer som veier 80 kg hver (totalt 240 kg). Føreren trenger du ikke å regne med, da personen allerede er inkludert i bilens egenvekt!\n\nRestvekt til bagasje: 500 kg (Nyttelast) - 240 kg (Passasjerer) = 260 kg. Du kan trygt laste inn 260 kg i bagasjerommet.'
+                content: 'Det klassiske regnestykket på teoriprøven er å finne ut hvor mange kilo bagasje du kan ha med når du allerede har passasjerer i bilen.\n\nEksempel:\n\n- Tillatt totalvekt: 2000 kg\n- Egenvekt med fører: 1500 kg\n- Nyttelast: 2000 - 1500 = 500 kg\n\nDu skal ha med 3 passasjerer som veier 80 kg hver:\n\n- Passasjerer: 3 × 80 kg = 240 kg\n- Rest til bagasje: 500 - 240 = 260 kg\n\nDu kan altså laste 260 kg bagasje. Føreren er allerede inkludert i egenvekten.'
             },
             {
-                title: '3. Taklast og tilhengervekt',
+                title: 'Interaktiv kalkulator for tilhengervekt',
+                type: 'calculator',
+                content: 'Bruk kalkulatoren under for å se om du lovlig kan trekke tilhengeren med vanlig klasse B, eller om du trenger B96 eller BE. Test med ulike vekter for å se hvordan 3500 kg-regelen fungerer i praksis.'
+            },
+            {
+                title: 'Slik leser du tilhengervekt i vognkortet',
+                type: 'text',
+                content: 'Når du skal finne ut hvilken tilhenger bilen kan trekke, må du se i punkt 8 i vognkortet: **Vekter**. Her finner du de viktigste tallene for bil, last og tilhenger.\n\nI eksempelet under ser du blant annet:\n\n- **Tillatt totalvekt:** 1985 kg\n- **Egenvekt med fører:** 1400 kg\n- **Tillatt nyttelast inkl. passasjerer:** 585 kg\n- **Tillatt vogntogvekt:** 3385 kg\n- **Tillatt hengervekt med brems:** 1400 kg\n- **Tillatt hengervekt uten brems:** 650 kg\n- **Tillatt koblingslast:** 75 kg\n- **Tillatt taklast:** 75 kg\n\n![Vognkort vekter – tillatt totalvekt, nyttelast og tilhengervekt med brems og uten brems](/Tilhenger%20vekter.png)\n*I vognkortet finner du bilens tillatte totalvekt, nyttelast, vogntogvekt og hvor tung tilhenger bilen kan trekke med og uten brems.*\n\nDet er spesielt to tall mange blander:\n\n**Tillatt hengervekt med brems** betyr hvor tung tilhenger bilen teknisk kan trekke når tilhengeren har egne bremser.\n\n**Tillatt hengervekt uten brems** betyr hvor tung tilhenger bilen kan trekke når tilhengeren ikke har egne bremser. Dette tallet er ofte mye lavere.\n\nHusk at du må sjekke tre ting samtidig:\n\n1. Hva bilen har lov til å trekke ifølge vognkortet\n2. Hva tilhengeren er registrert for\n3. Hva førerkortklassen din gir deg lov til å kjøre\n\nEn vanlig teorifelle er å bare se på førerkortregelen for klasse B og glemme bilens tekniske begrensning. Selv om førerkortet ditt tillater en bestemt kombinasjon, kan bilen ha en lavere grense i vognkortet.\n\nLes også vår guide om [regler for tilhenger](/laeringsressurser/tilhenger) hvis du vil forstå klasse B, B96 og BE bedre.'
+            },
+            {
+                title: 'Eksempel: Kan bilen trekke denne tilhengeren?',
+                type: 'example',
+                content: 'Bilen har tillatt hengervekt med brems på 1400 kg. Tilhengeren har tillatt totalvekt på 1300 kg.\n\nDa er tilhengeren innenfor bilens tekniske grense.\n\nMen du må fortsatt sjekke førerkortregelen. Med klasse B kan bilens og tilhengerens tillatte totalvekt som hovedregel være maks 3500 kg samlet, med unntak for lett tilhenger på maks 750 kg.\n\nDerfor må du alltid sjekke både:\n\n- vognkortet til bilen\n- vognkortet til tilhengeren\n- førerkortklassen din'
+            },
+            {
+                title: 'Hva betyr tillatt vogntogvekt?',
+                type: 'text',
+                content: 'Tillatt vogntogvekt er maksimal samlet vekt for bil og tilhenger. Selv om bilen har lov til å trekke en bestemt hengervekt, må samlet vekt for bil og tilhenger ikke overstige tillatt vogntogvekt i vognkortet.\n\nEksempel:\n\n- Bilens aktuelle totalvekt: 1900 kg\n- Tilhengerens aktuelle totalvekt: 1300 kg\n- Samlet vogntogvekt: 3200 kg\n\nHvis vognkortet sier at tillatt vogntogvekt er 3385 kg, er dette innenfor grensen.'
+            },
+            {
+                title: 'Taklast og takboks',
                 type: 'info',
-                content: 'I tillegg til nyttelasten inni bilen, regulerer vognkortet hva du kan ha på taket og på slep:\n\n- Maks tillatt taklast: Maksimal vekt du kan ha på taket. Ligger typisk mellom 50-100 kg. Husk at selve takstativet og takboksen veier noe – dette må trekkes fra taklasten før du fyller boksen med ski og bagasje.\n- Maks tillatt tilhengervekt: Deler seg i to kategorier: "med brems" og "uten brems". (Les mer om fartsgrensene for tilhengere i vår [artikkel om fartsgrenser](/laeringsressurser/fartsgrenser)).'
+                content: 'Maks tillatt taklast viser hvor mye du kan ha på taket. Dette inkluderer både takstativ, takboks og innholdet i takboksen.\n\nEksempel:\n\n- Tillatt taklast: 75 kg\n- Takstativ og takboks veier: 25 kg\n- Maks bagasje i takboksen: 75 - 25 = 50 kg\n\nEn vanlig teorifelle er å glemme at selve takboksen også veier noe.'
             },
             {
-                title: 'De 3 vanligste fellene på teoriprøven',
+                title: 'Overlast gjør bilen farligere',
                 type: 'warning',
-                content: '1. Glemme føreren: Mange trekker fra vekten på 4 personer når de regner ut restvekt. Husk at sjåføren (75 kg) allerede er bakt inn i bilens "Egenvekt". Du skal bare trekke fra passasjerene.\n2. Forveksle Tillatt og Aktuell: "Tillatt" er maksgrensen skrevet i papirene. "Aktuell" er det bilen veier akkurat nå på vekta.\n3. Glemme takboksens egenvekt: Får du oppgitt at taklasten er 75 kg, og at takboksen veier 25 kg, har du bare lov til å legge 50 kg med utstyr inni boksen.'
+                content: 'Hvis bilen er for tungt lastet, blir den vanskeligere å styre og stoppe. Overlast kan gi:\n\n- lengre bremselengde\n- dårligere veigrep\n- økt slitasje\n- høyere risiko ved unnamanøver\n- gebyr eller kjøreforbud ved kontroll\n\nLes også om [bremselengde og stopplengde](/laeringsressurser/bremselengde), siden tung bil trenger lengre avstand for å stoppe trygt.'
             },
             {
-                title: 'Klar for å teste regneferdighetene?',
-                type: 'tip',
-                content: 'Ta en [Gratis teoriprøve](/quiz) og se om du klarer å unngå overlast-fellene på eksamen!'
+                title: 'Fartsgrenser med tilhenger',
+                type: 'text',
+                content: 'Når du trekker tilhenger, må du også kunne reglene for fart. Fartsgrensen avhenger blant annet av tilhengeren, vekt og teknisk godkjenning.\n\nLes mer om [fartsgrenser med tilhenger](/laeringsressurser/fartsgrenser).'
+            },
+            {
+                title: 'De vanligste fellene på teoriprøven',
+                type: 'warning',
+                content: '### 1. Glemme at føreren er inkludert\n\nFøreren er normalt inkludert i egenvekten med 75 kg. Når du regner nyttelast, skal du derfor bare trekke fra passasjerer og bagasje.\n\n### 2. Forveksle tillatt og aktuell vekt\n\nTillatt vekt er maksgrensen i vognkortet. Aktuell vekt er det bilen faktisk veier akkurat nå.\n\n### 3. Bare sjekke førerkortregelen for tilhenger\n\nDu må også sjekke bilens tillatte hengervekt og tillatt vogntogvekt i vognkortet.\n\n### 4. Glemme tilhenger uten brems\n\nTillatt hengervekt uten brems er ofte mye lavere enn hengervekt med brems.\n\n### 5. Glemme takboksens egenvekt\n\nHvis taklasten er 75 kg og takboksen veier 25 kg, har du bare 50 kg igjen til bagasje i takboksen.'
             }
         ],
         faq: [
             {
                 question: 'Må jeg alltid ha vognkortet i bilen?',
-                answer: 'Ja, del 1 av vognkortet skal alltid ligge i bilen under kjøring. Det beviser at bilen er lovlig registrert. Del 2 av vognkortet er et eierbevis og skal oppbevares trygt hjemme, aldri i bilen.'
-            },
-            {
-                question: 'Hva skjer hvis jeg kjører med for høy aktuell totalvekt (overlast)?',
-                answer: 'Bilen får vesentlig dårligere kjøreegenskaper, og bremselengden øker farlig mye. Ved kontroll kan du få kjøreforbud (du må laste ut) og et klekkelig gebyr.'
+                answer: 'Ja, del 1 av vognkortet skal ligge i bilen under kjøring. Del 2 er eierbevis og bør oppbevares trygt hjemme.'
             },
             {
                 question: 'Hvor finner jeg bilens vekter?',
-                answer: 'Du finner alle vektbegrensninger under punkt 8 ("Vekter") i bilens vognkort del 1. Dette inkluderer også aksellast og tillatt tilhengervekt.'
+                answer: 'Du finner vektopplysningene i vognkortet, vanligvis under punkt 8: Vekter.'
+            },
+            {
+                question: 'Hvor finner jeg tillatt hengervekt i vognkortet?',
+                answer: 'Du finner tillatt hengervekt i punkt 8 "Vekter". Der står det vanligvis tillatt hengervekt med brems og uten brems.'
+            },
+            {
+                question: 'Hva betyr tillatt hengervekt med brems?',
+                answer: 'Det er den høyeste vekten bilen teknisk kan trekke når tilhengeren har egne bremser.'
+            },
+            {
+                question: 'Hva betyr tillatt hengervekt uten brems?',
+                answer: 'Det er den høyeste vekten bilen teknisk kan trekke når tilhengeren ikke har egne bremser. Denne grensen er ofte lavere.'
+            },
+            {
+                question: 'Hva betyr tillatt vogntogvekt?',
+                answer: 'Tillatt vogntogvekt er maksimal samlet vekt for bil og tilhenger.'
+            },
+            {
+                question: 'Hva er forskjellen på egenvekt og tillatt totalvekt?',
+                answer: 'Egenvekt er hva bilen veier uten last og passasjerer, men med fører inkludert. Tillatt totalvekt er maks lovlig vekt bilen kan ha med last og passasjerer.'
+            },
+            {
+                question: 'Hva skjer hvis jeg kjører med overlast?',
+                answer: 'Bilen kan få dårligere kjøreegenskaper og lengre bremselengde. Ved kontroll kan du få gebyr, og du kan bli pålagt å laste av før du kjører videre.'
+            }
+        ],
+        miniQuiz: [
+            {
+                question: 'Hva betyr egenvekt med fører?',
+                options: [
+                    'Bilens vekt uten drivstoff',
+                    'Bilens vekt inkludert fører, men uten passasjerer og bagasje',
+                    'Bilens maksimale lovlige vekt',
+                    'Vekten av bilen og tilhengeren samlet'
+                ],
+                correct: 'Bilens vekt inkludert fører, men uten passasjerer og bagasje',
+                explanation: 'Egenvekt med fører inkluderer føreren, normalt beregnet til 75 kg.'
+            },
+            {
+                question: 'Hvordan regner du ut nyttelast?',
+                options: [
+                    'Egenvekt + tillatt totalvekt',
+                    'Tillatt totalvekt - egenvekt',
+                    'Tillatt vogntogvekt - egenvekt',
+                    'Tillatt hengervekt - aktuell vekt'
+                ],
+                correct: 'Tillatt totalvekt - egenvekt',
+                explanation: 'Nyttelast er hvor mye bilen kan laste, og regnes ut ved å trekke egenvekt fra tillatt totalvekt.'
+            },
+            {
+                question: 'Bilen har tillatt totalvekt 2000 kg og egenvekt 1500 kg. Hvor stor er nyttelasten?',
+                options: [
+                    '300 kg',
+                    '400 kg',
+                    '500 kg',
+                    '3500 kg'
+                ],
+                correct: '500 kg',
+                explanation: '2000 - 1500 = 500 kg.'
+            },
+            {
+                question: 'Hvor finner du tillatt hengervekt med brems?',
+                options: [
+                    'I punktet for farge',
+                    'I punktet for antall sitteplasser',
+                    'Under vekter i vognkortet',
+                    'Bare på tilhengerens skilt'
+                ],
+                correct: 'Under vekter i vognkortet',
+                explanation: 'Tillatt hengervekt med og uten brems står under vektopplysningene i vognkortet.'
+            },
+            {
+                question: 'Hva må du sjekke før du trekker tilhenger?',
+                options: [
+                    'Bare bilens hestekrefter',
+                    'Bare om tilhengeren har lys',
+                    'Bilens vognkort, tilhengerens vognkort og førerkortklassen din',
+                    'Bare om du har klasse B'
+                ],
+                correct: 'Bilens vognkort, tilhengerens vognkort og førerkortklassen din',
+                explanation: 'Du må sjekke både tekniske grenser og hva førerkortet ditt tillater.'
+            },
+            {
+                question: 'Hva betyr tillatt vogntogvekt?',
+                options: [
+                    'Maks samlet vekt for bil og tilhenger',
+                    'Maks vekt på taket',
+                    'Maks vekt av føreren',
+                    'Maks vekt uten passasjerer'
+                ],
+                correct: 'Maks samlet vekt for bil og tilhenger',
+                explanation: 'Vogntogvekt er samlet vekt for bil og tilhenger.'
+            },
+            {
+                question: 'Hvorfor kan overlast være farlig?',
+                options: [
+                    'Bilen får bedre veigrep',
+                    'Bremselengden kan øke og kjøreegenskapene bli dårligere',
+                    'Motoren stopper alltid',
+                    'Det påvirker bare drivstofforbruket'
+                ],
+                correct: 'Bremselengden kan øke og kjøreegenskapene bli dårligere',
+                explanation: 'Overlast kan gi lengre bremselengde, dårligere styring og farligere kjøreegenskaper.'
             }
         ]
     },
