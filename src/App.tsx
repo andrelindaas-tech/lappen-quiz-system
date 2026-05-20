@@ -6,6 +6,8 @@ import StartScreen from './components/StartScreen'
 const QuizContainer = lazy(() => import('./components/QuizContainer'))
 const TheoryPage = lazy(() => import('./components/TheoryPage'))
 const OppkjoringPage = lazy(() => import('./components/OppkjoringPage'))
+const LearningGamesIndex = lazy(() => import('./components/LearningGamesIndex'))
+const StoppingDistanceChallenge = lazy(() => import('./components/StoppingDistanceChallenge'))
 import ThemeToggle from './components/ThemeToggle'
 import DailyStreak from './components/DailyStreak'
 import { recordCompletion } from './utils/streakStore'
@@ -131,6 +133,8 @@ export default function App() {
                         <Route path="/quiz/:category" element={<QuizContainer onReturnHome={handleReturnHome} onQuizComplete={handleQuizComplete} />} />
                         <Route path="/laeringsressurser/oppkjoring" element={<OppkjoringPage />} />
                         <Route path="/laeringsressurser/:articleId?" element={<TheoryPage />} />
+                        <Route path="/laeringsspill" element={<LearningGamesIndex />} />
+                        <Route path="/laeringsspill/stopplengde" element={<StoppingDistanceChallenge />} />
                         {/* Fallback route */}
                         <Route path="*" element={<StartScreen />} />
                     </Routes>

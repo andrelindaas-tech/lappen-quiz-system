@@ -17,7 +17,7 @@ export interface SignItem {
 export interface TheorySection {
     title: string
     content?: string
-    type: 'text' | 'formula' | 'info' | 'warning' | 'tip' | 'example' | 'signs' | 'calculator' | 'pyramid' | 'table' | 'component'
+    type: 'text' | 'formula' | 'info' | 'warning' | 'tip' | 'example' | 'signs' | 'calculator' | 'pyramid' | 'table' | 'component' | 'summary'
     signs?: SignItem[]
     componentId?: string
     component?: string
@@ -238,6 +238,11 @@ export const theoryTopics: TheoryTopic[] = [
                 title: 'Vannplaning — når bremselengden blir uendelig',
                 type: 'warning',
                 content: 'Vannplaning oppstår når vannet ikke rekker å presses vekk under dekket, og bilen begynner å gli på et vannlag. Dette skjer typisk ved høy fart, slitte dekk eller mye vann på veien.\n\nNår du hydraplaner (vannplaner):\n- Dekket mister kontakt med veibanen\n- Bremsene virker ikke\n- Rattet responderer ikke\n- Bilen lar seg ikke styres\n\n**Hva du skal gjøre:** Ikke brems hardt. Ta foten av gassen, hold rattet stødig og la bilen sakke av seg selv til dekket får kontakt igjen.\n\n**Forebygging:** Reduser farten ved kraftig regn, skift dekk i tide og kjør i hjulsporene til bilen foran (der vannet er presset vekk).\n\n[Les om reaksjonstid og reaksjonslengde](/laeringsressurser/reaksjonstid)'
+            },
+            {
+                title: '🚗 Interaktivt bremsespill',
+                type: 'tip',
+                content: 'Vil du teste reaksjonstiden din i en simulator og se om du klarer å anslå riktig bremselengde og stopplengde på ulikt føre?\n\n👉 **[Prøv Stopplengde-utfordringen her!](/laeringsspill/stopplengde)**'
             }
         ],
         faq: [
@@ -2553,10 +2558,10 @@ export const theoryTopics: TheoryTopic[] = [
     <span style="background:#f59e0b;color:#fff;font-size:0.6rem;font-weight:700;padding:3px 10px;border-radius:99px;text-transform:uppercase;margin-top:4px">Delvis</span>
   </div>
   <ul style="margin:0 0 1.5rem 0;padding-left:1.3rem;color:var(--color-text-light);font-size:0.875rem;line-height:1.7;flex-grow:1">
-    <li>Dekk, bremser og styring</li><li>Instrumentpanel og varsellys</li><li>Drivstoff og energikilde</li><li>Sikkerhetskontroll og kjetting</li><li>Førerstøttesystemer</li>
+    <li><a href="/laeringsressurser/dekk-bremser-styring" style="color:inherit;text-decoration:none;border-bottom:1px dashed var(--color-border)">Dekk, bremser og styring</a></li><li>Instrumentpanel og varsellys</li><li>Drivstoff og energikilde</li><li>Sikkerhetskontroll og kjetting</li><li>Førerstøttesystemer</li>
   </ul>
   <div style="font-size:0.82rem;color:var(--color-text-light);border-top:1px solid var(--color-border);padding-top:1rem">
-    <span style="opacity:0.7;font-weight:600">Les:</span> <a href="/laeringsressurser/sikkerhetskontroll" style="color:var(--color-primary);text-decoration:none">Sikkerhetskontroll</a> · <a href="/laeringsressurser/tilhenger" style="color:var(--color-primary);text-decoration:none">Tilhenger</a> · <a href="/laeringsressurser/automatlappen" style="color:var(--color-primary);text-decoration:none">Automatlappen</a>
+    <span style="opacity:0.7;font-weight:600">Les:</span> <a href="/laeringsressurser/dekk-bremser-styring" style="color:var(--color-primary);text-decoration:none">Dekk, bremser og styring</a> · <a href="/laeringsressurser/sikkerhetskontroll" style="color:var(--color-primary);text-decoration:none">Sikkerhetskontroll</a> · <a href="/laeringsressurser/tilhenger" style="color:var(--color-primary);text-decoration:none">Tilhenger</a> · <a href="/laeringsressurser/automatlappen" style="color:var(--color-primary);text-decoration:none">Automatlappen</a>
   </div>
 </div>
 
@@ -2610,7 +2615,7 @@ export const theoryTopics: TheoryTopic[] = [
 <tr style="border-bottom:1px solid var(--color-border)"><td style="padding:8px 10px;color:var(--color-text)">B – Sikt, føre og lys</td><td style="padding:8px 10px"><span style="background:#22c55e;color:#fff;font-size:0.68rem;font-weight:700;padding:2px 8px;border-radius:99px">Godt</span></td><td style="padding:8px 10px;color:var(--color-text-light)">Bremselengde, Reaksjonstid, Mørkekjøring</td></tr>
 <tr style="border-bottom:1px solid var(--color-border)"><td style="padding:8px 10px;color:var(--color-text)">C – Skilt og vikeplikt</td><td style="padding:8px 10px"><span style="background:#22c55e;color:#fff;font-size:0.68rem;font-weight:700;padding:2px 8px;border-radius:99px">Godt</span></td><td style="padding:8px 10px;color:var(--color-text-light)">Vikeplikt, Skilt, Vegoppmerking, Myndighetspyramiden</td></tr>
 <tr style="border-bottom:1px solid var(--color-border)"><td style="padding:8px 10px;color:var(--color-text)">D – Fører og risiko</td><td style="padding:8px 10px"><span style="background:#f59e0b;color:#fff;font-size:0.68rem;font-weight:700;padding:2px 8px;border-radius:99px">Delvis</span></td><td style="padding:8px 10px;color:var(--color-text-light)">Promille, Reaksjonstid, Øvingskjøring</td></tr>
-<tr style="border-bottom:1px solid var(--color-border)"><td style="padding:8px 10px;color:var(--color-text)">E – Kjøretøyet</td><td style="padding:8px 10px"><span style="background:#f59e0b;color:#fff;font-size:0.68rem;font-weight:700;padding:2px 8px;border-radius:99px">Delvis</span></td><td style="padding:8px 10px;color:var(--color-text-light)">Sikkerhetskontroll, Tilhenger, Vognkort</td></tr>
+<tr style="border-bottom:1px solid var(--color-border)"><td style="padding:8px 10px;color:var(--color-text)">E – Kjøretøyet</td><td style="padding:8px 10px"><span style="background:#f59e0b;color:#fff;font-size:0.68rem;font-weight:700;padding:2px 8px;border-radius:99px">Delvis</span></td><td style="padding:8px 10px;color:var(--color-text-light)">Dekk, bremser og styring, Sikkerhetskontroll, Tilhenger, Vognkort</td></tr>
 <tr style="border-bottom:1px solid var(--color-border)"><td style="padding:8px 10px;color:var(--color-text)">F – Lover og myndighet</td><td style="padding:8px 10px"><span style="background:#f59e0b;color:#fff;font-size:0.68rem;font-weight:700;padding:2px 8px;border-radius:99px">Delvis</span></td><td style="padding:8px 10px;color:var(--color-text-light)">Myndighetspyramiden, Vognkort, Promille</td></tr>
 <tr><td style="padding:8px 10px;color:var(--color-text)">G – Uhell og sikkerhet</td><td style="padding:8px 10px"><span style="background:#22c55e;color:#fff;font-size:0.68rem;font-weight:700;padding:2px 8px;border-radius:99px">Godt</span></td><td style="padding:8px 10px;color:var(--color-text-light)">Trafikkuhell & Førstehjelp, Sikkerhetsutstyr, Mørkekjøring</td></tr>
 </tbody></table>`
@@ -2645,6 +2650,176 @@ export const theoryTopics: TheoryTopic[] = [
             {
                 question: 'Hvor finner jeg Statens vegvesen sin temaliste?',
                 answer: 'Statens vegvesen publiserer temalisten på sine nettsider under informasjon om teoriprøven for klasse B. Teori-test.no er bygget rundt denne temalisten og dekker de sentrale temaene systematisk.'
+            }
+        ]
+    },
+    {
+        id: 'dekk-bremser-styring',
+        title: 'Dekk, bremser og styring: dette må du kunne til teoriprøven',
+        icon: '',
+        shortDescription: 'Lær hva du må kunne om dekk, lufttrykk, bremser, ABS, servostyring og veigrep til teoriprøven. Med regler, eksempler og typiske teorifeller.',
+        color: 'var(--apple-orange)',
+        seoTitle: 'Dekk, bremser og styring | Teoriprøven klasse B',
+        seoDescription: 'Lær hva du må kunne om dekk, lufttrykk, bremser, ABS, servostyring og veigrep til teoriprøven. Med regler, eksempler og typiske teorifeller.',
+        sections: [
+            {
+                title: 'Kort forklart',
+                type: 'summary',
+                content: 'Dekkene er bilens eneste kontakt med veien, og sammen med bremser og styring er de helt avgjørende for sikkerheten. For lav mønsterdybde, feil lufttrykk eller feil dekktype gir dårligere grep og økt skrensfare. Bremsene må virke jevnt og effektivt (med fungerende ABS), og styringen må reagere presist uten dødgang.\n\nHusk at du som fører alltid har ansvaret for at kjøretøyet er i forsvarlig og forskriftsmessig stand.'
+            },
+            {
+                title: 'Dekk: veigrepet starter her',
+                type: 'text',
+                content: 'Dekkene er det eneste som faktisk berører veien. Derfor påvirker de både bremselengde, styring, stabilitet, drivstofforbruk og risikoen for skrens.\n\nDu må særlig kunne dette til teoriprøven:'
+            },
+            {
+                title: 'Krav til dekk og veigrep',
+                type: 'table',
+                content: '<div style="overflow-x: auto; -webkit-overflow-scrolling: touch; margin-top: 1rem;"><table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem;"><thead><tr style="background-color: var(--color-surface); border-bottom: 2px solid var(--color-border);"><th style="padding: 12px 8px;">Tema</th><th style="padding: 12px 8px;">Hva du må kunne</th></tr></thead><tbody><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Mønsterdybde sommer</b></td><td style="padding: 12px 8px;">Minimum 1,6 mm på sommerføre.</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Mønsterdybde vinter</b></td><td style="padding: 12px 8px;">Minimum 3 mm på vinterføre.</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Veigrep</b></td><td style="padding: 12px 8px;">Føreren er ansvarlig for at bilen har tilstrekkelig veigrep hele året.</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Sommerdekk på vinterføre</b></td><td style="padding: 12px 8px;">Ikke lov hvis dekkene ikke gir tilstrekkelig veigrep på is eller snø.</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Piggdekk</b></td><td style="padding: 12px 8px;">Bruker du piggdekk, skal bilen ha piggdekk på alle hjul.</td></tr><tr><td style="padding: 12px 8px;"><b>Tilhenger</b></td><td style="padding: 12px 8px;">Tilhengerens dekk må oppfylle samme krav til mønsterdybde som bilen.</td></tr></tbody></table></div>'
+            },
+            {
+                title: 'Viktig teorifelle om mønsterdybde',
+                type: 'warning',
+                content: 'Lovlig mønsterdybde betyr ikke automatisk at veigrepet er godt nok. Slitte, gamle eller feil dekk kan være farlige selv om de akkurat oppfyller minimumskravet.'
+            },
+            {
+                title: 'Sommerdekk, vinterdekk og føre',
+                type: 'text',
+                content: 'Sommerdekk er laget for varmere vær og bar eller våt vei. Vinterdekk er laget for lavere temperaturer, snø og is. På vinterføre må bilen ha dekk som gir tilstrekkelig veigrep. Det kan bety vinterdekk med eller uten pigger, kjetting eller annet utstyr som gir bedre feste.\n\nFor teoriprøven er hovedpoenget dette: du skal ikke bare tenke på kalenderen. Du må også vurdere føret.'
+            },
+            {
+                title: 'Lufttrykk: for lavt, riktig og for høyt',
+                type: 'calculator',
+                componentId: 'dekktrykk',
+                content: 'Feil lufttrykk endrer hvordan dekket ligger mot veien. Det påvirker kontaktflaten, dekkslitasjen, stabiliteten, bremselengden og drivstofforbruket. Dra i slideren eller trykk på knappene under for å se effekten av ulikt lufttrykk:'
+            },
+            {
+                title: 'Hvordan ser du feil på dekkene?',
+                type: 'table',
+                content: '<div style="overflow-x: auto; -webkit-overflow-scrolling: touch; margin-top: 1rem;"><table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem;"><thead><tr style="background-color: var(--color-surface); border-bottom: 2px solid var(--color-border);"><th style="padding: 12px 8px;">Det du ser eller merker</th><th style="padding: 12px 8px;">Mulig årsak</th><th style="padding: 12px 8px;">Hvorfor det er farlig</th></tr></thead><tbody><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">Slitasje på begge ytterkanter</td><td style="padding: 12px 8px;">For lavt lufttrykk</td><td style="padding: 12px 8px;">Dårligere stabilitet og økt varme i dekket.</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">Slitasje på midten</td><td style="padding: 12px 8px;">For høyt lufttrykk</td><td style="padding: 12px 8px;">Mindre kontaktflate og dårligere grep.</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">Slitasje bare på én side</td><td style="padding: 12px 8px;">Feil hjulstilling eller styringsproblem</td><td style="padding: 12px 8px;">Bilen kan trekke skjevt og bli mindre stabil.</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">Vibrasjoner i rattet</td><td style="padding: 12px 8px;">Ubalanse, skade eller feil på hjul/dekk</td><td style="padding: 12px 8px;">Kan gjøre styringen usikker.</td></tr><tr><td style="padding: 12px 8px;">Bilen trekker til siden</td><td style="padding: 12px 8px;">Feil lufttrykk, dekkfeil, bremsefeil eller hjulstilling</td><td style="padding: 12px 8px;">Kan gi dårlig kontroll og økt risiko i bremsing.</td></tr></tbody></table></div>'
+            },
+            {
+                title: 'Bremser: slik påvirker de stopp og kontroll',
+                type: 'text',
+                content: 'Bremsene skal redusere farten sikkert og jevnt. Hvis bremsene er dårlige, kan bilen bruke lengre tid på å stoppe, trekke til siden eller bli vanskelig å kontrollere ved hard bremsing.\n\nDette bør du kunne:'
+            },
+            {
+                title: 'Bremsesystemets deler og funksjoner',
+                type: 'table',
+                content: '<div style="overflow-x: auto; -webkit-overflow-scrolling: touch; margin-top: 1rem;"><table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem;"><thead><tr style="background-color: var(--color-surface); border-bottom: 2px solid var(--color-border);"><th style="padding: 12px 8px;">Begrep</th><th style="padding: 12px 8px;">Kort forklaring</th></tr></thead><tbody><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Driftsbrems/fotbrems</b></td><td style="padding: 12px 8px;">Bremsen du bruker med bremsepedalen under kjøring. Skal virke på alle 4 hjul, og gi jevn og effektiv bremsing.</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Parkeringsbrems</b></td><td style="padding: 12px 8px;">Mekanisk håndbrekk eller elektronisk brems som holder bilen i ro når den står parkert. Skal virke på minst 2 hjul.</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Bremsekraftforsterker</b></td><td style="padding: 12px 8px;">Hjelper deg å presse bremsevæsken med økt kraft slik at du ikke må trykke ekstremt hardt på pedalen.</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>ABS (Blokkeringsfrie bremser)</b></td><td style="padding: 12px 8px;">Hindrer at hjulene låser seg ved hard bremsing, slik at du kan beholde styringen.</td></tr><tr><td style="padding: 12px 8px;"><b>Tokrets bremsesystem</b></td><td style="padding: 12px 8px;">Deler systemet i to uavhengige kretser slik at bilen fortsatt har bremseeffekt dersom en slange eller krets lekker.</td></tr></tbody></table></div>'
+            },
+            {
+                title: 'Bremsekraftforsterker',
+                type: 'text',
+                content: 'Bremsekraftforsterkeren hjelper deg med å få nok bremsekraft uten å måtte bruke ekstrem kraft på pedalen. En vanlig kontroll er at du pumper bremsepedalen 5-6 ganger med motoren av (til den blir hard), holder pedalen inne og starter motoren. Hvis pedalen synker litt inn når motoren starter, tyder det på at bremsekraftforsterkeren virker.\n\nHvis pedalen fortsetter å sige innover når du holder hardt trykk, kan det tyde på feil eller lekkasje i bremsesystemet. Da skal bilen ikke kjøres, men skal ikke brukes videre før feilen er kontrollert og rettet.\n\nSe også vår komplette guide til [sikkerhetskontroll av bilen](/laeringsressurser/sikkerhetskontroll).'
+            },
+            {
+                title: 'ABS (Blokkeringsfrie bremser)',
+                type: 'warning',
+                content: 'ABS står for blokkeringsfrie bremser. Systemet hindrer at hjulene låser seg ved hard bremsing. Det viktigste på teoriprøven er at ABS hjelper deg med å beholde styringskontrollen.\n\nMed ABS skal du trykke bestemt på bremsepedalen og holde trykket. Du skal ikke pumpe bremsen slik man gjorde på eldre biler uten ABS.\n\n**Viktig teorifelle:** ABS opphever ikke fysikken. På glatt føre trenger bilen fortsatt lang avstand for å stoppe. Les mer om [bremselengde og stopplengde](/laeringsressurser/bremselengde).'
+            },
+            {
+                title: 'Styring: bilen skal følge det du gjør med rattet',
+                type: 'text',
+                content: 'Styringen skal reagere presist når du vrir på rattet. Hvis bilen ikke følger rattet, trekker til siden, lager ulyder eller har unormal dødgang, kan det være feil på styring, hjulstilling, dekk eller servostyring.\n\nDu bør kunne disse begrepene:'
+            },
+            {
+                title: 'Viktige styrebegreper',
+                type: 'table',
+                content: '<div style="overflow-x: auto; -webkit-overflow-scrolling: touch; margin-top: 1rem;"><table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem;"><thead><tr style="background-color: var(--color-surface); border-bottom: 2px solid var(--color-border);"><th style="padding: 12px 8px;">Begrep</th><th style="padding: 12px 8px;">Hva betyr det?</th></tr></thead><tbody><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Servostyring</b></td><td style="padding: 12px 8px;">Hjelper deg å dreie rattet lettere (elektrisk eller hydraulisk). Kan sjekkes ved å vri litt på rattet når du starter motoren – rattet skal umiddelbart bli lettere å dreie.</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Dødgang</b></td><td style="padding: 12px 8px;">Hvor mye du kan bevege på rattet før hjulene faktisk begynner å røre på seg. På moderne biler skal det være lite eller ingen merkbar dødgang. Stor dødgang er et faresignal.</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Retningsstabilitet</b></td><td style="padding: 12px 8px;">At bilen holder kursen rett frem på flat vei uten at du må korrigere hele tiden.</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Selvoppretting</b></td><td style="padding: 12px 8px;">At rattet automatisk søker tilbake mot midtstilling av seg selv etter at du har svingt og slipper opp grepet under fart.</td></tr><tr><td style="padding: 12px 8px;"><b>Hjulstilling</b></td><td style="padding: 12px 8px;">Vinkelen hjulene står i (spissing/camber). Feil hjulstilling gjør at dekkene slites skjevt (på én side) og at retningsstabiliteten blir dårligere.</td></tr></tbody></table></div>'
+            },
+            {
+                title: 'Skjevtrekk under kjøring',
+                type: 'info',
+                content: 'Hvis bilen trekker til én side når du bremser, kan feilen ligge i bremsene (f.eks. ujevn bremseeffekt). Hvis den trekker til én side under vanlig kjøring rett frem, kan det skyldes feil lufttrykk i dekkene, skjev hjulstilling eller dekkfeil.'
+            },
+            {
+                title: 'Understyring og overstyring',
+                type: 'text',
+                content: '![Illustrasjon av understyring og overstyring i en sving, der bilen enten fortsetter rett frem eller bakenden slipper](/understyring-overstyring.png)\n\n*Understyring betyr at bilen ikke svinger nok og vil rett frem. Overstyring betyr at bakenden slipper og bilen roterer mer enn føreren ønsker.*\n\nUnderstyring og overstyring handler om hva som skjer når bilen mister grep i en sving.'
+            },
+            {
+                title: 'Forskjellen på understyring og overstyring',
+                type: 'table',
+                content: '<div style="overflow-x: auto; -webkit-overflow-scrolling: touch; margin-top: 1rem;"><table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem;"><thead><tr style="background-color: var(--color-surface); border-bottom: 2px solid var(--color-border);"><th style="padding: 12px 8px;">Situasjon</th><th style="padding: 12px 8px;">Hva skjer?</th><th style="padding: 12px 8px;">Vanlig årsak</th><th style="padding: 12px 8px;">Riktig tanke</th></tr></thead><tbody><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Understyring</b></td><td style="padding: 12px 8px;">Forhjulene mister grep, og bilen svinger mindre enn rattutslaget skulle tilsi. Bilen fortsetter mer rett frem.</td><td style="padding: 12px 8px;">For høy fart inn i svingen, glatt vei, slitte dekk foran eller brå akselerasjon (forhjulsdrift).</td><td style="padding: 12px 8px;">Senk farten i god tid før svingen, rett opp rattet litt for å gjenvinne grep, og unngå brå styring.</td></tr><tr><td style="padding: 12px 8px;"><b>Overstyring</b></td><td style="padding: 12px 8px;">Bakhjulene mister grep, og bakenden av bilen slipper ut til siden. Bilen svinger mer enn rattutslaget og kan spinne rundt.</td><td style="padding: 12px 8px;">For høy fart, glatt føre, brå sving eller gasspådrag (bakhjulsdrift), samt feil lastfordeling.</td><td style="padding: 12px 8px;">Styr forsiktig i den retningen bakenden slipper ut (motstyring). Unngå panikkbremsing.</td></tr></tbody></table></div>'
+            },
+            {
+                title: 'Kjørestil reduserer risikoen',
+                type: 'tip',
+                content: 'Det viktigste til teoriprøven er ikke å kunne avansert kjøreteknikk. Det viktigste er å forstå at riktig fart, gode dekk og rolig kjøring reduserer risikoen for at bilen mister grep. Planlegg kjøringen og kjør miljøvennlig for å holde god sikkerhetsmargin. Les mer i vår artikkel om [miljøvennlig kjøring](/laeringsressurser/miljo).'
+            },
+            {
+                title: 'Slik henger alt sammen',
+                type: 'text',
+                content: 'Dekk, bremser og styring må fungere sammen. Selv gode bremser hjelper lite hvis dekkene ikke har grep. God styring hjelper lite hvis bilen har for høy fart inn i en sving. Og riktig lufttrykk kan påvirke både bremselengde, styring og stabilitet.'
+            },
+            {
+                title: 'Sammenheng mellom feil og symptomer',
+                type: 'table',
+                content: '<div style="overflow-x: auto; -webkit-overflow-scrolling: touch; margin-top: 1rem;"><table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem;"><thead><tr style="background-color: var(--color-surface); border-bottom: 2px solid var(--color-border);"><th style="padding: 12px 8px;">Problem</th><th style="padding: 12px 8px;">Påvirker dekk</th><th style="padding: 12px 8px;">Påvirker bremser</th><th style="padding: 12px 8px;">Påvirker styring</th></tr></thead><tbody><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>For lavt lufttrykk</b></td><td style="padding: 12px 8px;">Ja (slitasje ytterkanter)</td><td style="padding: 12px 8px;">Ja (lengre bremselengde)</td><td style="padding: 12px 8px;">Ja (svampete, ustabil)</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Slitte vinterdekk</b></td><td style="padding: 12px 8px;">Ja (mister grep)</td><td style="padding: 12px 8px;">Ja (betydelig lengre stopp)</td><td style="padding: 12px 8px;">Ja (redusert sidegrep)</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Feil hjulstilling</b></td><td style="padding: 12px 8px;">Ja (skjevslitasje)</td><td style="padding: 12px 8px;">Nei, men merkes ved bremsing</td><td style="padding: 12px 8px;">Ja (dårlig stabilitet, trekker)</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>ABS-feil</b></td><td style="padding: 12px 8px;">Nei</td><td style="padding: 12px 8px;">Ja (hjulene kan låse seg)</td><td style="padding: 12px 8px;">Ja (mister styring ved full brems)</td></tr><tr><td style="padding: 12px 8px;"><b>For høy fart i sving</b></td><td style="padding: 12px 8px;">Ja (skrens/vannplaning)</td><td style="padding: 12px 8px;">Ja (vanskeligere å bremse ned)</td><td style="padding: 12px 8px;">Ja (skaper under-/overstyring)</td></tr></tbody></table></div>'
+            },
+            {
+                title: 'Typiske teorifeller å passe opp for',
+                type: 'warning',
+                content: 'Her er de vanligste fellene på teoriprøven for dette temaet:\n\n- **Ansvar:** Du som fører er ansvarlig for at bilen har tilstrekkelig veigrep hele året, ikke bare for å følge de formelle piggdekkdatoene.\n- **Mønsterdybde:** Lovlig mønsterdybde (f.eks. 1,6 mm på sommeren) betyr ikke nødvendigvis at dekket er trygt på våt vei. Det er minstekravet.\n- **Sommerdekk:** Sommerdekk skal aldri brukes på vinterføre hvis de ikke gir godt nok veigrep.\n- **Lufttrykk:** Feil lufttrykk kan gi betydelig lengre bremselengde og dårligere grep selv om dekket ser normalt ut ved visuell sjekk.\n- **ABS:** ABS hjelper deg å styre under full bremsing, men det forkorter ikke nødvendigvis bremselengden. På glatt føre trenger du uansett lang avstand.\n- **Bremsing med ABS:** Med ABS skal du holde hardt og jevnt trykk på bremsepedalen, aldri pumpe den.\n- **Skjevtrekk:** Hvis bilen trekker til siden under bremsing, er det tegn på feil ved bremsene (ujevn virkning) eller hjulstilling.\n- **Begreper:** Husk at understyring betyr at forhjulene sklir og bilen vil rett frem. Overstyring betyr at bakhjulene slipper og bakenden kommer.'
+            }
+        ],
+        faq: [
+            {
+                question: 'Hva er minimum mønsterdybde på dekk?',
+                answer: 'På sommerføre er minimum mønsterdybde 1,6 mm. På vinterføre er minimum 3 mm. Føreren må likevel alltid sørge for at bilen har tilstrekkelig veigrep og er trygg på det aktuelle føret.'
+            },
+            {
+                question: 'Kan jeg bruke sommerdekk på vinterføre?',
+                answer: 'Nei, ikke hvis sommerdekkene ikke gir tilstrekkelig veigrep på is eller snø. På vinterføre må bilen ha dekk eller utstyr (f.eks. kjetting) som gir godt nok feste.'
+            },
+            {
+                question: 'Hvor finner jeg riktig lufttrykk for min bil?',
+                answer: 'Riktig lufttrykk finner du vanligvis i bilens instruksjonsbok, på en etikett i dørkarmen (som oftest førersiden) eller ved tanklokket. Trykket kan variere med last og bilmodell.'
+            },
+            {
+                question: 'Hva gjør ABS?',
+                answer: 'ABS (blokkeringsfrie bremser) hindrer hjulene i å låse seg ved hard bremsing. Det gjør at du kan beholde styringskontrollen og unngå hindringer mens du bremser maksimalt.'
+            },
+            {
+                question: 'Hva er forskjellen på understyring og overstyring?',
+                answer: 'Understyring betyr at forhjulene mister grep og bilen vil fortsette rett frem i svingen. Overstyring betyr at bakhjulene mister grep og bakenden av bilen slipper ut til siden.'
+            },
+            {
+                question: 'Hvorfor er dekktrykk viktig på teoriprøven?',
+                answer: 'Fordi feil lufttrykk påvirker alt fra veigrep, stabilitet og bremselengde til drivstofforbruk, rekkevidde og dekkslitasje. Det er en viktig del av sikkerheten.'
+            }
+        ],
+        miniQuiz: [
+            {
+                question: 'Hva er minimum mønsterdybde på sommerdekk?',
+                options: ['1,0 mm', '1,6 mm', '3,0 mm', '4,0 mm'],
+                correct: '1,6 mm',
+                explanation: 'På sommerføre er minimumskravet 1,6 mm mønsterdybde, men føreren må fortsatt vurdere om veigrepet er godt nok.'
+            },
+            {
+                question: 'Hva kan for lavt lufttrykk føre til?',
+                options: ['Bedre stabilitet i svinger', 'Kortere bremselengde på våt vei', 'Økt dekkslitasje og dårligere veigrep', 'At ABS slutter å virke'],
+                correct: 'Økt dekkslitasje og dårligere veigrep',
+                explanation: 'For lavt lufttrykk gjør dekket svampete, øker slitasjen på dekkskuldrene, øker rullemotstanden (mer forbruk) og svekker bilens stabilitet og veigrep.'
+            },
+            {
+                question: 'Hva er hovedoppgaven to ABS?',
+                options: ['Å gjøre bilen raskere i svinger', 'Å hindre at hjulene låser seg ved hard bremsing', 'Å øke lufttrykket i dekkene', 'Å holde bilen parkert i bakke'],
+                correct: 'Å hindre at hjulene låser seg ved hard bremsing',
+                explanation: 'ABS hindrer hjulene i å låse seg, slik at dekkene fortsatt roterer og du beholder styringskontrollen til å svinge unna hindringer under hard bremsing.'
+            },
+            {
+                question: 'Hva betyr understyring?',
+                options: ['Bakhjulene mister grep og bilen roterer', 'Forhjulene mister grep og bilen vil mer rett frem', 'Rattet låser seg', 'Bremsene virker bare på bakhjulene'],
+                correct: 'Forhjulene mister grep og bilen vil mer rett frem',
+                explanation: 'Understyring skjer når forhjulene mister sidegrepet, slik at bilen fortsetter mer i fartsretningen (rett frem) enn dit du svinger med hjulene.'
+            },
+            {
+                question: 'Hva kan det bety hvis bilen trekker til én side når du bremser?',
+                options: ['At bremsene, dekkene eller hjulstillingen bør kontrolleres', 'At bilen alltid har for høyt lufttrykk', 'At ABS fungerer perfekt', 'At parkeringsbremsen er på'],
+                correct: 'At bremsene, dekkene eller hjulstillingen bør kontrolleres',
+                explanation: 'Skjevtrekk under bremsing betyr vanligvis at bremsene tar ujevnt (for eksempel at en bremsekaliper henger eller det er lekkasje), men kan også skyldes dekktrykk eller hjulstilling.'
             }
         ]
     }

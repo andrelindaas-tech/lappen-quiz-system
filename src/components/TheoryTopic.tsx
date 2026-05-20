@@ -14,6 +14,7 @@ import MotorromInteraktiv from './MotorromInteraktiv'
 import RundkjoringAnimasjon from './RundkjoringAnimasjon'
 import MiniQuiz from './MiniQuiz'
 import AutomatVsManuellSammenligning from './AutomatVsManuellSammenligning'
+import DekktrykkSimulator from './DekktrykkSimulator'
 
 
 // Renders content string with support for paragraphs, bullet lists (- ), numbered lists (1. ), images, headings (###) and markdown tables (| col |)
@@ -193,11 +194,13 @@ export default function TheoryTopic({ topic, onBack, extraComponent }: TheoryTop
             </button>
 
             <div className="theory-topic-header">
-                <span className="theory-topic-icon-lg">
-                    {topic.icon.startsWith('data:image') || topic.icon.startsWith('/')
-                        ? <img src={topic.icon} alt={topic.title} style={{ width: '64px', height: '64px', objectFit: 'contain' }} /> 
-                        : topic.icon}
-                </span>
+                {topic.icon && (
+                    <span className="theory-topic-icon-lg">
+                        {topic.icon.startsWith('data:image') || topic.icon.startsWith('/')
+                            ? <img src={topic.icon} alt={topic.title} style={{ width: '64px', height: '64px', objectFit: 'contain' }} /> 
+                            : topic.icon}
+                    </span>
+                )}
                 <div className="theory-topic-header-text">
                     <h1 className="theory-topic-title">{topic.title}</h1>
                     <p className="theory-topic-desc">{parseInlineLinks(topic.shortDescription)}</p>
@@ -252,6 +255,7 @@ export default function TheoryTopic({ topic, onBack, extraComponent }: TheoryTop
                                     {topic.id === 'sikkerhetskontroll' && !section.componentId && <DashboardWarningSimulator />}
                                     {topic.id === 'reaksjonstid' && <ReaksjonstidTest />}
                                     {topic.id === 'veimerking' && <VeimerkingInteraktiv />}
+                                    {section.componentId === 'dekktrykk' && <DekktrykkSimulator />}
                                 </div>
                             </div>
                         ) : section.type === 'component' ? (

@@ -998,3 +998,54 @@ body.dark-mode .theory-section-example {
     margin: 1.25rem 0 0.5rem;
     color: var(--color-text-primary);
 }
+
+/* Premium summary box / infobox at the top of topics */
+.theory-section-summary {
+    background-color: var(--color-bg-secondary) !important;
+    border: 1px solid var(--color-border) !important;
+    border-left: 5px solid var(--apple-orange) !important;
+    border-radius: var(--radius-lg) !important;
+    padding: var(--spacing-lg) var(--spacing-xl) !important;
+    box-shadow: none !important;
+    margin-bottom: var(--spacing-lg) !important;
+    transition: none !important;
+}
+
+body.dark-mode .theory-section-summary {
+    background-color: rgba(255, 146, 48, 0.05) !important;
+    border-left-color: var(--apple-orange) !important;
+    border-color: rgba(255, 146, 48, 0.15) !important;
+}
+
+.theory-section-summary::before {
+    display: none !important;
+}
+
+.theory-section-summary:hover {
+    transform: none !important;
+    box-shadow: none !important;
+    border-color: var(--color-border) !important;
+}
+
+body.dark-mode .theory-section-summary:hover {
+    border-color: rgba(255, 146, 48, 0.25) !important;
+}
+
+.theory-section-summary .theory-section-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--apple-orange);
+    margin-bottom: var(--spacing-xs);
+    letter-spacing: -0.01em;
+}
+
+.theory-section-summary .theory-section-content p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: var(--color-text);
+    margin: 0 0 var(--spacing-sm) 0;
+}
+
+.theory-section-summary .theory-section-content p:last-child {
+    margin-bottom: 0;
+}

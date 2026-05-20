@@ -1,0 +1,1009 @@
+<!doctype html>
+<html lang="no">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mockup: Stopplengde-utfordringen</title>
+    <style>
+      :root {
+        color-scheme: dark;
+        --page: #050607;
+        --panel: #15181d;
+        --panel-soft: #101216;
+        --panel-deep: #090a0c;
+        --border: #2a2f38;
+        --text: #f8fafc;
+        --muted: #a8b0bd;
+        --blue: #3b82f6;
+        --cyan: #22d3ee;
+        --green: #22c55e;
+        --orange: #f59e0b;
+        --red: #ef4444;
+        --road: #1f242c;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        background: var(--page);
+        color: var(--text);
+        font-family:
+          Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+          "Segoe UI", sans-serif;
+        line-height: 1.5;
+      }
+
+      main {
+        width: min(920px, calc(100% - 28px));
+        margin: 28px auto 56px;
+      }
+
+      .site-bar {
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+        gap: 16px;
+        margin: 0 0 18px;
+      }
+
+      .brand {
+        background: linear-gradient(90deg, var(--blue), var(--cyan));
+        background-clip: text;
+        color: transparent;
+        font-size: clamp(1.35rem, 4vw, 2rem);
+        font-weight: 900;
+        letter-spacing: 0;
+      }
+
+      .section-pill {
+        border: 1px solid var(--border);
+        border-radius: 999px;
+        background: #0b0d10;
+        color: var(--muted);
+        font-size: 0.86rem;
+        font-weight: 800;
+        padding: 8px 12px;
+      }
+
+      .article-card {
+        border: 1px solid var(--border);
+        border-radius: 22px;
+        background: #171a20;
+        padding: clamp(20px, 4vw, 40px);
+        box-shadow: 0 22px 60px rgb(0 0 0 / 0.32);
+      }
+
+      .kicker {
+        color: var(--cyan);
+        font-size: 0.82rem;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        margin: 0 0 8px;
+        text-transform: uppercase;
+      }
+
+      h1 {
+        font-size: clamp(1.65rem, 3.5vw, 2.7rem);
+        line-height: 1.08;
+        margin: 0 0 14px;
+        letter-spacing: 0;
+      }
+
+      .intro {
+        color: var(--muted);
+        max-width: 68ch;
+        margin: 0 0 28px;
+        font-size: 1rem;
+      }
+
+      .challenge {
+        overflow: hidden;
+        border: 1px solid #2458b8;
+        border-top: 4px solid var(--blue);
+        border-radius: 20px;
+        background: linear-gradient(180deg, #171a20 0%, #12151a 100%);
+        box-shadow: 0 18px 46px rgb(0 0 0 / 0.28);
+      }
+
+      .challenge-head {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        gap: 16px;
+        padding: 22px clamp(18px, 4vw, 30px);
+        border-bottom: 1px solid var(--border);
+      }
+
+      .game-stats {
+        align-self: start;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        gap: 8px;
+      }
+
+      .challenge h2 {
+        margin: 0 0 5px;
+        font-size: clamp(1.22rem, 3vw, 1.55rem);
+        letter-spacing: 0;
+      }
+
+      .subtitle {
+        color: var(--muted);
+        margin: 0;
+      }
+
+      .progress-pill {
+        border: 1px solid var(--border);
+        border-radius: 999px;
+        background: var(--panel-soft);
+        color: var(--muted);
+        font-size: 0.88rem;
+        font-weight: 700;
+        padding: 8px 12px;
+        white-space: nowrap;
+      }
+
+      .score-pill {
+        border: 1px solid rgb(34 197 94 / 0.35);
+        border-radius: 999px;
+        background: rgb(34 197 94 / 0.09);
+        color: #bbf7d0;
+        font-size: 0.88rem;
+        font-weight: 800;
+        padding: 8px 12px;
+        white-space: nowrap;
+      }
+
+      .challenge-grid {
+        display: grid;
+        grid-template-columns: 0.92fr 1.08fr;
+        gap: 24px;
+        padding: clamp(18px, 4vw, 30px);
+      }
+
+      .task-box,
+      .result-box {
+        border: 1px solid var(--border);
+        border-radius: 14px;
+        background: var(--panel-soft);
+        padding: 18px;
+      }
+
+      .task-copy {
+        color: var(--muted);
+        margin: -8px 0 18px;
+      }
+
+      .label {
+        color: var(--muted);
+        display: block;
+        font-size: 0.88rem;
+        font-weight: 700;
+        margin-bottom: 7px;
+      }
+
+      .scenario {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-bottom: 22px;
+      }
+
+      .badge {
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        background: #0b0d10;
+        font-weight: 800;
+        padding: 9px 11px;
+      }
+
+      .surface {
+        color: #dbeafe;
+      }
+
+      .slider-row {
+        margin: 20px 0 14px;
+      }
+
+      .guess-value {
+        display: flex;
+        align-items: baseline;
+        gap: 6px;
+        margin-bottom: 12px;
+      }
+
+      .guess-value strong {
+        font-size: 2.2rem;
+        line-height: 1;
+      }
+
+      input[type="range"] {
+        width: 100%;
+        accent-color: var(--blue);
+      }
+
+      .range-ends {
+        color: var(--muted);
+        display: flex;
+        justify-content: space-between;
+        font-size: 0.8rem;
+        margin-top: 4px;
+      }
+
+      .slider-hint {
+        color: var(--muted);
+        font-size: 0.86rem;
+        margin: 10px 0 0;
+      }
+
+      .actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 18px;
+      }
+
+      button {
+        border: 0;
+        border-radius: 10px;
+        color: white;
+        cursor: pointer;
+        font: inherit;
+        font-weight: 800;
+        min-height: 44px;
+        padding: 10px 15px;
+      }
+
+      button:disabled {
+        cursor: not-allowed;
+        opacity: 0.48;
+      }
+
+      .primary {
+        background: var(--blue);
+      }
+
+      .secondary {
+        background: #242933;
+        color: var(--text);
+      }
+
+      .road-wrap {
+        border: 1px solid var(--border);
+        border-radius: 14px;
+        background: var(--panel-deep);
+        padding: 18px 16px 16px;
+      }
+
+      .road {
+        position: relative;
+        height: 128px;
+        border-radius: 14px;
+        background:
+          linear-gradient(90deg, rgb(255 255 255 / 0.11) 0 0) center 60% / 36px
+            3px repeat-x,
+          linear-gradient(180deg, #2a303a, var(--road));
+        overflow: hidden;
+      }
+
+      .segment {
+        position: absolute;
+        bottom: 29px;
+        height: 10px;
+        border-radius: 99px;
+      }
+
+      .reaction {
+        left: 8%;
+        background: var(--blue);
+      }
+
+      .braking {
+        background: var(--orange);
+      }
+
+      .car,
+      .obstacle,
+      .stop-marker {
+        position: absolute;
+        transform: translateX(-50%);
+      }
+
+      .car {
+        left: 8%;
+        bottom: 44px;
+        width: 86px;
+        height: 38px;
+        filter: drop-shadow(0 7px 9px rgb(0 0 0 / 0.42));
+        transition: left 900ms cubic-bezier(0.2, 0.8, 0.2, 1);
+      }
+
+      .car svg {
+        display: block;
+        height: 100%;
+        overflow: visible;
+        width: 100%;
+      }
+
+      .car::before,
+      .car::after {
+        display: none;
+      }
+
+      .obstacle {
+        bottom: 41px;
+        width: 24px;
+        height: 48px;
+        border-radius: 13px 13px 7px 7px;
+        background: linear-gradient(180deg, #fca5a5, var(--red));
+        box-shadow: 0 0 0 8px rgb(239 68 68 / 0.12);
+      }
+
+      .stop-marker {
+        bottom: 18px;
+        width: 2px;
+        height: 78px;
+        background: var(--green);
+      }
+
+      .meter-line {
+        display: flex;
+        justify-content: space-between;
+        color: var(--muted);
+        font-size: 0.78rem;
+        margin-top: 9px;
+      }
+
+      .legend {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px 14px;
+        color: var(--muted);
+        font-size: 0.82rem;
+        margin: 12px 0 0;
+      }
+
+      .legend span::before {
+        content: "";
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        border-radius: 99px;
+        margin-right: 6px;
+      }
+
+      .legend .blue::before {
+        background: var(--blue);
+      }
+
+      .legend .orange::before {
+        background: var(--orange);
+      }
+
+      .legend .green::before {
+        background: var(--green);
+      }
+
+      .feedback {
+        border-radius: 12px;
+        margin-top: 16px;
+        padding: 14px;
+        background: #0b0d10;
+        border: 1px solid var(--border);
+      }
+
+      .feedback.good {
+        border-color: rgb(34 197 94 / 0.75);
+      }
+
+      .feedback.warn {
+        border-color: rgb(245 158 11 / 0.75);
+      }
+
+      .feedback.danger {
+        border-color: rgb(239 68 68 / 0.75);
+      }
+
+      .feedback-title {
+        font-weight: 900;
+        margin: 0 0 5px;
+      }
+
+      .feedback p {
+        color: var(--muted);
+        margin: 0;
+      }
+
+      .details {
+        display: grid;
+        gap: 8px;
+        margin-top: 14px;
+      }
+
+      .math-box {
+        border: 1px solid rgb(59 130 246 / 0.35);
+        border-radius: 12px;
+        background: rgb(59 130 246 / 0.08);
+        margin-top: 14px;
+        padding: 14px;
+      }
+
+      .math-box h3 {
+        font-size: 0.96rem;
+        margin: 0 0 10px;
+        letter-spacing: 0;
+      }
+
+      .formula-list {
+        display: grid;
+        gap: 7px;
+        color: var(--muted);
+        font-size: 0.92rem;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .formula-list strong {
+        color: var(--text);
+      }
+
+      .detail-row {
+        display: flex;
+        justify-content: space-between;
+        gap: 16px;
+        border-bottom: 1px solid rgb(255 255 255 / 0.08);
+        padding-bottom: 8px;
+      }
+
+      .detail-row strong {
+        white-space: nowrap;
+      }
+
+      .rule {
+        border-left: 4px solid var(--green);
+        background: rgb(34 197 94 / 0.08);
+        margin-top: 20px;
+        padding: 14px 16px;
+      }
+
+      .rule strong {
+        display: block;
+        margin-bottom: 4px;
+      }
+
+      .rule p {
+        color: var(--muted);
+        margin: 0;
+      }
+
+      .completion {
+        border-top: 1px solid var(--border);
+        padding: clamp(22px, 4vw, 34px);
+      }
+
+      .completion-inner {
+        border: 1px solid rgb(34 197 94 / 0.35);
+        border-radius: 16px;
+        background:
+          linear-gradient(180deg, rgb(34 197 94 / 0.12), rgb(59 130 246 / 0.08)),
+          var(--panel-soft);
+        padding: clamp(18px, 4vw, 28px);
+      }
+
+      .completion h3 {
+        font-size: clamp(1.25rem, 3vw, 1.65rem);
+        margin: 0 0 8px;
+      }
+
+      .completion p {
+        color: var(--muted);
+        margin: 0 0 16px;
+        max-width: 62ch;
+      }
+
+      .completion-score {
+        color: var(--text);
+        display: block;
+        font-size: 2.6rem;
+        font-weight: 900;
+        line-height: 1;
+        margin: 10px 0 18px;
+      }
+
+      @media (max-width: 760px) {
+        main {
+          width: min(100% - 18px, 920px);
+          margin-top: 12px;
+        }
+
+        .site-bar {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+
+        .article-card {
+          border-radius: 18px;
+          padding: 18px;
+        }
+
+        .challenge-head,
+        .challenge-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .game-stats {
+          justify-self: start;
+          justify-content: flex-start;
+        }
+
+        .actions button {
+          flex: 1 1 150px;
+        }
+
+        .road {
+          height: 112px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="site-bar">
+        <div class="brand">Teori-test.no</div>
+        <div class="section-pill">Pilot: Læringsspill</div>
+      </div>
+
+      <section class="article-card" aria-labelledby="page-title">
+        <p class="kicker">Mini-spill for klasse B</p>
+        <h1 id="page-title">Stopplengde-utfordringen</h1>
+        <p class="intro">
+          Dra slideren til stopplengden du tror passer. Etter svaret får du
+          fasit, utregning og en kort forklaring på hvorfor fart og føre betyr
+          så mye.
+        </p>
+
+        <div class="challenge">
+          <div class="challenge-head">
+            <div>
+              <h2>Klarer du å anslå stopplengden?</h2>
+              <p class="subtitle">
+                Dra slideren, sjekk svaret og lær hvorfor tallet blir som det
+                blir.
+              </p>
+            </div>
+            <div class="game-stats">
+              <div class="progress-pill" id="progress">Oppgave 1 av 10</div>
+              <div class="score-pill" id="score">0 poeng</div>
+            </div>
+          </div>
+
+          <div class="challenge-grid" id="challengeGrid">
+            <section class="task-box" aria-labelledby="task-title">
+              <span class="label" id="task-title">Situasjon</span>
+              <div class="scenario">
+                <span class="badge" id="speedBadge">50 km/t</span>
+                <span class="badge surface" id="surfaceBadge">Tørr asfalt</span>
+              </div>
+              <p class="task-copy" id="taskCopy">
+                Hvor mange meter trenger bilen omtrent før den står stille?
+              </p>
+
+              <span class="label">Hva blir total stopplengde omtrent?</span>
+              <div class="slider-row">
+                <div class="guess-value">
+                  <strong id="guessValue">0</strong>
+                  <span>meter</span>
+                </div>
+                <input
+                  id="guess"
+                  type="range"
+                  min="0"
+                  max="160"
+                  step="1"
+                  value="0"
+                  aria-label="Velg total stopplengde i meter"
+                />
+                <div class="range-ends">
+                  <span>0 m</span>
+                  <span id="rangeMaxLabel">160 m</span>
+                </div>
+                <p class="slider-hint" id="sliderHint">
+                  Start på 0 meter og dra slideren til ditt beste estimat.
+                </p>
+              </div>
+
+              <div class="actions">
+                <button class="primary" id="checkButton" type="button" disabled>
+                  Sjekk svaret
+                </button>
+                <button class="secondary" id="nextButton" type="button" disabled>
+                  Neste oppgave
+                </button>
+              </div>
+
+              <div class="rule">
+                <strong>Huskeregelen</strong>
+                <p>
+                  Reaksjonslengde + bremselengde = stopplengde. Dobbel fart gir
+                  omtrent fire ganger bremselengde.
+                </p>
+              </div>
+            </section>
+
+            <section class="result-box" aria-labelledby="visual-title">
+              <span class="label" id="visual-title">Visuell test</span>
+              <div class="road-wrap">
+                <div class="road" aria-hidden="true">
+                  <div class="segment reaction" id="reactionSegment"></div>
+                  <div class="segment braking" id="brakingSegment"></div>
+                  <div class="stop-marker" id="stopMarker"></div>
+                  <div class="obstacle" id="obstacle"></div>
+                  <div class="car" id="car" aria-hidden="true">
+                    <svg viewBox="0 0 110 50" role="img">
+                      <path
+                        d="M8 33 L11 26 C13 22 18 20 25 20 H33 L40 12 H70 C77 12 83 16 88 22 L98 24 C104 25 107 29 107 34 V38 H8 Z"
+                        fill="#60a5fa"
+                      />
+                      <path
+                        d="M41 15 H68 C73 15 78 18 82 23 H34 Z"
+                        fill="#dbeafe"
+                      />
+                      <path
+                        d="M56 15 V23"
+                        stroke="#64748b"
+                        stroke-width="1.8"
+                        stroke-linecap="round"
+                      />
+                      <path
+                        d="M23 31 L36 30 M63 30 L85 30"
+                        stroke="#bfdbfe"
+                        stroke-width="1.8"
+                        stroke-linecap="round"
+                      />
+                      <path
+                        d="M9 33 H17 M99 32 H107"
+                        stroke="#f8fafc"
+                        stroke-width="2.4"
+                        stroke-linecap="round"
+                      />
+                      <circle cx="31" cy="38" r="8" fill="#020617" />
+                      <circle cx="31" cy="38" r="3.2" fill="#334155" />
+                      <circle cx="84" cy="38" r="8" fill="#020617" />
+                      <circle cx="84" cy="38" r="3.2" fill="#334155" />
+                      <path
+                        d="M12 38 H102"
+                        stroke="#1d4ed8"
+                        stroke-width="1.8"
+                        stroke-linecap="round"
+                        fill="none"
+                      />
+                    </svg>
+                  </div>
+                </div>
+                <div class="meter-line">
+                  <span>0 m</span>
+                  <span id="midMeter">40 m</span>
+                  <span id="endMeter">80 m</span>
+                </div>
+                <div class="legend">
+                  <span class="blue">Reaksjon</span>
+                  <span class="orange">Bremsing</span>
+                  <span class="green">Riktig stoppunkt</span>
+                </div>
+              </div>
+
+              <div class="feedback" id="feedback">
+                <p class="feedback-title">Velg en avstand og sjekk svaret.</p>
+                <p>
+                  Tallene er pedagogiske estimater, ikke eksakte fasiter for
+                  alle biler og forhold.
+                </p>
+              </div>
+
+              <div class="details" id="details" hidden>
+                <div class="detail-row">
+                  <span>Reaksjonslengde</span>
+                  <strong id="reactionText">15 m</strong>
+                </div>
+                <div class="detail-row">
+                  <span>Bremselengde</span>
+                  <strong id="brakingText">13 m</strong>
+                </div>
+                <div class="detail-row">
+                  <span>Total stopplengde</span>
+                  <strong id="stoppingText">28 m</strong>
+                </div>
+              </div>
+
+              <div class="math-box" id="mathBox" hidden>
+                <h3>Utregningen bak svaret</h3>
+                <ul class="formula-list" id="formulaList"></ul>
+              </div>
+            </section>
+          </div>
+
+          <section class="completion" id="completion" hidden>
+            <div class="completion-inner">
+              <p class="kicker">Fullført</p>
+              <h3>Bra jobbet med stopplengde!</h3>
+              <span class="completion-score" id="completionScore">0 av 10</span>
+              <p id="completionText">
+                Poenget er ikke å pugge hvert tall, men å forstå at fart og føre
+                endrer stopplengden raskt. Les gjerne forklaringen i
+                bremselengde-artikkelen før du prøver igjen.
+              </p>
+              <button class="primary" id="restartButton" type="button">
+                Prøv på nytt
+              </button>
+            </div>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      const scenarios = [
+        { speed: 50, surface: "Tørr asfalt", multiplier: 1 },
+        { speed: 80, surface: "Tørr asfalt", multiplier: 1 },
+        { speed: 50, surface: "Våt asfalt", multiplier: 2 },
+        { speed: 60, surface: "Snø/vinterføre", multiplier: 4 },
+        { speed: 30, surface: "Is", multiplier: 9 },
+        { speed: 100, surface: "Tørr asfalt", multiplier: 1 },
+        { speed: 60, surface: "Våt asfalt", multiplier: 2 },
+        { speed: 80, surface: "Våt asfalt", multiplier: 2 },
+        { speed: 40, surface: "Snø/vinterføre", multiplier: 4 },
+        { speed: 110, surface: "Tørr asfalt", multiplier: 1 },
+      ];
+
+      function shuffle(items) {
+        const shuffled = [...items];
+
+        for (let i = shuffled.length - 1; i > 0; i -= 1) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+        }
+
+        return shuffled;
+      }
+
+      const els = {
+        challengeGrid: document.querySelector("#challengeGrid"),
+        completion: document.querySelector("#completion"),
+        completionScore: document.querySelector("#completionScore"),
+        completionText: document.querySelector("#completionText"),
+        progress: document.querySelector("#progress"),
+        score: document.querySelector("#score"),
+        speedBadge: document.querySelector("#speedBadge"),
+        surfaceBadge: document.querySelector("#surfaceBadge"),
+        taskCopy: document.querySelector("#taskCopy"),
+        guess: document.querySelector("#guess"),
+        guessValue: document.querySelector("#guessValue"),
+        rangeMaxLabel: document.querySelector("#rangeMaxLabel"),
+        sliderHint: document.querySelector("#sliderHint"),
+        checkButton: document.querySelector("#checkButton"),
+        nextButton: document.querySelector("#nextButton"),
+        restartButton: document.querySelector("#restartButton"),
+        car: document.querySelector("#car"),
+        obstacle: document.querySelector("#obstacle"),
+        stopMarker: document.querySelector("#stopMarker"),
+        reactionSegment: document.querySelector("#reactionSegment"),
+        brakingSegment: document.querySelector("#brakingSegment"),
+        midMeter: document.querySelector("#midMeter"),
+        endMeter: document.querySelector("#endMeter"),
+        feedback: document.querySelector("#feedback"),
+        details: document.querySelector("#details"),
+        mathBox: document.querySelector("#mathBox"),
+        formulaList: document.querySelector("#formulaList"),
+        reactionText: document.querySelector("#reactionText"),
+        brakingText: document.querySelector("#brakingText"),
+        stoppingText: document.querySelector("#stoppingText"),
+      };
+
+      let activeScenarios = shuffle(scenarios);
+      let index = 0;
+      let score = 0;
+      let hasMovedSlider = false;
+      let hasAnswered = false;
+
+      function roundMeters(value) {
+        return Math.round(value);
+      }
+
+      function calculate(scenario) {
+        const reaction = (scenario.speed / 10) * 3;
+        const dryBraking = Math.pow(scenario.speed / 10, 2) / 2;
+        const braking = dryBraking * scenario.multiplier;
+        const stopping = reaction + braking;
+
+        return {
+          reaction: roundMeters(reaction),
+          reactionRaw: reaction,
+          dryBraking: roundMeters(dryBraking),
+          braking: roundMeters(braking),
+          brakingRaw: braking,
+          stopping: roundMeters(stopping),
+        };
+      }
+
+      function scaleFor(stopping) {
+        return Math.max(80, Math.ceil((stopping + 20) / 20) * 20);
+      }
+
+      function percent(meters, scale) {
+        return 8 + (meters / scale) * 84;
+      }
+
+      function setFeedback(type, title, text) {
+        els.feedback.className = `feedback ${type}`;
+        els.feedback.innerHTML = `<p class="feedback-title">${title}</p><p>${text}</p>`;
+      }
+
+      function renderScenario() {
+        const scenario = activeScenarios[index];
+        const values = calculate(scenario);
+        const scale = scaleFor(values.stopping);
+
+        els.challengeGrid.hidden = false;
+        els.completion.hidden = true;
+        els.progress.textContent = `Oppgave ${index + 1} av ${activeScenarios.length}`;
+        els.score.textContent = `${score} poeng`;
+        els.speedBadge.textContent = `${scenario.speed} km/t`;
+        els.surfaceBadge.textContent = scenario.surface;
+        els.taskCopy.textContent = `Du kjører i ${scenario.speed} km/t på ${scenario.surface.toLowerCase()}. Hvor mange meter trenger bilen omtrent før den står stille?`;
+        els.guess.max = String(scale);
+        els.guess.value = "0";
+        els.guessValue.textContent = "0";
+        els.sliderHint.textContent =
+          "Start på 0 meter og dra slideren til ditt beste estimat.";
+        els.checkButton.disabled = true;
+        els.nextButton.disabled = true;
+        els.nextButton.textContent =
+          index === activeScenarios.length - 1 ? "Se resultat" : "Neste oppgave";
+        els.rangeMaxLabel.textContent = `${scale} m`;
+        els.midMeter.textContent = `${Math.round(scale / 2)} m`;
+        els.endMeter.textContent = `${scale} m`;
+        els.car.style.left = "8%";
+        els.details.hidden = true;
+        els.mathBox.hidden = true;
+        els.reactionText.textContent = "—";
+        els.brakingText.textContent = "—";
+        els.stoppingText.textContent = "—";
+        els.formulaList.innerHTML = "";
+        hasMovedSlider = false;
+        hasAnswered = false;
+
+        const reactionEnd = percent(values.reaction, scale);
+        const stopEnd = percent(values.stopping, scale);
+        els.reactionSegment.style.left = "8%";
+        els.reactionSegment.style.width = `${Math.max(4, reactionEnd - 8)}%`;
+        els.brakingSegment.style.left = `${reactionEnd}%`;
+        els.brakingSegment.style.width = `${Math.max(4, stopEnd - reactionEnd)}%`;
+        els.stopMarker.style.left = `${stopEnd}%`;
+        els.obstacle.style.left = `${Math.min(94, stopEnd + 3)}%`;
+
+        setFeedback(
+          "",
+          "Velg en avstand og sjekk svaret.",
+          "Tallene er pedagogiske estimater, ikke eksakte fasiter for alle biler og forhold.",
+        );
+      }
+
+      function checkAnswer() {
+        if (!hasMovedSlider) {
+          setFeedback(
+            "warn",
+            "Dra slideren først.",
+            "Startverdien er 0 meter. Flytt slideren til avstanden du tror er riktig før du sjekker svaret.",
+          );
+          return;
+        }
+
+        const scenario = activeScenarios[index];
+        const values = calculate(scenario);
+        const scale = scaleFor(values.stopping);
+        const guess = Number(els.guess.value);
+        const diff = guess - values.stopping;
+        const tolerance = Math.max(3, values.stopping * 0.1);
+        const carEnd = percent(Math.max(0, guess), scale);
+
+        els.car.style.left = `${Math.min(94, carEnd)}%`;
+        els.details.hidden = false;
+        els.mathBox.hidden = false;
+        els.reactionText.textContent = `${values.reaction} m`;
+        els.brakingText.textContent = `${values.braking} m`;
+        els.stoppingText.textContent = `${values.stopping} m`;
+        els.formulaList.innerHTML = `
+          <li><strong>Reaksjonslengde:</strong> (${scenario.speed} / 10) × 3 = ${values.reaction} m</li>
+          <li><strong>Bremselengde tørr vei:</strong> (${scenario.speed} / 10)² / 2 = ${values.dryBraking} m</li>
+          <li><strong>Føre:</strong> ${scenario.surface} gir ca. ${scenario.multiplier}× bremselengde = ${values.braking} m</li>
+          <li><strong>Stopplengde:</strong> ${values.reaction} m + ${values.braking} m = ${values.stopping} m</li>
+        `;
+
+        const isCorrect = Math.abs(diff) <= tolerance;
+
+        if (!hasAnswered && isCorrect) {
+          score += 1;
+          els.score.textContent = `${score} poeng`;
+        }
+
+        hasAnswered = true;
+        els.checkButton.disabled = true;
+        els.nextButton.disabled = false;
+
+        if (isCorrect) {
+          setFeedback(
+            "good",
+            "Bra! Dette er et godt estimat.",
+            `Du valgte ${guess} meter. Riktig pedagogisk estimat er omtrent ${values.stopping} meter.`,
+          );
+        } else if (diff < 0) {
+          setFeedback(
+            "danger",
+            "For kort. Her undervurderer du stopplengden.",
+            `Du valgte ${guess} meter, men bilen trenger omtrent ${values.stopping} meter. Ved ${scenario.speed} km/t rekker bilen allerede å kjøre ${values.reaction} meter før bremsingen starter.`,
+          );
+        } else {
+          setFeedback(
+            "warn",
+            "Trygt, men litt for langt.",
+            `Du valgte ${guess} meter. Riktig estimat er omtrent ${values.stopping} meter. På teoriprøven er poenget å forstå reaksjon + bremsing.`,
+          );
+        }
+      }
+
+      function showCompletion() {
+        els.challengeGrid.hidden = true;
+        els.completion.hidden = false;
+        els.progress.textContent = "Fullført";
+        els.score.textContent = `${score} poeng`;
+        els.completionScore.textContent = `${score} av ${activeScenarios.length}`;
+
+        if (score === activeScenarios.length) {
+          els.completionText.textContent =
+            "Full pott. Du har god kontroll på sammenhengen mellom fart, føre, reaksjon og bremsing.";
+        } else if (score >= Math.ceil(activeScenarios.length / 2)) {
+          els.completionText.textContent =
+            "Godt jobbet. Se spesielt på oppgavene du bommet på, og legg merke til hvordan fart og dårlig føre øker stopplengden.";
+        } else {
+          els.completionText.textContent =
+            "Dette er et tema mange undervurderer. Bruk utregningen bak hvert svar, og prøv igjen etter å ha lest forklaringen i bremselengde-artikkelen.";
+        }
+      }
+
+      els.guess.addEventListener("input", () => {
+        els.guessValue.textContent = els.guess.value;
+        hasMovedSlider = Number(els.guess.value) > 0;
+        els.checkButton.disabled = !hasMovedSlider || hasAnswered;
+        els.sliderHint.textContent = hasMovedSlider
+          ? "Når du er fornøyd med estimatet ditt, sjekk svaret."
+          : "Start på 0 meter og dra slideren til ditt beste estimat.";
+      });
+
+      els.checkButton.addEventListener("click", checkAnswer);
+
+      els.nextButton.addEventListener("click", () => {
+        if (index === activeScenarios.length - 1) {
+          showCompletion();
+          return;
+        }
+
+        index += 1;
+        renderScenario();
+      });
+
+      els.restartButton.addEventListener("click", () => {
+        activeScenarios = shuffle(scenarios);
+        index = 0;
+        score = 0;
+        renderScenario();
+      });
+
+      renderScenario();
+    </script>
+  </body>
+</html>

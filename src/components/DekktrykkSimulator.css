@@ -1,0 +1,361 @@
+.tire-pressure-simulator {
+    margin: 2rem 0;
+    width: 100%;
+}
+
+.simulator-card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.simulator-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid var(--color-border);
+    padding-bottom: 0.75rem;
+}
+
+.simulator-header h4 {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--color-text);
+}
+
+.pressure-badge {
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+/* Dynamic colors based on pressure state class */
+.low-pressure .pressure-badge {
+    background-color: rgba(255, 149, 0, 0.15);
+    color: #ff9500;
+    border: 1px solid rgba(255, 149, 0, 0.3);
+}
+
+.correct-pressure .pressure-badge {
+    background-color: rgba(52, 199, 89, 0.15);
+    color: #34c759;
+    border: 1px solid rgba(52, 199, 89, 0.3);
+}
+
+.high-pressure .pressure-badge {
+    background-color: rgba(255, 59, 48, 0.15);
+    color: #ff3b30;
+    border: 1px solid rgba(255, 59, 48, 0.3);
+}
+
+/* SVG styling */
+.visualizer-container {
+    background: var(--color-background);
+    border-radius: 8px;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px dashed var(--color-border);
+    margin-bottom: 1.5rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.tire-svg {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+}
+
+/* SVG Road */
+.road-line {
+    stroke: var(--color-border);
+    stroke-width: 4;
+    stroke-linecap: round;
+}
+
+.road-line-sub {
+    stroke: var(--color-text-light);
+    stroke-dasharray: 4,8;
+    stroke-width: 1;
+    opacity: 0.5;
+}
+
+/* SVG Rim/Hub */
+.rim-outer {
+    fill: #3a3a3c;
+    stroke: #8e8e93;
+    stroke-width: 2;
+}
+
+.rim-inner {
+    fill: #2c2c2e;
+    stroke: #636366;
+    stroke-width: 1.5;
+}
+
+.rim-spokes {
+    stroke: #8e8e93;
+    stroke-width: 2;
+    stroke-linecap: round;
+    opacity: 0.8;
+}
+
+.rim-center {
+    fill: #48484a;
+    stroke: #aeaeb2;
+    stroke-width: 1;
+}
+
+/* SVG Tire States */
+.tire-state {
+    opacity: 0;
+    transform: scale(0.98);
+    transform-origin: 200px 100px;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    pointer-events: none;
+}
+
+.tire-state.active {
+    opacity: 1;
+    transform: scale(1);
+    pointer-events: all;
+}
+
+.tire-rubber {
+    fill: #1c1c1e;
+    stroke: #48484a;
+    stroke-width: 3.5;
+    transition: fill 0.4s ease, stroke 0.4s ease;
+}
+
+/* Internal tire glow / heat warning for low pressure */
+.tire-inner-glow {
+    fill: none;
+    stroke: #ff9500;
+    stroke-width: 2;
+    stroke-dasharray: 6 4;
+    opacity: 0.5;
+    animation: dash-flow 2s linear infinite;
+}
+
+@keyframes dash-flow {
+    from { stroke-dashoffset: 0; }
+    to { stroke-dashoffset: 20; }
+}
+
+/* Contact Patch Glow Styles */
+.contact-glow {
+    stroke-width: 6;
+    stroke-linecap: round;
+    opacity: 0.8;
+    filter: drop-shadow(0 0 4px currentColor);
+}
+
+.wear-edge {
+    stroke: #ff9500;
+    color: #ff9500;
+}
+
+.wear-even {
+    stroke: #34c759;
+    color: #34c759;
+}
+
+.wear-center {
+    stroke: #ff3b30;
+    color: #ff3b30;
+}
+
+.warning-dot {
+    fill: #ff3b30;
+    stroke: #ffffff;
+    stroke-width: 1.5;
+    transform-origin: center;
+    transform-box: fill-box;
+    animation: pulse-dot 1.5s infinite;
+}
+
+.success-dot {
+    fill: #34c759;
+    stroke: #ffffff;
+    stroke-width: 1.5;
+}
+
+.friction-arrow {
+    stroke: currentColor;
+    stroke-width: 2;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    opacity: 0.9;
+}
+
+.low-pressure .friction-arrow {
+    color: #ff9500;
+}
+
+.high-pressure .friction-arrow {
+    color: #ff3b30;
+}
+
+@keyframes pulse-dot {
+    0% { transform: scale(1); opacity: 0.8; }
+    50% { transform: scale(1.2); opacity: 1; filter: drop-shadow(0 0 6px rgba(255,59,48,0.8)); }
+    100% { transform: scale(1); opacity: 0.8; }
+}
+
+/* Slider Section */
+.slider-section {
+    margin: 1.5rem 0 2rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.slider-labels {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.5rem;
+}
+
+.label-btn {
+    flex: 1;
+    background: var(--color-background);
+    border: 1px solid var(--color-border);
+    color: var(--color-text-light);
+    padding: 0.5rem;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.label-btn:hover {
+    border-color: var(--color-primary);
+    color: var(--color-text);
+}
+
+.label-btn.active {
+    background: var(--color-primary);
+    border-color: var(--color-primary);
+    color: #ffffff;
+}
+
+.pressure-range-slider {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 6px;
+    border-radius: 3px;
+    background: var(--color-border);
+    outline: none;
+    margin: 0.5rem 0;
+}
+
+.pressure-range-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--color-primary);
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.1s ease;
+}
+
+.pressure-range-slider::-webkit-slider-thumb:hover {
+    transform: scale(1.15);
+}
+
+/* Info Cards */
+.info-cards-container {
+    min-height: 200px;
+}
+
+.info-card {
+    border-radius: 8px;
+    padding: 1.25rem;
+    animation: fadeIn 0.4s ease;
+}
+
+.info-card h5 {
+    margin: 0 0 0.75rem 0;
+    font-size: 1.05rem;
+    font-weight: 700;
+}
+
+.info-card p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin: 0 0 1rem 0;
+    color: var(--color-text);
+}
+
+.info-card ul {
+    margin: 0 0 1.25rem 0;
+    padding-left: 1.2rem;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.info-card li {
+    margin-bottom: 0.4rem;
+    color: var(--color-text-light);
+}
+
+.info-card li strong {
+    color: var(--color-text);
+}
+
+.warning-card {
+    background: rgba(255, 149, 0, 0.05);
+    border: 1px solid rgba(255, 149, 0, 0.15);
+}
+
+.warning-card h5 {
+    color: #ff9500;
+}
+
+.success-card {
+    background: rgba(52, 199, 89, 0.05);
+    border: 1px solid rgba(52, 199, 89, 0.15);
+}
+
+.success-card h5 {
+    color: #34c759;
+}
+
+.teori-point {
+    background: var(--color-background);
+    border-left: 3px solid var(--color-primary);
+    padding: 0.75rem 1rem;
+    border-radius: 0 6px 6px 0;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    color: var(--color-text);
+}
+
+.teori-point strong {
+    color: var(--color-primary);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.animated {
+    animation-duration: 0.3s;
+    animation-fill-mode: both;
+}
