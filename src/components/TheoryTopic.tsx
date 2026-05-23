@@ -15,6 +15,7 @@ import RundkjoringAnimasjon from './RundkjoringAnimasjon'
 import MiniQuiz from './MiniQuiz'
 import AutomatVsManuellSammenligning from './AutomatVsManuellSammenligning'
 import DekktrykkSimulator from './DekktrykkSimulator'
+import { PromilleKalkulator } from './PromilleKalkulator'
 
 
 // Renders content string with support for paragraphs, bullet lists (- ), numbered lists (1. ), images, headings (###) and markdown tables (| col |)
@@ -256,6 +257,7 @@ export default function TheoryTopic({ topic, onBack, extraComponent }: TheoryTop
                                     {topic.id === 'reaksjonstid' && <ReaksjonstidTest />}
                                     {topic.id === 'veimerking' && <VeimerkingInteraktiv />}
                                     {section.componentId === 'dekktrykk' && <DekktrykkSimulator />}
+                                    {section.componentId === 'promille' && <PromilleKalkulator />}
                                 </div>
                             </div>
                         ) : section.type === 'component' ? (

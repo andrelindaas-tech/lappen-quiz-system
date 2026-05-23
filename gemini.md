@@ -3,7 +3,7 @@
 **Protocol:** B.L.A.S.T. (Blueprint → Link → Architect → Stylize → Trigger)  
 **Architecture:** A.N.T. (Action, Network, Task)  
 **Backend Authority:** Supabase (TypeScript SDK)  
-**Last Updated:** 2026-01-24T12:39:40+01:00
+**Last Updated:** 2026-05-21T19:08:00+02:00
 
 ---
 
@@ -101,3 +101,6 @@ SUPABASE_SERVICE_KEY=(not needed for MVP - anonymous access)
 - **2026-01-24 14:00** - Core implementation complete, schema mismatch fixed, browser testing passed
 - **2026-01-24 14:10** - Deployment automation configured, walkthrough.md created, project ready for GitHub setup
 - **2026-01-24 17:52** - User configured Supabase storage (quiz-images bucket), fixed image loading, all features verified working
+- **2026-05-21 19:00** - Activated Forbudsskilt category, enriched metadata, fixed typo in sign 336, updated search aliases, standardized details & category SEO configurations, and mixed prohibitory signs on TheoryPage.
+- **2026-05-21 19:08** - Copied and synchronized all 21 prohibitory sign images from OneDrive to active project, updated src/data/trafficSigns.ts with definitions/aliases for all 21 signs, and verified with successful npm.cmd run build.
+

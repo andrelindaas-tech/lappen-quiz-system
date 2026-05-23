@@ -1806,143 +1806,167 @@ export const theoryTopics: TheoryTopic[] = [
 
     {
         id: 'promille',
-        title: 'Alkohol og promille i trafikken',
+        title: 'Promillegrense i Norge: alkohol og bilkjøring',
         icon: '🚫',
-        shortDescription: 'Visste du at du kan være straffbart påvirket selv om du føler deg edru? Lær promillegrensene, hva som skjer i kroppen og hvilke konsekvenser promillekjøring kan få.',
+        shortDescription: 'Promillegrensen for bil i Norge er 0,2 promille. Det betyr at du ikke bør drikke alkohol hvis du skal kjøre. Selv små mengder alkohol kan svekke reaksjonstid, oppmerksomhet, vurderingsevne og evnen til å lese trafikkbildet riktig.\n\nPå teoriprøven må du kunne både grensen, hvordan alkohol påvirker kjøringen, og hvorfor du fortsatt kan være påvirket dagen derpå.',
         color: 'var(--apple-red)',
-        seoTitle: 'Promillegrense i Norge: 0,2, straff og teoriprøve-regler | Teori-test.no',
-        seoDescription: 'Lær promillegrensen i Norge: 0,2 promille, straff, reaksjonstid, legemidler og vanlige teoriprøve-feller. Kort forklart for klasse B.',
+        seoTitle: 'Promillegrense i Norge (0,2) | Alkohol og bilkjøring',
+        seoDescription: 'Lær promillegrensen for bil i Norge, hvordan alkohol påvirker kjøringen, hva som gjelder dagen derpå, og hva du må kunne til teoriprøven.',
         sections: [
             {
-                title: 'Kort forklart: promillegrensen i Norge',
-                type: 'info',
-                content: 'Promillegrensen i Norge er 0,2 for alle motorvognførere. Det finnes ingen egen 0,0-grense for unge sjåfører eller øvelseskjøring — 0,2 gjelder alle. Fra 0,5 promille mister du normalt førerretten. Over 1,2 promille er det fare for fengsel.'
+                title: '',
+                type: 'text',
+                content: '![Person med bilnøkkel som lar være å drikke alkohol før bilkjøring.](/images/promille-hero.jpg)\n*Skal du kjøre, er det tryggeste valget å la alkoholen stå.*'
             },
             {
-                title: 'Straff etter promillenivå',
-                type: 'table',
-                content: `<table>
-    <thead>
-        <tr>
-            <th>Promillenivå</th>
-            <th>Straff</th>
-            <th>Tap av førerkort</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>0,2–0,5</td>
-            <td>Stor bot</td>
-            <td>Normalt ikke</td>
-        </tr>
-        <tr>
-            <td>0,5–1,2</td>
-            <td>Bot + betinget fengsel</td>
-            <td>Ja, midlertidig</td>
-        </tr>
-        <tr>
-            <td>Over 1,2</td>
-            <td>Bot + ubetinget fengsel</td>
-            <td>Ja, langvarig inndragning</td>
-        </tr>
-    </tbody>
-</table>`
+                title: 'Kort forklart',
+                type: 'info',
+                content: '- Promillegrensen for bil i Norge er 0,2 promille.\n- Grensen gjelder alle motorvognførere, også unge førere og ved øvelseskjøring.\n- Du kan være straffbart påvirket selv om du føler deg edru.\n- Alkohol svekker reaksjonsevne, oppmerksomhet og vurderingsevne.\n- Du kan fortsatt ha promille dagen derpå.\n- Er du i tvil, skal du ikke kjøre.'
+            },
+            {
+                title: 'Hva er promillegrensen i Norge?',
+                type: 'text',
+                content: 'Promillegrensen for førere av motorvogn i Norge er 0,2 promille. Har du høyere alkoholkonsentrasjon i blodet enn dette, regnes du som påvirket etter vegtrafikkloven.\n\nDet finnes ikke en egen 0,0-grense for unge sjåfører eller øvelseskjøring. Grensen på 0,2 gjelder alle motorvognførere. Likevel er det viktigste rådet enkelt: har du drukket alkohol, bør du la bilen stå.'
+            },
+            {
+                title: '',
+                type: 'text',
+                content: '![Infografikk som viser promillegrensen for bilkjøring i Norge på 0,2 promille.](/images/promille-infografikk.jpg)\n*Promillegrensen er 0,2 promille, men det tryggeste er å ikke drikke før du skal kjøre.*'
+            },
+            {
+                title: 'Beregning av promille',
+                type: 'calculator',
+                componentId: 'promille',
+                content: 'Bruk kalkulatoren som en veiledende illustrasjon av hvordan alkohol kan henge igjen i kroppen. Den kan ikke avgjøre om du er lovlig eller trygg nok til å kjøre.'
             },
             {
                 title: 'Kan jeg kjøre dagen derpå?',
                 type: 'warning',
-                content: 'Mange tror de er edru dagen etter, men kroppen forbrenner alkohol i eget tempo — ca. 0,1–0,15 promille per time, og dette varierer fra person til person. Du kan ha promille selv om du føler deg fin.\n\nIkke bruk en kalkulator alene for å avgjøre om du kan kjøre. Forbrenning varierer mellom personer, og alkohol påvirker konsentrasjon og reaksjonstid selv ved lave nivåer. Er du i tvil — ikke kjør.'
-            },
-            {
-                title: 'Promillegrensen i Norge',
-                type: 'text',
-                content: 'I Norge er promillegrensen 0,2 promille blodalkohol. Dette er en av de laveste grensene i Europa og gjelder alle bilførere. Selv et lite glass vin eller en flaske øl kan ta deg over grensen — spesielt på tom mage eller hvis du er sliten.'
-            },
-            {
-                title: '⚠️ Teoriprøve-felle: Ingen strengere grense for unge',
-                type: 'warning',
-                content: 'Det er ingen strengere promillegrense for sjåfører under 20 år eller for øvelseskjøring i Norge. Grensen på 0,2 promille gjelder absolutt for alle motorvognførere, uansett alder eller erfaring.\n\nÅ tro at det er «nulltoleranse for de under 20» er en klassisk stryk-felle på teoriprøven. Husk: 0,2 promille gjelder for alle.'
+                content: 'Mange tror de er edru dagen etter fordi de har sovet, dusjet eller drukket kaffe. Det stemmer ikke. Kroppen forbrenner alkohol i sitt eget tempo, og du kan fortsatt ha promille selv om du føler deg fin.\n\nDet finnes geen sikker “12-timersregel” som passer for alle. Hvis du har drukket mye, drukket sent, sovet lite eller føler deg redusert, bør du ikke kjøre.'
             },
             {
                 title: 'Slik påvirker alkohol kjøreevnen',
+                type: 'table',
+                content: `Alkohol påvirker flere ferdigheter du trenger i trafikken:
+
+<div style="overflow-x: auto; -webkit-overflow-scrolling: touch; margin-top: 1rem;"><table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem;"><thead><tr style="background-color: var(--color-surface); border-bottom: 2px solid var(--color-border);"><th style="padding: 12px 8px;">Hva påvirkes?</th><th style="padding: 12px 8px;">Hvorfor er det farlig?</th></tr></thead><tbody><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px; font-weight: 600;">Reaksjonstid</td><td style="padding: 12px 8px;">Du bruker lengre tid på å oppdage fare og begynne å bremse. Se også vår guide om [reaksjonstid og stopplengde](/laeringsressurser/bremselengde).</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px; font-weight: 600;">Oppmerksomhet</td><td style="padding: 12px 8px;">Du kan overse skilt, fotgjengere, kryss eller endringer i trafikken.</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px; font-weight: 600;">Vurderingsevne</td><td style="padding: 12px 8px;">Du kan undervurdere fart, avstand og risiko.</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px; font-weight: 600;">Koordinasjon</td><td style="padding: 12px 8px;">Styring, bremsing og plassering kan bli mindre presis.</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px; font-weight: 600;">Selvkontroll</td><td style="padding: 12px 8px;">Alkohol kan gi overdreven selvtillit og dårligere risikovurdering.</td></tr></tbody></table></div>`
+            },
+            {
+                title: 'Fakta om promillekjøring',
                 type: 'info',
-                content: '• 0,2–0,5 promille: Redusert konsentrasjonsevne og vanskeligere å bedømme fart og avstand\n• 0,5–1,0 promille: Klart svekket reaksjonstid, dårligere koordinasjon og overdreven selvtillit\n• Over 1,0 promille: Kraftig nedsatt kjøreevne — ekstrem ulykkesrisiko\n\nReaksjonstiden kan bli to til tre ganger lengre enn normalt. På motorvei ved 100 km/t betyr det 20–30 meter ekstra før du begynner å bremse.'
+                content: 'Selv om nesten alle sier at de er imot promillekjøring, skjer det fortsatt mange farlige kjøreturer. Av-og-til viser til anslag om rundt 14 000 kjøreturer med alkoholpåvirket sjåfør hver dag i Norge.\n\nRisikoen øker raskt: En sjåfør med lav promille, 0,2-0,5, har omtrent dobbelt så høy skaderisiko som en edru sjåfør. Ved promille over 1,5 er risikoen oppgitt til å være mange titalls ganger høyere.\n\nPoenget til teoriprøven er enkelt: også lav promille kan svekke reaksjonstid, oppmerksomhet og vurderingsevne. Derfor er det tryggeste valget å ikke drikke hvis du skal kjøre.'
             },
             {
                 title: 'Straff og konsekvenser',
-                type: 'warning',
-                content: 'Straffene øker med promillenivået:\n\n0,2–0,5 promille: Normalt kun en svært stor bot — du mister vanligvis ikke førerkortet (med mindre det er skjerpende omstendigheter som en ulykke)\n0,5–1,2 promille: Bot + automatisk tap av førerrett. Automatisk inndragning starter på 0,5 promille\nOver 1,2 promille: Fengsel opptil 1 år + tap av førerrett i lang tid\n\nI tillegg kan forsikringen din nekte å dekke skader ved promillekjøring, noe som kan føre til enorme erstatningskrav.'
+                type: 'table',
+                content: `Bruk av alkohol og motorvogn kan medføre strenge reaksjoner. Straffen og tapet av førerrett avhenger av den konkrete situasjonen og promillenivået.
+
+<div style="overflow-x: auto; -webkit-overflow-scrolling: touch; margin-top: 1rem;"><table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem;"><thead><tr style="background-color: var(--color-surface); border-bottom: 2px solid var(--color-border);"><th style="padding: 12px 8px;">Promillenivå</th><th style="padding: 12px 8px;">Mulige konsekvenser</th></tr></thead><tbody><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px; font-weight: 600;">Over 0,2 promille</td><td style="padding: 12px 8px;">Kjøringen regnes som straffbar. Vanlig reaksjon er bot (som regel basert på månedslønn).</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px; font-weight: 600;">Over 0,5 promille</td><td style="padding: 12px 8px;">Bot og fengselsreaksjon kan bli aktuelt. Midlertidig tap av førerrett er normalt.</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px; font-weight: 600;">Over 1,2 promille</td><td style="padding: 12px 8px;">Strengere straff, ofte med ubetinget fengsel og langvarig tap av førerrett.</td></tr></tbody></table></div>\n\nI tillegg kan promillekjøring få store økonomiske konsekvenser. Forsikringen kan bli redusert eller nektet (regress), og du kan bli personlig ansvarlig for skader du påfører andre.`
             },
             {
-                title: 'Ruskjøring og legemidler — den røde trekanten',
-                type: 'warning',
-                content: 'Promilleloven gjelder ikke bare alkohol. Det er også straffbart å kjøre under påvirkning av:\n• Narkotika (cannabis, kokain, amfetamin m.fl.)\n• Visse reseptbelagte legemidler (beroligende midler, sovemedisiner, smertestillende)\n\n🔺 Den røde trekanten: På medisinemballasje betyr en rød advarselstrekant at preparatet kan svekke kjøreevnen. Dette symbolet er et av de mest testede visuelle elementene på teoriprøven knyttet til rus og kjøring. Kjenn igjen dette skiltet!\n\nDin lege er pliktig til å informere deg hvis medisinene dine kan påvirke kjøreevnen. Sjekk alltid pakningsvedlegget.'
+                title: 'Alkohol, narkotika og medisiner',
+                type: 'text',
+                content: 'Reglene handler ikke bare om alkohol. Det er også forbudt å kjøre når du er påvirket av narkotika, cannabis eller legemidler som gjør deg uskikket til å kjøre.\n\nLegemidler med rød varseltrekant kan påvirke kjøreevnen. Det betyr ikke alltid at du aldri kan kjøre, men du må lese pakningsvedlegget og følge råd fra lege eller apotek. Kombinasjon av alkohol og medisiner kan være ekstra farlig.'
             },
             {
-                title: 'Viktig å vite til teoriprøven',
+                title: 'Vanlige misforståelser',
+                type: 'info',
+                content: '- **“Jeg føler meg edru, så jeg kan kjøre.”** Feil. Du kan være påvirket selv om du føler deg normal.\n- **“Kaffe, dusj eller mat fjerner promille.”** Feil. Det er utelukkende tid som forbrenner alkohol.\n- **“Unge sjåfører har 0,0-grense.”** Feil. I Norge er grensen 0,2 for alle motorvognførere.\n- **“Litt alkohol påvirker ikke kjøringen.”** Feil. Også lave nivåer kan svekke reaksjon og vurdering.\n- **“Promillekalkulatoren sier det går bra.”** Ikke nok. Kalkulatoren er bare veiledende.'
+            },
+            {
+                title: 'Dette må du kunne til teoriprøven',
                 type: 'tip',
-                content: 'Promillespørsmål er blant de hyppigst stilte på teoriprøven. Husk disse nøkkeltallene:\n\n• Promillegrense: 0,2 promille\n• Reaksjonstiden kan bli 2–3 ganger lengre\n• Alkohol øker selvtilliten mens den reduserer evnen\n• Straff starter allerede ved 0,2 promille\n\nLes spørsmålene nøye — de tester ofte om du kjenner til de eksakte grensene, ikke bare at alkohol er farlig.'
+                content: '- Promillegrensen for bil er 0,2.\n- Grensen gjelder alle motorvognførere.\n- Alkohol svekker reaksjonstid, oppmerksomhet og dømmekraft.\n- Du kan ha promille dagen derpå.\n- Narkotika og trafikkfarlige legemidler kan også gjøre deg uskikket til å kjøre.\n- Er du i tvil, skal du ikke kjøre.\n\nSe også våre andre læringsressurser, som for eksempel guiden om [norske fartsgrenser](/laeringsressurser/fartsgrenser).\n\nKlar for å teste deg? [Prøv vår gratis ekspresstest eller fullverdige simulator](/quiz) for å se om du er klar til den ekte teoriprøven!'
             },
             {
-                title: 'Test kunnskapen din!',
-                type: 'tip',
-                content: 'Promille og ruspåvirkning er et av de temaene det oftest stilles spørsmål om på den ekte teoriprøven. Her på Teori-test.no kan du øve på akkurat disse spørsmålene i Ekspresstest eller Full prøve — helt gratis. Jo mer du øver, desto tryggere blir du på eksamensdagen. 🎯\n\n[Les om fartsgrenser i Norge](/laeringsressurser/fartsgrenser)'
+                title: 'Kilder og juridisk grunnlag',
+                type: 'text',
+                content: '- Politiet: Rus og ruskontroll\n- Lovdata: Vegtrafikkloven § 22\n- Av-og-til: Alt du må vite om promillegrensen'
             }
         ],
         miniQuiz: [
-  {
-    question: "Hva er promillegrensen i Norge for bilførere?",
-    options: ["0,0 promille", "0,2 promille", "0,5 promille", "1,0 promille"],
-    correct: "0,2 promille",
-    explanation: "Promillegrensen i Norge er 0,2 for alle motorvognførere. Dette gjelder uansett alder og erfaring."
-  },
-  {
-    question: "Gjelder det en strengere promillegrense for unge sjåfører?",
-    options: ["Ja, 0,0 promille", "Ja, 0,1 promille", "Nei, 0,2 gjelder alle", "Ja, 0,5 promille"],
-    correct: "Nei, 0,2 gjelder alle",
-    explanation: "Det finnes ingen egen nullgrense for unge eller nyutdannede sjåfører i Norge. 0,2 promille gjelder alle motorvognførere."
-  },
-  {
-    question: "Hva skjer normalt fra 0,5 promille?",
-    options: ["Bare en advarsel", "Bot uten tap av førerkort", "Tap av førerretten", "Ingenting første gang"],
-    correct: "Tap av førerretten",
-    explanation: "Fra 0,5 promille mister du normalt førerretten midlertidig. Over 1,2 promille risikerer du ubetinget fengsel og langvarig inndragning."
-  },
-  {
-    question: "Hva betyr en rød trekant på medisinpakningen?",
-    options: ["Medisinen er farlig giftig", "Medisinen kan påvirke kjøreevnen", "Medisinen krever resept", "Medisinen er reseptfri"],
-    correct: "Medisinen kan påvirke kjøreevnen",
-    explanation: "Rød trekant på medisiner betyr at medisinen kan påvirke kjøreevnen. Du bør ikke kjøre bil uten å sjekke med lege eller apotek."
-  },
-  {
-    question: "Hvordan påvirker alkohol reaksjonstiden?",
-    options: ["Den forbedres litt", "Den påvirkes ikke", "Den forlenges betydelig", "Den halveres"],
-    correct: "Den forlenges betydelig",
-    explanation: "Alkohol forlenger reaksjonstiden betydelig. Selv ved lave promillenivåer er konsentrasjonen og reaksjonsevnen svekket — du oppdager farer senere og bremser tregere."
-  }
-],
+            {
+                question: "Hva er promillegrensen for bilførere i Norge?",
+                options: [
+                    "0,0 promille",
+                    "0,2 promille",
+                    "0,5 promille",
+                    "1,0 promille"
+                ],
+                correct: "0,2 promille",
+                explanation: "Promillegrensen i Norge er 0,2 promille for alle førere av motorvogn."
+            },
+            {
+                question: "Gjelder det en egen, strengere promillegrense (f.eks. 0,0) for unge sjåfører eller ved øvelseskjøring?",
+                options: [
+                    "Ja, 0,0 promille for alle under 20 år",
+                    "Ja, 0,0 promille for de med prøvetid",
+                    "Nei, grensen på 0,2 promille gjelder for alle",
+                    "Ja, 0,1 promille for øvelseskjøring"
+                ],
+                correct: "Nei, grensen på 0,2 promille gjelder for alle",
+                explanation: "Det er ingen egen promillegrense for unge førere eller ved øvelseskjøring i Norge. Grensen på 0,2 promille gjelder alle motorvognførere."
+            },
+            {
+                question: "Hvorfor er det uforsvarlig å stole på en 12-timersregel for å kjøre dagen derpå?",
+                options: [
+                    "Fordi kaffe og søvn øker promillen",
+                    "Fordi alkoholforbrenningen er individuell og kan ta lengre tid",
+                    "Fordi 12-timersregelen bare gjelder i helgene",
+                    "Fordi politiet har 24-timersgrense"
+                ],
+                correct: "Fordi alkoholforbrenningen er individuell og kan ta lengre tid",
+                explanation: "Alkoholforbrenning varierer fra person til person og påvirkes av kropp, søvn, mat og mengde alkohol. Du kan fortsatt ha promille dagen derpå selv etter 12 timer."
+            },
+            {
+                question: "Hva betyr det hvis en medisinpakning er merket med en rød advarseltrekant?",
+                options: [
+                    "At medisinen kun kan kjøpes reseptfritt",
+                    "At medisinen er ulovlig i Norge",
+                    "At legemiddelet kan svekke kjøreevnen din",
+                    "At du aldri har lov til å kjøre bil mens du går på den"
+                ],
+                correct: "At legemiddelet kan svekke kjøreevnen din",
+                explanation: "Rød trekant betyr at medisinen kan påvirke kjøreevnen din. Du må lese pakningsvedlegget og rådføre deg med lege eller apotek før du kjører."
+            },
+            {
+                question: "Hvordan påvirkes kjøreevnen din av selv små mengder alkohol?",
+                options: [
+                    "Reaksjonstiden forlenges og vurderingsevnen svekkes",
+                    "Du reagerer raskere og blir mer oppmerksom",
+                    "Kun koordinasjonen påvirkes, ikke selvkontrollen",
+                    "Kjøreevnen påvirkes ikke under 0,5 promille"
+                ],
+                correct: "Reaksjonstiden forlenges og vurderingsevnen svekkes",
+                explanation: "Selv lave promillenivåer svekker konsentrasjonen, forlenger reaksjonstiden og gir dårligere vurderingsevne."
+            }
+        ],
         faq: [
-  {
-    question: "Hva er promillegrensen i Norge?",
-    answer: "Promillegrensen i Norge er 0,2 for alle motorvognførere. Dette gjelder uansett alder og erfaring."
-  },
-  {
-    question: "Er det nulltoleranse for unge sjåfører?",
-    answer: "Nei. Det finnes ingen egen nullgrense for unge sjåfører i Norge. 0,2 promille gjelder alle motorvognførere."
-  },
-  {
-    question: "Mister man førerkortet ved 0,5 promille?",
-    answer: "Ja, normalt mister du førerretten midlertidig fra 0,5 promille. Over 1,2 promille risikerer du ubetinget fengsel og langvarig inndragning av førerkortet."
-  },
-  {
-    question: "Kan medisiner påvirke kjøreevnen?",
-    answer: "Ja. Medisiner med rød trekant på pakningen kan påvirke kjøreevnen. Sjekk alltid med lege eller apotek før du kjører."
-  },
-  {
-    question: "Hvor lenge må man vente etter å ha drukket?",
-    answer: "Kroppen forbrenner ca. 0,1–0,15 promille per time, men dette varierer mellom personer. Er du i tvil — ikke kjør. Bruk ikke kalkulator alene for å avgjøre om du er edru nok."
-  }
-]
+            {
+                question: "Hva er promillegrensen i Norge?",
+                answer: "Promillegrensen i Norge er 0,2 promille for alle førere av motorvogn."
+            },
+            {
+                question: "Hva er promillegrensen for bil?",
+                answer: "Promillegrensen for bil er 0,2 promille, uavhengig av førerens alder, erfaring eller om det er øvelseskjøring."
+            },
+            {
+                question: "Can jeg kjøre med 0,2 i promille?",
+                answer: "Promillegrensen er på nøyaktig 0,2 promille. Har du 0,2 eller høyere i promille regnes du som straffbart påvirket etter vegtrafikkloven. Det sikreste er derfor alltid å ikke drikke alkohol i det hele tatt når du skal kjøre."
+            },
+            {
+                question: "Er det nulltoleranse for unge sjåfører?",
+                answer: "Nei, det er ikke en egen 0,0-promillegrense for unge sjåfører i Norge. Grensen på 0,2 promille gjelder absolutt alle førere, også nybegynnere, unge førere under 20 år og ved øvelseskjøring."
+            },
+            {
+                question: "Hvor lenge må jeg vente med å kjøre dagen derpå?",
+                answer: "Det finnes ingen fast regel (som f.eks. en '12-timersregel') fordi kroppen forbrenner alkohol i sitt eget tempo (normalt rundt 0,10 til 0,15 promille per time). Hvis du har drukket mye eller sent på kvelden, kan du fortsatt ha ulovlig promille neste dag. Er du i tvil, skal du la bilen stå."
+            },
+            {
+                question: "Kan medisiner eller cannabis påvirke kjøreevnen?",
+                answer: "Ja. Kjøring under påvirkning av narkotika eller trafikkfarlige legemidler (merket med rød varseltrekant) er sidestilt med promillekjøring og er straffbart. Følg alltid råd fra lege og apotek."
+            }
+        ]
     },
 
     {

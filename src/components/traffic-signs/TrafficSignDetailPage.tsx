@@ -1,0 +1,309 @@
+import { useMemo } from 'react';
+import { useParams, Link, useNavigate } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
+import { getTrafficSignBySlug, getCategoryBySlug } from '../../lib/trafficSigns';
+import { trafficSigns } from '../../data/trafficSigns';
+import '../../theory.css';
+
+export default function TrafficSignDetailPage() {
+  const { categorySlug, signSlug } = useParams<{ categorySlug: string; signSlug: string }>();
+  const navigate = useNavigate();
+
+  // Fetch the sign
+  const sign = useMemo(() => {
+    return categorySlug && signSlug ? getTrafficSignBySlug(categorySlug, signSlug) : undefined;
+  }, [categorySlug, signSlug]);
+
+  // Fetch the category
+  const category = useMemo(() => {
+    return categorySlug ? getCategoryBySlug(categorySlug) : undefined;
+  }, [categorySlug]);
+
+  // Fetch signs that this sign might be confused with
+  const confusedWithSigns = useMemo(() => {
+    if (!sign || !sign.confusedWith) return [];
+    return trafficSigns.filter((s) => sign.confusedWith?.includes(s.id));
+  }, [sign]);
+
+  if (!sign || !category || !category.isActive) {
+    return (
+      <div className="container" style={{ textAlign: 'center', padding: 'var(--spacing-2xl) var(--spacing-lg)' }}>
+        <Helmet>
+          <title>Fant ikke skiltet | Teori-test.no</title>
+          <meta name="robots" content="noindex, nofollow" />
+        </Helmet>
+        <div style={{
+          maxWidth: '500px',
+          margin: '0 auto',
+          padding: 'var(--spacing-xl)',
+          backgroundColor: 'var(--color-bg)',
+          borderRadius: 'var(--radius-lg)',
+          border: '1px solid var(--color-border)',
+          boxShadow: 'var(--shadow-md)'
+        }}>
+          <span style={{ fontSize: '3rem', display: 'block', marginBottom: 'var(--spacing-sm)' }}>🔍</span>
+          <h1 style={{ fontSize: '1.75rem', fontWeight: 700, marginBottom: 'var(--spacing-sm)' }}>
+            Fant ikke skiltet
+          </h1>
+          <p style={{ color: 'var(--color-text-light)', marginBottom: 'var(--spacing-lg)' }}>
+            Beklager, vi fant ikke det trafikkskiltet du lette etter. Det kan ha blitt flyttet eller slettet.
+          </p>
+          <button
+            onClick={() => navigate('/trafikkskilt')}
+            style={{
+              padding: '12px 24px',
+              backgroundColor: 'var(--color-primary)',
+              color: '#ffffff',
+              border: 'none',
+              borderRadius: 'var(--radius-sm)',
+              fontWeight: 600,
+              cursor: 'pointer',
+              transition: 'background-color 0.2s ease',
+            }}
+            onMouseOver={(e) => (e.currentTarget.style.backgroundColor = 'var(--color-primary-dark)')}
+            onMouseOut={(e) => (e.currentTarget.style.backgroundColor = 'var(--color-primary)')}
+          >
+            Tilbake til skiltbanken
+          </button>
+        </div>
+      </div>
+    );
+  }
+
+  const signTitleName = sign.displayName || sign.name;
+  const seoTitle = `${signTitleName}-skiltet (${sign.code}) | Hva betyr skiltet?`;
+  const seoDesc = `Lær hva ${signTitleName.toLowerCase()}-skiltet betyr, hva du skal gjøre, og hvilken vanlig misforståelse du må passe på til teoriprøven.`;
+
+  return (
+    <div className="container" style={{ paddingBottom: 'var(--spacing-2xl)' }}>
+      <Helmet>
+        <title>{seoTitle}</title>
+        <meta name="description" content={seoDesc} />
+      </Helmet>
+
+      {/* Breadcrumbs */}
+      <nav style={{ marginBottom: 'var(--spacing-lg)', fontSize: '0.9rem' }}>
+        <Link to="/trafikkskilt" style={{ color: 'var(--color-primary)', textDecoration: 'none' }}>
+          Skiltbanken
+        </Link>
+        <span style={{ color: 'var(--color-text-light)', margin: '0 8px' }}>/</span>
+        <Link to={`/trafikkskilt/${category.slug}`} style={{ color: 'var(--color-primary)', textDecoration: 'none' }}>
+          {category.name}
+        </Link>
+        <span style={{ color: 'var(--color-text-light)', margin: '0 8px' }}>/</span>
+        <span style={{ color: 'var(--color-text-light)' }}>{signTitleName}</span>
+      </nav>
+
+      {/* Details layout: Split into visual/image block and text content */}
+      <div style={{
+        display: 'grid',
+        gridTemplateColumns: '1fr',
+        gap: 'var(--spacing-xl)',
+      }}>
+        {/* Top/Main details card */}
+        <div style={{
+          backgroundColor: 'var(--color-bg)',
+          border: '1px solid var(--color-border)',
+          borderRadius: 'var(--radius-xl)',
+          padding: 'var(--spacing-xl)',
+          boxShadow: 'var(--shadow-sm)',
+          display: 'grid',
+          gridTemplateColumns: '1fr',
+          gap: 'var(--spacing-xl)',
+        }}>
+          {/* Layout for image and basic info */}
+          <div style={{
+            display: 'flex',
+            flexDirection: 'row',
+            flexWrap: 'wrap',
+            gap: 'var(--spacing-xl)',
+            alignItems: 'center',
+          }}>
+            {/* Sign Image Frame */}
+            <div style={{
+              flex: '1 1 240px',
+              maxWidth: '300px',
+              aspectRatio: '1',
+              backgroundColor: 'var(--color-bg-secondary)',
+              borderRadius: 'var(--radius-lg)',
+              padding: 'var(--spacing-lg)',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              margin: '0 auto',
+            }}>
+              <img
+                src={sign.imagePath}
+                alt={signTitleName}
+                style={{ maxHeight: '100%', maxWidth: '100%', objectFit: 'contain' }}
+              />
+            </div>
+
+            {/* Title and Short Explanation */}
+            <div style={{ flex: '2 1 300px' }}>
+              <div style={{ display: 'inline-block', padding: '2px 8px', borderRadius: '4px', backgroundColor: 'rgba(59, 130, 246, 0.1)', color: 'var(--color-primary)', fontSize: '0.85rem', fontWeight: 700, marginBottom: 'var(--spacing-sm)', fontFamily: 'monospace' }}>
+                Offentlig skilt nr. {sign.code}
+              </div>
+              <h1 style={{ fontSize: '2.25rem', fontWeight: 800, margin: '0 0 var(--spacing-sm) 0', letterSpacing: '-0.02em' }}>
+                {signTitleName}-skiltet
+              </h1>
+              <h2 style={{ fontSize: '1.15rem', color: 'var(--color-text)', fontWeight: 600, marginTop: 'var(--spacing-md)', marginBottom: 'var(--spacing-xs)' }}>
+                Kort forklart
+              </h2>
+              <p style={{ fontSize: '1.05rem', color: 'var(--color-text)', lineHeight: '1.6', margin: 0 }}>
+                {sign.shortExplanation}
+              </p>
+
+              {/* Practice CTA */}
+              <div style={{ marginTop: 'var(--spacing-lg)' }}>
+                <Link
+                  to="/quiz/skilt"
+                  style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    padding: '12px 24px',
+                    backgroundColor: 'var(--color-primary)',
+                    color: '#ffffff',
+                    textDecoration: 'none',
+                    borderRadius: 'var(--radius-sm)',
+                    fontWeight: 600,
+                    boxShadow: 'var(--shadow-sm)',
+                    transition: 'all 0.2s ease',
+                  }}
+                  onMouseOver={(e) => (e.currentTarget.style.backgroundColor = 'var(--color-primary-dark)')}
+                  onMouseOut={(e) => (e.currentTarget.style.backgroundColor = 'var(--color-primary)')}
+                >
+                  📝 Øv på skilt i quiz
+                </Link>
+              </div>
+            </div>
+          </div>
+
+          {/* Long/Detail description if available */}
+          {sign.longExplanation && (
+            <div style={{ borderTop: '1px solid var(--color-border)', paddingTop: 'var(--spacing-lg)' }}>
+              <h2 style={{ fontSize: '1.25rem', fontWeight: 700, marginBottom: 'var(--spacing-xs)' }}>
+                Betydning og virkemåte
+              </h2>
+              <p style={{ color: 'var(--color-text)', lineHeight: '1.6', fontSize: '1rem' }}>
+                {sign.longExplanation}
+              </p>
+            </div>
+          )}
+
+          {/* What to do (Actionable steps) */}
+          {sign.whatToDo && sign.whatToDo.length > 0 && (
+            <div style={{ borderTop: '1px solid var(--color-border)', paddingTop: 'var(--spacing-lg)' }}>
+              <h2 style={{ fontSize: '1.25rem', fontWeight: 700, marginBottom: 'var(--spacing-sm)' }}>
+                Hva skal du gjøre i trafikken?
+              </h2>
+              <ol style={{ paddingLeft: '20px', margin: 0 }}>
+                {sign.whatToDo.map((step, idx) => (
+                  <li key={idx} style={{ marginBottom: '8px', color: 'var(--color-text)', fontSize: '0.975rem', lineHeight: '1.5' }}>
+                    {step}
+                  </li>
+                ))}
+              </ol>
+            </div>
+          )}
+
+          {/* Theory Trap box */}
+          {sign.theoryTrap && (
+            <div style={{
+              backgroundColor: 'rgba(239, 68, 68, 0.05)',
+              borderLeft: '4px solid var(--color-error)',
+              padding: 'var(--spacing-md) var(--spacing-lg)',
+              borderRadius: '0 var(--radius-md) var(--radius-md) 0',
+              marginTop: 'var(--spacing-sm)',
+            }}>
+              <h3 style={{ fontSize: '1.05rem', fontWeight: 700, color: 'var(--color-error)', marginBottom: '4px', display: 'flex', alignItems: 'center', gap: '6px' }}>
+                ⚠️ Vanlig misforståelse
+              </h3>
+              <p style={{ color: 'var(--color-text)', margin: 0, fontSize: '0.95rem', lineHeight: '1.5' }}>
+                {sign.theoryTrap}
+              </p>
+            </div>
+          )}
+        </div>
+
+        {/* Similar Signs / Confused With */}
+        {confusedWithSigns.length > 0 && (
+          <section>
+            <h2 style={{ fontSize: '1.4rem', fontWeight: 700, marginBottom: 'var(--spacing-md)' }}>
+              Forveksles ofte med
+            </h2>
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fill, minmax(240px, 1fr))',
+              gap: 'var(--spacing-md)',
+            }}>
+              {confusedWithSigns.map((confusedSign) => (
+                <Link
+                  key={confusedSign.id}
+                  to={`/trafikkskilt/${confusedSign.category}/${confusedSign.slug}`}
+                  style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: 'var(--spacing-md)',
+                    padding: 'var(--spacing-md)',
+                    backgroundColor: 'var(--color-bg)',
+                    border: '1px solid var(--color-border)',
+                    borderRadius: 'var(--radius-md)',
+                    textDecoration: 'none',
+                    color: 'var(--color-text)',
+                    transition: 'all 0.2s ease',
+                  }}
+                  className="practice-card"
+                >
+                  <img
+                    src={confusedSign.imagePath}
+                    alt={confusedSign.displayName || confusedSign.name}
+                    style={{ width: '56px', height: '56px', objectFit: 'contain' }}
+                    loading="lazy"
+                  />
+                  <div style={{ minWidth: 0 }}>
+                    <span style={{ fontSize: '0.75rem', fontWeight: 700, color: 'var(--color-text-light)', textTransform: 'uppercase' }}>
+                      Nr. {confusedSign.code}
+                    </span>
+                    <h3 style={{ fontSize: '0.95rem', fontWeight: 600, margin: '2px 0 0 0', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+                      {confusedSign.displayName || confusedSign.name}
+                    </h3>
+                    <p style={{ fontSize: '0.8rem', color: 'var(--color-text-light)', margin: '2px 0 0 0', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+                      {confusedSign.shortExplanation}
+                    </p>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {/* Sources block */}
+        {sign.sources && sign.sources.length > 0 && (
+          <footer style={{
+            fontSize: '0.85rem',
+            color: 'var(--color-text-light)',
+            marginTop: 'var(--spacing-md)',
+            borderTop: '1px solid var(--color-border)',
+            paddingTop: 'var(--spacing-md)',
+          }}>
+            <span style={{ fontWeight: 600 }}>Kilder og lovhjemmel: </span>
+            {sign.sources.map((source, idx) => (
+              <span key={idx}>
+                {idx > 0 && ', '}
+                <a
+                  href={source.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ color: 'var(--color-primary)', textDecoration: 'none' }}
+                >
+                  {source.name}
+                </a>
+              </span>
+            ))}
+          </footer>
+        )}
+      </div>
+    </div>
+  );
+}
