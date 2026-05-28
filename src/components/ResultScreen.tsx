@@ -48,7 +48,7 @@ export default function ResultScreen({ result, mode, onRestart, onReview, onRetu
         }
     }, [mode.isFokusMode, mode.name, result.passed, result.errors])
 
-    // Special message for Fokus mode cleared
+    // Special message for Fokusmodus cleared
     const isFokusCleared = mode.isFokusMode && result.passed && result.errors === 0
 
     return (
@@ -58,7 +58,7 @@ export default function ResultScreen({ result, mode, onRestart, onReview, onRetu
             </div>
 
             <h1 className={`result-status ${result.passed ? 'passed' : 'failed'}`}>
-                {isFokusCleared ? 'FOKUS MODE CLEARED!' : result.passed ? 'BESTÅTT!' : 'IKKE BESTÅTT'}
+                {isFokusCleared ? 'FOKUSMODUS FULLFØRT!' : result.passed ? 'BESTÅTT!' : 'IKKE BESTÅTT'}
             </h1>
 
             <p className="result-mode-name">{mode.name}</p>

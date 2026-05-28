@@ -71,8 +71,13 @@ export default function TrafficSignDetailPage() {
   }
 
   const signTitleName = sign.displayName || sign.name;
-  const seoTitle = `${signTitleName}-skiltet (${sign.code}) | Hva betyr skiltet?`;
-  const seoDesc = `Lær hva ${signTitleName.toLowerCase()}-skiltet betyr, hva du skal gjøre, og hvilken vanlig misforståelse du må passe på til teoriprøven.`;
+  const isUnderskilt = category.slug === 'underskilt';
+  const seoTitle = isUnderskilt
+    ? `${signTitleName}-underskiltet (${sign.code}) | Hva betyr skiltet?`
+    : `${signTitleName}-skiltet (${sign.code}) | Hva betyr skiltet?`;
+  const seoDesc = isUnderskilt
+    ? `Lær hva ${signTitleName.toLowerCase()}-underskiltet betyr, hvordan det presiserer hovedskiltet, og hvilken vanlig misforståelse du må passe på til teoriprøven.`
+    : `Lær hva ${signTitleName.toLowerCase()}-skiltet betyr, hva du skal gjøre, og hvilken vanlig misforståelse du må passe på til teoriprøven.`;
 
   return (
     <div className="container" style={{ paddingBottom: 'var(--spacing-2xl)' }}>
@@ -204,6 +209,111 @@ export default function TrafficSignDetailPage() {
                   </li>
                 ))}
               </ol>
+            </div>
+          )}
+
+          {/* Combinations section for Underskilts */}
+          {category.slug === 'underskilt' && sign.combinations && sign.combinations.length > 0 && (
+            <div style={{ borderTop: '1px solid var(--color-border)', paddingTop: 'var(--spacing-lg)', marginTop: 'var(--spacing-lg)' }}>
+              <h2 style={{ fontSize: '1.25rem', fontWeight: 700, marginBottom: 'var(--spacing-md)' }}>
+                Slik fungerer det i praksis (Skiltkombinasjon)
+              </h2>
+              <div style={{
+                display: 'grid',
+                gridTemplateColumns: '1fr',
+                gap: 'var(--spacing-md)'
+              }}>
+                {sign.combinations.map((combo, idx) => (
+                  <div
+                    key={idx}
+                    style={{
+                      display: 'flex',
+                      flexDirection: 'row',
+                      flexWrap: 'wrap',
+                      gap: 'var(--spacing-lg)',
+                      backgroundColor: 'var(--color-bg-secondary)',
+                      padding: 'var(--spacing-lg)',
+                      borderRadius: 'var(--radius-lg)',
+                      border: '1px solid var(--color-border)',
+                      alignItems: 'center'
+                    }}
+                  >
+                    {/* Visual post simulation */}
+                    <div style={{
+                      display: 'flex',
+                      flexDirection: 'column',
+                      alignItems: 'center',
+                      gap: '6px',
+                      backgroundColor: 'var(--color-bg)',
+                      border: '1px solid var(--color-border)',
+                      borderRadius: 'var(--radius-md)',
+                      padding: 'var(--spacing-md)',
+                      width: '120px',
+                      boxShadow: 'var(--shadow-sm)',
+                      flexShrink: 0,
+                      margin: '0 auto'
+                    }}>
+                      {/* Main sign */}
+                      <div style={{
+                        height: '70px',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        width: '100%'
+                      }}>
+                        <img
+                          src={combo.mainSignImagePath}
+                          alt={combo.mainSignName}
+                          style={{ maxHeight: '100%', maxWidth: '100%', objectFit: 'contain' }}
+                        />
+                      </div>
+                      {/* Pole line divider */}
+                      <div style={{ width: '2px', height: '8px', backgroundColor: 'var(--color-border)' }}></div>
+                      {/* Underskilt */}
+                      <div style={{
+                        height: '45px',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        width: '100%',
+                        padding: '2px',
+                        backgroundColor: 'var(--color-bg-secondary)',
+                        borderRadius: 'var(--radius-sm)',
+                        border: '1px solid rgba(0,0,0,0.05)'
+                      }}>
+                        <img
+                          src={sign.imagePath}
+                          alt={sign.displayName || sign.name}
+                          style={{ maxHeight: '100%', maxWidth: '100%', objectFit: 'contain' }}
+                        />
+                      </div>
+                    </div>
+
+                    {/* Explanatory text */}
+                    <div style={{ flex: '1 1 240px' }}>
+                      <span style={{
+                        fontSize: '0.75rem',
+                        fontWeight: 700,
+                        backgroundColor: 'rgba(59, 130, 246, 0.1)',
+                        color: 'var(--color-primary)',
+                        padding: '2px 6px',
+                        borderRadius: '4px',
+                        textTransform: 'uppercase',
+                        display: 'inline-block',
+                        marginBottom: '6px'
+                      }}>
+                        {combo.relationType}
+                      </span>
+                      <h4 style={{ margin: '0 0 6px 0', fontSize: '1.05rem', fontWeight: 700, color: 'var(--color-text)' }}>
+                        Kombinasjon: {combo.mainSignName} (Nr. {combo.mainSignCode}) + {sign.displayName || sign.name}
+                      </h4>
+                      <p style={{ margin: 0, fontSize: '0.95rem', lineHeight: '1.5', color: 'var(--color-text-light)' }}>
+                        <strong>Lovlig betydning:</strong> {combo.combinedMeaning}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
           )}
 

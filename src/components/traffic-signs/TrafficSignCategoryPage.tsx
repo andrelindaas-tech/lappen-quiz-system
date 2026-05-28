@@ -77,6 +77,8 @@ export default function TrafficSignCategoryPage() {
     ? 'Opplysningsskilt | Trafikkskilt til teoriprøven'
     : category.slug === 'pabudsskilt'
     ? 'Påbudsskilt | Trafikkskilt til teoriprøven'
+    : category.slug === 'underskilt'
+    ? 'Underskilt | Trafikkskilt til teoriprøven'
     : `${category.name} - Forklaringer og regler til teoriprøven | Teori-test.no`;
 
   const seoDesc = category.slug === 'forbudsskilt'
@@ -87,6 +89,8 @@ export default function TrafficSignCategoryPage() {
     ? 'Lær hva opplysningsskilt betyr til teoriprøven. Se skilt for motorveg, gangfelt, møteplass, parkering, envegskjøring og nødutgang.'
     : category.slug === 'pabudsskilt'
     ? 'Lær hva påbudsskilt betyr til teoriprøven. Se skilt for påbudt kjøreretning, kjørefelt og rundkjøring med vanlige misforståelser.'
+    : category.slug === 'underskilt'
+    ? 'Lær hva underskilt betyr til teoriprøven. Se hvordan underskilt presiserer avstand, tid, kjøretøygrupper, unntak og gyldighet for hovedskilt.'
     : `Lær alt om ${category.name.toLowerCase()} til teoriprøven. Her finner du en oversikt over alle skilt i denne gruppen med forklaringer, kjøreregler og vanlige misforståelser.`;
 
   return (

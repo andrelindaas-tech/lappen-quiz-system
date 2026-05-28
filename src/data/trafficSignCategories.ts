@@ -60,8 +60,8 @@ export const trafficSignCategories: TrafficSignCategory[] = [
     id: 'underskilt',
     name: 'Underskilt',
     slug: 'underskilt',
-    description: 'Mindre skilt under hovedskiltet som presiserer, utvider eller begrenser skiltets gyldighet.',
-    isActive: false,
+    description: 'Underskilt står under et hovedskilt og presiserer hvem skiltet gjelder for, hvor langt det gjelder, når det gjelder eller hvilke unntak som finnes. De er viktige på teoriprøven fordi de kan endre hvordan du skal tolke hovedskiltet.',
+    isActive: true,
   },
   {
     id: 'markeringsskilt',

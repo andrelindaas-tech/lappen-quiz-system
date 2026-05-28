@@ -1,6 +1,6 @@
 // Main App Component
 import { useState, useEffect, useCallback, Suspense, lazy } from 'react'
-import { Routes, Route, NavLink, Link, useNavigate, useLocation } from 'react-router-dom'
+import { Routes, Route, Link, useNavigate, useLocation } from 'react-router-dom'
 import StartScreen from './components/StartScreen'
 
 const QuizContainer = lazy(() => import('./components/QuizContainer'))
@@ -19,6 +19,7 @@ import './fokus.css'
 import './theory.css'
 import ScrollToTop from './components/ScrollToTop'
 import { Helmet } from 'react-helmet-async'
+import { ClipboardCheck, Signpost, BookOpen, Gamepad2 } from 'lucide-react'
 
 // GA4 global type
 declare function gtag(...args: unknown[]): void
@@ -30,7 +31,6 @@ export default function App() {
     })
 
     const [streakBounce, setStreakBounce] = useState(false)
-    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
     const location = useLocation()
     const navigate = useNavigate()
 
@@ -62,7 +62,6 @@ export default function App() {
 
     // Send GA4 page_view for SPA navigation and close mobile menu on route transitions
     useEffect(() => {
-        setIsMobileMenuOpen(false)
         if (typeof gtag !== 'undefined') {
             // Use setTimeout to allow react-helmet-async to update the document.title first
             setTimeout(() => {
@@ -77,6 +76,8 @@ export default function App() {
     return (
         <>
             <ScrollToTop />
+            <div className="ambient-glow-1" />
+            <div className="ambient-glow-2" />
             <Helmet>
                 <link rel="canonical" href={"https://teori-test.no" + location.pathname} />
                 <meta property="og:url" content={`https://teori-test.no${location.pathname}`} />
@@ -86,13 +87,13 @@ export default function App() {
                 top: 0,
                 zIndex: 100,
                 backgroundColor: 'var(--color-header-bg)',
-                backdropFilter: 'blur(12px)',
-                WebkitBackdropFilter: 'blur(12px)',
+                backdropFilter: 'blur(16px)',
+                WebkitBackdropFilter: 'blur(16px)',
                 borderBottom: '1px solid var(--color-border)',
-                padding: 'var(--spacing-md) 0',
+                padding: '0.85rem 0',
                 transition: 'background-color 0.3s ease, border-color 0.3s ease'
             }}>
-                <div className="container" style={{
+                <div className="section-container" style={{
                     display: 'flex',
                     justifyContent: 'space-between',
                     alignItems: 'center',
@@ -100,94 +101,106 @@ export default function App() {
                     paddingBottom: 0
                 }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--spacing-lg)' }}>
-                        <Link to="/" style={{ textDecoration: 'none' }}>
-                            <span className="header-logo-text">
-                                Teori-test.no
-                            </span>
-                        </Link>
-                        <nav className="nav-tabs" style={{ gap: 'var(--spacing-xl)', marginLeft: 'var(--spacing-md)' }}>
-                            <NavLink
-                                to="/"
-                                end
-                                className={({ isActive }) => `nav-tab ${isActive || location.pathname.startsWith('/quiz') ? 'nav-tab-active' : ''}`}
-                                style={{ padding: '0.5rem 0.25rem', textDecoration: 'none' }}
-                            >
-                                <span className="nav-text-desktop">Øvingsprøve</span>
-                                <span className="nav-text-mobile">
-                                    <span className="nav-text-mobile-narrow">Prøve</span>
-                                    <span className="nav-text-mobile-wide">Øvingsprøve</span>
+                        <Link to="/" className="logo-wrapper" style={{ textDecoration: 'none' }}>
+                            <div className="logo-icon-container">
+                                <div className="logo-icon-glow" />
+                                <svg viewBox="0 0 100 100" fill="none" className="logo-svg">
+                                    <defs>
+                                        <linearGradient id="roadGlow" x1="0%" y1="100%" x2="100%" y2="0%">
+                                            <stop offset="0%" stopColor="#2dd4bf" />
+                                            <stop offset="50%" stopColor="#0d9488" />
+                                            <stop offset="100%" stopColor="#0f766e" />
+                                        </linearGradient>
+                                        <linearGradient id="roadSurface" x1="0%" y1="100%" x2="100%" y2="0%">
+                                            <stop offset="0%" stopColor="#0d9488" stopOpacity="0.03" />
+                                            <stop offset="100%" stopColor="#2dd4bf" stopOpacity="0.2" />
+                                        </linearGradient>
+                                    </defs>
+                                    <path 
+                                        d="M 22,92 C 50,85 32,58 58,46 C 75,41 84,41 85,41 L 85,41 C 84,41 79,41 70,44 C 50,56 70,82 76,92 Z" 
+                                        fill="url(#roadSurface)"
+                                    />
+                                    <path 
+                                        d="M 22,92 C 50,85 32,58 58,46 C 75,41 84,41 85,41" 
+                                        stroke="url(#roadGlow)" 
+                                        strokeWidth="4.5" 
+                                        strokeLinecap="round"
+                                    />
+                                    <path 
+                                        d="M 76,92 C 70,82 50,56 70,44 C 79,41 84,41 85,41" 
+                                        stroke="url(#roadGlow)" 
+                                        strokeWidth="4.5" 
+                                        strokeLinecap="round"
+                                    />
+                                    <path 
+                                        d="M 49,92 C 60,83.5 41,57 64,45 C 77,41.5 84,41 85,41" 
+                                        stroke={isDarkMode ? '#ffffff' : '#0d9488'} 
+                                        strokeWidth="2" 
+                                        strokeDasharray="3 4.5" 
+                                        strokeLinecap="round" 
+                                        className={isDarkMode ? 'opacity-85' : 'opacity-95'}
+                                    />
+                                </svg>
+                            </div>
+                            <div className="logo-text-container">
+                                <span className="header-logo-text">
+                                    Teori-test<span style={{ color: 'var(--color-primary)' }}>.no</span>
                                 </span>
-                            </NavLink>
-                            <NavLink
-                                to="/laeringsressurser"
-                                className={({ isActive }) => `nav-tab nav-tab-laeringsressurser ${isActive || location.pathname.startsWith('/laeringsressurser') || location.pathname.startsWith('/laeringsspill') ? 'nav-tab-active' : ''}`}
-                                style={{ padding: '0.5rem 0.25rem', textDecoration: 'none' }}
-                            >
-                                <span className="nav-text-desktop">Læringsressurser</span>
-                            </NavLink>
-                            <NavLink
-                                to="/trafikkskilt"
-                                className={({ isActive }) => `nav-tab ${isActive || location.pathname.startsWith('/trafikkskilt') ? 'nav-tab-active' : ''}`}
-                                style={{ padding: '0.5rem 0.25rem', textDecoration: 'none' }}
-                            >
-                                <span className="nav-text-desktop">Skiltbanken</span>
-                                <span className="nav-text-mobile">Skilt</span>
-                            </NavLink>
-                        </nav>
+                                <span className="logo-subtitle">Klasse B Førerkort</span>
+                            </div>
+                        </Link>
                     </div>
                     <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--spacing-sm)' }}>
                         <DailyStreak shouldBounce={streakBounce} onBounceComplete={handleBounceComplete} />
                         <ThemeToggle isDark={isDarkMode} onToggle={toggleDarkMode} />
-                        <button
-                            className="mobile-menu-btn"
-                            onClick={() => setIsMobileMenuOpen(prev => !prev)}
-                            aria-label="Meny"
-                            aria-expanded={isMobileMenuOpen}
-                            title="Meny"
-                        >
-                            {isMobileMenuOpen ? (
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
-                                    <line x1="18" y1="6" x2="6" y2="18"></line>
-                                    <line x1="6" y1="6" x2="18" y2="18"></line>
-                                </svg>
-                            ) : (
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
-                                    <line x1="3" y1="12" x2="21" y2="12"></line>
-                                    <line x1="3" y1="6" x2="21" y2="6"></line>
-                                    <line x1="3" y1="18" x2="21" y2="18"></line>
-                                </svg>
-                            )}
-                        </button>
                     </div>
                 </div>
-
-                {isMobileMenuOpen && (
-                    <div className="mobile-menu-dropdown">
-                        <NavLink
-                            to="/"
-                            end
-                            className={({ isActive }) => `mobile-menu-item ${isActive || location.pathname.startsWith('/quiz') ? 'mobile-menu-item-active' : ''}`}
-                            onClick={() => setIsMobileMenuOpen(false)}
-                        >
-                            Øvingsprøve
-                        </NavLink>
-                        <NavLink
-                            to="/laeringsressurser"
-                            className={({ isActive }) => `mobile-menu-item ${isActive || location.pathname.startsWith('/laeringsressurser') || location.pathname.startsWith('/laeringsspill') ? 'mobile-menu-item-active' : ''}`}
-                            onClick={() => setIsMobileMenuOpen(false)}
-                        >
-                            Læringsressurser
-                        </NavLink>
-                        <NavLink
-                            to="/trafikkskilt"
-                            className={({ isActive }) => `mobile-menu-item ${isActive || location.pathname.startsWith('/trafikkskilt') ? 'mobile-menu-item-active' : ''}`}
-                            onClick={() => setIsMobileMenuOpen(false)}
-                        >
-                            Skiltbanken
-                        </NavLink>
-                    </div>
-                )}
             </header>
+
+            <div className="sub-navigation">
+                <div className="sub-nav-container">
+                    <div className="sub-nav-scroll-wrapper">
+                        <div className="sub-nav-chips">
+                            <Link
+                                to="/"
+                                className={`sub-nav-chip ${location.pathname === '/' ? 'active' : ''}`}
+                            >
+                                <span className="sub-nav-chip-icon">
+                                    <ClipboardCheck size={16} strokeWidth={2.2} />
+                                </span>
+                                Øvingsprøve
+                            </Link>
+                            <Link
+                                to="/trafikkskilt"
+                                className={`sub-nav-chip ${location.pathname.startsWith('/trafikkskilt') ? 'active' : ''}`}
+                            >
+                                <span className="sub-nav-chip-icon">
+                                    <Signpost size={16} strokeWidth={2.2} />
+                                </span>
+                                Skiltguide
+                            </Link>
+                            <Link
+                                to="/laeringsressurser"
+                                className={`sub-nav-chip ${location.pathname.startsWith('/laeringsressurser') ? 'active' : ''}`}
+                            >
+                                <span className="sub-nav-chip-icon">
+                                    <BookOpen size={16} strokeWidth={2.2} />
+                                </span>
+                                Artikler
+                            </Link>
+                            <Link
+                                to="/laeringsspill"
+                                className={`sub-nav-chip ${location.pathname.startsWith('/laeringsspill') ? 'active' : ''}`}
+                            >
+                                <span className="sub-nav-chip-icon">
+                                    <Gamepad2 size={16} strokeWidth={2.2} />
+                                </span>
+                                Minispill
+                            </Link>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
             <main>
                 <Suspense fallback={<div style={{ display: 'flex', justifyContent: 'center', padding: '4rem', color: 'var(--color-text-light)' }}>Laster...</div>}>
@@ -209,25 +222,29 @@ export default function App() {
             </main>
 
             <footer className="site-footer">
-                <div className="container">
-                    <div className="footer-inner">
-
-                        {/* Left: source & status */}
-                        <div className="footer-meta">
-                            <p className="footer-status">✓ Sist verifisert og oppdatert: Mai 2026</p>
-                            <p className="footer-source">Innholdet er basert på Statens vegvesens temaliste for klasse B.</p>
+                <div className="section-container" style={{ paddingTop: '1.25rem', paddingBottom: '1.25rem' }}>
+                    <div className="footer-centered-content">
+                        {/* Title */}
+                        <div className="footer-title">
+                            TEORI-TEST<span className="footer-title-accent">.NO</span>
                         </div>
 
-                        {/* Right: links & copyright */}
-                        <div className="footer-links-block">
-                            <nav className="footer-links" aria-label="Foterlenker">
-                                <Link to="/laeringsressurser/om-oss" className="footer-link">Om oss</Link>
-                                <Link to="/laeringsressurser/kontakt" className="footer-link">Kontakt</Link>
-                                <Link to="/laeringsressurser/personvern" className="footer-link">Personvern &amp; Cookies</Link>
-                            </nav>
-                            <p className="footer-copyright">© 2026 Teori-test.no</p>
-                        </div>
+                        {/* Navigation Links */}
+                        <nav className="footer-nav" aria-label="Footerlenker">
+                            <Link to="/laeringsressurser/om-oss" className="footer-link">Om oss</Link>
+                            <Link to="/laeringsressurser/kontakt" className="footer-link">Kontakt</Link>
+                            <Link to="/laeringsressurser/personvern" className="footer-link">Personvern &amp; Cookies</Link>
+                        </nav>
 
+                        {/* Disclaimer */}
+                        <p className="footer-disclaimer">
+                            Alt innholdet på Teori-test.no er kvalitetssikret og uavhengig utarbeidet for å samsvare med de overordnede nasjonale læreplanene formidlet av Vegdirektoratet for Førerkort Klasse B. Vi er ikke tilknyttet Statens vegvesen eller noen offentlige godkjenningsorganer.
+                        </p>
+
+                        {/* Copyright */}
+                        <p className="footer-copyright-text">
+                            © 2026 Teori-test.no. Alle rettigheter reservert. Laget for optimal læring i Norge.
+                        </p>
                     </div>
                 </div>
             </footer>

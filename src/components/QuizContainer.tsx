@@ -62,7 +62,7 @@ export default function QuizContainer({ onReturnHome, onQuizComplete }: QuizCont
             }
         } else if (modeParam === 'fokus') {
             return {
-                name: 'Fokus mode',
+                name: 'Fokusmodus',
                 questionCount: getWrongAnswersCount(),
                 maxErrors: 0,
                 description: 'Øv på feil du har gjort',
@@ -109,7 +109,7 @@ export default function QuizContainer({ onReturnHome, onQuizComplete }: QuizCont
             if (mode.isFokusMode) {
                 const wrongIds = getWrongAnswers()
                 if (wrongIds.length === 0) {
-                    setError('Ingen feil å øve på i Fokus mode')
+                    setError('Ingen feil å øve på i Fokusmodus')
                     setLoading(false)
                     return
                 }

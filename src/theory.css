@@ -74,37 +74,49 @@
 
 /* ===== Teori-side ===== */
 .theory-page {
-    max-width: 900px;
+    width: 100%;
     margin: 0 auto;
-    padding: var(--spacing-xl);
-    text-align: center;
+    text-align: left;
 }
 
 .theory-page h1 {
-    font-size: var(--font-size-2xl);
+    font-size: var(--font-size-3xl);
     margin-bottom: var(--spacing-md);
+    font-weight: 800;
+    color: var(--color-text);
+    letter-spacing: -0.03em;
 }
 
 .theory-subtitle {
     color: var(--color-text-light);
-    font-size: var(--font-size-lg);
+    font-size: 1.1rem;
     margin-bottom: var(--spacing-xl);
+    line-height: 1.6;
+}
+
+.theory-section-group + .theory-section-group {
+    margin-top: var(--spacing-2xl);
 }
 
 /* ===== Emne-kort ===== */
 .theory-cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
     margin-top: var(--spacing-xl);
     text-align: left;
 }
 
+@media (max-width: 768px) {
+    .theory-cards {
+        grid-template-columns: 1fr;
+    }
+}
+
 .theory-card {
     background-color: var(--color-bg);
     border: 1px solid var(--color-border);
-    border-top: 5px solid var(--card-accent-color, var(--apple-blue));
-    border-radius: 8px; /* Slightly tighter radius for academic look */
+    border-radius: 16px;
     padding: 1.75rem;
     cursor: pointer;
     transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
@@ -114,52 +126,72 @@
     gap: 0.75rem;
     position: relative;
     overflow: hidden;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    box-shadow: var(--shadow-sm);
 }
 
 .theory-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+    transform: translateY(-3px);
+    border-color: var(--color-primary);
+    box-shadow: 0 8px 24px var(--color-accent-glow);
 }
 
-.theory-card-icon {
-    font-size: 2.5rem;
+/* Card Icon Box tailored for theory cards using standard primary color */
+.theory-card .card-icon-box {
+    margin-bottom: 0.25rem;
+    color: var(--color-primary);
+    background-color: rgba(13, 148, 136, 0.06);
+    border: 1px solid rgba(13, 148, 136, 0.15);
+}
+
+body.dark-mode .theory-card .card-icon-box {
+    background-color: rgba(45, 212, 191, 0.08);
+    border-color: rgba(45, 212, 191, 0.2);
+}
+
+.theory-card:hover .card-icon-box {
+    background-color: var(--color-primary-soft);
+    border-color: var(--color-primary);
 }
 
 .theory-card-title {
-    font-size: 1.15rem;
+    font-size: 1.2rem;
     font-weight: 700;
     color: var(--color-text);
     margin: 0;
     line-height: 1.4;
+    transition: color 0.25s ease;
+}
+
+.theory-card:hover .theory-card-title {
+    color: var(--color-primary);
 }
 
 .theory-card-desc {
     color: var(--color-text-light);
     font-size: 0.925rem;
     line-height: 1.6;
-    margin: 0;
+    margin: 0 0 var(--spacing-xs) 0;
     flex-grow: 1;
-    opacity: 0.9;
 }
 
 .theory-card-badge {
     display: inline-flex;
     align-items: center;
-    padding: 0.5rem 0;
+    padding: 0.25rem 0;
     font-size: 0.85rem;
     font-weight: 700;
-    color: var(--card-accent-color);
+    color: var(--color-primary);
     background: none !important;
     text-transform: uppercase;
     letter-spacing: 0.03em;
-    margin-top: 0.5rem;
+    margin-top: auto; /* Push badge to the bottom so they align */
     border-bottom: 2px solid transparent;
     transition: border-color 0.2s ease;
+    align-self: flex-start;
 }
 
 .theory-card:hover .theory-card-badge {
-    border-bottom-color: var(--card-accent-color);
+    border-bottom-color: var(--color-primary);
 }
 
 /* ===== Emne-detaljvisning ===== */

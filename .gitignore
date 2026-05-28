@@ -37,3 +37,7 @@ test-db.mjs
 test-supabase.html
 remove-duplicates.sql
 diagnose.ts
+
+# Scratch directories
+scratch/
+

@@ -247,10 +247,6 @@ export default function StoppingDistanceChallenge() {
             setShowReactionFlash(true)
             setTimeout(() => setShowReactionFlash(false), 300) // quick visual pulse
 
-            const reactionEndVal = Math.min(values.reaction, guess)
-            const reactionEndPos = percent(reactionEndVal)
-            setCarLeft(`${reactionEndPos}%`)
-
             setTimeout(() => {
                 // 1500ms -> 3000ms: Hard Braking phase (lights glow, chassis dips, smoke/particles emit, road stops scrolling, car decelerates)
                 setAnimatingPhase('braking')
@@ -349,7 +345,7 @@ export default function StoppingDistanceChallenge() {
             return { transition: 'left 500ms linear' }
         }
         if (animatingPhase === 'braking') {
-            return { transition: 'left 1500ms cubic-bezier(0.1, 0.6, 0.25, 1)' }
+            return { transition: 'left 1500ms cubic-bezier(0.25, 1, 0.5, 1)' }
         }
         return { transition: 'left 300ms ease' }
     }
@@ -481,172 +477,16 @@ export default function StoppingDistanceChallenge() {
                                             style={{ left: carLeft, ...getCarTransitionStyle() }}
                                             aria-hidden="true"
                                         >
-                                            <svg viewBox="0 0 110 50" role="img" style={{ overflow: 'visible' }}>
-                                                <defs>
-                                                    <linearGradient id="body-grad" x1="0%" y1="0%" x2="100%" y2="0%">
-                                                        <stop offset="0%" stopColor="#0f172a" />
-                                                        <stop offset="30%" stopColor="#1e3a8a" />
-                                                        <stop offset="65%" stopColor="#3b82f6" />
-                                                        <stop offset="90%" stopColor="#60a5fa" />
-                                                        <stop offset="100%" stopColor="#1d4ed8" />
-                                                    </linearGradient>
-                                                    <linearGradient id="window-grad" x1="0%" y1="0%" x2="0%" y2="100%">
-                                                        <stop offset="0%" stopColor="#1e293b" />
-                                                        <stop offset="100%" stopColor="#020617" />
-                                                    </linearGradient>
-                                                    <linearGradient id="wheel-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-                                                        <stop offset="0%" stopColor="#f8fafc" />
-                                                        <stop offset="50%" stopColor="#94a3b8" />
-                                                        <stop offset="100%" stopColor="#475569" />
-                                                    </linearGradient>
-                                                    <linearGradient id="headlight-beam-grad" x1="0%" y1="0%" x2="100%" y2="0%">
-                                                        <stop offset="0%" stopColor="rgba(224, 242, 254, 0.4)" />
-                                                        <stop offset="30%" stopColor="rgba(56, 189, 248, 0.15)" />
-                                                        <stop offset="100%" stopColor="rgba(56, 189, 248, 0)" />
-                                                    </linearGradient>
-                                                    <linearGradient id="brakelight-beam-grad" x1="100%" y1="0%" x2="0%" y2="0%">
-                                                        <stop offset="0%" stopColor="rgba(239, 68, 68, 0.4)" />
-                                                        <stop offset="40%" stopColor="rgba(239, 68, 68, 0.12)" />
-                                                        <stop offset="100%" stopColor="rgba(239, 68, 68, 0)" />
-                                                    </linearGradient>
-                                                </defs>
-
-                                                {/* Dynamic underglow matching state/feedback */}
-                                                <ellipse cx="58" cy="42" rx="46" ry="4.5" className="underglow" />
-
-                                                {/* Volumetric beams that display dynamically */}
-                                                <polygon points="104,26 240,8 240,46 104,30" fill="url(#headlight-beam-grad)" className="headlight-beam" />
-                                                <polygon points="8,26 -70,16 -70,36 8,28" fill="url(#brakelight-beam-grad)" className="brakelight-beam" />
-
-                                                {/* Car drop shadow */}
-                                                <ellipse cx="58" cy="43.5" rx="48" ry="3.5" fill="rgba(0, 0, 0, 0.55)" filter="blur(1.5px)" />
-
-                                                {/* Wheel wells/housing */}
-                                                <path d="M 19.5 38 A 11.5 11.5 0 0 1 42.5 38 Z" fill="#020617" opacity="0.75" />
-                                                <path d="M 72.5 38 A 11.5 11.5 0 0 1 95.5 38 Z" fill="#020617" opacity="0.75" />
-
-                                                {/* Car Body - Sleek sports sedan outline */}
-                                                <path
-                                                    d="M 6 34 C 6 30, 7 27, 10 25 C 13 23, 20 21, 26 21 C 31 21, 35 19, 39 15 C 43 11, 48 9.5, 54 9.5 H 72 C 78 9.5, 82 11, 86 16 L 93 21 L 102 23 C 106 24, 109 27, 109 31 C 109 33.5, 108 36, 106 37 L 106 38 H 6 Z"
-                                                    fill="url(#body-grad)"
-                                                />
-
-                                                {/* Chrome trim details */}
-                                                <path d="M 10 25 Q 26 21 39 15" fill="none" stroke="#94a3b8" strokeWidth="0.8" opacity="0.5" />
-                                                <path d="M 6 34 H 106" fill="none" stroke="#0f172a" strokeWidth="1" />
-
-                                                {/* Windows / Cabin with sport lines */}
-                                                <path
-                                                    d="M 40 13 H 70 C 74.5 13, 78 15, 81.5 20 H 34.5 Z"
-                                                    fill="url(#window-grad)"
-                                                />
-                                                <path d="M 56.5 13 V 20" stroke="#475569" strokeWidth="1.2" />
-                                                {/* Sleek window pillar slope */}
-                                                <path d="M 70 13 L 79.5 20" stroke="#475569" strokeWidth="1" />
-                                                
-                                                {/* Window reflection streaks */}
-                                                <path d="M 42 13 L 51 20 H 54 L 45 13 Z" fill="rgba(255, 255, 255, 0.16)" />
-                                                <path d="M 59 13 L 67 20 H 70 L 62 13 Z" fill="rgba(255, 255, 255, 0.08)" />
-
-                                                {/* Panel doors creases */}
-                                                <path d="M 33 21 V 38" stroke="rgba(0, 0, 0, 0.25)" strokeWidth="0.8" />
-                                                <path d="M 57 21 V 38" stroke="rgba(0, 0, 0, 0.25)" strokeWidth="0.8" />
-                                                <path d="M 81 21 C 81 26, 82 28, 85 30" fill="none" stroke="rgba(0, 0, 0, 0.25)" strokeWidth="0.8" />
-
-                                                {/* Body crease highlights */}
-                                                <path d="M 12 28 Q 58 26.5 103 28.5" fill="none" stroke="rgba(255, 255, 255, 0.18)" strokeWidth="0.8" />
-                                                <path d="M 12 29 Q 58 27.5 103 29.5" fill="none" stroke="rgba(0, 0, 0, 0.3)" strokeWidth="0.8" />
-
-                                                {/* Sport Door Handles */}
-                                                <rect x="42.5" y="23.5" width="6" height="1.2" rx="0.4" fill="#cbd5e1" stroke="#334155" strokeWidth="0.4" />
-                                                <rect x="67.5" y="23.5" width="6" height="1.2" rx="0.4" fill="#cbd5e1" stroke="#334155" strokeWidth="0.4" />
-
-                                                {/* Sports Side Mirror */}
-                                                <path d="M 34.5 19.5 C 33.5 19.5, 30.5 18, 30.5 17.5 C 30.5 17, 32.5 17, 34.5 18.5" fill="#1e3a8a" stroke="#0f172a" strokeWidth="0.5" />
-
-                                                {/* Futuristic LED Headlight */}
-                                                <path
-                                                    d="M 102 24 C 105 25, 108 27.5, 108 29.5 L 105 31.5 C 103 29.5, 101 26.5, 102 24 Z"
-                                                    fill="#e0f2fe"
-                                                    stroke="#0284c7"
-                                                    strokeWidth="0.5"
-                                                    filter="drop-shadow(0 0 2px #38bdf8)"
-                                                />
-                                                <circle cx="104.5" cy="27.5" r="1" fill="#ffffff" />
-                                                <circle cx="106" cy="29" r="0.8" fill="#ffffff" />
-
-                                                {/* LED Taillight wrap-around */}
-                                                <path
-                                                    className="taillight"
-                                                    d="M 6 26.5 C 7.5 25, 11 25.2, 13 25.8 L 12.5 28 C 10.5 27.2, 7.5 27.2, 6 26.5 Z"
-                                                    fill="#991b1b"
-                                                    stroke="#7f1d1d"
-                                                    strokeWidth="0.5"
-                                                />
-                                                <path d="M 5.8 26.5 H 12" stroke="#ff3333" strokeWidth="0.8" filter="drop-shadow(0 0 1px #ef4444)" />
-
-                                                {/* Stationary Brake Calipers (behind wheel spokes) */}
-                                                <g className="brake-caliper rear-caliper">
-                                                    <path d="M 8.5 33.5 A 7 7 0 0 1 12.5 31" stroke="none" fill="none" /> {/* Placeholder/aligner */}
-                                                    <path d="M 36.5 33.5 A 7 7 0 0 0 32.5 31" stroke="#ef4444" strokeWidth="2.2" strokeLinecap="round" fill="none" />
-                                                </g>
-                                                <g className="brake-caliper front-caliper">
-                                                    <path d="M 89.5 33.5 A 7 7 0 0 0 85.5 31" stroke="#ef4444" strokeWidth="2.2" strokeLinecap="round" fill="none" />
-                                                </g>
-
-                                                {/* Rear Wheel (hub: 31, 38) */}
-                                                <circle cx="31" cy="38" r="9" fill="#090d16" stroke="#1e293b" strokeWidth="0.8" />
-                                                {/* Alloy Rim face */}
-                                                <circle cx="31" cy="38" r="6.2" fill="url(#wheel-grad)" />
-                                                {/* Rim Inner Lip */}
-                                                <circle cx="31" cy="38" r="5" fill="none" stroke="#1e293b" strokeWidth="0.5" />
-                                                {/* Wheel spokes group (spins) */}
-                                                <g className="wheel-spokes" style={{ transformOrigin: '31px 38px' }}>
-                                                    <circle cx="31" cy="38" r="1.8" fill="#334155" />
-                                                    <line x1="31" y1="38" x2="31" y2="32" stroke="#f8fafc" strokeWidth="1" />
-                                                    <line x1="31" y1="38" x2="36.7" y2="39.8" stroke="#f8fafc" strokeWidth="1" />
-                                                    <line x1="31" y1="38" x2="34.5" y2="43.5" stroke="#f8fafc" strokeWidth="1" />
-                                                    <line x1="31" y1="38" x2="27.5" y2="43.5" stroke="#f8fafc" strokeWidth="1" />
-                                                    <line x1="31" y1="38" x2="25.3" y2="39.8" stroke="#f8fafc" strokeWidth="1" />
-                                                    {/* Wheel bolts */}
-                                                    <circle cx="31" cy="35" r="0.4" fill="#cbd5e1" />
-                                                    <circle cx="33.8" cy="37" r="0.4" fill="#cbd5e1" />
-                                                    <circle cx="32.8" cy="40.3" r="0.4" fill="#cbd5e1" />
-                                                    <circle cx="29.2" cy="40.3" r="0.4" fill="#cbd5e1" />
-                                                    <circle cx="28.2" cy="37" r="0.4" fill="#cbd5e1" />
-                                                </g>
-
-                                                {/* Front Wheel (hub: 84, 38) */}
-                                                <circle cx="84" cy="38" r="9" fill="#090d16" stroke="#1e293b" strokeWidth="0.8" />
-                                                {/* Alloy Rim face */}
-                                                <circle cx="84" cy="38" r="6.2" fill="url(#wheel-grad)" />
-                                                {/* Rim Inner Lip */}
-                                                <circle cx="84" cy="38" r="5" fill="none" stroke="#1e293b" strokeWidth="0.5" />
-                                                {/* Wheel spokes group (spins) */}
-                                                <g className="wheel-spokes" style={{ transformOrigin: '84px 38px' }}>
-                                                    <circle cx="84" cy="38" r="1.8" fill="#334155" />
-                                                    <line x1="84" y1="38" x2="84" y2="32" stroke="#f8fafc" strokeWidth="1" />
-                                                    <line x1="84" y1="38" x2="89.7" y2="39.8" stroke="#f8fafc" strokeWidth="1" />
-                                                    <line x1="84" y1="38" x2="87.5" y2="43.5" stroke="#f8fafc" strokeWidth="1" />
-                                                    <line x1="84" y1="38" x2="80.5" y2="43.5" stroke="#f8fafc" strokeWidth="1" />
-                                                    <line x1="84" y1="38" x2="78.3" y2="39.8" stroke="#f8fafc" strokeWidth="1" />
-                                                    {/* Wheel bolts */}
-                                                    <circle cx="84" cy="35" r="0.4" fill="#cbd5e1" />
-                                                    <circle cx="86.8" cy="37" r="0.4" fill="#cbd5e1" />
-                                                    <circle cx="85.8" cy="40.3" r="0.4" fill="#cbd5e1" />
-                                                    <circle cx="82.2" cy="40.3" r="0.4" fill="#cbd5e1" />
-                                                    <circle cx="81.2" cy="37" r="0.4" fill="#cbd5e1" />
-                                                </g>
-
-                                                {/* Chassis Underbody Line */}
-                                                <path
-                                                    d="M 12 38.5 H 102"
-                                                    stroke="#0f172a"
-                                                    strokeWidth="1.2"
-                                                    strokeLinecap="round"
-                                                    fill="none"
-                                                />
-                                            </svg>
+                                            <img
+                                                src="/images/renault5.png"
+                                                alt="Renault 5"
+                                                style={{
+                                                    width: '100%',
+                                                    height: '100%',
+                                                    objectFit: 'contain',
+                                                    display: 'block'
+                                                }}
+                                            />
 
                                             {/* Tire Smoke / Water / Snow Emitter sprays */}
                                             {tireSmoke && (

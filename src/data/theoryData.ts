@@ -465,97 +465,68 @@ export const theoryTopics: TheoryTopic[] = [
 
     {
         id: 'veimerking',
-        title: 'Veimerking til teoriprøven – komplett visuell guide (Klasse B)',
+        title: 'Veimerking til teoriprøven: linjer, sperrelinjer og vikelinje',
         icon: '🛣️',
-        shortDescription: 'Lær all norsk veimerking til teoriprøven med visuelle illustrasjoner. Sperrelinje, varsellinje, gangfelt, pilmerking og mer — med eksempler og forklaringer.',
+        shortDescription: 'Veimerking hjelper deg å forstå hvor du skal plassere bilen, når du kan skifte felt, hvor du må vike, og hvor det er farlig eller forbudt å kjøre over en linje. På teoriprøven blir du ofte testet på forskjellen mellom stiplet linje, sperrelinje, varsellinje, kombinert linje og vikelinje.',
         color: 'var(--apple-indigo)',
-        seoTitle: 'Veimerking til teoriprøven – komplett visuell guide (Klasse B) | Teori-test.no',
-        seoDescription: 'Hva betyr hvit sperrelinje, varsellinje, kombinert linje eller vikelinje? Komplett guide til norsk veimerking med visuelle illustrasjoner – til teoriprøven.',
+        seoTitle: 'Veimerking: sperrelinje, varsellinje og vikelinje | Teoriprøven',
+        seoDescription: 'Lær hva hvit sperrelinje, gul varsellinje, kombinert linje og vikelinje betyr til teoriprøven. Se bilder, regler og vanlige feil.',
         sections: [
-            {
-                title: 'Veimerking til teoriprøven',
-                type: 'text',
-                content: 'Vegoppmerkingen er det mange undervurderer til teoriprøven. Skilt kan du lese — men linjene i veibanen krever at du forstår hva de betyr når du kjører forbi dem i 80 km/t uten tid til å tenke. Denne guiden gir deg oversikt over alle viktige markeringer med visuelle eksempler.'
-            },
+
             {
                 title: 'Kort forklart: De viktigste linjene',
                 type: 'table',
-                content: '<div style="overflow-x: auto; -webkit-overflow-scrolling: touch; margin-top: 1rem;"><table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem;"><thead><tr style="background-color: var(--color-surface); border-bottom: 2px solid var(--color-border);"><th style="padding: 12px 8px;">Veimerking</th><th style="padding: 12px 8px;">Hva betyr det?</th><th style="padding: 12px 8px;">Typisk teorifelle</th></tr></thead><tbody><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Kjørefeltlinje</b></td><td style="padding: 12px 8px;">Kort stiplet hvit linje som skiller kjørefelt. Kan krysses når det er trygt og lovlig.</td><td style="padding: 12px 8px;">Mange forveksler den med varsellinje.</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Varsellinje</b></td><td style="padding: 12px 8px;">Lang stiplet linje som varsler fare, dårlig sikt eller et sted der du bør være ekstra forsiktig.</td><td style="padding: 12px 8px;">Varsler risiko, men er ikke alltid et direkte forbud.</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Hvit sperrelinje</b></td><td style="padding: 12px 8px;">Heltrukken hvit linje. Skal ikke krysses for feltskifte eller forbikjøring.</td><td style="padding: 12px 8px;">Kan i noen tilfeller krysses for inn- og utkjøring fra eiendom, men ikke for forbikjøring.</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Dobbel sperrelinje</b></td><td style="padding: 12px 8px;">To heltrukne linjer. Du skal ikke krysse for feltskifte eller forbikjøring.</td><td style="padding: 12px 8px;">Brukes på veier med mye trafikk eller dårlig sikt.</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Gul varsellinje</b></td><td style="padding: 12px 8px;">Stiplet gul linje som varsler begrenset sikt for forbikjøring i motgående kjørefelt.</td><td style="padding: 12px 8px;">Betyr ikke automatisk forbud, men du må vurdere sikten svært nøye.</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Gul sperrelinje</b></td><td style="padding: 12px 8px;">Heltrukken gul linje. Du skal ikke krysse eller kjøre til venstre for den.</td><td style="padding: 12px 8px;">Gjelder selv om du mener du har god sikt.</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Kombinert linje</b></td><td style="padding: 12px 8px;">Én stiplet og én heltrukken linje ved siden av hverandre.</td><td style="padding: 12px 8px;">Linjen nærmest deg bestemmer om du kan krysse.</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Vikelinje</b></td><td style="padding: 12px 8px;">Hvite trekanter på tvers av kjøreretningen. Du har vikeplikt.</td><td style="padding: 12px 8px;">Du må bare stoppe hvis det er nødvendig for å overholde vikeplikten.</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Stopplinje</b></td><td style="padding: 12px 8px;">Bred hvit tverrlinje. Viser hvor du skal stoppe ved stoppskilt, rødt lys eller annen stans.</td><td style="padding: 12px 8px;">Ved stoppskilt skal du alltid stoppe helt før linjen.</td></tr></tbody></table></div>'
+                content: '<div style="overflow-x: auto; -webkit-overflow-scrolling: touch; margin-top: 1rem;"><table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem;"><thead><tr style="background-color: var(--color-surface); border-bottom: 2px solid var(--color-border);"><th style="padding: 12px 8px;">Veimerking</th><th style="padding: 12px 8px;">Kort forklart</th><th style="padding: 12px 8px;">Vanlige misforståelser</th></tr></thead><tbody><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Kjørefeltlinje</b></td><td style="padding: 12px 8px;">Kort stiplet hvit linje som skiller kjørefelt i samme kjøreretning. Kan krysses når det er trygt og lovlig.</td><td style="padding: 12px 8px;">Mange forveksler den med hvit varsellinje, som har lengre streker og varsler at du må være ekstra oppmerksom.</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Hvit sperrelinje</b></td><td style="padding: 12px 8px;">Heltrukken hvit linje. Skal som hovedregel ikke krysses for feltskifte eller forbikjøring.</td><td style="padding: 12px 8px;">Mange tror den bare gjelder forbikjøring, men den gjelder også feltskifte i samme kjøreretning.</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Gul varsellinje</b></td><td style="padding: 12px 8px;">Gul varsellinje brukes mellom motgående trafikkretninger og varsler ofte at sikten eller forholdene gjør forbikjøring risikabelt, eller at du nærmer deg sperrelinje.</td><td style="padding: 12px 8px;">Den betyr ikke automatisk forbud mot å krysse, men du må vurdere om det er trygt og lovlig.</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Hvit varsellinje</b></td><td style="padding: 12px 8px;">Lang stiplet hvit linje som varsler at du må være ekstra oppmerksom, for eksempel før et felt slutter eller ved vanskeligere feltskifte.</td><td style="padding: 12px 8px;">Mange tror den er en vanlig kjørefeltlinje eller at den gir et absolutt kryssingsforbud.</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Gul sperrelinje</b></td><td style="padding: 12px 8px;">Heltrukken gul linje mellom motgående trafikkretninger. Du skal ikke krysse eller kjøre til venstre for den.</td><td style="padding: 12px 8px;">Den gjelder selv om du mener du har god sikt.</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Kombinert linje</b></td><td style="padding: 12px 8px;">To linjer ved siden av hverandre, én stiplet og én heltrukken. Regelen følger linjen nærmest deg.</td><td style="padding: 12px 8px;">Mange ser bare den stiplede linjen og glemmer å sjekke hvilken linje som ligger på egen side.</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Vikelinje</b></td><td style="padding: 12px 8px;">Hvite trekanter, ofte kalt «haifinner», på tvers av veien. Viser hvor du har vikeplikt.</td><td style="padding: 12px 8px;">Du må ikke alltid stoppe helt, men du må stanse hvis det er nødvendig for å overholde vikeplikten.</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Stopplinje</b></td><td style="padding: 12px 8px;">Bred hvit tverrlinje. Viser hvor du skal stoppe helt ved stoppskilt eller rødt lys.</td><td style="padding: 12px 8px;">«Rullende stopp» er ikke godkjent stans. Ved stoppskilt skal bilen stå helt stille.</td></tr></tbody></table></div>'
             },
-            
             {
-                title: 'Hva er veimerking?',
-                type: 'info',
-                content: 'Veimerking er striper, symboler og tekst som er malt direkte på veibanen. De forteller deg hva du kan og ikke kan gjøre i akkurat det punktet du befinner deg. I motsetning til skilt som varsler deg i forkant, gjelder vegoppmerkingen der og da — akkurat der linjen er.\n\nVegoppmerkingen er plassert under skilt og lyssignal i myndighetspyramiden — men den er likevel bindende å følge der den ikke overstyres av noe høyere opp.'
+                title: 'Gul og hvit veimerking',
+                type: 'text',
+                content: 'Fargen på linjen gir deg viktig informasjon.\n\nGul veimerking brukes vanligvis mot eller mellom motgående trafikkretninger. Den markerer grensen mellom kjørefelt der trafikken går i motsatte retninger. Gul oppmerking kan også brukes ved midlertidig oppmerking (for eksempel ved vegarbeid).\n\nHvit veimerking brukes vanligvis for å skille kjørefelt i samme retning (der trafikken går samme vei), markere kantlinjer eller vise oppmerking i vegkryss, gangfelt og spesielle felt.\n\n*Vanlige misforståelser:* Mange tror at gul alltid betyr forbud og hvit alltid betyr "fritt fram". Det stemmer ikke. Du må se på både farge, linjetype (heltrukken eller stiplet) og den konkrete situasjonen.'
             },
             {
                 title: 'Hvite linjer — de vanligste',
                 type: 'table',
-                content: `<div style="display:flex;flex-direction:column;gap:1.5rem">
-  <div>
-    <strong style="font-size:1rem;color:var(--color-text)">Kjørefeltlinje (stiplet hvit)</strong>
-    <div style="background:#2d2d2d;border-radius:6px;padding:12px 16px;margin:8px 0;position:relative;overflow:hidden">
-      <div style="font-size:10px;color:#999;margin-bottom:6px">→ Felt A</div>
-      <div style="height:3px;background:repeating-linear-gradient(90deg,white 0px,white 20px,transparent 20px,transparent 32px);border-radius:2px"></div>
-      <div style="font-size:10px;color:#999;margin-top:6px">→ Felt B</div>
-    </div>
-    <p style="color:var(--color-text-light);line-height:1.6;margin:0">Den vanligste linjen på norske veier. Skiller kjørefelt i samme kjøreretning. Du kan krysse den når det er trygt og lovlig — for eksempel ved feltskifte eller forbikjøring der forholdene tillater det.</p>
-  </div>
-  <div>
-    <strong style="font-size:1rem;color:var(--color-text)">Sperrelinje (heltrukken hvit)</strong>
-    <div style="background:#2d2d2d;border-radius:6px;padding:12px 16px;margin:8px 0">
-      <div style="font-size:10px;color:#999;margin-bottom:6px">→ Felt A</div>
-      <div style="height:3px;background:white;border-radius:2px"></div>
-      <div style="font-size:10px;color:#999;margin-top:6px">→ Felt B</div>
-    </div>
-    <p style="color:var(--color-text-light);line-height:1.6;margin:0">Forbyr overkjøring. Du har ikke lov til å krysse en hvit sperrelinje, hverken for å bytte felt eller kjøre forbi andre. Den brukes der sikt eller trafikkforhold gjør forbikjøring farlig. [Les mer om når forbikjøring er forbudt](/laeringsressurser/forbikjoring).</p>
-  </div>
-  <div>
-    <strong style="font-size:1rem;color:var(--color-text)">Dobbel heltrukken linje</strong>
-    <div style="background:#2d2d2d;border-radius:6px;padding:12px 16px;margin:8px 0">
-      <div style="font-size:10px;color:#999;margin-bottom:6px">→ Din retning</div>
-      <div style="height:2.5px;background:white;border-radius:2px;margin-bottom:4px"></div>
-      <div style="height:2.5px;background:white;border-radius:2px"></div>
-      <div style="font-size:10px;color:#999;margin-top:6px">← Motgående trafikk</div>
-    </div>
-    <p style="color:var(--color-text-light);line-height:1.6;margin:0">Dobbel heltrukken linje betyr at trafikk fra begge retninger skal holde seg på sin side av linjen. Du skal ikke krysse den for feltskifte eller forbikjøring.</p>
-  </div>
-  <div>
-    <strong style="font-size:1rem;color:var(--color-text)">Kombinerte linjer (én stiplet + én heltrukken)</strong>
-    <div style="background:#2d2d2d;border-radius:6px;padding:12px 16px;margin:8px 0">
-      <div style="font-size:10px;color:#9fe1cb;margin-bottom:6px">→ Kan krysse (stiplet side)</div>
-      <div style="height:2.5px;background:repeating-linear-gradient(90deg,white 0px,white 16px,transparent 16px,transparent 26px);border-radius:2px;margin-bottom:4px"></div>
-      <div style="height:2.5px;background:white;border-radius:2px"></div>
-      <div style="font-size:10px;color:#f09595;margin-top:6px">← Kan IKKE krysse (heltrukken side)</div>
-    </div>
-    <p style="color:var(--color-text-light);line-height:1.6;margin:0">Her gjelder regelen for linjen nærmest deg. Kjører du på siden med den stiplete linjen, kan du krysse om det er trygt. Kjører du på siden med den heltrukne, er det forbudt.</p>
-  </div>
-</div>`
+                content: '<div style="display:flex;flex-direction:column;gap:1.5rem"><div><strong style="font-size:1rem;color:var(--color-text)">Kjørefeltlinje (stiplet hvit)</strong><div style="background:#2d2d2d;border-radius:6px;padding:12px 16px;margin:8px 0;position:relative;overflow:hidden"><div style="font-size:10px;color:#999;margin-bottom:6px">→ Felt A</div><div style="height:3px;background:repeating-linear-gradient(90deg,white 0px,white 20px,transparent 20px,transparent 32px);border-radius:2px"></div><div style="font-size:10px;color:#999;margin-top:6px">→ Felt B</div></div><p style="color:var(--color-text-light);line-height:1.6;margin:0">Den vanligste linjen på norske veier. Skiller kjørefelt i samme kjøreretning. Du kan krysse den når det er trygt og lovlig — for eksempel ved feltskifte eller forbikjøring der forholdene tillater det.</p></div><div><strong style="font-size:1rem;color:var(--color-text)">Sperrelinje (heltrukken hvit)</strong><div style="background:#2d2d2d;border-radius:6px;padding:12px 16px;margin:8px 0"><div style="font-size:10px;color:#999;margin-bottom:6px">→ Felt A</div><div style="height:3px;background:white;border-radius:2px"></div><div style="font-size:10px;color:#999;margin-top:6px">→ Felt B</div></div><p style="color:var(--color-text-light);line-height:1.6;margin:0">Forbyr overkjøring. Du har ikke lov til å krysse en hvit sperrelinje, hverken for å bytte felt eller kjøre forbi andre. Den brukes der sikt eller trafikkforhold gjør forbikjøring farlig. [Les mer om når forbikjøring er forbudt](/laeringsressurser/forbikjoring).</p></div><div><strong style="font-size:1rem;color:var(--color-text)">Dobbel heltrukken linje</strong><div style="background:#2d2d2d;border-radius:6px;padding:12px 16px;margin:8px 0"><div style="font-size:10px;color:#999;margin-bottom:6px">→ Din retning</div><div style="height:2.5px;background:white;border-radius:2px;margin-bottom:4px"></div><div style="height:2.5px;background:white;border-radius:2px"></div><div style="font-size:10px;color:#999;margin-top:6px">← Motgående trafikk</div></div><p style="color:var(--color-text-light);line-height:1.6;margin:0">Dobbel heltrukken linje betyr at trafikk fra begge retninger skal holde seg på sin side av linjen. Du skal ikke krysse den for feltskifte eller forbikjøring.</p></div><div><strong style="font-size:1rem;color:var(--color-text)">Kombinerte linjer (én stiplet + én heltrukken)</strong><div style="background:#2d2d2d;border-radius:6px;padding:12px 16px;margin:8px 0"><div style="font-size:10px;color:#9fe1cb;margin-bottom:6px">→ Kan krysse (stiplet side)</div><div style="height:2.5px;background:repeating-linear-gradient(90deg,white 0px,white 16px,transparent 16px,transparent 26px);border-radius:2px;margin-bottom:4px"></div><div style="height:2.5px;background:white;border-radius:2px"></div><div style="font-size:10px;color:#f09595;margin-top:6px">← Kan IKKE krysse (heltrukken side)</div></div><p style="color:var(--color-text-light);line-height:1.6;margin:0">Her gjelder regelen for linjen nærmest deg. Kjører du på siden med den stiplete linjen, kan du krysse om det er trygt. Kjører du på siden med den heltrukne, er det forbudt.</p></div></div>'
             },
             {
-                title: 'Hva betyr kombinert linje?',
+                title: 'Hvit sperrelinje',
                 type: 'text',
-                content: 'Kombinert linje, også kalt kombinerte linjer, består av en sperrelinje og en kjørefeltlinje eller varsellinje ved siden av hverandre. Det er linjen på din side (nærmest deg) som bestemmer om du har lov til å krysse eller ikke.'
+                content: 'En hvit sperrelinje er en heltrukken hvit linje som skiller kjørefelt i samme kjøreretning. Den brukes der det kan være farlig eller uønsket å skifte felt, for eksempel før kryss, ved dårlig oversikt eller der trafikken må holdes i bestemte felt.\n\nDu skal som hovedregel ikke kjøre på eller over en hvit sperrelinje. Det betyr at du ikke skal bruke den til feltskifte eller [forbikjøring](/laeringsressurser/forbikjoring). Les mer om [reglene for forbikjøring](/laeringsressurser/forbikjoring).\n\n*Vanlige misforståelser:* Hvit sperrelinje gjelder ikke bare forbikjøring. Den forbyr også vanlige feltskifter før for eksempel kryss eller i tunneler.'
             },
             {
-                title: 'Interaktiv guide — klikk og lær',
-                type: 'calculator',
-                content: 'Klikk på linjene under for å se hva de betyr:'
+                title: 'Gul varsellinje',
+                type: 'table',
+                content: '<p style="color:var(--color-text-light); line-height:1.6; margin-bottom:1.5rem;">Gul varsellinje brukes mellom motgående trafikkretninger og varsler ofte at sikten eller forholdene gjør forbikjøring risikabelt, eller at du nærmer deg sperrelinje. Den betyr ikke automatisk forbud mot å krysse, men du må vurdere om det er trygt og lovlig.</p><div style="background:#2d2d2d; border-radius:8px; padding:20px; margin:16px 0; max-width:600px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);"><div style="font-size:0.85rem; font-weight:500; color:var(--color-text-light); margin-bottom:10px; display:flex; justify-content:space-between;"><span>← Motgående trafikk</span><span>Din retning →</span></div><svg viewBox="0 0 400 80" style="width:100%; height:auto; display:block; background:#1a1a1a; border-radius:6px; border:1px solid #333;"><line x1="0" y1="4" x2="400" y2="4" stroke="#ffffff" stroke-width="4" /><line x1="0" y1="76" x2="400" y2="76" stroke="#ffffff" stroke-width="4" /><path d="M 120 22 L 80 22 M 92 15 L 80 22 L 92 29" stroke="rgba(255, 255, 255, 0.45)" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round" /><path d="M 280 58 L 320 58 M 308 51 L 320 58 L 308 65" stroke="rgba(255, 255, 255, 0.45)" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round" /><line x1="0" y1="40" x2="400" y2="40" stroke="#ffd100" stroke-width="5" stroke-dasharray="48, 16" /></svg></div><p style="color:var(--color-text-light); line-height:1.6; margin-top:1.5rem;"><em>Vanlige misforståelser:</em> En gul varsellinje er ikke et absolutt kryssingsforbud på samme måte som en sperrelinje, men den varsler at forbikjøring er risikabelt og krever ekstra aktsomhet og sikkerhetsvurdering.</p>'
             },
             {
-                title: 'Gule linjer',
+                title: 'Hvit varsellinje',
+                type: 'table',
+                content: '<p style="color:var(--color-text-light); line-height:1.6; margin-bottom:1.5rem;">Hvit varsellinje brukes ved hvit oppmerking, typisk mellom kjørefelt i samme kjøreretning eller der trafikken går samme vei. Den varsler om fare eller spesielle forhold ved feltskifte.</p><p style="color:var(--color-text-light); line-height:1.6; margin-bottom:1.5rem;">Den kan ligne på en vanlig feltlinje, men varsellinjen har et annet mønster med lengre streker og kortere mellomrom. Akkurat som den gule varsellinjen, betyr ikke en hvit varsellinje automatisk at det er forbudt å krysse den, men den signaliserer at du må være ekstra på vakt før du skifter felt.</p><div style="background:#2d2d2d; border-radius:8px; padding:20px; margin:16px 0; max-width:600px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);"><div style="font-size:0.85rem; font-weight:500; color:var(--color-text-light); margin-bottom:10px; display:flex; justify-content:space-between;"><span>Felt A (Din retning) →</span><span>Felt B (Samme retning) →</span></div><svg viewBox="0 0 400 80" style="width:100%; height:auto; display:block; background:#1a1a1a; border-radius:6px; border:1px solid #333;"><line x1="0" y1="4" x2="400" y2="4" stroke="#ffffff" stroke-width="4" /><line x1="0" y1="76" x2="400" y2="76" stroke="#ffffff" stroke-width="4" /><path d="M 80 22 L 120 22 M 108 15 L 120 22 L 108 29" stroke="rgba(255, 255, 255, 0.45)" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round" /><path d="M 280 58 L 320 58 M 308 51 L 320 58 L 308 65" stroke="rgba(255, 255, 255, 0.45)" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round" /><line x1="0" y1="40" x2="400" y2="40" stroke="#ffffff" stroke-width="5" stroke-dasharray="48, 16" /></svg></div><p style="color:var(--color-text-light); line-height:1.6; margin-top:1rem;"><em>Vanlige misforståelser:</em> Mange forveksler hvit varsellinje med en vanlig kjørefeltlinje og utfører feltskifter uten ekstra oppmerksomhet. Se alltid etter lengden på strekene!</p>'
+            },
+            {
+                title: 'Kombinerte linjer',
                 type: 'text',
-                content: '**Gul varsellinje**\nEn gul stiplet linje advarer om at sikten fremover er begrenset — for eksempel i en kurve eller over en bakketopp. Gul varsellinje betyr at det er risikabelt å kjøre forbi, men ikke nødvendigvis forbudt.\n\n**Gul sperrelinje**\nHeltrukken gul linje forbyr kjøring til venstre for linjen. Dette er spesielt viktig å kjenne til: det er forbudt å krysse eller kjøre til venstre for gul sperrelinje — selv om du har god sikt.\n\n**Kantlinje**\nMarkerer yttergrensen av kjørebanen mot veikanten eller skulder. Hvit kantlinje er standard — gul kantlinje langs fortau eller parkering indikerer stans- og parkeringsforbud.'
+                content: 'Kombinert linje består av to linjer ved siden av hverandre (for eksempel en stiplet linje og en heltrukken linje). Da gjelder alltid regelen for den linjen som ligger nærmest din side av veien.\n\nHvis den stiplede linjen ligger nærmest din side, kan du krysse linjene når det er trygt og lovlig. Hvis den heltrukne linjen ligger nærmest din side, er det strengt forbudt å krysse eller kjøre over linjene.\n\n*Vanlige misforståelser:* Mange glemmer å sjekke hvilken linje som ligger nærmest eget kjøretøy, og antar feilaktig at de ikke har lov til å krysse i det hele tatt, eller omvendt.'
             },
             {
-                title: 'Tverrgående merking',
+                title: 'Vikelinje',
                 type: 'text',
-                content: '**Stopplinje**\nEn bred hvit tverrstrek som markerer nøyaktig hvor du skal stoppe — ved rødt lys, stoppskilt eller på annen måte når du er pålagt å stanse. Du skal stoppe før linjen, ikke på den.\n\n**Vikelinje (haifinner)**\nEn rekke hvite trekanter på tvers av kjøreretningen din. De peker mot deg og forteller deg at du har vikeplikt. Du skal stanse ved vikelinjen om nødvendig.\n\n**Gangfelt**\nBrede hvite striper på tvers av veien. Som bilfører har du vikeplikt for gående som er i gangfeltet eller på vei ut i det.\n\n**Sykkelkryssing**\nStiplet oppmerking som ligner gangfelt men for syklister. Syklister har ikke automatisk forkjørsrett her — du må vurdere situasjonen.'
+                content: 'Vikelinje viser hvor du skal vike eller stanse når du har [vikeplikt](/laeringsressurser/vikeplikt). Den består av en rekke hvite trekanter («haifinner») på tvers av kjørebanen og gjerne et vikesymbol i asfalten i forkant.\n\nVikelinjen betyr ikke alltid at du må stoppe helt. Du skal stanse dersom det er nødvendig for å overholde vikeplikten. Hvis det er fri sikt og ingen kryssende trafikk du har vikeplikt for, kan du kjøre videre med tilpasset fart uten å stoppe helt. Les mer i vår [komplette guide til vikeplikt](/laeringsressurser/vikeplikt).\n\n*Vanlige misforståelser:* Noen tror at vikelinje krever full stans uansett trafikk. Det er kun ved stopplinje og stoppskilt at du har stopplikt.'
+            },
+            {
+                title: 'Stopplinje',
+                type: 'text',
+                content: 'Stopplinje viser hvor du skal stanse helt når du har stopplikt ved stoppskilt eller rødt trafikklys.\n\nVed stoppskilt skal bilen stanse helt (hjulene må stå helt stille) før stopplinjen, slik at du har full kontroll og oversikt før du kjører videre.\n\n*Vanlige misforståelser:* Å utføre et såkalt «rullende stopp» (hvor bilen ruller sakte over linjen uten å stanse fullstendig) er ulovlig og regnes som et alvorlig brudd på trafikkreglene.'
+            },
+            {
+                title: 'Sperreområde',
+                type: 'text',
+                content: 'Sperreområde er et markert område i kjørebanen, ofte med skrå, hvite eller gule striper (skravering). Det viser et område du ikke skal kjøre i, over, eller bruke som kjørefelt.\n\nSperreområder brukes for å lede trafikken riktig, skille trafikkstrømmer eller beskytte områder der det ikke er trygt eller ønskelig å kjøre.\n\n*Vanlige misforståelser:* Noen tror at sperreområdet kan brukes til å snike forbi kø, eller som et ekstra kjørefelt når man skal svinge. Det er strengt forbudt.'
             },
             {
                 title: 'Pilmerking',
                 type: 'info',
-                content: 'Piler i kjørefeltet forteller deg hvilken retning du skal kjøre. Der det er sperrelinjer er pilene påbud — du må kjøre i den retningen pilen viser. Der det bare er feltlinjer er pilen en anbefaling, men du bør følge den.\n\nTypiske kombinasjoner du ser i kryss: rett frem, venstre, høyre, eller kombinasjoner som "rett frem eller høyre".'
+                content: 'Piler i kjørefeltet viser hvilken retning feltet er beregnet for. Du må lese pilene sammen med skilt, trafikklys, sperrelinjer og plasseringen din i feltet. Hvis du ligger i et felt som bare går til venstre, må du følge feltets retning eller skifte felt i god tid der det er lovlig.'
             },
             {
                 title: 'Symboler i veibanen',
@@ -563,120 +534,141 @@ export const theoryTopics: TheoryTopic[] = [
                 content: 'Vikesymbol (omvendt trekant malt i asfalten) varsler deg om kommende vikeplikt — det gir deg ekstra tid til å forberede deg, og brukes ofte i forkant av vikelinjen.\n\nGangsymbol viser at fotgjengere bruker det området. Sykkelsymbol markerer sykkelfelt — her gjelder trafikkreglenes bestemmelser om sykkelfelt.\n\nTekst som "STOPP", "BUSS", "TAXI" og "SKOLE" gir stedsspesifikk informasjon. "STOPP" hører sammen med stoppskilt. "BUSS" markerer kollektivfelt.'
             },
             {
-                title: 'De vanligste feilene på teoriprøven',
-                type: 'warning',
-                content: 'Disse scenarioene dukker jevnlig opp:\n\n- **Kombinerte linjer** er den hyppigste kilden til feil — mange tror begge sider av en kombinert linje har samme regler. Husk: linjen nærmest deg bestemmer.\n- **Gul sperrelinje** forveksles med hvit sperrelinje. Gul gjelder spesielt mot venstre — du kan ikke krysse eller kjøre til venstre for den uansett sikt.\n- **Gangfelt vs. sykkelkryssing** — som bilfører har du vikeplikt for gående i gangfelt, mens syklister ikke automatisk har samme prioritet i sykkelkryssing.\n- **Vikelinje vs. stopplinje** — ved vikelinje kan du kjøre sakte forbi hvis veien er fri. Ved stopplinje skal du alltid stanse helt.'
+                title: 'Gangfelt og annen oppmerking',
+                type: 'text',
+                content: 'Gangfelt er også veimerking. Det viser hvor gående kan krysse vegen, og hvor førere må være særlig oppmerksomme.\n\nDu må alltid tilpasse farten når du nærmer deg gangfelt, og være klar til å stanse for gående som er i eller på vei ut i gangfeltet.\n\nAndre symboler og piler i kjørebanen kan vise påbudt kjøreretning, feltbruk, sykkelfelt eller annen viktig informasjon. Slike symboler må leses sammen med [skilt](/trafikkskilt), trafikklys og situasjonen rundt deg.'
             },
             {
-                title: 'Klar til å teste?',
-                type: 'tip',
-                content: 'Veimerking er en fast del av teoriprøven. Kombiner denne artikkelen med [vår gratis øvingsprøve](/quiz) for å se om du klarer å identifisere riktig linje i typiske situasjonsbilder. Sjekk også [trafikkskilt-guiden](/laeringsressurser/skilt) for å forstå samspillet mellom skilt og veimerking.\n\n[Les om vikeplikt og høyreregelen](/laeringsressurser/vikeplikt)'
+                title: 'Interaktiv guide — klikk og lær',
+                type: 'calculator',
+                content: 'Klikk på linjene under for å se hva de betyr:'
             }
         ],
         faq: [
             {
-                question: 'Hva er forskjellen på sperrelinje og varsellinje?',
-                answer: 'Sperrelinje (heltrukken) forbyr overkjøring fullstendig. Varsellinje (stiplet, lengre streker enn normal feltlinje) advarer om dårlig sikt og anbefaler å ikke kjøre forbi, men forbyr det ikke direkte.'
+                question: 'Hva betyr hvit sperrelinje?',
+                answer: 'En hvit sperrelinje er en heltrukken hvit linje. Den skiller kjørefelt i samme kjøreretning og betyr at det er forbudt å krysse linjen, enten det er for feltskifte eller forbikjøring.'
             },
             {
-                question: 'Kan jeg krysse en hvit sperrelinje for å svinge inn i en avkjørsel?',
-                answer: 'Ja — du kan krysse en hvit sperrelinje for å kjøre inn eller ut av en eiendom, men du kan ikke krysse den for forbikjøring.'
+                question: 'Hva betyr gul varsellinje?',
+                answer: 'Gul varsellinje brukes mellom motgående trafikkretninger og varsler ofte at sikten eller forholdene gjør forbikjøring risikabelt, eller at du nærmer deg sperrelinje. Den betyr ikke automatisk forbud mot å krysse, men du må vurdere om det er trygt og lovlig.'
             },
             {
-                question: 'Hva betyr gul varsellinje kontra hvit varsellinje?',
-                answer: 'Gul varsellinje varsler om begrenset sikt for sikker forbikjøring. Hvit varsellinje indikerer risiko ved feltskifte. Begge er stiplete linjer med lengre streker enn vanlig feltlinje.'
+                question: 'Kan jeg krysse en varsellinje?',
+                answer: 'Ja, en varsellinje (både gul og hvit) gir ikke et automatisk forbud mot å krysse, men den fungerer som et tydelig varsel om at du må utvise ekstra oppmerksomhet og at kryssing/forbikjøring kan være risikabelt.'
+            },
+            {
+                question: 'Hva betyr kombinert linje?',
+                answer: 'Kombinert linje består av to linjer ved siden av hverandre (f.eks. én stiplet og én heltrukken). Du må alltid forholde deg til reglene for den linjen som ligger nærmest din side av veien.'
+            },
+            {
+                question: 'Hva er vikelinje?',
+                answer: 'En vikelinje består av hvite trekanter («haifinner») på tvers av kjørebanen. Den viser nøyaktig hvor du skal vike for kryssende trafikk ved vikeplikt. Du må kun stanse dersom det er nødvendig for å slippe frem andre.'
+            },
+            {
+                question: 'Hva er forskjellen på gul og hvit veimerking?',
+                answer: 'Gul veimerking skiller vanligvis trafikk i motsatte retninger (eller markerer midlertidig vegarbeid), mens hvit veimerking skiller kjørefelt i samme kjøreretning, markerer kantlinjer eller viser oppmerking i vegkryss.'
             },
             {
                 question: 'Hva er et sperreområde?',
-                answer: 'Et sperreområde er avgrenset av heltrukne linjer med skravering inni. Det er forbudt å kjøre inn i et sperreområde.'
+                answer: 'Et sperreområde er avgrenset av heltrukne linjer med skravering inni. Det er forbudt å kjøre inn i eller over et sperreområde.'
             },
             {
-                question: 'Må jeg stoppe ved vikelinje?',
-                answer: 'Ikke alltid — du skal stoppe dersom det er nødvendig for å overholde vikeplikten. Er veien fri, kan du passere vikelinjen uten å stanse.'
+                question: 'Kan jeg krysse en hvit sperrelinje for å svinge inn i avkjørsel?',
+                answer: 'Som hovedregel skal du ikke krysse sperrelinje. Det finnes enkelte praktiske unntak, for eksempel inn- og utkjøring til eiendom der dette kan gjøres trygt og ikke er forbudt av skilt eller annen regulering. På teoriprøven bør du likevel huske hovedregelen: sperrelinje skal ikke krysses for feltskifte eller forbikjøring.'
+            }
+        ],
+        miniQuiz: [
+            {
+                question: "Du kjører langs en hvit sperrelinje. Hva betyr det?",
+                options: [
+                    "Du kan krysse linjen hvis det er lite trafikk",
+                    "Du skal ikke krysse linjen for feltskifte eller forbikjøring",
+                    "Linjen gjelder bare for motgående trafikk",
+                    "Linjen betyr at du må stoppe"
+                ],
+                correct: "Du skal ikke krysse linjen for feltskifte eller forbikjøring",
+                explanation: "Hvit sperrelinje er heltrukken og skal ikke krysses for feltskifte eller forbikjøring."
+            },
+            {
+                question: "Du ser en gul varsellinje mellom motgående kjørefelt. Hva betyr den?",
+                options: [
+                    "Forbikjøring er alltid strengt forbudt",
+                    "Den varsler at sikten/forholdene gjør forbikjøring risikabelt eller at sperrelinje nærmer seg, men er ikke et automatisk kryssingsforbud",
+                    "Du har forkjørsrett og kan fritt kjøre forbi",
+                    "Du må stoppe før linjen"
+                ],
+                correct: "Den varsler at sikten/forholdene gjør forbikjøring risikabelt eller at sperrelinje nærmer seg, men er ikke et automatisk kryssingsforbud",
+                explanation: "Gul varsellinje brukes mellom motgående retninger og advarer om økt risiko (f.eks. på grunn av sikt). Den er ikke et automatisk forbud mot å krysse, men krever at du gjør en grundig sikkerhetsvurdering."
+            },
+            {
+                question: "Du kjører ved siden av en kombinert linje. Hvilken del av linjen bestemmer om du kan krysse?",
+                options: [
+                    "Linjen lengst fra deg",
+                    "Linjen nærmest deg",
+                    "Den gule linjen uansett plassering",
+                    "Den bredeste linjen"
+                ],
+                correct: "Linjen nærmest deg",
+                explanation: "Ved kombinert linje er det alltid linjen nærmest din side av veien som bestemmer om du kan krysse eller ikke."
+            },
+            {
+                question: "Hva betyr en vikelinje med hvite trekanter på tvers av kjøreretningen?",
+                options: [
+                    "Du har vikeplikt og må stoppe hvis det er nødvendig",
+                    "Du må alltid stoppe helt",
+                    "Du har forkjørsrett",
+                    "Du kan bare kjøre rett frem"
+                ],
+                correct: "Du har vikeplikt og må stoppe hvis det er nødvendig",
+                explanation: "Vikelinje («haifinner») viser at du har vikeplikt. Du må stoppe dersom det er nødvendig for å overholde vikeplikten, men du trenger ikke å stoppe helt hvis veien er klar."
+            },
+            {
+                question: "Hva er forskjellen på vikelinje og stopplinje?",
+                options: [
+                    "Det er ingen forskjell",
+                    "Ved vikelinje må du alltid stoppe, ved stopplinje kan du kjøre hvis det er klart",
+                    "Ved stopplinje skal du stoppe helt når du har stopplikt eller rødt lys, mens ved vikelinje stopper du bare hvis vikeplikten krever det",
+                    "Stopplinje gjelder bare for fotgjengere"
+                ],
+                correct: "Ved stopplinje skal du stoppe helt når du har stopplikt eller rødt lys, mens ved vikelinje stopper du bare hvis vikeplikten krever det",
+                explanation: "Ved stopplinje (for eksempel ved stoppskilt) skal du stoppe helt opp slik at hjulene står stille. Ved vikelinje stopper du bare hvis det er nødvendig for å overholde vikeplikten."
+            },
+            {
+                question: "Hva kreves av deg når du møter en stopplinje ved et stoppskilt?",
+                options: [
+                    "Du kan rulle sakte over linjen hvis det er fri sikt",
+                    "Bilen må stanses helt opp (hjulene må stå helt stille) før du kjører videre",
+                    "Du må stoppe i nøyaktig 5 sekunder uansett",
+                    "Du skal kun blinke med lysene"
+                ],
+                correct: "Bilen må stanses helt opp (hjulene må stå helt stille) før du kjører videre",
+                explanation: "Ved stoppskilt er det påbudt å foreta en fullstendig stans (rullende stopp er ulovlig). Hjulene må stå helt i ro."
+            },
+            {
+                question: "Hva er regelen for å kjøre i et sperreområde (skravert felt med heltrukken linje)?",
+                options: [
+                    "Det er tillatt om du skal svinge",
+                    "Det er strengt forbudt å kjøre inn i eller over et sperreområde",
+                    "Det kan brukes til å kjøre forbi kø",
+                    "Det gjelder kun for lastebiler"
+                ],
+                correct: "Det er strengt forbudt å kjøre inn i eller over et sperreområde",
+                explanation: "Sperreområder brukes for å lede trafikk og skille strømmer. Det er forbudt å kjøre på, over eller oppholde seg i et sperreområde."
+            },
+            {
+                question: "Hva er formålet med en hvit varsellinje ved feltskifte?",
+                options: [
+                    "Den gir deg automatisk forkjørsrett ved feltskifte",
+                    "Den varsler om fare eller spesielle forhold ved feltskifte, men gir ikke et automatisk forbud",
+                    "Den betyr at du må stanse helt",
+                    "Den viser at feltskifte er forbudt"
+                ],
+                correct: "Den varsler om fare eller spesielle forhold ved feltskifte, men gir ikke et automatisk forbud",
+                explanation: "Hvit varsellinje signaliserer fare eller spesielle forhold ved feltskifte (f.eks. nær kryss eller tunnell). Du kan krysse den, men må utvise ekstra aktsomhet."
             }
         ]
-    ,
-        miniQuiz: [
-    {
-        "question": "Du kjører langs en hvit sperrelinje. Hva betyr det?",
-        "options": [
-            "Du kan krysse linjen hvis det er lite trafikk",
-            "Du skal ikke krysse linjen for feltskifte eller forbikjøring",
-            "Linjen gjelder bare for motgående trafikk",
-            "Linjen betyr at du må stoppe"
-        ],
-        "correct": "Du skal ikke krysse linjen for feltskifte eller forbikjøring",
-        "explanation": "Hvit sperrelinje er heltrukken og skal ikke krysses for feltskifte eller forbikjøring."
     },
-    {
-        "question": "Du ser en gul varsellinje før en bakketopp. Hva betyr den?",
-        "options": [
-            "Forbikjøring er alltid forbudt",
-            "Du har forkjørsrett",
-            "Den varsler begrenset sikt og økt risiko ved forbikjøring",
-            "Du må stoppe før linjen"
-        ],
-        "correct": "Den varsler begrenset sikt og økt risiko ved forbikjøring",
-        "explanation": "Gul varsellinje varsler om dårlig sikt eller fare. Den betyr ikke alltid direkte forbud, men du må vurdere sikten svært nøye."
-    },
-    {
-        "question": "Du kjører ved siden av en kombinert linje. Hvilken del av linjen bestemmer om du kan krysse?",
-        "options": [
-            "Linjen lengst fra deg",
-            "Linjen nærmest deg",
-            "Den gule linjen uansett plassering",
-            "Den bredeste linjen"
-        ],
-        "correct": "Linjen nærmest deg",
-        "explanation": "Ved kombinert linje er det linjen nærmest deg som bestemmer om du kan krysse eller ikke."
-    },
-    {
-        "question": "Hva betyr en vikelinje med hvite trekanter på tvers av kjøreretningen?",
-        "options": [
-            "Du har vikeplikt og må stoppe hvis det er nødvendig",
-            "Du må alltid stoppe helt",
-            "Du har forkjørsrett",
-            "Du kan bare kjøre rett frem"
-        ],
-        "correct": "Du har vikeplikt og må stoppe hvis det er nødvendig",
-        "explanation": "Vikelinje viser at du har vikeplikt. Du må stoppe dersom det er nødvendig for å overholde vikeplikten."
-    },
-    {
-        "question": "Hva er forskjellen på vikelinje og stopplinje?",
-        "options": [
-            "Det er ingen forskjell",
-            "Ved vikelinje må du alltid stoppe, ved stopplinje kan du kjøre hvis det er klart",
-            "Ved stopplinje skal du stoppe helt når du er pålagt å stanse, mens ved vikelinje stopper du bare hvis vikeplikten krever det",
-            "Stopplinje gjelder bare for fotgjengere"
-        ],
-        "correct": "Ved stopplinje skal du stoppe helt når du er pålagt å stanse, mens ved vikelinje stopper du bare hvis vikeplikten krever det",
-        "explanation": "Ved stopplinje, for eksempel ved stoppskilt, skal du stoppe helt. Ved vikelinje stopper du bare hvis det er nødvendig for å overholde vikeplikten."
-    },
-    {
-        "question": "Du ser et gangfelt. Hva er riktig?",
-        "options": [
-            "Fotgjengere må alltid vente på bilene",
-            "Som bilfører har du vikeplikt for gående i gangfeltet eller på vei ut i det",
-            "Gangfelt gjelder bare hvis det også er trafikklys",
-            "Du har bare vikeplikt hvis fotgjengeren allerede er midt i veien"
-        ],
-        "correct": "Som bilfører har du vikeplikt for gående i gangfeltet eller på vei ut i det",
-        "explanation": "Som bilfører har du vikeplikt for gående som er i gangfeltet eller på vei ut i det."
-    },
-    {
-        "question": "Hva betyr gul sperrelinje?",
-        "options": [
-            "Du kan krysse hvis du har god sikt",
-            "Du skal ikke krysse eller kjøre til venstre for linjen",
-            "Den gjelder bare for tunge kjøretøy",
-            "Den viser kanten av kjørebanen"
-        ],
-        "correct": "Du skal ikke krysse eller kjøre til venstre for linjen",
-        "explanation": "Gul sperrelinje er heltrukken. Du skal ikke krysse eller kjøre til venstre for den, selv om du mener sikten er god."
-    }
-]
-    },
-
     {
         id: 'rundkjoring',
         title: 'Vikeplikt i rundkjøring – regler, blinklys og feltvalg',
@@ -3803,7 +3795,7 @@ export const theoryUtilityPages: TheoryTopic[] = [
             {
                 title: 'Kort oppsummert',
                 type: 'info',
-                content: '• Vi krever **ingen registrering** eller innlogging.\n• Vi samler **ikke** inn navn, e-post eller telefonnummer.\n• Dine feilsvar i "Fokus mode" lagres **kun lokalt** i din egen nettleser.\n• Vi bruker kun anonymisert statistikk for å forbedre tjenesten.'
+                content: '• Vi krever **ingen registrering** eller innlogging.\n• Vi samler **ikke** inn navn, e-post eller telefonnummer.\n• Dine feilsvar i "Fokusmodus" lagres **kun lokalt** i din egen nettleser.\n• Vi bruker kun anonymisert statistikk for å forbedre tjenesten.'
             },
             {
                 title: 'Hva vi samler inn',
@@ -3813,7 +3805,7 @@ export const theoryUtilityPages: TheoryTopic[] = [
             {
                 title: 'Lokal lagring (localStorage)',
                 type: 'tip',
-                content: 'Når du svarer feil på et spørsmål, lagres dette spørsmålet i nettleseren din slik at du kan øve på det i "Fokus mode". Dette lagres i det som kalles *localStorage*. Dette er data som aldri forlater din maskin, og som vi ikke har tilgang til. Du kan når som helst slette disse dataene ved å tømme nettleserdataene dine.'
+                content: 'Når du svarer feil på et spørsmål, lagres dette spørsmålet i nettleseren din slik at du kan øve på det i "Fokusmodus". Dette lagres i det som kalles *localStorage*. Dette er data som aldri forlater din maskin, og som vi ikke har tilgang til. Du kan når som helst slette disse dataene ved å tømme nettleserdataene dine.'
             },
             {
                 title: 'Cookies og statistikk',

@@ -355,11 +355,18 @@ body:not(.dark-mode) .simulator-section {
 .car {
   position: absolute;
   bottom: 66px; /* Positioned nicely above the segments */
-  width: 110px;
-  height: 50px;
+  width: 132px;
+  height: 60px;
   z-index: 5;
   transform: translateX(-50%);
   filter: drop-shadow(0 12px 14px rgba(0, 0, 0, 0.65));
+}
+
+.car img {
+  display: block;
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
 }
 
 .car svg {
@@ -484,11 +491,11 @@ body:not(.dark-mode) .simulator-section {
 }
 
 .spray-emitter.rear {
-  left: 24px;
+  left: 29px;
 }
 
 .spray-emitter.front {
-  left: 78px;
+  left: 94px;
 }
 
 .spray-drop {

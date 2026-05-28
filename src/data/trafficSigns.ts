@@ -1,3 +1,11 @@
+export interface TrafficSignCombination {
+  mainSignCode: string;
+  mainSignName: string;
+  mainSignImagePath: string;
+  relationType: string;
+  combinedMeaning: string;
+}
+
 export interface TrafficSign {
   id: string;
   code: string;
@@ -13,6 +21,7 @@ export interface TrafficSign {
   confusedWith?: string[];
   sources: { name: string; url: string }[];
   aliases?: string[];
+  combinations?: TrafficSignCombination[];
 }
 
 export const trafficSigns: TrafficSign[] = [
@@ -1963,33 +1972,633 @@ export const trafficSigns: TrafficSign[] = [
     imagePath: '/signs/opplysningsskilt/skilt-542-slutt-pa-gatetun.jpg',
     shortExplanation: 'Viser at reguleringen for gatetun opphører.',
     longExplanation: 'Dette skiltet markerer at du forlater et gatetun. Du har full vikeplikt for all trafikk på den kryssende vegen du kjører ut på.',
-    theoryTrap: 'Når du passerer dette skiltet for å kjøre ut på vanlig veg, har du vikeplikt for alle trafikanter på den kryssende vegen (både kjørende og myke trafikanter), uavhengig av høyreregelen.',
+    theoryTrap: 'Når du passerer dette skiltet for å kjøre ut på vanlig veg, har du vikeplikt for alle trafikanter på den kryssende vegen. Dette gjelder selv om du kommer fra høyre, da utkjørsel fra gatetun er likestilt med utkjørsel fra eiendom, parkeringsplass eller gårdsveg.',
     whatToDo: [
-      'Stopp helt og overhold vikeplikten overfor all trafikk på den kryssende vegen du kjører ut på.',
-      'Gå over til normal fartstilpasning etter de nye vegforholdene.'
+      'Stopp eller sjekk kryssende veg grundig for å overholde vikeplikten når du kjører ut av gatetunet.',
+      'Tilpass farten din til den ordinære fartsgrensen som gjelder på vegen du svinger inn på.'
     ],
     confusedWith: ['540'],
     sources: [{ name: 'Statens vegvesen', url: 'https://www.vegvesen.no' }],
-    aliases: ['slutt gatetun', 'gatetun slutt', 'ut av gatetun']
+    aliases: ['slutt gatetun', 'vikeplikt', 'ut av gatetun']
+  },
+  // --- UNDERSKILT (Aktiv Kategori) ---
+  {
+    id: '802',
+    code: '802',
+    name: 'Avstand',
+    displayName: 'Avstand',
+    slug: 'avstand',
+    category: 'underskilt',
+    imagePath: '/signs/underskilt/skilt-802-avstand.jpg',
+    shortExplanation: 'Viser nøyaktig avstand fra hovedskiltet frem til stedet der faren eller reguleringen begynner.',
+    longExplanation: 'Dette underskiltet presiserer avstanden fra der skiltet står, til det punktet der faren starter eller reguleringen trer i kraft. For eksempel, plassert under et fareskilt angir det avstanden til selve faren. Plassert under et vikepliktsskilt kan det angi avstand frem til vikepliktlinjen eller stopplinjen.',
+    theoryTrap: 'Mange forveksler avstand med utstrekning (skilt 804). Avstand (802) har ingen piler på siden av tallet og viser kun hvor langt det er frem til reguleringen starter, ikke hvor lang strekning den gjelder for.',
+    whatToDo: [
+      'Vær forberedt på at faren eller reguleringen beskrevet på hovedskiltet inntreffer etter den oppgitte avstanden.',
+      'Tilpass farten og oppmerksomheten din i god tid.'
+    ],
+    confusedWith: ['804', '824'],
+    sources: [
+      { name: 'Statens vegvesen', url: 'https://www.vegvesen.no' },
+      { name: 'Lovdata', url: 'https://lovdata.no/dokument/SF/forskrift/2005-10-07-1219' }
+    ],
+    aliases: ['underskilt', 'avstand', 'gjelder', 'strekning', 'meter'],
+    combinations: [
+      {
+        mainSignCode: '362',
+        mainSignName: 'Fartsgrense 50',
+        mainSignImagePath: '/signs/forbudsskilt/skilt-362-50-fartsgrense.jpg',
+        relationType: 'Avstand',
+        combinedMeaning: 'Fartsgrensen på 50 km/t gjelder ikke fra der skiltstolpen står, men starter først 500 meter lenger fremme (forvarsling).'
+      }
+    ]
   },
   {
-    id: '548',
-    code: '548',
-    name: 'Gågate',
-    displayName: 'Gågate',
-    slug: 'gagate',
-    category: 'opplysningsskilt',
-    imagePath: '/signs/opplysningsskilt/skilt-548-gagate.jpg',
-    shortExplanation: 'Viser at vegen er regulert som gågate der kjøring i utgangspunktet er forbudt.',
-    longExplanation: 'En gågate er en gate reservert for gående. Kjøring med motorvogn er i utgangspunktet forbudt, med mindre annet er spesifisert på underskilt (f.eks. for varelevering til bestemte tider). All tillatt kjøring må skje i gangfart og på de gåendes premisser.',
-    theoryTrap: 'Kjøring i gågate er kun tillatt i spesielle unntakstilfeller. Dersom du har tillatelse til å kjøre der, må du holde gangfart (under 10 km/t) og vike for alle fotgjengere. Du har også vikeplikt når du kjører UT av en gågate.',
+    id: '804',
+    code: '804',
+    name: 'Utstrekning',
+    displayName: 'Utstrekning',
+    slug: 'utstrekning',
+    category: 'underskilt',
+    imagePath: '/signs/underskilt/skilt-804-utstrekning.jpg',
+    shortExplanation: 'Viser lengden på den veistrekningen som hovedskiltets regulering eller farevarsel gjelder for.',
+    longExplanation: 'Dette underskiltet presiserer utstrekningen (lengden) av reguleringen eller faren. Det har to oppovervendte piler på hver side av avstandstallet. Dette viser at faren eller reguleringen starter bei skiltet og gjelder kontinuerlig over den oppgitte strekningen.',
+    theoryTrap: 'Mange overser at piler på siden av tallet betyr utstrekning (skilt 804), mens et tall uten piler betyr avstand (skilt 802). Reguleringen gjelder umiddelbart etter skiltet og varer i det angitte antall meter/kilometer.',
     whatToDo: [
-      'Ikke kjør inn i gågaten med mindre du har spesiell tillatelse (f.eks. varelevering til godkjente tider).',
-      'Kjør i gangfart og vik for alle gående dersom kjøring er tillatt.',
-      'Husk full vikeplikt for kryssende trafikk når du kjører ut av gågaten.'
+      'Tilpass kjøringen til faren eller reguleringen over hele den angitte strekningen.',
+      'Husk at reguleringen opphører når den oppgitte distansen er tilendebragt.'
     ],
-    confusedWith: ['540', '518'],
-    sources: [{ name: 'Statens vegvesen', url: 'https://www.vegvesen.no' }],
-    aliases: ['gågate', 'gagate', 'fotgjenger gate', 'kjøreforbud gågate']
+    confusedWith: ['802'],
+    sources: [
+      { name: 'Statens vegvesen', url: 'https://www.vegvesen.no' },
+      { name: 'Lovdata', url: 'https://lovdata.no/dokument/SF/forskrift/2005-10-07-1219' }
+    ],
+    aliases: ['underskilt', 'utstrekning', 'strekning', 'gjelder', 'piler', 'lengde'],
+    combinations: [
+      {
+        mainSignCode: '146.1',
+        mainSignName: 'Elg',
+        mainSignImagePath: '/signs/fareskilt/skilt-146-1-elg.jpg',
+        relationType: 'Utstrekning',
+        combinedMeaning: 'Det er økt fare for elg på vegen over en strekning på 2 kilometer som starter umiddelbart etter at du passerer skiltet.'
+      }
+    ]
+  },
+  {
+    id: '806',
+    code: '806',
+    name: 'Tid',
+    displayName: 'Tid',
+    slug: 'tid',
+    category: 'underskilt',
+    imagePath: '/signs/underskilt/skilt-806-tid.jpg',
+    shortExplanation: 'Viser de spesifikke klokkeslettene og dagene hovedskiltets regulering er gyldig.',
+    longExplanation: 'Dette underskiltet angir når reguleringen på hovedskiltet gjelder. Tall uten parenteser gjelder hverdager (mandag til fredag). Tall i parentes gjelder lørdager (og andre dager før søndag/helligdag). Røde tall gjelder søndager, helligdager og offentlige høytidsdager.',
+    theoryTrap: 'Husk parentes-regelen: Klokkeslett uten parentes gjelder mandag-fredag, i parentes gjelder lørdager, og røde tall gjelder søndager/helligdager. Parkerer eller kjører du utenom disse tidene, gjelder ikke hovedskiltet.',
+    whatToDo: [
+      'Sjekk ukedag og klokkeslett for å vurdere om hovedskiltet er aktivt.',
+      'Husk at hvis du parkerer utenom de oppgitte tidene, er det de generelle reglene på stedet som gjelder.'
+    ],
+    confusedWith: [],
+    sources: [
+      { name: 'Statens vegvesen', url: 'https://www.vegvesen.no' },
+      { name: 'Lovdata', url: 'https://lovdata.no/dokument/SF/forskrift/2005-10-07-1219' }
+    ],
+    aliases: ['underskilt', 'tid', 'klokkeslett', 'gjelder', 'parkering', 'hverdag', 'lørdag', 'søndag', 'røde tall', 'parentes'],
+    combinations: [
+      {
+        mainSignCode: '372',
+        mainSignName: 'Parkering forbudt',
+        mainSignImagePath: '/signs/forbudsskilt/skilt-372-parkering-forbudt.jpg',
+        relationType: 'Tidsbegrensning',
+        combinedMeaning: 'Det er forbudt å parkere på stedet mandag til fredag mellom kl. 08:00 og 16:00, og lørdager mellom kl. 08:00 og 13:00. Utenom disse tidene er parkering tillatt.'
+      }
+    ]
+  },
+  {
+    id: '807.1',
+    code: '807.1',
+    name: 'Symbol personbil',
+    displayName: 'Symbol personbil',
+    slug: 'gjelder-personbil',
+    category: 'underskilt',
+    imagePath: '/signs/underskilt/skilt-807-1-symbol-personbil.jpg',
+    shortExplanation: 'Viser at hovedskiltets regulering eller unntak kun gjelder for personbiler.',
+    longExplanation: 'Dette underskiltet presiserer at reguleringen på hovedskiltet er begrenset til kjøretøygruppen personbil (klasse B). Hvis det står under et parkeringsskilt, er plassen reservert for personbiler. Står det under et forbudsskilt, gjelder forbudet kun for personbiler.',
+    theoryTrap: 'Mange tror feilaktig at symbolet gjelder for alle lette kjøretøy. Det gjelder spesifikt for personbiler og omfatter ikke motorsykler, mopeder eller varebiler med mindre disse er avbildet eller nevnt.',
+    whatToDo: [
+      'Følg hovedskiltets regulering dersom du kjører personbil.',
+      'Dersom du kjører et annet kjøretøy, må du forholde deg til at reguleringen ikke gjelder for deg (eller at du ikke kan parkere der).'
+    ],
+    confusedWith: ['807.3', '807.6'],
+    sources: [
+      { name: 'Statens vegvesen', url: 'https://www.vegvesen.no' },
+      { name: 'Lovdata', url: 'https://lovdata.no/dokument/SF/forskrift/2005-10-07-1219' }
+    ],
+    aliases: ['underskilt', 'personbil', 'gjelder', 'kjøretøygruppe', 'bil'],
+    combinations: [
+      {
+        mainSignCode: '552',
+        mainSignName: 'Parkering',
+        mainSignImagePath: '/signs/opplysningsskilt/skilt-552-parkering.jpg',
+        relationType: 'Kjøretøygruppe',
+        combinedMeaning: 'Parkeringsplassen er reservert utelukkende for personbiler. Andre kjøretøy, som busser, lastebiler eller motorsykler, har ikke lov til å parkere her.'
+      }
+    ]
+  },
+  {
+    id: '807.3',
+    code: '807.3',
+    name: 'Symbol buss',
+    displayName: 'Symbol buss',
+    slug: 'gjelder-buss',
+    category: 'underskilt',
+    imagePath: '/signs/underskilt/skilt-807-3-symbol-buss.jpg',
+    shortExplanation: 'Viser at hovedskiltets regulering eller unntak kun gjelder for busser.',
+    longExplanation: 'Dette underskiltet presiserer at reguleringen på hovedskiltet kun gjelder for busser. Dette brukes ofte for å reservere parkeringsplasser for buss, eller for å opprette særskilte kjøreforbud eller påbud for store passasjerkjøretøy.',
+    theoryTrap: 'Hvis skiltet står under et parkeringsskilt, har personbiler ikke lov til å parkere der – plassen er reservert utelukkende for busser. Mange overser dette og får parkeringsgebyr.',
+    whatToDo: [
+      'Unngå å bruke plasser eller felt som er reservert for buss via dette skiltet dersom du kjører personbil.',
+      'Vis ekstra oppmerksomhet overfor busser i nærheten av slike soner.'
+    ],
+    confusedWith: ['807.1'],
+    sources: [
+      { name: 'Statens vegvesen', url: 'https://www.vegvesen.no' },
+      { name: 'Lovdata', url: 'https://lovdata.no/dokument/SF/forskrift/2005-10-07-1219' }
+    ],
+    aliases: ['underskilt', 'buss', 'gjelder', 'kjøretøygruppe', 'kollektiv'],
+    combinations: [
+      {
+        mainSignCode: '372',
+        mainSignName: 'Parkering forbudt',
+        mainSignImagePath: '/signs/forbudsskilt/skilt-372-parkering-forbudt.jpg',
+        relationType: 'Unntak',
+        combinedMeaning: 'Det er parkering forbudt for alle kjøretøy, unntatt busser, som har dispensasjon til å parkere på stedet.'
+      }
+    ]
+  },
+  {
+    id: '807.6',
+    code: '807.6',
+    name: 'Symbol sykkel',
+    displayName: 'Symbol sykkel',
+    slug: 'gjelder-sykkel',
+    category: 'underskilt',
+    imagePath: '/signs/underskilt/skilt-807-6-symbol-sykkel.jpg',
+    shortExplanation: 'Viser at hovedskiltets regulering eller unntak gjelder for syklister.',
+    longExplanation: 'Dette underskiltet presiserer at reguleringen på hovedskiltet gjelder for syklende, eller at de har unntak fra den. Det brukes hyppig sammen med "Gjelder ikke" under forbudsskilt (for eksempel innkjøring forbudt) for å tillate toveissykling i enveiskjørte gater.',
+    theoryTrap: 'Husk at dersom det står "Gjelder ikke" sammen med sykkelsymbolet under et forbudsskilt, betyr det at syklende har lov til å bryte forbudet. Les alltid hele skiltkombinasjonen under ett.',
+    whatToDo: [
+      'Vær oppmerksom på syklende dersom skiltet viser at de er unntatt fra enveiskjøring.',
+      'Sjekk kryssende sykkeltrafikk ekstra nøye.'
+    ],
+    confusedWith: ['826'],
+    sources: [
+      { name: 'Statens vegvesen', url: 'https://www.vegvesen.no' },
+      { name: 'Lovdata', url: 'https://lovdata.no/dokument/SF/forskrift/2005-10-07-1219' }
+    ],
+    aliases: ['underskilt', 'sykkel', 'syklende', 'gjelder', 'unntak'],
+    combinations: [
+      {
+        mainSignCode: '302',
+        mainSignName: 'Innkjøring forbudt',
+        mainSignImagePath: '/signs/forbudsskilt/skilt-302-innkjoring-forbudt.jpg',
+        relationType: 'Unntak',
+        combinedMeaning: 'Innkjøring er forbudt for alle motorvogner, men syklende har unntak og kan sykle inn mot kjøreretningen (toveissykling).'
+      }
+    ]
+  },
+  {
+    id: '807.8',
+    code: '807.8',
+    name: 'Symbol forflytningshemmede',
+    displayName: 'Symbol forflytningshemmede',
+    slug: 'gjelder-forflytningshemmede',
+    category: 'underskilt',
+    imagePath: '/signs/underskilt/skilt-807-8-symbol-forflytningshemmede.jpg',
+    shortExplanation: 'Viser at hovedskiltet (som oftest parkering) kun gjelder for forflytningshemmede med særskilt parkeringstillatelse.',
+    longExplanation: 'Dette underskiltet presiserer at en parkeringsplass er reservert for bilister med nedsatt funksjonsevne. For å kunne parkere på disse plassene må kjøretøyet ha en gyldig, offentlig parkeringstillatelse (HC-kort) godt synlig plassert i frontruten.',
+    theoryTrap: 'Det er ikke tillatt å stanse eller parkere på disse plassene "bare et øyeblikk" for å løpe et ærend eller slippe av noen, med mindre kjøretøyet og føreren/passasjeren har gyldig HC-kort.',
+    whatToDo: [
+      'La disse plassene stå ledige med mindre du transporterer en person med gyldig HC-kort.',
+      'Plasser tillatelsen godt synlig i frontruten dersom du har rett til å parkere her.'
+    ],
+    confusedWith: [],
+    sources: [
+      { name: 'Statens vegvesen', url: 'https://www.vegvesen.no' },
+      { name: 'Lovdata', url: 'https://lovdata.no/dokument/SF/forskrift/2005-10-07-1219' }
+    ],
+    aliases: ['underskilt', 'forflytningshemmede', 'hc', 'handikap', 'parkering', 'gjelder'],
+    combinations: [
+      {
+        mainSignCode: '552',
+        mainSignName: 'Parkering',
+        mainSignImagePath: '/signs/opplysningsskilt/skilt-552-parkering.jpg',
+        relationType: 'Brukergruppe',
+        combinedMeaning: 'Parkeringsplassen er reservert for bilister med nedsatt funksjonsevne. Kjøretøyet må ha et gyldig, offentlig HC-kort liggende godt synlig i frontruten.'
+      }
+    ]
+  },
+  {
+    id: '807.10',
+    code: '807.10',
+    name: 'Symbol liten elektrisk motorvogn',
+    displayName: 'Symbol liten elektrisk motorvogn',
+    slug: 'liten-elektrisk-motorvogn',
+    category: 'underskilt',
+    imagePath: '/signs/underskilt/skilt-807-10-symbol-liten-elektrisk-motorvogn.png',
+    shortExplanation: 'Viser at hovedskiltets regulering eller unntak gjelder for små elektriske motorvogner som elsparkesykler.',
+    longExplanation: 'Dette underskiltet presiserer at hovedskiltets regler gjelder for små elektriske motorvogner (for eksempel elsparkesykkel). Det brukes ofte under forbudsskilt eller parkeringsskilt for å regulere ferdsel eller parkering av disse kjøretøyene i bysoner.',
+    theoryTrap: 'Mange antar at små elektriske motorvogner alltid reguleres nøyaktig som tråsykler. Dette skiltet viser at myndighetene kan innføre egne særskilte forbud eller regler kun for elsparkesykler.',
+    whatToDo: [
+      'Følg de angitte reguleringene dersom du kjører elsparkesykkel.',
+      'Vær oppmerksom på slike soner i bykjerner der elsparkesykling kan være forbudt.'
+    ],
+    confusedWith: ['807.6'],
+    sources: [
+      { name: 'Statens vegvesen', url: 'https://www.vegvesen.no' },
+      { name: 'Lovdata', url: 'https://lovdata.no/dokument/SF/forskrift/2005-10-07-1219' }
+    ],
+    aliases: ['underskilt', 'liten elektrisk motorvogn', 'elsparkesykkel', 'sparkesykkel', 'gjelder', 'sone'],
+    combinations: [
+      {
+        mainSignCode: '306.6',
+        mainSignName: 'Forbudt for syklende',
+        mainSignImagePath: '/signs/forbudsskilt/skilt-306-6-forbudt-for-syklende.jpg',
+        relationType: 'Begrensning',
+        combinedMeaning: 'Det er forbudt å ferdes med både tråsykkel og liten elektrisk motorvogn (som elsparkesykkel) på denne vegen.'
+      }
+    ]
+  },
+  {
+    id: '808',
+    code: '808',
+    name: 'Tekst',
+    displayName: 'Tekst',
+    slug: 'tekstlig-presisering',
+    category: 'underskilt',
+    imagePath: '/signs/underskilt/skilt-808-tekst.jpg',
+    shortExplanation: 'Gir en skriftlig presisering, utvidelse eller begrensning av hovedskiltets gyldighet.',
+    longExplanation: 'Dette underskiltet bruker tekst til å formidle utfyllende regler som ikke kan vises med symboler. Eksempler er "Gjelder ikke buss", "Gjelder til snuplass", "Kun besøkende" eller tidsbegrensninger.',
+    theoryTrap: 'Hovedfellen er å overse teksten eller misforstå unntakene. Teksten modifiserer always hovedskiltet – står det f.eks. "Stans forbudt" med underskilt "Gjelder ikke varebil", betyr det at varebiler kan stanse der for av-/pålessing, men ingen andre.',
+    whatToDo: [
+      'Les teksten på underskiltet grundig.',
+      'Vurder om teksten innebærer et unntak eller en innskjerping for din kjøretøygruppe eller situasjon.'
+    ],
+    confusedWith: [],
+    sources: [
+      { name: 'Statens vegvesen', url: 'https://www.vegvesen.no' },
+      { name: 'Lovdata', url: 'https://lovdata.no/dokument/SF/forskrift/2005-10-07-1219' }
+    ],
+    aliases: ['underskilt', 'tekst', 'gjelder', 'unntak', 'presisering'],
+    combinations: [
+      {
+        mainSignCode: '302',
+        mainSignName: 'Innkjøring forbudt',
+        mainSignImagePath: '/signs/forbudsskilt/skilt-302-innkjoring-forbudt.jpg',
+        relationType: 'Unntak',
+        combinedMeaning: 'Innkjøring er forbudt for alle vanlige motorvogner, men busser og taxier har dispensasjon til å kjøre inn i gaten.'
+      }
+    ]
+  },
+  {
+    id: '810',
+    code: '810',
+    name: 'Svingpil',
+    displayName: 'Svingpil',
+    slug: 'svingpil',
+    category: 'underskilt',
+    imagePath: '/signs/underskilt/skilt-810-svingpil.jpg',
+    shortExplanation: 'Viser at hovedskiltets regulering eller farevarsel gjelder etter at du svinger i pilens retning i neste kryss.',
+    longExplanation: 'Dette underskiltet angir at reguleringen eller faren på hovedskiltet gjelder på den kryssende vegen du svinger inn på, ikke på vegen du befinner deg på nå. Det gir føreren mulighet til å innrette seg før svingen tas.',
+    theoryTrap: 'Reguleringen gjelder ikke på veien du kjører på akkurat nå, men trer i kraft med en gang du svinger inn i krysset.',
+    whatToDo: [
+      'Forbered deg på at forbudet eller faren gjelder umiddelbart etter svingen i krysset.',
+      'Sørg for riktig plassering i kjørefeltet før du svinger.'
+    ],
+    confusedWith: ['828.1', '828.2'],
+    sources: [
+      { name: 'Statens vegvesen', url: 'https://www.vegvesen.no' },
+      { name: 'Lovdata', url: 'https://lovdata.no/dokument/SF/forskrift/2005-10-07-1219' }
+    ],
+    aliases: ['underskilt', 'svingpil', 'retning', 'pil', 'gjelder'],
+    combinations: [
+      {
+        mainSignCode: '372',
+        mainSignName: 'Parkering forbudt',
+        mainSignImagePath: '/signs/forbudsskilt/skilt-372-parkering-forbudt.jpg',
+        relationType: 'Retningsbegrensning',
+        combinedMeaning: 'Parkeringsforbudet gjelder ikke rett frem på denne vegen, men trer i kraft på den tverrgående vegen umiddelbart etter at du svinger til høyre i neste vegkryss.'
+      }
+    ]
+  },
+  {
+    id: '812',
+    code: '812',
+    name: 'Anbefalt fart',
+    displayName: 'Anbefalt fart',
+    slug: 'anbefalt-fart',
+    category: 'underskilt',
+    imagePath: '/signs/underskilt/skilt-812-anbefalt-fart.jpg',
+    shortExplanation: 'Viser den anbefalte høyeste hastigheten under normale forhold ved passering av et faremoment.',
+    longExplanation: 'Dette underskiltet plasseres under et fareskilt (for eksempel for svinger eller humper) for å angi hvilken hastighet som er trygg og hensiktsmessig under gode kjøreforhold. Denne hastigheten er lavere enn den generelle eller skiltede fartsgrensen på veien.',
+    theoryTrap: 'Dette is en anbefaling for din egen sikkerhet, ikke en formell fartsgrense. Du får ikke bot for å kjøre i f.eks. 60 km/t hvis anbefalt fart er 50 (så fremt fartsgrensen tillater det), men du risikerer ulykker og kan bli holdt erstatningsansvarlig ved uaktsom kjøring.',
+    whatToDo: [
+      'Tilpass og reduser hastigheten til den anbefalte verdien før du når faremomentet.',
+      'Husk at ved dårlig sikt eller glatt vegbane må du kjøre enda saktere enn anbefalt.'
+    ],
+    confusedWith: [],
+    sources: [
+      { name: 'Statens vegvesen', url: 'https://www.vegvesen.no' },
+      { name: 'Lovdata', url: 'https://lovdata.no/dokument/SF/forskrift/2005-10-07-1219' }
+    ],
+    aliases: ['underskilt', 'anbefalt fart', 'fart', 'hastighet', 'fartsgrense', 'sving'],
+    combinations: [
+      {
+        mainSignCode: '100.1',
+        mainSignName: 'Farlig sving til høyre',
+        mainSignImagePath: '/signs/fareskilt/skilt-100-1-farlig-sving-til-hoyre.jpg',
+        relationType: 'Anbefalt hastighet',
+        combinedMeaning: 'Det varsles om en farlig, skarp sving til høyre forut. Det anbefales å redusere farten til 50 km/t eller lavere før du kjører inn i svingen.'
+      }
+    ]
+  },
+  {
+    id: '822.1',
+    code: '822.1',
+    name: 'Forløp av forkjørsveg',
+    displayName: 'Forløp av forkjørsveg',
+    slug: 'forlop-av-forkjorsveg',
+    category: 'underskilt',
+    imagePath: '/signs/underskilt/skilt-822-1-forlop-av-forkjorsveg.jpg',
+    shortExplanation: 'Viser hvordan den prioriterte forkjørsvegen svinger eller forløper gjennom krysset.',
+    longExplanation: 'Dette underskiltet står under forkjørsvegskilt (206) eller vikepliktsskilt (202) for å visualisere kjøremønsteret i krysset. Den tykke, svarte streken viser hvilken retning forkjørsvegen tar, mens de tynne strekene viser sideveger der trafikken har vikeplikt.',
+    theoryTrap: 'Selv om du følger den prioriterte forkjørsvegen (tykk strek) og svinger gjennom krysset, må du bruke retningsendringssignal (blinklys). Husk også at trafikken fra de tynne strekene har vikeplikt for deg, uansett hvilken side de kommer fra.',
+    whatToDo: [
+      'Følg den tykke linjen for å beholde forkjørsretten din gjennom krysset.',
+      'Husk å bruke blinklys dersom du svinger ut av din opprinnelige kjøreretning, selv om du følger den tykke linjen.',
+      'Kjørende på sidevegene (tynne linjer) har vikeplikt for deg.'
+    ],
+    confusedWith: [],
+    sources: [
+      { name: 'Statens vegvesen', url: 'https://www.vegvesen.no' },
+      { name: 'Lovdata', url: 'https://lovdata.no/dokument/SF/forskrift/2005-10-07-1219' }
+    ],
+    aliases: ['underskilt', 'forløp av forkjørsveg', 'forkjørsvei', 'kryss', 'vikeplikt', 'strekning'],
+    combinations: [
+      {
+        mainSignCode: '202',
+        mainSignName: 'Vikeplikt',
+        mainSignImagePath: '/signs/vikeplikt-og-forkjorsskilt/skilt-202-vikeplikt.jpg',
+        relationType: 'Vegforløp',
+        combinedMeaning: 'Du har vikeplikt i krysset. Den prioriterte forkjørsvegen går i en sving til venstre (tykk strek). Du har full vikeplikt for all trafikk som kommer langs denne prioriterte ruten.'
+      }
+    ]
+  },
+  {
+    id: '824',
+    code: '824',
+    name: 'Forvarsling av stopp',
+    displayName: 'Forvarsling av stopp',
+    slug: 'forvarsling-av-stopp',
+    category: 'underskilt',
+    imagePath: '/signs/underskilt/skilt-824-forvarsling-av-stopp.jpg',
+    shortExplanation: 'Varsler på forhånd om at du har vikeplikt og må stoppe helt ved neste stoppskilt.',
+    longExplanation: 'Dette underskiltet er plassert under et vanlig vikepliktsskilt (202) for å advare om at det neste krysset er regulert med et stoppskilt (204). Skiltet angir avstanden i meter frem til krysset der du har absolutt stanseplikt.',
+    theoryTrap: 'Du trenger ikke stoppe der dette skiltet står montert. Dette er kun et forvarsel. Du skal bremse rolig ned og stanse helt først når du når selve stoppskiltet og stopplinjen efter det angitte antall meter.',
+    whatToDo: [
+      'Begynn å senke farten kontrollert etter at du har passert skiltet.',
+      'Forbered deg på å stanse kjøretøyet fullstendig foran stopplinjen i neste kryss.'
+    ],
+    confusedWith: ['802'],
+    sources: [
+      { name: 'Statens vegvesen', url: 'https://www.vegvesen.no' },
+      { name: 'Lovdata', url: 'https://lovdata.no/dokument/SF/forskrift/2005-10-07-1219' }
+    ],
+    aliases: ['underskilt', 'forvarsling av stopp', 'stopp', 'vikeplikt', 'avstand'],
+    combinations: [
+      {
+        mainSignCode: '202',
+        mainSignName: 'Vikeplikt',
+        mainSignImagePath: '/signs/vikeplikt-og-forkjorsskilt/skilt-202-vikeplikt.jpg',
+        relationType: 'Forvarsling',
+        combinedMeaning: 'Varsler om at krysset 150 meter lenger fremme har et stoppskilt (204). Du må tilpasse farten og forberede deg på å stanse helt opp foran stopplinjen i krysset.'
+      }
+    ]
+  },
+  {
+    id: '826',
+    code: '826',
+    name: 'Sykkeltrafikk i begge kjøreretninger',
+    displayName: 'Sykkeltrafikk i begge kjøreretninger',
+    slug: 'toveis-sykkeltrafikk',
+    category: 'underskilt',
+    imagePath: '/signs/underskilt/skilt-826-sykkeltrafikk-i-begge-kjoreretninger.jpg',
+    shortExplanation: 'Advarer om at syklister har tillatelse til å sykle i begge retninger på veien eller i kryssende gate.',
+    longExplanation: 'Dette underskiltet presiserer at syklende har lov til å sykle i begge retninger på strekningen. Dette brukes ofte i enveiskjørte gater der syklister er unntatt fra enveiskjøringen, slik at bilister må forvente møtende syklister.',
+    theoryTrap: 'Selv om veien er markert som enveiskjørt for biler, opphever dette skiltet enveiskjøringen for syklister. Du må aldri anta at gaten er tom i motgående retning.',
+    whatToDo: [
+      'Plasser kjøretøyet ditt slik at det er tilstrekkelig plass til møtende syklister.',
+      'Vær spesielt oppmerksom på syklende som kommer imot kjøreretningen når du skal svinge i kryss.'
+    ],
+    confusedWith: ['807.6'],
+    sources: [
+      { name: 'Statens vegvesen', url: 'https://www.vegvesen.no' },
+      { name: 'Lovdata', url: 'https://lovdata.no/dokument/SF/forskrift/2005-10-07-1219' }
+    ],
+    aliases: ['underskilt', 'sykkeltrafikk i begge kjøreretninger', 'sykkel', 'toveis', 'retning', 'strekning'],
+    combinations: [
+      {
+        mainSignCode: '526.1',
+        mainSignName: 'Envegskjøring',
+        mainSignImagePath: '/signs/opplysningsskilt/skilt-526-1-envegskjoring.jpg',
+        relationType: 'Vegtype unntak',
+        combinedMeaning: 'Gaten er enveiskjørt for biler, men syklister har tillatelse til å sykle i begge retninger (mot kjøreretningen). Du må vike og gi plass til møtende syklende.'
+      }
+    ]
+  },
+  {
+    id: '828.1',
+    code: '828.1',
+    name: 'Utstrekning av stans- og parkeringsregulering (Start)',
+    displayName: 'Utstrekning av stans- og parkeringsregulering (Start)',
+    slug: 'start-pa-parkeringsregulering',
+    category: 'underskilt',
+    imagePath: '/signs/underskilt/skilt-828-1-utstrekning-av-stans-og-parkeringsregulering.jpg',
+    shortExplanation: 'Viser at stans- eller parkeringsreguleringen starter ved skiltet og gjelder fremover i pilens retning.',
+    longExplanation: 'Dette underskiltet presiserer starten på en regulering for stans eller parkering. Pilen peker oppover (eller fremover), noe som betyr at forbudet eller tillatelsen gjelder fra skiltet og i kjøreretningen fremover langs kanten.',
+    theoryTrap: 'Mange forveksler start (pil opp, skilt 828.1) med slutt (pil ned, skilt 828.2). Parkerer du rett før dette skiltet, rammes du ikke av reguleringen fremover (med mindre andre generelle regler forbyr det).',
+    whatToDo: [
+      'Husk at reguleringen (for eksempel et stansforbud) gjelder fra skiltet og videre fremover in den retningen pilen peker.'
+    ],
+    confusedWith: ['828.2', '828.3', '810'],
+    sources: [
+      { name: 'Statens vegvesen', url: 'https://www.vegvesen.no' },
+      { name: 'Lovdata', url: 'https://lovdata.no/dokument/SF/forskrift/2005-10-07-1219' }
+    ],
+    aliases: ['underskilt', 'start på parkeringsregulering', 'parkering', 'stans', 'retning', 'strekning', 'pil'],
+    combinations: [
+      {
+        mainSignCode: '370',
+        mainSignName: 'Stans forbudt',
+        mainSignImagePath: '/signs/forbudsskilt/skilt-370-stans-forbudt.jpg',
+        relationType: 'Grense / Start',
+        combinedMeaning: 'Stansforbudet gjelder fra der skiltstolpen står og videre fremover langs denne siden av vegen.'
+      }
+    ]
+  },
+  {
+    id: '828.2',
+    code: '828.2',
+    name: 'Utstrekning av stans- og parkeringsregulering (Slutt)',
+    displayName: 'Utstrekning av stans- og parkeringsregulering (Slutt)',
+    slug: 'slutt-pa-parkeringsregulering',
+    category: 'underskilt',
+    imagePath: '/signs/underskilt/skilt-828-2-utstrekning-av-stans-og-parkeringsregulering.jpg',
+    shortExplanation: 'Viser at stans- eller parkeringsreguleringen opphører ved skiltet.',
+    longExplanation: 'Dette underskiltet presiserer slutten på en regulering. Pilen peker nedover (eller bakover), noe som indikerer at stans- eller parkeringsreguleringen gjaldt på strekningen fram til dette skiltet, og at den opphører her.',
+    theoryTrap: 'Pilen som peker ned betyr at forbudet slutter. Det er altså lov å parkere etter dette skiltet, forutsatt at det ikke er i strid med generelle trafikkregler (f.eks. avstand til kryss).',
+    whatToDo: [
+      'Vær oppmerksom på at reguleringen som gjaldt bakover langs vegen nå slutter.',
+      'Du kan parkere etter skiltet om forholdene ellers tillater det.'
+    ],
+    confusedWith: ['828.1', '828.3', '810'],
+    sources: [
+      { name: 'Statens vegvesen', url: 'https://www.vegvesen.no' },
+      { name: 'Lovdata', url: 'https://lovdata.no/dokument/SF/forskrift/2005-10-07-1219' }
+    ],
+    aliases: ['underskilt', 'slutt på parkeringsregulering', 'parkering', 'stans', 'retning', 'strekning', 'pil'],
+    combinations: [
+      {
+        mainSignCode: '370',
+        mainSignName: 'Stans forbudt',
+        mainSignImagePath: '/signs/forbudsskilt/skilt-370-stans-forbudt.jpg',
+        relationType: 'Grense / Slutt',
+        combinedMeaning: 'Stansforbudet som har gjeldt langs denne vegkanten opphører akkurat ved dette skiltet. Du kan stanse etter skiltstolpen.'
+      }
+    ]
+  },
+  {
+    id: '828.3',
+    code: '828.3',
+    name: 'Utstrekning av stans- og parkeringsregulering (Gjeldende)',
+    displayName: 'Utstrekning av stans- og parkeringsregulering (Gjeldende)',
+    slug: 'gjeldende-parkeringsregulering',
+    category: 'underskilt',
+    imagePath: '/signs/underskilt/skilt-828-3-utstrekning-av-stans-og-parkeringsregulering.jpg',
+    shortExplanation: 'Viser at stans- eller parkeringsreguleringen gjelder på begge sider av skiltet.',
+    longExplanation: 'Dette underskiltet bekrefter at reguleringen for stans eller parkering fortsetter å gjelde på begge sider av skiltet (både før og etter). Det har en dobbeltsidig pil som peker både opp og ned for å fungere som en gjentakelse på en lengre strekning.',
+    theoryTrap: 'Det er forbudt å parkere eller stanse både før og etter dette skiltet. Det er plassert der som en påminnelse for at du ikke skal tro reguleringen er over.',
+    whatToDo: [
+      'Respekter at stans- eller parkeringsreguleringen er aktiv på hele denne veistrekningen på begge sider av skiltet.'
+    ],
+    confusedWith: ['828.1', '828.2', '810'],
+    sources: [
+      { name: 'Statens vegvesen', url: 'https://www.vegvesen.no' },
+      { name: 'Lovdata', url: 'https://lovdata.no/dokument/SF/forskrift/2005-10-07-1219' }
+    ],
+    aliases: ['underskilt', 'gjeldende parkeringsregulering', 'parkering', 'stans', 'retning', 'strekning', 'pil'],
+    combinations: [
+      {
+        mainSignCode: '370',
+        mainSignName: 'Stans forbudt',
+        mainSignImagePath: '/signs/forbudsskilt/skilt-370-stans-forbudt.jpg',
+        relationType: 'Gjentakelse',
+        combinedMeaning: 'Stansforbudet gjelder både før og etter dette skiltet (bekrefter at forbudet fortsatt løper på denne strekningen).'
+      }
+    ]
+  },
+  {
+    id: '829',
+    code: '829',
+    name: 'Oppstilling av parkert kjøretøy',
+    displayName: 'Oppstilling av parkert kjøretøy',
+    slug: 'oppstillingsmate',
+    category: 'underskilt',
+    imagePath: '/signs/underskilt/skilt-829-oppstilling-av-parkert-kjoretoy.jpg',
+    shortExplanation: 'Angir hvilken retning og vinkel kjøretøyet skal parkeres i på den oppmerkede plassen.',
+    longExplanation: 'Dette underskiltet presiserer oppstillingsmåten for kjøretøy på en parkeringsplass. Symbolet viser om bilene skal parkeres parallelt med vegen, vinkelrett på den, eller på skrå inn mot fortauskanten.',
+    theoryTrap: 'Det er en vanlig kilde til parkeringsgebyr å parkere i strid med dette skiltet. Dersom skiltet for eksempel viser skråparkering, er det ikke tillatt å parkere parallelt, selv om det fysisk er plass.',
+    whatToDo: [
+      'Still opp kjøretøyet ditt nøyaktig slik som symbolet på underskiltet viser.',
+      'Sørg for at bilen står innenfor eventuelle oppmerkede linjer på bakken.'
+    ],
+    confusedWith: [],
+    sources: [
+      { name: 'Statens vegvesen', url: 'https://www.vegvesen.no' },
+      { name: 'Lovdata', url: 'https://lovdata.no/dokument/SF/forskrift/2005-10-07-1219' }
+    ],
+    aliases: ['underskilt', 'oppstillingsmåte', 'parkering', 'gjelder'],
+    combinations: [
+      {
+        mainSignCode: '552',
+        mainSignName: 'Parkering',
+        mainSignImagePath: '/signs/opplysningsskilt/skilt-552-parkering.jpg',
+        relationType: 'Oppstillingsmåte',
+        combinedMeaning: 'Det er tillatt å parkere, men bilene skal plasseres i skrå stilling mot fortauskanten slik symbolet på underskiltet viser.'
+      }
+    ]
+  },
+  {
+    id: '831',
+    code: '831',
+    name: 'Parkeringsskive / gratisbillett',
+    displayName: 'Parkeringsskive / gratisbillett',
+    slug: 'parkeringsskive',
+    category: 'underskilt',
+    imagePath: '/signs/underskilt/skilt-831-parkeringsskive-gratisbillett.jpg',
+    shortExplanation: 'Viser at parkeringen er tidsbegrenset og krever bruk av parkeringsskive eller registrering for å dokumentere ankomsttid.',
+    longExplanation: 'Dette underskiltet forteller at du kan parkere gratis i en angitt tidsperiode, men at du må dokumentere når du parkerte. Dette gjøres ved å stille inn en parkeringsskive i frontruten på ankomsttidspunktet (rundet opp to nærmeste halvtime), legge en synlig lapp med tidspunkt, eller registrere det på parkeringsautomat/app.',
+    theoryTrap: 'Selv om parkeringen er gratis, kan du bli bøtelagt dersom du glemmer å stille parkeringsskiven eller registrere ankomsten digitalt. Fellen er å tro at du slipper unna fordi det ikke koster penger.',
+    whatToDo: [
+      'Still inn parkeringsskiven og plasser den godt synlig bak frontruten med en gang du parkerer.',
+      'Alternativt henter du en gratisbillett fra automaten eller registrerer ankomsttiden i parkeringsappen.'
+    ],
+    confusedWith: ['834'],
+    sources: [
+      { name: 'Statens vegvesen', url: 'https://www.vegvesen.no' },
+      { name: 'Lovdata', url: 'https://lovdata.no/dokument/SF/forskrift/2005-10-07-1219' }
+    ],
+    aliases: ['underskilt', 'parkeringsskive', 'gratisbillett', 'parkering', 'klokkeslett', 'tid'],
+    combinations: [
+      {
+        mainSignCode: '552',
+        mainSignName: 'Parkering',
+        mainSignImagePath: '/signs/opplysningsskilt/skilt-552-parkering.jpg',
+        relationType: 'Dokumentasjon',
+        combinedMeaning: 'Det er gratis parkering, men du har plikt til å dokumentere ankomsttidspunktet med parkeringsskive eller parkeringsapp.'
+      }
+    ]
+  },
+  {
+    id: '834',
+    code: '834',
+    name: 'Kombinert regulering',
+    displayName: 'Kombinert regulering',
+    slug: 'kombinert-regulering',
+    category: 'underskilt',
+    imagePath: '/signs/underskilt/skilt-834-kombinert-regulering.jpg',
+    shortExplanation: 'Viser flere reguleringer som gjelder samtidig under hovedskiltet.',
+    longExplanation: 'Dette underskiltet angir flere parallelle regler for stedet, som for eksempel tidsbegrenset parkering mot avgift innenfor visse klokkeslett, eller at det kun gjelder for visse kjøretøygrupper.',
+    theoryTrap: 'Du må oppfylle alle de oppførte kravene samtidig. Hvis det kreves avgift og det er en tidsbegrensning i et klokkeslett, er begge deler aktive i den perioden.',
+    whatToDo: [
+      'Les alle delene av underskiltet under ett.',
+      'Sørg for å overholde samtlige betingelser (for eksempel betale avgift og registrere parkeringsskive).'
+    ],
+    confusedWith: ['831'],
+    sources: [
+      { name: 'Statens vegvesen', url: 'https://www.vegvesen.no' },
+      { name: 'Lovdata', url: 'https://lovdata.no/dokument/SF/forskrift/2005-10-07-1219' }
+    ],
+    aliases: ['underskilt', 'kombinert regulering', 'parkering', 'avgift', 'tid', 'klokkeslett', 'gjelder'],
+    combinations: [
+      {
+        mainSignCode: '552',
+        mainSignName: 'Parkering',
+        mainSignImagePath: '/signs/opplysningsskilt/skilt-552-parkering.jpg',
+        relationType: 'Betingelser',
+        combinedMeaning: 'Det er parkering mot avgift i tidsrommene som oppgis (f.eks. hverdager 08-17), og parkering er begrenset til maksimalt 2 timer.'
+      }
+    ]
   }
 ];
