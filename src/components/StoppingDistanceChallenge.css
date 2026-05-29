@@ -155,6 +155,25 @@ body:not(.dark-mode) .simulator-section {
   min-height: 24px;
 }
 
+.simulator-title-group {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  flex-wrap: wrap;
+}
+
+.scenario-badges.header-badges {
+  margin-bottom: 0;
+  gap: 8px;
+}
+
+.header-badges .scenario-badge {
+  padding: 4px 10px;
+  font-size: 0.8rem;
+  border-radius: 8px;
+  box-shadow: none;
+}
+
 .reaction-flash-indicator {
   background: #ef4444;
   color: white;
@@ -1194,6 +1213,17 @@ input[type="range"].stopplengde-slider-tactile::-moz-range-thumb:hover {
     padding-top: 12px;
   }
 
+  /* Hide decorative content on mobile for compact viewport */
+  .stopping-distance-challenge .kicker,
+  .stopping-distance-challenge .challenge-title,
+  .stopping-distance-challenge .intro,
+  .challenge-head h2,
+  .challenge-head .subtitle,
+  .task-description,
+  .hide-on-mobile {
+    display: none !important;
+  }
+
   .site-bar {
     align-items: flex-start;
     flex-direction: column;
@@ -1207,7 +1237,8 @@ input[type="range"].stopplengde-slider-tactile::-moz-range-thumb:hover {
 
   .challenge-head {
     grid-template-columns: 1fr;
-    padding: 16px;
+    padding: 10px 16px;
+    border-bottom: none;
   }
 
   .game-stats {
@@ -1215,15 +1246,20 @@ input[type="range"].stopplengde-slider-tactile::-moz-range-thumb:hover {
   }
 
   .challenge-dashboard {
-    padding: 16px;
+    padding: 10px;
+    gap: 12px;
+  }
+
+  .simulator-section {
+    padding: 12px 10px;
   }
 
   .road {
-    height: 160px;
+    height: 120px;
   }
 
   .car {
-    bottom: 46px;
+    bottom: 30px;
     width: 94px;
     height: 43px;
   }
@@ -1235,20 +1271,40 @@ input[type="range"].stopplengde-slider-tactile::-moz-range-thumb:hover {
 
   @keyframes grow-in-mobile {
     from { height: 0; opacity: 0; }
-    to { height: 86px; opacity: 1; }
+    to { height: 62px; opacity: 1; }
   }
 
-  .stop-marker { bottom: 18px; }
-  .guess-marker { bottom: 18px; }
+  .stop-marker { bottom: 8px; }
+  .guess-marker { bottom: 8px; }
   
   .segment {
-    bottom: 30px;
-    height: 10px;
+    bottom: 18px;
+    height: 8px;
   }
 
   .legend-bar {
     gap: 8px 12px;
     font-size: 0.78rem;
+    margin: 8px 0 0;
+    padding-top: 8px;
+  }
+
+  .task-panel,
+  .feedback-details-panel {
+    padding: 14px;
+  }
+
+  .slider-container-box {
+    margin: 8px 0;
+    padding: 10px;
+  }
+
+  .guess-display {
+    margin-bottom: 8px;
+  }
+
+  .guess-display .number {
+    font-size: 2rem;
   }
 
   .slider-wrapper {
@@ -1261,10 +1317,6 @@ input[type="range"].stopplengde-slider-tactile::-moz-range-thumb:hover {
     font-size: 1.2rem;
   }
 
-  .guess-display .number {
-    font-size: 2.3rem;
-  }
-
   .action-btn {
     flex: 1 1 100%;
   }
@@ -1275,5 +1327,10 @@ input[type="range"].stopplengde-slider-tactile::-moz-range-thumb:hover {
   
   .breakdown-row .value-text {
     font-size: 1.05rem;
+  }
+
+  .slider-instruction {
+    margin-top: 6px;
+    font-size: 0.8rem;
   }
 }

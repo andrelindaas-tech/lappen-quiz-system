@@ -60,6 +60,42 @@ export default function App() {
         navigate('/')
     }
 
+    const [showHeader, setShowHeader] = useState(true)
+    const [lastScrollY, setLastScrollY] = useState(0)
+
+    // Reset header visibility on page/route transition
+    useEffect(() => {
+        setShowHeader(true)
+    }, [location.pathname])
+
+    // Track scroll direction to hide header on scroll down, show on scroll up on mobile
+    useEffect(() => {
+        const handleScroll = () => {
+            const currentScrollY = window.scrollY
+            
+            // Keep header visible when close to the top
+            if (currentScrollY < 80) {
+                setShowHeader(true)
+                setLastScrollY(currentScrollY)
+                return
+            }
+
+            if (currentScrollY > lastScrollY) {
+                // Scrolling down -> hide header
+                setShowHeader(false)
+            } else {
+                // Scrolling up -> show header
+                setShowHeader(true)
+            }
+            setLastScrollY(currentScrollY)
+        }
+
+        window.addEventListener('scroll', handleScroll, { passive: true })
+        return () => {
+            window.removeEventListener('scroll', handleScroll)
+        }
+    }, [lastScrollY])
+
     // Send GA4 page_view for SPA navigation and close mobile menu on route transitions
     useEffect(() => {
         if (typeof gtag !== 'undefined') {
@@ -82,17 +118,16 @@ export default function App() {
                 <link rel="canonical" href={"https://teori-test.no" + location.pathname} />
                 <meta property="og:url" content={`https://teori-test.no${location.pathname}`} />
             </Helmet>
-            <header style={{
-                position: 'sticky',
-                top: 0,
-                zIndex: 100,
-                backgroundColor: 'var(--color-header-bg)',
-                backdropFilter: 'blur(16px)',
-                WebkitBackdropFilter: 'blur(16px)',
-                borderBottom: '1px solid var(--color-border)',
-                padding: '0.85rem 0',
-                transition: 'background-color 0.3s ease, border-color 0.3s ease'
-            }}>
+            
+            <div className={`sticky-header-wrapper ${!showHeader ? 'header-hidden' : ''}`}>
+                <header style={{
+                    backgroundColor: 'var(--color-header-bg)',
+                    backdropFilter: 'blur(16px)',
+                    WebkitBackdropFilter: 'blur(16px)',
+                    borderBottom: '1px solid var(--color-border)',
+                    padding: '0.85rem 0',
+                    transition: 'background-color 0.3s ease, border-color 0.3s ease'
+                }}>
                 <div className="section-container" style={{
                     display: 'flex',
                     justifyContent: 'space-between',
@@ -157,49 +192,52 @@ export default function App() {
                 </div>
             </header>
 
-            <div className="sub-navigation">
-                <div className="sub-nav-container">
-                    <div className="sub-nav-scroll-wrapper">
-                        <div className="sub-nav-chips">
-                            <Link
-                                to="/"
-                                className={`sub-nav-chip ${location.pathname === '/' ? 'active' : ''}`}
-                            >
-                                <span className="sub-nav-chip-icon">
-                                    <ClipboardCheck size={16} strokeWidth={2.2} />
-                                </span>
-                                Øvingsprøve
-                            </Link>
-                            <Link
-                                to="/trafikkskilt"
-                                className={`sub-nav-chip ${location.pathname.startsWith('/trafikkskilt') ? 'active' : ''}`}
-                            >
-                                <span className="sub-nav-chip-icon">
-                                    <Signpost size={16} strokeWidth={2.2} />
-                                </span>
-                                Skiltguide
-                            </Link>
-                            <Link
-                                to="/laeringsressurser"
-                                className={`sub-nav-chip ${location.pathname.startsWith('/laeringsressurser') ? 'active' : ''}`}
-                            >
-                                <span className="sub-nav-chip-icon">
-                                    <BookOpen size={16} strokeWidth={2.2} />
-                                </span>
-                                Artikler
-                            </Link>
-                            <Link
-                                to="/laeringsspill"
-                                className={`sub-nav-chip ${location.pathname.startsWith('/laeringsspill') ? 'active' : ''}`}
-                            >
-                                <span className="sub-nav-chip-icon">
-                                    <Gamepad2 size={16} strokeWidth={2.2} />
-                                </span>
-                                Minispill
-                            </Link>
+            {!location.pathname.startsWith('/quiz') && location.pathname !== '/laeringsspill/stopplengde' && (
+                <div className="sub-navigation">
+                    <div className="sub-nav-container">
+                        <div className="sub-nav-scroll-wrapper">
+                            <div className="sub-nav-chips">
+                                <Link
+                                    to="/"
+                                    className={`sub-nav-chip ${location.pathname === '/' ? 'active' : ''}`}
+                                >
+                                    <span className="sub-nav-chip-icon">
+                                        <ClipboardCheck size={16} strokeWidth={2.2} />
+                                    </span>
+                                    Øvingsprøve
+                                </Link>
+                                <Link
+                                    to="/trafikkskilt"
+                                    className={`sub-nav-chip ${location.pathname.startsWith('/trafikkskilt') ? 'active' : ''}`}
+                                >
+                                    <span className="sub-nav-chip-icon">
+                                        <Signpost size={16} strokeWidth={2.2} />
+                                    </span>
+                                    Skiltguide
+                                </Link>
+                                <Link
+                                    to="/laeringsressurser"
+                                    className={`sub-nav-chip ${location.pathname.startsWith('/laeringsressurser') ? 'active' : ''}`}
+                                >
+                                    <span className="sub-nav-chip-icon">
+                                        <BookOpen size={16} strokeWidth={2.2} />
+                                    </span>
+                                    Artikler
+                                </Link>
+                                <Link
+                                    to="/laeringsspill"
+                                    className={`sub-nav-chip ${location.pathname.startsWith('/laeringsspill') ? 'active' : ''}`}
+                                >
+                                    <span className="sub-nav-chip-icon">
+                                        <Gamepad2 size={16} strokeWidth={2.2} />
+                                    </span>
+                                    Minispill
+                                </Link>
+                            </div>
                         </div>
                     </div>
                 </div>
+            )}
             </div>
 
             <main>

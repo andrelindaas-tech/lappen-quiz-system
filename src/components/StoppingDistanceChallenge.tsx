@@ -390,7 +390,13 @@ export default function StoppingDistanceChallenge() {
                             {/* Top: Large cinematic visual test */}
                             <section className="simulator-section" aria-labelledby="visual-title">
                                 <div className="simulator-header">
-                                    <span className="label" id="visual-title">Visuell simulator</span>
+                                    <div className="simulator-title-group">
+                                        <span className="label" id="visual-title">Visuell simulator</span>
+                                        <div className="scenario-badges header-badges">
+                                            <span className="scenario-badge speed">{currentScenario.speed} km/t</span>
+                                            <span className="scenario-badge surface">{currentScenario.surface}</span>
+                                        </div>
+                                    </div>
                                     {showReactionFlash && (
                                         <div className="reaction-flash-indicator">
                                             <span>! REAKSJON</span>
@@ -523,11 +529,7 @@ export default function StoppingDistanceChallenge() {
                             {/* Bottom: Control Panel split into left inputs and right explanation */}
                             <div className="control-panel">
                                 <section className="task-panel" aria-labelledby="task-title">
-                                    <span className="label" id="task-title">Situasjon</span>
-                                    <div className="scenario-badges">
-                                        <span className="scenario-badge speed">{currentScenario.speed} km/t</span>
-                                        <span className="scenario-badge surface">{currentScenario.surface}</span>
-                                    </div>
+                                    <span className="label hide-on-mobile" id="task-title">Situasjon</span>
                                     <p className="task-description">
                                         Du kjører i {currentScenario.speed} km/t på {currentScenario.surface.toLowerCase()}. Hvor mange meter trenger bilen omtrent før den står stille?
                                     </p>
