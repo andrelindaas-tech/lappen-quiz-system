@@ -295,38 +295,6 @@ const SCENARIOS: Scenario[] = [
     },
     {
         id: 9,
-        title: "Dobbel sperrelinje",
-        question: "Hva betyr denne doble heltrukne gule linjen i midten av veien?",
-        options: [
-            { id: 'a', text: "Det er kun forbudt å krysse fra den siden der linjen er bredest.", isCorrect: false },
-            { id: 'b', text: "Forbud mot å krysse linjen for begge kjøreretninger.", isCorrect: true },
-            { id: 'c', text: "Forbikjøring er tillatt dersom begge sider har fri sikt.", isCorrect: false },
-            { id: 'd', text: "Linjen brukes kun midlertidig ved veiarbeid og har samme virkning som en vanlig midtlinje.", isCorrect: false }
-        ],
-        explanation: "Doble heltrukne gule linjer kalles en dobbel sperrelinje og angir at det er forbudt å krysse linjene eller kjøre til venstre for dem for begge kjøreretninger. Dobbel sperrelinje brukes typisk på firefeltsveier eller tofeltsveier med høy fartsgrense der forbikjøring og kryssing utgjør en særskilt fare.",
-        svg: `
-            <svg viewBox="0 0 600 300" class="w-full h-full rounded-lg bg-[#3f6a3d]">
-                <!-- Asfalt -->
-                <rect x="0" y="40" width="600" height="220" fill="#2c3540" />
-                <!-- Motgående piler -->
-                <path d="M 480 95 L 450 95 M 460 90 L 450 95 L 460 100" stroke="white" stroke-width="3" fill="none" />
-                <path d="M 120 205 L 150 205 M 140 200 L 150 205 L 140 210" stroke="white" stroke-width="3" fill="none" />
-                <!-- Kantlinjer -->
-                <line x1="0" y1="45" x2="600" y2="45" stroke="white" stroke-width="3" />
-                <line x1="0" y1="255" x2="600" y2="255" stroke="white" stroke-width="3" />
-                <!-- Dobbel gul sperrelinje -->
-                <line x1="0" y1="146" x2="600" y2="146" stroke="#facc15" stroke-width="4" />
-                <line x1="0" y1="154" x2="600" y2="154" stroke="#facc15" stroke-width="4" />
-                <!-- Egen bil -->
-                <rect x="200" y="180" width="70" height="40" rx="5" fill="#3b82f6" stroke="white" stroke-width="2" />
-                <text x="235" y="205" fill="white" font-size="14" font-weight="bold" text-anchor="middle">DU</text>
-                <!-- Markeringsring -->
-                <ellipse cx="320" cy="150" rx="170" ry="25" fill="none" stroke="#ef4444" stroke-width="3" stroke-dasharray="8 6" />
-            </svg>
-        `
-    },
-    {
-        id: 10,
         title: "Hvit kantlinje",
         question: "Hva er hovedformålet med denne heltrukne hvite linjen langs veikanten?",
         options: [
@@ -355,7 +323,7 @@ const SCENARIOS: Scenario[] = [
         `
     },
     {
-        id: 11,
+        id: 10,
         title: "Gul kantlinje",
         question: "Hva betyr denne heltrukne gule linjen langs fortauskanten?",
         options: [
@@ -382,6 +350,38 @@ const SCENARIOS: Scenario[] = [
                 <path d="M 100 120 L 130 120 M 120 115 L 130 120 L 120 125" stroke="white" stroke-width="3" fill="none" />
                 <!-- Markeringsring -->
                 <ellipse cx="285" cy="237" rx="110" ry="20" fill="none" stroke="#ef4444" stroke-width="3" stroke-dasharray="8 6" />
+            </svg>
+        `
+    },
+    {
+        id: 11,
+        title: "Dobbel sperrelinje",
+        question: "Hva betyr denne doble heltrukne gule linjen i midten av veien?",
+        options: [
+            { id: 'a', text: "Det er kun forbudt å krysse fra den siden der linjen er bredest.", isCorrect: false },
+            { id: 'b', text: "Forbud mot å krysse linjen for begge kjøreretninger.", isCorrect: true },
+            { id: 'c', text: "Forbikjøring er tillatt dersom begge sider har fri sikt.", isCorrect: false },
+            { id: 'd', text: "Linjen brukes kun midlertidig ved veiarbeid og har samme virkning som en vanlig midtlinje.", isCorrect: false }
+        ],
+        explanation: "Doble heltrukne gule linjer kalles en dobbel sperrelinje og angir at det er forbudt å krysse linjene eller kjøre til venstre for dem for begge kjøreretninger. Dobbel sperrelinje brukes typisk på firefeltsveier eller tofeltsveier med høy fartsgrense der forbikjøring og kryssing utgjør en særskilt fare.",
+        svg: `
+            <svg viewBox="0 0 600 300" class="w-full h-full rounded-lg bg-[#3f6a3d]">
+                <!-- Asfalt -->
+                <rect x="0" y="40" width="600" height="220" fill="#2c3540" />
+                <!-- Motgående piler -->
+                <path d="M 480 95 L 450 95 M 460 90 L 450 95 L 460 100" stroke="white" stroke-width="3" fill="none" />
+                <path d="M 120 205 L 150 205 M 140 200 L 150 205 L 140 210" stroke="white" stroke-width="3" fill="none" />
+                <!-- Kantlinjer -->
+                <line x1="0" y1="45" x2="600" y2="45" stroke="white" stroke-width="3" />
+                <line x1="0" y1="255" x2="600" y2="255" stroke="white" stroke-width="3" />
+                <!-- Dobbel gul sperrelinje -->
+                <line x1="0" y1="146" x2="600" y2="146" stroke="#facc15" stroke-width="4" />
+                <line x1="0" y1="154" x2="600" y2="154" stroke="#facc15" stroke-width="4" />
+                <!-- Egen bil -->
+                <rect x="200" y="180" width="70" height="40" rx="5" fill="#3b82f6" stroke="white" stroke-width="2" />
+                <text x="235" y="205" fill="white" font-size="14" font-weight="bold" text-anchor="middle">DU</text>
+                <!-- Markeringsring -->
+                <ellipse cx="320" cy="150" rx="170" ry="25" fill="none" stroke="#ef4444" stroke-width="3" stroke-dasharray="8 6" />
             </svg>
         `
     },
