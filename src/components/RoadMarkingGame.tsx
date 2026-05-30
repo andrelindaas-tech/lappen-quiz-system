@@ -327,6 +327,35 @@ const SCENARIOS: Scenario[] = [
     },
     {
         id: 10,
+        title: "Hvit kantlinje",
+        question: "Hva er hovedformålet med denne heltrukne hvite linjen langs veikanten?",
+        options: [
+            { id: 'a', text: "Å markere kjørebanens ytterkant og lede sjåføren visuelt.", isCorrect: true },
+            { id: 'b', text: "Å vise at det er forbudt å parkere langs hele veistrekningen.", isCorrect: false },
+            { id: 'c', text: "Å markere at det er en asfaltert sykkelsti for syklister.", isCorrect: false },
+            { id: 'd', text: "Å varsle at det kommer et veikryss eller en avkjørsel om kort tid.", isCorrect: false }
+        ],
+        explanation: "En heltrukken hvit linje langs veikanten kalles en kantlinje (linje 1012). Hovedformålet er å markere grensen for den kjørbare delen av veien (kjørebanen), hjelpe sjåføren med å holde riktig plassering i veibanen, og gi visuell veiledning spesielt i mørket eller under vanskelige siktforhold.",
+        svg: `
+            <svg viewBox="0 0 600 300" class="w-full h-full rounded-lg bg-[#3f6a3d]">
+                <!-- Asfalt -->
+                <rect x="0" y="40" width="600" height="220" fill="#2c3540" />
+                <!-- Motgående piler -->
+                <path d="M 480 205 L 450 205 M 460 200 L 450 205 L 460 210" stroke="white" stroke-width="3" fill="none" />
+                <path d="M 120 95 L 150 95 M 140 90 L 150 95 L 140 100" stroke="white" stroke-width="3" fill="none" />
+                <!-- Gul stiplet delelinje -->
+                <line x1="0" y1="150" x2="600" y2="150" stroke="#facc15" stroke-width="6" stroke-dasharray="20 20" />
+                <!-- Hvite heltrukne kantlinjer -->
+                <line x1="0" y1="45" x2="600" y2="45" stroke="white" stroke-width="6" />
+                <line x1="0" y1="255" x2="600" y2="255" stroke="white" stroke-width="6" />
+                <!-- Røde markeringsringer rundt kantlinjene -->
+                <ellipse cx="300" cy="45" rx="180" ry="12" fill="none" stroke="#ef4444" stroke-width="3" stroke-dasharray="8 6" />
+                <ellipse cx="300" cy="255" rx="180" ry="12" fill="none" stroke="#ef4444" stroke-width="3" stroke-dasharray="8 6" />
+            </svg>
+        `
+    },
+    {
+        id: 11,
         title: "Gul kantlinje",
         question: "Hva betyr denne heltrukne gule linjen langs fortauskanten?",
         options: [
@@ -357,7 +386,7 @@ const SCENARIOS: Scenario[] = [
         `
     },
     {
-        id: 11,
+        id: 12,
         title: "Pilmerking med sperrelinje",
         question: "Du ligger i det høyre feltet, og det er en hvit sperrelinje på din venstre side. Hva må du gjøre?",
         options: [
@@ -397,7 +426,7 @@ const SCENARIOS: Scenario[] = [
         `
     },
     {
-        id: 12,
+        id: 13,
         title: "Midlertidig veimerking",
         question: "Det pågår veiarbeid, og det er malt både gule og delvis slitte hvite linjer på asfalten. Hvilke skal du følge?",
         options: [
@@ -468,7 +497,7 @@ const SCENARIOS: Scenario[] = [
         `
     },
     {
-        id: 13,
+        id: 14,
         title: "Gangfelt (Sebrastriper)",
         question: "Du nærmer deg dette gangfeltet (sebrastripene). Hva er din viktigste plikt som bilfører?",
         options: [
@@ -520,7 +549,7 @@ export default function RoadMarkingGame() {
 
     // Confetti effect on completion
     useEffect(() => {
-        if (showResults && score >= 80) {
+        if (showResults && score >= 90) {
             const duration = 2000
             const end = Date.now() + duration
 
@@ -584,9 +613,9 @@ export default function RoadMarkingGame() {
 
     const renderResults = () => {
         let textResult = ""
-        if (score >= 130) {
+        if (score >= 140) {
             textResult = "Utmerket! Du har fullstendig kontroll på all viktig veimerking og er klar for teoriprøven Klasse B."
-        } else if (score >= 80) {
+        } else if (score >= 90) {
             textResult = "Godt bestått! Du har god grunnforståelse, men pass på de små nyansene rundt kollektivfelt og gule kantlinjer."
         } else {
             textResult = "Her er det rom for forbedring. Vegoppmerking kan virke lett, men har mange nyanser. Gå gjennom artiklene og prøv igjen!"
