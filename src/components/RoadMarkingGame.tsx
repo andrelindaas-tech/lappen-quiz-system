@@ -25,8 +25,8 @@ const SCENARIOS: Scenario[] = [
         title: "Hvit sperrelinje",
         question: "Hva betyr denne heltrukne hvite linjen mellom kjørefelt i samme retning?",
         options: [
-            { id: 'a', text: "Sperrelinje — det er forbudt å skifte kjørefelt over denne linjen.", isCorrect: true },
-            { id: 'b', text: "Kjørefeltlinje — kan krysses dersom du bruker blinklys først.", isCorrect: false },
+            { id: 'a', text: "Kjørefeltlinje — kan krysses dersom du bruker blinklys først.", isCorrect: false },
+            { id: 'b', text: "Sperrelinje — det er forbudt å skifte kjørefelt over denne linjen.", isCorrect: true },
             { id: 'c', text: "Varsellinje — advarer om at veien snart snevres inn.", isCorrect: false },
             { id: 'd', text: "Kantlinje — markerer den ytre kanten av asfalten.", isCorrect: false }
         ],
@@ -53,8 +53,8 @@ const SCENARIOS: Scenario[] = [
         question: "Hva betyr denne gule linjen i midten av veien?",
         options: [
             { id: 'a', text: "Forbikjøring forbudt — linjen må aldri krysses.", isCorrect: false },
-            { id: 'b', text: "Sikten er for kort til vanlig forbikjøring. Linjen varsler om fare.", isCorrect: true },
-            { id: 'c', text: "Vanlig midtlinje — du kan kjøre forbi som normalt om det er fri bane.", isCorrect: false },
+            { id: 'b', text: "Vanlig midtlinje — du kan kjøre forbi som normalt om det er fri bane.", isCorrect: false },
+            { id: 'c', text: "Sikten er for kort til vanlig forbikjøring. Linjen varsler om fare.", isCorrect: true },
             { id: 'd', text: "Sperreområde — veien deles permanent i to separate retninger.", isCorrect: false }
         ],
         explanation: "En gul varsellinje skiller motgående kjøreretninger og har lange streker med korte opphold (forholdet 3:1). Den varsler at sikten fremover er for kort til vanlig forbikjøring. Det er ikke et direkte forbud mot å krysse den, men en sterk advarsel.",
@@ -115,8 +115,8 @@ const SCENARIOS: Scenario[] = [
         options: [
             { id: 'a', text: "At du har forkjørsrett og kryssende trafikk må vike for deg.", isCorrect: false },
             { id: 'b', text: "At du må stoppe helt opp uansett om det kommer biler eller ikke.", isCorrect: false },
-            { id: 'c', text: "At du har vikeplikt for kryssende trafikk på den tverrgående veien.", isCorrect: true },
-            { id: 'd', text: "At veien videre er enveiskjørt mot høyre.", isCorrect: false }
+            { id: 'c', text: "At veien videre er enveiskjørt mot høyre.", isCorrect: false },
+            { id: 'd', text: "At du har vikeplikt for kryssende trafikk på den tverrgående veien.", isCorrect: true }
         ],
         explanation: "Hvite trekanter på tvers av kjørefeltet kalles en vikelinje (ofte kalt 'haitenner'). De markerer stedet hvor du må stanse for å overholde vikeplikten dersom det kommer kryssende trafikk. Du trenger ikke å stanse helt om det er fri bane.",
         svg: `
@@ -151,8 +151,8 @@ const SCENARIOS: Scenario[] = [
         title: "Sperreområde",
         question: "Hvilke regler gjelder for det skraverte området i midten (sperreområdet)?",
         options: [
-            { id: 'a', text: "Det er forbudt å kjøre, sykle eller parkere på eller over sperreområdet.", isCorrect: true },
-            { id: 'b', text: "Området kan brukes som midlertidig stopp- eller svingefelt ved kø.", isCorrect: false },
+            { id: 'a', text: "Området kan brukes som midlertidig stopp- eller svingefelt ved kø.", isCorrect: false },
+            { id: 'b', text: "Det er forbudt å kjøre, sykle eller parkere på eller over sperreområdet.", isCorrect: true },
             { id: 'c', text: "Sperreområdet gjelder kun for tungtransport og lastebiler.", isCorrect: false },
             { id: 'd', text: "Du kan kjøre over området dersom du skal svinge av til høyre senere.", isCorrect: false }
         ],
@@ -199,9 +199,9 @@ const SCENARIOS: Scenario[] = [
         title: "Stopplinje",
         question: "Hva kreves av deg når du møter denne heltrukne, brede tverrlinjen (stopplinjen)?",
         options: [
-            { id: 'a', text: "Du må stoppe helt opp (hjulene i ro) før du passerer linjen.", isCorrect: true },
-            { id: 'b', text: "Det er en vikelinje, du må kun stoppe dersom det kommer biler.", isCorrect: false },
-            { id: 'c', text: "Du må redusere farten til under 20 km/t, men trenger ikke stoppe helt.", isCorrect: false },
+            { id: 'a', text: "Det er en vikelinje, du må kun stoppe dersom det kommer biler.", isCorrect: false },
+            { id: 'b', text: "Du må redusere farten til under 20 km/t, men trenger ikke stoppe helt.", isCorrect: false },
+            { id: 'c', text: "Du må stoppe helt opp (hjulene i ro) før du passerer linjen.", isCorrect: true },
             { id: 'd', text: "Linjen viser hvor du har vikeplikt fra høyre.", isCorrect: false }
         ],
         explanation: "En stopplinje er en bred, heltrukken tverrlinje som brukes sammen med stoppskilt eller trafikklys. Her har du en absolutt plikt til å stoppe helt opp (alle hjul må stå i ro) før linjen, selv om det ikke er noen andre biler i sikte.",
@@ -236,10 +236,10 @@ const SCENARIOS: Scenario[] = [
         title: "Skillelinje",
         question: "Hva markerer denne brede, stiplede hvite linjen (skillelinjen)?",
         options: [
-            { id: 'a', text: "At feltet til høyre er et kollektivfelt eller sykkelfelt.", isCorrect: true },
-            { id: 'b', text: "At det er en vanlig kjørefeltlinje der du fritt kan bytte felt for å kjøre forbi.", isCorrect: false },
-            { id: 'c', text: "At veien snevres inn til ett felt om kort tid.", isCorrect: false },
-            { id: 'd', text: "At du har vikeplikt for biler som kommer fra høyre.", isCorrect: false }
+            { id: 'a', text: "At det er en vanlig kjørefeltlinje der du fritt kan bytte felt for å kjøre forbi.", isCorrect: false },
+            { id: 'b', text: "At veien snevres inn til ett felt om kort tid.", isCorrect: false },
+            { id: 'c', text: "At du har vikeplikt for biler som kommer fra høyre.", isCorrect: false },
+            { id: 'd', text: "At feltet til høyre er et kollektivfelt eller sykkelfelt.", isCorrect: true }
         ],
         explanation: "En skillelinje er betydelig bredere enn en vanlig kjørefeltlinje. Den markerer grensen mot et kjørefelt for spesielle trafikantgrupper, som et kollektivfelt (buss/taxi) eller sykkelfelt. Du har som hovedregel ikke lov til å kjøre i kollektivfeltet med vanlig personbil.",
         svg: `
@@ -298,8 +298,8 @@ const SCENARIOS: Scenario[] = [
         title: "Dobbel sperrelinje",
         question: "Hva betyr denne doble heltrukne gule linjen i midten av veien?",
         options: [
-            { id: 'a', text: "Forbud mot å krysse linjen for begge kjøreretninger.", isCorrect: true },
-            { id: 'b', text: "Det er kun forbudt å krysse fra den siden der linjen er bredest.", isCorrect: false },
+            { id: 'a', text: "Det er kun forbudt å krysse fra den siden der linjen er bredest.", isCorrect: false },
+            { id: 'b', text: "Forbud mot å krysse linjen for begge kjøreretninger.", isCorrect: true },
             { id: 'c', text: "Forbikjøring er tillatt dersom begge sider har fri sikt.", isCorrect: false },
             { id: 'd', text: "Linjen brukes kun midlertidig ved veiarbeid og har samme virkning som en vanlig midtlinje.", isCorrect: false }
         ],
@@ -330,9 +330,9 @@ const SCENARIOS: Scenario[] = [
         title: "Hvit kantlinje",
         question: "Hva er hovedformålet med denne heltrukne hvite linjen langs veikanten?",
         options: [
-            { id: 'a', text: "Å markere kjørebanens ytterkant og lede sjåføren visuelt.", isCorrect: true },
+            { id: 'a', text: "Å markere at det er en asfaltert sykkelsti for syklister.", isCorrect: false },
             { id: 'b', text: "Å vise at det er forbudt å parkere langs hele veistrekningen.", isCorrect: false },
-            { id: 'c', text: "Å markere at det er en asfaltert sykkelsti for syklister.", isCorrect: false },
+            { id: 'c', text: "Å markere kjørebanens ytterkant og lede sjåføren visuelt.", isCorrect: true },
             { id: 'd', text: "Å varsle at det kommer et veikryss eller en avkjørsel om kort tid.", isCorrect: false }
         ],
         explanation: "En heltrukken hvit linje langs veikanten kalles en kantlinje (linje 1012). Hovedformålet er å markere grensen for den kjørbare delen av veien (kjørebanen), hjelpe sjåføren med å holde riktig plassering i veibanen, og gi visuell veiledning spesielt i mørket eller under vanskelige siktforhold.",
@@ -359,10 +359,10 @@ const SCENARIOS: Scenario[] = [
         title: "Gul kantlinje",
         question: "Hva betyr denne heltrukne gule linjen langs fortauskanten?",
         options: [
-            { id: 'a', text: "Stansforbud — det er forbudt å stanse eller parkere langs denne linjen.", isCorrect: true },
-            { id: 'b', text: "Parkeringsforbud — du kan stanse kort for av- og påstigning, men ikke parkere.", isCorrect: false },
-            { id: 'c', text: "At det kun er tillatt å parkere her i helgene.", isCorrect: false },
-            { id: 'd', text: "Linjen markerer vikeplikt for fotgjengere.", isCorrect: false }
+            { id: 'a', text: "Parkeringsforbud — du kan stanse kort for av- og påstigning, men ikke parkere.", isCorrect: false },
+            { id: 'b', text: "At det kun er tillatt å parkere her i helgene.", isCorrect: false },
+            { id: 'c', text: "Linjen markerer vikeplikt for fotgjengere.", isCorrect: false },
+            { id: 'd', text: "Stansforbud — det er forbudt å stanse eller parkere langs denne linjen.", isCorrect: true }
         ],
         explanation: "En heltrukken gul linje på kantstein eller langs veikanten betyr stansforbud (og dermed også parkeringsforbud). Her har du ikke lov til å stanse i det hele tatt – ikke en gang for en rask av- og påstigning. (Stiplet gul linje betyr kun parkeringsforbud).",
         svg: `
@@ -430,8 +430,8 @@ const SCENARIOS: Scenario[] = [
         title: "Midlertidig veimerking",
         question: "Det pågår veiarbeid, og det er malt både gule og delvis slitte hvite linjer på asfalten. Hvilke skal du følge?",
         options: [
-            { id: 'a', text: "Du må følge de gule linjene. Midlertidig gul oppmerking overstyrer den hvite.", isCorrect: true },
-            { id: 'b', text: "Du skal følge de hvite linjene, da permanent oppmerking alltid gjelder først.", isCorrect: false },
+            { id: 'a', text: "Du skal følge de hvite linjene, da permanent oppmerking alltid gjelder først.", isCorrect: false },
+            { id: 'b', text: "Du må følge de gule linjene. Midlertidig gul oppmerking overstyrer den hvite.", isCorrect: true },
             { id: 'c', text: "Du kan velge fritt basert på hvilket kjørefelt som er tomt.", isCorrect: false },
             { id: 'd', text: "De gule linjene gjelder kun for anleggsmaskiner under 7,5 tonn.", isCorrect: false }
         ],
@@ -501,9 +501,9 @@ const SCENARIOS: Scenario[] = [
         title: "Gangfelt (Sebrastriper)",
         question: "Du nærmer deg dette gangfeltet (sebrastripene). Hva er din viktigste plikt som bilfører?",
         options: [
-            { id: 'a', text: "Du har vikeplikt for fotgjengere som befinner seg i, eller er på vei ut i, gangfeltet.", isCorrect: true },
-            { id: 'b', text: "Du har vikeplikt for syklister som sykler hurtig over gangfeltet.", isCorrect: false },
-            { id: 'c', text: "Du har kun vikeplikt dersom det er dårlig sikt eller mørkt.", isCorrect: false },
+            { id: 'a', text: "Du har vikeplikt for syklister som sykler hurtig over gangfeltet.", isCorrect: false },
+            { id: 'b', text: "Du har kun vikeplikt dersom det er dårlig sikt eller mørkt.", isCorrect: false },
+            { id: 'c', text: "Du har vikeplikt for fotgjengere som befinner seg i, eller er på vei ut i, gangfeltet.", isCorrect: true },
             { id: 'd', text: "Du må stoppe helt opp og stå i ro i 3 sekunder, uansett om det er folk der eller ikke.", isCorrect: false }
         ],
         explanation: "Sebrastriper i veibanen markerer et godkjent gangfelt. Som bilfører har du en streng og absolutt vikeplikt for fotgjengere som er i gangfeltet, eller som viser tydelig tegn på at de er på vei ut i det. Du må tilpasse farten i god tid.",
