@@ -492,48 +492,6 @@ export default function RoadMarkingGame() {
         }
     }, [showResults, score])
 
-    // Keyboard navigation
-    useEffect(() => {
-        const handleKeyDown = (e: KeyboardEvent) => {
-            if (e.target instanceof HTMLInputElement || e.target instanceof HTMLTextAreaElement) {
-                return
-            }
-
-            if (!showResults) {
-                if (!hasAnswered) {
-                    // Option selection (1-4)
-                    const key = e.key
-                    if (['1', '2', '3', '4'].includes(key)) {
-                        const index = parseInt(key) - 1
-                        const option = scenario.options[index]
-                        if (option) {
-                            handleSelectOption(option.id, option.isCorrect)
-                        }
-                    } else if (['a', 'b', 'c', 'd'].includes(key.toLowerCase())) {
-                        const optionId = key.toLowerCase()
-                        const option = scenario.options.find(o => o.id === optionId)
-                        if (option) {
-                            handleSelectOption(option.id, option.isCorrect)
-                        }
-                    }
-                } else {
-                    // Next round (Enter, Space, or N)
-                    if (e.key === 'Enter' || e.key === ' ' || e.key.toLowerCase() === 'n') {
-                        e.preventDefault() // Prevent scrolling for spacebar
-                        handleNextRound()
-                    }
-                }
-            } else {
-                // Restart game (R)
-                if (e.key.toLowerCase() === 'r') {
-                    handleRestartGame()
-                }
-            }
-        }
-
-        window.addEventListener('keydown', handleKeyDown)
-        return () => window.removeEventListener('keydown', handleKeyDown)
-    }, [currentRound, hasAnswered, showResults, scenario, score, streak])
 
     const handleSelectOption = (optionId: string, isCorrect: boolean) => {
         if (hasAnswered) return
@@ -594,8 +552,7 @@ export default function RoadMarkingGame() {
                 </div>
 
                 <button onClick={handleRestartGame} className="results-restart-btn">
-                    <span>Spill på nytt</span>
-                    <kbd className="keyboard-hint" style={{ background: 'rgba(255, 255, 255, 0.2)', border: 'none', color: '#ffffff', boxShadow: 'none' }}>R</kbd>
+                    Spill på nytt
                 </button>
             </div>
         )
@@ -651,7 +608,7 @@ export default function RoadMarkingGame() {
 
                             {/* Options */}
                             <div className="quiz-options-list">
-                                {scenario.options.map((option, idx) => {
+                                {scenario.options.map((option) => {
                                     let btnClass = "quiz-option-btn"
                                     if (hasAnswered) {
                                         if (option.isCorrect) {
@@ -673,7 +630,6 @@ export default function RoadMarkingGame() {
                                                 <span className="option-badge">{option.id.toUpperCase()}</span>
                                                 <span className="option-text">{option.text}</span>
                                             </span>
-                                            <kbd className="keyboard-hint">{idx + 1}</kbd>
                                         </button>
                                     )
                                 })}
@@ -697,10 +653,7 @@ export default function RoadMarkingGame() {
                                     <p className="quiz-feedback-text">{scenario.explanation}</p>
                                     
                                     <button onClick={handleNextRound} className="quiz-next-btn">
-                                        <span>
-                                            {currentRound < SCENARIOS.length - 1 ? "Neste runde" : "Se resultat"}
-                                        </span>
-                                        <kbd className="keyboard-hint" style={{ background: 'rgba(255, 255, 255, 0.2)', border: 'none', color: '#ffffff', boxShadow: 'none' }}>Enter</kbd>
+                                        {currentRound < SCENARIOS.length - 1 ? "Neste runde" : "Se resultat"}
                                     </button>
                                 </div>
                             )}

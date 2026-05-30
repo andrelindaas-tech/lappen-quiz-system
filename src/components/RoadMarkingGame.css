@@ -242,27 +242,7 @@ body.dark-mode .quiz-option-btn.incorrect-option {
   color: #ffffff;
 }
 
-.keyboard-hint {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--color-bg);
-  border: 1px solid var(--color-border);
-  border-radius: 4px;
-  padding: 2px 6px;
-  font-size: 0.75rem;
-  font-family: var(--font-family);
-  font-weight: 600;
-  color: var(--color-text-light);
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
-  transition: all 0.2s ease;
-}
 
-@media (max-width: 768px) {
-  .keyboard-hint {
-    display: none;
-  }
-}
 
 /* Disabled option styling */
 .quiz-option-btn:disabled:not(.correct-option):not(.incorrect-option) {
