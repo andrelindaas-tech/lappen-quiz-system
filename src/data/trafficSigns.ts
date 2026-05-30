@@ -2600,5 +2600,644 @@ export const trafficSigns: TrafficSign[] = [
         combinedMeaning: 'Det er parkering mot avgift i tidsrommene som oppgis (f.eks. hverdager 08-17), og parkering er begrenset til maksimalt 2 timer.'
       }
     ]
+  },
+  // --- SERVICESKILT (Aktiv Kategori) ---
+  {
+    id: '601',
+    code: '601',
+    name: 'Radioinformasjon',
+    displayName: 'Radioinformasjon / Lytt til radio',
+    slug: 'radioinformasjon',
+    category: 'serviceskilt',
+    imagePath: '/signs/serviceskilt/skilt-601-lytt-til-radio.jpg',
+    shortExplanation: 'Viser at det gis veg- og trafikkmeldinger via den angitte radiofrekvensen eller kanalen.',
+    longExplanation: 'Skiltet opplyser om at du kan motta lokal radioinformasjon med trafikkmeldinger, spesielt før og i tunneler, eller over værutsatte fjelloverganger. Nyere skilt viser gjerne til digitale radiokanaler som NRK P1.',
+    theoryTrap: 'Dette er et opplysningsskilt for din egen komfort og sikkerhet, ikke et påbud. Du risikerer ingen sanksjoner om du ikke skrur på radioen, men det er sterkt anbefalt ved utfordrende føre eller stengte veger.',
+    whatToDo: [
+      'Still radioen inn på den angitte kanalen eller frekvensen for å motta meldinger.',
+      'Følg med på meldinger om kolonnekjøring, stengte tunneler eller omkjøringer.'
+    ],
+    confusedWith: [],
+    sources: [
+      { name: 'Statens vegvesen', url: 'https://www.vegvesen.no' },
+      { name: 'Lovdata', url: 'https://lovdata.no/dokument/SF/forskrift/2005-10-07-1219' }
+    ],
+    aliases: ['radio', 'lytt til radio', 'frekvens', 'trafikkmeldinger']
+  },
+  {
+    id: '602',
+    code: '602',
+    name: 'Førstehjelp',
+    displayName: 'Førstehjelp',
+    slug: 'forstehjelp',
+    category: 'serviceskilt',
+    imagePath: '/signs/serviceskilt/skilt-602-forstehjelp.jpg',
+    shortExplanation: 'Angir plassering av førstehjelpsstasjon, nødskrin eller nødutstyr.',
+    longExplanation: 'Dette skiltet viser hvor du kan finne førstehjelpsutstyr, båre eller en stasjon bemannet for enkel akuttmedisinsk hjelp langs vegen.',
+    theoryTrap: 'Dette skiltet angir ikke nødvendigvis et fullverdig sykehus, men et sted med elementært førstehjelpsutstyr for å stabilisere skadde personer.',
+    whatToDo: [
+      'Bruk dette utstyret eller oppsøk stasjonen ved akutte skader eller ulykker.',
+      'Husk alltid å sikre ulykkesstedet først med refleksvest og varseltrekant før du henter utstyr.'
+    ],
+    confusedWith: ['605', '606'],
+    sources: [
+      { name: 'Statens vegvesen', url: 'https://www.vegvesen.no' },
+      { name: 'Lovdata', url: 'https://lovdata.no/dokument/SF/forskrift/2005-10-07-1219' }
+    ],
+    aliases: ['førstehjelp', 'nødskrin', 'forstehjelp', 'plaster', 'røde kors', 'hjelp']
+  },
+  {
+    id: '605',
+    code: '605',
+    name: 'Nødtelefon',
+    displayName: 'Nødtelefon',
+    slug: 'nodtelefon',
+    category: 'serviceskilt',
+    imagePath: '/signs/serviceskilt/skilt-605-nodtelefon.jpg',
+    shortExplanation: 'Viser plassering av nødtelefon som er koblet direkte til Vegtrafikksentralen eller nødetatene.',
+    longExplanation: 'Settes opp langs motorveger, fjelloverganger og inne i tunneler. Telefonen gir direkte kontakt med Vegtrafikksentralen, og de ser automatisk nøyaktig hvilken telefon du ringer fra.',
+    theoryTrap: 'I tunneler bør du alltid bruke Vegvesenets nødtelefon framfor din egen mobiltelefon. Når du løfter av røret på en nødtelefon i en tunnel, går alarmen automatisk hos Vegtrafikksentralen, skiltene utenfor tunnelen stenges, og ventilasjonsanlegget startes for å suge ut eventuell røyk.',
+    whatToDo: [
+      'Bruk telefonen ved motorstopp, brann, ulykker eller andre nødsituasjoner.',
+      'Oppgi rolig hva som har skjedd. Posisjonen din er allerede registrert.'
+    ],
+    confusedWith: ['602', '606'],
+    sources: [
+      { name: 'Statens vegvesen', url: 'https://www.vegvesen.no' },
+      { name: 'Lovdata', url: 'https://lovdata.no/dokument/SF/forskrift/2005-10-07-1219' }
+    ],
+    aliases: ['nødtelefon', 'telefon', 'tunnel telefon', 'nodtelefon', 'nød']
+  },
+  {
+    id: '606',
+    code: '606',
+    name: 'Brannslokkingsapparat',
+    displayName: 'Brannslokkingsapparat',
+    slug: 'brannslokkingsapparat',
+    category: 'serviceskilt',
+    imagePath: '/signs/serviceskilt/skilt-606-brannslokningsapparat.jpg',
+    shortExplanation: 'Viser plassering av brannslokkingsutstyr.',
+    longExplanation: 'Settes opp der det er plassert brannslokkingsapparater til allmenn bruk, som for eksempel i tunneler, ved rasteplasser eller bensinstasjoner.',
+    theoryTrap: 'Dette er plassert for at du raskt skal kunne slokke et begynnende branntilløp. Du må aldri risikere ditt eget liv ved store branner.',
+    whatToDo: [
+      'Bruk apparatet til å kvele små branner i eget eller andres kjøretøy.',
+      'Sørg for å trykke på nødknapp eller ringe 110/112 så snart som mulig.'
+    ],
+    confusedWith: ['602', '605'],
+    sources: [
+      { name: 'Statens vegvesen', url: 'https://www.vegvesen.no' },
+      { name: 'Lovdata', url: 'https://lovdata.no/dokument/SF/forskrift/2005-10-07-1219' }
+    ],
+    aliases: ['brann', 'slokker', 'brannslukker', 'brannslokkingsapparat', 'apparat']
+  },
+  {
+    id: '608',
+    code: '608',
+    name: 'Kjøretøyverksted',
+    displayName: 'Kjøretøyverksted',
+    slug: 'kjoretoyverksted',
+    category: 'serviceskilt',
+    imagePath: '/signs/serviceskilt/skilt-608-kjoretoyverksted.jpg',
+    shortExplanation: 'Viser at det finnes et bilverksted i nærheten.',
+    longExplanation: 'Dette skiltet viser vei til et godkjent kjøretøyverksted som kan hjelpe med reparasjoner, tekniske problemer eller berging.',
+    theoryTrap: 'Verkstedet har egne åpningstider og er normalt ikke døgnåpent, selv om skiltet står oppe hele tiden.',
+    whatToDo: [
+      'Kjør hit eller kontakt verkstedet dersom bilen har tekniske feil eller ulyder.',
+      'Ved akutt motorstopp på vegen bør du bruke nødblink og plassere bilen så trygt som mulig før du søker hjelp.'
+    ],
+    confusedWith: [],
+    sources: [
+      { name: 'Statens vegvesen', url: 'https://www.vegvesen.no' },
+      { name: 'Lovdata', url: 'https://lovdata.no/dokument/SF/forskrift/2005-10-07-1219' }
+    ],
+    aliases: ['verksted', 'bilverksted', 'reparasjon', 'mekaniker']
+  },
+  {
+    id: '609',
+    code: '609',
+    name: 'Hurtiglading',
+    displayName: 'Hurtiglading av motorvogn',
+    slug: 'hurtiglading',
+    category: 'serviceskilt',
+    imagePath: '/signs/serviceskilt/skilt-609-hurtiglading-av-motorvogn.jpg',
+    shortExplanation: 'Viser ladestasjon for elektriske kjøretøy.',
+    longExplanation: 'Skiltet viser vei til en ladestasjon utstyrt med hurtigladere (og ofte normalladere) for elbiler og andre oppladbare motorvogner.',
+    theoryTrap: 'Parkeringsplasser merket med dette skiltet er kun ment for elbiler som faktisk lader. Å parkere en bensin-/dieselbil eller en elbil som ikke lader her, kan medføre parkeringsgebyr.',
+    whatToDo: [
+      'Følg skiltet dersom du kjører elbil og trenger å lade batteriet.',
+      'Frigi plassen så snart ladingen er fullført, slik at andre slipper til.'
+    ],
+    confusedWith: ['610'],
+    sources: [
+      { name: 'Statens vegvesen', url: 'https://www.vegvesen.no' },
+      { name: 'Lovdata', url: 'https://lovdata.no/dokument/SF/forskrift/2005-10-07-1219' }
+    ],
+    aliases: ['lading', 'elbil', 'ladestasjon', 'hurtiglading', 'strøm']
+  },
+  {
+    id: '610',
+    code: '610',
+    name: 'Drivstoff',
+    displayName: 'Drivstoff',
+    slug: 'drivstoff',
+    category: 'serviceskilt',
+    imagePath: '/signs/serviceskilt/skilt-610-drivstoff.jpg',
+    shortExplanation: 'Viser at det finnes en bensinstasjon / energistasjon i nærheten.',
+    longExplanation: 'Dette skiltet opplyser om en fyllestasjon for vanlig drivstoff (bensin og diesel). Ofte kombinert med kiosksalg, toalett og enkle bilrekvisita.',
+    theoryTrap: 'Dette standardskiltet garanterer kun tradisjonelt drivstoff. For elbiler eller alternative drivstoff må du se etter skilt 609 (Hurtiglading), 610.1 (LPG) eller 610.2 (Hydrogen).',
+    whatToDo: [
+      'Sving av for å fylle drivstoff eller ta en pause på stasjonen.'
+    ],
+    confusedWith: ['609', '610.1', '610.2'],
+    sources: [
+      { name: 'Statens vegvesen', url: 'https://www.vegvesen.no' },
+      { name: 'Lovdata', url: 'https://lovdata.no/dokument/SF/forskrift/2005-10-07-1219' }
+    ],
+    aliases: ['bensin', 'diesel', 'bensinstasjon', 'fylle', 'drivstoff']
+  },
+  {
+    id: '610.1',
+    code: '610.1',
+    name: 'Drivstoff LPG',
+    displayName: 'Drivstoff - Gass (LPG)',
+    slug: 'drivstoff-gass-lpg',
+    category: 'serviceskilt',
+    imagePath: '/signs/serviceskilt/skilt-610-1-drivstoff.jpg',
+    shortExplanation: 'Viser fyllestasjon for gass (autogass/LPG).',
+    longExplanation: 'Viser vei til en stasjon hvor biler og kjøretøy som drives av flytende petroleumsgass (LPG) kan fylle tanken.',
+    theoryTrap: 'Ikke alle vanlige bensinstasjoner har LPG-fylling. Dette skiltet brukes spesifikt for å lede gassdrevne kjøretøy til riktig sted.',
+    whatToDo: [
+      'Følg skiltet dersom du kjører et gassdrevet kjøretøy og trenger å fylle gass.'
+    ],
+    confusedWith: ['610', '610.2'],
+    sources: [
+      { name: 'Statens vegvesen', url: 'https://www.vegvesen.no' },
+      { name: 'Lovdata', url: 'https://lovdata.no/dokument/SF/forskrift/2005-10-07-1219' }
+    ],
+    aliases: ['gass', 'lpg', 'autogass', 'propan']
+  },
+  {
+    id: '610.2',
+    code: '610.2',
+    name: 'Drivstoff Hydrogen',
+    displayName: 'Drivstoff - Hydrogen',
+    slug: 'drivstoff-hydrogen',
+    category: 'serviceskilt',
+    imagePath: '/signs/serviceskilt/skilt-610-2-drivstoff.jpg',
+    shortExplanation: 'Viser fyllestasjon for hydrogen.',
+    longExplanation: 'Viser vei til en energistasjon utstyrt for fylling av hydrogengass, som benyttes av biler med brenselcelleteknologi.',
+    theoryTrap: 'Hydrogensektoren er svært spesialisert, og vanlige kjøretøy kan ikke bruke disse pumpene.',
+    whatToDo: [
+      'Bruk stasjonen til fylling dersom du kjører en hydrogenbil.'
+    ],
+    confusedWith: ['610', '610.1'],
+    sources: [
+      { name: 'Statens vegvesen', url: 'https://www.vegvesen.no' },
+      { name: 'Lovdata', url: 'https://lovdata.no/dokument/SF/forskrift/2005-10-07-1219' }
+    ],
+    aliases: ['hydrogen', 'h2', 'brenselcelle']
+  },
+  {
+    id: '611',
+    code: '611',
+    name: 'Tømmested toalett',
+    displayName: 'Tømmested for toalett',
+    slug: 'tommested-toalett',
+    category: 'serviceskilt',
+    imagePath: '/signs/serviceskilt/skilt-611-toalettommeanlegg.jpg',
+    shortExplanation: 'Viser tømmested for avløpsvann/kjemisk toalett fra campingvogner, bobiler og busser.',
+    longExplanation: 'Settes opp ved rasteplasser eller campingplasser for å angi et godkjent tømmested for septiktank og kjemisk toalett fra mobile boenheter.',
+    theoryTrap: 'Det er strengt forbudt og miljøskadelig å tømme kjemiske toaletter i vanlig natur, veikant eller i vanlige toaletter som ikke er tilrettelagt for dette.',
+    whatToDo: [
+      'Følg skiltet for å utføre tømming av toalett/spillvann på en lovlig og miljøvennlig måte.'
+    ],
+    confusedWith: ['612'],
+    sources: [
+      { name: 'Statens vegvesen', url: 'https://www.vegvesen.no' },
+      { name: 'Lovdata', url: 'https://lovdata.no/dokument/SF/forskrift/2005-10-07-1219' }
+    ],
+    aliases: ['tømmested', 'septik', 'bobil tømming', 'toalett tømming', 'kloakk', 'wc tømming']
+  },
+  {
+    id: '612',
+    code: '612',
+    name: 'Toalett',
+    displayName: 'Toalett',
+    slug: 'toalett',
+    category: 'serviceskilt',
+    imagePath: '/signs/serviceskilt/skilt-612-toalett.jpg',
+    shortExplanation: 'Viser til et offentlig toalett langs vegen.',
+    longExplanation: 'Settes opp ved rasteplasser, parkeringsområder eller offentlige bygg for å vise at toalettfasiliteter er tilgjengelige.',
+    theoryTrap: 'Dette skiltet garanterer ikke at toalettet er universelt utformet (handikaptoalett) eller gratis, men gir opplysning om at det finnes et toalett.',
+    whatToDo: [
+      'Benytt toalettet ved behov. Husk å forlate det i god stand.'
+    ],
+    confusedWith: ['611'],
+    sources: [
+      { name: 'Statens vegvesen', url: 'https://www.vegvesen.no' },
+      { name: 'Lovdata', url: 'https://lovdata.no/dokument/SF/forskrift/2005-10-07-1219' }
+    ],
+    aliases: ['toalett', 'wc', 'dass', 'do', 'restroom']
+  },
+  {
+    id: '613.1',
+    code: '613.1',
+    name: 'Rasteplass',
+    displayName: 'Rasteplass',
+    slug: 'rasteplass',
+    category: 'serviceskilt',
+    imagePath: '/signs/serviceskilt/skilt-613-1-rasteplass.jpg',
+    shortExplanation: 'Viser til en tilrettelagt rasteplass langs vegen.',
+    longExplanation: 'Rasteplasser er tilrettelagte områder utenfor kjørebanen hvor førere og passasjerer kan ta pauser. De er ofte utstyrt med bord, søppelkasser, toaletter og noen ganger lekeområder eller utsiktspunkter.',
+    theoryTrap: 'Rasteplasser er ment for kortere opphold og hvile for å motvirke tretthet bak rattet. Det er ikke tillatt å etablere permanente campingplasser eller bo der over lengre tid (f.eks. mer enn et døgn på samme sted om det hindrer andre).',
+    whatToDo: [
+      'Sving inn for å ta en pause og strekke på beina dersom du føler deg trøtt.',
+      'Kast søppel i beholderne og vis hensyn til andre reisende.'
+    ],
+    confusedWith: ['552'],
+    sources: [
+      { name: 'Statens vegvesen', url: 'https://www.vegvesen.no' },
+      { name: 'Lovdata', url: 'https://lovdata.no/dokument/SF/forskrift/2005-10-07-1219' }
+    ],
+    aliases: ['rasteplass', 'rast', 'pause', 'benk', 'veikant parkering']
+  },
+  {
+    id: '614',
+    code: '614',
+    name: 'Enklere servering',
+    displayName: 'Enklere servering',
+    slug: 'enklere-servering',
+    category: 'serviceskilt',
+    imagePath: '/signs/serviceskilt/skilt-614-enklere-servering.jpg',
+    shortExplanation: 'Viser kafé, kiosk eller enklere serveringssted i nærheten.',
+    longExplanation: 'Viser vei til et sted hvor man kan kjøpe enkle måltider, kaffe, snacks, bakevarer eller kioskvarer. Typisk en veikro eller bensinstasjon med matservering.',
+    theoryTrap: 'Dette skiltet indikerer enklere servering, ikke en fullverdig restaurant (som har eget skilt med kniv og gaffel – 616).',
+    whatToDo: [
+      'Benytt serveringsstedet for mat og drikke under reisen.'
+    ],
+    confusedWith: ['616'],
+    sources: [
+      { name: 'Statens vegvesen', url: 'https://www.vegvesen.no' },
+      { name: 'Lovdata', url: 'https://lovdata.no/dokument/SF/forskrift/2005-10-07-1219' }
+    ],
+    aliases: ['kaffe', 'kafe', 'kiosk', 'veikro', 'kopp', 'enklere servering']
+  },
+  {
+    id: '616',
+    code: '616',
+    name: 'Spisested',
+    displayName: 'Spisested',
+    slug: 'spisested',
+    category: 'serviceskilt',
+    imagePath: '/signs/serviceskilt/skilt-616-spisested.jpg',
+    shortExplanation: 'Viser til en restaurant eller et fullverdig spisested.',
+    longExplanation: 'Viser vei til et spisested med et mer omfattende mattilbud (varmretter, middag osv.) enn en enkel kiosk eller kafé.',
+    theoryTrap: 'Skiltet viser en kniv og en gaffel. Dette skiller seg fra skilt 614 som viser en kaffekopp og indikerer enklere servering.',
+    whatToDo: [
+      'Sving av for et større måltid underveis.'
+    ],
+    confusedWith: ['614'],
+    sources: [
+      { name: 'Statens vegvesen', url: 'https://www.vegvesen.no' },
+      { name: 'Lovdata', url: 'https://lovdata.no/dokument/SF/forskrift/2005-10-07-1219' }
+    ],
+    aliases: ['restaurant', 'spisested', 'mat', 'middag', 'kniv og gaffel']
+  },
+  {
+    id: '618',
+    code: '618',
+    name: 'Campingplass',
+    displayName: 'Campingplass',
+    slug: 'campingplass',
+    category: 'serviceskilt',
+    imagePath: '/signs/serviceskilt/skilt-618-campingplass.jpg',
+    shortExplanation: 'Viser vei til en godkjent campingplass for telt, campingvogn eller bobil.',
+    longExplanation: 'Angir et område spesielt tilrettelagt for overnatting i telt, campingvogn eller bobil. Ofte utstyrt med fellesanlegg for dusj, toalett og strømtilkobling.',
+    theoryTrap: 'Dette er et kommersielt eller tilrettelagt campingområde. Det må ikke forveksles med allemannsretten for fricamping i utmark.',
+    whatToDo: [
+      'Følg skiltet for å finne overnattingsplass med telt eller vogn.'
+    ],
+    confusedWith: ['621', '622'],
+    sources: [
+      { name: 'Statens vegvesen', url: 'https://www.vegvesen.no' },
+      { name: 'Lovdata', url: 'https://lovdata.no/dokument/SF/forskrift/2005-10-07-1219' }
+    ],
+    aliases: ['camping', 'telt', 'campingplass', 'vogn']
+  },
+  {
+    id: '621',
+    code: '621',
+    name: 'Bobilplass',
+    displayName: 'Bobilplass',
+    slug: 'bobilplass',
+    category: 'serviceskilt',
+    imagePath: '/signs/serviceskilt/skilt-621-bobilplass.jpg',
+    shortExplanation: 'Viser til en tilrettelagt oppstillingsplass for bobiler.',
+    longExplanation: 'Dette skiltet viser til et område spesielt avsatt og tilrettelagt for overnatting og parkering av bobiler (bobilcamp/bobilparkering).',
+    theoryTrap: 'En bobilplass er forbeholdt bobiler. Campingvogner som trekkes av personbil eller vanlige biler kan ikke overnatte på områder utelukkende merket med dette skiltet.',
+    whatToDo: [
+      'Oppsøk plassen for overnatting dersom du kjører en registrert bobil.'
+    ],
+    confusedWith: ['618', '622'],
+    sources: [
+      { name: 'Statens vegvesen', url: 'https://www.vegvesen.no' },
+      { name: 'Lovdata', url: 'https://lovdata.no/dokument/SF/forskrift/2005-10-07-1219' }
+    ],
+    aliases: ['bobil', 'bobilplass', 'caravan', 'bobilparkering']
+  },
+  {
+    id: '622',
+    code: '622',
+    name: 'Campinghytter',
+    displayName: 'Campinghytter',
+    slug: 'campinghytter',
+    category: 'serviceskilt',
+    imagePath: '/signs/serviceskilt/skilt-622-campinghytter.jpg',
+    shortExplanation: 'Viser til utleiehytter (typisk på eller i tilknytning til en campingplass).',
+    longExplanation: 'Skiltet opplyser om at det er mulig å leie enkle hytter for overnatting på stedet.',
+    theoryTrap: 'Dette indikerer enkle hytter, ikke nødvendigvis et hotell eller motell (som har eget skilt for overnattingssted – 626).',
+    whatToDo: [
+      'Sving av dersom du ønsker hytteovernatting.'
+    ],
+    confusedWith: ['618', '626'],
+    sources: [
+      { name: 'Statens vegvesen', url: 'https://www.vegvesen.no' },
+      { name: 'Lovdata', url: 'https://lovdata.no/dokument/SF/forskrift/2005-10-07-1219' }
+    ],
+    aliases: ['hytter', 'campinghytter', 'overnatting hytte']
+  },
+  {
+    id: '624',
+    code: '624',
+    name: 'Vandrerhjem',
+    displayName: 'Vandrerhjem',
+    slug: 'vandrerhjem',
+    category: 'serviceskilt',
+    imagePath: '/signs/serviceskilt/skilt-624-vandrerhjem.jpg',
+    shortExplanation: 'Viser vei til et vandrerhjem (hostel) med enklere og rimeligere overnatting.',
+    longExplanation: 'Opplyser om tilgjengelig vandrerhjem for reisende, ofte med mulighet for felleskjøkken, sovesaler eller enkle private rom.',
+    theoryTrap: 'Standard og servicenivå er enklere og rimeligere enn på ordinære hoteller.',
+    whatToDo: [
+      'Oppsøk vandrerhjemmet dersom du ønsker rimelig overnatting.'
+    ],
+    confusedWith: ['626'],
+    sources: [
+      { name: 'Statens vegvesen', url: 'https://www.vegvesen.no' },
+      { name: 'Lovdata', url: 'https://lovdata.no/dokument/SF/forskrift/2005-10-07-1219' }
+    ],
+    aliases: ['vandrerhjem', 'hostel', 'billig overnatting']
+  },
+  {
+    id: '625',
+    code: '625',
+    name: 'Rom og frokost',
+    displayName: 'Rom og frokost (Bed & Breakfast)',
+    slug: 'rom-og-frokost',
+    category: 'serviceskilt',
+    imagePath: '/signs/serviceskilt/skilt-625-rom-og-frokost.jpg',
+    shortExplanation: 'Viser til privat eller mindre kommersiell overnatting med frokost inkludert.',
+    longExplanation: 'Angir et mindre overnattingssted, ofte i private hjem eller gårdsturisme, der leie av rom inkluderer frokost (Bed and Breakfast).',
+    theoryTrap: 'Kapasiteten på slike steder er ofte svært begrenset sammenlignet med et vanlig hotell.',
+    whatToDo: [
+      'Oppsøk stedet for en personlig og koselig overnatting.'
+    ],
+    confusedWith: ['626'],
+    sources: [
+      { name: 'Statens vegvesen', url: 'https://www.vegvesen.no' },
+      { name: 'Lovdata', url: 'https://lovdata.no/dokument/SF/forskrift/2005-10-07-1219' }
+    ],
+    aliases: ['bed and breakfast', 'bb', 'rom og frokost', 'gjestegård']
+  },
+  {
+    id: '626',
+    code: '626',
+    name: 'Overnattingssted',
+    displayName: 'Overnattingssted (Hotell / Motell)',
+    slug: 'overnattingssted',
+    category: 'serviceskilt',
+    imagePath: '/signs/serviceskilt/skilt-626-overnattingssted.jpg',
+    shortExplanation: 'Viser vei til et hotell, motell eller pensjonat.',
+    longExplanation: 'Skiltet viser at det finnes kommersiell overnatting med fulle hotell- eller motelltjenester i nærheten.',
+    theoryTrap: 'Dette skiltet viser en seng. Det indikerer ordinært hotell/motell, ikke camping eller hytter (som har egne skilt).',
+    whatToDo: [
+      'Følg skiltet for å finne hotellovernatting.'
+    ],
+    confusedWith: ['622', '624', '625'],
+    sources: [
+      { name: 'Statens vegvesen', url: 'https://www.vegvesen.no' },
+      { name: 'Lovdata', url: 'https://lovdata.no/dokument/SF/forskrift/2005-10-07-1219' }
+    ],
+    aliases: ['hotell', 'motell', 'seng', 'overnatting', 'overnattingssted', 'pensjonat']
+  },
+  {
+    id: '635',
+    code: '635',
+    name: 'Informasjon',
+    displayName: 'Informasjonstavle',
+    slug: 'informasjonstavle',
+    category: 'serviceskilt',
+    imagePath: '/signs/serviceskilt/skilt-635-informasjon.jpg',
+    shortExplanation: 'Viser til en informasjonstavle, kart eller info-punkt.',
+    longExplanation: 'Settes opp ved rasteplasser, innkjøringer til kommuner eller severdigheter. Viser et sted med oppsatte kart og lokal informasjon for reisende.',
+    theoryTrap: 'Dette er en ubemannet informasjonstavle med fysiske kart og oppslag. Det er ikke et bemannet turistkontor (som har skilt 637).',
+    whatToDo: [
+      'Stopp på oppmerket plass og gå bort til tavlen for å orientere deg på kartet.'
+    ],
+    confusedWith: ['637'],
+    sources: [
+      { name: 'Statens vegvesen', url: 'https://www.vegvesen.no' },
+      { name: 'Lovdata', url: 'https://lovdata.no/dokument/SF/forskrift/2005-10-07-1219' }
+    ],
+    aliases: ['informasjon', 'info', 'kart', 'tavle', 'i-skilt']
+  },
+  {
+    id: '637',
+    code: '637',
+    name: 'Turistkontor',
+    displayName: 'Turistkontor',
+    slug: 'turistkontor',
+    category: 'serviceskilt',
+    imagePath: '/signs/serviceskilt/skilt-637-turistkontor.jpg',
+    shortExplanation: 'Viser vei til et bemannet turistkontor.',
+    longExplanation: 'Viser til et lokalt eller regionalt turistkontor (i-punkt) der du kan få personlig hjelp, brosjyrer, bestille turer og få reisetips.',
+    theoryTrap: 'Turistkontor har begrensede åpningstider og er ofte kun sesongåpne om sommeren.',
+    whatToDo: [
+      'Oppsøk kontoret i åpningstiden for reisehjelp og råd.'
+    ],
+    confusedWith: ['635'],
+    sources: [
+      { name: 'Statens vegvesen', url: 'https://www.vegvesen.no' },
+      { name: 'Lovdata', url: 'https://lovdata.no/dokument/SF/forskrift/2005-10-07-1219' }
+    ],
+    aliases: ['turistinformasjon', 'turistkontor', 'info bemannet', 'i-punkt']
+  },
+  {
+    id: '640.10',
+    code: '640.10',
+    name: 'Severdighet',
+    displayName: 'Severdighet',
+    slug: 'severdighet',
+    category: 'serviceskilt',
+    imagePath: '/signs/serviceskilt/skilt-640-10-severdighet.jpg',
+    shortExplanation: 'Viser til et kulturminne, historisk sted eller annen severdighet.',
+    longExplanation: 'Dette skiltet (ofte kalt «sløyfe» eller «severdighetstegn») viser vei til nasjonalt eller regionalt viktige severdigheter, kulturminner, gamle kirker eller fortidsminner.',
+    theoryTrap: 'Symbolet (en firkantet sløyfe) er internasjonalt kjent og finnes også på tastaturet på Mac (Command-tasten), men i trafikken betyr det alltid en vernet eller viktig severdighet.',
+    whatToDo: [
+      'Følg skiltet dersom du ønsker å besøke lokale severdigheter.'
+    ],
+    confusedWith: ['640.12', '640.20'],
+    sources: [
+      { name: 'Statens vegvesen', url: 'https://www.vegvesen.no' },
+      { name: 'Lovdata', url: 'https://lovdata.no/dokument/SF/forskrift/2005-10-07-1219' }
+    ],
+    aliases: ['severdighet', 'sløyfe', 'kulturminne', 'historisk', 'attraksjon']
+  },
+  {
+    id: '640.12',
+    code: '640.12',
+    name: 'Museum',
+    displayName: 'Museum / Galleri',
+    slug: 'museum-galleri',
+    category: 'serviceskilt',
+    imagePath: '/signs/serviceskilt/skilt-640-12-museum-galleri.jpg',
+    shortExplanation: 'Viser vei til et museum eller kunstgalleri.',
+    longExplanation: 'Opplyser om at det ligger et offentlig tilgjengelig museum, kunstsamling eller galleri i nærheten.',
+    theoryTrap: 'Disse stedene krever ofte inngangsbillett og har faste åpningstider.',
+    whatToDo: [
+      'Følg skiltet for kulturelle opplevelser underveis.'
+    ],
+    confusedWith: ['640.10'],
+    sources: [
+      { name: 'Statens vegvesen', url: 'https://www.vegvesen.no' },
+      { name: 'Lovdata', url: 'https://lovdata.no/dokument/SF/forskrift/2005-10-07-1219' }
+    ],
+    aliases: ['museum', 'galleri', 'kunst', 'utstilling']
+  },
+  {
+    id: '640.20',
+    code: '640.20',
+    name: 'Utsiktspunkt',
+    displayName: 'Utsiktspunkt',
+    slug: 'utsiktspunkt',
+    category: 'serviceskilt',
+    imagePath: '/signs/serviceskilt/skilt-640-20-utsiktspunkt.jpg',
+    shortExplanation: 'Viser vei til et tilrettelagt utsiktspunkt.',
+    longExplanation: 'Dette skiltet leder til en parkeringsplass eller rampe som byr på spesielt flott utsikt over landskapet forut.',
+    theoryTrap: 'Sving forsiktig av vegen, da inn- og utkjøringer til utsiktspunkter kan være bratte eller ligge rett etter uoversiktlige svinger.',
+    whatToDo: [
+      'Sving inn og parker trygt før du nyter utsikten.'
+    ],
+    confusedWith: ['640.10'],
+    sources: [
+      { name: 'Statens vegvesen', url: 'https://www.vegvesen.no' },
+      { name: 'Lovdata', url: 'https://lovdata.no/dokument/SF/forskrift/2005-10-07-1219' }
+    ],
+    aliases: ['utsiktspunkt', 'utsikt', 'fotopunkt', 'panorama']
+  },
+  {
+    id: '650.10',
+    code: '650.10',
+    name: 'Badeplass',
+    displayName: 'Badeplass',
+    slug: 'badeplass',
+    category: 'serviceskilt',
+    imagePath: '/signs/serviceskilt/skilt-650-10-badeplass.jpg',
+    shortExplanation: 'Viser vei til en tilrettelagt badeplass (strand, svaberg eller basseng).',
+    longExplanation: 'Opplyser om offentlig tilgjengelig badeplass, gjerne med tilhørende toalett, parkering eller søppelhåndtering.',
+    theoryTrap: 'Bading skjer alltid på eget ansvar. Skiltet garanterer ikke at vannet er temperert eller fritt for undervannsstrømmer.',
+    whatToDo: [
+      'Vis aktsomhet ved bading, spesielt med barn.'
+    ],
+    confusedWith: [],
+    sources: [
+      { name: 'Statens vegvesen', url: 'https://www.vegvesen.no' },
+      { name: 'Lovdata', url: 'https://lovdata.no/dokument/SF/forskrift/2005-10-07-1219' }
+    ],
+    aliases: ['badeplass', 'strand', 'bading', 'vann', 'bade']
+  },
+  {
+    id: '650.11',
+    code: '650.11',
+    name: 'Fiskeplass',
+    displayName: 'Fiskeplass',
+    slug: 'fiskeplass',
+    category: 'serviceskilt',
+    imagePath: '/signs/serviceskilt/skilt-650-11-fiskeplass.jpg',
+    shortExplanation: 'Viser vei til tilrettelagt fiskeplass.',
+    longExplanation: 'Viser til steder der det er gode og eventuelt universelt utformede fiskemuligheter fra land (brygge, elvebredd osv.).',
+    theoryTrap: 'Selv om det skiltes fiskeplass, må du fortsatt ha gyldig fiskekort eller følge lokale regler for fiske i ferskvann.',
+    whatToDo: [
+      'Sjekk lokale fiskeregler før du kaster ut snøret.'
+    ],
+    confusedWith: [],
+    sources: [
+      { name: 'Statens vegvesen', url: 'https://www.vegvesen.no' },
+      { name: 'Lovdata', url: 'https://lovdata.no/dokument/SF/forskrift/2005-10-07-1219' }
+    ],
+    aliases: ['fiskeplass', 'fiske', 'fiskekort', 'stang']
+  },
+  {
+    id: '650.20',
+    code: '650.20',
+    name: 'Tursti',
+    displayName: 'Tursti',
+    slug: 'tursti',
+    category: 'serviceskilt',
+    imagePath: '/signs/serviceskilt/skilt-650-20-tursti.jpg',
+    shortExplanation: 'Viser startpunkt for en merket tursti eller turløype.',
+    longExplanation: 'Settes opp der en merket sti for fotturer eller fjellturer starter, ofte ved en parkeringsplass med informasjonstavle.',
+    theoryTrap: 'Dette er en sti beregnet for gående i naturen. Den må ikke forveksles med sykkelløyper eller asfalterte gangveger.',
+    whatToDo: [
+      'Følg stien og respekter naturen ved å ta med søppel hjem.'
+    ],
+    confusedWith: ['650.21'],
+    sources: [
+      { name: 'Statens vegvesen', url: 'https://www.vegvesen.no' },
+      { name: 'Lovdata', url: 'https://lovdata.no/dokument/SF/forskrift/2005-10-07-1219' }
+    ],
+    aliases: ['tursti', 'sti', 'gåtur', 'fottur', 'fjelltur']
+  },
+  {
+    id: '650.21',
+    code: '650.21',
+    name: 'Skiløype',
+    displayName: 'Skiløype',
+    slug: 'skiloype',
+    category: 'serviceskilt',
+    imagePath: '/signs/serviceskilt/skilt-650-21-skiloyype.jpg',
+    shortExplanation: 'Viser startpunkt eller kryssing for en merket og preparert skiløype.',
+    longExplanation: 'Opplyser om at du befinner deg ved eller krysser en løype beregnet på langrenn og skigåing.',
+    theoryTrap: 'På sommerstid er dette ofte myr eller utmark. Skiltet er primært aktivt/relevant i vintersesongen.',
+    whatToDo: [
+      'Vis hensyn dersom skiløypen krysser vegen eller parkeringsplassen.'
+    ],
+    confusedWith: ['650.20'],
+    sources: [
+      { name: 'Statens vegvesen', url: 'https://www.vegvesen.no' },
+      { name: 'Lovdata', url: 'https://lovdata.no/dokument/SF/forskrift/2005-10-07-1219' }
+    ],
+    aliases: ['skiløype', 'ski', 'langrenn', 'løype', 'skiloyype']
+  },
+  {
+    id: '650.40',
+    code: '650.40',
+    name: 'Gardsmat',
+    displayName: 'Gardsmat / Bygdeturisme',
+    slug: 'gardsmat-bygdeturisme',
+    category: 'serviceskilt',
+    imagePath: '/signs/serviceskilt/skilt-650-40-gardsmat-bygdeturisme.jpg',
+    shortExplanation: 'Viser til gardsmatutsalg, bygdeturisme eller lokalprodusert mat.',
+    longExplanation: 'Dette skiltet viser vei til gårder eller utsalg som tilbyr lokalproduserte matvarer, tradisjonsmat, gårdsutsalg eller bygdeturismeopplevelser.',
+    theoryTrap: 'Slike gårdsutsalg kan ha sesongavhengige eller uregelmessige åpningstider.',
+    whatToDo: [
+      'Følg skiltet for å støtte lokale produsenter og handle tradisjonsmat.'
+    ],
+    confusedWith: [],
+    sources: [
+      { name: 'Statens vegvesen', url: 'https://www.vegvesen.no' },
+      { name: 'Lovdata', url: 'https://lovdata.no/dokument/SF/forskrift/2005-10-07-1219' }
+    ],
+    aliases: ['gårdsmat', 'gardsmat', 'bygdeturisme', 'gård', 'lokalmat', 'honning', 'svele']
   }
 ];
+

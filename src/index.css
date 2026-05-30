@@ -1717,26 +1717,21 @@ body.dark-mode .site-footer {
   text-align: center;
   max-width: 800px;
   margin: 0 auto;
-  gap: 1rem;
-}
-
-.footer-title {
-  font-size: 1.15rem;
-  font-weight: 800;
-  letter-spacing: 0.05em;
-  color: var(--color-text);
-  font-family: var(--font-family);
-}
-
-.footer-title-accent {
-  color: var(--color-primary);
+  gap: 0.5rem;
 }
 
 .footer-nav {
   display: flex;
   justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
-  gap: var(--spacing-lg);
+  gap: var(--spacing-sm) var(--spacing-md);
+}
+
+.footer-separator {
+  color: var(--color-border);
+  opacity: 0.6;
+  user-select: none;
 }
 
 .footer-link {
@@ -1750,21 +1745,13 @@ body.dark-mode .site-footer {
   color: var(--color-primary);
 }
 
-.footer-disclaimer {
-  font-size: 0.825rem;
-  line-height: 1.7;
+.footer-copyright-and-disclaimer {
+  font-size: 0.8rem;
+  line-height: 1.6;
   color: var(--color-text-light);
+  opacity: 0.75;
   margin: 0;
   max-width: 760px;
-  opacity: 0.85;
-}
-
-.footer-copyright-text {
-  font-size: 0.775rem;
-  color: var(--color-text-light);
-  opacity: 0.65;
-  margin: 0;
-  font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
 }
 
 /* Featured Signs Section Grid & Responsive Swipe Layout */

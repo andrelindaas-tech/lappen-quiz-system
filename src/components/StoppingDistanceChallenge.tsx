@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
 import confetti from 'canvas-confetti'
 import './StoppingDistanceChallenge.css'
@@ -328,7 +329,7 @@ export default function StoppingDistanceChallenge() {
     // Road positioning calculations
     const reactionEnd = percent(values.reaction)
     const stopEnd = percent(values.stopping)
-    const isOverlap = showResultSegments && showGuessMarker && Math.abs(guess - values.stopping) <= 8
+    const isOverlap = showResultSegments && showGuessMarker && Math.abs(percent(guess) - percent(values.stopping)) <= 14
 
     const surfaceClass = currentScenario.surface
         .toLowerCase()
@@ -357,10 +358,13 @@ export default function StoppingDistanceChallenge() {
                 <meta name="description" content="Test din forståelse for reaksjonstid, bremselende og total stopplengde med vårt interaktive stopplengde-spill." />
             </Helmet>
 
-            <div className="site-bar">
-                <div className="brand">Teori-test.no</div>
-                <div className="section-pill">Læringsspill</div>
-            </div>
+            <nav style={{ marginBottom: 'var(--spacing-md)', fontSize: '0.9rem' }} aria-label="Brødsmulesti">
+                <Link to="/laeringsspill" style={{ color: 'var(--color-primary)', textDecoration: 'none' }}>
+                    Læringsspill
+                </Link>
+                <span style={{ color: 'var(--color-text-light)', margin: '0 8px' }}>/</span>
+                <span style={{ color: 'var(--color-text-light)' }}>Stopplengde-utfordringen</span>
+            </nav>
 
             <section className="article-card" aria-labelledby="page-title">
                 <span className="kicker">Mini-spill for klasse B</span>

@@ -24,7 +24,8 @@ interface QuizContainerProps {
 const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL
 
 export default function QuizContainer({ onReturnHome, onQuizComplete }: QuizContainerProps) {
-    const { category } = useParams()
+    const { category: rawCategory } = useParams()
+    const category = rawCategory?.toLowerCase() === 'fartsregler' ? 'fart_og_plassering' : rawCategory
     const [searchParams] = useSearchParams()
 
     // Construct mode dynamically from URL params

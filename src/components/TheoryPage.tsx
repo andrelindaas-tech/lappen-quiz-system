@@ -1,5 +1,6 @@
 // Teori-siden — Oversikt over alle emner
 import { useParams, useNavigate } from 'react-router-dom'
+import { useEffect } from 'react'
 import { Helmet } from 'react-helmet-async'
 import { 
     Shield, 
@@ -60,6 +61,21 @@ declare function gtag(...args: unknown[]): void
 export default function TheoryPage() {
     const { articleId } = useParams()
     const navigate = useNavigate()
+
+    useEffect(() => {
+        if (articleId) {
+            const slugMap: Record<string, string> = {
+                'vognkort-og-vekt': 'vognkort-vekter',
+                'sikkerhet': 'sikkerhetsutstyr',
+                'morkekjoring': 'lysbruk-morkekjoring',
+                'trafikkuhell': 'trafikkuhell-forstehjelp',
+            }
+            const correctId = slugMap[articleId.toLowerCase()]
+            if (correctId) {
+                navigate(`/laeringsressurser/${correctId}`, { replace: true })
+            }
+        }
+    }, [articleId, navigate])
 
     // Using react-router-dom, we don't need manual popstate tracking anymore
     const selectedTopicId = articleId || null

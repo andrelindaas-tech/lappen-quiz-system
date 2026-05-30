@@ -19,9 +19,13 @@
 /teori/myndighetspyramiden         /laeringsressurser/myndighetspyramiden      301
 /teori/veimerking                  /laeringsressurser/veimerking               301
 /teori/rundkjoring                 /laeringsressurser/rundkjoring              301
+/teori/morkekjoring                /laeringsressurser/lysbruk-morkekjoring     301
+/teori/trafikkuhell                /laeringsressurser/trafikkuhell-forstehjelp 301
 
 # Intern redirect (gammel URL-variant)
 /laeringsressurser/vognkort-og-vekt    /laeringsressurser/vognkort-vekter      301
 /laeringsressurser/sikkerhet          /laeringsressurser/sikkerhetsutstyr      301
+/laeringsressurser/morkekjoring    /laeringsressurser/lysbruk-morkekjoring     301
+/laeringsressurser/trafikkuhell    /laeringsressurser/trafikkuhell-forstehjelp 301
 
 /*    /index.html   200

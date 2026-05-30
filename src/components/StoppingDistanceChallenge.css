@@ -614,6 +614,10 @@ body:not(.dark-mode) .simulator-section {
 }
 
 /* Stacking adjustment when guess and stop markers overlap */
+.stop-marker.overlap-adjust {
+  z-index: 5;
+}
+
 .stop-marker.overlap-adjust .stop-marker-flag {
   top: -54px; /* Stack above the guess marker */
 }

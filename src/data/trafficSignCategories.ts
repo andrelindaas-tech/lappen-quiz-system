@@ -46,8 +46,8 @@ export const trafficSignCategories: TrafficSignCategory[] = [
     id: 'serviceskilt',
     name: 'Serviceskilt',
     slug: 'serviceskilt',
-    description: 'Skilt som gir opplysninger om nødhjelp, bensinstasjoner eller serveringssteder.',
-    isActive: false,
+    description: 'Skilt som gir opplysninger om nødutstyr, veghjelp, spisesteder, overnatting og andre tjenester langs vegen.',
+    isActive: true,
   },
   {
     id: 'vegvisningsskilt',

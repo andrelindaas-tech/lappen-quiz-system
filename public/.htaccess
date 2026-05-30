@@ -1,0 +1,36 @@
+RewriteEngine On
+
+# 1. Redirect legacy /teori/ paths to /laeringsressurser/ (301 Moved Permanently)
+RewriteRule ^teori/bremselengde$ /laeringsressurser/bremselengde [R=301,NC,L]
+RewriteRule ^teori/reaksjonstid$ /laeringsressurser/reaksjonstid [R=301,NC,L]
+RewriteRule ^teori/vikeplikt$ /laeringsressurser/vikeplikt [R=301,NC,L]
+RewriteRule ^teori/skilt$ /laeringsressurser/skilt [R=301,NC,L]
+RewriteRule ^teori/sikkerhet$ /laeringsressurser/sikkerhetsutstyr [R=301,NC,L]
+RewriteRule ^teori/miljo$ /laeringsressurser/miljo [R=301,NC,L]
+RewriteRule ^teori/stans-og-parkering$ /laeringsressurser/stans-og-parkering [R=301,NC,L]
+RewriteRule ^teori/vognkort-vekter$ /laeringsressurser/vognkort-vekter [R=301,NC,L]
+RewriteRule ^teori/vognkort-og-vekt$ /laeringsressurser/vognkort-vekter [R=301,NC,L]
+RewriteRule ^teori/sikkerhetskontroll$ /laeringsressurser/sikkerhetskontroll [R=301,NC,L]
+RewriteRule ^teori/stroket-teoriproven$ /laeringsressurser/stroket-teoriproven [R=301,NC,L]
+RewriteRule ^teori/oppkjoring$ /laeringsressurser/oppkjoring [R=301,NC,L]
+RewriteRule ^teori/tips-eksamen$ /laeringsressurser/tips-eksamen [R=301,NC,L]
+RewriteRule ^teori/ovingskjoring$ /laeringsressurser/ovingskjoring [R=301,NC,L]
+RewriteRule ^teori/promille$ /laeringsressurser/promille [R=301,NC,L]
+RewriteRule ^teori/tilhenger$ /laeringsressurser/tilhenger [R=301,NC,L]
+RewriteRule ^teori/fartsgrenser$ /laeringsressurser/fartsgrenser [R=301,NC,L]
+RewriteRule ^teori/myndighetspyramiden$ /laeringsressurser/myndighetspyramiden [R=301,NC,L]
+RewriteRule ^teori/veimerking$ /laeringsressurser/veimerking [R=301,NC,L]
+RewriteRule ^teori/rundkjoring$ /laeringsressurser/rundkjoring [R=301,NC,L]
+RewriteRule ^teori/morkekjoring$ /laeringsressurser/lysbruk-morkekjoring [R=301,NC,L]
+RewriteRule ^teori/trafikkuhell$ /laeringsressurser/trafikkuhell-forstehjelp [R=301,NC,L]
+
+# 2. Redirect alternative /laeringsressurser/ slugs
+RewriteRule ^laeringsressurser/vognkort-og-vekt$ /laeringsressurser/vognkort-vekter [R=301,NC,L]
+RewriteRule ^laeringsressurser/sikkerhet$ /laeringsressurser/sikkerhetsutstyr [R=301,NC,L]
+RewriteRule ^laeringsressurser/morkekjoring$ /laeringsressurser/lysbruk-morkekjoring [R=301,NC,L]
+RewriteRule ^laeringsressurser/trafikkuhell$ /laeringsressurser/trafikkuhell-forstehjelp [R=301,NC,L]
+
+# 3. SPA Routing (fallback til index.html for React Router)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.html [L]

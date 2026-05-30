@@ -1,6 +1,6 @@
 // Main App Component
 import { useState, useEffect, useCallback, Suspense, lazy } from 'react'
-import { Routes, Route, Link, useNavigate, useLocation } from 'react-router-dom'
+import { Routes, Route, Link, useNavigate, useLocation, Navigate, useParams } from 'react-router-dom'
 import StartScreen from './components/StartScreen'
 
 const QuizContainer = lazy(() => import('./components/QuizContainer'))
@@ -23,6 +23,18 @@ import { ClipboardCheck, Signpost, BookOpen, Gamepad2 } from 'lucide-react'
 
 // GA4 global type
 declare function gtag(...args: unknown[]): void
+
+function LegacyTeoriRedirect() {
+    const { articleId } = useParams()
+    const slugMap: Record<string, string> = {
+        'vognkort-og-vekt': 'vognkort-vekter',
+        'sikkerhet': 'sikkerhetsutstyr',
+        'morkekjoring': 'lysbruk-morkekjoring',
+        'trafikkuhell': 'trafikkuhell-forstehjelp',
+    }
+    const targetId = articleId ? (slugMap[articleId.toLowerCase()] || articleId) : ''
+    return <Navigate to={`/laeringsressurser/${targetId}`} replace />
+}
 
 export default function App() {
     const [isDarkMode, setIsDarkMode] = useState(() => {
@@ -248,6 +260,7 @@ export default function App() {
                         <Route path="/quiz/:category" element={<QuizContainer onReturnHome={handleReturnHome} onQuizComplete={handleQuizComplete} />} />
                         <Route path="/laeringsressurser/oppkjoring" element={<OppkjoringPage />} />
                         <Route path="/laeringsressurser/:articleId?" element={<TheoryPage />} />
+                        <Route path="/teori/:articleId" element={<LegacyTeoriRedirect />} />
                         <Route path="/laeringsspill" element={<LearningGamesIndex />} />
                         <Route path="/laeringsspill/stopplengde" element={<StoppingDistanceChallenge />} />
                         <Route path="/trafikkskilt" element={<TrafficSignBank />} />
@@ -260,28 +273,20 @@ export default function App() {
             </main>
 
             <footer className="site-footer">
-                <div className="section-container" style={{ paddingTop: '1.25rem', paddingBottom: '1.25rem' }}>
+                <div className="section-container" style={{ paddingTop: '1rem', paddingBottom: '1rem' }}>
                     <div className="footer-centered-content">
-                        {/* Title */}
-                        <div className="footer-title">
-                            TEORI-TEST<span className="footer-title-accent">.NO</span>
-                        </div>
-
                         {/* Navigation Links */}
                         <nav className="footer-nav" aria-label="Footerlenker">
                             <Link to="/laeringsressurser/om-oss" className="footer-link">Om oss</Link>
+                            <span className="footer-separator" aria-hidden="true">•</span>
                             <Link to="/laeringsressurser/kontakt" className="footer-link">Kontakt</Link>
+                            <span className="footer-separator" aria-hidden="true">•</span>
                             <Link to="/laeringsressurser/personvern" className="footer-link">Personvern &amp; Cookies</Link>
                         </nav>
 
-                        {/* Disclaimer */}
-                        <p className="footer-disclaimer">
-                            Alt innholdet på Teori-test.no er kvalitetssikret og uavhengig utarbeidet for å samsvare med de overordnede nasjonale læreplanene formidlet av Vegdirektoratet for Førerkort Klasse B. Vi er ikke tilknyttet Statens vegvesen eller noen offentlige godkjenningsorganer.
-                        </p>
-
-                        {/* Copyright */}
-                        <p className="footer-copyright-text">
-                            © 2026 Teori-test.no. Alle rettigheter reservert. Laget for optimal læring i Norge.
+                        {/* Copyright & Disclaimer */}
+                        <p className="footer-copyright-and-disclaimer">
+                            © 2026 Teori-test.no. En uavhengig læringsressurs, ikke tilknyttet Statens vegvesen.
                         </p>
                     </div>
                 </div>
