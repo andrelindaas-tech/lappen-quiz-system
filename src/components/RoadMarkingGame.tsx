@@ -1,6 +1,7 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
+import confetti from 'canvas-confetti'
 import './RoadMarkingGame.css'
 
 interface Option {
@@ -155,7 +156,7 @@ const SCENARIOS: Scenario[] = [
             { id: 'c', text: "Sperreområdet gjelder kun for tungtransport og lastebiler.", isCorrect: false },
             { id: 'd', text: "Du kan kjøre over området dersom du skal svinge av til høyre senere.", isCorrect: false }
         ],
-        explanation: "Et sperreområde is markert med diagonale hvite eller gule striper innenfor en heltrukken begrensningslinje. Det skal lede trafikken sikkert unna hindringer. Det er strengt forbudt å kjøre eller plassere kjøretøyet innenfor dette området.",
+        explanation: "Et sperreområde er markert med diagonale hvite eller gule striper innenfor en heltrukken begrensningslinje. Det skal lede trafikken sikkert unna hindringer. Det er strengt forbudt å kjøre eller plassere kjøretøyet innenfor dette området.",
         svg: `
             <svg viewBox="0 0 600 300" class="w-full h-full rounded-lg bg-[#3f6a3d]">
                 <defs>
@@ -333,7 +334,7 @@ const SCENARIOS: Scenario[] = [
             { id: 'c', text: "Du kan krysse sperrelinjen for å skifte felt om du bruker blinklys.", isCorrect: false },
             { id: 'd', text: "Du må stoppe helt opp før du svinger til høyre.", isCorrect: false }
         ],
-        explanation: "Piler i kjørefeltet fungerer som et påbud dersom det er en heltrukken hvit sperrelinje mellom kjørefeltene. Siden sperrelinjen hindrer deg i å skifte felt, er du pålagt å følge retningen pilen viser (svinge til høyre inn på avkjøringsveien). Det høyre feltet opphører og snevres fysisk inn etter svingen.",
+        explanation: "Kjørefeltpiler (skilt 1034) angir hvilke kjøreretninger som er tillatt i feltet. Det er forbudt å kjøre i strid med pilene. Siden det er en heltrukken sperrelinje på din venstre side, kan du heller ikke skifte felt, og du må derfor følge pilens retning og svinge til høyre.",
         svg: `
             <svg viewBox="0 0 600 300" class="w-full h-full rounded-lg bg-[#3f6a3d]">
                 <!-- Veibane som utvider seg diagonalt og deretter snevres inn til kun ETT felt etter svingen -->
@@ -420,7 +421,7 @@ const SCENARIOS: Scenario[] = [
             { id: 'c', text: "Du har kun vikeplikt dersom det er dårlig sikt eller mørkt.", isCorrect: false },
             { id: 'd', text: "Du må stoppe helt opp og stå i ro i 3 sekunder, uansett om det er folk der eller ikke.", isCorrect: false }
         ],
-        explanation: "Sebrastriper i veibanen markerer et godkjent gangfelt. Som bilfører har du en streng og absolutt vikeplikt for fotgjengere som er i gangfeltet, eller som viser tydelig tegn på at de er på veg ut i det. Du må tilpasse farten i god tid.",
+        explanation: "Sebrastriper i veibanen markerer et godkjent gangfelt. Som bilfører har du en streng og absolutt vikeplikt for fotgjengere som er i gangfeltet, eller som viser tydelig tegn på at de er på vei ut i det. Du må tilpasse farten i god tid.",
         svg: `
             <svg viewBox="0 0 600 300" class="w-full h-full rounded-lg bg-[#3f6a3d]">
                 <!-- Asfalt -->
@@ -458,6 +459,81 @@ export default function RoadMarkingGame() {
     const [hasAnswered, setHasAnswered] = useState(false)
     const [selectedOptionId, setSelectedOptionId] = useState<string | null>(null)
     const [showResults, setShowResults] = useState(false)
+
+    const scenario = SCENARIOS[currentRound]
+
+    // Confetti effect on completion
+    useEffect(() => {
+        if (showResults && score >= 70) {
+            const duration = 2000
+            const end = Date.now() + duration
+
+            const frame = () => {
+                confetti({
+                    particleCount: 4,
+                    angle: 60,
+                    spread: 55,
+                    origin: { x: 0, y: 0.85 },
+                    colors: ['#2dd4bf', '#3b82f6', '#10b981']
+                })
+                confetti({
+                    particleCount: 4,
+                    angle: 120,
+                    spread: 55,
+                    origin: { x: 1, y: 0.85 },
+                    colors: ['#2dd4bf', '#3b82f6', '#10b981']
+                })
+
+                if (Date.now() < end) {
+                    requestAnimationFrame(frame)
+                }
+            }
+            frame()
+        }
+    }, [showResults, score])
+
+    // Keyboard navigation
+    useEffect(() => {
+        const handleKeyDown = (e: KeyboardEvent) => {
+            if (e.target instanceof HTMLInputElement || e.target instanceof HTMLTextAreaElement) {
+                return
+            }
+
+            if (!showResults) {
+                if (!hasAnswered) {
+                    // Option selection (1-4)
+                    const key = e.key
+                    if (['1', '2', '3', '4'].includes(key)) {
+                        const index = parseInt(key) - 1
+                        const option = scenario.options[index]
+                        if (option) {
+                            handleSelectOption(option.id, option.isCorrect)
+                        }
+                    } else if (['a', 'b', 'c', 'd'].includes(key.toLowerCase())) {
+                        const optionId = key.toLowerCase()
+                        const option = scenario.options.find(o => o.id === optionId)
+                        if (option) {
+                            handleSelectOption(option.id, option.isCorrect)
+                        }
+                    }
+                } else {
+                    // Next round (Enter, Space, or N)
+                    if (e.key === 'Enter' || e.key === ' ' || e.key.toLowerCase() === 'n') {
+                        e.preventDefault() // Prevent scrolling for spacebar
+                        handleNextRound()
+                    }
+                }
+            } else {
+                // Restart game (R)
+                if (e.key.toLowerCase() === 'r') {
+                    handleRestartGame()
+                }
+            }
+        }
+
+        window.addEventListener('keydown', handleKeyDown)
+        return () => window.removeEventListener('keydown', handleKeyDown)
+    }, [currentRound, hasAnswered, showResults, scenario, score, streak])
 
     const handleSelectOption = (optionId: string, isCorrect: boolean) => {
         if (hasAnswered) return
@@ -503,7 +579,7 @@ export default function RoadMarkingGame() {
         }
 
         return (
-            <div className="quiz-results-card">
+            <div className="quiz-results-card" key="results">
                 <span className="results-trophy" aria-hidden="true">🏆</span>
                 <h2 className="quiz-card-title" style={{ fontSize: '1.75rem', marginBottom: 'var(--spacing-sm)' }}>
                     Spillet er fullført!
@@ -518,13 +594,13 @@ export default function RoadMarkingGame() {
                 </div>
 
                 <button onClick={handleRestartGame} className="results-restart-btn">
-                    Spill på nytt
+                    <span>Spill på nytt</span>
+                    <kbd className="keyboard-hint" style={{ background: 'rgba(255, 255, 255, 0.2)', border: 'none', color: '#ffffff', boxShadow: 'none' }}>R</kbd>
                 </button>
             </div>
         )
     }
 
-    const scenario = SCENARIOS[currentRound]
     const progressPercent = ((currentRound + 1) / SCENARIOS.length) * 100
 
     return (
@@ -563,7 +639,7 @@ export default function RoadMarkingGame() {
                         </div>
 
                         {/* Body */}
-                        <div className="quiz-card-body">
+                        <div className="quiz-card-body" key={currentRound}>
                             {/* Inline Visual SVG */}
                             <div 
                                 className="quiz-visual-wrapper" 
@@ -575,7 +651,7 @@ export default function RoadMarkingGame() {
 
                             {/* Options */}
                             <div className="quiz-options-list">
-                                {scenario.options.map(option => {
+                                {scenario.options.map((option, idx) => {
                                     let btnClass = "quiz-option-btn"
                                     if (hasAnswered) {
                                         if (option.isCorrect) {
@@ -591,8 +667,13 @@ export default function RoadMarkingGame() {
                                             disabled={hasAnswered}
                                             onClick={() => handleSelectOption(option.id, option.isCorrect)}
                                             className={btnClass}
+                                            aria-label={`Svaralternativ ${option.id.toUpperCase()}: ${option.text}`}
                                         >
-                                            {option.text}
+                                            <span className="option-badge-text-group">
+                                                <span className="option-badge">{option.id.toUpperCase()}</span>
+                                                <span className="option-text">{option.text}</span>
+                                            </span>
+                                            <kbd className="keyboard-hint">{idx + 1}</kbd>
                                         </button>
                                     )
                                 })}
@@ -609,14 +690,17 @@ export default function RoadMarkingGame() {
                                         )}
                                         {streak > 1 && (
                                             <span className="streak-badge">
-                                                Streak x{streak}!
+                                                🔥 Streak x{streak}!
                                             </span>
                                         )}
                                     </div>
                                     <p className="quiz-feedback-text">{scenario.explanation}</p>
                                     
                                     <button onClick={handleNextRound} className="quiz-next-btn">
-                                        {currentRound < SCENARIOS.length - 1 ? "Neste runde" : "Se resultat"}
+                                        <span>
+                                            {currentRound < SCENARIOS.length - 1 ? "Neste runde" : "Se resultat"}
+                                        </span>
+                                        <kbd className="keyboard-hint" style={{ background: 'rgba(255, 255, 255, 0.2)', border: 'none', color: '#ffffff', boxShadow: 'none' }}>Enter</kbd>
                                     </button>
                                 </div>
                             )}
