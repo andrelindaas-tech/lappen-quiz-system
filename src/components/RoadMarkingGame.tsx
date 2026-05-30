@@ -614,7 +614,7 @@ export default function RoadMarkingGame() {
     const renderResults = () => {
         let textResult = ""
         if (score >= 140) {
-            textResult = "Utmerket! Du har fullstendig kontroll på all viktig veimerking og er klar for teoriprøven Klasse B."
+            textResult = "Utmerket! Du har vist svært god forståelse for veimerking, noe som gir deg et kjempefint utgangspunkt for teoriprøven."
         } else if (score >= 90) {
             textResult = "Godt bestått! Du har god grunnforståelse, men pass på de små nyansene rundt kollektivfelt og gule kantlinjer."
         } else {
