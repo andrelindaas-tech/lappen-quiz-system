@@ -133,16 +133,16 @@ const SCENARIOS: Scenario[] = [
                 <!-- Midtlinje på sideveien -->
                 <line x1="300" y1="160" x2="300" y2="300" stroke="#facc15" stroke-width="4" stroke-dasharray="10 10" />
                 <!-- Bil -->
-                <rect x="215" y="210" width="70" height="45" rx="5" fill="#3b82f6" stroke="white" stroke-width="2" />
-                <text x="250" y="238" fill="white" font-size="13" font-weight="bold" text-anchor="middle">DU</text>
+                <rect x="315" y="210" width="70" height="45" rx="5" fill="#3b82f6" stroke="white" stroke-width="2" />
+                <text x="350" y="238" fill="white" font-size="13" font-weight="bold" text-anchor="middle">DU</text>
                 <!-- Vikelinje -->
                 <g fill="white">
-                    <polygon points="210,123 230,123 220,138" />
-                    <polygon points="240,123 260,123 250,138" />
-                    <polygon points="270,123 290,123 280,138" />
+                    <polygon points="310,123 330,123 320,138" />
+                    <polygon points="340,123 360,123 350,138" />
+                    <polygon points="370,123 390,123 380,138" />
                 </g>
                 <!-- Markeringsring -->
-                <ellipse cx="250" cy="130" rx="60" ry="22" fill="none" stroke="#ef4444" stroke-width="3" stroke-dasharray="6 4" />
+                <ellipse cx="350" cy="130" rx="60" ry="22" fill="none" stroke="#ef4444" stroke-width="3" stroke-dasharray="6 4" />
             </svg>
         `
     },
@@ -217,17 +217,17 @@ const SCENARIOS: Scenario[] = [
                 <!-- Delelinje -->
                 <line x1="300" y1="160" x2="300" y2="300" stroke="#facc15" stroke-width="4" stroke-dasharray="10 10" />
                 <!-- Egen bil -->
-                <rect x="215" y="210" width="70" height="45" rx="5" fill="#3b82f6" stroke="white" stroke-width="2" />
-                <text x="250" y="238" fill="white" font-size="13" font-weight="bold" text-anchor="middle">DU</text>
+                <rect x="315" y="210" width="70" height="45" rx="5" fill="#3b82f6" stroke="white" stroke-width="2" />
+                <text x="350" y="238" fill="white" font-size="13" font-weight="bold" text-anchor="middle">DU</text>
                 <!-- Stoppskilt-ikon -->
-                <g transform="translate(340, 150)">
+                <g transform="translate(415, 140)">
                     <polygon points="10,0 25,0 35,10 35,25 25,35 10,35 0,25 0,10" fill="#ef4444" stroke="white" stroke-width="1.5" />
                     <text x="17.5" y="21" fill="white" font-size="8" font-weight="bold" text-anchor="middle">STOP</text>
                 </g>
                 <!-- Stopplinje (bred tverrlinje) -->
-                <line x1="200" y1="125" x2="300" y2="125" stroke="white" stroke-width="12" />
+                <line x1="300" y1="125" x2="400" y2="125" stroke="white" stroke-width="12" />
                 <!-- Rød markeringsring -->
-                <ellipse cx="250" cy="125" rx="60" ry="18" fill="none" stroke="#ef4444" stroke-width="3" stroke-dasharray="6 4" />
+                <ellipse cx="350" cy="125" rx="60" ry="18" fill="none" stroke="#ef4444" stroke-width="3" stroke-dasharray="6 4" />
             </svg>
         `
     },
