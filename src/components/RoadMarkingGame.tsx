@@ -374,7 +374,7 @@ const SCENARIOS: Scenario[] = [
             { id: 'c', text: "Du kan velge fritt basert på hvilket kjørefelt som er tomt.", isCorrect: false },
             { id: 'd', text: "De gule linjene gjelder kun for anleggsmaskiner under 7,5 tonn.", isCorrect: false }
         ],
-        explanation: "Under veiarbeid brukes det ofte midlertidig gul vegoppmerking for å lede trafikken i nye, midlertidige traséer. Regelen er krystallklar: Gul midlertidig oppmerking overstyrer alltid den ordinære hvite oppmerkingen.",
+        explanation: "Under veiarbeid brukes det ofte midlertidig gul vegoppmerking for å lede trafikken i nye, midlertidige traséer. Regelen er krystallklar: Gul midlertidig oppmerking overstyrer alltid den ordinære hvite oppmerkingen.\n\nI praksis fjernes ikke den hvite malingen under kortvarig veiarbeid fordi det er dyrt, tidkrevende og skader asfalten. I stedet blir den overmalt, tapet over med svart markeringstape, eller rett og slett bare overstyrt av de gule linjene. Du skal derfor overse de hvite linjene og følge de gule.",
         svg: `
             <svg viewBox="0 0 600 300" class="w-full h-full rounded-lg bg-[#3f6a3d]">
                 <!-- Asfalt -->
@@ -385,10 +385,37 @@ const SCENARIOS: Scenario[] = [
                 <line x1="0" y1="255" x2="600" y2="255" stroke="white" stroke-width="3" />
                 
                 <!-- Slitt hvit delelinje (lav opasitet) som fortsetter rett frem -->
-                <line x1="0" y1="150" x2="600" y2="150" stroke="white" stroke-width="4" stroke-dasharray="10 15" opacity="0.25" />
+                <line x1="0" y1="150" x2="600" y2="150" stroke="white" stroke-width="4" stroke-dasharray="10 15" opacity="0.2" />
+                
+                <!-- Svarte kryss (tape) over den deaktiverte hvite delelinjen -->
+                <g stroke="#111827" stroke-width="3.5" opacity="0.8">
+                    <!-- Kryss 1 -->
+                    <line x1="120" y1="143" x2="135" y2="157" />
+                    <line x1="120" y1="157" x2="135" y2="143" />
+                    <!-- Kryss 2 -->
+                    <line x1="220" y1="143" x2="235" y2="157" />
+                    <line x1="220" y1="157" x2="235" y2="143" />
+                    <!-- Kryss 3 -->
+                    <line x1="360" y1="143" x2="375" y2="157" />
+                    <line x1="360" y1="157" x2="375" y2="143" />
+                    <!-- Kryss 4 -->
+                    <line x1="460" y1="143" x2="475" y2="157" />
+                    <line x1="460" y1="157" x2="475" y2="143" />
+                </g>
                 
                 <!-- Midlertidig gul delelinje som svinger unna veiarbeidet i midten -->
                 <path d="M 0 150 Q 300 80 600 150" stroke="#facc15" stroke-width="6" fill="none" stroke-dasharray="15 15" />
+                
+                <!-- Gule retningspiler i veibanen for å vise trafikkflyten -->
+                <g fill="none" stroke="#facc15" stroke-width="3" opacity="0.9">
+                    <!-- Retningspil 1 (før hindring, svinger oppover) -->
+                    <path d="M 40 210 Q 120 185 200 160" />
+                    <polygon points="200,160 188,162 194,171" fill="#facc15" stroke="none" />
+                    
+                    <!-- Retningspil 2 (etter hindring, svinger nedover igjen) -->
+                    <path d="M 380 155 Q 460 180 540 210" />
+                    <polygon points="540,210 526,203 532,212" fill="#facc15" stroke="none" />
+                </g>
                 
                 <!-- Kjegler som sperrer av det opprinnelige feltet -->
                 <g transform="translate(280, 160)">
@@ -405,9 +432,6 @@ const SCENARIOS: Scenario[] = [
                     <rect x="0" y="0" width="65" height="38" rx="5" fill="#3b82f6" stroke="white" stroke-width="2" />
                     <text x="32.5" y="24" fill="white" font-size="13" font-weight="bold" text-anchor="middle">DU</text>
                 </g>
-                
-                <!-- Rød markeringsring rundt kjeglene og den gule linjen -->
-                <ellipse cx="300" cy="150" rx="140" ry="45" fill="none" stroke="#ef4444" stroke-width="3" stroke-dasharray="8 6" />
             </svg>
         `
     },
