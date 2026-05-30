@@ -8,6 +8,7 @@ const TheoryPage = lazy(() => import('./components/TheoryPage'))
 const OppkjoringPage = lazy(() => import('./components/OppkjoringPage'))
 const LearningGamesIndex = lazy(() => import('./components/LearningGamesIndex'))
 const StoppingDistanceChallenge = lazy(() => import('./components/StoppingDistanceChallenge'))
+const RoadMarkingGame = lazy(() => import('./components/RoadMarkingGame'))
 const TrafficSignBank = lazy(() => import('./components/traffic-signs/TrafficSignBank'))
 const TrafficSignCategoryPage = lazy(() => import('./components/traffic-signs/TrafficSignCategoryPage'))
 const TrafficSignDetailPage = lazy(() => import('./components/traffic-signs/TrafficSignDetailPage'))
@@ -263,6 +264,7 @@ export default function App() {
                         <Route path="/teori/:articleId" element={<LegacyTeoriRedirect />} />
                         <Route path="/laeringsspill" element={<LearningGamesIndex />} />
                         <Route path="/laeringsspill/stopplengde" element={<StoppingDistanceChallenge />} />
+                        <Route path="/laeringsspill/veimerking" element={<RoadMarkingGame />} />
                         <Route path="/trafikkskilt" element={<TrafficSignBank />} />
                         <Route path="/trafikkskilt/:categorySlug" element={<TrafficSignCategoryPage />} />
                         <Route path="/trafikkskilt/:categorySlug/:signSlug" element={<TrafficSignDetailPage />} />

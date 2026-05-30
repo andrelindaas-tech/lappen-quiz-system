@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
-import { CircleGauge, Gamepad2, Timer, Trophy, Signpost, GitFork } from 'lucide-react'
+import { CircleGauge, Gamepad2, Timer, Trophy, Signpost, Route } from 'lucide-react'
 
 export default function LearningGamesIndex() {
     return (
@@ -100,31 +100,30 @@ export default function LearningGamesIndex() {
                         <span className="mode-badge" style={{ alignSelf: 'center', marginTop: 'auto', backgroundColor: 'var(--color-border)', color: 'var(--color-text-light)', padding: '6px 14px' }}>Kommer snart</span>
                     </div>
 
-                    <div
+                    <Link
+                        to="/laeringsspill/veimerking"
                         className="mode-card"
                         style={{ 
-                            opacity: 0.7, 
-                            cursor: 'not-allowed', 
+                            textDecoration: 'none', 
                             display: 'flex', 
                             flexDirection: 'column', 
                             height: 'auto', 
                             minHeight: '250px',
+                            cursor: 'pointer', 
                             textAlign: 'center', 
-                            width: '100%', 
-                            background: 'var(--color-bg-secondary)', 
-                            border: '1px dashed var(--color-border)',
+                            width: '100%',
                             padding: '1.5rem 1.25rem'
                         }}
                     >
                         <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '1rem' }}>
                             <div className="card-icon-box">
-                                <GitFork size={24} strokeWidth={1.8} />
+                                <Route size={24} strokeWidth={1.8} />
                             </div>
                         </div>
-                        <h2 style={{ fontSize: '1.25rem', marginBottom: '0.5rem' }}>Vikeplikt-simulatoren</h2>
-                        <p style={{ flexGrow: 1, fontSize: '0.9rem', lineHeight: '1.5', margin: '0 0 1rem 0' }}>Avgjør hvem som har vikeplikt i komplekse krysssituasjoner under tidspress. Perfekt for vikeplikt-trening.</p>
-                        <span className="mode-badge" style={{ alignSelf: 'center', marginTop: 'auto', backgroundColor: 'var(--color-border)', color: 'var(--color-text-light)', padding: '6px 14px' }}>Kommer snart</span>
-                    </div>
+                        <h2 style={{ fontSize: '1.25rem', marginBottom: '0.5rem' }}>Veimerking-spillet</h2>
+                        <p style={{ flexGrow: 1, fontSize: '0.9rem', lineHeight: '1.5', margin: '0 0 1rem 0' }}>Kan du reglene for heltrukne linjer, sperreområder og vikelinjer? Test deg selv med interaktive situasjoner.</p>
+                        <span className="mode-badge mode-badge-full" style={{ alignSelf: 'center', marginTop: 'auto', padding: '6px 14px' }}>Spill nå</span>
+                    </Link>
                 </div>
             </div>
         </div>
