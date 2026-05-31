@@ -8,6 +8,38 @@ import '../../theory.css';
 export default function TrafficSignBank() {
   const [searchQuery, setSearchQuery] = useState('');
 
+  const faqItems = useMemo(() => [
+    {
+      question: "Hvor mange trafikkskilt er det i Norge?",
+      answer: "Det finnes nesten 300 offisielle trafikkskilt i Norge, fordelt på 9 grupper som fareskilt, forbudsskilt, påbudsskilt, opplysningsskilt og vikepliktskilt. Skiltbanken på teori-test.no dekker 212 av de viktigste med forklaringer og teorifeller."
+    },
+    {
+      question: "Hva er forskjellen på fareskilt og forbudsskilt?",
+      answer: "Fareskilt varsler om fare og krever at du tilpasser fart og oppmerksomhet — de forbyr ikke noe. Forbudsskilt forbyr en bestemt handling eller kjøremåte, for eksempel innkjøring eller parkering."
+    },
+    {
+      question: "Hvilke skilt er viktigst til teoriprøven?",
+      answer: "Vikepliktskilt (202), stoppskilt (204), forkjørsvegskilt (206), innkjøring forbudt (302) og forbikjøringsforbud (334) er blant de mest testede på teoriprøven. Underskilt er også viktige fordi de kan endre hvordan du tolker hovedskiltet."
+    },
+    {
+      question: "Hva betyr underskilt?",
+      answer: "Underskilt står under et hovedskilt og presiserer hvem skiltet gjelder for, hvor langt det gjelder, eller hvilke unntak som finnes. På teoriprøven er underskilt viktige fordi de kan endre betydningen av hovedskiltet."
+    }
+  ], []);
+
+  const faqSchema = useMemo(() => ({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqItems.map(item => ({
+      "@type": "Question",
+      "name": item.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": item.answer
+      }
+    }))
+  }), [faqItems]);
+
   // Fetch all categories and the signs for the active one
   const categories = useMemo(() => getAllCategories(), []);
   
@@ -36,27 +68,27 @@ export default function TrafficSignBank() {
           name="description"
           content="Søk i skiltbanken og lær alle trafikkskiltene til teoriprøven for personbil (klasse B). Se forklaringer, kjøreregler og typiske teorifeller."
         />
+        <script type="application/ld+json">
+          {JSON.stringify(faqSchema)}
+        </script>
       </Helmet>
 
       {/* Hero / Header Section */}
       <section style={{ textAlign: 'center', marginBottom: 'var(--spacing-2xl)', marginTop: 'var(--spacing-md)' }}>
-        <div style={{ display: 'inline-block', padding: '2px 10px', borderRadius: '9999px', background: 'rgba(59, 130, 246, 0.1)', color: 'var(--color-primary)', fontSize: '0.85rem', fontWeight: 600, marginBottom: 'var(--spacing-sm)' }}>
-          Nytt oppslagsverk
-        </div>
         <h1 style={{ fontSize: '2.5rem', fontWeight: 800, letterSpacing: '-0.025em', marginBottom: 'var(--spacing-md)' }}>
           Trafikkskilt til teoriprøven
         </h1>
-        <p style={{ color: 'var(--color-text-light)', maxWidth: '640px', margin: '0 auto', fontSize: '1.1rem', lineHeight: '1.6' }}>
-          Søk etter skilt, eller velg en skiltgruppe. Hver forklaring viser hva skiltet betyr, hva du skal gjøre i trafikken, og typiske teorifeller.
+        <p style={{ color: 'var(--color-text-light)', maxWidth: '720px', margin: '0 auto 16px auto', fontSize: '1.1rem', lineHeight: '1.6' }}>
+          På teoriprøven klasse B møter du skilt fra alle grupper — vikepliktskilt, fareskilt, forbudsskilt, påbudsskilt og opplysningsskilt. Du må ikke bare kjenne igjen skiltet, du må forstå hva det krever av deg i trafikken.
+        </p>
+        <p style={{ color: 'var(--color-text-light)', maxWidth: '720px', margin: '0 auto', fontSize: '1.1rem', lineHeight: '1.6' }}>
+          Skiltbanken dekker alle vanlige norske trafikkskilt med offisielt skiltnummer, betydning og hva du skal gjøre i trafikken. Dette er en av de mest komplette skiltguidene du finner på norske nettsider — helt gratis.
         </p>
       </section>
 
       {/* Interactive Search Section */}
       <section style={{ marginBottom: 'var(--spacing-2xl)' }}>
         <div style={{ position: 'relative', maxWidth: '600px', margin: '0 auto' }}>
-          <span style={{ position: 'absolute', left: '16px', top: '50%', transform: 'translateY(-50%)', color: 'var(--color-text-light)', pointerEvents: 'none' }}>
-            🔍
-          </span>
           <input
             type="text"
             placeholder="Søk etter skilt (f.eks. vikeplikt, 204, stop)..."
@@ -64,7 +96,7 @@ export default function TrafficSignBank() {
             onChange={(e) => setSearchQuery(e.target.value)}
             style={{
               width: '100%',
-              padding: '16px 16px 16px 48px',
+              padding: '16px',
               fontSize: '1.05rem',
               borderRadius: 'var(--radius-md)',
               border: '1px solid var(--color-border)',
@@ -177,7 +209,7 @@ export default function TrafficSignBank() {
 
       {/* Categories Grid */}
       <section id="categories" style={{ marginBottom: 'var(--spacing-2xl)' }}>
-        <h2 style={{ fontSize: '1.5rem', fontWeight: 700, marginBottom: 'var(--spacing-md)' }}>
+        <h2 style={{ fontSize: '1.75rem', fontWeight: 800, letterSpacing: '-0.02em', marginBottom: 'var(--spacing-md)' }}>
           Velg en skiltgruppe
         </h2>
         <div style={{
@@ -368,6 +400,23 @@ export default function TrafficSignBank() {
                 {sign.shortExplanation}
               </p>
             </Link>
+          ))}
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="theory-faq-section" style={{ marginTop: 'var(--spacing-2xl)' }}>
+        <h2 className="theory-faq-title" style={{ fontSize: '1.75rem', fontWeight: 800, letterSpacing: '-0.02em', marginBottom: 'var(--spacing-lg)' }}>
+          Ofte stilte spørsmål om trafikkskilt
+        </h2>
+        <div className="theory-faq-list">
+          {faqItems.map((item, i) => (
+            <div key={i} className="theory-faq-item">
+              <h3 className="theory-faq-question">{item.question}</h3>
+              <div className="theory-faq-answer">
+                <p>{item.answer}</p>
+              </div>
+            </div>
           ))}
         </div>
       </section>

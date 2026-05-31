@@ -636,9 +636,14 @@ export default function RoadMarkingGame() {
                     <p className="results-assessment-text">{textResult}</p>
                 </div>
 
-                <button onClick={handleRestartGame} className="results-restart-btn">
-                    Spill på nytt
-                </button>
+                <div className="results-actions">
+                    <button onClick={handleRestartGame} className="results-restart-btn">
+                        Spill på nytt
+                    </button>
+                    <Link to="/laeringsressurser/veimerking" className="results-theory-btn">
+                        📚 Les teorien om veimerking
+                    </Link>
+                </div>
             </div>
         )
     }

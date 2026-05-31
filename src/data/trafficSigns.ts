@@ -3238,6 +3238,1360 @@ export const trafficSigns: TrafficSign[] = [
       { name: 'Lovdata', url: 'https://lovdata.no/dokument/SF/forskrift/2005-10-07-1219' }
     ],
     aliases: ['gårdsmat', 'gardsmat', 'bygdeturisme', 'gård', 'lokalmat', 'honning', 'svele']
+  },
+  // --- VEGVISNINGSSKILT ---
+  {
+    id: '701',
+    code: '701',
+    name: 'Tabellorienteringstavle',
+    displayName: 'Tabellorienteringstavle',
+    slug: 'tabellorienteringstavle',
+    category: 'vegvisningsskilt',
+    imagePath: '/signs/vegvisningsskilt/skilt-701-tabellorienteringstavle.jpg',
+    shortExplanation: 'Viser vegnummer, reisemål og avstander fram mot et kryss i tabellform.',
+    longExplanation: 'Tabellorienteringstavler settes opp i god tid før et vegkryss for å hjelpe deg med å orientere deg om retninger, reisemål og vegnummer i krysset, slik at du kan planlegge plasseringen din tidlig.',
+    theoryTrap: 'Dette er et vegvisningsskilt og ikke et påbudsskilt. Det er rent informativt og pålegger deg ingen svingforbud eller kjørefeltpåbud i seg selv, men hjelper deg å plassere deg riktig.',
+    whatToDo: [
+      'Les skiltet i god tid for å finne ditt reisemål.',
+      'Plasser deg i riktig kjørefelt tidlig og gi tegn i god tid før krysset.'
+    ],
+    confusedWith: ['703', '711'],
+    sources: [
+      { name: 'Statens vegvesen', url: 'https://www.vegvesen.no' },
+      { name: 'Lovdata', url: 'https://lovdata.no/dokument/SF/forskrift/2005-10-07-1219' }
+    ],
+    aliases: ['tabellorienteringstavle', 'orienteringstavle', 'vegviser', 'veiutvalg']
+  },
+  {
+    id: '703',
+    code: '703',
+    name: 'Diagramorienteringstavle',
+    displayName: 'Diagramorienteringstavle',
+    slug: 'diagramorienteringstavle',
+    category: 'vegvisningsskilt',
+    imagePath: '/signs/vegvisningsskilt/skilt-703-diagramorienteringstavle.jpg',
+    shortExplanation: 'Viser kryssutforming og kjøreretninger grafisk som et diagram fram mot et kryss.',
+    longExplanation: 'Diagramorienteringstavler viser en forenklet tegning av kryssutformingen (for eksempel en rundkjøring eller et kryss med sideveger) og hvilke retninger de ulike kjørefeltene fører til.',
+    theoryTrap: 'Tegningen på skiltet viser den faktiske geometrien i krysset. Hvis en sideveg er tegnet med en sving eller vinkel, betyr det at du må være forberedt på denne svingen.',
+    whatToDo: [
+      'Bruk diagrammet til å forstå kryssets oppbygning (f.eks. om det er rundkjøring).',
+      'Plasser deg i riktig kjørefelt i henhold til retningen du skal.'
+    ],
+    confusedWith: ['701'],
+    sources: [
+      { name: 'Statens vegvesen', url: 'https://www.vegvesen.no' },
+      { name: 'Lovdata', url: 'https://lovdata.no/dokument/SF/forskrift/2005-10-07-1219' }
+    ],
+    aliases: ['diagramorienteringstavle', 'diagram', 'kryssdiagram', 'rundkjøring']
+  },
+  {
+    id: '705',
+    code: '705',
+    name: 'Avkjøringstavle',
+    displayName: 'Avkjøringstavle',
+    slug: 'avkjoringstavle',
+    category: 'vegvisningsskilt',
+    imagePath: '/signs/vegvisningsskilt/skilt-705-avkjoringstavle.jpg',
+    shortExplanation: 'Viser avkjøring og reisemål i god tid før krysset på motorveger eller andre flerfeltsveger.',
+    longExplanation: 'Avkjøringstavler settes opp i god tid før en avkjøring (typisk 500 eller 1000 meter før) på veger med høy hastighet for å gi deg tid til å forberede feltskifte til avkjøringsfeltet.',
+    theoryTrap: 'Dette skiltet står før avkjøringsfeltet starter. Du skal ikke bremse ned på selve hovedvegen, men vente til du har svingt helt inn i avkjøringsfeltet (retardasjonsfeltet) før du reduserer farten.',
+    whatToDo: [
+      'Planlegg feltskifte til høyre kjørefelt i god tid.',
+      'Hold jevn fart på hovedvegen og brems først når du er inne i avkjøringsfeltet.'
+    ],
+    confusedWith: ['701', '709'],
+    sources: [
+      { name: 'Statens vegvesen', url: 'https://www.vegvesen.no' },
+      { name: 'Lovdata', url: 'https://lovdata.no/dokument/SF/forskrift/2005-10-07-1219' }
+    ],
+    aliases: ['avkjøringstavle', 'avkjoringstavle', 'motorveiavkjøring', 'avfart']
+  },
+  {
+    id: '707',
+    code: '707',
+    name: 'Kjørefeltorienteringstavle',
+    displayName: 'Kjørefeltorienteringstavle',
+    slug: 'kjorefeltorienteringstavle',
+    category: 'vegvisningsskilt',
+    imagePath: '/signs/vegvisningsskilt/skilt-707-kjorefeltorienteringstavle.jpg',
+    shortExplanation: 'Viser hvordan kjørefeltene fordeler seg fram mot vegkryss.',
+    longExplanation: 'Kjørefeltorienteringstavler viser antall kjørefelt og hvilke reisemål eller retninger de enkelte feltene leder til før du kommer til selve krysset.',
+    theoryTrap: 'Skiltet viser ofte om et kjørefelt slutter eller om to felt slås sammen. Vær oppmerksom på fletting og plasser deg tidlig.',
+    whatToDo: [
+      'Sjekk hvilke kjørefelt som leder til din destinasjon.',
+      'Skift felt i god tid dersom du ligger i feil kjørefelt.'
+    ],
+    confusedWith: ['709', '717'],
+    sources: [
+      { name: 'Statens vegvesen', url: 'https://www.vegvesen.no' },
+      { name: 'Lovdata', url: 'https://lovdata.no/dokument/SF/forskrift/2005-10-07-1219' }
+    ],
+    aliases: ['kjørefeltorienteringstavle', 'kjørefelt', 'feltfordeling', 'filvalg']
+  },
+  {
+    id: '709',
+    code: '709',
+    name: 'Portalorienteringstavle',
+    displayName: 'Portalorienteringstavle',
+    slug: 'portalorienteringstavle',
+    category: 'vegvisningsskilt',
+    imagePath: '/signs/vegvisningsskilt/skilt-709-portalorienteringstavle.jpg',
+    shortExplanation: 'Står over veibanen for å vise retning for de enkelte kjørefelt.',
+    longExplanation: 'Portalorienteringstavler henges opp på en portal eller bru over kjørebanen. Hvert skilt henger direkte over det kjørefeltet informasjonen gjelder for.',
+    theoryTrap: 'Siden skiltet henger over feltet, er det ekstremt viktig å følge det spesifikke feltet du ligger under, spesielt i store flerfeltskryss.',
+    whatToDo: [
+      'Se på skiltene over veibanen fremfor kun i veikanten.',
+      'Hold deg i kjørefeltet som har vegviser til ditt reisemål.'
+    ],
+    confusedWith: ['707', '719'],
+    sources: [
+      { name: 'Statens vegvesen', url: 'https://www.vegvesen.no' },
+      { name: 'Lovdata', url: 'https://lovdata.no/dokument/SF/forskrift/2005-10-07-1219' }
+    ],
+    aliases: ['portalorienteringstavle', 'portal', 'skiltbru', 'kjørefeltskilt']
+  },
+  {
+    id: '711',
+    code: '711',
+    name: 'Tabellvegviser',
+    displayName: 'Tabellvegviser',
+    slug: 'tabellvegviser',
+    category: 'vegvisningsskilt',
+    imagePath: '/signs/vegvisningsskilt/skilt-711-tabellvegviser.jpg',
+    shortExplanation: 'Står i selve krysset og viser reisemål og vegnummer i tabellform.',
+    longExplanation: 'Tabellvegvisere settes opp rett før eller i selve krysset for å angi retningene til de ulike reisemålene og vegnumrene.',
+    theoryTrap: 'I motsetning to orienteringstavler (som står i forkant) står tabellvegviseren i selve krysset. Ikke bråbrems hvis du oppdager feil retning sent.',
+    whatToDo: [
+      'Gjør vegvalget før du kjører inn i krysset.',
+      'Følg retningen angitt på tabellvegviseren.'
+    ],
+    confusedWith: ['701', '713'],
+    sources: [
+      { name: 'Statens vegvesen', url: 'https://www.vegvesen.no' },
+      { name: 'Lovdata', url: 'https://lovdata.no/dokument/SF/forskrift/2005-10-07-1219' }
+    ],
+    aliases: ['tabellvegviser', 'veiviser', 'kryssvegviser', 'skiltikryss']
+  },
+  {
+    id: '713',
+    code: '713',
+    name: 'Vegviser',
+    displayName: 'Vegviser',
+    slug: 'vegviser',
+    category: 'vegvisningsskilt',
+    imagePath: '/signs/vegvisningsskilt/skilt-713-vegviser.jpg',
+    shortExplanation: 'Viser retning og vegnummer til reisemål, plassert i selve krysset.',
+    longExplanation: 'Vegvisere er de klassiske pilformede skiltene plassert direkte i vegkrysset som peker mot reisemål og oppgjev vegnummer.',
+    theoryTrap: 'Fargen på vegviseren har stor betydning: Gul = riks- eller fylkesveg, Hvit = lokal veg, Grønn = motorveg, Brun = nasjonal turistveg.',
+    whatToDo: [
+      'Følg pilens retning i krysset.',
+      'Bruk fargen til å forstå hvilken type veg du svinger inn på.'
+    ],
+    confusedWith: ['711', '717'],
+    sources: [
+      { name: 'Statens vegvesen', url: 'https://www.vegvesen.no' },
+      { name: 'Lovdata', url: 'https://lovdata.no/dokument/SF/forskrift/2005-10-07-1219' }
+    ],
+    aliases: ['vegviser', 'pilskilt', 'veipil', 'retningspil', 'gulvegviser']
+  },
+  {
+    id: '717',
+    code: '717',
+    name: 'Kjørefeltvegviser',
+    displayName: 'Kjørefeltvegviser',
+    slug: 'kjorefeltvegviser',
+    category: 'vegvisningsskilt',
+    imagePath: '/signs/vegvisningsskilt/skilt-717-kjorefeltvegviser.jpg',
+    shortExplanation: 'Viser retning og reisemål for de enkelte kjørefelt, plassert i selve krysset.',
+    longExplanation: 'Kjørefeltvegvisere viser hvilke kjørefelt som fører til de angitte reisemålene og vegnumrene i krysset.',
+    theoryTrap: 'Plassert rett ved krysset. Hvis du har valgt feil kjørefelt, må du fortsette i det feltet du ligger i av hensyn til sikkerheten (ikke ta brå svinger over sperrelinjer).',
+    whatToDo: [
+      'Følg kjørefeltet som peker mot din destinasjon.',
+      'Dersom du har lagt deg i feil felt, må du følge feltets retning og snu senere.'
+    ],
+    confusedWith: ['707', '719'],
+    sources: [
+      { name: 'Statens vegvesen', url: 'https://www.vegvesen.no' },
+      { name: 'Lovdata', url: 'https://lovdata.no/dokument/SF/forskrift/2005-10-07-1219' }
+    ],
+    aliases: ['kjørefeltvegviser', 'filvegviser', 'feltpil', 'vegvalg']
+  },
+  {
+    id: '719',
+    code: '719',
+    name: 'Portalvegviser',
+    displayName: 'Portalvegviser',
+    slug: 'portalvegviser',
+    category: 'vegvisningsskilt',
+    imagePath: '/signs/vegvisningsskilt/skilt-719-portalvegviser.jpg',
+    shortExplanation: 'Plassert på portal over veibanen i selve krysset for å angi retning i de enkelte kjørefelt.',
+    longExplanation: 'Portalvegvisere er hengt opp over kjørebanen i selve vegkrysset, for å gjøre det helt klart hvilke kjørefelt som fører hvor.',
+    theoryTrap: 'Ofte kombinert med heltrukne linjer (sperrelinjer) under portalen. Dette betyr at du ikke lenger kan skifte felt når du er under portalen.',
+    whatToDo: [
+      'Følg filen du befinner deg i under portalen.',
+      'Sørg for å være plassert i riktig felt før du kommer helt frem til portalen.'
+    ],
+    confusedWith: ['709', '717'],
+    sources: [
+      { name: 'Statens vegvesen', url: 'https://www.vegvesen.no' },
+      { name: 'Lovdata', url: 'https://lovdata.no/dokument/SF/forskrift/2005-10-07-1219' }
+    ],
+    aliases: ['portalvegviser', 'portalskilt', 'bruvegviser']
+  },
+  {
+    id: '723.11',
+    code: '723.11',
+    name: 'Vegnummer for europaveg',
+    displayName: 'Vegnummer for europaveg (E-veg)',
+    slug: 'vegnummer-europaveg',
+    category: 'vegvisningsskilt',
+    imagePath: '/signs/vegvisningsskilt/skilt-723-11-vegnummer-europaveg.jpg',
+    shortExplanation: 'Viser rutenummeret til en europaveg (E-veg).',
+    longExplanation: 'Europavegnummeret angir en vegstrekning som er en del av det internasjonale europavegnettet (f.eks. E 6 eller E 18).',
+    theoryTrap: 'Europavegskiltet kjennetegnes av en grønn bakgrunn med en hvit ramme og hvit tekst.',
+    whatToDo: [
+      'Bruk vegnummeret til å bekrefte at du kjører på riktig europaveg.',
+      'Vær klar over at europaveger ofte har høy standard og høyere fartsgrenser.'
+    ],
+    confusedWith: ['723.13', '723.15'],
+    sources: [
+      { name: 'Statens vegvesen', url: 'https://www.vegvesen.no' },
+      { name: 'Lovdata', url: 'https://lovdata.no/dokument/SF/forskrift/2005-10-07-1219' }
+    ],
+    aliases: ['europaveg', 'e-veg', 'grøntskilt', 'e6', 'e18', 'e39']
+  },
+  {
+    id: '723.13',
+    code: '723.13',
+    name: 'Vegnummer for riksveg',
+    displayName: 'Vegnummer for riksveg',
+    slug: 'vegnummer-riksveg',
+    category: 'vegvisningsskilt',
+    imagePath: '/signs/vegvisningsskilt/skilt-723-13-vegnummer-riksveg.jpg',
+    shortExplanation: 'Viser rutenummeret til en riksveg.',
+    longExplanation: 'Dette skiltet viser vegnummeret for en nasjonal riksveg (ikke europaveg). Riksveger eies og driftes av staten.',
+    theoryTrap: 'Riksvegnummeret har grønn bakgrunn og hvit tekst, men har INGEN hvit ramme rundt (i motsetning til europaveg).',
+    whatToDo: [
+      'Følg rutenummeret for å holde deg på planlagt riksveg.'
+    ],
+    confusedWith: ['723.11', '723.15'],
+    sources: [
+      { name: 'Statens vegvesen', url: 'https://www.vegvesen.no' },
+      { name: 'Lovdata', url: 'https://lovdata.no/dokument/SF/forskrift/2005-10-07-1219' }
+    ],
+    aliases: ['riksveg', 'riksvei', 'grøntvegnummer', 'riksvegskilt']
+  },
+  {
+    id: '723.15',
+    code: '723.15',
+    name: 'Vegnummer for fylkesveg',
+    displayName: 'Vegnummer for fylkesveg',
+    slug: 'vegnummer-fylkesveg',
+    category: 'vegvisningsskilt',
+    imagePath: '/signs/vegvisningsskilt/skilt-723-15-vegnummer-fylkesveg.jpg',
+    shortExplanation: 'Viser rutenummeret til en fylkesveg.',
+    longExplanation: 'Viser vegnummeret til en fylkesveg. Fylkesveger eies og vedlikeholdes av fylkeskommunene.',
+    theoryTrap: 'Fylkesvegskiltet har svart tekst og svart ramme på hvit bakgrunn. Dette gjør det enkelt å skille fylkesveger fra grønne riksveger.',
+    whatToDo: [
+      'Naviger etter de hvite fylkesvegnumrene på lokalveger og sekundærveger.'
+    ],
+    confusedWith: ['723.11', '723.13'],
+    sources: [
+      { name: 'Statens vegvesen', url: 'https://www.vegvesen.no' },
+      { name: 'Lovdata', url: 'https://lovdata.no/dokument/SF/forskrift/2005-10-07-1219' }
+    ],
+    aliases: ['fylkesveg', 'fylkesvei', 'hvitskilt', 'fylkesskilt']
+  },
+  {
+    id: '723.21',
+    code: '723.21',
+    name: 'Ringveg / ringrute',
+    displayName: 'Ringveg / ringrute',
+    slug: 'ringveg-ringrute',
+    category: 'vegvisningsskilt',
+    imagePath: '/signs/vegvisningsskilt/skilt-723-21-ringveg-ringrute.jpg',
+    shortExplanation: 'Viser rutenummer for en ringveg som går rundt et byområde.',
+    longExplanation: 'Ringvegskiltet viser at vegen går i en ring rundt et bysenter (f.eks. Ring 3 eller Ring 2 i Oslo) for å lede gjennomgangstrafikken utenom sentrum.',
+    theoryTrap: 'Svart skrift og ramme på hvit bakgrunn med teksten "Ring" etterfulgt av nummeret.',
+    whatToDo: [
+      'Bruk ringvegen for å unngå bytrafikk og lyskryss i sentrum.'
+    ],
+    confusedWith: [],
+    sources: [
+      { name: 'Statens vegvesen', url: 'https://www.vegvesen.no' },
+      { name: 'Lovdata', url: 'https://lovdata.no/dokument/SF/forskrift/2005-10-07-1219' }
+    ],
+    aliases: ['ringveg', 'ringrute', 'ringvei', 'ring3', 'ring2']
+  },
+  {
+    id: '723.31',
+    code: '723.31',
+    name: 'Nasjonal turistveg',
+    displayName: 'Nasjonal turistveg',
+    slug: 'nasjonal-turistveg',
+    category: 'vegvisningsskilt',
+    imagePath: '/signs/vegvisningsskilt/skilt-723-31-nasjonal-turistveg.jpg',
+    shortExplanation: 'Viser rute som har status som nasjonal turistveg.',
+    longExplanation: 'Dette skiltet markerer vegstrekninger utvalgt for sin naturskjønne verdi og spesielle arkitektoniske utsiktspunkter.',
+    theoryTrap: 'Brun bakgrunn med det hvite turistvegsymbolet (en firkantet knute, også kalt severdighetssymbol).',
+    whatToDo: [
+      'Forvent smalere, svingete veger og mange turister som kjører sakte på disse strekningene.'
+    ],
+    confusedWith: [],
+    sources: [
+      { name: 'Statens vegvesen', url: 'https://www.vegvesen.no' },
+      { name: 'Lovdata', url: 'https://lovdata.no/dokument/SF/forskrift/2005-10-07-1219' }
+    ],
+    aliases: ['nasjonal turistveg', 'turistveg', 'turistvei', 'bruntskilt', 'turist']
+  },
+  {
+    id: '723.41',
+    code: '723.41',
+    name: 'Omkjøringsrute for store kjøretøy',
+    displayName: 'Omkjøringsrute for store kjøretøy',
+    slug: 'omkjoringsrute-store-kjoretoy',
+    category: 'vegvisningsskilt',
+    imagePath: '/signs/vegvisningsskilt/skilt-723-41-omkjoringsrute-store-kjoretoy.jpg',
+    shortExplanation: 'Viser anbefalt rute for store kjøretøy for å unngå hindringer på hovedvegen.',
+    longExplanation: 'Dette skiltet angir en anbefalt kjørerute for lastebiler, busser og andre store kjøretøy, typisk for å unngå lave tunneler, trange bygater eller svake bruer.',
+    theoryTrap: 'Selv om det er et vegvisningsskilt (blått symbol), er det viktig at store kjøretøy følger dette for å unngå fysiske hindringer.',
+    whatToDo: [
+      'Hvis du kjører et stort kjøretøy (klasse C/D eller stor personbil med henger), bør du følge denne ruten.'
+    ],
+    confusedWith: ['723.51', '741'],
+    sources: [
+      { name: 'Statens vegvesen', url: 'https://www.vegvesen.no' },
+      { name: 'Lovdata', url: 'https://lovdata.no/dokument/SF/forskrift/2005-10-07-1219' }
+    ],
+    aliases: ['omkjøring for lastebil', 'lastebilrute', 'omkjøring lastebil']
+  },
+  {
+    id: '723.51',
+    code: '723.51',
+    name: 'Rute for transport av farlig gods',
+    displayName: 'Rute for transport av farlig gods',
+    slug: 'rute-farlig-gods',
+    category: 'vegvisningsskilt',
+    imagePath: '/signs/vegvisningsskilt/skilt-723-51-rute-farlig-gods.jpg',
+    shortExplanation: 'Viser anbefalt rute for kjøretøy som frakter farlig gods.',
+    longExplanation: 'Dette skiltet viser hvilken rute kjøretøy med eksplosiver, brennbare væsker eller annet farlig gods (ADR-transport) bør velge for å minimere risikoen for ulykker nær tettsteder eller sårbare tunneler.',
+    theoryTrap: 'Oransje og svart symbol med en lastebil. Dette skiltet gjelder ADR-transporter og er en anbefalt eller påbudt rute avhengig av lokale forskrifter.',
+    whatToDo: [
+      'Følg ruten dersom du transporterer farlig gods underlagt ADR-reglene.'
+    ],
+    confusedWith: ['723.41'],
+    sources: [
+      { name: 'Statens vegvesen', url: 'https://www.vegvesen.no' },
+      { name: 'Lovdata', url: 'https://lovdata.no/dokument/SF/forskrift/2005-10-07-1219' }
+    ],
+    aliases: ['farlig gods', 'adr-rute', 'oransje lastebil', 'eksplosiver']
+  },
+  {
+    id: '723.71',
+    code: '723.71',
+    name: 'Kryssnummer for flerfeltsveg',
+    displayName: 'Kryssnummer for flerfeltsveg',
+    slug: 'kryssnummer-flerfeltsveg',
+    category: 'vegvisningsskilt',
+    imagePath: '/signs/vegvisningsskilt/skilt-723-71-kryssnummer-flerfeltsveg.jpg',
+    shortExplanation: 'Viser avkjøringsnummeret til et vegkryss på motorveg eller annen flerfeltsveg.',
+    longExplanation: 'Dette skiltet oppgir kryssets unike nummer. Kryssnummereringen gjør det enklere å navigere og finne riktig avkjøring basert på kart og navigasjonssystemer.',
+    theoryTrap: 'Svart bakgrunn med hvitt kryss-symbol og hvitt nummer. Viser kun kryssnummeret på flerfeltsveger (grønne motorveger).',
+    whatToDo: [
+      'Bruk kryssnummeret til å planlegge avkjøringen din i god tid.'
+    ],
+    confusedWith: ['723.73'],
+    sources: [
+      { name: 'Statens vegvesen', url: 'https://www.vegvesen.no' },
+      { name: 'Lovdata', url: 'https://lovdata.no/dokument/SF/forskrift/2005-10-07-1219' }
+    ],
+    aliases: ['kryssnummer', 'avkjøringsnummer', 'kryss-symbol', 'avfartsnummer']
+  },
+  {
+    id: '723.73',
+    code: '723.73',
+    name: 'Kryssnummer for tofeltsveg',
+    displayName: 'Kryssnummer for tofeltsveg',
+    slug: 'kryssnummer-tofeltsveg',
+    category: 'vegvisningsskilt',
+    imagePath: '/signs/vegvisningsskilt/skilt-723-73-kryssnummer-tofeltsveg.jpg',
+    shortExplanation: 'Viser avkjøringsnummeret til et vegkryss på tofeltsveg.',
+    longExplanation: 'Angir kryssets nummer på vanlige tofeltsveger (gule veger) for å forenkle navigasjon.',
+    theoryTrap: 'Gul bakgrunn med svart kryss-symbol og nummer. Fargen indikerer at du befinner deg på en vanlig tofeltsveg, ikke en flerfelts- eller motorveg.',
+    whatToDo: [
+      'Bruk nummeret til å identifisere riktig vegkryss på din rute.'
+    ],
+    confusedWith: ['723.71'],
+    sources: [
+      { name: 'Statens vegvesen', url: 'https://www.vegvesen.no' },
+      { name: 'Lovdata', url: 'https://lovdata.no/dokument/SF/forskrift/2005-10-07-1219' }
+    ],
+    aliases: ['kryssnummer tofelt', 'gult kryssnummer', 'avfart tofelt']
+  },
+  {
+    id: '727',
+    code: '727',
+    name: 'Stedsnavnskilt',
+    displayName: 'Stedsnavnskilt',
+    slug: 'stedsnavnskilt',
+    category: 'vegvisningsskilt',
+    imagePath: '/signs/vegvisningsskilt/skilt-727-stedsnavnskilt.jpg',
+    shortExplanation: 'Angir navnet på et tettsted, elv, kommune eller fylkesgrense.',
+    longExplanation: 'Stedsnavnskilt brukes for å informere trafikanter om at de kjører inn i et bestemt geografisk område eller krysser en grense.',
+    theoryTrap: 'Skiltet opplyser kun om navnet på stedet og setter IKKE i seg selv noen fartsgrenser (i motsetning til skilt 502 "Sone for tettbygd strøk" som setter 50 km/t grense).',
+    whatToDo: [
+      'Bruk skiltet til geografisk orientering under kjøring.'
+    ],
+    confusedWith: ['502'],
+    sources: [
+      { name: 'Statens vegvesen', url: 'https://www.vegvesen.no' },
+      { name: 'Lovdata', url: 'https://lovdata.no/dokument/SF/forskrift/2005-10-07-1219' }
+    ],
+    aliases: ['stedsnavnskilt', 'kommuneskilt', 'stedsnavn', 'elvenavn', 'bygrense']
+  },
+  {
+    id: '729',
+    code: '729',
+    name: 'Gate- og vegnavnskilt',
+    displayName: 'Gate- og vegnavnskilt',
+    slug: 'gate-vegnavnskilt',
+    category: 'vegvisningsskilt',
+    imagePath: '/signs/vegvisningsskilt/skilt-729-gate-vegnavnskilt.jpg',
+    shortExplanation: 'Viser navnet på en gate eller veg.',
+    longExplanation: 'Settes opp i kryss og langs vegen for å vise navnet på gaten eller vegen du befinner deg på eller krysser.',
+    theoryTrap: 'Hvit bakgrunn med svart ramme. Brukes til lokal orientering og adressesøk.',
+    whatToDo: [
+      'Bruk vegnavnet til lokal navigering.'
+    ],
+    confusedWith: [],
+    sources: [
+      { name: 'Statens vegvesen', url: 'https://www.vegvesen.no' },
+      { name: 'Lovdata', url: 'https://lovdata.no/dokument/SF/forskrift/2005-10-07-1219' }
+    ],
+    aliases: ['gate- og vegnavnskilt', 'gatenavn', 'vegnavn', 'veiskilt', 'skilt med gatenavn']
+  },
+  {
+    id: '731',
+    code: '731',
+    name: 'Samleskilt for vegvisning',
+    displayName: 'Samleskilt for vegvisning',
+    slug: 'samleskilt-vegvisning',
+    category: 'vegvisningsskilt',
+    imagePath: '/signs/vegvisningsskilt/skilt-731-samleskilt-vegvisning.jpg',
+    shortExplanation: 'Samler informasjon om flere reisemål og vegnummer i et kryss på ett felles skilt.',
+    longExplanation: 'Dette skiltet brukes ofte før større vegkryss for å gi en ryddig, samlet oversikt over komplekse veivalg og hindre visuell støy fra mange enkeltskilter.',
+    theoryTrap: 'Viser retning og vegnummer for flere destinasjoner samtidig. Plasser deg i riktig kjørefelt tidlig basert på samleskiltet.',
+    whatToDo: [
+      'Les skiltet raskt for å finne din destinasjon og følg tilhørende pil/felt.'
+    ],
+    confusedWith: ['701', '711'],
+    sources: [
+      { name: 'Statens vegvesen', url: 'https://www.vegvesen.no' },
+      { name: 'Lovdata', url: 'https://lovdata.no/dokument/SF/forskrift/2005-10-07-1219' }
+    ],
+    aliases: ['samleskilt for vegvisning', 'samleskilt', 'vegvisning', 'fellesveiviser']
+  },
+  {
+    id: '741',
+    code: '741',
+    name: 'Anbefalt omkjøring for bestemte kjøretøygrupper',
+    displayName: 'Anbefalt omkjøring for bestemte kjøretøygrupper',
+    slug: 'omkjoring-bestemte-kjoretoygrupper',
+    category: 'vegvisningsskilt',
+    imagePath: '/signs/vegvisningsskilt/skilt-741-omkjoring-bestemte-kjoretoygrupper.jpg',
+    shortExplanation: 'Viser anbefalt omkjøringsrute for spesifikke kjøretøygrupper (f.eks. lastebiler).',
+    longExplanation: 'Dette skiltet angir en anbefalt rute for enkelte grupper kjøretøy for å lede dem utenom områder der de kan skape problemer eller møte hindringer.',
+    theoryTrap: 'Skiltet viser et blått symbol med lastebil eller buss. Det er en anbefalt rute, men det er sterkt tilrådelig å følge den for å unngå å sette seg fast.',
+    whatToDo: [
+      'Følg ruten dersom du kjører et kjøretøy som treffes av symbolet.'
+    ],
+    confusedWith: ['723.41', '743.1'],
+    sources: [
+      { name: 'Statens vegvesen', url: 'https://www.vegvesen.no' },
+      { name: 'Lovdata', url: 'https://lovdata.no/dokument/SF/forskrift/2005-10-07-1219' }
+    ],
+    aliases: ['anbefalt omkjøring', 'omkjøring lastebil', 'anbefalt rute lastebil']
+  },
+  {
+    id: '743.1',
+    code: '743.1',
+    name: 'Midlertidig omkjøring',
+    displayName: 'Midlertidig omkjøring',
+    slug: 'midlertidig-omkjoring',
+    category: 'vegvisningsskilt',
+    imagePath: '/signs/vegvisningsskilt/skilt-743-1-midlertidig-omkjoring.jpg',
+    shortExplanation: 'Viser midlertidig omkjøringsrute på grunn av stengt veg eller vegarbeid.',
+    longExplanation: 'Dette skiltet leder trafikken rundt en midlertidig stengt vegstrekning (f.eks. på grunn av ulykke, ras eller vegarbeid).',
+    theoryTrap: 'Skiltet har gul bakgrunn, som alltid indikerer midlertidige forhold. Følg de gule omkjøringsskiltene slavisk for å komme tilbake på ruten din.',
+    whatToDo: [
+      'Følg pilenes retning for å kjøre rundt den stengte vegen.',
+      'Tilpass farten da omkjøringsvegen kan ha lavere standard.'
+    ],
+    confusedWith: ['743.2', '745'],
+    sources: [
+      { name: 'Statens vegvesen', url: 'https://www.vegvesen.no' },
+      { name: 'Lovdata', url: 'https://lovdata.no/dokument/SF/forskrift/2005-10-07-1219' }
+    ],
+    aliases: ['midlertidig omkjøring', 'gult omkjøringsskilt', 'omkjøringspil', 'vegarbeid omkjøring']
+  },
+  {
+    id: '743.2',
+    code: '743.2',
+    name: 'Midlertidig omkjøringstavle',
+    displayName: 'Midlertidig omkjøringstavle',
+    slug: 'midlertidig-omkjoringstavle',
+    category: 'vegvisningsskilt',
+    imagePath: '/signs/vegvisningsskilt/skilt-743-2-midlertidig-omkjoring.jpg',
+    shortExplanation: 'Midlertidig tavle som viser omkjøringsvegen grafisk som et kart.',
+    longExplanation: 'Viser hele omkjøringsruten grafisk på en tavle før du kjører inn på den, slik at du har oversikt over traséen.',
+    theoryTrap: 'Gul bakgrunn betyr midlertidig regulering. Skiltet viser ofte kryss eller rundkjøringer der du må skifte retning under omkjøringen.',
+    whatToDo: [
+      'Studer tavlen raskt for å forstå omkjøringsruten.',
+      'Følg de gule vegviserne videre.'
+    ],
+    confusedWith: ['743.1'],
+    sources: [
+      { name: 'Statens vegvesen', url: 'https://www.vegvesen.no' },
+      { name: 'Lovdata', url: 'https://lovdata.no/dokument/SF/forskrift/2005-10-07-1219' }
+    ],
+    aliases: ['midlertidig omkjøringstavle', 'omkjøringskart', 'gulkarttavle']
+  },
+  {
+    id: '745',
+    code: '745',
+    name: 'Slutt på midlertidig omkjøring',
+    displayName: 'Slutt på midlertidig omkjøring',
+    slug: 'slutt-pa-midlertidig-omkjoring',
+    category: 'vegvisningsskilt',
+    imagePath: '/signs/vegvisningsskilt/skilt-745-slutt-pa-midlertidig-omkjoring.jpg',
+    shortExplanation: 'Viser at den midlertidige omkjøringen er avsluttet.',
+    longExplanation: 'Dette skiltet markerer slutten på omkjøringsruten. Etter dette skiltet følger du igjen den vanlige vegvisningen (hvite/gule skilt).',
+    theoryTrap: 'Gult skilt med en rød diagonal strek over omkjøringssymbolet. Det opphever den midlertidige skiltingen.',
+    whatToDo: [
+      'Fortsett kjøringen og følg ordinære skilt videre.'
+    ],
+    confusedWith: ['743.1'],
+    sources: [
+      { name: 'Statens vegvesen', url: 'https://www.vegvesen.no' },
+      { name: 'Lovdata', url: 'https://lovdata.no/dokument/SF/forskrift/2005-10-07-1219' }
+    ],
+    aliases: ['slutt på midlertidig omkjøring', 'slutt omkjøring', 'rødstrek omkjøring']
+  },
+  {
+    id: '749',
+    code: '749',
+    name: 'Vegviser for gangtrafikk',
+    displayName: 'Vegviser for gangtrafikk',
+    slug: 'vegviser-gangtrafikk',
+    category: 'vegvisningsskilt',
+    imagePath: '/signs/vegvisningsskilt/skilt-749-vegviser-gangtrafikk.jpg',
+    shortExplanation: 'Viser veg og retning to reisemål beregnet for gående.',
+    longExplanation: 'Settes opp for å viser vei til steder (f.eks. stasjon, sentrum eller severdigheter) langs gangveger eller fortau.',
+    theoryTrap: 'Dette skiltet gjelder KUN for fotgjengere. Det er blått med et symbol av en gående person.',
+    whatToDo: [
+      'Gjelder ikke for motorvogn eller syklister. Ignorer skiltet under kjøring.'
+    ],
+    confusedWith: [],
+    sources: [
+      { name: 'Statens vegvesen', url: 'https://www.vegvesen.no' },
+      { name: 'Lovdata', url: 'https://lovdata.no/dokument/SF/forskrift/2005-10-07-1219' }
+    ],
+    aliases: ['vegviser for gangtrafikk', 'fotgjengerskilt', 'gåretning', 'blåfotgjenger']
+  },
+  {
+    id: '751',
+    code: '751',
+    name: 'Vegviser for sykkelrute',
+    displayName: 'Vegviser for sykkelrute',
+    slug: 'vegviser-sykkelrute',
+    category: 'vegvisningsskilt',
+    imagePath: '/signs/vegvisningsskilt/skilt-751-vegviser-sykkelrute.jpg',
+    shortExplanation: 'Viser retning og rutenummer eller reisemål for syklende.',
+    longExplanation: 'Brukes til å rettlede syklister langs nasjonale eller lokale sykkelruter.',
+    theoryTrap: 'Grønn bakgrunn med rødt/brunt sykkelsymbol. Gjelder kun for syklister, men bilister må være oppmerksomme på at sykkeltrafikk er prioritert her.',
+    whatToDo: [
+      'Vær ekstra oppmerksom på syklister i krysset der dette skiltet står.'
+    ],
+    confusedWith: ['753', '755'],
+    sources: [
+      { name: 'Statens vegvesen', url: 'https://www.vegvesen.no' },
+      { name: 'Lovdata', url: 'https://lovdata.no/dokument/SF/forskrift/2005-10-07-1219' }
+    ],
+    aliases: ['vegviser for sykkelrute', 'sykkelvegviser', 'sykkelpil', 'sykkelrute']
+  },
+  {
+    id: '753',
+    code: '753',
+    name: 'Tabellvegviser for sykkelrute',
+    displayName: 'Tabellvegviser for sykkelrute',
+    slug: 'tabellvegviser-sykkelrute',
+    category: 'vegvisningsskilt',
+    imagePath: '/signs/vegvisningsskilt/skilt-753-tabellvegviser-sykkelrute.jpg',
+    shortExplanation: 'Viser flere reisemål og avstander for syklister i tabellform.',
+    longExplanation: 'Settes opp i kryss på sykkelveger for å gi syklister oversikt over ulike ruter og avstander.',
+    theoryTrap: 'Dette skiltet oppgir avstander tilpasset syklende trafikanter.',
+    whatToDo: [
+      'Vær oppmerksom på at dette er en tilrettelagt sykkeltrase.'
+    ],
+    confusedWith: ['751'],
+    sources: [
+      { name: 'Statens vegvesen', url: 'https://www.vegvesen.no' },
+      { name: 'Lovdata', url: 'https://lovdata.no/dokument/SF/forskrift/2005-10-07-1219' }
+    ],
+    aliases: ['tabellvegviser for sykkelrute', 'sykkeltabell', 'avstandssykkel']
+  },
+  {
+    id: '755',
+    code: '755',
+    name: 'Ruteskilt for sykkelrute',
+    displayName: 'Ruteskilt for sykkelrute',
+    slug: 'sykkelruteskilt',
+    category: 'vegvisningsskilt',
+    imagePath: '/signs/vegvisningsskilt/skilt-755-sykkelruteskilt.jpg',
+    shortExplanation: 'Viser rutenummer for en nasjonal eller regional sykkelrute.',
+    longExplanation: 'Brukes som rutebekreftelse langs lengre sykkelløyper.',
+    theoryTrap: 'Svart nummer på grønn bakgrunn eller rødt skilt med hvitt sykkelsymbol. Viser kun rutenummeret for syklister.',
+    whatToDo: [
+      'Bruk informasjonen til å dele vegen trygt med syklister.'
+    ],
+    confusedWith: ['751'],
+    sources: [
+      { name: 'Statens vegvesen', url: 'https://www.vegvesen.no' },
+      { name: 'Lovdata', url: 'https://lovdata.no/dokument/SF/forskrift/2005-10-07-1219' }
+    ],
+    aliases: ['ruteskilt for sykkelrute', 'sykkelruteskilt', 'sykkelnummer']
+  },
+  {
+    id: '757',
+    code: '757',
+    name: 'Avstandsskilt for sykkelrute',
+    displayName: 'Avstandsskilt for sykkelrute',
+    slug: 'avstandsskilt-sykkelrute',
+    category: 'vegvisningsskilt',
+    imagePath: '/signs/vegvisningsskilt/skilt-757-avstandsskilt-sykkelrute.jpg',
+    shortExplanation: 'Viser avstander til reisemål langs en sykkelrute.',
+    longExplanation: 'Settes opp regelmessig langs sykkelruten for å bekrefte reisemål og vise gjenværende avstand.',
+    theoryTrap: 'Avstandene er angitt i kilometer og gjelder sykkelløypa, som kan avvike fra bilvegen.',
+    whatToDo: [
+      'Respekter syklende på disse strekningene.'
+    ],
+    confusedWith: [],
+    sources: [
+      { name: 'Statens vegvesen', url: 'https://www.vegvesen.no' },
+      { name: 'Lovdata', url: 'https://lovdata.no/dokument/SF/forskrift/2005-10-07-1219' }
+    ],
+    aliases: ['avstandsskilt for sykkelrute', 'sykkelavstand', 'sykkelmilepæl']
+  },
+  {
+    id: '761',
+    code: '761',
+    name: 'Motorveg',
+    displayName: 'Motorveg',
+    slug: 'motorveg',
+    category: 'vegvisningsskilt',
+    imagePath: '/signs/vegvisningsskilt/skilt-761-motorveg.jpg',
+    shortExplanation: 'Markerer at vegen er klassifisert som motorveg.',
+    longExplanation: 'Motorvegskiltet markerer starten på en motorveg, der spesielle trafikkregler gjelder: Det er forbudt for gående, syklende, mopeder, traktorer og kjøretøy som ikke kan kjøre lovlig i minst 40 km/t på vannrett veg.',
+    theoryTrap: 'Dette er et vegvisningsskilt (kode 761) og ikke et opplysningsskilt, selv om det er blått og gir informasjon. På motorveg er det strengt forbudt å rygge, vende, kjøre i motsatt retning eller stanse/parkere på kjørebanen eller veiskulderen.',
+    whatToDo: [
+      'Kjør kun inn på motorveg med godkjent motorvogn (minst 40 km/t konstruktiv hastighet).',
+      'Bruk akselerasjonsfeltet til å tilpasse farten til trafikken på motorvegen.',
+      'Hold god sikkerhetsavstand og følg de særskilte reglene for motorveg.'
+    ],
+    confusedWith: ['763'],
+    sources: [
+      { name: 'Statens vegvesen', url: 'https://www.vegvesen.no' },
+      { name: 'Lovdata', url: 'https://lovdata.no/dokument/SF/forskrift/2005-10-07-1219' }
+    ],
+    aliases: ['motorveg', 'motorvei', 'e6 motorvei', 'blått motorvegskilt', 'vei klasse a']
+  },
+  {
+    id: '763',
+    code: '763',
+    name: 'Motortrafikkveg',
+    displayName: 'Motortrafikkveg',
+    slug: 'motortrafikkveg',
+    category: 'vegvisningsskilt',
+    imagePath: '/signs/vegvisningsskilt/skilt-763-motortrafikkveg.jpg',
+    shortExplanation: 'Markerer at vegen er klassifisert som motortrafikkveg.',
+    longExplanation: 'Motortrafikkveg (tidligere kalt "bilveg") har de samme adgangsbegrensningene som en motorveg (forbudt for gående, syklende, moped, traktor). Vegen har imidlertid ofte lavere standard enn motorveg, f.eks. tofeltsveg uten midtdeler.',
+    theoryTrap: 'Mange forveksler dette med motorveg. En motortrafikkveg kan ha møtende trafikk uten midtdeler og plankryss (kryss i samme plan). Rygge/vende-forbudet gjelder fortsatt.',
+    whatToDo: [
+      'Følg de samme kjøretøysbegrensningene som på motorveg.',
+      'Vær oppmerksom på møtende trafikk og plankryss.'
+    ],
+    confusedWith: ['761'],
+    sources: [
+      { name: 'Statens vegvesen', url: 'https://www.vegvesen.no' },
+      { name: 'Lovdata', url: 'https://lovdata.no/dokument/SF/forskrift/2005-10-07-1219' }
+    ],
+    aliases: ['motortrafikkveg', 'motortrafikkvei', 'bilveg', 'bilvei', 'blåbil']
+  },
+  {
+    id: '765',
+    code: '765',
+    name: 'Bomveg (brukerbetaling)',
+    displayName: 'Bomveg (brukerbetaling)',
+    slug: 'bomveg-brukerbetaling',
+    category: 'vegvisningsskilt',
+    imagePath: '/signs/vegvisningsskilt/skilt-765-bomveg-brukerbetaling.jpg',
+    shortExplanation: 'Viser at det kreves betaling (bompenger) for å bruke vegen.',
+    longExplanation: 'Dette skiltet settes opp i forkant av en bomvei eller bomstasjon for å informere om at strekningen krever brukerbetaling.',
+    theoryTrap: 'Skiltet viser "Kr" i en sirkel. Mange tror de må stoppe for å betale kontant, men nesten alle norske bomstasjoner er helautomatiske. Du skal kjøre igjennom uten å stoppe.',
+    whatToDo: [
+      'Kjør igjennom bomstasjonen uten å stoppe.',
+      'Sørg for å ha gyldig AutoPASS-avtale for rabatt.'
+    ],
+    confusedWith: ['792.30'],
+    sources: [
+      { name: 'Statens vegvesen', url: 'https://www.vegvesen.no' },
+      { name: 'Lovdata', url: 'https://lovdata.no/dokument/SF/forskrift/2005-10-07-1219' }
+    ],
+    aliases: ['bomveg', 'bomvei', 'bomstasjon', 'kroner', 'kr-skilt', 'brukerbetaling']
+  },
+  {
+    id: '767',
+    code: '767',
+    name: 'Parkering',
+    displayName: 'Parkering',
+    slug: 'parkering',
+    category: 'vegvisningsskilt',
+    imagePath: '/signs/vegvisningsskilt/skilt-767-parkering.jpg',
+    shortExplanation: 'Angir at parkering er tillatt på stedet.',
+    longExplanation: 'Dette skiltet markerer en plass eller strekning der det er tillatt å parkere kjøretøy. Eventuelle tidsbegrensninger, parkeringsvilkår eller betalingsplikt vil være angitt på underskilt.',
+    theoryTrap: 'Selv om det er en stor hvit P på blå bakgrunn, er dette offisielt et vegvisningsskilt (767). Hvis skiltet står uten underskilt, gjelder tillatelsen uten tidsbegrensning.',
+    whatToDo: [
+      'Parkér kjøretøyet i henhold til eventuelle oppmerkede felt.',
+      'Sjekk alltid om det er underskilt som angir tidsbegrensning, avgift eller reserverte plasser.'
+    ],
+    confusedWith: ['769'],
+    sources: [
+      { name: 'Statens vegvesen', url: 'https://www.vegvesen.no' },
+      { name: 'Lovdata', url: 'https://lovdata.no/dokument/SF/forskrift/2005-10-07-1219' }
+    ],
+    aliases: ['parkering', 'p-skilt', 'parkere', 'parkeringsplass']
+  },
+  {
+    id: '769',
+    code: '769',
+    name: 'Parkeringshus',
+    displayName: 'Parkeringshus',
+    slug: 'parkeringshus',
+    category: 'vegvisningsskilt',
+    imagePath: '/signs/vegvisningsskilt/skilt-769-parkeringshus.jpg',
+    shortExplanation: 'Angir at det er et parkeringshus eller parkeringskjeller på stedet.',
+    longExplanation: 'Dette skiltet viser vei til eller markerer inngangen til et innendørs parkeringsanlegg (parkeringshus eller parkeringskjeller).',
+    theoryTrap: 'Skiltet har et tak-symbol over den hvite P-en. Hjelper deg å skille utendørs parkering fra innendørs parkeringshus.',
+    whatToDo: [
+      'Kjør forsiktig inn i parkeringshuset og vær oppmerksom på lav takhøyde og fotgjengere i mørke områder.'
+    ],
+    confusedWith: ['767'],
+    sources: [
+      { name: 'Statens vegvesen', url: 'https://www.vegvesen.no' },
+      { name: 'Lovdata', url: 'https://lovdata.no/dokument/SF/forskrift/2005-10-07-1219' }
+    ],
+    aliases: ['parkeringshus', 'parkeringskjeller', 'innendørs parkering', 'p-hus']
+  },
+  {
+    id: '771',
+    code: '771',
+    name: 'Lufthavn / flyplass',
+    displayName: 'Lufthavn / flyplass',
+    slug: 'lufthavn-flyplass',
+    category: 'vegvisningsskilt',
+    imagePath: '/signs/vegvisningsskilt/skilt-771-lufthavn-flyplass.jpg',
+    shortExplanation: 'Viser vei til en lufthavn eller flyplass.',
+    longExplanation: 'Dette skiltet viser retningen til nærmeste flyplass eller lufthavn.',
+    theoryTrap: 'Skiltet viser et hvitt flysymbol på blå bakgrunn. Dette er en del av den internasjonale symbolvegvisningen.',
+    whatToDo: [
+      'Følg skiltet dersom du skal til flyplassen.'
+    ],
+    confusedWith: [],
+    sources: [
+      { name: 'Statens vegvesen', url: 'https://www.vegvesen.no' },
+      { name: 'Lovdata', url: 'https://lovdata.no/dokument/SF/forskrift/2005-10-07-1219' }
+    ],
+    aliases: ['lufthavn', 'flyplass', 'flyskilt', 'flyplassvegviser']
+  },
+  {
+    id: '773',
+    code: '773',
+    name: 'Busstasjon / bussterminal',
+    displayName: 'Busstasjon / bussterminal',
+    slug: 'busstasjon-bussterminal',
+    category: 'vegvisningsskilt',
+    imagePath: '/signs/vegvisningsskilt/skilt-773-busstasjon-bussterminal.jpg',
+    shortExplanation: 'Viser vei til en busstasjon eller bussterminal.',
+    longExplanation: 'Viser retning til en busstasjon der rutebusser og langdistansebusser har terminal eller stoppested.',
+    theoryTrap: 'Må ikke forveksles med vanlig bussholdeplass (skilt 512). Dette skiltet viser vei til een busstasjon, som er en større terminal.',
+    whatToDo: [
+      'Vær forberedt på økt buss- og fotgjengertrafikk i nærheten av busstasjonen.'
+    ],
+    confusedWith: ['512'],
+    sources: [
+      { name: 'Statens vegvesen', url: 'https://www.vegvesen.no' },
+      { name: 'Lovdata', url: 'https://lovdata.no/dokument/SF/forskrift/2005-10-07-1219' }
+    ],
+    aliases: ['busstasjon', 'bussterminal', 'bussholdeplass retning', 'buss-stasjon']
+  },
+  {
+    id: '774',
+    code: '774',
+    name: 'Jernbanestasjon / togterminal',
+    displayName: 'Jernbanestasjon / togterminal',
+    slug: 'jernbanestasjon-togterminal',
+    category: 'vegvisningsskilt',
+    imagePath: '/signs/vegvisningsskilt/skilt-774-jernbanestasjon-togterminal.jpg',
+    shortExplanation: 'Viser vei til en jernbanestasjon eller togterminal.',
+    longExplanation: 'Dette skiltet viser retningen til nærmeste jernbanestasjon eller togstasjon for passasjertog.',
+    theoryTrap: 'Blått skilt med et hvitt togsymbol. Hjelper deg å navigere mot kollektivknutepunkter.',
+    whatToDo: [
+      'Følg skiltet for å finne jernbanestasjonen.'
+    ],
+    confusedWith: [],
+    sources: [
+      { name: 'Statens vegvesen', url: 'https://www.vegvesen.no' },
+      { name: 'Lovdata', url: 'https://lovdata.no/dokument/SF/forskrift/2005-10-07-1219' }
+    ],
+    aliases: ['jernbanestasjon', 'togstasjon', 'togterminal', 'togskilt', 'jernbane']
+  },
+  {
+    id: '775',
+    code: '775',
+    name: 'Bilferje',
+    displayName: 'Bilferje',
+    slug: 'bilferje',
+    category: 'vegvisningsskilt',
+    imagePath: '/signs/vegvisningsskilt/skilt-775-bilferje.jpg',
+    shortExplanation: 'Viser vei til et bilferjeleie.',
+    longExplanation: 'Dette skiltet viser retningen til nærmeste ferjeleie der du kan ta bilferje over en fjord eller til en øy.',
+    theoryTrap: 'Skiltet viser et ferjesymbol sett forfra. Det er viktig å beregne god tid til ferjeavganger under planleggingen av reisen.',
+    whatToDo: [
+      'Følg skiltet for å komme til ferjekaia.',
+      'Plasser deg i riktig oppstillingsfelt på kaia.'
+    ],
+    confusedWith: [],
+    sources: [
+      { name: 'Statens vegvesen', url: 'https://www.vegvesen.no' },
+      { name: 'Lovdata', url: 'https://lovdata.no/dokument/SF/forskrift/2005-10-07-1219' }
+    ],
+    aliases: ['bilferje', 'bilferry', 'ferjeleie', 'ferjekai', 'fergeskilt']
+  },
+  {
+    id: '780',
+    code: '780',
+    name: 'Kjettingplass',
+    displayName: 'Kjettingplass',
+    slug: 'kjettingplass',
+    category: 'vegvisningsskilt',
+    imagePath: '/signs/vegvisningsskilt/skilt-780-kjetting.jpg',
+    shortExplanation: 'Viser sted spesielt tilrettelagt for å montere eller demontere snøkjettinger på tunge kjøretøy.',
+    longExplanation: 'Kjettingplasser etableres langs bratte bakker eller før fjelloverganger, slik at lastebiler og andre tunge kjøretøy kan stoppe trygt utenom kjørebanen for å legge på snøkjetting under vanskelige vinterforhold.',
+    theoryTrap: 'Selv om dette skiltet gjelder mest for tunge kjøretøy, er det viktig at personbiler ikke blokkerer kjettingplassen under snøfall, da lastebiler er avhengige av denne for å unngå å kjøre seg fast.',
+    whatToDo: [
+      'Ikke stans eller parker på kjettingplassen med mindre du har behov for å legge på kjetting.',
+      'Vær oppmerksom på at tunge kjøretøy kan kjøre sakte eller svinge brått inn på plassen.'
+    ],
+    confusedWith: [],
+    sources: [
+      { name: 'Statens vegvesen', url: 'https://www.vegvesen.no' },
+      { name: 'Lovdata', url: 'https://lovdata.no/dokument/SF/forskrift/2005-10-07-1219' }
+    ],
+    aliases: ['kjettingplass', 'kjetting', 'snøkjetting', 'monteringsplass', 'snøfallplass']
+  },
+  {
+    id: '790.10',
+    code: '790.10',
+    name: 'Kirke',
+    displayName: 'Kirke',
+    slug: 'kirke',
+    category: 'vegvisningsskilt',
+    imagePath: '/signs/vegvisningsskilt/skilt-790-10-kirke.jpg',
+    shortExplanation: 'Viser retning til en kirke eller et kirkebygg.',
+    longExplanation: 'Settes opp for å rettlede trafikanter mot en kirke av kulturhistorisk eller praktisk betydning.',
+    theoryTrap: 'Viser et hvitt kirkesymbol på blå bakgrunn. Dette er et rent informasjonvegviserskilt.',
+    whatToDo: [
+      'Bruk det som navigasjonshjelp ved behov.'
+    ],
+    confusedWith: [],
+    sources: [
+      { name: 'Statens vegvesen', url: 'https://www.vegvesen.no' },
+      { name: 'Lovdata', url: 'https://lovdata.no/dokument/SF/forskrift/2005-10-07-1219' }
+    ],
+    aliases: ['kirke', 'kirkebygg', 'gudstjeneste', 'kirkeskilt']
+  },
+  {
+    id: '790.15',
+    code: '790.15',
+    name: 'Næringsområde',
+    displayName: 'Næringsområde / Industriområde',
+    slug: 'naeringsomrade',
+    category: 'vegvisningsskilt',
+    imagePath: '/signs/vegvisningsskilt/skilt-790-15-naeringsomrade.jpg',
+    shortExplanation: 'Viser vei til et nærings- eller industriområde.',
+    longExplanation: 'Dette skiltet hjelper yrkessjåfører og andre trafikanter med å finne frem til næringsparker eller industriområder der bedrifter og fabrikker er samlet.',
+    theoryTrap: 'Viser et hvitt fabrikksymbol med piper. Her kan det være økt trafikk av tunge kjøretøy (lastebiler og vogntog) som svinger ut og inn.',
+    whatToDo: [
+      'Vær spesielt oppmerksom på kryssende og svingende tungtransport i nærheten av næringsområder.'
+    ],
+    confusedWith: [],
+    sources: [
+      { name: 'Statens vegvesen', url: 'https://www.vegvesen.no' },
+      { name: 'Lovdata', url: 'https://lovdata.no/dokument/SF/forskrift/2005-10-07-1219' }
+    ],
+    aliases: ['næringsområde', 'industriområde', 'fabrikk', 'industripark']
+  },
+  {
+    id: '790.16',
+    code: '790.16',
+    name: 'Kjøpesenter',
+    displayName: 'Kjøpesenter',
+    slug: 'kjopesenter',
+    category: 'vegvisningsskilt',
+    imagePath: '/signs/vegvisningsskilt/skilt-790-16-kjopesenter.jpg',
+    shortExplanation: 'Viser vei til et kjøpesenter eller varehus.',
+    longExplanation: 'Dette skiltet viser retningen til et kjøpesenter eller en større samling av butikker.',
+    theoryTrap: 'Skiltet viser en hvit handlekurv på blå bakgrunn. Vær forberedt på uforutsigbar trafikk, fotgjengere og kø rundt innkjøringene.',
+    whatToDo: [
+      'Tilpass farten og vær oppmerksom på biler som bremser brått for å svinge inn til senteret.'
+    ],
+    confusedWith: [],
+    sources: [
+      { name: 'Statens vegvesen', url: 'https://www.vegvesen.no' },
+      { name: 'Lovdata', url: 'https://lovdata.no/dokument/SF/forskrift/2005-10-07-1219' }
+    ],
+    aliases: ['kjøpesenter', 'senter', 'handlekurv', 'butikksenter', 'shopping']
+  },
+  {
+    id: '790.20',
+    code: '790.20',
+    name: 'Svømmehall',
+    displayName: 'Svømmehall / Badeanlegg',
+    slug: 'svommehall',
+    category: 'vegvisningsskilt',
+    imagePath: '/signs/vegvisningsskilt/skilt-790-20-svommehall.jpg',
+    shortExplanation: 'Viser vei til en svømmehall eller et badeanlegg.',
+    longExplanation: 'Viser vei til innendørs badeanlegg, svømmehaller eller offentlige bad.',
+    theoryTrap: 'Viser en hvit svømmer på blå bakgrunn. Ofte plassert nær idrettsparker.',
+    whatToDo: [
+      'Følg skiltet dersom du skal til badeanlegget.'
+    ],
+    confusedWith: [],
+    sources: [
+      { name: 'Statens vegvesen', url: 'https://www.vegvesen.no' },
+      { name: 'Lovdata', url: 'https://lovdata.no/dokument/SF/forskrift/2005-10-07-1219' }
+    ],
+    aliases: ['svømmehall', 'svommehall', 'badeland', 'badeanlegg', 'svømmer']
+  },
+  {
+    id: '792.30',
+    code: '792.30',
+    name: 'Helautomatisk bomstasjon',
+    displayName: 'AutoPASS helautomatisk bomstasjon',
+    slug: 'helautomatisk-bomstasjon',
+    category: 'vegvisningsskilt',
+    imagePath: '/signs/vegvisningsskilt/skilt-792-30-helautomatisk-bomstasjon.jpg',
+    shortExplanation: 'Viser at du nærmer deg en automatisk bomstasjon der betalingen skjer uten stans.',
+    longExplanation: 'Dette skiltet varsler om en kommende AutoPASS helautomatisk bomstasjon. Skiltet viser et kamerasymbol og radiabølgesymbol for å vise at passeringen registreres automatisk via bombrikke eller video av bilskiltet.',
+    theoryTrap: 'Det er strengt forbudt å stoppe eller bremse ned ved en helautomatisk bomstasjon. Mange tror de må stoppe fordi det er en "bomstasjon", men det fører til farlige situasjoner.',
+    whatToDo: [
+      'Kjør igjennom bomstasjonen i normal hastighet uten å bremse ned.',
+      'Sørg for at du har gyldig betalingsløsning eller AutoPASS-brikke.'
+    ],
+    confusedWith: ['765'],
+    sources: [
+      { name: 'Statens vegvesen', url: 'https://www.vegvesen.no' },
+      { name: 'Lovdata', url: 'https://lovdata.no/dokument/SF/forskrift/2005-10-07-1219' }
+    ],
+    aliases: ['helautomatisk bomstasjon', 'autopass', 'bomstasjonkamera', 'bompenger automatisk']
+  },
+  // --- MARKERINGSSKILT ---
+  {
+    id: '902-H',
+    code: '902-H',
+    name: 'Bakgrunnsmarkering (høyre)',
+    displayName: 'Bakgrunnsmarkering (høyre)',
+    slug: 'bakgrunnsmarkering-hoyre',
+    category: 'markeringsskilt',
+    imagePath: '/signs/markeringsskilt/skilt-902-h-bakgrunnsmarkering.jpg',
+    shortExplanation: 'Viser at vegen endrer retning i en spesielt skarp eller uoversiktlig sving til høyre.',
+    longExplanation: 'Bakgrunnsmarkering brukes på steder der det kan være vanskelig å oppdage svingen eller faremomentet i tide, spesielt under mørke- eller tåkekjøring.',
+    theoryTrap: 'De gule og svarte skråstripene peker alltid nedover i kjøreretningen. Når stripene skråner ned mot høyre, viser det at du skal passere på høyre side og svinge til høyre.',
+    whatToDo: [
+      'Tilpass farten før svingen.',
+      'Følg vegens retning til høyre.'
+    ],
+    confusedWith: ['902-V', '904-H'],
+    sources: [
+      { name: 'Statens vegvesen', url: 'https://www.vegvesen.no' },
+      { name: 'Lovdata', url: 'https://lovdata.no/dokument/SF/forskrift/2005-10-07-1219' }
+    ],
+    aliases: ['bakgrunnsmarkering', 'svingmarkering', 'skarp sving høyre', 'gulgul-svart']
+  },
+  {
+    id: '902-V',
+    code: '902-V',
+    name: 'Bakgrunnsmarkering (venstre)',
+    displayName: 'Bakgrunnsmarkering (venstre)',
+    slug: 'bakgrunnsmarkering-venstre',
+    category: 'markeringsskilt',
+    imagePath: '/signs/markeringsskilt/skilt-902-v-bakgrunnsmarkering.jpg',
+    shortExplanation: 'Viser at vegen endrer retning i en spesielt skarp eller uoversiktlig sving til venstre.',
+    longExplanation: 'Bakgrunnsmarkering med striper som skråner ned mot venstre brukes for å lede kjøretøy trygt gjennom en skarp sving til venstre.',
+    theoryTrap: 'Stripene skråner nedover til venstre, som indikerer at du må styre og passere til venstre for skiltet.',
+    whatToDo: [
+      'Reduser farten før kurven.',
+      'Hold oppmerksomheten på vegens forløp mot venstre.'
+    ],
+    confusedWith: ['902-H', '904-V'],
+    sources: [
+      { name: 'Statens vegvesen', url: 'https://www.vegvesen.no' },
+      { name: 'Lovdata', url: 'https://lovdata.no/dokument/SF/forskrift/2005-10-07-1219' }
+    ],
+    aliases: ['bakgrunnsmarkering venstre', 'skarp sving venstre', 'kurvemarkering']
+  },
+  {
+    id: '904-H',
+    code: '904-H',
+    name: 'Retningsmarkering (høyre)',
+    displayName: 'Retningsmarkering (høyre)',
+    slug: 'retningsmarkering-hoyre',
+    category: 'markeringsskilt',
+    imagePath: '/signs/markeringsskilt/skilt-904-retningsmarkering.jpg',
+    shortExplanation: 'Viser retningsendring eller kurveforløp til høyre på spesielt utsatte steder.',
+    longExplanation: 'Retningsmarkering brukes i kurver eller veikryss for å markere at vegen svinger skarpt til høyre, og er utstyrt med gule piler på svart bakgrunn.',
+    theoryTrap: 'Pilene peker tydelig mot høyre. Dette skiltet brukes ofte som supplement til vanlig bakgrunnsmarkering i ekstra skarpe svinger.',
+    whatToDo: [
+      'Tilpass hastigheten etter svingens skarphet.',
+      'Kjør i henhold til pilenes retning.'
+    ],
+    confusedWith: ['902-H', '904-V'],
+    sources: [
+      { name: 'Statens vegvesen', url: 'https://www.vegvesen.no' },
+      { name: 'Lovdata', url: 'https://lovdata.no/dokument/SF/forskrift/2005-10-07-1219' }
+    ],
+    aliases: ['retningsmarkering', 'piler', 'kurvepiler', 'svingpiler høyre']
+  },
+  {
+    id: '904-V',
+    code: '904-V',
+    name: 'Retningsmarkering (venstre)',
+    displayName: 'Retningsmarkering (venstre)',
+    slug: 'retningsmarkering-venstre',
+    category: 'markeringsskilt',
+    imagePath: '/signs/markeringsskilt/skilt-904-v-retningsmarkering.jpg',
+    shortExplanation: 'Viser retningsendring eller kurveforløp til venstre på spesielt utsatte steder.',
+    longExplanation: 'Pilene peker mot venstre for å rettlede trafikken gjennom en skarp venstresving der sikten kan være redusert.',
+    theoryTrap: 'Pilretningen må følges. Slike skilt er plassert direkte i svingens ytre ytterkant for maksimal synlighet.',
+    whatToDo: [
+      'Senk farten i god tid.',
+      'Følg svingen mot venstre.'
+    ],
+    confusedWith: ['902-V', '904-H'],
+    sources: [
+      { name: 'Statens vegvesen', url: 'https://www.vegvesen.no' },
+      { name: 'Lovdata', url: 'https://lovdata.no/dokument/SF/forskrift/2005-10-07-1219' }
+    ],
+    aliases: ['retningsmarkering venstre', 'venstrepiler', 'svingpiler venstre']
+  },
+  {
+    id: '906-H',
+    code: '906-H',
+    name: 'Hindermarkering (høyre)',
+    displayName: 'Hindermarkering (høyre)',
+    slug: 'hindermarkering-hoyre',
+    category: 'markeringsskilt',
+    imagePath: '/signs/markeringsskilt/skilt-906-h-hindermarkering.jpg',
+    shortExplanation: 'Markerer en hindring i eller nær vegen, og angir at du skal passere på høyre side.',
+    longExplanation: 'Hindermarkering brukes til å merke fysiske hindringer som trafikkøyer, autovernender, stolper eller midtdelere.',
+    theoryTrap: 'Stripene skråner nedover mot høyre. Dette er din visuelle instruks om å passere på den siden stripene skråner ned mot (altså høyre side).',
+    whatToDo: [
+      'Styr til høyre for skiltet for å passere hindringen trygt.'
+    ],
+    confusedWith: ['906-V', '906-VH'],
+    sources: [
+      { name: 'Statens vegvesen', url: 'https://www.vegvesen.no' },
+      { name: 'Lovdata', url: 'https://lovdata.no/dokument/SF/forskrift/2005-10-07-1219' }
+    ],
+    aliases: ['hindermarkering', 'hinder', 'passering høyre', 'gul-svart stolpe']
+  },
+  {
+    id: '906-V',
+    code: '906-V',
+    name: 'Hindermarkering (venstre)',
+    displayName: 'Hindermarkering (venstre)',
+    slug: 'hindermarkering-venstre',
+    category: 'markeringsskilt',
+    imagePath: '/signs/markeringsskilt/skilt-906-v-hindermarkering.jpg',
+    shortExplanation: 'Markerer en hindring i eller nær vegen, og angir at du skal passere på venstre side.',
+    longExplanation: 'Brukes for å markere hindringer der trafikkstrømmen ledes til venstre for hindringen.',
+    theoryTrap: 'Stripene skråner nedover mot venstre. Du må styre og passere til venstre for dette skiltet.',
+    whatToDo: [
+      'Passér på venstre side av hindringen.'
+    ],
+    confusedWith: ['906-H', '906-VH'],
+    sources: [
+      { name: 'Statens vegvesen', url: 'https://www.vegvesen.no' },
+      { name: 'Lovdata', url: 'https://lovdata.no/dokument/SF/forskrift/2005-10-07-1219' }
+    ],
+    aliases: ['hindermarkering venstre', 'hinder venstre', 'passering venstre']
+  },
+  {
+    id: '906-VH',
+    code: '906-VH',
+    name: 'Hindermarkering (begge sider)',
+    displayName: 'Hindermarkering (begge sider)',
+    slug: 'hindermarkering-begge-sider',
+    category: 'markeringsskilt',
+    imagePath: '/signs/markeringsskilt/skilt-906-vh-hindermarkering.jpg',
+    shortExplanation: 'Markerer en hindring som kan passeres på enten høyre eller venstre side.',
+    longExplanation: 'Dette skiltet har et pilformet (V-formet) mønster der stripene skråner nedover mot begge sider. Det settes typisk opp på starten av trafikkøyer der kjørefelt deler seg.',
+    theoryTrap: 'Siden mønsteret peker nedover til begge sider, har du lov til å passere hindringen på valgfri side (både høyre og venstre side).',
+    whatToDo: [
+      'Velg kjørefeltet som leder til din destinasjon og passér hindringen på den aktuelle siden.'
+    ],
+    confusedWith: ['906-H', '906-V'],
+    sources: [
+      { name: 'Statens vegvesen', url: 'https://www.vegvesen.no' },
+      { name: 'Lovdata', url: 'https://lovdata.no/dokument/SF/forskrift/2005-10-07-1219' }
+    ],
+    aliases: ['hindermarkering begge sider', 'pilsplitt', 'valgfri passering', 'midtdeler splitting']
+  },
+  {
+    id: '908',
+    code: '908',
+    name: 'Hindermarkering for høyde',
+    displayName: 'Hindermarkering for høyde',
+    slug: 'hindermarkering-hoyde',
+    category: 'markeringsskilt',
+    imagePath: '/signs/markeringsskilt/skilt-908-hindermarkering-hoyde.jpg',
+    shortExplanation: 'Markerer en hindring i høyden, for eksempel underkant av en tunnelportal eller undergang.',
+    longExplanation: 'Settes opp for å gjøre førere av høye kjøretøy ekstra oppmerksomme på fysiske hindringer over kjørebanen.',
+    theoryTrap: 'Dette skiltet har vertikale striper. Det markerer kun høydehindringen og må leses sammen med fareskilt for fri høyde.',
+    whatToDo: [
+      'Vær spesielt oppmerksom på kjøretøyets totale høyde (inkludert eventuell last/takboks).'
+    ],
+    confusedWith: ['930'],
+    sources: [
+      { name: 'Statens vegvesen', url: 'https://www.vegvesen.no' },
+      { name: 'Lovdata', url: 'https://lovdata.no/dokument/SF/forskrift/2005-10-07-1219' }
+    ],
+    aliases: ['hindermarkering for høyde', 'høydehindring', 'tunneltak', 'undergangsmarkering']
+  },
+  {
+    id: '912',
+    code: '912',
+    name: 'Avkjøringsmarkering',
+    displayName: 'Avkjøringsmarkering',
+    slug: 'avkjoringsmarkering',
+    category: 'markeringsskilt',
+    imagePath: '/signs/markeringsskilt/skilt-912-avkjoringsmarkering.jpg',
+    shortExplanation: 'Markerer punktet (krysset) der et avkjøringsfelt skiller seg fra hovedvegen.',
+    longExplanation: 'Dette skiltet står i selve delepunktet («snuten») mellom kjørefeltene for å markere hvor du må svinge av.',
+    theoryTrap: 'Det er strengt forbudt å krysse sperreområdet (skraveringen) foran dette skiltet. Hvis du bommer på avkjøringen, må du fortsette rett frem.',
+    whatToDo: [
+      'Følg kjørefeltet du har plassert deg i.',
+      'Ikke gjør brå feltskifter over sperrelinjer foran skiltet.'
+    ],
+    confusedWith: ['906-VH'],
+    sources: [
+      { name: 'Statens vegvesen', url: 'https://www.vegvesen.no' },
+      { name: 'Lovdata', url: 'https://lovdata.no/dokument/SF/forskrift/2005-10-07-1219' }
+    ],
+    aliases: ['avkjøringsmarkering', 'avkjøringssnute', 'krysspil', 'veideling']
+  },
+  {
+    id: '914-H',
+    code: '914-H',
+    name: 'Tunnelmarkering (høyre)',
+    displayName: 'Tunnelmarkering (høyre)',
+    slug: 'tunnelmarkering-hoyre',
+    category: 'markeringsskilt',
+    imagePath: '/signs/markeringsskilt/skilt-914-h-tunnelmarkering.jpg',
+    shortExplanation: 'Markeringsskilt montert på tunnelveggen på høyre side for å vise kantforløpet.',
+    longExplanation: 'Disse skiltene monteres i tunneler for å gi bedre visuell ledning langs tunnelveggene under mørke og fuktige forhold.',
+    theoryTrap: 'Skiltet er svart og hvitt. Stripene leder blikket og markerer hvor langt ut til høyre du kan plassere bilen.',
+    whatToDo: [
+      'Bruk markeringene til å holde riktig sideplassering i tunnelen.'
+    ],
+    confusedWith: ['914-V'],
+    sources: [
+      { name: 'Statens vegvesen', url: 'https://www.vegvesen.no' },
+      { name: 'Lovdata', url: 'https://lovdata.no/dokument/SF/forskrift/2005-10-07-1219' }
+    ],
+    aliases: ['tunnelmarkering høyre', 'tunnelstripe', 'tunnelveggskilt']
+  },
+  {
+    id: '914-V',
+    code: '914-V',
+    name: 'Tunnelmarkering (venstre)',
+    displayName: 'Tunnelmarkering (venstre)',
+    slug: 'tunnelmarkering-venstre',
+    category: 'markeringsskilt',
+    imagePath: '/signs/markeringsskilt/skilt-914-v-tunnelmarkering.jpg',
+    shortExplanation: 'Markeringsskilt montert på tunnelveggen på venstre side for å vise kantforløpet.',
+    longExplanation: 'Viser forløpet av venstre tunnelvegg for motgående kjørefelt eller flerfeltsveger.',
+    theoryTrap: 'Svart-hvitt mønster. Viser den fysiske begrensningen på venstre side.',
+    whatToDo: [
+      'Hold god avstand til venstre side og tunnelveggen.'
+    ],
+    confusedWith: ['914-H'],
+    sources: [
+      { name: 'Statens vegvesen', url: 'https://www.vegvesen.no' },
+      { name: 'Lovdata', url: 'https://lovdata.no/dokument/SF/forskrift/2005-10-07-1219' }
+    ],
+    aliases: ['tunnelmarkering venstre', 'tunnelvegg venstre']
+  },
+  {
+    id: '916',
+    code: '916',
+    name: 'Avstandsmarkering i tunnel',
+    displayName: 'Avstandsmarkering i tunnel',
+    slug: 'avstandsmarkering-i-tunnel',
+    category: 'markeringsskilt',
+    imagePath: '/signs/markeringsskilt/skilt-916-avstandsmarkering-i-tunnel.jpg',
+    shortExplanation: 'Viser avstand til tunnelåpningene (nødutganger) i begge retninger.',
+    longExplanation: 'Dette skiltet settes opp med jevne mellomrom i lange tunneler for å angi avstanden til trygghet i hver retning.',
+    theoryTrap: 'Skiltet har to piler med avstander (f.eks. opp 9 km, ned 2 km). Ved en brann eller ulykke i tunnelen viser dette skiltet hvilken vei det er kortest å gå for å evakuere til fots.',
+    whatToDo: [
+      'Bruk skiltet til å orientere deg om korteste evakueringsveg i en nødsituasjon.',
+      'Gå alltid i retning av pilen med kortest avstand ved evakuering.'
+    ],
+    confusedWith: [],
+    sources: [
+      { name: 'Statens vegvesen', url: 'https://www.vegvesen.no' },
+      { name: 'Lovdata', url: 'https://lovdata.no/dokument/SF/forskrift/2005-10-07-1219' }
+    ],
+    aliases: ['avstandsmarkering i tunnel', 'nødutgang tunnel', 'evakueringsskilt', 'tunnelavstand']
+  },
+  {
+    id: '920-H',
+    code: '920-H',
+    name: 'Kantstolpe (høyre)',
+    displayName: 'Kantstolpe (høyre side)',
+    slug: 'kantstolpe-hoyre',
+    category: 'markeringsskilt',
+    imagePath: '/signs/markeringsskilt/skilt-920-h-kantstolpe.jpg',
+    shortExplanation: 'Kantstolpe plassert på høyre side av vegen for å markere vegens kant.',
+    longExplanation: 'Kantstolper hjelper deg å se vegens forløp under dårlig sikt (snøvær, tåke eller mørke).',
+    theoryTrap: 'Stolper på høyre side av vegen har alltid en hvit rektangulær (firkantet) refleks. Dette gjør at du enkelt kan identifisere høyre vegkant i mørket.',
+    whatToDo: [
+      'Plasser kjøretøyet i forhold til kantstolpen på høyre side.',
+      'Bruk stolpene til å vurdere vegens forløp fremover.'
+    ],
+    confusedWith: ['920-V', '920-VM'],
+    sources: [
+      { name: 'Statens vegvesen', url: 'https://www.vegvesen.no' },
+      { name: 'Lovdata', url: 'https://lovdata.no/dokument/SF/forskrift/2005-10-07-1219' }
+    ],
+    aliases: ['kantstolpe høyre', 'brøytestikke refleks', 'høyrereflekstolpe']
+  },
+  {
+    id: '920-V',
+    code: '920-V',
+    name: 'Kantstolpe (venstre)',
+    displayName: 'Kantstolpe (venstre side)',
+    slug: 'kantstolpe-venstre',
+    category: 'markeringsskilt',
+    imagePath: '/signs/markeringsskilt/skilt-920-ve-kantstolpe.jpg',
+    shortExplanation: 'Kantstolpe plassert på venstre side av vegen for å markere vegens kant.',
+    longExplanation: 'Marker stolpeforløpet på venstre side av vegen for å skille vegen fra grøften.',
+    theoryTrap: 'Stolper på venstre side av vegen har alltid to hvite sirkulære reflekser (prikker). Dette skiller dem visuelt fra stolpene på høyre side (som har en rektangulær strek).',
+    whatToDo: [
+      'Hold god avstand til venstre side der stolpene med to prikker står.'
+    ],
+    confusedWith: ['920-H', '920-VM'],
+    sources: [
+      { name: 'Statens vegvesen', url: 'https://www.vegvesen.no' },
+      { name: 'Lovdata', url: 'https://lovdata.no/dokument/SF/forskrift/2005-10-07-1219' }
+    ],
+    aliases: ['kantstolpe venstre', 'refleks med to prikker', 'venstrereflekstolpe']
+  },
+  {
+    id: '920-VM',
+    code: '920-VM',
+    name: 'Kantstolpe (midtdeler)',
+    displayName: 'Kantstolpe (midtdeler)',
+    slug: 'kantstolpe-midtdeler',
+    category: 'markeringsskilt',
+    imagePath: '/signs/markeringsskilt/skilt-920-vm-kantstolpe.jpg',
+    shortExplanation: 'Kantstolpe plassert på midtdeler, trafikkøy eller skillelinje.',
+    longExplanation: 'Disse stolpene brukes for å synliggjøre midtdelere eller andre faste hindringer mellom motgående felt.',
+    theoryTrap: 'Kan ha gule reflekser eller andre mønster avhengig av plassering for å skille dem fra ytterkanten av vegen.',
+    whatToDo: [
+      'Hold deg til høyre for kantstolper på midtdeler.'
+    ],
+    confusedWith: ['920-H', '920-V'],
+    sources: [
+      { name: 'Statens vegvesen', url: 'https://www.vegvesen.no' },
+      { name: 'Lovdata', url: 'https://lovdata.no/dokument/SF/forskrift/2005-10-07-1219' }
+    ],
+    aliases: ['kantstolpe midtdeler', 'midtstolpe', 'gulkantstolpe']
+  },
+  {
+    id: '930',
+    code: '930',
+    name: 'Sperremarkering',
+    displayName: 'Sperremarkering',
+    slug: 'sperremarkering',
+    category: 'markeringsskilt',
+    imagePath: '/signs/markeringsskilt/skilt-930-sperremarkering.jpg',
+    shortExplanation: 'Markerer stengt veg, vegarbeid eller midlertidige sperringer.',
+    longExplanation: 'Sperremarkering settes opp på tvers av kjørebanen for å vise at vegen er helt stengt for trafikk, f.eks. ved vegarbeid eller ulykker.',
+    theoryTrap: 'Skiltet har røde og gule skråstriper (rød/gul markering). Det betyr et absolutt forbud mot å kjøre forbi eller passere markeringen.',
+    whatToDo: [
+      'Stans kjøretøyet helt og snu, eller følg skiltet omkjøring.'
+    ],
+    confusedWith: ['908'],
+    sources: [
+      { name: 'Statens vegvesen', url: 'https://www.vegvesen.no' },
+      { name: 'Lovdata', url: 'https://lovdata.no/dokument/SF/forskrift/2005-10-07-1219' }
+    ],
+    aliases: ['sperremarkering', 'vegsperring', 'rød-gul sperre', 'stengt veg']
+  },
+  {
+    id: '940',
+    code: '940',
+    name: 'Trafikkjegle',
+    displayName: 'Trafikkjegle',
+    slug: 'trafikkjegle',
+    category: 'markeringsskilt',
+    imagePath: '/signs/markeringsskilt/skilt-940-trafikkjegle.jpg',
+    shortExplanation: 'Brukes til midlertidig oppmerking, innsnevring eller sperring av kjørefelt.',
+    longExplanation: 'Trafikkjegler (kjegler) brukes ved ulykker, vegarbeid eller kortvarige endringer for å lede kjøretøy trygt forbi et skadested eller arbeidsområde.',
+    theoryTrap: 'Kjegler settes opp midlertidig og kan lett velte. Du må aldri kjøre over kjeglene eller flytte på dem selv.',
+    whatToDo: [
+      'Senk farten og hold god avstand til kjeglene.',
+      'Vær forberedt på uforutsigbart mønster ved innsnevring.'
+    ],
+    confusedWith: ['942'],
+    sources: [
+      { name: 'Statens vegvesen', url: 'https://www.vegvesen.no' },
+      { name: 'Lovdata', url: 'https://lovdata.no/dokument/SF/forskrift/2005-10-07-1219' }
+    ],
+    aliases: ['trafikkjegle', 'kjegle', 'oransje kjegle', 'vegarbeidjegle']
+  },
+  {
+    id: '942',
+    code: '942',
+    name: 'Trafikksylinder',
+    displayName: 'Trafikksylinder',
+    slug: 'trafikksylinder',
+    category: 'markeringsskilt',
+    imagePath: '/signs/markeringsskilt/skilt-942-trafikksylinder.jpg',
+    shortExplanation: 'Brukes til deling av kjørefelt, markering av trafikkøyer eller midlertidige sperringer.',
+    longExplanation: 'Trafikksylindere monteres på vegen for å skille felt i hver sin retning eller hindre ulovlige svinger over sperreområder.',
+    theoryTrap: 'Trafikksylindere er laget av fleksibelt materiale som gir etter om de blir påkjørt, men de fungerer fortsatt som en fysisk sperrelinje som det er ulovlig å krysse.',
+    whatToDo: [
+      'Hold deg på riktig side av sylinderne.',
+      'Ikke utfør feltskifter på strekninger med sylindere.'
+    ],
+    confusedWith: ['940'],
+    sources: [
+      { name: 'Statens vegvesen', url: 'https://www.vegvesen.no' },
+      { name: 'Lovdata', url: 'https://lovdata.no/dokument/SF/forskrift/2005-10-07-1219' }
+    ],
+    aliases: ['trafikksylinder', 'sylinder', 'veggsylinder', 'oransje stolpe']
   }
 ];
 

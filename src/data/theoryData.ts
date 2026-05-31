@@ -466,10 +466,10 @@ export const theoryTopics: TheoryTopic[] = [
     {
         id: 'veimerking',
         title: 'Veimerking til teoriprøven: linjer, sperrelinjer og vikelinje',
-        icon: '🛣️',
+        icon: '',
         shortDescription: 'Veimerking hjelper deg å forstå hvor du skal plassere bilen, når du kan skifte felt, hvor du må vike, og hvor det er farlig eller forbudt å kjøre over en linje. På teoriprøven blir du ofte testet på forskjellen mellom stiplet linje, sperrelinje, varsellinje, kombinert linje og vikelinje.',
         color: 'var(--apple-indigo)',
-        seoTitle: 'Veimerking: sperrelinje, varsellinje og vikelinje | Teoriprøven',
+        seoTitle: 'Veimerking: sperrelinje, varsellinje og kombinert linje | Teori-test.no',
         seoDescription: 'Lær hva hvit sperrelinje, gul varsellinje, kombinert linje og vikelinje betyr til teoriprøven. Se bilder, regler og vanlige feil.',
         sections: [
 
@@ -542,6 +542,11 @@ export const theoryTopics: TheoryTopic[] = [
                 title: 'Interaktiv guide — klikk og lær',
                 type: 'calculator',
                 content: 'Klikk på linjene under for å se hva de betyr:'
+            },
+            {
+                title: '🎮 Test deg selv med Veimerking-spillet',
+                type: 'tip',
+                content: 'Klar for å teste det du har lært? Prøv vårt interaktive **[Veimerking-spill](/laeringsspill/veimerking)** og se om du klarer full pott!'
             }
         ],
         faq: [

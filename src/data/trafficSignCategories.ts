@@ -54,7 +54,7 @@ export const trafficSignCategories: TrafficSignCategory[] = [
     name: 'Vegvisningsskilt',
     slug: 'vegvisningsskilt',
     description: 'Skilt som viser vei til steder, bydeler, virksomheter eller rutenummer.',
-    isActive: false,
+    isActive: true,
   },
   {
     id: 'underskilt',
@@ -68,6 +68,6 @@ export const trafficSignCategories: TrafficSignCategory[] = [
     name: 'Markeringsskilt',
     slug: 'markeringsskilt',
     description: 'Skilt som markerer hindringer, svinger eller vegens kantforløp.',
-    isActive: false,
+    isActive: true,
   },
 ];

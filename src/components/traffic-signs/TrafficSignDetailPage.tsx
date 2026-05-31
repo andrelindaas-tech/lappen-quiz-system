@@ -139,7 +139,7 @@ export default function TrafficSignDetailPage() {
             }}>
               <img
                 src={sign.imagePath}
-                alt={signTitleName}
+                alt={`Skilt ${sign.code} ${sign.name} – norsk trafikkskilt`}
                 style={{ maxHeight: '100%', maxWidth: '100%', objectFit: 'contain' }}
               />
             </div>
