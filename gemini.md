@@ -3,13 +3,13 @@
 **Protocol:** B.L.A.S.T. (Blueprint → Link → Architect → Stylize → Trigger)  
 **Architecture:** A.N.T. (Action, Network, Task)  
 **Backend Authority:** Supabase (TypeScript SDK)  
-**Last Updated:** 2026-05-31T12:31:00+02:00
+**Last Updated:** 2026-06-02T22:58:00+02:00
 
 ---
 
 ## Project Status
 **Current Phase:** Protocol 5 - Trigger (Deployment Ready)  
-**Status:** ✅ CORE COMPLETE - Awaiting GitHub/FTP Setup for Deployment
+**Status:** ✅ CORE COMPLETE & SECURED - Awaiting GitHub/FTP Setup for Deployment
 
 ---
 
@@ -107,4 +107,5 @@ SUPABASE_SERVICE_KEY=(not needed for MVP - anonymous access)
 - **2026-05-31 11:16** - Activated Markeringsskilt category, copied 18 sign images from OneDrive to active project, defined metadata for all 18 signs in src/data/trafficSigns.ts, and verified with successful npm.cmd run build (264 URLs generated).
 - **2026-05-31 11:42** - Updated seoTitle for the veimerking article in theoryData.ts, removed the road emoji (icon) from the header representation, and verified the build.
 - **2026-05-31 12:31** - Updated sign detail page image alt attributes, added FAQ schema/list to TrafficSignBank, re-ordered layout components, and verified successful build.
+- **2026-06-02 22:58** - Secured public.questions table by revoking public SELECT from anon, implemented secure SECURITY DEFINER RPC functions get_questions_by_ids and get_question_count on client and server sides, and verified with updated security test suite.
 

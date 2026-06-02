@@ -1081,3 +1081,58 @@ body.dark-mode .theory-section-summary:hover {
 .theory-section-summary .theory-section-content p:last-child {
     margin-bottom: 0;
 }
+
+/* Responsive Card Layout for Tables on Mobile */
+@media (max-width: 600px) {
+  .responsive-theory-table,
+  .responsive-theory-table thead,
+  .responsive-theory-table tbody,
+  .responsive-theory-table tr,
+  .responsive-theory-table th,
+  .responsive-theory-table td {
+    display: block !important;
+    width: 100% !important;
+    box-sizing: border-box;
+  }
+
+  .responsive-theory-table thead tr {
+    display: none !important;
+  }
+
+  .responsive-theory-table tbody tr {
+    margin-bottom: var(--spacing-lg) !important;
+    border: 1px solid var(--color-border) !important;
+    border-radius: var(--radius-lg) !important;
+    padding: var(--spacing-lg) !important;
+    background-color: var(--color-bg) !important;
+    box-shadow: var(--shadow-sm) !important;
+  }
+
+  body.dark-mode .responsive-theory-table tbody tr {
+    background-color: rgba(255, 255, 255, 0.02) !important;
+  }
+
+  .responsive-theory-table td {
+    padding: var(--spacing-xs) 0 !important;
+    border: none !important;
+  }
+
+  /* Style the first cell (Veimerking Name) as a large header line */
+  .responsive-theory-table td:nth-of-type(1) {
+    font-size: 1.15rem !important;
+    font-weight: 800 !important;
+    color: var(--color-text-primary) !important;
+    border-bottom: 1px solid var(--color-border) !important;
+    padding-bottom: var(--spacing-sm) !important;
+    margin-bottom: var(--spacing-sm) !important;
+  }
+
+  /* Style descriptive columns to display their label headers */
+  .responsive-theory-table td:not(:first-child)::before {
+    content: attr(data-label) ": ";
+    font-weight: 700 !important;
+    color: var(--color-text-primary) !important;
+    display: block;
+    margin-bottom: 2px;
+  }
+}

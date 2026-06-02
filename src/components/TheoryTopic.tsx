@@ -16,6 +16,12 @@ import MiniQuiz from './MiniQuiz'
 import AutomatVsManuellSammenligning from './AutomatVsManuellSammenligning'
 import DekktrykkSimulator from './DekktrykkSimulator'
 import { PromilleKalkulator } from './PromilleKalkulator'
+import { 
+  Shield, Gauge, Layers, Route, Zap, Wrench, Car, RefreshCcw, 
+  UserCheck, GraduationCap, HeartPulse, AlertTriangle, Snowflake, 
+  BookOpen, Signpost, CircleGauge, Wine, Truck, RefreshCw, 
+  Scale, Leaf, Lock, Eye, FileText
+} from 'lucide-react'
 
 
 // Renders content string with support for paragraphs, bullet lists (- ), numbered lists (1. ), images, headings (###) and markdown tables (| col |)
@@ -117,6 +123,76 @@ function renderContent(text: string) {
     return output
 }
 
+// Helper function to render a premium Lucide React icon based on topic ID
+const getTopicIcon = (id: string) => {
+    const iconSize = 48
+    const strokeWidth = 1.5
+    const color = 'var(--color-primary)'
+    
+    switch (id) {
+        case 'vikeplikt':
+            return <Shield size={iconSize} strokeWidth={strokeWidth} style={{ color }} />
+        case 'bremselengde':
+            return <Gauge size={iconSize} strokeWidth={strokeWidth} style={{ color }} />
+        case 'myndighetspyramiden':
+            return <Layers size={iconSize} strokeWidth={strokeWidth} style={{ color }} />
+        case 'veimerking':
+            return <Route size={iconSize} strokeWidth={strokeWidth} style={{ color }} />
+        case 'rundkjoring':
+            return <RefreshCw size={iconSize} strokeWidth={strokeWidth} style={{ color }} />
+        case 'forbikjoring':
+            return <Car size={iconSize} strokeWidth={strokeWidth} style={{ color }} />
+        case 'lysbruk-morkekjoring':
+            return <Eye size={iconSize} strokeWidth={strokeWidth} style={{ color }} />
+        case 'skilt':
+            return <Signpost size={iconSize} strokeWidth={strokeWidth} style={{ color }} />
+        case 'fartsgrenser':
+            return <CircleGauge size={iconSize} strokeWidth={strokeWidth} style={{ color }} />
+        case 'reaksjonstid':
+            return <Gauge size={iconSize} strokeWidth={strokeWidth} style={{ color }} />
+        case 'stans-og-parkering':
+            return <CircleGauge size={iconSize} strokeWidth={strokeWidth} style={{ color }} />
+        case 'promille':
+            return <Wine size={iconSize} strokeWidth={strokeWidth} style={{ color }} />
+        case 'tilhenger':
+            return <Truck size={iconSize} strokeWidth={strokeWidth} style={{ color }} />
+        case 'miljo':
+            return <Leaf size={iconSize} strokeWidth={strokeWidth} style={{ color }} />
+        case 'vognkort-vekter':
+            return <Scale size={iconSize} strokeWidth={strokeWidth} style={{ color }} />
+        case 'temaliste-teoriproven-klasse-b':
+            return <FileText size={iconSize} strokeWidth={strokeWidth} style={{ color }} />
+        case 'dekk-bremser-styring':
+            return <Wrench size={iconSize} strokeWidth={strokeWidth} style={{ color }} />
+        case 'automatlappen':
+            return <Zap size={iconSize} strokeWidth={strokeWidth} style={{ color }} />
+        case 'sikkerhetskontroll':
+            return <Wrench size={iconSize} strokeWidth={strokeWidth} style={{ color }} />
+        case 'oppkjoring':
+            return <Car size={iconSize} strokeWidth={strokeWidth} style={{ color }} />
+        case 'stroket-teoriproven':
+            return <RefreshCcw size={iconSize} strokeWidth={strokeWidth} style={{ color }} />
+        case 'ovingskjoring':
+            return <UserCheck size={iconSize} strokeWidth={strokeWidth} style={{ color }} />
+        case 'tips-eksamen':
+            return <GraduationCap size={iconSize} strokeWidth={strokeWidth} style={{ color }} />
+        case 'trafikkuhell-forstehjelp':
+            return <HeartPulse size={iconSize} strokeWidth={strokeWidth} style={{ color }} />
+        case 'sikkerhetsutstyr':
+            return <Shield size={iconSize} strokeWidth={strokeWidth} style={{ color }} />
+        case 'bilens-lys':
+            return <Eye size={iconSize} strokeWidth={strokeWidth} style={{ color }} />
+        case 'vanlige-feil-teoriproven':
+            return <AlertTriangle size={iconSize} strokeWidth={strokeWidth} style={{ color }} />
+        case 'glatt-fore':
+            return <Snowflake size={iconSize} strokeWidth={strokeWidth} style={{ color: 'var(--apple-blue)' }} />
+        case 'personvern':
+            return <Lock size={iconSize} strokeWidth={strokeWidth} style={{ color }} />
+        default:
+            return <BookOpen size={iconSize} strokeWidth={strokeWidth} style={{ color }} />
+    }
+}
+
 interface TheoryTopicProps {
     topic: TopicType
     onBack: () => void
@@ -199,7 +275,7 @@ export default function TheoryTopic({ topic, onBack, extraComponent }: TheoryTop
                     <span className="theory-topic-icon-lg">
                         {topic.icon.startsWith('data:image') || topic.icon.startsWith('/')
                             ? <img src={topic.icon} alt={topic.title} style={{ width: '64px', height: '64px', objectFit: 'contain' }} /> 
-                            : topic.icon}
+                            : getTopicIcon(topic.id)}
                     </span>
                 )}
                 <div className="theory-topic-header-text">

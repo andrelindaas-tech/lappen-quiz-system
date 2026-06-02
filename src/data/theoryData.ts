@@ -476,7 +476,7 @@ export const theoryTopics: TheoryTopic[] = [
             {
                 title: 'Kort forklart: De viktigste linjene',
                 type: 'table',
-                content: '<div style="overflow-x: auto; -webkit-overflow-scrolling: touch; margin-top: 1rem;"><table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem;"><thead><tr style="background-color: var(--color-surface); border-bottom: 2px solid var(--color-border);"><th style="padding: 12px 8px;">Veimerking</th><th style="padding: 12px 8px;">Kort forklart</th><th style="padding: 12px 8px;">Vanlige misforståelser</th></tr></thead><tbody><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Kjørefeltlinje</b></td><td style="padding: 12px 8px;">Kort stiplet hvit linje som skiller kjørefelt i samme kjøreretning. Kan krysses når det er trygt og lovlig.</td><td style="padding: 12px 8px;">Mange forveksler den med hvit varsellinje, som har lengre streker og varsler at du må være ekstra oppmerksom.</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Hvit sperrelinje</b></td><td style="padding: 12px 8px;">Heltrukken hvit linje. Skal som hovedregel ikke krysses for feltskifte eller forbikjøring.</td><td style="padding: 12px 8px;">Mange tror den bare gjelder forbikjøring, men den gjelder også feltskifte i samme kjøreretning.</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Gul varsellinje</b></td><td style="padding: 12px 8px;">Gul varsellinje brukes mellom motgående trafikkretninger og varsler ofte at sikten eller forholdene gjør forbikjøring risikabelt, eller at du nærmer deg sperrelinje.</td><td style="padding: 12px 8px;">Den betyr ikke automatisk forbud mot å krysse, men du må vurdere om det er trygt og lovlig.</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Hvit varsellinje</b></td><td style="padding: 12px 8px;">Lang stiplet hvit linje som varsler at du må være ekstra oppmerksom, for eksempel før et felt slutter eller ved vanskeligere feltskifte.</td><td style="padding: 12px 8px;">Mange tror den er en vanlig kjørefeltlinje eller at den gir et absolutt kryssingsforbud.</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Gul sperrelinje</b></td><td style="padding: 12px 8px;">Heltrukken gul linje mellom motgående trafikkretninger. Du skal ikke krysse eller kjøre til venstre for den.</td><td style="padding: 12px 8px;">Den gjelder selv om du mener du har god sikt.</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Kombinert linje</b></td><td style="padding: 12px 8px;">To linjer ved siden av hverandre, én stiplet og én heltrukken. Regelen følger linjen nærmest deg.</td><td style="padding: 12px 8px;">Mange ser bare den stiplede linjen og glemmer å sjekke hvilken linje som ligger på egen side.</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Vikelinje</b></td><td style="padding: 12px 8px;">Hvite trekanter, ofte kalt «haifinner», på tvers av veien. Viser hvor du har vikeplikt.</td><td style="padding: 12px 8px;">Du må ikke alltid stoppe helt, men du må stanse hvis det er nødvendig for å overholde vikeplikten.</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Stopplinje</b></td><td style="padding: 12px 8px;">Bred hvit tverrlinje. Viser hvor du skal stoppe helt ved stoppskilt eller rødt lys.</td><td style="padding: 12px 8px;">«Rullende stopp» er ikke godkjent stans. Ved stoppskilt skal bilen stå helt stille.</td></tr></tbody></table></div>'
+                content: '<div style="overflow-x: auto; -webkit-overflow-scrolling: touch; margin-top: 1rem;"><table class="responsive-theory-table" style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem;"><thead><tr style="background-color: var(--color-surface); border-bottom: 2px solid var(--color-border);"><th style="padding: 12px 8px;">Veimerking</th><th style="padding: 12px 8px;">Kort forklart</th><th style="padding: 12px 8px;">Vanlige misforståelser</th></tr></thead><tbody><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Kjørefeltlinje</b></td><td style="padding: 12px 8px;" data-label="Kort forklart">Kort stiplet hvit linje som skiller kjørefelt i samme kjøreretning. Kan krysses når det er trygt og lovlig.</td><td style="padding: 12px 8px;" data-label="Vanlige misforståelser">Mange forveksler den med hvit varsellinje, som har lengre streker og varsler at du må være ekstra oppmerksom.</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Hvit sperrelinje</b></td><td style="padding: 12px 8px;" data-label="Kort forklart">Heltrukken hvit linje. Skal som hovedregel ikke krysses for feltskifte eller forbikjøring.</td><td style="padding: 12px 8px;" data-label="Vanlige misforståelser">Mange tror den bare gjelder forbikjøring, men den gjelder også feltskifte i samme kjøreretning.</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Gul varsellinje</b></td><td style="padding: 12px 8px;" data-label="Kort forklart">Gul varsellinje brukes mellom motgående trafikkretninger og varsler ofte at sikten eller forholdene gjør forbikjøring risikabelt, eller at du nærmer deg sperrelinje.</td><td style="padding: 12px 8px;" data-label="Vanlige misforståelser">Den betyr ikke automatisk forbud mot å krysse, men du må vurdere om det er trygt og lovlig.</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Hvit varsellinje</b></td><td style="padding: 12px 8px;" data-label="Kort forklart">Lang stiplet hvit linje som varsler at du må være ekstra oppmerksom, for eksempel før et felt slutter eller ved vanskeligere feltskifte.</td><td style="padding: 12px 8px;" data-label="Vanlige misforståelser">Mange tror den er en vanlig kjørefeltlinje eller at den gir et absolutt kryssingsforbud.</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Gul sperrelinje</b></td><td style="padding: 12px 8px;" data-label="Kort forklart">Heltrukken gul linje mellom motgående trafikkretninger. Du skal ikke krysse eller kjøre til venstre for den.</td><td style="padding: 12px 8px;" data-label="Vanlige misforståelser">Den gjelder selv om du mener du har god sikt.</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Kombinert linje</b></td><td style="padding: 12px 8px;" data-label="Kort forklart">To linjer ved siden av hverandre, én stiplet og én heltrukken. Regelen følger linjen nærmest deg.</td><td style="padding: 12px 8px;" data-label="Vanlige misforståelser">Mange ser bare den stiplede linjen og glemmer å sjekke hvilken linje som ligger på egen side.</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Vikelinje</b></td><td style="padding: 12px 8px;" data-label="Kort forklart">Hvite trekanter, ofte kalt «haifinner», på tvers av veien. Viser hvor du har vikeplikt.</td><td style="padding: 12px 8px;" data-label="Vanlige misforståelser">Du må ikke alltid stoppe helt, men du må stanse hvis det er nødvendig for å overholde vikeplikten.</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Stopplinje</b></td><td style="padding: 12px 8px;" data-label="Kort forklart">Bred hvit tverrlinje. Viser hvor du skal stoppe helt ved stoppskilt eller rødt lys.</td><td style="padding: 12px 8px;" data-label="Vanlige misforståelser">«Rullende stopp» er ikke godkjent stans. Ved stoppskilt skal bilen stå helt stille.</td></tr></tbody></table></div>'
             },
             {
                 title: 'Gul og hvit veimerking',
@@ -3782,6 +3782,195 @@ export const theoryArticles: TheoryTopic[] = [
                 options: ['At alle svar alltid er like riktige', 'At små ord som “ikke”, “alltid” og “kan” endrer betydningen', 'At spørsmål om skilt aldri handler om situasjon', 'At du bør svare raskest mulig'],
                 correct: 'At små ord som “ikke”, “alltid” og “kan” endrer betydningen',
                 explanation: 'Mange feil skjer fordi kandidaten leser for raskt og overser nøkkelord.'
+            }
+        ]
+    },
+    {
+        id: 'glatt-fore',
+        title: 'Glatt føre: dette må du kunne til teoriprøven',
+        icon: '❄️',
+        shortDescription: 'Glatt føre betyr at bilen har dårligere veigrep enn normalt. Det kan oppstå på snø og is, men også på våt vei, slaps eller underkjølt regn. Lær hvordan du tilpasser kjøringen og unngår vanlige feller.',
+        color: 'var(--apple-blue)',
+        seoTitle: 'Glatt føre og glatt kjørebane | Teoriprøven klasse B',
+        seoDescription: 'Lær hva glatt føre betyr for fart, bremselengde, ABS, dekk og veigrep. Se vanlige teorifeller og hva du må gjøre på snø, is og våt vei.',
+        sections: [
+            {
+                title: 'Innledning',
+                type: 'text',
+                content: 'Glatt føre betyr at bilen har dårligere veigrep enn normalt. Det kan skje på snø og is, men også på våt vei, slaps, underkjølt regn, løv, grus eller asfalt som ser helt bar ut.\n\nPå teoriprøven må du forstå hvorfor glatt føre gir lengre bremselengde, dårligere styring og større risiko for skrens. Det viktigste er ikke å kunne avansert kjøreteknikk, men å vite hvordan du som fører skal tilpasse fart, avstand og kjøremåte etter føret.\n\n![Bil på snødekket vei i skog, eksempel på glatt føre og redusert veigrep.](/images/glatt-fore-hero.png)\n*Glatt føre krever lavere fart, større avstand og roligere kjøring.*'
+            },
+            {
+                title: 'Kort forklart: Glatt føre',
+                type: 'table',
+                content: '<div style="overflow-x: auto; -webkit-overflow-scrolling: touch; margin-top: 1rem;"><table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem;"><thead><tr style="background-color: var(--color-surface); border-bottom: 2px solid var(--color-border);"><th style="padding: 12px 8px;">Tema</th><th style="padding: 12px 8px;">Kort forklart</th></tr></thead><tbody><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Glatt føre</b></td><td style="padding: 12px 8px;">Betyr at veigrepet er redusert. Bilen bruker lengre tid på å stoppe og kan lettere skli.</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Fart</b></td><td style="padding: 12px 8px;">Du må senke farten etter forholdene, selv om fartsgrensen på skiltet er høyere.</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Avstand</b></td><td style="padding: 12px 8px;">Du må holde vesentlig større avstand til bilen foran (øk 3-sekundersregelen).</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Bremselengde</b></td><td style="padding: 12px 8px;">Kan bli opptil 4 ganger (snø) til 10 ganger (is) lengre enn på tørr asfalt.</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>ABS</b></td><td style="padding: 12px 8px;">Hjelper deg å beholde styringskontrollen ved hard bremsing, men gir ikke automatisk kortere bremselengde.</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Dekk</b></td><td style="padding: 12px 8px;">Som fører har du ansvar for at bilen har tilstrekkelig veigrep etter forholdene.</td></tr></tbody></table></div>'
+            },
+            {
+                title: 'Hva regnes som glatt føre?',
+                type: 'text',
+                content: 'Glatt føre is ikke bare snø og is. Det handler om alle situasjoner der dekkene får dårligere feste mot veibanen. Vanlige former for glatt føre inkluderer:\n- Snø og is\n- Slaps (halvsmeltet snø og vann)\n- Våt asfalt (spesielt rett etter at det har begynt å regne etter en tørrperiode, da oljerester og støv flyter opp)\n- Underkjølt regn (regn som fryser i det sekundet det treffer den kalde veien)\n- Vannplaning (når dekkene mister kontakt med veien og flyter oppå vannet)\n- Løv, grus eller leire på veibanen\n\n**Husk:** Veien kan være ekstremt glatt selv om den ser helt bar og tørr ut (for eksempel underkjølt rim eller svart is).'
+            },
+            {
+                title: 'Hvor blir det ofte glatt først?',
+                type: 'text',
+                content: 'Noen partier av veien er mer utsatt for glatt føre enn andre. Her må du være ekstra forberedt:\n- **Broer og viadukter:** Luften sirkulerer både over og under broen, noe som gjør at kjørebanen her kjøles ned raskere enn veien på bakken.\n- **Skyggepartier:** Sola slipper ikke til i svinger omgitt av skog eller fjellvegger, og rim eller is blir liggende lenge etter at andre steder har tørket opp.\n- **Kryss og rundkjøringer:** Start, stopp og akselerasjon fra mange kjøretøy polerer snøen og isen, slik at det blir ekstremt glatt akkurat der du trenger bremsekraft.'
+            },
+            {
+                title: 'Hvorfor glatt føre ofte overrasker',
+                type: 'info',
+                content: 'Glatt føre er farligst når føreren ikke forventer det. Når veien er dekket av snø, kjører de fleste automatisk mer forsiktig. Den største risikoen oppstår ofte når veien ser bar eller bare litt våt ut, men temperaturen ligger rundt null grader.\n\nDa kan små forskjeller i temperatur gjøre at én del av veien har godt grep, mens neste sving, bro eller skyggeparti er isete. Dette kalles ofte **flekkvis glatt føre**. Som fører må du derfor ikke bare vurdere hvordan veien ser ut akkurat der du er, men også hva som kan vente lenger fremme.\n\nEt godt tegn på faglig forståelse er å tenke på **overganger**: fra sol til skygge, fra vanlig vei til bro, fra tørr vei til våt vei, fra spor med bar asfalt til snø/slaps, eller fra rett strekning til kryss og rundkjøring. Det er ofte i slike overganger bilen mister grep.\n\nTil teoriprøven er hovedpoenget dette: **Du skal tilpasse farten etter det dårligste føret du kan møte, ikke bare etter det beste grepet du har akkurat nå.**'
+            },
+            {
+                title: 'Glatt føre til ulike årstider',
+                type: 'text',
+                content: 'Mange forbinder glatt føre utelukkende med vinteren, men det kan oppstå hele året:\n- **Vår:** Snøsmelting om dagen renner ut i veibanen og fryser til farlig is (såkalt "svart is") når temperaturen faller om natten.\n- **Sommer:** Kraftig regnvær kan gi vannplaning. På ekstremt varme dager kan asfalten begynne å "blø" (bindemiddelet i asfalten smelter og flyter opp), noe som gir en glatt overflate.\n- **Høst:** Vått løv som faller på veien danner en glatt film som minner om is. Den første frostnatten kommer også ofte overraskende på bilister som ikke har skiftet til vinterdekk.'
+            },
+            {
+                title: 'Hva er vannplaning?',
+                type: 'warning',
+                content: 'Vannplaning skjer når dekket mister direkte kontakt med veibanen fordi det ligger et lag med vann mellom dekket og asfalten. Bilen flyter på vannet, og du får svært dårlig kontroll over styring og bremsing.\n\n**Hovedårsaker til vannplaning:**\n1. **For høy fart:** Dekkets mønster rekker ikke å drenere bort vannet i tide.\n2. **Slitte dekk:** Dårlig mønsterdybde reduserer dekkets evne til å lede vann bort fra kontaktflaten.\n3. **Mye vann i veibanen:** Spesielt i dype hjulspor i asfalten der vannet samler seg.\n\n**Hva gjør du om du opplever vannplaning?**\nSlipp gassen rolig, hold rattet stødig i kjøreretningen og unngå brå bremsing eller brå styring. Når farten synker, vil dekkene gjenvinne veigrepet slik at du får kontroll over bilen igjen.'
+            },
+            {
+                title: 'Fart og bremselengde på glatt føre',
+                type: 'text',
+                content: 'Bremselengden øker med kvadratet av farten. Det betyr at dersom du dobler farten (f.eks. fra 40 til 80 km/t), blir bremselengden **fire ganger** så lang.\n\nPå glatt føre blir denne effekten ekstremt forsterket fordi friksjonen mellom dekk og vei er minimal. Bremselengden kan bli 4 ganger lengre på snø, og opptil 10 ganger lengre på is, sammenlignet med tørr asfalt.\n\n![Illustrasjon av bremselengde på snø, med forskjell mellom 50 km/t og 60 km/t.](/images/glatt-fore-bremselengde.png)\n*På glatt føre kan små fartsøkninger gi merkbart lengre stopplengde. Tallene må forstås som eksempel, ikke en fast regel.*\n\n[Lær mer om forholdet mellom reaksjonstid, bremselengde og stopplengde](/laeringsressurser/bremselengde)'
+            },
+            {
+                title: 'Sammenligning av bremselengder',
+                type: 'table',
+                content: '<div style="overflow-x: auto; -webkit-overflow-scrolling: touch; margin-top: 1rem;"><table class="responsive-theory-table" style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem;"><thead><tr style="background-color: var(--color-surface); border-bottom: 2px solid var(--color-border);"><th style="padding: 12px 8px;">Fart</th><th style="padding: 12px 8px;">Bremselengde på tørr asfalt</th><th style="padding: 12px 8px;">Bremselengde på snø (x4)</th><th style="padding: 12px 8px;">Bremselengde på is (x10)</th></tr></thead><tbody><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>50 km/t</b></td><td style="padding: 12px 8px;" data-label="Tørr asfalt">ca. 12,5 meter</td><td style="padding: 12px 8px;" data-label="På snø">ca. 50 meter</td><td style="padding: 12px 8px;" data-label="På is">ca. 125 meter</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>60 km/t</b></td><td style="padding: 12px 8px;" data-label="Tørr asfalt">ca. 18 meter</td><td style="padding: 12px 8px;" data-label="På snø">ca. 72 meter</td><td style="padding: 12px 8px;" data-label="På is">ca. 180 meter</td></tr></tbody></table></div>\n\n*Tallene er forenklede eksempler. Faktisk bremselengde avhenger av dekk, fart, føre, temperatur og bil.*'
+            },
+            {
+                title: 'ABS-bremser på glatt føre',
+                type: 'text',
+                content: 'ABS (blokkeringsfrie bremser) er standard på moderne biler. Systemet forhindrer at hjulene låser seg helt når du nødbremser.\n\n**Hva må du kunne til teoriprøven om ABS?**\n- **Styringskontroll:** Det viktigste med ABS er at du beholder evnen til å svinge (styre unna hindringer) mens du bremser maksimalt. Låste forhjul kan ikke svinge bilen.\n- **Riktig bruk:** Tråkk bremsepedalen hardt og bestemt inn, og hold trykket oppe. Du vil merke at pedalen rister, noe som er helt normalt. Du skal **ikke pumpe** bremsen slik man gjorde på gamle biler uten ABS.\n- **Ingen mirakelkur:** ABS opphever ikke fysikkens lover. ABS gir ikke automatisk kortere bremselengde på glatt føre. Hovedpoenget er at du kan beholde styringen under hard bremsing. Du trenger fortsatt lang avstand for å stoppe.\n\n[Les mer om dekk, bremser og styring](/laeringsressurser/dekk-bremser-styring)'
+            },
+            {
+                title: 'Dekk og veigrep',
+                type: 'text',
+                content: 'Dekkene er bilens eneste kontaktpunkt med veibanen. Du som fører har det juridiske ansvaret for at kjøretøyet har tilstrekkelig veigrep hele året, uavhengig av kalenderdatoer.\n- **Mønsterdybde:**\n  * **Vinterdekk:** Minst **3,0 mm** mønsterdybde (anbefalt 4 mm for sikker kjøring på slaps/snø).\n  * **Sommerdekk:** Minst **1,6 mm** mønsterdybde (anbefalt 3 mm på våt vei for å unngå vannplaning).\n- **Piggdekkregler:** Piggdekk er tillatt fra **1. november** til første søndag etter 2. påskedag i Sør-Norge (i Nord-Norge fra 16. oktober til 30. april). **Viktig felle:** Piggdekk kan brukes utenom disse datoene dersom føret krever det. Føret trumfer alltid datoen!\n- **Piggfrie vinterdekk:** Det er lovlig å bruke piggfrie vinterdekk om sommeren, men gummien er myk og blir glatt på varm asfalt, og bremselengden øker betydelig. Det frarådes derfor sterkt.'
+            },
+            {
+                title: 'Slik kjører du på glatt føre',
+                type: 'tip',
+                content: 'For å unngå ulykker på glatt føre bør du kjøre etter følgende prinsipper:\n1. **Kjør defensivt:** Planlegg kjøringen godt frem i tid. Se langt frem slik at du kan oppdage farer og svinger tidlig.\n2. **Tilpass farten før svingen:** Brems ned mens bilen kjører rett frem. Går du inn i en sving med for høy fart, øker sjansen for skrens betydelig.\n3. **Myke bevegelser:** Unngå brå rattutslag, hard akselerasjon og bråbremsing. Dette kan provosere frem tap av veigrep.\n4. **Øk følgeavstanden:** Bruk tresekundersregelen som et absolutt minimum på tørt føre, men øk avstanden til **5–6 sekunder** eller mer på snø og is.'
+            },
+            {
+                title: 'Hvis bilen begynner å skli (skrens)',
+                type: 'text',
+                content: 'Dersom du mister grepet, må du reagere riktig ut fra hva slags skrens bilen får:\n- **Understyring (bilen svinger for lite):** Forhjulene mister grep og bilen vil fortsette rett frem i svingen. Dette skyldes ofte for høy fart inn i svingen eller brått rattutslag. **Handling:** Slipp gasspedalen og rett opp rattet litt til forhjulene gjenvinner grep, før du svinger rolig igjen.\n- **Overstyring (bilen svinger for mye):** Bakhjulene mister grep og bakenden sklir ut til siden. **Handling:** Slipp gassen rolig, hold rattet stødig i kjøreretningen og unngå brå bremsing eller brå styring. Hvis bakenden sklir ut, styrer du forsiktig i den retningen bakenden sklir (motstyring).'
+            },
+            {
+                title: 'Fareskilt: Glatt kjørebane',
+                type: 'signs',
+                content: 'Når du kjører i områder der det er spesielt stor fare for glatt vei under visse forhold, vil du møte fareskiltet for glatt kjørebane. Når du ser dette skiltet, skal du umiddelbart senke farten og øke avstanden.',
+                signs: [
+                    {
+                        name: 'Fareskilt 116: Glatt kjørebane',
+                        description: 'Varsler om strekning der kjørebanen under spesielle forhold (f.eks. ved frost eller regn) kan være spesielt glatt. Tilpass kjøringen umiddelbart.',
+                        imageUrl: '/signs/fareskilt/skilt-116-glatt-kjorebane.jpg'
+                    }
+                ]
+            },
+            {
+                title: 'Mer om fareskiltet',
+                type: 'text',
+                content: 'Fareskilt 116 settes ofte opp sammen med et underskilt som presiserer når eller over hvilken strekning faren gjelder (f.eks. «Gjelder ved væromslag» eller en lengde som «Gjelder over 3 km»).\n\n[Se alle fareskilt og detaljer i Skiltbanken](/trafikkskilt/fareskilt/glatt-kjorebane)'
+            },
+            {
+                title: 'Kilder og regelverk',
+                type: 'text',
+                content: 'For mer detaljert informasjon og formelle regler om veigrep, dekk og kjetting, se følgende offentlige kilder:\n- **Statens vegvesen:** [Krav til dekk og kjetting på bil](https://www.vegvesen.no/kjoretoy/eie-og-vedlikeholde/dekk-og-kjetting/)\n- **Lovdata:** [Forskrift om bruk av kjøretøy (kapittel 1: hjul, dekk og kjetting)](https://lovdata.no/dokument/SF/forskrift/1990-01-25-92)'
+            }
+        ],
+        faq: [
+            {
+                question: 'Hva er underkjølt regn?',
+                answer: 'Underkjølt regn er regn som faller som væske, men som fryser umiddelbart til is i det sekundet det treffer en kald veibane eller bilrute. Dette danner et tynt, glassklart islag (ofte kalt svart is) som er ekstremt vanskelig å se, og veien blir såpeglatt på noen få sekunder.'
+            },
+            {
+                question: 'Hva gjør du hvis du får vannplaning?',
+                answer: 'Slipp gassen rolig, hold rattet stødig i kjøreretningen og unngå brå bremsing eller brå styring. Hjulene vil gjenvinne grep når farten synker.'
+            },
+            {
+                question: 'Har firehjulstrekk (4WD/AWD) kortere bremselengde på glatt føre?',
+                answer: 'Nei, dette er en vanlig teorifelle. Firehjulstrekk og allhjulsdrift gir bedre fremdrift og grep under akselerasjon, men når du bremser, bremses alle biler på alle fire hjul uansett drivverk. Bremselengden avhenger kun av dekk, veigrep og fart.'
+            },
+            {
+                question: 'Hvem har ansvaret for at bilen har godt nok veigrep?',
+                answer: 'Det er alltid føreren (du) som har det fulle juridiske ansvaret for at kjøretøyet har tilstrekkelig veigrep og er utstyrt etter forholdene (for eksempel ved å ha vinterdekk på vinterføre), uansett om det er sommer eller vinter på kalenderen.'
+            },
+            {
+                question: 'Hva er minstekravet til mønsterdybde på vinterdekk?',
+                answer: 'Lovens minstekrav til mønsterdybde på vinterdekk (både piggdekk og piggfrie) er 3,0 mm. Det anbefales imidlertid å ha minst 4 mm mønsterdybde for å sikre god drenering av slaps og vann.'
+            },
+            {
+                question: 'Når er det tillatt å bruke piggdekk i Sør-Norge?',
+                answer: 'Det er som hovedregel tillatt å kjøre med piggdekk fra 1. november til første søndag etter 2. påskedag. Men reglene sier også at du kan kjøre med piggdekk utenom disse datoene dersom føret gjør det nødvendig. Føret trumfer alltid datoen!'
+            },
+            {
+                question: 'Hva skjer med bremselengden hvis du dobler farten?',
+                answer: 'Bremselengden øker med kvadratet av fartsøkningen. Dobbel fart gir fire ganger så lang bremselengde. På glatt føre (for eksempel på is) vil denne firedoblingen utgjøre en enorm og livsfarlig økning i antall meter.'
+            },
+            {
+                question: 'Kan man bruke piggfrie vinterdekk om sommeren?',
+                answer: 'Det er formelt lovlig, men frarådes sterkt. Piggfrie vinterdekk har en veldig myk gummi som er laget for kuldegrader. På varm sommerasfalt gir dette dekket vesentlig lengre bremselengde, dårligere sidestabilitet, og det slites ekstremt raskt.'
+            }
+        ],
+        miniQuiz: [
+            {
+                question: 'Hva er det viktigste du gjør når du oppdager glatt føre?',
+                options: [
+                    'Øker farten for å bli raskere ferdig med strekningen',
+                    'Senker farten og øker avstanden til kjøretøyet foran',
+                    'Kjører nærmere veikanten for å finne bedre grep',
+                    'Bremser hardt gjentatte ganger for å teste grepet kontinuerlig'
+                ],
+                correct: 'Senker farten og øker avstanden til kjøretøyet foran',
+                explanation: 'Lavere fart reduserer bremselengden betraktelig, og økt avstand gir deg en reaksjons- og bremsemargin dersom kjøretøyet foran må stoppe brått.'
+            },
+            {
+                question: 'Hva hjelper ABS-bremser deg mest med på glatt føre?',
+                options: [
+                    'Å oppnå kortere bremselengde enn på tørr asfalt',
+                    'Å beholde styringskontrollen ved hard bremsing',
+                    'Å automatisk rette opp en skrens på bakhjulene',
+                    'Å kjøre raskere og tryggere gjennom skarpe svinger'
+                ],
+                correct: 'Å beholde styringskontrollen ved hard bremsing',
+                explanation: 'ABS forhindrer at hjulene låser seg ved maksimal bremsing. Siden hjulene fortsetter å rulle litt, beholder du styreevnen og kan styre utenom hindringer mens du bremser.'
+            },
+            {
+                question: 'Hvor på veien fryser det vanligvis først når temperaturen faller mot null grader?',
+                options: [
+                    'Inne i lange tunneler',
+                    'På broer, viadukter og i skyggepartier',
+                    'Midt i veibanen på høyt trafikkerte motorveier',
+                    'Kun på toppen av bratte bakker'
+                ],
+                correct: 'På broer, viadukter og i skyggepartier',
+                explanation: 'Broer kjøles ned raskt av luften på alle kanter, både over og under. I skyggepartier slipper ikke sola til for å varme opp veien, så fuktighet fryser raskt og blir liggende lenge.'
+            },
+            {
+                question: 'Hva øker risikoen for vannplaning mest?',
+                options: [
+                    'Lav hastighet og nye dekk med god mønsterdybde',
+                    'Høy hastighet, slitte dekk med dårlig mønsterdybde og dype hjulspor fylt med vann',
+                    'Kjøring på tørr asfalt med høyt lufttrykk i dekkene',
+                    'Forsiktig bremsing på flat veibane ved lett yr'
+                ],
+                correct: 'Høy hastighet, slitte dekk med dårlig mønsterdybde og dype hjulspor fylt med vann',
+                explanation: 'Vannplaning skjer når dekkene ikke rekker å lede bort vannet i veibanen. Høy fart og slitte dekk (mangel på dype spor til å lede vann bort) gjør at bilen mister veigrep og flyter opp.'
+            },
+            {
+                question: 'Hvilken påstand om firehjulstrekk (4WD/AWD) på glatt føre er riktig?',
+                options: [
+                    'Firehjulstrekk gir kortere bremselengde enn tohjulstrekk',
+                    'Firehjulstrekk gir bedre fremdrift under akselerasjon, men bremselengden er den samme',
+                    'Med firehjulstrekk trenger du ikke tenke på minstekravet til dekk',
+                    'Firehjulstrekk fjerner faren for vannplaning helt'
+                ],
+                correct: 'Firehjulstrekk gir bedre fremdrift under akselerasjon, men bremselengden er den samme',
+                explanation: 'Firehjulstrekk fordeler motorkraften på alle fire hjul, noe som forbedrer grepet når du skal i gang eller kjøre oppover. Men alle biler bremser med alle fire hjul, så bremselengen på glatt føre reduseres ikke.'
             }
         ]
     }

@@ -24,14 +24,25 @@ export function searchTrafficSigns(query: string): TrafficSign[] {
   const cleanQuery = query.toLowerCase().trim();
   if (!cleanQuery) return [];
 
+  // Normalize query: strip common search terms like "skilt", "nr", "nummer" when they are separate words
+  const processedQuery = cleanQuery
+    .replace(/\bskilt\b/g, '')
+    .replace(/\bnr\b/g, '')
+    .replace(/\bnummer\b/g, '')
+    .replace(/\s+/g, ' ')
+    .trim();
+
+  // Fallback to original cleanQuery if the stripping resulted in an empty string (e.g. user searched for just "skilt")
+  const finalQuery = processedQuery || cleanQuery;
+
   return trafficSigns.filter((sign) => {
-    const nameMatch = sign.name.toLowerCase().includes(cleanQuery);
-    const displayNameMatch = sign.displayName?.toLowerCase().includes(cleanQuery) || false;
-    const codeMatch = sign.code.toLowerCase().includes(cleanQuery);
-    const explanationMatch = sign.shortExplanation.toLowerCase().includes(cleanQuery) || 
-      sign.longExplanation?.toLowerCase().includes(cleanQuery) || false;
-    const trapMatch = sign.theoryTrap.toLowerCase().includes(cleanQuery);
-    const aliasMatch = sign.aliases?.some((alias) => alias.toLowerCase().includes(cleanQuery)) || false;
+    const nameMatch = sign.name.toLowerCase().includes(finalQuery);
+    const displayNameMatch = sign.displayName?.toLowerCase().includes(finalQuery) || false;
+    const codeMatch = sign.code.toLowerCase().includes(finalQuery);
+    const explanationMatch = sign.shortExplanation.toLowerCase().includes(finalQuery) || 
+      sign.longExplanation?.toLowerCase().includes(finalQuery) || false;
+    const trapMatch = sign.theoryTrap.toLowerCase().includes(finalQuery);
+    const aliasMatch = sign.aliases?.some((alias) => alias.toLowerCase().includes(finalQuery)) || false;
 
     return nameMatch || displayNameMatch || codeMatch || explanationMatch || trapMatch || aliasMatch;
   });

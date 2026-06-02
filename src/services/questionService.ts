@@ -88,11 +88,9 @@ export async function fetchQuestionsByIds(ids: number[]): Promise<Question[]> {
 
     console.log(`📡 Fetching ${ids.length} specific questions for Fokus mode`)
 
-    // Fetch questions filtered by IDs
-    const { data, error } = await supabase
-      .from('questions')
-      .select('*')
-      .in('id', ids)
+    // Fetch questions filtered by IDs using RPC
+    const { data, error } = await (supabase as any)
+      .rpc('get_questions_by_ids', { p_ids: ids })
 
     if (error) {
       console.error('❌ Supabase query error:', error)
@@ -137,16 +135,15 @@ function shuffleArray<T>(array: T[]): T[] {
  */
 export async function getQuestionCount(): Promise<number> {
   try {
-    const { count, error } = await supabase
-      .from('questions')
-      .select('*', { count: 'exact', head: true })
+    const { data, error } = await (supabase as any)
+      .rpc('get_question_count')
 
     if (error) {
       console.error('❌ Count query error:', error)
       return 0
     }
 
-    return count || 0
+    return data || 0
   } catch (err) {
     console.error('💥 Error getting question count:', err)
     return 0

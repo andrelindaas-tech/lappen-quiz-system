@@ -16,7 +16,8 @@ import {
     UserCheck,
     GraduationCap,
     HeartPulse,
-    AlertTriangle
+    AlertTriangle,
+    Snowflake
 } from 'lucide-react'
 import { theoryTopics, theoryArticles, theoryUtilityPages } from '../data/theoryData'
 import TheoryTopic from './TheoryTopic'
@@ -50,6 +51,8 @@ const getTopicIcon = (id: string) => {
             return <HeartPulse size={24} strokeWidth={1.8} />
         case 'vanlige-feil-teoriproven':
             return <AlertTriangle size={24} strokeWidth={1.8} />
+        case 'glatt-fore':
+            return <Snowflake size={24} strokeWidth={1.8} />
         default:
             return <BookOpen size={24} strokeWidth={1.8} />
     }

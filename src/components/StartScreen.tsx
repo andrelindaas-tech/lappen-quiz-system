@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { useNavigate, Link } from 'react-router-dom'
 import { getWrongAnswersCount, clearWrongAnswers } from '../utils/wrongAnswersStore'
 import { Helmet } from 'react-helmet-async'
-import { Zap, Signpost, Target, Route, Gauge, Layers, CircleGauge, Wine, Truck, Wrench, ChevronDown, RefreshCw, Car, ChevronRight, BookOpen, HelpCircle } from 'lucide-react'
+import { Zap, Signpost, Target, Route, Gauge, Layers, CircleGauge, Wine, Truck, Wrench, ChevronDown, RefreshCw, Car, ChevronRight, BookOpen, HelpCircle, Snowflake } from 'lucide-react'
 
 export default function StartScreen() {
     const [fokusCount, setFokusCount] = useState(0)
@@ -334,7 +334,8 @@ export default function StartScreen() {
                             { label: 'Fartsgrenser', path: '/laeringsressurser/fartsgrenser', icon: CircleGauge },
                             { label: 'Promille og rus', path: '/laeringsressurser/promille', icon: Wine },
                             { label: 'Tilhenger og vekt', path: '/laeringsressurser/tilhenger', icon: Truck },
-                            { label: 'Sikkerhetskontroll', path: '/laeringsressurser/sikkerhetskontroll', icon: Wrench }
+                            { label: 'Sikkerhetskontroll', path: '/laeringsressurser/sikkerhetskontroll', icon: Wrench },
+                            { label: 'Glatt føre', path: '/laeringsressurser/glatt-fore', icon: Snowflake }
                         ].map((topic, i) => {
                             const IconComponent = topic.icon
                             return (

@@ -59,6 +59,16 @@ export interface Database {
         }
         Returns: Database['public']['Tables']['questions']['Row'][]
       }
+      get_questions_by_ids: {
+        Args: {
+          p_ids: number[]
+        }
+        Returns: Database['public']['Tables']['questions']['Row'][]
+      }
+      get_question_count: {
+        Args: Record<PropertyKey, never>
+        Returns: number
+      }
     }
     Enums: {
       [_ in never]: never

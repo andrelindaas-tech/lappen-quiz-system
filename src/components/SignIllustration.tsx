@@ -141,6 +141,7 @@ export const SignIllustration: React.FC<SignIllustrationProps> = ({ signId, clas
             <polygon points="46,31 64,32 54,45" fill={COLORS.BLACK} />
           </g>
         )
+      case '116':
       case 'slippery-road':
         return (
           <g>
