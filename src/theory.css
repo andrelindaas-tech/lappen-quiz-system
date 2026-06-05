@@ -1,35 +1,5 @@
 /* Teori-side stiler */
 
-:root {
-    /* Apple Human Interface Colors - Light Mode */
-    --apple-red: rgb(255, 56, 60);
-    --apple-orange: rgb(255, 141, 40);
-    --apple-yellow: rgb(255, 204, 0);
-    --apple-green: rgb(52, 199, 89);
-    --apple-mint: rgb(0, 200, 179);
-    --apple-teal: rgb(0, 195, 208);
-    --apple-cyan: rgb(0, 192, 232);
-    --apple-blue: rgb(0, 136, 255);
-    --apple-indigo: rgb(97, 85, 245);
-    --apple-purple: rgb(203, 48, 224);
-    --apple-pink: rgb(255, 45, 85);
-}
-
-.dark-mode {
-    /* Apple Human Interface Colors - Dark Mode */
-    --apple-red: rgb(255, 66, 69);
-    --apple-orange: rgb(255, 146, 48);
-    --apple-yellow: rgb(255, 214, 0);
-    --apple-green: rgb(48, 209, 88);
-    --apple-mint: rgb(0, 218, 195);
-    --apple-teal: rgb(0, 210, 224);
-    --apple-cyan: rgb(60, 211, 254);
-    --apple-blue: rgb(0, 145, 255);
-    --apple-indigo: rgb(109, 124, 255);
-    --apple-purple: rgb(219, 52, 242);
-    --apple-pink: rgb(255, 55, 95);
-}
-
 /* ===== Navigasjon ===== */
 .nav-tabs {
     display: flex;
@@ -74,124 +44,80 @@
 
 /* ===== Teori-side ===== */
 .theory-page {
-    width: 100%;
+    max-width: 900px;
     margin: 0 auto;
-    text-align: left;
+    padding: var(--spacing-xl);
+    text-align: center;
 }
 
 .theory-page h1 {
-    font-size: var(--font-size-3xl);
+    font-size: var(--font-size-2xl);
     margin-bottom: var(--spacing-md);
-    font-weight: 800;
-    color: var(--color-text);
-    letter-spacing: -0.03em;
 }
 
 .theory-subtitle {
     color: var(--color-text-light);
-    font-size: 1.1rem;
+    font-size: var(--font-size-lg);
     margin-bottom: var(--spacing-xl);
-    line-height: 1.6;
-}
-
-.theory-section-group + .theory-section-group {
-    margin-top: var(--spacing-2xl);
 }
 
 /* ===== Emne-kort ===== */
 .theory-cards {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 1.5rem;
     margin-top: var(--spacing-xl);
     text-align: left;
 }
 
-@media (max-width: 768px) {
-    .theory-cards {
-        grid-template-columns: 1fr;
-    }
-}
-
 .theory-card {
     background-color: var(--color-bg);
     border: 1px solid var(--color-border);
-    border-radius: 16px;
-    padding: 1.75rem;
+    border-left: 3px solid transparent;
+    border-radius: var(--radius-lg);
+    padding: 2rem;
     cursor: pointer;
-    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     font-family: var(--font-family);
+    box-shadow: var(--shadow-sm);
     display: flex;
     flex-direction: column;
-    gap: 0.75rem;
-    position: relative;
-    overflow: hidden;
-    box-shadow: var(--shadow-sm);
+    gap: var(--spacing-sm);
 }
 
 .theory-card:hover {
-    transform: translateY(-3px);
-    border-color: var(--color-primary);
-    box-shadow: 0 8px 24px var(--color-accent-glow);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
 }
 
-/* Card Icon Box tailored for theory cards using standard primary color */
-.theory-card .card-icon-box {
-    margin-bottom: 0.25rem;
-    color: var(--color-primary);
-    background-color: rgba(13, 148, 136, 0.06);
-    border: 1px solid rgba(13, 148, 136, 0.15);
-}
-
-body.dark-mode .theory-card .card-icon-box {
-    background-color: rgba(45, 212, 191, 0.08);
-    border-color: rgba(45, 212, 191, 0.2);
-}
-
-.theory-card:hover .card-icon-box {
-    background-color: var(--color-primary-soft);
-    border-color: var(--color-primary);
+.theory-card-icon {
+    font-size: 2.5rem;
 }
 
 .theory-card-title {
-    font-size: 1.2rem;
+    font-size: var(--font-size-lg);
     font-weight: 700;
     color: var(--color-text);
     margin: 0;
-    line-height: 1.4;
-    transition: color 0.25s ease;
-}
-
-.theory-card:hover .theory-card-title {
-    color: var(--color-primary);
 }
 
 .theory-card-desc {
     color: var(--color-text-light);
-    font-size: 0.925rem;
-    line-height: 1.6;
-    margin: 0 0 var(--spacing-xs) 0;
+    font-size: 1rem; /* +15% from 0.875rem (--font-size-sm) */
+    line-height: 1.5;
+    margin: 0;
     flex-grow: 1;
 }
 
 .theory-card-badge {
-    display: inline-flex;
-    align-items: center;
-    padding: 0.25rem 0;
-    font-size: 0.85rem;
-    font-weight: 700;
-    color: var(--color-primary);
-    background: none !important;
-    text-transform: uppercase;
-    letter-spacing: 0.03em;
-    margin-top: auto; /* Push badge to the bottom so they align */
-    border-bottom: 2px solid transparent;
-    transition: border-color 0.2s ease;
+    display: inline-block;
+    padding: var(--spacing-xs) var(--spacing-md);
+    border-radius: var(--radius-sm);
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    color: white;
     align-self: flex-start;
-}
-
-.theory-card:hover .theory-card-badge {
-    border-bottom-color: var(--color-primary);
+    margin-top: var(--spacing-sm);
 }
 
 /* ===== Emne-detaljvisning ===== */
@@ -406,21 +332,15 @@ body.dark-mode .theory-section-example {
 }
 
 .theory-signs-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
+    flex-direction: column;
     gap: var(--spacing-lg);
-}
-
-@media (max-width: 600px) {
-    .theory-signs-grid {
-        grid-template-columns: 1fr;
-    }
 }
 
 .theory-sign-item {
     display: flex;
-    align-items: flex-start;
-    gap: var(--spacing-md);
+    align-items: center;
+    gap: var(--spacing-xl);
     padding: var(--spacing-lg);
     border-radius: var(--radius-lg);
     background-color: var(--color-bg);
@@ -429,15 +349,14 @@ body.dark-mode .theory-section-example {
 }
 
 .theory-sign-item:hover {
-    transform: translateY(-2px);
+    transform: translateX(8px);
     box-shadow: var(--shadow-md);
-    border-color: var(--color-primary);
+    border-color: rgba(255, 255, 255, 0.1);
 }
 
 .theory-sign-visual {
     width: 80px;
     height: 80px;
-    min-width: 80px;
     background-color: var(--color-bg-secondary);
     border-radius: var(--radius-md);
     padding: var(--spacing-sm);
@@ -456,22 +375,20 @@ body.dark-mode .theory-section-example {
 
 .theory-sign-text {
     flex-grow: 1;
-    min-width: 0;
 }
 
 .theory-sign-text strong {
     display: block;
     font-size: var(--font-size-base);
     color: var(--color-text);
-    margin-bottom: 4px;
+    margin-bottom: 2px;
 }
 
 .theory-sign-text p {
     color: var(--color-text-light);
     font-size: var(--font-size-sm);
     margin: 0;
-    line-height: 1.6;
-    white-space: pre-line;
+    line-height: 1.5;
 }
 
 /* ===== Bremselengde-kalkulator ===== */
@@ -951,58 +868,7 @@ body.dark-mode .theory-section-example {
     color: var(--color-primary);
 }
 
-/* ===== Theory tables (markdown-rendered) ===== */
-.theory-table-wrapper {
-    width: 100%;
-    overflow-x: auto;
-    margin: var(--spacing-md) 0;
-}
-
-.theory-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 0.95rem;
-}
-
-.theory-table thead tr {
-    border-bottom: 2px solid var(--color-border);
-}
-
-.theory-table th {
-    padding: 10px 16px 12px 16px;
-    text-align: left;
-    font-weight: 700;
-    color: var(--color-text-primary);
-    background: none;
-    white-space: nowrap;
-}
-
-.theory-table tbody tr {
-    border-bottom: 1px solid var(--color-border);
-}
-
-.theory-table tbody tr:last-child {
-    border-bottom: none;
-}
-
-.theory-table td {
-    padding: 14px 16px;
-    text-align: left;
-    vertical-align: top;
-    line-height: 1.6;
-    color: var(--color-text-primary);
-}
-
-/* First column (Rang) is narrow and slightly muted */
-.theory-table td:first-child,
-.theory-table th:first-child {
-    font-weight: 600;
-    width: 48px;
-    min-width: 40px;
-    color: var(--color-text-light);
-}
-
-/* Styling for raw HTML tables in theory content (legacy) */
+/* Styling for raw HTML tables in theory content */
 .theory-section-content table {
     width: 100%;
     border-collapse: collapse;
@@ -1011,7 +877,7 @@ body.dark-mode .theory-section-example {
 
 .theory-section-content th,
 .theory-section-content td {
-    padding: 12px 16px;
+    padding: 16px 32px; /* Extra horizontal padding for column spacing */
     text-align: left;
     border-bottom: 1px solid var(--color-border);
     vertical-align: top;
@@ -1019,120 +885,43 @@ body.dark-mode .theory-section-example {
 }
 
 .theory-section-content th {
-    font-weight: 700;
+    font-weight: 600;
     color: var(--color-text-primary);
+    background-color: var(--color-bg-alt);
 }
 
-/* Inline heading inside content sections */
-.theory-content-heading {
-    font-size: 1rem;
-    font-weight: 700;
-    margin: 1.25rem 0 0.5rem;
-    color: var(--color-text-primary);
-}
-
-/* Premium summary box / infobox at the top of topics */
-.theory-section-summary {
-    background-color: var(--color-bg-secondary) !important;
-    border: 1px solid var(--color-border) !important;
-    border-left: 5px solid var(--apple-orange) !important;
-    border-radius: var(--radius-lg) !important;
-    padding: var(--spacing-lg) var(--spacing-xl) !important;
-    box-shadow: none !important;
-    margin-bottom: var(--spacing-lg) !important;
-    transition: none !important;
-}
-
-body.dark-mode .theory-section-summary {
-    background-color: rgba(255, 146, 48, 0.05) !important;
-    border-left-color: var(--apple-orange) !important;
-    border-color: rgba(255, 146, 48, 0.15) !important;
-}
-
-.theory-section-summary::before {
-    display: none !important;
-}
-
-.theory-section-summary:hover {
-    transform: none !important;
-    box-shadow: none !important;
-    border-color: var(--color-border) !important;
-}
-
-body.dark-mode .theory-section-summary:hover {
-    border-color: rgba(255, 146, 48, 0.25) !important;
-}
-
-.theory-section-summary .theory-section-title {
-    font-size: 1.15rem;
-    font-weight: 700;
-    color: var(--apple-orange);
-    margin-bottom: var(--spacing-xs);
-    letter-spacing: -0.01em;
-}
-
-.theory-section-summary .theory-section-content p {
-    font-size: 1.05rem;
-    line-height: 1.7;
+/* ===== Kodeblokker for formler og eksempler ===== */
+.theory-code-block {
+    background-color: var(--color-bg-secondary);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-md);
+    font-family: var(--font-mono, monospace);
+    font-size: 0.95rem;
     color: var(--color-text);
-    margin: 0 0 var(--spacing-sm) 0;
+    overflow-x: auto;
+    margin: var(--spacing-md) 0;
+    line-height: 1.6;
+    white-space: pre-wrap;
 }
 
-.theory-section-summary .theory-section-content p:last-child {
-    margin-bottom: 0;
+body.dark-mode .theory-code-block {
+    background-color: #0f1115;
+    border-color: rgba(255, 255, 255, 0.08);
 }
 
-/* Responsive Card Layout for Tables on Mobile */
-@media (max-width: 600px) {
-  .responsive-theory-table,
-  .responsive-theory-table thead,
-  .responsive-theory-table tbody,
-  .responsive-theory-table tr,
-  .responsive-theory-table th,
-  .responsive-theory-table td {
-    display: block !important;
-    width: 100% !important;
-    box-sizing: border-box;
-  }
+/* ===== Inline-kode ===== */
+.theory-inline-code {
+    background-color: var(--color-bg-secondary);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    padding: 2px 6px;
+    font-family: var(--font-mono, monospace);
+    font-size: 0.9em;
+    color: var(--color-text);
+}
 
-  .responsive-theory-table thead tr {
-    display: none !important;
-  }
-
-  .responsive-theory-table tbody tr {
-    margin-bottom: var(--spacing-lg) !important;
-    border: 1px solid var(--color-border) !important;
-    border-radius: var(--radius-lg) !important;
-    padding: var(--spacing-lg) !important;
-    background-color: var(--color-bg) !important;
-    box-shadow: var(--shadow-sm) !important;
-  }
-
-  body.dark-mode .responsive-theory-table tbody tr {
-    background-color: rgba(255, 255, 255, 0.02) !important;
-  }
-
-  .responsive-theory-table td {
-    padding: var(--spacing-xs) 0 !important;
-    border: none !important;
-  }
-
-  /* Style the first cell (Veimerking Name) as a large header line */
-  .responsive-theory-table td:nth-of-type(1) {
-    font-size: 1.15rem !important;
-    font-weight: 800 !important;
-    color: var(--color-text-primary) !important;
-    border-bottom: 1px solid var(--color-border) !important;
-    padding-bottom: var(--spacing-sm) !important;
-    margin-bottom: var(--spacing-sm) !important;
-  }
-
-  /* Style descriptive columns to display their label headers */
-  .responsive-theory-table td:not(:first-child)::before {
-    content: attr(data-label) ": ";
-    font-weight: 700 !important;
-    color: var(--color-text-primary) !important;
-    display: block;
-    margin-bottom: 2px;
-  }
+body.dark-mode .theory-inline-code {
+    background-color: #1a1d24;
+    border-color: rgba(255, 255, 255, 0.08);
 }

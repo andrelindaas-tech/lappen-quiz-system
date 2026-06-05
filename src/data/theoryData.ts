@@ -35,6 +35,7 @@ export interface TheoryTopic {
     seoDescription?: string
     faq?: { question: string, answer: string }[]
     miniQuiz?: MiniQuizQuestion[]
+    sources?: TheorySection
 }
 
 export const theoryTopics: TheoryTopic[] = [
@@ -1468,7 +1469,7 @@ export const theoryTopics: TheoryTopic[] = [
             {
                 title: 'Fartsbøter og prikker i førerkortet (ved 50 km/t grense)',
                 type: 'warning',
-                content: 'Dette er noe veldig mange unge lurer på — og det er god grunn til det.\n\nPrikker i førerkortet:\nDu får prikker når du kjører mer enn 10 km/t over fartsgrensen (der grensen er 60 km/t eller lavere) eller mer enn 15 km/t over (der grensen er 70 km/t eller høyere). Samler du 8 prikker på 3 år mister du førerretten i 6 måneder.\n\nBøtesatser 2025 (ved 50 km/t fartsgrense):\n• Inntil 5 km/t over: 1 250 kr\n• 6–10 km/t over: 3 350 kr\n• 11–15 km/t over: 5 950 kr\n• 16–20 km/t over: 8 650 kr\n• Over 25 km/t over: Fra 13 450 kr + mulig tap av lappen\n\nVed kraftig overskridelse (vanligvis 30+ km/t over) mister du førerkortet og saken kan gå til retten.\n\nViktig for deg under 18 år: Du er på prøveperiode de to første årene. Én alvorlig forseelse kan bety at du mister lappen og må ta den på nytt.'
+                content: 'Dette er noe veldig mange unge lurer på — og det er god grunn til det.\n\nPrikker i førerkortet:\nDu får prikker når du kjører mer enn 10 km/t over fartsgrensen (der grensen er 60 km/t eller lavere) or mer enn 15 km/t over (der grensen er 70 km/t eller høyere). Samler du 8 prikker på 3 år mister du førerretten i 6 måneder.\n\nBøtesatser 2025 (ved 50 km/t fartsgrense):\n• Inntil 5 km/t over: 1 250 kr\n• 6–10 km/t over: 3 350 kr\n• 11–15 km/t over: 5 950 kr\n• 16–20 km/t over: 8 650 kr\n• Over 25 km/t over: Fra 13 450 kr + mulig tap av lappen\n\nVed kraftig overskridelse (vanligvis 30+ km/t over) mister du førerkortet og saken kan gå til retten.\n\nViktig for deg under 18 år: Du er på prøveperiode de to første årene. Én alvorlig forseelse kan bety at du mister lappen og må ta den på nytt.'
             },
             {
                 title: 'Fartsgrenser og bremselengde — sammenhengen',
@@ -1487,45 +1488,74 @@ export const theoryTopics: TheoryTopic[] = [
             }
         ]
     },
-
     {
         id: 'reaksjonstid',
-        title: 'Reaksjonstid og stopplengde – slik regner du det ut (Klasse B)',
-        icon: '⏱️',
-        shortDescription: 'Lær hva reaksjonstid er, hvordan du regner ut reaksjonslengde og stopplengde til teoriprøven. Tabeller, formler og interaktiv test for klasse B.',
+        title: 'Reaksjonstid og stopplengde: slik regner du det ut til teoriprøven',
+        icon: '',
+        shortDescription: 'Reaksjonstid er tiden det tar fra du oppdager en fare til du faktisk handler. På teoriprøven handler dette ofte om hvor langt bilen rekker å kjøre før du begynner å bremse. Den avstanden kalles reaksjonslengde.',
         color: 'var(--apple-blue)',
-        seoTitle: 'Reaksjonstid og stopplengde – slik regner du det ut (Klasse B) | Teori-test.no',
-        seoDescription: 'Lær hva reaksjonstid er, hvordan du regner ut reaksjonslengde og stopplengde til teoriprøven. Tabeller, formler og interaktiv test for klasse B.',
+        seoTitle: 'Reaksjonstid bil: reaksjonslengde, formel og test | Teoriprøven',
+        seoDescription: 'Lær hva reaksjonstid er, test reaksjonstiden din, og se hvordan du regner ut reaksjonslengde ved 30, 50, 80 og 100 km/t.',
         sections: [
+            {
+                title: 'Kort forklart',
+                type: 'info',
+                content: 'Reaksjonstid er tiden fra du oppdager en fare til du handler. Reaksjonslengde er avstanden bilen kjører i denne tiden. Ved 1 sekund reaksjonstid finner du reaksjonslengden ved å dele farten i km/t på 3,6. Stopplengde er reaksjonslengde pluss bremselengde.\n\nEn vanlig tommelfingerregel er at en opplagt fører bruker ca. 1 sekund på å reagere. Ved 50 km/t kjører bilen omtrent 14 meter på 1 sekund før bremsingen starter. Ved 80 km/t er det omtrent 22 meter.\n\nVed 30 km/t kjører bilen omtrent 8 meter på 1 sekund. Derfor kan også lav fart gi for lang stopplengde hvis du er uoppmerksom eller reagerer sent.'
+            },
             {
                 title: 'Hva er reaksjonstid?',
                 type: 'text',
-                content: 'Før bilen begynner å bremse, har du allerede kjørt langt. Reaksjonstiden er den usynlige faren de fleste undervurderer — og en av de viktigste grunnene til ulykker på norske veier.\n\nReaksjonstid er tiden det tar fra du oppdager en fare til foten faktisk treffer bremsepedalen. For en uthvilt og edru sjåfør er dette normalt ca. 1 sekund. Det høres kort ut — men i løpet av det sekundet fortsetter bilen med full fart uten at du gjør noe som helst.\n\nI mørket er det spesielt viktig å huske på dette. Se også [lysbruk og mørkekjøring](/laeringsressurser/lysbruk-morkekjoring).'
+                content: 'I bilkjøring er reaksjonstid den korte forsinkelsen mellom fare og handling. Du kan ha sett faren, men bilen bremser ikke før du faktisk rekker å reagere og trykke på bremsepedalen.\n\nFor en uthvilt, edru og oppmerksom fører brukes ofte ca. 1 sekund som enkel verdi i teorien. I virkeligheten kan reaksjonstiden bli både kortere og lengre. Den påvirkes av blant annet trøtthet, rus, medisiner, stress, mobilbruk, erfaring, sikt og hvor overraskende situasjonen er.\n\nViktig teoripoeng: Bilen bremser ikke i reaksjonstiden. Den fortsetter i samme fart.'
             },
             {
-                title: 'Test din egen reaksjonstid:',
+                title: 'Slik henger reaksjonslengde og bremselengde sammen',
+                type: 'text',
+                content: '![Illustrasjon av oppmerksomhetsperiode, reaksjonslengde, bremselengde og total stopplengde for en bil.](/images/stopplengde-oversikt.png)\n*Stopplengden er reaksjonslengden pluss bremselengden. Reaksjonslengden er avstanden bilen kjører fra du oppdager faren til bremsingen starter.*'
+            },
+            {
+                title: 'Prøv reaksjonstidstesten',
                 type: 'calculator',
-                content: 'Sjekk hvor raskt du reagerer! Testen under simulerer en nødbrems-situasjon i 80 km/t. Klarer du å reagere raskere enn gjennomsnittet?'
+                content: 'Sjekk hvor raskt du reagerer. Testen under simulerer en nødbrems-situasjon i 80 km/t og viser hvordan reaksjonstiden din påvirker reaksjonslengde og total stopplengde.\n\nResultatet er ikke en medisinsk måling, men en pedagogisk demonstrasjon. Poenget er å se at selv små forskjeller i reaksjonstid kan gi flere meter ekstra før bremsingen starter.'
             },
             {
-                title: 'Reaksjonslengde — hvor langt kjører du før du bremser?',
+                title: 'Reaksjonslengde: hvor langt kjører du før du bremser?',
+                type: 'text',
+                content: 'Reaksjonslengde er avstanden bilen kjører i løpet av reaksjonstiden. Hvis reaksjonstiden er 1 sekund, kan du finne reaksjonslengden ved å regne om farten fra km/t til meter per sekund.\n\nDen mest presise enkle formelen er:\n\n```text\nReaksjonslengde ved 1 sekund = fart i km/t / 3,6\n```\n\nEn huskeregel er:\n\n```text\nReaksjonslengde ved 1 sekund ≈ (fart / 10) x 3\n```\n\nEksempel ved 50 km/t:\n\n```text\n50 / 3,6 = ca. 13,9 meter\n```\n\nDet betyr at du kjører omtrent 14 meter før bremsingen starter, selv med normal reaksjonstid.'
+            },
+            {
+                title: 'Hvor langt kjører bilen på 1 sekund?',
                 type: 'table',
-                content: 'Formelen er: **Reaksjonslengde = (fart ÷ 10) × 3 meter**\n\n<div style="overflow-x: auto; -webkit-overflow-scrolling: touch; margin-top: 1rem;"><table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem;"><thead><tr style="background-color: var(--color-surface); border-bottom: 2px solid var(--color-border);"><th style="padding: 12px 8px;">Hastighet</th><th style="padding: 12px 8px;">Reaksjonslengde</th></tr></thead><tbody><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">30 km/t</td><td style="padding: 12px 8px;">9 meter</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">50 km/t</td><td style="padding: 12px 8px;">15 meter</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">80 km/t</td><td style="padding: 12px 8px;">24 meter</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">100 km/t</td><td style="padding: 12px 8px;">30 meter</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">120 km/t</td><td style="padding: 12px 8px;">36 meter</td></tr></tbody></table></div>\n\nTenk på det slik: ved 80 km/t kjører du nesten tre bilengder før du i det hele tatt begynner å bremse.'
+                content: '<div class="responsive-theory-table-wrapper" style="margin-top: 1rem;"><table class="responsive-theory-table" style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem;"><thead><tr style="background-color: var(--color-surface); border-bottom: 2px solid var(--color-border);"><th style="padding: 12px 8px;">Fart</th><th style="padding: 12px 8px;">Meter per sekund</th><th style="padding: 12px 8px;">Reaksjonslengde ved 1 sekund</th></tr></thead><tbody><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>30 km/t</b></td><td style="padding: 12px 8px;" data-label="Meter per sekund">ca. 8,3 m</td><td style="padding: 12px 8px;" data-label="Reaksjonslengde ved 1 sekund">ca. 8 m</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>50 km/t</b></td><td style="padding: 12px 8px;" data-label="Meter per sekund">ca. 13,9 m</td><td style="padding: 12px 8px;" data-label="Reaksjonslengde ved 1 sekund">ca. 14 m</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>80 km/t</b></td><td style="padding: 12px 8px;" data-label="Meter per sekund">ca. 22,2 m</td><td style="padding: 12px 8px;" data-label="Reaksjonslengde ved 1 sekund">ca. 22 m</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>100 km/t</b></td><td style="padding: 12px 8px;" data-label="Meter per sekund">ca. 27,8 m</td><td style="padding: 12px 8px;" data-label="Reaksjonslengde ved 1 sekund">ca. 28 m</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>120 km/t</b></td><td style="padding: 12px 8px;" data-label="Meter per sekund">ca. 33,3 m</td><td style="padding: 12px 8px;" data-label="Reaksjonslengde ved 1 sekund">ca. 33 m</td></tr></tbody></table></div>'
             },
             {
-                title: 'Hva øker reaksjonstiden din?',
-                type: 'info',
-                content: 'Dette er faktorer som gjør at du reagerer langsommere — og som teoriprøven elsker å spørre om:\n\n- **Tretthet** — kan doble eller tredoble reaksjonstiden. En sjåfør som har vært våken i 20 timer reagerer like sakte som en med 0,8 i promille\n- **Alkohol og medisiner** — selv små mengder forsinker signalene fra øynene til hjernen til foten\n- **Mobilbruk** — ikke bare hånden på telefonen, men selve tankene dine er et annet sted. Reaksjonstiden øker med opptil 40 % selv med handsfree\n- **Uoppmerksomhet** — samtale med passasjer, radio, tanker om andre ting\n- **Mørke og dårlig sikt** — du oppdager faren senere og må reagere raskere\n- **Alder** — eldre sjåfører reagerer noe langsommere, men kompenserer med erfaring'
+                title: 'Reaksjonslengde ved 1 og 2 sekunder',
+                type: 'table',
+                content: '<div class="responsive-theory-table-wrapper" style="margin-top: 1rem;"><table class="responsive-theory-table" style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem;"><thead><tr style="background-color: var(--color-surface); border-bottom: 2px solid var(--color-border);"><th style="padding: 12px 8px;">Fart</th><th style="padding: 12px 8px;">Ved 1 sekund</th><th style="padding: 12px 8px;">Ved 2 sekunder</th><th style="padding: 12px 8px;">Hva betyr det?</th></tr></thead><tbody><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>30 km/t</b></td><td style="padding: 12px 8px;" data-label="Ved 1 sekund">ca. 8 m</td><td style="padding: 12px 8px;" data-label="Ved 2 sekunder">ca. 17 m</td><td style="padding: 12px 8px;" data-label="Hva betyr det?">Du kan rulle forbi et gangfelt før du bremser.</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>50 km/t</b></td><td style="padding: 12px 8px;" data-label="Ved 1 sekund">ca. 14 m</td><td style="padding: 12px 8px;" data-label="Ved 2 sekunder">ca. 28 m</td><td style="padding: 12px 8px;" data-label="Hva betyr det?">En liten forsinkelse kan utgjøre flere billengder.</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>80 km/t</b></td><td style="padding: 12px 8px;" data-label="Ved 1 sekund">ca. 22 m</td><td style="padding: 12px 8px;" data-label="Ved 2 sekunder">ca. 44 m</td><td style="padding: 12px 8px;" data-label="Hva betyr det?">Du kjører over 40 meter før bremsingen starter.</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>100 km/t</b></td><td style="padding: 12px 8px;" data-label="Ved 1 sekund">ca. 28 m</td><td style="padding: 12px 8px;" data-label="Ved 2 sekunder">ca. 56 m</td><td style="padding: 12px 8px;" data-label="Hva betyr det?">Avstand til bilen foran blir svært viktig.</td></tr></tbody></table></div>'
             },
             {
                 title: 'Stopplengde = reaksjonslengde + bremselengde',
-                type: 'table',
-                content: 'Stopplengden er den totale avstanden fra du oppdager faren til bilen faktisk stopper. Bremselengden øker kvadratisk med farten — det vil si at dobbel fart gir firedobbel bremselengde.\n\n<div style="overflow-x: auto; -webkit-overflow-scrolling: touch; margin-top: 1rem;"><table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem;"><thead><tr style="background-color: var(--color-surface); border-bottom: 2px solid var(--color-border);"><th style="padding: 12px 8px;">Hastighet</th><th style="padding: 12px 8px;">Reaksjonslengde</th><th style="padding: 12px 8px;">Bremselengde (tørr)</th><th style="padding: 12px 8px;">Stopplengde</th></tr></thead><tbody><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">30 km/t</td><td style="padding: 12px 8px;">9 m</td><td style="padding: 12px 8px;">4,5 m</td><td style="padding: 12px 8px;">13,5 m</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">50 km/t</td><td style="padding: 12px 8px;">15 m</td><td style="padding: 12px 8px;">12,5 m</td><td style="padding: 12px 8px;">27,5 m</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">80 km/t</td><td style="padding: 12px 8px;">24 m</td><td style="padding: 12px 8px;">32 m</td><td style="padding: 12px 8px;">56 m</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">100 km/t</td><td style="padding: 12px 8px;">30 m</td><td style="padding: 12px 8px;">50 m</td><td style="padding: 12px 8px;">80 m</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">120 km/t</td><td style="padding: 12px 8px;">36 m</td><td style="padding: 12px 8px;">72 m</td><td style="padding: 12px 8px;">108 m</td></tr></tbody></table></div>'
+                type: 'text',
+                content: 'Stopplengde er hele avstanden fra du oppdager faren til bilen står stille.\n\n```text\nStopplengde = reaksjonslengde + bremselengde\n```\n\nReaksjonslengden handler om deg som fører: hvor raskt du oppfatter faren og handler. Bremselengden handler om bilen, farten, bremsene, dekkene og underlaget.\n\nPå teoriprøven må du lese oppgaven nøye. Noen oppgaver spør bare etter reaksjonslengde. Andre spør etter bremselengde. Noen spør etter total stopplengde.\n\n[Bruk vår interaktive bremselengde-kalkulator for å beregne stopplengde ved ulike hastigheter og veiforhold](/laeringsressurser/bremselengde)'
             },
             {
-                title: 'Tips: Vil du regne på andre forhold?',
-                type: 'text',
-                content: '[Bruk vår interaktive bremselengde-kalkulator for å beregne stopplengde ved ulike hastigheter og veiforhold](/laeringsressurser/bremselengde)'
+                title: 'Hvordan regne ut bremselengde?',
+                type: 'formula',
+                content: 'På teoriprøven får du ofte oppgaver hvor du skal beregne bremselengde på tørr asfalt. I denne artikkelen presenteres formelen under som en vanlig forenklet teoriregel for tørr asfalt:\n\n```text\nBremselengde på tørr asfalt ≈ (fart / 10) x (fart / 10) / 2\n```\n\nEksempel ved 80 km/t:\n```text\n80 / 10 = 8\n8 x 8 = 64\n64 / 2 = 32 meter bremselengde\n```\n\nDa kan stopplengden ved 80 km/t med 1 sekund reaksjonstid bli:\n```text\n22 meter reaksjonslengde + 32 meter bremselengde = ca. 54 meter stopplengde\n```\n\nNoen lærekilder bruker en grovere huskeregel der bremselengden beregnes som `(fart / 10) x (fart / 10)`. Det gir høyere tall. Les alltid oppgaveteksten: den kan oppgi egne forutsetninger eller bruke en enklere huskeregel.'
+            },
+            {
+                title: 'Eksempler på stopplengde',
+                type: 'table',
+                content: '<div class="responsive-theory-table-wrapper" style="margin-top: 1rem;"><table class="responsive-theory-table" style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem;"><thead><tr style="background-color: var(--color-surface); border-bottom: 2px solid var(--color-border);"><th style="padding: 12px 8px;">Fart</th><th style="padding: 12px 8px;">Reaksjonslengde</th><th style="padding: 12px 8px;">Bremselengde på tørr asfalt</th><th style="padding: 12px 8px;">Stopplengde</th></tr></thead><tbody><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>30 km/t</b></td><td style="padding: 12px 8px;" data-label="Reaksjonslengde">ca. 8 m</td><td style="padding: 12px 8px;" data-label="Bremselengde på tørr asfalt">ca. 4,5 m</td><td style="padding: 12px 8px;" data-label="Stopplengde">ca. 13 m</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>50 km/t</b></td><td style="padding: 12px 8px;" data-label="Reaksjonslengde">ca. 14 m</td><td style="padding: 12px 8px;" data-label="Bremselengde på tørr asfalt">ca. 12,5 m</td><td style="padding: 12px 8px;" data-label="Stopplengde">ca. 27 m</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>80 km/t</b></td><td style="padding: 12px 8px;" data-label="Reaksjonslengde">ca. 22 m</td><td style="padding: 12px 8px;" data-label="Bremselengde på tørr asfalt">ca. 32 m</td><td style="padding: 12px 8px;" data-label="Stopplengde">ca. 54 m</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>100 km/t</b></td><td style="padding: 12px 8px;" data-label="Reaksjonslengde">ca. 28 m</td><td style="padding: 12px 8px;" data-label="Bremselengde på tørr asfalt">ca. 50 m</td><td style="padding: 12px 8px;" data-label="Stopplengde">ca. 78 m</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>120 km/t</b></td><td style="padding: 12px 8px;" data-label="Reaksjonslengde">ca. 33 m</td><td style="padding: 12px 8px;" data-label="Bremselengde på tørr asfalt">ca. 72 m</td><td style="padding: 12px 8px;" data-label="Stopplengde">ca. 105 m</td></tr></tbody></table></div>'
+            },
+            {
+                title: 'Ekspertforklaring',
+                type: 'info',
+                content: 'På teoriprøven må du skille mellom oppmerksomhet, reaksjonstid, reaksjonslengde, bremselengde og stopplengde.\n\nDårlig sikt gjør ofte at du oppdager faren senere. Det kan skje i mørke, regn, snø, tåke eller i et uoversiktlig trafikkmiljø (lær mer om riktig [lysbruk og mørkekjøring](/laeringsressurser/lysbruk-morkekjoring) for å oppdage farer tidligere). Trøtthet, mobilbruk, rus, stress og medisiner kan gjøre selve reaksjonen tregere når du først har oppdaget faren.\n\nBegge deler øker risikoen, men på ulike måter. Hvis du oppdager faren sent, har du mindre avstand igjen. Hvis reaksjonstiden blir lengre, ruller bilen lenger før bremsingen starter.\n\nDerfor handler reaksjonstid ikke bare om et regnestykke. Det handler også om å være aktpågivende, holde god nok avstand og tilpasse farten slik at du faktisk rekker å handle.'
+            },
+            {
+                title: 'Hva øker reaksjonstiden?',
+                type: 'warning',
+                content: 'Dette er typiske faktorer som kan gjøre at du reagerer langsommere:\n\n- trøtthet eller lite søvn\n- alkohol, rusmidler eller enkelte medisiner\n- mobilbruk, også når du bruker handsfree\n- stress, sterke følelser eller distraksjoner\n- lite erfaring eller usikkerhet\n- overraskende situasjoner med mye å tolke samtidig\n\nDårlig sikt gjør ikke nødvendigvis selve reaksjonen tregere, men du kan oppdage faren senere. Det gir deg mindre tid og avstand til å handle.\n\nTeoriprøven tester ofte om du forstår at reaksjonstid ikke er konstant. En fører som er trøtt eller uoppmerksom, kan bruke mye mer enn 1 sekund.'
             },
             {
                 title: 'Praktisk eksempel',
@@ -1540,23 +1570,132 @@ export const theoryTopics: TheoryTopic[] = [
             {
                 title: 'Vanlige teoriprøvespørsmål',
                 type: 'text',
-                content: '• **Hva er normal reaksjonstid for en opplagt sjåfør?** → Ca. 1 sekund\n• **Hva skjer med reaksjonstiden ved tretthet?** → Den kan doble eller tredoble seg\n• **Hva er stopplengde?** → Reaksjonslengde + bremselengde\n• **Hva skjer med bremselengden når farten dobles?** → Den firedobles\n• **Hva er 3-sekunders regelen?** → Minimum avstand til bilen foran i normale forhold\n\n[Les også vår bremselengde-kalkulator](/laeringsressurser/bremselengde)'
+                content: '• **Hva er normal reaksjonstid for en opplagt sjåfør?** → Ca. 1 sekund\n• **Hva skjer med reaksjonstiden ved tretthet?** → Den kan doble eller tredoble seg\n• **Hva er stopplengde?** → Reaksjonslengde + bremselengde\n• **Hva skjer med bremselengden når farten dobles?** → Den firedobles\n• **Hva er 3-sekunders regelen?** → Minimum avstand til bilen foran i normale forhold\n\nLes også våre guider om [bremselengde og stopplengde](/laeringsressurser/bremselengde) og gjeldende [fartsgrenser og fartstilpasning](/laeringsressurser/fartsgrenser). Du kan også [øv på fartsregler](/quiz/fartsregler) direkte i vår fartsquiz.'
             }
         ],
         faq: [
             {
-                question: 'Hva er normal reaksjonstid?',
-                answer: 'For en uthvilt og opplagt fører er normal reaksjonstid ca. 1 sekund.'
+                question: 'Hva er reaksjonstid?',
+                answer: 'Reaksjonstid er tiden fra du oppdager en fare til du handler, for eksempel ved å flytte foten til bremsepedalen.'
+            },
+            {
+                question: 'Hva er reaksjonslengde?',
+                answer: 'Reaksjonslengde er avstanden bilen kjører i reaksjonstiden. Ved 50 km/t og 1 sekund reaksjonstid er reaksjonslengden ca. 14 meter.'
+            },
+            {
+                question: 'Hva er forskjellen på reaksjonstid og reaksjonslengde?',
+                answer: 'Reaksjonstid er tiden det tar før du handler. Reaksjonslengde er avstanden bilen kjører i denne tiden.'
+            },
+            {
+                question: 'Hvordan regner du ut reaksjonslengde?',
+                answer: 'Du kan dele farten i km/t på 3,6 for å finne meter per sekund. Ved 80 km/t blir det ca. 22 meter på 1 sekund.'
+            },
+            {
+                question: 'Hvorfor deler man km/t på 3,6?',
+                answer: 'Fordi 1 km/t tilsvarer 1000 meter delt på 3600 sekunder. Når du deler km/t på 3,6, får du omtrent meter per sekund.'
             },
             {
                 question: 'Hva er forskjellen på reaksjonslengde og bremselengde?',
-                answer: 'Reaksjonslengde er avstanden du kjører fra du oppdager faren til du starter å bremse. Bremselengde er avstanden bilen bruker på å stoppe etter at du har truffet bremsen.'
+                answer: 'Reaksjonslengde er avstanden bilen kjører før du begynner å bremse. Bremselengde er avstanden bilen bruker fra bremsingen starter til bilen står stille.'
             },
             {
-                question: 'Hvor mye øker bremselengden når farten dobles?',
-                answer: 'Bremselengden firedobles når farten dobles (eksempel: fra 40 til 80 km/t).'
+                question: 'Hva er stopplengde?',
+                answer: 'Stopplengde er reaksjonslengde pluss bremselengde. Det er hele avstanden fra du oppdager faren til bilen står stille.'
+            },
+            {
+                question: 'Hva påvirker reaksjonstiden?',
+                answer: 'Trøtthet, rus, enkelte medisiner, mobilbruk, stress og distraksjoner kan øke reaksjonstiden. Dårlig sikt gjør ofte at du oppdager faren senere, og gir deg mindre tid og avstand til å handle.'
+            },
+            {
+                question: 'Hvor langt kjører bilen på 1 sekund i 30 km/t?',
+                answer: 'I 30 km/t kjører bilen ca. 8,3 meter på 1 sekund.'
+            },
+            {
+                question: 'Hvor langt kjører bilen på 1 sekund i 50 km/t?',
+                answer: 'I 50 km/t kjører bilen ca. 13,9 meter på 1 sekund, altså omtrent 14 meter.'
+            },
+            {
+                question: 'Hvor langt kjører bilen på 1 sekund i 80 km/t?',
+                answer: 'I 80 km/t kjører bilen ca. 22,2 meter på 1 sekund.'
+            },
+            {
+                question: 'Hva er reaksjonslengde ved 100 km/t?',
+                answer: 'Ved 100 km/t kjører bilen ca. 27,8 meter på 1 sekund. Med 1 sekund reaksjonstid blir reaksjonslengden derfor omtrent 28 meter.'
             }
-        ]
+        ],
+        miniQuiz: [
+            {
+                question: 'Hva betyr reaksjonstid?',
+                options: [
+                    'Tiden bilen bruker på å bremse',
+                    'Tiden fra du oppdager en fare til du handler',
+                    'Avstanden bilen bruker etter at du har bremset',
+                    'Den totale stopplengden'
+                ],
+                correct: 'Tiden fra du oppdager en fare til du handler',
+                explanation: 'Reaksjonstid er tiden før handlingen starter. Bilen fortsetter å kjøre i denne tiden.'
+            },
+            {
+                question: 'Hva er reaksjonslengde?',
+                options: [
+                    'Avstanden bilen kjører i reaksjonstiden',
+                    'Avstanden bilen bruker etter at bremsene virker',
+                    'Avstanden mellom to trafikkskilt',
+                    'Avstanden du bør parkere fra et gangfelt'
+                ],
+                correct: 'Avstanden bilen kjører i reaksjonstiden',
+                explanation: 'Reaksjonslengde er hvor langt bilen rekker å kjøre før du begynner å bremse.'
+            },
+            {
+                question: 'Hvor langt kjører du omtrent på 1 sekund i 50 km/t?',
+                options: [
+                    '5 meter',
+                    '10 meter',
+                    '14 meter',
+                    '30 meter'
+                ],
+                correct: '14 meter',
+                explanation: '50 km/t delt på 3,6 er ca. 13,9 meter per sekund.'
+            },
+            {
+                question: 'Du kjører i 50 km/t og bruker 2 sekunder på å reagere. Omtrent hvor lang blir reaksjonslengden?',
+                options: [
+                    'ca. 14 meter',
+                    'ca. 20 meter',
+                    'ca. 28 meter',
+                    'ca. 50 meter'
+                ],
+                correct: 'ca. 28 meter',
+                explanation: 'Ved 50 km/t kjører bilen ca. 14 meter per sekund. På 2 sekunder blir det ca. 28 meter.'
+            },
+            {
+                question: 'Hva er stopplengde?',
+                options: [
+                    'Reaksjonslengde + bremselengde',
+                    'Bare bremselengden',
+                    'Bare reaksjonstiden',
+                    'Avstanden til bilen bak'
+                ],
+                correct: 'Reaksjonslengde + bremselengde',
+                explanation: 'Stopplengden er hele avstanden fra du oppdager faren til bilen står stille.'
+            },
+            {
+                question: 'Hva er riktig?',
+                options: [
+                    'Dårlig sikt kan gjøre at du oppdager faren senere, mens trøtthet kan gjøre reaksjonen tregere',
+                    'Dårlig sikt gjør alltid selve reaksjonen tregere',
+                    'Trøtthet påvirker bare bremselengden',
+                    'Mobilbruk påvirker bare styringen, ikke reaksjonstiden'
+                ],
+                correct: 'Dårlig sikt kan gjøre at du oppdager faren senere, mens trøtthet kan gjøre reaksjonen tregere',
+                explanation: 'Sikt og reaksjonstid påvirker risikoen på ulike måter. Dårlig sikt kan gjøre at du ser faren senere. Trøtthet, rus, medisiner, stress og mobilbruk kan gjøre reaksjonen tregere.'
+            }
+        ],
+        sources: {
+            title: 'Kilder',
+            type: 'text',
+            content: '- **Statens vegvesen:** [Temaliste til teoriprøve klasse B](https://www.vegvesen.no/globalassets/forerkort/ta-forerkort/temaliste-til-teoriprove-klasse-b-bokmal.pdf)\n- **Lovdata:** [Vegtrafikkloven § 3](https://lovdata.no/lov/1965-06-18-4/%C2%A73)'
+        }
     },
 
     {

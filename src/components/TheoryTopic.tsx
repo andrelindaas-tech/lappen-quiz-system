@@ -2,6 +2,23 @@
 import React from 'react'
 import { Helmet } from 'react-helmet-async'
 import type { TheoryTopic as TopicType } from '../data/theoryData'
+import { 
+    Shield, 
+    Gauge, 
+    Layers, 
+    Route, 
+    BookOpen, 
+    Zap,
+    Wrench,
+    Car,
+    RefreshCcw,
+    UserCheck,
+    GraduationCap,
+    HeartPulse,
+    AlertTriangle,
+    Snowflake,
+    Timer
+} from 'lucide-react'
 import BrakeCalculator from './BrakeCalculator'
 import TrailerWeightSimulator from './TrailerWeightSimulator'
 import DashboardWarningSimulator from './DashboardWarningSimulator'
@@ -14,23 +31,16 @@ import MotorromInteraktiv from './MotorromInteraktiv'
 import RundkjoringAnimasjon from './RundkjoringAnimasjon'
 import MiniQuiz from './MiniQuiz'
 import AutomatVsManuellSammenligning from './AutomatVsManuellSammenligning'
-import DekktrykkSimulator from './DekktrykkSimulator'
-import { PromilleKalkulator } from './PromilleKalkulator'
-import { 
-  Shield, Gauge, Layers, Route, Zap, Wrench, Car, RefreshCcw, 
-  UserCheck, GraduationCap, HeartPulse, AlertTriangle, Snowflake, 
-  BookOpen, Signpost, CircleGauge, Wine, Truck, RefreshCw, 
-  Scale, Leaf, Lock, Eye, FileText
-} from 'lucide-react'
 
 
-// Renders content string with support for paragraphs, bullet lists (- ), numbered lists (1. ), images, headings (###) and markdown tables (| col |)
+// Renders content string with support for paragraphs, bullet lists (- ), numbered lists (1. ) and code blocks (```)
 function renderContent(text: string) {
     const lines = text.split('\n')
     const output: React.ReactNode[] = []
     let ulItems: string[] = []
     let olItems: string[] = []
-    let tableLines: string[] = []
+    let codeLines: string[] = []
+    let inCodeBlock = false
     let key = 0
 
     const flushUl = () => {
@@ -53,143 +63,92 @@ function renderContent(text: string) {
             olItems = []
         }
     }
-    const flushTable = () => {
-        if (tableLines.length === 0) return
-        const rows = tableLines.filter(l => !l.match(/^\|[\s\-|:]+\|$/))
-        if (rows.length === 0) { tableLines = []; return }
-        const parseRow = (row: string) =>
-            row.split('|').map(c => c.trim()).filter((_, i, arr) => i > 0 && i < arr.length - 1)
-        const headers = parseRow(rows[0])
-        const body = rows.slice(1)
-        output.push(
-            <div key={key++} className="theory-table-wrapper">
-                <table className="theory-table">
-                    <thead>
-                        <tr>{headers.map((h, i) => <th key={i}>{parseInlineLinks(h)}</th>)}</tr>
-                    </thead>
-                    <tbody>
-                        {body.map((row, ri) => (
-                            <tr key={ri}>{parseRow(row).map((cell, ci) => <td key={ci}>{parseInlineLinks(cell)}</td>)}</tr>
-                        ))}
-                    </tbody>
-                </table>
-            </div>
-        )
-        tableLines = []
+    const flushCode = () => {
+        if (codeLines.length > 0) {
+            output.push(
+                <pre key={key++} className="theory-code-block">
+                    <code>{codeLines.join('\n')}</code>
+                </pre>
+            )
+            codeLines = []
+        }
     }
 
     for (const line of lines) {
-        const trimmed = line.trim()
-        if (trimmed.startsWith('|')) {
-            flushUl()
-            flushOl()
-            tableLines.push(trimmed)
+        if (line.trim().startsWith('```')) {
+            if (inCodeBlock) {
+                flushCode()
+                inCodeBlock = false
+            } else {
+                flushUl()
+                flushOl()
+                inCodeBlock = true
+            }
+        } else if (inCodeBlock) {
+            codeLines.push(line)
         } else if (line.startsWith('- ')) {
-            flushTable()
             flushOl()
             ulItems.push(line.slice(2))
         } else if (/^\d+\.\s/.test(line)) {
-            flushTable()
             flushUl()
             olItems.push(line.replace(/^\d+\.\s/, ''))
-        } else if (trimmed.startsWith('![')) {
-            flushTable()
-            flushUl()
-            flushOl()
-            const match = trimmed.match(/^!\[(.*?)\]\((.*?)\)$/)
-            if (match) {
-                output.push(<img key={key++} src={match[2]} alt={match[1]} style={{ maxWidth: '100%', height: 'auto', borderRadius: '8px', margin: '1rem 0' }} />)
-            } else {
-                if (trimmed !== '') output.push(<p key={key++}>{parseInlineLinks(line)}</p>)
-            }
-        } else if (trimmed.startsWith('### ')) {
-            flushTable()
-            flushUl()
-            flushOl()
-            output.push(<h3 key={key++} className="theory-content-heading">{trimmed.slice(4)}</h3>)
         } else {
-            flushTable()
             flushUl()
             flushOl()
-            if (trimmed !== '') {
+            if (line.trim() !== '') {
                 output.push(<p key={key++}>{parseInlineLinks(line)}</p>)
             }
         }
     }
-    flushTable()
     flushUl()
     flushOl()
+    flushCode()
 
     return output
 }
 
-// Helper function to render a premium Lucide React icon based on topic ID
-const getTopicIcon = (id: string) => {
-    const iconSize = 48
-    const strokeWidth = 1.5
-    const color = 'var(--color-primary)'
-    
+const getTopicIcon = (id: string, iconFromData: string) => {
+    if (iconFromData && (iconFromData.startsWith('data:image') || iconFromData.startsWith('/'))) {
+        return <img src={iconFromData} alt="" style={{ width: '64px', height: '64px', objectFit: 'contain' }} />
+    }
+
+    const iconProps = {
+        size: 48,
+        strokeWidth: 1.5,
+        color: 'var(--color-primary)'
+    }
+
     switch (id) {
         case 'vikeplikt':
-            return <Shield size={iconSize} strokeWidth={strokeWidth} style={{ color }} />
+            return <Shield {...iconProps} />
         case 'bremselengde':
-            return <Gauge size={iconSize} strokeWidth={strokeWidth} style={{ color }} />
+            return <Gauge {...iconProps} />
         case 'myndighetspyramiden':
-            return <Layers size={iconSize} strokeWidth={strokeWidth} style={{ color }} />
+            return <Layers {...iconProps} />
         case 'veimerking':
-            return <Route size={iconSize} strokeWidth={strokeWidth} style={{ color }} />
-        case 'rundkjoring':
-            return <RefreshCw size={iconSize} strokeWidth={strokeWidth} style={{ color }} />
-        case 'forbikjoring':
-            return <Car size={iconSize} strokeWidth={strokeWidth} style={{ color }} />
-        case 'lysbruk-morkekjoring':
-            return <Eye size={iconSize} strokeWidth={strokeWidth} style={{ color }} />
-        case 'skilt':
-            return <Signpost size={iconSize} strokeWidth={strokeWidth} style={{ color }} />
-        case 'fartsgrenser':
-            return <CircleGauge size={iconSize} strokeWidth={strokeWidth} style={{ color }} />
+            return <Route {...iconProps} />
         case 'reaksjonstid':
-            return <Gauge size={iconSize} strokeWidth={strokeWidth} style={{ color }} />
-        case 'stans-og-parkering':
-            return <CircleGauge size={iconSize} strokeWidth={strokeWidth} style={{ color }} />
-        case 'promille':
-            return <Wine size={iconSize} strokeWidth={strokeWidth} style={{ color }} />
-        case 'tilhenger':
-            return <Truck size={iconSize} strokeWidth={strokeWidth} style={{ color }} />
-        case 'miljo':
-            return <Leaf size={iconSize} strokeWidth={strokeWidth} style={{ color }} />
-        case 'vognkort-vekter':
-            return <Scale size={iconSize} strokeWidth={strokeWidth} style={{ color }} />
-        case 'temaliste-teoriproven-klasse-b':
-            return <FileText size={iconSize} strokeWidth={strokeWidth} style={{ color }} />
-        case 'dekk-bremser-styring':
-            return <Wrench size={iconSize} strokeWidth={strokeWidth} style={{ color }} />
+            return <Timer {...iconProps} />
         case 'automatlappen':
-            return <Zap size={iconSize} strokeWidth={strokeWidth} style={{ color }} />
+            return <Zap {...iconProps} />
         case 'sikkerhetskontroll':
-            return <Wrench size={iconSize} strokeWidth={strokeWidth} style={{ color }} />
+            return <Wrench {...iconProps} />
         case 'oppkjoring':
-            return <Car size={iconSize} strokeWidth={strokeWidth} style={{ color }} />
+            return <Car {...iconProps} />
         case 'stroket-teoriproven':
-            return <RefreshCcw size={iconSize} strokeWidth={strokeWidth} style={{ color }} />
+            return <RefreshCcw {...iconProps} />
         case 'ovingskjoring':
-            return <UserCheck size={iconSize} strokeWidth={strokeWidth} style={{ color }} />
+            return <UserCheck {...iconProps} />
         case 'tips-eksamen':
-            return <GraduationCap size={iconSize} strokeWidth={strokeWidth} style={{ color }} />
+            return <GraduationCap {...iconProps} />
         case 'trafikkuhell-forstehjelp':
-            return <HeartPulse size={iconSize} strokeWidth={strokeWidth} style={{ color }} />
-        case 'sikkerhetsutstyr':
-            return <Shield size={iconSize} strokeWidth={strokeWidth} style={{ color }} />
-        case 'bilens-lys':
-            return <Eye size={iconSize} strokeWidth={strokeWidth} style={{ color }} />
+            return <HeartPulse {...iconProps} />
         case 'vanlige-feil-teoriproven':
-            return <AlertTriangle size={iconSize} strokeWidth={strokeWidth} style={{ color }} />
+            return <AlertTriangle {...iconProps} />
         case 'glatt-fore':
-            return <Snowflake size={iconSize} strokeWidth={strokeWidth} style={{ color: 'var(--apple-blue)' }} />
-        case 'personvern':
-            return <Lock size={iconSize} strokeWidth={strokeWidth} style={{ color }} />
+            return <Snowflake {...iconProps} />
         default:
-            return <BookOpen size={iconSize} strokeWidth={strokeWidth} style={{ color }} />
+            return <BookOpen {...iconProps} />
     }
 }
 
@@ -239,45 +198,36 @@ export default function TheoryTopic({ topic, onBack, extraComponent }: TheoryTop
         }))
     } : null
 
-    const seoTitle = topic.seoTitle || `${topic.title} | Teori-test.no`
-    const seoDesc = topic.seoDescription || topic.shortDescription
-    const canonicalUrl = `https://teori-test.no/laeringsressurser/${topic.id}`
-
     return (
         <div className="theory-topic-detail">
-            {/* All head management in one Helmet block to prevent race conditions */}
-            <Helmet>
-                <title>{seoTitle}</title>
-                <meta name="description" content={seoDesc} />
-                <link rel="canonical" href={canonicalUrl} />
-                <meta property="og:type" content="article" />
-                <meta property="og:title" content={seoTitle} />
-                <meta property="og:description" content={seoDesc} />
-                <meta property="og:url" content={canonicalUrl} />
-                <meta name="twitter:card" content="summary" />
-                <meta name="twitter:title" content={seoTitle} />
-                <meta name="twitter:description" content={seoDesc} />
-                <script type="application/ld+json">{`${JSON.stringify(structuredData)}`}</script>
-            </Helmet>
-            {/* FAQ JSON-LD must be in a separate Helmet block if rendered conditionally */}
+            {/* Inject JSON-LD */}
+            <script type="application/ld+json">
+                {JSON.stringify(structuredData)}
+            </script>
             {faqData && (
-                <Helmet>
-                    <script type="application/ld+json">{`${JSON.stringify(faqData)}`}</script>
-                </Helmet>
+                <script type="application/ld+json">
+                    {JSON.stringify(faqData)}
+                </script>
             )}
+
+            {/* Dynamic SEO Header Tags */}
+            <Helmet>
+                <title>{topic.seoTitle || `${topic.title} | Teori-test.no`}</title>
+                <meta name="description" content={topic.seoDescription || topic.shortDescription} />
+                <meta property="og:title" content={topic.seoTitle || `${topic.title} | Teori-test.no`} />
+                <meta property="og:description" content={topic.seoDescription || topic.shortDescription} />
+                <meta name="twitter:title" content={topic.seoTitle || `${topic.title} | Teori-test.no`} />
+                <meta name="twitter:description" content={topic.seoDescription || topic.shortDescription} />
+            </Helmet>
 
             <button className="theory-back-btn" onClick={onBack}>
                 ← Tilbake til emner
             </button>
 
             <div className="theory-topic-header">
-                {topic.icon && (
-                    <span className="theory-topic-icon-lg">
-                        {topic.icon.startsWith('data:image') || topic.icon.startsWith('/')
-                            ? <img src={topic.icon} alt={topic.title} style={{ width: '64px', height: '64px', objectFit: 'contain' }} /> 
-                            : getTopicIcon(topic.id)}
-                    </span>
-                )}
+                <span className="theory-topic-icon-lg">
+                    {getTopicIcon(topic.id, topic.icon)}
+                </span>
                 <div className="theory-topic-header-text">
                     <h1 className="theory-topic-title">{topic.title}</h1>
                     <p className="theory-topic-desc">{parseInlineLinks(topic.shortDescription)}</p>
@@ -332,8 +282,6 @@ export default function TheoryTopic({ topic, onBack, extraComponent }: TheoryTop
                                     {topic.id === 'sikkerhetskontroll' && !section.componentId && <DashboardWarningSimulator />}
                                     {topic.id === 'reaksjonstid' && <ReaksjonstidTest />}
                                     {topic.id === 'veimerking' && <VeimerkingInteraktiv />}
-                                    {section.componentId === 'dekktrykk' && <DekktrykkSimulator />}
-                                    {section.componentId === 'promille' && <PromilleKalkulator />}
                                 </div>
                             </div>
                         ) : section.type === 'component' ? (
@@ -372,6 +320,15 @@ export default function TheoryTopic({ topic, onBack, extraComponent }: TheoryTop
                         <h3 className="theory-section-title">Test deg selv</h3>
                         <div className="theory-section-content">
                             <MiniQuiz questions={topic.miniQuiz} />
+                        </div>
+                    </div>
+                )}
+
+                {topic.sources && (
+                    <div className="theory-sources-section" style={{ marginTop: '2rem', borderTop: '1px solid var(--color-border)', paddingTop: '1.5rem' }}>
+                        <h4 className="theory-section-title" style={{ fontSize: '1.1rem', marginBottom: '0.75rem' }}>{topic.sources.title}</h4>
+                        <div className="theory-section-content" style={{ fontSize: '0.95rem', color: 'var(--color-text-light)' }}>
+                            {topic.sources.content && renderContent(topic.sources.content)}
                         </div>
                     </div>
                 )}

@@ -5,25 +5,47 @@ import { Link } from 'react-router-dom'
  * Helper to parse bold markdown **text** and italic *text*
  */
 function parseBoldAndItalicText(text: string) {
-    // Parse bold first
-    const boldRegex = /\*\*([^*]+)\*\*/g
-    let boldParts = []
+    // 1. Parse inline code first
+    const codeRegex = /`([^`]+)`/g
+    let codeParts: React.ReactNode[] = []
     let lastIndex = 0
     let match
 
-    while ((match = boldRegex.exec(text)) !== null) {
+    while ((match = codeRegex.exec(text)) !== null) {
         if (match.index > lastIndex) {
-            boldParts.push(text.substring(lastIndex, match.index))
+            codeParts.push(text.substring(lastIndex, match.index))
         }
-        boldParts.push(<strong key={`bold-${match.index}`}>{match[1]}</strong>)
-        lastIndex = boldRegex.lastIndex
+        codeParts.push(<code key={`code-${match.index}`} className="theory-inline-code">{match[1]}</code>)
+        lastIndex = codeRegex.lastIndex
     }
 
     if (lastIndex < text.length) {
-        boldParts.push(text.substring(lastIndex))
+        codeParts.push(text.substring(lastIndex))
     }
+
+    // 2. Parse bold from the remaining string parts
+    let boldParts: React.ReactNode[] = []
+    codeParts.forEach((part, i) => {
+        if (typeof part === 'string') {
+            const boldRegex = /\*\*([^*]+)\*\*/g
+            let boldLastIndex = 0
+            let boldMatch
+            while ((boldMatch = boldRegex.exec(part)) !== null) {
+                if (boldMatch.index > boldLastIndex) {
+                    boldParts.push(part.substring(boldLastIndex, boldMatch.index))
+                }
+                boldParts.push(<strong key={`bold-${i}-${boldMatch.index}`}>{boldMatch[1]}</strong>)
+                boldLastIndex = boldRegex.lastIndex
+            }
+            if (boldLastIndex < part.length) {
+                boldParts.push(part.substring(boldLastIndex))
+            }
+        } else {
+            boldParts.push(part)
+        }
+    })
     
-    // Then parse italic out of the remaining string parts
+    // 3. Parse italic from the remaining string parts
     let finalParts: React.ReactNode[] = []
     boldParts.forEach((part, i) => {
         if (typeof part === 'string') {
