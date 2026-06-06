@@ -61,6 +61,14 @@
     margin-bottom: var(--spacing-xl);
 }
 
+.theory-section-group {
+    margin-bottom: var(--spacing-2xl);
+}
+
+.theory-section-group:last-child {
+    margin-bottom: 0;
+}
+
 /* ===== Emne-kort ===== */
 .theory-cards {
     display: grid;

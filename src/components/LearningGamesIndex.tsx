@@ -50,7 +50,7 @@ export default function LearningGamesIndex() {
                 <div className="mode-cards">
                     <Link
                         to="/laeringsspill/stopplengde"
-                        className="mode-card mode-card-full"
+                        className="mode-card"
                         style={{ 
                             textDecoration: 'none', 
                             display: 'flex', 
@@ -71,6 +71,57 @@ export default function LearningGamesIndex() {
                         </div>
                         <h2 style={{ fontSize: '1.25rem', marginBottom: '0.5rem' }}>Stopplengde-utfordringen</h2>
                         <p style={{ flexGrow: 1, fontSize: '0.9rem', lineHeight: '1.5', margin: '0 0 1rem 0' }}>Klarer du å anslå total stopplengde for ulike hastigheter og føreforhold? Test deg selv og forstå reaksjons- og bremselengden.</p>
+                        <span className="mode-badge mode-badge-full" style={{ alignSelf: 'center', marginTop: 'auto', padding: '6px 14px' }}>Spill nå</span>
+                    </Link>
+ 
+                    <Link
+                        to="/laeringsspill/skiltduellen"
+                        className="mode-card"
+                        style={{ 
+                            textDecoration: 'none', 
+                            display: 'flex', 
+                            flexDirection: 'column', 
+                            height: 'auto', 
+                            minHeight: '250px',
+                            cursor: 'pointer', 
+                            textAlign: 'center', 
+                            width: '100%',
+                            padding: '1.5rem 1.25rem'
+                        }}
+                    >
+                        <div className="card-badge-new">Nytt</div>
+                        <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '1rem' }}>
+                            <div className="card-icon-box">
+                                <Gamepad2 size={24} strokeWidth={1.8} />
+                            </div>
+                        </div>
+                        <h2 style={{ fontSize: '1.25rem', marginBottom: '0.5rem' }}>Skiltduellen</h2>
+                        <p style={{ flexGrow: 1, fontSize: '0.9rem', lineHeight: '1.5', margin: '0 0 1rem 0' }}>Velg riktig trafikkskilt før tiden går ut. Jo raskere du svarer, jo flere poeng får du.</p>
+                        <span className="mode-badge mode-badge-full" style={{ alignSelf: 'center', marginTop: 'auto', padding: '6px 14px' }}>Spill nå</span>
+                    </Link>
+
+                    <Link
+                        to="/laeringsspill/veimerking"
+                        className="mode-card"
+                        style={{ 
+                            textDecoration: 'none', 
+                            display: 'flex', 
+                            flexDirection: 'column', 
+                            height: 'auto', 
+                            minHeight: '250px',
+                            cursor: 'pointer', 
+                            textAlign: 'center', 
+                            width: '100%',
+                            padding: '1.5rem 1.25rem'
+                        }}
+                    >
+                        <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '1rem' }}>
+                            <div className="card-icon-box">
+                                <Route size={24} strokeWidth={1.8} />
+                            </div>
+                        </div>
+                        <h2 style={{ fontSize: '1.25rem', marginBottom: '0.5rem' }}>Veimerking-spillet</h2>
+                        <p style={{ flexGrow: 1, fontSize: '0.9rem', lineHeight: '1.5', margin: '0 0 1rem 0' }}>Kan du reglene for heltrukne linjer, sperreområder og vikelinjer? Test deg selv med interaktive situasjoner.</p>
                         <span className="mode-badge mode-badge-full" style={{ alignSelf: 'center', marginTop: 'auto', padding: '6px 14px' }}>Spill nå</span>
                     </Link>
 
@@ -99,31 +150,6 @@ export default function LearningGamesIndex() {
                         <p style={{ flexGrow: 1, fontSize: '0.9rem', lineHeight: '1.5', margin: '0 0 1rem 0' }}>Sorter skilt lynraskt i riktige kategorier (fareskilt, vikepliktskilt, forbudsskilt). Forbedre din skiltgjenkjenning.</p>
                         <span className="mode-badge" style={{ alignSelf: 'center', marginTop: 'auto', backgroundColor: 'var(--color-border)', color: 'var(--color-text-light)', padding: '6px 14px' }}>Kommer snart</span>
                     </div>
-
-                    <Link
-                        to="/laeringsspill/veimerking"
-                        className="mode-card"
-                        style={{ 
-                            textDecoration: 'none', 
-                            display: 'flex', 
-                            flexDirection: 'column', 
-                            height: 'auto', 
-                            minHeight: '250px',
-                            cursor: 'pointer', 
-                            textAlign: 'center', 
-                            width: '100%',
-                            padding: '1.5rem 1.25rem'
-                        }}
-                    >
-                        <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '1rem' }}>
-                            <div className="card-icon-box">
-                                <Route size={24} strokeWidth={1.8} />
-                            </div>
-                        </div>
-                        <h2 style={{ fontSize: '1.25rem', marginBottom: '0.5rem' }}>Veimerking-spillet</h2>
-                        <p style={{ flexGrow: 1, fontSize: '0.9rem', lineHeight: '1.5', margin: '0 0 1rem 0' }}>Kan du reglene for heltrukne linjer, sperreområder og vikelinjer? Test deg selv med interaktive situasjoner.</p>
-                        <span className="mode-badge mode-badge-full" style={{ alignSelf: 'center', marginTop: 'auto', padding: '6px 14px' }}>Spill nå</span>
-                    </Link>
                 </div>
             </div>
         </div>

@@ -9,6 +9,7 @@ const OppkjoringPage = lazy(() => import('./components/OppkjoringPage'))
 const LearningGamesIndex = lazy(() => import('./components/LearningGamesIndex'))
 const StoppingDistanceChallenge = lazy(() => import('./components/StoppingDistanceChallenge'))
 const RoadMarkingGame = lazy(() => import('./components/RoadMarkingGame'))
+const SignSpeedGamePage = lazy(() => import('./pages/SignSpeedGamePage'))
 const TrafficSignBank = lazy(() => import('./components/traffic-signs/TrafficSignBank'))
 const TrafficSignCategoryPage = lazy(() => import('./components/traffic-signs/TrafficSignCategoryPage'))
 const TrafficSignDetailPage = lazy(() => import('./components/traffic-signs/TrafficSignDetailPage'))
@@ -205,7 +206,7 @@ export default function App() {
                 </div>
             </header>
 
-            {!location.pathname.startsWith('/quiz') && location.pathname !== '/laeringsspill/stopplengde' && (
+            {!location.pathname.startsWith('/quiz') && location.pathname !== '/laeringsspill/stopplengde' && location.pathname !== '/laeringsspill/skiltduellen' && (
                 <div className="sub-navigation">
                     <div className="sub-nav-container">
                         <div className="sub-nav-scroll-wrapper">
@@ -265,6 +266,7 @@ export default function App() {
                         <Route path="/laeringsspill" element={<LearningGamesIndex />} />
                         <Route path="/laeringsspill/stopplengde" element={<StoppingDistanceChallenge />} />
                         <Route path="/laeringsspill/veimerking" element={<RoadMarkingGame />} />
+                        <Route path="/laeringsspill/skiltduellen" element={<SignSpeedGamePage />} />
                         <Route path="/trafikkskilt" element={<TrafficSignBank />} />
                         <Route path="/trafikkskilt/:categorySlug" element={<TrafficSignCategoryPage />} />
                         <Route path="/trafikkskilt/:categorySlug/:signSlug" element={<TrafficSignDetailPage />} />

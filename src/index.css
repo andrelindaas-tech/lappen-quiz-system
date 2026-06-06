@@ -1036,7 +1036,7 @@ body.dark-mode .hero-section {
   position: absolute;
   top: 15px;
   right: -40px;
-  background-color: var(--color-success);
+  background-color: var(--color-primary);
   color: white;
   padding: 5px 44px;
   font-size: 0.85rem;
@@ -2018,8 +2018,8 @@ body.dark-mode .faq-item:hover {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-weight: 700;
-  font-size: 1.1rem;
+  font-weight: 600;
+  font-size: 1.05rem;
   color: var(--color-text);
   gap: var(--spacing-md);
 }
@@ -2676,7 +2676,7 @@ body.dark-mode .trust-badge {
 
 .faq-section h2 {
   font-size: 1.5rem;
-  font-weight: 800;
+  font-weight: 700;
   margin-bottom: var(--spacing-lg);
   color: var(--color-text);
 }
@@ -2696,4 +2696,26 @@ body.dark-mode .trust-badge {
     padding-top: 0;
     padding-bottom: 1.5rem;
   }
+}
+
+/* Compact Feature Item Hover Styles */
+.compact-feature-item {
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.25s ease, box-shadow 0.25s ease !important;
+}
+
+.compact-feature-item:hover {
+  transform: translateY(-2px);
+  border-color: var(--color-primary) !important;
+  box-shadow: var(--shadow-md);
+}
+
+/* Compact Fact Box Card Hover Styles */
+.compact-fact-card {
+  transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease !important;
+}
+
+.compact-fact-card:hover {
+  transform: translateY(-1px);
+  border-color: var(--color-primary) !important;
+  box-shadow: 0 4px 12px rgb(0 0 0 / 0.15);
 }
