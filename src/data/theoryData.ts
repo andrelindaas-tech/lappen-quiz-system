@@ -2120,6 +2120,11 @@ export const theoryTopics: TheoryTopic[] = [
                 content: 'Med klasse B kan du trekke tilhenger på maks 750 kg tillatt totalvekt, eller tyngre tilhenger hvis bil + tilhenger har samlet tillatt totalvekt på maks 3500 kg. B96 gjelder opp til 4250 kg. BE kreves over dette. [Les om automatlappen og elbil med tilhenger](/laeringsressurser/automatlappen)'
             },
             {
+                title: 'Kort svar: Hvilken tilhenger kan du kjøre med klasse B?',
+                type: 'tip',
+                content: '- Klasse B: tilhenger maks 750 kg tillatt totalvekt.\n- Eller tyngre tilhenger hvis bil + tilhenger har samlet tillatt totalvekt maks 3500 kg.\n- B kode 96 (B96): samlet tillatt totalvekt maks 4250 kg.\n- BE: tyngre kombinasjoner, men fortsatt innenfor bilens og tilhengerens tekniske grenser.\n- Sjekk alltid: førerkortklasse, bilens vognkort og tilhengerens vognkort.'
+            },
+            {
                 title: 'Førerkortklasser for tilhenger',
                 type: 'table',
                 content: `<table>
@@ -2173,6 +2178,16 @@ export const theoryTopics: TheoryTopic[] = [
                 title: 'Klasse BE – for de tyngste kombinasjonene',
                 type: 'text',
                 content: 'BE kreves når kombinert tillatt totalvekt overstiger 4250 kg.\n- Tilhengeren kan ha tillatt totalvekt opp til 3500 kg\n- Kombinert vekt kan gå opp til 7000 kg\n- Krever full teoriprøve for BE + praktisk oppkjøring\n\nEksempel: Bil 3000 kg + tilhenger 1500 kg = 4500 kg → Klasse BE.\n\nNB: Hestehengere og større båthengere havner ofte i BE-kategorien.'
+            },
+            {
+                title: 'Lastsikring og plassering av last på tilhenger',
+                type: 'text',
+                content: 'Som fører har du ansvar for at lasten på tilhengeren er plassert og sikret på en trygg og lovlig måte. Dårlig sikret last kan forskyve seg eller falle av når du akselererer, bremser eller svinger. Hvis lasten flytter seg, kan vektfordelingen bli feil, og bilen med tilhenger kan bli ustabil eller vanskelig å kontrollere.\n\nPlasser lasten lavt, mest mulig midt på tilhengeren og med tyngdepunktet nær akslingen. Unngå for mye vekt helt bakerst eller høyt stablet last. Feil vektfordeling kan gi dårligere kjøreegenskaper, økt slingring og større veltefare.\n\nLasten bør som hovedregel ligge innenfor tilhengeren. Hvis noe stikker ut foran eller bak, må det være forsvarlig sikret, tydelig merket ved behov og ikke være til fare for andre trafikanter.\n\n![Riktig og feil plassering av last på tilhenger med bil, som viser hvordan vektfordeling påvirker stabilitet.](/lastsikring-tilhenger.png)\n*Riktig lastfordeling gjør vogntoget mer stabilt. Unngå for mye vekt bakerst eller høyt plassert last.*'
+            },
+            {
+                title: 'Husk før du kjører med henger',
+                type: 'tip',
+                content: '- Sikre lasten før du kjører.\n- Plasser tung last lavt og nær akslingen.\n- Unngå for mye vekt bakerst på tilhengeren.\n- Sjekk lys, kobling, sikkerhetswire og dekk før avreise.'
             },
             {
                 title: 'Fartsgrenser med tilhenger',
