@@ -21,7 +21,6 @@ import {
 } from 'lucide-react'
 import { theoryTopics, theoryArticles, theoryUtilityPages } from '../data/theoryData'
 import TheoryTopic from './TheoryTopic'
-import { TilhengerKalkulator } from './TilhengerKalkulator'
 import { parseInlineLinks } from '../utils/textUtils'
 
 // Helper function to get Lucide icons for topics and articles
@@ -156,7 +155,6 @@ export default function TheoryPage() {
                     key={selectedTopic.id}
                     topic={selectedTopic}
                     onBack={handleBack}
-                    extraComponent={selectedTopic.id === 'tilhenger' ? <TilhengerKalkulator /> : undefined}
                 />
             </div>
         )

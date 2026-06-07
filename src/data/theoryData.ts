@@ -2125,6 +2125,11 @@ export const theoryTopics: TheoryTopic[] = [
                 content: '- Klasse B: tilhenger maks 750 kg tillatt totalvekt.\n- Eller tyngre tilhenger hvis bil + tilhenger har samlet tillatt totalvekt maks 3500 kg.\n- B kode 96 (B96): samlet tillatt totalvekt maks 4250 kg.\n- BE: tyngre kombinasjoner, men fortsatt innenfor bilens og tilhengerens tekniske grenser.\n- Sjekk alltid: førerkortklasse, bilens vognkort og tilhengerens vognkort.'
             },
             {
+                title: 'Tilhengerkalkulator',
+                type: 'calculator',
+                content: 'Tast inn tillatt totalvekt for bil og tilhenger under for å sjekke hvilken førerkortklasse du trenger for å kjøre lovlig.'
+            },
+            {
                 title: 'Førerkortklasser for tilhenger',
                 type: 'table',
                 content: `<table>
@@ -2157,12 +2162,12 @@ export const theoryTopics: TheoryTopic[] = [
             {
                 title: 'Hva betyr "tillatt totalvekt"?',
                 type: 'text',
-                content: 'Når vi snakker om vekt for tilhenger og bil i dette regelverket, er det alltid "tillatt totalvekt" (også kalt registrert totalvekt) som gjelder – IKKE faktisk lastet vekt. Tillatt totalvekt finner du i vognkortet (del I og II).\n\nEksempel: Campingvognen din veier 800 kg lastet, men tillatt totalvekt i vognkortet er 1300 kg. Da bruker du 1300 kg i alle beregninger.\n\nTIP: Sjekk alltid vognkortet – ikke stol på gjetning.'
+                content: 'Når vi snakker om vekt for tilhenger og bil i dette regelverket, er det alltid "tillatt totalvekt" (også kalt registrert totalvekt) som gjelder – IKKE faktisk lastet vekt. Tillatt totalvekt finner du i vognkortet (del I og II).\n\nEksempel: Campingvognen din veier 800 kg lastet, men tillatt totalvekt i vognkortet er 1300 kg. Da bruker du 1300 kg i alle beregninger.\n\nTips: Sjekk alltid vognkortet – ikke stol på gjetning.'
             },
             {
                 title: 'Klasse B – grunnreglene for tilhenger',
                 type: 'info',
-                content: 'Med vanlig klasse B (personbil) kan du trekke tilhenger i to situasjoner:\n\n1. 750 kg-regelen:\nTilhengeren har tillatt totalvekt på 750 kg eller mindre. Kombinert vekt kan da være hva som helst.\n\n2. Campingvogn-regelen (også kalt 3500 kg-regelen):\nTilhengeren er TYNGRE enn 750 kg, men bilens tillatte totalvekt pluss tilhengerens tillatte totalvekt overstiger IKKE 3500 kg.\n\nEksempel: Bil med tillatt totalvekt 2200 kg + tilhenger 1100 kg = 3300 kg. Tilhengeren er over 750 kg, men kombinasjonen er under 3500 kg → Klasse B holder!'
+                content: 'Med vanlig klasse B (personbil) kan du trekke tilhenger i to situasjoner:\n\n1. 750 kg-regelen:\nTilhengeren har tillatt totalvekt på 750 kg eller mindre. Da kan samlet tillatt totalvekt være over 3500 kg, men bilen må fortsatt være godkjent for å trekke tilhengeren. Sjekk alltid bilens vognkort.\n\n2. Campingvogn-regelen (også kalt 3500 kg-regelen):\nTilhengeren er TYNGRE enn 750 kg, men bilens tillatte totalvekt pluss tilhengerens tillatte totalvekt overstiger IKKE 3500 kg.\n\nCampingvognregelen er ofte brukt om regelen der du kan trekke tilhenger over 750 kg med klasse B hvis samlet tillatt totalvekt for bil og tilhenger ikke er over 3500 kg.\n\nEksempel: Bil med tillatt totalvekt 2200 kg + tilhenger 1100 kg = 3300 kg. Tilhengeren er over 750 kg, men kombinasjonen er under 3500 kg → Klasse B holder!'
             },
             {
                 title: '⚠️ Husk bilens begrensninger',
@@ -2172,17 +2177,17 @@ export const theoryTopics: TheoryTopic[] = [
             {
                 title: 'Klasse B96 – mellomklassen',
                 type: 'text',
-                content: 'B96 er en utvidelse av klasse B som gjelder når:\n- Tilhengeren veier MER enn 750 kg, OG\n- Kombinert tillatt totalvekt (bil + tilhenger) er MELLOM 3500 kg og 4250 kg.\n\nKrav for B96:\n- Bestå et 7-timers obligatorisk kurs (5 t teori + 2 t kjøring)\n- INGEN oppkjøring/praktisk prøve kreves\n- B96 "stemplet" i førerkortet etter bestått kurs\n\nEksempel: Bil with tillatt totalvekt 2500 kg + tilhenger 1200 kg = 3700 kg → B96.'
+                content: 'B96 er en utvidelse av klasse B som gjelder når:\n- Tilhengeren veier MER enn 750 kg, OG\n- Kombinert tillatt totalvekt (bil + tilhenger) er MELLOM 3500 kg og 4250 kg.\n\nKrav for B96:\n- Bestå et 7-timers obligatorisk kurs (5 t teori + 2 t kjøring)\n- INGEN oppkjøring/praktisk prøve kreves\n- B96 "stemplet" i førerkortet etter bestått kurs\n\nEksempel: Bil med tillatt totalvekt 2500 kg + tilhenger 1200 kg = 3700 kg → B96.'
             },
             {
                 title: 'Klasse BE – for de tyngste kombinasjonene',
                 type: 'text',
-                content: 'BE kreves når kombinert tillatt totalvekt overstiger 4250 kg.\n- Tilhengeren kan ha tillatt totalvekt opp til 3500 kg\n- Kombinert vekt kan gå opp til 7000 kg\n- Krever full teoriprøve for BE + praktisk oppkjøring\n\nEksempel: Bil 3000 kg + tilhenger 1500 kg = 4500 kg → Klasse BE.\n\nNB: Hestehengere og større båthengere havner ofte i BE-kategorien.'
+                content: 'BE kreves når kombinert tillatt totalvekt overstiger 4250 kg.\n- Tilhengeren kan ha tillatt totalvekt opp til 3500 kg\n- Kombinert vekt kan gå opp til 7000 kg\n- Krever full teoriprøve for BE + praktisk oppkjøring\n\nEksempel: Bil 3000 kg + tilhenger 1500 kg = 4500 kg → Klasse BE. BE gjelder tyngre kombinasjoner, innenfor grensene i bilens og tilhengerens vognkort.\n\nNB: Hestehengere og større båthengere havner ofte i BE-kategorien.'
             },
             {
                 title: 'Lastsikring og plassering av last på tilhenger',
                 type: 'text',
-                content: 'Som fører har du ansvar for at lasten på tilhengeren er plassert og sikret på en trygg og lovlig måte. Dårlig sikret last kan forskyve seg eller falle av når du akselererer, bremser eller svinger. Hvis lasten flytter seg, kan vektfordelingen bli feil, og bilen med tilhenger kan bli ustabil eller vanskelig å kontrollere.\n\nPlasser lasten lavt, mest mulig midt på tilhengeren og med tyngdepunktet nær akslingen. Unngå for mye vekt helt bakerst eller høyt stablet last. Feil vektfordeling kan gi dårligere kjøreegenskaper, økt slingring og større veltefare.\n\nLasten bør som hovedregel ligge innenfor tilhengeren. Hvis noe stikker ut foran eller bak, må det være forsvarlig sikret, tydelig merket ved behov og ikke være til fare for andre trafikanter.\n\n![Riktig og feil plassering av last på tilhenger med bil, som viser hvordan vektfordeling påvirker stabilitet.](/lastsikring-tilhenger.png)\n*Forlastet eller baklastet tilhenger gir feil kuletrykk og dårligere stabilitet. Plasser lasten lavt og slik at tyngdepunktet ligger nær midten av tilhengeren.*'
+                content: 'Som fører har du ansvar for at lasten på tilhengeren er plassert og sikret på en trygg og lovlig måte. Dårlig sikret last kan forskyve seg eller falle av når du akselererer, bremser eller svinger. Hvis lasten flytter seg, kan vektfordelingen bli feil, og bilen med tilhenger kan bli ustabil eller vanskelig å kontrollere.\n\nPlasser lasten lavt, mest mulig midt på tilhengeren og med tyngdepunktet nær akslingen. Unngå for mye vekt helt bakerst eller høyt stablet last. Feil vektfordeling kan gi dårligere kjøreegenskaper, økt slingring og større veltefare.\n\nLasten bør som hovedregel ligge innenfor tilhengeren. Hvis noe stikker ut foran eller bak, må det være forsvarlig sikret, tydelig merket ved behov og ikke være til fare for andre trafikanter.\n\n![Riktig og feil plassering av last på tilhenger med bil, som viser hvordan vektfordeling påvirker stabilitet.](/lastsikring-tilhenger.png)\n*Forlastet eller baklastet tilhenger gir feil kuletrykk og dårligere stabilitet. Plasser lasten lavt og med tyngdepunktet nær midten av tilhengeren.*'
             },
             {
                 title: 'Husk før du kjører med henger',
@@ -2192,17 +2197,12 @@ export const theoryTopics: TheoryTopic[] = [
             {
                 title: 'Fartsgrenser med tilhenger',
                 type: 'info',
-                content: 'Alle tilhengere kan kjøres i inntil 80 km/t der fartsgrensen tillater det — uavhengig av om tilhengeren har bremser eller ikke. Den gamle 60 km/t-grensen for tilhengere uten bremser gjelder ikke lenger.\n\nTempo 100: Noen tilhengere kan etter en egen teknisk godkjenning hos Statens vegvesen kjøres i inntil 100 km/t. Du får da et godkjenningsdokument og et merke som skal monteres på tilhengeren. Bruk Statens vegvesens egen kalkulator på vegvesen.no/tempo100 for å sjekke om din bil og tilhenger kvalifiserer.'
+                content: 'Alle tilhengere kan kjøres i inntil 80 km/t der fartsgrensen tillater det — uavhengig av om tilhengeren har bremser eller ikke. Den gamle 60 km/t-grensen for tilhengere uten bremser gjelder ikke lenger.\n\nTempo 100: Noen tilhengere kan etter en egen teknisk godkjenning hos Statens vegvesen kjøres i inntil 100 km/t. Du får da et godkjenningsdokument og et merke som skal monteres på tilhengeren. Autorisert Tempo 100-sjekk kan gjøres hos Statens vegvesen.'
             },
             {
                 title: 'Sjekkliste før avgang med tilhenger',
                 type: 'tip',
-                content: 'Bruk denne sjekklisten FØR du kjører – dette er pensumstoff på teoriprøven:\n- Koblingen: Henger/kule er låst og sikret (klikk-lyd)\n- Låsekabel: Nødbremsewire er festet til bilen (IKKE lås/kule)\n- Lys: Brems-, bak-, og blinklys fungerer (sjekk via bakspeil mens noen trykker)\n- Last: 100% sikret mot fremover – 50% sikret mot sideveis og bakover\n- Dekk: Riktig lufttrykk på tilhengerdekk (se vognkort)\n- Nummerskilt: Synlig, rent, og belyst (samme nr. som bil der tilhenger mangler eget)\n- Lastfordeling: Tyngde av last FORAN tilhengernes aksling → gir stabilitet\n\nHusk: Overvekt bakerst = svaiing og ustabilitet i høy hastighet.'
-            },
-            {
-                title: 'Vanlige spørsmål om tilhenger (FAQ)',
-                type: 'info',
-                content: 'Q: Kan jeg øvelseskjøre med tilhenger hvis jeg bare har klasse B?\nA: Ja, du kan øvelseskjøre med tilhenger så lenge du følger reglene for klassen du skal ta (f.eks. BE). Ledsageren må ha hatt førerrett for den aktuelle klassen sammenhengende de siste 5 årene og være over 25 år. Husk «L»-skilt og ekstra speil.\n\nQ: Hva skjer hvis kombinert vekt overstiger 3500 kg og jeg bare har klasse B?\nA: Da kjører du uten gyldig førerkort for kjøretøyet. Dette kan føre til bøter og tap av førerretten. I verste fall kan forsikringsselskapet kreve at du må betale skaden selv ved en ulykke.\n\nQ: Trenger jeg ekstra speil for tilhenger?\nA: Ja, dersom tilhengeren eller lasten er så bred at den hindrer sikt bakover i bilens vanlige speil. Du skal kunne se langs hele siden av tilhengeren.\n\nQ: Gjelder 80 km/t-regelen også i 50-sonen?\nA: Nei, i tettbygd strøk følger du alltid de lokale fartsgrensene (skiltingen). 80 km/t-grensen er en maksgrense for tilhenger på veier der skiltingen ellers ville tillatt høyere fart.'
+                content: 'Bruk denne sjekklisten FØR du kjører – dette er pensumstoff på teoriprøven:\n- Koblingen: Henger/kule er låst og sikret (klikk-lyd)\n- Låsekabel: Nødbremsewire er festet til bilen (IKKE lås/kule)\n- Lys: Brems-, bak-, og blinklys fungerer (sjekk via bakspeil mens noen trykker)\n- Last: 100% sikret mot fremover – 50% sikret mot sideveis og bakover\n- Dekk: Riktig lufttrykk på tilhengerdekk (se vognkort)\n- Nummerskilt: Synlig, rent, og belyst (samme nr. som bil der tilhenger mangler eget)\n- Lastfordeling: Tyngste last lavt og nær akslingen. Unngå for mye vekt helt foran eller helt bakerst.\n\nHusk: Overvekt bakerst = svaiing og ustabilitet i høy hastighet.'
             }
         ],
         miniQuiz: [
@@ -2238,27 +2238,39 @@ export const theoryTopics: TheoryTopic[] = [
   }
 ],
         faq: [
-  {
-    question: "Hvor tung tilhenger kan jeg kjøre med klasse B?",
-    answer: "Med klasse B kan du trekke tilhenger med tillatt totalvekt på maks 750 kg. Alternativt kan du trekke tyngre tilhenger hvis samlet tillatt totalvekt for bil og tilhenger ikke overstiger 3500 kg."
-  },
-  {
-    question: "Når trenger jeg B96?",
-    answer: "Du trenger B96 når samlet tillatt totalvekt for bil og tilhenger er mellom 3500 og 4250 kg."
-  },
-  {
-    question: "Når trenger jeg BE?",
-    answer: "Du trenger BE når samlet tillatt totalvekt for bil og tilhenger overstiger 4250 kg, eller når tilhengeren er tyngre enn bilen."
-  },
-  {
-    question: "Hvor fort kan man kjøre med tilhenger?",
-    answer: "Etter regelendringen i mars 2022 kan alle tilhengere kjøres i inntil 80 km/t der fartsgrensen tillater det. Med Tempo 100-godkjenning fra Statens vegvesen kan du kjøre i inntil 100 km/t."
-  },
-  {
-    question: "Er det faktisk vekt eller tillatt totalvekt som gjelder?",
-    answer: "Det er alltid tillatt totalvekt (også kalt teknisk tillatt totalvekt) som gjelder — ikke faktisk vekt. Tillatt totalvekt finner du i vognkortet og på et skilt på tilhengeren."
-  }
-]
+            {
+                question: "Hvor tung tilhenger kan jeg kjøre med klasse B?",
+                answer: "Med klasse B kan du trekke tilhenger med tillatt totalvekt på maks 750 kg. Alternativt kan du trekke tyngre tilhenger hvis samlet tillatt totalvekt for bil og tilhenger ikke overstiger 3500 kg."
+            },
+            {
+                question: "Hva er reglene for tilhenger med klasse B?",
+                answer: "Hovedreglene er at du kan trekke tilhenger på maks 750 kg tillatt totalvekt. Dersom tilhengeren er tyngre enn 750 kg, kan du kjøre den med klasse B dersom samlet tillatt totalvekt for bil + tilhenger ikke overstiger 3500 kg (campingvognregelen)."
+            },
+            {
+                question: "Hva er campingvognregelen?",
+                answer: "Campingvognregelen er ofte brukt om regelen der du kan trekke tilhenger over 750 kg med klasse B hvis samlet tillatt totalvekt for bil og tilhenger ikke er over 3500 kg."
+            },
+            {
+                question: "Når trenger jeg B96?",
+                answer: "Du trenger B96 dersom samlet tillatt totalvekt for bil og tilhenger er mellom 3500 og 4250 kg. Dette krever et obligatorisk 7-timers kurs, men ingen ny oppkjøring."
+            },
+            {
+                question: "Når trenger jeg BE?",
+                answer: "BE gjelder tyngre kombinasjoner, innenfor grensene i bilens og tilhengerens vognkort. Du trenger BE dersom samlet tillatt totalvekt for bil og tilhenger overstiger 4250 kg."
+            },
+            {
+                question: "Hvor fort kan man kjøre med tilhenger?",
+                answer: "Alle tilhengere kan kjøres i inntil 80 km/t der fartsgrensen tillater det. Dersom tilhengeren har godkjent Tempo 100 fra Statens vegvesen, kan du kjøre i inntil 100 km/t."
+            },
+            {
+                question: "Hva er forskjellen på tillatt totalvekt og faktisk vekt?",
+                answer: "Tillatt totalvekt er den maksimale vekten kjøretøyet eller tilhengeren har lov til å veie med full last (oppgitt i vognkortet), og bestemmer førerkortklassen din. Faktisk vekt er hva kjøretøyet og lasten veier der og da på veien."
+            },
+            {
+                question: "Hvordan sjekker jeg vognkortet for bil og tilhenger?",
+                answer: "I bilens vognkort sjekker du tillatt totalvekt og bilens maksimale tilhengervekt (med/uten brems). I tilhengerens vognkort sjekker du tilhengerens tillatte totalvekt. Begge vognkort må sjekkes for å sikre at du ikke overskrider tekniske eller førerkortmessige grenser."
+            }
+        ]
     },
 
     {

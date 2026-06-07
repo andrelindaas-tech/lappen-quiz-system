@@ -31,6 +31,7 @@ import MotorromInteraktiv from './MotorromInteraktiv'
 import RundkjoringAnimasjon from './RundkjoringAnimasjon'
 import MiniQuiz from './MiniQuiz'
 import AutomatVsManuellSammenligning from './AutomatVsManuellSammenligning'
+import { TilhengerKalkulator } from './TilhengerKalkulator'
 
 
 // Renders content string with support for paragraphs, bullet lists (- ), numbered lists (1. ) and code blocks (```)
@@ -155,10 +156,9 @@ const getTopicIcon = (id: string, iconFromData: string) => {
 interface TheoryTopicProps {
     topic: TopicType
     onBack: () => void
-    extraComponent?: React.ReactNode
 }
 
-export default function TheoryTopic({ topic, onBack, extraComponent }: TheoryTopicProps) {
+export default function TheoryTopic({ topic, onBack }: TheoryTopicProps) {
     // Generate JSON-LD for this specific topic
     const structuredData = {
         "@context": "https://schema.org",
@@ -282,6 +282,7 @@ export default function TheoryTopic({ topic, onBack, extraComponent }: TheoryTop
                                     {topic.id === 'sikkerhetskontroll' && !section.componentId && <DashboardWarningSimulator />}
                                     {topic.id === 'reaksjonstid' && <ReaksjonstidTest />}
                                     {topic.id === 'veimerking' && <VeimerkingInteraktiv />}
+                                    {topic.id === 'tilhenger' && <TilhengerKalkulator />}
                                 </div>
                             </div>
                         ) : section.type === 'component' ? (
@@ -330,12 +331,6 @@ export default function TheoryTopic({ topic, onBack, extraComponent }: TheoryTop
                         <div className="theory-section-content" style={{ fontSize: '0.95rem', color: 'var(--color-text-light)' }}>
                             {topic.sources.content && renderContent(topic.sources.content)}
                         </div>
-                    </div>
-                )}
-
-                {extraComponent && (
-                    <div className="theory-extra-component" style={{ marginTop: '2rem' }}>
-                        {extraComponent}
                     </div>
                 )}
             </div>

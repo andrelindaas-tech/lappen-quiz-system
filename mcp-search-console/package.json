@@ -1,0 +1,14 @@
+{
+  "name": "google-search-console-mcp",
+  "version": "1.0.0",
+  "description": "MCP-server for integrasjon mot Google Search Console API",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^0.6.0",
+    "googleapis": "^144.0.0"
+  }
+}
