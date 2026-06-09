@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="520" viewBox="0 0 960 520" role="img" aria-labelledby="title desc">
+  <title id="title">Trafikklys med pil og vanlig lys - oppgavevalg A, B og C</title>
+  <desc id="desc">Tre svaralternativer med trafikklys. A viser rød venstrepil og rødt lys, B viser rød og gul venstrepil sammen med rødt og gult lys, C viser grønn venstrepil og grønt lys.</desc>
+  <defs>
+    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="5" stdDeviation="7" flood-color="#0f172a" flood-opacity="0.18"/>
+    </filter>
+    <style>
+      .housing{fill:#070707;stroke:#202020;stroke-width:2;rx:7}
+      .rim{fill:none;stroke:#f8fafc;stroke-width:5}
+      .off{fill:#101010}
+      .red{fill:#ff3340}
+      .yellow{fill:#ffd21f}
+      .green{fill:#159462}
+      .arrow{stroke:#07111f;stroke-width:10;stroke-linecap:round;stroke-linejoin:round;fill:none}
+      .arrowLight{stroke:#e8fff7;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;fill:none}
+      .label{font-family:Arial, Helvetica, sans-serif;font-size:64px;fill:#101827}
+    </style>
+  </defs>
+
+  <rect width="960" height="520" fill="#ffffff"/>
+
+  <!-- A -->
+  <g transform="translate(66 70)" filter="url(#softShadow)">
+    <rect class="housing" x="0" y="0" width="76" height="250"/>
+    <circle class="red" cx="38" cy="42" r="29"/>
+    <path class="arrow" d="M51 42H25M36 29L22 42l14 13"/>
+    <circle class="rim" cx="38" cy="125" r="29"/>
+    <circle class="off" cx="38" cy="125" r="25"/>
+    <circle class="rim" cx="38" cy="208" r="29"/>
+    <circle class="off" cx="38" cy="208" r="25"/>
+  </g>
+  <g transform="translate(176 70)" filter="url(#softShadow)">
+    <rect class="housing" x="0" y="0" width="76" height="250"/>
+    <circle class="red" cx="38" cy="42" r="29"/>
+    <circle class="rim" cx="38" cy="125" r="29"/>
+    <circle class="off" cx="38" cy="125" r="25"/>
+    <circle class="rim" cx="38" cy="208" r="29"/>
+    <circle class="off" cx="38" cy="208" r="25"/>
+  </g>
+  <text class="label" x="130" y="435" text-anchor="middle">A</text>
+
+  <!-- B -->
+  <g transform="translate(352 70)" filter="url(#softShadow)">
+    <rect class="housing" x="0" y="0" width="76" height="250"/>
+    <circle class="red" cx="38" cy="42" r="29"/>
+    <path class="arrow" d="M51 42H25M36 29L22 42l14 13"/>
+    <circle class="yellow" cx="38" cy="125" r="29"/>
+    <path class="arrow" d="M51 125H25M36 112L22 125l14 13"/>
+    <circle class="rim" cx="38" cy="208" r="29"/>
+    <circle class="off" cx="38" cy="208" r="25"/>
+  </g>
+  <g transform="translate(462 70)" filter="url(#softShadow)">
+    <rect class="housing" x="0" y="0" width="76" height="250"/>
+    <circle class="red" cx="38" cy="42" r="29"/>
+    <circle class="yellow" cx="38" cy="125" r="29"/>
+    <circle class="rim" cx="38" cy="208" r="29"/>
+    <circle class="off" cx="38" cy="208" r="25"/>
+  </g>
+  <text class="label" x="416" y="435" text-anchor="middle">B</text>
+
+  <!-- C -->
+  <g transform="translate(642 70)" filter="url(#softShadow)">
+    <rect class="housing" x="0" y="0" width="76" height="250"/>
+    <circle class="rim" cx="38" cy="42" r="29"/>
+    <circle class="off" cx="38" cy="42" r="25"/>
+    <circle class="rim" cx="38" cy="125" r="29"/>
+    <circle class="off" cx="38" cy="125" r="25"/>
+    <circle class="green" cx="38" cy="208" r="29"/>
+    <path class="arrowLight" d="M52 208H25M37 195L23 208l14 13"/>
+  </g>
+  <g transform="translate(752 70)" filter="url(#softShadow)">
+    <rect class="housing" x="0" y="0" width="76" height="250"/>
+    <circle class="rim" cx="38" cy="42" r="29"/>
+    <circle class="off" cx="38" cy="42" r="25"/>
+    <circle class="rim" cx="38" cy="125" r="29"/>
+    <circle class="off" cx="38" cy="125" r="25"/>
+    <circle class="green" cx="38" cy="208" r="29"/>
+  </g>
+  <text class="label" x="706" y="435" text-anchor="middle">C</text>
+</svg>

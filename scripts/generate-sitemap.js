@@ -24,6 +24,7 @@ function generateSitemap() {
     { loc: '/laeringsspill', priority: '0.7', changefreq: 'monthly' },
     { loc: '/laeringsspill/stopplengde', priority: '0.7', changefreq: 'monthly' },
     { loc: '/laeringsspill/veimerking', priority: '0.7', changefreq: 'monthly' },
+    { loc: '/laeringsspill/skiltduellen', priority: '0.7', changefreq: 'monthly' },
     { loc: '/trafikkskilt', priority: '0.8', changefreq: 'monthly' },
     { loc: '/quiz', priority: '0.8', changefreq: 'monthly' },
     { loc: '/quiz/vikeplikt', priority: '0.6', changefreq: 'monthly' },

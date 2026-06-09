@@ -19,6 +19,14 @@ export default function TrafficSignDetailPage() {
     return categorySlug ? getCategoryBySlug(categorySlug) : undefined;
   }, [categorySlug]);
 
+  // Clean up visualDescription by removing trailing period if it exists
+  const cleanVisualDescription = useMemo(() => {
+    if (!sign || !sign.visualDescription) return '';
+    return sign.visualDescription.endsWith('.')
+      ? sign.visualDescription.slice(0, -1)
+      : sign.visualDescription;
+  }, [sign]);
+
   // Fetch signs that this sign might be confused with
   const confusedWithSigns = useMemo(() => {
     if (!sign || !sign.confusedWith) return [];
@@ -139,7 +147,7 @@ export default function TrafficSignDetailPage() {
             }}>
               <img
                 src={sign.imagePath}
-                alt={`Skilt ${sign.code} ${sign.name} – norsk trafikkskilt`}
+                alt={cleanVisualDescription ? `${cleanVisualDescription}, skilt ${sign.code} ${signTitleName}` : `Skilt ${sign.code} ${signTitleName} – norsk trafikkskilt`}
                 style={{ maxHeight: '100%', maxWidth: '100%', objectFit: 'contain' }}
               />
             </div>
@@ -158,6 +166,11 @@ export default function TrafficSignDetailPage() {
               <p style={{ fontSize: '1.05rem', color: 'var(--color-text)', lineHeight: '1.6', margin: 0 }}>
                 {sign.shortExplanation}
               </p>
+              {sign.visualDescription && (
+                <p style={{ fontSize: '0.9rem', color: 'var(--color-text-light)', marginTop: '8px', margin: 0, fontStyle: 'italic' }}>
+                  Kjennetegn: {sign.visualDescription}
+                </p>
+              )}
 
               {/* Practice CTA */}
               <div style={{ marginTop: 'var(--spacing-lg)' }}>

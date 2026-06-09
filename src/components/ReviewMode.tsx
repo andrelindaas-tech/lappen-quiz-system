@@ -1,5 +1,7 @@
 // Review Mode Component - Shows explanations for incorrect answers
+import { useState } from 'react'
 import type { Question } from '../services/supabase'
+import ImageLightbox from './ImageLightbox'
 
 interface ReviewModeProps {
     incorrectAnswers: Array<{ question: Question; userAnswer: string }>
@@ -7,6 +9,9 @@ interface ReviewModeProps {
 }
 
 export default function ReviewMode({ incorrectAnswers, onRestart }: ReviewModeProps) {
+    const [zoomedImage, setZoomedImage] = useState<{ src: string; alt: string } | null>(null)
+    const [imageErrors, setImageErrors] = useState<Record<string, boolean>>({})
+
     if (incorrectAnswers.length === 0) {
         return (
             <div className="review-mode">
@@ -52,15 +57,24 @@ export default function ReviewMode({ incorrectAnswers, onRestart }: ReviewModePr
 
                             <h3 className="review-question-text">{question.question_text}</h3>
 
-                            {question.image_name && (
-                                <img
-                                    src={`https://tdclflxovwhqutaikvuj.supabase.co/storage/v1/object/public/quiz-images/${question.image_name}`}
-                                    alt="Spørsmålsbilde"
-                                    className="question-image"
-                                    onError={(e) => {
-                                        e.currentTarget.style.display = 'none'
+                            {question.image_name && !imageErrors[question.id] && (
+                                <div 
+                                    className="question-image-container zoomable"
+                                    onClick={() => {
+                                        const src = `https://tdclflxovwhqutaikvuj.supabase.co/storage/v1/object/public/quiz-images/${question.image_name}`
+                                        setZoomedImage({ src, alt: "Spørsmålsbilde" })
                                     }}
-                                />
+                                    title="Klikk for å forstørre bildet"
+                                >
+                                    <img
+                                        src={`https://tdclflxovwhqutaikvuj.supabase.co/storage/v1/object/public/quiz-images/${question.image_name}`}
+                                        alt="Spørsmålsbilde"
+                                        className="question-image"
+                                        onError={() => {
+                                            setImageErrors(prev => ({ ...prev, [question.id]: true }))
+                                        }}
+                                    />
+                                </div>
                             )}
 
                             <div className="review-answers">
@@ -90,6 +104,15 @@ export default function ReviewMode({ incorrectAnswers, onRestart }: ReviewModePr
             >
                 Ta ny prøve
             </button>
+
+            {zoomedImage && (
+                <ImageLightbox
+                    src={zoomedImage.src}
+                    alt={zoomedImage.alt}
+                    isOpen={true}
+                    onClose={() => setZoomedImage(null)}
+                />
+            )}
         </div>
     )
 }

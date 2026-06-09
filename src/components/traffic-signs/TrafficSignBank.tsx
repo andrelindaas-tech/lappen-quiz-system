@@ -79,10 +79,10 @@ export default function TrafficSignBank() {
           Trafikkskilt til teoriprøven
         </h1>
         <p style={{ color: 'var(--color-text-light)', maxWidth: '720px', margin: '0 auto 16px auto', fontSize: '1.1rem', lineHeight: '1.6' }}>
-          På teoriprøven klasse B møter du skilt fra alle grupper — vikepliktskilt, fareskilt, forbudsskilt, påbudsskilt og opplysningsskilt. Du må ikke bare kjenne igjen skiltet, du må forstå hva det krever av deg i trafikken.
+          På teoriprøven klasse B møter du skilt fra alle skiltgrupper: vikepliktsskilt, fareskilt, forbudsskilt, påbudsskilt og opplysningsskilt. Du må ikke bare kjenne igjen skiltet, men også forstå hva det krever av deg i trafikken.
         </p>
         <p style={{ color: 'var(--color-text-light)', maxWidth: '720px', margin: '0 auto', fontSize: '1.1rem', lineHeight: '1.6' }}>
-          Skiltbanken dekker alle vanlige norske trafikkskilt med offisielt skiltnummer, betydning og hva du skal gjøre i trafikken. Dette er en av de mest komplette skiltguidene du finner på norske nettsider — helt gratis.
+          Søk etter skilt med navn, skilt nummer eller beskrivelse av hvordan skiltet ser ut – for eksempel “blått skilt med hvit pil”, “rødt skilt med hvit strek” eller “skilt 204”.
         </p>
       </section>
 
@@ -91,7 +91,7 @@ export default function TrafficSignBank() {
         <div style={{ position: 'relative', maxWidth: '600px', margin: '0 auto' }}>
           <input
             type="text"
-            placeholder="Søk etter skilt (f.eks. vikeplikt, 204, stop)..."
+            placeholder="Søk etter navn, nummer eller utseende (f.eks. blått skilt med hvit pil)..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             style={{
@@ -209,9 +209,12 @@ export default function TrafficSignBank() {
 
       {/* Categories Grid */}
       <section id="categories" style={{ marginBottom: 'var(--spacing-2xl)' }}>
-        <h2 style={{ fontSize: '1.75rem', fontWeight: 800, letterSpacing: '-0.02em', marginBottom: 'var(--spacing-md)' }}>
-          Velg en skiltgruppe
+        <h2 style={{ fontSize: '1.75rem', fontWeight: 800, letterSpacing: '-0.02em', marginBottom: 'var(--spacing-sm)' }}>
+          Skiltgrupper
         </h2>
+        <p style={{ color: 'var(--color-text-light)', fontSize: '1.05rem', lineHeight: '1.6', maxWidth: '800px', marginBottom: 'var(--spacing-lg)' }}>
+          Trafikkskilt er delt inn i grupper etter funksjon. Noen skilt varsler om fare, noen gir forbud, noen påbyr en handling, og andre gir informasjon om vei, felt eller sted. Velg en skiltgruppe for å se skiltene, vanlige misforståelser og hva du skal gjøre i trafikken.
+        </p>
         <div style={{
           display: 'grid',
           gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))',

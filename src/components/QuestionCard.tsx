@@ -1,6 +1,7 @@
 // Action Layer: Question Card Component
 import { useState, useEffect } from 'react'
 import type { Question } from '../services/supabase'
+import ImageLightbox from './ImageLightbox'
 
 interface QuestionCardProps {
     question: Question
@@ -16,6 +17,7 @@ export default function QuestionCard({ question, questionNumber, totalQuestions,
     const [hasAnswered, setHasAnswered] = useState(false)
     const [imageError, setImageError] = useState(false)
     const [imageLoading, setImageLoading] = useState(true)
+    const [isZoomed, setIsZoomed] = useState(false)
 
     // Initialize state with previous answer or reset when question changes
     useEffect(() => {
@@ -90,24 +92,37 @@ export default function QuestionCard({ question, questionNumber, totalQuestions,
             </h2>
 
             {imageUrl && !imageError && (
-                <div className="question-image-container">
-                    {imageLoading && (
-                        <div className="image-loading-placeholder">
-                            Laster bilde...
-                        </div>
-                    )}
-                    <img
+                <>
+                    <div 
+                        className={`question-image-container ${!imageLoading ? 'zoomable' : ''}`}
+                        onClick={() => !imageLoading && setIsZoomed(true)}
+                        title="Klikk for å forstørre bildet"
+                    >
+                        {imageLoading && (
+                            <div className="image-loading-placeholder">
+                                Laster bilde...
+                            </div>
+                        )}
+                        <img
+                            src={imageUrl}
+                            alt="Spørsmålsbilde"
+                            className={`question-image ${imageLoading ? 'hidden' : ''}`}
+                            onLoad={() => setImageLoading(false)}
+                            onError={() => {
+                                console.warn(`Failed to load image: ${imageUrl}`)
+                                setImageError(true)
+                                setImageLoading(false)
+                            }}
+                        />
+                    </div>
+
+                    <ImageLightbox
                         src={imageUrl}
                         alt="Spørsmålsbilde"
-                        className={`question-image ${imageLoading ? 'hidden' : ''}`}
-                        onLoad={() => setImageLoading(false)}
-                        onError={() => {
-                            console.warn(`Failed to load image: ${imageUrl}`)
-                            setImageError(true)
-                            setImageLoading(false)
-                        }}
+                        isOpen={isZoomed}
+                        onClose={() => setIsZoomed(false)}
                     />
-                </div>
+                </>
             )}
 
             <div className="answers-container">

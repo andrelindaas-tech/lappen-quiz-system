@@ -93,6 +93,10 @@ function renderContent(text: string) {
         } else if (/^\d+\.\s/.test(line)) {
             flushUl()
             olItems.push(line.replace(/^\d+\.\s/, ''))
+        } else if (line.trim().startsWith('### ')) {
+            flushUl()
+            flushOl()
+            output.push(<h3 key={key++} className="theory-section-subtitle-inner">{parseInlineLinks(line.trim().slice(4))}</h3>)
         } else {
             flushUl()
             flushOl()
@@ -164,7 +168,7 @@ export default function TheoryTopic({ topic, onBack }: TheoryTopicProps) {
         "@context": "https://schema.org",
         "@type": "Article",
         "headline": topic.title,
-        "description": topic.shortDescription,
+        "description": topic.seoDescription || topic.shortDescription,
         "inLanguage": "nb",
         "datePublished": "2026-02-21",
         "dateModified": "2026-02-21",
@@ -199,17 +203,7 @@ export default function TheoryTopic({ topic, onBack }: TheoryTopicProps) {
     } : null
 
     return (
-        <div className="theory-topic-detail">
-            {/* Inject JSON-LD */}
-            <script type="application/ld+json">
-                {JSON.stringify(structuredData)}
-            </script>
-            {faqData && (
-                <script type="application/ld+json">
-                    {JSON.stringify(faqData)}
-                </script>
-            )}
-
+        <article className="theory-topic-detail">
             {/* Dynamic SEO Header Tags */}
             <Helmet>
                 <title>{topic.seoTitle || `${topic.title} | Teori-test.no`}</title>
@@ -218,13 +212,21 @@ export default function TheoryTopic({ topic, onBack }: TheoryTopicProps) {
                 <meta property="og:description" content={topic.seoDescription || topic.shortDescription} />
                 <meta name="twitter:title" content={topic.seoTitle || `${topic.title} | Teori-test.no`} />
                 <meta name="twitter:description" content={topic.seoDescription || topic.shortDescription} />
+                <script type="application/ld+json">
+                    {JSON.stringify(structuredData)}
+                </script>
+                {faqData && (
+                    <script type="application/ld+json">
+                        {JSON.stringify(faqData)}
+                    </script>
+                )}
             </Helmet>
 
             <button className="theory-back-btn" onClick={onBack}>
                 ← Tilbake til emner
             </button>
 
-            <div className="theory-topic-header">
+            <header className="theory-topic-header">
                 <span className="theory-topic-icon-lg">
                     {getTopicIcon(topic.id, topic.icon)}
                 </span>
@@ -232,12 +234,12 @@ export default function TheoryTopic({ topic, onBack }: TheoryTopicProps) {
                     <h1 className="theory-topic-title">{topic.title}</h1>
                     <p className="theory-topic-desc">{parseInlineLinks(topic.shortDescription)}</p>
                 </div>
-            </div>
+            </header>
 
             <div className="theory-sections">
                 {topic.sections.map((section, index) => (
-                    <div key={index} className={`theory-section theory-section-${section.type}`}>
-                        <h3 className="theory-section-title">{section.title}</h3>
+                    <section key={index} className={`theory-section theory-section-${section.type}`}>
+                        <h2 className="theory-section-title">{section.title}</h2>
 
                         {section.type === 'pyramid' && (
                             <div className="theory-section-content">
@@ -297,7 +299,7 @@ export default function TheoryTopic({ topic, onBack }: TheoryTopicProps) {
                                 {section.content && renderContent(section.content)}
                             </div>
                         )}
-                    </div>
+                    </section>
                 ))}
                 
                 {topic.faq && (
@@ -318,7 +320,7 @@ export default function TheoryTopic({ topic, onBack }: TheoryTopicProps) {
                 
                 {topic.miniQuiz && topic.miniQuiz.length > 0 && (
                     <div className="theory-section theory-section-info" style={{ marginTop: '0' }}>
-                        <h3 className="theory-section-title">Test deg selv</h3>
+                        <h2 className="theory-section-title">Test deg selv</h2>
                         <div className="theory-section-content">
                             <MiniQuiz questions={topic.miniQuiz} />
                         </div>
@@ -334,6 +336,6 @@ export default function TheoryTopic({ topic, onBack }: TheoryTopicProps) {
                     </div>
                 )}
             </div>
-        </div>
+        </article>
     )
 }
