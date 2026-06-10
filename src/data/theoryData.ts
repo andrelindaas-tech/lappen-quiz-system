@@ -3000,6 +3000,309 @@ export const theoryTopics: TheoryTopic[] = [
                 explanation: 'Skjevtrekk under bremsing betyr vanligvis at bremsene tar ujevnt (for eksempel at en bremsekaliper henger eller det er lekkasje), men kan også skyldes dekktrykk eller hjulstilling.'
             }
         ]
+    },
+    {
+        id: 'trafikklys-signaler',
+        title: 'Trafikklys, politiets tegn og signaler',
+        icon: '🚦',
+        shortDescription: 'Trafikklys og signaler forteller deg når du skal stoppe, kjøre eller være ekstra oppmerksom. På teoriprøven må du forstå både vanlige trafikklys, pillys, blinkende gult lys og signaler fra politiet.',
+        color: 'var(--apple-orange)',
+        seoTitle: 'Trafikklys, politiets tegn og signaler | Teoriprøven',
+        seoDescription: 'Lær hva rødt, gult og grønt lys betyr, hvordan pillys fungerer, og hva som gjelder først av politi, trafikklys, skilt og veimerking.',
+        sections: [
+            {
+                title: 'Kort forklart',
+                type: 'text',
+                content: `Trafikklys regulerer trafikken i kryss, ved gangfelt, i kjørefelt og på steder der trafikken må styres ekstra tydelig. Du må ikke bare se hvilken farge som lyser, men også om signalet gjelder hele kjøreretningen, et bestemt felt eller en bestemt retning.
+
+Det viktigste å huske:
+- Rødt lys betyr stopp.
+- Rødt og gult lys samtidig betyr at det snart blir grønt, men du skal fortsatt vente.
+- Grønt lys betyr at du kan kjøre dersom veien er fri.
+- Gult lys betyr stopp hvis du kan stanse trygt.
+- Grønn pil betyr at du kan kjøre i pilens retning, men du må fortsatt være oppmerksom.
+- Blinkende gult lys betyr at signalanlegget ikke regulerer trafikken som vanlig.
+- Politiets tegn og signaler gjelder foran trafikklys, skilt, veimerking og vanlige trafikkregler.`
+            },
+            {
+                title: 'Hva gjelder først?',
+                type: 'text',
+                content: `Hvis flere signaler eller regler virker motstridende, må du følge den som har høyest rang. Dette er samme prinsipp som i myndighetspyramiden, men her er hovedpoenget enkelt:
+1. Politi eller trafikkdirigent
+2. Trafikklys og lyssignaler
+3. Trafikkskilt og veimerking
+4. Vanlige trafikkregler
+
+Eksempel: Hvis trafikklyset viser grønt, men en politibetjent gir tegn om å stoppe, skal du stoppe. Politiets tegn går foran trafikklyset.
+
+[Les mer i artikkelen om myndighetspyramiden](/laeringsressurser/myndighetspyramiden).`
+            },
+            {
+                title: 'Vanlige trafikklys',
+                type: 'table',
+                content: `<div class="theory-table-wrapper">
+<table class="theory-table" style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem;">
+<thead>
+<tr style="border-bottom: 2px solid var(--color-border); font-weight: bold;">
+<th style="padding: 10px 8px;">Signal</th>
+<th style="padding: 10px 8px;">Hva betyr det?</th>
+<th style="padding: 10px 8px;">Hva skal du gjøre?</th>
+</tr>
+</thead>
+<tbody>
+<tr style="border-bottom: 1px solid var(--color-border);">
+<td style="padding: 12px 8px;"><strong>Rødt lys</strong></td>
+<td style="padding: 12px 8px;">Du har ikke lov til å kjøre inn i krysset.</td>
+<td style="padding: 12px 8px;">Stans før stopplinjen.</td>
+</tr>
+<tr style="border-bottom: 1px solid var(--color-border);">
+<td style="padding: 12px 8px;"><strong>Rødt og gult lys</strong></td>
+<td style="padding: 12px 8px;">Det blir snart grønt, men du har fortsatt ikke lov til å kjøre.</td>
+<td style="padding: 12px 8px;">Gjør deg klar, men vent.</td>
+</tr>
+<tr style="border-bottom: 1px solid var(--color-border);">
+<td style="padding: 12px 8px;"><strong>Grønt lys</strong></td>
+<td style="padding: 12px 8px;">Du kan kjøre hvis veien er fri.</td>
+<td style="padding: 12px 8px;">Kjør rolig og sjekk trafikken rundt deg.</td>
+</tr>
+<tr style="border-bottom: 1px solid var(--color-border);">
+<td style="padding: 12px 8px;"><strong>Gult lys</strong></td>
+<td style="padding: 12px 8px;">Lyset skifter til rødt.</td>
+<td style="padding: 12px 8px;">Stans hvis du kan gjøre det trygt.</td>
+</tr>
+<tr style="border-bottom: 1px solid var(--color-border);">
+<td style="padding: 12px 8px;"><strong>Blinkende gult lys</strong></td>
+<td style="padding: 12px 8px;">Trafikklyset regulerer ikke trafikken på vanlig måte.</td>
+<td style="padding: 12px 8px;">Kjør forsiktig og følg skilt, veimerking og vanlige regler.</td>
+</tr>
+</tbody>
+</table>
+</div>`
+            },
+            {
+                title: 'Rødt lys',
+                type: 'text',
+                content: `Rødt lys betyr at du skal stanse. Du skal stoppe før stopplinjen. Hvis det ikke finnes stopplinje, skal du stoppe før krysset eller før gangfeltet.
+
+Du skal ikke kjøre inn i krysset på rødt lys, selv om det ser tomt ut. Rødt lys gjelder helt til signalet endres.
+
+**Vanlig misforståelse:** Mange tror det er greit å rulle sakte fram hvis det ikke kommer trafikk. Det er feil. Rødt lys betyr stopp.`
+            },
+            {
+                title: 'Rødt og gult lys samtidig',
+                type: 'text',
+                content: `Når rødt og gult lys lyser samtidig, betyr det at lyset snart skifter til grønt. Du kan forberede deg på å kjøre, men du har fortsatt ikke lov til å kjøre.
+
+Dette signalet er lett å misforstå på teoriprøven. Rødt og gult betyr ikke "kjør hvis det er klart". Det betyr vent.`
+            },
+            {
+                title: 'Grønt lys',
+                type: 'text',
+                content: `Grønt lys betyr at du kan kjøre, men bare hvis det er trygt. Du må fortsatt ta hensyn til fotgjengere, syklister, kø, utrykningskjøretøy og trafikk som allerede er inne i krysset.
+
+Hvis det er kø på andre siden av krysset, skal du ikke kjøre inn selv om du har grønt lys dersom du kan bli stående og blokkere krysset.
+
+**Vanlig misforståelse:** Grønt lys betyr ikke at du kan kjøre uten å se deg for. Det betyr at du har lov til å kjøre når det er trygt.`
+            },
+            {
+                title: 'Gult lys',
+                type: 'text',
+                content: `Gult lys betyr at signalet er i ferd med å skifte til rødt. Du skal stoppe hvis du kan gjøre det uten fare.
+
+Hvis du er så nær krysset at en hard oppbremsing kan skape fare, kan du fortsette gjennom krysset. Men du skal ikke øke farten for å rekke lyset.
+
+**Kort sagt:** Gult lys betyr stopp hvis du kan stanse trygt.`
+            },
+            {
+                title: 'Pillys og filterlys',
+                type: 'text',
+                content: `Pillys gjelder bare trafikk i den retningen pilen viser. Dette er viktig på teoriprøven, fordi et pillys kan gi en annen beskjed enn hovedlyset.
+
+En grønn pil betyr at du kan kjøre i pilens retning. Du må likevel være oppmerksom på fotgjengere, syklister og andre trafikanter som kan krysse eller befinne seg i området.
+
+En gul pil betyr stopp for trafikk i pilens retning hvis du kan stoppe trygt. Den fungerer på samme måte som vanlig gult lys, men gjelder bare retningen pilen viser.
+
+En rød pil betyr at du ikke kan kjøre i pilens retning.
+
+![Pillys og filterlys](/trafikklys-signalvalg-abc-1.svg)
+*Forskjellen på pilsignal og vanlig rundt signal: Vanlig rundt grønt lys gjelder trafikken signalet styrer, og du kan kjøre i lovlig retning når veien er fri. Skal du svinge til venstre, må du fortsatt ta hensyn til møtende trafikk. Grønn pil gir tillatelse til å kjøre kun i pilens retning (du har fortsatt aktsomhetsplikt).*
+
+**Forklaring til illustrasjon: røde og grønne pillys**
+- **A:** Rød pil til venstre betyr at du ikke kan kjøre til venstre. Rødt hovedlys betyr også stopp for trafikk rett frem.
+- **B:** Rød og gul pil betyr at signalet for venstresving snart blir grønt, men du må fortsatt vente. Rødt og gult hovedlys betyr også vent.
+- **C:** Grønn pil til venstre betyr at du kan kjøre til venstre når det er trygt. Grønt hovedlys betyr at trafikk rett frem kan kjøre hvis veien er fri.
+
+![Gul pil, gult lys og grønn pil](/trafikklys-signalvalg-abc-2.svg)
+
+**Forklaring til illustrasjon: gul pil, gult lys og grønn pil**
+- **A:** Gul pil gjelder bare trafikk i pilens retning. Du skal stoppe hvis du kan gjøre det trygt.
+- **B:** Vanlig gult lys gjelder trafikken signalet styrer, og betyr at du skal stoppe hvis du kan stanse trygt.
+- **C:** Grønn pil til høyre sammen med rødt hovedlys betyr at du kan kjøre til høyre, men du må fortsatt være oppmerksom på andre trafikanter.`
+            },
+            {
+                title: 'Blinkende gult lys',
+                type: 'text',
+                content: `Blinkende gult lys betyr at signalanlegget ikke regulerer trafikken på vanlig måte. Da skal du kjøre ekstra forsiktig og følge skilt, veimerking og vanlige trafikkregler.
+
+Ved et kryss med blinkende gult lys kan for eksempel vikepliktskilt, stoppskilt eller høyreregelen avgjøre hvem som skal kjøre først.
+
+**Vanlig misforståelse:** Blinkende gult betyr ikke at du har forkjørsrett. Det betyr at du må være ekstra oppmerksom.`
+            },
+            {
+                title: 'Trafikklys ute av drift',
+                type: 'text',
+                content: `Hvis trafikklyset er helt mørkt eller ute av drift, må du ikke behandle krysset som om du har grønt lys. Da gjelder skilt, veimerking og vanlige trafikkregler.
+
+Se etter:
+- vikepliktskilt
+- stoppskilt
+- forkjørsveg
+- veimerking
+- høyreregelen
+
+Hvis du er usikker, senk farten og vær forberedt på å stoppe.`
+            },
+            {
+                title: 'Politiets tegn og signaler',
+                type: 'text',
+                content: `Politiets tegn og signaler gjelder foran trafikklys. Det betyr at du alltid skal følge politiets tegn hvis de dirigerer trafikken.
+
+Politiet kan bruke håndtegn, kroppsstilling, lykt, fløyte eller andre tydelige signaler. Det viktigste for teoriprøven er å forstå at politiet kan overstyre både trafikklys og skilt.
+
+Eksempler:
+- **Politiet viser stopp:** Du skal stoppe, selv om lyset er grønt.
+- **Politiet vinker deg fram:** Du kan kjøre, selv om du ellers ville hatt vikeplikt.
+- **Politiet dirigerer trafikken i et kryss:** Følg tegnene, ikke trafikklyset.`
+            },
+            {
+                title: 'Trafikkdirigent og vegarbeid',
+                type: 'text',
+                content: `Ved vegarbeid kan trafikken dirigeres av trafikkdirigent, midlertidige lys eller skilt. Du skal følge dirigentens tegn og kjøre med lav fart.
+
+Midlertidige signaler og manuell dirigering brukes ofte når ett kjørefelt er stengt, ved innsnevringer eller der trafikken må slippes gjennom én retning av gangen.`
+            },
+            {
+                title: 'Sammen med skilt og veimerking',
+                type: 'text',
+                content: `Trafikklys må ofte leses sammen med skilt og veimerking. Stopplinjen viser hvor du skal stoppe. Piler i kjørefeltet viser hvilken retning feltet er beregnet for. Skilt kan vise vikeplikt, påbudt kjøreretning eller forbud mot å svinge.
+
+Når du nærmer deg et lyskryss, bør du derfor se etter:
+- hvilken farge som lyser
+- om lyset har pil
+- hvilken retning pilen gjelder
+- stopplinje
+- gangfelt og sykkelfelt
+- skilt og kjørefeltpiler
+
+[Les også om veimerking](/laeringsressurser/veimerking) og [trafikkskilt](/trafikkskilt).`
+            },
+            {
+                title: 'Typiske teorifeller',
+                type: 'text',
+                content: `- Rødt og gult lys betyr ikke at du kan kjøre. Du skal vente.
+- Gult lys betyr ikke "fort deg gjennom". Du skal stoppe hvis du kan gjøre det trygt.
+- Grønt lys betyr ikke at alt er fritt. Du må fortsatt vurdere trafikken.
+- Grønn pil gjelder bare retningen pilen viser.
+- Blinkende gult lys gir ikke forkjørsrett.
+- Politiets tegn går foran trafikklys.
+- Hvis trafikklyset er ute av drift, gjelder skilt, veimerking og vanlige regler.`
+            },
+            {
+                title: 'Kort sjekkliste til teoriprøven',
+                type: 'text',
+                content: `Du bør kunne:
+- hva rødt, rødt/gult, gult og grønt lys betyr
+- hva pillys betyr
+- hva blinkende gult lys betyr
+- hva du gjør når trafikklys er ute av drift
+- at politiets tegn går foran trafikklys
+- at grønt lys fortsatt krever oppmerksomhet
+- at gult lys betyr stopp hvis du kan stanse trygt`
+            }
+        ],
+        faq: [
+            {
+                question: 'Hva betyr rødt og gult lys samtidig?',
+                answer: 'Rødt og gult lys samtidig betyr at signalet snart skifter til grønt, men du skal fortsatt vente. Du har ikke lov til å kjøre før det blir grønt.'
+            },
+            {
+                question: 'Hva betyr gult lys?',
+                answer: 'Gult lys betyr at signalet skifter til rødt. Du skal stoppe hvis du kan gjøre det trygt. Hvis du er for nær til å stoppe uten fare, kan du fortsette.'
+            },
+            {
+                question: 'Hva betyr grønn pil i trafikklys?',
+                answer: 'Grønn pil betyr at du kan kjøre i pilens retning. Pilen gjelder bare den retningen den peker, og du må fortsatt være oppmerksom på andre trafikanter.'
+            },
+            {
+                question: 'Hva betyr blinkende gult lys?',
+                answer: 'Blinkende gult lys betyr at trafikklyset ikke regulerer trafikken på vanlig måte. Du må kjøre forsiktig og følge skilt, veimerking og vanlige trafikkregler.'
+            },
+            {
+                question: 'Hva gjelder først av politi og trafikklys?',
+                answer: 'Politiets tegn og signaler gjelder foran trafikklys. Hvis politiet viser stopp, skal du stoppe selv om trafikklyset er grønt.'
+            },
+            {
+                question: 'Hva gjør jeg hvis trafikklyset er ute av drift?',
+                answer: 'Da skal du følge skilt, veimerking og vanlige trafikkregler, for eksempel vikeplikt eller høyreregelen. Kjør rolig og vær forberedt på å stoppe.'
+            }
+        ],
+        miniQuiz: [
+            {
+                question: 'Hva betyr rødt og gult lys samtidig?',
+                options: [
+                    'Du kan kjøre hvis veien er fri',
+                    'Du skal vente, men gjøre deg klar til grønt',
+                    'Du har forkjørsrett',
+                    'Trafikklyset er ute av drift'
+                ],
+                correct: 'Du skal vente, men gjøre deg klar til grønt',
+                explanation: 'Rødt og gult betyr at lyset snart blir grønt, men du har fortsatt ikke lov til å kjøre.'
+            },
+            {
+                question: 'Hva betyr gult lys?',
+                options: [
+                    'Kjør raskt gjennom krysset',
+                    'Stopp hvis du kan gjøre det trygt',
+                    'Du har alltid forkjørsrett',
+                    'Lyset gjelder bare fotgjengere'
+                ],
+                correct: 'Stopp hvis du kan gjøre det trygt',
+                explanation: 'Gult lys varsler rødt lys. Du skal stoppe hvis det kan gjøres uten fare.'
+            },
+            {
+                question: 'Hva betyr blinkende gult lys?',
+                options: [
+                    'Du har forkjørsrett',
+                    'Du skal alltid stoppe helt',
+                    'Trafikklyset regulerer ikke trafikken på vanlig måte',
+                    'Du kan ignorere alle skilt'
+                ],
+                correct: 'Trafikklyset regulerer ikke trafikken på vanlig måte',
+                explanation: 'Ved blinkende gult må du følge skilt, veimerking og vanlige regler.'
+            },
+            {
+                question: 'Hva gjelder først hvis politiet viser stopp, men trafikklyset er grønt?',
+                options: [
+                    'Trafikklyset',
+                    'Skiltet nærmest deg',
+                    'Politiets tegn',
+                    'Høyreregelen'
+                ],
+                correct: 'Politiets tegn',
+                explanation: 'Politiets tegn og signaler går foran trafikklys.'
+            },
+            {
+                question: 'Hva betyr grønn pil til høyre sammen med rødt hovedlys?',
+                options: [
+                    'Du kan kjøre rett frem og til høyre',
+                    'Du kan kjøre til høyre når det er trygt',
+                    'Du må alltid stoppe til lyset blir helt grønt',
+                    'Pilen gjelder bare gående'
+                ],
+                correct: 'Du kan kjøre til høyre når det er trygt',
+                explanation: 'Grønn pil gjelder bare retningen pilen viser. Du må fortsatt være oppmerksom.'
+            }
+        ]
     }
 ]
 
