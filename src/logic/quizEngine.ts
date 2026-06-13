@@ -22,6 +22,12 @@ export interface QuizResult {
     percentage: number
     maxErrors: number
     timeTaken?: number  // Time taken in seconds
+    categoryBreakdown?: {
+        [category: string]: {
+            correct: number
+            total: number
+        }
+    }
 }
 
 export class QuizEngine {
@@ -72,6 +78,22 @@ export class QuizEngine {
         const passed = errors <= this.maxErrors
         const percentage = Math.round((correctCount / totalCount) * 100)
 
+        // Calculate category breakdown
+        const categoryBreakdown: { [category: string]: { correct: number; total: number } } = {}
+        for (const answer of this.answers) {
+            const question = questions.find(q => q.id === answer.questionId)
+            if (question) {
+                const cat = question.category || 'ukjent'
+                if (!categoryBreakdown[cat]) {
+                    categoryBreakdown[cat] = { correct: 0, total: 0 }
+                }
+                categoryBreakdown[cat].total++
+                if (answer.isCorrect) {
+                    categoryBreakdown[cat].correct++
+                }
+            }
+        }
+
         console.log(`📊 Quiz Results:`)
         console.log(`   Correct: ${correctCount}/${totalCount}`)
         console.log(`   Errors: ${errors}`)
@@ -85,7 +107,8 @@ export class QuizEngine {
             errors,
             passed,
             percentage,
-            maxErrors: this.maxErrors
+            maxErrors: this.maxErrors,
+            categoryBreakdown
         }
     }
 

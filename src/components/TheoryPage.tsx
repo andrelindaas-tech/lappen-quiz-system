@@ -33,6 +33,7 @@ const getTopicIcon = (id: string) => {
         case 'myndighetspyramiden':
             return <Layers size={24} strokeWidth={1.8} />
         case 'veimerking':
+        case 'feltvalg-fletting-kollektivfelt':
             return <Route size={24} strokeWidth={1.8} />
         case 'automatlappen':
             return <Zap size={24} strokeWidth={1.8} />

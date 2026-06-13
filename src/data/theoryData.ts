@@ -3303,6 +3303,209 @@ Når du nærmer deg et lyskryss, bør du derfor se etter:
                 explanation: 'Grønn pil gjelder bare retningen pilen viser. Du må fortsatt være oppmerksom.'
             }
         ]
+    },
+    {
+        id: 'feltvalg-fletting-kollektivfelt',
+        title: 'Feltvalg og fletting: kjørefelt, kollektivfelt og påkjøring',
+        shortDescription: 'Feltvalg handler om å lese skilt, vegoppmerking og trafikklys tidlig nok til å plassere seg trygt. Lær reglene for feltskifte, fletting og kollektivfelt.',
+        icon: '🛣️',
+        color: 'var(--apple-blue)',
+        seoTitle: 'Feltvalg og fletting: regler for kjørefelt og kollektivfelt',
+        seoDescription: 'Lær forskjellen på feltskifte og fletting, hvordan du bruker kollektivfelt og sambruksfelt, og hva som gjelder ved påkjøring og feltvalg til teoriprøven.',
+        sections: [
+            {
+                title: '1. Kort forklart',
+                type: 'text',
+                content: 'Feltvalg betyr å velge riktig kjørefelt i god tid. Feltskifte betyr at du bytter fra ett felt til et annet, og da har du vikeplikt for trafikken i feltet du skal inn i. Fletting gjelder når to vanlige kjørefelt i samme retning blir til ett; da skal førerne tilpasse farten og slippe hverandre inn vekselvis. Kollektivfelt og sambruksfelt kan bare brukes når skilt og eventuelle underskilt tillater det.'
+            },
+            {
+                title: '2. Hva betyr feltvalg?',
+                type: 'text',
+                content: 'Feltvalg er plasseringen din før du kommer til en situasjon der veien deler seg, feltene får ulike retninger, eller ett felt har egne regler. Riktig feltvalg gjør trafikken mer forutsigbar for alle rundt deg.\n\nDu må velge felt tidlig nok til at du slipper brå feltbytter. Det gjelder særlig før kryss, [rundkjøringer](/laeringsressurser/rundkjoring), avkjøringer, påkjøringer til motorvei, kollektivfelt og steder der feltpiler viser hvilken retning feltet gjelder for.\n\nEt godt feltvalg bygger på fem ting:\n- skilt over eller ved kjørefeltet\n- vegoppmerking, som piler, kjørefeltlinjer og sperrelinjer\n- trafikklys og pilsignaler\n- hvor du skal videre\n- trafikkflyt, avstand og sikt\n\nHvis du oppdager for sent at du ligger i feil felt, er det ofte tryggere å følge feltet videre og finne en ny lovlig vei tilbake enn å presse deg inn i siste øyeblikk.'
+            },
+            {
+                title: '3. Feltskifte, fletting og påkjøring er ikke det samme',
+                type: 'table',
+                content: '<div style="overflow-x: auto; -webkit-overflow-scrolling: touch; margin-top: 1rem;"><table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem;"><thead><tr style="background-color: var(--color-surface); border-bottom: 2px solid var(--color-border);"><th style="padding: 12px 8px; font-weight: 600;">Situasjon</th><th style="padding: 12px 8px; font-weight: 600;">Hva betyr det?</th><th style="padding: 12px 8px; font-weight: 600;">Hovedregel</th><th style="padding: 12px 8px; font-weight: 600;">Typisk teorifelle</th></tr></thead><tbody><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px; font-weight: 600; white-space: nowrap;">Feltvalg</td><td style="padding: 12px 8px;">Du velger riktig felt før kryss, rundkjøring eller avkjøring</td><td style="padding: 12px 8px;">Planlegg tidlig og plasser deg tydelig</td><td style="padding: 12px 8px; color: #E24B4A;">Å bytte felt for sent</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px; font-weight: 600; white-space: nowrap;">Feltskifte</td><td style="padding: 12px 8px;">Du bytter fra ett kjørefelt til et annet</td><td style="padding: 12px 8px;">Du har vikeplikt for trafikken i feltet du skal inn i</td><td style="padding: 12px 8px; color: #E24B4A;">Å tro at blinklys gir deg rett til å skifte felt</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px; font-weight: 600; white-space: nowrap;">Fletting</td><td style="padding: 12px 8px;">To vanlige felt i samme retning går sammen til ett</td><td style="padding: 12px 8px;">Førerne skal tilpasse farten og slippe hverandre inn vekselvis</td><td style="padding: 12px 8px; color: #E24B4A;">Å tro at ett felt alltid har absolutt forkjørsrett</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px; font-weight: 600; white-space: nowrap;">Påkjøring med vikeplikt</td><td style="padding: 12px 8px;">Du kjører inn på en vei der du har vikeplikt</td><td style="padding: 12px 8px;">Du må vente på trygg luke</td><td style="padding: 12px 8px; color: #E24B4A;">Å tro at all påkjøring til motorvei er fletting</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px; font-weight: 600; white-space: nowrap;">Akselerasjonsfelt</td><td style="padding: 12px 8px;">Du bruker feltet til å komme opp i fart før innkjøring</td><td style="padding: 12px 8px;">Kom opp i fart, observer og finn luke</td><td style="padding: 12px 8px; color: #E24B4A;">Å legge seg inn for tidlig eller for sakte</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px; font-weight: 600; white-space: nowrap;">Kollektivfelt</td><td style="padding: 12px 8px;">Et felt reservert for bestemte trafikantgrupper</td><td style="padding: 12px 8px;">Skilt og underskilt avgjør hvem som kan bruke feltet</td><td style="padding: 12px 8px; color: #E24B4A;">Å overse tidsrom eller vilkår på underskilt</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px; font-weight: 600; white-space: nowrap;">Sambruksfelt</td><td style="padding: 12px 8px;">Et felt for kjøretøy som oppfyller bestemte vilkår</td><td style="padding: 12px 8px;">Følg skiltet, ofte krav til antall personer</td><td style="padding: 12px 8px; color: #E24B4A;">Å tro at alle personbiler kan bruke feltet</td></tr></tbody></table></div>'
+            },
+            {
+                title: '4. Fletting: glidelåsprinsippet',
+                type: 'text',
+                content: 'Ved fletting blir to vanlige kjørefelt i samme retning til ett felt. Da skal førerne tilpasse farten slik at bilene kan fortsette vekselvis, omtrent som en glidelås.\n\nDet betyr ikke at du skal presse deg frem. Det betyr heller ikke at du skal stoppe unødvendig tidlig og lage lang kø bak deg. Målet er flyt: finn plassen din i rekken, tilpass farten og gjør valget ditt tydelig.\n\nSlik gjør du fletting riktig:\n- bruk begge felt frem til flettingen\n- se langt frem og finn en naturlig luke\n- bruk speil, blindsone og blinklys\n- legg deg ikke rett ved siden av en annen bil hvis du snart skal flette\n- tilpass farten to trafikken i feltet ved siden av\n- slipp inn annenhver bil når det er tett trafikk\n\n![Illustrasjon av fletting der kjøretøy tilpasser farten for å slippe hverandre inn vekselvis.](/images/feltvalg-fletting-glidelas.png)\n*Ved fletting skal trafikken i feltene tilpasse farten og slippe hverandre inn vekselvis.*\n\n**Bildeoppgave:**\nDu kjører i feltet som snart flettes sammen med feltet ved siden av. Hvordan bør du opptre?\n*Riktig svar:* Tilpass farten, finn plass i rekken og samarbeid med trafikken i det andre feltet slik at bilene kan kjøre videre vekselvis.'
+            },
+            {
+                title: '5. Feltskifte: du har vikeplikt',
+                type: 'text',
+                content: 'Ved vanlig feltskifte er regelen strengere enn ved fletting. Hvis du skal skifte fra ett kjørefelt til et annet, har du [vikeplikt](/laeringsressurser/vikeplikt) for kjøretøy som allerede er i feltet du skal inn i.\n\nBlinklys er bare et signal om hva du ønsker å gjøre. Det gir deg ikke rett til å skifte felt. Før du legger deg inn må du kontrollere speil, blindsone, avstand og fart. Hvis feltet ikke er ledig, venter du.\n\nDette er typisk feltskifte:\n- du bytter felt på motorvei for å kjøre forbi (les om [forbikjøring](/laeringsressurser/forbikjoring))\n- du legger deg fra høyre til venstre felt før en [rundkjøring](/laeringsressurser/rundkjoring)\n- du vil inn i et svingefelt før et kryss\n- du vil ut av kollektivfelt eller inn i kollektivfelt\n- du bytter felt fordi feltet ditt går i feil retning\n\n**Hovedpoenget til teoriprøven:**\nHvis feltet du skal inn i allerede har trafikk, må du ikke hindre eller forstyrre den trafikken.'
+            },
+            {
+                title: '6. Påkjøring og akselerasjonsfelt',
+                type: 'text',
+                content: 'Et akselerasjonsfelt, også kalt fartsøkningsfelt, brukes for å komme opp i fart før du kjører inn på en større vei. Dette er vanlig ved påkjøring til motorvei eller motortrafikkvei.\n\nDen viktigste feilen er å kjøre for sakte. Hvis du kommer inn på motorveien med for lav fart, tvinger du andre til å bremse eller skifte felt (les om [reaksjonstid](/laeringsressurser/reaksjonstid) og fartstilpasning). Bruk feltet til å øke farten, observere trafikken og finne en trygg luke.\n\n![Illustrasjon av bil i akselerasjonsfelt som skal inn på motorvei.](/images/feltvalg-akselerasjonsfelt.png)\n*Bruk akselerasjonsfeltet til å komme opp i fart, observere og finne en trygg luke.*\n\nSjekk dette før du legger deg inn:\n- Er det vikepliktskilt, eller er dette en sammenfletting?\n- Er linjen mellom feltene heltrukken eller stiplet? (les om [veimerking](/laeringsressurser/veimerking))\n- Har du nok fart til å passe inn i trafikkflyten? (se [fartsgrenser](/laeringsressurser/fartsgrenser))\n- Har du kontrollert speil og blindsone?\n- Har du gitt tegn i god tid?\n- Er det plass foran eller bak kjøretøyet du skal flette inn ved?\n\nHvis påkjøringen har vikepliktskilt eller kort innkjøring uten reelt akselerasjonsfelt, må du vente til det er trygt å kjøre inn. Ikke bland dette med fletting.'
+            },
+            {
+                title: '7. Kollektivfelt',
+                type: 'text',
+                content: 'Kollektivfelt er felt som først og fremst er satt av til kollektivtrafikk og bestemte trafikantgrupper. Hvem som kan bruke feltet avgjøres av [skilt](/laeringsressurser/skilt) og eventuelle underskilt.\n\nPå teoriprøven må du være ekstra oppmerksom på underskilt. Et kollektivfeltskilt alene gir ikke alltid nok informasjon. Underskilt kan begrense bruken etter kjøretøytype, passasjerer, tidspunkt eller lokale regler.\n\n![Illustrasjon av kollektivfelt merket for buss og taxi med underskilt om elbil uten passasjer.](/images/kollektivfelt-elbil-underskilt.png)\n*Kollektivfelt kan ha underskilt som begrenser hvem som kan bruke feltet. Les alltid både hovedskilt og underskilt.*\n\nI bildet står det: *Gjelder ikke elmotorvogn uten passasjer 06-09*. Det betyr at unntaket for elbil uten passasjer ikke gjelder i dette tidsrommet. Kjører du elbil alene klokken 08.15, skal du ikke bruke kollektivfeltet her.\n\n**Viktig å huske:**\n- Les både hovedskilt og underskilt.\n- Ikke anta at elbil alltid kan bruke kollektivfelt.\n- Reglene kan være tidsstyrte og lokale.\n- Du må fortsatt skifte felt trygt når du skal inn eller ut av kollektivfeltet.\n- Hvis du er usikker på om du har lov til å bruke feltet, velg vanlig kjørefelt.\n\n**Bildeoppgave:**\nDu kjører elbil uten passasjer klokken 08.15 og ser skiltet på bildet. Kan du bruke kollektivfeltet?\n*Riktig svar:* Nei. Underskiltet sier at dette ikke gjelder for elmotorvogn uten passasjer i tidsrommet 06-09.'
+            },
+            {
+                title: '8. Sambruksfelt',
+                type: 'text',
+                content: 'Sambruksfelt er felt som kan brukes av kjøretøy som oppfyller bestemte vilkår. Det vanligste poenget er antall personer i bilen, men du må alltid lese skiltet og eventuelle underskilt.\n\nForskjellen på kollektivfelt og sambruksfelt er at kollektivfelt normalt handler om bestemte trafikantgrupper, mens sambruksfelt handler om vilkår for bruk av feltet. En personbil kan derfor være lovlig i et sambruksfelt hvis vilkårene er oppfylt, men ikke hvis føreren kjører alene og skiltet krever flere personer.\n\n**Typisk teorifelle:**\nDu ser et felt som virker "ledig" og tenker at du kan bruke det for å komme raskere frem. Men spesialfelt er ikke vanlige forbikjøringsfelt. Først må du sjekke om kjøretøyet og situasjonen din oppfyller vilkårene.'
+            },
+            {
+                title: '9. Feltpiler, skilt og trafikklys',
+                type: 'text',
+                content: 'Feltpiler viser hvilken retning et kjørefelt skal brukes til. Hvis venstre felt har pil til venstre, skal du ikke bruke det feltet for å kjøre rett frem. Hvis høyre felt har pil rett frem, skal du ikke svinge til høyre.\n\nTrafikklys kan også gjelde bestemte felt eller retninger. Et grønt pilsignal betyr at du kan kjøre i pilens retning når det er trygt og lovlig, men du må fortsatt lese feltplassering, skilt og vikeplikt i situasjonen.\n\nSe etter dette i god tid:\n- piler malt i kjørefeltet (se [veimerking](/laeringsressurser/veimerking))\n- skilt over feltet (se [skilt](/laeringsressurser/skilt))\n- egne signaler for venstresving eller høyresving\n- sperrelinjer som gjør feltbytte ulovlig\n- felt som er reservert for buss, taxi, sykkel eller sambruk\n\nNår du har valgt felt, bør du holde plasseringen rolig og tydelig. Sen feltbytte i kryss er en av de vanligste måtene å skape usikkerhet på.'
+            },
+            {
+                title: '10. Envegskjøring og feltvalg',
+                type: 'text',
+                content: 'På enveiskjørt vei kan det være flere felt i samme retning. Da må du velge felt ut fra hvor du skal videre, hva skilt og vegoppmerking viser, og hvordan trafikken flyter.\n\nSkal du til venstre, er det ofte naturlig å plassere seg mot venstre i god tid. Skal du rett frem eller til høyre, må du følge feltpiler og skilt. Det viktigste er at plasseringen din gjør handlingen forutsigbar for andre.\n\nHvis du må bytte felt på en enveiskjørt vei, gjelder fortsatt regelen for feltskifte: du har vikeplikt for trafikken i feltet du skal inn i.'
+            },
+            {
+                title: '11. Ekspertforklaring',
+                type: 'info',
+                content: 'På teoriprøven er det ofte ikke nok å kjenne navnet på skiltet. Du må forstå hvilken type handling situasjonen krever.\n\nStill deg disse spørsmålene i riktig rekkefølge:\n1. Er dette et vanlig feltskifte?\n2. Er det en flettesituasjon der to vanlige felt blir til ett?\n3. Har jeg vikeplikt ved innkjøring eller påkjøring?\n4. Er feltet reservert, for eksempel kollektivfelt eller sambruksfelt?\n5. Sier underskiltet noe om tid, kjøretøytype eller passasjerer?\n\nHvis du bytter felt frivillig, har du som regel vikeplikt for trafikken i feltet du skal inn i. Hvis to vanlige felt i samme retning reduseres til ett, er det fletting, og farten skal tilpasses gjensidig. Hvis feltet er et kollektivfelt eller sambruksfelt, avgjør skilt og underskilt om du kan bruke det.\n\nDen beste strategien er å lese situasjonen utenfra og inn: først skilt, så oppmerking, så trafikklys, så trafikkflyt, og til slutt plasseringen din.'
+            },
+            {
+                title: '12. Typiske teorifeller',
+                type: 'warning',
+                content: '- Blinklys gir deg ikke rett til å skifte felt.\n- Fletting er ikke det samme som vanlig feltskifte.\n- Påkjøring til motorvei er ikke alltid fletting; noen steder har du vikeplikt.\n- Du skal ikke skifte felt over heltrukken linje.\n- Kollektivfelt kan ha tidsbegrensninger og lokale regler.\n- Elbil kan ikke alltid bruke kollektivfelt.\n- Sambruksfelt krever at vilkårene på skiltet er oppfylt.\n- Feltpiler gjelder kjørefeltet du ligger i, ikke bare retningen du ønsker.\n- Det er bedre å kjøre en omvei enn å presse seg inn fra feil felt.\n- Underskilt kan endre hele svaret på en bildeoppgave.'
+            },
+            {
+                title: '13. Slik bør du tenke på teoriprøven',
+                type: 'tip',
+                content: 'Når du får et bilde med flere felt, start med å finne ut hva slags felt du ser. Er det et vanlig kjørefelt, et svingefelt, et kollektivfelt, et sambruksfelt eller et akselerasjonsfelt?\n\nDeretter ser du på handlingen: Skal du bare fortsette, skifte felt, flette, svinge eller kjøre inn på en ny vei? Hver handling har sin egen regel. Det er derfor to bilder som ser ganske like ut, kan ha helt ulike svar.\n\n**En god huskeregel:**\n*Felt først, handling etterpå.*\n\nFørst forstår du hvilket felt du er i. Deretter vurderer du hva du har lov til å gjøre fra det feltet.'
+            }
+        ],
+        faq: [
+            {
+                question: 'Hva er feltvalg?',
+                answer: 'Feltvalg betyr å velge riktig kjørefelt ut fra hvor du skal, skilt, vegoppmerking, trafikklys og trafikkflyt. Du bør velge felt tidlig nok til at du slipper brå eller farlige feltskifter.'
+            },
+            {
+                question: 'Hva er forskjellen på feltskifte og fletting?',
+                answer: 'Ved feltskifte bytter du fra ett kjørefelt til et annet, og da har du vikeplikt for trafikken i feltet du skal inn i. Ved fletting blir to vanlige felt i samme retning til ett, og førerne skal tilpasse farten gjensidig.'
+            },
+            {
+                question: 'Hvem har vikeplikt ved fletting?',
+                answer: 'Ved fletting skal førerne tilpasse farten og slippe hverandre inn vekselvis. Det er ikke det samme som vanlig feltskifte, der den som skifter felt har vikeplikt.'
+            },
+            {
+                question: 'Hva betyr glidelåsprinsippet?',
+                answer: 'Glidelåsprinsippet betyr at bilene slipper hverandre inn vekselvis når to felt blir til ett. Målet er jevn trafikkflyt uten at noen presser seg frem eller stopper unødvendig tidlig.'
+            },
+            {
+                question: 'Må jeg blinke ved fletting?',
+                answer: 'Ja, du bør bruke blinklys når du skal bevege deg inn i et annet felt eller gjøre plasseringen din tydelig. Men blinklys gir deg ikke rett til å presse deg inn.'
+            },
+            {
+                question: 'Hva gjelder ved vanlig feltskifte?',
+                answer: 'Når du skifter kjørefelt, har du vikeplikt for kjøretøy som allerede er i feltet du skal inn i. Du må kontrollere speil, blindsone, avstand og fart før du legger deg inn.'
+            },
+            {
+                question: 'Hva er et akselerasjonsfelt?',
+                answer: 'Et akselerasjonsfelt er et felt der du øker farten for å tilpasse deg trafikken på veien du skal inn på. Det brukes ofte ved påkjøring til motorvei eller motortrafikkvei.'
+            },
+            {
+                question: 'Er påkjøring til motorvei alltid fletting?',
+                answer: 'Nei. Noen påkjøringer har akselerasjonsfelt og fletting, mens andre har tydelig vikeplikt eller kort innkjøring. Du må lese skilt og oppmerking i situasjonen.'
+            },
+            {
+                question: 'Hvem kan bruke kollektivfelt?',
+                answer: 'Hvem som kan bruke kollektivfelt avgjøres av skilt og underskilt. Feltet kan være reservert for bestemte kjøretøy eller trafikantgrupper, og reglene kan være lokale eller tidsstyrte.'
+            },
+            {
+                question: 'Kan elbil bruke kollektivfelt?',
+                answer: 'Ikke alltid. Elbilregler i kollektivfelt kan variere etter sted, tidspunkt og underskilt. Hvis underskiltet begrenser bruk for elmotorvogn uten passasjer, må du følge den begrensningen.'
+            },
+            {
+                question: 'Hva er sambruksfelt?',
+                answer: 'Sambruksfelt er et felt som kan brukes av kjøretøy som oppfyller bestemte vilkår, ofte et krav om flere personer i bilen. Vilkårene står på skilt eller underskilt.'
+            },
+            {
+                question: 'Hva gjør jeg hvis jeg ligger i feil felt?',
+                answer: 'Hvis du ligger i feil felt og ikke kan skifte trygt og lovlig, bør du følge feltet videre og finne en ny lovlig vei tilbake. Ikke press deg inn i siste øyeblikk.'
+            }
+        ],
+        miniQuiz: [
+            {
+                question: 'Hva er hovedforskjellen på feltskifte og fletting?',
+                options: [
+                    'Ved feltskifte har den som skifter felt vikeplikt. Ved fletting skal trafikken tilpasse farten gjensidig.',
+                    'Ved fletting har alltid bilen i venstre felt forkjørsrett.',
+                    'Ved feltskifte trenger du bare å blinke, så må andre slippe deg inn.'
+                ],
+                correct: 'Ved feltskifte har den som skifter felt vikeplikt. Ved fletting skal trafikken tilpasse farten gjensidig.',
+                explanation: 'Blinklys varsler andre om hva du vil gjøre, men det gir deg ikke rett til å skifte felt. Fletting gjelder når to vanlige felt i samme retning blir til ett.'
+            },
+            {
+                question: 'Du kjører i et akselerasjonsfelt inn på motorvei. Hva bør du gjøre?',
+                options: [
+                    'Øke farten, observere speil og blindsone, gi tegn og finne en trygg luke.',
+                    'Stoppe i enden av feltet og vente til hele motorveien er tom.',
+                    'Kjøre rett inn i hovedfeltet fordi trafikken på motorveien always har plikt til å vike.'
+                ],
+                correct: 'Øke farten, observere speil og blindsone, gi tegn og finne en trygg luke.',
+                explanation: 'Akselerasjonsfeltet skal hjelpe deg å tilpasse farten til trafikken på hovedveien. Du må likevel kontrollere at det er trygt å legge deg inn.'
+            },
+            {
+                question: 'Kan elbil alltid kjøre i kollektivfelt?',
+                options: [
+                    'Nei, du må følge skilt, underskilt og lokale regler.',
+                    'Ja, elbil kan alltid bruke alle kollektivfelt.',
+                    'Ja, men bare hvis du blinker.'
+                ],
+                correct: 'Nei, du må følge skilt, underskilt og lokale regler.',
+                explanation: 'Kollektivfelt kan ha egne vilkår, tidsbegrensninger og lokale regler. Les alltid underskiltet.'
+            },
+            {
+                question: 'Hva betyr glidelåsprinsippet ved fletting?',
+                options: [
+                    'Bilene slipper hverandre inn vekselvis, omtrent annenhver bil.',
+                    'Alle biler i høyre felt må stoppe helt.',
+                    'Den største bilen skal alltid først.'
+                ],
+                correct: 'Bilene slipper hverandre inn vekselvis, omtrent annenhver bil.',
+                explanation: 'Fletting handler om gjensidig fartstilpasning og samarbeid når to vanlige felt blir til ett.'
+            },
+            {
+                question: 'Du skal skifte fra høyre til venstre kjørefelt. Det ligger en bil i venstre felt litt bak deg. Hva må du gjøre?',
+                options: [
+                    'Vente til du har trygg avstand og ikke hindrer bilen i venstre felt.',
+                    'Blinke og legge deg inn med en gang.',
+                    'Bremse hardt slik at bilen i venstre felt må slippe deg inn.'
+                ],
+                correct: 'Vente til du har trygg avstand og ikke hindrer bilen i venstre felt.',
+                explanation: 'Ved feltskifte har du vikeplikt for trafikken i feltet du skal inn i.'
+            },
+            {
+                question: 'Du kjører elbil uten passasjer klokken 08.15. Skiltet ved kollektivfeltet sier: Gjelder ikke elmotorvogn uten passasjer 06-09. Kan du bruke kollektivfeltet?',
+                options: [
+                    'Nei, ikke i dette tidsrommet.',
+                    'Ja, fordi alle elbiler kan bruke kollektivfelt.',
+                    'Ja, hvis det er lite trafikk.'
+                ],
+                correct: 'Nei, ikke i dette tidsrommet.',
+                explanation: 'Underskiltet begrenser bruken for elmotorvogn uten passasjer mellom 06 og 09. Da må du velge vanlig kjørefelt.'
+            },
+            {
+                question: 'Hva er en vanlig feil ved feltvalg før kryss?',
+                options: [
+                    'Å bytte felt for sent og skape usikkerhet for andre.',
+                    'Å velge felt tidlig.',
+                    'Å følge kjørefeltpilene.'
+                ],
+                correct: 'Å bytte felt for sent og skape usikkerhet for andre.',
+                explanation: 'Riktig feltvalg handler om å planlegge tidlig. Sen og brå plassering kan skape farlige situasjoner.'
+            }
+        ],
+        sources: {
+            title: 'Kilder',
+            type: 'text',
+            content: '- Statens vegvesen: [Temaliste til teoriprøve klasse B](https://www.vegvesen.no/globalassets/forerkort/ta-forerkort/temaliste-til-teoriprove-klasse-b-bokmal.pdf)\n- Lovdata: [Trafikkreglene](https://lovdata.no/dokument/SF/forskrift/1986-03-21-747)\n- Norges Trafikkskoleforbund: [Fletting i trafikken](https://ntsf.no/ta-forerkort/tips/fletting-i-trafikken)'
+        }
     }
 ]
 

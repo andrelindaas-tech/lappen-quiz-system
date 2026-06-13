@@ -9,6 +9,7 @@ export type QuizMode = {
     isFokusMode?: boolean  // Optional: flag to identify Fokus mode for special handling
     timeLimitMinutes?: number  // Optional: time limit in minutes
     useTimer?: boolean  // Optional: whether timer is enabled for this session
+    isExamMode?: boolean  // Optional: flag to identify exam mode
 }
 
 export interface QuizResult {

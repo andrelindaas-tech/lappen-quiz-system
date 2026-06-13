@@ -59,7 +59,8 @@ export default function QuizContainer({ onReturnHome, onQuizComplete }: QuizCont
                 maxErrors: 7,
                 description: '45 spørsmål - Maks 7 feil',
                 timeLimitMinutes: 90,
-                useTimer: timerParam
+                useTimer: timerParam,
+                isExamMode: true
             }
         } else if (modeParam === 'fokus') {
             return {

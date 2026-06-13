@@ -95,7 +95,7 @@ export function parseInlineLinks(text: string) {
 
         if (isImage) {
             // Apply different styling if it's a sign (needs smaller width) vs regular illustration
-            const isSign = url.includes('/signs/') || url.includes('skilt');
+            const isSign = url.includes('/signs/') || (url.includes('skilt') && !url.includes('/images/'));
             parts.push(
                 <img 
                     key={match.index} 

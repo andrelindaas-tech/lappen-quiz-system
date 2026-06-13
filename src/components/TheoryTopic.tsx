@@ -131,6 +131,7 @@ const getTopicIcon = (id: string, iconFromData: string) => {
         case 'myndighetspyramiden':
             return <Layers {...iconProps} />
         case 'veimerking':
+        case 'feltvalg-fletting-kollektivfelt':
             return <Route {...iconProps} />
         case 'reaksjonstid':
             return <Timer {...iconProps} />
