@@ -31,10 +31,6 @@ function generateSitemap() {
     { loc: '/quiz/skilt', priority: '0.6', changefreq: 'monthly' },
     { loc: '/quiz/fartsregler', priority: '0.6', changefreq: 'monthly' },
     { loc: '/quiz/veimerking', priority: '0.6', changefreq: 'monthly' },
-    { loc: '/quiz/fareskilt', priority: '0.6', changefreq: 'monthly' },
-    { loc: '/quiz/forbudsskilt', priority: '0.6', changefreq: 'monthly' },
-    { loc: '/quiz/opplysningsskilt', priority: '0.6', changefreq: 'monthly' },
-    { loc: '/quiz/underskilt', priority: '0.6', changefreq: 'monthly' },
   ];
 
   // 2. Parse theory articles from theoryData.ts

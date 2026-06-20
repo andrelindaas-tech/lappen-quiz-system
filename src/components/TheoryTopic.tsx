@@ -261,7 +261,7 @@ export default function TheoryTopic({ topic, onBack }: TheoryTopicProps) {
                                                 ) : (
                                                     <img
                                                         src={sign.imageUrl}
-                                                        alt={sign.name}
+                                                        alt={sign.alt || sign.name}
                                                         className="theory-sign-img"
                                                     />
                                                 )}

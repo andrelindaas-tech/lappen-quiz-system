@@ -12,6 +12,7 @@ export interface SignItem {
     description: string
     imageUrl?: string
     signId?: string
+    alt?: string
 }
 
 export interface TheorySection {
@@ -1174,190 +1175,217 @@ export const theoryTopics: TheoryTopic[] = [
             {
                 title: 'Kort forklart',
                 type: 'warning',
-                content: '- Trekant med rød kant varsler fare.\n- Rundt skilt med rød kant betyr ofte forbud.\n- Blått rundt skilt betyr påbud.\n- Blå firkant gir ofte opplysning.\n- STOPP-skiltet er åttekantet og krever full stans.\n- Underskilt endrer eller presiserer hovedskiltet.\n- Teoriprøven spør ofte om hva du skal gjøre, ikke bare hva skiltet heter.\n\nLes også:\n[Vikeplikt](/laeringsressurser/vikeplikt), [rundkjøring](/laeringsressurser/rundkjoring), [forbikjøring](/laeringsressurser/forbikjoring) og [veimerking](/laeringsressurser/veimerking).'
+                content: '- Trekant med rød kant varsler fare.\n- Rundt skilt med rød kant betyr ofte forbud.\n- Blått rundt skilt betyr påbud.\n- Blå firkant gir ofte opplysning.\n- STOPP-skiltet er åttekantet og krever full stans.\n- Underskilt endrer eller presiserer hovedskiltet.\n- Teoriprøven spør ofte om hva du skal gjøre, ikke bare hva skiltet heter.\n\nLes også:\n[Vikeplikt](/laeringsressurser/vikeplikt), [rundkjøring](/laeringsressurser/rundkjoring), [forbikjøring](/laeringsressurser/forbikjoring), [veimerking](/laeringsressurser/veimerking) og vår [trafikkskilt-guide](/trafikkskilt).'
             },
             {
                 title: 'Form og farge: slik kjenner du igjen skilt',
-                type: 'text',
-                content: '| Form/farge | Betyr ofte | Eksempel |\n|---|---|---|\n| Trekant med rød kant | Fare | Barn, elg, glatt vei |\n| Omvendt trekant | Vikeplikt | Vikeplikt |\n| Åttekant | Full stans | STOPP |\n| Gul diamant | Forkjørsvei | Forkjørsveg |\n| Rundt med rød kant | Forbud | Innkjøring forbudt, fartsgrense |\n| Rundt blått | Påbud | Påbudt rundkjøring |\n| Blå firkant | Opplysning | Gangfelt |\n| Hvitt underskilt | Presisering | Avstand, tid, kjøretøygruppe |\n| Gul/svart markering | Veiforløp eller hindring | Retningsmarkering |'
+                type: 'table',
+                content: '<div style="overflow-x: auto; -webkit-overflow-scrolling: touch; margin-top: 1rem;"><table class="responsive-theory-table" style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem;"><thead><tr style="background-color: var(--color-surface); border-bottom: 2px solid var(--color-border);"><th style="padding: 12px 8px;">Form/farge</th><th style="padding: 12px 8px;">Betyr ofte</th><th style="padding: 12px 8px;">Eksempel</th></tr></thead><tbody><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Trekant med rød kant</b></td><td style="padding: 12px 8px;" data-label="Betyr ofte">Fare</td><td style="padding: 12px 8px;" data-label="Eksempel">Barn, elg, glatt vei</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Omvendt trekant</b></td><td style="padding: 12px 8px;" data-label="Betyr ofte">Vikeplikt</td><td style="padding: 12px 8px;" data-label="Eksempel">Vikeplikt</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Åttekant</b></td><td style="padding: 12px 8px;" data-label="Betyr ofte">Full stans</td><td style="padding: 12px 8px;" data-label="Eksempel">STOPP</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Gul diamant</b></td><td style="padding: 12px 8px;" data-label="Betyr ofte">Forkjørsvei</td><td style="padding: 12px 8px;" data-label="Eksempel">Forkjørsveg</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Rundt med rød kant</b></td><td style="padding: 12px 8px;" data-label="Betyr ofte">Forbud</td><td style="padding: 12px 8px;" data-label="Eksempel">Innkjøring forbudt, fartsgrense</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Rundt blått</b></td><td style="padding: 12px 8px;" data-label="Betyr ofte">Påbud</td><td style="padding: 12px 8px;" data-label="Eksempel">Påbudt rundkjøring</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Blå firkant</b></td><td style="padding: 12px 8px;" data-label="Betyr ofte">Opplysning</td><td style="padding: 12px 8px;" data-label="Eksempel">Gangfelt</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Hvitt underskilt</b></td><td style="padding: 12px 8px;" data-label="Betyr ofte">Presisering</td><td style="padding: 12px 8px;" data-label="Eksempel">Avstand, tid, kjøretøygruppe</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Gul/svart markering</b></td><td style="padding: 12px 8px;" data-label="Betyr ofte">Veiforløp eller hindring</td><td style="padding: 12px 8px;" data-label="Eksempel">Retningsmarkering</td></tr></tbody></table></div>'
             },
             {
                 title: 'De 9 skiltkategoriene',
                 type: 'signs',
-                content: 'Kjenner du form og farge, kan du ofte plassere et ukjent skilt i riktig gruppe – før du leser detaljene.',
+                content: 'Kjenner du form og farge, kan du ofte plassere et ukjent skilt i riktig gruppe – før du leser detaljene. Klikk deg inn på de ulike [skiltkategoriene i guiden](/trafikkskilt) for en fullstendig oversikt.',
                 signs: [
                     {
                         name: 'Fareskilt',
                         description: '100-serien\nVarsler fare på eller ved veien. Skiltet betyr ikke automatisk ny fartsgrense, men du må tilpasse farten.\nEksempler: Barn (142), Elg (146), Glatt kjørebane (116)\nTeorifelle: Fareskilt varsler fare, men regulerer ikke farten alene.',
-                        imageUrl: '/signs/fareskilt/skilt-142-barn.jpg'
+                        imageUrl: '/signs/fareskilt/skilt-142-barn.jpg',
+                        alt: 'Trekantet fareskilt med rød kant og hvit bunn som viser to barn som løper, skilt 142 barn'
                     },
                     {
                         name: 'Vikeplikt- og forkjørsskilt',
                         description: '200-serien\nBestemmer hvem som skal vike, stoppe eller har prioritet. STOPP (204) krever alltid full stans.\nEksempler: Vikeplikt (202), STOPP (204), Forkjørsveg (206)\nTeorifelle: Vikeplikt og stopplikt er ikke det samme.',
-                        imageUrl: '/signs/vikeplikt-og-forkjorsskilt/skilt-202-vikeplikt.jpg'
+                        imageUrl: '/signs/vikeplikt-og-forkjorsskilt/skilt-202-vikeplikt.jpg',
+                        alt: 'Opp-ned trekantet vikepliktskilt med rød kant og hvit bunn, skilt 202 vikeplikt'
                     },
                     {
                         name: 'Forbudsskilt',
                         description: '300-serien\nForteller hva som er forbudt. Diagonal strek betyr ofte at forbudet eller reguleringen opphører.\nEksempler: Innkjøring forbudt (302), Forbikjøring forbudt (334), Fartsgrense (362)\nTeorifelle: Opphørsskilt betyr at forbudet slutter, ikke at et nytt forbud starter.',
-                        imageUrl: '/signs/forbudsskilt/skilt-302-innkjoring-forbudt.jpg'
+                        imageUrl: '/signs/forbudsskilt/skilt-302-innkjoring-forbudt.jpg',
+                        alt: 'Rødt rundt forbudsskilt med hvit tverrstripe i midten, skilt 302 innkjøring forbudt'
                     },
                     {
                         name: 'Påbudsskilt',
-                        description: '400-serien\nForteller hva du må gjøre. Skiltene er runde og blå med hvitt symbol.\nEksempler: Påbudt kjøreretning (402), Påbudt rundkjøring (406)\nTeorifelle: Påbudt rundkjøring viser kjøreretning. Vikeplikt reguleres normalt med eget skilt.',
-                        imageUrl: '/signs/pabudsskilt/skilt-406-pabudt-rundkjoring.jpg'
+                        description: '400-serien\nForteller hva du må gjøre. Skiltene are runde og blå med hvitt symbol.\nEksempler: Påbudt kjøreretning (402), Påbudt rundkjøring (406)\nTeorifelle: Påbudt rundkjøring viser kjøreretning. Vikeplikt reguleres normalt med eget skilt.',
+                        imageUrl: '/signs/pabudsskilt/skilt-406-pabudt-rundkjoring.jpg',
+                        alt: 'Rundt blått påbudsskilt med tre hvite piler som danner en sirkel, skilt 406 påbudt rundkjøring'
                     },
                     {
                         name: 'Opplysningsskilt',
                         description: '500-serien\nGir informasjon om regler, steder eller trafikale forhold. Noen opplysningsskilt er også regulerende.\nEksempler: Motorveg (502), Gangfelt (516), Envegskjøring (526)\nTeorifelle: Noen opplysningsskilt betyr at en bestemt regel gjelder fra skiltet.',
-                        imageUrl: '/signs/opplysningsskilt/skilt-516-gangfelt.jpg'
+                        imageUrl: '/signs/opplysningsskilt/skilt-516-gangfelt.jpg',
+                        alt: 'Blått firkantet opplysningsskilt med hvit trekant og symbol av en person som går i gangfelt, skilt 516 gangfelt'
                     },
                     {
                         name: 'Serviceskilt',
                         description: '600-serien\nViser service og tilbud langs veien, som bensinstasjon, rasteplass eller førstehjelp.\nEksempler: Førstehjelp (602), Bensinstasjon (605), Rasteplass (613)',
-                        imageUrl: '/signs/serviceskilt/skilt-605-bensinstasjon.jpg'
+                        imageUrl: '/signs/serviceskilt/skilt-605-bensinstasjon.jpg',
+                        alt: 'Serviceskilt med symbol av en bensinpumpe, skilt 605 bensinstasjon'
                     },
                     {
                         name: 'Vegvisningsskilt',
                         description: '700-serien\nHjelper deg å finne retning, sted, avstand og veitype. Farge kan vise hvilken type vei eller mål skiltet gjelder.\nEksempler: Vegviser (713), stedsnavnskilt, avkjøringsviser',
-                        imageUrl: '/signs/vegvisningsskilt/skilt-713-vegviser.jpg'
+                        imageUrl: '/signs/vegvisningsskilt/skilt-713-vegviser.jpg',
+                        alt: 'Vegvisningsskilt som viser veien og avstanden til et reisemål, skilt 713 vegviser'
                     },
                     {
                         name: 'Underskilt',
                         description: '800-serien\nPresiserer hovedskiltet. Det kan vise avstand, tid, kjøretøygruppe eller unntak.\nEksempler: Avstand (802), Tid (806), Kjøretøygruppe (808)\nTeorifelle: Underskilt må alltid leses sammen med hovedskiltet.',
-                        imageUrl: '/signs/underskilt/skilt-802-avstand.jpg'
+                        imageUrl: '/signs/underskilt/skilt-802-avstand.jpg',
+                        alt: 'Hvitt rektangulært underskilt med angitt avstand i meter, skilt 802 avstand'
                     },
                     {
                         name: 'Markeringsskilt',
                         description: '900-serien\nMarkerer hindringer, veiforløp, svinger eller midlertidige endringer. De hjelper deg å plassere bilen riktig.\nEksempler: Retningsmarkering (904), bakgrunnsmarkering, hindermarkering',
-                        imageUrl: '/signs/markeringsskilt/skilt-904-retningsmarkering.jpg'
+                        imageUrl: '/signs/markeringsskilt/skilt-904-retningsmarkering.jpg',
+                        alt: 'Rektangulært markeringsskilt med gule og svarte piler som peker mot høyre, skilt 904 retningsmarkering'
                     }
                 ]
             },
             {
                 title: 'Fareskilt',
                 type: 'signs',
-                content: 'Fareskilt varsler fare på eller ved veien. De er vanligvis trekantede med rød kant og hvit bunn.\n\nEksempler: Barn, Elg, Glatt vei, Farlig sving\n\n**Viktig teorifelle:** Et fareskilt betyr ikke automatisk lavere fartsgrense. Det betyr at du må tilpasse farten etter faren.',
+                content: 'Fareskilt varsler fare på eller ved veien. De er vanligvis trekantede med rød kant og hvit bunn. Se alle [fareskilt i vår oversikt](/trafikkskilt/fareskilt).\n\nEksempler: Barn, Elg, Glatt vei, Farlig sving\n\n**Viktig teorifelle:** Et fareskilt betyr ikke automatisk lavere fartsgrense. Det betyr at du må tilpasse farten etter faren.',
                 signs: [
                     {
                         name: 'Fareskilt 142 Barn',
                         description: 'Varsler om barn i nærheten av veien. Tilpass farten.',
-                        imageUrl: '/signs/fareskilt/skilt-142-barn.jpg'
+                        imageUrl: '/signs/fareskilt/skilt-142-barn.jpg',
+                        alt: 'Trekantet fareskilt med rød kant og hvit bunn som viser to løpende barn, skilt 142 barn'
                     }
                 ]
             },
             {
                 title: 'Vikeplikt- og forkjørsskilt',
                 type: 'signs',
-                content: 'Disse skiltene bestemmer hvem som skal kjøre først, hvem som skal vike, og når du må stanse helt.\n\nViktige skilt: Vikeplikt, STOPP, Forkjørsveg, Slutt på forkjørsveg, Vikeplikt overfor møtende kjørende\n\n**Viktig teorifelle:** Vikeplikt og stopplikt er ikke det samme. Ved STOPP-skilt må bilen stanse helt, også hvis veien ser klar ut.',
+                content: 'Disse skiltene bestemmer hvem som skal kjøre først, hvem som skal vike, og når du må stanse helt. Se alle [vikeplikt- og forkjørsskilt](/trafikkskilt/vikeplikt-og-forkjorsskilt) i guiden.\n\nViktige skilt: Vikeplikt, STOPP, Forkjørsveg, Slutt på forkjørsveg, Vikeplikt overfor møtende kjørende\n\n**Viktig teorifelle:** Vikeplikt og stopplikt er ikke det samme. Ved STOPP-skilt må bilen stanse helt, også hvis veien ser klar ut.',
                 signs: [
                     {
                         name: 'Skilt 202 Vikeplikt',
                         description: 'Omvendt trekant. Du skal vike for trafikk på veien du kjører inn på.',
-                        imageUrl: '/signs/vikeplikt-og-forkjorsskilt/skilt-202-vikeplikt.jpg'
+                        imageUrl: '/signs/vikeplikt-og-forkjorsskilt/skilt-202-vikeplikt.jpg',
+                        alt: 'Opp-ned trekantet vikepliktskilt med rød kant og hvit bunn, skilt 202 vikeplikt'
                     },
                     {
                         name: 'Skilt 204 STOPP',
                         description: 'Åttekantet. Du må stanse helt før du kjører videre, uansett om veien er klar.',
-                        imageUrl: '/signs/vikeplikt-og-forkjorsskilt/skilt-204-stopp.jpg'
+                        imageUrl: '/signs/vikeplikt-og-forkjorsskilt/skilt-204-stopp.jpg',
+                        alt: 'Åttekantet rødt STOPP-skilt med hvit kant og hvit tekst, skilt 204 STOPP'
                     }
                 ]
             },
             {
                 title: 'Forbudsskilt',
                 type: 'signs',
-                content: 'Forbudsskilt forteller hva som er forbudt. De er ofte runde med rød kant.\n\nEksempler: Innkjøring forbudt, Forbikjøring forbudt, Fartsgrense, Parkering forbudt\n\n**Viktig teorifelle:** Et opphørsskilt betyr at et tidligere forbud slutter å gjelde. Det er ikke et nytt forbud.',
+                content: 'Forbudsskilt forteller hva som er forbudt. De er ofte runde med rød kant. Se alle [forbudsskilt](/trafikkskilt/forbudsskilt) for detaljer.\n\nEksempler: Innkjøring forbudt, Forbikjøring forbudt, Fartsgrense, Parkering forbudt\n\n**Viktig teorifelle:** Et opphørsskilt betyr at et tidligere forbud slutter å gjelde. Det er ikke et nytt forbud.',
                 signs: [
                     {
                         name: 'Skilt 302 Innkjøring forbudt',
                         description: 'Rund med rød kant. Du har ikke lov til å kjøre inn.',
-                        imageUrl: '/signs/forbudsskilt/skilt-302-innkjoring-forbudt.jpg'
+                        imageUrl: '/signs/forbudsskilt/skilt-302-innkjoring-forbudt.jpg',
+                        alt: 'Rødt rundt forbudsskilt med hvit tverrstripe, skilt 302 innkjøring forbudt'
                     },
                     {
                         name: 'Skilt 362 Fartsgrense 50',
                         description: 'Fartsgrensen gjelder fra skiltet og frem til nytt skilt eller tettsted.',
-                        imageUrl: '/signs/forbudsskilt/skilt-362-50-fartsgrense.jpg'
+                        imageUrl: '/signs/forbudsskilt/skilt-362-50-fartsgrense.jpg',
+                        alt: 'Rundt forbudsskilt med rød kant og tallet 50 i midten, skilt 362 fartsgrense 50'
                     },
                     {
                         name: 'Skilt 364 Slutt på særskilt fartsgrense',
                         description: 'Diagonal strek betyr at den særskilte fartsgrensen opphører.',
-                        imageUrl: '/signs/forbudsskilt/skilt-364-50-slutt-pa-saerskilt-fartsgrense.jpg'
+                        imageUrl: '/signs/forbudsskilt/skilt-364-50-slutt-pa-saerskilt-fartsgrense.jpg',
+                        alt: 'Grått rundt skilt med fem tynne svarte diagonale striper over tallet 50, skilt 364 slutt på særskilt fartsgrense'
                     }
                 ]
             },
             {
                 title: 'Påbudsskilt',
                 type: 'signs',
-                content: 'Påbudsskilt forteller hva du må gjøre. De er runde, blå og har hvitt symbol.\n\nEksempel: Påbudt rundkjøring, Påbudt kjøreretning, Påbudt kjørefelt\n\n**Viktig teorifelle:** Påbudt rundkjøring viser hvilken retning du skal kjøre rundt trafikkøya. Vikeplikt inn i rundkjøringen reguleres normalt med eget vikepliktskilt.',
+                content: 'Påbudsskilt forteller hva du må gjøre. De er runde, blå og har hvitt symbol. Se alle [påbudsskilt](/trafikkskilt/pabudsskilt) for en full oversikt.\n\nEksempel: Påbudt rundkjøring, Påbudt kjøreretning, Påbudt kjørefelt\n\n**Viktig teorifelle:** Påbudt rundkjøring viser hvilken retning du skal kjøre rundt trafikkøya. Vikeplikt inn i rundkjøringen reguleres normalt med eget vikepliktskilt.',
                 signs: [
                     {
                         name: 'Påbudsskilt 406 Påbudt rundkjøring',
                         description: 'Blå sirkel med pil. Du skal kjøre i pilens retning rundt trafikkøya.',
-                        imageUrl: '/signs/pabudsskilt/skilt-406-pabudt-rundkjoring.jpg'
+                        imageUrl: '/signs/pabudsskilt/skilt-406-pabudt-rundkjoring.jpg',
+                        alt: 'Blått rundt påbudsskilt med tre hvite piler i sirkel, skilt 406 påbudt rundkjøring'
                     }
                 ]
             },
             {
                 title: 'Opplysningsskilt',
                 type: 'signs',
-                content: 'Opplysningsskilt gir informasjon om regler, steder eller situasjoner på veien. Mange er blå firkanter eller rektangler.\n\nEksempel: Gangfelt, Envegskjøring, Motorveg, Tettbygd strøk\n\n**Viktig teorifelle:** Noen opplysningsskilt gir mer enn informasjon. De kan også fortelle at en bestemt trafikkregel gjelder fra skiltet.',
+                content: 'Opplysningsskilt gir informasjon om regler, steder eller situasjoner på veien. Mange er blå firkanter eller rektangler. Se alle [opplysningsskilt](/trafikkskilt/opplysningsskilt) for mer informasjon.\n\nEksempel: Gangfelt, Envegskjøring, Motorveg, Tettbygd strøk\n\n**Viktig teorifelle:** Noen opplysningsskilt gir mer enn informasjon. De kan også fortelle at en bestemt trafikkregel gjelder fra skiltet.',
                 signs: [
                     {
                         name: 'Opplysningsskilt 516 Gangfelt',
                         description: 'Du har vikeplikt for gående som er i gangfeltet eller på vei ut i det.',
-                        imageUrl: '/signs/opplysningsskilt/skilt-516-gangfelt.jpg'
+                        imageUrl: '/signs/opplysningsskilt/skilt-516-gangfelt.jpg',
+                        alt: 'Blått firkantet opplysningsskilt med symbol av en person i et gangfelt, skilt 516 gangfelt'
                     }
                 ]
             },
             {
                 title: 'Serviceskilt og vegvisningsskilt',
                 type: 'signs',
-                content: 'Serviceskilt viser tilbud langs veien, som bensinstasjon, rasteplass eller førstehjelp. Vegvisningsskilt hjelper deg å finne retning, sted og veitype.\n\nDisse er vanligvis ikke de vanskeligste teoriskiltene, men du bør kjenne hovedprinsippet.',
+                content: 'Serviceskilt viser tilbud langs veien, som bensinstasjon, rasteplass eller førstehjelp. Vegvisningsskilt hjelper deg å finne retning, sted og veitype. Se oversikten over [vegvisningsskilt](/trafikkskilt/vegvisningsskilt) og [serviceskilt](/trafikkskilt/serviceskilt) i guiden.\n\nDisse er vanligvis ikke de vanskeligste teoriskiltene, men du bør kjenne hovedprinsippet.',
                 signs: [
                     {
                         name: 'Serviceskilt 605 Bensinstasjon',
                         description: 'Viser at det finnes bensinstasjon i nærheten.',
-                        imageUrl: '/signs/serviceskilt/skilt-605-bensinstasjon.jpg'
+                        imageUrl: '/signs/serviceskilt/skilt-605-bensinstasjon.jpg',
+                        alt: 'Serviceskilt med tegning av en bensinpumpe, skilt 605 bensinstasjon'
                     },
                     {
                         name: 'Vegvisningsskilt 713 Vegviser',
                         description: 'Viser retning og avstand til steder og veier.',
-                        imageUrl: '/signs/vegvisningsskilt/skilt-713-vegviser.jpg'
+                        imageUrl: '/signs/vegvisningsskilt/skilt-713-vegviser.jpg',
+                        alt: 'Pekende vegvisningsskilt med stedsnavn og avstandsangivelse, skilt 713 vegviser'
                     }
                 ]
             },
             {
                 title: 'Underskilt',
                 type: 'signs',
-                content: 'Underskilt står under et hovedskilt og presiserer betydningen. Det kan handle om avstand, tid, kjøretøytype eller hvem regelen gjelder for.\n\nEksempel: Et parkering forbudt-skilt med underskilt om tid kan bety at forbudet bare gjelder bestemte klokkeslett.\n\n**Viktig teorifelle:** Mange leser hovedskiltet og glemmer underskiltet. På teoriprøven er underskilt ofte nøkkelen til riktig svar.',
+                content: 'Underskilt står under et hovedskilt og presiserer betydningen. Det kan handle om avstand, tid, kjøretøytype eller hvem regelen gjelder for. Se alle [underskilt](/trafikkskilt/underskilt) i skiltguiden.\n\nEksempel: Et parkering forbudt-skilt med underskilt om tid kan bety at forbudet bare gjelder bestemte klokkeslett.\n\n**Viktig teorifelle:** Mange leser hovedskiltet og glemmer underskiltet. På teoriprøven er underskilt oppskriften på riktig svar.',
                 signs: [
                     {
                         name: 'Underskilt 802 Avstand',
                         description: 'Angir avstand fra skiltet til stedet regelen gjelder.',
-                        imageUrl: '/signs/underskilt/skilt-802-avstand.jpg'
+                        imageUrl: '/signs/underskilt/skilt-802-avstand.jpg',
+                        alt: 'Hvitt rektangulært underskilt med svart kant og tall som angir avstand, skilt 802 avstand'
                     },
                     {
                         name: 'Underskilt 806 Tid',
                         description: 'Angir tidsrommet en regel gjelder. For eksempel parkeringsforbud i bestemte timer.',
-                        imageUrl: '/signs/underskilt/skilt-806-tid.jpg'
+                        imageUrl: '/signs/underskilt/skilt-806-tid.jpg',
+                        alt: 'Hvitt underskilt med svarte tall i parentes og klokkeslett, skilt 806 tid'
                     }
                 ]
             },
             {
                 title: 'Markeringsskilt',
                 type: 'signs',
-                content: 'Markeringsskilt viser hindringer, veiforløp eller farlige steder. De hjelper deg å forstå hvor veien går, særlig i svinger, ved innsnevring eller ved arbeid på veien.',
+                content: 'Markeringsskilt viser hindringer, veiforløp eller farlige steder. De hjelper deg å forstå hvor veien går, særlig i svinger, ved innsnevring eller ved arbeid på veien. Se alle [markeringsskilt](/trafikkskilt/markeringsskilt) i guiden.',
                 signs: [
                     {
                         name: 'Markeringsskilt 904 Retningsmarkering',
                         description: 'Viser veiforløpets retning, særlig i skarpe svinger.',
-                        imageUrl: '/signs/markeringsskilt/skilt-904-retningsmarkering.jpg'
+                        imageUrl: '/signs/markeringsskilt/skilt-904-retningsmarkering.jpg',
+                        alt: 'Markeringsskilt med gule og svarte piler som peker kjøreretningen, skilt 904 retningsmarkering'
                     }
                 ]
             },
             {
+                title: 'Finn skilt med visuelt søk',
+                type: 'info',
+                content: 'Leter du etter et bestemt skilt, men husker ikke hva det heter? I vår [trafikkskilt-guide](/trafikkskilt) kan du søke etter skilt basert på kjennetegn, farger eller skiltnummer.\n\nDu kan for eksempel søke etter:\n- «blått skilt med hvit pil» for å finne påbudsskilt\n- «rødt rundt skilt» for å finne forbudsskilt\n- «skilt 204» (eller andre numre) hvis du vet skiltkoden\n- «vikepliktskilt» for å søke etter funksjon eller tema\n\nPrøv det visuelle søket direkte i [skiltguiden](/trafikkskilt) for å raskt finne betydningen og reglene for skiltet.'
+            },
+            {
                 title: 'Vanlige feil med trafikkskilt',
-                type: 'warning',
-                content: '| Feil | Hvorfor det er en felle | Slik unngår du den |\n|---|---|---|\n| Overser underskilt | Underskilt kan endre når eller hvem skiltet gjelder for | Les alltid hovedskilt og underskilt sammen |\n| Blander STOPP og vikeplikt | STOPP krever full stans, vikeplikt gjør ikke alltid det | Se etter åttekantet form |\n| Tror fareskilt endrer fartsgrensen | Fareskilt varsler fare, men setter ikke automatisk ny grense | Tilpass farten etter forholdene |\n| Leser opphørsskilt som forbud | Diagonal strek betyr ofte at forbudet slutter | Se etter streken og spør: opphører regelen her? |\n| Glemmer situasjonen rundt skiltet | Teoriprøven spør ofte hva du skal gjøre, ikke bare navnet | Se på vei, felt, trafikk og eventuelle underskilt |'
+                type: 'table',
+                content: '<div style="overflow-x: auto; -webkit-overflow-scrolling: touch; margin-top: 1rem;"><table class="responsive-theory-table" style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem;"><thead><tr style="background-color: var(--color-surface); border-bottom: 2px solid var(--color-border);"><th style="padding: 12px 8px;">Feil</th><th style="padding: 12px 8px;">Hvorfor det er en felle</th><th style="padding: 12px 8px;">Slik unngår du den</th></tr></thead><tbody><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Overser underskilt</b></td><td style="padding: 12px 8px;" data-label="Hvorfor det er en felle">Underskilt kan endre når eller hvem skiltet gjelder for.</td><td style="padding: 12px 8px;" data-label="Slik unngår du den">Les alltid hovedskilt og underskilt sammen.</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Blander STOPP og vikeplikt</b></td><td style="padding: 12px 8px;" data-label="Hvorfor det er en felle">STOPP krever full stans, vikeplikt gjør ikke alltid det.</td><td style="padding: 12px 8px;" data-label="Slik unngår du den">Se etter åttekantet form.</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Tror fareskilt endrer fartsgrensen</b></td><td style="padding: 12px 8px;" data-label="Hvorfor det er en felle">Fareskilt varsler fare, men setter ikke automatisk ny grense.</td><td style="padding: 12px 8px;" data-label="Slik unngår du den">Tilpass farten etter forholdene.</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Leser opphørsskilt som forbud</b></td><td style="padding: 12px 8px;" data-label="Hvorfor det er en felle">Diagonal strek betyr ofte at forbudet slutter.</td><td style="padding: 12px 8px;" data-label="Slik unngår du den">Se etter streken og spør: opphører regelen her?</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Glemmer situasjonen rundt skiltet</b></td><td style="padding: 12px 8px;" data-label="Hvorfor det er en felle">Teoriprøven spør ofte hva du skal gjøre, ikke bare navnet.</td><td style="padding: 12px 8px;" data-label="Slik unngår du den">Se på vei, felt, trafikk og eventuelle underskilt.</td></tr></tbody></table></div>'
             },
             {
                 title: 'Slik lærer du trafikkskilt effektivt',
@@ -1365,9 +1393,9 @@ export const theoryTopics: TheoryTopic[] = [
                 content: '**Start med form og farge**\n\nIkke begynn med å pugge alle skilt enkeltvis. Lær først hva form og farge betyr. Da kan du plassere skiltet i riktig gruppe før du husker detaljene.\n\n**Øv i korte økter**\n\nDet er bedre å ta korte skiltøkter ofte enn én lang økt sjelden. Bruk gjerne 10–15 minutter på skiltquiz og repeter skiltene du bommer på.\n\n**Lær skilt i situasjon**\n\nPå teoriprøven er spørsmålet ofte: "Hva skal du gjøre her?" Ikke bare: "Hva heter skiltet?" Øv derfor på bilder og situasjoner der skiltet står sammen med vei, trafikk og oppmerking.\n\n**Prioriter de viktigste skiltene først**\n\nTil klasse B bør du prioritere:\n- vikeplikt og STOPP\n- fareskilt\n- forbudsskilt\n- påbudsskilt\n- underskilt\n- skilt som påvirker fart, plassering og vikeplikt'
             },
             {
-                title: 'Vil du øve på skilt?',
+                title: 'Klar for å teste deg selv?',
                 type: 'info',
-                content: '[Ta skiltquiz](/quiz/skilt)'
+                content: 'For å bestå teoriprøven må du kjenne igjen skiltene raskt og vite nøyaktig hva de krever av deg i trafikken. Vi tilbyr to effektive og gratis måter å øve på:\n\n- **Klassisk teoritest:** Ta vår grundige [Skiltquiz](/quiz/skilt) med 45 spørsmål for å sjekke om du har kunnskapen som kreves til prøven.\n- **Morsom spill-læring:** Spill [Skiltduellen](/laeringsspill/skiltduellen) for å teste reaksjonstiden din og se hvor raskt du klarer å kjenne igjen de ulike skiltene.'
             },
             {
                 title: 'Kilder',
