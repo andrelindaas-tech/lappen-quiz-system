@@ -40,6 +40,7 @@ const getTopicIcon = (id: string) => {
         case 'sikkerhetskontroll':
             return <Wrench size={24} strokeWidth={1.8} />
         case 'oppkjoring':
+        case 'forerstottesystemer':
             return <Car size={24} strokeWidth={1.8} />
         case 'stroket-teoriproven':
             return <RefreshCcw size={24} strokeWidth={1.8} />

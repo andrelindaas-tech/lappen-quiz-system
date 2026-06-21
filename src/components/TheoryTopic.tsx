@@ -140,6 +140,7 @@ const getTopicIcon = (id: string, iconFromData: string) => {
         case 'sikkerhetskontroll':
             return <Wrench {...iconProps} />
         case 'oppkjoring':
+        case 'forerstottesystemer':
             return <Car {...iconProps} />
         case 'stroket-teoriproven':
             return <RefreshCcw {...iconProps} />
@@ -330,7 +331,7 @@ export default function TheoryTopic({ topic, onBack }: TheoryTopicProps) {
 
                 {topic.sources && (
                     <div className="theory-sources-section" style={{ marginTop: '2rem', borderTop: '1px solid var(--color-border)', paddingTop: '1.5rem' }}>
-                        <h4 className="theory-section-title" style={{ fontSize: '1.1rem', marginBottom: '0.75rem' }}>{topic.sources.title}</h4>
+                        <h3 className="theory-section-title" style={{ fontSize: '1.1rem', marginBottom: '0.75rem' }}>{topic.sources.title}</h3>
                         <div className="theory-section-content" style={{ fontSize: '0.95rem', color: 'var(--color-text-light)' }}>
                             {topic.sources.content && renderContent(topic.sources.content)}
                         </div>

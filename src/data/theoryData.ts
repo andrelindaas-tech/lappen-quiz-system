@@ -3534,6 +3534,149 @@ Når du nærmer deg et lyskryss, bør du derfor se etter:
             type: 'text',
             content: '- Statens vegvesen: [Temaliste til teoriprøve klasse B](https://www.vegvesen.no/globalassets/forerkort/ta-forerkort/temaliste-til-teoriprove-klasse-b-bokmal.pdf)\n- Lovdata: [Trafikkreglene](https://lovdata.no/dokument/SF/forskrift/1986-03-21-747)\n- Norges Trafikkskoleforbund: [Fletting i trafikken](https://ntsf.no/ta-forerkort/tips/fletting-i-trafikken)'
         }
+    },
+    {
+        id: 'forerstottesystemer',
+        title: 'Førerstøttesystemer på teoriprøven: hjelpemidler, ikke selvkjøring',
+        icon: '🚗',
+        shortDescription: 'Førerstøttesystemer kan hjelpe deg med å bremse, holde avstand, varsle om fare eller holde bilen i feltet. Men de erstatter ikke føreren. På teoriprøven er det viktigste å forstå at du fortsatt må følge med, tilpasse farten og gripe inn når systemene ikke fungerer godt nok.',
+        color: 'var(--apple-blue)',
+        seoTitle: 'Førerstøttesystemer: ABS, ESP og adaptiv cruise | Teori-test.no',
+        seoDescription: 'Lær hva ABS, ESP, adaptiv cruise control, filholder og nødbrems gjør – og hvorfor du fortsatt har ansvaret som fører. Med teorifeller og miniQuiz.',
+        sections: [
+            {
+                title: 'Kort forklart: Hva er førerstøttesystemer?',
+                type: 'info',
+                content: 'Førerstøttesystemer (ofte kalt ADAS - Advanced Driver Assistance Systems) er elektroniske hjelpemidler i bilen. De kan varsle om fare, hjelpe med styring og fart, eller gripe inn i kritiske situasjoner. Hovedregelen til teoriprøven er enkel:\n\n**Systemene hjelper føreren, men de erstatter aldri førerens ansvar.**\n\nDet betyr at uansett hvilke systemer som er aktivert i bilen, er det du som fører som er ansvarlig for bilens plassering, fart, sikkerhet og eventuelle regelbrudd.\n\n![Illustrasjon av førerstøttesystemer i bil, med ABS, ESP, adaptiv cruise control, filholder, blindsonevarsler og automatisk nødbrems.](/images/forerstottesystemer_oversikt.png)\n*En oversikt over de viktigste førerstøttesystemene i en moderne bil, og hvor de hjelper deg under kjøring.*'
+            },
+            {
+                title: 'Tabell: Vanlige førerstøttesystemer på teoriprøven',
+                type: 'table',
+                content: '<div style="overflow-x: auto; -webkit-overflow-scrolling: touch; margin-top: 1rem;"><table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem;"><thead><tr style="background-color: var(--color-surface); border-bottom: 2px solid var(--color-border);"><th style="padding: 12px 8px;">System</th><th style="padding: 12px 8px;">Hva det hjelper med</th><th style="padding: 12px 8px;">Hva du fortsatt må gjøre</th><th style="padding: 12px 8px;">Vanlig teorifelle</th></tr></thead><tbody><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>ABS</b> (Blokkeringsfrie bremser)</td><td style="padding: 12px 8px;">Hindrer at hjulene låser seg ved hard bremsing, slik at du kan styre.</td><td style="padding: 12px 8px;">Bremse hardt og holde trykket på pedalen, og styr unna faren.</td><td style="padding: 12px 8px;">Å tro at ABS-bremser alltid gir kortere bremselengde. (På løs snø eller grus kan den bli lengre).</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>ESP / Antiskrens</b></td><td style="padding: 12px 8px;">Hjelper med å stabilisere bilen ved skrensfare ved å bremse enkelthjul.</td><td style="padding: 12px 8px;">Tilpass farten etter forholdene og unngå brå rattbevegelser.</td><td style="padding: 12px 8px;">Å tro at ESP opphever glatt føre og tillater høyere fart i svinger.</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Antispinn</b></td><td style="padding: 12px 8px;">Reduserer hjulspinn ved igangkjøring eller akselerasjon.</td><td style="padding: 12px 8px;">Kjør rolig, gi forsiktig gass og tilpass deg glatt underlag.</td><td style="padding: 12px 8px;">Å tro at bilen får bedre faktisk veigrep enn dekkene og føret tillater.</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Adaptiv cruise control</b></td><td style="padding: 12px 8px;">Holder valgt fart og tilpasser avstanden til kjøretøyet foran.</td><td style="padding: 12px 8px;">Følg med på trafikken, vær klar til å bremse selv, og tilpass farten etter sikt og føre.</td><td style="padding: 12px 8px;">Å tro at systemet fungerer som en autopilot og reagerer riktig i alle situasjoner.</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Filholder / Kjørefeltassistent</b></td><td style="padding: 12px 8px;">Varsler eller styrer forsiktig for å holde bilen innenfor kjørefeltet.</td><td style="padding: 12px 8px;">Hold hendene på rattet, se på veien, styr selv og bruk blinklys ved filskifte.</td><td style="padding: 12px 8px;">Å tro at systemet fungerer like godt uten synlige linjer i veibanen.</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Automatisk nødbrems</b></td><td style="padding: 12px 8px;">Varsler og bremser automatisk hvis en kollisjon is nært forestående.</td><td style="padding: 12px 8px;">Hold tilstrekkelig avstand, les trafikkbildet fremover og brems tidlig.</td><td style="padding: 12px 8px;">Å tro at nødbremsen alltid oppdager alle hindringer og avverger enhver kollisjon.</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Blindsonevarsler</b></td><td style="padding: 12px 8px;">Varsler med lys/lyd hvis det ligger et kjøretøy i blindsonen din.</td><td style="padding: 12px 8px;">Sjekk alltid speil og ta skulderblikk før du skifter kjørefelt.</td><td style="padding: 12px 8px;">Å stole blindt på varsellampen og droppe skulderblikket (kan overse raske MC/sykler).</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Ryggekamera / Parkeringssensor</b></td><td style="padding: 12px 8px;">Hjelper deg å oppdage hindringer bak bilen under rygging.</td><td style="padding: 12px 8px;">Se deg rundt i alle retninger, sjekk speil og blindsoner før og under rygging.</td><td style="padding: 12px 8px;">Å tro at kameraet viser alt og erstatter plikten til fysisk observasjon.</td></tr><tr><td style="padding: 12px 8px;"><b>Skiltgjenkjenning / ISA</b></td><td style="padding: 12px 8px;">Leser fartsskilt og kan varsle eller tilpasse bilens fartsgrense automatisk.</td><td style="padding: 12px 8px;">Følg med på fysiske skilt, og tilpass farten etter vær, sikt og føre.</td><td style="padding: 12px 8px;">Å tro at bilen alltid viser riktig fartsgrense (systemet kan feile på midlertidige skilt).</td></tr></tbody></table></div>'
+            },
+            {
+                title: 'ABS og ESP: De viktigste sikkerhetssystemene',
+                type: 'text',
+                content: 'De to mest kjente og utbredte førerstøttesystemene er ABS og ESP. De jobber aktivt med bilens veigrep under kjøring:\n\n### ABS (Blokkeringsfrie bremser)\nHovedoppgaven til ABS-bremser er å hindre at hjulene låser seg helt når du bremser maksimalt. Hvis hjulene låser seg, mister du all mulighet til å styre bilen. Med ABS kan du bremse maksimalt og samtidig styre unna en hindring. Les mer om hvordan veigrep og fart påvirker [bremselengde og stopplengde](/laeringsressurser/bremselengde).\n\n**Teorifelle:** Mange tror ABS-bremser alltid gir kortere bremselengde. På enkelte underlag, som løs snø eller grus, kan bremselengden bli lengre med ABS. På [glatt føre](/laeringsressurser/glatt-fore) er hovedpoenget at ABS hjelper deg å beholde styringen, ikke at bilen stopper raskere.\n\n### ESP / Antiskrens\nESP (Electronic Stability Program) overvåker bilens retning og hjulenes rotasjon. Hvis bilen begynner å skli (understyring eller overstyring), griper ESP inn ved å bremse ett eller flere hjul individuelt for å rette opp bilen.\n\n**Teorifelle:** ESP kan hjelpe deg med å hente inn en skrens, men systemet opphever ikke fysikkens lover. Kjører du for fort inn i en sving på glatt føre, vil bilen skli ut uansett om ESP er aktivert eller ikke.'
+            },
+            {
+                title: 'Adaptiv cruise control og filholder: Komfort, ikke selvkjøring',
+                type: 'text',
+                content: 'Disse systemene hjelper deg med den daglige kjøringen på lengre strekninger, men krever at føreren er 100 % oppmerksom:\n\n### Adaptiv cruise control (ACC)\nI motsetning to vanlig cruise control som kun holder en fast hastighet, bruker adaptiv cruise control radar eller kamera for å måle avstanden til bilen foran. Hvis bilen foran bremser, kan bilen bremse eller redusere farten for å holde avstanden.\n\n**Viktig:** Du har fortsatt ansvaret. Hvis bilen foran bremser brått, eller det oppstår en situasjon systemet ikke oppfatter (f.eks. en bil som svinger inn rett foran deg), må du være klar til å bremse selv.\n\n### Filholder / Kjørefeltassistent\nFilholderen bruker et kamera øverst i frontruten for å lese oppmerkingen i veibanen. Hvis du er i ferd med å drifte ut av kjørefeltet uten å bruke blinklys, vil systemet varsle deg eller gi et lite styreinnrykk for å holde deg i feltet. Les mer om kjørefelt og vegoppmerking i vår guide om [veimerking](/laeringsressurser/veimerking) og [feltvalg, fletting og kollektivfelt](/laeringsressurser/feltvalg-fletting-kollektivfelt).\n\n**Viktig:** Filholderen fungerer best når det er synlig vegoppmerking. Ved vegarbeid, slitte linjer eller snødekt vei kan systemet fungere dårligere eller slå seg av.'
+            },
+            {
+                title: 'Automatisk nødbrems, blindsonevarsling og ryggehjelp',
+                type: 'text',
+                content: 'Sikkerhetssystemene rundt bilen hjelper til i kritiske øyeblikk og ved finmanøvrering:\n\n### Automatisk nødbrems (AEB)\nSystemet kan bruke kamera/radar til å oppdage andre kjøretøy, fotgjengere eller syklister foran bilen. Hvis det oppstår en akutt kollisjonsfare og du ikke reagerer på varslene, kan bilen bremse automatisk for å redusere risikoen for eller skadene av et sammenstøt.\n\n### Blindsonevarsler\nBlindsonevarsleren bruker sensorer på siden og bak på bilen for å oppdage kjøretøy som befinner seg i blindsonen din. En lampe (ofte i sidespeilet) lyser eller blinker hvis du setter på blinklyset for å skifte felt mens det ligger en bil der.\n\n**Teorifelle:** Blindsonevarsleren erstatter aldri din plikt til å sjekke blindsonen selv med skulderblikk. Sensorer kan overse raske motorsykler eller syklister.\n\n### Ryggekamera og parkeringssensor\nNår du setter bilen i revers, viser ryggekameraet området bak bilen, og sensorer piper når du nærmer deg hindringer. Dette er utmerkede hjelpemidler ved parkering, men kameraet har en begrenset vinkel og kan ha blindsoner rett under eller på sidene. Du må fortsatt gjøre en fysisk observasjon rundt hele bilen før du begynner å rygge.'
+            },
+            {
+                title: 'Når systemene kan svikte',
+                type: 'warning',
+                content: 'Førerstøttesystemene er helt avhengige av sensorer, radarer og kameraer plassert rundt omkring på bilen (spesielt i fronten, på støtfangere og bak frontruten). Disse kan lett settes ut av spill av ytre forhold:\n\n- **Snø, is og sludd:** Kan dekke til radarer i grillen eller kameraet i frontruten. Bilen vil da ofte gi beskjed om at støttesystemene er utilgjengelige.\n- **Skitt, søle og veisalt:** En skitten bil kan blokkere linsene til ryggekameraet og blindsone-sensorene.\n- **Kraftig regn og tåke:** Reduserer sikten for kamerasystemene, noe som gjør det vanskelig for bilen å registrere kjøretøy eller fotgjengere.\n- **Dårlig vegoppmerking:** Snø, slaps, slitasje eller vegarbeid gjør at filholderen ikke klarer å lese kjørefeltene.\n- **Feil skiltgjenkjenning:** Skiltgjenkjenning (ISA) kan lese skilt på avkjøringsveier eller overse midlertidige fartsgrenser ved vegarbeid. Du må alltid forholde deg til de faktiske skiltene langs veien.\n\nHusk at du alltid må sjekke at sensorer og lykter er rene og fungerer før du kjører. Dette lærer du mer om i vår guide til [sikkerhetskontroll av bilen](/laeringsressurser/sikkerhetskontroll).\n\n![Bil på vintervei der snø og dårlig vegoppmerking kan gjøre at filholder, kamera og andre førerstøttesystemer fungerer dårligere.](/images/forerstottesystemer_vinter.png)\n*Snø og is kan blokkere sensorer og kameraer, og gjøre at førerstøttesystemene slutter å virke.*'
+            },
+            {
+                title: 'Vanlige misforståelser',
+                type: 'example',
+                content: 'Her er tre klassiske feil mange gjør på teoriprøven når det gjelder førerstøtte:\n\n1. **«Bilen har adaptiv cruise control, så jeg kan slappe av og lese på telefonen.»**\n**Feil:** Du har det fulle føreransvaret under hele kjøringen. Du skal være konsentrert, holde hendene på rattet og være klar til å overta kontrollen umiddelbart.\n\n2. **«ABS-bremser gjør at jeg stopper raskere på glatt føre.»**\n**Feil:** På glatt føre er hovedpoenget at ABS hjelper deg å beholde styringen, ikke at bilen stopper raskere. På enkelte underlag, som løs snø eller grus, kan bremselengden faktisk bli lengre med ABS.\n\n3. **«Jeg trenger ikke å se meg over skulderen før feltbytte når jeg har blindsonevarsler.»**\n**Feil:** Blindsonevarsleren er kun et hjelpemiddel. Du har vikeplikt ved feltbytte og må alltid utføre visuell kontroll (speil + skulderblikk) for å sikre at feltet er ledig.'
+            },
+            {
+                title: 'Slik kan spørsmål komme på teoriprøven',
+                type: 'tip',
+                content: 'På den ekte teoriprøven hos Statens vegvesen blir du ofte testet i din forståelse av føreransvar og praktisk bruk av systemene:\n\n- **Scenariooppgaver:** Du får beskrevet en situasjon der et støttesystem feiler (f.eks. filholderen mister linjene på grunn av snø, eller adaptiv cruise control bremser ikke for en parkert bil). Spørsmålet vil handle om hvem som har ansvaret og hva du som fører må gjøre.\n- **Faktaspørsmål om ABS og ESP:** Du må vite nøyaktig hva ABS hjelper med (beholde styring, ikke nødvendigvis kortere bremselengde) og hva ESP gjør (stabiliserer bilen ved skrens).\n- **Regelspørsmål om rygging og feltvalg:** Du blir spurt om ryggekameraet fritar deg for plikten til å observere blindsoner, eller om blindsonevarsleren erstatter sidespeil/skulderblikk.\n\nVil du sjekke om du er klar til eksamen? Gå til forsiden og [ta vår gratis teoriprøve](/) for å teste deg selv på lignende oppgaver.'
+            }
+        ],
+        faq: [
+            {
+                question: 'Hva er førerstøttesystemer?',
+                answer: 'Førerstøttesystemer (ADAS) er elektroniske hjelpemidler i bilen som kan varsle, hjelpe eller gripe inn i bestemte situasjoner, for eksempel ved bremsing, feltplassering, avstand eller rygging.'
+            },
+            {
+                question: 'Er førerstøttesystemer det samme som selvkjøring?',
+                answer: 'Nei. De fleste systemer i dagens vanlige biler er kun hjelpemidler (nivå 2 automasjon). Føreren må alltid følge med på veien, holde hendene på rattet og være klar til å overta styringen umiddelbart.'
+            },
+            {
+                question: 'Hva gjør ABS?',
+                answer: 'ABS (blokkeringsfrie bremser) hindrar at hjulene låser seg helt når du bremser maksimalt. Det gjør at dekkene fortsatt ruller slik at du beholder evnen til å styre unna en hindring mens du bremser.'
+            },
+            {
+                question: 'Gjør ABS bremselengden kortere?',
+                answer: 'Ikke nødvendigvis. På enkelte underlag, som løs snø eller grus, kan bremselengden bli lengre med ABS. På glatt føre er hovedpoenget at ABS hjelper deg å beholde styringen, ikke at bilen stopper raskere.'
+            },
+            {
+                question: 'Hva gjør ESP?',
+                answer: 'ESP (antiskrens) hjelper til med å holde bilen stabil dersom den begynner å skli. Systemet bremser ett eller flere hjul individuelt for å motvirke understyring eller overstyring og få bilen tilbake i riktig retning.'
+            },
+            {
+                question: 'Kan jeg stole på filholderen?',
+                answer: 'Nei, du må bruke den som et hjelpemiddel og ikke stole blindt på den. Den krever tydelig vegoppmerking og kan fungere dårlig eller slå seg helt av ved snø, slaps, slitte linjer eller i vegarbeidsområder.'
+            },
+            {
+                question: 'Hva er det viktigste å huske om førerstøttesystemer til teoriprøven?',
+                answer: 'Det viktigste er at du som fører alltid har det fulle ansvaret for kjøringen. Systemene fritar deg aldri for plikten til å tilpasse farten, holde avstand, observere trafikkbildet og gripe inn når teknologien svikter.'
+            }
+        ],
+        miniQuiz: [
+            {
+                question: 'Hva er hovedoppgaven til ABS-bremser?',
+                options: [
+                    'Å gjøre bremselengden kortest mulig under alle forhold',
+                    'Å hindre at hjulene låser seg slik at du kan styre under hard bremsing',
+                    'Å holde bilen automatisk i riktig kjørefelt',
+                    'Å forhindre at motoren kveles ved bråstopp'
+                ],
+                correct: 'Å hindre at hjulene låser seg slik at du kan styre under hard bremsing',
+                explanation: 'ABS forhindrer blokkering av hjulene. Dette gjør at dekkene fortsatt roterer og kan overføre styrekrefter, slik at du kan styre unna hindringer selv under full oppbremsing.'
+            },
+            {
+                question: 'Hva er riktig om adaptiv cruise control (ACC)?',
+                options: [
+                    'Den fritar føreren for ansvaret med å følge med på veien',
+                    'Den kan hjelpe med å holde fart og avstand, men føreren må fortsatt være klar til å gripe inn',
+                    'Den fungerer bare under lukeparkering',
+                    'Den tar over all styring av bilen uansett hastighet'
+                ],
+                correct: 'Den kan hjelpe med å holde fart og avstand, men føreren må fortsatt være klar til å gripe inn',
+                explanation: 'Adaptiv cruise control regulerer fart og avstand til kjøretøyet foran, men føreren har fortsatt 100 % ansvar for kjøringen og må gripe inn dersom systemet ikke reagerer tilstrekkelig.'
+            },
+            {
+                question: 'Når kan filholderen (kjørefeltassistenten) fungere dårligere?',
+                options: [
+                    'Når vegoppmerkingen er slitt, dekket av snø eller vanskelig å lese',
+                    'Når veioppmerkingen er helt tørr og nylagt asfalt',
+                    'Når bilen har lite spylevæske igjen',
+                    'Kun når det er mørkt ute'
+                ],
+                correct: 'Når vegoppmerkingen er slitt, dekket av snø eller vanskelig å lese',
+                explanation: 'Filholderen bruker kamera til å registrere oppmerkingen i veien. Hvis linjene er slitt, snødekt eller vanskelige å skille fra veibanen, vil ikke systemet fungere optimalt og kan slå seg av.'
+            },
+            {
+                question: 'Hva er riktig om ESP / antiskrens?',
+                options: [
+                    'Det hjelper med å stabilisere bilen ved skrensfare, men føreren må fortsatt tilpasse fart og avstand',
+                    'Det gjør at du kan kjøre i samme hastighet på glatt føre som på tørr vei',
+                    'Det erstatter behovet for vinterdekk på vinterføre',
+                    'Det kobler ut bremsene hvis bilen begynner å skli'
+                ],
+                correct: 'Det hjelper med å stabilisere bilen ved skrensfare, men føreren må fortsatt tilpasse fart og avstand',
+                explanation: 'ESP hjelper til med å gjenvinne kontrollen ved skrens ved å bremse enkeltvise hjul, men det opphever ikke fysikkens lover og kan ikke skape veigrep dersom farten is altfor høy etter forholdene.'
+            },
+            {
+                question: 'Hva bør du gjøre selv om bilen din har ryggekamera?',
+                options: [
+                    'Stole fullt ut på skjermen og rygge uten å se deg rundt',
+                    'Fortsatt bruke speil, se deg rundt bilen og fysisk kontrollere blindsoner',
+                    'Rygge raskere fordi sensorene vil piping-varsle i tide',
+                    'Slå av kameraet for å unngå å bli distrahert'
+                ],
+                correct: 'Fortsatt bruke speil, se deg rundt bilen og fysisk kontrollere blindsoner',
+                explanation: 'Ryggekamera og sensorer har begrensede vinkler og kan ha blindsoner. Du har alltid det fulle ansvaret ved rygging og må sikre fri bane ved å se deg fysisk rundt.'
+            }
+        ],
+        sources: {
+            title: 'Kilder',
+            type: 'text',
+            content: '- Statens vegvesen: [avanserte førerstøttesystemer (ADAS)](https://www.vegvesen.no/fag/trafikk/its-portalen/its-i-statens-vegvesen/metr/forerstottesystemer/)\n- Trygg Trafikk: [kjøretøyteknologi](https://www.tryggtrafikk.no/wiki/kjoretoyteknologi/)'
+        }
     }
 ]
 
@@ -4662,6 +4805,144 @@ export const theoryArticles: TheoryTopic[] = [
                 ],
                 correct: 'Firehjulstrekk gir bedre fremdrift under akselerasjon, men bremselengden er den samme',
                 explanation: 'Firehjulstrekk fordeler motorkraften på alle fire hjul, noe som forbedrer grepet når du skal i gang eller kjøre oppover. Men alle biler bremser med alle fire hjul, så bremselengen på glatt føre reduseres ikke.'
+            }
+        ]
+    },
+    {
+        id: 'forerstottesystemer',
+        title: 'Førerstøttesystemer på teoriprøven: hjelpemidler, ikke selvkjøring',
+        icon: '🚗',
+        shortDescription: 'Førerstøttesystemer kan hjelpe deg med å bremse, holde avstand, varsle om fare eller holde bilen i feltet. Men de erstatter ikke føreren. På teoriprøven er det viktigste å forstå at du fortsatt må følge med, tilpasse farten og gripe inn når systemene ikke fungerer godt nok.',
+        color: 'var(--apple-blue)',
+        seoTitle: 'Førerstøttesystemer: ABS, ESP og adaptiv cruise | Teori-test.no',
+        seoDescription: 'Lær hva ABS, ESP, adaptiv cruise control, filholder og nødbrems gjør – og hvorfor du fortsatt har ansvaret som fører. Med teorifeller og miniQuiz.',
+        sections: [
+            {
+                title: 'Kort forklart: Hva er førerstøttesystemer?',
+                type: 'info',
+                content: 'Førerstøttesystemer (ofte kalt ADAS - Advanced Driver Assistance Systems) er elektroniske hjelpemidler i bilen. De kan varsle om fare, hjelpe med styring og fart, eller gripe inn i kritiske situasjoner. Hovedregelen til teoriprøven er enkel:\n\n**Systemene hjelper føreren, men de erstatter aldri førerens ansvar.**\n\nDet betyr at uansett hvilke systemer som er aktivert i bilen, er det du som fører som er ansvarlig for bilens plassering, fart, sikkerhet og eventuelle regelbrudd.\n\n![Illustrasjon av førerstøttesystemer i bil, med ABS, ESP, adaptiv cruise control, filholder, blindsonevarsler og automatisk nødbrems.](/images/forerstottesystemer_oversikt.png)\n*En oversikt over de viktigste førerstøttesystemene i en moderne bil, og hvor de hjelper deg under kjøring.*'
+            },
+            {
+                title: 'Tabell: Vanlige førerstøttesystemer på teoriprøven',
+                type: 'table',
+                content: '<div style="overflow-x: auto; -webkit-overflow-scrolling: touch; margin-top: 1rem;"><table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem;"><thead><tr style="background-color: var(--color-surface); border-bottom: 2px solid var(--color-border);"><th style="padding: 12px 8px;">System</th><th style="padding: 12px 8px;">Hva det hjelper med</th><th style="padding: 12px 8px;">Hva du fortsatt må gjøre</th><th style="padding: 12px 8px;">Vanlig teorifelle</th></tr></thead><tbody><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>ABS</b> (Blokkeringsfrie bremser)</td><td style="padding: 12px 8px;">Hindrer at hjulene låser seg ved hard bremsing, slik at du kan styre.</td><td style="padding: 12px 8px;">Bremse hardt og holde trykket på pedalen, og styr unna faren.</td><td style="padding: 12px 8px;">Å tro at ABS-bremser alltid gir kortere bremselengde. (På løs snø eller grus kan den bli lengre).</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>ESP / Antiskrens</b></td><td style="padding: 12px 8px;">Hjelper med å stabilisere bilen ved skrensfare ved å bremse enkelthjul.</td><td style="padding: 12px 8px;">Tilpass farten etter forholdene og unngå brå rattbevegelser.</td><td style="padding: 12px 8px;">Å tro at ESP opphever glatt føre og tillater høyere fart i svinger.</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Antispinn</b></td><td style="padding: 12px 8px;">Reduserer hjulspinn ved igangkjøring eller akselerasjon.</td><td style="padding: 12px 8px;">Kjør rolig, gi forsiktig gass og tilpass deg glatt underlag.</td><td style="padding: 12px 8px;">Å tro at bilen får bedre faktisk veigrep enn dekkene og føret tillater.</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Adaptiv cruise control</b></td><td style="padding: 12px 8px;">Holder valgt fart og tilpasser avstanden til kjøretøyet foran.</td><td style="padding: 12px 8px;">Følg med på trafikken, vær klar til å bremse selv, og tilpass farten etter sikt og føre.</td><td style="padding: 12px 8px;">Å tro at systemet fungerer som en autopilot og reagerer riktig i alle situasjoner.</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Filholder / Kjørefeltassistent</b></td><td style="padding: 12px 8px;">Varsler eller styrer forsiktig for å holde bilen innenfor kjørefeltet.</td><td style="padding: 12px 8px;">Hold hendene på rattet, se på veien, styr selv og bruk blinklys ved filskifte.</td><td style="padding: 12px 8px;">Å tro at systemet fungerer like godt uten synlige linjer i veibanen.</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Automatisk nødbrems</b></td><td style="padding: 12px 8px;">Varsler og bremser automatisk hvis en kollisjon er nært forestående.</td><td style="padding: 12px 8px;">Hold tilstrekkelig avstand, les trafikkbildet fremover og brems tidlig.</td><td style="padding: 12px 8px;">Å tro at nødbremsen alltid oppdager alle hindringer og avverger enhver kollisjon.</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Blindsonevarsler</b></td><td style="padding: 12px 8px;">Varsler med lys/lyd hvis det ligger et kjøretøy i blindsonen din.</td><td style="padding: 12px 8px;">Sjekk alltid speil og ta skulderblikk før du skifter kjørefelt.</td><td style="padding: 12px 8px;">Å stole blindt på varsellampen og droppe skulderblikket (kan overse raske MC/sykler).</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Ryggekamera / Parkeringssensor</b></td><td style="padding: 12px 8px;">Hjelper deg å oppdage hindringer bak bilen under rygging.</td><td style="padding: 12px 8px;">Se deg rundt i alle retninger, sjekk speil og blindsoner før og under rygging.</td><td style="padding: 12px 8px;">Å tro at kameraet viser alt og erstatter plikten til fysisk observasjon.</td></tr><tr><td style="padding: 12px 8px;"><b>Skiltgjenkjenning / ISA</b></td><td style="padding: 12px 8px;">Leser fartsskilt og kan varsle eller tilpasse bilens fartsgrense automatisk.</td><td style="padding: 12px 8px;">Følg med på fysiske skilt, og tilpass farten etter vær, sikt og føre.</td><td style="padding: 12px 8px;">Å tro at bilen alltid viser riktig fartsgrense (systemet kan feile på midlertidige skilt).</td></tr></tbody></table></div>'
+            },
+            {
+                title: 'ABS og ESP: De viktigste sikkerhetssystemene',
+                type: 'text',
+                content: 'De to mest kjente og utbredte førerstøttesystemene er ABS og ESP. De jobber aktivt med bilens veigrep under kjøring:\n\n### ABS (Blokkeringsfrie bremser)\nHovedoppgaven til ABS-bremser er å hindre at hjulene låser seg helt når du bremser maksimalt. Hvis hjulene låser seg, mister du all mulighet til å styre bilen. Med ABS kan du bremse maksimalt og samtidig styre unna en hindring. Les mer om hvordan veigrep og fart påvirker [bremselengde og stopplengde](/laeringsressurser/bremselengde).\n\n**Teorifelle:** Mange tror ABS-bremser alltid gir kortere bremselengde. På enkelte underlag, som løs snø eller grus, kan bremselengden bli lengre med ABS. På [glatt føre](/laeringsressurser/glatt-fore) er hovedpoenget at ABS hjelper deg å beholde styringen, ikke at bilen stopper raskere.\n\n### ESP / Antiskrens\nESP (Electronic Stability Program) overvåker bilens retning og hjulenes rotasjon. Hvis bilen begynner å skli (understyring eller overstyring), griper ESP inn ved å bremse ett eller flere hjul individuelt for å rette opp bilen.\n\n**Teorifelle:** ESP kan hjelpe deg med å hente inn en skrens, men systemet opphever ikke fysikkens lover. Kjører du for fort inn i en sving på glatt føre, vil bilen skli ut uansett om ESP er aktivert eller ikke.'
+            },
+            {
+                title: 'Adaptiv cruise control og filholder: Komfort, ikke selvkjøring',
+                type: 'text',
+                content: 'Disse systemene hjelper deg med den daglige kjøringen på lengre strekninger, men krever at føreren er 100 % oppmerksom:\n\n### Adaptiv cruise control (ACC)\nI motsetning til vanlig cruise control som kun holder en fast hastighet, bruker adaptiv cruise control radar eller kamera for å måle avstanden til bilen foran. Hvis bilen foran bremser, kan bilen bremse eller redusere farten for å holde avstanden.\n\n**Viktig:** Du har fortsatt ansvaret. Hvis bilen foran bremser brått, eller det oppstår en situasjon systemet ikke oppfatter (f.eks. en bil som svinger inn rett foran deg), må du være klar til å bremse selv.\n\n### Filholder / Kjørefeltassistent\nFilholderen bruker et kamera øverst i frontruten for å lese oppmerkingen i veibanen. Hvis du er i ferd med å drifte ut av kjørefeltet uten å bruke blinklys, vil systemet varsle deg eller gi et lite styreinnrykk for å holde deg i feltet. Les mer om kjørefelt og vegoppmerking i vår guide om [veimerking](/laeringsressurser/veimerking) og [feltvalg, fletting og kollektivfelt](/laeringsressurser/feltvalg-fletting-kollektivfelt).\n\n**Viktig:** Filholderen fungerer best når det er synlig vegoppmerking. Ved vegarbeid, slitte linjer eller snødekt vei kan systemet fungere dårligere eller slå seg av.'
+            },
+            {
+                title: 'Automatisk nødbrems, blindsonevarsling og ryggehjelp',
+                type: 'text',
+                content: 'Sikkerhetssystemene rundt bilen hjelper til i kritiske øyeblikk og ved finmanøvrering:\n\n### Automatisk nødbrems (AEB)\nSystemet kan bruke kamera/radar til å oppdage andre kjøretøy, fotgjengere eller syklister foran bilen. Hvis det oppstår en akutt kollisjonsfare og du ikke reagerer på varslene, kan bilen bremse automatisk for å redusere risikoen for eller skadene av et sammenstøt.\n\n### Blindsonevarsler\nBlindsonevarsleren bruker sensorer på siden og bak på bilen for å oppdage kjøretøy som befinner seg i blindsonen din. En lampe (ofte i sidespeilet) lyser eller blinker hvis du setter på blinklyset for å skifte felt mens det ligger en bil der.\n\n**Teorifelle:** Blindsonevarsleren erstatter aldri din plikt til å sjekke blindsonen selv med skulderblikk. Sensorer kan overse raske motorsykler eller syklister.\n\n### Ryggekamera og parkeringssensor\nNår du setter bilen i revers, viser ryggekameraet området bak bilen, og sensorer piper når du nærmer deg hindringer. Dette er utmerkede hjelpemidler ved parkering, men kameraet har en begrenset vinkel og kan ha blindsoner rett under eller på sidene. Du må fortsatt gjøre en fysisk observasjon rundt hele bilen før du begynner å rygge.'
+            },
+            {
+                title: 'Når systemene kan svikte',
+                type: 'warning',
+                content: 'Førerstøttesystemene er helt avhengige av sensorer, radarer og kameraer plassert rundt omkring på bilen (spesielt i fronten, på støtfangere og bak frontruten). Disse kan lett settes ut av spill av ytre forhold:\n\n- **Snø, is og sludd:** Kan dekke til radarer i grillen eller kameraet i frontruten. Bilen vil da ofte gi beskjed om at støttesystemene er utilgjengelige.\n- **Skitt, søle og veisalt:** En skitten bil kan blokkere linsene til ryggekameraet og blindsone-sensorene.\n- **Kraftig regn og tåke:** Reduserer sikten for kamerasystemene, noe som gjør det vanskelig for bilen å registrere kjøretøy eller fotgjengere.\n- **Dårlig vegoppmerking:** Snø, slaps, slitasje eller vegarbeid gjør at filholderen ikke klarer å lese kjørefeltene.\n- **Feil skiltgjenkjenning:** Skiltgjenkjenning (ISA) kan lese skilt på avkjøringsveier eller overse midlertidige fartsgrenser ved vegarbeid. Du må alltid forholde deg til de faktiske skiltene langs veien.\n\nHusk at du alltid må sjekke at sensorer og lykter er rene og fungerer før du kjører. Dette lærer du mer om i vår guide til [sikkerhetskontroll av bilen](/laeringsressurser/sikkerhetskontroll).\n\n![Bil på vintervei der snø og dårlig vegoppmerking kan gjøre at filholder, kamera og andre førerstøttesystemer fungerer dårligere.](/images/forerstottesystemer_vinter.png)\n*Snø og is kan blokkere sensorer og kameraer, og gjøre at førerstøttesystemene slutter å virke.*'
+            },
+            {
+                title: 'Vanlige misforståelser',
+                type: 'example',
+                content: 'Her er tre klassiske feil mange gjør på teoriprøven når det gjelder førerstøtte:\n\n1. **«Bilen har adaptiv cruise control, så jeg kan slappe av og lese på telefonen.»**\n**Feil:** Du har det fulle føreransvaret under hele kjøringen. Du skal være konsentrert, holde hendene på rattet og være klar til å overta kontrollen umiddelbart.\n\n2. **«ABS-bremser gjør at jeg stopper raskere på glatt føre.»**\n**Feil:** På glatt føre er hovedpoenget at ABS hjelper deg å beholde styringen, ikke at bilen stopper raskere. På enkelte underlag, som løs snø eller grus, kan bremselengden faktisk bli lengre med ABS.\n\n3. **«Jeg trenger ikke å se meg over skulderen før feltbytte når jeg har blindsonevarsler.»**\n**Feil:** Blindsonevarsleren er kun et hjelpemiddel. Du har vikeplikt ved feltbytte og må alltid utføre visuell kontroll (speil + skulderblikk) for å sikre at feltet er ledig.'
+            },
+            {
+                title: 'Slik kan spørsmål komme på teoriprøven',
+                type: 'tip',
+                content: 'På den ekte teoriprøven hos Statens vegvesen blir du ofte testet i din forståelse av føreransvar og praktisk bruk av systemene:\n\n- **Scenariooppgaver:** Du får beskrevet en situasjon der et støttesystem feiler (f.eks. filholderen mister linjene på grunn av snø, eller adaptiv cruise control bremser ikke for en parkert bil). Spørsmålet vil handle om hvem som har ansvaret og hva du som fører må gjøre.\n- **Faktaspørsmål om ABS og ESP:** Du må vite nøyaktig hva ABS hjelper med (beholde styring, ikke nødvendigvis kortere bremselengde) og hva ESP gjør (stabiliserer bilen ved skrens).\n- **Regelspørsmål om rygging og feltvalg:** Du blir spurt om ryggekameraet fritar deg for plikten til å observere blindsoner, eller om blindsonevarsleren erstatter sidespeil/skulderblikk.\n\nVil du sjekke om du er klar til eksamen? Gå til forsiden og [ta vår gratis teoriprøve](/) for å teste deg selv på lignende oppgaver.'
+            }
+        ],
+        faq: [
+            {
+                question: 'Hva er førerstøttesystemer?',
+                answer: 'Førerstøttesystemer (ADAS) er elektroniske hjelpemidler i bilen som kan varsle, hjelpe eller gripe inn i bestemte situasjoner, for eksempel ved bremsing, feltplassering, avstand eller rygging.'
+            },
+            {
+                question: 'Er førerstøttesystemer det samme som selvkjøring?',
+                answer: 'Nei. De fleste systemer i dagens vanlige biler er kun hjelpemidler (nivå 2 automasjon). Føreren må alltid følge med på veien, holde hendene på rattet og være klar til å overta styringen umiddelbart.'
+            },
+            {
+                question: 'Hva gjør ABS?',
+                answer: 'ABS (blokkeringsfrie bremser) hindrer at hjulene låser seg helt når du bremser maksimalt. Det gjør at dekkene fortsatt ruller slik at du beholder evnen til å styre unna en hindring mens du bremser.'
+            },
+            {
+                question: 'Gjør ABS bremselengden kortere?',
+                answer: 'Ikke nødvendigvis. På enkelte underlag, som løs snø eller grus, kan bremselengden bli lengre med ABS. På glatt føre er hovedpoenget at ABS hjelper deg å beholde styringen, ikke at bilen stopper raskere.'
+            },
+            {
+                question: 'Hva gjør ESP?',
+                answer: 'ESP (antiskrens) hjelper til med å holde bilen stabil dersom den begynner å skli. Systemet bremser ett eller flere hjul individuelt for å motvirke understyring eller overstyring og få bilen tilbake i riktig retning.'
+            },
+            {
+                question: 'Kan jeg stole på filholderen?',
+                answer: 'Nei, du må bruke den som et hjelpemiddel og ikke stole blindt på den. Den krever tydelig vegoppmerking og kan fungere dårlig eller slå seg helt av ved snø, slaps, slitte linjer eller i vegarbeidsområder.'
+            },
+            {
+                question: 'Hva er det viktigste å huske om førerstøttesystemer til teoriprøven?',
+                answer: 'Det viktigste er at du som fører alltid har det fulle ansvaret for kjøringen. Systemene fritar deg aldri for plikten til å tilpasse farten, holde avstand, observere trafikkbildet og gripe inn når teknologien svikter.'
+            }
+        ],
+        miniQuiz: [
+            {
+                question: 'Hva er hovedoppgaven til ABS-bremser?',
+                options: [
+                    'Å gjøre bremselengden kortest mulig under alle forhold',
+                    'Å hindre at hjulene låser seg slik at du kan styre under hard bremsing',
+                    'Å holde bilen automatisk i riktig kjørefelt',
+                    'Å forhindre at motoren kveles ved bråstopp'
+                ],
+                correct: 'Å hindre at hjulene låser seg slik at du kan styre under hard bremsing',
+                explanation: 'ABS forhindrer blokkering av hjulene. Dette gjør at dekkene fortsatt roterer og kan overføre styrekrefter, slik at du kan styre unna hindringer selv under full oppbremsing.'
+            },
+            {
+                question: 'Hva er riktig om adaptiv cruise control (ACC)?',
+                options: [
+                    'Den fritar føreren for ansvaret med å følge med på veien',
+                    'Den kan hjelpe med å holde fart og avstand, men føreren må fortsatt være klar til å gripe inn',
+                    'Den fungerer bare under lukeparkering',
+                    'Den tar over all styring av bilen uansett hastighet'
+                ],
+                correct: 'Den kan hjelpe med å holde fart og avstand, men føreren må fortsatt være klar til å gripe inn',
+                explanation: 'Adaptiv cruise control regulerer fart og avstand til kjøretøyet foran, men føreren har fortsatt 100 % ansvar for kjøringen og må gripe inn dersom systemet ikke reagerer tilstrekkelig.'
+            },
+            {
+                question: 'Når kan filholderen (kjørefeltassistenten) fungere dårligere?',
+                options: [
+                    'Når vegoppmerkingen er slitt, dekket av snø eller vanskelig å lese',
+                    'Når veioppmerkingen er helt tørr og nylagt asfalt',
+                    'Når bilen har lite spylevæske igjen',
+                    'Kun når det er mørkt ute'
+                ],
+                correct: 'Når vegoppmerkingen er slitt, dekket av snø eller vanskelig å lese',
+                explanation: 'Filholderen bruker kamera til å registrere oppmerkingen i veien. Hvis linjene er slitt, snødekt eller vanskelige å skille fra veibanen, vil ikke systemet fungere optimalt og kan slå seg av.'
+            },
+            {
+                question: 'Hva er riktig om ESP / antiskrens?',
+                options: [
+                    'Det hjelper med å stabilisere bilen ved skrensfare, men føreren må fortsatt tilpasse fart og avstand',
+                    'Det gjør at du kan kjøre i samme hastighet på glatt føre som på tørr vei',
+                    'Det erstatter behovet for vinterdekk på vinterføre',
+                    'Det kobler ut bremsene hvis bilen begynner å skli'
+                ],
+                correct: 'Det hjelper med å stabilisere bilen ved skrensfare, men føreren må fortsatt tilpasse fart og avstand',
+                explanation: 'ESP hjelper til med å gjenvinne kontrollen ved skrens ved å bremse enkeltvise hjul, men det opphever ikke fysikkens lover og kan ikke skape veigrep dersom farten er altfor høy etter forholdene.'
+            },
+            {
+                question: 'Hva bør du gjøre selv om bilen din har ryggekamera?',
+                options: [
+                    'Stole fullt ut på skjermen og rygge uten å se deg rundt',
+                    'Fortsatt bruke speil, se deg rundt bilen og fysisk kontrollere blindsoner',
+                    'Rygge raskere fordi sensorene vil piping-varsle i tide',
+                    'Slå av kameraet for å unngå å bli distrahert'
+                ],
+                correct: 'Fortsatt bruke speil, se deg rundt bilen og fysisk kontrollere blindsoner',
+                explanation: 'Ryggekamera og sensorer har begrensede vinkler og kan ha blindsoner. Du har alltid det fulle ansvaret ved rygging og må sikre fri bane ved å se deg fysisk rundt.'
             }
         ]
     }

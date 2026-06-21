@@ -2,12 +2,63 @@ import { useState, useEffect } from 'react'
 import { useNavigate, Link } from 'react-router-dom'
 import { getWrongAnswersCount, clearWrongAnswers } from '../utils/wrongAnswersStore'
 import { Helmet } from 'react-helmet-async'
-import { Zap, Signpost, Target, Route, Gauge, Layers, CircleGauge, Wine, Truck, Wrench, ChevronDown, RefreshCw, Car, ChevronRight, BookOpen, HelpCircle, Snowflake, Gamepad2 } from 'lucide-react'
+import { Zap, Signpost, Target, Route, Gauge, Layers, CircleGauge, Wine, Truck, Wrench, ChevronDown, RefreshCw, Car, ChevronRight, BookOpen, HelpCircle, Snowflake, Gamepad2, Share2 } from 'lucide-react'
+
+interface FaqItem {
+    question: string;
+    answer: React.ReactNode;
+    jsonLdAnswer?: string;
+}
+
+const faqItems: FaqItem[] = [
+    {
+        question: 'Er teoriprøven på Teori-test.no gratis?',
+        answer: 'Ja. Du kan ta en teoriprøve gratis for bil klasse B med 45 spørsmål, fasit og forklaringer. Du trenger ikke registrere deg.'
+    },
+    {
+        question: 'Er dette en teoriprøve for bil klasse B?',
+        answer: 'Ja. Øvingen er laget for deg som skal ta teoriprøven for bil/personbil klasse B.'
+    },
+    {
+        question: 'Er dette den ekte teoriprøven?',
+        answer: 'Nei. Dette er en øvingsprøve laget for å ligne formatet på teoriprøven for klasse B, slik at du kan trene før den ekte prøven hos Statens vegvesen.'
+    },
+    {
+        question: 'Får jeg se fasit og forklaring?',
+        answer: 'Ja. Etter prøven får du se riktige svar og korte forklaringer, slik at du kan lære av feilene dine.'
+    },
+    {
+        question: 'Får jeg se hva jeg bør øve mer på etter prøven?',
+        answer: 'Ja. Etter full prøve får du en oversikt over temaene du bommet mest på, slik at du kan øve videre mer målrettet.'
+    },
+    {
+        question: 'Hvilke temaer kan jeg øve på?',
+        answer: 'Spørsmålene dekker de viktigste kategoriene i pensum for teoriprøven klasse B. Du kan øve på blant annet vikeplikt, trafikkskilt, veimerking, bremselengde, forbikjøring, promille, glatt føre, kjøretøy, sikkerhetskontroll og trafikkregler.'
+    },
+    {
+        question: 'Hva er fokusmodus?',
+        answer: 'Fokusmodus lar deg øve videre på spørsmål du tidligere har svart feil på. Dette lagres lokalt i nettleseren din.'
+    },
+    {
+        question: 'Finnes det en gratis teoriprøve-app jeg kan bruke?',
+        answer: (
+            <>
+                Du trenger ikke laste ned en egen app. Teori-test.no fungerer i nettleseren på mobil, nettbrett og PC. For rask tilgang kan brukeren legge siden til på hjemskjermen:
+                <ul style={{ marginTop: '0.5rem', paddingLeft: '1.25rem', listStyleType: 'disc' }}>
+                    <li><strong>iPhone/Safari:</strong> Åpne teori-test.no, trykk Del-ikonet og velg "Legg til på Hjem-skjerm".</li>
+                    <li><strong>Android/Chrome:</strong> Åpne teori-test.no, trykk menyen og velg "Legg til på startsiden" eller "Installer app".</li>
+                </ul>
+            </>
+        ),
+        jsonLdAnswer: 'Du trenger ikke laste ned en egen app. Teori-test.no fungerer i nettleseren på mobil, nettbrett og PC. For rask tilgang kan brukeren legge siden til på hjemskjermen.'
+    }
+]
 
 export default function StartScreen() {
     const [fokusCount, setFokusCount] = useState(0)
     const [useTimerForFull, setUseTimerForFull] = useState(false)
     const [activeFaq, setActiveFaq] = useState<number | null>(null)
+    const [shareStatus, setShareStatus] = useState('')
     const navigate = useNavigate()
 
     // Load wrong answers count on mount and when returning from quiz
@@ -28,6 +79,45 @@ export default function StartScreen() {
         }
     }
 
+    const handleShare = async () => {
+        const shareData = {
+            title: 'Teori-test.no',
+            text: 'Øv gratis til teoriprøven for klasse B med 45 spørsmål, fasit og forklaringer.',
+            url: window.location.origin
+        }
+
+        if (navigator.share && navigator.canShare && navigator.canShare(shareData)) {
+            try {
+                await navigator.share(shareData)
+            } catch (err) {
+                console.log('Deling avbrutt eller feilet:', err)
+            }
+        } else {
+            try {
+                await navigator.clipboard.writeText(window.location.origin)
+                setShareStatus('Lenke kopiert!')
+                setTimeout(() => setShareStatus(''), 2000)
+            } catch (err) {
+                console.error('Klarte ikke å kopiere lenke:', err)
+                setShareStatus('Kunne ikke kopiere lenke')
+                setTimeout(() => setShareStatus(''), 2000)
+            }
+        }
+    }
+
+    const faqJsonLd = {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": faqItems.map(item => ({
+            "@type": "Question",
+            "name": item.question,
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": item.jsonLdAnswer || (typeof item.answer === 'string' ? item.answer : 'Besøk Teori-test.no for detaljert informasjon.')
+            }
+        }))
+    }
+
     return (
         <div className="start-screen">
             <Helmet>
@@ -37,65 +127,15 @@ export default function StartScreen() {
                 <meta property="og:url" content="https://teori-test.no/" />
                 <meta property="og:title" content="Gratis teoriprøve klasse B 2026 – 45 spørsmål og fasit | Teori-test.no" />
                 <meta property="og:description" content="Øv gratis til teoriprøven for klasse B. Ta full prøve med 45 spørsmål, vikeplikt-test, skilt-test og interaktive guider. Ingen registrering." />
+                <meta property="og:image" content="https://teori-test.no/og-image.png" />
+                <meta property="og:image:alt" content="Teori-test.no – gratis teoriprøve for klasse B" />
+                <meta name="twitter:card" content="summary_large_image" />
                 <meta name="twitter:title" content="Gratis teoriprøve klasse B 2026 – 45 spørsmål og fasit | Teori-test.no" />
                 <meta name="twitter:description" content="Øv gratis til teoriprøven for klasse B. Ta full prøve med 45 spørsmål, vikeplikt-test, skilt-test og interaktive guider. Ingen registrering." />
+                <meta name="twitter:image" content="https://teori-test.no/og-image.png" />
+                <meta name="twitter:image:alt" content="Teori-test.no – gratis teoriprøve for klasse B" />
                 <script type="application/ld+json">
-                    {`
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Er teoriprøvene på Teori-test.no gratis?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Ja. Du kan øve gratis uten registrering og uten å laste ned app."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Er dette den ekte teoriprøven?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Nei. Dette er en øvingsprøve laget for å ligne formatet på teoriprøven for klasse B, slik at du kan trene før den ekte prøven hos Statens vegvesen."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Får jeg se fasit og forklaring?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Ja. Etter prøven får du se riktige svar og korte forklaringer, slik at du kan lære av feilene dine."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Hvilke temaer kan jeg øve på?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Spørsmålene dekker de viktigste kategoriene i pensum for teoriprøven klasse B. Du kan øve på blant annet vikeplikt, trafikkskilt, veimerking, bremselengde, forbikjøring, promille, glatt føre, kjøretøy, sikkerhetskontroll og trafikkregler."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Hva er fokusmodus?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Fokusmodus lar deg øve videre på spørsmål du tidligere har svart feil på. Dette lagres lokalt i nettleseren din."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Finnes det en gratis teoriprøve-app jeg kan bruke?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Du trenger ikke laste ned en egen app. Teori-test.no fungerer i nettleseren på mobil, nettbrett og PC. For rask tilgang kan brukeren legge siden til på hjemskjermen."
-      }
-    }
-  ]
-}
-                    `}
+                    {JSON.stringify(faqJsonLd)}
                 </script>
             </Helmet>
 
@@ -153,7 +193,7 @@ export default function StartScreen() {
                                     <span className="mode-badge mode-badge-full">Offisielt format</span>
                                 </h3>
                                 <p className="card-desc">
-                                    Simulerer den virkelige teoriprøven hos Statens vegvesen med samme tidsbegrensning og beståttgrense (maks 7 feil av 45 oppgaver). Denne samler spørsmål fra alle kategorier for å gi deg et mest mulig realistisk bilde av sjansene dine for å bestå før den ekte eksamenen.
+                                    Simulerer den virkelige teoriprøven hos Statens vegvesen med samme tidsbegrensning og beståttgrense (maks 7 feil av 45 oppgaver). Denne samler spørsmål fra alle kategorier for å gi deg et mest mulig realistisk bilde av sjansene dine for å bestå før den ekte eksamenen. Etter prøven får du en oversikt over hvilke temaer du bør øve mer på.
                                 </p>
                             </div>
                         </div>
@@ -436,7 +476,7 @@ export default function StartScreen() {
                                     <IconComponent size={20} strokeWidth={2} />
                                 </div>
                                 <div>
-                                    <h4 style={{ margin: '0 0 4px 0', fontSize: '1.05rem', fontWeight: 'bold' }}>{item.title}</h4>
+                                    <h3 style={{ margin: '0 0 4px 0', fontSize: '1.05rem', fontWeight: 'bold' }}>{item.title}</h3>
                                     <p style={{ margin: 0, fontSize: '0.9rem', color: 'var(--color-text-light)', lineHeight: '1.45' }}>{item.desc}</p>
                                 </div>
                             </div>
@@ -472,7 +512,7 @@ export default function StartScreen() {
                         { title: 'Velg prøve eller tema', desc: 'Start med full prøve, tematest eller guide.' },
                         { title: 'Svar på spørsmål', desc: 'Øv i samme format som teoriprøven.' },
                         { title: 'Se forklaring', desc: 'Lær hvorfor svaret er riktig eller feil.' },
-                        { title: 'Repeter feil', desc: 'Fokusmodus hjelper deg å øve videre.' }
+                        { title: 'Få oversikt over svake områder', desc: 'Etter full prøve ser du hvilke temaer du bør øve mer på.' }
                     ].map((step, i) => (
                         <div key={i} className="step-card">
                             <div className="step-badge">
@@ -490,8 +530,48 @@ export default function StartScreen() {
                 <div className="start-screen-seo">
                     <h2>Om Teori-test.no</h2>
                     <p>
-                        Teori-test.no er en gratis læringsplattform for deg som skal ta førerkort for klasse B. Her kan du øve til teoriprøven med kvalitetssikrede spørsmål, studere trafikkskilt i vår skiltguide, eller dykke ned i våre interaktive læringsartikler. Alt innhold er tilgjengelig helt gratis og uten registrering.
+                        Teori-test.no er en gratis læringsplattform for deg som skal ta førerkort for klasse B. Her kan du øve til teoriprøven med kvalitetssikrede spørsmål, studere trafikkskilt i vår skiltguide, prøve minispill som Skiltduellen, eller dykke ned i interaktive læringsartikler. Etter full prøve ser du også hvilke temaer du bør øve mer på. Alt innhold er tilgjengelig helt gratis og uten registrering.
                     </p>
+
+                    {/* SHARE ROW */}
+                    <div style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        flexWrap: 'wrap',
+                        gap: '0.75rem',
+                        marginTop: '1rem',
+                        marginBottom: '2rem',
+                        fontSize: '0.92rem',
+                        color: 'var(--color-text-light)'
+                    }}>
+                        <span>Kjenner du noen som øver til teoriprøven? Del Teori-test.no.</span>
+                        <button
+                            onClick={handleShare}
+                            className="button button-secondary"
+                            style={{
+                                display: 'inline-flex',
+                                alignItems: 'center',
+                                gap: '6px',
+                                fontSize: '0.85rem',
+                                padding: '6px 12px',
+                                borderRadius: '6px',
+                                border: '1px solid var(--color-border)'
+                            }}
+                        >
+                            <Share2 size={13} />
+                            Del siden
+                        </button>
+                        {shareStatus && (
+                            <span style={{
+                                fontSize: '0.85rem',
+                                color: 'var(--color-success)',
+                                fontWeight: '600',
+                                marginLeft: '0.25rem'
+                            }}>
+                                {shareStatus}
+                            </span>
+                        )}
+                    </div>
 
                     {/* COMPACT FACT BOX */}
                     <div className="fact-box-container" style={{
@@ -523,7 +603,9 @@ export default function StartScreen() {
                                 'Maks 7 feil for å bestå',
                                 '17,5 år er tidligste alder for å ta prøven',
                                 '3 år gyldighet etter bestått teoriprøve',
-                                'Minst 2 uker ventetid ved stryk'
+                                'Minst 2 uker ventetid ved stryk',
+                                'Teoriprøven tas hos Statens vegvesen',
+                                'Bestill time før du møter på trafikkstasjonen'
                             ].map((fact, index) => (
                                 <div key={index} style={{
                                     display: 'flex',
@@ -541,7 +623,8 @@ export default function StartScreen() {
                                     <span style={{
                                         color: 'var(--color-primary)',
                                         fontWeight: '900',
-                                        fontSize: '1.1rem'
+                                        fontSize: '1.1rem',
+                                        flexShrink: 0
                                     }}>✓</span>
                                     <span>{fact}</span>
                                 </div>
@@ -564,40 +647,7 @@ export default function StartScreen() {
                         <h2>Ofte stilte spørsmål</h2>
                         
                         <div className="faq-container">
-                            {[
-                                {
-                                    question: 'Er teoriprøvene på Teori-test.no gratis?',
-                                    answer: 'Ja. Du kan øve gratis uten registrering og uten å laste ned app.'
-                                },
-                                {
-                                    question: 'Er dette den ekte teoriprøven?',
-                                    answer: 'Nei. Dette er en øvingsprøve laget for å ligne formatet på teoriprøven for klasse B, slik at du kan trene før den ekte prøven hos Statens vegvesen.'
-                                },
-                                {
-                                    question: 'Får jeg se fasit og forklaring?',
-                                    answer: 'Ja. Etter prøven får du se riktige svar og korte forklaringer, slik at du kan lære av feilene dine.'
-                                },
-                                {
-                                    question: 'Hvilke temaer kan jeg øve på?',
-                                    answer: 'Spørsmålene dekker de viktigste kategoriene i pensum for teoriprøven klasse B. Du kan øve på blant annet vikeplikt, trafikkskilt, veimerking, bremselengde, forbikjøring, promille, glatt føre, kjøretøy, sikkerhetskontroll og trafikkregler.'
-                                },
-                                {
-                                    question: 'Hva er fokusmodus?',
-                                    answer: 'Fokusmodus lar deg øve videre på spørsmål du tidligere har svart feil på. Dette lagres lokalt i nettleseren din.'
-                                },
-                                {
-                                    question: 'Finnes det en gratis teoriprøve-app jeg kan bruke?',
-                                    answer: (
-                                        <>
-                                            Du trenger ikke laste ned en egen app. Teori-test.no fungerer i nettleseren på mobil, nettbrett og PC. For rask tilgang kan brukeren legge siden til på hjemskjermen:
-                                            <ul style={{ marginTop: '0.5rem', paddingLeft: '1.25rem', listStyleType: 'disc' }}>
-                                                <li><strong>iPhone/Safari:</strong> Åpne teori-test.no, trykk Del-ikonet og velg "Legg til på Hjem-skjerm".</li>
-                                                <li><strong>Android/Chrome:</strong> Åpne teori-test.no, trykk menyen og velg "Legg til på startsiden" eller "Installer app".</li>
-                                            </ul>
-                                        </>
-                                    )
-                                }
-                             ].map((faq, index) => {
+                            {faqItems.map((faq, index) => {
                                 const isOpen = activeFaq === index
                                 return (
                                     <div key={index} className="faq-item">

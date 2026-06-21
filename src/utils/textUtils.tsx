@@ -56,12 +56,24 @@ function parseBoldAndItalicText(text: string) {
                 if (itMatch.index > itLastIndex) {
                     finalParts.push(part.substring(itLastIndex, itMatch.index))
                 }
-                // Use caption-like styling for italic text to look great under images
-                finalParts.push(
-                    <em key={`italic-${i}-${itMatch.index}`} style={{ display: 'block', textAlign: 'center', fontSize: '0.9rem', color: 'var(--color-text-light)', marginTop: '-0.5rem', marginBottom: '1.5rem' }}>
-                        {itMatch[1]}
-                    </em>
-                )
+                
+                // Standalone image captions start and end with * and contain no other *
+                const trimmed = part.trim()
+                const isStandaloneCaption = trimmed.startsWith('*') && trimmed.endsWith('*') && trimmed.split('*').length === 3
+                
+                if (isStandaloneCaption) {
+                    finalParts.push(
+                        <em key={`italic-${i}-${itMatch.index}`} style={{ display: 'block', textAlign: 'center', fontSize: '0.9rem', color: 'var(--color-text-light)', marginTop: '-0.5rem', marginBottom: '1.5rem' }}>
+                            {itMatch[1]}
+                        </em>
+                    )
+                } else {
+                    finalParts.push(
+                        <em key={`italic-${i}-${itMatch.index}`}>
+                            {itMatch[1]}
+                        </em>
+                    )
+                }
                 itLastIndex = italicRegex.lastIndex
             }
             if (itLastIndex < part.length) {

@@ -9,7 +9,7 @@ import {
 import type { ScoreboardEntry } from '../../utils/localProfile';
 import './SignSpeedGame.css';
 
-type GamePhase = 'idle' | 'playing' | 'feedback' | 'reveal' | 'ended';
+type GamePhase = 'idle' | 'countdown' | 'playing' | 'feedback' | 'reveal' | 'ended';
 
 type EndReason = 'wrong' | 'timeout';
 
@@ -42,6 +42,7 @@ type GameState = {
   durationMs: number;
   startedAt: number;
   progressRatio: number;
+  countdownVal: number | null;
 };
 
 const answerLabels = ['A', 'B', 'C', 'D'];
@@ -62,6 +63,7 @@ const createInitialState = (rounds: SignSpeedRound[]): GameState => ({
   durationMs: 0,
   startedAt: 0,
   progressRatio: 1,
+  countdownVal: null,
 });
 
 export function SignSpeedGame({ rounds, playerName, onGameEnd, onProfileClick, onClose, scoreboard }: SignSpeedGameProps) {
@@ -219,14 +221,51 @@ export function SignSpeedGame({ rounds, playerName, onGameEnd, onProfileClick, o
     });
   }, [roundBank]);
 
+  // Countdown timer effect (ticks from 3 down to 0)
+  useEffect(() => {
+    if (state.phase !== 'countdown') {
+      return undefined;
+    }
+
+    const intervalId = window.setInterval(() => {
+      setState((current) => {
+        if (current.phase !== 'countdown' || current.countdownVal === null) {
+          return current;
+        }
+
+        if (current.countdownVal > 0) {
+          return {
+            ...current,
+            countdownVal: current.countdownVal - 1,
+          };
+        }
+
+        return current;
+      });
+    }, 1000);
+
+    return () => window.clearInterval(intervalId);
+  }, [state.phase]);
+
+  // Once countdown reaches 0, wait 1 second and then start the round
+  useEffect(() => {
+    if (state.phase === 'countdown' && state.countdownVal === 0) {
+      const timerId = window.setTimeout(() => {
+        startRound();
+      }, 1000);
+      return () => window.clearTimeout(timerId);
+    }
+    return undefined;
+  }, [state.phase, state.countdownVal, startRound]);
+
   const startGame = useCallback(() => {
     reportedResultKey.current = null;
     setState({
       ...createInitialState(roundBank),
-      phase: 'playing',
+      phase: 'countdown',
+      countdownVal: 3,
     });
-    window.setTimeout(startRound, 0);
-  }, [roundBank, startRound]);
+  }, [roundBank]);
 
   const resetGame = useCallback(() => {
     reportedResultKey.current = null;
@@ -271,13 +310,13 @@ export function SignSpeedGame({ rounds, playerName, onGameEnd, onProfileClick, o
     reportedResultKey.current = null;
     setState({
       ...createInitialState(roundBank),
-      phase: 'playing',
+      phase: 'countdown',
+      countdownVal: 3,
     });
-    window.setTimeout(startRound, 0);
-  }, [roundBank, startRound]);
+  }, [roundBank]);
 
   const isActive =
-    state.phase === 'playing' || state.phase === 'feedback' || state.phase === 'reveal';
+    state.phase === 'countdown' || state.phase === 'playing' || state.phase === 'feedback' || state.phase === 'reveal';
   const round = state.round;
 
   return (
@@ -286,31 +325,50 @@ export function SignSpeedGame({ rounds, playerName, onGameEnd, onProfileClick, o
         <button className="close-button" type="button" onClick={onClose ?? resetGame} aria-label="Avslutt">
           ×
         </button>
-        <div className="score-board">
-          <strong>{formatScore(state.score)}</strong>
-          <span>poeng</span>
-        </div>
-        {playerName ? (
-          <button className="profile-button" type="button" onClick={onProfileClick}>
-            <span>{playerName.slice(0, 1).toUpperCase()}</span>
-          </button>
+        {state.phase !== 'countdown' ? (
+          <>
+            <div className="score-board">
+              <strong>{formatScore(state.score)}</strong>
+              <span>poeng</span>
+            </div>
+            {playerName ? (
+              <button className="profile-button" type="button" onClick={onProfileClick}>
+                <span>{playerName.slice(0, 1).toUpperCase()}</span>
+              </button>
+            ) : (
+              <span aria-hidden="true" />
+            )}
+            <div className="timer-track" aria-hidden="true">
+              <div
+                className="timer-fill"
+                data-progress
+                style={{ transform: `scaleX(${state.progressRatio})` }}
+              />
+            </div>
+            <div className="meta-row" aria-label="Status">
+              <span>{state.streak} streak</span>
+              <span>{roundBank.length} påstander</span>
+            </div>
+          </>
         ) : (
-          <span aria-hidden="true" />
+          <div style={{ gridColumn: 'span 2' }} />
         )}
-        <div className="timer-track" aria-hidden="true">
-          <div
-            className="timer-fill"
-            data-progress
-            style={{ transform: `scaleX(${state.progressRatio})` }}
-          />
-        </div>
-        <div className="meta-row" aria-label="Status">
-          <span>{state.streak} streak</span>
-          <span>{roundBank.length} påstander</span>
-        </div>
       </header>
 
-      {!round ? (
+      {state.phase === 'countdown' ? (
+        <section className="countdown-panel">
+          <h2 className="countdown-text">Gjør deg klar!</h2>
+          <div className="countdown-number" key={state.countdownVal}>
+            {state.countdownVal}
+          </div>
+          <div className="countdown-shapes" aria-hidden="true">
+            <div className="shape shape-1"></div>
+            <div className="shape shape-2"></div>
+            <div className="shape shape-3"></div>
+            <div className="shape shape-4"></div>
+          </div>
+        </section>
+      ) : !round ? (
         <section className="start-panel">
           <p className="eyebrow">Skiltbanken</p>
           <h1>Skiltduellen</h1>

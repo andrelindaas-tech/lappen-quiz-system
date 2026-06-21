@@ -16,8 +16,9 @@ export type SignSpeedRound = {
   explanation: string;
 };
 
-export const ROUND_START_MS = 7040;
+export const ROUND_START_MS = 8000;
 export const ROUND_MIN_MS = 3630;
+export const ROUND_STEP_DOWN_MS = 60;
 
 export const signSpeedPrompts: SignSpeedPrompt[] = [
   {
@@ -170,6 +171,24 @@ export const signSpeedPrompts: SignSpeedPrompt[] = [
     correctCode: '610',
     distractorCodes: ['512', '514', '605'],
   },
+  {
+    id: 'rest-area',
+    claim: 'Viser rasteplass.',
+    correctCode: '613.1',
+    distractorCodes: ['614', '612', '650.10'],
+  },
+  {
+    id: 'bathing-place',
+    claim: 'Viser badeplass.',
+    correctCode: '650.10',
+    distractorCodes: ['613.1', '650.11', '650.20'],
+  },
+  {
+    id: 'restaurant',
+    claim: 'Viser restaurant eller spisested.',
+    correctCode: '616',
+    distractorCodes: ['614', '613.1', '650.10'],
+  },
 ];
 
 const signByCode = new Map(trafficSigns.map((sign) => [sign.code, sign]));
@@ -244,7 +263,7 @@ export const getSignSpeedRounds = () =>
     .filter((round): round is SignSpeedRound => Boolean(round));
 
 export const getRoundDuration = (roundIndex: number) =>
-  Math.max(ROUND_MIN_MS, ROUND_START_MS - roundIndex * 130);
+  Math.max(ROUND_MIN_MS, ROUND_START_MS - roundIndex * ROUND_STEP_DOWN_MS);
 
 export const getAnswerScore = (remainingMs: number, durationMs: number, streak: number) => {
   const speedRatio = Math.max(0, Math.min(1, remainingMs / durationMs));
