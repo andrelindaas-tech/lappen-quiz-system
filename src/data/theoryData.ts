@@ -1475,44 +1475,121 @@ export const theoryTopics: TheoryTopic[] = [
                 content: 'Fartsgrenser er ett av de temaene du garantert møter på teoriprøven. Her får du en fullstendig oversikt over alle gjeldende fartsgrenser, hva bøtene koster, og hvordan prikkesystemet fungerer.'
             },
             {
+                title: 'Kort forklart',
+                type: 'info',
+                content: 'I tettbygd strøk er fartsgrensen 50 km/t hvis ikke skilt viser noe annet. Utenfor tettbygd strøk er fartsgrensen 80 km/t hvis ikke skilt viser noe annet. Høyeste fartsgrense i Norge er 110 km/t på enkelte skiltede motorveier. På gågate og gatetun skal du kjøre i gangfart. Med tilhenger er hovedregelen maks 80 km/t, eller opptil 100 km/t med Tempo 100-godkjenning.'
+            },
+            {
+                title: 'Fartsgrenser du må kunne til teoriprøven',
+                type: 'table',
+                content: `<div class="responsive-theory-table-wrapper" style="margin-top: 1rem;"><table class="responsive-theory-table" style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem;"><thead><tr style="background-color: var(--color-surface); border-bottom: 2px solid var(--color-border);"><th style="padding: 12px 8px;">Situasjon</th><th style="padding: 12px 8px;">Fartsgrense</th><th style="padding: 12px 8px;">Typisk teorifelle</th></tr></thead><tbody><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">Tettbygd strøk</td><td style="padding: 12px 8px;">50 km/t</td><td style="padding: 12px 8px;">Gjelder når ingen skilt viser noe annet</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">Utenfor tettbygd strøk</td><td style="padding: 12px 8px;">80 km/t</td><td style="padding: 12px 8px;">Gjelder også når særskilt fartsgrense opphører uten ny skiltet grense</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">Motorvei</td><td style="padding: 12px 8px;">Skiltet fart, ofte 90, 100 eller 110 km/t</td><td style="padding: 12px 8px;">Det er ikke automatisk 110 på motorvei</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">Gågate/gatetun</td><td style="padding: 12px 8px;">Gangfart</td><td style="padding: 12px 8px;">Du skal kunne stanse trygt for gående</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">Tilhenger</td><td style="padding: 12px 8px;">Som hovedregel maks 80 km/t</td><td style="padding: 12px 8px;">Over 80 krever Tempo 100</td></tr><tr><td style="padding: 12px 8px;">Skole/boligområde</td><td style="padding: 12px 8px;">Ofte 30 km/t</td><td style="padding: 12px 8px;">Soneskilt gjelder til sonen oppheves</td></tr></tbody></table></div>`
+            },
+            {
+                title: 'Fartsgrenseskilt på norsk vei',
+                type: 'text',
+                content: '![Fartsgrenseskilt på norsk landevei](/norsk_vei_80.png)\n*Fartsgrensen bestemmes av skilt, området du kjører i og forholdene på stedet.*'
+            },
+            {
                 title: 'De generelle fartsgrensene',
                 type: 'info',
-                content: 'I Norge gjelder disse standardfartsgrensene der ingen skilt sier noe annet:\n\n• Tettbygd strøk: 50 km/t\n• Utenfor tettbygd strøk: 80 km/t\n• Motorvei: 100 eller 110 km/t\n\nHuskeregel: Ser du ingen fartsgrenseskilt og er i tettbygd strøk → 50 km/t. Er du utenfor tettbygd strøk → 80 km/t.'
+                content: 'I Norge gjelder disse standardfartsgrensene der ingen skilt sier noe annet:\n\n• Tettbygd strøk: 50 km/t\n• Utenfor tettbygd strøk: 80 km/t\n• Motorvei: følg skiltet fart, ofte 90, 100 eller 110 km/t\n\nHuskeregel: Ser du ingen fartsgrenseskilt og er i tettbygd strøk → 50 km/t. Er du utenfor tettbygd strøk → 80 km/t.'
+            },
+            {
+                title: 'Hva betyr tettbygd strøk?',
+                type: 'text',
+                content: 'Tettbygd strøk betyr område med tett bebyggelse og mer blandet trafikk. Det kan være gående, syklende, kryss, avkjørsler, butikker, skoler eller boliger. På teoriprøven er poenget at du må vurdere omgivelsene, ikke bare lete etter skilt.'
             },
             {
                 title: 'Lavere fartsgrenser og gangfart — når gjelder de?',
                 type: 'text',
-                content: 'På mange veier er fartsgrensen lavere enn standarden på 50 km/t. Dette er typisk i:\n\nGangfart (ca. 5-7 km/t): I gågater og på gatetun (blått skilt med hus og lekende barn) er fartsgrensen alltid gangfart. Dette er et klassisk lurespørsmål på teoriprøven! Du skal aldri kjøre fortere enn at du kan stoppe på en femøring, og de gående har alltid førsteprioritet.\n\n30 km/t: Gjelder ofte nær skoler, barnehager og i tette boliggater. Husk at hvis du kjører inn i en "30-sone", gjelder grensen for hele området og alle sideveier, helt til et skilt opphever sonen.\n\n40 km/t: Vanlig i bymiljøer og ved lekeplasser. Fysiske fartsdumper er ofte plassert i 30- og 40-soner.'
+                content: 'På mange veier er fartsgrensen lavere enn standarden på 50 km/t. Dette er typisk i:\n\nGangfart (ca. 5-7 km/t): I gågater og på gatetun (blått skilt med hus og lekende barn) er fartsgrensen alltid gangfart. Dette er et klassisk lurespørsmål på teoriprøven. Du skal aldri kjøre fortere enn at du kan stoppe trygt og kontrollert, og de gående har alltid førsteprioritet.\n\n30 km/t: Gjelder ofte nær skoler, barnehager og i tette boliggater. Husk at hvis du kjører inn i en "30-sone", gjelder grensen for hele området og alle sideveier, helt til et skilt opphever sonen.\n\n40 km/t: Vanlig i bymiljøer og ved lekeplasser. Fysiske fartsdumper er ofte plassert i 30- og 40-soner.'
             },
             {
                 title: 'Spesielle fartsgrenser du må huske',
                 type: 'warning',
-                content: 'Noen kjøretøy og situasjoner har egne regler — og disse er favoritter på teoriprøven.\n\nMed tilhenger (De nye reglene): Fartsgrensen avhenger av tilhengerens bremser og vekt:\n- Maks 60 km/t: Hvis tilhengeren er uten bremser, og den aktuelle totalvekten er over 300 kg.\n- Maks 80 km/t: Hvis tilhengeren har bremser (eller er uten bremser, men veier under 300 kg).\n- Maks 100 km/t (Tempo 100): Hvis både bil og tilhenger er spesialgodkjent for "Tempo 100", kan du kjøre i 100 km/t på motorvei som er skiltet med 100 eller 110.\n\n• Moped (45 km/t-moped): Maks 45 km/t uansett fartsgrense på veien.\n• Traktor: Maks 40 km/t.\n• Tunge kjøretøy over 3 500 kg: Maks 80 km/t på alle veier.'
+                content: 'Noen kjøretøy og situasjoner har egne regler — og disse er favoritter på teoriprøven.\n\nMed tilhenger: En bil med tilhenger kan som hovedregel kjøre i opptil 80 km/t der veien tillater det. Dette gjelder også for tilhenger uten brems, forutsatt at tilhengeren er i forsvarlig stand og lasten er sikret. For å kjøre over 80 km/t, maksimalt 100 km/t på egnede veier, må trekkbil og tilhenger ha Tempo 100-godkjenning. Les mer i vår guide til [tilhenger](/laeringsressurser/tilhenger) og hos [Statens vegvesen om fartsgrenser for tilhengere](https://www.vegvesen.no/om-oss/presse/aktuelt/2022/03/nye-fartsgrenser-for-tilhengere/).\n\n• Moped (45 km/t-moped): Maks 45 km/t uansett fartsgrense på veien.\n• Traktor: Maks 40 km/t.\n• Tunge kjøretøy over 3 500 kg: Maks 80 km/t på alle veier.'
             },
             {
                 title: '110 km/t på motorvei — hva gjelder?',
                 type: 'info',
-                content: '110 km/t er den høyeste fartsgrensen i Norge og gjelder kun på utvalgte motorveistrekninger der det er skiltet. Det er ikke automatisk 110 km/t på alle motorveier — sjekk alltid skiltene.\n\nDe fleste motorveier er skiltet 100 km/t. Noen strekninger, særlig rundt Oslo og Bergen, er hevet til 110 km/t etter dokumenterte sikkerhetsvurderinger.'
+                content: '110 km/t er den høyeste fartsgrensen i Norge og gjelder kun på utvalgte motorveistrekninger der det er skiltet. Det er ikke automatisk 110 km/t på alle motorveier — sjekk alltid skiltene.\n\nMange motorveier er skiltet lavere, for eksempel 90 eller 100 km/t. Skiltet fart gjelder, men forholdene avgjør om du må kjøre saktere.'
             },
             {
                 title: 'Fartsbøter og prikker i førerkortet (ved 50 km/t grense)',
                 type: 'warning',
-                content: 'Dette er noe veldig mange unge lurer på — og det er god grunn til det.\n\nPrikker i førerkortet:\nDu får prikker når du kjører mer enn 10 km/t over fartsgrensen (der grensen er 60 km/t eller lavere) or mer enn 15 km/t over (der grensen er 70 km/t eller høyere). Samler du 8 prikker på 3 år mister du førerretten i 6 måneder.\n\nBøtesatser 2025 (ved 50 km/t fartsgrense):\n• Inntil 5 km/t over: 1 250 kr\n• 6–10 km/t over: 3 350 kr\n• 11–15 km/t over: 5 950 kr\n• 16–20 km/t over: 8 650 kr\n• Over 25 km/t over: Fra 13 450 kr + mulig tap av lappen\n\nVed kraftig overskridelse (vanligvis 30+ km/t over) mister du førerkortet og saken kan gå til retten.\n\nViktig for deg under 18 år: Du er på prøveperiode de to første årene. Én alvorlig forseelse kan bety at du mister lappen og må ta den på nytt.'
+                content: 'Dette er noe veldig mange unge lurer på — og det er god grunn til det.\n\nPrikker i førerkortet:\nDu får prikker når du kjører mer enn 10 km/t over fartsgrensen der grensen er 60 km/t eller lavere, eller mer enn 15 km/t over der grensen er 70 km/t eller høyere. Samler du 8 prikker på 3 år mister du førerretten i 6 måneder.\n\nGjeldende fartsbøter ved 50 km/t fartsgrense:\n• Inntil 5 km/t over: 1 250 kr\n• 6-10 km/t over: 3 350 kr\n• 11-15 km/t over: 5 950 kr\n• 16-20 km/t over: 8 650 kr\n• 21-25 km/t over: 13 450 kr\n\nVed kraftig overskridelse kan du miste førerkortet og saken kan gå til retten.\n\nViktig for deg under 18 år: Du er på prøveperiode de to første årene. Én alvorlig forseelse kan bety at du mister lappen og må ta den på nytt.\n\nMerk: Bøtesatsene fastsettes nasjonalt og kan endres. Kontroller alltid [Lovdata](https://lovdata.no/) eller Politiets nettsider for oppdaterte satser.'
             },
             {
                 title: 'Fartsgrenser og bremselengde — sammenhengen',
                 type: 'text',
-                content: 'Dette er et klassisk teoriprøve-spørsmål. Fart har dramatisk effekt på bremselengde fordi bremseenergien øker med kvadratet av farten:\n\n• 50 km/t → bremselengde ca. 13 meter (tørr asfalt)\n• 80 km/t → bremselengde ca. 32 meter\n• 100 km/t → bremselengde ca. 50 meter\n\nDobler du farten, firedobles bremselengden — ikke dobbles. For total stopplengde (reaksjonstid + bremsing) blir forskjellen enda større.\n\nTest deg selv: Å regne ut nøyaktig stopplengde er en gjenganger på teoriprøven. [Prøv vår interaktive bremselengde-kalkulator](/laeringsressurser/bremselengde) for å se nøyaktig hvor mange meter bilen din trenger for å stoppe på ulike underlag!'
+                content: 'Dette er et klassisk teoriprøve-spørsmål. Fart har dramatisk effekt på bremselengde fordi bremseenergien øker med kvadratet av farten:\n\n• 50 km/t → bremselengde ca. 13 meter (tørr asfalt)\n• 80 km/t → bremselengde ca. 32 meter\n• 100 km/t → bremselengde ca. 50 meter\n\nDobler du farten, firedobles bremselengden — ikke dobles. For total stopplengde (reaksjonstid + bremsing) blir forskjellen enda større.\n\nTest deg selv: Å regne ut nøyaktig stopplengde er en gjenganger på teoriprøven. [Prøv vår interaktive bremselengde-kalkulator](/laeringsressurser/bremselengde) for å se nøyaktig hvor mange meter bilen din trenger for å stoppe på ulike underlag!'
+            },
+            {
+                title: 'Teorifelle: når fartsgrensen opphører',
+                type: 'tip',
+                content: 'Når en særskilt fartsgrense opphører, går du tilbake til generell fartsgrense. Utenfor tettbygd strøk betyr det normalt 80 km/t. I tettbygd strøk er utgangspunktet 50 km/t. Du må alltid vurdere området og skiltingen.'
             },
             {
                 title: 'Tips for å huske fartsgrensene til teoriprøven',
                 type: 'tip',
-                content: '• Ingen skilt i by = 50. Det er alltid utgangspunktet i tettbygd strøk.\n• Ingen skilt på landet = 80. Gjelder utenfor tettbygd strøk.\n• Tilhenger = alltid maks 80, uansett hva veien er skiltet (uten Tempo 100).\n• Skolen er ofte 30, med eller uten fartsdump.\n• 110 km/t finnes bare der det er skiltet — anta aldri 110.'
+                content: '• Ingen skilt i by = 50. Det er alltid utgangspunktet i tettbygd strøk.\n• Ingen skilt på landet = 80. Gjelder utenfor tettbygd strøk.\n• Tilhenger = som hovedregel maks 80 km/t, eller opptil 100 km/t med Tempo 100-godkjenning.\n• Skolen er ofte 30, med eller uten fartsdump.\n• 110 km/t finnes bare der det er skiltet — anta aldri 110.'
             },
             {
-                title: 'Vanlige spørsmål om fartsgrenser (FAQ)',
-                type: 'info',
-                content: 'Q: Hva er fartsgrensen der det ikke er satt opp skilt?\nA: I tettbygd strøk er den 50 km/t, og utenfor tettbygd strøk er den 80 km/t. Dette følger av trafikkreglene § 13.\n\nQ: Kan kommunen sette lavere fartsgrenser?\nA: Ja. Kommunen kan skilte lavere grenser enn de nasjonale standardene, for eksempel 30 km/t i boliggater.\n\nQ: Mister man lappen første gang man kjører for fort?\nA: Ikke nødvendigvis, men ved alvorlig overskridelse (typisk 30+ km/t over) kan førerretten inndras selv første gang.\n\nQ: Gjelder 50 km/t også på riksveier gjennom tettsteder?\nA: Ja. Fartsgrensen følger veitype og bebyggelse, ikke om veien er en riksvei eller kommunal vei.'
+                title: 'Kilder og videre lesing',
+                type: 'text',
+                content: 'Les mer hos [Statens vegvesen om fartsgrenser og fartstilpasning](https://www.vegvesen.no/trafikkinformasjon/trafikksikkerhet/sikker-kjoring/hold-fartsgrensen/) og [Trygg Trafikk om fart](https://www.tryggtrafikk.no/wiki/fart/). For regler om tilhenger kan du også lese vår guide om [tilhenger](/laeringsressurser/tilhenger).'
+            }
+        ],
+        faq: [
+            {
+                question: 'Hva er maks fartsgrense i Norge?',
+                answer: 'Høyeste skiltede fartsgrense i Norge er 110 km/t på enkelte motorveier. Du må likevel alltid tilpasse farten etter sikt, føre, trafikk og forholdene på stedet.'
+            },
+            {
+                question: 'Hva er vanlig fartsgrense i tettbygd strøk?',
+                answer: 'Vanlig fartsgrense i tettbygd strøk er 50 km/t hvis ikke skilt viser noe annet. Lavere grenser er vanlige ved skoler, boligområder og sentrum.'
+            },
+            {
+                question: 'Hva betyr tettbygd strøk?',
+                answer: 'Tettbygd strøk er områder med tett bebyggelse og mer blandet trafikk, for eksempel gående, syklende, kryss, butikker, skoler og boliger.'
+            },
+            {
+                question: 'Hvor fort er gangfart?',
+                answer: 'Gangfart betyr svært lav fart, omtrent som gåtempo. I teorisammenheng forklares det ofte som ca. 5-7 km/t, men poenget er at du skal kunne stoppe trygt for gående.'
+            },
+            {
+                question: 'Hva er fartsgrensen på motorvei?',
+                answer: 'Motorvei kan ha ulike skiltede fartsgrenser, ofte 90, 100 eller 110 km/t. Skiltet fart gjelder, men du må kjøre saktere hvis forholdene krever det.'
+            },
+            {
+                question: 'Hvor fort kan du kjøre med tilhenger?',
+                answer: 'Hovedregelen er at bil med tilhenger kan kjøre inntil 80 km/t der veien tillater det. Over 80 km/t krever Tempo 100-godkjenning.'
+            }
+        ],
+        miniQuiz: [
+            {
+                question: 'Hva er høyeste skiltede fartsgrense i Norge?',
+                options: ['90 km/t', '100 km/t', '110 km/t', '120 km/t'],
+                correct: '110 km/t',
+                explanation: '110 km/t er høyeste skiltede fartsgrense i Norge, og gjelder bare på enkelte motorveistrekninger.'
+            },
+            {
+                question: 'Hva er vanlig fartsgrense i tettbygd strøk når ingen skilt viser noe annet?',
+                options: ['30 km/t', '50 km/t', '60 km/t', '80 km/t'],
+                correct: '50 km/t',
+                explanation: 'I tettbygd strøk er utgangspunktet 50 km/t når skilting ikke sier noe annet.'
+            },
+            {
+                question: 'Hva betyr gangfart på gatetun eller gågate?',
+                options: ['Omtrent gåtempo og svært lav fart', 'Alltid 30 km/t', 'Samme som vanlig byfart', 'At du kan kjøre så fort veien tillater'],
+                correct: 'Omtrent gåtempo og svært lav fart',
+                explanation: 'Gangfart betyr at du må kjøre så sakte at du kan stoppe trygt for gående.'
+            },
+            {
+                question: 'Hva gjelder som hovedregel for bil med tilhenger?',
+                options: ['Maks 60 km/t uansett', 'Maks 80 km/t, eller opptil 100 km/t med Tempo 100', 'Alltid samme fart som veien er skiltet', 'Maks 110 km/t hvis motorvei'],
+                correct: 'Maks 80 km/t, eller opptil 100 km/t med Tempo 100',
+                explanation: 'Hovedregelen er maks 80 km/t med tilhenger. Tempo 100-godkjenning kan gi opptil 100 km/t på egnede veier.'
             }
         ]
     },
@@ -3552,7 +3629,7 @@ Når du nærmer deg et lyskryss, bør du derfor se etter:
             {
                 title: 'Tabell: Vanlige førerstøttesystemer på teoriprøven',
                 type: 'table',
-                content: '<div style="overflow-x: auto; -webkit-overflow-scrolling: touch; margin-top: 1rem;"><table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem;"><thead><tr style="background-color: var(--color-surface); border-bottom: 2px solid var(--color-border);"><th style="padding: 12px 8px;">System</th><th style="padding: 12px 8px;">Hva det hjelper med</th><th style="padding: 12px 8px;">Hva du fortsatt må gjøre</th><th style="padding: 12px 8px;">Vanlig teorifelle</th></tr></thead><tbody><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>ABS</b> (Blokkeringsfrie bremser)</td><td style="padding: 12px 8px;">Hindrer at hjulene låser seg ved hard bremsing, slik at du kan styre.</td><td style="padding: 12px 8px;">Bremse hardt og holde trykket på pedalen, og styr unna faren.</td><td style="padding: 12px 8px;">Å tro at ABS-bremser alltid gir kortere bremselengde. (På løs snø eller grus kan den bli lengre).</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>ESP / Antiskrens</b></td><td style="padding: 12px 8px;">Hjelper med å stabilisere bilen ved skrensfare ved å bremse enkelthjul.</td><td style="padding: 12px 8px;">Tilpass farten etter forholdene og unngå brå rattbevegelser.</td><td style="padding: 12px 8px;">Å tro at ESP opphever glatt føre og tillater høyere fart i svinger.</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Antispinn</b></td><td style="padding: 12px 8px;">Reduserer hjulspinn ved igangkjøring eller akselerasjon.</td><td style="padding: 12px 8px;">Kjør rolig, gi forsiktig gass og tilpass deg glatt underlag.</td><td style="padding: 12px 8px;">Å tro at bilen får bedre faktisk veigrep enn dekkene og føret tillater.</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Adaptiv cruise control</b></td><td style="padding: 12px 8px;">Holder valgt fart og tilpasser avstanden til kjøretøyet foran.</td><td style="padding: 12px 8px;">Følg med på trafikken, vær klar til å bremse selv, og tilpass farten etter sikt og føre.</td><td style="padding: 12px 8px;">Å tro at systemet fungerer som en autopilot og reagerer riktig i alle situasjoner.</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Filholder / Kjørefeltassistent</b></td><td style="padding: 12px 8px;">Varsler eller styrer forsiktig for å holde bilen innenfor kjørefeltet.</td><td style="padding: 12px 8px;">Hold hendene på rattet, se på veien, styr selv og bruk blinklys ved filskifte.</td><td style="padding: 12px 8px;">Å tro at systemet fungerer like godt uten synlige linjer i veibanen.</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Automatisk nødbrems</b></td><td style="padding: 12px 8px;">Varsler og bremser automatisk hvis en kollisjon is nært forestående.</td><td style="padding: 12px 8px;">Hold tilstrekkelig avstand, les trafikkbildet fremover og brems tidlig.</td><td style="padding: 12px 8px;">Å tro at nødbremsen alltid oppdager alle hindringer og avverger enhver kollisjon.</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Blindsonevarsler</b></td><td style="padding: 12px 8px;">Varsler med lys/lyd hvis det ligger et kjøretøy i blindsonen din.</td><td style="padding: 12px 8px;">Sjekk alltid speil og ta skulderblikk før du skifter kjørefelt.</td><td style="padding: 12px 8px;">Å stole blindt på varsellampen og droppe skulderblikket (kan overse raske MC/sykler).</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Ryggekamera / Parkeringssensor</b></td><td style="padding: 12px 8px;">Hjelper deg å oppdage hindringer bak bilen under rygging.</td><td style="padding: 12px 8px;">Se deg rundt i alle retninger, sjekk speil og blindsoner før og under rygging.</td><td style="padding: 12px 8px;">Å tro at kameraet viser alt og erstatter plikten til fysisk observasjon.</td></tr><tr><td style="padding: 12px 8px;"><b>Skiltgjenkjenning / ISA</b></td><td style="padding: 12px 8px;">Leser fartsskilt og kan varsle eller tilpasse bilens fartsgrense automatisk.</td><td style="padding: 12px 8px;">Følg med på fysiske skilt, og tilpass farten etter vær, sikt og føre.</td><td style="padding: 12px 8px;">Å tro at bilen alltid viser riktig fartsgrense (systemet kan feile på midlertidige skilt).</td></tr></tbody></table></div>'
+                content: '<div style="overflow-x: auto; -webkit-overflow-scrolling: touch; margin-top: 1rem;"><table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem;"><thead><tr style="background-color: var(--color-surface); border-bottom: 2px solid var(--color-border);"><th style="padding: 12px 8px;">System</th><th style="padding: 12px 8px;">Hva det hjelper med</th><th style="padding: 12px 8px;">Hva du fortsatt må gjøre</th><th style="padding: 12px 8px;">Vanlig teorifelle</th></tr></thead><tbody><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>ABS</b> (Blokkeringsfrie bremser)</td><td style="padding: 12px 8px;">Hindrer at hjulene låser seg ved hard bremsing, slik at du kan styre.</td><td style="padding: 12px 8px;">Bremse hardt og holde trykket på pedalen, og styr unna faren.</td><td style="padding: 12px 8px;">Å tro at ABS-bremser alltid gir kortere bremselengde. (På løs snø eller grus kan den bli lengre).</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>ESP / Antiskrens</b></td><td style="padding: 12px 8px;">Hjelper med å stabilisere bilen ved skrensfare ved å bremse enkelthjul.</td><td style="padding: 12px 8px;">Tilpass farten etter forholdene og unngå brå rattbevegelser.</td><td style="padding: 12px 8px;">Å tro at ESP opphever glatt føre og tillater høyere fart i svinger.</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Antispinn</b></td><td style="padding: 12px 8px;">Reduserer hjulspinn ved igangkjøring eller akselerasjon.</td><td style="padding: 12px 8px;">Kjør rolig, gi forsiktig gass og tilpass deg glatt underlag.</td><td style="padding: 12px 8px;">Å tro at bilen får bedre faktisk veigrep enn dekkene og føret tillater.</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Adaptiv cruise control</b></td><td style="padding: 12px 8px;">Holder valgt fart og tilpasser avstanden til kjøretøyet foran.</td><td style="padding: 12px 8px;">Følg med på trafikken, vær klar til å bremse selv, og tilpass farten etter sikt og føre.</td><td style="padding: 12px 8px;">Å tro at systemet fungerer som en autopilot og reagerer riktig i alle situasjoner.</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Filholder / Kjørefeltassistent</b></td><td style="padding: 12px 8px;">Varsler eller styrer forsiktig for å holde bilen innenfor kjørefeltet.</td><td style="padding: 12px 8px;">Hold hendene på rattet, se på veien, styr selv og bruk blinklys ved filskifte.</td><td style="padding: 12px 8px;">Å tro at systemet fungerer like godt uten synlige linjer i veibanen.</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Automatisk nødbrems</b></td><td style="padding: 12px 8px;">Varsler og bremser automatisk hvis en kollisjon er nært forestående.</td><td style="padding: 12px 8px;">Hold tilstrekkelig avstand, les trafikkbildet fremover og brems tidlig.</td><td style="padding: 12px 8px;">Å tro at nødbremsen alltid oppdager alle hindringer og avverger enhver kollisjon.</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Blindsonevarsler</b></td><td style="padding: 12px 8px;">Varsler med lys/lyd hvis det ligger et kjøretøy i blindsonen din.</td><td style="padding: 12px 8px;">Sjekk alltid speil og ta skulderblikk før du skifter kjørefelt.</td><td style="padding: 12px 8px;">Å stole blindt på varsellampen og droppe skulderblikket (kan overse raske MC/sykler).</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Ryggekamera / Parkeringssensor</b></td><td style="padding: 12px 8px;">Hjelper deg å oppdage hindringer bak bilen under rygging.</td><td style="padding: 12px 8px;">Se deg rundt i alle retninger, sjekk speil og blindsoner før og under rygging.</td><td style="padding: 12px 8px;">Å tro at kameraet viser alt og erstatter plikten til fysisk observasjon.</td></tr><tr><td style="padding: 12px 8px;"><b>Skiltgjenkjenning / ISA</b></td><td style="padding: 12px 8px;">Leser fartsskilt og kan varsle eller tilpasse bilens fartsgrense automatisk.</td><td style="padding: 12px 8px;">Følg med på fysiske skilt, og tilpass farten etter vær, sikt og føre.</td><td style="padding: 12px 8px;">Å tro at bilen alltid viser riktig fartsgrense (systemet kan feile på midlertidige skilt).</td></tr></tbody></table></div>'
             },
             {
                 title: 'ABS og ESP: De viktigste sikkerhetssystemene',
@@ -3562,7 +3639,7 @@ Når du nærmer deg et lyskryss, bør du derfor se etter:
             {
                 title: 'Adaptiv cruise control og filholder: Komfort, ikke selvkjøring',
                 type: 'text',
-                content: 'Disse systemene hjelper deg med den daglige kjøringen på lengre strekninger, men krever at føreren er 100 % oppmerksom:\n\n### Adaptiv cruise control (ACC)\nI motsetning to vanlig cruise control som kun holder en fast hastighet, bruker adaptiv cruise control radar eller kamera for å måle avstanden til bilen foran. Hvis bilen foran bremser, kan bilen bremse eller redusere farten for å holde avstanden.\n\n**Viktig:** Du har fortsatt ansvaret. Hvis bilen foran bremser brått, eller det oppstår en situasjon systemet ikke oppfatter (f.eks. en bil som svinger inn rett foran deg), må du være klar til å bremse selv.\n\n### Filholder / Kjørefeltassistent\nFilholderen bruker et kamera øverst i frontruten for å lese oppmerkingen i veibanen. Hvis du er i ferd med å drifte ut av kjørefeltet uten å bruke blinklys, vil systemet varsle deg eller gi et lite styreinnrykk for å holde deg i feltet. Les mer om kjørefelt og vegoppmerking i vår guide om [veimerking](/laeringsressurser/veimerking) og [feltvalg, fletting og kollektivfelt](/laeringsressurser/feltvalg-fletting-kollektivfelt).\n\n**Viktig:** Filholderen fungerer best når det er synlig vegoppmerking. Ved vegarbeid, slitte linjer eller snødekt vei kan systemet fungere dårligere eller slå seg av.'
+                content: 'Disse systemene hjelper deg med den daglige kjøringen på lengre strekninger, men krever at føreren er 100 % oppmerksom:\n\n### Adaptiv cruise control (ACC)\nI motsetning til vanlig cruise control som kun holder en fast hastighet, bruker adaptiv cruise control radar eller kamera for å måle avstanden til bilen foran. Hvis bilen foran bremser, kan bilen bremse eller redusere farten for å holde avstanden.\n\n**Viktig:** Du har fortsatt ansvaret. Hvis bilen foran bremser brått, eller det oppstår en situasjon systemet ikke oppfatter (f.eks. en bil som svinger inn rett foran deg), må du være klar til å bremse selv.\n\n### Filholder / Kjørefeltassistent\nFilholderen bruker et kamera øverst i frontruten for å lese oppmerkingen i veibanen. Hvis du er i ferd med å drifte ut av kjørefeltet uten å bruke blinklys, vil systemet varsle deg eller gi et lite styreinnrykk for å holde deg i feltet. Les mer om kjørefelt og vegoppmerking i vår guide om [veimerking](/laeringsressurser/veimerking) og [feltvalg, fletting og kollektivfelt](/laeringsressurser/feltvalg-fletting-kollektivfelt).\n\n**Viktig:** Filholderen fungerer best når det er synlig vegoppmerking. Ved vegarbeid, slitte linjer eller snødekt vei kan systemet fungere dårligere eller slå seg av.'
             },
             {
                 title: 'Automatisk nødbrems, blindsonevarsling og ryggehjelp',
@@ -3596,7 +3673,7 @@ Når du nærmer deg et lyskryss, bør du derfor se etter:
             },
             {
                 question: 'Hva gjør ABS?',
-                answer: 'ABS (blokkeringsfrie bremser) hindrar at hjulene låser seg helt når du bremser maksimalt. Det gjør at dekkene fortsatt ruller slik at du beholder evnen til å styre unna en hindring mens du bremser.'
+                answer: 'ABS (blokkeringsfrie bremser) hindrer at hjulene låser seg helt når du bremser maksimalt. Det gjør at dekkene fortsatt ruller slik at du beholder evnen til å styre unna en hindring mens du bremser.'
             },
             {
                 question: 'Gjør ABS bremselengden kortere?',
@@ -3658,7 +3735,7 @@ Når du nærmer deg et lyskryss, bør du derfor se etter:
                     'Det kobler ut bremsene hvis bilen begynner å skli'
                 ],
                 correct: 'Det hjelper med å stabilisere bilen ved skrensfare, men føreren må fortsatt tilpasse fart og avstand',
-                explanation: 'ESP hjelper til med å gjenvinne kontrollen ved skrens ved å bremse enkeltvise hjul, men det opphever ikke fysikkens lover og kan ikke skape veigrep dersom farten is altfor høy etter forholdene.'
+                explanation: 'ESP hjelper til med å gjenvinne kontrollen ved skrens ved å bremse enkeltvise hjul, men det opphever ikke fysikkens lover og kan ikke skape veigrep dersom farten er altfor høy etter forholdene.'
             },
             {
                 question: 'Hva bør du gjøre selv om bilen din har ryggekamera?',
@@ -3802,23 +3879,28 @@ export const theoryArticles: TheoryTopic[] = [
         icon: '🔧',
         shortDescription: 'Lær deg de tekniske kontrollspørsmålene til oppkjøringen. Slik sjekker du bremser, styring, lys og dekk på en enkel måte.',
         color: 'var(--apple-indigo)',
-        seoTitle: 'Sikkerhetskontroll oppkjøring klasse B – spørsmål med fasit | Teori-test.no',
-        seoDescription: 'Se vanlige sikkerhetskontroll-spørsmål til oppkjøring klasse B med svar og fasit. Øv på bremser, dekk, lys, styring, motorrom og varsellamper.',
+        seoTitle: 'Sikkerhetskontroll klasse B: spørsmål og svar til oppkjøring',
+        seoDescription: 'Se vanlige spørsmål fra sensor på sikkerhetskontroll klasse B. Lær kontroll av bremser, dekk, lys, varsellamper og motorrom før oppkjøringen.',
         sections: [
             {
                 title: 'Hva skjer på sikkerhetskontrollen?',
                 type: 'info',
-                content: 'Kort forklart: På oppkjøringen får du vanligvis ett sikkerhetskontroll-spørsmål før kjøringen starter. Du må kunne vise eller forklare kontroll av for eksempel bremser, dekk, lys, styring, vognkort eller varsellamper. Sensor vil enten be deg utføre kontrollen praktisk eller forklare hvordan du ville gjort det.'
+                content: 'På oppkjøringen får du en stikkprøve med én eller flere sikkerhetskontrolloppgaver. Sensor kan be deg kontrollere eller forklare noe ved bilen, for eksempel bremser, dekk, lys, styring, vognkort, væsker i motorrommet eller varsellamper.\n\nKort forklart: Du skal vise at du forstår om bilen er trygg å kjøre. Et godt svar består av tre deler: hva du kontrollerer, hvordan du kontrollerer det, og hvorfor feilen kan være farlig.'
             },
             {
                 title: 'Vanlige sikkerhetskontroll-spørsmål med fasit',
                 type: 'table',
-                content: `<table>\n    <thead>\n        <tr>\n            <th>Sensor spør</th>\n            <th>Slik kontrollerer du</th>\n            <th>Kort fasit</th>\n        </tr>\n    </thead>\n    <tbody>\n        <tr>\n            <td>Kontroller dekktrykket</td>\n            <td>Se i vognkortet eller dørkarmen for anbefalt trykk. Bruk trykkmåler på ventilen.</td>\n            <td>Riktig trykk = trygt. Lavt trykk = dårligere grep og høyere forbruk.</td>\n        </tr>\n        <tr>\n            <td>Kontroller mønsterdybden</td>\n            <td>Bruk mønsterdybdemåler eller 20-kroningen. Minimum 1,6 mm — anbefalt 3 mm.</td>\n            <td>Under 1,6 mm er ulovlig og farlig.</td>\n        </tr>\n        <tr>\n            <td>Kontroller bremsene</td>\n            <td>Trykk bremsepedalen ned. Den skal være fast og ikke synke. Sjekk bremsevæskenivå i motorrommet.</td>\n            <td>Myk pedal = luftboble i systemet.</td>\n        </tr>\n        <tr>\n            <td>Kontroller styringen</td>\n            <td>Kjør sakte og kjenn at bilen følger rattet uten å trekke til siden.</td>\n            <td>Trekking = feil hjulstilling eller dekk.</td>\n        </tr>\n        <tr>\n            <td>Kontroller lys foran</td>\n            <td>Slå på tenning. Sjekk nærlys, fjernlys og parkeringslys visuelt foran bilen.</td>\n            <td>Defekt lys = bot. Se [lysbruk](/laeringsressurser/lysbruk-morkekjoring).</td>\n        </tr>\n        <tr>\n            <td>Kontroller bremselys</td>\n            <td>Slå på tenning. Be noen se bakpå mens du tråkker bremsepedalen.</td>\n            <td>Eller bruk refleksjonen i en vegg/garasjeport.</td>\n        </tr>\n        <tr>\n            <td>Kontroller motorolje</td>\n            <td>Trekk ut oljepinnen, tørk, sett inn igjen og sjekk nivået. Skal være mellom min og max.</td>\n            <td>For lite olje = motorskade.</td>\n        </tr>\n        <tr>\n            <td>Kontroller kjølevæske</td>\n            <td>Sjekk nivå i ekspansjonsbeholderen. Skal være mellom min og max når motoren er kald.</td>\n            <td>Aldri åpne lokket på varm motor.</td>\n        </tr>\n        <tr>\n            <td>Kontroller bremsevæske</td>\n            <td>Se nivå i beholderne under panseret. Skal være mellom min og max.</td>\n            <td>Lavt nivå kan bety slitte bremser eller lekkasje.</td>\n        </tr>\n        <tr>\n            <td>Kontroller vindusvaskervæske</td>\n            <td>Sjekk beholdernivå. Fyll på ved behov.</td>\n            <td>Tomt = dårlig sikt = farlig.</td>\n        </tr>\n        <tr>\n            <td>Kontroller varsellamper</td>\n            <td>Start bilen og sjekk at alle varsellamper slukker etter oppstart.</td>\n            <td>Lamper som lyser = feil som må sjekkes.</td>\n        </tr>\n        <tr>\n            <td>Hva betyr ABS-lampen?</td>\n            <td>ABS-systemet er feil. Bremser fungerer normalt men uten ABS-funksjon.</td>\n            <td>Kjør til verksted snart.</td>\n        </tr>\n        <tr>\n            <td>Hva betyr oljelampen?</td>\n            <td>Lavt oljetrykk. Stopp umiddelbart og slå av motoren.</td>\n            <td>Fortsetter du å kjøre kan motoren bli ødelagt.</td>\n        </tr>\n        <tr>\n            <td>Kontroller sikkerhetsbeltene</td>\n            <td>Dra beltet ut raskt — det skal låse seg. Sjekk at det klikker skikkelig i låsen.</td>\n            <td>Defekt belte = ikke godkjent.</td>\n        </tr>\n        <tr>\n            <td>Les av vognkortet</td>\n            <td>Finn egenvekt, tillatt totalvekt og nyttelast. Nyttelast = totalvekt minus egenvekt.</td>\n            <td>Viktig for tilhenger og lastberegning.</td>\n        </tr>\n        <tr>\n            <td>Hva er største tillatte tilhengervekt?</td>\n            <td>Se vognkortets felt for største tilhengervekt.</td>\n            <td>Avhenger av bilmodell — alltid sjekk vognkortet.</td>\n        </tr>\n    </tbody>\n</table>`
+                content: `<table>\n    <thead>\n        <tr>\n            <th>Sensor spør</th>\n            <th>Slik kontrollerer du</th>\n            <th>Kort fasit</th>\n        </tr>\n    </thead>\n    <tbody>\n        <tr>\n            <td>Kontroller dekktrykket</td>\n            <td>Se i vognkortet eller dørkarmen for anbefalt trykk. Bruk trykkmåler på ventilen.</td>\n            <td>Riktig trykk = trygt. Lavt trykk = dårligere grep og høyere forbruk.</td>\n        </tr>\n        <tr>\n            <td>Kontroller mønsterdybden</td>\n            <td>Bruk mønsterdybdemåler eller 20-kroningen. Minimum 1,6 mm — anbefalt 3 mm.</td>\n            <td>Under 1,6 mm er ulovlig og farlig.</td>\n        </tr>\n        <tr>\n            <td>Kontroller bremsene</td>\n            <td>Trykk bremsepedalen ned. Den skal være fast og ikke synke. Sjekk bremsevæskenivå i motorrommet.</td>\n            <td>Myk pedal = luftboble i systemet.</td>\n        </tr>\n        <tr>\n            <td>Kontroller styringen</td>\n            <td>Kjør sakte og kjenn at bilen følger rattet uten å trekke til siden.</td>\n            <td>Trekking = feil hjulstilling eller dekk.</td>\n        </tr>\n        <tr>\n            <td>Kontroller lys foran</td>\n            <td>Slå på tenning. Sjekk nærlys, fjernlys og parkeringslys visuelt foran bilen.</td>\n            <td>Defekt lys = bot. Se [lysbruk](/laeringsressurser/lysbruk-morkekjoring).</td>\n        </tr>\n        <tr>\n            <td>Kontroller bremselys</td>\n            <td>Slå på tenning. Be noen se bakpå mens du tråkker bremsepedalen.</td>\n            <td>Eller bruk refleksjonen i en vegg/garasjeport.</td>\n        </tr>\n        <tr>\n            <td>Kontroller motorolje</td>\n            <td>Trekk ut oljepinnen, tørk, sett inn igjen og sjekk nivået. Skal være mellom min og max.</td>\n            <td>For lite olje = motorskade.</td>\n        </tr>\n        <tr>\n            <td>Kontroller kjølevæske</td>\n            <td>Sjekk nivå i ekspansjonsbeholderen. Skal være mellom min og max når motoren er kald.</td>\n            <td>Aldri åpne lokket på varm motor.</td>\n        </tr>\n        <tr>\n            <td>Kontroller bremsevæske</td>\n            <td>Se nivå i beholderne under panseret. Skal være mellom min og max.</td>\n            <td>Lavt nivå kan bety slitte bremser eller lekkasje.</td>\n        </tr>\n        <tr>\n            <td>Kontroller vindusvaskervæske</td>\n            <td>Sjekk beholdernivå. Fyll på ved behov.</td>\n            <td>Tomt = dårlig sikt = farlig.</td>\n        </tr>\n        <tr>\n            <td>Kontroller varsellamper</td>\n            <td>Start bilen og sjekk at alle varsellamper slukker etter oppstart.</td>\n            <td>Lamper som lyser = feil som må sjekkes.</td>\n        </tr>\n        <tr>\n            <td>Hva betyr ABS-lampen?</td>\n            <td>Vanlig brems kan fortsatt virke, men ABS-funksjonen kan være ute av drift.</td>\n            <td>Kjør til verksted snart.</td>\n        </tr>\n        <tr>\n            <td>Hva betyr oljelampen?</td>\n            <td>Lavt oljetrykk. Stopp umiddelbart og slå av motoren.</td>\n            <td>Fortsetter du å kjøre kan motoren bli ødelagt.</td>\n        </tr>\n        <tr>\n            <td>Kontroller sikkerhetsbeltene</td>\n            <td>Dra beltet ut raskt — det skal låse seg. Sjekk at det klikker skikkelig i låsen.</td>\n            <td>Defekt belte = ikke godkjent.</td>\n        </tr>\n        <tr>\n            <td>Les av vognkortet</td>\n            <td>Finn egenvekt, tillatt totalvekt og nyttelast. Nyttelast = totalvekt minus egenvekt.</td>\n            <td>Viktig for tilhenger og lastberegning.</td>\n        </tr>\n        <tr>\n            <td>Hva er største tillatte tilhengervekt?</td>\n            <td>Se vognkortets felt for største tilhengervekt.</td>\n            <td>Avhenger av bilmodell — alltid sjekk vognkortet.</td>\n        </tr>\n    </tbody>\n</table>`
             },
             {
                 title: 'Hva er sikkerhetskontroll?',
                 type: 'text',
-                content: 'På oppkjøringen vil sensor alltid starte med å gi deg en oppgave knyttet til bilens tekniske stand. Mange gruer seg til dette, men det er egentlig en veldig overkommelig oppgave når du kjenner systematikken.\n\nIfølge Vegtrafikklovens § 23 er det du som fører som har ansvaret for at kjøretøyet er i forsvarlig og forskriftsmessig stand før kjøringen begynner. Sikkerhetskontrollen gjennomføres som regel i to deler: Først kan sensor be deg om å utføre en praktisk sjekk på bilen. Eller stille deg et teknisk spørsmål, og ofte et oppfølgingsspørsmål om hvordan man sjekker dette.\n\nHer er de vanligste oppgavene du kan få på førerprøven, delt inn i kategorier.'
+                content: 'Føreren har ansvar for at bilen er i forsvarlig og forskriftsmessig stand før kjøring. Dette følger av Vegtrafikkloven § 23. På sikkerhetskontrollen viser du at du forstår praktiske kontroller, ikke at du er bilmekaniker.\n\nLes mer hos [Statens vegvesen om oppkjøring](https://www.vegvesen.no/forerkort/ta-forerkort/oppkjoring/) og se også vår guide til [dekk, bremser og styring](/laeringsressurser/dekk-bremser-styring).'
+            },
+            {
+                title: 'Slik svarer du sensor',
+                type: 'tip',
+                content: 'Når sensor spør, trenger du ikke bruke vanskelige fagord. Svar rolig og praktisk:\n\n1. Jeg kontrollerer ...\n2. Jeg ser eller kjenner etter ...\n3. Feilen er farlig fordi ...\n\nEksempel: "Jeg kontrollerer bremselysene ved å trykke inn bremsepedalen og se at lysene bak tennes. Det er viktig fordi trafikken bak må se når jeg bremser."'
             },
             {
                 title: 'Interaktiv Guide: Hva sjekker du i motorrommet?',
@@ -3829,7 +3911,7 @@ export const theoryArticles: TheoryTopic[] = [
             {
                 title: '1. Bremser',
                 type: 'info',
-                content: 'Bremsene er bilens viktigste sikkerhetssystem. Du kan bli bedt om å kontrollere flere deler av dette systemet.\n\nOppgave: Kontroller bremsekraftforsterkeren.\n\nSlik gjør du: Den tradisjonelle måten er å pumpe bremsepedalen 5-6 ganger mens motoren er av, til pedalen blir hard. Hold pedalen inne og start motoren. Pedalen skal da synke litt inn. På mange moderne biler med elektroniske løsninger fungerer ikke denne metoden; her må du bremse i lav fart og kjenne at bilen stopper effektivt med lite trykk på pedalen.\n\nSensors spørsmål: Er det forsvarlig å kjøre hvis den ikke virker?\n\nSvar: Nei, bremsepedalen blir veldig tung og bilen får dårligere bremseeffekt.\n\nOppgave: Kontroller om bremsene har skjevtrekk.\n\nSlik gjør du: Bygg opp litt fart (10-15 km/t) på en jevn og rett strekning, brems normalt, og hold bare løst i rattet. Bilen skal gå rett frem.\n\nSensors spørsmål: Hva kan være grunnen til skjevtrekk?\n\nSvar: Testen skal avdekke feil som gjør at hjulene bremser ulikt, noe som kan gjøre at man mister kontrollen under hard oppbremsing. (Merk at ulikt lufttrykk eller en svært sporete vei også kan gi skjevtrekk).\n\nOppgave: Varsellampe for to-krets bremsesystem.\n\nSlik gjør du: Skru på tenningen og finn den røde varsellampen med et utropstegn (!). Den skal lyse noen sekunder og så slukke.\n\nSensors spørsmål: Hva gjør du hvis lampen lyser under kjøring?\n\nSvar: Stopp umiddelbart og tilkall veihjelp, da den røde lampen indikerer en alvorlig mangel eller lekkasje med bremsesystemet.'
+                content: 'Bremsene er bilens viktigste sikkerhetssystem. Du kan bli bedt om å kontrollere flere deler av dette systemet.\n\nOppgave: Kontroller bremsekraftforsterkeren.\n\nSlik gjør du: Den tradisjonelle måten er å pumpe bremsepedalen 5-6 ganger mens motoren er av, til pedalen blir hard. Hold pedalen inne og start motoren. Pedalen skal da synke litt inn. På mange moderne biler med elektroniske løsninger fungerer ikke denne metoden; her må du bremse i lav fart og kjenne at bilen stopper effektivt med lite trykk på pedalen.\n\nSensors spørsmål: Er det forsvarlig å kjøre hvis den ikke virker?\n\nSvar: Nei, bremsepedalen blir veldig tung og bilen får dårligere bremseeffekt.\n\nOppgave: Kontroller om bremsene har skjevtrekk.\n\nSlik gjør du: Bygg opp litt fart (10-15 km/t) på en jevn og rett strekning, brems normalt, og hold bare løst i rattet. Bilen skal gå rett frem.\n\nSensors spørsmål: Hva kan være grunnen til skjevtrekk?\n\nSvar: Testen skal avdekke feil som gjør at hjulene bremser ulikt, noe som kan gjøre at man mister kontrollen under hard oppbremsing. (Merk at ulikt lufttrykk eller en svært sporete vei også kan gi skjevtrekk).\n\nOppgave: Varsellampe for to-krets bremsesystem.\n\nSlik gjør du: Skru på tenningen og finn den røde varsellampen med et utropstegn (!). Den skal lyse noen sekunder og så slukke.\n\nSensors spørsmål: Hva gjør du hvis lampen lyser under kjøring?\n\nSvar: Stans trygt og finn årsaken før du kjører videre, fordi den røde lampen kan indikere en alvorlig feil i bremsesystemet.'
             },
             {
                 title: '2. Styring',
@@ -3856,6 +3938,73 @@ export const theoryArticles: TheoryTopic[] = [
                 type: 'calculator',
                 componentId: 'dashboard',
                 content: 'På oppkjøringen forventes det at du forstår den grunnleggende logikken bak varsellampene, og spesielt fargekoden. Rødt lys betyr at du må stanse bilen på et trygt sted og slå av motoren. Gult lys betyr som regel at du kan fortsette kjøringen, men at bilen må kontrolleres. Prøv simulatoren under for å teste refleksene dine.\n\n[Les vår komplette guide til oppkjøringen](/laeringsressurser/oppkjoring)'
+            },
+            {
+                title: 'Typiske feil på sikkerhetskontrollen',
+                type: 'warning',
+                content: 'Mange gjør sikkerhetskontrollen vanskeligere enn den er. Sensor forventer ikke at du er bilmekaniker, men du må vise praktisk forståelse.\n\nVanlige feil:\n- Bare peke uten å forklare hvorfor kontrollen er viktig.\n- Si at du ville kjørt videre med rød varsellampe.\n- Blande varsellamper og kontrollamper.\n- Glemme at dekk, bremser, lys og sikt handler om trafikksikkerhet.\n- Ikke kunne forklare hvor olje, kjølevæske, bremsevæske og spylervæske finnes.\n\nLes også om [bilens lys](/laeringsressurser/bilens-lys), [sikkerhetsutstyr](/laeringsressurser/sikkerhetsutstyr) og [vognkort og vekter](/laeringsressurser/vognkort-vekter).'
+            }
+        ],
+        faq: [
+            {
+                question: 'Hva er sikkerhetskontroll på oppkjøring?',
+                answer: 'Sikkerhetskontroll er delen av oppkjøringen der sensor ber deg kontrollere eller forklare noe ved bilen. Det kan handle om bremser, dekk, lys, styring, vognkort, væsker i motorrommet eller varsellamper.'
+            },
+            {
+                question: 'Hvilke spørsmål kan sensor stille på sikkerhetskontroll klasse B?',
+                answer: 'Sensor kan spørre hvordan du kontrollerer bremser, bremselys, dekk, styring, varsellamper, olje, spylervæske, bremsevæske, kjølevæske, sikkerhetsbelter eller opplysninger i vognkortet.'
+            },
+            {
+                question: 'Må jeg kunne alt i motorrommet til oppkjøringen?',
+                answer: 'Nei, men du bør kjenne de viktigste punktene: olje, spylervæske, kjølevæske, bremsevæske og batteri. Du bør også kunne forklare hvorfor kontrollen er viktig.'
+            },
+            {
+                question: 'Hva skjer hvis jeg svarer feil på sikkerhetskontrollen?',
+                answer: 'En liten feil betyr ikke automatisk stryk, men sikkerhetskontrollen er en del av helhetsvurderingen. Alvorlig manglende forståelse for bremser, styring eller varsellamper kan trekke ned.'
+            },
+            {
+                question: 'Hva betyr varsellampe for tokrets bremsesystem?',
+                answer: 'Den kan bety feil i bremsesystemet, lav bremsevæske eller at parkeringsbremsen ikke er helt løst. Hvis lampen lyser under kjøring, må du stanse trygt og finne årsaken.'
+            },
+            {
+                question: 'Hvordan kontrollerer jeg bremsene før kjøring?',
+                answer: 'Du kan kjenne at bremsepedalen har fast motstand, se etter varsellamper og teste bremsene forsiktig ved lav fart. Bilen skal bremse jevnt og ikke trekke tydelig til én side.'
+            },
+            {
+                question: 'Hva bør jeg kunne om dekk på sikkerhetskontrollen?',
+                answer: 'Du bør kunne sjekke mønsterdybde, lufttrykk, synlige skader og om dekkene passer årstid og bil. Dårlige dekk gir dårligere veigrep og lengre bremselengde.'
+            }
+        ],
+        miniQuiz: [
+            {
+                question: 'Hva er hovedpoenget med sikkerhetskontrollen på oppkjøringen?',
+                options: ['Å vise at du kan kontrollere og forklare om bilen er trygg å kjøre', 'Å vise at du kan reparere bilen selv', 'Å pugge alle tekniske deler i motoren', 'Å finne ut hvor fort bilen kan kjøre'],
+                correct: 'Å vise at du kan kontrollere og forklare om bilen er trygg å kjøre',
+                explanation: 'Sensor vil se at du forstår enkle kontroller og hvorfor feil kan være farlige.'
+            },
+            {
+                question: 'Hva bør du gjøre hvis rød varsellampe for bremsesystemet lyser under kjøring?',
+                options: ['Stanse trygt og finne årsaken før du kjører videre', 'Kjøre videre hvis bilen virker normal', 'Skru av og på lysene', 'Bare kontrollere dekktrykket'],
+                correct: 'Stanse trygt og finne årsaken før du kjører videre',
+                explanation: 'Røde varsellamper kan bety alvorlig feil. Bremsesystemet er kritisk for sikkerheten.'
+            },
+            {
+                question: 'Hva er et godt svar hvis sensor ber deg kontrollere bremselys?',
+                options: ['Jeg sjekker at bremselysene tennes når bremsepedalen trykkes inn', 'Jeg ser bare om frontlysene virker', 'Jeg trenger ikke sjekke bremselys på dagtid', 'Jeg trykker på hornet'],
+                correct: 'Jeg sjekker at bremselysene tennes når bremsepedalen trykkes inn',
+                explanation: 'Bremselys varsler trafikken bak deg om at du bremser.'
+            },
+            {
+                question: 'Hva bør du sjekke på dekkene?',
+                options: ['Mønsterdybde, skader og lufttrykk', 'Bare fargen på felgene', 'Bare om bilen står rett', 'Bare om dekkene er rene'],
+                correct: 'Mønsterdybde, skader og lufttrykk',
+                explanation: 'Dekkene påvirker veigrep, bremselengde og styring.'
+            },
+            {
+                question: 'Hva er en vanlig feil på sikkerhetskontroll?',
+                options: ['Å forklare hva du sjekker og hvorfor', 'Å bare peke uten å forklare hvorfor kontrollen er viktig', 'Å svare rolig og praktisk', 'Å koble kontrollen til trafikksikkerhet'],
+                correct: 'Å bare peke uten å forklare hvorfor kontrollen er viktig',
+                explanation: 'Et godt svar viser både hva du kontrollerer og hvorfor det har betydning for sikkerheten.'
             }
         ]
     },
@@ -3866,6 +4015,8 @@ export const theoryArticles: TheoryTopic[] = [
         icon: '🚗',
         shortDescription: 'Du har bestått teoriprøven – nå er det bare oppkjøringen igjen. Lær hva det koster, hva som skjer på sikkerhetskontrollen og hva sensor faktisk ser etter. Ekspert-tips som hjelper deg bestå på første forsøk.',
         color: 'var(--apple-orange)',
+        seoTitle: 'Oppkjøring klasse B: slik består du førerprøven',
+        seoDescription: 'Se hvordan oppkjøring klasse B foregår, hva sensor vurderer, vanlige feil, sikkerhetskontroll og hvordan du forbereder deg best mulig.',
         sections: []
     },
 
@@ -3925,47 +4076,114 @@ export const theoryArticles: TheoryTopic[] = [
 
     {
         id: 'ovingskjoring',
-        title: 'Guide til øvingskjøring',
+        title: 'Øvelseskjøring klasse B: regler, krav og tips',
         icon: '🚗',
-        shortDescription: 'Skal du lære bort kjøring til egne barn? Lær hvordan du formidler erfaring, hva du bør øve på først, de vanskeligste situasjonene – og hvordan du sparer penger på trafikkskolen.',
+        shortDescription: 'Lær kravene til øvelseskjøring klasse B: alder, trafikalt grunnkurs, ledsager, L-skilt, ekstra speil, ansvar og smart mengdetrening.',
         color: 'var(--apple-green)',
-        seoTitle: 'Guide til øvingskjøring – krav og regler | Teori-test.no',
-        seoDescription: 'Alt du trenger å vite om øvingskjøring: krav til ledsager, elev og bil for klasse B førerkort.',
+        seoTitle: 'Øvelseskjøring klasse B: regler, ledsager og L-skilt',
+        seoDescription: 'Se krav til øvelseskjøring klasse B: alder, trafikalt grunnkurs, ledsager, L-skilt, ekstra speil, ansvar og tips til trygg mengdetrening.',
         sections: [
             {
-                title: 'Hva er øvingskjøring?',
+                title: 'Hva er øvelseskjøring?',
                 type: 'text',
-                content: 'Øvingskjøring er privat kjøretrening med en godkjent ledsager, og er en av de beste måtene å bygge opp kjøreerfaring på. Jo mer du øver, desto tryggere vil du stå i fagprøven — og som sjåfør generelt. Men det er viktig å gjøre det riktig fra starten av.'
+                content: 'Øvelseskjøring, ofte kalt øvingskjøring, er privat kjøretrening med en godkjent ledsager. For klasse B må du vite kravene til elev, ledsager og bil før dere starter. Her får du en enkel oversikt over reglene, hva bilen må ha, hvem som har ansvaret, og hvordan dere øver smart fram mot oppkjøringen.'
+            },
+            {
+                title: 'Kort forklart',
+                type: 'info',
+                content: 'For å øvelseskjøre med personbil må du som hovedregel være minst 16 år. Er du under 25 år, må du ha fullført trafikalt grunnkurs og ha med øvelseskjøringsbevis og legitimasjon. Ledsager må være minst 25 år og ha hatt førerkort klasse B sammenhengende i minst 5 år. Bilen skal ha rød L på hvit bakgrunn bak på bilen, ekstra speil for ledsager og være i forsvarlig stand. Les mer hos [Statens vegvesen om øvelseskjøring med personbil](https://www.vegvesen.no/forerkort/ta-forerkort/ovelseskjoring/ovelseskjoring-i-de-ulike-forerkortklassene/personbil/).'
+            },
+            {
+                title: 'Krav før dere starter',
+                type: 'table',
+                content: '<div class="responsive-theory-table-wrapper" style="margin-top: 1rem;"><table class="responsive-theory-table" style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem;"><thead><tr style="background-color: var(--color-surface); border-bottom: 2px solid var(--color-border);"><th style="padding: 12px 8px;">Tema</th><th style="padding: 12px 8px;">Krav</th><th style="padding: 12px 8px;">Typisk feil</th></tr></thead><tbody><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">Elev</td><td style="padding: 12px 8px;">Minst 16 år. Under 25 år må ha fullført trafikalt grunnkurs og ha med øvelseskjøringsbevis og legitimasjon.</td><td style="padding: 12px 8px;">Glemmer bevis eller legitimasjon.</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">Over 25 år</td><td style="padding: 12px 8px;">Kan øvelseskjøre uten å ha tatt hele trafikalt grunnkurs, men må ha gyldig legitimasjon.</td><td style="padding: 12px 8px;">Tror alle over 25 har samme krav som yngre elever.</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">Ledsager</td><td style="padding: 12px 8px;">Minst 25 år og hatt førerkort klasse B sammenhengende i minst 5 år.</td><td style="padding: 12px 8px;">Bruker ledsager som ikke oppfyller 5-årskravet.</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">Ansvar</td><td style="padding: 12px 8px;">Ledsager regnes som ansvarlig fører under øvelseskjøringen.</td><td style="padding: 12px 8px;">Ledsager følger ikke godt nok med.</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">Bil</td><td style="padding: 12px 8px;">Klasse B, tillatt totalvekt maks 3500 kg, forsvarlig stand og ekstra speil for ledsager.</td><td style="padding: 12px 8px;">Mangler ekstra speil.</td></tr><tr><td style="padding: 12px 8px;">L-skilt</td><td style="padding: 12px 8px;">Godt synlig rød L på hvit bakgrunn bak på bilen, kun under øvelseskjøring.</td><td style="padding: 12px 8px;">Lar L-skiltet stå på etter økten.</td></tr></tbody></table></div>'
             },
             {
                 title: 'Krav til deg som elev',
                 type: 'info',
-                content: '• Minst 16 år gammel\n• Bestått trafikalt grunnkurs (TG) ved en godkjent trafikkskole\n• Oppfylle helsekravene for førerkort\n\nTrafikalt grunnkurs er obligatorisk og må gjennomføres FØR du kan begynne å øvingskjøre. Unntak: Er du over 25 år, kan du starte uten å ha fullført hele TG.'
+                content: 'Du må være minst 16 år for å øvelseskjøre med personbil. Er du under 25 år, må du ha fullført trafikalt grunnkurs før du starter. Ta alltid med legitimasjon og øvelseskjøringsbevis når du kjører.'
             },
             {
                 title: 'Krav til ledsageren',
                 type: 'warning',
-                content: 'Ledsageren har samme juridiske ansvar som en kjørelærer. Vedkommende må:\n• Være minst 25 år gammel\n• Ha hatt gyldig klasse B-førerkort sammenhengende i minst 5 år\n• Sitte i forsetet ved siden av deg\n• Være helt edru under kjøringen\n\nVelg en ledsager som er tålmodig og konstruktiv — det gjør øktene mye mer effektive.'
+                content: 'Ledsageren må være minst 25 år, ha hatt førerkort klasse B sammenhengende i minst 5 år og sitte ved siden av deg. Ledsager regnes som ansvarlig fører og må være egnet til å kjøre: ikke ruspåvirket, syk, trøtt eller uoppmerksom. Telefonen bør ligge bort, og ledsageren må følge aktivt med.'
             },
             {
                 title: 'Krav til bilen',
                 type: 'info',
-                content: '• Gyldig EU-kontroll\n• Forsikret for øvingskjøring — sjekk med forsikringsselskapet!\n• L-skilt festet foran og bak på bilen\n• Fungerende speil, bremser, lys og sikkerhetsbelter\n\nDe fleste kaskoforsikringer dekker øvingskjøring automatisk, men det lønner seg å bekrefte dette på forhånd.'
+                content: 'Bilen må være i forsvarlig stand, ha ekstra speil for ledsager og rød L på hvit bakgrunn godt synlig bak på bilen. Sjekk også forsikring, lys, bremser, speil og sikkerhetsbelter før dere starter. Øver du med automatgir og kjører opp med automat, får du automatkode på førerkortet.'
             },
             {
-                title: 'Bygg deg opp trinn for trinn',
+                title: 'Slik øver dere smart',
                 type: 'tip',
-                content: 'Start enkelt og øk vanskelighetsgraden gradvis:\n\nFase 1 – Grunnleggende: starte, stoppe, gire og parkere på tom p-plass\nFase 2 – Rolige boligveier, enkle kryss og rundkjøringer\nFase 3 – Bykjøring med fotgjengere, syklister og kø\nFase 4 – Landevei og motorvei\nFase 5 – Mørke, regn og vinterføre\n\nStatens vegvesen anbefaler minst 100–150 kjørte timer. Ikke spar på øvingen!'
-            },
-            {
-                title: 'Tips for gode øvingsøkter',
-                type: 'tip',
-                content: '• Avtal på forhånd hva dere skal fokusere på\n• Gi eleven tid til å reagere — unngå å rykke til i rattet\n• Gi ros for det som går bra, ikke bare korriger feil\n• Avslutt på en positiv opplevelse for å holde motivasjonen oppe\n• Varier mellom kjente og ukjente strekninger for bredere erfaring'
+                content: 'Start på rolige steder og øk vanskelighetsgraden gradvis. Begynn med igangsetting, bremsing, giring, plassering og parkering. Gå deretter videre til boligfelt, kryss, [rundkjøringer](/laeringsressurser/rundkjoring), landevei, bykjøring, mørke og krevende føre. Korte, planlagte økter er ofte bedre enn lange turer uten mål. Avtal før økten hva dere skal trene på, og snakk kort om hva som gikk bra etterpå.'
             },
             {
                 title: 'Teori + praksis = best forberedt',
                 type: 'tip',
-                content: 'Øvingskjøring gir deg den praktiske erfaringen, men god trafikal forståelse starter med teorien. Her på Teori-test.no kan du øve på vikeplikt, skiltgjenkjenning og trafikkregler mellom kjøreøktene — slik at du er best mulig forberedt til både teori- og fagprøven. 🎯\n\nNår du er klar for selve oppkjøringen, les vår komplette guide til hva du kan vente deg -> [Oppkjøring klasse B](/laeringsressurser/oppkjoring)'
+                content: 'Øvelseskjøring gir praktisk erfaring, men god trafikal forståelse starter med teorien. Mellom kjøreøktene bør du øve på [vikeplikt](/laeringsressurser/vikeplikt), [trafikkskilt](/laeringsressurser/skilt), [sikkerhetskontroll](/laeringsressurser/sikkerhetskontroll) og vanlige trafikkregler. Når du nærmer deg førerprøven, les vår guide til [oppkjøring klasse B](/laeringsressurser/oppkjoring).'
+            }
+        ],
+        faq: [
+            {
+                question: 'Når kan jeg begynne å øvelseskjøre med bil?',
+                answer: 'Du kan begynne å øvelseskjøre med personbil fra du er 16 år. Er du under 25 år, må du ha fullført trafikalt grunnkurs først.'
+            },
+            {
+                question: 'Hva må jeg ha med når jeg øvelseskjører?',
+                answer: 'Du må ha med legitimasjon med bilde. Er du under 25 år, må du også ha øvelseskjøringsbevis eller bevis for fullført trafikalt grunnkurs.'
+            },
+            {
+                question: 'Hvem kan være ledsager ved øvelseskjøring?',
+                answer: 'Ledsager må være minst 25 år og ha hatt førerkort klasse B sammenhengende i minst 5 år. Ledsager må også være egnet til å kjøre og følge aktivt med.'
+            },
+            {
+                question: 'Hvem har ansvaret under øvelseskjøring?',
+                answer: 'Ledsager regnes som ansvarlig fører under øvelseskjøringen, selv om eleven sitter bak rattet.'
+            },
+            {
+                question: 'Må bilen ha L-skilt og ekstra speil?',
+                answer: 'Ja. Bilen skal ha godt synlig rød L på hvit bakgrunn bak på bilen og ekstra speil for ledsager.'
+            },
+            {
+                question: 'Kan jeg øvelseskjøre med passasjerer?',
+                answer: 'Ja, men bare når eleven er trygg nok og ledsager vurderer at det er forsvarlig. I starten er det ofte best å kjøre uten passasjerer.'
+            },
+            {
+                question: 'Kan jeg øvelseskjøre med automatgir?',
+                answer: 'Ja. Du kan øvelseskjøre med automatgir, men hvis du kjører opp med automatgir får du førerkort med kode for automat.'
+            }
+        ],
+        miniQuiz: [
+            {
+                question: 'Hvor gammel må du være for å øvelseskjøre med personbil?',
+                options: ['15 år', '16 år', '17 år', '18 år'],
+                correct: '16 år',
+                explanation: 'Du kan begynne å øvelseskjøre med personbil når du er 16 år, så lenge kravene ellers er oppfylt.'
+            },
+            {
+                question: 'Hva er kravet til ledsager?',
+                options: ['Minst 21 år og hatt førerkort i 2 år', 'Minst 25 år og hatt klasse B sammenhengende i minst 5 år', 'Bare gyldig førerkort uansett alder', 'Må være trafikklærer'],
+                correct: 'Minst 25 år og hatt klasse B sammenhengende i minst 5 år',
+                explanation: 'Dette er hovedkravet til ledsager ved privat øvelseskjøring klasse B.'
+            },
+            {
+                question: 'Hvor skal L-skiltet være?',
+                options: ['Foran på bilen', 'Godt synlig bak på bilen', 'I frontruten', 'Det er valgfritt'],
+                correct: 'Godt synlig bak på bilen',
+                explanation: 'L-skiltet skal være godt synlig bak på bilen under øvelseskjøringen.'
+            },
+            {
+                question: 'Hva må bilen ha for ledsager?',
+                options: ['Ekstra speil', 'Ekstra pedalsett', 'Taklys', 'Varseltrekant på dashbordet'],
+                correct: 'Ekstra speil',
+                explanation: 'Ledsager skal ha ekstra speil slik at han eller hun har oversikt bakover.'
+            },
+            {
+                question: 'Hvem regnes som ansvarlig fører under privat øvelseskjøring?',
+                options: ['Eleven', 'Ledsager', 'Bileier', 'Trafikkstasjonen'],
+                correct: 'Ledsager',
+                explanation: 'Ledsager regnes som ansvarlig fører under privat øvelseskjøring.'
             }
         ]
     },
@@ -4238,83 +4456,130 @@ export const theoryArticles: TheoryTopic[] = [
 
     {
         id: 'sikkerhetsutstyr',
-        title: 'Sikkerhetsutstyr i bilen',
+        title: 'Sikkerhetsutstyr i bil: påbudt utstyr, bilbelte og airbag',
         icon: '🛡️',
-        shortDescription: 'Lær om bilbelte, barnesikring, airbag, varseltrekant og refleksvest. Alt du trenger å vite om påbudt og anbefalt utstyr.',
+        shortDescription: 'Lær hva som er påbudt å ha i bilen, og hvordan bilbelte, barnesikring, airbag, varseltrekant og refleksvest brukes riktig.',
         color: 'var(--apple-blue)',
-        seoTitle: 'Sikkerhetsutstyr i bil: regler for bilbelte, barnesikring og airbag | Teori-test.no',
-        seoDescription: 'Hva er påbudt sikkerhetsutstyr i bilen? Lær reglene for bilbelte, barnesikring og airbag. Se også krav til varseltrekant og refleksvest.',
+        seoTitle: 'Sikkerhetsutstyr i bil: påbudt utstyr, belte og airbag',
+        seoDescription: 'Se hva som er påbudt å ha i bilen, hvordan refleksvest og varseltrekant brukes, og reglene for bilbelte, barnesikring og airbag til teoriprøven.',
         sections: [
             {
                 title: 'Sikkerhetsutstyr i bilen',
                 type: 'text',
-                content: 'Sikkerhetsutstyr handler om to ting: å beskytte dem som sitter i bilen, og å gjøre deg synlig og trygg hvis noe skjer langs veien.\n\nPå teoriprøven kan du få spørsmål om bilbelte, barnesikring, airbag, refleksvest, varseltrekant og hva du bør gjøre ved stans eller trafikkuhell.'
+                content: 'På teoriprøven kan du få spørsmål om hvilket sikkerhetsutstyr bilen må ha, hvordan bilbelte og airbag beskytter deg, og hvordan barn skal sikres riktig. Her får du en enkel oversikt over påbudt utstyr i bilen, vanlig sikkerhetsutstyr og typiske teorifeller.'
             },
             {
                 title: 'Kort forklart',
                 type: 'info',
-                content: 'Dette bør du kunne:\n\n• Alle skal bruke bilbelte.\n• Barn under 135 cm skal bruke godkjent barnesikring.\n• Bakovervendt barnesete må aldri brukes foran aktiv airbag.\n• Bilen skal ha varseltrekant.\n• Refleksvest skal ligge lett tilgjengelig fra førerplassen.\n• Førstehjelpsutstyr og brannslukker er lurt å ha, men ikke påbudt i vanlig personbil.'
+                content: 'Det viktigste påbudte utstyret i bilen er varseltrekant og minst én godkjent refleksvest som ligger lett tilgjengelig for føreren. Bilbelte skal brukes der det er montert, og barn må sikres med godkjent utstyr som passer barnets høyde og vekt. Airbag er et tillegg til bilbelte, ikke en erstatning. Bakovervendt barnesete skal aldri brukes foran en aktiv airbag.'
             },
             {
-                title: 'Bilbelte',
+                title: 'Hva er påbudt å ha i bilen?',
+                type: 'table',
+                content: '<div class="responsive-theory-table-wrapper" style="margin-top: 1rem;"><table class="responsive-theory-table" style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem;"><thead><tr style="background-color: var(--color-surface); border-bottom: 2px solid var(--color-border);"><th style="padding: 12px 8px;">Utstyr</th><th style="padding: 12px 8px;">Påbudt?</th><th style="padding: 12px 8px;">Dette må du huske</th></tr></thead><tbody><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">Varseltrekant</td><td style="padding: 12px 8px;">Ja</td><td style="padding: 12px 8px;">Bilen skal ha minst én varseltrekant. Ved stans eller uhell skal den plasseres slik at andre trafikanter ser faren i tide, om mulig minst 150 meter fra bilen.</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">Refleksvest</td><td style="padding: 12px 8px;">Ja</td><td style="padding: 12px 8px;">Det skal ligge minst én godkjent refleksvest lett tilgjengelig for føreren, for eksempel i bildøren eller hanskerommet.</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">Bilbelte</td><td style="padding: 12px 8px;">Ja, der det er montert</td><td style="padding: 12px 8px;">Alle skal bruke bilbelte der det finnes. Bilbeltet skal ligge stramt over hofte og skulder, ikke over magen eller under armen.</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">Barnesikring</td><td style="padding: 12px 8px;">Ja, for barn</td><td style="padding: 12px 8px;">Barn under 135 cm skal bruke godkjent barnesikringsutstyr som passer barnets høyde og vekt.</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">Førstehjelpspakke</td><td style="padding: 12px 8px;">Nei</td><td style="padding: 12px 8px;">Ikke påbudt i vanlig personbil, men smart å ha med.</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">Reservedekk/reparasjonssett</td><td style="padding: 12px 8px;">Nei</td><td style="padding: 12px 8px;">Ikke alltid påbudt, men du må vite hvordan bilen er utstyrt og hva du gjør ved punktering.</td></tr><tr><td style="padding: 12px 8px;">Brannslukker</td><td style="padding: 12px 8px;">Nei</td><td style="padding: 12px 8px;">Ikke påbudt i vanlig personbil, men kan være nyttig i enkelte situasjoner.</td></tr></tbody></table></div>'
+            },
+            {
+                title: 'Bilbelte, airbag og barnesikring',
                 type: 'text',
-                content: 'Alle i bilen skal bruke bilbelte, både fører og passasjerer. Bilbeltet holder kroppen på plass ved bråbrems or kollisjon, og fungerer sammen med airbag og bilens øvrige sikkerhetssystemer.\n\nSom fører har du ansvar for at passasjerer under 15 år er riktig sikret. Voksne passasjerer har selv ansvar for å bruke bilbelte, men som fører bør du likevel passe på at alle er sikret før du kjører.\n\nVanlige feil:\n- beltet ligger under armen\n- beltet ligger over halsen\n- beltet er vridd\n- passasjerer dropper belte “bare på en kort tur”\n\nKorte turer er ikke et unntak. Ulykker bestiller ikke langkjøring først.'
+                content: `Bilbelte er det viktigste sikkerhetsutstyret i bilen. Det holder kroppen på plass ved bråbrems eller kollisjon, og gjør at airbagen virker slik den skal. Airbag alene er ikke nok. Sitter du uten bilbelte, eller sitter for nær airbagen, kan airbagen skade deg.
+
+Barn skal sikres ekstra godt. Barn under 135 cm skal bruke godkjent barnesikringsutstyr som passer barnets høyde og vekt. Barn mellom 135 og 150 cm skal bruke godkjent utstyr hvis det finnes i bilen. Føreren har ansvar for at passasjerer under 15 år er riktig sikret.
+
+Viktig teorifelle: Bakovervendt barnesete skal aldri plasseres foran en aktiv airbag. Airbagen må være koblet ut hvis bakovervendt barnesete skal brukes i forsetet. Les mer hos [Statens vegvesen om sikring av barn i bil](https://www.vegvesen.no/trafikkinformasjon/trafikksikkerhet/sikker-kjoring/sikring-av-barn-i-bil/regelverket-for-sikring-av-barn/).`
             },
             {
-                title: 'Barnesikring',
-                type: 'text',
-                content: 'Barn under 135 cm skal bruke godkjent barnesikringsutstyr som passer barnets høyde og vekt. Det kan være barnesete, beltestol eller pute, avhengig av barnet.\n\nBarn bør sitte bakovervendt så lenge som mulig. Det gir bedre beskyttelse for hode, nakke og rygg ved en kollisjon.\n\nViktig regel: Bakovervendt barnesete skal aldri plasseres foran en aktiv airbag. Hvis airbagen utløses, kan det være svært farlig for barnet.'
-            },
-            {
-                title: 'Airbag',
-                type: 'info',
-                content: 'Airbag er laget for å fungere sammen med bilbeltet. Den skal dempe slag mot hode og overkropp ved kraftig kollisjon, men den erstatter aldri bilbeltet.\n\nDette bør du kunne:\n• Airbag + bilbelte gir best beskyttelse.\n• Airbag uten bilbelte kan gi alvorlige skader.\n• Du bør sitte riktig og ha god avstand til rattet.\n• Bakovervendt barnesete må ikke brukes foran aktiv airbag.'
-            },
-            {
-                title: 'Varseltrekant',
-                type: 'warning',
-                content: 'Bilen skal ha minst én varseltrekant. Den brukes hvis bilen står til fare eller hinder for trafikken og ikke kan flyttes trygt med en gang.\n\nVarseltrekanten skal plasseres slik at andre trafikanter rekker å oppdage faren. Ved høy fart, sving eller bakketopp må den stå i god avstand før bilen eller ulykkesstedet.\n\nIkke tenk bare “bak bilen”. Tenk: Hvor må varslingen stå for at andre rekker å reagere?'
-            },
-            {
-                title: 'Refleksvest',
+                title: 'Slik bruker du varseltrekant og refleksvest',
                 type: 'tip',
-                content: 'Refleksvesten skal ligge lett tilgjengelig fra førerplassen, for eksempel i bildøren eller hanskerommet. Poenget er at du skal kunne ta den på før du går ut av bilen.\n\nDen bør brukes hvis du må forlate bilen langs veien, særlig ved motorstopp, punktering, trafikkuhell, mørke eller dårlig sikt.'
+                content: `Hvis bilen stanser på et farlig sted, skal du først tenke egen sikkerhet. Ta på refleksvest før du går ut hvis det er mulig. Sett ut varseltrekanten slik at andre trafikanter oppdager faren tidlig. På vei med høy fart, dårlig sikt eller mørke må varseltrekanten stå langt nok unna til at andre rekker å reagere.
+
+Refleksvesten bør ligge innen armlengdes avstand fra føreren, for eksempel i dørlommen eller hanskerommet. Ikke fest refleksvesten rundt setet, fordi det kan hindre sideairbag i å virke riktig. Se [Statens vegvesen om refleksvest](https://www.vegvesen.no/trafikkinformasjon/trafikksikkerhet/sikker-kjoring/refleksvest/) og [Lovdata om varseltrekant og refleksvest](https://lovdata.no/dokument/SF/forskrift/1994-10-04-918/%C2%A741-2).`
             },
             {
-                title: 'Anbefalt utstyr i bilen',
-                type: 'text',
-                content: 'Dette er smart å ha, selv om alt ikke er påbudt i vanlig personbil:\n\n- førstehjelpsutstyr\n- brannslukker\n- lommelykt\n- varme klær eller teppe\n- isskrape og snøkost\n- dekkreparasjonssett eller reservehjul hvis bilen har det\n- startkabler eller ladet startbooster\n- mobiltelefon med strøm\n\nPoenget er ikke å fylle bilen som en ekspedisjon. Poenget er å kunne håndtere en vanlig nødsituasjon uten å stå helt hjelpeløs.'
+                title: 'Typiske teorifeller',
+                type: 'warning',
+                content: `På teoriprøven handler sikkerhetsutstyr ofte om å velge det tryggeste svaret, ikke bare huske en regel.
+
+Vanlige feller:
+- Tro at førstehjelpspakke er påbudt i vanlig personbil.
+- Tro at airbag erstatter bilbelte.
+- Plassere bakovervendt barnesete foran aktiv airbag.
+- Glemme at føreren har ansvar for barn under 15 år.
+- Legge bilbeltet over magen eller under armen.
+- La refleksvesten ligge i bagasjerommet i stedet for lett tilgjengelig.
+- Tro at varseltrekanten skal stå rett bak bilen uansett situasjon.`
             },
             {
                 title: 'Ved trafikkuhell',
                 type: 'text',
-                content: 'Ved trafikkuhell er riktig rekkefølge:\n\n**Stans – sikre – varsle – hjelpe**\n\nSikre deg selv og stedet først. Bruk refleksvest, nødblink og varseltrekant. Ved personskade ringer du 113 og følger instruksene du får.\n\n[Les mer om trafikkuhell og førstehjelp](/laeringsressurser/trafikkuhell-forstehjelp)'
+                content: `Ved trafikkuhell er riktig rekkefølge: stans, sikre, varsle og hjelpe. Sikre deg selv og stedet først. Bruk refleksvest, nødblink og varseltrekant. Ved personskade ringer du 113 og følger instruksene du får.
+
+Les mer om [trafikkuhell og førstehjelp](/laeringsressurser/trafikkuhell-forstehjelp), [bilens lys](/laeringsressurser/bilens-lys), [dekk, bremser og styring](/laeringsressurser/dekk-bremser-styring) og [sikkerhetskontroll](/laeringsressurser/sikkerhetskontroll).`
+            }
+        ],
+        faq: [
+            {
+                question: 'Hva er påbudt sikkerhetsutstyr i bil?',
+                answer: 'Vanlig personbil skal ha varseltrekant og minst én godkjent refleksvest som er lett tilgjengelig for føreren. I tillegg skal bilbelte brukes der det er montert, og barn skal sikres med godkjent barnesikringsutstyr.'
+            },
+            {
+                question: 'Er refleksvest påbudt i bilen?',
+                answer: 'Ja. Det skal ligge minst én godkjent refleksvest i bilen, og den skal være lett tilgjengelig for føreren, for eksempel i bildøren eller hanskerommet.'
+            },
+            {
+                question: 'Er varseltrekant påbudt i bilen?',
+                answer: 'Ja. Bilen skal ha minst én varseltrekant. Ved stans eller uhell skal den plasseres slik at andre trafikanter ser faren i tide, om mulig minst 150 meter fra bilen.'
+            },
+            {
+                question: 'Er førstehjelpspakke påbudt i bil?',
+                answer: 'Nei, førstehjelpspakke er ikke påbudt i vanlig personbil, men det er smart å ha med. På teoriprøven er det viktig å skille mellom påbudt utstyr og anbefalt utstyr.'
+            },
+            {
+                question: 'Hvordan beskytter bilbelte?',
+                answer: 'Bilbeltet holder kroppen på plass ved bråbrems eller kollisjon. Det reduserer risikoen for alvorlige skader og gjør at airbag og andre sikkerhetssystemer virker best mulig.'
+            },
+            {
+                question: 'Kan barn sitte foran airbag?',
+                answer: 'Barn i bakovervendt barnesete skal aldri sitte foran en aktiv airbag. Barn under 140 cm bør heller ikke sitte foran en aktiv airbag hvis den ikke er koblet ut.'
+            },
+            {
+                question: 'Når må barn bruke barnesete eller beltestol?',
+                answer: 'Barn under 135 cm skal bruke godkjent barnesikringsutstyr som passer barnets høyde og vekt. Barn mellom 135 og 150 cm skal bruke slikt utstyr hvis det finnes i bilen.'
+            },
+            {
+                question: 'Hvem har ansvar for at barn er sikret i bilen?',
+                answer: 'Føreren har ansvar for at passasjerer under 15 år er riktig sikret.'
             }
         ],
         miniQuiz: [
             {
-                question: 'Hva er påbudt å ha i bilen?',
-                options: ['Førstehjelpsutstyr og brannslukker', 'Varseltrekant og refleksvest', 'Reservehjul og jekk', 'Startkabler og lommelykt'],
-                correct: 'Varseltrekant og refleksvest',
-                explanation: 'I en vanlig personbil er varseltrekant og refleksvest påbudt utstyr.'
+                question: 'Hva er påbudt å ha i vanlig personbil?',
+                options: ['Førstehjelpsutstyr og brannslukker', 'Varseltrekant og minst én lett tilgjengelig refleksvest', 'Reservehjul og jekk', 'Startkabler og lommelykt'],
+                correct: 'Varseltrekant og minst én lett tilgjengelig refleksvest',
+                explanation: 'Førstehjelpspakke og brannslukker kan være smart, men er ikke påbudt i vanlig personbil.'
             },
             {
                 question: 'Hvor bør refleksvesten ligge?',
-                options: ['I bagasjerommet', 'I hanskerommet eller bildøren', 'Under reservehjulet', 'Hjemme i garasjen'],
-                correct: 'I hanskerommet eller bildøren',
-                explanation: 'Refleksvesten skal ligge lett tilgjengelig fra førerplassen slik at du kan ta den på før du går ut av bilen.'
+                options: ['Lett tilgjengelig for føreren, for eksempel i døren eller hanskerommet', 'I bagasjerommet', 'Under reservehjulet', 'Hjemme i garasjen'],
+                correct: 'Lett tilgjengelig for føreren, for eksempel i døren eller hanskerommet',
+                explanation: 'Du skal kunne ta den på før du går ut av bilen ved stans eller uhell.'
             },
             {
-                question: 'Kan bakovervendt barnesete stå foran aktiv airbag?',
-                options: ['Ja, det er tryggest', 'Bare hvis barnet er over 10 kg', 'Nei, det kan være svært farlig', 'Ja, hvis stolen er godkjent'],
-                correct: 'Nei, det kan være svært farlig',
-                explanation: 'Airbagen utløses med voldsom kraft og kan skade barnet alvorlig hvis det sitter i bakovervendt sete.'
+                question: 'Hva er riktig om barn og aktiv airbag?',
+                options: ['Bakovervendt barnesete skal ikke brukes foran aktiv airbag', 'Airbag erstatter barnesete', 'Barn bør alltid sitte foran airbag', 'Airbag gjør belte unødvendig'],
+                correct: 'Bakovervendt barnesete skal ikke brukes foran aktiv airbag',
+                explanation: 'Airbagen kan skade barnet alvorlig hvis den utløses.'
             },
             {
-                question: 'Hva gjør du først hvis bilen stanser farlig langs veien?',
-                options: ['Ringer etter veihjelp', 'Gjør deg synlig og sikre stedet', 'Begynner å reparere feilen', 'Går ut og vinker til andre biler'],
-                correct: 'Gjør deg synlig og sikre stedet',
-                explanation: 'Ta på refleksvest, sett ut varseltrekant og bruk nødblink for å hindre påkjørsel.'
+                question: 'Hva gjør bilbeltet?',
+                options: ['Holder kroppen på plass og reduserer skade ved bråstopp eller kollisjon', 'Erstatter airbag', 'Gjelder bare på motorvei', 'Skal ligge løst over magen'],
+                correct: 'Holder kroppen på plass og reduserer skade ved bråstopp eller kollisjon',
+                explanation: 'Airbag er laget for å virke sammen med bilbeltet, ikke erstatte det.'
+            },
+            {
+                question: 'Er førstehjelpspakke påbudt i vanlig personbil?',
+                options: ['Nei, men det er anbefalt å ha med', 'Ja, alltid', 'Bare på motorvei', 'Bare om vinteren'],
+                correct: 'Nei, men det er anbefalt å ha med',
+                explanation: 'Dette er en vanlig teorifelle: nyttig utstyr er ikke alltid påbudt utstyr.'
             }
         ]
     },
@@ -4341,7 +4606,12 @@ export const theoryArticles: TheoryTopic[] = [
             {
                 title: 'Oversikt: bilens lys og typiske teorifeller',
                 type: 'text',
-                content: 'Les også:\n- [Mørkekjøring](/laeringsressurser/lysbruk-morkekjoring)\n- [Sikkerhetskontroll](/laeringsressurser/sikkerhetskontroll)\n- [Trafikkuhell og førstehjelp](/laeringsressurser/trafikkuhell-forstehjelp)\n\n| Lys | Når brukes det? | Typisk teorifelle |\n|---|---|---|\n| Nærlys | Ved kjøring i mørke, tunnel, regn, snø, tåke eller dårlig sikt | Å tro at kjørelys alltid er nok |\n| Kjørelys | På dagtid og ved gode siktforhold | Baklys er ikke alltid tent sammen med kjørelys |\n| Fjernlys | På mørke veier når det ikke blender andre | Å glemme å blende ned for møtende eller forankjørende |\n| Tåkelys foran | Ved tåke/svært dårlig sikt, eller som kjørelys på dagtid i stedet for nærlys | Skal ikke brukes sammen med nærlys |\n| Kurvelys | Ved lav fart i svinger, avhengig av bilens system | Å tro at det er ekstra lys du kan bruke fritt |\n| Baklys | Gjør bilen synlig bakfra, særlig i mørke, tunnel og dårlig sikt | Mange biler har ikke baklys tent med bare kjørelys |\n| Bremselys | Lyser automatisk når du bremser | Defekte bremselys gjør at bilen bak får mindre tid til å reagere |\n| Blinklys/retningslys | Ved sving, feltskifte, forbikjøring og ut av rundkjøring | Å blinke for sent, eller glemme å blinke ut av rundkjøring |\n| Nødblink/nødsignallys | Ved fare, stans, ulykke eller motorstopp | Å bruke nødblink som “parkeringstillatelse” |\n| Parkeringslys | Når bilen står parkert eller stanset og må være synlig | Å kjøre med bare parkeringslys |\n| Skiltlys | Lyser opp registreringsskiltet bak | Lett å glemme ved sikkerhetskontroll |\n| Ryggelys | Lyser når bilen settes i revers | Det varsler rygging, men gir deg ikke forkjørsrett |\n| Autolys | Automatisk lysfunksjon på nyere biler | Kan lure deg i tunnel, regn, tåke eller skumring |'
+                content: 'Les også:\n- [Mørkekjøring](/laeringsressurser/lysbruk-morkekjoring)\n- [Sikkerhetskontroll](/laeringsressurser/sikkerhetskontroll)\n- [Trafikkuhell og førstehjelp](/laeringsressurser/trafikkuhell-forstehjelp)'
+            },
+            {
+                title: 'Tabell: bilens lys og typiske teorifeller',
+                type: 'table',
+                content: `<div class="responsive-theory-table-wrapper" style="margin-top: 1rem;"><table class="responsive-theory-table" style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem;"><thead><tr style="background-color: var(--color-surface); border-bottom: 2px solid var(--color-border);"><th style="padding: 12px 8px;">Lys</th><th style="padding: 12px 8px;">Når brukes det?</th><th style="padding: 12px 8px;">Typisk teorifelle</th></tr></thead><tbody><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Nærlys</b></td><td style="padding: 12px 8px;">Ved kjøring i mørke, tunnel, regn, snø, tåke eller dårlig sikt</td><td style="padding: 12px 8px;">Å tro at kjørelys alltid er nok</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Kjørelys</b></td><td style="padding: 12px 8px;">På dagtid og ved gode siktforhold</td><td style="padding: 12px 8px;">Baklys er ikke alltid tent sammen med kjørelys</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Fjernlys</b></td><td style="padding: 12px 8px;">På mørke veier når det ikke blender andre</td><td style="padding: 12px 8px;">Å glemme å blende ned for møtende eller forankjørende</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Tåkelys foran</b></td><td style="padding: 12px 8px;">Ved tåke eller svært dårlig sikt, eller som kjørelys på dagtid i stedet for nærlys</td><td style="padding: 12px 8px;">Skal ikke brukes sammen med nærlys</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Kurvelys</b></td><td style="padding: 12px 8px;">Ved lav fart i svinger, avhengig av bilens system</td><td style="padding: 12px 8px;">Å tro at det er ekstra lys du kan bruke fritt</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Baklys</b></td><td style="padding: 12px 8px;">Gjør bilen synlig bakfra, særlig i mørke, tunnel og dårlig sikt</td><td style="padding: 12px 8px;">Mange biler har ikke baklys tent med bare kjørelys</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Bremselys</b></td><td style="padding: 12px 8px;">Lyser automatisk når du bremser</td><td style="padding: 12px 8px;">Defekte bremselys gjør at bilen bak får mindre tid til å reagere</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Blinklys/retningslys</b></td><td style="padding: 12px 8px;">Ved sving, feltskifte, forbikjøring og ut av rundkjøring</td><td style="padding: 12px 8px;">Å blinke for sent, eller glemme å blinke ut av rundkjøring</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Nødblink/nødsignallys</b></td><td style="padding: 12px 8px;">Ved fare, stans, ulykke eller motorstopp</td><td style="padding: 12px 8px;">Å bruke nødblink som parkeringstillatelse</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Parkeringslys</b></td><td style="padding: 12px 8px;">Når bilen står parkert eller stanset og må være synlig</td><td style="padding: 12px 8px;">Å kjøre med bare parkeringslys</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Skiltlys</b></td><td style="padding: 12px 8px;">Lyser opp registreringsskiltet bak</td><td style="padding: 12px 8px;">Lett å glemme ved sikkerhetskontroll</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Ryggelys</b></td><td style="padding: 12px 8px;">Lyser når bilen settes i revers</td><td style="padding: 12px 8px;">Det varsler rygging, men gir deg ikke forkjørsrett</td></tr><tr><td style="padding: 12px 8px;"><b>Autolys</b></td><td style="padding: 12px 8px;">Automatisk lysfunksjon på nyere biler</td><td style="padding: 12px 8px;">Kan lure deg i tunnel, regn, tåke eller skumring</td></tr></tbody></table></div>`
             },
             {
                 title: 'Nærlys og kjørelys',
@@ -4484,8 +4754,8 @@ export const theoryArticles: TheoryTopic[] = [
             },
             {
                 title: 'Oversikt: 10 vanlige feil og øvetiltak',
-                type: 'text',
-                content: '| Rang | Feiltype | Estimert hyppighet | Slik øver du |\n|---|---|---|---|\n| 1 | Høyreregelen i kryss uten skilt | Svært høy | Øv på uregulerte kryss og spør alltid: kommer noen fra høyre? |\n| 2 | Rundkjøring | Svært høy | Del opp øvingen: innkjøring, feltvalg, vikeplikt, blinklys og utkjøring |\n| 3 | Utkjøring fra privat vei, parkering eller bensinstasjon | Høy | Husk hovedregelen: ut fra område betyr ofte vikeplikt |\n| 4 | Skiltforveksling | Høy | Lær skiltgruppene først: fare, forbud, påbud, opplysning og vikeplikt |\n| 5 | Stopplikt og prioritetsskilt | Høy | Tren på forskjellen mellom vikeplikt, stopplikt og forkjørsvei |\n| 6 | Buss, trikk og særregler | Middels–høy | Repeter buss fra holdeplass, trikk og situasjoner der særregler gjelder |\n| 7 | Bremselengde, reaksjonslengde og stoppavstand | Høy | Forstå forskjellen på reaksjon, bremsing og total stoppavstand |\n| 8 | Følgeavstand og fartstilpasning | Middels–høy | Bruk tresekundersregelen og øk avstanden ved dårlig sikt eller glatt vei |\n| 9 | Vegoppmerking, sperrelinje og feltskifte | Middels–høy | Sammenlign sperrelinje, varsellinje, feltpiler og regler for feltskifte |\n| 10 | Leser feil, overser nøkkelord eller gjetter for tidlig | Middels–høy | Les spørsmålet to ganger og se etter ord som "ikke", "alltid", "kan" og "må" |'
+                type: 'table',
+                content: `<div class="responsive-theory-table-wrapper" style="margin-top: 1rem;"><table class="responsive-theory-table" style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem;"><thead><tr style="background-color: var(--color-surface); border-bottom: 2px solid var(--color-border);"><th style="padding: 12px 8px;">Rang</th><th style="padding: 12px 8px;">Feiltype</th><th style="padding: 12px 8px;">Estimert hyppighet</th><th style="padding: 12px 8px;">Slik øver du</th></tr></thead><tbody><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">1</td><td style="padding: 12px 8px;">Høyreregelen i kryss uten skilt</td><td style="padding: 12px 8px;">Svært høy</td><td style="padding: 12px 8px;">Øv på uregulerte kryss og spør alltid: kommer noen fra høyre?</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">2</td><td style="padding: 12px 8px;">Rundkjøring</td><td style="padding: 12px 8px;">Svært høy</td><td style="padding: 12px 8px;">Del opp øvingen: innkjøring, feltvalg, vikeplikt, blinklys og utkjøring</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">3</td><td style="padding: 12px 8px;">Utkjøring fra privat vei, parkering eller bensinstasjon</td><td style="padding: 12px 8px;">Høy</td><td style="padding: 12px 8px;">Husk hovedregelen: ut fra område betyr ofte vikeplikt</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">4</td><td style="padding: 12px 8px;">Skiltforveksling</td><td style="padding: 12px 8px;">Høy</td><td style="padding: 12px 8px;">Lær skiltgruppene først: fare, forbud, påbud, opplysning og vikeplikt</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">5</td><td style="padding: 12px 8px;">Stopplikt og prioritetsskilt</td><td style="padding: 12px 8px;">Høy</td><td style="padding: 12px 8px;">Tren på forskjellen mellom vikeplikt, stopplikt og forkjørsvei</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">6</td><td style="padding: 12px 8px;">Buss, trikk og særregler</td><td style="padding: 12px 8px;">Middels-høy</td><td style="padding: 12px 8px;">Repeter buss fra holdeplass, trikk og situasjoner der særregler gjelder</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">7</td><td style="padding: 12px 8px;">Bremselengde, reaksjonslengde og stoppavstand</td><td style="padding: 12px 8px;">Høy</td><td style="padding: 12px 8px;">Forstå forskjellen på reaksjon, bremsing og total stoppavstand</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">8</td><td style="padding: 12px 8px;">Følgeavstand og fartstilpasning</td><td style="padding: 12px 8px;">Middels-høy</td><td style="padding: 12px 8px;">Bruk tresekundersregelen og øk avstanden ved dårlig sikt eller glatt vei</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">9</td><td style="padding: 12px 8px;">Vegoppmerking, sperrelinje og feltskifte</td><td style="padding: 12px 8px;">Middels-høy</td><td style="padding: 12px 8px;">Sammenlign sperrelinje, varsellinje, feltpiler og regler for feltskifte</td></tr><tr><td style="padding: 12px 8px;">10</td><td style="padding: 12px 8px;">Leser feil, overser nøkkelord eller gjetter for tidlig</td><td style="padding: 12px 8px;">Middels-høy</td><td style="padding: 12px 8px;">Les spørsmålet to ganger og se etter ord som "ikke", "alltid", "kan" og "må"</td></tr></tbody></table></div>`
             },
             {
                 title: '1. Høyreregelen i kryss uten skilt',
@@ -4540,7 +4810,12 @@ export const theoryArticles: TheoryTopic[] = [
             {
                 title: 'Hvorfor skjer disse feilene?',
                 type: 'info',
-                content: '![Tekstkort om at de vanskeligste spørsmålene på teoriprøven kombinerer flere regler samtidig](/teoriproven-flere-regler-samtidig.png)\n\nDe vanskeligste spørsmålene på teoriprøven kombinerer ofte flere regler samtidig. Det er derfor vikeplikt, rundkjøring og vegoppmerking kan føles vanskeligere enn rene faktaspørsmål.\n\nEt skiltspørsmål kan handle om ett skilt. En rundkjøring kan derimot handle om skilt, vikeplikt, feltvalg, blinklys, fotgjengere og trafikkflyt samtidig.\n\nDerfor bør du ikke bare pugge regler. Du bør øve på situasjoner.\n\n### Hva bør du prioritere først?\n\n| Tema | Hvorfor viktig | Slik øver du |\n|---|---|---|\n| Vikeplikt | Mange spørsmål handler om hvem som skal kjøre først | Øv på kryss uten skilt og kryss med vikepliktskilt |\n| Rundkjøring | Flere regler brukes samtidig | Del opp i innkjøring, feltvalg og utkjøring |\n| Skilt | Skilt styrer mange situasjoner | Lær form og kategori før enkeltskilt |\n| Bremselengde | Fart påvirker risiko kraftig | Øv på forskjellen mellom reaksjonslengde, bremselengde og stoppavstand |\n| Vegoppmerking | Linjer og felt avgjør hva du kan gjøre | Sammenlign sperrelinje, varsellinje og feltskifte |'
+                content: '![Tekstkort om at de vanskeligste spørsmålene på teoriprøven kombinerer flere regler samtidig](/teoriproven-flere-regler-samtidig.png)\n\nDe vanskeligste spørsmålene på teoriprøven kombinerer ofte flere regler samtidig. Det er derfor vikeplikt, rundkjøring og vegoppmerking kan føles vanskeligere enn rene faktaspørsmål.\n\nEt skiltspørsmål kan handle om ett skilt. En rundkjøring kan derimot handle om skilt, vikeplikt, feltvalg, blinklys, fotgjengere og trafikkflyt samtidig.\n\nDerfor bør du ikke bare pugge regler. Du bør øve på situasjoner.'
+            },
+            {
+                title: 'Hva bør du prioritere først?',
+                type: 'table',
+                content: `<div class="responsive-theory-table-wrapper" style="margin-top: 1rem;"><table class="responsive-theory-table" style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem;"><thead><tr style="background-color: var(--color-surface); border-bottom: 2px solid var(--color-border);"><th style="padding: 12px 8px;">Tema</th><th style="padding: 12px 8px;">Hvorfor viktig</th><th style="padding: 12px 8px;">Slik øver du</th></tr></thead><tbody><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">Vikeplikt</td><td style="padding: 12px 8px;">Mange spørsmål handler om hvem som skal kjøre først</td><td style="padding: 12px 8px;">Øv på kryss uten skilt og kryss med vikepliktskilt</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">Rundkjøring</td><td style="padding: 12px 8px;">Flere regler brukes samtidig</td><td style="padding: 12px 8px;">Del opp i innkjøring, feltvalg og utkjøring</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">Skilt</td><td style="padding: 12px 8px;">Skilt styrer mange situasjoner</td><td style="padding: 12px 8px;">Lær form og kategori før enkeltskilt</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">Bremselengde</td><td style="padding: 12px 8px;">Fart påvirker risiko kraftig</td><td style="padding: 12px 8px;">Øv på forskjellen mellom reaksjonslengde, bremselengde og stoppavstand</td></tr><tr><td style="padding: 12px 8px;">Vegoppmerking</td><td style="padding: 12px 8px;">Linjer og felt avgjør hva du kan gjøre</td><td style="padding: 12px 8px;">Sammenlign sperrelinje, varsellinje og feltskifte</td></tr></tbody></table></div>`
             },
             {
                 title: 'Snart: feilstatistikk fra Teori-test.no',
@@ -4808,144 +5083,6 @@ export const theoryArticles: TheoryTopic[] = [
             }
         ]
     },
-    {
-        id: 'forerstottesystemer',
-        title: 'Førerstøttesystemer på teoriprøven: hjelpemidler, ikke selvkjøring',
-        icon: '🚗',
-        shortDescription: 'Førerstøttesystemer kan hjelpe deg med å bremse, holde avstand, varsle om fare eller holde bilen i feltet. Men de erstatter ikke føreren. På teoriprøven er det viktigste å forstå at du fortsatt må følge med, tilpasse farten og gripe inn når systemene ikke fungerer godt nok.',
-        color: 'var(--apple-blue)',
-        seoTitle: 'Førerstøttesystemer: ABS, ESP og adaptiv cruise | Teori-test.no',
-        seoDescription: 'Lær hva ABS, ESP, adaptiv cruise control, filholder og nødbrems gjør – og hvorfor du fortsatt har ansvaret som fører. Med teorifeller og miniQuiz.',
-        sections: [
-            {
-                title: 'Kort forklart: Hva er førerstøttesystemer?',
-                type: 'info',
-                content: 'Førerstøttesystemer (ofte kalt ADAS - Advanced Driver Assistance Systems) er elektroniske hjelpemidler i bilen. De kan varsle om fare, hjelpe med styring og fart, eller gripe inn i kritiske situasjoner. Hovedregelen til teoriprøven er enkel:\n\n**Systemene hjelper føreren, men de erstatter aldri førerens ansvar.**\n\nDet betyr at uansett hvilke systemer som er aktivert i bilen, er det du som fører som er ansvarlig for bilens plassering, fart, sikkerhet og eventuelle regelbrudd.\n\n![Illustrasjon av førerstøttesystemer i bil, med ABS, ESP, adaptiv cruise control, filholder, blindsonevarsler og automatisk nødbrems.](/images/forerstottesystemer_oversikt.png)\n*En oversikt over de viktigste førerstøttesystemene i en moderne bil, og hvor de hjelper deg under kjøring.*'
-            },
-            {
-                title: 'Tabell: Vanlige førerstøttesystemer på teoriprøven',
-                type: 'table',
-                content: '<div style="overflow-x: auto; -webkit-overflow-scrolling: touch; margin-top: 1rem;"><table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem;"><thead><tr style="background-color: var(--color-surface); border-bottom: 2px solid var(--color-border);"><th style="padding: 12px 8px;">System</th><th style="padding: 12px 8px;">Hva det hjelper med</th><th style="padding: 12px 8px;">Hva du fortsatt må gjøre</th><th style="padding: 12px 8px;">Vanlig teorifelle</th></tr></thead><tbody><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>ABS</b> (Blokkeringsfrie bremser)</td><td style="padding: 12px 8px;">Hindrer at hjulene låser seg ved hard bremsing, slik at du kan styre.</td><td style="padding: 12px 8px;">Bremse hardt og holde trykket på pedalen, og styr unna faren.</td><td style="padding: 12px 8px;">Å tro at ABS-bremser alltid gir kortere bremselengde. (På løs snø eller grus kan den bli lengre).</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>ESP / Antiskrens</b></td><td style="padding: 12px 8px;">Hjelper med å stabilisere bilen ved skrensfare ved å bremse enkelthjul.</td><td style="padding: 12px 8px;">Tilpass farten etter forholdene og unngå brå rattbevegelser.</td><td style="padding: 12px 8px;">Å tro at ESP opphever glatt føre og tillater høyere fart i svinger.</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Antispinn</b></td><td style="padding: 12px 8px;">Reduserer hjulspinn ved igangkjøring eller akselerasjon.</td><td style="padding: 12px 8px;">Kjør rolig, gi forsiktig gass og tilpass deg glatt underlag.</td><td style="padding: 12px 8px;">Å tro at bilen får bedre faktisk veigrep enn dekkene og føret tillater.</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Adaptiv cruise control</b></td><td style="padding: 12px 8px;">Holder valgt fart og tilpasser avstanden til kjøretøyet foran.</td><td style="padding: 12px 8px;">Følg med på trafikken, vær klar til å bremse selv, og tilpass farten etter sikt og føre.</td><td style="padding: 12px 8px;">Å tro at systemet fungerer som en autopilot og reagerer riktig i alle situasjoner.</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Filholder / Kjørefeltassistent</b></td><td style="padding: 12px 8px;">Varsler eller styrer forsiktig for å holde bilen innenfor kjørefeltet.</td><td style="padding: 12px 8px;">Hold hendene på rattet, se på veien, styr selv og bruk blinklys ved filskifte.</td><td style="padding: 12px 8px;">Å tro at systemet fungerer like godt uten synlige linjer i veibanen.</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Automatisk nødbrems</b></td><td style="padding: 12px 8px;">Varsler og bremser automatisk hvis en kollisjon er nært forestående.</td><td style="padding: 12px 8px;">Hold tilstrekkelig avstand, les trafikkbildet fremover og brems tidlig.</td><td style="padding: 12px 8px;">Å tro at nødbremsen alltid oppdager alle hindringer og avverger enhver kollisjon.</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Blindsonevarsler</b></td><td style="padding: 12px 8px;">Varsler med lys/lyd hvis det ligger et kjøretøy i blindsonen din.</td><td style="padding: 12px 8px;">Sjekk alltid speil og ta skulderblikk før du skifter kjørefelt.</td><td style="padding: 12px 8px;">Å stole blindt på varsellampen og droppe skulderblikket (kan overse raske MC/sykler).</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Ryggekamera / Parkeringssensor</b></td><td style="padding: 12px 8px;">Hjelper deg å oppdage hindringer bak bilen under rygging.</td><td style="padding: 12px 8px;">Se deg rundt i alle retninger, sjekk speil og blindsoner før og under rygging.</td><td style="padding: 12px 8px;">Å tro at kameraet viser alt og erstatter plikten til fysisk observasjon.</td></tr><tr><td style="padding: 12px 8px;"><b>Skiltgjenkjenning / ISA</b></td><td style="padding: 12px 8px;">Leser fartsskilt og kan varsle eller tilpasse bilens fartsgrense automatisk.</td><td style="padding: 12px 8px;">Følg med på fysiske skilt, og tilpass farten etter vær, sikt og føre.</td><td style="padding: 12px 8px;">Å tro at bilen alltid viser riktig fartsgrense (systemet kan feile på midlertidige skilt).</td></tr></tbody></table></div>'
-            },
-            {
-                title: 'ABS og ESP: De viktigste sikkerhetssystemene',
-                type: 'text',
-                content: 'De to mest kjente og utbredte førerstøttesystemene er ABS og ESP. De jobber aktivt med bilens veigrep under kjøring:\n\n### ABS (Blokkeringsfrie bremser)\nHovedoppgaven til ABS-bremser er å hindre at hjulene låser seg helt når du bremser maksimalt. Hvis hjulene låser seg, mister du all mulighet til å styre bilen. Med ABS kan du bremse maksimalt og samtidig styre unna en hindring. Les mer om hvordan veigrep og fart påvirker [bremselengde og stopplengde](/laeringsressurser/bremselengde).\n\n**Teorifelle:** Mange tror ABS-bremser alltid gir kortere bremselengde. På enkelte underlag, som løs snø eller grus, kan bremselengden bli lengre med ABS. På [glatt føre](/laeringsressurser/glatt-fore) er hovedpoenget at ABS hjelper deg å beholde styringen, ikke at bilen stopper raskere.\n\n### ESP / Antiskrens\nESP (Electronic Stability Program) overvåker bilens retning og hjulenes rotasjon. Hvis bilen begynner å skli (understyring eller overstyring), griper ESP inn ved å bremse ett eller flere hjul individuelt for å rette opp bilen.\n\n**Teorifelle:** ESP kan hjelpe deg med å hente inn en skrens, men systemet opphever ikke fysikkens lover. Kjører du for fort inn i en sving på glatt føre, vil bilen skli ut uansett om ESP er aktivert eller ikke.'
-            },
-            {
-                title: 'Adaptiv cruise control og filholder: Komfort, ikke selvkjøring',
-                type: 'text',
-                content: 'Disse systemene hjelper deg med den daglige kjøringen på lengre strekninger, men krever at føreren er 100 % oppmerksom:\n\n### Adaptiv cruise control (ACC)\nI motsetning til vanlig cruise control som kun holder en fast hastighet, bruker adaptiv cruise control radar eller kamera for å måle avstanden til bilen foran. Hvis bilen foran bremser, kan bilen bremse eller redusere farten for å holde avstanden.\n\n**Viktig:** Du har fortsatt ansvaret. Hvis bilen foran bremser brått, eller det oppstår en situasjon systemet ikke oppfatter (f.eks. en bil som svinger inn rett foran deg), må du være klar til å bremse selv.\n\n### Filholder / Kjørefeltassistent\nFilholderen bruker et kamera øverst i frontruten for å lese oppmerkingen i veibanen. Hvis du er i ferd med å drifte ut av kjørefeltet uten å bruke blinklys, vil systemet varsle deg eller gi et lite styreinnrykk for å holde deg i feltet. Les mer om kjørefelt og vegoppmerking i vår guide om [veimerking](/laeringsressurser/veimerking) og [feltvalg, fletting og kollektivfelt](/laeringsressurser/feltvalg-fletting-kollektivfelt).\n\n**Viktig:** Filholderen fungerer best når det er synlig vegoppmerking. Ved vegarbeid, slitte linjer eller snødekt vei kan systemet fungere dårligere eller slå seg av.'
-            },
-            {
-                title: 'Automatisk nødbrems, blindsonevarsling og ryggehjelp',
-                type: 'text',
-                content: 'Sikkerhetssystemene rundt bilen hjelper til i kritiske øyeblikk og ved finmanøvrering:\n\n### Automatisk nødbrems (AEB)\nSystemet kan bruke kamera/radar til å oppdage andre kjøretøy, fotgjengere eller syklister foran bilen. Hvis det oppstår en akutt kollisjonsfare og du ikke reagerer på varslene, kan bilen bremse automatisk for å redusere risikoen for eller skadene av et sammenstøt.\n\n### Blindsonevarsler\nBlindsonevarsleren bruker sensorer på siden og bak på bilen for å oppdage kjøretøy som befinner seg i blindsonen din. En lampe (ofte i sidespeilet) lyser eller blinker hvis du setter på blinklyset for å skifte felt mens det ligger en bil der.\n\n**Teorifelle:** Blindsonevarsleren erstatter aldri din plikt til å sjekke blindsonen selv med skulderblikk. Sensorer kan overse raske motorsykler eller syklister.\n\n### Ryggekamera og parkeringssensor\nNår du setter bilen i revers, viser ryggekameraet området bak bilen, og sensorer piper når du nærmer deg hindringer. Dette er utmerkede hjelpemidler ved parkering, men kameraet har en begrenset vinkel og kan ha blindsoner rett under eller på sidene. Du må fortsatt gjøre en fysisk observasjon rundt hele bilen før du begynner å rygge.'
-            },
-            {
-                title: 'Når systemene kan svikte',
-                type: 'warning',
-                content: 'Førerstøttesystemene er helt avhengige av sensorer, radarer og kameraer plassert rundt omkring på bilen (spesielt i fronten, på støtfangere og bak frontruten). Disse kan lett settes ut av spill av ytre forhold:\n\n- **Snø, is og sludd:** Kan dekke til radarer i grillen eller kameraet i frontruten. Bilen vil da ofte gi beskjed om at støttesystemene er utilgjengelige.\n- **Skitt, søle og veisalt:** En skitten bil kan blokkere linsene til ryggekameraet og blindsone-sensorene.\n- **Kraftig regn og tåke:** Reduserer sikten for kamerasystemene, noe som gjør det vanskelig for bilen å registrere kjøretøy eller fotgjengere.\n- **Dårlig vegoppmerking:** Snø, slaps, slitasje eller vegarbeid gjør at filholderen ikke klarer å lese kjørefeltene.\n- **Feil skiltgjenkjenning:** Skiltgjenkjenning (ISA) kan lese skilt på avkjøringsveier eller overse midlertidige fartsgrenser ved vegarbeid. Du må alltid forholde deg til de faktiske skiltene langs veien.\n\nHusk at du alltid må sjekke at sensorer og lykter er rene og fungerer før du kjører. Dette lærer du mer om i vår guide til [sikkerhetskontroll av bilen](/laeringsressurser/sikkerhetskontroll).\n\n![Bil på vintervei der snø og dårlig vegoppmerking kan gjøre at filholder, kamera og andre førerstøttesystemer fungerer dårligere.](/images/forerstottesystemer_vinter.png)\n*Snø og is kan blokkere sensorer og kameraer, og gjøre at førerstøttesystemene slutter å virke.*'
-            },
-            {
-                title: 'Vanlige misforståelser',
-                type: 'example',
-                content: 'Her er tre klassiske feil mange gjør på teoriprøven når det gjelder førerstøtte:\n\n1. **«Bilen har adaptiv cruise control, så jeg kan slappe av og lese på telefonen.»**\n**Feil:** Du har det fulle føreransvaret under hele kjøringen. Du skal være konsentrert, holde hendene på rattet og være klar til å overta kontrollen umiddelbart.\n\n2. **«ABS-bremser gjør at jeg stopper raskere på glatt føre.»**\n**Feil:** På glatt føre er hovedpoenget at ABS hjelper deg å beholde styringen, ikke at bilen stopper raskere. På enkelte underlag, som løs snø eller grus, kan bremselengden faktisk bli lengre med ABS.\n\n3. **«Jeg trenger ikke å se meg over skulderen før feltbytte når jeg har blindsonevarsler.»**\n**Feil:** Blindsonevarsleren er kun et hjelpemiddel. Du har vikeplikt ved feltbytte og må alltid utføre visuell kontroll (speil + skulderblikk) for å sikre at feltet er ledig.'
-            },
-            {
-                title: 'Slik kan spørsmål komme på teoriprøven',
-                type: 'tip',
-                content: 'På den ekte teoriprøven hos Statens vegvesen blir du ofte testet i din forståelse av føreransvar og praktisk bruk av systemene:\n\n- **Scenariooppgaver:** Du får beskrevet en situasjon der et støttesystem feiler (f.eks. filholderen mister linjene på grunn av snø, eller adaptiv cruise control bremser ikke for en parkert bil). Spørsmålet vil handle om hvem som har ansvaret og hva du som fører må gjøre.\n- **Faktaspørsmål om ABS og ESP:** Du må vite nøyaktig hva ABS hjelper med (beholde styring, ikke nødvendigvis kortere bremselengde) og hva ESP gjør (stabiliserer bilen ved skrens).\n- **Regelspørsmål om rygging og feltvalg:** Du blir spurt om ryggekameraet fritar deg for plikten til å observere blindsoner, eller om blindsonevarsleren erstatter sidespeil/skulderblikk.\n\nVil du sjekke om du er klar til eksamen? Gå til forsiden og [ta vår gratis teoriprøve](/) for å teste deg selv på lignende oppgaver.'
-            }
-        ],
-        faq: [
-            {
-                question: 'Hva er førerstøttesystemer?',
-                answer: 'Førerstøttesystemer (ADAS) er elektroniske hjelpemidler i bilen som kan varsle, hjelpe eller gripe inn i bestemte situasjoner, for eksempel ved bremsing, feltplassering, avstand eller rygging.'
-            },
-            {
-                question: 'Er førerstøttesystemer det samme som selvkjøring?',
-                answer: 'Nei. De fleste systemer i dagens vanlige biler er kun hjelpemidler (nivå 2 automasjon). Føreren må alltid følge med på veien, holde hendene på rattet og være klar til å overta styringen umiddelbart.'
-            },
-            {
-                question: 'Hva gjør ABS?',
-                answer: 'ABS (blokkeringsfrie bremser) hindrer at hjulene låser seg helt når du bremser maksimalt. Det gjør at dekkene fortsatt ruller slik at du beholder evnen til å styre unna en hindring mens du bremser.'
-            },
-            {
-                question: 'Gjør ABS bremselengden kortere?',
-                answer: 'Ikke nødvendigvis. På enkelte underlag, som løs snø eller grus, kan bremselengden bli lengre med ABS. På glatt føre er hovedpoenget at ABS hjelper deg å beholde styringen, ikke at bilen stopper raskere.'
-            },
-            {
-                question: 'Hva gjør ESP?',
-                answer: 'ESP (antiskrens) hjelper til med å holde bilen stabil dersom den begynner å skli. Systemet bremser ett eller flere hjul individuelt for å motvirke understyring eller overstyring og få bilen tilbake i riktig retning.'
-            },
-            {
-                question: 'Kan jeg stole på filholderen?',
-                answer: 'Nei, du må bruke den som et hjelpemiddel og ikke stole blindt på den. Den krever tydelig vegoppmerking og kan fungere dårlig eller slå seg helt av ved snø, slaps, slitte linjer eller i vegarbeidsområder.'
-            },
-            {
-                question: 'Hva er det viktigste å huske om førerstøttesystemer til teoriprøven?',
-                answer: 'Det viktigste er at du som fører alltid har det fulle ansvaret for kjøringen. Systemene fritar deg aldri for plikten til å tilpasse farten, holde avstand, observere trafikkbildet og gripe inn når teknologien svikter.'
-            }
-        ],
-        miniQuiz: [
-            {
-                question: 'Hva er hovedoppgaven til ABS-bremser?',
-                options: [
-                    'Å gjøre bremselengden kortest mulig under alle forhold',
-                    'Å hindre at hjulene låser seg slik at du kan styre under hard bremsing',
-                    'Å holde bilen automatisk i riktig kjørefelt',
-                    'Å forhindre at motoren kveles ved bråstopp'
-                ],
-                correct: 'Å hindre at hjulene låser seg slik at du kan styre under hard bremsing',
-                explanation: 'ABS forhindrer blokkering av hjulene. Dette gjør at dekkene fortsatt roterer og kan overføre styrekrefter, slik at du kan styre unna hindringer selv under full oppbremsing.'
-            },
-            {
-                question: 'Hva er riktig om adaptiv cruise control (ACC)?',
-                options: [
-                    'Den fritar føreren for ansvaret med å følge med på veien',
-                    'Den kan hjelpe med å holde fart og avstand, men føreren må fortsatt være klar til å gripe inn',
-                    'Den fungerer bare under lukeparkering',
-                    'Den tar over all styring av bilen uansett hastighet'
-                ],
-                correct: 'Den kan hjelpe med å holde fart og avstand, men føreren må fortsatt være klar til å gripe inn',
-                explanation: 'Adaptiv cruise control regulerer fart og avstand til kjøretøyet foran, men føreren har fortsatt 100 % ansvar for kjøringen og må gripe inn dersom systemet ikke reagerer tilstrekkelig.'
-            },
-            {
-                question: 'Når kan filholderen (kjørefeltassistenten) fungere dårligere?',
-                options: [
-                    'Når vegoppmerkingen er slitt, dekket av snø eller vanskelig å lese',
-                    'Når veioppmerkingen er helt tørr og nylagt asfalt',
-                    'Når bilen har lite spylevæske igjen',
-                    'Kun når det er mørkt ute'
-                ],
-                correct: 'Når vegoppmerkingen er slitt, dekket av snø eller vanskelig å lese',
-                explanation: 'Filholderen bruker kamera til å registrere oppmerkingen i veien. Hvis linjene er slitt, snødekt eller vanskelige å skille fra veibanen, vil ikke systemet fungere optimalt og kan slå seg av.'
-            },
-            {
-                question: 'Hva er riktig om ESP / antiskrens?',
-                options: [
-                    'Det hjelper med å stabilisere bilen ved skrensfare, men føreren må fortsatt tilpasse fart og avstand',
-                    'Det gjør at du kan kjøre i samme hastighet på glatt føre som på tørr vei',
-                    'Det erstatter behovet for vinterdekk på vinterføre',
-                    'Det kobler ut bremsene hvis bilen begynner å skli'
-                ],
-                correct: 'Det hjelper med å stabilisere bilen ved skrensfare, men føreren må fortsatt tilpasse fart og avstand',
-                explanation: 'ESP hjelper til med å gjenvinne kontrollen ved skrens ved å bremse enkeltvise hjul, men det opphever ikke fysikkens lover og kan ikke skape veigrep dersom farten er altfor høy etter forholdene.'
-            },
-            {
-                question: 'Hva bør du gjøre selv om bilen din har ryggekamera?',
-                options: [
-                    'Stole fullt ut på skjermen og rygge uten å se deg rundt',
-                    'Fortsatt bruke speil, se deg rundt bilen og fysisk kontrollere blindsoner',
-                    'Rygge raskere fordi sensorene vil piping-varsle i tide',
-                    'Slå av kameraet for å unngå å bli distrahert'
-                ],
-                correct: 'Fortsatt bruke speil, se deg rundt bilen og fysisk kontrollere blindsoner',
-                explanation: 'Ryggekamera og sensorer har begrensede vinkler og kan ha blindsoner. Du har alltid det fulle ansvaret ved rygging og må sikre fri bane ved å se deg fysisk rundt.'
-            }
-        ]
-    }
 ];
 
 export const theoryUtilityPages: TheoryTopic[] = [
