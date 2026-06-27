@@ -241,6 +241,42 @@
         <priority>0.7</priority>
     </url>
     <url>
+        <loc>https://teori-test.no/laeringsressurser/buss-fra-holdeplass</loc>
+        <lastmod>2026-06-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://teori-test.no/laeringsressurser/trikk-og-vikeplikt</loc>
+        <lastmod>2026-06-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://teori-test.no/laeringsressurser/planovergang-regler</loc>
+        <lastmod>2026-06-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://teori-test.no/laeringsressurser/kollektivfelt-og-elbil</loc>
+        <lastmod>2026-06-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://teori-test.no/laeringsressurser/tunnelsikkerhet</loc>
+        <lastmod>2026-06-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://teori-test.no/laeringsressurser/barn-i-bil-og-sikring</loc>
+        <lastmod>2026-06-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
         <loc>https://teori-test.no/laeringsressurser/bilens-lys</loc>
         <lastmod>2026-06-27</lastmod>
         <changefreq>monthly</changefreq>

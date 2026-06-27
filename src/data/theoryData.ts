@@ -4585,6 +4585,748 @@ Les mer om [trafikkuhell og førstehjelp](/laeringsressurser/trafikkuhell-forste
     },
 
     {
+        id: 'buss-fra-holdeplass',
+        title: 'Buss fra holdeplass: når har du vikeplikt?',
+        icon: '🚌',
+        shortDescription: 'Lær regelen for buss som skal ut fra holdeplass, når 60 km/t-grensen betyr noe, og hvilke teorifeller du må unngå.',
+        color: 'var(--apple-blue)',
+        seoTitle: 'Buss fra holdeplass: når har du vikeplikt?',
+        seoDescription: 'Se når du har vikeplikt for buss fra holdeplass, hva som gjelder ved 60 km/t eller lavere, blinklys, busslomme og typiske teorifeller.',
+        sections: [
+            {
+                title: 'Buss fra holdeplass',
+                type: 'text',
+                content: `Spørsmål om buss fra holdeplass er en klassiker på teoriprøven. Det virker enkelt, men mange bommer fordi de glemmer at fartsgrensen, blinklys og situasjonen rundt holdeplassen må vurderes samtidig.`
+            },
+            {
+                title: 'Kort forklart',
+                type: 'info',
+                content: `På vei med fartsgrense 60 km/t eller lavere har du vikeplikt for buss som skal kjøre ut fra holdeplass. Du skal senke farten og gi bussen mulighet til å kjøre ut når det kan skje uten fare. Bussen skal normalt bruke blinklys og må også opptre forsiktig, men på teoriprøven må du vurdere hele situasjonen rundt holdeplassen.`
+            },
+            {
+                title: 'Buss som skal ut fra holdeplass',
+                type: 'text',
+                content: `![Illustrasjon av buss som blinker ut fra holdeplass i 50-sone](/buss-fra-holdeplass.png)
+*I 60 km/t eller lavere skal du gi bussen mulighet til å kjøre ut når det kan skje uten fare.*`
+            },
+            {
+                title: 'Når må du slippe bussen ut?',
+                type: 'table',
+                content: `<div class="responsive-theory-table-wrapper" style="margin-top: 1rem;"><table class="responsive-theory-table" style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem;"><thead><tr style="background-color: var(--color-surface); border-bottom: 2px solid var(--color-border);"><th style="padding: 12px 8px;">Situasjon</th><th style="padding: 12px 8px;">Hva gjør du?</th><th style="padding: 12px 8px;">Typisk teorifelle</th></tr></thead><tbody><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">Fartsgrense 60 km/t eller lavere</td><td style="padding: 12px 8px;">Senk farten og gi bussen mulighet til å kjøre ut</td><td style="padding: 12px 8px;">Mange tror regelen bare gjelder i busslomme</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">Bussen blinker ut</td><td style="padding: 12px 8px;">Vær klar til å slippe den ut hvis det er trygt</td><td style="padding: 12px 8px;">Du skal ikke akselerere forbi</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">Det er gående ved holdeplassen</td><td style="padding: 12px 8px;">Vær ekstra oppmerksom og klar til å stoppe</td><td style="padding: 12px 8px;">Fotgjengere kan komme ut foran eller bak bussen</td></tr><tr><td style="padding: 12px 8px;">Høyere fartsgrense enn 60 km/t</td><td style="padding: 12px 8px;">Bussen har ikke samme særregel, men du må fortsatt kjøre hensynsfullt</td><td style="padding: 12px 8px;">Hensynsplikten gjelder alltid</td></tr></tbody></table></div>`
+            },
+            {
+                title: 'Slik løser du spørsmålet på teoriprøven',
+                type: 'tip',
+                content: `Bruk denne korte testen:
+
+1. Er fartsgrensen 60 km/t eller lavere?
+2. Skal bussen ut fra holdeplassen?
+3. Kan du senke farten og slippe den ut uten å skape fare?
+
+Hvis svaret er ja, er riktig løsning som regel å senke farten rolig og gi bussen plass. Se samtidig i speil, vurder trafikken bak deg og se etter fotgjengere ved holdeplassen.`
+            },
+            {
+                title: 'Typiske teorifeller',
+                type: 'warning',
+                content: `Vanlige feil er å tro at du alltid har forkjørsrett fordi du allerede kjører på veien, eller at regelen bare gjelder når bussen står i en egen busslomme. En annen felle er å bare se på bussen og glemme fotgjengere som kan krysse veien ved holdeplassen.`
+            },
+            {
+                title: 'Les mer',
+                type: 'text',
+                content: `Dette henger tett sammen med [vikeplikt](/laeringsressurser/vikeplikt), [fartsgrenser](/laeringsressurser/fartsgrenser), [stans og parkering](/laeringsressurser/stans-og-parkering) og [feltvalg og kollektivfelt](/laeringsressurser/feltvalg-fletting-kollektivfelt). Se også [holdeplass for buss-skiltet](/trafikkskilt/opplysningsskilt/holdeplass-for-buss) i skiltguiden og Statens vegvesen om [vikeplikt for buss og trikk](https://www.vegvesen.no/trafikkinformasjon/trafikksikkerhet/trafikkregler/vikeplikt/vikeplikt-og-trikk/).`
+            }
+        ],
+        faq: [
+            {
+                question: 'Når har du vikeplikt for buss fra holdeplass?',
+                answer: 'På vei med fartsgrense 60 km/t eller lavere har du vikeplikt for buss som gir tegn om at den skal kjøre ut fra holdeplass.'
+            },
+            {
+                question: 'Gjelder regelen bare når bussen står i busslomme?',
+                answer: 'Nei. Regelen gjelder når bussen skal forlate holdeplassen, uansett om holdeplassen har busslomme eller ikke.'
+            },
+            {
+                question: 'Må bussen bruke blinklys?',
+                answer: 'Bussen skal normalt bruke blinklys og unngå å skape farlige situasjoner. Du må likevel vurdere hele situasjonen hvis det er tydelig at bussen skal kjøre ut fra holdeplassen.'
+            },
+            {
+                question: 'Hva bør du passe ekstra på ved bussholdeplass?',
+                answer: 'Vær ekstra oppmerksom på fotgjengere som kan komme ut foran eller bak bussen, og senk farten tidlig.'
+            },
+            {
+                question: 'Kan du stanse i busslomme?',
+                answer: 'Du skal ikke stanse eller parkere slik at du hindrer buss eller passasjerer. Busslomme og holdeplass er laget for kollektivtrafikk, så velg et annet trygt sted hvis du må stanse.'
+            },
+            {
+                question: 'Hva betyr holdeplass for buss-skiltet?',
+                answer: 'Skiltet viser at stedet er holdeplass for buss. Som bilfører må du være ekstra oppmerksom på buss som skal ut og passasjerer som kan krysse veien.'
+            }
+        ],
+        miniQuiz: [
+            {
+                question: 'Du kjører i 50-sone. En buss ved holdeplass blinker ut. Hva er riktig?',
+                options: ['Akselerere forbi før bussen rekker ut', 'Senk farten og gi bussen mulighet til å kjøre ut', 'Tute for å varsle at du kjører først', 'Bare stoppe hvis det er gangfelt'],
+                correct: 'Senk farten og gi bussen mulighet til å kjøre ut',
+                explanation: 'Ved 60 km/t eller lavere har du vikeplikt for buss som gir tegn om at den skal forlate holdeplassen.'
+            },
+            {
+                question: 'Hva er en viktig fare ved bussholdeplass?',
+                options: ['At bussen alltid rygger', 'At fotgjengere kan komme ut foran eller bak bussen', 'At fartsgrensen alltid blir 30 km/t', 'At du alltid må stoppe helt'],
+                correct: 'At fotgjengere kan komme ut foran eller bak bussen',
+                explanation: 'Du må se etter både bussen og myke trafikanter rundt holdeplassen.'
+            },
+            {
+                question: 'Gjelder bussregelen ved fartsgrense 80 km/t?',
+                options: ['Ja, alltid samme regel', 'Nei, ikke den særskilte regelen for 60 km/t eller lavere', 'Bare hvis bussen har passasjerer', 'Bare i tunnel'],
+                correct: 'Nei, ikke den særskilte regelen for 60 km/t eller lavere',
+                explanation: 'Den særskilte vikeplikten gjelder ved fartsgrense 60 km/t eller lavere, men du skal alltid kjøre hensynsfullt.'
+            },
+            {
+                question: 'Hva bør du gjøre hvis du vurderer å stanse i en busslomme?',
+                options: ['Stanse der hvis det er praktisk', 'Unngå å stanse slik at buss eller passasjerer hindres', 'Parkere der så lenge nødblink er på', 'Bare stanse hvis du står under ett minutt'],
+                correct: 'Unngå å stanse slik at buss eller passasjerer hindres',
+                explanation: 'Busslomme og holdeplass er for kollektivtrafikk. Ikke stans slik at du skaper hinder eller fare.'
+            }
+        ]
+    },
+
+    {
+        id: 'trikk-og-vikeplikt',
+        title: 'Trikk og vikeplikt: reglene du må kunne',
+        icon: '🚋',
+        shortDescription: 'Lær når du må vike for trikk, hvorfor trikken er et unntak fra høyreregelen, og hva som gjelder i kryss, sving og rundkjøring.',
+        color: 'var(--apple-purple)',
+        seoTitle: 'Trikk og vikeplikt: reglene til teoriprøven',
+        seoDescription: 'Se når du har vikeplikt for trikk, hva som gjelder for trikk i rundkjøring, forbikjøring av trikk, sving, holdeplass og teorifeller.',
+        sections: [
+            {
+                title: 'Trikk og vikeplikt',
+                type: 'text',
+                content: `Trikkespørsmål på teoriprøven handler ofte om at trikken ikke oppfører seg som en vanlig bil. Den går på skinner, kan ikke svinge unna og trenger lang bremselengde. Derfor må du som bilfører gi trikken god plass og være ekstra oppmerksom der vei og spor møtes.
+
+Det viktigste er ikke å pugge en løs setning om at "trikken har forkjørsrett". Du må forstå situasjonen: Hvor kommer trikken fra? Skal du krysse sporene? Finnes det trafikklys, vikepliktskilt eller rundkjøring? Og kan du komme deg helt over uten å bli stående i sporet?`
+            },
+            {
+                title: 'Kort forklart',
+                type: 'info',
+                content: `Som hovedregel har du vikeplikt for trikken og skal gi den fri vei. Det betyr at du ikke skal hindre trikken, presse deg inn foran den eller bli stående i sporet. Dette gjelder også i situasjoner der trikken kommer fra venstre. Samtidig må trikkeføreren følge trafikklys og skilt, for eksempel når trikken skal inn i rundkjøring eller inn på forkjørsvei.`
+            },
+            {
+                title: 'Situasjoner du må kjenne igjen',
+                type: 'table',
+                content: `<div class="responsive-theory-table-wrapper" style="margin-top: 1rem;"><table class="responsive-theory-table" style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem;"><thead><tr style="background-color: var(--color-surface); border-bottom: 2px solid var(--color-border);"><th style="padding: 12px 8px;">Situasjon</th><th style="padding: 12px 8px;">Hovedregel</th><th style="padding: 12px 8px;">Teorifelle</th></tr></thead><tbody><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">Trikk kommer fra venstre i kryss</td><td style="padding: 12px 8px;">Du må normalt vike</td><td style="padding: 12px 8px;">Høyreregelen løser ikke alt når trikk er med</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">Du skal svinge og krysser trikkespor</td><td style="padding: 12px 8px;">Vik for trikken og kontroller speil/blindsone</td><td style="padding: 12px 8px;">Trikken kan komme bakfra i samme retning</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">Trikk ved rundkjøring</td><td style="padding: 12px 8px;">Trikken må følge skilt inn, men du skal gi den fri vei ut</td><td style="padding: 12px 8px;">Ikke press deg inn foran trikken</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">Kø over trikkespor</td><td style="padding: 12px 8px;">Vent før sporet hvis du ikke kommer helt over</td><td style="padding: 12px 8px;">Ikke bli stående og sperre skinnegangen</td></tr><tr><td style="padding: 12px 8px;">Forbi trikk ved holdeplass</td><td style="padding: 12px 8px;">Kjør svært forsiktig og vurder gående</td><td style="padding: 12px 8px;">Passasjerer kan krysse foran eller bak trikken</td></tr></tbody></table></div>`
+            },
+            {
+                title: 'Hvorfor er trikk spesielt viktig?',
+                type: 'text',
+                content: `Trikken kan ikke svinge unna hindringer, og den kan bruke lang tid på å stoppe. Hvis du sperrer sporet, kan du skape farlige situasjoner og forsinkelser. I praksis betyr det at du må planlegge tidlig: se etter skinner, skilt, trafikklys og om trikken nærmer seg.
+
+På teoriprøven er det ofte nok å oppdage at det er trikkespor i bildet. Da bør du straks tenke: Kan det komme trikk? Skal jeg krysse sporet? Kan jeg bli stående i veien for trikken?`
+            },
+            {
+                title: 'Hva betyr å gi fri vei?',
+                type: 'tip',
+                content: `Å gi fri vei betyr mer enn å stoppe helt. Du skal opptre slik at trikken kan fortsette uten at du hindrer eller forstyrrer den. Det kan bety å vente før et kryss, la være å kjøre inn i en luke som er for liten, eller stoppe før trikkesporet hvis det er kø foran deg.`
+            },
+            {
+                title: 'Gi trikken nok plass',
+                type: 'warning',
+                content: `Trikken trenger ekstra plass rundt seg. På rett strekning bør du holde god avstand til sporene, og i sving kan trikken trenge betydelig mer sideplass fordi bakenden kan slå ut. Dette er en typisk teorifelle i bygater: Ikke legg deg tett inntil trikken eller prøv å smette forbi når den svinger.`
+            },
+            {
+                title: 'Trikk i rundkjøring',
+                type: 'text',
+                content: `Trikk i rundkjøring er en av de mest søkte teorifellene. Når trikken skal inn i rundkjøringen, må den følge skilt og signaler som andre trafikanter. Men når trikken er i eller skal ut av rundkjøringen, må du som bilfører være svært forsiktig og gi den fri vei.
+
+Ikke legg deg slik at du sperrer sporet. Hvis du er usikker på om du kommer trygt gjennom uten å hindre trikken, venter du.`
+            },
+            {
+                title: 'Forbikjøring av trikk',
+                type: 'warning',
+                content: `Forbikjøring av trikk krever ekstra aktsomhet. Du må ha god sikt, nok plass og være sikker på at du ikke skaper fare for passasjerer som går av eller på. Ved holdeplass kan gående komme ut foran eller bak trikken.
+
+Husk også de vanlige reglene om [forbikjøring](/laeringsressurser/forbikjoring), særlig ved gangfelt, kryss og uoversiktlige steder.`
+            },
+            {
+                title: 'Når du svinger over trikkespor',
+                type: 'text',
+                content: `Hvis du skal svinge over trikkespor, må du planlegge svingen tidlig. Bruk speil, sjekk blindsone, gi tegn og kontroller at det ikke kommer trikk bakfra eller fra siden. Dette er spesielt viktig i bygater der trikken kan ligge i samme kjøreretning som deg.
+
+Ikke start svingen hvis du ikke er sikker på at du kan fullføre den uten å bli stående i sporet. Kø, fotgjengere, rødt lys eller biler foran deg kan gjøre at riktig svar er å vente.`
+            },
+            {
+                title: 'Trikk ved holdeplass',
+                type: 'warning',
+                content: `Ved trikkeholdeplass må du også tenke på passasjerene. Folk kan gå ut i veien for å komme til eller fra trikken, og sikten kan være begrenset. Kjør sakte, hold god avstand og vær forberedt på å stanse.
+
+Dette er litt annerledes enn regelen om [buss fra holdeplass](/laeringsressurser/buss-fra-holdeplass). Bussregelen er knyttet til fartsgrense 60 km/t eller lavere og buss som blinker ut. Trikk handler først og fremst om å gi fri vei og ikke hindre et kjøretøy som går på skinner.`
+            },
+            {
+                title: 'Typiske teorifeller',
+                type: 'warning',
+                content: `Den vanligste feilen er å svare høyreregelen uten å ta hensyn til at det er en trikk i situasjonen. En annen felle er å tenke at grønt lys alltid betyr at du kan kjøre uten å se etter trikkespor. Du må fortsatt kontrollere at du ikke hindrer trikken eller skaper fare for passasjerer og gående.
+
+Se også etter kø. Hvis du kjører inn over trikkesporet og blir stående der, kan du hindre trikken selv om du egentlig hadde grønt lys da du startet.`
+            },
+            {
+                title: 'Les mer',
+                type: 'text',
+                content: `Denne regelen hører naturlig sammen med [vikeplikt](/laeringsressurser/vikeplikt), [rundkjøring](/laeringsressurser/rundkjoring), [trafikklys og signaler](/laeringsressurser/trafikklys-signaler) og [forbikjøring](/laeringsressurser/forbikjoring). Se også Statens vegvesen om [vikeplikt for buss og trikk](https://www.vegvesen.no/trafikkinformasjon/trafikksikkerhet/trafikkregler/vikeplikt/vikeplikt-og-trikk/).`
+            }
+        ],
+        faq: [
+            {
+                question: 'Har du vikeplikt for trikk?',
+                answer: 'Ja, som hovedregel har bilførere vikeplikt for trikk og skal gi den fri vei.'
+            },
+            {
+                question: 'Må du vike for trikk som kommer fra venstre?',
+                answer: 'Ja, normalt må du vike for trikk også når den kommer fra venstre. Dette er en vanlig teorifelle.'
+            },
+            {
+                question: 'Har trikken alltid forkjørsrett?',
+                answer: 'Nei. Trikkeføreren må også følge trafikklys og skilt, for eksempel ved innkjøring i rundkjøring eller inn på forkjørsvei.'
+            },
+            {
+                question: 'Hva gjelder for trikk i rundkjøring?',
+                answer: 'Trikken må følge skilt inn i rundkjøringen, men som bilfører må du være svært forsiktig og gi trikken fri vei når den er i eller skal ut av rundkjøringen.'
+            },
+            {
+                question: 'Kan du kjøre forbi trikk?',
+                answer: 'Bare hvis det kan skje trygt, med god sikt og nok plass. Ved holdeplass må du være ekstra oppmerksom på passasjerer og gående.'
+            },
+            {
+                question: 'Hvorfor må du gi trikken ekstra plass?',
+                answer: 'Trikken går på skinner, kan ikke svinge unna og trenger lang strekning for å stoppe. I sving kan trikken også trenge ekstra sideplass.'
+            },
+            {
+                question: 'Hva betyr det å gi fri vei for trikk?',
+                answer: 'Det betyr at du ikke skal hindre eller forstyrre trikken. Du må vente hvis du ikke kan krysse sporet uten å bli stående i veien.'
+            },
+            {
+                question: 'Hva gjør du hvis det er kø over trikkesporet?',
+                answer: 'Da venter du før sporet til du er sikker på at du kommer helt over. Du skal ikke bli stående og sperre trikken.'
+            },
+            {
+                question: 'Hva må du passe på ved trikkeholdeplass?',
+                answer: 'Vær ekstra oppmerksom på passasjerer og gående som kan krysse veien foran eller bak trikken.'
+            },
+            {
+                question: 'Hvorfor skal du ikke kjøre tett inntil en trikk i sving?',
+                answer: 'Trikken kan trenge ekstra sideplass i sving, og bakenden kan slå ut. Derfor må du holde god avstand.'
+            }
+        ],
+        miniQuiz: [
+            {
+                question: 'En trikk kommer fra venstre i et kryss. Hva er riktig hovedregel?',
+                options: ['Du kjører først fordi trikken kommer fra venstre', 'Du viker normalt for trikken', 'Trikken må alltid stoppe', 'Høyreregelen gjelder alltid foran trikkeregler'],
+                correct: 'Du viker normalt for trikken',
+                explanation: 'Trikk er en viktig teorifelle: du skal normalt gi trikken fri vei, også når den kommer fra venstre.'
+            },
+            {
+                question: 'Hvorfor er det farlig å kjøre for nær trikken?',
+                options: ['Trikken kan plutselig rygge', 'Trikken kan ikke svinge unna og trenger plass', 'Trikken har alltid nødblink på', 'Trikken har kortere bremselengde enn bil'],
+                correct: 'Trikken kan ikke svinge unna og trenger plass',
+                explanation: 'Trikken følger skinnene og kan ikke manøvrere rundt hindringer slik en bil kan.'
+            },
+            {
+                question: 'Hva må trikken også følge?',
+                options: ['Trafikklys og skilt', 'Bare høyreregelen', 'Bare fotgjengere', 'Ingen trafikkregler'],
+                correct: 'Trafikklys og skilt',
+                explanation: 'Trikken har sterke vikepliktsregler rundt seg, men trikkeføreren må også følge signaler og skilt.'
+            },
+            {
+                question: 'Det er kø foran deg, og du kan bli stående på trikkesporet. Hva gjør du?',
+                options: ['Kjører inn fordi du har grønt lys', 'Venter før sporet til du kan komme helt over', 'Stopper midt på sporet', 'Tuter så trikken må vente'],
+                correct: 'Venter før sporet til du kan komme helt over',
+                explanation: 'Du skal ikke kjøre inn i en situasjon der du kan bli stående og hindre trikken.'
+            },
+            {
+                question: 'Hva bør du kontrollere før du svinger over trikkespor?',
+                options: ['Bare fartsgrensen', 'Speil, blindsone, tegn og om det kommer trikk', 'Bare bilen foran', 'Om det er parkeringsplass i nærheten'],
+                correct: 'Speil, blindsone, tegn og om det kommer trikk',
+                explanation: 'Trikken kan komme bakfra eller fra siden, og du må være sikker på at du kan krysse sporet trygt.'
+            },
+            {
+                question: 'Hvorfor må du holde ekstra avstand til trikken i sving?',
+                options: ['Fordi trikken kan trenge mer sideplass', 'Fordi trikken alltid rygger', 'Fordi bilen mister bremsene', 'Fordi vikeplikt ikke gjelder i sving'],
+                correct: 'Fordi trikken kan trenge mer sideplass',
+                explanation: 'Trikken følger skinnene og kan trenge ekstra plass i sving. Ikke legg deg tett inntil den.'
+            },
+            {
+                question: 'Hva er riktig om forbikjøring av trikk ved holdeplass?',
+                options: ['Det er alltid trygt hvis trikken står stille', 'Du må være ekstra oppmerksom på passasjerer og gående', 'Du kan alltid kjøre forbi på høyre side', 'Trikken har aldri passasjerer ved holdeplass'],
+                correct: 'Du må være ekstra oppmerksom på passasjerer og gående',
+                explanation: 'Passasjerer kan gå ut i veien foran eller bak trikken, og sikten kan være begrenset.'
+            }
+        ]
+    },
+
+    {
+        id: 'planovergang-regler',
+        title: 'Planovergang regler: slik krysser du trygt',
+        icon: '🚦',
+        shortDescription: 'Lær hva du må gjøre ved planovergang, hvordan lys, bom og skilt skal tolkes, og hvilke svar som ofte er riktige på teoriprøven.',
+        color: 'var(--apple-orange)',
+        seoTitle: 'Planovergang regler: stopp, lys, bom og skilt',
+        seoDescription: 'Lær reglene ved planovergang til teoriprøven klasse B: rødt lys, bom, skilt, stopp-plikt, kø og trygg kryssing av jernbane.',
+        sections: [
+            {
+                title: 'Planovergang på teoriprøven',
+                type: 'text',
+                content: `En planovergang er et sted der vei og jernbane krysser hverandre i samme nivå. På teoriprøven handler temaet om sikker vurdering: du må kunne tolke skilt, lys og bom, vurdere kø og aldri bli stående på sporet.`
+            },
+            {
+                title: 'Kort forklart',
+                type: 'info',
+                content: `Du skal aldri kjøre inn på en planovergang hvis rødt lys, lydsignal, bom eller skilt viser at du skal stoppe. Du må også la være å kjøre inn hvis trafikken foran gjør at du kan bli stående på sporet. Vent til du har fri vei hele veien over.`
+            },
+            {
+                title: 'Planovergang med bom og rødt signal',
+                type: 'text',
+                content: `![Illustrasjon av planovergang med bom og rødt lys](/planovergang-med-bom.png)
+*Ved rødt lys, lydsignal eller bom skal du stanse og vente. Ikke kjør inn på overgangen før det er trygt og du har fri vei helt over.*`
+            },
+            {
+                title: 'Hva betyr skilt, bom og signaler?',
+                type: 'table',
+                content: `<div class="responsive-theory-table-wrapper" style="margin-top: 1rem;"><table class="responsive-theory-table" style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem;"><thead><tr style="background-color: var(--color-surface); border-bottom: 2px solid var(--color-border);"><th style="padding: 12px 8px;">Tegn ved planovergang</th><th style="padding: 12px 8px;">Hva gjør du?</th><th style="padding: 12px 8px;">Teorifelle</th></tr></thead><tbody><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">Fareskilt for planovergang</td><td style="padding: 12px 8px;">Senk farten og gjør deg klar til å stoppe</td><td style="padding: 12px 8px;">Skiltet betyr ikke at du kan kjøre uten å kontrollere</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">Avstandsskilt før planovergang</td><td style="padding: 12px 8px;">Forbered deg tidlig</td><td style="padding: 12px 8px;">De varsler at planovergangen nærmer seg</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">Rødt blinklys eller lydsignal</td><td style="padding: 12px 8px;">Stans og vent</td><td style="padding: 12px 8px;">Ikke kjør fordi du tror toget er langt unna</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">Bom går ned eller er nede</td><td style="padding: 12px 8px;">Stans før bommen</td><td style="padding: 12px 8px;">Kjør aldri rundt bommen</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">Stoppskilt før planovergang</td><td style="padding: 12px 8px;">Stans helt og kontroller før du kjører</td><td style="padding: 12px 8px;">Hjulene skal stå stille</td></tr><tr><td style="padding: 12px 8px;">Kø på andre siden</td><td style="padding: 12px 8px;">Vent før du kjører inn</td><td style="padding: 12px 8px;">Ikke bli stående på sporet</td></tr></tbody></table></div>`
+            },
+            {
+                title: 'Planovergang med og uten bom',
+                type: 'text',
+                content: `Planovergang kan være sikret med bom, lys og lydsignal, men den kan også være mindre sikret. Uansett må du som fører kontrollere at det er trygt å krysse. Ved planovergang uten bom er det ekstra viktig å senke farten, se begge veier og lytte.`
+            },
+            {
+                title: 'Slik tenker du som bilfører',
+                type: 'tip',
+                content: `Senk farten når du nærmer deg planovergang. Se etter skilt, lys, bom og kø. Hvis du ikke er sikker på at du kommer helt over, skal du vente. Hvis du allerede er på vei over når signalet starter, skal du normalt komme deg helt over og bort fra sporet, ikke stoppe midt på overgangen.`
+            },
+            {
+                title: 'Typiske teorifeller',
+                type: 'warning',
+                content: `Mange svarer feil fordi de bare ser på toget og ikke på køen etter planovergangen. Du kan ikke kjøre inn hvis du risikerer å bli stående på sporet. En annen felle er å tro at hvitt blink eller slukket signal betyr at du kan kjøre uten å se. Du må fortsatt kontrollere at det er trygt.`
+            },
+            {
+                title: 'Les mer',
+                type: 'text',
+                content: `Planovergang henger sammen med [trafikkskilt](/laeringsressurser/skilt), [trafikklys og signaler](/laeringsressurser/trafikklys-signaler), [stans og parkering](/laeringsressurser/stans-og-parkering) og [myndighetspyramiden](/laeringsressurser/myndighetspyramiden). Se også skiltguiden for [planovergang med bom](/trafikkskilt/fareskilt/planovergang-med-bom) og [planovergang uten bom](/trafikkskilt/fareskilt/planovergang-uten-bom). For regelverk kan du se [trafikkreglene på Lovdata](https://lovdata.no/forskrift/1986-03-21-747) og [skiltforskriften på Lovdata](https://lovdata.no/dokument/SF/forskrift/2005-10-07-1219).`
+            }
+        ],
+        faq: [
+            {
+                question: 'Hva er en planovergang?',
+                answer: 'En planovergang er et sted der vei og jernbane krysser hverandre i samme nivå.'
+            },
+            {
+                question: 'Kan du kjøre inn på planovergang hvis det er kø på andre siden?',
+                answer: 'Nei. Du skal ikke kjøre inn hvis du kan bli stående på sporet. Vent til du har fri vei helt over.'
+            },
+            {
+                question: 'Hva gjør du når rødt lys blinker ved planovergang?',
+                answer: 'Du skal stanse og vente til signalet tillater at du kan kjøre videre.'
+            },
+            {
+                question: 'Kan du kjøre rundt en bom ved planovergang?',
+                answer: 'Nei. Du skal aldri kjøre rundt en bom som er nede eller på vei ned.'
+            },
+            {
+                question: 'Hva gjør du hvis du allerede er på planovergangen når signalet starter?',
+                answer: 'Da skal du normalt fortsette rolig og komme deg helt over og bort fra sporet. Du skal ikke stoppe midt på overgangen.'
+            },
+            {
+                question: 'Hva betyr planovergang uten bom for deg som bilfører?',
+                answer: 'Du må være ekstra oppmerksom, senke farten, se begge veier og lytte før du krysser. Mindre sikring betyr ikke mindre ansvar.'
+            },
+            {
+                question: 'Hva gjør du hvis bilen stopper på sporet?',
+                answer: 'Kom deg og passasjerene raskt ut av bilen og bort fra sporet. Varsle nødetater eller ansvarlig trafikkstyring så raskt som mulig.'
+            }
+        ],
+        miniQuiz: [
+            {
+                question: 'Du nærmer deg planovergang, og det er kø rett etter sporet. Hva gjør du?',
+                options: ['Kjører inn hvis det ikke kommer tog', 'Venter før sporet til du har fri vei over', 'Stopper på sporet og venter', 'Kjører over så lenge bommen er oppe'],
+                correct: 'Venter før sporet til du har fri vei over',
+                explanation: 'Du må aldri risikere å bli stående på jernbanesporet.'
+            },
+            {
+                question: 'Hva betyr rødt blinklys ved planovergang?',
+                options: ['Kjør forsiktig', 'Stans og vent', 'Bare tunge kjøretøy må stoppe', 'Kjør hvis du ikke ser toget'],
+                correct: 'Stans og vent',
+                explanation: 'Rødt lys ved planovergang betyr at du skal stanse.'
+            },
+            {
+                question: 'Hva er riktig når bommen går ned?',
+                options: ['Kjøre raskt over før den lukker helt', 'Stanse før bommen', 'Kjøre rundt bommen hvis du har oversikt', 'Følge bilen foran tett over sporet'],
+                correct: 'Stanse før bommen',
+                explanation: 'Du skal aldri kjøre rundt eller presse deg forbi en bom ved planovergang.'
+            },
+            {
+                question: 'Hva er riktig ved planovergang uten bom?',
+                options: ['Kjøre i samme fart som ellers', 'Senk farten, se og lytt før du krysser', 'Stoppe midt på sporet for å se bedre', 'Bare kontrollere hvis det er mørkt'],
+                correct: 'Senk farten, se og lytt før du krysser',
+                explanation: 'Ved planovergang uten bom må du selv kontrollere ekstra nøye at det er trygt.'
+            },
+            {
+                question: 'Bilen stopper på jernbanesporet. Hva er viktigst først?',
+                options: ['Bli sittende og starte bilen på nytt', 'Få alle ut og bort fra sporet', 'Sette ut varseltrekant midt på sporet', 'Ringe forsikringsselskapet først'],
+                correct: 'Få alle ut og bort fra sporet',
+                explanation: 'Liv og sikkerhet kommer først. Kom dere bort fra sporet og varsle så raskt som mulig.'
+            }
+        ]
+    },
+
+    {
+        id: 'kollektivfelt-og-elbil',
+        title: 'Elbil i kollektivfelt: regler og underskilt',
+        icon: '⚡',
+        shortDescription: 'Lær når elbil kan bruke kollektivfelt, hvordan underskilt begrenser adgangen, og hva som er typiske teorifeller.',
+        color: 'var(--apple-green)',
+        seoTitle: 'Elbil i kollektivfelt: regler, underskilt og sambruksfelt',
+        seoDescription: 'Se når elbil kan kjøre i kollektivfelt, hva underskilt betyr, forskjellen på kollektivfelt og sambruksfelt, og hva du må kunne til teoriprøven.',
+        sections: [
+            {
+                title: 'Elbil i kollektivfelt',
+                type: 'text',
+                content: `Denne artikkelen handler spesielt om elbil i kollektivfelt. Den brede forklaringen av feltvalg finner du i hovedguiden om [feltvalg, fletting og kollektivfelt](/laeringsressurser/feltvalg-fletting-kollektivfelt). Her fokuserer vi på det teoriprøven ofte tester: elbil, underskilt, taxi, sambruksfelt og når du må velge vanlig kjørefelt.`
+            },
+            {
+                title: 'Kort forklart',
+                type: 'info',
+                content: `Elbil og hydrogenbil kan som hovedregel bruke kollektivfelt, men underskilt kan begrense eller fjerne denne retten. Hvis underskiltet sier at det ikke gjelder elmotorvogn, kan elbil ikke bruke feltet i den perioden eller på den strekningen skiltet gjelder.`
+            },
+            {
+                title: 'Hvem kan bruke kollektivfeltet?',
+                type: 'table',
+                content: `<div class="responsive-theory-table-wrapper" style="margin-top: 1rem;"><table class="responsive-theory-table" style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem;"><thead><tr style="background-color: var(--color-surface); border-bottom: 2px solid var(--color-border);"><th style="padding: 12px 8px;">Kjøretøy</th><th style="padding: 12px 8px;">Kan bruke feltet?</th><th style="padding: 12px 8px;">Viktig å huske</th></tr></thead><tbody><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">Buss</td><td style="padding: 12px 8px;">Ja</td><td style="padding: 12px 8px;">Kollektivfeltet er primært for buss</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">Drosje/taxi</td><td style="padding: 12px 8px;">Ja, hvis skiltet viser taxi</td><td style="padding: 12px 8px;">Gjelder drosje med taklykt når skiltet åpner for taxi</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">Elbil og hydrogenbil</td><td style="padding: 12px 8px;">Som hovedregel ja</td><td style="padding: 12px 8px;">Underskilt kan si at elmotorvogn ikke har adgang</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">Motorsykkel, moped og sykkel</td><td style="padding: 12px 8px;">Ofte ja</td><td style="padding: 12px 8px;">Ikke hvis motorvei/motortrafikkvei forbyr kjøretøytypen</td></tr><tr><td style="padding: 12px 8px;">Vanlig bensin- eller dieselbil</td><td style="padding: 12px 8px;">Nei, med mindre det er sambruksfelt og kravene er oppfylt</td><td style="padding: 12px 8px;">Sambruksfelt har egne skilt, for eksempel 2+</td></tr></tbody></table></div>`
+            },
+            {
+                title: 'Underskilt er avgjørende',
+                type: 'warning',
+                content: `På teoriprøven er det ofte underskiltet som avgjør svaret. Hvis skiltet under kollektivfeltet begrenser elbil, gjelder begrensningen selv om du kjører elektrisk. Et typisk underskilt kan si "Gjelder ikke elmotorvogn". Tidsangivelser må også leses nøye. Et skilt kan for eksempel gjelde mandag til fredag, bestemte klokkeslett eller bestemte kjøretøygrupper.`
+            },
+            {
+                title: 'Tidsbegrensning og motorvei',
+                type: 'tip',
+                content: `Hvis kollektivfeltet har tidsbegrensning, gjelder regelen bare i tiden som står på skiltet. Les også om skiltet gjelder hverdager, bestemte klokkeslett eller bestemte kjøretøy.
+
+På motorvei og motortrafikkvei kan kjøretøy som ikke lovlig kan kjøre over 40 km/t, for eksempel vanlig moped og sykkel, ikke bruke kollektivfeltet selv om de ellers ofte kan bruke kollektivfelt.`
+            },
+            {
+                title: 'Feltvalg og samspill',
+                type: 'tip',
+                content: `Selv om du har lov til å bruke kollektivfeltet, må du vurdere om det er lurt. Ikke hindre buss, vær oppmerksom på syklister og mopeder, og planlegg feltskifte tidlig før kryss eller avkjøring.`
+            },
+            {
+                title: 'Kollektivfelt eller sambruksfelt?',
+                type: 'text',
+                content: `Kollektivfelt er først og fremst for kollektivtrafikk og bestemte kjøretøygrupper. Sambruksfelt handler om hvor mange personer som sitter i bilen, for eksempel 2+. På teoriprøven er forskjellen viktig: En vanlig bil kan ikke bruke kollektivfelt bare fordi det er flere personer i bilen, med mindre skiltingen faktisk viser sambruksfelt eller åpner for det.`
+            },
+            {
+                title: 'Les mer',
+                type: 'text',
+                content: `Dette henger sammen med [feltvalg, fletting og kollektivfelt](/laeringsressurser/feltvalg-fletting-kollektivfelt), [trafikkskilt](/laeringsressurser/skilt) og [trafikklys og signaler](/laeringsressurser/trafikklys-signaler). Se også Statens vegvesen om [hvem som kan kjøre i kollektivfelt](https://www.vegvesen.no/trafikkinformasjon/trafikksikkerhet/trafikkregler/kollektivfelt/).`
+            }
+        ],
+        faq: [
+            {
+                question: 'Kan elbil kjøre i kollektivfelt?',
+                answer: 'Som hovedregel kan elbil og hydrogenbil kjøre i kollektivfelt, men underskilt kan begrense eller forby dette.'
+            },
+            {
+                question: 'Hva betyr underskilt i kollektivfelt?',
+                answer: 'Underskilt kan fortelle hvem som får bruke feltet, hvem som ikke får bruke det, eller hvilke tider regelen gjelder.'
+            },
+            {
+                question: 'Kan vanlig bil bruke sambruksfelt?',
+                answer: 'Ja, hvis bilen oppfyller kravet på skiltet, for eksempel minst to personer i bilen ved 2+.'
+            },
+            {
+                question: 'Hva er forskjellen på kollektivfelt og sambruksfelt?',
+                answer: 'Kollektivfelt er for kollektivtrafikk og bestemte kjøretøygrupper. Sambruksfelt kan brukes av kjøretøy som oppfyller kravet til antall personer, for eksempel 2+.'
+            },
+            {
+                question: 'Må du alltid bruke kollektivfelt hvis du kan?',
+                answer: 'Nei. Du må fortsatt velge felt hensynsfullt og unngå å hindre kollektivtrafikk eller skape farlige feltskifter.'
+            },
+            {
+                question: 'Hva betyr underskiltet "Gjelder ikke elmotorvogn"?',
+                answer: 'Det betyr at elbil og hydrogenbil ikke kan bruke kollektivfeltet der og når underskiltet gjelder.'
+            },
+            {
+                question: 'Kan taxi alltid bruke kollektivfelt?',
+                answer: 'Taxi kan bruke kollektivfelt når skiltingen åpner for taxi. Det gjelder drosje med taklykt.'
+            }
+        ],
+        miniQuiz: [
+            {
+                question: 'Hva er viktigst når du vurderer om elbil kan bruke kollektivfelt?',
+                options: ['Bilens farge', 'Underskiltet og skiltingen på stedet', 'Om du har dårlig tid', 'Om feltet er tomt'],
+                correct: 'Underskiltet og skiltingen på stedet',
+                explanation: 'Underskilt kan begrense elbilens adgang til kollektivfelt.'
+            },
+            {
+                question: 'Hva betyr et sambruksfelt med 2+?',
+                options: ['Minst to personer i bilen', 'Maks to personer i bilen', 'Bare to-hjuls kjøretøy', 'Bare busser med to dører'],
+                correct: 'Minst to personer i bilen',
+                explanation: '2+ betyr at kjøretøyet må ha minst to personer om bord, hvis ikke andre regler på skiltet sier noe annet.'
+            },
+            {
+                question: 'Hva bør du gjøre før du forlater kollektivfeltet?',
+                options: ['Skifte felt brått', 'Planlegge tidlig, sjekke speil og blindsoner', 'Bare blinke etter feltskifte', 'Stoppe i feltet'],
+                correct: 'Planlegge tidlig, sjekke speil og blindsoner',
+                explanation: 'Feltskifte krever god observasjon og tydelig tegn.'
+            },
+            {
+                question: 'Et underskilt sier "Gjelder ikke elmotorvogn". Hva betyr det for elbil?',
+                options: ['Elbil kan fortsatt kjøre der', 'Elbil kan ikke bruke feltet der underskiltet gjelder', 'Bare elbil med passasjer kan kjøre der', 'Det gjelder bare om natten'],
+                correct: 'Elbil kan ikke bruke feltet der underskiltet gjelder',
+                explanation: 'Underskiltet begrenser retten elbil vanligvis har til å bruke kollektivfelt.'
+            },
+            {
+                question: 'Hva er forskjellen på kollektivfelt og sambruksfelt?',
+                options: ['Kollektivfelt handler om bestemte kjøretøygrupper, sambruksfelt om antall personer', 'Det er alltid det samme', 'Sambruksfelt er bare for busser', 'Kollektivfelt er bare for vanlige personbiler'],
+                correct: 'Kollektivfelt handler om bestemte kjøretøygrupper, sambruksfelt om antall personer',
+                explanation: 'Dette er en vanlig teorifelle: les skiltet og se om det faktisk er kollektivfelt eller sambruksfelt.'
+            }
+        ]
+    },
+
+    {
+        id: 'tunnelsikkerhet',
+        title: 'Stans i tunnel: har du lov?',
+        icon: '🚇',
+        shortDescription: 'Lær hvordan du kjører trygt i tunnel, hva du gjør ved stans eller brann, og hvilke svar som ofte er riktige på teoriprøven.',
+        color: 'var(--apple-gray)',
+        seoTitle: 'Har du lov til å stanse i tunnel? Regler og sikkerhet',
+        seoDescription: 'Se når det er lov å stanse i tunnel, hva du gjør ved motorstopp, brann, kø, nødblink, havarilomme, nødtelefon og lys i tunnel.',
+        sections: [
+            {
+                title: 'Har du lov til å stanse i tunnel?',
+                type: 'text',
+                content: `Som hovedregel skal du ikke stanse i tunnel. På teoriprøven er spørsmålet ofte formulert som "har du lov til å stanse i en tunnel?" Riktig tankegang er at stans bare er aktuelt når det er nødvendig, for eksempel ved kø, ulykke, motorstopp eller annen fare.`
+            },
+            {
+                title: 'Kort forklart',
+                type: 'info',
+                content: `Du har ikke lov til å stanse i tunnel uten grunn. Må du stanse på grunn av kø, motorstopp eller fare, skal du gjøre bilen synlig og varsle riktig. Husk rekkefølgen nødblink, havarilomme hvis mulig og nødtelefon. Ved brann eller røyk må du varsle, følge skilt og komme deg raskt i sikkerhet.`
+            },
+            {
+                title: 'Hva gjør du i ulike situasjoner?',
+                type: 'table',
+                content: `<div class="responsive-theory-table-wrapper" style="margin-top: 1rem;"><table class="responsive-theory-table" style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem;"><thead><tr style="background-color: var(--color-surface); border-bottom: 2px solid var(--color-border);"><th style="padding: 12px 8px;">Situasjon</th><th style="padding: 12px 8px;">Riktig handling</th><th style="padding: 12px 8px;">Husk</th></tr></thead><tbody><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">Vanlig kjøring i tunnel</td><td style="padding: 12px 8px;">Hold avstand, bruk lys og tilpass farten</td><td style="padding: 12px 8px;">Sikt og lysforhold kan endre seg raskt</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">Bilen stanser</td><td style="padding: 12px 8px;">Nødblink, havarilomme hvis mulig, nødtelefon</td><td style="padding: 12px 8px;">Nødtelefon gir veitrafikksentralen posisjonen din</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">Kø i tunnel</td><td style="padding: 12px 8px;">Hold avstand og følg med på meldinger/skilt</td><td style="padding: 12px 8px;">Ikke tett igjen rommet foran deg</td></tr><tr><td style="padding: 12px 8px;">Brann eller røyk</td><td style="padding: 12px 8px;">Varsle og kom deg i sikkerhet</td><td style="padding: 12px 8px;">Følg nødutganger, skilt og anvisninger</td></tr></tbody></table></div>`
+            },
+            {
+                title: 'Når er stans i tunnel lov?',
+                type: 'warning',
+                content: `Det er forbudt å stanse i tunnel hvis det ikke er nødvendig. Hvis du likevel må stanse på grunn av feil, kø eller ulykke, må du gjøre bilen synlig og varsle riktig. Bruk nødblink, ta på refleksvest før du går ut hvis det er trygt, og bruk nødtelefon der den finnes.`
+            },
+            {
+                title: 'Tunnelvett: før og under kjøring',
+                type: 'tip',
+                content: `Sjekk at lysene er på før du kjører inn. Hold ekstra god avstand, følg med på informasjonsskilt og lytt til radio hvis det kommer meldinger. Ikke kjør inn i tunnel som er stengt med rødt lys, bom eller tydelig skilting.
+
+Hvis det oppstår kø, hold avstand til bilen foran. Da får nødetater og andre trafikanter mer plass hvis situasjonen utvikler seg.`
+            },
+            {
+                title: 'Brann eller røyk i tunnel',
+                type: 'warning',
+                content: `Ved brann eller røyk skal du varsle og komme deg i sikkerhet. Bruk nødtelefon hvis du kan, fordi den gir riktig posisjon til veitrafikksentralen. Hvis du bruker brannslukningsapparat fra tunnelen, kan det også utløse alarm. Følg nødutgangsskilt og anvisninger, og ikke bli sittende og vente i røyk.`
+            },
+            {
+                title: 'Typiske teorifeller',
+                type: 'tip',
+                content: `En vanlig felle er å velge mobiltelefon før nødtelefon. Nødtelefonen er ofte bedre i tunnel fordi den forteller veitrafikksentralen hvor du er. En annen felle er å kjøre inn i en tunnel som er stengt med rødt lys eller bom. Rødt lys og stengt tunnel skal respekteres.`
+            },
+            {
+                title: 'Les mer',
+                type: 'text',
+                content: `Les mer om [stans og parkering](/laeringsressurser/stans-og-parkering), [bilens lys](/laeringsressurser/bilens-lys), [trafikkuhell og førstehjelp](/laeringsressurser/trafikkuhell-forstehjelp) og [sikkerhetsutstyr](/laeringsressurser/sikkerhetsutstyr). Se også Statens vegvesen sin side [Trygg i tunnel](https://www.vegvesen.no/trafikkinformasjon/trafikksikkerhet/trygg-i-tunnel/) og Lovdata om [stans og parkering](https://lovdata.no/forskrift/1986-03-21-747/%C2%A717).`
+            }
+        ],
+        faq: [
+            {
+                question: 'Hva gjør du hvis bilen stanser i tunnel?',
+                answer: 'Sett på nødblink, prøv å komme deg til havarilomme hvis mulig, ta på refleksvest hvis du må ut, og bruk nødtelefon der den finnes.'
+            },
+            {
+                question: 'Hvorfor bør du bruke nødtelefon i tunnel?',
+                answer: 'Nødtelefonen gir veitrafikksentralen informasjon om hvilken tunnel du er i og hvor i tunnelen du ringer fra.'
+            },
+            {
+                question: 'Er det lov å stanse i tunnel?',
+                answer: 'Det er forbudt å stanse i tunnel hvis det ikke er nødvendig. Ved feil, kø eller ulykke må du stanse så trygt som mulig og varsle.'
+            },
+            {
+                question: 'Har du lov til å stanse i en tunnel?',
+                answer: 'Bare hvis det er nødvendig, for eksempel ved kø, ulykke, motorstopp eller fare. Du skal ikke stanse i tunnel uten grunn.'
+            },
+            {
+                question: 'Hva gjør du ved røyk eller brann i tunnel?',
+                answer: 'Varsle, følg skilt og anvisninger, og kom deg raskt i sikkerhet. Ikke bli sittende og vente hvis røyk eller brann gjør situasjonen farlig.'
+            },
+            {
+                question: 'Hva er en enkel huskeregel ved stans i tunnel?',
+                answer: 'Nødblink, havarilomme hvis mulig og nødtelefon. Deretter følger du anvisninger og vurderer om du må forlate bilen.'
+            },
+            {
+                question: 'Hvorfor bør du lytte til radio i tunnel?',
+                answer: 'Ved hendelser kan det komme viktige meldinger om stengt tunnel, kø, brann eller evakuering.'
+            }
+        ],
+        miniQuiz: [
+            {
+                question: 'Hva er riktig hvis bilen stanser i tunnel?',
+                options: ['Slå av lysene for å spare strøm', 'Bruke nødblink og varsle via nødtelefon hvis mulig', 'Bli sittende uten å varsle', 'Rygge langt tilbake til åpningen'],
+                correct: 'Bruke nødblink og varsle via nødtelefon hvis mulig',
+                explanation: 'Nødblink gjør bilen synlig, og nødtelefonen gir riktig posisjon til veitrafikksentralen.'
+            },
+            {
+                question: 'Hva bør du gjøre før du kjører inn i tunnel?',
+                options: ['Øke farten', 'Sjekke lys, avstand og trafikken foran', 'Slå av nærlys', 'Ligge tett bak bilen foran'],
+                correct: 'Sjekke lys, avstand og trafikken foran',
+                explanation: 'God avstand og riktig lys er viktig i tunnel.'
+            },
+            {
+                question: 'Hva betyr rødt lys eller bom før tunnel?',
+                options: ['Kjør hvis du ikke ser andre biler', 'Tunnelen er stengt, du skal ikke kjøre inn', 'Bare lastebiler må stoppe', 'Kjør sakte inn'],
+                correct: 'Tunnelen er stengt, du skal ikke kjøre inn',
+                explanation: 'Rødt lys og bom skal respekteres.'
+            },
+            {
+                question: 'Har du lov til å stanse i tunnel uten grunn?',
+                options: ['Ja, hvis du bare stanser kort', 'Nei, stans er bare aktuelt når det er nødvendig', 'Ja, hvis nødblink er på', 'Ja, hvis du står nær tunnelåpningen'],
+                correct: 'Nei, stans er bare aktuelt når det er nødvendig',
+                explanation: 'Stans i tunnel er forbudt uten nødvendig grunn. Ved feil, kø eller fare må du varsle og sikre riktig.'
+            },
+            {
+                question: 'Hvorfor er nødtelefon ofte bedre enn mobiltelefon i tunnel?',
+                options: ['Den gir riktig posisjon til veitrafikksentralen', 'Den gjør bilen raskere', 'Den virker som brannslukker', 'Den åpner alltid bommen automatisk'],
+                correct: 'Den gir riktig posisjon til veitrafikksentralen',
+                explanation: 'Nødtelefonen er knyttet til tunnelen og hjelper veitrafikksentralen å finne riktig sted.'
+            }
+        ]
+    },
+
+    {
+        id: 'barn-i-bil-og-sikring',
+        title: 'Barn i bil og sikring: reglene du må kunne',
+        icon: '👶',
+        shortDescription: 'Lær reglene for barnesete, beltestol, høydegrenser, airbag og førerens ansvar når barn er passasjerer i bilen.',
+        color: 'var(--apple-pink)',
+        seoTitle: 'Barn i bil og sikring: barnesete, airbag og ansvar',
+        seoDescription: 'Se reglene for sikring av barn i bil til teoriprøven: ansvar, barnesete, bilpute, beltestol, 135 cm, 140 cm, airbag og bilbelte.',
+        sections: [
+            {
+                title: 'Barn i bil og sikring',
+                type: 'text',
+                content: `Spørsmål om barn i bil handler ikke bare om barnesete. Du må også kunne førerens ansvar, høydegrenser, airbag og hva som er trygg plassering. Dette er viktig både på teoriprøven og i vanlig kjøring.`
+            },
+            {
+                title: 'Kort forklart',
+                type: 'info',
+                content: `Barn under 135 cm skal bruke godkjent barnesikringsutstyr som passer barnets høyde og vekt. Barn mellom 135 og 150 cm skal bruke slikt utstyr hvis det finnes i bilen. Føreren har ansvar for at passasjerer under 15 år er riktig sikret. Bakovervendt barnesete skal aldri brukes foran aktiv airbag. Utstyret må være godkjent, for eksempel etter ECE R44.03, R44.04 eller R129.`
+            },
+            {
+                title: 'Reglene du må kunne',
+                type: 'table',
+                content: `<div class="responsive-theory-table-wrapper" style="margin-top: 1rem;"><table class="responsive-theory-table" style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem;"><thead><tr style="background-color: var(--color-surface); border-bottom: 2px solid var(--color-border);"><th style="padding: 12px 8px;">Tema</th><th style="padding: 12px 8px;">Regel</th><th style="padding: 12px 8px;">Teorifelle</th></tr></thead><tbody><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">Barn under 135 cm</td><td style="padding: 12px 8px;">Skal bruke godkjent barnesikringsutstyr</td><td style="padding: 12px 8px;">Vanlig bilbelte er ikke nok</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">Barn 135-150 cm</td><td style="padding: 12px 8px;">Skal bruke utstyr hvis det finnes i bilen</td><td style="padding: 12px 8px;">Beltestol kan fortsatt være riktig</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">Passasjer under 15 år</td><td style="padding: 12px 8px;">Føreren har ansvar for sikringen</td><td style="padding: 12px 8px;">Barnet har ikke hovedansvaret selv</td></tr><tr><td style="padding: 12px 8px;">Bakovervendt sete foran</td><td style="padding: 12px 8px;">Ikke foran aktiv airbag</td><td style="padding: 12px 8px;">Airbag må være koblet ut</td></tr></tbody></table></div>`
+            },
+            {
+                title: 'Airbag og plassering',
+                type: 'warning',
+                content: `Bakovervendt barnesete skal aldri plasseres foran en aktiv airbag. Hvis airbagen utløses, kan barnet bli alvorlig skadet. Barn under 140 cm bør heller ikke sitte foran en aktiv airbag hvis den ikke er koblet ut. Baksetet er ofte det tryggeste valget.
+
+Sideairbag er normalt ikke et problem når barnet sitter riktig sikret, men barnet bør ikke lene seg mot døren eller sitte slik at airbagen kan treffe feil.`
+            },
+            {
+                title: 'Godkjent utstyr og bil uten bilbelte',
+                type: 'tip',
+                content: `Velg barnesete, beltestol eller pute etter barnets høyde og vekt, ikke alder alene. Sjekk at utstyret er godkjent og riktig montert.
+
+I bil uten bilbelte er reglene strengere: Barn under 3 år skal ikke transporteres i bilen. Barn over 3 år kan ikke sitte foran hvis det ikke finnes bilbelte. Dette er en typisk teorifelle fordi mange blander "kort tur" med lovlig sikring.`
+            },
+            {
+                title: 'Slik tenker du på teoriprøven',
+                type: 'tip',
+                content: `Velg svaret som gir best faktisk beskyttelse, ikke bare det som virker mest praktisk. Riktig sikring handler om barnets høyde, vekt, setetype og plassering i bilen. Hvis et svar sier at airbag kan erstatte barnesete eller bilbelte, er det feil.`
+            },
+            {
+                title: 'Les mer',
+                type: 'text',
+                content: `Dette henger sammen med [sikkerhetsutstyr](/laeringsressurser/sikkerhetsutstyr), [bilbelte og airbag](/laeringsressurser/sikkerhetsutstyr), [sikkerhetskontroll](/laeringsressurser/sikkerhetskontroll) og [trafikkuhell og førstehjelp](/laeringsressurser/trafikkuhell-forstehjelp). Se også Statens vegvesen om [regelverket for sikring av barn i bil](https://www.vegvesen.no/trafikkinformasjon/trafikksikkerhet/sikker-kjoring/sikring-av-barn-i-bil/regelverket-for-sikring-av-barn/).`
+            }
+        ],
+        faq: [
+            {
+                question: 'Når må barn bruke barnesete eller beltestol?',
+                answer: 'Barn under 135 cm skal bruke godkjent barnesikringsutstyr som passer barnets høyde og vekt.'
+            },
+            {
+                question: 'Hvem har ansvar for barn i bil?',
+                answer: 'Føreren har ansvar for at passasjerer under 15 år er riktig sikret med bilbelte eller godkjent barnesikringsutstyr.'
+            },
+            {
+                question: 'Hvem har ansvar for at barn er sikret i bilen?',
+                answer: 'Føreren har ansvar for at passasjerer under 15 år er riktig sikret.'
+            },
+            {
+                question: 'Kan bakovervendt barnesete stå foran airbag?',
+                answer: 'Nei, ikke foran en aktiv airbag. Airbagen må være koblet ut hvis bakovervendt sete skal brukes foran.'
+            },
+            {
+                question: 'Hva gjelder for barn mellom 135 og 150 cm?',
+                answer: 'De skal bruke godkjent sikringsutstyr hvis det finnes i bilen.'
+            },
+            {
+                question: 'Hva betyr godkjent barnesikringsutstyr?',
+                answer: 'Utstyret skal være godkjent etter relevant standard, for eksempel ECE R44.03, R44.04 eller R129, og passe barnets høyde og vekt.'
+            },
+            {
+                question: 'Kan barn under 3 år sitte i bil uten bilbelte?',
+                answer: 'Nei. Barn under 3 år skal ikke transporteres i bil uten bilbelte.'
+            },
+            {
+                question: 'Er sideairbag farlig for barn?',
+                answer: 'Sideairbag er normalt ikke farlig når barnet sitter riktig sikret, men barnet bør ikke lene seg mot døren eller sitte feil plassert.'
+            }
+        ],
+        miniQuiz: [
+            {
+                question: 'Hva gjelder for barn under 135 cm?',
+                options: ['De kan bruke vanlig belte uten ekstra utstyr', 'De skal bruke godkjent barnesikringsutstyr', 'De må alltid sitte foran', 'De trenger bare airbag'],
+                correct: 'De skal bruke godkjent barnesikringsutstyr',
+                explanation: 'Barn under 135 cm skal sikres med godkjent utstyr som passer høyde og vekt.'
+            },
+            {
+                question: 'Hvem har ansvar for at passasjerer under 15 år er riktig sikret?',
+                options: ['Passasjeren selv', 'Føreren', 'Bilprodusenten', 'Den eldste passasjeren'],
+                correct: 'Føreren',
+                explanation: 'Føreren har ansvar for at passasjerer under 15 år er riktig sikret.'
+            },
+            {
+                question: 'Hva er riktig om bakovervendt barnesete og airbag?',
+                options: ['Det kan stå foran aktiv airbag', 'Det skal ikke brukes foran aktiv airbag', 'Airbag erstatter barnesete', 'Airbag gjør plassering uviktig'],
+                correct: 'Det skal ikke brukes foran aktiv airbag',
+                explanation: 'Aktiv airbag foran bakovervendt barnesete kan skade barnet alvorlig.'
+            },
+            {
+                question: 'Hva bør du velge barnesikringsutstyr etter?',
+                options: ['Barnets høyde og vekt', 'Bilens farge', 'Hvor kort turen er', 'Om barnet vil sitte foran'],
+                correct: 'Barnets høyde og vekt',
+                explanation: 'Barnesete, beltestol og pute må passe barnets størrelse og være godkjent.'
+            },
+            {
+                question: 'Hva gjelder for barn under 3 år i bil uten bilbelte?',
+                options: ['Det er greit på korte turer', 'Barnet skal ikke transporteres i bilen', 'Barnet kan sitte på fanget', 'Barnet kan sitte foran hvis airbag er av'],
+                correct: 'Barnet skal ikke transporteres i bilen',
+                explanation: 'Barn under 3 år skal ikke transporteres i bil uten bilbelte.'
+            }
+        ]
+    },
+
+    {
         id: 'bilens-lys',
         title: 'Bilens lys til teoriprøven klasse B',
         icon: '💡',
