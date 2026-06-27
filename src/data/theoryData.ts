@@ -89,7 +89,7 @@ export const theoryTopics: TheoryTopic[] = [
             {
                 title: '5. Trikk og buss',
                 type: 'warning',
-                content: 'Det gjelder egne regler for kollektivtrafikk:\n- Trikk: Du har vikeplikt for trikken, selv om den kommer fra venstre. Dette er et viktig unntak fra høyreregelen.\n- Buss: Hvis en buss blinker seg ut fra en holdeplass i en 60-sone (eller lavere), skal du senke farten og gi bussen mulighet til å kjøre ut, så lenge det kan skje uten fare.'
+                content: 'Det gjelder egne regler for kollektivtrafikk:\n- Trikk: Du har vikeplikt for trikken, selv om den kommer fra venstre. Dette er et viktig unntak fra høyreregelen. Les mer om [trikk og vikeplikt](/laeringsressurser/trikk-og-vikeplikt).\n- Buss: Hvis en buss blinker seg ut fra en holdeplass i en 60-sone (eller lavere), skal du senke farten og gi bussen mulighet til å kjøre ut, så lenge det kan skje uten fare. Lær alle detaljene om reglene for [buss fra holdeplass](/laeringsressurser/buss-fra-holdeplass).'
             },
             {
                 title: '6. Fotgjengere og syklister',
@@ -1246,7 +1246,7 @@ export const theoryTopics: TheoryTopic[] = [
             {
                 title: 'Fareskilt',
                 type: 'signs',
-                content: 'Fareskilt varsler fare på eller ved veien. De er vanligvis trekantede med rød kant og hvit bunn. Se alle [fareskilt i vår oversikt](/trafikkskilt/fareskilt).\n\nEksempler: Barn, Elg, Glatt vei, Farlig sving\n\n**Viktig teorifelle:** Et fareskilt betyr ikke automatisk lavere fartsgrense. Det betyr at du må tilpasse farten etter faren.',
+                content: 'Fareskilt varsler fare på eller ved veien. De er vanligvis trekantede med rød kant og hvit bunn. Se alle [fareskilt i vår oversikt](/trafikkskilt/fareskilt).\n\nEksempler på fareskilt er barn (142), elg (146) og de spesielle skiltene for planoverganger. Les mer om [regler ved planovergang](/laeringsressurser/planovergang-regler) for å lære hvordan du tolker fareskilt, bom og lyssignaler.\n\n**Viktig teorifelle:** Et fareskilt betyr ikke automatisk lavere fartsgrense. Det betyr at du må tilpasse farten etter faren.',
                 signs: [
                     {
                         name: 'Fareskilt 142 Barn',
@@ -1884,7 +1884,7 @@ export const theoryTopics: TheoryTopic[] = [
             {
                 title: '',
                 type: 'text',
-                content: 'Hvis det er forbudt å stanse, er parkering også forbudt. Men hvis det bare er parkering forbudt, kan kort stans være lov.\n\nLes også guiden om [trafikkskilt](/laeringsressurser/skilt) hvis du vil lære forskjellen på stans forbudt-skiltet og parkering forbudt-skiltet.'
+                content: 'Hvis det er forbudt å stanse, er parkering også forbudt. Men hvis det bare er parkering forbudt, kan kort stans være lov. Dette gjelder spesielt på steder med høy risiko, som tunneler. Les mer om reglene for [stans i tunnel](/laeringsressurser/tunnelsikkerhet) og generell sikkerhet.\n\nLes også guiden om [trafikkskilt](/laeringsressurser/skilt) hvis du vil lære forskjellen på stans forbudt-skiltet og parkering forbudt-skiltet.'
             },
             {
                 title: 'Kan du stanse på venstre side av veien?',
@@ -3451,7 +3451,7 @@ Når du nærmer deg et lyskryss, bør du derfor se etter:
             {
                 title: '7. Kollektivfelt',
                 type: 'text',
-                content: 'Kollektivfelt er felt som først og fremst er satt av til kollektivtrafikk og bestemte trafikantgrupper. Hvem som kan bruke feltet avgjøres av [skilt](/laeringsressurser/skilt) og eventuelle underskilt.\n\nPå teoriprøven må du være ekstra oppmerksom på underskilt. Et kollektivfeltskilt alene gir ikke alltid nok informasjon. Underskilt kan begrense bruken etter kjøretøytype, passasjerer, tidspunkt eller lokale regler.\n\n![Illustrasjon av kollektivfelt merket for buss og taxi med underskilt om elbil uten passasjer.](/images/kollektivfelt-elbil-underskilt.png)\n*Kollektivfelt kan ha underskilt som begrenser hvem som kan bruke feltet. Les alltid både hovedskilt og underskilt.*\n\nI bildet står det: *Gjelder ikke elmotorvogn uten passasjer 06-09*. Det betyr at unntaket for elbil uten passasjer ikke gjelder i dette tidsrommet. Kjører du elbil alene klokken 08.15, skal du ikke bruke kollektivfeltet her.\n\n**Viktig å huske:**\n- Les både hovedskilt og underskilt.\n- Ikke anta at elbil alltid kan bruke kollektivfelt.\n- Reglene kan være tidsstyrte og lokale.\n- Du må fortsatt skifte felt trygt når du skal inn eller ut av kollektivfeltet.\n- Hvis du er usikker på om du har lov til å bruke feltet, velg vanlig kjørefelt.\n\n**Bildeoppgave:**\nDu kjører elbil uten passasjer klokken 08.15 og ser skiltet på bildet. Kan du bruke kollektivfeltet?\n*Riktig svar:* Nei. Underskiltet sier at dette ikke gjelder for elmotorvogn uten passasjer i tidsrommet 06-09.'
+                content: 'Kollektivfelt er felt som først og fremst er satt av til kollektivtrafikk og bestemte trafikantgrupper. Hvem som kan bruke feltet avgjøres av [skilt](/laeringsressurser/skilt) og eventuelle underskilt. Det gjelder spesielle regler for [elbil i kollektivfelt](/laeringsressurser/kollektivfelt-og-elbil), spesielt knyttet to underskilt og tidsrom.\n\nPå teoriprøven må du være ekstra oppmerksom på underskilt. Et kollektivfeltskilt alene gir ikke alltid nok informasjon. Underskilt kan begrense bruken etter kjøretøytype, passasjerer, tidspunkt eller lokale regler.\n\n![Illustrasjon av kollektivfelt merket for buss og taxi med underskilt om elbil uten passasjer.](/images/kollektivfelt-elbil-underskilt.png)\n*Kollektivfelt kan ha underskilt som begrenser hvem som kan bruke feltet. Les alltid både hovedskilt og underskilt.*\n\nI bildet står det: *Gjelder ikke elmotorvogn uten passasjer 06-09*. Det betyr at unntaket for elbil uten passasjer ikke gjelder i dette tidsrommet. Kjører du elbil alene klokken 08.15, skal du ikke bruke kollektivfeltet her.\n\n**Viktig å huske:**\n- Les både hovedskilt og underskilt.\n- Ikke anta at elbil alltid kan bruke kollektivfelt.\n- Reglene kan være tidsstyrte og lokale.\n- Du må fortsatt skifte felt trygt når du skal inn eller ut av kollektivfeltet.\n- Hvis du er usikker på om du har lov til å bruke feltet, velg vanlig kjørefelt.\n\n**Bildeoppgave:**\nDu kjører elbil uten passasjer klokken 08.15 og ser skiltet på bildet. Kan du bruke kollektivfeltet?\n*Riktig svar:* Nei. Underskiltet sier at dette ikke gjelder for elmotorvogn uten passasjer i tidsrommet 06-09.'
             },
             {
                 title: '8. Sambruksfelt',
@@ -4483,7 +4483,7 @@ export const theoryArticles: TheoryTopic[] = [
                 type: 'text',
                 content: `Bilbelte er det viktigste sikkerhetsutstyret i bilen. Det holder kroppen på plass ved bråbrems eller kollisjon, og gjør at airbagen virker slik den skal. Airbag alene er ikke nok. Sitter du uten bilbelte, eller sitter for nær airbagen, kan airbagen skade deg.
 
-Barn skal sikres ekstra godt. Barn under 135 cm skal bruke godkjent barnesikringsutstyr som passer barnets høyde og vekt. Barn mellom 135 og 150 cm skal bruke godkjent utstyr hvis det finnes i bilen. Føreren har ansvar for at passasjerer under 15 år er riktig sikret.
+Barn skal sikres ekstra godt. Barn under 135 cm skal bruke godkjent barnesikringsutstyr som passer barnets høyde og vekt. Barn mellom 135 og 150 cm skal bruke godkjent utstyr hvis det finnes i bilen. Føreren har ansvar for at passasjerer under 15 år er riktig sikret. Få full oversikt i vår egen guide om [barn i bil og sikring](/laeringsressurser/barn-i-bil-og-sikring).
 
 Viktig teorifelle: Bakovervendt barnesete skal aldri plasseres foran en aktiv airbag. Airbagen må være koblet ut hvis bakovervendt barnesete skal brukes i forsetet. Les mer hos [Statens vegvesen om sikring av barn i bil](https://www.vegvesen.no/trafikkinformasjon/trafikksikkerhet/sikker-kjoring/sikring-av-barn-i-bil/regelverket-for-sikring-av-barn/).`
             },

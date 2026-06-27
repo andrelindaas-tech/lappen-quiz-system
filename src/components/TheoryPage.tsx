@@ -23,10 +23,20 @@ import { theoryTopics, theoryArticles, theoryUtilityPages } from '../data/theory
 import TheoryTopic from './TheoryTopic'
 import { parseInlineLinks } from '../utils/textUtils'
 
+const situationalArticleIds = [
+    'buss-fra-holdeplass',
+    'trikk-og-vikeplikt',
+    'planovergang-regler',
+    'kollektivfelt-og-elbil',
+    'tunnelsikkerhet',
+    'barn-i-bil-og-sikring'
+]
+
 // Helper function to get Lucide icons for topics and articles
 const getTopicIcon = (id: string) => {
     switch (id) {
         case 'vikeplikt':
+        case 'trikk-og-vikeplikt':
             return <Shield size={24} strokeWidth={1.8} />
         case 'bremselengde':
             return <Gauge size={24} strokeWidth={1.8} />
@@ -34,6 +44,9 @@ const getTopicIcon = (id: string) => {
             return <Layers size={24} strokeWidth={1.8} />
         case 'veimerking':
         case 'feltvalg-fletting-kollektivfelt':
+        case 'buss-fra-holdeplass':
+        case 'planovergang-regler':
+        case 'kollektivfelt-og-elbil':
             return <Route size={24} strokeWidth={1.8} />
         case 'automatlappen':
             return <Zap size={24} strokeWidth={1.8} />
@@ -45,12 +58,14 @@ const getTopicIcon = (id: string) => {
         case 'stroket-teoriproven':
             return <RefreshCcw size={24} strokeWidth={1.8} />
         case 'ovingskjoring':
+        case 'barn-i-bil-og-sikring':
             return <UserCheck size={24} strokeWidth={1.8} />
         case 'tips-eksamen':
             return <GraduationCap size={24} strokeWidth={1.8} />
         case 'trafikkuhell-forstehjelp':
             return <HeartPulse size={24} strokeWidth={1.8} />
         case 'vanlige-feil-teoriproven':
+        case 'tunnelsikkerhet':
             return <AlertTriangle size={24} strokeWidth={1.8} />
         case 'glatt-fore':
             return <Snowflake size={24} strokeWidth={1.8} />
@@ -129,10 +144,16 @@ export default function TheoryPage() {
         )
     }, [searchQuery])
 
+    const situationalArticles = useMemo(() => {
+        return theoryArticles.filter(a => situationalArticleIds.includes(a.id))
+    }, [])
+
     // Filter articles based on search query
     const filteredArticles = useMemo(() => {
         const query = searchQuery.trim().toLowerCase()
-        if (!query) return theoryArticles
+        if (!query) {
+            return theoryArticles.filter(a => !situationalArticleIds.includes(a.id))
+        }
         return theoryArticles.filter(a => 
             a.title.toLowerCase().includes(query) ||
             a.shortDescription.toLowerCase().includes(query) ||
@@ -281,6 +302,34 @@ export default function TheoryPage() {
                                             <p className="theory-card-desc">{parseInlineLinks(topic.shortDescription)}</p>
                                             <span className="theory-card-badge">
                                                 Les mer <ArrowRight size={14} style={{ marginLeft: '4px' }} />
+                                            </span>
+                                        </div>
+                                    ))}
+                                </div>
+                            </section>
+                        )}
+
+                        {!searchQuery && situationalArticles.length > 0 && (
+                            <section className="theory-section-group">
+                                <h2 style={{ textAlign: 'center', marginBottom: '0.5rem' }}>Situasjonsartikler</h2>
+                                <p className="theory-subtitle" style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
+                                    Lær reglene for spesifikke trafikksituasjoner du møter på veien.
+                                </p>
+
+                                <div className="theory-cards article-grid">
+                                    {situationalArticles.map(article => (
+                                        <div
+                                            key={article.id}
+                                            className="theory-card article-card"
+                                            onClick={() => handleSelectTopic(article.id)}
+                                        >
+                                            <div className="card-icon-box">
+                                                {getTopicIcon(article.id)}
+                                            </div>
+                                            <h3 className="theory-card-title">{article.title}</h3>
+                                            <p className="theory-card-desc">{parseInlineLinks(article.shortDescription)}</p>
+                                            <span className="theory-card-badge">
+                                                Les artikkel <ArrowRight size={14} style={{ marginLeft: '4px' }} />
                                             </span>
                                         </div>
                                     ))}
