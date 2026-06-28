@@ -23,13 +23,59 @@ import { theoryTopics, theoryArticles, theoryUtilityPages } from '../data/theory
 import TheoryTopic from './TheoryTopic'
 import { parseInlineLinks } from '../utils/textUtils'
 
-const situationalArticleIds = [
-    'buss-fra-holdeplass',
-    'trikk-og-vikeplikt',
-    'planovergang-regler',
-    'kollektivfelt-og-elbil',
-    'tunnelsikkerhet',
-    'barn-i-bil-og-sikring'
+const overviewArticleIds = ['temaliste-teoriproven-klasse-b']
+
+const articleCategorySections = [
+    {
+        title: 'Vikeplikt og kryss',
+        description: 'Lær hvordan du vurderer kryss, rundkjøringer, trikk, buss og trafikklys.',
+        ids: ['vikeplikt', 'rundkjoring', 'trafikklys-signaler', 'buss-fra-holdeplass', 'trikk-og-vikeplikt']
+    },
+    {
+        title: 'Trafikkskilt',
+        description: 'Forstå skiltgrupper, fareskilt og situasjoner der skilt styrer hva du skal gjøre.',
+        ids: ['skilt', 'planovergang-regler']
+    },
+    {
+        title: 'Fart og plassering',
+        description: 'Øv på fartsgrenser, feltvalg, forbikjøring, kollektivfelt og riktig plassering.',
+        ids: ['fartsgrenser', 'feltvalg-fletting-kollektivfelt', 'forbikjoring', 'kollektivfelt-og-elbil']
+    },
+    {
+        title: 'Bremselengde og reaksjonstid',
+        description: 'Lær stopplengde, reaksjonstid og hvordan føre påvirker bremsing.',
+        ids: ['bremselengde', 'reaksjonstid', 'glatt-fore']
+    },
+    {
+        title: 'Parkering og stans',
+        description: 'Se reglene for stans, parkering og situasjoner der du må være ekstra varsom.',
+        ids: ['stans-og-parkering', 'tunnelsikkerhet']
+    },
+    {
+        title: 'Veimerking',
+        description: 'Lær sperrelinjer, varsellinjer, kantlinjer og hva veimerkingen betyr i praksis.',
+        ids: ['veimerking']
+    },
+    {
+        title: 'Kjøretøy og teknisk',
+        description: 'Alt om bilen, dekk, bremser, lys, vognkort, tilhenger og førerstøttesystemer.',
+        ids: ['dekk-bremser-styring', 'sikkerhetskontroll', 'bilens-lys', 'vognkort-vekter', 'tilhenger', 'forerstottesystemer', 'automatlappen']
+    },
+    {
+        title: 'Trafikanter og samspill',
+        description: 'Forstå samspill, øvelseskjøring, miljø, barn i bil og forberedelse til prøvene.',
+        ids: ['ovingskjoring', 'barn-i-bil-og-sikring', 'miljo', 'oppkjoring', 'tips-eksamen', 'stroket-teoriproven', 'vanlige-feil-teoriproven']
+    },
+    {
+        title: 'Sikkerhet og førstehjelp',
+        description: 'Lær sikkerhetsutstyr, promille, førstehjelp og hva du gjør ved trafikkuhell.',
+        ids: ['sikkerhetsutstyr', 'trafikkuhell-forstehjelp', 'promille']
+    },
+    {
+        title: 'Lover og ansvar',
+        description: 'Forstå føreransvar, §3, prikker, forelegg, førerkortbeslag og forsikring.',
+        ids: ['vegtrafikkloven-paragraf-3', 'plikter-ved-ulykke', 'prikker-pa-forerkortet', 'forerkortbeslag', 'boter-og-forelegg', 'forsikring-og-ansvar', 'myndighetspyramiden']
+    }
 ]
 
 // Helper function to get Lucide icons for topics and articles
@@ -37,6 +83,8 @@ const getTopicIcon = (id: string) => {
     switch (id) {
         case 'vikeplikt':
         case 'trikk-og-vikeplikt':
+        case 'vegtrafikkloven-paragraf-3':
+        case 'forsikring-og-ansvar':
             return <Shield size={24} strokeWidth={1.8} />
         case 'bremselengde':
             return <Gauge size={24} strokeWidth={1.8} />
@@ -63,9 +111,13 @@ const getTopicIcon = (id: string) => {
         case 'tips-eksamen':
             return <GraduationCap size={24} strokeWidth={1.8} />
         case 'trafikkuhell-forstehjelp':
+        case 'plikter-ved-ulykke':
             return <HeartPulse size={24} strokeWidth={1.8} />
         case 'vanlige-feil-teoriproven':
         case 'tunnelsikkerhet':
+        case 'prikker-pa-forerkortet':
+        case 'forerkortbeslag':
+        case 'boter-og-forelegg':
             return <AlertTriangle size={24} strokeWidth={1.8} />
         case 'glatt-fore':
             return <Snowflake size={24} strokeWidth={1.8} />
@@ -144,16 +196,29 @@ export default function TheoryPage() {
         )
     }, [searchQuery])
 
-    const situationalArticles = useMemo(() => {
-        return theoryArticles.filter(a => situationalArticleIds.includes(a.id))
+    const categorizedSections = useMemo(() => {
+        const contentById = new Map([...theoryTopics, ...theoryArticles].map(item => [item.id, item]))
+        return articleCategorySections
+            .map(section => ({
+                ...section,
+                items: section.ids
+                    .map(id => contentById.get(id))
+                    .filter((item): item is NonNullable<typeof item> => Boolean(item))
+            }))
+            .filter(section => section.items.length > 0)
+    }, [])
+
+    const overviewArticles = useMemo(() => {
+        const contentById = new Map([...theoryTopics, ...theoryArticles].map(item => [item.id, item]))
+        return overviewArticleIds
+            .map(id => contentById.get(id))
+            .filter((item): item is NonNullable<typeof item> => Boolean(item))
     }, [])
 
     // Filter articles based on search query
     const filteredArticles = useMemo(() => {
         const query = searchQuery.trim().toLowerCase()
-        if (!query) {
-            return theoryArticles.filter(a => !situationalArticleIds.includes(a.id))
-        }
+        if (!query) return theoryArticles
         return theoryArticles.filter(a => 
             a.title.toLowerCase().includes(query) ||
             a.shortDescription.toLowerCase().includes(query) ||
@@ -277,92 +342,122 @@ export default function TheoryPage() {
                     </div>
                 ) : (
                     <>
-                        {filteredTopics.length > 0 && (
-                            <section className="theory-section-group">
-                                {searchQuery ? (
-                                    <>
+                        {!searchQuery ? (
+                            <>
+                                {overviewArticles.length > 0 && (
+                                    <section className="theory-section-group">
+                                        <h2 style={{ textAlign: 'center', marginBottom: '0.5rem' }}>Slik er teorien delt inn</h2>
+                                        <p className="theory-subtitle" style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
+                                            Start her for å se de 10 hovedtemaene som brukes både på artikkelsiden og i resultatanalysen etter full prøve.
+                                        </p>
+
+                                        <div className="theory-cards article-grid">
+                                            {overviewArticles.map(article => (
+                                                <div
+                                                    key={article.id}
+                                                    className="theory-card article-card"
+                                                    onClick={() => handleSelectTopic(article.id)}
+                                                >
+                                                    <div className="card-icon-box">
+                                                        {getTopicIcon(article.id)}
+                                                    </div>
+                                                    <h3 className="theory-card-title">{article.title}</h3>
+                                                    <p className="theory-card-desc">{parseInlineLinks(article.shortDescription)}</p>
+                                                    <span className="theory-card-badge">
+                                                        Se temakart <ArrowRight size={14} style={{ marginLeft: '4px' }} />
+                                                    </span>
+                                                </div>
+                                            ))}
+                                        </div>
+                                    </section>
+                                )}
+
+                                {categorizedSections.map(section => (
+                                    <section className="theory-section-group" key={section.title}>
+                                        <h2 style={{ textAlign: 'center', marginBottom: '0.5rem' }}>{section.title}</h2>
+                                        <p className="theory-subtitle" style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
+                                            {section.description}
+                                        </p>
+
+                                        <div className="theory-cards article-grid">
+                                            {section.items.map(item => (
+                                                <div
+                                                    key={item.id}
+                                                    className="theory-card article-card"
+                                                    onClick={() => handleSelectTopic(item.id)}
+                                                >
+                                                    <div className="card-icon-box">
+                                                        {getTopicIcon(item.id)}
+                                                    </div>
+                                                    <h3 className="theory-card-title">{item.title}</h3>
+                                                    <p className="theory-card-desc">{parseInlineLinks(item.shortDescription)}</p>
+                                                    <span className="theory-card-badge">
+                                                        Les mer <ArrowRight size={14} style={{ marginLeft: '4px' }} />
+                                                    </span>
+                                                </div>
+                                            ))}
+                                        </div>
+                                    </section>
+                                ))}
+                            </>
+                        ) : (
+                            <>
+                                {filteredTopics.length > 0 && (
+                                    <section className="theory-section-group">
                                         <h2 style={{ textAlign: 'center', marginBottom: '0.5rem' }}>Læringsemner</h2>
                                         <p className="theory-subtitle" style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
                                             Relevante emner som matchet søket ditt.
                                         </p>
-                                    </>
-                                ) : null}
 
-                                <div className="theory-cards">
-                                    {filteredTopics.map(topic => (
-                                        <div
-                                            key={topic.id}
-                                            className="theory-card"
-                                            onClick={() => handleSelectTopic(topic.id)}
-                                        >
-                                            <div className="card-icon-box">
-                                                {getTopicIcon(topic.id)}
-                                            </div>
-                                            <h2 className="theory-card-title">{topic.title}</h2>
-                                            <p className="theory-card-desc">{parseInlineLinks(topic.shortDescription)}</p>
-                                            <span className="theory-card-badge">
-                                                Les mer <ArrowRight size={14} style={{ marginLeft: '4px' }} />
-                                            </span>
+                                        <div className="theory-cards">
+                                            {filteredTopics.map(topic => (
+                                                <div
+                                                    key={topic.id}
+                                                    className="theory-card"
+                                                    onClick={() => handleSelectTopic(topic.id)}
+                                                >
+                                                    <div className="card-icon-box">
+                                                        {getTopicIcon(topic.id)}
+                                                    </div>
+                                                    <h2 className="theory-card-title">{topic.title}</h2>
+                                                    <p className="theory-card-desc">{parseInlineLinks(topic.shortDescription)}</p>
+                                                    <span className="theory-card-badge">
+                                                        Les mer <ArrowRight size={14} style={{ marginLeft: '4px' }} />
+                                                    </span>
+                                                </div>
+                                            ))}
                                         </div>
-                                    ))}
-                                </div>
-                            </section>
-                        )}
+                                    </section>
+                                )}
 
-                        {!searchQuery && situationalArticles.length > 0 && (
-                            <section className="theory-section-group">
-                                <h2 style={{ textAlign: 'center', marginBottom: '0.5rem' }}>Situasjonsartikler</h2>
-                                <p className="theory-subtitle" style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
-                                    Lær reglene for spesifikke trafikksituasjoner du møter på veien.
-                                </p>
+                                {filteredArticles.length > 0 && (
+                                    <section className="theory-section-group">
+                                        <h2 style={{ textAlign: 'center', marginBottom: '0.5rem' }}>Nyttige artikler</h2>
+                                        <p className="theory-subtitle" style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
+                                            Relevante artikler som matchet søket ditt.
+                                        </p>
 
-                                <div className="theory-cards article-grid">
-                                    {situationalArticles.map(article => (
-                                        <div
-                                            key={article.id}
-                                            className="theory-card article-card"
-                                            onClick={() => handleSelectTopic(article.id)}
-                                        >
-                                            <div className="card-icon-box">
-                                                {getTopicIcon(article.id)}
+                                        <div className="theory-cards article-grid">
+                                            {filteredArticles.map(article => (
+                                            <div
+                                                key={article.id}
+                                                className="theory-card article-card"
+                                                onClick={() => handleSelectTopic(article.id)}
+                                            >
+                                                <div className="card-icon-box">
+                                                    {getTopicIcon(article.id)}
+                                                </div>
+                                                <h3 className="theory-card-title">{article.title}</h3>
+                                                <p className="theory-card-desc">{parseInlineLinks(article.shortDescription)}</p>
+                                                <span className="theory-card-badge">
+                                                    Les artikkel <ArrowRight size={14} style={{ marginLeft: '4px' }} />
+                                                </span>
                                             </div>
-                                            <h3 className="theory-card-title">{article.title}</h3>
-                                            <p className="theory-card-desc">{parseInlineLinks(article.shortDescription)}</p>
-                                            <span className="theory-card-badge">
-                                                Les artikkel <ArrowRight size={14} style={{ marginLeft: '4px' }} />
-                                            </span>
+                                            ))}
                                         </div>
-                                    ))}
-                                </div>
-                            </section>
-                        )}
-
-                        {filteredArticles.length > 0 && (
-                            <section className="theory-section-group">
-                                <h2 style={{ textAlign: 'center', marginBottom: '0.5rem' }}>Nyttige artikler</h2>
-                                <p className="theory-subtitle" style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
-                                    {searchQuery ? 'Relevante artikler som matchet søket ditt.' : 'Tips og råd for å hjelpe deg på veien mot førerkortet.'}
-                                </p>
-
-                                <div className="theory-cards article-grid">
-                                    {filteredArticles.map(article => (
-                                        <div
-                                            key={article.id}
-                                            className="theory-card article-card"
-                                            onClick={() => handleSelectTopic(article.id)}
-                                        >
-                                            <div className="card-icon-box">
-                                                {getTopicIcon(article.id)}
-                                            </div>
-                                            <h3 className="theory-card-title">{article.title}</h3>
-                                            <p className="theory-card-desc">{parseInlineLinks(article.shortDescription)}</p>
-                                            <span className="theory-card-badge">
-                                                Les artikkel <ArrowRight size={14} style={{ marginLeft: '4px' }} />
-                                            </span>
-                                        </div>
-                                    ))}
-                                </div>
-                            </section>
+                                    </section>
+                                )}
+                            </>
                         )}
                     </>
                 )}

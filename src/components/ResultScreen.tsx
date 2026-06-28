@@ -61,7 +61,7 @@ export default function ResultScreen({ result, mode, onRestart, onReview, onRetu
         kjoretoy: { name: "Kjøretøy og teknisk", url: "/laeringsressurser/dekk-bremser-styring" },
         trafikanter: { name: "Trafikanter og samspill", url: "/laeringsressurser/vikeplikt" },
         sikkerhet: { name: "Sikkerhet og førstehjelp", url: "/laeringsressurser/sikkerhetskontroll" },
-        lover: { name: "Lover og ansvar", url: "/laeringsressurser/temaliste-teoriproven-klasse-b" }
+        lover: { name: "Lover og ansvar", url: "/laeringsressurser/vegtrafikkloven-paragraf-3" }
     };
 
     const showBreakdown = mode.isExamMode && result.categoryBreakdown && Object.keys(result.categoryBreakdown).length > 1;

@@ -493,7 +493,7 @@ export const theoryTopics: TheoryTopic[] = [
             {
                 title: 'Hvit sperrelinje',
                 type: 'text',
-                content: 'En hvit sperrelinje er en heltrukken hvit linje som skiller kjørefelt i samme kjøreretning. Den brukes der det kan være farlig eller uønsket å skifte felt, for eksempel før kryss, ved dårlig oversikt eller der trafikken må holdes i bestemte felt.\n\nDu skal som hovedregel ikke kjøre på eller over en hvit sperrelinje. Det betyr at du ikke skal bruke den til feltskifte eller [forbikjøring](/laeringsressurser/forbikjoring). Les mer om [reglene for forbikjøring](/laeringsressurser/forbikjoring).\n\n*Vanlige misforståelser:* Hvit sperrelinje gjelder ikke bare forbikjøring. Den forbyr også vanlige feltskifter før for eksempel kryss eller i tunneler.'
+                content: 'En hvit sperrelinje er en heltrukken hvit linje som skiller kjørefelt i samme kjøreretning. Den brukes der det kan være farlig eller uønsket å skifte felt, for eksempel før kryss, ved dårlig oversikt eller der trafikken må holdes i bestemte felt.\n\nDu skal som hovedregel ikke kjøre på eller over en hvit sperrelinje. Det betyr at du ikke skal bruke den til feltskifte eller [forbikjøring](/laeringsressurser/forbikjoring). Les mer om [reglene for forbikjøring](/laeringsressurser/forbikjoring).\n\nBrudd på sperrelinje kan også være relevant for [bøter og forelegg](/laeringsressurser/boter-og-forelegg), og enkelte trafikkovertredelser kan gi [prikker på førerkortet](/laeringsressurser/prikker-pa-forerkortet).\n\n*Vanlige misforståelser:* Hvit sperrelinje gjelder ikke bare forbikjøring. Den forbyr også vanlige feltskifter før for eksempel kryss eller i tunneler.'
             },
             {
                 title: 'Gul varsellinje',
@@ -2761,167 +2761,64 @@ export const theoryTopics: TheoryTopic[] = [
 
     {
         id: 'temaliste-teoriproven-klasse-b',
-        title: 'Temaliste teoriprøven klasse B – dette må du kunne',
+        title: 'Temaliste teoriprøven klasse B: 10 hovedtema du bør kunne',
         icon: '📋',
-        shortDescription: 'Finn ut hva du kan bli spurt om på teoriprøven for klasse B. Praktisk temaoversikt med guider og forklaringer om vikeplikt, skilt, bremselengde, lys, kjøretøy og mer.',
+        shortDescription: 'Se de 10 hovedtemaene teorien er delt inn i, og finn riktig guide hvis du er usikker på vikeplikt, skilt, fart, teknisk, sikkerhet eller ansvar.',
         color: 'var(--apple-blue)',
-        seoTitle: 'Temaliste teoriprøven klasse B – dette må du kunne | Teori-test.no',
-        seoDescription: 'Se hva du kan få på teoriprøven for klasse B. Praktisk temaoversikt med guider og forklaringer om vikeplikt, trafikkskilt, veimerking, bilens lys og mer.',
+        seoTitle: 'Temaliste teoriprøven klasse B: 10 hovedtema du må kunne',
+        seoDescription: 'Se de 10 hovedtemaene til teoriprøven klasse B: vikeplikt, skilt, fart, bremselengde, parkering, veimerking, kjøretøy, trafikanter, sikkerhet og ansvar.',
         sections: [
             {
                 title: 'Kort forklart',
                 type: 'info',
-                content: 'Temalisten viser hvilke fagområder teoriprøven for klasse B bygger på. Den er ikke en fasit på hvilke spørsmål du får, men en oversikt over hva du bør forstå før prøven.'
+                content: 'Temalisten viser hvordan vi deler teorien inn i 10 hovedtemaer. Det er samme mentale modell som brukes på artikkelsiden og i analysen etter full prøve, slik at du lettere ser hvilke områder du kan og hvilke du bør øve mer på.'
             },
             {
                 title: 'Slik bruker du temalisten',
                 type: 'tip',
-                content: '1. Finn temaet du er usikker på.\n2. Les relevant guide på Teori-test.no.\n3. Test deg med øvingsprøve eller tematest.\n4. Bruk fokusmodus på spørsmål du svarer feil på.'
+                content: '1. Finn hovedtemaet du er usikker på.\n2. Les de viktigste artiklene i den kategorien.\n3. Ta en full øvingsprøve.\n4. Bruk resultatanalysen til å se hvilke kategorier som fortsatt er svake.\n5. Gå tilbake til riktig kategori og øv mer målrettet.'
             },
             {
-                title: '7 hovedtemaer – temakart for teoriprøven klasse B',
+                title: '10 hovedtemaer – temakart for teoriprøven klasse B',
                 type: 'table',
-                content: `<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:1.25rem">
-<!-- Tema A -->
-<div style="border:1px solid var(--color-border);border-radius:14px;padding:1.5rem;background:var(--color-bg);display:flex;flex-direction:column;height:100%">
-  <div style="display:grid;grid-template-columns:28px 1fr auto;gap:0.75rem;align-items:start;margin-bottom:1.25rem">
-    <div style="background:var(--color-primary);color:#fff;width:28px;height:26px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:0.9rem;font-weight:800;margin-top:2px">A</div>
-    <strong style="font-size:1.05rem;color:var(--color-text);line-height:1.3">Fart, plassering og samhandling</strong>
-    <span style="background:#22c55e;color:#fff;font-size:0.6rem;font-weight:700;padding:3px 10px;border-radius:99px;text-transform:uppercase;margin-top:4px">Godt</span>
-  </div>
-  <ul style="margin:0 0 1.5rem 0;padding-left:1.3rem;color:var(--color-text-light);font-size:0.875rem;line-height:1.7;flex-grow:1">
-    <li>Avstand til forankjørende</li><li>Feltvalg og kollektivfelt</li><li>Rundkjøring og envegskjøring</li><li>Forbikjøring og fletting</li><li>Planovergang og sporvogn</li><li>Stans og parkering</li>
-  </ul>
-  <div style="font-size:0.82rem;color:var(--color-text-light);border-top:1px solid var(--color-border);padding-top:1rem">
-    <span style="opacity:0.7;font-weight:600">Les:</span> <a href="/laeringsressurser/fartsgrenser" style="color:var(--color-primary);text-decoration:none">Fartsgrenser</a> · <a href="/laeringsressurser/rundkjoring" style="color:var(--color-primary);text-decoration:none">Rundkjøring</a> · <a href="/laeringsressurser/forbikjoring" style="color:var(--color-primary);text-decoration:none">Forbikjøring</a> · <a href="/laeringsressurser/stans-og-parkering" style="color:var(--color-primary);text-decoration:none">Stans og parkering</a>
-  </div>
-</div>
-
-<!-- Tema B -->
-<div style="border:1px solid var(--color-border);border-radius:14px;padding:1.5rem;background:var(--color-bg);display:flex;flex-direction:column;height:100%">
-  <div style="display:grid;grid-template-columns:28px 1fr auto;gap:0.75rem;align-items:start;margin-bottom:1.25rem">
-    <div style="background:var(--color-primary);color:#fff;width:28px;height:26px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:0.9rem;font-weight:800;margin-top:2px">B</div>
-    <strong style="font-size:1.05rem;color:var(--color-text);line-height:1.3">Sikt, føre og lys</strong>
-    <span style="background:#22c55e;color:#fff;font-size:0.6rem;font-weight:700;padding:3px 10px;border-radius:99px;text-transform:uppercase;margin-top:4px">Godt</span>
-  </div>
-  <ul style="margin:0 0 1.5rem 0;padding-left:1.3rem;color:var(--color-text-light);font-size:0.875rem;line-height:1.7;flex-grow:1">
-    <li>Sikt, vær og mørke</li><li>Bruk av lys (nærlys, fjernlys, tåkelys)</li><li>Bremselengde og stopplengde</li><li>Reaksjonslengde og veggrep</li>
-  </ul>
-  <div style="font-size:0.82rem;color:var(--color-text-light);border-top:1px solid var(--color-border);padding-top:1rem">
-    <span style="opacity:0.7;font-weight:600">Les:</span> <a href="/laeringsressurser/lysbruk-morkekjoring" style="color:var(--color-primary);text-decoration:none">Mørkekjøring</a> · <a href="/laeringsressurser/bilens-lys" style="color:var(--color-primary);text-decoration:none">Bilens lys</a> · <a href="/laeringsressurser/bremselengde" style="color:var(--color-primary);text-decoration:none">Bremselengde</a> · <a href="/laeringsressurser/reaksjonstid" style="color:var(--color-primary);text-decoration:none">Reaksjonstid</a> · <a href="/laeringsressurser/glatt-fore" style="color:var(--color-primary);text-decoration:none">Glatt føre</a>
-  </div>
-</div>
-
-<!-- Tema C -->
-<div style="border:1px solid var(--color-border);border-radius:14px;padding:1.5rem;background:var(--color-bg);display:flex;flex-direction:column;height:100%">
-  <div style="display:grid;grid-template-columns:28px 1fr auto;gap:0.75rem;align-items:start;margin-bottom:1.25rem">
-    <div style="background:var(--color-primary);color:#fff;width:28px;height:26px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:0.9rem;font-weight:800;margin-top:2px">C</div>
-    <strong style="font-size:1.05rem;color:var(--color-text);line-height:1.3">Trafikkskilt, veimerking og vikeplikt</strong>
-    <span style="background:#22c55e;color:#fff;font-size:0.6rem;font-weight:700;padding:3px 10px;border-radius:99px;text-transform:uppercase;margin-top:4px">Godt</span>
-  </div>
-  <ul style="margin:0 0 1.5rem 0;padding-left:1.3rem;color:var(--color-text-light);font-size:0.875rem;line-height:1.7;flex-grow:1">
-    <li>Trafikkskilt og skiltgrupper</li><li>Veimerking</li><li>Vikeplikt og høyreregel</li><li>Lysregulering og politimannens tegn</li><li>Stoppeplikt</li>
-  </ul>
-  <div style="font-size:0.82rem;color:var(--color-text-light);border-top:1px solid var(--color-border);padding-top:1rem">
-    <span style="opacity:0.7;font-weight:600">Les:</span> <a href="/trafikkskilt" style="color:var(--color-primary);text-decoration:none">Trafikkskilt</a> · <a href="/laeringsressurser/veimerking" style="color:var(--color-primary);text-decoration:none">Veimerking</a> · <a href="/laeringsressurser/vikeplikt" style="color:var(--color-primary);text-decoration:none">Vikeplikt</a> · <a href="/laeringsressurser/myndighetspyramiden" style="color:var(--color-primary);text-decoration:none">Myndighetspyramiden</a> · <a href="/laeringsressurser/trafikklys-signaler" style="color:var(--color-primary);text-decoration:none">Trafikklys og signaler</a>
-  </div>
-</div>
-
-<!-- Tema D -->
-<div style="border:1px solid var(--color-border);border-radius:14px;padding:1.5rem;background:var(--color-bg);display:flex;flex-direction:column;height:100%">
-  <div style="display:grid;grid-template-columns:28px 1fr auto;gap:0.75rem;align-items:start;margin-bottom:1.25rem">
-    <div style="background:var(--color-primary);color:#fff;width:28px;height:26px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:0.9rem;font-weight:800;margin-top:2px">D</div>
-    <strong style="font-size:1.05rem;color:var(--color-text);line-height:1.3">Fører, ansvar og risiko</strong>
-    <span style="background:#22c55e;color:#fff;font-size:0.6rem;font-weight:700;padding:3px 10px;border-radius:99px;text-transform:uppercase;margin-top:4px">Godt</span>
-  </div>
-  <ul style="margin:0 0 1.5rem 0;padding-left:1.3rem;color:var(--color-text-light);font-size:0.875rem;line-height:1.7;flex-grow:1">
-    <li>Reaksjonstid og sanser</li><li>Tretthet og uoppmerksomhet</li><li>Rus, promille og pliktmessig avhold</li><li>Helsekrav, førerrett og øvelseskjøring</li><li>Miljøvennlig kjøring</li>
-  </ul>
-  <div style="font-size:0.82rem;color:var(--color-text-light);border-top:1px solid var(--color-border);padding-top:1rem">
-    <span style="opacity:0.7;font-weight:600">Les:</span> <a href="/laeringsressurser/promille" style="color:var(--color-primary);text-decoration:none">Promille og rus</a> · <a href="/laeringsressurser/reaksjonstid" style="color:var(--color-primary);text-decoration:none">Reaksjonstid</a> · <a href="/laeringsressurser/ovingskjoring" style="color:var(--color-primary);text-decoration:none">Øvelseskjøring</a> · <a href="/laeringsressurser/miljo" style="color:var(--color-primary);text-decoration:none">Miljøvennlig kjøring</a>
-  </div>
-</div>
-
-<!-- Tema E -->
-<div style="border:1px solid var(--color-border);border-radius:14px;padding:1.5rem;background:var(--color-bg);display:flex;flex-direction:column;height:100%">
-  <div style="display:grid;grid-template-columns:28px 1fr auto;gap:0.75rem;align-items:start;margin-bottom:1.25rem">
-    <div style="background:var(--color-primary);color:#fff;width:28px;height:26px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:0.9rem;font-weight:800;margin-top:2px">E</div>
-    <strong style="font-size:1.05rem;color:var(--color-text);line-height:1.3">Kjøretøyet</strong>
-    <span style="background:#f59e0b;color:#fff;font-size:0.6rem;font-weight:700;padding:3px 10px;border-radius:99px;text-transform:uppercase;margin-top:4px">Delvis</span>
-  </div>
-  <ul style="margin:0 0 1.5rem 0;padding-left:1.3rem;color:var(--color-text-light);font-size:0.875rem;line-height:1.7;flex-grow:1">
-    <li>Dekk, bremser og styring</li><li>Sikkerhetskontroll og varsellamper</li><li>Vognkort, tilhenger og vekter</li><li>Drivstoff, energikilder og elbil</li><li>Førerstøttesystemer og automatlappen</li>
-  </ul>
-  <div style="font-size:0.82rem;color:var(--color-text-light);border-top:1px solid var(--color-border);padding-top:1rem">
-    <span style="opacity:0.7;font-weight:600">Les:</span> <a href="/laeringsressurser/dekk-bremser-styring" style="color:var(--color-primary);text-decoration:none">Dekk, bremser og styring</a> · <a href="/laeringsressurser/sikkerhetskontroll" style="color:var(--color-primary);text-decoration:none">Sikkerhetskontroll</a> · <a href="/laeringsressurser/tilhenger" style="color:var(--color-primary);text-decoration:none">Tilhenger</a> · <a href="/laeringsressurser/vognkort-vekter" style="color:var(--color-primary);text-decoration:none">Vognkort og vekter</a> · <a href="/laeringsressurser/automatlappen" style="color:var(--color-primary);text-decoration:none">Automatlappen</a> · <a href="/laeringsressurser/bilens-lys" style="color:var(--color-primary);text-decoration:none">Bilens lys</a>
-  </div>
-</div>
-
-<!-- Tema F -->
-<div style="border:1px solid var(--color-border);border-radius:14px;padding:1.5rem;background:var(--color-bg);display:flex;flex-direction:column;height:100%">
-  <div style="display:grid;grid-template-columns:28px 1fr auto;gap:0.75rem;align-items:start;margin-bottom:1.25rem">
-    <div style="background:var(--color-primary);color:#fff;width:28px;height:26px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:0.9rem;font-weight:800;margin-top:2px">F</div>
-    <strong style="font-size:1.05rem;color:var(--color-text);line-height:1.3">Lover, regler og myndighet</strong>
-    <span style="background:#f59e0b;color:#fff;font-size:0.6rem;font-weight:700;padding:3px 10px;border-radius:99px;text-transform:uppercase;margin-top:4px">Delvis</span>
-  </div>
-  <ul style="margin:0 0 1.5rem 0;padding-left:1.3rem;color:var(--color-text-light);font-size:0.875rem;line-height:1.7;flex-grow:1">
-    <li>Vegtrafikkloven og trafikkregler</li><li>Offentlige reaksjoner, bøter og prikker</li><li>Registrering, forsikring og omregistrering</li><li>Myndighetspyramiden</li>
-  </ul>
-  <div style="font-size:0.82rem;color:var(--color-text-light);border-top:1px solid var(--color-border);padding-top:1rem">
-    <span style="opacity:0.7;font-weight:600">Les:</span> <a href="/laeringsressurser/myndighetspyramiden" style="color:var(--color-primary);text-decoration:none">Myndighetspyramiden</a> · <a href="/laeringsressurser/vognkort-vekter" style="color:var(--color-primary);text-decoration:none">Vognkort og vekter</a> · <a href="/laeringsressurser/promille" style="color:var(--color-primary);text-decoration:none">Promille</a>
-  </div>
-</div>
-
-<!-- Tema G -->
-<div style="border:1px solid var(--color-border);border-radius:14px;padding:1.5rem;background:var(--color-bg);display:flex;flex-direction:column;height:100%">
-  <div style="display:grid;grid-template-columns:28px 1fr auto;gap:0.75rem;align-items:start;margin-bottom:1.25rem">
-    <div style="background:var(--color-primary);color:#fff;width:28px;height:26px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:0.9rem;font-weight:800;margin-top:2px">G</div>
-    <strong style="font-size:1.05rem;color:var(--color-text);line-height:1.3">Uhell, førstehjelp og sikkerhet</strong>
-    <span style="background:#22c55e;color:#fff;font-size:0.6rem;font-weight:700;padding:3px 10px;border-radius:99px;text-transform:uppercase;margin-top:4px">Godt</span>
-  </div>
-  <ul style="margin:0 0 1.5rem 0;padding-left:1.3rem;color:var(--color-text-light);font-size:0.875rem;line-height:1.7;flex-grow:1">
-    <li>Førstehjelp og plikter ved uhell</li><li>Sikkerhetsutstyr og varseltrekant</li><li>Tunnelsikkerhet og nødtelefon</li><li>Snø på tak og isfrie ruter</li>
-  </ul>
-  <div style="font-size:0.82rem;color:var(--color-text-light);border-top:1px solid var(--color-border);padding-top:1rem">
-    <span style="opacity:0.7;font-weight:600">Les:</span> <a href="/laeringsressurser/trafikkuhell-forstehjelp" style="color:var(--color-primary);text-decoration:none">Trafikkuhell og førstehjelp</a> · <a href="/laeringsressurser/sikkerhetsutstyr" style="color:var(--color-primary);text-decoration:none">Sikkerhetsutstyr</a> · <a href="/laeringsressurser/glatt-fore" style="color:var(--color-primary);text-decoration:none">Glatt føre</a> · <a href="/laeringsressurser/lysbruk-morkekjoring" style="color:var(--color-primary);text-decoration:none">Mørkekjøring</a>
-  </div>
-</div>
+                content: `<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:1rem">
+<div style="border:1px solid var(--color-border);border-radius:12px;padding:1.25rem;background:var(--color-bg);"><strong style="color:var(--color-text)">1. Vikeplikt og kryss</strong><p style="color:var(--color-text-light);font-size:0.9rem;line-height:1.6">Vikeplikt, høyreregel, rundkjøring, buss fra holdeplass, trikk og trafikklys.</p><a href="/laeringsressurser/vikeplikt" style="color:var(--color-primary);text-decoration:none">Start med vikeplikt</a></div>
+<div style="border:1px solid var(--color-border);border-radius:12px;padding:1.25rem;background:var(--color-bg);"><strong style="color:var(--color-text)">2. Trafikkskilt</strong><p style="color:var(--color-text-light);font-size:0.9rem;line-height:1.6">Skiltgrupper, fareskilt, forbudsskilt, påbudsskilt og planovergang.</p><a href="/laeringsressurser/skilt" style="color:var(--color-primary);text-decoration:none">Les om trafikkskilt</a></div>
+<div style="border:1px solid var(--color-border);border-radius:12px;padding:1.25rem;background:var(--color-bg);"><strong style="color:var(--color-text)">3. Fart og plassering</strong><p style="color:var(--color-text-light);font-size:0.9rem;line-height:1.6">Fartsgrenser, feltvalg, forbikjøring, fletting og kollektivfelt.</p><a href="/laeringsressurser/fartsgrenser" style="color:var(--color-primary);text-decoration:none">Les om fartsgrenser</a></div>
+<div style="border:1px solid var(--color-border);border-radius:12px;padding:1.25rem;background:var(--color-bg);"><strong style="color:var(--color-text)">4. Bremselengde og reaksjonstid</strong><p style="color:var(--color-text-light);font-size:0.9rem;line-height:1.6">Reaksjonslengde, bremselengde, stopplengde, glatt føre og veggrep.</p><a href="/laeringsressurser/bremselengde" style="color:var(--color-primary);text-decoration:none">Øv på bremselengde</a></div>
+<div style="border:1px solid var(--color-border);border-radius:12px;padding:1.25rem;background:var(--color-bg);"><strong style="color:var(--color-text)">5. Parkering og stans</strong><p style="color:var(--color-text-light);font-size:0.9rem;line-height:1.6">Stans, parkering, tunnel, gangfelt, kryss og steder med stansforbud.</p><a href="/laeringsressurser/stans-og-parkering" style="color:var(--color-primary);text-decoration:none">Les om stans og parkering</a></div>
+<div style="border:1px solid var(--color-border);border-radius:12px;padding:1.25rem;background:var(--color-bg);"><strong style="color:var(--color-text)">6. Veimerking</strong><p style="color:var(--color-text-light);font-size:0.9rem;line-height:1.6">Sperrelinje, varsellinje, kjørefeltlinjer, kantlinjer og symboler i veibanen.</p><a href="/laeringsressurser/veimerking" style="color:var(--color-primary);text-decoration:none">Les om veimerking</a></div>
+<div style="border:1px solid var(--color-border);border-radius:12px;padding:1.25rem;background:var(--color-bg);"><strong style="color:var(--color-text)">7. Kjøretøy og teknisk</strong><p style="color:var(--color-text-light);font-size:0.9rem;line-height:1.6">Dekk, bremser, styring, lys, vognkort, tilhenger og førerstøttesystemer.</p><a href="/laeringsressurser/dekk-bremser-styring" style="color:var(--color-primary);text-decoration:none">Les om kjøretøyet</a></div>
+<div style="border:1px solid var(--color-border);border-radius:12px;padding:1.25rem;background:var(--color-bg);"><strong style="color:var(--color-text)">8. Trafikanter og samspill</strong><p style="color:var(--color-text-light);font-size:0.9rem;line-height:1.6">Myke trafikanter, barn i bil, miljø, øvelseskjøring og samhandling.</p><a href="/laeringsressurser/ovingskjoring" style="color:var(--color-primary);text-decoration:none">Les om øvelseskjøring</a></div>
+<div style="border:1px solid var(--color-border);border-radius:12px;padding:1.25rem;background:var(--color-bg);"><strong style="color:var(--color-text)">9. Sikkerhet og førstehjelp</strong><p style="color:var(--color-text-light);font-size:0.9rem;line-height:1.6">Sikkerhetsutstyr, førstehjelp, promille, trafikkuhell og skadeforebygging.</p><a href="/laeringsressurser/sikkerhetsutstyr" style="color:var(--color-primary);text-decoration:none">Les om sikkerhet</a></div>
+<div style="border:1px solid var(--color-border);border-radius:12px;padding:1.25rem;background:var(--color-bg);"><strong style="color:var(--color-text)">10. Lover og ansvar</strong><p style="color:var(--color-text-light);font-size:0.9rem;line-height:1.6">Vegtrafikkloven §3, prikker, forelegg, førerkortbeslag, forsikring og plikter ved ulykke.</p><a href="/laeringsressurser/vegtrafikkloven-paragraf-3" style="color:var(--color-primary);text-decoration:none">Les om føreransvar</a></div>
 </div>`
             },
             {
-                title: 'Forberedelser og veien videre',
+                title: 'Hvorfor denne inndelingen er nyttig',
                 type: 'info',
-                content: 'Disse sidene handler ikke bare om pensum, men om hvordan du forbereder deg, unngår vanlige feil og kommer videre etter teoriprøven.\n\n- [Vanlige feil på teoriprøven](/laeringsressurser/vanlige-feil-teoriproven)\n- [Tips til teoriprøven](/laeringsressurser/tips-eksamen)\n- [Strøket på teoriprøven?](/laeringsressurser/stroket-teoriproven)\n- [Oppkjøring](/laeringsressurser/oppkjoring)'
+                content: 'Når du tar en full prøve på Teori-test.no, kan resultatanalysen vise hvilke av disse hovedtemaene du scorer svakt på. Da blir det enklere å gå rett fra resultatet til riktig læringsressurs, i stedet for å lese alt på nytt.'
             },
             {
-                title: 'Dekkingsoversikt – Statens vegvesen temaliste klasse B',
+                title: 'Hva bør du prioritere først?',
                 type: 'table',
-                content: `<div style="margin-bottom:1.5rem;padding:1rem;border-radius:10px;background:rgba(0,0,0,0.02);border:1px solid var(--color-border);color:var(--color-text-light);font-size:0.875rem;line-height:1.6">Vi bygger ut siden fortløpende. Nye artikler, guider og oppgaver legges til etter hvert for å dekke temalisten på en god måte. Du finner også mer informasjon på <a href="https://www.vegvesen.no/forerkort/ta-forerkort/teoriprove/" target="_blank" rel="noopener noreferrer" style="color:var(--color-primary);text-decoration:none">Statens vegvesen sine sider om teoriprøven</a>.</div><table style="width:100%;border-collapse:collapse;font-size:0.875rem">
-<thead><tr style="border-bottom:2px solid var(--color-border)">
-<th style="padding:8px 10px;text-align:left;color:var(--color-text-light);font-size:0.75rem;text-transform:uppercase;letter-spacing:0.05em">Tema</th>
-<th style="padding:8px 10px;text-align:left;color:var(--color-text-light);font-size:0.75rem;text-transform:uppercase;letter-spacing:0.05em">Status</th>
-<th style="padding:8px 10px;text-align:left;color:var(--color-text-light);font-size:0.75rem;text-transform:uppercase;letter-spacing:0.05em">Sider på Teori-test.no</th>
-</tr></thead>
+                content: `<div class="responsive-theory-table-wrapper"><table class="responsive-theory-table" style="width:100%;border-collapse:collapse;font-size:0.9rem"><thead><tr style="background-color:var(--color-surface);border-bottom:2px solid var(--color-border)"><th style="padding:12px 8px;text-align:left">Hvis du sliter med</th><th style="padding:12px 8px;text-align:left">Start her</th><th style="padding:12px 8px;text-align:left">Hvorfor</th></tr></thead>
 <tbody>
-<tr style="border-bottom:1px solid var(--color-border)"><td style="padding:8px 10px;color:var(--color-text)">A – Fart og samhandling</td><td style="padding:8px 10px"><span style="background:#22c55e;color:#fff;font-size:0.68rem;font-weight:700;padding:2px 8px;border-radius:99px">Godt</span></td><td style="padding:8px 10px;color:var(--color-text-light)">Fartsgrenser, Rundkjøring, Forbikjøring, Stans og parkering</td></tr>
-<tr style="border-bottom:1px solid var(--color-border)"><td style="padding:8px 10px;color:var(--color-text)">B – Sikt, føre og lys</td><td style="padding:8px 10px"><span style="background:#22c55e;color:#fff;font-size:0.68rem;font-weight:700;padding:2px 8px;border-radius:99px">Godt</span></td><td style="padding:8px 10px;color:var(--color-text-light)">Bremselengde, Reaksjonstid, Mørkekjøring, Bilens lys, Glatt føre</td></tr>
-<tr style="border-bottom:1px solid var(--color-border)"><td style="padding:8px 10px;color:var(--color-text)">C – Trafikkskilt og vikeplikt</td><td style="padding:8px 10px"><span style="background:#22c55e;color:#fff;font-size:0.68rem;font-weight:700;padding:2px 8px;border-radius:99px">Godt</span></td><td style="padding:8px 10px;color:var(--color-text-light)">Vikeplikt, Trafikkskilt, Veimerking, Myndighetspyramiden, Trafikklys og signaler</td></tr>
-<tr style="border-bottom:1px solid var(--color-border)"><td style="padding:8px 10px;color:var(--color-text)">D – Fører og risiko</td><td style="padding:8px 10px"><span style="background:#22c55e;color:#fff;font-size:0.68rem;font-weight:700;padding:2px 8px;border-radius:99px">Godt</span></td><td style="padding:8px 10px;color:var(--color-text-light)">Promille og rus, Reaksjonstid, Øvelseskjøring, Miljøvennlig kjøring</td></tr>
-<tr style="border-bottom:1px solid var(--color-border)"><td style="padding:8px 10px;color:var(--color-text)">E – Kjøretøyet</td><td style="padding:8px 10px"><span style="background:#f59e0b;color:#fff;font-size:0.68rem;font-weight:700;padding:2px 8px;border-radius:99px">Delvis</span></td><td style="padding:8px 10px;color:var(--color-text-light)">Dekk, bremser og styring, Sikkerhetskontroll, Tilhenger, Vognkort og vekter, Automatlappen, Bilens lys</td></tr>
-<tr style="border-bottom:1px solid var(--color-border)"><td style="padding:8px 10px;color:var(--color-text)">F – Lover og myndighet</td><td style="padding:8px 10px"><span style="background:#f59e0b;color:#fff;font-size:0.68rem;font-weight:700;padding:2px 8px;border-radius:99px">Delvis</span></td><td style="padding:8px 10px;color:var(--color-text-light)">Myndighetspyramiden, Vognkort og vekter, Promille, Trafikkuhell og førstehjelp</td></tr>
-<tr style="border-bottom:1px solid var(--color-border)"><td style="padding:8px 10px;color:var(--color-text)">G – Uhell og sikkerhet</td><td style="padding:8px 10px"><span style="background:#22c55e;color:#fff;font-size:0.68rem;font-weight:700;padding:2px 8px;border-radius:99px">Godt</span></td><td style="padding:8px 10px;color:var(--color-text-light)">Trafikkuhell og førstehjelp, Sikkerhetsutstyr, Glatt føre, Mørkekjøring</td></tr>
-<tr style="border-bottom:1px solid var(--color-border)"><td style="padding:8px 10px;color:var(--color-text)">Forberedelser og veien videre</td><td style="padding:8px 10px"><span style="background:#22c55e;color:#fff;font-size:0.68rem;font-weight:700;padding:2px 8px;border-radius:99px">Godt</span></td><td style="padding:8px 10px;color:var(--color-text-light)">Vanlige feil, Tips til teoriprøven, Strøket på teoriprøven?, Oppkjøring</td></tr>
-</tbody></table>`
+<tr style="border-bottom:1px solid var(--color-border)"><td style="padding:12px 8px">Mange regelspørsmål</td><td style="padding:12px 8px"><a href="/laeringsressurser/vegtrafikkloven-paragraf-3" style="color:var(--color-primary);text-decoration:none">Vegtrafikkloven §3</a></td><td style="padding:12px 8px;color:var(--color-text-light)">Grunnregelen forklarer hvorfor det tryggeste svaret ofte er riktig.</td></tr>
+<tr style="border-bottom:1px solid var(--color-border)"><td style="padding:12px 8px">Skilt og oppmerking</td><td style="padding:12px 8px"><a href="/laeringsressurser/skilt" style="color:var(--color-primary);text-decoration:none">Trafikkskilt</a> og <a href="/laeringsressurser/veimerking" style="color:var(--color-primary);text-decoration:none">veimerking</a></td><td style="padding:12px 8px;color:var(--color-text-light)">Mange feil kommer av at skilt og linjer blandes sammen.</td></tr>
+<tr style="border-bottom:1px solid var(--color-border)"><td style="padding:12px 8px">Situasjoner i trafikken</td><td style="padding:12px 8px"><a href="/laeringsressurser/vikeplikt" style="color:var(--color-primary);text-decoration:none">Vikeplikt</a> og <a href="/laeringsressurser/feltvalg-fletting-kollektivfelt" style="color:var(--color-primary);text-decoration:none">feltvalg</a></td><td style="padding:12px 8px;color:var(--color-text-light)">Dette trener vurdering, ikke bare pugging.</td></tr>
+<tr><td style="padding:12px 8px">Teknisk og kontroll</td><td style="padding:12px 8px"><a href="/laeringsressurser/sikkerhetskontroll" style="color:var(--color-primary);text-decoration:none">Sikkerhetskontroll</a></td><td style="padding:12px 8px;color:var(--color-text-light)">Dette er nyttig både til teoriprøven og oppkjøringen.</td></tr>
+</tbody></table></div>`
             }
         ],
         faq: [
             {
                 question: 'Hva kommer på teoriprøven klasse B?',
-                answer: 'Teoriprøven klasse B dekker 7 hovedtemaer: fart og samhandling, sikt og lys, skilt og vikeplikt, føreransvar og risiko, kjøretøyet, lover og regler, samt ulykker og sikkerhet. Du får 45 spørsmål og kan ha maks 7 feil for å bestå.'
+                answer: 'Teoriprøven klasse B kan dekke hele læreplanen. På Teori-test.no deler vi stoffet inn i 10 hovedtemaer: vikeplikt og kryss, trafikkskilt, fart og plassering, bremselengde og reaksjonstid, parkering og stans, veimerking, kjøretøy og teknisk, trafikanter og samspill, sikkerhet og førstehjelp, samt lover og ansvar.'
             },
             {
                 question: 'Er temalisten det samme som pensum?',
-                answer: 'Ja, i praksis. Læreplanen for klasse B (Håndbok V851) fra Statens vegvesen beskriver hvilke emner du kan bli testet på. Det er ikke en fasit på hvilke spørsmål du får, men en oversikt over hva du må forstå for å bestå.'
+                answer: 'Temalisten er en praktisk inndeling av pensumområdene. Den er ikke en fasit på hvilke spørsmål du får, men hjelper deg å se hvilke fagområder du bør beherske.'
             },
             {
                 question: 'Må jeg kunne alle temaene?',
@@ -2929,7 +2826,7 @@ export const theoryTopics: TheoryTopic[] = [
             },
             {
                 question: 'Hvordan bør jeg bruke temalisten når jeg øver?',
-                answer: 'Bruk listen som en personlig sjekkliste. Finn temaene du er mest usikker på, les guidene våre på Teori-test.no, og test deretter kunnskapene dine med tematilpassede quizer. Avslutt med å ta fulle øvingsprøver under tidsbegrensning.'
+                answer: 'Bruk listen som en personlig sjekkliste. Les guidene i temaene du er usikker på, ta en full øvingsprøve, og bruk resultatanalysen til å gå tilbake til riktig kategori.'
             },
             {
                 question: 'Hvor finner jeg Statens vegvesen sin temaliste?',
@@ -5825,6 +5722,655 @@ I bil uten bilbelte er reglene strengere: Barn under 3 år skal ikke transporter
             }
         ]
     },
+
+    {
+        id: 'vegtrafikkloven-paragraf-3',
+        title: 'Vegtrafikkloven §3: grunnregelen alle må kunne',
+        icon: '⚖️',
+        shortDescription: 'Forstå hva det betyr å kjøre hensynsfullt, aktpågivende og varsomt, og hvorfor §3 er grunnmuren i trafikkreglene.',
+        color: 'var(--apple-blue)',
+        seoTitle: 'Vegtrafikkloven §3: hensynsfull, aktpågivende og varsom',
+        seoDescription: 'Lær hva Vegtrafikkloven §3 betyr til teoriprøven: hensynsfull, aktpågivende og varsom kjøring, typiske teorifeller og føreransvar.',
+        sections: [
+            {
+                title: 'Vegtrafikkloven §3',
+                type: 'text',
+                content: `Vegtrafikkloven §3 er grunnregelen for all trafikk. På teoriprøven brukes den ofte som bakgrunn for spørsmål om fart, vikeplikt, samspill, barn, eldre, ulykker og farlige situasjoner.
+
+Poenget er enkelt: Du skal ikke bare følge skilt og regler mekanisk. Du skal også kjøre slik at du ikke skaper fare, skade, unødvendig hinder eller unødvendig ulempe for andre.`
+            },
+            {
+                title: 'Kort forklart',
+                type: 'info',
+                content: `Vegtrafikkloven §3 betyr at du alltid skal kjøre hensynsfullt, aktpågivende og varsomt. Hvis en situasjon er uklar, skal du velge den løsningen som gir mest sikkerhet og minst risiko. På teoriprøven er dette ofte grunnen til at "jeg har lov" ikke alltid er riktig svar.`
+            },
+            {
+                title: 'Hva betyr ordene?',
+                type: 'table',
+                content: `<div class="responsive-theory-table-wrapper" style="margin-top: 1rem;"><table class="responsive-theory-table" style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem;"><thead><tr style="background-color: var(--color-surface); border-bottom: 2px solid var(--color-border);"><th style="padding: 12px 8px;">Begrep</th><th style="padding: 12px 8px;">Hva betyr det?</th><th style="padding: 12px 8px;">Eksempel</th></tr></thead><tbody><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">Hensynsfull</td><td style="padding: 12px 8px;">Du tar hensyn til andre trafikanter og personer langs veien</td><td style="padding: 12px 8px;">Senke farten ved barn, skole, buss eller fotgjengere</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">Aktpågivende</td><td style="padding: 12px 8px;">Du følger med og oppdager risiko tidlig</td><td style="padding: 12px 8px;">Se etter syklister, skilt, lys, kø og sideveier</td></tr><tr><td style="padding: 12px 8px;">Varsom</td><td style="padding: 12px 8px;">Du velger fart og handling med god sikkerhetsmargin</td><td style="padding: 12px 8px;">Vente litt ekstra hvis du er usikker</td></tr></tbody></table></div>`
+            },
+            {
+                title: 'Slik brukes §3 på teoriprøven',
+                type: 'tip',
+                content: `Når to svar virker lovlige, skal du ofte velge det mest trygge og forutsigbare svaret. §3 handler om vurdering, ikke bare pugging.
+
+Typiske eksempler er at du må senke farten ved dårlig sikt, gi ekstra plass til myke trafikanter, vente hvis du kan bli stående i et kryss, eller avverge fare selv om du egentlig har forkjørsrett.`
+            },
+            {
+                title: 'Typiske §3-situasjoner',
+                type: 'table',
+                content: `<div class="responsive-theory-table-wrapper" style="margin-top: 1rem;"><table class="responsive-theory-table" style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem;"><thead><tr style="background-color: var(--color-surface); border-bottom: 2px solid var(--color-border);"><th style="padding: 12px 8px;">Situasjon</th><th style="padding: 12px 8px;">Hva §3 krever</th><th style="padding: 12px 8px;">Riktig tankegang</th></tr></thead><tbody><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">Du har forkjørsrett, men en annen trafikant virker usikker</td><td style="padding: 12px 8px;">Du må fortsatt være aktpågivende og kunne avverge fare</td><td style="padding: 12px 8px;">Rett til å kjøre først er ikke det samme som rett til å skape fare</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">Fartsgrensen er 80, men sikten er dårlig</td><td style="padding: 12px 8px;">Farten må tilpasses forholdene</td><td style="padding: 12px 8px;">Lovlig fartsgrense er en øvre grense, ikke en garanti for trygg fart</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">Barn, eldre eller fotgjengere ved veien</td><td style="padding: 12px 8px;">Du skal vise ekstra hensyn</td><td style="padding: 12px 8px;">Senk farten og gjør deg klar til å stoppe</td></tr><tr><td style="padding: 12px 8px;">Kø på andre siden av krysset</td><td style="padding: 12px 8px;">Du skal ikke hindre eller forstyrre unødig</td><td style="padding: 12px 8px;">Vent hvis du risikerer å bli stående og blokkere</td></tr></tbody></table></div>`
+            },
+            {
+                title: 'Typiske teorifeller',
+                type: 'warning',
+                content: `En vanlig feil er å tenke at "jeg har rett" er nok. I trafikken har du også ansvar for å hindre farlige situasjoner når du kan gjøre det på en trygg måte.
+
+En annen felle er å velge høyeste lovlige fart. Fartsgrensen er en øvre grense, ikke en anbefalt fart i alle situasjoner.`
+            },
+            {
+                title: 'Les mer',
+                type: 'text',
+                content: `Denne grunnregelen henger sammen med [vikeplikt](/laeringsressurser/vikeplikt), [fartsgrenser](/laeringsressurser/fartsgrenser), [bremselengde](/laeringsressurser/bremselengde), [plikter ved ulykke](/laeringsressurser/plikter-ved-ulykke) og [forsikring og ansvar](/laeringsressurser/forsikring-og-ansvar). Se også [Vegtrafikkloven på Lovdata](https://lovdata.no/dokument/NL/lov/1965-06-18-4).`
+            }
+        ],
+        faq: [
+            {
+                question: 'Hva betyr Vegtrafikkloven §3?',
+                answer: 'Den betyr at alle trafikanter skal opptre hensynsfullt, aktpågivende og varsomt, slik at det ikke oppstår fare, skade eller unødvendig hinder.'
+            },
+            {
+                question: 'Hvorfor er §3 viktig på teoriprøven?',
+                answer: 'Fordi mange spørsmål tester vurdering og ansvar, ikke bare om du kan en enkelt regel utenat.'
+            },
+            {
+                question: 'Kan du bryte §3 selv om du følger fartsgrensen?',
+                answer: 'Ja. Hvis farten er for høy for sikt, føre eller trafikkmiljø, kan kjøringen være uforsvarlig selv om du er under fartsgrensen.'
+            },
+            {
+                question: 'Hva betyr aktpågivende?',
+                answer: 'At du følger aktivt med, ser etter risiko og oppdager faresituasjoner tidlig.'
+            },
+            {
+                question: 'Kan du få ansvar selv om du hadde forkjørsrett?',
+                answer: 'Ja. Hvis du opptrer uforsiktig eller ikke forsøker å avverge en tydelig fare, kan du likevel ha brutt grunnregelen om hensynsfull, aktpågivende og varsom ferdsel.'
+            },
+            {
+                question: 'Hva betyr unødig hinder i trafikken?',
+                answer: 'Det betyr at du ikke skal hindre eller forstyrre andre trafikanter mer enn situasjonen krever, for eksempel ved å blokkere et kryss unødvendig.'
+            }
+        ],
+        miniQuiz: [
+            {
+                question: 'Hva er hovedpoenget med Vegtrafikkloven §3?',
+                options: ['Å kjøre så nær fartsgrensen som mulig', 'Å opptre hensynsfullt, aktpågivende og varsomt', 'Å alltid kjøre først når du har forkjørsrett', 'Å bare følge trafikkskilt'],
+                correct: 'Å opptre hensynsfullt, aktpågivende og varsomt',
+                explanation: '§3 er grunnregelen om ansvar, hensyn og aktsomhet i trafikken.'
+            },
+            {
+                question: 'Du har forkjørsrett, men en syklist virker usikker. Hva passer best med §3?',
+                options: ['Holde farten og vise at du har rett', 'Tute og kjøre forbi tett', 'Senke farten og være klar til å avverge fare', 'Lukke øynene for situasjonen'],
+                correct: 'Senke farten og være klar til å avverge fare',
+                explanation: 'Du skal bidra til sikker trafikk selv om du i utgangspunktet har retten på din side.'
+            },
+            {
+                question: 'Hva betyr det at fartsgrensen er en øvre grense?',
+                options: ['Du bør alltid kjøre akkurat i fartsgrensen', 'Du kan måtte kjøre saktere når forholdene krever det', 'Du kan kjøre fortere ved god sikt', 'Fartsgrensen gjelder bare på dagtid'],
+                correct: 'Du kan måtte kjøre saktere når forholdene krever det',
+                explanation: 'Fart skal tilpasses sikt, føre, trafikk og risiko.'
+            },
+            {
+                question: 'Du ser at krysset foran er fullt av kø. Hva passer best med §3?',
+                options: ['Kjøre inn fordi du har grønt lys', 'Vente hvis du kan bli stående og blokkere krysset', 'Tute og presse deg frem', 'Stoppe midt i gangfeltet'],
+                correct: 'Vente hvis du kan bli stående og blokkere krysset',
+                explanation: 'Du skal ikke skape unødvendig hinder eller farlige situasjoner for andre trafikanter.'
+            }
+        ]
+    },
+
+    {
+        id: 'plikter-ved-ulykke',
+        title: 'Plikter ved ulykke: hva må du gjøre?',
+        icon: '🚨',
+        shortDescription: 'Lær hva du plikter å gjøre ved trafikkuhell: stanse, sikre, hjelpe, varsle og oppgi opplysninger.',
+        color: 'var(--apple-red)',
+        seoTitle: 'Plikter ved ulykke: dette må du gjøre ved trafikkuhell',
+        seoDescription: 'Se hva du må gjøre ved trafikkuhell til teoriprøven: stanse, sikre skadested, hjelpe personer og dyr, varsle politiet og oppgi opplysninger.',
+        sections: [
+            {
+                title: 'Plikter ved ulykke',
+                type: 'text',
+                content: `Ved trafikkuhell har du plikter selv om du ikke har skyld i ulykken. På teoriprøven handler temaet ofte om riktig rekkefølge: stanse, sikre, hjelpe, varsle og oppgi opplysninger.`
+            },
+            {
+                title: 'Kort forklart',
+                type: 'info',
+                content: `Er du innblandet i et trafikkuhell, skal du stanse straks, hjelpe personer og dyr som er skadet, og delta i nødvendige tiltak. De innblandede skal oppgi navn og adresse til hverandre. Ved personskade som ikke er ubetydelig, eller dødsfall, skal politiet varsles så raskt som mulig.`
+            },
+            {
+                title: 'Hva gjør du først?',
+                type: 'table',
+                content: `<div class="responsive-theory-table-wrapper" style="margin-top: 1rem;"><table class="responsive-theory-table" style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem;"><thead><tr style="background-color: var(--color-surface); border-bottom: 2px solid var(--color-border);"><th style="padding: 12px 8px;">Situasjon</th><th style="padding: 12px 8px;">Riktig handling</th><th style="padding: 12px 8px;">Teorifelle</th></tr></thead><tbody><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">Du er innblandet i uhell</td><td style="padding: 12px 8px;">Stans straks og få oversikt</td><td style="padding: 12px 8px;">Ikke kjør videre fordi skaden virker liten</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">Fare for nye ulykker</td><td style="padding: 12px 8px;">Sikre stedet med nødblink, refleksvest og varsling</td><td style="padding: 12px 8px;">Ikke sett deg selv i unødvendig fare</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">Person eller dyr er skadet</td><td style="padding: 12px 8px;">Hjelp og varsle nødetater ved behov</td><td style="padding: 12px 8px;">Ikke prioriter skade på bilen først</td></tr><tr><td style="padding: 12px 8px;">Alvorlig personskade</td><td style="padding: 12px 8px;">Sørg for at politiet blir varslet</td><td style="padding: 12px 8px;">Du kan normalt ikke bare avtale deg bort fra dette</td></tr></tbody></table></div>`
+            },
+            {
+                title: 'Riktig rekkefølge',
+                type: 'tip',
+                content: `Tenk slik på teoriprøven: stans, få oversikt, sikre skadestedet, hjelp skadde, varsle ved behov og oppgi nødvendige opplysninger. Hvis liv og helse står på spill, kommer hjelp og varsling foran praktiske detaljer som forsikring og bilder av skade.`
+            },
+            {
+                title: 'Personskade eller bare materiell skade?',
+                type: 'table',
+                content: `<div class="responsive-theory-table-wrapper" style="margin-top: 1rem;"><table class="responsive-theory-table" style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem;"><thead><tr style="background-color: var(--color-surface); border-bottom: 2px solid var(--color-border);"><th style="padding: 12px 8px;">Type uhell</th><th style="padding: 12px 8px;">Dette må du gjøre</th><th style="padding: 12px 8px;">Husk til teoriprøven</th></tr></thead><tbody><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">Personskade som ikke er ubetydelig, eller dødsfall</td><td style="padding: 12px 8px;">Sørg for at politiet varsles raskt</td><td style="padding: 12px 8px;">De innblandede skal normalt ikke forlate stedet før politiet kommer</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">Skadet dyr</td><td style="padding: 12px 8px;">Stans og hjelp så langt det er mulig og forsvarlig</td><td style="padding: 12px 8px;">Plikten gjelder også dyr som er kommet til skade</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">Materiell skade med partene til stede</td><td style="padding: 12px 8px;">Oppgi navn og adresse, og som fører også eieropplysninger og kjennemerke</td><td style="padding: 12px 8px;">Ikke dra uten å utveksle nødvendige opplysninger</td></tr><tr><td style="padding: 12px 8px;">Materiell skade uten eier/skadelidt til stede</td><td style="padding: 12px 8px;">Underrett skadelidte eller politiet så snart som mulig</td><td style="padding: 12px 8px;">En lapp kan være utilstrekkelig hvis den ikke faktisk gir beskjed</td></tr></tbody></table></div>`
+            },
+            {
+                title: 'Typiske teorifeller',
+                type: 'warning',
+                content: `En vanlig felle er å velge "flytte bilen først" uten å vurdere skadde personer eller ny fare. En annen felle er å forlate stedet for tidlig. Ved alvorlig personskade skal de innblandede normalt bli på stedet til politiet kommer, med mindre det er nødvendig å dra.`
+            },
+            {
+                title: 'Les mer',
+                type: 'text',
+                content: `Les også om [trafikkuhell og førstehjelp](/laeringsressurser/trafikkuhell-forstehjelp), [sikkerhetsutstyr](/laeringsressurser/sikkerhetsutstyr), [stans i tunnel](/laeringsressurser/tunnelsikkerhet), [Vegtrafikkloven §3](/laeringsressurser/vegtrafikkloven-paragraf-3) og [Vegtrafikkloven på Lovdata](https://lovdata.no/dokument/NL/lov/1965-06-18-4).`
+            }
+        ],
+        faq: [
+            {
+                question: 'Må du stanse ved trafikkuhell?',
+                answer: 'Ja. Er du innblandet i et trafikkuhell, skal du stanse straks og delta i nødvendige tiltak.'
+            },
+            {
+                question: 'Må du hjelpe dyr som er skadet i trafikkuhell?',
+                answer: 'Ja. Plikten gjelder også dyr som er kommet til skade.'
+            },
+            {
+                question: 'Når skal politiet varsles ved trafikkuhell?',
+                answer: 'Politiet skal varsles ved dødsfall eller personskade som ikke er ubetydelig, og ellers når situasjonen krever det.'
+            },
+            {
+                question: 'Hvilke opplysninger må innblandede gi hverandre?',
+                answer: 'De innblandede skal oppgi navn og adresse. Fører skal også kunne oppgi eierens navn og adresse og kjøretøyets kjennemerke.'
+            },
+            {
+                question: 'Kan du forlate ulykkesstedet ved alvorlig personskade?',
+                answer: 'Normalt ikke før politiet kommer, med mindre det er nødvendig eller politiet har samtykket.'
+            },
+            {
+                question: 'Gjelder pliktene selv om du ikke hadde skyld?',
+                answer: 'Ja. Pliktene gjelder når du er innblandet i trafikkuhellet, også når du ikke selv mener du har skyld.'
+            }
+        ],
+        miniQuiz: [
+            {
+                question: 'Du er innblandet i et trafikkuhell. Hva skal du gjøre først?',
+                options: ['Kjøre videre hvis bilen virker kjørbar', 'Stanse straks og få oversikt', 'Ringe forsikringsselskapet før du stopper', 'Ta bilder før du ser etter skadde'],
+                correct: 'Stanse straks og få oversikt',
+                explanation: 'Innblandede i trafikkuhell skal stanse og delta i nødvendige tiltak.'
+            },
+            {
+                question: 'Hva kommer først hvis noen er skadet?',
+                options: ['Hjelpe og varsle ved behov', 'Finne skyldspørsmålet', 'Fylle ut skademelding', 'Vaske veibanen'],
+                correct: 'Hjelpe og varsle ved behov',
+                explanation: 'Liv og helse går foran praktiske detaljer.'
+            },
+            {
+                question: 'Når må politiet varsles?',
+                options: ['Ved personskade som ikke er ubetydelig eller dødsfall', 'Bare hvis bilen er ny', 'Aldri ved trafikkuhell', 'Bare hvis du ikke har forsikring'],
+                correct: 'Ved personskade som ikke er ubetydelig eller dødsfall',
+                explanation: 'Ved alvorlig personskade eller dødsfall skal politiet underrettes.'
+            },
+            {
+                question: 'Hva må føreren oppgi til andre innblandede?',
+                options: ['Navn og adresse, og også eierens navn/adresse og kjennemerke ved motorvogn', 'Bare fornavn', 'Bare forsikringsselskap', 'Ingenting hvis skaden er liten'],
+                correct: 'Navn og adresse, og også eierens navn/adresse og kjennemerke ved motorvogn',
+                explanation: 'Vegtrafikkloven krever at innblandede utveksler nødvendige opplysninger.'
+            }
+        ]
+    },
+
+    {
+        id: 'prikker-pa-forerkortet',
+        title: 'Prikker på førerkortet: slik fungerer prikkbelastning',
+        icon: '📍',
+        shortDescription: 'Lær hvor mange prikker du kan få, hvor lenge prikkene varer, hvordan prøveperioden fungerer, og hvordan du sjekker egne prikker.',
+        color: 'var(--apple-orange)',
+        seoTitle: 'Prikker på førerkortet: hvor mange før du mister førerkortet?',
+        seoDescription: 'Se hvordan prikker på førerkortet fungerer: 8 prikker, 4-prikk varsel, prøveperiode, hvor lenge prikker varer og hvordan du sjekker egne prikker.',
+        sections: [
+            {
+                title: 'Prikker på førerkortet',
+                type: 'text',
+                content: `Prikkbelastning er et system som gjør at gjentatte eller alvorlige trafikkbrudd får konsekvenser over tid. Mange søker etter "hvor mange prikker før du mister førerkortet", "hvor lenge varer prikker" og "hvordan sjekke prikker". Til teoriprøven bør du forstå hovedregelen, prøveperioden og hvilke typer overtredelser som kan gi prikker.
+
+Poenget er ikke å pugge alle beløp og satser. Poenget er å se sammenhengen mellom farlig atferd, bot/forelegg, prikker og mulig tap av førerrett.`
+            },
+            {
+                title: 'Kort forklart',
+                type: 'info',
+                content: `Får du 8 prikker i løpet av 3 år, mister du førerretten i 6 måneder. Når du har 4 prikker, får du et varselbrev. I prøveperioden for klasse B får du dobbelt antall prikker for overtredelser som gir prikkbelastning. Prikker slettes normalt etter 3 år fra vedtatt forelegg eller endelig dom.`
+            },
+            {
+                title: 'Hva kan gi prikker?',
+                type: 'table',
+                content: `<div class="responsive-theory-table-wrapper" style="margin-top: 1rem;"><table class="responsive-theory-table" style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem;"><thead><tr style="background-color: var(--color-surface); border-bottom: 2px solid var(--color-border);"><th style="padding: 12px 8px;">Overtredelse</th><th style="padding: 12px 8px;">Prikker</th><th style="padding: 12px 8px;">Hvorfor er det viktig?</th></tr></thead><tbody><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">Fartsovertredelser</td><td style="padding: 12px 8px;">Kan gi 2 eller 3 prikker</td><td style="padding: 12px 8px;">Høyere fart gir mer risiko og lengre stopplengde</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">Kjøring mot rødt lys</td><td style="padding: 12px 8px;">Vanligvis 3 prikker</td><td style="padding: 12px 8px;">Skaper stor fare i kryss og for gående</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">Brudd på vikeplikt</td><td style="padding: 12px 8px;">Vanligvis 3 prikker</td><td style="padding: 12px 8px;">Vikepliktfeil er en klassisk ulykkesårsak</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">Ulovlig forbikjøring eller kjøring i sperreområde</td><td style="padding: 12px 8px;">Vanligvis 3 prikker</td><td style="padding: 12px 8px;">Ofte knyttet til dårlig sikt og høy risiko</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">For liten avstand til bilen foran</td><td style="padding: 12px 8px;">Vanligvis 3 prikker</td><td style="padding: 12px 8px;">Gir for lite tid til å reagere og bremse</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">Brudd på mobilbruksforbudet</td><td style="padding: 12px 8px;">Vanligvis 3 prikker</td><td style="padding: 12px 8px;">Tar oppmerksomheten bort fra trafikken</td></tr><tr><td style="padding: 12px 8px;">Passasjer under 15 år er ikke sikret</td><td style="padding: 12px 8px;">Kan gi prikker</td><td style="padding: 12px 8px;">Føreren har ansvar for passasjerer under 15 år</td></tr></tbody></table></div>`
+            },
+            {
+                title: 'Prøveperioden',
+                type: 'warning',
+                content: `De første to årene etter at du får førerkort klasse B, er prøveperiode. I denne perioden får du dobbelt antall prikker for overtredelser som gir prikkbelastning.
+
+Det betyr at en overtredelse som normalt gir 3 prikker, kan gi 6 prikker i prøveperioden. Du mister fortsatt førerretten ved 8 prikker, men fordi prikkene dobles, kan én eller to feil være nok til å komme svært nær grensen.`
+            },
+            {
+                title: 'Når blir prikker registrert?',
+                type: 'tip',
+                content: `Prikker kommer ikke bare fordi politiet mener at du har gjort noe feil. Prikkbelastningen kommer som følge av et vedtatt forenklet forelegg, et vedtatt ordinært forelegg eller en rettskraftig dom.
+
+Hvis du ikke vedtar forelegget, går saken videre til domstolen. Du kan ikke klage på selve prikkene etter at grunnlaget er endelig, men du kan la være å vedta forelegget hvis du mener grunnlaget er feil.`
+            },
+            {
+                title: '4 prikker, 8 prikker og flere overtredelser samtidig',
+                type: 'table',
+                content: `<div class="responsive-theory-table-wrapper" style="margin-top: 1rem;"><table class="responsive-theory-table" style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem;"><thead><tr style="background-color: var(--color-surface); border-bottom: 2px solid var(--color-border);"><th style="padding: 12px 8px;">Situasjon</th><th style="padding: 12px 8px;">Hva skjer?</th><th style="padding: 12px 8px;">Teorifelle</th></tr></thead><tbody><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">Du har 4 prikker</td><td style="padding: 12px 8px;">Du får varselbrev</td><td style="padding: 12px 8px;">Dette er en advarsel, ikke tap av førerrett</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">Du får 8 prikker i løpet av 3 år</td><td style="padding: 12px 8px;">Du mister førerretten i 6 måneder</td><td style="padding: 12px 8px;">Grensen gjelder innenfor 3-årsperioden</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">Flere overtredelser samtidig</td><td style="padding: 12px 8px;">Prikkene kan legges sammen</td><td style="padding: 12px 8px;">Én kontroll kan gi flere prikker</td></tr><tr><td style="padding: 12px 8px;">Prøveperiode</td><td style="padding: 12px 8px;">Prikkene dobles</td><td style="padding: 12px 8px;">Nye førere når grensen raskere</td></tr></tbody></table></div>`
+            },
+            {
+                title: 'Hvor lenge har du prikker på førerkortet?',
+                type: 'info',
+                content: `Prikker slettes normalt etter 3 år. Det viktige er at fristen ikke nødvendigvis regnes fra selve lovbruddsdagen. Den regnes normalt fra dagen du vedtok forelegget, eller fra datoen for endelig dom hvis saken gikk til retten.
+
+Eksempel: Hvis du gjør en overtredelse i januar, men først vedtar forelegget i mars, er det normalt mars som blir startpunktet for 3-årsperioden.
+
+Hvis du mister førerretten fordi du har fått 8 prikker, slettes prikkene som førte til tapet når du får førerretten tilbake. Nye prikker etter dette starter en ny vurdering.`
+            },
+            {
+                title: 'Hvordan sjekker du egne prikker?',
+                type: 'text',
+                content: `Du kan sjekke egne prikker ved å logge inn hos politiet. Dette er nyttig hvis du er usikker på hvor mange prikker som er registrert på deg.
+
+Til teoriprøven er det viktigste likevel å forstå systemet: 4 prikker gir varsel, 8 prikker innen 3 år gir tap av førerrett, og prikker slettes normalt etter 3 år fra vedtatt forelegg eller endelig dom.`
+            },
+            {
+                title: 'Typiske teorifeller',
+                type: 'tip',
+                content: `Ikke bland prikker med bot. En overtredelse kan gi bot uten prikker, men enkelte overtredelser kan gi både bot og prikker. Alvorlige forhold kan også føre til førerkortbeslag.
+
+En annen vanlig feil er å tro at prikker slettes når boten er betalt. Betaling og sletting er to forskjellige ting. Prikker slettes normalt først etter 3 år fra forelegget ble vedtatt eller dommen ble endelig.`
+            },
+            {
+                title: 'Les mer',
+                type: 'text',
+                content: `Dette henger sammen med [bøter og forelegg](/laeringsressurser/boter-og-forelegg), [førerkortbeslag](/laeringsressurser/forerkortbeslag), [Vegtrafikkloven §3](/laeringsressurser/vegtrafikkloven-paragraf-3), [fartsgrenser](/laeringsressurser/fartsgrenser), [vikeplikt](/laeringsressurser/vikeplikt) og [barn i bil og sikring](/laeringsressurser/barn-i-bil-og-sikring). Se også [Statens vegvesen om prikker på førerkortet](https://www.vegvesen.no/forerkort/har-forerkort/prikker/) og [Politiet om prikker i førerkortet](https://www.politiet.no/tjenester/forerkort-prikker-bilskilt/prikker-i-forerkortet).`
+            }
+        ],
+        faq: [
+            {
+                question: 'Hvor mange prikker kan du få før du mister førerkortet?',
+                answer: 'Får du 8 prikker i løpet av 3 år, mister du førerretten for en periode.'
+            },
+            {
+                question: 'Hvor lenge varer prikker på førerkortet?',
+                answer: 'Prikker slettes normalt etter 3 år fra den dagen du vedtok forelegget, eller fra datoen for endelig dom.'
+            },
+            {
+                question: 'Hva skjer med prikker i prøveperioden?',
+                answer: 'I prøveperioden får du dobbelt antall prikker for overtredelser som gir prikkbelastning.'
+            },
+            {
+                question: 'Gir alle bøter prikker?',
+                answer: 'Nei. Ikke alle bøter gir prikker. Det kommer an på overtredelsen.'
+            },
+            {
+                question: 'Hva skjer når du har 4 prikker?',
+                answer: 'Når du har minst 4 prikker, får du et varselbrev. Det er en påminnelse om at du må endre kjøreatferd før du mister førerretten.'
+            },
+            {
+                question: 'Hvordan kan du sjekke hvor mange prikker du har?',
+                answer: 'Du kan sjekke egne prikker ved å logge inn hos politiet.'
+            },
+            {
+                question: 'Kan flere overtredelser samtidig gi flere prikker?',
+                answer: 'Ja. Blir du tatt for flere overtredelser samtidig, kan prikkene for overtredelsene legges sammen.'
+            },
+            {
+                question: 'Kan du klage på prikker?',
+                answer: 'Du kan ikke klage på selve prikkene når grunnlaget er endelig, men du kan la være å vedta forelegget hvis du mener saken er feil.'
+            }
+        ],
+        miniQuiz: [
+            {
+                question: 'Hva skjer hvis du får 8 prikker i løpet av 3 år?',
+                options: ['Du mister førerretten for en periode', 'Du får bare et brev uten konsekvens', 'Du får gratis kjøretime', 'Prikkene slettes automatisk samme dag'],
+                correct: 'Du mister førerretten for en periode',
+                explanation: '8 prikker innen 3 år fører til tap av førerrett for en periode.'
+            },
+            {
+                question: 'Hva gjelder i prøveperioden?',
+                options: ['Du får dobbelt antall prikker', 'Du kan ikke få prikker', 'Prikker slettes etter en uke', 'Bare parkeringsbøter teller'],
+                correct: 'Du får dobbelt antall prikker',
+                explanation: 'Nye førere får dobbelt prikkbelastning i prøveperioden.'
+            },
+            {
+                question: 'Gir alle bøter prikker?',
+                options: ['Ja, alltid', 'Nei, det avhenger av overtredelsen', 'Bare hvis bilen er forsikret', 'Bare i tunnel'],
+                correct: 'Nei, det avhenger av overtredelsen',
+                explanation: 'Bot og prikkbelastning er ikke det samme, selv om de kan komme samtidig.'
+            },
+            {
+                question: 'Hva skjer når du har 4 prikker?',
+                options: ['Du får et varselbrev', 'Du mister alltid førerkortet samme dag', 'Alle prikker slettes', 'Du får kjøre bare automatgir'],
+                correct: 'Du får et varselbrev',
+                explanation: '4 prikker gir varselbrev. 8 prikker i løpet av 3 år gir tap av førerrett.'
+            },
+            {
+                question: 'Når blir prikker normalt slettet?',
+                options: ['Etter 3 år fra vedtatt forelegg eller endelig dom', 'Når boten er betalt', 'Etter 30 dager', 'Aldri'],
+                correct: 'Etter 3 år fra vedtatt forelegg eller endelig dom',
+                explanation: 'Betaling av bot og sletting av prikker er ikke det samme.'
+            },
+            {
+                question: 'Du blir tatt for to prikkgivende overtredelser samtidig. Hva kan skje?',
+                options: ['Prikkene kan legges sammen', 'Bare den minste overtredelsen teller', 'Du får aldri prikker', 'Prikkene blir halvert'],
+                correct: 'Prikkene kan legges sammen',
+                explanation: 'Flere overtredelser samtidig kan gi samlet prikkbelastning.'
+            }
+        ]
+    },
+
+    {
+        id: 'forerkortbeslag',
+        title: 'Førerkortbeslag: når kan førerkortet bli tatt?',
+        icon: '🚓',
+        shortDescription: 'Lær forskjellen på prikker, beslag og tap av førerrett, og hvilke trafikkbrudd som kan føre til førerkortbeslag.',
+        color: 'var(--apple-red)',
+        seoTitle: 'Førerkortbeslag: når kan politiet ta førerkortet?',
+        seoDescription: 'Lær når førerkortet kan bli beslaglagt, forskjellen på prikker og beslag, samtykke, tap av førerrett og typiske teorifeller.',
+        sections: [
+            {
+                title: 'Førerkortbeslag',
+                type: 'text',
+                content: `Førerkortbeslag betyr at førerkortet kan bli tatt midlertidig etter en alvorlig hendelse eller overtredelse. På teoriprøven er det viktig å forstå forskjellen på prikker, forelegg og beslag.`
+            },
+            {
+                title: 'Kort forklart',
+                type: 'info',
+                content: `Politiet kan beslaglegge førerkortet midlertidig når det er grunnlag for det, for eksempel ved alvorlig fartsovertredelse, ruspåvirket kjøring, farlig kjøring eller alvorlig trafikkuhell. Saken avgjøres videre etter reglene for tap av førerrett.`
+            },
+            {
+                title: 'Prikker, forelegg eller beslag?',
+                type: 'table',
+                content: `<div class="responsive-theory-table-wrapper" style="margin-top: 1rem;"><table class="responsive-theory-table" style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem;"><thead><tr style="background-color: var(--color-surface); border-bottom: 2px solid var(--color-border);"><th style="padding: 12px 8px;">Reaksjon</th><th style="padding: 12px 8px;">Hva betyr det?</th><th style="padding: 12px 8px;">Eksempel</th></tr></thead><tbody><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">Prikker</td><td style="padding: 12px 8px;">Belastning som samles over tid</td><td style="padding: 12px 8px;">Mobilbruk eller visse fartsovertredelser</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">Forelegg</td><td style="padding: 12px 8px;">Straffereaksjon du kan vedta eller ikke vedta</td><td style="padding: 12px 8px;">Bot for en trafikkovertredelse</td></tr><tr><td style="padding: 12px 8px;">Førerkortbeslag</td><td style="padding: 12px 8px;">Midlertidig tap av retten til å kjøre mens saken behandles</td><td style="padding: 12px 8px;">Ruspåvirket eller svært farlig kjøring</td></tr></tbody></table></div>`
+            },
+            {
+                title: 'Samtykke til beslag',
+                type: 'info',
+                content: `Hvis politiet tar førerkortet midlertidig, kan du bli spurt om du samtykker til beslaget. Samtykker du ikke, må spørsmålet om midlertidig tilbakekall og beslag sendes videre til tingretten innen en frist. Til teoriprøven er hovedpoenget at beslag ikke er det samme som endelig dom, men at du ikke kan kjøre mens beslaget gjelder.`
+            },
+            {
+                title: 'Når skjer beslag direkte?',
+                type: 'table',
+                content: `<div class="responsive-theory-table-wrapper" style="margin-top: 1rem;"><table class="responsive-theory-table" style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem;"><thead><tr style="background-color: var(--color-surface); border-bottom: 2px solid var(--color-border);"><th style="padding: 12px 8px;">Situasjon</th><th style="padding: 12px 8px;">Hvorfor alvorlig?</th><th style="padding: 12px 8px;">Teoriprøve-poeng</th></tr></thead><tbody><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">Ruspåvirket kjøring</td><td style="padding: 12px 8px;">Kraftig økt ulykkesrisiko</td><td style="padding: 12px 8px;">Kan gi beslag direkte, ikke bare prikker</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">Svært høy fart</td><td style="padding: 12px 8px;">Kortere reaksjonstid og mye større skadepotensial</td><td style="padding: 12px 8px;">Reaksjonen kan bli strengere enn bot</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">Farlig forbikjøring eller aggressiv kjøring</td><td style="padding: 12px 8px;">Kan sette andre direkte i fare</td><td style="padding: 12px 8px;">§3 og føreransvar vurderes tungt</td></tr><tr><td style="padding: 12px 8px;">Alvorlig trafikkuhell</td><td style="padding: 12px 8px;">Saken må avklares før videre kjøring</td><td style="padding: 12px 8px;">Beslag kan brukes mens saken behandles</td></tr></tbody></table></div>`
+            },
+            {
+                title: 'Typiske teorifeller',
+                type: 'warning',
+                content: `Ikke tenk at du alltid må få prikker først. Ved alvorlige overtredelser kan førerkortbeslag skje direkte. Beslag handler også om trafikksikkerhet: myndighetene kan hindre videre kjøring når risikoen vurderes som for stor.`
+            },
+            {
+                title: 'Les mer',
+                type: 'text',
+                content: `Les også om [prikker på førerkortet](/laeringsressurser/prikker-pa-forerkortet), [bøter og forelegg](/laeringsressurser/boter-og-forelegg), [Vegtrafikkloven §3](/laeringsressurser/vegtrafikkloven-paragraf-3) og [Statens vegvesen om inndratt førerkort](https://www.vegvesen.no/forerkort/har-forerkort/tilbakelevering-av-forerkort/).`
+            }
+        ],
+        faq: [
+            {
+                question: 'Hva betyr førerkortbeslag?',
+                answer: 'Det betyr at førerkortet tas midlertidig, slik at du ikke kan kjøre mens saken behandles.'
+            },
+            {
+                question: 'Kan førerkortet bli tatt uten at du har 8 prikker?',
+                answer: 'Ja. Ved alvorlige overtredelser kan førerkortbeslag skje direkte.'
+            },
+            {
+                question: 'Er prikker og førerkortbeslag det samme?',
+                answer: 'Nei. Prikker samles over tid, mens beslag er en midlertidig reaksjon i en konkret sak.'
+            },
+            {
+                question: 'Kan ruspåvirket kjøring føre til førerkortbeslag?',
+                answer: 'Ja. Ruspåvirket kjøring er et alvorlig forhold som kan føre til beslag og tap av førerrett.'
+            },
+            {
+                question: 'Er førerkortbeslag en endelig dom?',
+                answer: 'Nei. Beslag er en midlertidig reaksjon mens saken behandles. Den endelige reaksjonen avgjøres senere.'
+            },
+            {
+                question: 'Kan du kjøre mens førerkortet er beslaglagt?',
+                answer: 'Nei. Når førerkortet er beslaglagt og førerretten midlertidig tilbakekalt, kan du ikke kjøre.'
+            }
+        ],
+        miniQuiz: [
+            {
+                question: 'Hva er forskjellen på prikker og førerkortbeslag?',
+                options: ['Prikker samles over tid, beslag kan skje i en konkret alvorlig sak', 'Det er akkurat det samme', 'Beslag gjelder bare parkering', 'Prikker gjelder bare sykkel'],
+                correct: 'Prikker samles over tid, beslag kan skje i en konkret alvorlig sak',
+                explanation: 'Prikkbelastning og beslag er ulike reaksjoner.'
+            },
+            {
+                question: 'Kan ruspåvirket kjøring føre til beslag?',
+                options: ['Ja', 'Nei, bare bot', 'Bare hvis bilen er over 10 år', 'Bare på motorvei'],
+                correct: 'Ja',
+                explanation: 'Ruspåvirket kjøring er et alvorlig trafikkbrudd.'
+            },
+            {
+                question: 'Hva er en teorifelle om førerkortbeslag?',
+                options: ['Å tro at du alltid må ha 8 prikker først', 'Å vite at farlig kjøring er alvorlig', 'Å kjøre forsiktig ved barn', 'Å varsle ved ulykke'],
+                correct: 'Å tro at du alltid må ha 8 prikker først',
+                explanation: 'Alvorlige overtredelser kan føre til beslag direkte.'
+            },
+            {
+                question: 'Hva betyr det at beslag er midlertidig?',
+                options: ['At du kan kjøre så lenge du er uenig', 'At saken ikke er endelig avgjort ennå, men du kan ikke kjøre mens beslaget gjelder', 'At det bare gjelder på motorvei', 'At det alltid varer én dag'],
+                correct: 'At saken ikke er endelig avgjort ennå, men du kan ikke kjøre mens beslaget gjelder',
+                explanation: 'Beslag er ikke det samme som endelig dom, men førerretten er midlertidig tatt fra deg.'
+            }
+        ]
+    },
+
+    {
+        id: 'boter-og-forelegg',
+        title: 'Bøter og forelegg: hva betyr det?',
+        icon: '💸',
+        shortDescription: 'Forstå forskjellen på bot, forenklet forelegg, ordinært forelegg, prikker og hva det betyr å vedta et forelegg.',
+        color: 'var(--apple-yellow)',
+        seoTitle: 'Bøter og forelegg i trafikken: dette må du kunne',
+        seoDescription: 'Lær forskjellen på bot, forenklet forelegg, forelegg, prikker og førerkortbeslag til teoriprøven klasse B.',
+        sections: [
+            {
+                title: 'Bøter og forelegg',
+                type: 'text',
+                content: `Trafikkovertredelser kan gi ulike reaksjoner. På teoriprøven er det viktigere å forstå systemet enn å pugge alle beløp. Satser kan endre seg, men prinsippene er stabile.`
+            },
+            {
+                title: 'Kort forklart',
+                type: 'info',
+                content: `Et forenklet forelegg brukes ved bestemte trafikkovertredelser der saken kan avgjøres enklere. Vedtar du forelegget, aksepterer du reaksjonen. Ikke alle bøter gir prikker, men noen overtredelser kan gi både bot, prikker og i alvorlige tilfeller førerkortbeslag.`
+            },
+            {
+                title: 'Begrepene du må skille',
+                type: 'table',
+                content: `<div class="responsive-theory-table-wrapper" style="margin-top: 1rem;"><table class="responsive-theory-table" style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem;"><thead><tr style="background-color: var(--color-surface); border-bottom: 2px solid var(--color-border);"><th style="padding: 12px 8px;">Begrep</th><th style="padding: 12px 8px;">Betydning</th><th style="padding: 12px 8px;">Teorifelle</th></tr></thead><tbody><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">Bot</td><td style="padding: 12px 8px;">Pengebeløp du må betale som reaksjon</td><td style="padding: 12px 8px;">Bot betyr ikke automatisk prikker</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">Forenklet forelegg</td><td style="padding: 12px 8px;">En enklere reaksjon for bestemte overtredelser</td><td style="padding: 12px 8px;">Vedtak betyr at du aksepterer reaksjonen</td></tr><tr><td style="padding: 12px 8px;">Prikker/beslag</td><td style="padding: 12px 8px;">Reaksjoner som gjelder førerretten</td><td style="padding: 12px 8px;">Kan komme i tillegg til bot</td></tr></tbody></table></div>`
+            },
+            {
+                title: 'Hvorfor vi ikke pugger bøtesatser',
+                type: 'tip',
+                content: `Bøtesatser endres over tid. Derfor er det smartere å lære hvilke handlinger som er farlige og hvilke reaksjoner som kan følge. Hvis du trenger konkrete og oppdaterte beløp, bør du sjekke offisiell forskrift eller politiets informasjon.`
+            },
+            {
+                title: 'Hva skjer når du vedtar et forelegg?',
+                type: 'info',
+                content: `Å vedta et forelegg betyr at du godtar reaksjonen. Da kan saken avsluttes uten vanlig rettssak, men reaksjonen kan fortsatt få konsekvenser, for eksempel prikkbelastning hvis overtredelsen gir prikker. Er du uenig, skal du ikke bare tenke på beløpet, men også på mulige følger for førerretten.`
+            },
+            {
+                title: 'Bot, gebyr eller forelegg?',
+                type: 'table',
+                content: `<div class="responsive-theory-table-wrapper" style="margin-top: 1rem;"><table class="responsive-theory-table" style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem;"><thead><tr style="background-color: var(--color-surface); border-bottom: 2px solid var(--color-border);"><th style="padding: 12px 8px;">Reaksjon</th><th style="padding: 12px 8px;">Typisk bruk</th><th style="padding: 12px 8px;">Hva du må forstå</th></tr></thead><tbody><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">Forenklet forelegg</td><td style="padding: 12px 8px;">Bestemte trafikkovertredelser med faste satser</td><td style="padding: 12px 8px;">Vedtak betyr at du godtar reaksjonen</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">Ordinært forelegg</td><td style="padding: 12px 8px;">Mer alvorlige eller mindre standardiserte saker</td><td style="padding: 12px 8px;">Kan være del av straffesak</td></tr><tr><td style="padding: 12px 8px;">Gebyr/avgift</td><td style="padding: 12px 8px;">Noen administrative overtredelser</td><td style="padding: 12px 8px;">Ikke bland alle pengekrav med prikkbelastning</td></tr></tbody></table></div>`
+            },
+            {
+                title: 'Les mer',
+                type: 'text',
+                content: `Les også [prikker på førerkortet](/laeringsressurser/prikker-pa-forerkortet), [førerkortbeslag](/laeringsressurser/forerkortbeslag), [Vegtrafikkloven §3](/laeringsressurser/vegtrafikkloven-paragraf-3) og [forskrift om forenklet forelegg i vegtrafikksaker på Lovdata](https://lovdata.no/dokument/SF/forskrift/1990-06-29-492).`
+            }
+        ],
+        faq: [
+            {
+                question: 'Hva er et forenklet forelegg?',
+                answer: 'Det er en forenklet reaksjon for bestemte trafikkovertredelser, der saken kan avgjøres uten ordinær rettsbehandling hvis forelegget vedtas.'
+            },
+            {
+                question: 'Gir alle bøter prikker?',
+                answer: 'Nei. Noen overtredelser gir prikker, andre gjør det ikke.'
+            },
+            {
+                question: 'Kan du få både bot og prikker?',
+                answer: 'Ja. Enkelte trafikkovertredelser kan gi både bot og prikker.'
+            },
+            {
+                question: 'Bør du pugge bøtesatser til teoriprøven?',
+                answer: 'Det viktigste er å forstå hvilke overtredelser som er farlige og hvilke reaksjoner de kan gi. Satser bør sjekkes i offisielle kilder.'
+            },
+            {
+                question: 'Hva betyr det å vedta et forelegg?',
+                answer: 'Det betyr at du godtar reaksjonen. Saken kan da avsluttes uten vanlig rettssak, men eventuelle følger som prikker kan fortsatt gjelde.'
+            },
+            {
+                question: 'Er bot og førerkortbeslag det samme?',
+                answer: 'Nei. Bot handler om penger, mens førerkortbeslag handler om at du midlertidig ikke kan kjøre.'
+            }
+        ],
+        miniQuiz: [
+            {
+                question: 'Hva betyr det å vedta et forelegg?',
+                options: ['Du aksepterer reaksjonen', 'Du avviser saken', 'Du får automatisk nytt førerkort', 'Du slipper alle konsekvenser'],
+                correct: 'Du aksepterer reaksjonen',
+                explanation: 'Vedtak betyr at du godtar forelegget og reaksjonen.'
+            },
+            {
+                question: 'Gir alle bøter prikker?',
+                options: ['Ja, alltid', 'Nei, det avhenger av overtredelsen', 'Bare hvis politiet sier det muntlig', 'Bare ved parkering'],
+                correct: 'Nei, det avhenger av overtredelsen',
+                explanation: 'Bot og prikkbelastning er ulike reaksjoner.'
+            },
+            {
+                question: 'Hvor bør du sjekke oppdaterte bøtesatser?',
+                options: ['Offisielle kilder som Lovdata eller politiet', 'Gamle forumtråder', 'Rykter fra venner', 'Bilens instruksjonsbok'],
+                correct: 'Offisielle kilder som Lovdata eller politiet',
+                explanation: 'Satser kan endre seg, så bruk oppdaterte offisielle kilder.'
+            },
+            {
+                question: 'Hva kan være en følge av å vedta et forelegg for en prikkgivende overtredelse?',
+                options: ['Prikkbelastning kan bli registrert', 'Bilen får automatisk EU-kontroll', 'Fartsgrensen økes', 'Du slipper alle konsekvenser'],
+                correct: 'Prikkbelastning kan bli registrert',
+                explanation: 'For overtredelser som gir prikker, kan vedtatt forelegg føre til prikkbelastning.'
+            }
+        ]
+    },
+
+    {
+        id: 'forsikring-og-ansvar',
+        title: 'Forsikring og ansvar: hva må føreren vite?',
+        icon: '🛡️',
+        shortDescription: 'Lær hva ansvarsforsikring dekker, forskjellen på ansvar og kasko, og hvorfor føreren fortsatt har ansvar.',
+        color: 'var(--apple-green)',
+        seoTitle: 'Forsikring og ansvar bil: ansvarsforsikring, skade og regress',
+        seoDescription: 'Lær hva ansvarsforsikring er, hva den dekker, forskjellen på ansvar og kasko, regress og føreransvar til teoriprøven klasse B.',
+        sections: [
+            {
+                title: 'Forsikring og ansvar',
+                type: 'text',
+                content: `Bilforsikring handler ikke bare om penger etter en skade. Det handler også om ansvar. Som fører må du vite at bilen skal være forsikret, at ansvarsforsikring er grunnleggende, og at du fortsatt kan få konsekvenser hvis du kjører uforsvarlig.`
+            },
+            {
+                title: 'Kort forklart',
+                type: 'info',
+                content: `Motorvogn som brukes i trafikken skal som hovedregel være forsikret. Ansvarsforsikring dekker skade motorvognen gjør på andre personer, kjøretøy eller eiendom, men dekker normalt ikke skade på din egen bil. Kasko er frivillig tilleggsdekning. Forsikring fritar deg ikke fra føreransvar.`
+            },
+            {
+                title: 'Ansvar, delkasko og kasko',
+                type: 'table',
+                content: `<div class="responsive-theory-table-wrapper" style="margin-top: 1rem;"><table class="responsive-theory-table" style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem;"><thead><tr style="background-color: var(--color-surface); border-bottom: 2px solid var(--color-border);"><th style="padding: 12px 8px;">Type</th><th style="padding: 12px 8px;">Hva dekker den typisk?</th><th style="padding: 12px 8px;">Husk</th></tr></thead><tbody><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">Ansvarsforsikring</td><td style="padding: 12px 8px;">Skade bilen gjør på andre</td><td style="padding: 12px 8px;">Dette er den grunnleggende lovpålagte dekningen</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">Delkasko</td><td style="padding: 12px 8px;">Kan dekke for eksempel brann, tyveri eller glass</td><td style="padding: 12px 8px;">Dekning varierer mellom avtaler</td></tr><tr><td style="padding: 12px 8px;">Kasko</td><td style="padding: 12px 8px;">Kan dekke skade på egen bil</td><td style="padding: 12px 8px;">Frivillig, men ofte viktig ved dyr bil eller lån</td></tr></tbody></table></div>`
+            },
+            {
+                title: 'Føreransvar og regress',
+                type: 'warning',
+                content: `Selv om bilen er forsikret, har du ansvar for hvordan du kjører. Ved svært alvorlige forhold, for eksempel ruspåvirket kjøring eller grov uaktsomhet, kan forsikringsselskapet i noen tilfeller kreve penger tilbake. Dette kalles regress.`
+            },
+            {
+                title: 'Uforsikret kjøretøy',
+                type: 'info',
+                content: `Et registrert kjøretøy skal ha gyldig ansvarsforsikring. Mangler bilen ansvarsforsikring, kan eieren få gebyr, og ved skade kan det bli svært dyrt. Til teoriprøven er hovedpoenget enkelt: forsikring er ikke valgfritt for en registrert motorvogn, og økonomisk ansvar kan bli stort ved skade.`
+            },
+            {
+                title: 'Eieransvar og føreransvar',
+                type: 'table',
+                content: `<div class="responsive-theory-table-wrapper" style="margin-top: 1rem;"><table class="responsive-theory-table" style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem;"><thead><tr style="background-color: var(--color-surface); border-bottom: 2px solid var(--color-border);"><th style="padding: 12px 8px;">Rolle</th><th style="padding: 12px 8px;">Ansvar</th><th style="padding: 12px 8px;">Eksempel</th></tr></thead><tbody><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">Eier</td><td style="padding: 12px 8px;">Sørge for at kjøretøyet er registrert og forsikret når det skal være det</td><td style="padding: 12px 8px;">Ikke la registrert bil stå uten ansvarsforsikring</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">Fører</td><td style="padding: 12px 8px;">Kjøre forsvarlig og følge trafikkreglene</td><td style="padding: 12px 8px;">Forsikring fritar deg ikke fra §3-ansvar</td></tr><tr><td style="padding: 12px 8px;">Forsikringsselskap</td><td style="padding: 12px 8px;">Behandle skade etter avtale og regelverk</td><td style="padding: 12px 8px;">Kan i alvorlige tilfeller kreve penger tilbake</td></tr></tbody></table></div>`
+            },
+            {
+                title: 'Les mer',
+                type: 'text',
+                content: `Dette henger sammen med [Vegtrafikkloven §3](/laeringsressurser/vegtrafikkloven-paragraf-3), [plikter ved ulykke](/laeringsressurser/plikter-ved-ulykke), [bøter og forelegg](/laeringsressurser/boter-og-forelegg), [sikkerhetskontroll](/laeringsressurser/sikkerhetskontroll), [bilansvarslova på Lovdata](https://lovdata.no/dokument/NL/lov/1961-02-03) og [Trafikkforsikringsforeningen om ansvarsforsikring](https://www.tff.no/tema/forsikring-kjop-salg-avregistrering/ansvarsforsikring).`
+            }
+        ],
+        faq: [
+            {
+                question: 'Hva er ansvarsforsikring?',
+                answer: 'Ansvarsforsikring er grunnleggende forsikring som dekker skade motorvognen gjør på andre personer, kjøretøy eller eiendom.'
+            },
+            {
+                question: 'Dekker ansvarsforsikring skade på egen bil?',
+                answer: 'Normalt ikke. Skade på egen bil krever vanligvis kasko eller annen frivillig dekning.'
+            },
+            {
+                question: 'Er kasko påbudt?',
+                answer: 'Nei, kasko er frivillig, men kan være viktig hvis bilen er verdifull eller finansiert med lån.'
+            },
+            {
+                question: 'Hva betyr regress?',
+                answer: 'Regress betyr at forsikringsselskapet kan kreve penger tilbake i visse alvorlige tilfeller, for eksempel ved grov uaktsomhet eller ruspåvirket kjøring.'
+            },
+            {
+                question: 'Må en registrert bil ha ansvarsforsikring?',
+                answer: 'Ja, registrerte motorvogner skal som hovedregel ha gyldig ansvarsforsikring.'
+            },
+            {
+                question: 'Hvem kan få gebyr hvis kjøretøyet er uforsikret?',
+                answer: 'Eieren kan få gebyr hvis et registrert kjøretøy står uten gyldig ansvarsforsikring.'
+            }
+        ],
+        miniQuiz: [
+            {
+                question: 'Hva dekker ansvarsforsikring typisk?',
+                options: ['Skade bilen gjør på andre', 'All skade på egen bil', 'Bare punktering', 'Bare servicekostnader'],
+                correct: 'Skade bilen gjør på andre',
+                explanation: 'Ansvarsforsikring handler om ansvar overfor andre.'
+            },
+            {
+                question: 'Hva må du normalt ha for å få dekket skade på egen bil?',
+                options: ['Kasko eller relevant tilleggsdekning', 'Bare førerkort', 'Varseltrekant', 'Prikker på førerkortet'],
+                correct: 'Kasko eller relevant tilleggsdekning',
+                explanation: 'Ansvarsforsikring dekker normalt ikke skade på egen bil.'
+            },
+            {
+                question: 'Fritar forsikring deg fra å kjøre forsvarlig?',
+                options: ['Nei', 'Ja, hvis du har full kasko', 'Ja, hvis bilen er ny', 'Bare på privat vei'],
+                correct: 'Nei',
+                explanation: 'Forsikring erstatter ikke føreransvar.'
+            },
+            {
+                question: 'Hva er hovedpoenget med ansvarsforsikring?',
+                options: ['Den dekker skade bilen gjør på andre', 'Den gjør at du kan kjøre uforsiktig', 'Den dekker alltid egen bil fullt ut', 'Den erstatter førerkort'],
+                correct: 'Den dekker skade bilen gjør på andre',
+                explanation: 'Ansvarsforsikring handler først og fremst om skade på andre personer, kjøretøy eller eiendom.'
+            }
+        ]
+    }
 ];
 
 export const theoryUtilityPages: TheoryTopic[] = [
