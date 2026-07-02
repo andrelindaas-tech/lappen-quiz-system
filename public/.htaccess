@@ -30,7 +30,12 @@ RewriteRule ^laeringsressurser/sikkerhet$ /laeringsressurser/sikkerhetsutstyr [R
 RewriteRule ^laeringsressurser/morkekjoring$ /laeringsressurser/lysbruk-morkekjoring [R=301,NC,L]
 RewriteRule ^laeringsressurser/trafikkuhell$ /laeringsressurser/trafikkuhell-forstehjelp [R=301,NC,L]
 
-# 3. SPA Routing (fallback til index.html for React Router)
+# 3. Serve prerendret HTML (SSG): /rute -> /rute/index.html (uten redirect)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME}/index.html -f
+RewriteRule ^(.*)$ $1/index.html [L]
+
+# 4. SPA Routing (fallback til index.html for React Router)
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule . /index.html [L]
