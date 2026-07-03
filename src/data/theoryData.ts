@@ -178,7 +178,7 @@ export const theoryTopics: TheoryTopic[] = [
 
     {
         id: 'bremselengde',
-        title: 'Bremselengde kalkulator – regn ut stopplengde | Teori-test.no',
+        title: 'Bremselengde kalkulator – regn ut stopplengde',
         icon: '🚗',
         shortDescription: 'Bruk kalkulatoren og tast inn hastighet — se bremselengde og stopplengde for tørr vei, våt vei og is. Med formel og øvingsoppgaver til teoriprøven.',
         color: 'var(--apple-red)',
@@ -313,8 +313,8 @@ export const theoryTopics: TheoryTopic[] = [
         icon: '👮',
         shortDescription: 'I trafikken vil du ofte oppleve at ulike signaler gir deg motstridende beskjeder. Hvem skal du høre på? Lær hierarkiet for å unngå fellene på prøven.',
         color: 'var(--apple-blue)',
-        seoTitle: 'Myndighetspyramiden – hvem bestemmer? | Teori-test.no',
-        seoDescription: 'Myndighetspyramiden viser hva som gjelder først i trafikken: politi, trafikklys, skilt/vegoppmerking og trafikkregler. Se rekkefølgen, eksempler og vanlige feller på teoriprøven.',
+        seoTitle: 'Myndighetspyramiden forklart – rekkefølgen med enkel huskeregel',
+        seoDescription: 'Politi → trafikklys → skilt → trafikkregler. Enkel huskeregel for myndighetspyramiden (trafikkpyramiden), med eksempler og fellene som går igjen på teoriprøven.',
         sections: [
             {
                 title: 'Kort forklart: Myndighetspyramiden',
@@ -471,8 +471,8 @@ export const theoryTopics: TheoryTopic[] = [
         icon: '',
         shortDescription: 'Veimerking hjelper deg å forstå hvor du skal plassere bilen, når du kan skifte felt, hvor du må vike, og hvor det er farlig eller forbudt å kjøre over en linje. På teoriprøven blir du ofte testet på forskjellen mellom stiplet linje, sperrelinje, varsellinje, kombinert linje og vikelinje.',
         color: 'var(--apple-indigo)',
-        seoTitle: 'Veimerking: sperrelinje, varsellinje og kombinert linje | Teori-test.no',
-        seoDescription: 'Lær hva hvit sperrelinje, gul varsellinje, kombinert linje og vikelinje betyr til teoriprøven. Se bilder, regler og vanlige feil.',
+        seoTitle: 'Veimerking: hva betyr sperrelinje, varsellinje og kombinert linje?',
+        seoDescription: 'Se bilder av hvit og gul sperrelinje, varsellinje, kombinert linje og vikelinje. Regler, vanlige feil og gratis quiz – alt du må kunne til teoriprøven.',
         sections: [
 
             {
@@ -845,7 +845,7 @@ export const theoryTopics: TheoryTopic[] = [
 
     {
         id: 'forbikjoring',
-        title: 'Forbikjøring – regler, forbud og feller | Teori-test.no',
+        title: 'Forbikjøring – regler, forbud og feller',
         icon: '🚗',
         shortDescription: 'Lær reglene for forbikjøring til teoriprøven klasse B: gangfelt, kryss, høyre side, forbikjøringsforbud, syklist, buss, traktor og motorvei.',
         color: 'var(--apple-orange)',
@@ -1159,8 +1159,8 @@ export const theoryTopics: TheoryTopic[] = [
         icon: '🚦',
         shortDescription: 'Lær trafikkskilt til teoriprøven klasse B: fareskilt, vikeplikt, forbudsskilt, påbudsskilt, opplysningsskilt, underskilt og vanlige skiltfeller.',
         color: 'var(--apple-blue)',
-        seoTitle: 'Trafikkskilt til teoriprøven – skiltgrupper og vanlige feil | Teori-test.no',
-        seoDescription: 'Lær trafikkskilt til teoriprøven klasse B: fareskilt, vikeplikt, forbudsskilt, påbudsskilt, opplysningsskilt, underskilt og vanlige skiltfeller.',
+        seoTitle: 'Lær trafikkskilt til teoriprøven – skiltgrupper og vanlige feil',
+        seoDescription: 'Fareskilt, forbudsskilt, påbudsskilt og opplysningsskilt forklart – med bilder, vanlige skiltfeller og gratis skiltquiz til teoriprøven klasse B.',
         sections: [
             {
                 title: 'Trafikkskilt til teoriprøven klasse B',
@@ -1809,8 +1809,8 @@ export const theoryTopics: TheoryTopic[] = [
         icon: '🅿️',
         shortDescription: 'Reglene for stans og parkering er en klassisk gjenganger på teoriprøven for klasse B. Mange mister unødvendige poeng her fordi de blander sammen de to begrepene, eller glemmer de eksakte avstandsreglene for gangfelt og veikryss.',
         color: 'var(--apple-blue)',
-        seoTitle: 'Stans og parkering – 5-metersregelen og teorifeller | Teori-test.no',
-        seoDescription: 'Lær forskjellen på stans og parkering, 5-metersregelen ved gangfelt og veikryss, og vanlige feller på teoriprøven. Med eksempler og miniQuiz.',
+        seoTitle: 'Stans og parkering – 5-metersregelen og teorifeller',
+        seoDescription: 'Hva er forskjellen på stans og parkering? Lær 5-metersregelen ved gangfelt og kryss, se eksempler og test deg med gratis quiz til teoriprøven.',
         sections: [
             {
                 title: 'Kort forklart: forskjellen på stans og parkering',

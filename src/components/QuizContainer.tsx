@@ -15,6 +15,7 @@ import { useImagePrefetch } from '../hooks/useImagePrefetch'
 import { getWrongAnswers, removeWrongAnswer, addWrongAnswers, getWrongAnswersCount } from '../utils/wrongAnswersStore'
 import { logQuizAnswer } from "../services/supabase";
 import { getSessionId } from "../utils/session";
+import { trackEvent } from '../utils/analytics'
 
 interface QuizContainerProps {
     onReturnHome: () => void
@@ -127,6 +128,12 @@ export default function QuizContainer({ onReturnHome, onQuizComplete }: QuizCont
             setQuestions(data)
             setLoading(false)
 
+            // GA4: quiz started
+            trackEvent('quiz_started', {
+                quiz_name: mode.name,
+                question_count: data.length,
+            })
+
             console.log(`✅ ${mode.name} loaded successfully`)
         } catch (err) {
             console.error('❌ Failed to load quiz:', err)
@@ -160,6 +167,17 @@ export default function QuizContainer({ onReturnHome, onQuizComplete }: QuizCont
         } else {
             const elapsed = Math.floor((Date.now() - startTime) / 1000)
             setTimeTaken(elapsed)
+
+            // GA4: quiz completed (marker som key event i GA4-innstillingene)
+            const finalResult = engine.calculateScore(questions)
+            trackEvent('quiz_completed', {
+                quiz_name: mode.name,
+                question_count: questions.length,
+                correct_count: finalResult.correctCount,
+                passed: finalResult.passed,
+                time_taken_seconds: elapsed,
+            })
+
             setShowResults(true)
             onQuizComplete()
         }

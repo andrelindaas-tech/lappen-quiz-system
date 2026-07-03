@@ -87,11 +87,81 @@ export default function TrafficSignDetailPage() {
     ? `Lær hva ${signTitleName.toLowerCase()}-underskiltet betyr, hvordan det presiserer hovedskiltet, og hvilken vanlig misforståelse du må passe på til teoriprøven.`
     : `Lær hva ${signTitleName.toLowerCase()}-skiltet betyr, hva du skal gjøre, og hvilken vanlig misforståelse du må passe på til teoriprøven.`;
 
+  // ImageObject structured data for Google Images
+  const imageStructuredData = {
+    '@context': 'https://schema.org',
+    '@type': 'ImageObject',
+    contentUrl: `https://teori-test.no${sign.imagePath}`,
+    url: `https://teori-test.no/trafikkskilt/${category.slug}/${sign.slug}`,
+    name: `Skilt ${sign.code} ${signTitleName}`,
+    description: cleanVisualDescription || seoDesc,
+    caption: `Skilt ${sign.code} ${signTitleName} – norsk trafikkskilt`,
+    representativeOfPage: true,
+    inLanguage: 'nb',
+  };
+
+  // FAQPage structured data generated from existing sign fields
+  const faqEntries = [
+    {
+      '@type': 'Question',
+      name: `Hva betyr skilt ${sign.code} ${signTitleName}?`,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: cleanVisualDescription
+          ? `${sign.shortExplanation} Kjennetegn: ${cleanVisualDescription}.`
+          : sign.shortExplanation,
+      },
+    },
+    {
+      '@type': 'Question',
+      name: `Hva er en vanlig misforståelse om ${signTitleName.toLowerCase()}-skiltet?`,
+      acceptedAnswer: { '@type': 'Answer', text: sign.theoryTrap },
+    },
+    ...(sign.whatToDo && sign.whatToDo.length > 0
+      ? [
+          {
+            '@type': 'Question',
+            name: `Hva skal du gjøre når du ser ${signTitleName.toLowerCase()}-skiltet?`,
+            acceptedAnswer: { '@type': 'Answer', text: sign.whatToDo.join(' ') },
+          },
+        ]
+      : []),
+  ];
+  const faqStructuredData = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqEntries,
+  };
+
+  // BreadcrumbList structured data (matches the visible breadcrumb)
+  const breadcrumbStructuredData = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Skiltbanken', item: 'https://teori-test.no/trafikkskilt' },
+      { '@type': 'ListItem', position: 2, name: category.name, item: `https://teori-test.no/trafikkskilt/${category.slug}` },
+      { '@type': 'ListItem', position: 3, name: signTitleName },
+    ],
+  };
+
   return (
     <div className="container" style={{ paddingBottom: 'var(--spacing-2xl)' }}>
       <Helmet>
         <title>{seoTitle}</title>
         <meta name="description" content={seoDesc} />
+        <meta property="og:title" content={seoTitle} />
+        <meta property="og:description" content={seoDesc} />
+        <meta name="twitter:title" content={seoTitle} />
+        <meta name="twitter:description" content={seoDesc} />
+        <script type="application/ld+json">
+          {JSON.stringify(imageStructuredData)}
+        </script>
+        <script type="application/ld+json">
+          {JSON.stringify(faqStructuredData)}
+        </script>
+        <script type="application/ld+json">
+          {JSON.stringify(breadcrumbStructuredData)}
+        </script>
       </Helmet>
 
       {/* Breadcrumbs */}
@@ -296,7 +366,7 @@ export default function TrafficSignDetailPage() {
                       }}>
                         <img
                           src={sign.imagePath}
-                          alt={sign.displayName || sign.name}
+                          alt={`Skilt ${sign.code} ${sign.displayName || sign.name}`}
                           style={{ maxHeight: '100%', maxWidth: '100%', objectFit: 'contain' }}
                         />
                       </div>
@@ -380,7 +450,7 @@ export default function TrafficSignDetailPage() {
                 >
                   <img
                     src={confusedSign.imagePath}
-                    alt={confusedSign.displayName || confusedSign.name}
+                    alt={`Skilt ${confusedSign.code} ${confusedSign.displayName || confusedSign.name}`}
                     style={{ width: '56px', height: '56px', objectFit: 'contain' }}
                     loading="lazy"
                   />

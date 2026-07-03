@@ -93,11 +93,26 @@ export default function TrafficSignCategoryPage() {
     ? 'Lær hva underskilt betyr til teoriprøven. Se hvordan underskilt presiserer avstand, tid, kjøretøygrupper, unntak og gyldighet for hovedskilt.'
     : `Lær alt om ${category.name.toLowerCase()} til teoriprøven. Her finner du en oversikt over alle skilt i denne gruppen med forklaringer, kjøreregler og vanlige misforståelser.`;
 
+  // BreadcrumbList structured data (matches the visible breadcrumb)
+  const breadcrumbStructuredData = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Skiltbanken', item: 'https://teori-test.no/trafikkskilt' },
+      { '@type': 'ListItem', position: 2, name: category.name },
+    ],
+  };
+
   return (
     <div className="container" style={{ paddingBottom: 'var(--spacing-2xl)' }}>
       <Helmet>
         <title>{seoTitle}</title>
         <meta name="description" content={seoDesc} />
+        <meta property="og:title" content={seoTitle} />
+        <meta property="og:description" content={seoDesc} />
+        <script type="application/ld+json">
+          {JSON.stringify(breadcrumbStructuredData)}
+        </script>
       </Helmet>
 
       {/* Breadcrumb navigation */}
@@ -156,7 +171,7 @@ export default function TrafficSignCategoryPage() {
                 }}>
                   <img
                     src={sign.imagePath}
-                    alt={sign.displayName || sign.name}
+                    alt={`Skilt ${sign.code} ${sign.displayName || sign.name}`}
                     style={{ maxHeight: '100%', maxWidth: '100%', objectFit: 'contain' }}
                     loading="lazy"
                   />

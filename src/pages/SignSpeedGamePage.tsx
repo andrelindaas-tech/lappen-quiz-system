@@ -1,4 +1,5 @@
-import { useCallback, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
+import { trackEvent } from '../utils/analytics';
 import { Helmet } from 'react-helmet-async';
 import { useNavigate } from 'react-router-dom';
 import { SignSpeedGame, type SignSpeedGameResult } from '../components/minigames/SignSpeedGame';
@@ -20,6 +21,12 @@ const formatScore = (score: number) => new Intl.NumberFormat('nb-NO').format(sco
 
 export default function SignSpeedGamePage() {
   const navigate = useNavigate();
+
+  // GA4: game started
+  useEffect(() => {
+    trackEvent('game_started', { game_name: 'skiltduellen' });
+  }, []);
+
   const [profile, setProfile] = useState<LocalProfile | null>(() => loadLocalProfile());
   const [nickname, setNickname] = useState(() => profile?.nickname ?? '');
   const [isEditingProfile, setIsEditingProfile] = useState(() => !profile);
@@ -74,12 +81,38 @@ export default function SignSpeedGamePage() {
   return (
     <>
       <Helmet>
-        <title>Skiltduellen | Mini-spill for trafikkskilt | Teori-test.no</title>
+        <title>Trafikkskilt-spill: Skiltduellen – hvor mange klarer du?</title>
         <meta
           name="description"
-          content="Test hvor raskt du kjenner igjen norske trafikkskilt i Skiltduellen. Jo raskere du svarer, jo flere poeng får du!"
+          content="Gratis skiltspill: kjenn igjen norske trafikkskilt før tiden går ut. Jo raskere du svarer, jo flere poeng. Perfekt trening til teoriprøven klasse B."
         />
+        <meta property="og:title" content="Trafikkskilt-spill: Skiltduellen – hvor mange klarer du?" />
+        <meta property="og:description" content="Gratis skiltspill: kjenn igjen norske trafikkskilt før tiden går ut. Jo raskere du svarer, jo flere poeng. Perfekt trening til teoriprøven klasse B." />
         <link rel="canonical" href="https://teori-test.no/laeringsspill/skiltduellen" />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'VideoGame',
+            name: 'Skiltduellen',
+            url: 'https://teori-test.no/laeringsspill/skiltduellen',
+            description: 'Tidsbasert læringsspill der du kjenner igjen norske trafikkskilt før tiden går ut. Laget for teoriprøven klasse B.',
+            genre: 'Educational',
+            gamePlatform: 'Web browser',
+            applicationCategory: 'Game',
+            isAccessibleForFree: true,
+            inLanguage: 'nb',
+          })}
+        </script>
+        <script type="application/ld+json">
+          {JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'BreadcrumbList',
+            itemListElement: [
+              { '@type': 'ListItem', position: 1, name: 'Læringsspill', item: 'https://teori-test.no/laeringsspill' },
+              { '@type': 'ListItem', position: 2, name: 'Skiltduellen' },
+            ],
+          })}
+        </script>
       </Helmet>
 
       <div className="app-shell" style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>

@@ -1,1665 +1,2301 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
     <url>
         <loc>https://teori-test.no/</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>https://teori-test.no/laeringsressurser</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://teori-test.no/laeringsspill</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://teori-test.no/laeringsspill/stopplengde</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://teori-test.no/laeringsspill/veimerking</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://teori-test.no/laeringsspill/skiltduellen</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://teori-test.no/quiz</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://teori-test.no/quiz/vikeplikt</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://teori-test.no/quiz/skilt</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://teori-test.no/quiz/fartsregler</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://teori-test.no/quiz/veimerking</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://teori-test.no/laeringsressurser/vikeplikt</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://teori-test.no/laeringsressurser/bremselengde</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://teori-test.no/laeringsressurser/myndighetspyramiden</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://teori-test.no/laeringsressurser/veimerking</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://teori-test.no/laeringsressurser/rundkjoring</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://teori-test.no/laeringsressurser/forbikjoring</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://teori-test.no/laeringsressurser/lysbruk-morkekjoring</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://teori-test.no/laeringsressurser/skilt</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://teori-test.no/laeringsressurser/fartsgrenser</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://teori-test.no/laeringsressurser/reaksjonstid</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://teori-test.no/laeringsressurser/stans-og-parkering</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://teori-test.no/laeringsressurser/promille</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://teori-test.no/laeringsressurser/tilhenger</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://teori-test.no/laeringsressurser/miljo</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://teori-test.no/laeringsressurser/vognkort-vekter</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://teori-test.no/laeringsressurser/temaliste-teoriproven-klasse-b</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://teori-test.no/laeringsressurser/dekk-bremser-styring</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://teori-test.no/laeringsressurser/trafikklys-signaler</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://teori-test.no/laeringsressurser/feltvalg-fletting-kollektivfelt</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://teori-test.no/laeringsressurser/forerstottesystemer</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://teori-test.no/laeringsressurser/automatlappen</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://teori-test.no/laeringsressurser/sikkerhetskontroll</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://teori-test.no/laeringsressurser/oppkjoring</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://teori-test.no/laeringsressurser/stroket-teoriproven</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://teori-test.no/laeringsressurser/ovingskjoring</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://teori-test.no/laeringsressurser/tips-eksamen</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://teori-test.no/laeringsressurser/trafikkuhell-forstehjelp</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://teori-test.no/laeringsressurser/sikkerhetsutstyr</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://teori-test.no/laeringsressurser/buss-fra-holdeplass</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://teori-test.no/laeringsressurser/trikk-og-vikeplikt</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://teori-test.no/laeringsressurser/planovergang-regler</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://teori-test.no/laeringsressurser/kollektivfelt-og-elbil</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://teori-test.no/laeringsressurser/tunnelsikkerhet</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://teori-test.no/laeringsressurser/barn-i-bil-og-sikring</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://teori-test.no/laeringsressurser/bilens-lys</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://teori-test.no/laeringsressurser/vanlige-feil-teoriproven</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://teori-test.no/laeringsressurser/glatt-fore</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://teori-test.no/laeringsressurser/vegtrafikkloven-paragraf-3</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://teori-test.no/laeringsressurser/plikter-ved-ulykke</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://teori-test.no/laeringsressurser/prikker-pa-forerkortet</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://teori-test.no/laeringsressurser/forerkortbeslag</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://teori-test.no/laeringsressurser/boter-og-forelegg</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://teori-test.no/laeringsressurser/forsikring-og-ansvar</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://teori-test.no/laeringsressurser/personvern</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/vikeplikt-og-forkjorsskilt</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/fareskilt</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/forbudsskilt</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/pabudsskilt</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/opplysningsskilt</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/serviceskilt</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/vegvisningsskilt</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/underskilt</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/markeringsskilt</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/vikeplikt-og-forkjorsskilt/vikeplikt</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/vikeplikt-og-forkjorsskilt/skilt-202-vikeplikt.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/vikeplikt-og-forkjorsskilt/stopp</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/vikeplikt-og-forkjorsskilt/skilt-204-stopp.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/vikeplikt-og-forkjorsskilt/forkjorsveg</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/vikeplikt-og-forkjorsskilt/skilt-206-forkjorsveg.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/vikeplikt-og-forkjorsskilt/slutt-pa-forkjorsveg</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/vikeplikt-og-forkjorsskilt/skilt-208-slutt-pa-forkjorsveg.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/vikeplikt-og-forkjorsskilt/forkjorsvegkryss</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/vikeplikt-og-forkjorsskilt/skilt-210-forkjorskryss.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/vikeplikt-og-forkjorsskilt/vikeplikt-overfor-motende-kjorende</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/vikeplikt-og-forkjorsskilt/skilt-212-vikeplikt-overfor-motende-kjorende.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/vikeplikt-og-forkjorsskilt/motende-kjorende-har-vikeplikt</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/vikeplikt-og-forkjorsskilt/skilt-214-motende-kjorende-har-vikeplikt.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/fareskilt/farlig-sving-til-hoyre</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/fareskilt/skilt-100-1-farlig-sving-til-hoyre.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/fareskilt/farlig-sving-til-venstre</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/fareskilt/skilt-100-2-farlig-sving-til-venstre.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/fareskilt/farlige-svinger-forst-til-hoyre</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/fareskilt/skilt-102-1-farlige-svinger-forst-til-hoyre.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/fareskilt/smalere-veg-begge-sider</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/fareskilt/skilt-106-1-smalere-veg-begge-sider.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/fareskilt/ujevn-veg</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/fareskilt/skilt-108-ujevn-veg.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/fareskilt/fartshump</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/fareskilt/skilt-109-fartshump.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/fareskilt/vegarbeid</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/fareskilt/skilt-110-vegarbeid.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/fareskilt/steinsprut</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/fareskilt/skilt-112-steinsprut.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/fareskilt/glatt-kjorebane</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/fareskilt/skilt-116-glatt-kjorebane.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/fareskilt/tunnel</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/fareskilt/skilt-122-tunnel.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/fareskilt/farlig-vegkryss</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/fareskilt/skilt-124-farlig-vegkryss.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/fareskilt/rundkjoring</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/fareskilt/skilt-126-rundkjoring.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/fareskilt/trafikklyssignal</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/fareskilt/skilt-132-trafikklyssignal.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/fareskilt/planovergang-med-bom</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/fareskilt/skilt-134-planovergang-med-bom.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/fareskilt/planovergang-uten-bom</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/fareskilt/skilt-135-planovergang-uten-bom.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/fareskilt/fotgjengere</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/fareskilt/skilt-140-avstand-til-gangfelt.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/fareskilt/barn</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/fareskilt/skilt-142-barn.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/fareskilt/syklende</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/fareskilt/skilt-144-syklende.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/fareskilt/elg</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/fareskilt/skilt-146-1-elg.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/fareskilt/motende-trafikk</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/fareskilt/skilt-148-motende-trafikk.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/fareskilt/ko</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/fareskilt/skilt-149-ko.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/fareskilt/trafikkulykke</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/fareskilt/skilt-153-trafikkulykke.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/forbudsskilt/innkjoring-forbudt</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/forbudsskilt/skilt-302-innkjoring-forbudt.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/forbudsskilt/forbudt-for-alle-kjoretoy</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/forbudsskilt/skilt-306-0-forbudt-for-alle-kjoretoy.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/forbudsskilt/forbudt-for-motorvogn</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/forbudsskilt/skilt-306-1-forbudt-for-motorvogn.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/forbudsskilt/forbudt-for-syklende</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/forbudsskilt/skilt-306-6-forbudt-for-syklende.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/forbudsskilt/forbudt-for-gaende-og-syklende</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/forbudsskilt/skilt-306-8-forbudt-for-gaende-og-syklende.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/forbudsskilt/forbudt-for-transport-av-farlig-gods</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/forbudsskilt/skilt-308-forbudt-for-transport-av-farlig-gods.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/forbudsskilt/breddegrense</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/forbudsskilt/skilt-312-breddegrense.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/forbudsskilt/hoydegrense</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/forbudsskilt/skilt-314-hoydegrense.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/forbudsskilt/svingforbud-til-hoyre</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/forbudsskilt/skilt-330-1-svingforbud-til-hoyre.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/forbudsskilt/svingforbud-til-venstre</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/forbudsskilt/skilt-330-2-svingforbud-til-venstre.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/forbudsskilt/vendingsforbud</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/forbudsskilt/skilt-332-vendingsforbud.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/forbudsskilt/forbikjoring-forbudt</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/forbudsskilt/skilt-334-forbikjoring-forbudt.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/forbudsskilt/forbikjoringsforbud-for-lastebil</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/forbudsskilt/skilt-335-forbikjoringsforbud-for-lastebil.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/forbudsskilt/slutt-pa-forbikjoringsforbud</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/forbudsskilt/skilt-336-slutt-pa-forbikjoringsforbud.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/forbudsskilt/slutt-pa-forbikjoringsforbud-for-lastebil</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/forbudsskilt/skilt-337-slutt-pa-forbikjoringsforbud-for-lastebil.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/forbudsskilt/fartsgrense-50</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/forbudsskilt/skilt-362-50-fartsgrense.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/forbudsskilt/slutt-pa-saerskilt-fartsgrense-50</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/forbudsskilt/skilt-364-50-slutt-pa-saerskilt-fartsgrense.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/forbudsskilt/fartsgrensesone</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/forbudsskilt/skilt-366-fartsgrensesone.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/forbudsskilt/slutt-pa-fartsgrensesone</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/forbudsskilt/skilt-368-slutt-pa-fartsgrensesone.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/forbudsskilt/stans-forbudt</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/forbudsskilt/skilt-370-stans-forbudt.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/forbudsskilt/parkering-forbudt</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/forbudsskilt/skilt-372-parkering-forbudt.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/pabudsskilt/pabudt-kjoreretning-rett-fram</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/pabudsskilt/skilt-402-1-pabudt-kjoreretning-rett-fram.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/pabudsskilt/pabudt-kjoreretning-til-hoyre</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/pabudsskilt/skilt-402-2-pabudt-kjoreretning-til-hoyre.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/pabudsskilt/pabudt-kjoreretning-til-venstre</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/pabudsskilt/skilt-402-3-pabudt-kjoreretning-til-venstre.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/pabudsskilt/pabudt-kjoreretning-rett-fram-eller-til-hoyre</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/pabudsskilt/skilt-402-4-pabudt-kjoreretning-rett-fram-eller-til-hoyre.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/pabudsskilt/pabudt-kjoreretning-rett-fram-eller-til-venstre</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/pabudsskilt/skilt-402-5-pabudt-kjoreretning-rett-fram-eller-til-venstre.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/pabudsskilt/pabudt-kjoreretning-til-hoyre-eller-venstre</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/pabudsskilt/skilt-402-6-pabudt-kjoreretning-til-hoyre-eller-venstre.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/pabudsskilt/pabudt-kjoreretning-pa-hoyre-side</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/pabudsskilt/skilt-402-7-pabudt-kjoreretning-pa-hoyre-side.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/pabudsskilt/pabudt-kjoreretning-pa-venstre-side</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/pabudsskilt/skilt-402-8-pabudt-kjoreretning-pa-venstre-side.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/pabudsskilt/pabudt-kjorefelt-hoyre</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/pabudsskilt/skilt-404-1-pabudt-kjorefelt-hoyre.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/pabudsskilt/pabudt-kjorefelt-venstre</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/pabudsskilt/skilt-404-2-pabudt-kjorefelt-venstre.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/pabudsskilt/pabudt-rundkjoring</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/pabudsskilt/skilt-406-pabudt-rundkjoring.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/pabudsskilt/pabudt-kjoreretning-i-rundkjoring</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/pabudsskilt/skilt-408-pabudt-kjoreretning-i-rundkjoring.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/opplysningsskilt/motorveg</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/opplysningsskilt/skilt-502-motorveg.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/opplysningsskilt/motortrafikkveg</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/opplysningsskilt/skilt-503-motortrafikkveg.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/opplysningsskilt/slutt-pa-motorveg</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/opplysningsskilt/skilt-504-slutt-pa-motorveg.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/opplysningsskilt/slutt-pa-motortrafikkveg</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/opplysningsskilt/skilt-505-slutt-pa-motortrafikkveg.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/opplysningsskilt/gangfelt</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/opplysningsskilt/skilt-516-gangfelt.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/opplysningsskilt/moteplass</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/opplysningsskilt/skilt-524-moteplass.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/opplysningsskilt/envegskjoring</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/opplysningsskilt/skilt-526-1-envegskjoring.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/opplysningsskilt/blindveg</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/opplysningsskilt/skilt-527-1-blindveg.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/opplysningsskilt/parkering</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/opplysningsskilt/skilt-552-parkering.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/opplysningsskilt/opplysningstavle</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/opplysningsskilt/skilt-560-opplysningstavle.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/opplysningsskilt/feil-kjoreretning</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/opplysningsskilt/skilt-565-feil-kjoreretning.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/opplysningsskilt/nodutgang-for-tunnel</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/opplysningsskilt/skilt-570-1-nodutgang-for-tunnel.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/opplysningsskilt/retning-og-avstand-til-nodutgang</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/opplysningsskilt/skilt-570-2-retning-og-avstand-til-nodutgang.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/opplysningsskilt/kollektivfelt</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/opplysningsskilt/skilt-508-1-kollektivfelt.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/opplysningsskilt/kollektivfelt-for-buss-og-drosje</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/opplysningsskilt/skilt-508-2-kollektivfelt.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/opplysningsskilt/sambruksfelt</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/opplysningsskilt/skilt-509-sambruksfelt.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/opplysningsskilt/slutt-pa-kollektivfelt</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/opplysningsskilt/skilt-510-1-slutt-pa-kollektivfelt.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/opplysningsskilt/slutt-pa-kollektivfelt-for-buss-og-drosje</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/opplysningsskilt/skilt-510-2-slutt-pa-kollektivfelt.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/opplysningsskilt/slutt-pa-sambruksfelt</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/opplysningsskilt/skilt-511-slutt-pa-sambruksfelt.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/opplysningsskilt/holdeplass-for-buss</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/opplysningsskilt/skilt-512-holdeplass-for-buss.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/opplysningsskilt/holdeplass-for-drosje</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/opplysningsskilt/skilt-514-holdeplass-for-drosje.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/opplysningsskilt/gangveg</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/opplysningsskilt/skilt-518-gangveg.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/opplysningsskilt/sykkelveg</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/opplysningsskilt/skilt-520-sykkelveg.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/opplysningsskilt/sykkelfelt</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/opplysningsskilt/skilt-521-sykkelfelt.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/opplysningsskilt/gang-og-sykkelveg</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/opplysningsskilt/skilt-522-gang-og-sykkelveg.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/opplysningsskilt/envegskjoring-retning</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/opplysningsskilt/skilt-526-2-envegskjoring.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/opplysningsskilt/blindveg-sideveg</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/opplysningsskilt/skilt-527-2-blindveg-sideveg.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/opplysningsskilt/blindveg-apen-for-gaende-og-syklende</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/opplysningsskilt/skilt-527-3-blindveg-apen-for-gaende-og-syklende.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/opplysningsskilt/blindveg-sideveg-apen-for-gaende-og-syklende</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/opplysningsskilt/skilt-527-4-blindveg-sideveg-apen-for-gaende-og-syklende.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/opplysningsskilt/valgfritt-kjorefelt</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/opplysningsskilt/skilt-528-valgfritt-kjorefelt.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/opplysningsskilt/sammenfletting</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/opplysningsskilt/skilt-530-sammenfletting.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/opplysningsskilt/felt-for-fartsokning</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/opplysningsskilt/skilt-531-felt-for-fartsokning.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/opplysningsskilt/kjorefelt-slutter</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/opplysningsskilt/skilt-532-kjorefelt-slutter.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/opplysningsskilt/kjorefelt-begynner</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/opplysningsskilt/skilt-534-kjorefelt-begynner.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/opplysningsskilt/kjorefeltinndeling</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/opplysningsskilt/skilt-538-kjorefeltinndeling.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/opplysningsskilt/gatetun</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/opplysningsskilt/skilt-540-gatetun.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/opplysningsskilt/slutt-pa-gatetun</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/opplysningsskilt/skilt-542-slutt-pa-gatetun.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/underskilt/avstand</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/underskilt/skilt-802-avstand.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/underskilt/utstrekning</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/underskilt/skilt-804-utstrekning.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/underskilt/tid</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/underskilt/skilt-806-tid.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/underskilt/gjelder-personbil</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/underskilt/skilt-807-1-symbol-personbil.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/underskilt/gjelder-buss</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/underskilt/skilt-807-3-symbol-buss.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/underskilt/gjelder-sykkel</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/underskilt/skilt-807-6-symbol-sykkel.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/underskilt/gjelder-forflytningshemmede</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/underskilt/skilt-807-8-symbol-forflytningshemmede.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/underskilt/liten-elektrisk-motorvogn</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/underskilt/skilt-807-10-symbol-liten-elektrisk-motorvogn.png</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/underskilt/tekstlig-presisering</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/underskilt/skilt-808-tekst.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/underskilt/svingpil</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/underskilt/skilt-810-svingpil.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/underskilt/anbefalt-fart</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/underskilt/skilt-812-anbefalt-fart.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/underskilt/forlop-av-forkjorsveg</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/underskilt/skilt-822-1-forlop-av-forkjorsveg.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/underskilt/forvarsling-av-stopp</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/underskilt/skilt-824-forvarsling-av-stopp.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/underskilt/toveis-sykkeltrafikk</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/underskilt/skilt-826-sykkeltrafikk-i-begge-kjoreretninger.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/underskilt/start-pa-parkeringsregulering</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/underskilt/skilt-828-1-utstrekning-av-stans-og-parkeringsregulering.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/underskilt/slutt-pa-parkeringsregulering</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/underskilt/skilt-828-2-utstrekning-av-stans-og-parkeringsregulering.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/underskilt/gjeldende-parkeringsregulering</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/underskilt/skilt-828-3-utstrekning-av-stans-og-parkeringsregulering.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/underskilt/oppstillingsmate</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/underskilt/skilt-829-oppstilling-av-parkert-kjoretoy.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/underskilt/parkeringsskive</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/underskilt/skilt-831-parkeringsskive-gratisbillett.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/underskilt/kombinert-regulering</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/underskilt/skilt-834-kombinert-regulering.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/serviceskilt/radioinformasjon</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/serviceskilt/skilt-601-lytt-til-radio.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/serviceskilt/forstehjelp</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/serviceskilt/skilt-602-forstehjelp.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/serviceskilt/nodtelefon</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/serviceskilt/skilt-605-nodtelefon.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/serviceskilt/brannslokkingsapparat</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/serviceskilt/skilt-606-brannslokningsapparat.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/serviceskilt/kjoretoyverksted</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/serviceskilt/skilt-608-kjoretoyverksted.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/serviceskilt/hurtiglading</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/serviceskilt/skilt-609-hurtiglading-av-motorvogn.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/serviceskilt/drivstoff</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/serviceskilt/skilt-610-drivstoff.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/serviceskilt/drivstoff-gass-lpg</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/serviceskilt/skilt-610-1-drivstoff.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/serviceskilt/drivstoff-hydrogen</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/serviceskilt/skilt-610-2-drivstoff.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/serviceskilt/tommested-toalett</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/serviceskilt/skilt-611-toalettommeanlegg.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/serviceskilt/toalett</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/serviceskilt/skilt-612-toalett.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/serviceskilt/rasteplass</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/serviceskilt/skilt-613-1-rasteplass.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/serviceskilt/enklere-servering</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/serviceskilt/skilt-614-enklere-servering.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/serviceskilt/spisested</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/serviceskilt/skilt-616-spisested.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/serviceskilt/campingplass</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/serviceskilt/skilt-618-campingplass.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/serviceskilt/bobilplass</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/serviceskilt/skilt-621-bobilplass.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/serviceskilt/campinghytter</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/serviceskilt/skilt-622-campinghytter.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/serviceskilt/vandrerhjem</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/serviceskilt/skilt-624-vandrerhjem.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/serviceskilt/rom-og-frokost</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/serviceskilt/skilt-625-rom-og-frokost.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/serviceskilt/overnattingssted</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/serviceskilt/skilt-626-overnattingssted.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/serviceskilt/informasjonstavle</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/serviceskilt/skilt-635-informasjon.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/serviceskilt/turistkontor</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/serviceskilt/skilt-637-turistkontor.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/serviceskilt/severdighet</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/serviceskilt/skilt-640-10-severdighet.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/serviceskilt/museum-galleri</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/serviceskilt/skilt-640-12-museum-galleri.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/serviceskilt/utsiktspunkt</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/serviceskilt/skilt-640-20-utsiktspunkt.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/serviceskilt/badeplass</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/serviceskilt/skilt-650-10-badeplass.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/serviceskilt/fiskeplass</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/serviceskilt/skilt-650-11-fiskeplass.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/serviceskilt/tursti</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/serviceskilt/skilt-650-20-tursti.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/serviceskilt/skiloype</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/serviceskilt/skilt-650-21-skiloyype.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/serviceskilt/gardsmat-bygdeturisme</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/serviceskilt/skilt-650-40-gardsmat-bygdeturisme.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/vegvisningsskilt/tabellorienteringstavle</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/vegvisningsskilt/skilt-701-tabellorienteringstavle.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/vegvisningsskilt/diagramorienteringstavle</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/vegvisningsskilt/skilt-703-diagramorienteringstavle.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/vegvisningsskilt/avkjoringstavle</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/vegvisningsskilt/skilt-705-avkjoringstavle.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/vegvisningsskilt/kjorefeltorienteringstavle</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/vegvisningsskilt/skilt-707-kjorefeltorienteringstavle.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/vegvisningsskilt/portalorienteringstavle</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/vegvisningsskilt/skilt-709-portalorienteringstavle.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/vegvisningsskilt/tabellvegviser</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/vegvisningsskilt/skilt-711-tabellvegviser.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/vegvisningsskilt/vegviser</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/vegvisningsskilt/skilt-713-vegviser.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/vegvisningsskilt/kjorefeltvegviser</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/vegvisningsskilt/skilt-717-kjorefeltvegviser.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/vegvisningsskilt/portalvegviser</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/vegvisningsskilt/skilt-719-portalvegviser.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/vegvisningsskilt/vegnummer-europaveg</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/vegvisningsskilt/skilt-723-11-vegnummer-europaveg.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/vegvisningsskilt/vegnummer-riksveg</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/vegvisningsskilt/skilt-723-13-vegnummer-riksveg.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/vegvisningsskilt/vegnummer-fylkesveg</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/vegvisningsskilt/skilt-723-15-vegnummer-fylkesveg.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/vegvisningsskilt/ringveg-ringrute</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/vegvisningsskilt/skilt-723-21-ringveg-ringrute.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/vegvisningsskilt/nasjonal-turistveg</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/vegvisningsskilt/skilt-723-31-nasjonal-turistveg.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/vegvisningsskilt/omkjoringsrute-store-kjoretoy</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/vegvisningsskilt/skilt-723-41-omkjoringsrute-store-kjoretoy.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/vegvisningsskilt/rute-farlig-gods</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/vegvisningsskilt/skilt-723-51-rute-farlig-gods.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/vegvisningsskilt/kryssnummer-flerfeltsveg</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/vegvisningsskilt/skilt-723-71-kryssnummer-flerfeltsveg.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/vegvisningsskilt/kryssnummer-tofeltsveg</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/vegvisningsskilt/skilt-723-73-kryssnummer-tofeltsveg.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/vegvisningsskilt/stedsnavnskilt</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/vegvisningsskilt/skilt-727-stedsnavnskilt.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/vegvisningsskilt/gate-vegnavnskilt</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/vegvisningsskilt/skilt-729-gate-vegnavnskilt.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/vegvisningsskilt/samleskilt-vegvisning</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/vegvisningsskilt/skilt-731-samleskilt-vegvisning.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/vegvisningsskilt/omkjoring-bestemte-kjoretoygrupper</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/vegvisningsskilt/skilt-741-omkjoring-bestemte-kjoretoygrupper.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/vegvisningsskilt/midlertidig-omkjoring</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/vegvisningsskilt/skilt-743-1-midlertidig-omkjoring.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/vegvisningsskilt/midlertidig-omkjoringstavle</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/vegvisningsskilt/skilt-743-2-midlertidig-omkjoring.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/vegvisningsskilt/slutt-pa-midlertidig-omkjoring</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/vegvisningsskilt/skilt-745-slutt-pa-midlertidig-omkjoring.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/vegvisningsskilt/vegviser-gangtrafikk</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/vegvisningsskilt/skilt-749-vegviser-gangtrafikk.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/vegvisningsskilt/vegviser-sykkelrute</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/vegvisningsskilt/skilt-751-vegviser-sykkelrute.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/vegvisningsskilt/tabellvegviser-sykkelrute</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/vegvisningsskilt/skilt-753-tabellvegviser-sykkelrute.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/vegvisningsskilt/sykkelruteskilt</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/vegvisningsskilt/skilt-755-sykkelruteskilt.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/vegvisningsskilt/avstandsskilt-sykkelrute</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/vegvisningsskilt/skilt-757-avstandsskilt-sykkelrute.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/vegvisningsskilt/motorveg</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/vegvisningsskilt/skilt-761-motorveg.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/vegvisningsskilt/motortrafikkveg</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/vegvisningsskilt/skilt-763-motortrafikkveg.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/vegvisningsskilt/bomveg-brukerbetaling</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/vegvisningsskilt/skilt-765-bomveg-brukerbetaling.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/vegvisningsskilt/parkering</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/vegvisningsskilt/skilt-767-parkering.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/vegvisningsskilt/parkeringshus</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/vegvisningsskilt/skilt-769-parkeringshus.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/vegvisningsskilt/lufthavn-flyplass</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/vegvisningsskilt/skilt-771-lufthavn-flyplass.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/vegvisningsskilt/busstasjon-bussterminal</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/vegvisningsskilt/skilt-773-busstasjon-bussterminal.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/vegvisningsskilt/jernbanestasjon-togterminal</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/vegvisningsskilt/skilt-774-jernbanestasjon-togterminal.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/vegvisningsskilt/bilferje</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/vegvisningsskilt/skilt-775-bilferje.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/vegvisningsskilt/kjettingplass</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/vegvisningsskilt/skilt-780-kjetting.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/vegvisningsskilt/kirke</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/vegvisningsskilt/skilt-790-10-kirke.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/vegvisningsskilt/naeringsomrade</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/vegvisningsskilt/skilt-790-15-naeringsomrade.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/vegvisningsskilt/kjopesenter</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/vegvisningsskilt/skilt-790-16-kjopesenter.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/vegvisningsskilt/svommehall</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/vegvisningsskilt/skilt-790-20-svommehall.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/vegvisningsskilt/helautomatisk-bomstasjon</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/vegvisningsskilt/skilt-792-30-helautomatisk-bomstasjon.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/markeringsskilt/bakgrunnsmarkering-hoyre</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/markeringsskilt/skilt-902-h-bakgrunnsmarkering.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/markeringsskilt/bakgrunnsmarkering-venstre</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/markeringsskilt/skilt-902-v-bakgrunnsmarkering.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/markeringsskilt/retningsmarkering-hoyre</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/markeringsskilt/skilt-904-retningsmarkering.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/markeringsskilt/retningsmarkering-venstre</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/markeringsskilt/skilt-904-v-retningsmarkering.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/markeringsskilt/hindermarkering-hoyre</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/markeringsskilt/skilt-906-h-hindermarkering.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/markeringsskilt/hindermarkering-venstre</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/markeringsskilt/skilt-906-v-hindermarkering.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/markeringsskilt/hindermarkering-begge-sider</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/markeringsskilt/skilt-906-vh-hindermarkering.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/markeringsskilt/hindermarkering-hoyde</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/markeringsskilt/skilt-908-hindermarkering-hoyde.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/markeringsskilt/avkjoringsmarkering</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/markeringsskilt/skilt-912-avkjoringsmarkering.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/markeringsskilt/tunnelmarkering-hoyre</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/markeringsskilt/skilt-914-h-tunnelmarkering.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/markeringsskilt/tunnelmarkering-venstre</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/markeringsskilt/skilt-914-v-tunnelmarkering.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/markeringsskilt/avstandsmarkering-i-tunnel</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/markeringsskilt/skilt-916-avstandsmarkering-i-tunnel.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/markeringsskilt/kantstolpe-hoyre</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/markeringsskilt/skilt-920-h-kantstolpe.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/markeringsskilt/kantstolpe-venstre</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/markeringsskilt/skilt-920-ve-kantstolpe.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/markeringsskilt/kantstolpe-midtdeler</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/markeringsskilt/skilt-920-vm-kantstolpe.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/markeringsskilt/sperremarkering</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/markeringsskilt/skilt-930-sperremarkering.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/markeringsskilt/trafikkjegle</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/markeringsskilt/skilt-940-trafikkjegle.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/markeringsskilt/trafikksylinder</loc>
-        <lastmod>2026-07-02</lastmod>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/markeringsskilt/skilt-942-trafikksylinder.jpg</image:loc>
+        </image:image>
     </url>
 </urlset>

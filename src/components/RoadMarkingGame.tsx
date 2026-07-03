@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { trackEvent } from '../utils/analytics'
 import { Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
 import confetti from 'canvas-confetti'
@@ -545,6 +546,11 @@ export default function RoadMarkingGame() {
     const [selectedOptionId, setSelectedOptionId] = useState<string | null>(null)
     const [showResults, setShowResults] = useState(false)
 
+    // GA4: game started
+    useEffect(() => {
+        trackEvent('game_started', { game_name: 'veimerking' })
+    }, [])
+
     const scenario = SCENARIOS[currentRound]
 
     // Confetti effect on completion
@@ -653,8 +659,34 @@ export default function RoadMarkingGame() {
     return (
         <div className="road-marking-game">
             <Helmet>
-                <title>Lær veimerking: Interaktivt spill til teoriprøven | Teori-test.no</title>
-                <meta name="description" content="Test din kunnskap om sperrelinjer, haitenner, sperreområder og veimerking med vårt interaktive læringsspill for klasse B." />
+                <title>Veimerking-spill – test deg på linjer og oppmerking</title>
+                <meta name="description" content="Gratis spill om veimerking: sperrelinjer, varsellinjer, vikelinjer og sperreområder. Interaktive situasjoner som trener deg til teoriprøven klasse B." />
+                <meta property="og:title" content="Veimerking-spill – test deg på linjer og oppmerking" />
+                <meta property="og:description" content="Gratis spill om veimerking: sperrelinjer, varsellinjer, vikelinjer og sperreområder. Interaktive situasjoner som trener deg til teoriprøven klasse B." />
+                <script type="application/ld+json">
+                    {JSON.stringify({
+                        '@context': 'https://schema.org',
+                        '@type': 'VideoGame',
+                        name: 'Veimerking-spillet',
+                        url: 'https://teori-test.no/laeringsspill/veimerking',
+                        description: 'Interaktivt læringsspill om veimerking: sperrelinjer, varsellinjer, vikelinjer og sperreområder. Laget for teoriprøven klasse B.',
+                        genre: 'Educational',
+                        gamePlatform: 'Web browser',
+                        applicationCategory: 'Game',
+                        isAccessibleForFree: true,
+                        inLanguage: 'nb',
+                    })}
+                </script>
+                <script type="application/ld+json">
+                    {JSON.stringify({
+                        '@context': 'https://schema.org',
+                        '@type': 'BreadcrumbList',
+                        itemListElement: [
+                            { '@type': 'ListItem', position: 1, name: 'Læringsspill', item: 'https://teori-test.no/laeringsspill' },
+                            { '@type': 'ListItem', position: 2, name: 'Veimerking-spillet' },
+                        ],
+                    })}
+                </script>
             </Helmet>
 
             <nav aria-label="Brødsmulesti">

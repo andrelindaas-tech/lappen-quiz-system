@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { trackEvent } from '../utils/analytics'
 import { Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
 import confetti from 'canvas-confetti'
@@ -35,6 +36,11 @@ function shuffle<T>(array: T[]): T[] {
 export default function StoppingDistanceChallenge() {
     const [scenarios, setScenarios] = useState<Scenario[]>([])
     const [currentIndex, setCurrentIndex] = useState(0)
+
+    // GA4: game started
+    useEffect(() => {
+        trackEvent('game_started', { game_name: 'stopplengde' })
+    }, [])
     const [score, setScore] = useState(0)
     const [guess, setGuess] = useState(0)
     const [hasMovedSlider, setHasMovedSlider] = useState(false)
@@ -113,8 +119,48 @@ export default function StoppingDistanceChallenge() {
         }
     }, [isGameOver, score])
 
+    // SEO head — rendered in BOTH the loading state and the game view,
+    // so prerendering (SSG) always gets the correct title/meta.
+    const seoHead = (
+        <Helmet>
+            <title>Stopplengde-spill – test bremselengde og reaksjonstid</title>
+            <meta name="description" content="Klarer du å anslå bremselengde og stopplengde i ulike hastigheter og føreforhold? Gratis interaktivt spill som trener deg til teoriprøven." />
+            <meta property="og:title" content="Stopplengde-spill – test bremselengde og reaksjonstid" />
+            <meta property="og:description" content="Klarer du å anslå bremselengde og stopplengde i ulike hastigheter og føreforhold? Gratis interaktivt spill som trener deg til teoriprøven." />
+            <script type="application/ld+json">
+                {JSON.stringify({
+                    '@context': 'https://schema.org',
+                    '@type': 'VideoGame',
+                    name: 'Stopplengde-utfordringen',
+                    url: 'https://teori-test.no/laeringsspill/stopplengde',
+                    description: 'Interaktivt læringsspill der du anslår reaksjonslengde, bremselengde og total stopplengde i ulike hastigheter og føreforhold. Laget for teoriprøven klasse B.',
+                    genre: 'Educational',
+                    gamePlatform: 'Web browser',
+                    applicationCategory: 'Game',
+                    isAccessibleForFree: true,
+                    inLanguage: 'nb',
+                })}
+            </script>
+            <script type="application/ld+json">
+                {JSON.stringify({
+                    '@context': 'https://schema.org',
+                    '@type': 'BreadcrumbList',
+                    itemListElement: [
+                        { '@type': 'ListItem', position: 1, name: 'Læringsspill', item: 'https://teori-test.no/laeringsspill' },
+                        { '@type': 'ListItem', position: 2, name: 'Stopplengde-utfordringen' },
+                    ],
+                })}
+            </script>
+        </Helmet>
+    )
+
     if (scenarios.length === 0) {
-        return <div style={{ padding: '3rem', textAlign: 'center', color: 'var(--color-text-light)' }}>Laster spill...</div>
+        return (
+            <>
+                {seoHead}
+                <div style={{ padding: '3rem', textAlign: 'center', color: 'var(--color-text-light)' }}>Laster spill...</div>
+            </>
+        )
     }
 
     const currentScenario = scenarios[currentIndex]
@@ -353,10 +399,7 @@ export default function StoppingDistanceChallenge() {
 
     return (
         <div className="stopping-distance-challenge">
-            <Helmet>
-                <title>Stopplengde-utfordringen | Læringsspill | Teori-test.no</title>
-                <meta name="description" content="Test din forståelse for reaksjonstid, bremselende og total stopplengde med vårt interaktive stopplengde-spill." />
-            </Helmet>
+            {seoHead}
 
             <nav style={{ marginBottom: 'var(--spacing-md)', fontSize: '0.9rem' }} aria-label="Brødsmulesti">
                 <Link to="/laeringsspill" style={{ color: 'var(--color-primary)', textDecoration: 'none' }}>

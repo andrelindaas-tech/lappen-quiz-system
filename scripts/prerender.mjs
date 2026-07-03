@@ -59,17 +59,21 @@ function renderRoute(url) {
 
 function buildDocument(appHtml, helmet) {
     let doc = template
-    const head = helmet
+    let head = helmet
         ? [helmet.title, helmet.meta, helmet.link, helmet.script]
               .map((p) => p.toString())
               .filter(Boolean)
               .join('\n  ')
         : ''
-    // If the page provides its own <title> via Helmet, drop the static default
-    if (head.includes('<title')) {
+    // Only swap in Helmet's <title> if it actually has content —
+    // otherwise keep the static default title from index.html
+    const helmetTitle = head.match(/<title[^>]*>([\s\S]*?)<\/title>/)
+    if (helmetTitle && helmetTitle[1].trim()) {
         doc = doc.replace(/<title>[\s\S]*?<\/title>/, '')
+    } else if (helmetTitle) {
+        head = head.replace(/<title[^>]*>[\s\S]*?<\/title>\s*/, '')
     }
-    if (head) {
+    if (head.trim()) {
         doc = doc.replace('</head>', `  ${head}\n</head>`)
     }
     return doc.replace('<div id="root"></div>', `<div id="root">${appHtml}</div>`)

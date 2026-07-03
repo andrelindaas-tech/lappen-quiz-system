@@ -6,8 +6,22 @@ export default function LearningGamesIndex() {
     return (
         <div className="start-screen" style={{ paddingBottom: '4rem' }}>
             <Helmet>
-                <title>Interaktive Læringsspill for Teoriprøven Klasse B | Teori-test.no</title>
-                <meta name="description" content="Lær teori til førerkortet gjennom morsomme interaktive spill og utfordringer. Test dine ferdigheter på stopplengde, bremselengde og mer." />
+                <title>Gratis teorispill – lær til teoriprøven med spill</title>
+                <meta name="description" content="Tre gratis læringsspill til teoriprøven klasse B: tren på trafikkskilt, stopplengde og veimerking. Spill rett i nettleseren – ingen innlogging." />
+                <meta property="og:title" content="Gratis teorispill – lær til teoriprøven med spill" />
+                <meta property="og:description" content="Tre gratis læringsspill til teoriprøven klasse B: tren på trafikkskilt, stopplengde og veimerking. Spill rett i nettleseren – ingen innlogging." />
+                <script type="application/ld+json">
+                    {JSON.stringify({
+                        '@context': 'https://schema.org',
+                        '@type': 'ItemList',
+                        name: 'Læringsspill til teoriprøven klasse B',
+                        itemListElement: [
+                            { '@type': 'ListItem', position: 1, name: 'Stopplengde-utfordringen', url: 'https://teori-test.no/laeringsspill/stopplengde' },
+                            { '@type': 'ListItem', position: 2, name: 'Skiltduellen', url: 'https://teori-test.no/laeringsspill/skiltduellen' },
+                            { '@type': 'ListItem', position: 3, name: 'Veimerking-spillet', url: 'https://teori-test.no/laeringsspill/veimerking' },
+                        ],
+                    })}
+                </script>
             </Helmet>
 
             <div className="section-container">

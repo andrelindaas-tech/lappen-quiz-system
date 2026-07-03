@@ -63,11 +63,13 @@ export default function TrafficSignBank() {
   return (
     <div className="container" style={{ paddingBottom: 'var(--spacing-2xl)' }}>
       <Helmet>
-        <title>Trafikkskilt og skiltregler for teoriprøven | Teori-test.no</title>
+        <title>Alle norske trafikkskilt – komplett oversikt med forklaring</title>
         <meta
           name="description"
-          content="Søk i skiltbanken og lær alle trafikkskiltene til teoriprøven for personbil (klasse B). Se forklaringer, kjøreregler og typiske teorifeller."
+          content="Komplett oversikt over alle norske trafikkskilt med bilde og forklaring. Søk på navn, skiltnummer eller utseende – for eksempel «blått skilt med rød strek»."
         />
+        <meta property="og:title" content="Alle norske trafikkskilt – komplett oversikt med forklaring" />
+        <meta property="og:description" content="Komplett oversikt over alle norske trafikkskilt med bilde og forklaring. Søk på navn, skiltnummer eller utseende – for eksempel «blått skilt med rød strek»." />
         <script type="application/ld+json">
           {JSON.stringify(faqSchema)}
         </script>
@@ -187,7 +189,7 @@ export default function TrafficSignBank() {
                   >
                     <img
                       src={sign.imagePath}
-                      alt={sign.displayName || sign.name}
+                      alt={`Skilt ${sign.code} ${sign.displayName || sign.name}`}
                       style={{ width: '48px', height: '48px', objectFit: 'contain' }}
                       loading="lazy"
                     />
@@ -388,7 +390,7 @@ export default function TrafficSignBank() {
               <div style={{ height: '80px', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 'var(--spacing-md)' }}>
                 <img
                   src={sign.imagePath}
-                  alt={sign.displayName || sign.name}
+                  alt={`Skilt ${sign.code} ${sign.displayName || sign.name}`}
                   style={{ maxHeight: '100%', maxWidth: '80px', objectFit: 'contain' }}
                   loading="lazy"
                 />

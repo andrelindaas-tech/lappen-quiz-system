@@ -87,7 +87,7 @@ function generateSitemap() {
     console.warn(`Warning: Could not find categories data at ${CAT_DATA_PATH}`);
   }
 
-  // 4. Parse active signs from trafficSigns.ts
+  // 4. Parse active signs from trafficSigns.ts (incl. image for Google Images)
   if (fs.existsSync(SIGNS_DATA_PATH)) {
     const content = fs.readFileSync(SIGNS_DATA_PATH, 'utf-8');
     // Split into individual sign blocks
@@ -95,6 +95,7 @@ function generateSitemap() {
     for (const block of blocks) {
       const slugMatch = block.match(/slug:\s*['"]([^'"]+)['"]/);
       const categoryMatch = block.match(/category:\s*['"]([^'"]+)['"]/);
+      const imageMatch = block.match(/imagePath:\s*['"]([^'"]+)['"]/);
       if (slugMatch && categoryMatch) {
         const slug = slugMatch[1];
         const category = categoryMatch[1];
@@ -102,7 +103,8 @@ function generateSitemap() {
           urls.push({
             loc: `/trafikkskilt/${category}/${slug}`,
             priority: '0.6',
-            changefreq: 'monthly'
+            changefreq: 'monthly',
+            image: imageMatch ? imageMatch[1] : null
           });
         }
       }
@@ -111,16 +113,21 @@ function generateSitemap() {
     console.warn(`Warning: Could not find traffic signs data at ${SIGNS_DATA_PATH}`);
   }
 
-  // Generate XML sitemap
+  // Generate XML sitemap (with image extension for sign photos)
   let xml = '<?xml version="1.0" encoding="UTF-8"?>\n';
-  xml += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n';
-  
+  xml += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">\n';
+
   for (const url of urls) {
     xml += '    <url>\n';
     xml += `        <loc>${BASE_URL}${url.loc}</loc>\n`;
     xml += `        <lastmod>${TODAY}</lastmod>\n`;
     xml += `        <changefreq>${url.changefreq}</changefreq>\n`;
     xml += `        <priority>${url.priority}</priority>\n`;
+    if (url.image) {
+      xml += '        <image:image>\n';
+      xml += `            <image:loc>${BASE_URL}${url.image}</image:loc>\n`;
+      xml += '        </image:image>\n';
+    }
     xml += '    </url>\n';
   }
   
