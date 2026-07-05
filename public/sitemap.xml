@@ -2,397 +2,409 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
     <url>
         <loc>https://teori-test.no/</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>https://teori-test.no/laeringsressurser</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://teori-test.no/laeringsspill</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://teori-test.no/laeringsspill/stopplengde</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://teori-test.no/laeringsspill/veimerking</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://teori-test.no/laeringsspill/skiltduellen</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://teori-test.no/quiz</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://teori-test.no/quiz/vikeplikt</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://teori-test.no/quiz/skilt</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://teori-test.no/quiz/fartsregler</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://teori-test.no/quiz/veimerking</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://teori-test.no/laeringsressurser/vikeplikt</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://teori-test.no/laeringsressurser/bremselengde</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://teori-test.no/laeringsressurser/myndighetspyramiden</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://teori-test.no/laeringsressurser/veimerking</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://teori-test.no/laeringsressurser/rundkjoring</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://teori-test.no/laeringsressurser/forbikjoring</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://teori-test.no/laeringsressurser/lysbruk-morkekjoring</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://teori-test.no/laeringsressurser/skilt</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://teori-test.no/laeringsressurser/fartsgrenser</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://teori-test.no/laeringsressurser/reaksjonstid</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://teori-test.no/laeringsressurser/stans-og-parkering</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://teori-test.no/laeringsressurser/promille</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://teori-test.no/laeringsressurser/tilhenger</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://teori-test.no/laeringsressurser/miljo</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://teori-test.no/laeringsressurser/vognkort-vekter</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://teori-test.no/laeringsressurser/temaliste-teoriproven-klasse-b</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://teori-test.no/laeringsressurser/dekk-bremser-styring</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://teori-test.no/laeringsressurser/trafikklys-signaler</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://teori-test.no/laeringsressurser/feltvalg-fletting-kollektivfelt</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://teori-test.no/laeringsressurser/forerstottesystemer</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://teori-test.no/laeringsressurser/teoriproven-bil</loc>
+        <lastmod>2026-07-05</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://teori-test.no/laeringsressurser/teoritentamen</loc>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://teori-test.no/laeringsressurser/automatlappen</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://teori-test.no/laeringsressurser/sikkerhetskontroll</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://teori-test.no/laeringsressurser/oppkjoring</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://teori-test.no/laeringsressurser/stroket-teoriproven</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://teori-test.no/laeringsressurser/ovingskjoring</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://teori-test.no/laeringsressurser/tips-eksamen</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://teori-test.no/laeringsressurser/trafikkuhell-forstehjelp</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://teori-test.no/laeringsressurser/sikkerhetsutstyr</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://teori-test.no/laeringsressurser/buss-fra-holdeplass</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://teori-test.no/laeringsressurser/trikk-og-vikeplikt</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://teori-test.no/laeringsressurser/planovergang-regler</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://teori-test.no/laeringsressurser/kollektivfelt-og-elbil</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://teori-test.no/laeringsressurser/tunnelsikkerhet</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://teori-test.no/laeringsressurser/barn-i-bil-og-sikring</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://teori-test.no/laeringsressurser/bilens-lys</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://teori-test.no/laeringsressurser/vanlige-feil-teoriproven</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://teori-test.no/laeringsressurser/glatt-fore</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://teori-test.no/laeringsressurser/vegtrafikkloven-paragraf-3</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://teori-test.no/laeringsressurser/plikter-ved-ulykke</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://teori-test.no/laeringsressurser/prikker-pa-forerkortet</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://teori-test.no/laeringsressurser/forerkortbeslag</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://teori-test.no/laeringsressurser/boter-og-forelegg</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://teori-test.no/laeringsressurser/forsikring-og-ansvar</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://teori-test.no/laeringsressurser/personvern</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/vikeplikt-og-forkjorsskilt</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/fareskilt</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/forbudsskilt</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/pabudsskilt</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/opplysningsskilt</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/serviceskilt</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/vegvisningsskilt</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/underskilt</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/markeringsskilt</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/vikeplikt-og-forkjorsskilt/vikeplikt</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -401,7 +413,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/vikeplikt-og-forkjorsskilt/stopp</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -410,7 +422,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/vikeplikt-og-forkjorsskilt/forkjorsveg</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -419,7 +431,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/vikeplikt-og-forkjorsskilt/slutt-pa-forkjorsveg</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -428,7 +440,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/vikeplikt-og-forkjorsskilt/forkjorsvegkryss</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -437,7 +449,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/vikeplikt-og-forkjorsskilt/vikeplikt-overfor-motende-kjorende</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -446,7 +458,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/vikeplikt-og-forkjorsskilt/motende-kjorende-har-vikeplikt</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -455,7 +467,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/fareskilt/farlig-sving-til-hoyre</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -464,7 +476,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/fareskilt/farlig-sving-til-venstre</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -473,7 +485,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/fareskilt/farlige-svinger-forst-til-hoyre</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -482,7 +494,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/fareskilt/smalere-veg-begge-sider</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -491,7 +503,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/fareskilt/ujevn-veg</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -500,7 +512,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/fareskilt/fartshump</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -509,7 +521,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/fareskilt/vegarbeid</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -518,7 +530,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/fareskilt/steinsprut</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -527,7 +539,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/fareskilt/glatt-kjorebane</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -536,7 +548,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/fareskilt/tunnel</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -545,7 +557,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/fareskilt/farlig-vegkryss</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -554,7 +566,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/fareskilt/rundkjoring</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -563,7 +575,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/fareskilt/trafikklyssignal</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -572,7 +584,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/fareskilt/planovergang-med-bom</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -581,7 +593,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/fareskilt/planovergang-uten-bom</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -590,7 +602,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/fareskilt/fotgjengere</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -599,7 +611,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/fareskilt/barn</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -608,7 +620,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/fareskilt/syklende</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -617,7 +629,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/fareskilt/elg</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -626,7 +638,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/fareskilt/motende-trafikk</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -635,7 +647,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/fareskilt/ko</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -644,7 +656,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/fareskilt/trafikkulykke</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -653,7 +665,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/forbudsskilt/innkjoring-forbudt</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -662,7 +674,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/forbudsskilt/forbudt-for-alle-kjoretoy</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -671,7 +683,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/forbudsskilt/forbudt-for-motorvogn</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -680,7 +692,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/forbudsskilt/forbudt-for-syklende</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -689,7 +701,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/forbudsskilt/forbudt-for-gaende-og-syklende</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -698,7 +710,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/forbudsskilt/forbudt-for-transport-av-farlig-gods</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -707,7 +719,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/forbudsskilt/breddegrense</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -716,7 +728,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/forbudsskilt/hoydegrense</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -725,7 +737,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/forbudsskilt/svingforbud-til-hoyre</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -734,7 +746,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/forbudsskilt/svingforbud-til-venstre</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -743,7 +755,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/forbudsskilt/vendingsforbud</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -752,7 +764,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/forbudsskilt/forbikjoring-forbudt</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -761,7 +773,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/forbudsskilt/forbikjoringsforbud-for-lastebil</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -770,7 +782,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/forbudsskilt/slutt-pa-forbikjoringsforbud</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -779,7 +791,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/forbudsskilt/slutt-pa-forbikjoringsforbud-for-lastebil</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -788,7 +800,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/forbudsskilt/fartsgrense-50</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -797,7 +809,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/forbudsskilt/slutt-pa-saerskilt-fartsgrense-50</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -806,7 +818,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/forbudsskilt/fartsgrensesone</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -815,7 +827,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/forbudsskilt/slutt-pa-fartsgrensesone</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -824,7 +836,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/forbudsskilt/stans-forbudt</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -833,7 +845,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/forbudsskilt/parkering-forbudt</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -842,7 +854,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/pabudsskilt/pabudt-kjoreretning-rett-fram</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -851,7 +863,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/pabudsskilt/pabudt-kjoreretning-til-hoyre</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -860,7 +872,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/pabudsskilt/pabudt-kjoreretning-til-venstre</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -869,7 +881,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/pabudsskilt/pabudt-kjoreretning-rett-fram-eller-til-hoyre</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -878,7 +890,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/pabudsskilt/pabudt-kjoreretning-rett-fram-eller-til-venstre</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -887,7 +899,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/pabudsskilt/pabudt-kjoreretning-til-hoyre-eller-venstre</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -896,7 +908,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/pabudsskilt/pabudt-kjoreretning-pa-hoyre-side</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -905,7 +917,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/pabudsskilt/pabudt-kjoreretning-pa-venstre-side</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -914,7 +926,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/pabudsskilt/pabudt-kjorefelt-hoyre</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -923,7 +935,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/pabudsskilt/pabudt-kjorefelt-venstre</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -932,7 +944,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/pabudsskilt/pabudt-rundkjoring</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -941,7 +953,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/pabudsskilt/pabudt-kjoreretning-i-rundkjoring</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -950,7 +962,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/opplysningsskilt/motorveg</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -959,7 +971,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/opplysningsskilt/motortrafikkveg</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -968,7 +980,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/opplysningsskilt/slutt-pa-motorveg</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -977,7 +989,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/opplysningsskilt/slutt-pa-motortrafikkveg</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -986,7 +998,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/opplysningsskilt/gangfelt</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -995,7 +1007,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/opplysningsskilt/moteplass</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -1004,7 +1016,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/opplysningsskilt/envegskjoring</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -1013,7 +1025,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/opplysningsskilt/blindveg</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -1022,7 +1034,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/opplysningsskilt/parkering</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -1031,7 +1043,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/opplysningsskilt/opplysningstavle</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -1040,7 +1052,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/opplysningsskilt/feil-kjoreretning</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -1049,7 +1061,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/opplysningsskilt/nodutgang-for-tunnel</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -1058,7 +1070,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/opplysningsskilt/retning-og-avstand-til-nodutgang</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -1067,7 +1079,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/opplysningsskilt/kollektivfelt</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -1076,7 +1088,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/opplysningsskilt/kollektivfelt-for-buss-og-drosje</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -1085,7 +1097,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/opplysningsskilt/sambruksfelt</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -1094,7 +1106,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/opplysningsskilt/slutt-pa-kollektivfelt</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -1103,7 +1115,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/opplysningsskilt/slutt-pa-kollektivfelt-for-buss-og-drosje</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -1112,7 +1124,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/opplysningsskilt/slutt-pa-sambruksfelt</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -1121,7 +1133,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/opplysningsskilt/holdeplass-for-buss</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -1130,7 +1142,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/opplysningsskilt/holdeplass-for-drosje</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -1139,7 +1151,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/opplysningsskilt/gangveg</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -1148,7 +1160,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/opplysningsskilt/sykkelveg</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -1157,7 +1169,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/opplysningsskilt/sykkelfelt</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -1166,7 +1178,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/opplysningsskilt/gang-og-sykkelveg</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -1175,7 +1187,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/opplysningsskilt/envegskjoring-retning</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -1184,7 +1196,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/opplysningsskilt/blindveg-sideveg</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -1193,7 +1205,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/opplysningsskilt/blindveg-apen-for-gaende-og-syklende</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -1202,7 +1214,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/opplysningsskilt/blindveg-sideveg-apen-for-gaende-og-syklende</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -1211,7 +1223,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/opplysningsskilt/valgfritt-kjorefelt</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -1220,7 +1232,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/opplysningsskilt/sammenfletting</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -1229,7 +1241,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/opplysningsskilt/felt-for-fartsokning</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -1238,7 +1250,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/opplysningsskilt/kjorefelt-slutter</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -1247,7 +1259,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/opplysningsskilt/kjorefelt-begynner</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -1256,7 +1268,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/opplysningsskilt/kjorefeltinndeling</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -1265,7 +1277,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/opplysningsskilt/gatetun</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -1274,7 +1286,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/opplysningsskilt/slutt-pa-gatetun</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -1283,7 +1295,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/underskilt/avstand</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -1292,7 +1304,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/underskilt/utstrekning</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -1301,7 +1313,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/underskilt/tid</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -1310,7 +1322,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/underskilt/gjelder-personbil</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -1319,7 +1331,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/underskilt/gjelder-buss</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -1328,7 +1340,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/underskilt/gjelder-sykkel</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -1337,7 +1349,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/underskilt/gjelder-forflytningshemmede</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -1346,7 +1358,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/underskilt/liten-elektrisk-motorvogn</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -1355,7 +1367,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/underskilt/tekstlig-presisering</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -1364,7 +1376,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/underskilt/svingpil</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -1373,7 +1385,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/underskilt/anbefalt-fart</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -1382,7 +1394,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/underskilt/forlop-av-forkjorsveg</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -1391,7 +1403,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/underskilt/forvarsling-av-stopp</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -1400,7 +1412,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/underskilt/toveis-sykkeltrafikk</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -1409,7 +1421,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/underskilt/start-pa-parkeringsregulering</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -1418,7 +1430,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/underskilt/slutt-pa-parkeringsregulering</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -1427,7 +1439,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/underskilt/gjeldende-parkeringsregulering</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -1436,7 +1448,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/underskilt/oppstillingsmate</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -1445,7 +1457,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/underskilt/parkeringsskive</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -1454,7 +1466,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/underskilt/kombinert-regulering</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -1463,7 +1475,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/serviceskilt/radioinformasjon</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -1472,7 +1484,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/serviceskilt/forstehjelp</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -1481,7 +1493,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/serviceskilt/nodtelefon</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -1490,7 +1502,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/serviceskilt/brannslokkingsapparat</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -1499,7 +1511,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/serviceskilt/kjoretoyverksted</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -1508,7 +1520,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/serviceskilt/hurtiglading</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -1517,7 +1529,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/serviceskilt/drivstoff</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -1526,7 +1538,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/serviceskilt/drivstoff-gass-lpg</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -1535,7 +1547,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/serviceskilt/drivstoff-hydrogen</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -1544,7 +1556,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/serviceskilt/tommested-toalett</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -1553,7 +1565,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/serviceskilt/toalett</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -1562,7 +1574,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/serviceskilt/rasteplass</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -1571,7 +1583,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/serviceskilt/enklere-servering</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -1580,7 +1592,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/serviceskilt/spisested</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -1589,7 +1601,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/serviceskilt/campingplass</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -1598,7 +1610,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/serviceskilt/bobilplass</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -1607,7 +1619,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/serviceskilt/campinghytter</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -1616,7 +1628,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/serviceskilt/vandrerhjem</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -1625,7 +1637,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/serviceskilt/rom-og-frokost</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -1634,7 +1646,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/serviceskilt/overnattingssted</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -1643,7 +1655,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/serviceskilt/informasjonstavle</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -1652,7 +1664,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/serviceskilt/turistkontor</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -1661,7 +1673,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/serviceskilt/severdighet</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -1670,7 +1682,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/serviceskilt/museum-galleri</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -1679,7 +1691,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/serviceskilt/utsiktspunkt</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -1688,7 +1700,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/serviceskilt/badeplass</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -1697,7 +1709,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/serviceskilt/fiskeplass</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -1706,7 +1718,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/serviceskilt/tursti</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -1715,7 +1727,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/serviceskilt/skiloype</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -1724,7 +1736,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/serviceskilt/gardsmat-bygdeturisme</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -1733,7 +1745,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/vegvisningsskilt/tabellorienteringstavle</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -1742,7 +1754,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/vegvisningsskilt/diagramorienteringstavle</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -1751,7 +1763,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/vegvisningsskilt/avkjoringstavle</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -1760,7 +1772,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/vegvisningsskilt/kjorefeltorienteringstavle</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -1769,7 +1781,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/vegvisningsskilt/portalorienteringstavle</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -1778,7 +1790,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/vegvisningsskilt/tabellvegviser</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -1787,7 +1799,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/vegvisningsskilt/vegviser</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -1796,7 +1808,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/vegvisningsskilt/kjorefeltvegviser</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -1805,7 +1817,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/vegvisningsskilt/portalvegviser</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -1814,7 +1826,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/vegvisningsskilt/vegnummer-europaveg</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -1823,7 +1835,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/vegvisningsskilt/vegnummer-riksveg</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -1832,7 +1844,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/vegvisningsskilt/vegnummer-fylkesveg</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -1841,7 +1853,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/vegvisningsskilt/ringveg-ringrute</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -1850,7 +1862,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/vegvisningsskilt/nasjonal-turistveg</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -1859,7 +1871,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/vegvisningsskilt/omkjoringsrute-store-kjoretoy</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -1868,7 +1880,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/vegvisningsskilt/rute-farlig-gods</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -1877,7 +1889,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/vegvisningsskilt/kryssnummer-flerfeltsveg</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -1886,7 +1898,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/vegvisningsskilt/kryssnummer-tofeltsveg</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -1895,7 +1907,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/vegvisningsskilt/stedsnavnskilt</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -1904,7 +1916,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/vegvisningsskilt/gate-vegnavnskilt</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -1913,7 +1925,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/vegvisningsskilt/samleskilt-vegvisning</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -1922,7 +1934,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/vegvisningsskilt/omkjoring-bestemte-kjoretoygrupper</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -1931,7 +1943,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/vegvisningsskilt/midlertidig-omkjoring</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -1940,7 +1952,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/vegvisningsskilt/midlertidig-omkjoringstavle</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -1949,7 +1961,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/vegvisningsskilt/slutt-pa-midlertidig-omkjoring</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -1958,7 +1970,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/vegvisningsskilt/vegviser-gangtrafikk</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -1967,7 +1979,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/vegvisningsskilt/vegviser-sykkelrute</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -1976,7 +1988,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/vegvisningsskilt/tabellvegviser-sykkelrute</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -1985,7 +1997,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/vegvisningsskilt/sykkelruteskilt</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -1994,7 +2006,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/vegvisningsskilt/avstandsskilt-sykkelrute</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -2003,7 +2015,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/vegvisningsskilt/motorveg</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -2012,7 +2024,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/vegvisningsskilt/motortrafikkveg</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -2021,7 +2033,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/vegvisningsskilt/bomveg-brukerbetaling</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -2030,7 +2042,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/vegvisningsskilt/parkering</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -2039,7 +2051,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/vegvisningsskilt/parkeringshus</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -2048,7 +2060,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/vegvisningsskilt/lufthavn-flyplass</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -2057,7 +2069,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/vegvisningsskilt/busstasjon-bussterminal</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -2066,7 +2078,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/vegvisningsskilt/jernbanestasjon-togterminal</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -2075,7 +2087,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/vegvisningsskilt/bilferje</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -2084,7 +2096,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/vegvisningsskilt/kjettingplass</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -2093,7 +2105,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/vegvisningsskilt/kirke</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -2102,7 +2114,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/vegvisningsskilt/naeringsomrade</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -2111,7 +2123,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/vegvisningsskilt/kjopesenter</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -2120,7 +2132,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/vegvisningsskilt/svommehall</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -2129,7 +2141,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/vegvisningsskilt/helautomatisk-bomstasjon</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -2138,7 +2150,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/markeringsskilt/bakgrunnsmarkering-hoyre</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -2147,7 +2159,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/markeringsskilt/bakgrunnsmarkering-venstre</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -2156,7 +2168,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/markeringsskilt/retningsmarkering-hoyre</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -2165,7 +2177,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/markeringsskilt/retningsmarkering-venstre</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -2174,7 +2186,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/markeringsskilt/hindermarkering-hoyre</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -2183,7 +2195,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/markeringsskilt/hindermarkering-venstre</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -2192,7 +2204,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/markeringsskilt/hindermarkering-begge-sider</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -2201,7 +2213,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/markeringsskilt/hindermarkering-hoyde</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -2210,7 +2222,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/markeringsskilt/avkjoringsmarkering</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -2219,7 +2231,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/markeringsskilt/tunnelmarkering-hoyre</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -2228,7 +2240,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/markeringsskilt/tunnelmarkering-venstre</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -2237,7 +2249,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/markeringsskilt/avstandsmarkering-i-tunnel</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -2246,7 +2258,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/markeringsskilt/kantstolpe-hoyre</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -2255,7 +2267,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/markeringsskilt/kantstolpe-venstre</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -2264,7 +2276,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/markeringsskilt/kantstolpe-midtdeler</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -2273,7 +2285,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/markeringsskilt/sperremarkering</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -2282,7 +2294,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/markeringsskilt/trafikkjegle</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -2291,7 +2303,7 @@
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/markeringsskilt/trafikksylinder</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>

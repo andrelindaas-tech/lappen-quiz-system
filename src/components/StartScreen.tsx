@@ -24,6 +24,18 @@ const faqItems: FaqItem[] = [
         answer: 'Nei. Dette er en øvingsprøve laget for å ligne formatet på teoriprøven for klasse B, slik at du kan trene før den ekte prøven hos Statens vegvesen.'
     },
     {
+        question: 'Hvor mange spørsmål er det på teoriprøven?',
+        answer: 'Teoriprøven for bil (klasse B) hos Statens vegvesen har 45 spørsmål. Du må svare riktig på minst 38 for å bestå. Øvingsprøven vår bruker samme format med 45 spørsmål.'
+    },
+    {
+        question: 'Hvor mange feil kan man ha på teoriprøven?',
+        answer: 'Du kan ha maksimalt 7 feil på teoriprøven for klasse B. Det tilsvarer minst 38 riktige av 45 spørsmål, altså cirka 85 prosent.'
+    },
+    {
+        question: 'Hvor lang tid har man på teoriprøven?',
+        answer: 'Du har 90 minutter på den offisielle teoriprøven for klasse B. Trenger du mer tid, kan du be prøvevakten om ekstra tid. Hos oss kan du øve med valgfri 90-minutters nedtelling.'
+    },
+    {
         question: 'Får jeg se fasit og forklaring?',
         answer: 'Ja. Etter prøven får du se riktige svar og korte forklaringer, slik at du kan lære av feilene dine.'
     },

@@ -4,6 +4,10 @@ export interface TrafficSignCategory {
   slug: string;
   description: string;
   isActive?: boolean;
+  /** Ekstra avsnitt under beskrivelsen — dekker synonymer og utseende folk søker på */
+  synonymIntro?: string;
+  /** FAQ vist nederst på kategorisiden + FAQPage-schema */
+  faq?: { question: string; answer: string }[];
 }
 
 export const trafficSignCategories: TrafficSignCategory[] = [
@@ -13,6 +17,21 @@ export const trafficSignCategories: TrafficSignCategory[] = [
     slug: 'vikeplikt-og-forkjorsskilt',
     description: 'Skilt som regulerer hvem som har vikeplikt eller forkjørsrett i kryss og på veistrekninger.',
     isActive: true,
+    synonymIntro: 'Gruppen kalles også vikepliktskilt eller forkjørsskilt. Det mest kjente er den hvite trekanten med rød kant og spissen ned (vikeplikt) og det røde åttekantede stoppskiltet.',
+    faq: [
+      {
+        question: 'Hva betyr trekant-skiltet med spissen ned?',
+        answer: 'Den hvite trekanten med rød kant og spissen ned er vikepliktskiltet (202). Det betyr at du har vikeplikt for kjørende trafikk i begge retninger på kryssende veg. Du må kun stoppe helt hvis det er nødvendig for å slippe trafikken frem.'
+      },
+      {
+        question: 'Hvilket skilt krever at du alltid stopper helt?',
+        answer: 'Stoppskiltet (204) – det røde åttekantede skiltet – krever at du alltid stanser helt, med hjulene i ro, før du kjører videre. En «rullende stopp» er ikke lov.'
+      },
+      {
+        question: 'Hva betyr det gule diamantformede skiltet?',
+        answer: 'Det gule, diamantformede skiltet med hvit kant er forkjørsveg (206). Det betyr at kryssende trafikk har vikeplikt for deg, helt til skiltet «Slutt på forkjørsveg» opphever det.'
+      }
+    ],
   },
   {
     id: 'fareskilt',
@@ -20,6 +39,21 @@ export const trafficSignCategories: TrafficSignCategory[] = [
     slug: 'fareskilt',
     description: 'Fareskilt varsler om farer du må være ekstra oppmerksom på. De sier ikke nødvendigvis at noe er forbudt, men at du må tilpasse fart, plassering og oppmerksomhet etter forholdene.',
     isActive: true,
+    synonymIntro: 'Fareskilt kalles også varselskilt. Du kjenner dem igjen på formen: trekantede skilt med rød kant, hvit bunn og et svart symbol som viser faren – for eksempel elg, barn eller farlig sving.',
+    faq: [
+      {
+        question: 'Hva betyr trekantede skilt med rød kant?',
+        answer: 'Trekantede skilt med rød kant og spissen opp er fareskilt. De varsler om en fare lenger fremme – for eksempel farlig sving, glatt veg eller dyr – og betyr at du må senke farten og skjerpe oppmerksomheten.'
+      },
+      {
+        question: 'Hva skal du gjøre når du ser et fareskilt?',
+        answer: 'Tilpass farten, øk oppmerksomheten og vær klar til å handle. Fareskilt forbyr ingenting i seg selv, men faren det varsler om kan kreve at du bremser eller endrer plassering.'
+      },
+      {
+        question: 'Hvor langt før faren står fareskiltet?',
+        answer: 'Utenfor tettbygd strøk står fareskilt vanligvis 150–250 meter før faren. I tettbygd strøk kan avstanden være kortere. Et underskilt kan angi en annen avstand.'
+      }
+    ],
   },
   {
     id: 'forbudsskilt',
@@ -27,6 +61,21 @@ export const trafficSignCategories: TrafficSignCategory[] = [
     slug: 'forbudsskilt',
     description: 'Runde skilt som forbyr en bestemt adferd, for eksempel fartsgrenser eller innkjøringsforbud.',
     isActive: true,
+    synonymIntro: 'Forbudsskilt er runde med rød ring – ofte omtalt som «rundt skilt med rød ring» eller «rød sirkel-skilt». De blå variantene med røde streker er stans- og parkeringsskiltene.',
+    faq: [
+      {
+        question: 'Hva betyr blått skilt med rød strek?',
+        answer: 'Et rundt blått skilt med rød ring og én rød skråstrek betyr parkering forbudt (372). Har skiltet et rødt kryss (to kryssende streker), betyr det stans forbudt (370) – da kan du verken stanse eller parkere.'
+      },
+      {
+        question: 'Hva betyr rundt hvitt skilt med rød ring?',
+        answer: 'Runde hvite skilt med rød ring er forbudsskilt. Symbolet eller tallet i midten viser hva som er forbudt – for eksempel er et tall en fartsgrense, og en rød ring rundt en bil betyr forbikjøring forbudt.'
+      },
+      {
+        question: 'Hvor lenge gjelder et forbudsskilt?',
+        answer: 'Et forbudsskilt gjelder som hovedregel frem til neste kryss, eller til et opphevelsesskilt eller nytt skilt endrer reguleringen. Underskilt kan angi en bestemt strekning.'
+      }
+    ],
   },
   {
     id: 'pabudsskilt',
@@ -34,6 +83,21 @@ export const trafficSignCategories: TrafficSignCategory[] = [
     slug: 'pabudsskilt',
     description: 'Påbudsskilt viser hva du må gjøre eller hvilken retning du skal følge. De brukes blant annet for kjøreretning, kjørefelt og rundkjøring, og er viktige å forstå fordi de pålegger deg en bestemt handling.',
     isActive: true,
+    synonymIntro: 'Påbudsskilt kalles ofte obligatoriske skilt i dagligtale. Du kjenner dem igjen som runde, blå skilt med hvite piler eller symboler – de forteller hva du MÅ gjøre, ikke bare hva du kan.',
+    faq: [
+      {
+        question: 'Hva er obligatoriske skilt?',
+        answer: 'Obligatoriske skilt er et uoffisielt navn på påbudsskilt – runde blå skilt med hvite symboler. De pålegger deg en bestemt handling, for eksempel påbudt kjøreretning eller påbudt rundkjøring.'
+      },
+      {
+        question: 'Hva betyr blått rundt skilt med hvit pil?',
+        answer: 'Et rundt blått skilt med hvit pil er påbudt kjøreretning (402). Du må kjøre i den retningen pilen viser – andre retninger er ikke tillatt.'
+      },
+      {
+        question: 'Hva er forskjellen på påbudsskilt og opplysningsskilt?',
+        answer: 'Påbudsskilt (runde, blå) pålegger deg en handling du må utføre. Opplysningsskilt (firkantede, ofte blå) informerer om hva som gjelder på stedet, for eksempel motorveg eller gangfelt.'
+      }
+    ],
   },
   {
     id: 'opplysningsskilt',
@@ -41,6 +105,17 @@ export const trafficSignCategories: TrafficSignCategory[] = [
     slug: 'opplysningsskilt',
     description: 'Opplysningsskilt gir informasjon om trafikkregler, kjørefelt, parkeringsmuligheter, gangfelt, motorveg og andre forhold du må forstå når du kjører. De forteller ofte hva som gjelder på stedet eller strekningen.',
     isActive: true,
+    synonymIntro: 'Opplysningsskilt er som regel firkantede, blå og hvite skilt. Søker du på «norsk skilt blått og hvitt», er det oftest et opplysningsskilt du har sett – for eksempel gangfelt, parkering eller motorveg.',
+    faq: [
+      {
+        question: 'Hva betyr blå og hvite firkantede skilt?',
+        answer: 'Firkantede blå skilt med hvite symboler er opplysningsskilt. De informerer om hva som gjelder på stedet – for eksempel gangfelt, parkering, envegskjøring eller motorveg.'
+      },
+      {
+        question: 'Er opplysningsskilt bare til informasjon?',
+        answer: 'Nei – mange opplysningsskilt har rettslig betydning. Skiltet for gangfelt betyr for eksempel at du har vikeplikt for gående i feltet, og motorvegskiltet betyr at reglene for motorveg gjelder.'
+      }
+    ],
   },
   {
     id: 'serviceskilt',
@@ -48,6 +123,17 @@ export const trafficSignCategories: TrafficSignCategory[] = [
     slug: 'serviceskilt',
     description: 'Skilt som gir opplysninger om nødutstyr, veghjelp, spisesteder, overnatting og andre tjenester langs vegen.',
     isActive: true,
+    synonymIntro: 'Serviceskilt er de blå eller brune firkantede skiltene med hvite symboler for bensinstasjon, rasteplass, sykehus og lignende tjenester.',
+    faq: [
+      {
+        question: 'Hva betyr brune serviceskilt?',
+        answer: 'Brune serviceskilt viser vei til severdigheter og aktiviteter, for eksempel museer, badeplasser eller nasjonale turistveger. Blå serviceskilt viser tjenester som drivstoff, mat og overnatting.'
+      },
+      {
+        question: 'Kommer serviceskilt på teoriprøven?',
+        answer: 'Serviceskilt testes sjeldnere enn fare- og forbudsskilt, men du bør kjenne igjen de vanligste – som førstehjelp, drivstoff og rasteplass – og vite at de kun informerer, ikke regulerer.'
+      }
+    ],
   },
   {
     id: 'vegvisningsskilt',
@@ -55,6 +141,17 @@ export const trafficSignCategories: TrafficSignCategory[] = [
     slug: 'vegvisningsskilt',
     description: 'Skilt som viser vei til steder, bydeler, virksomheter eller rutenummer.',
     isActive: true,
+    synonymIntro: 'Vegvisningsskilt kalles gjerne veivisere eller retningsskilt. Fargen forteller hvor vegen fører: blå for riksveger, gule for lokale mål, grønne for motorveg og hvite for gater og virksomheter.',
+    faq: [
+      {
+        question: 'Hva betyr fargene på vegvisningsskilt?',
+        answer: 'Grønn bakgrunn brukes for motorveg, blå for øvrige hovedveger, gul/oransje for midlertidig omkjøring og lokale mål, hvit for gater, bydeler og virksomheter, og brun for severdigheter.'
+      },
+      {
+        question: 'Kommer vegvisningsskilt på teoriprøven?',
+        answer: 'Du kan få spørsmål om hva fargene betyr og hvordan du leser skiltene i god tid for å velge riktig felt – spesielt i kombinasjon med feltvalg og plassering.'
+      }
+    ],
   },
   {
     id: 'underskilt',
@@ -62,6 +159,17 @@ export const trafficSignCategories: TrafficSignCategory[] = [
     slug: 'underskilt',
     description: 'Underskilt står under et hovedskilt og presiserer hvem skiltet gjelder for, hvor langt det gjelder, når det gjelder eller hvilke unntak som finnes. De er viktige på teoriprøven fordi de kan endre hvordan du skal tolke hovedskiltet.',
     isActive: true,
+    synonymIntro: 'Underskilt er de små, hvite tilleggsskiltene som henger under hovedskiltet – med tekst, tall eller symboler som presiserer hva som gjelder.',
+    faq: [
+      {
+        question: 'Hva betyr tallene på et underskilt?',
+        answer: 'Tall på underskilt angir som regel avstand eller utstrekning – for eksempel «200 m» (faren/reguleringen kommer om 200 meter) eller en pil med lengde som viser hvor langt hovedskiltet gjelder.'
+      },
+      {
+        question: 'Gjelder hovedskiltet uten at du leser underskiltet?',
+        answer: 'Nei – underskiltet er en del av reguleringen. Et parkering forbudt-skilt med underskilt «8–16» gjelder for eksempel bare i det tidsrommet. Du må alltid lese hovedskilt og underskilt samlet.'
+      }
+    ],
   },
   {
     id: 'markeringsskilt',
@@ -69,5 +177,16 @@ export const trafficSignCategories: TrafficSignCategory[] = [
     slug: 'markeringsskilt',
     description: 'Skilt som markerer hindringer, svinger eller vegens kantforløp.',
     isActive: true,
+    synonymIntro: 'Markeringsskilt er de sorte og gule (eller røde og hvite) stripede skiltene som markerer skarpe svinger, hindre og kanter – ofte kalt sving-markering eller hindermarkering.',
+    faq: [
+      {
+        question: 'Hva betyr sorte og gule stripede skilt?',
+        answer: 'Sorte og gule striper brukes på bakgrunnsmarkering i skarpe svinger og ved hindre. Stripene peker nedover mot den siden du skal passere på.'
+      },
+      {
+        question: 'Hva er forskjellen på markeringsskilt og fareskilt?',
+        answer: 'Fareskilt varsler om en fare i forkant, mens markeringsskilt står ved selve hindringen eller svingen og viser nøyaktig hvor den er og hvilken side du skal passere på.'
+      }
+    ],
   },
 ];

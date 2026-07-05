@@ -113,6 +113,19 @@ export default function TrafficSignCategoryPage() {
         <script type="application/ld+json">
           {JSON.stringify(breadcrumbStructuredData)}
         </script>
+        {category.faq && category.faq.length > 0 && (
+          <script type="application/ld+json">
+            {JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'FAQPage',
+              mainEntity: category.faq.map((item) => ({
+                '@type': 'Question',
+                name: item.question,
+                acceptedAnswer: { '@type': 'Answer', text: item.answer },
+              })),
+            })}
+          </script>
+        )}
       </Helmet>
 
       {/* Breadcrumb navigation */}
@@ -132,6 +145,11 @@ export default function TrafficSignCategoryPage() {
         <p style={{ color: 'var(--color-text-light)', fontSize: '1.1rem', lineHeight: '1.6', maxWidth: '720px' }}>
           {category.description}
         </p>
+        {category.synonymIntro && (
+          <p style={{ color: 'var(--color-text-light)', fontSize: '1.05rem', lineHeight: '1.6', maxWidth: '720px', marginTop: 'var(--spacing-sm)' }}>
+            {category.synonymIntro}
+          </p>
+        )}
       </section>
 
       {/* Grid of signs in the category */}
@@ -247,6 +265,57 @@ export default function TrafficSignCategoryPage() {
           ))}
         </div>
       </section>
+
+      {/* Quiz CTA */}
+      <section style={{
+        marginTop: 'var(--spacing-2xl)',
+        textAlign: 'center',
+        padding: 'var(--spacing-xl)',
+        backgroundColor: 'var(--color-bg)',
+        border: '1px solid var(--color-border)',
+        borderRadius: 'var(--radius-lg)',
+        boxShadow: 'var(--shadow-sm)',
+      }}>
+        <h2 style={{ fontSize: '1.4rem', fontWeight: 700, marginBottom: 'var(--spacing-sm)' }}>
+          Kan du skiltene i denne gruppen?
+        </h2>
+        <p style={{ color: 'var(--color-text-light)', marginBottom: 'var(--spacing-md)' }}>
+          Ta en kort skiltquiz og se hvor mange du kjenner igjen.
+        </p>
+        <Link
+          to="/quiz/skilt"
+          style={{
+            display: 'inline-block',
+            padding: '12px 28px',
+            backgroundColor: 'var(--color-primary)',
+            color: '#ffffff',
+            borderRadius: 'var(--radius-sm)',
+            textDecoration: 'none',
+            fontWeight: 600,
+          }}
+        >
+          Start skiltquiz
+        </Link>
+      </section>
+
+      {/* FAQ */}
+      {category.faq && category.faq.length > 0 && (
+        <section style={{ marginTop: 'var(--spacing-2xl)', maxWidth: '760px' }}>
+          <h2 style={{ fontSize: '1.5rem', fontWeight: 700, marginBottom: 'var(--spacing-lg)' }}>
+            Ofte stilte spørsmål om {category.name.toLowerCase()}
+          </h2>
+          {category.faq.map((item) => (
+            <div key={item.question} style={{ marginBottom: 'var(--spacing-lg)' }}>
+              <h3 style={{ fontSize: '1.05rem', fontWeight: 700, marginBottom: '6px' }}>
+                {item.question}
+              </h3>
+              <p style={{ color: 'var(--color-text-light)', lineHeight: '1.6', margin: 0 }}>
+                {item.answer}
+              </p>
+            </div>
+          ))}
+        </section>
+      )}
     </div>
   );
 }

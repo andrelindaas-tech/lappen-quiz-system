@@ -27,6 +27,11 @@ const overviewArticleIds = ['temaliste-teoriproven-klasse-b']
 
 const articleCategorySections = [
     {
+        title: 'Om teoriprøven',
+        description: 'Fakta om prøven: antall spørsmål, tid, pris, krav – og hvordan du øver gratis.',
+        ids: ['teoriproven-bil', 'teoritentamen']
+    },
+    {
         title: 'Vikeplikt og kryss',
         description: 'Lær hvordan du vurderer kryss, rundkjøringer, trikk, buss og trafikklys.',
         ids: ['vikeplikt', 'rundkjoring', 'trafikklys-signaler', 'buss-fra-holdeplass', 'trikk-og-vikeplikt']
@@ -109,6 +114,8 @@ const getTopicIcon = (id: string) => {
         case 'barn-i-bil-og-sikring':
             return <UserCheck size={24} strokeWidth={1.8} />
         case 'tips-eksamen':
+        case 'teoriproven-bil':
+        case 'teoritentamen':
             return <GraduationCap size={24} strokeWidth={1.8} />
         case 'trafikkuhell-forstehjelp':
         case 'plikter-ved-ulykke':

@@ -2575,21 +2575,26 @@ export const theoryTopics: TheoryTopic[] = [
         shortDescription: 'Lær å lese vognkortet til teoriprøven: egenvekt, tillatt totalvekt, nyttelast, aksellast, vogntogvekt og tilhengervekt.',
         icon: '📋',
         color: 'var(--apple-teal)',
-        seoTitle: 'Vognkort og vekter – egenvekt, nyttelast og totalvekt | Teori-test.no',
-        seoDescription: 'Lær å lese vognkortet til teoriprøven: egenvekt, tillatt totalvekt, nyttelast, aksellast, vogntogvekt og tilhengervekt. Med eksempler og miniQuiz.',
+        seoTitle: 'Vognkort forklart med eksempel – egenvekt, totalvekt og tilhengervekt',
+        seoDescription: 'Se et vognkort-eksempel med forklaring av feltene: egenvekt, tillatt totalvekt, nyttelast og tilhengervekt. Pluss: hvilken del skal ligge i bilen?',
         sections: [
             {
                 title: 'Kort forklart: hva viser vognkortet?',
                 type: 'text',
-                content: 'Vognkortet viser bilens tekniske data og lovlige vektgrenser. De viktigste tallene til teoriprøven er egenvekt, tillatt totalvekt, nyttelast, tillatt vogntogvekt, aksellast og tillatt hengervekt med eller uten brems. Det er den tekniske delen av vognkortet, del 1, som skal ligge i bilen under kjøring. Del 2 er eierdelen og bør oppbevares trygt hjemme.'
+                content: 'Vognkortet viser bilens tekniske data og lovlige vektgrenser. De viktigste tallene til teoriprøven er egenvekt, tillatt totalvekt, nyttelast, tillatt vogntogvekt, aksellast og tillatt hengervekt med eller uten brems. På teoriprøven får du ofte et bilde av et vognkort og må regne ut nyttelast, tilhengervekt eller om bilen er lovlig lastet.'
             },
             {
-                title: 'Vognkort og vekter: Slik forstår du tallene til teoriprøven',
-                type: 'text',
-                content: 'Vognkortet forteller deg hva bilen er godkjent for: hvor mye den kan veie, hvor mye du kan laste, hvor mye den kan trekke, og hvilke tekniske grenser du må følge. På teoriprøven får du ofte et bilde av et vognkort og må regne ut nyttelast, tilhengervekt eller om bilen er lovlig lastet.'
+                title: 'Eksempel: Slik ser et vognkort ut',
+                type: 'component',
+                component: 'VognkortEksempel'
             },
             {
-                title: '',
+                title: 'Hvilken del av vognkortet skal ligge i bilen?',
+                type: 'info',
+                content: 'Vognkortet består av to deler:\n\n• **Del 1 (kjøretøydelen)** skal alltid være med i bilen under kjøring. Det er denne delen du viser ved kontroll, og den inneholder alle tekniske data og vekter.\n• **Del 2 (eierdelen)** brukes ved eierskifte og skal oppbevares trygt hjemme – aldri i bilen. Ligger del 2 i bilen og bilen blir stjålet, kan tyven i verste fall omregistrere den.\n\nDu kan også vise digitalt vognkort i Statens vegvesen-appen i stedet for papirutgaven av del 1.'
+            },
+            {
+                title: 'Vektbegrepene på ett brett',
                 type: 'table',
                 content: `<div style="overflow-x:auto; margin: 1rem 0;">\n<table style="width: 100%; border-collapse: collapse; margin-bottom: 2rem;">\n    <thead>\n        <tr style="border-bottom: 2px solid var(--color-border);">\n            <th style="padding: 1rem 0.5rem; text-align: left; font-weight: 700;">Begrep</th>\n            <th style="padding: 1rem 0.5rem; text-align: left; font-weight: 700;">Hva betyr det?</th>\n            <th style="padding: 1rem 0.5rem; text-align: left; font-weight: 700;">Typisk teorifelle</th>\n        </tr>\n    </thead>\n    <tbody>\n        <tr style="border-bottom: 1px solid var(--color-border);">\n            <td style="padding: 1rem 0.5rem; font-weight: 600;">Egenvekt med fører</td>\n            <td style="padding: 1rem 0.5rem;">Bilens vekt uten passasjerer og bagasje, men med fører på 75 kg</td>\n            <td style="padding: 1rem 0.5rem;">Mange trekker fra føreren én gang til</td>\n        </tr>\n        <tr style="border-bottom: 1px solid var(--color-border);">\n            <td style="padding: 1rem 0.5rem; font-weight: 600;">Tillatt totalvekt</td>\n            <td style="padding: 1rem 0.5rem;">Maks lovlig vekt for bilen med last og passasjerer</td>\n            <td style="padding: 1rem 0.5rem;">Må aldri overskrides</td>\n        </tr>\n        <tr style="border-bottom: 1px solid var(--color-border);">\n            <td style="padding: 1rem 0.5rem; font-weight: 600;">Aktuell totalvekt</td>\n            <td style="padding: 1rem 0.5rem;">Det bilen faktisk veier akkurat nå</td>\n            <td style="padding: 1rem 0.5rem;">Endrer seg med passasjerer og last</td>\n        </tr>\n        <tr style="border-bottom: 1px solid var(--color-border);">\n            <td style="padding: 1rem 0.5rem; font-weight: 600;">Nyttelast</td>\n            <td style="padding: 1rem 0.5rem;">Hvor mye bilen kan laste av passasjerer og bagasje</td>\n            <td style="padding: 1rem 0.5rem;">Takboks og bagasje teller med</td>\n        </tr>\n        <tr style="border-bottom: 1px solid var(--color-border);">\n            <td style="padding: 1rem 0.5rem; font-weight: 600;">Tillatt vogntogvekt</td>\n            <td style="padding: 1rem 0.5rem;">Maks samlet vekt for bil og tilhenger</td>\n            <td style="padding: 1rem 0.5rem;">Kan begrense selv om hengervekten ser høy nok ut</td>\n        </tr>\n        <tr style="border-bottom: 1px solid var(--color-border);">\n            <td style="padding: 1rem 0.5rem; font-weight: 600;">Tillatt hengervekt med brems</td>\n            <td style="padding: 1rem 0.5rem;">Maks tilhenger bilen kan trekke når tilhengeren har brems</td>\n            <td style="padding: 1rem 0.5rem;">Må sjekkes mot førerkortklasse</td>\n        </tr>\n        <tr style="border-bottom: 1px solid var(--color-border);">\n            <td style="padding: 1rem 0.5rem; font-weight: 600;">Tillatt hengervekt uten brems</td>\n            <td style="padding: 1rem 0.5rem;">Maks tilhenger bilen kan trekke uten tilhengerbrems</td>\n            <td style="padding: 1rem 0.5rem;">Er ofte mye lavere</td>\n        </tr>\n        <tr style="border-bottom: 1px solid var(--color-border);">\n            <td style="padding: 1rem 0.5rem; font-weight: 600;">Tillatt taklast</td>\n            <td style="padding: 1rem 0.5rem;">Maks vekt på taket, inkludert takstativ og takboks</td>\n            <td style="padding: 1rem 0.5rem;">Takboksen veier også noe</td>\n        </tr>\n    </tbody>\n</table>\n</div>`
             },
@@ -2604,19 +2609,19 @@ export const theoryTopics: TheoryTopic[] = [
                 content: 'Det klassiske regnestykket på teoriprøven er å finne ut hvor mange kilo bagasje du kan ha med når du allerede har passasjerer i bilen.\n\nEksempel:\n\n- Tillatt totalvekt: 2000 kg\n- Egenvekt med fører: 1500 kg\n- Nyttelast: 2000 - 1500 = 500 kg\n\nDu skal ha med 3 passasjerer som veier 80 kg hver:\n\n- Passasjerer: 3 × 80 kg = 240 kg\n- Rest til bagasje: 500 - 240 = 260 kg\n\nDu kan altså laste 260 kg bagasje. Føreren er allerede inkludert i egenvekten.'
             },
             {
-                title: 'Interaktiv kalkulator for tilhengervekt',
-                type: 'calculator',
-                content: 'Bruk kalkulatoren under for å se om du lovlig kan trekke tilhengeren med vanlig klasse B, eller om du trenger B96 eller BE. Test med ulike vekter for å se hvordan 3500 kg-regelen fungerer i praksis.'
-            },
-            {
                 title: 'Slik leser du tilhengervekt i vognkortet',
                 type: 'text',
-                content: 'Når du skal finne ut hvilken tilhenger bilen kan trekke, må du se i punkt 8 i vognkortet: **Vekter**. Her finner du de viktigste tallene for bil, last og tilhenger.\n\nI eksempelet under ser du blant annet:\n\n- **Tillatt totalvekt:** 1985 kg\n- **Egenvekt med fører:** 1400 kg\n- **Tillatt nyttelast inkl. passasjerer:** 585 kg\n- **Tillatt vogntogvekt:** 3385 kg\n- **Tillatt hengervekt med brems:** 1400 kg\n- **Tillatt hengervekt uten brems:** 650 kg\n- **Tillatt koblingslast:** 75 kg\n- **Tillatt taklast:** 75 kg\n\n![Vognkort vekter – tillatt totalvekt, nyttelast og tilhengervekt med brems og uten brems](/Tilhenger%20vekter.png)\n*I vognkortet finner du bilens tillatte totalvekt, nyttelast, vogntogvekt og hvor tung tilhenger bilen kan trekke med og uten brems.*\n\nDet er spesielt to tall mange blander:\n\n**Tillatt hengervekt med brems** betyr hvor tung tilhenger bilen teknisk kan trekke når tilhengeren har egne bremser.\n\n**Tillatt hengervekt uten brems** betyr hvor tung tilhenger bilen kan trekke når tilhengeren ikke har egne bremser. Dette tallet er ofte mye lavere.\n\nHusk at du må sjekke tre ting samtidig:\n\n1. Hva bilen har lov til å trekke ifølge vognkortet\n2. Hva tilhengeren er registrert for\n3. Hva førerkortklassen din gir deg lov til å kjøre\n\nEn vanlig teorifelle er å bare se på førerkortregelen for klasse B og glemme bilens tekniske begrensning. Selv om førerkortet ditt tillater en bestemt kombinasjon, kan bilen ha en lavere grense i vognkortet.\n\nLes også vår guide om [regler for tilhenger](/laeringsressurser/tilhenger) hvis du vil forstå klasse B, B96 og BE bedre.'
+                content: 'Når du skal finne ut hvilken tilhenger bilen kan trekke, må du se i punkt 8 i vognkortet: **Vekter**. Her finner du de viktigste tallene for bil, last og tilhenger.\n\nI eksempelet under – samme bil som i det interaktive eksempelet øverst i artikkelen – ser du blant annet:\n\n- **Tillatt totalvekt:** 1985 kg\n- **Egenvekt med fører:** 1400 kg\n- **Tillatt nyttelast inkl. passasjerer:** 585 kg\n- **Tillatt vogntogvekt:** 3385 kg\n- **Tillatt hengervekt med brems:** 1400 kg\n- **Tillatt hengervekt uten brems:** 650 kg\n- **Tillatt koblingslast:** 75 kg\n- **Tillatt taklast:** 75 kg\n\n![Vognkort vekter – tillatt totalvekt, nyttelast og tilhengervekt med brems og uten brems](/Tilhenger%20vekter.png)\n*I vognkortet finner du bilens tillatte totalvekt, nyttelast, vogntogvekt og hvor tung tilhenger bilen kan trekke med og uten brems.*\n\nDet er spesielt to tall mange blander:\n\n**Tillatt hengervekt med brems** betyr hvor tung tilhenger bilen teknisk kan trekke når tilhengeren har egne bremser.\n\n**Tillatt hengervekt uten brems** betyr hvor tung tilhenger bilen kan trekke når tilhengeren ikke har egne bremser. Dette tallet er ofte mye lavere.\n\nHusk at du må sjekke tre ting samtidig:\n\n1. Hva bilen har lov til å trekke ifølge vognkortet\n2. Hva tilhengeren er registrert for\n3. Hva førerkortklassen din gir deg lov til å kjøre\n\nEn vanlig teorifelle er å bare se på førerkortregelen for klasse B og glemme bilens tekniske begrensning. Selv om førerkortet ditt tillater en bestemt kombinasjon, kan bilen ha en lavere grense i vognkortet.\n\nLes også vår guide om [regler for tilhenger](/laeringsressurser/tilhenger) hvis du vil forstå klasse B, B96 og BE bedre.'
             },
             {
                 title: 'Eksempel: Kan bilen trekke denne tilhengeren?',
                 type: 'example',
                 content: 'Bilen har tillatt hengervekt med brems på 1400 kg. Tilhengeren har tillatt totalvekt på 1300 kg.\n\nDa er tilhengeren innenfor bilens tekniske grense.\n\nMen du må fortsatt sjekke førerkortregelen. Med klasse B kan bilens og tilhengerens tillatte totalvekt som hovedregel være maks 3500 kg samlet, med unntak for lett tilhenger på maks 750 kg.\n\nDerfor må du alltid sjekke både:\n\n- vognkortet til bilen\n- vognkortet til tilhengeren\n- førerkortklassen din'
+            },
+            {
+                title: 'Interaktiv kalkulator for tilhengervekt',
+                type: 'calculator',
+                content: 'Bruk kalkulatoren under for å se om du lovlig kan trekke tilhengeren med vanlig klasse B, eller om du trenger B96 eller BE. Test med ulike vekter for å se hvordan 3500 kg-regelen fungerer i praksis.'
             },
             {
                 title: 'Hva betyr tillatt vogntogvekt?',
@@ -2647,7 +2652,27 @@ export const theoryTopics: TheoryTopic[] = [
         faq: [
             {
                 question: 'Må jeg alltid ha vognkortet i bilen?',
-                answer: 'Ja, del 1 av vognkortet skal ligge i bilen under kjøring. Del 2 er eierbevis og bør oppbevares trygt hjemme.'
+                answer: 'Ja, del 1 av vognkortet skal ligge i bilen under kjøring. Del 2 er eierbevis og bør oppbevares trygt hjemme. Du kan også vise digitalt vognkort i Statens vegvesen-appen.'
+            },
+            {
+                question: 'Hvordan ser et vognkort ut?',
+                answer: 'Vognkort del 1 er et dokument med bilens registreringsnummer, tekniske data og vektfelter merket med koder: G (egenvekt), F.2 (tillatt totalvekt), O.1 (tilhengervekt med brems) og O.2 (uten brems). Se det interaktive eksempelet i denne artikkelen.'
+            },
+            {
+                question: 'Hvor i vognkortet står tilhengervekten?',
+                answer: 'Tillatt tilhengervekt står i vektfeltene i vognkort del 1: O.1 er maksvekt for tilhenger med brems, og O.2 for tilhenger uten brems. Husk at tillatt vogntogvekt kan begrense hvor tungt du kan trekke i praksis.'
+            },
+            {
+                question: 'Hvordan leser jeg vognkortet?',
+                answer: 'Start med vektfeltene: egenvekt (G) er bilen klar til kjøring med fører, tillatt totalvekt (F.2) er maks lovlig vekt, og differansen er nyttelasten din. For tilhenger ser du på O.1 og O.2. Prøv det klikkbare vognkort-eksempelet i artikkelen.'
+            },
+            {
+                question: 'Hva er forskjellen på tillatt og aktuell totalvekt?',
+                answer: 'Tillatt totalvekt er maksgrensen i vognkortet og kan aldri lovlig overskrides. Aktuell totalvekt er det bilen faktisk veier akkurat nå, med passasjerene og lasten du har med.'
+            },
+            {
+                question: 'Hva er nyttelast?',
+                answer: 'Nyttelast er hvor mye du kan laste i bilen av passasjerer og bagasje. Den regnes ut som tillatt totalvekt minus egenvekt. Føreren (75 kg) er allerede inkludert i egenvekten.'
             },
             {
                 question: 'Hvor finner jeg bilens vekter?',
@@ -3656,6 +3681,180 @@ Når du nærmer deg et lyskryss, bør du derfor se etter:
 
 export const theoryArticles: TheoryTopic[] = [
     {
+        id: 'teoriproven-bil',
+        title: 'Teoriprøven for bil – alt du må vite',
+        icon: '📋',
+        shortDescription: 'Hvor mange spørsmål, hvor mange feil kan du ha, hva koster den og hvor lenge er den gyldig? Her er alle fakta om teoriprøven for klasse B, basert på Statens vegvesen.',
+        color: 'var(--apple-blue)',
+        seoTitle: 'Teoriprøven for bil (klasse B) 2026 – spørsmål, tid, pris og krav',
+        seoDescription: '45 spørsmål, maks 7 feil, 90 minutter og 480 kr per forsøk. Alt om teoriprøven for bil: krav, booking, språk, gyldighet – og gratis øvingsprøve.',
+        sections: [
+            {
+                title: 'Kort forklart: Teoriprøven i tall',
+                type: 'info',
+                content: 'Teoriprøven for bil (klasse B) hos Statens vegvesen:\n• 45 spørsmål – du må ha minst 38 riktige for å bestå (maks 7 feil)\n• 90 minutter – du kan be om ekstra tid hvis du trenger det\n• 480 kr per forsøk (2026) – i tillegg kommer gebyr for førerkortfoto\n• Du kan ta prøven fra du er 17,5 år\n• Bestått prøve er gyldig i 3 år\n• Stryker du, må du vente 2 uker og betale nytt gebyr\n\nVil du kjenne på formatet først? [Ta en gratis øvingsprøve med 45 spørsmål](/quiz?mode=eksamen) – helt uten innlogging.'
+            },
+            {
+                title: 'Hva er teoriprøven?',
+                type: 'text',
+                content: 'Teoriprøven er den teoretiske eksamenen du må bestå før du kan ta oppkjøringen (praktisk førerprøve). Prøven er digital og gjennomføres på en trafikkstasjon hos Statens vegvesen.\n\nSpørsmålene er flervalgsoppgaver, ofte med bilder av trafikksituasjoner. De tester om du forstår trafikkreglene i praksis – ikke bare om du har pugget dem. Temaene følger den offisielle temalisten for klasse B og dekker blant annet [vikeplikt](/laeringsressurser/vikeplikt), [trafikkskilt](/laeringsressurser/skilt), [veimerking](/laeringsressurser/veimerking), [bremselengde](/laeringsressurser/bremselengde), [fartsgrenser](/laeringsressurser/fartsgrenser) og førstehjelp.\n\nMange kaller prøven teoritentamen eller teorieksamen – [det er samme prøve](/laeringsressurser/teoritentamen). Det offisielle navnet hos Statens vegvesen er teoriprøve.'
+            },
+            {
+                title: 'Hvor mange spørsmål og hvor mange feil kan du ha?',
+                type: 'text',
+                content: 'Teoriprøven for klasse B har 45 spørsmål, og du må svare riktig på minst 38 for å bestå. Det betyr at du kan ha maksimalt 7 feil.\n\nDet tilsvarer et krav på cirka 85 prosent riktige svar. Hvert spørsmål har flere svaralternativer med ett riktig svar, og du kan bla frem og tilbake i prøven og endre svarene dine helt til tiden er ute.'
+            },
+            {
+                title: 'Hvor lang tid har du?',
+                type: 'text',
+                content: 'Du har 90 minutter på deg til de 45 spørsmålene – det er to minutter per spørsmål, så de aller fleste rekker gjennom med god margin.\n\nTrenger du mer tid, kan du be prøvevakten om ekstra tid før tiden løper ut. Du kan også få spørsmålene opplest på norsk med hodetelefoner (lydstøtte) hvis du ber om det.'
+            },
+            {
+                title: 'Hva koster teoriprøven?',
+                type: 'text',
+                content: 'Teoriprøven for bil koster 480 kr per forsøk (2026). I tillegg betaler du et gebyr for førerkortfotoet som tas i fotoautomat på trafikkstasjonen.\n\nMerk at gebyret gjelder per forsøk: stryker du, må du betale på nytt neste gang. God forberedelse er med andre ord den billigste veien til lappen – [øv gratis her](/) til du består prøvene dine stabilt.'
+            },
+            {
+                title: 'Krav: Når kan du ta teoriprøven?',
+                type: 'text',
+                content: 'For klasse B kan du ta teoriprøven fra du er 17,5 år – altså et halvt år før du kan kjøre opp.\n\nFør du møter opp må du ha sendt inn søknad om førerkort på vegvesen.no og fått den godkjent. På trafikkstasjonen må du vise gyldig legitimasjon, ta førerkortfoto og betale gebyret. Du trenger ikke bestille time til teoriprøven på alle trafikkstasjoner, men sjekk din lokale stasjon på vegvesen.no – og husk at drop-in kan ha ventetid.'
+            },
+            {
+                title: 'Hvilke språk kan du ta prøven på?',
+                type: 'text',
+                content: 'Teoriprøven for klasse B kan tas på norsk (bokmål og nynorsk), nordsamisk, engelsk, arabisk, sorani og tyrkisk. Du kan bytte språk underveis i prøven.\n\nDu kan bruke ordbok under prøven – enten din egen (den blir kontrollert for notater) eller en som finnes på trafikkstasjonen. Trenger du et annet språk enn de nevnte, kan du søke om tolkeassistert teoriprøve hos Statens vegvesen.'
+            },
+            {
+                title: 'Hva skjer hvis du stryker?',
+                type: 'warning',
+                content: 'Rundt 4 av 10 stryker på teoriprøven for bil. Stryker du, må du vente 2 uker før du kan ta ny prøve, og du må betale nytt gebyr.\n\nDu får resultatet på skjermen umiddelbart etter prøven, sammen med en oppsummering av hvordan du gjorde det i de ulike temaene – slik vet du hva du bør øve mer på. [Les hva du bør gjøre etter stryk](/laeringsressurser/stroket-teoriproven).'
+            },
+            {
+                title: 'Hvor lenge er bestått teoriprøve gyldig?',
+                type: 'text',
+                content: 'Bestått teoriprøve er gyldig i 3 år. Det betyr at du må bestå [oppkjøringen](/laeringsressurser/oppkjoring) innen 3 år etter at du besto teorien – ellers må du ta teoriprøven på nytt.\n\nDe fleste tar teoriprøven relativt tidlig i opplæringen, slik at den er unnagjort før kjøretimene og oppkjøringen.'
+            },
+            {
+                title: 'Slik forbereder du deg best',
+                type: 'tip',
+                content: 'Den vanligste grunnen til stryk er å øve for lite og for likt. Tren på realistiske prøver med tidspress, les forklaringene på det du bommer på, og bruk statistikken etter hver prøve til å finne svake temaer.\n\n• [Ta en gratis teoriprøve med 45 spørsmål](/quiz?mode=eksamen) – med analyse av hvilke temaer du bør jobbe med etterpå\n• [Les våre beste tips for å bestå på første forsøk](/laeringsressurser/tips-eksamen)\n• [Se de 10 vanligste feilene på teoriprøven](/laeringsressurser/vanlige-feil-teoriproven)'
+            }
+        ],
+        sources: {
+            title: 'Kilder',
+            type: 'text',
+            content: '- **Statens vegvesen:** [Gjennomføring av teoriprøven](https://www.vegvesen.no/forerkort/ta-forerkort/teoriprove/gjennomforing-av-teoriproven/) (antall spørsmål, tid, beståttkrav, språk, hjelpemidler)\n- **Statens vegvesen:** [Gebyrer for førerprøver](https://www.vegvesen.no/forerkort/ta-forerkort/gebyrer-for-foreproven/)'
+        },
+        faq: [
+            {
+                question: 'Hvor mange spørsmål er det på teoriprøven for bil?',
+                answer: 'Teoriprøven for klasse B har 45 spørsmål. Du må svare riktig på minst 38 av dem for å bestå.'
+            },
+            {
+                question: 'Hvor mange feil kan man ha på teoriprøven?',
+                answer: 'Du kan ha maksimalt 7 feil på teoriprøven for bil. Med 45 spørsmål må du ha minst 38 riktige svar, som tilsvarer cirka 85 prosent.'
+            },
+            {
+                question: 'Hvor lang tid har man på teoriprøven?',
+                answer: 'Du har 90 minutter på teoriprøven for klasse B. Trenger du mer tid, kan du be prøvevakten om ekstra tid før tiden løper ut.'
+            },
+            {
+                question: 'Hva koster teoriprøven i 2026?',
+                answer: 'Teoriprøven for bil koster 480 kr per forsøk i 2026. I tillegg kommer gebyr for førerkortfoto. Stryker du, må du betale nytt gebyr ved neste forsøk.'
+            },
+            {
+                question: 'Hvor gammel må du være for å ta teoriprøven?',
+                answer: 'Du kan ta teoriprøven for klasse B fra du er 17,5 år – et halvt år før du kan ta oppkjøringen.'
+            },
+            {
+                question: 'Hvor lenge er teoriprøven gyldig?',
+                answer: 'Bestått teoriprøve er gyldig i 3 år. Du må bestå oppkjøringen innen 3 år, ellers må du ta teoriprøven på nytt.'
+            },
+            {
+                question: 'Hvilke språk kan teoriprøven tas på?',
+                answer: 'For klasse B kan du ta teoriprøven på norsk, nordsamisk, engelsk, arabisk, sorani og tyrkisk. Du kan også bruke ordbok og søke om tolkeassistert prøve.'
+            },
+            {
+                question: 'Kan jeg øve gratis på teoriprøven?',
+                answer: 'Ja. På Teori-test.no kan du ta gratis øvingsprøver med 45 spørsmål, fasit, forklaringer og analyse av hvilke temaer du bør øve mer på – uten registrering.'
+            }
+        ],
+        miniQuiz: [
+            {
+                question: 'Hvor mange riktige svar må du ha for å bestå teoriprøven for bil?',
+                options: ['Minst 30 av 45', 'Minst 38 av 45', 'Minst 40 av 45', 'Alle 45'],
+                correct: 'Minst 38 av 45',
+                explanation: 'Du må ha minst 38 riktige av 45 spørsmål – altså maksimalt 7 feil.'
+            },
+            {
+                question: 'Hvor lenge må du vente etter stryk på teoriprøven?',
+                options: ['1 uke', '2 uker', '1 måned', 'Du kan ta ny prøve samme dag'],
+                correct: '2 uker',
+                explanation: 'Etter stryk på teoriprøven for klasse B må du vente 2 uker før du kan ta ny prøve, og du må betale nytt gebyr.'
+            },
+            {
+                question: 'Hvor lenge er en bestått teoriprøve gyldig?',
+                options: ['1 år', '2 år', '3 år', 'Den varer evig'],
+                correct: '3 år',
+                explanation: 'Bestått teoriprøve er gyldig i 3 år. Du må bestå den praktiske førerprøven innen fristen, ellers må teorien tas på nytt.'
+            }
+        ]
+    },
+    {
+        id: 'teoritentamen',
+        title: 'Teoritentamen – hva er det, og hvor kan du øve gratis?',
+        icon: '📝',
+        shortDescription: 'Teoritentamen, teoriprøve og teorieksamen er samme prøve. Her får du forklaringen – og en gratis teoritentamen med 45 spørsmål du kan ta med en gang.',
+        color: 'var(--apple-green)',
+        seoTitle: 'Teoritentamen for bil – øv gratis på nett (45 spørsmål)',
+        seoDescription: 'Teoritentamen, teoriprøve og teorieksamen er samme prøve. Øv gratis med 45 spørsmål, fasit og forklaringer – helt uten innlogging.',
+        sections: [
+            {
+                title: 'Kort forklart',
+                type: 'info',
+                content: 'Teoritentamen er det mange kaller teoriprøven for førerkort. Det offisielle navnet hos Statens vegvesen er teoriprøve, men teoritentamen, teorieksamen og teoritest brukes om hverandre i dagligtale – alle betyr den samme prøven.\n\nUansett hva du kaller den: prøven har 45 spørsmål, du kan ha maks 7 feil, og du har 90 minutter på deg. [Ta en gratis teoritentamen nå](/quiz?mode=eksamen) – uten innlogging.'
+            },
+            {
+                title: 'Teoritentamen og teoriprøven er samme prøve',
+                type: 'text',
+                content: 'Ordet «tentamen» brukes gjerne om en prøveeksamen på skolen – en generalprøve før den ekte eksamenen. Derfor bruker mange «teoritentamen» både om selve prøven hos Statens vegvesen og om øvingsprøvene man tar på nett for å forberede seg.\n\nDet viktige er innholdet: prøven tester om du forstår trafikkreglene, skiltene og risikovurdering i praksis. [Se alle fakta om den offisielle teoriprøven](/laeringsressurser/teoriproven-bil) – pris, tid, krav og språk.'
+            },
+            {
+                title: 'Slik fungerer en teoritentamen på nett',
+                type: 'text',
+                content: 'En god teoritentamen på nett skal ligne mest mulig på den ekte prøven, slik at du er vant til formatet når det gjelder. Hos oss betyr det:\n\n• 45 tilfeldige spørsmål per prøve – samme antall som hos Statens vegvesen\n• Samme beståttkrav: maks 7 feil\n• Valgfri nedtelling på 90 minutter, så du kan trene under tidspress\n• Fasit og forklaring på hvert spørsmål etterpå\n• Analyse etter full prøve som viser hvilke temaer du bommet mest på, med lenker til artikler om akkurat de temaene\n• Fokusmodus som lar deg øve videre på spørsmålene du svarte feil på\n\nAlt er gratis og krever ingen registrering.'
+            },
+            {
+                title: 'Hvor mange teoritentamen bør du ta før den ekte prøven?',
+                type: 'tip',
+                content: 'En god tommelfingerregel: du er klar når du består flere prøver på rad med god margin – ikke bare én gang med flaks. Består du stabilt med 2–3 feil eller færre, ligger du godt an.\n\nØv jevnlig i korte økter fremfor skippertak, og bruk analysen etter hver prøve til å tette hullene. [Les våre beste eksamenstips](/laeringsressurser/tips-eksamen) når prøvedagen nærmer seg.'
+            },
+            {
+                title: 'Fra teoritentamen til ekte teoriprøve',
+                type: 'text',
+                content: 'Når øvingsprøvene sitter, bestiller du den ekte teoriprøven hos Statens vegvesen. Den tas digitalt på en trafikkstasjon, koster 480 kr per forsøk (2026), og du får resultatet umiddelbart.\n\nHusk at du må ha godkjent søknad om førerkort før du møter opp, og at du kan ta prøven fra du er 17,5 år. [Alt om krav, booking og gjennomføring finner du her](/laeringsressurser/teoriproven-bil).'
+            }
+        ],
+        faq: [
+            {
+                question: 'Er teoritentamen og teoriprøven det samme?',
+                answer: 'Ja. Teoriprøve er det offisielle navnet hos Statens vegvesen, mens teoritentamen og teorieksamen brukes i dagligtale om samme prøve. Ordet teoritentamen brukes også om øvingsprøver på nett.'
+            },
+            {
+                question: 'Hvor kan jeg ta gratis teoritentamen for bil?',
+                answer: 'På Teori-test.no kan du ta gratis teoritentamen med 45 spørsmål, fasit, forklaringer og analyse av svake temaer – uten registrering eller betaling.'
+            },
+            {
+                question: 'Hvor mange spørsmål er det på teoritentamen?',
+                answer: 'Den offisielle teoriprøven for bil har 45 spørsmål, og du kan ha maks 7 feil. Gode øvingsprøver på nett bruker samme format.'
+            },
+            {
+                question: 'Er teoritentamen på nett lik den ekte teoriprøven?',
+                answer: 'En god øvingsprøve ligner på format, temaer og vanskelighetsgrad, men spørsmålene på den ekte prøven hos Statens vegvesen er ikke offentlige. Målet med øvingen er å forstå reglene – da består du uansett hvordan spørsmålene er formulert.'
+            }
+        ]
+    },
+    {
         id: 'automatlappen',
         title: 'Automatlappen og elbil',
         icon: '🚗',
@@ -3934,7 +4133,7 @@ export const theoryArticles: TheoryTopic[] = [
             {
                 title: 'Hva skjer etter stryk?',
                 type: 'warning',
-                content: 'Du må vente to uker før du kan ta teoriprøven på nytt. Du må bestille ny time og betale ny prøveavgift — sjekk gjeldende pris på vegvesen.no. Det er ingen grense på antall forsøk, men stryk koster deg både tid og penger.\n\nI Vestfold og Telemark strøk 46% av alle som tok prøven i 2024 — omtrent på linje med landsgjennomsnittet på 47%.'
+                content: 'Du må vente to uker før du kan ta teoriprøven på nytt. Du må bestille ny time og betale ny prøveavgift — sjekk gjeldende pris på vegvesen.no. Det er ingen grense på antall forsøk, men stryk koster deg både tid og penger.\n\nI Vestfold og Telemark strøk 46% av alle som tok prøven i 2024 — omtrent på linje med landsgjennomsnittet på 47%.\n\n[Se alle fakta og krav for ny prøve i vår guide til teoriprøven](/laeringsressurser/teoriproven-bil)'
             },
             {
                 title: 'De vanligste feilene — og hva du gjør med dem',
@@ -4102,7 +4301,7 @@ export const theoryArticles: TheoryTopic[] = [
             {
                 title: 'Fakta om teoriprøven klasse B',
                 type: 'info',
-                content: 'For klasse B gjelder dette:\n• Antall spørsmål: 45 spørsmål\n• Krav for å bestå: Minst 38 riktige\n• Maks antall feil: 7 feil\n• Tid: 90 minutter\n• Pris: 480 kr hos Statens vegvesen fra 1. februar 2026\n• Ved stryk: Du kan ta ny prøve tidligst etter 2 uker\n• Gyldighet: Bestått teoriprøve er gyldig i 3 år\n• Når kan du ta prøven?: Tidligst 6 måneder før alderskravet, altså 17,5 år for klasse B\n\nDu må bestille time hos Statens vegvesen og ta med gyldig legitimasjon. Møt heller litt tidlig enn å starte prøven med puls som en nødblink.'
+                content: 'For klasse B gjelder dette:\n• Antall spørsmål: 45 spørsmål\n• Krav for å bestå: Minst 38 riktige\n• Maks antall feil: 7 feil\n• Tid: 90 minutter\n• Pris: 480 kr hos Statens vegvesen fra 1. februar 2026\n• Ved stryk: Du kan ta ny prøve tidligst etter 2 uker\n• Gyldighet: Bestått teoriprøve er gyldig i 3 år\n• Når kan du ta prøven?: Tidligst 6 måneder før alderskravet, altså 17,5 år for klasse B\n\nDu må bestille time hos Statens vegvesen og ta med gyldig legitimasjon. Møt heller litt tidlig enn å starte prøven med puls som en nødblink.\n\n[Se alle fakta om teoriprøven – pris, tid, krav og språk](/laeringsressurser/teoriproven-bil)'
             },
             {
                 title: 'Hva bør du øve mest på?',

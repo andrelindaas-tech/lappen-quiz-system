@@ -31,6 +31,7 @@ import MotorromInteraktiv from './MotorromInteraktiv'
 import RundkjoringAnimasjon from './RundkjoringAnimasjon'
 import MiniQuiz from './MiniQuiz'
 import AutomatVsManuellSammenligning from './AutomatVsManuellSammenligning'
+import VognkortEksempel from './VognkortEksempel'
 import { TilhengerKalkulator } from './TilhengerKalkulator'
 
 
@@ -293,6 +294,7 @@ export default function TheoryTopic({ topic, onBack }: TheoryTopicProps) {
                             <div className="theory-section-content">
                                 {section.component === 'RundkjoringAnimasjon' && <RundkjoringAnimasjon />}
                                 {section.component === 'AutomatVsManuellSammenligning' && <AutomatVsManuellSammenligning />}
+                                {section.component === 'VognkortEksempel' && <VognkortEksempel />}
                             </div>
                         ) : section.type === 'table' ? (
                             <div className="theory-section-content" dangerouslySetInnerHTML={{ __html: section.content || '' }} />
