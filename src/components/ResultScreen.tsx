@@ -1,6 +1,7 @@
 // Action Layer: Result Screen Component
 import { useEffect } from 'react'
 import confetti from 'canvas-confetti'
+import { useCountUp } from '../hooks/useCountUp'
 import type { QuizResult } from '../logic/quizEngine'
 import type { QuizMode } from '../types/quiz.types'
 
@@ -50,6 +51,10 @@ export default function ResultScreen({ result, mode, onRestart, onReview, onRetu
 
     // Special message for Fokusmodus cleared
     const isFokusCleared = mode.isFokusMode && result.passed && result.errors === 0
+
+    // Levende tall: score og prosent teller mykt opp
+    const animCorrect = useCountUp(result.correctCount)
+    const animPercentage = useCountUp(result.percentage)
 
     const categoryMetadata: { [key: string]: { name: string; url: string } } = {
         vikeplikt: { name: "Vikeplikt og kryss", url: "/laeringsressurser/vikeplikt" },
@@ -110,11 +115,11 @@ export default function ResultScreen({ result, mode, onRestart, onReview, onRetu
 
             <div className="score-bar-container" style={{ margin: 'var(--spacing-lg) 0 var(--spacing-xl) 0', width: '100%', display: 'flex', flexDirection: 'column', gap: '8px', textAlign: 'left' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: '1rem', fontWeight: 600 }}>
-                    <span style={{ color: 'var(--color-text)' }}>Din score: {result.correctCount} av {result.totalCount}</span>
-                    <span style={{ color: result.passed ? 'var(--color-success)' : 'var(--color-error)' }}>{result.percentage}%</span>
+                    <span style={{ color: 'var(--color-text)' }}>Din score: {animCorrect} av {result.totalCount}</span>
+                    <span style={{ color: result.passed ? 'var(--color-success)' : 'var(--color-error)' }}>{animPercentage}%</span>
                 </div>
                 <div style={{ position: 'relative', width: '100%', height: '14px', background: 'linear-gradient(to right, #E24B4A 0%, #EF9F27 40%, #97C459 70%, #1D9E75 100%)', borderRadius: '7px' }}>
-                    <div style={{ position: 'absolute', left: `${result.percentage}%`, transform: 'translateX(-50%)', top: '-3px', width: '3px', height: '20px', backgroundColor: 'var(--color-text)', borderRadius: '1.5px', border: '1px solid var(--color-bg)', boxShadow: 'var(--shadow-sm)' }} />
+                    <div style={{ position: 'absolute', left: `${animPercentage}%`, transform: 'translateX(-50%)', top: '-3px', width: '3px', height: '20px', backgroundColor: 'var(--color-text)', borderRadius: '1.5px', border: '1px solid var(--color-bg)', boxShadow: 'var(--shadow-sm)' }} />
                 </div>
                 <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.85rem', color: 'var(--color-text-light)' }}>
                     <span>Bestått-grense: {result.totalCount - result.maxErrors} av {result.totalCount}</span>

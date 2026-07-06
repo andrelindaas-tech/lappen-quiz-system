@@ -16,6 +16,7 @@ import { getWrongAnswers, removeWrongAnswer, addWrongAnswers, getWrongAnswersCou
 import { logQuizAnswer } from "../services/supabase";
 import { getSessionId } from "../utils/session";
 import { trackEvent } from '../utils/analytics'
+import { recordQuizResult } from '../utils/progressStore'
 
 interface QuizContainerProps {
     onReturnHome: () => void
@@ -176,6 +177,14 @@ export default function QuizContainer({ onReturnHome, onQuizComplete }: QuizCont
                 correct_count: finalResult.correctCount,
                 passed: finalResult.passed,
                 time_taken_seconds: elapsed,
+            })
+
+            // «Min fremgang»: lagre resultatet lokalt
+            recordQuizResult({
+                name: mode.name,
+                correct: finalResult.correctCount,
+                total: questions.length,
+                passed: finalResult.passed,
             })
 
             setShowResults(true)

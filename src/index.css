@@ -2900,4 +2900,71 @@ body.dark-mode .lightbox-caption {
     opacity: 1;
     transform: scale(1);
   }
+}
+
+
+/* ============================================
+   Designløft: entrance-animasjoner og glødedriv
+   ============================================ */
+
+/* Myk fade-opp brukt på forsidens hero og prøvekort */
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Forsidens hero: elementene glir inn etter tur */
+.hero-section-clean > * {
+  animation: fadeSlideUp 0.55s ease both;
+}
+.hero-section-clean > *:nth-child(2) { animation-delay: 0.08s; }
+.hero-section-clean > *:nth-child(3) { animation-delay: 0.16s; }
+.hero-section-clean > *:nth-child(4) { animation-delay: 0.24s; }
+.hero-section-clean > *:nth-child(5) { animation-delay: 0.3s; }
+
+.mode-selection-header {
+  animation: fadeSlideUp 0.55s ease 0.3s both;
+}
+
+/* Prøvekortene kommer i stagger etter heroen */
+.mode-cards > * {
+  animation: fadeSlideUp 0.5s ease both;
+}
+.mode-cards > *:nth-child(1) { animation-delay: 0.36s; }
+.mode-cards > *:nth-child(2) { animation-delay: 0.44s; }
+.mode-cards > *:nth-child(3) { animation-delay: 0.52s; }
+.mode-cards > *:nth-child(4) { animation-delay: 0.6s; }
+
+/* Ambient-glødene driver sakte i bakgrunnen */
+@keyframes glowDrift1 {
+  from { transform: translate(0, 0) scale(1); }
+  to { transform: translate(60px, 45px) scale(1.15); }
+}
+@keyframes glowDrift2 {
+  from { transform: translate(0, 0) scale(1); }
+  to { transform: translate(-70px, -50px) scale(1.1); }
+}
+.ambient-glow-1 {
+  animation: glowDrift1 38s ease-in-out infinite alternate;
+}
+.ambient-glow-2 {
+  animation: glowDrift2 46s ease-in-out infinite alternate;
+}
+
+/* Tilgjengelighet: slå av all bevegelse for brukere som ber om det */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

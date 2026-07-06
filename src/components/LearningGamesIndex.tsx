@@ -77,7 +77,6 @@ export default function LearningGamesIndex() {
                             padding: '1.5rem 1.25rem'
                         }}
                     >
-                        <div className="card-badge-new">Beta</div>
                         <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '1rem' }}>
                             <div className="card-icon-box">
                                 <CircleGauge size={24} strokeWidth={1.8} />

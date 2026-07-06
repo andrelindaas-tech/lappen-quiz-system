@@ -15,14 +15,26 @@ const ALL_SCENARIOS: Scenario[] = [
     { speed: 50, surface: 'Tørr asfalt', multiplier: 1 },
     { speed: 80, surface: 'Tørr asfalt', multiplier: 1 },
     { speed: 50, surface: 'Våt asfalt', multiplier: 2 },
-    { speed: 60, surface: 'Snø/vinterføre', multiplier: 4 },
+    { speed: 60, surface: 'Vått vinterføre', multiplier: 4 },
     { speed: 30, surface: 'Is', multiplier: 9 },
     { speed: 100, surface: 'Tørr asfalt', multiplier: 1 },
     { speed: 60, surface: 'Våt asfalt', multiplier: 2 },
     { speed: 80, surface: 'Våt asfalt', multiplier: 2 },
-    { speed: 40, surface: 'Snø/vinterføre', multiplier: 4 },
+    { speed: 40, surface: 'Vått vinterføre', multiplier: 4 },
     { speed: 110, surface: 'Tørr asfalt', multiplier: 1 },
 ]
+
+// Lettere modus: kun tørr asfalt — tren på grunnformelen uten førefaktorer
+const DRY_SCENARIOS: Scenario[] = [
+    { speed: 30, surface: 'Tørr asfalt', multiplier: 1 },
+    { speed: 50, surface: 'Tørr asfalt', multiplier: 1 },
+    { speed: 60, surface: 'Tørr asfalt', multiplier: 1 },
+    { speed: 80, surface: 'Tørr asfalt', multiplier: 1 },
+    { speed: 100, surface: 'Tørr asfalt', multiplier: 1 },
+    { speed: 110, surface: 'Tørr asfalt', multiplier: 1 },
+]
+
+type SurfaceMode = 'torr' | 'alle'
 
 function shuffle<T>(array: T[]): T[] {
     const shuffled = [...array]
@@ -46,6 +58,7 @@ export default function StoppingDistanceChallenge() {
     const [hasMovedSlider, setHasMovedSlider] = useState(false)
     const [hasAnswered, setHasAnswered] = useState(false)
     const [isGameOver, setIsGameOver] = useState(false)
+    const [surfaceMode, setSurfaceMode] = useState<SurfaceMode>('torr')
     const [feedback, setFeedback] = useState({ type: '', title: 'Velg en avstand og sjekk svaret.', text: 'Tallene er beregnede teoretiske verdier, ikke eksakte fasiter for alle biler og forhold.' })
     
     // Animation/Movement states
@@ -61,8 +74,8 @@ export default function StoppingDistanceChallenge() {
     const [showReactionFlash, setShowReactionFlash] = useState(false)
 
     // Initial setup and restarts
-    const initGame = () => {
-        setScenarios(shuffle(ALL_SCENARIOS))
+    const initGame = (mode: SurfaceMode = 'torr') => {
+        setScenarios(shuffle(mode === 'torr' ? DRY_SCENARIOS : ALL_SCENARIOS))
         setCurrentIndex(0)
         setScore(0)
         setGuess(0)
@@ -416,6 +429,42 @@ export default function StoppingDistanceChallenge() {
                     Dra slideren til stopplengden du tror passer. Etter svaret får du fasit, utregning og en kort forklaring på hvorfor fart og føre betyr så mye.
                 </p>
 
+                {/* Førevelger: tren på tørr asfalt først, eller ta alle føreforhold */}
+                <div style={{ display: 'flex', gap: '8px', justifyContent: 'center', margin: '0 0 var(--spacing-lg) 0', flexWrap: 'wrap' }} role="group" aria-label="Velg føreforhold">
+                    <button
+                        type="button"
+                        onClick={() => { setSurfaceMode('torr'); initGame('torr') }}
+                        style={{
+                            padding: '8px 18px',
+                            borderRadius: '100px',
+                            border: surfaceMode === 'torr' ? '1.5px solid var(--color-primary)' : '1px solid var(--color-border)',
+                            backgroundColor: surfaceMode === 'torr' ? 'rgba(45, 212, 191, 0.12)' : 'var(--color-bg)',
+                            color: surfaceMode === 'torr' ? 'var(--color-primary)' : 'var(--color-text-light)',
+                            fontWeight: 600,
+                            fontSize: '0.9rem',
+                            cursor: 'pointer',
+                        }}
+                    >
+                        ☀️ Kun tørr asfalt
+                    </button>
+                    <button
+                        type="button"
+                        onClick={() => { setSurfaceMode('alle'); initGame('alle') }}
+                        style={{
+                            padding: '8px 18px',
+                            borderRadius: '100px',
+                            border: surfaceMode === 'alle' ? '1.5px solid var(--color-primary)' : '1px solid var(--color-border)',
+                            backgroundColor: surfaceMode === 'alle' ? 'rgba(45, 212, 191, 0.12)' : 'var(--color-bg)',
+                            color: surfaceMode === 'alle' ? 'var(--color-primary)' : 'var(--color-text-light)',
+                            fontWeight: 600,
+                            fontSize: '0.9rem',
+                            cursor: 'pointer',
+                        }}
+                    >
+                        🌧️ Alle føreforhold
+                    </button>
+                </div>
+
                 <div className="challenge">
                     <div className="challenge-head">
                         <div>
@@ -737,7 +786,7 @@ export default function StoppingDistanceChallenge() {
                                         "Dette er et tema mange undervurderer. Bruk utregningen bak hvert svar, og prøv igjen for å forbedre forståelsen din."
                                     )}
                                 </p>
-                                <button className="primary" onClick={initGame} type="button" style={{ margin: '0 auto' }}>
+                                <button className="primary" onClick={() => initGame(surfaceMode)} type="button" style={{ margin: '0 auto' }}>
                                     Prøv på nytt
                                 </button>
                             </div>

@@ -23,6 +23,7 @@ import BrakeCalculator from './BrakeCalculator'
 import TrailerWeightSimulator from './TrailerWeightSimulator'
 import DashboardWarningSimulator from './DashboardWarningSimulator'
 import { parseInlineLinks } from '../utils/textUtils'
+import { markArticleRead } from '../utils/progressStore'
 import { SignIllustration } from './SignIllustration'
 import AuthorityPyramid from './AuthorityPyramid'
 import ReaksjonstidTest from './ReaksjonstidTest'
@@ -166,6 +167,11 @@ interface TheoryTopicProps {
 }
 
 export default function TheoryTopic({ topic, onBack }: TheoryTopicProps) {
+    // «Min fremgang»: registrer at artikkelen er lest (lokalt)
+    React.useEffect(() => {
+        markArticleRead(topic.id)
+    }, [topic.id])
+
     // Generate JSON-LD for this specific topic
     const structuredData = {
         "@context": "https://schema.org",

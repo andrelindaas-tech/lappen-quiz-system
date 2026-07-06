@@ -70,25 +70,25 @@ export default function TrafficSignCategoryPage() {
 
   // Active category rendering
   const seoTitle = category.slug === 'forbudsskilt'
-    ? 'Forbudsskilt | Trafikkskilt til teoriprøven'
+    ? 'Forbudsskilt – alle forbudsskiltene med forklaring'
     : category.slug === 'fareskilt'
-    ? 'Fareskilt | Trafikkskilt til teoriprøven'
+    ? 'Fareskilt (varselskilt) – alle med forklaring'
     : category.slug === 'opplysningsskilt'
-    ? 'Opplysningsskilt | Trafikkskilt til teoriprøven'
+    ? 'Opplysningsskilt – alle blå og hvite skilt med forklaring'
     : category.slug === 'pabudsskilt'
-    ? 'Påbudsskilt | Trafikkskilt til teoriprøven'
+    ? 'Påbudsskilt (obligatoriske skilt) – alle med forklaring'
     : category.slug === 'underskilt'
     ? 'Underskilt | Trafikkskilt til teoriprøven'
     : `${category.name} - Forklaringer og regler til teoriprøven | Teori-test.no`;
 
   const seoDesc = category.slug === 'forbudsskilt'
-    ? 'Lær hva forbudsskilt betyr til teoriprøven. Se skilt for innkjøring forbudt, stans, parkering, forbikjøring, fartsgrenser og vanlige misforståelser.'
+    ? 'Hva er forbudsskilt? Se alle de runde skiltene med rød ring – fartsgrenser, innkjøring forbudt, stans og parkering – med forklaring og vanlige teorifeller.'
     : category.slug === 'fareskilt'
-    ? 'Lær hva fareskilt betyr til teoriprøven. Se skilt for barn, dyr, glatt veg, farlig sving, vegarbeid og andre vanlige farer i trafikken.'
+    ? 'Hva er fareskilt? Se alle de trekantede skiltene med rød kant – elg, barn, farlig sving og glatt veg – med forklaring og hva du skal gjøre.'
     : category.slug === 'opplysningsskilt'
-    ? 'Lær hva opplysningsskilt betyr til teoriprøven. Se skilt for motorveg, gangfelt, møteplass, parkering, envegskjøring og nødutgang.'
+    ? 'Hva betyr opplysningsskilt? Se de firkantede blå og hvite skiltene – gangfelt, motorveg, parkering og envegskjøring – med forklaring til teoriprøven.'
     : category.slug === 'pabudsskilt'
-    ? 'Lær hva påbudsskilt betyr til teoriprøven. Se skilt for påbudt kjøreretning, kjørefelt og rundkjøring med vanlige misforståelser.'
+    ? 'Hva er påbudsskilt? De runde blå skiltene med hvite piler kalles også obligatoriske skilt. Se alle med forklaring og vanlige misforståelser.'
     : category.slug === 'underskilt'
     ? 'Lær hva underskilt betyr til teoriprøven. Se hvordan underskilt presiserer avstand, tid, kjøretøygrupper, unntak og gyldighet for hovedskilt.'
     : `Lær alt om ${category.name.toLowerCase()} til teoriprøven. Her finner du en oversikt over alle skilt i denne gruppen med forklaringer, kjøreregler og vanlige misforståelser.`;

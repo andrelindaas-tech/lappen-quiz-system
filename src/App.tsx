@@ -13,6 +13,8 @@ const SignSpeedGamePage = lazy(() => import('./pages/SignSpeedGamePage'))
 const TrafficSignBank = lazy(() => import('./components/traffic-signs/TrafficSignBank'))
 const TrafficSignCategoryPage = lazy(() => import('./components/traffic-signs/TrafficSignCategoryPage'))
 const TrafficSignDetailPage = lazy(() => import('./components/traffic-signs/TrafficSignDetailPage'))
+const MinFremgang = lazy(() => import('./components/MinFremgang'))
+const NotFound = lazy(() => import('./components/NotFound'))
 import ThemeToggle from './components/ThemeToggle'
 import DailyStreak from './components/DailyStreak'
 import { recordCompletion } from './utils/streakStore'
@@ -21,7 +23,7 @@ import './fokus.css'
 import './theory.css'
 import ScrollToTop from './components/ScrollToTop'
 import { Helmet } from 'react-helmet-async'
-import { ClipboardCheck, Signpost, BookOpen, Gamepad2 } from 'lucide-react'
+import { ClipboardCheck, Signpost, BookOpen, Gamepad2, TrendingUp } from 'lucide-react'
 
 // GA4 global type
 declare function gtag(...args: unknown[]): void
@@ -247,6 +249,15 @@ export default function App() {
                                     </span>
                                     Minispill
                                 </Link>
+                                <Link
+                                    to="/min-fremgang"
+                                    className={`sub-nav-chip ${location.pathname.startsWith('/min-fremgang') ? 'active' : ''}`}
+                                >
+                                    <span className="sub-nav-chip-icon">
+                                        <TrendingUp size={16} strokeWidth={2.2} />
+                                    </span>
+                                    Min fremgang
+                                </Link>
                             </div>
                         </div>
                     </div>
@@ -270,8 +281,9 @@ export default function App() {
                         <Route path="/trafikkskilt" element={<TrafficSignBank />} />
                         <Route path="/trafikkskilt/:categorySlug" element={<TrafficSignCategoryPage />} />
                         <Route path="/trafikkskilt/:categorySlug/:signSlug" element={<TrafficSignDetailPage />} />
-                        {/* Fallback route */}
-                        <Route path="*" element={<StartScreen />} />
+                        <Route path="/min-fremgang" element={<MinFremgang />} />
+                        {/* Fallback route: ekte 404 med noindex (unngår soft-404) */}
+                        <Route path="*" element={<NotFound />} />
                     </Routes>
                 </Suspense>
             </main>
@@ -281,6 +293,8 @@ export default function App() {
                     <div className="footer-centered-content">
                         {/* Navigation Links */}
                         <nav className="footer-nav" aria-label="Footerlenker">
+                            <Link to="/laeringsressurser/teoriproven-bil" className="footer-link">Om teoriprøven</Link>
+                            <span className="footer-separator" aria-hidden="true">•</span>
                             <Link to="/laeringsressurser/om-oss" className="footer-link">Om oss</Link>
                             <span className="footer-separator" aria-hidden="true">•</span>
                             <Link to="/laeringsressurser/kontakt" className="footer-link">Kontakt</Link>

@@ -62,7 +62,7 @@ export const theoryTopics: TheoryTopic[] = [
             {
                 title: '3. Når skilt bestemmer vikeplikten',
                 type: 'signs',
-                content: 'Høyreregelen gjelder bare når ingenting annet er bestemt. Hvis det står skilt eller er vegoppmerking som regulerer krysset, skal du følge dette først.',
+                content: 'Høyreregelen gjelder bare når ingenting annet er bestemt. Hvis det står skilt eller er vegoppmerking som regulerer krysset, skal du følge dette først. Se alle [vikeplikt- og forkjørsskiltene i skiltbanken](/trafikkskilt/vikeplikt-og-forkjorsskilt), og test deg etterpå i [vikeplikt-quizen](/quiz/vikeplikt).',
                 signs: [
                     {
                         name: 'Vikepliktskilt',
@@ -182,14 +182,19 @@ export const theoryTopics: TheoryTopic[] = [
         icon: '🚗',
         shortDescription: 'Bruk kalkulatoren og tast inn hastighet — se bremselengde og stopplengde for tørr vei, våt vei og is. Med formel og øvingsoppgaver til teoriprøven.',
         color: 'var(--apple-red)',
-        seoTitle: 'Bremselengde og stopplengde – formel og kalkulator | Teori-test.no',
-        seoDescription: 'Tast inn hastighet og se bremselengde for tørr vei, våt vei og is — direkte i kalkulatoren. Med formel, bremsefaktorer, vannplaning og øvingsoppgaver til teoriprøven.',
+        seoTitle: 'Bremselengde og stopplengde – slik regner du ut (med kalkulator)',
+        seoDescription: 'Slik regner du ut stopplengde: reaksjonslengde + bremselengde. Enkel 3-stegs metode du kan gjøre i hodet, kalkulator for tørr og våt vei og is, og øvingsoppgaver.',
         hasCalculator: true,
         sections: [
             {
                 title: 'Kort svar: Formel for bremselengde',
                 type: 'text',
                 content: 'På teoriprøven for klasse B kan du på tørr vei ved nødbremsing bruke denne huskeregelen:\n\n**Bremselengde = (fart / 10) × (fart / 10) / 2**\n\nEksempel ved 80 km/t:\n\n**8 × 8 / 2 = 32 meter**\n\nDet betyr at bremselengden ved 80 km/t på tørr vei er omtrent 32 meter. Husk at dette bare er selve bremselengden. Total stopplengde blir lengre, fordi du også må legge til reaksjonslengden.'
+            },
+            {
+                title: 'Regn ut i 3 enkle steg («stryk nullen»-metoden)',
+                type: 'info',
+                content: 'Alt du trenger på teoriprøven kan gjøres i hodet med tre steg. Eksempel med 80 km/t på tørr vei:\n\n1. **Stryk nullen i farten:** 80 km/t → **8**\n2. **Reaksjonslengde:** tallet × 3 → 8 × 3 = **24 meter**\n3. **Bremselengde:** tallet × tallet ÷ 2 → 8 × 8 ÷ 2 = **32 meter**\n\nStopplengde = 24 + 32 = **56 meter**. Ferdig!\n\nPrøv selv med 60 km/t: stryk nullen (6), reaksjon 6 × 3 = 18 m, brems 6 × 6 ÷ 2 = 18 m, stopplengde **36 meter**.\n\nEr føret dårlig, ganger du bare bremselengden (ikke reaksjonslengden!) med førefaktoren: våt vei × 2, vått vinterføre × 4, is × 8–10.'
             },
             {
                                 title: 'Hva er bremselengde?',
@@ -251,6 +256,14 @@ export const theoryTopics: TheoryTopic[] = [
             {
                 question: "Hva er bremselengden ved 80 km/t på tørr vei?",
                 answer: "Ved 80 km/t er bremselengden 32 meter på tørr vei. Reaksjonslengden er 24 meter, så total stopplengde blir 56 meter."
+            },
+            {
+                question: "Hvordan regner du ut stopplengde?",
+                answer: "Bruk stryk nullen-metoden: Stryk nullen i farten (80 km/t → 8). Reaksjonslengde = tallet × 3. Bremselengde = tallet × tallet ÷ 2. Stopplengde = reaksjonslengde + bremselengde. Ved 80 km/t: 24 + 32 = 56 meter."
+            },
+            {
+                question: "Hva er bremselengden ved 60 km/t?",
+                answer: "Ved 60 km/t er bremselengden 18 meter på tørr vei (6 × 6 ÷ 2). Med reaksjonslengden på 18 meter (6 × 3) blir total stopplengde 36 meter."
             },
             {
                 question: "Hva er forskjellen på bremselengde og stopplengde?",
