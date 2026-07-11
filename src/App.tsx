@@ -15,6 +15,8 @@ const TrafficSignCategoryPage = lazy(() => import('./components/traffic-signs/Tr
 const TrafficSignDetailPage = lazy(() => import('./components/traffic-signs/TrafficSignDetailPage'))
 const MinFremgang = lazy(() => import('./components/MinFremgang'))
 const NotFound = lazy(() => import('./components/NotFound'))
+const QuestionsIndex = lazy(() => import('./components/QuestionsIndex'))
+const QuestionPage = lazy(() => import('./components/QuestionPage'))
 import ThemeToggle from './components/ThemeToggle'
 import DailyStreak from './components/DailyStreak'
 import { recordCompletion } from './utils/streakStore'
@@ -282,6 +284,8 @@ export default function App() {
                         <Route path="/trafikkskilt/:categorySlug" element={<TrafficSignCategoryPage />} />
                         <Route path="/trafikkskilt/:categorySlug/:signSlug" element={<TrafficSignDetailPage />} />
                         <Route path="/min-fremgang" element={<MinFremgang />} />
+                        <Route path="/sporsmal" element={<QuestionsIndex />} />
+                        <Route path="/sporsmal/:slug" element={<QuestionPage />} />
                         {/* Fallback route: ekte 404 med noindex (unngår soft-404) */}
                         <Route path="*" element={<NotFound />} />
                     </Routes>
@@ -294,6 +298,8 @@ export default function App() {
                         {/* Navigation Links */}
                         <nav className="footer-nav" aria-label="Footerlenker">
                             <Link to="/laeringsressurser/teoriproven-bil" className="footer-link">Om teoriprøven</Link>
+                            <span className="footer-separator" aria-hidden="true">•</span>
+                            <Link to="/sporsmal" className="footer-link">Teorispørsmål</Link>
                             <span className="footer-separator" aria-hidden="true">•</span>
                             <Link to="/laeringsressurser/om-oss" className="footer-link">Om oss</Link>
                             <span className="footer-separator" aria-hidden="true">•</span>

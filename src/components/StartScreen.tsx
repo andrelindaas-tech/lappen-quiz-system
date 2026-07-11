@@ -382,6 +382,15 @@ export default function StartScreen() {
                         </div>
                     </div>
                 </div>
+
+                {/* Diskret lenke til teorispørsmålene */}
+                <p style={{ textAlign: 'center', fontSize: '0.95rem', color: 'var(--color-text-light)', marginTop: 'var(--spacing-lg)' }}>
+                    Ikke klar for en hel prøve? Prøv våre{' '}
+                    <Link to="/sporsmal" style={{ color: 'var(--color-primary)', fontWeight: 600, textDecoration: 'none' }}>
+                        ofte spurte teorispørsmål
+                    </Link>
+                    {' '}— oppgaver med fasit og ekstra god forklaring.
+                </p>
             </section>
 
             {/* GUIDES AND CHIPS TILE */}

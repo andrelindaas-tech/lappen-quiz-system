@@ -1,5 +1,5 @@
 // Teori-siden — Oversikt over alle emner
-import { useParams, useNavigate } from 'react-router-dom'
+import { useParams, useNavigate, Link } from 'react-router-dom'
 import { useEffect, useState, useMemo } from 'react'
 import { Helmet } from 'react-helmet-async'
 import { 
@@ -266,9 +266,29 @@ export default function TheoryPage() {
                 {/* Header Title Section */}
                 <section className="theory-section-group" style={{ marginBottom: 'var(--spacing-xl)' }}>
                     <h1 style={{ textAlign: 'center', marginBottom: '0.5rem' }}>Læringsressurser</h1>
-                    <p className="theory-subtitle" style={{ textAlign: 'center', marginBottom: '2rem' }}>
+                    <p className="theory-subtitle" style={{ textAlign: 'center', marginBottom: '1rem' }}>
                         Lær viktig teori for førerprøven. Velg et emne for å komme i gang.
                     </p>
+
+                    {/* Teorispørsmål-promo (testflate) */}
+                    <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '2rem' }}>
+                        <Link to="/sporsmal" style={{
+                            display: 'inline-flex', alignItems: 'center', gap: '8px',
+                            padding: '10px 18px', borderRadius: '100px',
+                            border: '1px solid rgba(45, 212, 191, 0.4)',
+                            backgroundColor: 'rgba(45, 212, 191, 0.08)',
+                            textDecoration: 'none', color: 'var(--color-text)',
+                            fontSize: '0.9rem', fontWeight: 600,
+                        }}>
+                            <span style={{
+                                fontSize: '0.7rem', fontWeight: 800, letterSpacing: '0.05em',
+                                backgroundColor: 'var(--color-primary)', color: '#fff',
+                                padding: '2px 8px', borderRadius: '100px',
+                            }}>NYTT</span>
+                            Ofte spurte teorispørsmål — med fasit og ekstra god forklaring
+                            <span style={{ color: 'var(--color-primary)' }}>→</span>
+                        </Link>
+                    </div>
 
                     {/* Interactive Search Bar */}
                     <div className="theory-search-wrapper" style={{ padding: '0 var(--spacing-sm)' }}>

@@ -7,6 +7,7 @@ const __dirname = path.dirname(__filename);
 
 const ROOT_DIR = path.resolve(__dirname, '..');
 const THEORY_DATA_PATH = path.join(ROOT_DIR, 'src/data/theoryData.ts');
+const QUESTIONS_DATA_PATH = path.join(ROOT_DIR, 'src/data/questionPages.ts');
 const CAT_DATA_PATH = path.join(ROOT_DIR, 'src/data/trafficSignCategories.ts');
 const SIGNS_DATA_PATH = path.join(ROOT_DIR, 'src/data/trafficSigns.ts');
 const SITEMAP_PATH = path.join(ROOT_DIR, 'public/sitemap.xml');
@@ -31,7 +32,24 @@ function generateSitemap() {
     { loc: '/quiz/skilt', priority: '0.6', changefreq: 'monthly' },
     { loc: '/quiz/fartsregler', priority: '0.6', changefreq: 'monthly' },
     { loc: '/quiz/veimerking', priority: '0.6', changefreq: 'monthly' },
+    { loc: '/sporsmal', priority: '0.7', changefreq: 'weekly' },
   ];
+
+  // 1b. Spørsmålssider fra questionPages.ts
+  if (fs.existsSync(QUESTIONS_DATA_PATH)) {
+    const content = fs.readFileSync(QUESTIONS_DATA_PATH, 'utf-8');
+    const slugRegex = /slug:\s*['"]([^'"]+)['"]/g;
+    let qm;
+    while ((qm = slugRegex.exec(content)) !== null) {
+      urls.push({
+        loc: `/sporsmal/${qm[1]}`,
+        priority: '0.6',
+        changefreq: 'monthly'
+      });
+    }
+  } else {
+    console.warn(`Warning: Could not find question pages at ${QUESTIONS_DATA_PATH}`);
+  }
 
   // 2. Parse theory articles from theoryData.ts
   if (fs.existsSync(THEORY_DATA_PATH)) {
