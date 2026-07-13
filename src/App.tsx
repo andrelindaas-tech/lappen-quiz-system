@@ -1,5 +1,5 @@
 // Main App Component
-import { useState, useEffect, useCallback, Suspense, lazy } from 'react'
+import { useState, useEffect, useCallback, Suspense, lazy, startTransition } from 'react'
 import { Routes, Route, Link, useNavigate, useLocation, Navigate, useParams } from 'react-router-dom'
 import StartScreen from './components/StartScreen'
 
@@ -9,6 +9,7 @@ const OppkjoringPage = lazy(() => import('./components/OppkjoringPage'))
 const LearningGamesIndex = lazy(() => import('./components/LearningGamesIndex'))
 const StoppingDistanceChallenge = lazy(() => import('./components/StoppingDistanceChallenge'))
 const RoadMarkingGame = lazy(() => import('./components/RoadMarkingGame'))
+const VikepliktSpill = lazy(() => import('./components/VikepliktSpill'))
 const SignSpeedGamePage = lazy(() => import('./pages/SignSpeedGamePage'))
 const TrafficSignBank = lazy(() => import('./components/traffic-signs/TrafficSignBank'))
 const TrafficSignCategoryPage = lazy(() => import('./components/traffic-signs/TrafficSignCategoryPage'))
@@ -43,10 +44,10 @@ function LegacyTeoriRedirect() {
 }
 
 export default function App() {
-    const [isDarkMode, setIsDarkMode] = useState(() => {
-        const saved = localStorage.getItem('darkMode')
-        return saved !== 'false' // Default to true (Antigravity theme)
-    })
+    // Keep the first browser render identical to the prerendered HTML.
+    // The saved preference is applied after hydration to avoid a mismatch.
+    const [isDarkMode, setIsDarkMode] = useState(true)
+    const [themeInitialized, setThemeInitialized] = useState(false)
 
     const [streakBounce, setStreakBounce] = useState(false)
     const location = useLocation()
@@ -62,13 +63,23 @@ export default function App() {
     }, [])
 
     useEffect(() => {
+        const saved = localStorage.getItem('darkMode')
+        startTransition(() => {
+            setIsDarkMode(saved !== 'false') // Default to dark (Antigravity theme)
+            setThemeInitialized(true)
+        })
+    }, [])
+
+    useEffect(() => {
+        if (!themeInitialized) return
+
         if (isDarkMode) {
             document.body.classList.add('dark-mode')
         } else {
             document.body.classList.remove('dark-mode')
         }
         localStorage.setItem('darkMode', isDarkMode.toString())
-    }, [isDarkMode])
+    }, [isDarkMode, themeInitialized])
 
     const toggleDarkMode = () => {
         setIsDarkMode(prev => !prev)
@@ -279,6 +290,7 @@ export default function App() {
                         <Route path="/laeringsspill" element={<LearningGamesIndex />} />
                         <Route path="/laeringsspill/stopplengde" element={<StoppingDistanceChallenge />} />
                         <Route path="/laeringsspill/veimerking" element={<RoadMarkingGame />} />
+                        <Route path="/laeringsspill/vikeplikt" element={<VikepliktSpill />} />
                         <Route path="/laeringsspill/skiltduellen" element={<SignSpeedGamePage />} />
                         <Route path="/trafikkskilt" element={<TrafficSignBank />} />
                         <Route path="/trafikkskilt/:categorySlug" element={<TrafficSignCategoryPage />} />

@@ -44,7 +44,7 @@ const articleCategorySections = [
     {
         title: 'Fart og plassering',
         description: 'Øv på fartsgrenser, feltvalg, forbikjøring, kollektivfelt og riktig plassering.',
-        ids: ['fartsgrenser', 'feltvalg-fletting-kollektivfelt', 'forbikjoring', 'kollektivfelt-og-elbil']
+        ids: ['fartsgrenser', 'feltvalg-fletting-kollektivfelt', 'forbikjoring', 'kollektivfelt-og-elbil', 'motorvei-regler']
     },
     {
         title: 'Bremselengde og reaksjonstid',
@@ -64,17 +64,22 @@ const articleCategorySections = [
     {
         title: 'Kjøretøy og teknisk',
         description: 'Alt om bilen, dekk, bremser, lys, vognkort, tilhenger og førerstøttesystemer.',
-        ids: ['dekk-bremser-styring', 'sikkerhetskontroll', 'bilens-lys', 'vognkort-vekter', 'tilhenger', 'forerstottesystemer', 'automatlappen']
+        ids: ['dekk-bremser-styring', 'sikkerhetskontroll', 'varsellamper-i-bilen', 'bilens-lys', 'vognkort-vekter', 'tilhenger', 'forerstottesystemer', 'automatlappen']
     },
     {
         title: 'Trafikanter og samspill',
         description: 'Forstå samspill, øvelseskjøring, miljø, barn i bil og forberedelse til prøvene.',
-        ids: ['ovingskjoring', 'barn-i-bil-og-sikring', 'miljo', 'oppkjoring', 'tips-eksamen', 'stroket-teoriproven', 'vanlige-feil-teoriproven']
+        ids: ['ovingskjoring', 'trafikalt-grunnkurs', 'sikkerhetskurs-pa-bane', 'barn-i-bil-og-sikring', 'miljo', 'oppkjoring', 'tips-eksamen', 'stroket-teoriproven', 'vanlige-feil-teoriproven']
     },
     {
         title: 'Sikkerhet og førstehjelp',
         description: 'Lær sikkerhetsutstyr, promille, førstehjelp og hva du gjør ved trafikkuhell.',
         ids: ['sikkerhetsutstyr', 'trafikkuhell-forstehjelp', 'promille']
+    },
+    {
+        title: 'Mennesket i trafikken',
+        description: 'Forstå syn, trøtthet, medisiner og risiko — føreren er den viktigste faktoren.',
+        ids: ['syn-og-fartsblindhet', 'trotthet-og-mikrosovn', 'medisiner-og-bilkjoring', 'kjoreprosessen-og-risiko']
     },
     {
         title: 'Lover og ansvar',
@@ -116,10 +121,21 @@ const getTopicIcon = (id: string) => {
         case 'tips-eksamen':
         case 'teoriproven-bil':
         case 'teoritentamen':
+        case 'trafikalt-grunnkurs':
+        case 'sikkerhetskurs-pa-bane':
             return <GraduationCap size={24} strokeWidth={1.8} />
+        case 'motorvei-regler':
+            return <Route size={24} strokeWidth={1.8} />
+        case 'varsellamper-i-bilen':
+            return <Wrench size={24} strokeWidth={1.8} />
         case 'trafikkuhell-forstehjelp':
         case 'plikter-ved-ulykke':
             return <HeartPulse size={24} strokeWidth={1.8} />
+        case 'syn-og-fartsblindhet':
+        case 'trotthet-og-mikrosovn':
+        case 'medisiner-og-bilkjoring':
+        case 'kjoreprosessen-og-risiko':
+            return <UserCheck size={24} strokeWidth={1.8} />
         case 'vanlige-feil-teoriproven':
         case 'tunnelsikkerhet':
         case 'prikker-pa-forerkortet':

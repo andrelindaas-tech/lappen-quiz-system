@@ -7,18 +7,19 @@ export default function LearningGamesIndex() {
         <div className="start-screen" style={{ paddingBottom: '4rem' }}>
             <Helmet>
                 <title>Gratis teorispill – lær til teoriprøven med spill</title>
-                <meta name="description" content="Tre gratis læringsspill til teoriprøven klasse B: tren på trafikkskilt, stopplengde og veimerking. Spill rett i nettleseren – ingen innlogging." />
+                <meta name="description" content="Fire gratis læringsspill til teoriprøven klasse B: tren på vikeplikt, trafikkskilt, stopplengde og veimerking. Spill rett i nettleseren – ingen innlogging." />
                 <meta property="og:title" content="Gratis teorispill – lær til teoriprøven med spill" />
-                <meta property="og:description" content="Tre gratis læringsspill til teoriprøven klasse B: tren på trafikkskilt, stopplengde og veimerking. Spill rett i nettleseren – ingen innlogging." />
+                <meta property="og:description" content="Fire gratis læringsspill til teoriprøven klasse B: tren på vikeplikt, trafikkskilt, stopplengde og veimerking. Spill rett i nettleseren – ingen innlogging." />
                 <script type="application/ld+json">
                     {JSON.stringify({
                         '@context': 'https://schema.org',
                         '@type': 'ItemList',
                         name: 'Læringsspill til teoriprøven klasse B',
                         itemListElement: [
-                            { '@type': 'ListItem', position: 1, name: 'Stopplengde-utfordringen', url: 'https://teori-test.no/laeringsspill/stopplengde' },
-                            { '@type': 'ListItem', position: 2, name: 'Skiltduellen', url: 'https://teori-test.no/laeringsspill/skiltduellen' },
-                            { '@type': 'ListItem', position: 3, name: 'Veimerking-spillet', url: 'https://teori-test.no/laeringsspill/veimerking' },
+                            { '@type': 'ListItem', position: 1, name: 'Vikepliktspillet', url: 'https://teori-test.no/laeringsspill/vikeplikt' },
+                            { '@type': 'ListItem', position: 2, name: 'Stopplengde-utfordringen', url: 'https://teori-test.no/laeringsspill/stopplengde' },
+                            { '@type': 'ListItem', position: 3, name: 'Skiltduellen', url: 'https://teori-test.no/laeringsspill/skiltduellen' },
+                            { '@type': 'ListItem', position: 4, name: 'Veimerking-spillet', url: 'https://teori-test.no/laeringsspill/veimerking' },
                         ],
                     })}
                 </script>
@@ -63,6 +64,32 @@ export default function LearningGamesIndex() {
 
                 <div className="mode-cards">
                     <Link
+                        to="/laeringsspill/vikeplikt"
+                        className="mode-card"
+                        style={{
+                            textDecoration: 'none',
+                            display: 'flex',
+                            flexDirection: 'column',
+                            height: 'auto',
+                            minHeight: '250px',
+                            cursor: 'pointer',
+                            textAlign: 'center',
+                            width: '100%',
+                            padding: '1.5rem 1.25rem'
+                        }}
+                    >
+                        <div className="card-badge-new">Nytt</div>
+                        <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '1rem' }}>
+                            <div className="card-icon-box">
+                                <Route size={24} strokeWidth={1.8} />
+                            </div>
+                        </div>
+                        <h2 style={{ fontSize: '1.25rem', marginBottom: '0.5rem' }}>Vikepliktspillet</h2>
+                        <p style={{ flexGrow: 1, fontSize: '0.9rem', lineHeight: '1.5', margin: '0 0 1rem 0' }}>Hvem kjører først? Velg riktig rekkefølge i kryss og ved hindringer med høyreregel, vikepliktskilt og forkjørsvei.</p>
+                        <span className="mode-badge mode-badge-full" style={{ alignSelf: 'center', marginTop: 'auto', padding: '6px 14px' }}>Spill nå</span>
+                    </Link>
+
+                    <Link
                         to="/laeringsspill/stopplengde"
                         className="mode-card"
                         style={{ 
@@ -102,7 +129,6 @@ export default function LearningGamesIndex() {
                             padding: '1.5rem 1.25rem'
                         }}
                     >
-                        <div className="card-badge-new">Nytt</div>
                         <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '1rem' }}>
                             <div className="card-icon-box">
                                 <Gamepad2 size={24} strokeWidth={1.8} />
@@ -168,4 +194,3 @@ export default function LearningGamesIndex() {
         </div>
     )
 }
-

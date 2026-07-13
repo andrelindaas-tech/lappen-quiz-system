@@ -2120,7 +2120,7 @@ export const theoryTopics: TheoryTopic[] = [
             {
                 title: 'Alkohol, narkotika og medisiner',
                 type: 'text',
-                content: 'Reglene handler ikke bare om alkohol. Det er også forbudt å kjøre når du er påvirket av narkotika, cannabis eller legemidler som gjør deg uskikket til å kjøre.\n\nLegemidler med rød varseltrekant kan påvirke kjøreevnen. Det betyr ikke alltid at du aldri kan kjøre, men du må lese pakningsvedlegget og følge råd fra lege eller apotek. Kombinasjon av alkohol og medisiner kan være ekstra farlig.'
+                content: 'Reglene handler ikke bare om alkohol. Det er også forbudt å kjøre når du er påvirket av narkotika, cannabis eller legemidler som gjør deg uskikket til å kjøre — og for mange rusmidler gjelder faste grenser i blodet, på samme måte som promillegrensen.\n\nKombinasjonen av alkohol og medisiner kan være ekstra farlig, fordi effektene forsterker hverandre. Hva den røde varseltrekanten på medisiner faktisk betyr, og hvilke regler som gjelder for legemidler bak rattet, [får du i egen guide om medisiner og bilkjøring](/laeringsressurser/medisiner-og-bilkjoring).'
             },
             {
                 title: 'Vanlige misforståelser',
@@ -2822,15 +2822,20 @@ export const theoryTopics: TheoryTopic[] = [
                 content: `<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:1rem">
 <div style="border:1px solid var(--color-border);border-radius:12px;padding:1.25rem;background:var(--color-bg);"><strong style="color:var(--color-text)">1. Vikeplikt og kryss</strong><p style="color:var(--color-text-light);font-size:0.9rem;line-height:1.6">Vikeplikt, høyreregel, rundkjøring, buss fra holdeplass, trikk og trafikklys.</p><a href="/laeringsressurser/vikeplikt" style="color:var(--color-primary);text-decoration:none">Start med vikeplikt</a></div>
 <div style="border:1px solid var(--color-border);border-radius:12px;padding:1.25rem;background:var(--color-bg);"><strong style="color:var(--color-text)">2. Trafikkskilt</strong><p style="color:var(--color-text-light);font-size:0.9rem;line-height:1.6">Skiltgrupper, fareskilt, forbudsskilt, påbudsskilt og planovergang.</p><a href="/laeringsressurser/skilt" style="color:var(--color-primary);text-decoration:none">Les om trafikkskilt</a></div>
-<div style="border:1px solid var(--color-border);border-radius:12px;padding:1.25rem;background:var(--color-bg);"><strong style="color:var(--color-text)">3. Fart og plassering</strong><p style="color:var(--color-text-light);font-size:0.9rem;line-height:1.6">Fartsgrenser, feltvalg, forbikjøring, fletting og kollektivfelt.</p><a href="/laeringsressurser/fartsgrenser" style="color:var(--color-primary);text-decoration:none">Les om fartsgrenser</a></div>
+<div style="border:1px solid var(--color-border);border-radius:12px;padding:1.25rem;background:var(--color-bg);"><strong style="color:var(--color-text)">3. Fart og plassering</strong><p style="color:var(--color-text-light);font-size:0.9rem;line-height:1.6">Fartsgrenser, feltvalg, forbikjøring, fletting, kollektivfelt og motorvei.</p><a href="/laeringsressurser/fartsgrenser" style="color:var(--color-primary);text-decoration:none">Les om fartsgrenser</a></div>
 <div style="border:1px solid var(--color-border);border-radius:12px;padding:1.25rem;background:var(--color-bg);"><strong style="color:var(--color-text)">4. Bremselengde og reaksjonstid</strong><p style="color:var(--color-text-light);font-size:0.9rem;line-height:1.6">Reaksjonslengde, bremselengde, stopplengde, glatt føre og veggrep.</p><a href="/laeringsressurser/bremselengde" style="color:var(--color-primary);text-decoration:none">Øv på bremselengde</a></div>
 <div style="border:1px solid var(--color-border);border-radius:12px;padding:1.25rem;background:var(--color-bg);"><strong style="color:var(--color-text)">5. Parkering og stans</strong><p style="color:var(--color-text-light);font-size:0.9rem;line-height:1.6">Stans, parkering, tunnel, gangfelt, kryss og steder med stansforbud.</p><a href="/laeringsressurser/stans-og-parkering" style="color:var(--color-primary);text-decoration:none">Les om stans og parkering</a></div>
 <div style="border:1px solid var(--color-border);border-radius:12px;padding:1.25rem;background:var(--color-bg);"><strong style="color:var(--color-text)">6. Veimerking</strong><p style="color:var(--color-text-light);font-size:0.9rem;line-height:1.6">Sperrelinje, varsellinje, kjørefeltlinjer, kantlinjer og symboler i veibanen.</p><a href="/laeringsressurser/veimerking" style="color:var(--color-primary);text-decoration:none">Les om veimerking</a></div>
-<div style="border:1px solid var(--color-border);border-radius:12px;padding:1.25rem;background:var(--color-bg);"><strong style="color:var(--color-text)">7. Kjøretøy og teknisk</strong><p style="color:var(--color-text-light);font-size:0.9rem;line-height:1.6">Dekk, bremser, styring, lys, vognkort, tilhenger og førerstøttesystemer.</p><a href="/laeringsressurser/dekk-bremser-styring" style="color:var(--color-primary);text-decoration:none">Les om kjøretøyet</a></div>
-<div style="border:1px solid var(--color-border);border-radius:12px;padding:1.25rem;background:var(--color-bg);"><strong style="color:var(--color-text)">8. Trafikanter og samspill</strong><p style="color:var(--color-text-light);font-size:0.9rem;line-height:1.6">Myke trafikanter, barn i bil, miljø, øvelseskjøring og samhandling.</p><a href="/laeringsressurser/ovingskjoring" style="color:var(--color-primary);text-decoration:none">Les om øvelseskjøring</a></div>
+<div style="border:1px solid var(--color-border);border-radius:12px;padding:1.25rem;background:var(--color-bg);"><strong style="color:var(--color-text)">7. Kjøretøy og teknisk</strong><p style="color:var(--color-text-light);font-size:0.9rem;line-height:1.6">Dekk, bremser, styring, lys, varsellamper, vognkort, tilhenger og førerstøttesystemer.</p><a href="/laeringsressurser/dekk-bremser-styring" style="color:var(--color-primary);text-decoration:none">Les om kjøretøyet</a></div>
+<div style="border:1px solid var(--color-border);border-radius:12px;padding:1.25rem;background:var(--color-bg);"><strong style="color:var(--color-text)">8. Trafikanter og samspill</strong><p style="color:var(--color-text-light);font-size:0.9rem;line-height:1.6">Myke trafikanter, barn i bil, øvelseskjøring, trafikalt grunnkurs og sikkerhetskurs på bane.</p><a href="/laeringsressurser/ovingskjoring" style="color:var(--color-primary);text-decoration:none">Les om øvelseskjøring</a></div>
 <div style="border:1px solid var(--color-border);border-radius:12px;padding:1.25rem;background:var(--color-bg);"><strong style="color:var(--color-text)">9. Sikkerhet og førstehjelp</strong><p style="color:var(--color-text-light);font-size:0.9rem;line-height:1.6">Sikkerhetsutstyr, førstehjelp, promille, trafikkuhell og skadeforebygging.</p><a href="/laeringsressurser/sikkerhetsutstyr" style="color:var(--color-primary);text-decoration:none">Les om sikkerhet</a></div>
 <div style="border:1px solid var(--color-border);border-radius:12px;padding:1.25rem;background:var(--color-bg);"><strong style="color:var(--color-text)">10. Lover og ansvar</strong><p style="color:var(--color-text-light);font-size:0.9rem;line-height:1.6">Vegtrafikkloven §3, prikker, forelegg, førerkortbeslag, forsikring og plikter ved ulykke.</p><a href="/laeringsressurser/vegtrafikkloven-paragraf-3" style="color:var(--color-primary);text-decoration:none">Les om føreransvar</a></div>
 </div>`
+            },
+            {
+                title: 'Mennesket i trafikken – temaet mange glemmer',
+                type: 'info',
+                content: 'Læreplanen handler ikke bare om regler og skilt, men også om føreren selv: syn, reaksjon, trøtthet, rus og hvordan vi faktisk tar beslutninger bak rattet. Dette går på tvers av de ti hovedtemaene over, og vi har egne guider om [syn og fartsblindhet](/laeringsressurser/syn-og-fartsblindhet), [trøtthet og mikrosøvn](/laeringsressurser/trotthet-og-mikrosovn), [medisiner og bilkjøring](/laeringsressurser/medisiner-og-bilkjoring) og [kjøreprosessen og risiko](/laeringsressurser/kjoreprosessen-og-risiko).'
             },
             {
                 title: 'Hvorfor denne inndelingen er nyttig',
@@ -2845,8 +2850,14 @@ export const theoryTopics: TheoryTopic[] = [
 <tr style="border-bottom:1px solid var(--color-border)"><td style="padding:12px 8px">Mange regelspørsmål</td><td style="padding:12px 8px"><a href="/laeringsressurser/vegtrafikkloven-paragraf-3" style="color:var(--color-primary);text-decoration:none">Vegtrafikkloven §3</a></td><td style="padding:12px 8px;color:var(--color-text-light)">Grunnregelen forklarer hvorfor det tryggeste svaret ofte er riktig.</td></tr>
 <tr style="border-bottom:1px solid var(--color-border)"><td style="padding:12px 8px">Skilt og oppmerking</td><td style="padding:12px 8px"><a href="/laeringsressurser/skilt" style="color:var(--color-primary);text-decoration:none">Trafikkskilt</a> og <a href="/laeringsressurser/veimerking" style="color:var(--color-primary);text-decoration:none">veimerking</a></td><td style="padding:12px 8px;color:var(--color-text-light)">Mange feil kommer av at skilt og linjer blandes sammen.</td></tr>
 <tr style="border-bottom:1px solid var(--color-border)"><td style="padding:12px 8px">Situasjoner i trafikken</td><td style="padding:12px 8px"><a href="/laeringsressurser/vikeplikt" style="color:var(--color-primary);text-decoration:none">Vikeplikt</a> og <a href="/laeringsressurser/feltvalg-fletting-kollektivfelt" style="color:var(--color-primary);text-decoration:none">feltvalg</a></td><td style="padding:12px 8px;color:var(--color-text-light)">Dette trener vurdering, ikke bare pugging.</td></tr>
+<tr style="border-bottom:1px solid var(--color-border)"><td style="padding:12px 8px">Spørsmål om føreren selv</td><td style="padding:12px 8px"><a href="/laeringsressurser/kjoreprosessen-og-risiko" style="color:var(--color-primary);text-decoration:none">Kjøreprosessen og risiko</a></td><td style="padding:12px 8px;color:var(--color-text-light)">Syn, trøtthet og rus avgjør mange oppgaver som ikke handler om regler.</td></tr>
 <tr><td style="padding:12px 8px">Teknisk og kontroll</td><td style="padding:12px 8px"><a href="/laeringsressurser/sikkerhetskontroll" style="color:var(--color-primary);text-decoration:none">Sikkerhetskontroll</a></td><td style="padding:12px 8px;color:var(--color-text-light)">Dette er nyttig både til teoriprøven og oppkjøringen.</td></tr>
 </tbody></table></div>`
+            },
+            {
+                title: 'Flere måter å øve på',
+                type: 'tip',
+                content: 'Lesing er bare halve jobben – test deg selv underveis:\n\n• [Ofte spurte teorispørsmål](/sporsmal): ekte oppgaver med fasit og ekstra grundig forklaring.\n• [Læringsspill](/laeringsspill): tren på vikeplikt, stopplengde, skilt og veimerking i spillform. Nyeste tilskudd er [vikepliktspillet](/laeringsspill/vikeplikt), der du velger hvem som kjører først i kryss.\n• Full øvingsprøve fra [forsiden](/): 45 tilfeldige spørsmål med resultatanalyse per hovedtema.'
             }
         ],
         faq: [
@@ -2869,6 +2880,10 @@ export const theoryTopics: TheoryTopic[] = [
             {
                 question: 'Hvor finner jeg Statens vegvesen sin temaliste?',
                 answer: 'Statens vegvesen publiserer den offisielle læreplanen for klasse B på sine nettsider. Vår temaliste og våre læringsressurser er systematisk bygget rundt disse kravene for å gi deg best mulig forberedelse.'
+            },
+            {
+                question: 'Dekker temalisten også mennesket i trafikken?',
+                answer: 'Ja. Temaer som syn, reaksjon, trøtthet, rus og risikoforståelse går på tvers av de ti hovedtemaene, og vi har egne guider om syn og fartsblindhet, trøtthet og mikrosøvn, medisiner og bilkjøring, og kjøreprosessen og risiko.'
             }
         ]
     },{
@@ -3868,18 +3883,659 @@ export const theoryArticles: TheoryTopic[] = [
         ]
     },
     {
-        id: 'automatlappen',
-        title: 'Automatlappen og elbil',
-        icon: '🚗',
-        shortDescription: 'Forstå kode 78, elbilens særegenheter og hva automatlappen faktisk betyr i 2026.',
+        id: 'syn-og-fartsblindhet',
+        title: 'Syn, fartsblindhet og sansene i trafikken',
+        icon: '👁️',
+        shortDescription: 'Synet er din viktigste sans bak rattet. Lær hvordan direkte og perifert syn fungerer, hvorfor synsfeltet krymper i fart, og hva fartsblindhet gjør med deg.',
+        color: 'var(--apple-blue)',
+        seoTitle: 'Fartsblindhet og synet i trafikken – dette må du kunne',
+        seoDescription: 'Hva er fartsblindhet og tunnellsyn? Lær hvordan synet fungerer i fart, hvorfor du undervurderer farten etter motorveikjøring, og synskravene til førerkort.',
+        sections: [
+            {
+                title: 'Kort forklart',
+                type: 'info',
+                content: 'Det aller meste av informasjonen du bruker når du kjører, kommer gjennom synet. Tre ting må du kunne til teoriprøven:\n\n• **Direkte syn** er skarpt, men dekker bare et lite felt — det er her du leser skilt og detaljer.\n• **Perifert syn** (sidesynet) er uskarpt, men svært godt til å oppdage bevegelse.\n• I høy fart fungerer synsfeltet dårligere (**tunnellsyn**), og etter lang kjøring i høy fart undervurderer du farten din (**fartsblindhet**).'
+            },
+            {
+                title: 'Direkte og perifert syn',
+                type: 'text',
+                content: 'Det direkte synet er den lille delen av synsfeltet der du ser skarpt — omtrent som en smal lyskjegle. Alt du leser og vurderer i detalj (skilt, lys, avstander) skjer her.\n\nPeriferisynet dekker resten av synsfeltet. Det ser uskarpt, men reagerer lynraskt på bevegelse — det er ofte sidesynet som først «melder fra» om syklisten fra høyre eller barnet ved veikanten.\n\nDerfor er aktiv blikkbruk en kjerneferdighet: flytt blikket systematisk mellom veien langt frem, speilene og sidene, i stedet for å stirre ett sted. Det du ikke retter blikket mot, ser du bare uskarpt.'
+            },
+            {
+                title: 'Tunnellsyn: synsfeltet krymper i fart',
+                type: 'text',
+                content: 'Jo fortere du kjører, jo lenger frem må du fokusere — og jo mindre klarer du å oppfatte av det som skjer på sidene. Dette kalles ofte tunnellsyn: i praksis fungerer synsfeltet ditt smalere i høy fart.\n\nKonsekvensen er at fotgjengere, syklister og biler fra sidegater oppdages senere. Det er en av grunnene til at fartsgrensene er lave der mennesker ferdes: i 30 km/t har du både bredere reell oppfattelse og [mye kortere stopplengde](/laeringsressurser/bremselengde) enn i 60.'
+            },
+            {
+                title: 'Hva er fartsblindhet?',
+                type: 'text',
+                content: 'Fartsblindhet er at du venner deg til farten etter en stund i høy hastighet, slik at farten føles lavere enn den er.\n\nKlassikeren: Du har kjørt en time på motorvei i 100 km/t og svinger av. Nå føles 80 km/t som sakte kjøring — men det er det ikke. I avkjøringsrampen, gjennom rundkjøringen og inn i 60-sonen ligger du farlig høyt uten å merke det.\n\nMotgiften er enkel og er et typisk riktig svar på teoriprøven: **stol på speedometeret, ikke på følelsen** — spesielt de første minuttene etter fartsreduksjon.'
+            },
+            {
+                title: 'Eksempel: eksamensspørsmålet om fartsblindhet',
+                type: 'example',
+                content: '«Du har kjørt lenge på motorvei og tar av mot en 60-sone. Hva bør du være spesielt oppmerksom på?»\n\nRiktig tankegang: Etter lang kjøring i høy fart er du fartsblind — farten føles lavere enn den er. Du bør sjekke speedometeret aktivt og bremse ned tidligere enn følelsen tilsier.'
+            },
+            {
+                title: 'Mørke, blending og alder',
+                type: 'text',
+                content: 'Synet svekkes kraftig i mørke: fargesyn og detaljsyn blir dårligere, og øynene trenger tid på å omstille seg etter blending fra møtende lys. Eldre førere trenger dessuten mer lys og blir lettere blendet enn unge.\n\nDette henger tett sammen med lysbruk — [les guiden om lysbruk og mørkekjøring](/laeringsressurser/lysbruk-morkekjoring) for reglene om fjernlys, nærlys og blending.'
+            },
+            {
+                title: 'Synskrav til førerkort',
+                type: 'info',
+                content: 'For førerkort klasse B er kravet at du ser minst 0,5 (visus) med begge øyne åpne samlet — om nødvendig med briller eller linser. Bruker du synskorreksjon for å oppfylle kravet, får du en kode i førerkortet og plikter å bruke korreksjonen når du kjører.\n\nEr du i tvil om synet ditt, får du sjekket det hos optiker — det er også et vanlig krav ved fornyelse senere i livet.'
+            },
+            {
+                title: 'Slik bruker du dette på prøven',
+                type: 'tip',
+                content: 'Spørsmål om syn og fart handler nesten alltid om det samme: **at sansene dine har begrensninger, og at du må kompensere aktivt**. Sjekk speedometeret etter fartsreduksjon, flytt blikket systematisk, og senk farten der mennesker ferdes.\n\n• [Reaksjonstid – hvorfor sekundene teller](/laeringsressurser/reaksjonstid)\n• [Ta en gratis øvingsprøve](/quiz?mode=hurtig)'
+            }
+        ],
+        faq: [
+            {
+                question: 'Hva er fartsblindhet?',
+                answer: 'Fartsblindhet er at du venner deg til farten etter lengre kjøring i høy hastighet, slik at farten føles lavere enn den faktisk er. Typisk skjer det når du svinger av fra motorvei. Løsningen er å stole på speedometeret, ikke følelsen.'
+            },
+            {
+                question: 'Hva er tunnellsyn i trafikken?',
+                answer: 'At synsfeltet i praksis blir smalere når farten øker: du må fokusere lenger frem og oppfatter mindre av det som skjer på sidene. Derfor oppdages fotgjengere og kryssende trafikk senere i høy fart.'
+            },
+            {
+                question: 'Hva er forskjellen på direkte og perifert syn?',
+                answer: 'Direkte syn er det lille feltet der du ser skarpt og leser detaljer som skilt. Perifert syn er uskarpt, men oppdager bevegelse raskt. God kjøring bruker begge: aktiv blikkflytting med det direkte synet, og reaksjon på varsler fra sidesynet.'
+            },
+            {
+                question: 'Hva er synskravet for førerkort klasse B?',
+                answer: 'Du må se minst 0,5 (visus) med begge øyne åpne samlet, om nødvendig med briller eller linser. Trenger du korreksjon for å nå kravet, plikter du å bruke den når du kjører.'
+            }
+        ],
+        miniQuiz: [
+            {
+                question: 'Du svinger av motorveien etter en times kjøring i 100 km/t. Hva er den største faren?',
+                options: ['At motoren overopphetes', 'At du er fartsblind og ligger høyere i fart enn det føles', 'At bremsene er varme', 'At du blir blendet av sollyset'],
+                correct: 'At du er fartsblind og ligger høyere i fart enn det føles',
+                explanation: 'Etter lang kjøring i høy fart føles lavere hastigheter saktere enn de er. Sjekk speedometeret aktivt.'
+            },
+            {
+                question: 'Hva kjennetegner det perifere synet?',
+                options: ['Det er skarpt og leser detaljer', 'Det er uskarpt, men oppdager bevegelse raskt', 'Det fungerer bare i dagslys', 'Det brukes til å lese skilt'],
+                correct: 'Det er uskarpt, men oppdager bevegelse raskt',
+                explanation: 'Sidesynet ser uskarpt, men er svært følsomt for bevegelse — det varsler deg om det som skjer utenfor blikkretningen.'
+            },
+            {
+                question: 'Hva skjer med synsfeltet ditt når farten øker?',
+                options: ['Det blir bredere', 'Det påvirkes ikke', 'Det fungerer i praksis smalere — du oppfatter mindre på sidene', 'Det blir skarpere'],
+                correct: 'Det fungerer i praksis smalere — du oppfatter mindre på sidene',
+                explanation: 'I høy fart må du fokusere lenger frem, og evnen til å oppfatte det som skjer på sidene svekkes (tunnellsyn).'
+            }
+        ]
+    },
+    {
+        id: 'trotthet-og-mikrosovn',
+        title: 'Trøtthet og mikrosøvn bak rattet',
+        icon: '😴',
+        shortDescription: 'Mikrosøvn kan gjøre deg «blind» i flere sekunder uten at du merker det. Lær tegnene, loven og hva som faktisk hjelper mot trøtthet.',
+        color: 'var(--apple-blue)',
+        seoTitle: 'Mikrosøvn og trøtt bak rattet – regler, tegn og hva som hjelper',
+        seoDescription: 'Hva er mikrosøvn, når er det ulovlig å kjøre trøtt, og hva hjelper egentlig? Lær faresignalene, loven (§ 21) og rådene som virker – til teoriprøven.',
+        sections: [
+            {
+                title: 'Kort forklart',
+                type: 'info',
+                content: 'Trøtthet svekker deg på samme måte som rus: lengre reaksjonstid, dårligere vurderinger og til slutt mikrosøvn — sekunder med søvn du ikke merker selv.\n\n• Det er **ulovlig** å kjøre når du er så trøtt at du ikke er skikket (vegtrafikkloven § 21).\n• I 80 km/t beveger bilen seg 22 meter per sekund — tre sekunders mikrosøvn er nesten 70 meter i blinde.\n• Det eneste som faktisk hjelper, er **søvn og pause** — ikke musikk, frisk luft eller vindusvask.'
+            },
+            {
+                title: 'Hva er mikrosøvn?',
+                type: 'text',
+                content: 'Mikrosøvn er korte søvnepisoder på ett til flere sekunder som kommer uten forvarsel når hjernen er utslitt. Øynene kan til og med være åpne — men du oppfatter ingenting.\n\nDet farlige er at du ikke selv registrerer at det skjer. Mange som kjører av veien i utforkjøringsulykker om natten, har hatt mikrosøvn uten å vite det. Kombiner det med [stopplengdene](/laeringsressurser/bremselengde) i høy fart, så ser du hvorfor trøtthetsulykker ofte er alvorlige: det finnes ingen bremsing før smellen.'
+            },
+            {
+                title: 'Loven: når er det ulovlig å kjøre trøtt?',
+                type: 'warning',
+                content: 'Vegtrafikkloven § 21 sier at ingen må føre kjøretøy når man er i en slik tilstand — på grunn av sykdom, trøtthet eller andre årsaker — at man ikke kan regnes som skikket til å kjøre trygt.\n\nDet betyr at trøtt kjøring ikke bare er farlig, men straffbart, på lik linje med annen uskikkethet. Har du våket lenge nok, kan du være like svekket som en ruspåvirket fører — og du vurderes like strengt ved en ulykke.'
+            },
+            {
+                title: 'Faresignalene du skal reagere på',
+                type: 'text',
+                content: 'Kroppen varsler før mikrosøvnen kommer. Tegn på at du MÅ stoppe:\n\n- Du gjesper gjentatte ganger og øyelokkene blir tunge\n- Du husker ikke de siste kilometerne du har kjørt\n- Du vingler i feltet eller skvetter til av rumlefelt\n- Tankene vandrer og du «våkner» av småting\n- Du bommer på gir, blinklys eller enkle vurderinger\n\nNår ett eller flere av disse melder seg, er neste steg mikrosøvn — ikke om en time, men når som helst.'
+            },
+            {
+                title: 'Hva hjelper — og hva hjelper IKKE?',
+                type: 'text',
+                content: 'Dette skiller teoriprøve-svarene fra mytene:\n\n**Hjelper:**\n- Stoppe og sove 15–20 minutter (powernap) — det klart mest effektive\n- Bytte sjåfør\n- Planlegge: sov godt før langtur, ta pause minst hvert annen time\n\n**Hjelper ikke (vanlige feilsvar):**\n- Høy musikk, åpne vinduer og kald luft — gir i beste fall et par minutters oppkvikking\n- Kaffe/energidrikk alene — koffein tar tid og skjuler trøttheten uten å fjerne den; kombiner eventuelt med en lur («kaffelur»)\n- «Å ta seg sammen» — viljestyrke stopper ikke mikrosøvn'
+            },
+            {
+                title: 'Når er risikoen størst?',
+                type: 'text',
+                content: 'Døgnrytmen din gjør deg ekstra sårbar på to tidspunkter: **om natten (ca. kl. 02–06)** og **tidlig ettermiddag (ca. kl. 14–16)**, spesielt etter et tungt måltid.\n\nMonoton vei forsterker det: lange, rette strekninger med lite trafikk — typisk motorvei om natten — er der trøtthetsulykkene skjer. Unge sjåfører på vei hjem fra fest natt til lørdag/søndag er en klassisk høyrisikogruppe, selv helt uten alkohol.'
+            },
+            {
+                title: 'Slik bruker du dette på prøven',
+                type: 'tip',
+                content: 'Husk to ting: **søvn er den eneste reelle løsningen**, og **trøtt kjøring er ulovlig** når du ikke lenger er skikket. Svar som handler om musikk, vindu eller «kjøre forsiktig videre» er feil.\n\n• [Reaksjonstid – hvordan trøtthet forlenger den](/laeringsressurser/reaksjonstid)\n• [Promille og rus – samme lovkrav om skikkethet](/laeringsressurser/promille)\n• [Ta en gratis øvingsprøve](/quiz?mode=hurtig)'
+            }
+        ],
+        faq: [
+            {
+                question: 'Hva er mikrosøvn?',
+                answer: 'Korte søvnepisoder på ett til flere sekunder som kommer uten forvarsel når du er utslitt — ofte uten at du merker det selv. I 80 km/t betyr tre sekunders mikrosøvn nesten 70 meter kjøring i blinde.'
+            },
+            {
+                question: 'Er det ulovlig å kjøre når man er trøtt?',
+                answer: 'Ja, når trøttheten gjør deg uskikket. Vegtrafikkloven § 21 forbyr å føre kjøretøy når du på grunn av sykdom, trøtthet eller andre årsaker ikke kan kjøre på trygg måte.'
+            },
+            {
+                question: 'Hva hjelper best mot trøtthet bak rattet?',
+                answer: 'Å stoppe og sove 15–20 minutter, eller bytte sjåfør. Musikk, frisk luft og kaffe alene fjerner ikke trøttheten — de skjuler den kortvarig, og mikrosøvnen kan komme uansett.'
+            },
+            {
+                question: 'Når på døgnet er risikoen for trøtthetsulykker størst?',
+                answer: 'Om natten mellom cirka kl. 02 og 06, og tidlig ettermiddag mellom cirka kl. 14 og 16 — spesielt på monotone veier og etter tunge måltider.'
+            }
+        ],
+        miniQuiz: [
+            {
+                question: 'Hva er det eneste som virkelig hjelper mot trøtthet på langtur?',
+                options: ['Høy musikk og åpent vindu', 'En stor energidrikk', 'Å stoppe og sove en kort lur, eller bytte sjåfør', 'Å kjøre litt fortere så turen blir kortere'],
+                correct: 'Å stoppe og sove en kort lur, eller bytte sjåfør',
+                explanation: 'Søvn er den eneste reelle løsningen. Musikk, luft og koffein gir bare kortvarig og upålitelig oppkvikking.'
+            },
+            {
+                question: 'Hvor langt beveger bilen seg hvis du har mikrosøvn i 3 sekunder i 80 km/t?',
+                options: ['Cirka 20 meter', 'Cirka 40 meter', 'Cirka 67 meter', 'Cirka 100 meter'],
+                correct: 'Cirka 67 meter',
+                explanation: 'I 80 km/t kjører du 22,2 meter per sekund. Tre sekunder uten bevissthet er nesten 70 meter i blinde.'
+            },
+            {
+                question: 'Du gjesper gjentatte ganger og husker ikke de siste kilometerne. Hva skal du gjøre?',
+                options: ['Skru opp musikken og åpne vinduet', 'Stoppe på et trygt sted og hvile', 'Kjøre litt saktere og fortsette', 'Drikke kaffe mens du kjører videre'],
+                correct: 'Stoppe på et trygt sted og hvile',
+                explanation: 'Dette er klassiske forvarsler om mikrosøvn. Det eneste riktige er å stoppe — neste steg kan være sekunder med søvn i full fart.'
+            }
+        ]
+    },
+    {
+        id: 'medisiner-og-bilkjoring',
+        title: 'Medisiner, rus og bilkjøring',
+        icon: '💊',
+        shortDescription: 'Hva betyr den røde varseltrekanten på medisiner, og hvilke regler gjelder for rusmidler bak rattet? Lær reglene som mange misforstår.',
+        color: 'var(--apple-blue)',
+        seoTitle: 'Medisiner og bilkjøring – hva betyr den røde varseltrekanten?',
+        seoDescription: 'Kan du kjøre bil på medisiner med rød varseltrekant? Lær reglene: varseltrekanten, faste grenser for rusmidler og ditt eget ansvar – forklart til teoriprøven.',
+        sections: [
+            {
+                title: 'Kort forklart',
+                type: 'info',
+                content: 'Tre regler oppsummerer temaet:\n\n• **Rød varseltrekant** på medisinen betyr at den kan påvirke kjøreevnen og at det gjelder egne regler — ikke at kjøring automatisk er forbudt.\n• For en rekke rusmidler og legemidler finnes **faste grenser** i blodet, på samme måte som promillegrensen på 0,2.\n• Uansett medisin eller resept: **du er selv ansvarlig** for å være skikket når du kjører (vegtrafikkloven § 21).'
+            },
+            {
+                title: 'Hva betyr den røde varseltrekanten?',
+                type: 'text',
+                content: 'Varseltrekanten på pakningen er et varsel, ikke et forbudsskilt: legemidlet kan påvirke reaksjonsevne, oppmerksomhet eller dømmekraft, og det gjelder egne regler for bilkjøring.\n\nOm du kan kjøre, avhenger av dosen, hvor lenge du har brukt medisinen, og hvordan akkurat du reagerer — mange bruker trekantmerkede medisiner fast og kjører lovlig. Ordningen ble i 2018 knyttet direkte til førerkortforskriftens regler for legemidler.\n\nDet trygge svaret, både på prøven og i livet: **les pakningsvedlegget, og spør lege eller apotek** om hva som gjelder for deg og din dose. Vær ekstra forsiktig de første dagene på en ny medisin.'
+            },
+            {
+                title: 'Faste grenser — «promillegrenser» for andre stoffer',
+                type: 'text',
+                content: 'Norge har faste grenser i blodet for en rekke rusmidler og legemidler (blant annet THC, benzodiazepiner og amfetamin) — fastsatt i egen forskrift, med nivåer som tilsvarer 0,2, 0,5 og 1,2 i promille.\n\nDet betyr at ruspåvirket kjøring dømmes objektivt, akkurat som promillekjøring: er konsentrasjonen i blodet over grensen, er lovbruddet et faktum uansett hvor «edru» du følte deg.\n\nViktig nyanse for legemidler: bruker du et legemiddel **etter legens forskrivning**, gjelder ikke de faste grensene automatisk — da vurderes det konkret om du var skikket. Ansvaret for å ikke kjøre svekket er uansett ditt.'
+            },
+            {
+                title: 'Kombinasjoner er farligst',
+                type: 'warning',
+                content: 'Alkohol sammen med beroligende eller sløvende medisiner forsterker effekten av begge — én øl kan virke som tre. Det samme gjelder kombinasjoner av flere legemidler.\n\nPå teoriprøven er dette en gjenganger: selv lovlige mengder alkohol og lovlige medisiner kan sammen gjøre deg uskikket — og da er kjøringen ulovlig etter § 21, uavhengig av promilletall og grenser.'
+            },
+            {
+                title: 'Sykdom og form dagen etter',
+                type: 'text',
+                content: 'Skikkethetskravet gjelder mer enn rus: høy feber, sterk smerte, [kraftig trøtthet](/laeringsressurser/trotthet-og-mikrosovn) eller sjokk kan gjøre deg like farlig bak rattet som promille.\n\nHusk også «dagen derpå»: alkohol forbrennes langsomt (grovt regnet 0,1–0,15 promille i timen), og etter en fuktig kveld kan du fortsatt være over grensen langt utpå neste dag. [Les mer i promille-guiden](/laeringsressurser/promille).'
+            },
+            {
+                title: 'Slik bruker du dette på prøven',
+                type: 'tip',
+                content: 'Nøkkelsvarene: varseltrekant = «kan påvirke — undersøk hva som gjelder for deg», ikke automatisk forbud. Faste grenser gjør ruskjøring objektivt straffbart. Og ditt ansvar for å være skikket gjelder alltid — uansett resept.\n\n• [Promille og alkohol – grenser og straff](/laeringsressurser/promille)\n• [Bøter og forelegg](/laeringsressurser/boter-og-forelegg)\n• [Ta en gratis øvingsprøve](/quiz?mode=hurtig)'
+            }
+        ],
+        sources: {
+            title: 'Kilder',
+            type: 'text',
+            content: '- **Felleskatalogen:** [Legemidler og bilkjøring](https://www.felleskatalogen.no/medisin/nyttig-om/bilkjoring)\n- **Direktoratet for medisinske produkter:** [Varseltrekantordningen](https://www.dmp.no/godkjenning/godkjenning-og-oppfolging-av-markedsforingstillatelse/produktinformasjon-templater-og-veiledninger/varseltrekantordningen-regulatorisk-informasjon)'
+        },
+        faq: [
+            {
+                question: 'Kan jeg kjøre bil når jeg bruker medisin med rød varseltrekant?',
+                answer: 'Ofte ja — trekanten betyr at medisinen kan påvirke kjøreevnen og at egne regler gjelder, ikke at kjøring er forbudt. Det avhenger av dose, tilvenning og hvordan du reagerer. Les pakningsvedlegget og spør lege eller apotek.'
+            },
+            {
+                question: 'Hva er faste grenser for rusmidler i trafikken?',
+                answer: 'Lovbestemte grenser for konsentrasjon i blodet av en rekke rusmidler og legemidler, tilsvarende promillegrensene 0,2, 0,5 og 1,2. Over grensen er kjøringen straffbar uansett hvordan du selv følte deg.'
+            },
+            {
+                question: 'Gjelder de faste grensene hvis jeg har resept?',
+                answer: 'Nei, ikke automatisk — bruker du legemidlet etter legens forskrivning, vurderes det konkret om du var skikket til å kjøre. Men ansvaret for å ikke kjøre svekket er alltid ditt, uavhengig av resept.'
+            },
+            {
+                question: 'Hvorfor er alkohol og medisiner sammen så farlig?',
+                answer: 'Fordi effektene forsterker hverandre: alkohol pluss sløvende medisiner kan gjøre deg langt mer svekket enn hver av dem alene. Kombinasjonen kan gjøre deg uskikket selv når begge deler isolert sett er «innenfor».'
+            }
+        ],
+        miniQuiz: [
+            {
+                question: 'Hva betyr den røde varseltrekanten på en medisinpakning?',
+                options: ['At det er forbudt å kjøre bil når du bruker medisinen', 'At medisinen kan påvirke kjøreevnen og at egne regler gjelder', 'At medisinen er reseptbelagt', 'At medisinen inneholder alkohol'],
+                correct: 'At medisinen kan påvirke kjøreevnen og at egne regler gjelder',
+                explanation: 'Trekanten er et varsel om mulig påvirkning — ikke et automatisk kjøreforbud. Les pakningsvedlegget og spør lege eller apotek.'
+            },
+            {
+                question: 'Hva er «faste grenser» i trafikken?',
+                options: ['Fartsgrenser som aldri endres', 'Lovbestemte grenser for rusmidler i blodet, tilsvarende promillegrenser', 'Grensene for hvor lenge man kan kjøre uten pause', 'Aldersgrenser for førerkort'],
+                correct: 'Lovbestemte grenser for rusmidler i blodet, tilsvarende promillegrenser',
+                explanation: 'Norge har faste grenser for en rekke rusmidler og legemidler — over grensen er kjøringen objektivt straffbar, som ved promille.'
+            },
+            {
+                question: 'Du bruker en trekantmerket medisin etter legens anvisning og føler deg helt fin. Hva gjelder?',
+                options: ['Du kan aldri kjøre bil', 'Du kan kjøre hvis du er skikket — men ansvaret er ditt', 'Reseptem opphever alle regler', 'Du må ha med legeerklæring i bilen'],
+                correct: 'Du kan kjøre hvis du er skikket — men ansvaret er ditt',
+                explanation: 'Forskrevet bruk kan være forenlig med kjøring, men vegtrafikkloven § 21 krever alltid at du er skikket — det ansvaret kan ingen resept ta fra deg.'
+            }
+        ]
+    },
+    {
+        id: 'kjoreprosessen-og-risiko',
+        title: 'Kjøreprosessen og risikoforståelse',
+        icon: '🧠',
+        shortDescription: 'Sanse, oppfatte, avgjøre, handle — kjøreprosessen forklarer hvorfor ulykker skjer, og hvorfor unge førere er mest utsatt. Kjernestoff på teoriprøven.',
+        color: 'var(--apple-blue)',
+        seoTitle: 'Kjøreprosessen: sanse, oppfatte, avgjøre, handle – forklart enkelt',
+        seoDescription: 'Lær kjøreprosessen (sanse → oppfatte → avgjøre → handle), hvorfor unge førere har høyest ulykkesrisiko, og hvordan gruppepress påvirker kjøringen din.',
+        sections: [
+            {
+                title: 'Kort forklart: de fire stegene',
+                type: 'info',
+                content: 'All kjøring består av den samme mentale kjeden, om og om igjen:\n\n1. **Sanse** — du ser, hører eller kjenner noe (en ball triller ut i gaten)\n2. **Oppfatte** — du forstår hva det betyr (der en ball er, kan et barn komme)\n3. **Avgjøre** — du velger handling (brems nå, ikke vent)\n4. **Handle** — du utfører den (foten på bremsen)\n\nHele kjeden tar tid — det er dette som er [reaksjonstiden din](/laeringsressurser/reaksjonstid). Og hvert steg kan svikte: du kan overse, feiltolke, velge feil eller handle for sent.'
+            },
+            {
+                title: 'Hvor går det galt?',
+                type: 'text',
+                content: 'Ulykker skyldes nesten alltid svikt i ett av de fire stegene:\n\n- **Sansesvikt:** du så aldri syklisten — blikket var på mobilen, eller [synets begrensninger](/laeringsressurser/syn-og-fartsblindhet) lurte deg\n- **Oppfattelsessvikt:** du så bilen, men trodde den skulle svinge\n- **Avgjørelsessvikt:** du valgte å rekke det gule lyset i stedet for å stanse\n- **Handlingssvikt:** du traff gassen i stedet for bremsen i panikk\n\nPå teoriprøven brukes dette til å teste årsaksforståelse: «Hvorfor er mobilbruk farlig?» Fordi den stjeler sansesteget — resten av kjeden får aldri sjansen.'
+            },
+            {
+                title: 'Erfaring flytter kapasitet',
+                type: 'text',
+                content: 'For en fersk fører krever selve bilkjøringen — gir, plassering, speil — mye mental kapasitet. Da blir det lite igjen til å lese trafikken.\n\nMed mengdetrening automatiseres det tekniske, og kapasiteten frigjøres til det som betyr noe: å oppdage og forutse. Det er derfor [øvelseskjøring](/laeringsressurser/ovingskjoring) i mange ulike situasjoner er så viktig — du trener ikke bare teknikk, du trener hele kjøreprosessen til å gå raskere.'
+            },
+            {
+                title: 'Hvorfor har unge førere høyest risiko?',
+                type: 'text',
+                content: 'Førere mellom 18 og 24 år — og spesielt unge menn — er kraftig overrepresentert i alvorlige ulykker. Tre grunner går igjen:\n\n1. **Lite erfaring:** kjøreprosessen går tregere og feiltolkninger er vanligere\n2. **Umoden risikovurdering:** hjernens evne til impulskontroll og konsekvensvurdering er ikke ferdig utviklet i tenårene\n3. **Livsstil:** mer kjøring om natten, i helger og med jevnaldrende passasjerer\n\nDette er ikke moralisering, men statistikk du skal kjenne til på prøven — og bakgrunnen for prøveperioden med [doble prikker](/laeringsressurser/prikker-pa-forerkortet) de to første årene.'
+            },
+            {
+                title: 'Gruppepress og passasjerer',
+                type: 'warning',
+                content: 'Risikoen for unge førere øker markant med jevnaldrende passasjerer i bilen — ikke fordi noen sier «kjør fortere», men fordi stemning, oppmerksomhet og ønsket om å imponere påvirker avgjørelses-steget i kjøreprosessen.\n\nGruppepress kan også være stilltiende: du tar sjanser du aldri ville tatt alene. Det beste mottrekket er å bestemme seg på forhånd: du er sjåfør, ikke underholder. En god fører sier fra — og en god passasjer respekterer det.'
+            },
+            {
+                title: 'Selvinnsikt: den viktigste sikkerhetsutrustningen',
+                type: 'text',
+                content: 'Risikoforståelse handler til slutt om ærlighet med deg selv: Er jeg [trøtt](/laeringsressurser/trotthet-og-mikrosovn)? Stresset? Sint? Påvirket av [medisiner](/laeringsressurser/medisiner-og-bilkjoring) eller presset av klokka?\n\nFørere som vurderer egen tilstand og tilpasser kjøringen — eller lar bilen stå — er tryggere enn førere med perfekt teknikk og null selvinnsikt. Det er dette [førerens ansvar etter vegtrafikkloven § 3](/laeringsressurser/vegtrafikkloven-paragraf-3) egentlig handler om.'
+            },
+            {
+                title: 'Slik bruker du dette på prøven',
+                type: 'tip',
+                content: 'Kan du de fire stegene og hvor de svikter, kan du resonnere deg til riktig svar på mange «hvorfor»-spørsmål: mobilbruk (sansing), rus (hele kjeden), uerfarenhet (tregere prosess), passasjerer (avgjørelser).\n\n• [Reaksjonstid – kjeden målt i meter](/laeringsressurser/reaksjonstid)\n• [Ta en gratis øvingsprøve](/quiz?mode=hurtig)'
+            }
+        ],
+        faq: [
+            {
+                question: 'Hva er kjøreprosessen?',
+                answer: 'Den mentale kjeden all kjøring består av: sanse (se/høre), oppfatte (forstå), avgjøre (velge handling) og handle (utføre). Kjeden gjentas kontinuerlig, og hvert steg tar tid og kan svikte.'
+            },
+            {
+                question: 'Hvorfor har unge førere høyest ulykkesrisiko?',
+                answer: 'Kombinasjonen av lite erfaring (tregere kjøreprosess), umoden risikovurdering og impulskontroll, og en livsstil med mer natt- og helgekjøring med jevnaldrende passasjerer. Førere 18–24 år er kraftig overrepresentert i alvorlige ulykker.'
+            },
+            {
+                question: 'Hvordan påvirker gruppepress kjøringen?',
+                answer: 'Jevnaldrende passasjerer øker risikoen for unge førere — ofte uten at noen sier noe. Stemning og ønsket om å imponere påvirker avgjørelsene, slik at føreren tar sjanser hen aldri ville tatt alene.'
+            },
+            {
+                question: 'Hvorfor er mobilbruk bak rattet så farlig?',
+                answer: 'Fordi den slår ut første steg i kjøreprosessen: sansingen. Ser du ikke faren, hjelper det ikke hvor god du er til å oppfatte, avgjøre og handle — kjeden starter aldri.'
+            }
+        ],
+        miniQuiz: [
+            {
+                question: 'Hva er riktig rekkefølge i kjøreprosessen?',
+                options: ['Handle → avgjøre → sanse → oppfatte', 'Sanse → oppfatte → avgjøre → handle', 'Oppfatte → sanse → handle → avgjøre', 'Avgjøre → sanse → oppfatte → handle'],
+                correct: 'Sanse → oppfatte → avgjøre → handle',
+                explanation: 'Du må se faren (sanse), forstå den (oppfatte), velge handling (avgjøre) og utføre den (handle) — i den rekkefølgen.'
+            },
+            {
+                question: 'Hvorfor øker risikoen når unge førere har jevnaldrende passasjerer?',
+                options: ['Fordi bilen blir tyngre', 'Fordi stemning og gruppepress påvirker førerens avgjørelser', 'Fordi passasjerene skygger for speilene', 'Det stemmer ikke — passasjerer reduserer risikoen'],
+                correct: 'Fordi stemning og gruppepress påvirker førerens avgjørelser',
+                explanation: 'Gruppepress virker ofte stilltiende: føreren tar sjanser for å imponere eller følge stemningen — avgjørelses-steget i kjøreprosessen påvirkes.'
+            },
+            {
+                question: 'Mobilbruk bak rattet rammer først og fremst hvilket steg i kjøreprosessen?',
+                options: ['Handlingen', 'Avgjørelsen', 'Sansingen', 'Ingen av stegene'],
+                correct: 'Sansingen',
+                explanation: 'Med blikket på mobilen ser du aldri faren — sansesteget slås ut, og resten av kjeden får ikke sjansen til å starte.'
+            }
+        ]
+    },
+    {
+        id: 'motorvei-regler',
+        title: 'Motorvei og motortrafikkvei: reglene du må kunne',
+        icon: '🛣️',
+        shortDescription: 'Hvem har lov til å kjøre på motorvei, hva er forbudt, og hvem har vikeplikt ved påkjøring? Reglene mange bommer på — forklart enkelt.',
+        color: 'var(--apple-blue)',
+        seoTitle: 'Regler på motorvei – forbud, påkjøring og vikeplikt',
+        seoDescription: 'Hva er forbudt på motorvei, hvem har vikeplikt i akselerasjonsfeltet, og hva er forskjellen på motorvei og motortrafikkvei? Forklart til teoriprøven.',
+        sections: [
+            {
+                title: 'Kort forklart',
+                type: 'info',
+                content: 'Motorvei er laget for én ting: rask og jevn trafikkflyt uten overraskelser. Derfor er reglene strenge:\n\n• Kun for motorkjøretøy som lovlig kan holde en viss fart — gående, syklende, moped og traktor er forbudt\n• Stans, parkering, rygging, vending og av-/påstigning er forbudt\n• Ved påkjøring har **du** vikeplikt for trafikken som allerede er på motorveien\n• Motortrafikkvei har i hovedsak de samme forbudene, men lavere standard'
+            },
+            {
+                title: 'Hvem har ikke lov på motorveien?',
+                type: 'text',
+                content: 'Motorvei er stengt for all myk og langsom trafikk: gående, syklister, mopeder, traktorer, motorredskaper og andre kjøretøy som ikke lovlig kan holde tilstrekkelig fart. Øvelseskjøring med bil er derimot lov — motorveikjøring inngår i opplæringen.\n\nLogikken er fartsforskjeller: en traktor i 40 km/t på en vei der trafikken holder 110, er en dødsfelle. Store fartsforskjeller er blant de farligste situasjonene i trafikken, og motorveireglene er designet for å fjerne dem.'
+            },
+            {
+                title: 'Forbudt på motorveien',
+                type: 'warning',
+                content: 'På motorvei (og motortrafikkvei) er det forbudt å:\n\n- Stanse eller parkere — også på skulderen, som er forbeholdt nødstopp\n- Rygge eller snu — kjører du feil, må du fortsette til neste avkjøring\n- Slippe av eller ta opp passasjerer\n- Kjøre i midtrabatten eller krysse den\n\nFår du motorstopp, setter du på nødblink, kommer deg ut på høyre side og bak autovernet, og bruker refleksvest — [les mer om sikkerhetsutstyr](/laeringsressurser/sikkerhetsutstyr).'
+            },
+            {
+                title: 'Påkjøring: hvem har vikeplikt?',
+                type: 'text',
+                content: 'Dette er selve eksamensfellen: **Ved påkjøring på motorvei har du vikeplikt for trafikken som allerede er på motorveien.** Akselerasjonsfeltet gir deg ikke fletterett — det gir deg plass til å tilpasse farten og finne en luke.\n\nRiktig teknikk: bruk hele akselerasjonsfeltet, kom opp i motorveiens fart, se etter luke tidlig (speil + skulderblikk) og gli inn uten å tvinge noen til å bremse. Å stanse i enden av feltet er det farligste du kan gjøre — da må du starte fra null inn i 100-sonen.\n\nSelve feltskifte-teknikken og flettereglene ellers finner du i [guiden om feltvalg og fletting](/laeringsressurser/feltvalg-fletting-kollektivfelt).'
+            },
+            {
+                title: 'Avkjøring: brems i retardasjonsfeltet',
+                type: 'text',
+                content: 'Ved avkjøring gjelder det motsatte prinsippet: hold motorveiens fart til du er inne i retardasjonsfeltet, og brems der — ikke ute på motorveien. Slik forstyrrer du ikke trafikken bak.\n\nHusk også [fartsblindheten](/laeringsressurser/syn-og-fartsblindhet): etter lang motorveikjøring føles avkjøringsrampen saktere enn den er. Sjekk speedometeret — mange ramper har krappe svinger med lav fartsgrense.'
+            },
+            {
+                title: 'Motorvei vs. motortrafikkvei',
+                type: 'text',
+                content: 'Begge er skiltet med egne opplysningsskilt og har de samme forbudene mot myk trafikk, stans, rygging og vending. Forskjellen er standarden:\n\n- **Motorvei:** alltid fysisk adskilte kjøreretninger og planfrie kryss (av- og påkjøringsramper). Fartsgrense opptil 110 km/t.\n- **Motortrafikkvei:** lavere standard — kan ha smalere profil og vanligvis lavere fartsgrense. \n\nSe [fartsgrense-guiden](/laeringsressurser/fartsgrenser) for de generelle og særskilte fartsgrensene.'
+            },
+            {
+                title: 'Slik bruker du dette på prøven',
+                type: 'tip',
+                content: 'De to svarene som går igjen: **du har vikeplikt ved påkjøring** (akselerasjonsfeltet er ingen flettesone), og **listen over hva som er forbudt** (myk trafikk, stans, rygging, vending).\n\n• [Feltvalg og fletting – teknikken](/laeringsressurser/feltvalg-fletting-kollektivfelt)\n• [Ta en gratis øvingsprøve](/quiz?mode=hurtig)'
+            }
+        ],
+        faq: [
+            {
+                question: 'Hvem har vikeplikt ved påkjøring på motorvei?',
+                answer: 'Du som kjører på. Trafikken som allerede er på motorveien har ikke vikeplikt for deg — akselerasjonsfeltet er til for å tilpasse farten og finne en luke, ikke en flettesone med like rettigheter.'
+            },
+            {
+                question: 'Hva er forbudt på motorvei?',
+                answer: 'Gående, syklister, moped, traktor og andre langsomme kjøretøy har ikke adgang. I tillegg er det forbudt å stanse, parkere, rygge, snu og slippe av passasjerer. Skulderen er kun for nødstopp.'
+            },
+            {
+                question: 'Hva er forskjellen på motorvei og motortrafikkvei?',
+                answer: 'Begge har samme forbud, men motorvei har alltid adskilte kjøreretninger, planfrie kryss og fartsgrense opptil 110 km/t. Motortrafikkvei har lavere standard og vanligvis lavere fartsgrense.'
+            },
+            {
+                question: 'Hva gjør du hvis du kjører feil på motorveien?',
+                answer: 'Fortsett til neste avkjøring og snu der. Å rygge, snu eller krysse midtrabatten på motorvei er strengt forbudt og livsfarlig.'
+            }
+        ],
+        miniQuiz: [
+            {
+                question: 'Du kjører i akselerasjonsfeltet for å komme inn på motorveien. Hva gjelder?',
+                options: ['Trafikken på motorveien må slippe deg inn (fletteregel)', 'Du har vikeplikt for trafikken på motorveien', 'Den som er nærmest krysset har vikeplikt', 'Høyreregelen gjelder'],
+                correct: 'Du har vikeplikt for trafikken på motorveien',
+                explanation: 'Akselerasjonsfeltet gir deg plass til å tilpasse farten og finne en luke — men vikeplikten er din.'
+            },
+            {
+                question: 'Hvilke av disse har lov til å kjøre på motorvei?',
+                options: ['Moped', 'Traktor', 'Personbil under øvelseskjøring', 'Syklist i veiskulderen'],
+                correct: 'Personbil under øvelseskjøring',
+                explanation: 'Øvelseskjøring med bil er tillatt på motorvei — myk og langsom trafikk er forbudt.'
+            },
+            {
+                question: 'Du skal av motorveien. Hvor bør du bremse ned?',
+                options: ['På motorveien, i god tid før avkjøringen', 'I retardasjonsfeltet', 'Det spiller ingen rolle', 'Rett før rampen, med nødblink'],
+                correct: 'I retardasjonsfeltet',
+                explanation: 'Hold motorveiens fart til du er inne i retardasjonsfeltet, og brems der — slik forstyrrer du ikke trafikken bak.'
+            }
+        ]
+    },
+    {
+        id: 'trafikalt-grunnkurs',
+        title: 'Trafikalt grunnkurs: innhold, krav og mørkekjøring',
+        icon: '🎓',
+        shortDescription: 'Alt om trafikalt grunnkurs: de 17 timene, aldersgrensen, mørkekjøringen, fritaket for deg over 25 — og hva kurset faktisk koster.',
         color: 'var(--apple-green)',
-        seoTitle: 'Automatlappen og elbil: kode 78, regler og oppkjøring i 2026 | Teori-test.no',
+        seoTitle: 'Trafikalt grunnkurs – innhold, pris, mørkekjøring og fritak',
+        seoDescription: 'Hva er trafikalt grunnkurs, hvor mange timer er det, når må mørkekjøringen tas, og hvem er fritatt? Alt du trenger å vite før du begynner å øvelseskjøre.',
+        sections: [
+            {
+                title: 'Kort forklart',
+                type: 'info',
+                content: 'Trafikalt grunnkurs er første trinn i føreropplæringen og nøkkelen som låser opp øvelseskjøringen:\n\n• **17 timer** obligatorisk kurs, felles for alle førerkortklasser\n• Kan tas fra du er **15 år**\n• Inkluderer **førstehjelp** og **mørkekjøringsdemonstrasjon**\n• Etter kurset får du bevis som gir rett til å [øvelseskjøre](/laeringsressurser/ovingskjoring)\n• Er du **over 25**, er du fritatt fra kurset — men ikke fra førstehjelp og mørkekjøring'
+            },
+            {
+                title: 'Hva lærer du på kurset?',
+                type: 'text',
+                content: 'Grunnkurset handler ikke om å kjøre bil — det handler om å forstå trafikk før du setter deg bak rattet. Temaene er:\n\n- Trafikkopplæringen og grunnleggende trafikkforståelse\n- [Mennesket i trafikken](/laeringsressurser/kjoreprosessen-og-risiko) — risiko, sansing og hvorfor ulykker skjer\n- Øvelseskjøring og kjøreerfaring — hvordan du trener smart\n- Førstehjelp og [tiltak ved trafikkulykke](/laeringsressurser/trafikkuhell-forstehjelp)\n- Mørkekjøringsdemonstrasjon\n\nKurset går over flere kvelder hos en trafikkskole, og det er ingen eksamen — du må bare delta på alt.'
+            },
+            {
+                title: 'Mørkekjøringen — den viktige detaljen',
+                type: 'warning',
+                content: 'Mørkekjøringsdemonstrasjonen kan bare gjennomføres i mørketiden (vinterhalvåret). Tar du grunnkurset i perioden **16. mars til 31. oktober**, får du et bevis som er tidsbegrenset: du kan øvelseskjøre i lyse perioder, men må gjennomføre mørkekjøringen så snart den tilbys — først da får du fullverdig bevis fra Statens vegvesen.\n\nDemonstrasjonen viser deg blant annet hvor sent du ser fotgjengere uten refleks, og hvordan [fjernlys og nærlys](/laeringsressurser/lysbruk-morkekjoring) fungerer i praksis. Den må uansett være gjennomført før du kan ta oppkjøringen.'
+            },
+            {
+                title: 'Over 25 år? Da gjelder fritaket',
+                type: 'text',
+                content: 'Er du fylt 25, slipper du selve grunnkurset og kan begynne å øvelseskjøre med bare gyldig legitimasjon. Men to deler er fortsatt obligatoriske før førerprøven: **førstehjelpsdelen og mørkekjøringsdemonstrasjonen**.\n\nMange over 25 tar disse to bitene tidlig likevel, så de ikke blir en flaskehals rett før oppkjøringen — mørkekjøring tilbys jo bare i vinterhalvåret.'
+            },
+            {
+                title: 'Hva koster trafikalt grunnkurs?',
+                type: 'text',
+                content: 'Prisen settes av den enkelte trafikkskole og varierer en del — typisk fra rundt et par tusenlapper, ofte med mørkekjøringen som eget tillegg. Noen kommuner og videregående skoler tilbyr kurset rimeligere som valgfag eller fritidstilbud for 15–16-åringer.\n\nTo sparetips: sammenlign flere skoler i nærheten (prisforskjellene er reelle), og sjekk om skolen inkluderer mørkekjøring i prisen eller fakturerer den separat.'
+            },
+            {
+                title: 'Etter kurset: klar for å øve',
+                type: 'text',
+                content: 'Med grunnkursbevis (og legitimasjon) kan du øvelseskjøre privat med ledsager — kravene til ledsager, L-skilt og ekstra speil finner du i [øvelseskjøring-guiden](/laeringsressurser/ovingskjoring).\n\nSmart rekkefølge videre: mengdetrening privat + kjøretimer, [teoriprøven](/laeringsressurser/teoriproven-bil) når teorien sitter, [sikkerhetskurs på bane](/laeringsressurser/sikkerhetskurs-pa-bane) i trinn 3, og til slutt sikkerhetskurs på veg og [oppkjøring](/laeringsressurser/oppkjoring).'
+            }
+        ],
+        faq: [
+            {
+                question: 'Hvor mange timer er trafikalt grunnkurs?',
+                answer: '17 timer, inkludert førstehjelp og mørkekjøringsdemonstrasjon. Kurset er felles for alle førerkortklasser og har ingen eksamen — men du må delta på alle delene.'
+            },
+            {
+                question: 'Hvor gammel må du være for å ta trafikalt grunnkurs?',
+                answer: 'Du kan ta kurset fra du er 15 år. Med gyldig grunnkursbevis kan du begynne å øvelseskjøre til bil fra du er 16.'
+            },
+            {
+                question: 'Må jeg ta trafikalt grunnkurs hvis jeg er over 25?',
+                answer: 'Nei, du er fritatt fra selve kurset og kan øvelseskjøre med bare legitimasjon. Men førstehjelp og mørkekjøringsdemonstrasjon er fortsatt obligatorisk før den praktiske prøven.'
+            },
+            {
+                question: 'Når kan jeg ta mørkekjøringen?',
+                answer: 'Bare i mørketiden (vinterhalvåret). Tar du grunnkurset mellom 16. mars og 31. oktober, får du et tidsbegrenset bevis til mørkekjøringen er gjennomført.'
+            }
+        ],
+        miniQuiz: [
+            {
+                question: 'Hva gir trafikalt grunnkurs deg rett til?',
+                options: ['Å kjøre bil alene i 30-soner', 'Å øvelseskjøre med ledsager', 'Å ta teoriprøven', 'Å kjøre moped'],
+                correct: 'Å øvelseskjøre med ledsager',
+                explanation: 'Grunnkursbeviset er nøkkelen til øvelseskjøring. Teoriprøven kan du uansett først ta fra du er 17,5 år.'
+            },
+            {
+                question: 'Du er 27 år og skal ta lappen. Hva gjelder for trafikalt grunnkurs?',
+                options: ['Du må ta hele kurset som alle andre', 'Du er fritatt fra alt', 'Du er fritatt fra kurset, men må ta førstehjelp og mørkekjøring', 'Du trenger bare mørkekjøringen'],
+                correct: 'Du er fritatt fra kurset, men må ta førstehjelp og mørkekjøring',
+                explanation: 'Over 25 år: øvelseskjør med legitimasjon, men førstehjelp og mørkekjøringsdemonstrasjon må gjennomføres før førerprøven.'
+            }
+        ]
+    },
+    {
+        id: 'sikkerhetskurs-pa-bane',
+        title: 'Sikkerhetskurs på bane (glattkjøring)',
+        icon: '🧊',
+        shortDescription: 'Fire timer på glattkjøringsbane er obligatorisk i trinn 3. Her er hva som skjer på kurset, hvorfor det finnes, og hva det pleier å koste.',
+        color: 'var(--apple-green)',
+        seoTitle: 'Sikkerhetskurs på bane – glattkjøring, innhold og pris',
+        seoDescription: 'Hva skjer på sikkerhetskurs på bane (glattkjøringskurs)? Lær om de 4 obligatoriske timene i trinn 3, hva du trener på, og hva kurset koster.',
+        sections: [
+            {
+                title: 'Kort forklart',
+                type: 'info',
+                content: 'Sikkerhetskurs på bane — ofte kalt glattkjøringskurs — er en obligatorisk del av trinn 3 i føreropplæringen:\n\n• **4 timer** på øvingsbane med glatt dekke\n• Du øver med egen trafikklærer og skolens bil\n• Målet er ikke å «mestre glatta», men å **oppleve hvor lite som skal til** før bilen mister grepet\n• Kurset må være gjennomført før du går videre til trinn 4 og [oppkjøring](/laeringsressurser/oppkjoring)'
+            },
+            {
+                title: 'Hva skjer på banen?',
+                type: 'text',
+                content: 'På banen får du kontrollert oppleve det du aldri bør oppleve ukontrollert på veien:\n\n- Bremsing på glatt underlag — og hvor dramatisk [bremselengden](/laeringsressurser/bremselengde) vokser\n- Hva som skjer når du svinger for fort på glatta (understyring)\n- Sikring av last og mennesker — hvorfor løse gjenstander blir prosjektiler\n- Avstand og fartsvalg: hvorfor [tresekundersregelen](/sporsmal/hva-er-tresekundersregelen) ikke holder på vinterføre\n\nDet viktigste kurset gir deg, er respekt: de fleste undervurderer kreftene til de har kjent bilen gli med egne hender på rattet.'
+            },
+            {
+                title: 'Hvorfor er kurset obligatorisk?',
+                type: 'text',
+                content: 'Norge har vinterføre store deler av året, og utforkjøringer på glatta er en gjenganger i ulykkesstatistikken — spesielt blant ferske førere som aldri har kjent grensen for veigrepet.\n\nPå banen flyttes den første skrensen fra en mørk landevei i 80 km/t til et trygt, kontrollert miljø. Kombiner det du lærer med teorien om [kjøring på glatt føre](/laeringsressurser/glatt-fore) og [dekk og veigrep](/laeringsressurser/dekk-bremser-styring).'
+            },
+            {
+                title: 'Hva koster sikkerhetskurs på bane?',
+                type: 'text',
+                content: 'Prisen består normalt av to deler: trafikkskolens undervisning (lærer og bil i 4 timer) pluss baneleie til banen. Totalprisen varierer mellom skoler og landsdeler — sammenlign gjerne, men husk at kurset er likt regulert uansett hvor du tar det.\n\nKurset kommer i tillegg til kjøretimene, veiledningstimene og [sikkerhetskurs på veg i trinn 4](/laeringsressurser/oppkjoring) — legg det inn i budsjettet tidlig.'
+            },
+            {
+                title: 'Slik bruker du dette på prøven',
+                type: 'tip',
+                content: 'Teorispørsmålene henter poenger herfra: bremselengde på glatta, hvorfor lastsikring er kritisk, og at kurset handler om risikoforståelse — ikke om å bli «flink på glatta» og dermed tørre mer.\n\n• [Glatt føre – teorien bak](/laeringsressurser/glatt-fore)\n• [Ta en gratis øvingsprøve](/quiz?mode=hurtig)'
+            }
+        ],
+        faq: [
+            {
+                question: 'Hva er sikkerhetskurs på bane?',
+                answer: 'Et obligatorisk 4-timers kurs på glattkjøringsbane i trinn 3 av føreropplæringen for klasse B. Du øver på bremsing, svinging og risikoforståelse på glatt underlag, sammen med trafikklærer.'
+            },
+            {
+                question: 'Er glattkjøringskurs obligatorisk for førerkort klasse B?',
+                answer: 'Ja. Sikkerhetskurs på bane er en obligatorisk del av trinn 3 og må være gjennomført før du kan fullføre opplæringen og ta oppkjøringen.'
+            },
+            {
+                question: 'Hva lærer du på sikkerhetskurs på bane?',
+                answer: 'Hvor fort bilen mister veigrep på glatt underlag, hvordan bremselengden vokser, betydningen av lastsikring, og — viktigst — respekt for fart og føreforhold. Målet er risikoforståelse, ikke skrensetriks.'
+            }
+        ],
+        miniQuiz: [
+            {
+                question: 'Hva er hovedmålet med sikkerhetskurs på bane?',
+                options: ['Å lære å skrense kontrollert', 'Å forstå risiko og hvor lite som skal til før du mister grepet', 'Å øve til teoriprøven', 'Å teste bilens vinterdekk'],
+                correct: 'Å forstå risiko og hvor lite som skal til før du mister grepet',
+                explanation: 'Kurset skal gi risikoforståelse og respekt — ikke gjøre deg «flink på glatta» slik at du tør mer.'
+            },
+            {
+                question: 'Hvor mange timer varer sikkerhetskurs på bane?',
+                options: ['2 timer', '4 timer', '8 timer', '13 timer'],
+                correct: '4 timer',
+                explanation: 'Kurset er på 4 obligatoriske timer i trinn 3. Sikkerhetskurs på veg i trinn 4 er lengre (13 timer).'
+            }
+        ]
+    },
+    {
+        id: 'varsellamper-i-bilen',
+        title: 'Varsellamper i bilen: hva betyr de?',
+        icon: '🚨',
+        shortDescription: 'Rød, gul eller grønn? Lær hva varsellampene i dashbordet betyr, hvilke som krever stopp med en gang — og test deg i det interaktive dashbordet.',
+        color: 'var(--apple-orange)',
+        seoTitle: 'Varsellamper i bilen – hva betyr lampene i dashbordet?',
+        seoDescription: 'Hva betyr motorlampen, oljelampen og batterilampen? Lær fargesystemet (rød = stopp, gul = undersøk) og de vanligste varsellampene — med interaktiv test.',
+        sections: [
+            {
+                title: 'Kort forklart: fargene styrer alvoret',
+                type: 'info',
+                content: 'Dashbordets lamper følger et trafikklys-lignende system:\n\n• **Rød lampe** = alvorlig feil eller fare. Stans så snart det er trygt, og ikke kjør videre før årsaken er avklart.\n• **Gul/oransje lampe** = noe må undersøkes snart. Du kan vanligvis kjøre forsiktig videre, men få det sjekket.\n• **Grønn/blå lampe** = ren informasjon (lys på, blinklys) — blå er fjernlyset.\n\nKan du fargesystemet, kan du «lese» også lamper du aldri har sett før.'
+            },
+            {
+                title: 'De røde: stopp så snart det er trygt',
+                type: 'warning',
+                content: 'De viktigste røde lampene å kjenne igjen:\n\n- **Oljekanne (oljetrykk):** motoren mister smøring — stans motoren straks, ellers risikerer du havari\n- **Batteri (lading):** ladesystemet svikter; bilen går på batteriet og stopper når det er tomt\n- **Termometer/kjølevæske:** motoren overopphetes — stans og la den kjøles ned\n- **Bremselampe:** kan bety alt fra håndbrekk på til feil i bremsekretsen — sjekk håndbrekket først; lyser den fortsatt, ikke kjør videre\n- **Rødt bilbelte:** noen i bilen er ikke festet\n\nFellesnevneren: rødt betyr at videre kjøring kan skade bilen eller være farlig.'
+            },
+            {
+                title: 'De gule: undersøk snarest',
+                type: 'text',
+                content: 'Gule lamper er varsler, ikke nødstopp:\n\n- **Motorlampe (motorblokk-symbol):** feil i motorstyring/utslipp — kjør rolig og bestill verkstedtime; blinker den, ta det mer alvorlig\n- **ABS:** blokkeringsfrie bremser er ute av funksjon — vanlig brems virker, men uten ABS-støtte\n- **Antiskrens/ESP (bil med slingrespor):** blinker når systemet jobber (glatt!), lyser fast ved feil eller avslått system\n- **Dekktrykk (TPMS):** ett eller flere dekk har for lavt trykk — sjekk ved første anledning, [riktig trykk påvirker både veigrep og bremselengde](/laeringsressurser/dekk-bremser-styring)\n\nEn gul lampe du ignorerer i ukevis, har det med å bli en rød.'
+            },
+            {
+                title: 'Test deg selv: det interaktive dashbordet',
+                type: 'component',
+                componentId: 'dashboard'
+            },
+            {
+                title: 'Slik bruker du dette på prøven',
+                type: 'tip',
+                content: 'Prøven tester sjelden alle lampene — den tester **prinsippet**: rød = stopp trygt og ikke kjør videre, gul = undersøk snarest. Pluss klassikerne oljetrykk (stans motoren) og brems (sjekk håndbrekket, så verksted).\n\nLampene inngår også i [sikkerhetskontrollen til oppkjøringen](/laeringsressurser/sikkerhetskontroll) — der må du kunne forklare dem for sensor.\n\n• [Ta en gratis øvingsprøve](/quiz?mode=hurtig)'
+            }
+        ],
+        faq: [
+            {
+                question: 'Hva betyr rød varsellampe i bilen?',
+                answer: 'Alvorlig feil eller fare: stans så snart det er trygt, og ikke kjør videre før årsaken er avklart. Typiske røde lamper er oljetrykk, lading/batteri, kjølevæsketemperatur og brems.'
+            },
+            {
+                question: 'Kan jeg kjøre med gul motorlampe?',
+                answer: 'Som regel ja — kjør rolig og få bilen sjekket snarest. Blinker motorlampen, eller mister bilen kraft, bør du stanse og få den tauet. Gul lampe er et varsel, ikke et klarsignal til å ignorere.'
+            },
+            {
+                question: 'Hva betyr bremselampen?',
+                answer: 'Sjekk først om håndbrekket står på. Lyser lampen med håndbrekket av, kan det være feil i bremsesystemet eller lav bremsevæske — da skal du ikke kjøre videre.'
+            },
+            {
+                question: 'Hvorfor blinker antiskrens-lampen (ESP)?',
+                answer: 'Blinking betyr at systemet jobber akkurat nå — bilen er på grensen av veigrepet, typisk på glatt føre. Det er et signal om å senke farten. Lyser den fast, er systemet ute av funksjon eller slått av.'
+            }
+        ],
+        miniQuiz: [
+            {
+                question: 'Oljetrykklampen (rød oljekanne) tennes mens du kjører. Hva gjør du?',
+                options: ['Kjører til nærmeste verksted', 'Stanser og slår av motoren så snart det er trygt', 'Fyller på olje ved neste bensinstasjon', 'Ignorerer den hvis motoren går fint'],
+                correct: 'Stanser og slår av motoren så snart det er trygt',
+                explanation: 'Uten oljetrykk mister motoren smøring og kan havarere på kort tid. Rød lampe = stopp.'
+            },
+            {
+                question: 'Hva betyr det at ESP/antiskrens-lampen blinker?',
+                options: ['Systemet er i ustand', 'Systemet jobber — bilen er på grensen av veigrepet', 'Du har glemt å slå på lysene', 'Dekktrykket er lavt'],
+                correct: 'Systemet jobber — bilen er på grensen av veigrepet',
+                explanation: 'Blinkende ESP-lampe betyr at antiskrens griper inn akkurat nå. Senk farten — føret er glattere enn du tror.'
+            },
+            {
+                question: 'Hvilket fargeprinsipp gjelder for varsellamper?',
+                options: ['Rød = informasjon, gul = fare', 'Rød = stopp trygt, gul = undersøk snarest, grønn/blå = informasjon', 'Alle lamper krever umiddelbar stans', 'Fargene betyr forskjellig fra bilmerke til bilmerke'],
+                correct: 'Rød = stopp trygt, gul = undersøk snarest, grønn/blå = informasjon',
+                explanation: 'Fargesystemet er felles: rødt er alvor, gult er varsel, grønt og blått er informasjon.'
+            }
+        ]
+    },
+    {
+        id: 'automatlappen',
+        title: 'Automatlappen: kode 78, automat eller manuell?',
+        icon: '🚗',
+        shortDescription: 'Hva betyr kode 78, kan du kjøre manuell bil, og hvordan fjerner du begrensningen? Her får du automatlappen forklart enkelt.',
+        color: 'var(--apple-green)',
+        seoTitle: 'Automatlappen og elbil: kode 78, regler og oppkjøring i 2026',
         seoDescription: 'Skal du ta lappen på elbil eller automatgir? Lær hva kode 78 betyr, om du kan kjøre tilhenger, hvordan regenerering fungerer og om automatlappen er en begrensning i 2026.',
         sections: [
             {
-                title: 'Kort forklart: Hva er automatlappen?',
+                title: 'Kort forklart: Hva betyr automatlappen?',
                 type: 'info',
-                content: 'Automatlappen er vanlig førerkort klasse B, men oppkjøringen tas i bil med automatgir. Når du består, får du førerrett for personbil, men med kode 78 i førerkortet.\n\nDet betyr:\n• Du kan kjøre personbil med automatgir.\n• Du kan kjøre elbil, siden elbiler i praksis kjøres som automat.\n• Du kan ikke kjøre bil med manuelt gir.\n• Vil du senere kjøre manuell bil, må du ta ny oppkjøring med manuelt gir.\n\nStatens vegvesen skriver at hvis du kjører opp med automatgir, får førerkortet en kode som viser at du kun kan kjøre automatgir. Hvis du senere trenger manuell bil, må du kjøre opp på nytt med manuelt gir.'
+                content: 'Automatlappen er førerkort klasse B med **kode 78**. Du får kode 78 når du består oppkjøringen med automatgir. Da kan du kjøre personbil med automatgir og elbil, men ikke bil med manuelt gir.\n\nKjører du opp med manuelt gir, kan du kjøre både manuell og automat. Har du allerede kode 78, kan du fjerne begrensningen ved å bestå en ny oppkjøring med manuelt gir. Du trenger ikke ta hele føreropplæringen på nytt.'
+            },
+            {
+                title: 'Kode 78 på ett minutt',
+                type: 'table',
+                content: `<div class="responsive-theory-table-wrapper" style="margin-top: 1rem;"><table class="responsive-theory-table" style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem;"><thead><tr style="background-color: var(--color-surface); border-bottom: 2px solid var(--color-border);"><th style="padding: 12px 8px;">Spørsmål</th><th style="padding: 12px 8px;">Svar</th></tr></thead><tbody><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Hva betyr kode 78?</b></td><td style="padding: 12px 8px;">Førerretten er begrenset til kjøretøy med automatgir.</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Kan du kjøre elbil?</b></td><td style="padding: 12px 8px;">Ja. Elbiler kjøres som biler med automatgir.</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Kan du kjøre manuell bil?</b></td><td style="padding: 12px 8px;">Nei, ikke før kode 78 er fjernet.</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Hvordan fjernes kode 78?</b></td><td style="padding: 12px 8px;">Du må bestå en ny oppkjøring med manuelt gir.</td></tr><tr><td style="padding: 12px 8px;"><b>Gjelder andre trafikkregler?</b></td><td style="padding: 12px 8px;">Nei. Trafikkreglene og kravene til sikker kjøring er de samme.</td></tr></tbody></table></div>`
             },
             {
                 title: 'Automat eller manuell?',
@@ -3887,39 +4543,39 @@ export const theoryArticles: TheoryTopic[] = [
                 component: 'AutomatVsManuellSammenligning'
             },
             {
-                title: 'Er automatlappen en begrensning i 2026?',
+                title: 'Reglene for automatlappen i 2026',
                 type: 'text',
-                content: 'For mange er svaret: mindre enn før.\n\nAutomatgir er blitt mye vanligere, og elbiler har gjort automatlappen langt mer praktisk enn den var for noen år siden. Statens vegvesen opplyste at 62 prosent av alle oppkjøringer i 2024 ble gjennomført med automatgir, mot bare 6 prosent i 2016. For klasse B var andelen 61 prosent.\n\nDet betyr ikke at manuell er ubrukelig. Det betyr bare at automat ikke lenger er “litt spesielt”. Det er blitt normalen for veldig mange.\n\nDu bør likevel vurdere manuell hvis du:\n• ofte skal låne eldre biler\n• skal kjøre varebil eller firmabil med manuelt gir\n• vil ha maksimal fleksibilitet ved bilutleie i utlandet\n• ønsker å slippe kode 78 i førerkortet\n\nDu kan fint velge automat hvis du:\n• primært skal kjøre elbil\n• vil bruke mer energi på trafikkforståelse enn giring\n• ikke har behov for manuell bil\n• vil gjøre opplæringen litt enklere i starten'
+                content: 'Hovedregelen er fortsatt enkel i 2026: Kjører du opp med automatgir, får du kode 78 og kan bare kjøre biler med automatgir. Kjører du opp med manuelt gir, kan du kjøre begge girtypene.\n\nAutomat er nå det vanligste valget. Statens vegvesen opplyser at 70 prosent av oppkjøringene i første halvår 2026 ble gjennomført med automatgir. Det gjør automatlappen praktisk for mange, men behovet ditt bør styre valget.\n\nVelg gjerne automat hvis du hovedsakelig skal kjøre elbil eller nyere biler. Vurder manuell hvis du ofte skal låne eldre biler, bruke varebil eller firmabil, eller ønsker størst mulig valgfrihet.\n\nKilder: [Statens vegvesen om oppkjøringer første halvår 2026](https://www.vegvesen.no/om-oss/presse/aktuelt/2026/07/rekordmange-oppkjoringer/) og [Statens vegvesen om personbil klasse B](https://www.vegvesen.no/forerkort/ta-forerkort/veien-til-forerkortet/personbil-b/).'
             },
             {
-                title: 'Lappen på elbil: Hva er annerledes?',
+                title: 'Er teoriprøven annerledes med automatgir?',
                 type: 'text',
-                content: 'Å ta lappen på elbil ligner mye på å ta lappen i annen automatbil. Du må fortsatt kunne trafikkregler, vikeplikt, skilt, plassering, fartstilpasning, observasjon og sikker kjøring. Sensor vurderer ikke om bilen er kul og stillegående. Sensor vurderer deg.\n\nMen elbil har noen praktiske forskjeller du bør kjenne til.\n\n1. Elbil har umiddelbar kraft\nElmotoren gir kraft med en gang du trykker på pedalen. Det kan gjøre bilen lettkjørt, men også litt brå hvis du ikke er myk med høyrefoten.\n\n2. Regenerering: Bilen bremser når du slipper gassen\nMange elbiler har regenerativ bremsing. Det betyr at bilen gjenvinner energi når du slipper gasspedalen, og bruker motoren til å bremse bilen. På noen elbiler kan dette være så kraftig at bilen føles som den “bremser selv”.\n\n3. Elbiler er ofte tyngre\nElbiler har store batterier, og mange elbiler veier mer enn tilsvarende bensin- eller dieselbiler. Det påvirker blant annet bremselengde, dekk, energibruk og hvor mye bilen kan laste eller trekke. [Les om bremselengde og stopplengde](/laeringsressurser/bremselengde)'
+                content: 'Nei. Teoriprøven for klasse B er den samme enten du planlegger å kjøre opp med automatgir eller manuelt gir. Du må kunne de samme trafikkreglene, skiltene og sikkerhetsprinsippene. Kode 78 bestemmes av bilen du bruker på den praktiske oppkjøringen, ikke av teoriprøven.\n\nPå oppkjøringen vurderes trafikkforståelse, observasjon, plassering, fartstilpasning og samhandling. Automatgir fjerner giringen, men ikke ansvaret for å kjøre selvstendig og sikkert. Les mer om [oppkjøring klasse B](/laeringsressurser/oppkjoring) og [sikkerhetskontroll](/laeringsressurser/sikkerhetskontroll).'
             },
             {
-                title: 'Elbil + tilhenger: Hva er reglene?',
+                title: 'Fordeler og ulemper med automatlappen',
+                type: 'text',
+                content: '**Fordeler:** Du slipper clutch og girskift, kan konsentrere deg mer om trafikken og kan kjøre de fleste nyere biler og elbiler. For noen elever kan opplæringen også bli enklere.\n\n**Ulemper:** Du kan ikke kjøre manuell bil. Det kan være upraktisk hvis du skal låne en eldre bil, bruke en manuell arbeidsbil eller møte et begrenset utvalg av leiebiler. Automatopplæring er heller ingen garanti for færre kjøretimer; behovet varierer fra elev til elev.\n\nDet beste valget er derfor ikke det samme for alle. Tenk på hvilke biler du faktisk forventer å bruke etter at du har fått førerkortet.'
+            },
+            {
+                title: 'Hva bør du kunne om elbil?',
+                type: 'text',
+                content: 'Elbiler kjøres som automatbiler, men de kan oppføre seg litt annerledes. Kraften kommer raskt, bilen kan være tung, og regenerativ bremsing kan gjøre at farten reduseres tydelig når du slipper gasspedalen. Vær jevn med pedalene og lær hvordan bilen du øvelseskjører med reagerer.\n\nFørerstøttesystemer som adaptiv cruisekontroll, filholder og automatisk nødbrems kan hjelpe, men du er fortsatt ansvarlig. Les mer om [førerstøttesystemer på teoriprøven](/laeringsressurser/forerstottesystemer) og [bremselengde og stopplengde](/laeringsressurser/bremselengde).'
+            },
+            {
+                title: 'Kan du kjøre med tilhenger?',
                 type: 'info',
-                content: 'Du kan trekke tilhenger med elbil, men du må sjekke to ting: Hva førerkortet ditt gir deg lov til, og hva bilen faktisk er godkjent for i vognkortet. Med førerkort klasse B kan du trekke tilhenger på maks 750 kg, eller tyngre hvis samlet vekt er maks 3500 kg. [Les vår komplette tilhenger-guide](/laeringsressurser/tilhenger)'
-            },
-            {
-                title: 'Kan du kjøre tilhenger med automatlappen?',
-                type: 'warning',
-                content: 'Ja, kode 78 handler om girtype, ikke om tilhenger i seg selv. Har du klasse B med kode 78, kan du kjøre bil med automatgir og tilhenger innenfor reglene for klasse B. Men bilen må være automat, og tilhengeren må være lovlig etter vognkort og førerkortklasse.'
-            },
-            {
-                title: 'Støttesystemer i elbil: Hjelp, ikke autopilot',
-                type: 'tip',
-                content: 'Bilen kan hjelpe deg med adaptiv cruisekontroll og filholder, men den er ikke en kjørelærer med superkrefter. Du må fortsatt ha full kontroll. Stol ikke blindt på systemene, spesielt ved snø eller dårlig veimerking.'
-            },
-            {
-                title: 'Bør du velge automat eller manuell?',
-                type: 'text',
-                content: 'Velg automat hvis du hovedsakelig skal kjøre moderne biler eller elbil. Velg manuell hvis du ønsker full fleksibilitet for eldre biler, jobb-biler eller leiebiler i utlandet.\n\nEn praktisk fordel med automatopplæringen er at den ofte koster noe mindre enn manuell. Når du slipper å bruke tid på å lære clutch og girskift, kan du bruke kjøretimene på trafikkforståelse, plassering og samhandling i stedet. Mange elever trenger derfor færre timer totalt. Det er ikke en garanti — det avhenger av eleven — men det er et reelt argument for automat hvis du primært skal kjøre moderne biler uansett.'
+                content: 'Ja. Kode 78 handler om girtype, ikke om tilhenger. Du kan trekke tilhenger så lenge trekkbilen har automatgir, førerkortklassen din tillater kombinasjonen, og bilen er godkjent for vekten. Sjekk både [reglene for tilhenger](/laeringsressurser/tilhenger) og [vognkort og vekter](/laeringsressurser/vognkort-vekter).'
             },
             {
                 title: 'Hvordan fjerner du kode 78?',
-                type: 'info',
-                content: 'Hvis du har automatlappen og senere vil kunne kjøre manuelt gir, må du kjøre opp på nytt med manuell bil. Når du består oppkjøring med manuelt gir, kan begrensningen fjernes. [Les vår guide til oppkjøringen](/laeringsressurser/oppkjoring)'
+                type: 'warning',
+                content: 'For å få rett til å kjøre manuelt gir må du lære deg å bruke clutch og gir og deretter bestå en ny oppkjøring med manuelt gir. Når du består, fjernes begrensningen slik at klasse B gjelder både manuell og automat.\n\nDu kan øvelseskjøre privat eller ta kjøretimer før prøven. Statens vegvesen krever ny praktisk prøve, men ikke at du tar hele opplæringen fra starten. Se gjeldende krav og pris hos [Statens vegvesen for personbil klasse B](https://www.vegvesen.no/forerkort/ta-forerkort/veien-til-forerkortet/personbil-b/).'
+            },
+            {
+                title: 'Vanlige misforståelser',
+                type: 'tip',
+                content: '• **«Kode 78 betyr bare elbil.»** Feil. Den gjelder alle biler med automatgir, ikke bare elbiler.\n• **«Jeg kan kjøre manuell bil hvis jeg har øvd.»** Feil. Du må ha fjernet kode 78 ved å bestå oppkjøring med manuelt gir.\n• **«Automatlappen har en enklere teoriprøve.»** Feil. Teoriprøven for klasse B er den samme.\n• **«Kode 78 betyr at jeg ikke kan trekke tilhenger.»** Feil. Begrensningen gjelder girtypen på bilen.\n• **«Automatgir gjør bilen selvkjørende.»** Feil. Du har samme ansvar for observasjon og sikker kjøring.'
             }
         ],
         miniQuiz: [
@@ -3949,9 +4605,9 @@ export const theoryArticles: TheoryTopic[] = [
             },
             {
                 question: 'Hva må du gjøre for å fjerne kode 78 fra førerkortet?',
-                options: ['Søke skriftlig til Statens vegvesen', 'Ta ny teoriprøve', 'Bestå ny oppkjøring med manuelt gir', 'Vente 2 år'],
+                options: ['Søke skriftlig til Statens vegvesen', 'Ta hele føreropplæringen på nytt', 'Bestå ny oppkjøring med manuelt gir', 'Vente 2 år'],
                 correct: 'Bestå ny oppkjøring med manuelt gir',
-                explanation: 'For å fjerne kode 78 må du kjøre opp på nytt med manuell bil og bestå. Du trenger ikke ta teoriprøven på nytt.'
+                explanation: 'For å fjerne kode 78 må du kjøre opp på nytt med manuell bil og bestå.'
             }
         ],
         faq: [
@@ -3972,12 +4628,16 @@ export const theoryArticles: TheoryTopic[] = [
                 answer: 'Ja, så lenge bilen har automatgir og du holder deg innenfor reglene for klasse B, B96 eller BE. Du må også sjekke bilens vognkort.'
             },
             {
-                question: 'Er automatlappen dumt hvis jeg skal jobbe med bil?',
-                answer: 'Ikke nødvendigvis, men det kommer an på jobben. Noen arbeidsgivere bruker bare biler med automatgir. Andre har varebiler eller eldre biler med manuelt gir. Hvis du vil ha maksimal fleksibilitet, er manuell fortsatt tryggest.'
+                question: 'Er teoriprøven annerledes hvis jeg tar automatlappen?',
+                answer: 'Nei. Teoriprøven for klasse B er den samme. Kode 78 bestemmes av om du bruker automatgir eller manuelt gir på den praktiske oppkjøringen.'
             },
             {
                 question: 'Er elbil annerledes på oppkjøring?',
-                answer: 'Ja og nei. Du vurderes etter samme grunnleggende ferdigheter: sikkerhet, trafikkforståelse, observasjon og samhandling. Men du bør være trygg på elbilens kraft, regenerering, støttesystemer og hvordan bilen oppfører seg i lav fart.'
+                answer: 'Du vurderes etter de samme grunnleggende ferdighetene: sikkerhet, trafikkforståelse, observasjon og samhandling. Du bør samtidig være trygg på elbilens kraft, regenerering og hvordan bilen oppfører seg i lav fart.'
+            },
+            {
+                question: 'Har reglene for automatlappen endret seg i 2026?',
+                answer: 'Hovedregelen er fortsatt at oppkjøring med automatgir gir kode 78, mens oppkjøring med manuelt gir gir rett til å kjøre begge girtypene.'
             }
         ]
     },
