@@ -494,6 +494,11 @@ export const theoryTopics: TheoryTopic[] = [
                 content: '<div style="overflow-x: auto; -webkit-overflow-scrolling: touch; margin-top: 1rem;"><table class="responsive-theory-table" style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem;"><thead><tr style="background-color: var(--color-surface); border-bottom: 2px solid var(--color-border);"><th style="padding: 12px 8px;">Veimerking</th><th style="padding: 12px 8px;">Kort forklart</th><th style="padding: 12px 8px;">Vanlige misforståelser</th></tr></thead><tbody><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Kjørefeltlinje</b></td><td style="padding: 12px 8px;" data-label="Kort forklart">Kort stiplet hvit linje som skiller kjørefelt i samme kjøreretning. Kan krysses når det er trygt og lovlig.</td><td style="padding: 12px 8px;" data-label="Vanlige misforståelser">Mange forveksler den med hvit varsellinje, som har lengre streker og varsler at du må være ekstra oppmerksom.</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Hvit sperrelinje</b></td><td style="padding: 12px 8px;" data-label="Kort forklart">Heltrukken hvit linje. Skal som hovedregel ikke krysses for feltskifte eller forbikjøring.</td><td style="padding: 12px 8px;" data-label="Vanlige misforståelser">Mange tror den bare gjelder forbikjøring, men den gjelder også feltskifte i samme kjøreretning.</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Gul varsellinje</b></td><td style="padding: 12px 8px;" data-label="Kort forklart">Gul varsellinje brukes mellom motgående trafikkretninger og varsler ofte at sikten eller forholdene gjør forbikjøring risikabelt, eller at du nærmer deg sperrelinje.</td><td style="padding: 12px 8px;" data-label="Vanlige misforståelser">Den betyr ikke automatisk forbud mot å krysse, men du må vurdere om det er trygt og lovlig.</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Hvit varsellinje</b></td><td style="padding: 12px 8px;" data-label="Kort forklart">Lang stiplet hvit linje som varsler at du må være ekstra oppmerksom, for eksempel før et felt slutter eller ved vanskeligere feltskifte.</td><td style="padding: 12px 8px;" data-label="Vanlige misforståelser">Mange tror den er en vanlig kjørefeltlinje eller at den gir et absolutt kryssingsforbud.</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Gul sperrelinje</b></td><td style="padding: 12px 8px;" data-label="Kort forklart">Heltrukken gul linje mellom motgående trafikkretninger. Du skal ikke krysse eller kjøre til venstre for den.</td><td style="padding: 12px 8px;" data-label="Vanlige misforståelser">Den gjelder selv om du mener du har god sikt.</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Kombinert linje</b></td><td style="padding: 12px 8px;" data-label="Kort forklart">To linjer ved siden av hverandre, én stiplet og én heltrukken. Regelen følger linjen nærmest deg.</td><td style="padding: 12px 8px;" data-label="Vanlige misforståelser">Mange ser bare den stiplede linjen og glemmer å sjekke hvilken linje som ligger på egen side.</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Vikelinje</b></td><td style="padding: 12px 8px;" data-label="Kort forklart">Hvite trekanter, ofte kalt «haifinner», på tvers av veien. Viser hvor du har vikeplikt.</td><td style="padding: 12px 8px;" data-label="Vanlige misforståelser">Du må ikke alltid stoppe helt, men du må stanse hvis det er nødvendig for å overholde vikeplikten.</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Stopplinje</b></td><td style="padding: 12px 8px;" data-label="Kort forklart">Bred hvit tverrlinje. Viser hvor du skal stoppe helt ved stoppskilt eller rødt lys.</td><td style="padding: 12px 8px;" data-label="Vanlige misforståelser">«Rullende stopp» er ikke godkjent stans. Ved stoppskilt skal bilen stå helt stille.</td></tr></tbody></table></div>'
             },
             {
+                title: 'Lettere å huske når du ser og prøver selv',
+                type: 'tip',
+                content: 'Linjene er lettere å skille når du ser dem i praksis: lenger ned på siden finner du bilder av hver linjetype og en interaktiv guide der du klikker på linjene i et veikryss. Vil du teste deg med en gang? Prøv [veimerking-spillet](/laeringsspill/veimerking) eller ta [veimerking-quizen](/quiz/veimerking).'
+            },
+            {
                 title: 'Gul og hvit veimerking',
                 type: 'text',
                 content: 'Fargen på linjen gir deg viktig informasjon.\n\nGul veimerking brukes vanligvis mot eller mellom motgående trafikkretninger. Den markerer grensen mellom kjørefelt der trafikken går i motsatte retninger. Gul oppmerking kan også brukes ved midlertidig oppmerking (for eksempel ved vegarbeid).\n\nHvit veimerking brukes vanligvis for å skille kjørefelt i samme retning (der trafikken går samme vei), markere kantlinjer eller vise oppmerking i vegkryss, gangfelt og spesielle felt.\n\n*Vanlige misforståelser:* Mange tror at gul alltid betyr forbud og hvit alltid betyr "fritt fram". Det stemmer ikke. Du må se på både farge, linjetype (heltrukken eller stiplet) og den konkrete situasjonen.'
@@ -2245,7 +2250,7 @@ export const theoryTopics: TheoryTopic[] = [
             {
                 title: 'Tilhengerkalkulator',
                 type: 'calculator',
-                content: 'Tast inn tillatt totalvekt for bil og tilhenger under for å sjekke hvilken førerkortklasse du trenger for å kjøre lovlig.'
+                content: 'Tast inn tillatt totalvekt for bil og tilhenger under for å sjekke hvilken førerkortklasse du trenger for å kjøre lovlig. Vil du ha kalkulatoren for seg selv (fin å dele)? [Åpne tilhengerkalkulatoren](/laeringsressurser/tilhengerkalkulator).'
             },
             {
                 title: 'Førerkortklasser for tilhenger',
@@ -2634,7 +2639,7 @@ export const theoryTopics: TheoryTopic[] = [
             {
                 title: 'Interaktiv kalkulator for tilhengervekt',
                 type: 'calculator',
-                content: 'Bruk kalkulatoren under for å se om du lovlig kan trekke tilhengeren med vanlig klasse B, eller om du trenger B96 eller BE. Test med ulike vekter for å se hvordan 3500 kg-regelen fungerer i praksis.'
+                content: 'Bruk kalkulatoren under for å se om du lovlig kan trekke tilhengeren med vanlig klasse B, eller om du trenger B96 eller BE. Test med ulike vekter for å se hvordan 3500 kg-regelen fungerer i praksis. Du finner også en [egen side med tilhengerkalkulatoren](/laeringsressurser/tilhengerkalkulator).'
             },
             {
                 title: 'Hva betyr tillatt vogntogvekt?',
@@ -4519,6 +4524,65 @@ export const theoryArticles: TheoryTopic[] = [
         ]
     },
     {
+        id: 'tilhengerkalkulator',
+        title: 'Tilhengerkalkulator – kan bilen din trekke hengeren?',
+        icon: '🧮',
+        shortDescription: 'Legg inn bilens og hengerens tillatte totalvekt og se med en gang om kombinasjonen er lovlig med klasse B, B96 eller BE. Funker også for campingvogn.',
+        color: 'var(--apple-red)',
+        seoTitle: 'Tilhengerkalkulator – sjekk bil og henger med klasse B',
+        seoDescription: 'Gratis tilhengerkalkulator: legg inn bilens og hengerens tillatte totalvekt og se om du kan kjøre med klasse B, B96 eller BE. Funker også for campingvogn og bobil med henger.',
+        sections: [
+            {
+                title: 'Sjekk kombinasjonen din',
+                type: 'component',
+                component: 'TilhengerKalkulator'
+            },
+            {
+                title: 'Slik finner du tallene kalkulatoren spør om',
+                type: 'tip',
+                content: 'Begge tallene står i vognkortet (del 1):\n\n1. **Bilens tillatte totalvekt** — felt **F.2** i bilens vognkort.\n2. **Hengerens tillatte totalvekt** — felt **F.2** i hengerens vognkort.\n\nHusk at det er *tillatt* totalvekt som teller for førerkortklassen — ikke hva bilen eller hengeren faktisk veier med last. I tillegg setter bilens vognkort en egen grense for hvor tung henger akkurat din bil kan trekke (felt **O.1** med brems og **O.2** uten brems). Usikker på feltene? [Se vognkortet forklart med eksempel](/laeringsressurser/vognkort-vekter).'
+            },
+            {
+                title: 'Grensene på ett minutt',
+                type: 'table',
+                content: `<div class="responsive-theory-table-wrapper"><table class="responsive-theory-table" style="width:100%;border-collapse:collapse;font-size:0.95rem"><thead><tr style="background-color:var(--color-surface);border-bottom:2px solid var(--color-border)"><th style="padding:12px 8px;text-align:left">Førerkort</th><th style="padding:12px 8px;text-align:left">Hovedregel</th></tr></thead><tbody><tr style="border-bottom:1px solid var(--color-border)"><td style="padding:12px 8px"><b>Klasse B</b></td><td style="padding:12px 8px">Bil + henger kan til sammen ha tillatt totalvekt på maks 3&nbsp;500 kg. Unntak: henger med tillatt totalvekt maks 750 kg kan alltid trekkes — da kan kombinasjonen bli inntil 4&nbsp;250 kg.</td></tr><tr style="border-bottom:1px solid var(--color-border)"><td style="padding:12px 8px"><b>Klasse B96</b></td><td style="padding:12px 8px">Bil + henger kan til sammen ha tillatt totalvekt på inntil 4&nbsp;250 kg.</td></tr><tr><td style="padding:12px 8px"><b>Klasse BE</b></td><td style="padding:12px 8px">Hengeren kan ha tillatt totalvekt på inntil 3&nbsp;500 kg (bilen inntil 3&nbsp;500 kg i tillegg).</td></tr></tbody></table></div>`
+            },
+            {
+                title: 'Skal du trekke campingvogn?',
+                type: 'info',
+                content: 'Campingvogner har ofte tillatt totalvekt på 1&nbsp;300–2&nbsp;000 kg. Med en vanlig personbil (tillatt totalvekt gjerne 2&nbsp;000–2&nbsp;500 kg) ryker 3&nbsp;500-grensen for klasse B fort — test kombinasjonen i kalkulatoren over. Havner du over grensen, er [B96 eller BE veien videre](/laeringsressurser/tilhenger). Og husk: bilens egen grense i felt O.1 må også holde, uansett førerkortklasse.'
+            },
+            {
+                title: 'Kalkulatoren er en teorihjelper',
+                type: 'warning',
+                content: 'Kalkulatoren sjekker **førerkortklassen** — den vanligste teorifellen. To ting den ikke kan sjekke for deg:\n\n- **Bilens egen trekkevne** (felt O.1/O.2 i vognkortet) kan være lavere enn det førerkortet tillater. Begge må være innenfor.\n- På teoriprøven er fellen ofte at oppgaven oppgir *faktisk* vekt — men det er **tillatt totalvekt** i vognkortet som avgjør førerkortklassen.\n\nAlle reglene bak tallene finner du i [tilhenger-guiden](/laeringsressurser/tilhenger). Kilder: [Statens vegvesen om førerkortklasse B, B96 og BE](https://www.vegvesen.no/forerkort/ta-forerkort/veien-til-forerkortet/personbil-b/).'
+            }
+        ],
+        faq: [
+            {
+                question: 'Hvor tung henger kan jeg trekke med klasse B?',
+                answer: 'Med klasse B kan bil og henger til sammen ha tillatt totalvekt på maks 3 500 kg. En henger med tillatt totalvekt på inntil 750 kg kan du alltid trekke (så lenge bilen er godkjent for det) — da kan kombinasjonen bli inntil 4 250 kg.'
+            },
+            {
+                question: 'Teller det hva hengeren faktisk veier?',
+                answer: 'Nei — for førerkortklassen er det tillatt totalvekt i vognkortet som gjelder, ikke den faktiske vekten. En tom henger med tillatt totalvekt på 1 300 kg regnes som 1 300 kg i dette regnestykket. Dette er en klassisk felle på teoriprøven.'
+            },
+            {
+                question: 'Hva er vogntogvekt?',
+                answer: 'Vogntogvekt er bilens og hengerens tillatte totalvekt lagt sammen. Det er dette tallet som avgjør om kombinasjonen er lovlig med klasse B (maks 3 500 kg, eller 4 250 kg når hengeren er på maks 750 kg).'
+            },
+            {
+                question: 'Kan jeg trekke campingvogn med vanlig klasse B?',
+                answer: 'Bare hvis bilens og campingvognens tillatte totalvekt til sammen er maks 3 500 kg. Med en vanlig bil og campingvogn ryker grensen ofte — da trenger du B96 (inntil 4 250 kg samlet) eller BE.'
+            },
+            {
+                question: 'Hva er forskjellen på B96 og BE?',
+                answer: 'B96 er en utvidelse av klasse B som hever grensen for samlet tillatt totalvekt til 4 250 kg — den krever kun obligatorisk opplæring. BE er en egen førerkortklasse med praktisk prøve, og tillater henger med tillatt totalvekt på inntil 3 500 kg.'
+            }
+        ]
+    },
+
+    {
         id: 'automatlappen',
         title: 'Automatlappen: kode 78, automat eller manuell?',
         icon: '🚗',
@@ -4648,8 +4712,8 @@ export const theoryArticles: TheoryTopic[] = [
         icon: '🔧',
         shortDescription: 'Lær deg de tekniske kontrollspørsmålene til oppkjøringen. Slik sjekker du bremser, styring, lys og dekk på en enkel måte.',
         color: 'var(--apple-indigo)',
-        seoTitle: 'Sikkerhetskontroll klasse B: spørsmål og svar til oppkjøring',
-        seoDescription: 'Se vanlige spørsmål fra sensor på sikkerhetskontroll klasse B. Lær kontroll av bremser, dekk, lys, varsellamper og motorrom før oppkjøringen.',
+        seoTitle: 'Sikkerhetskontroll klasse B – spørsmål fra sensor med fasit',
+        seoDescription: 'Alle de vanlige sensor-spørsmålene på sikkerhetskontrollen med fasit: bremser, dekk, lys, væsker, varsellamper og motorrom. Øv gratis før oppkjøringen klasse B.',
         sections: [
             {
                 title: 'Hva skjer på sikkerhetskontrollen?',
@@ -4659,7 +4723,7 @@ export const theoryArticles: TheoryTopic[] = [
             {
                 title: 'Vanlige sikkerhetskontroll-spørsmål med fasit',
                 type: 'table',
-                content: `<table>\n    <thead>\n        <tr>\n            <th>Sensor spør</th>\n            <th>Slik kontrollerer du</th>\n            <th>Kort fasit</th>\n        </tr>\n    </thead>\n    <tbody>\n        <tr>\n            <td>Kontroller dekktrykket</td>\n            <td>Se i vognkortet eller dørkarmen for anbefalt trykk. Bruk trykkmåler på ventilen.</td>\n            <td>Riktig trykk = trygt. Lavt trykk = dårligere grep og høyere forbruk.</td>\n        </tr>\n        <tr>\n            <td>Kontroller mønsterdybden</td>\n            <td>Bruk mønsterdybdemåler eller 20-kroningen. Minimum 1,6 mm — anbefalt 3 mm.</td>\n            <td>Under 1,6 mm er ulovlig og farlig.</td>\n        </tr>\n        <tr>\n            <td>Kontroller bremsene</td>\n            <td>Trykk bremsepedalen ned. Den skal være fast og ikke synke. Sjekk bremsevæskenivå i motorrommet.</td>\n            <td>Myk pedal = luftboble i systemet.</td>\n        </tr>\n        <tr>\n            <td>Kontroller styringen</td>\n            <td>Kjør sakte og kjenn at bilen følger rattet uten å trekke til siden.</td>\n            <td>Trekking = feil hjulstilling eller dekk.</td>\n        </tr>\n        <tr>\n            <td>Kontroller lys foran</td>\n            <td>Slå på tenning. Sjekk nærlys, fjernlys og parkeringslys visuelt foran bilen.</td>\n            <td>Defekt lys = bot. Se [lysbruk](/laeringsressurser/lysbruk-morkekjoring).</td>\n        </tr>\n        <tr>\n            <td>Kontroller bremselys</td>\n            <td>Slå på tenning. Be noen se bakpå mens du tråkker bremsepedalen.</td>\n            <td>Eller bruk refleksjonen i en vegg/garasjeport.</td>\n        </tr>\n        <tr>\n            <td>Kontroller motorolje</td>\n            <td>Trekk ut oljepinnen, tørk, sett inn igjen og sjekk nivået. Skal være mellom min og max.</td>\n            <td>For lite olje = motorskade.</td>\n        </tr>\n        <tr>\n            <td>Kontroller kjølevæske</td>\n            <td>Sjekk nivå i ekspansjonsbeholderen. Skal være mellom min og max når motoren er kald.</td>\n            <td>Aldri åpne lokket på varm motor.</td>\n        </tr>\n        <tr>\n            <td>Kontroller bremsevæske</td>\n            <td>Se nivå i beholderne under panseret. Skal være mellom min og max.</td>\n            <td>Lavt nivå kan bety slitte bremser eller lekkasje.</td>\n        </tr>\n        <tr>\n            <td>Kontroller vindusvaskervæske</td>\n            <td>Sjekk beholdernivå. Fyll på ved behov.</td>\n            <td>Tomt = dårlig sikt = farlig.</td>\n        </tr>\n        <tr>\n            <td>Kontroller varsellamper</td>\n            <td>Start bilen og sjekk at alle varsellamper slukker etter oppstart.</td>\n            <td>Lamper som lyser = feil som må sjekkes.</td>\n        </tr>\n        <tr>\n            <td>Hva betyr ABS-lampen?</td>\n            <td>Vanlig brems kan fortsatt virke, men ABS-funksjonen kan være ute av drift.</td>\n            <td>Kjør til verksted snart.</td>\n        </tr>\n        <tr>\n            <td>Hva betyr oljelampen?</td>\n            <td>Lavt oljetrykk. Stopp umiddelbart og slå av motoren.</td>\n            <td>Fortsetter du å kjøre kan motoren bli ødelagt.</td>\n        </tr>\n        <tr>\n            <td>Kontroller sikkerhetsbeltene</td>\n            <td>Dra beltet ut raskt — det skal låse seg. Sjekk at det klikker skikkelig i låsen.</td>\n            <td>Defekt belte = ikke godkjent.</td>\n        </tr>\n        <tr>\n            <td>Les av vognkortet</td>\n            <td>Finn egenvekt, tillatt totalvekt og nyttelast. Nyttelast = totalvekt minus egenvekt.</td>\n            <td>Viktig for tilhenger og lastberegning.</td>\n        </tr>\n        <tr>\n            <td>Hva er største tillatte tilhengervekt?</td>\n            <td>Se vognkortets felt for største tilhengervekt.</td>\n            <td>Avhenger av bilmodell — alltid sjekk vognkortet.</td>\n        </tr>\n    </tbody>\n</table>`
+                content: `<table>\n    <thead>\n        <tr>\n            <th>Sensor spør</th>\n            <th>Slik kontrollerer du</th>\n            <th>Kort fasit</th>\n        </tr>\n    </thead>\n    <tbody>\n        <tr>\n            <td>Kontroller dekktrykket</td>\n            <td>Se i vognkortet eller dørkarmen for anbefalt trykk. Bruk trykkmåler på ventilen.</td>\n            <td>Riktig trykk = trygt. Lavt trykk = dårligere grep og høyere forbruk.</td>\n        </tr>\n        <tr>\n            <td>Kontroller mønsterdybden</td>\n            <td>Bruk mønsterdybdemåler eller 20-kroningen. Minimum 1,6 mm — anbefalt 3 mm.</td>\n            <td>Under 1,6 mm er ulovlig og farlig.</td>\n        </tr>\n        <tr>\n            <td>Kontroller bremsene</td>\n            <td>Trykk bremsepedalen ned. Den skal være fast og ikke synke. Sjekk bremsevæskenivå i motorrommet.</td>\n            <td>Myk pedal = luftboble i systemet.</td>\n        </tr>\n        <tr>\n            <td>Kontroller styringen</td>\n            <td>Kjør sakte og kjenn at bilen følger rattet uten å trekke til siden.</td>\n            <td>Trekking = feil hjulstilling eller dekk.</td>\n        </tr>\n        <tr>\n            <td>Kontroller lys foran</td>\n            <td>Slå på tenning. Sjekk nærlys, fjernlys og parkeringslys visuelt foran bilen.</td>\n            <td>Defekt lys = bot. Se [lysbruk](/laeringsressurser/lysbruk-morkekjoring).</td>\n        </tr>\n        <tr>\n            <td>Kontroller bremselys</td>\n            <td>Slå på tenning. Be noen se bakpå mens du tråkker bremsepedalen.</td>\n            <td>Eller bruk refleksjonen i en vegg/garasjeport.</td>\n        </tr>\n        <tr>\n            <td>Kontroller motorolje</td>\n            <td>Trekk ut oljepinnen, tørk, sett inn igjen og sjekk nivået. Skal være mellom min og max.</td>\n            <td>For lite olje = motorskade.</td>\n        </tr>\n        <tr>\n            <td>Kontroller kjølevæske</td>\n            <td>Sjekk nivå i ekspansjonsbeholderen. Skal være mellom min og max når motoren er kald.</td>\n            <td>Aldri åpne lokket på varm motor.</td>\n        </tr>\n        <tr>\n            <td>Kontroller bremsevæske</td>\n            <td>Se nivå i beholderne under panseret. Skal være mellom min og max.</td>\n            <td>Lavt nivå kan bety slitte bremser eller lekkasje.</td>\n        </tr>\n        <tr>\n            <td>Kontroller vindusvaskervæske</td>\n            <td>Sjekk beholdernivå. Fyll på ved behov.</td>\n            <td>Tomt = dårlig sikt = farlig.</td>\n        </tr>\n        <tr>\n            <td>Kontroller varsellamper</td>\n            <td>Start bilen og sjekk at alle varsellamper slukker etter oppstart.</td>\n            <td>Lamper som lyser = feil som må sjekkes.</td>\n        </tr>\n        <tr>\n            <td>Hva betyr ABS-lampen?</td>\n            <td>Vanlig brems kan fortsatt virke, men ABS-funksjonen kan være ute av drift.</td>\n            <td>Kjør til verksted snart.</td>\n        </tr>\n        <tr>\n            <td>Hva betyr oljelampen?</td>\n            <td>Lavt oljetrykk. Stopp umiddelbart og slå av motoren.</td>\n            <td>Fortsetter du å kjøre kan motoren bli ødelagt.</td>\n        </tr>\n        <tr>\n            <td>Kontroller sikkerhetsbeltene</td>\n            <td>Dra beltet ut raskt — det skal låse seg. Sjekk at det klikker skikkelig i låsen.</td>\n            <td>Defekt belte = ikke godkjent.</td>\n        </tr>\n        <tr>\n            <td>Les av vognkortet</td>\n            <td>Finn egenvekt, tillatt totalvekt og nyttelast. Nyttelast = totalvekt minus egenvekt.</td>\n            <td>Viktig for tilhenger og lastberegning.</td>\n        </tr>\n        <tr>\n            <td>Hva er største tillatte tilhengervekt?</td>\n            <td>Se vognkortets felt for største tilhengervekt.</td>\n            <td>Avhenger av bilmodell — alltid sjekk vognkortet.</td>\n        </tr>\n        <tr>\n            <td>Kontroller bremsekraftforsterkeren</td>\n            <td>Pump bremsepedalen 4–5 ganger med motoren av, hold pedalen inne og start motoren.</td>\n            <td>Pedalen skal synke litt når motoren starter — da virker forsterkeren.</td>\n        </tr>\n        <tr>\n            <td>Kontroller parkeringsbremsen</td>\n            <td>Sett på parkeringsbremsen og kjenn at den holder bilen — f.eks. i en liten bakke eller ved forsiktig belastning.</td>\n            <td>Bilen skal stå stille når parkeringsbremsen er på.</td>\n        </tr>\n        <tr>\n            <td>Kontroller signalhornet</td>\n            <td>Trykk på hornet og lytt.</td>\n            <td>Hornet skal gi tydelig lyd — det er påbudt utstyr.</td>\n        </tr>\n        <tr>\n            <td>Hvor har du varseltrekant og refleksvest?</td>\n            <td>Vis hvor de ligger. Trekanten skal være lett tilgjengelig, vesten bør ligge slik at du får tak i den fra førersetet.</td>\n            <td>Du skal kunne ta på vesten FØR du går ut av bilen ved nødstopp.</td>\n        </tr>\n        <tr>\n            <td>Kontroller vindusviskere og sikt</td>\n            <td>Test viskerne og spyleren, sjekk at bladene ikke er slitte og at frontruten er fri for skader i siktfeltet.</td>\n            <td>Fri sikt er et krav — slitte viskerblad må byttes.</td>\n        </tr>\n        <tr>\n            <td>Kontroller nødsignallysene (nødblink)</td>\n            <td>Slå på nødblinken og se at alle blinklysene blinker samtidig.</td>\n            <td>Nødblink brukes ved nødstopp og for å varsle om fare — alle fire skal virke.</td>\n        </tr>\n    </tbody>\n</table>`
             },
             {
                 title: 'Hva er sikkerhetskontroll?',
@@ -4782,11 +4846,78 @@ export const theoryArticles: TheoryTopic[] = [
         id: 'oppkjoring',
         title: 'Oppkjøring klasse B: Komplett guide',
         icon: '🚗',
-        shortDescription: 'Du har bestått teoriprøven – nå er det bare oppkjøringen igjen. Lær hva det koster, hva som skjer på sikkerhetskontrollen og hva sensor faktisk ser etter. Ekspert-tips som hjelper deg bestå på første forsøk.',
+        shortDescription: 'Du har bestått teoriprøven – nå er det bare oppkjøringen igjen. Lær hva det koster, hvordan prøven foregår, hva sensor faktisk vurderer og hva som skjer hvis du stryker.',
         color: 'var(--apple-orange)',
-        seoTitle: 'Oppkjøring klasse B: slik består du førerprøven',
-        seoDescription: 'Se hvordan oppkjøring klasse B foregår, hva sensor vurderer, vanlige feil, sikkerhetskontroll og hvordan du forbereder deg best mulig.',
-        sections: []
+        seoTitle: 'Oppkjøring klasse B 2026 – pris, varighet og slik består du',
+        seoDescription: 'Alt om oppkjøring klasse B: pris (1 490 kr på nett), varighet 65–75 min, de tre delene av prøven, hva sensor vurderer og hva som skjer hvis du stryker.',
+        sections: [
+            {
+                title: 'Kort forklart',
+                type: 'info',
+                content: 'Oppkjøringen er den praktiske førerprøven du tar på en trafikkstasjon etter bestått teoriprøve. Den varer 65–75 minutter og består av tre deler: klargjøring av kjøretøyet, sikkerhetskontroll og kjøring. Du vurderes som en helhet — sensor ser etter at du kjører selvstendig og trygt, ikke at du er feilfri. I første halvår 2026 besto 74 prosent av dem som kjørte opp i klasse B.'
+            },
+            {
+                title: 'Dette må være på plass før du kan kjøre opp',
+                type: 'tip',
+                content: '1. **All obligatorisk opplæring** må være fullført og registrert hos Statens vegvesen — inkludert [trafikalt grunnkurs](/laeringsressurser/trafikalt-grunnkurs), [sikkerhetskurs på bane](/laeringsressurser/sikkerhetskurs-pa-bane) og sikkerhetskurs på veg.\n2. **Teoriprøven** må være bestått — [den er gyldig i tre år](/laeringsressurser/teoriproven-bil).\n3. **Vandelen din** må være godkjent av politiet (skjer via søknaden om førerkort).\n4. **Helseattest** må være levert hvis du trenger det.\n\nPå Din side hos Statens vegvesen kan du sjekke at alt er registrert før du bestiller time.'
+            },
+            {
+                title: 'Slik foregår oppkjøringen',
+                type: 'text',
+                content: 'Prøven er delt i tre deler:\n\n1. **Klargjøring av kjøretøyet** — du gjør bilen klar for kjøring, stiller inn sete og speil.\n2. **Sikkerhetskontroll** — sensor gir deg en stikkprøve av tilfeldig valgte kontrolloppgaver, for eksempel bremser eller spylervæske. Alle de vanlige spørsmålene med fasit finner du i [sikkerhetskontroll-guiden](/laeringsressurser/sikkerhetskontroll).\n3. **Kjøring** — den klart største delen. Ruten er bestemt på forhånd, og sensor forteller deg underveis hvor du skal kjøre. Du skal løse oppgavene selvstendig: velge felt, tilpasse fart og håndtere situasjonene uten hjelp.\n\nDu kjører opp i en godkjent skolebil som leies av en trafikkskole — du kan ikke bruke din egen bil. Husk gyldig legitimasjon når du møter opp.'
+            },
+            {
+                title: 'Hva vurderer sensor?',
+                type: 'text',
+                content: 'Sensor vurderer prøven **som en helhet** — én enkelt feil betyr ikke automatisk stryk, med mindre den er alvorlig (for eksempel brudd på vikeplikt som skaper fare). Det sensor ser etter:\n\n- **Trafikkforståelse**: leser du situasjonene og planlegger du fremover?\n- **Observasjon og tegngiving**: speil, blindsone og blinklys til riktig tid.\n- **Plassering og fartstilpasning**: riktig felt, riktig fart for forholdene — ikke bare fartsgrensen.\n- **Samhandling**: flyter du med trafikken og gjør deg forutsigbar for andre?\n- **Selvstendighet**: du er fører og har ansvaret under hele prøven.\n\nUansett resultat får du en skriftlig begrunnelse, og beskjeden får du med en gang prøven er over.'
+            },
+            {
+                title: 'Pris og praktisk informasjon',
+                type: 'table',
+                content: `<div class="responsive-theory-table-wrapper"><table class="responsive-theory-table" style="width:100%;border-collapse:collapse;font-size:0.95rem"><thead><tr style="background-color:var(--color-surface);border-bottom:2px solid var(--color-border)"><th style="padding:12px 8px;text-align:left">Hva</th><th style="padding:12px 8px;text-align:left">Detaljer (fra 1. februar 2026)</th></tr></thead><tbody><tr style="border-bottom:1px solid var(--color-border)"><td style="padding:12px 8px"><b>Pris oppkjøring klasse B</b></td><td style="padding:12px 8px">1 490 kr ved betaling på nett, 1 540 kr på trafikkstasjonen.</td></tr><tr style="border-bottom:1px solid var(--color-border)"><td style="padding:12px 8px"><b>Utstedelse av førerkort</b></td><td style="padding:12px 8px">160 kr på nett (270 kr på trafikkstasjonen) + 100 kr for bilde.</td></tr><tr style="border-bottom:1px solid var(--color-border)"><td style="padding:12px 8px"><b>Varighet</b></td><td style="padding:12px 8px">65–75 minutter totalt.</td></tr><tr style="border-bottom:1px solid var(--color-border)"><td style="padding:12px 8px"><b>Avbestilling</b></td><td style="padding:12px 8px">Senest to virkedager før — ellers må du betale for timen.</td></tr><tr><td style="padding:12px 8px"><b>Bil</b></td><td style="padding:12px 8px">Godkjent skolebil som leies av trafikkskole (kommer i tillegg til gebyret).</td></tr></tbody></table></div>`
+            },
+            {
+                title: 'Automat eller manuelt gir?',
+                type: 'info',
+                content: 'Du velger selv. Kjører du opp med automatgir, får førerkortet kode 78 — da kan du bare kjøre biler med automatgir. 70 prosent valgte automat i første halvår 2026. Alt om valget, elbil og hvordan du senere fjerner koden finner du i [guiden om automatlappen](/laeringsressurser/automatlappen).'
+            },
+            {
+                title: 'Tips som roer nervene',
+                type: 'tip',
+                content: '- **Tenk høyt.** Er en situasjon uklar, si det: «Her er det uoversiktlig, så jeg roer ned.» Da forstår sensor hvordan du vurderer — og vurdering er nettopp det som testes.\n- **Ikke dvel ved småfeil.** Kveler du motoren eller bommer på en giring, stryker du ikke av den grunn. Trekk pusten og kjør videre — det er helheten som teller.\n- **Bli kjent med området.** Øvelseskjør rundt trafikkstasjonen dagene før. Kjente kryss og rundkjøringer gir ro på prøvedagen.\n- **Møt uthvilt.** [Trøtthet forlenger reaksjonstiden](/laeringsressurser/trotthet-og-mikrosovn) og gjør deg mer stresset — legg deg tidlig kvelden før.'
+            },
+            {
+                title: 'Hvis du stryker',
+                type: 'warning',
+                content: 'Omtrent 1 av 4 stryker på oppkjøringen i klasse B (26 prosent i første halvår 2026), så du er ikke alene. Dette gjelder da:\n\n- Du må vente **minst fire uker** før du kan kjøre opp på nytt, og du må betale for ny prøve.\n- Du får sensors **vurderingsskjema** — les det nøye, det forteller nøyaktig hva du må trene på.\n- Bruk ventetiden målrettet: øv på situasjonene fra skjemaet, og gå gjennom [sikkerhetskontrollen](/laeringsressurser/sikkerhetskontroll) på nytt hvis den var svak.\n\nKilder: [Statens vegvesen om oppkjøring](https://www.vegvesen.no/forerkort/ta-forerkort/oppkjoring/), [priser hos Statens vegvesen](https://www.vegvesen.no/forerkort/ta-forerkort/priser/) og [SVVs prøvestatistikk for første halvår 2026](https://www.vegvesen.no/om-oss/presse/aktuelt/2026/07/rekordmange-oppkjoringer/).'
+            }
+        ],
+        faq: [
+            {
+                question: 'Hvor lenge varer oppkjøringen for klasse B?',
+                answer: 'Prøven varer 65–75 minutter og består av klargjøring av kjøretøyet, sikkerhetskontroll og kjøring. Kjøringen er den klart største delen.'
+            },
+            {
+                question: 'Hva koster oppkjøringen i 2026?',
+                answer: 'Gebyret for oppkjøring klasse B er 1 490 kr ved betaling på nett og 1 540 kr på trafikkstasjonen (fra 1. februar 2026). I tillegg kommer utstedelse av førerkort (160 kr på nett), bilde (100 kr) og leie av skolebil fra trafikkskolen.'
+            },
+            {
+                question: 'Hvor mange består oppkjøringen?',
+                answer: 'I første halvår 2026 besto 74 prosent av oppkjøringene i klasse B, ifølge Statens vegvesen. Omtrent 1 av 4 stryker.'
+            },
+            {
+                question: 'Hvor lenge må jeg vente etter stryk?',
+                answer: 'Du må vente minst fire uker før du kan ta ny oppkjøring i klasse B, og du må betale for den nye prøven. Bruk sensors vurderingsskjema til å trene målrettet i mellomtiden.'
+            },
+            {
+                question: 'Kan jeg kjøre opp med min egen bil?',
+                answer: 'Nei. Bilen du kjører opp med skal være godkjent av Statens vegvesen og må leies av en trafikkskole. Snakk med trafikklæreren din om leie.'
+            },
+            {
+                question: 'Når kan jeg kjøre bil etter bestått oppkjøring?',
+                answer: 'Med en gang — du får et midlertidig førerbevis når du har bestått. Det er kun gyldig i Norge. Selve førerkortet bestiller du på Din side eller trafikkstasjonen, og det kommer i posten.'
+            }
+        ]
     },
 
     {
@@ -6494,7 +6625,7 @@ I bil uten bilbelte er reglene strengere: Barn under 3 år skal ikke transporter
             {
                 title: 'Mer om fareskiltet',
                 type: 'text',
-                content: 'Fareskilt 116 settes ofte opp sammen med et underskilt som presiserer når eller over hvilken strekning faren gjelder (f.eks. «Gjelder ved væromslag» eller en lengde som «Gjelder over 3 km»).\n\n[Se alle fareskilt og detaljer i Skiltbanken](/trafikkskilt/fareskilt/glatt-kjorebane)'
+                content: 'Fareskilt 116 settes ofte opp sammen med et underskilt som presiserer når eller over hvilken strekning faren gjelder (f.eks. «Gjelder ved væromslag» eller en lengde som «Gjelder over 3 km»).\n\n[Se alle fareskilt og detaljer i skiltguiden](/trafikkskilt/fareskilt/glatt-kjorebane)'
             },
             {
                 title: 'Kilder og regelverk',

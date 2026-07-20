@@ -34,6 +34,8 @@ globalThis.sessionStorage = memoryStorage()
 const xml = fs.readFileSync(SITEMAP, 'utf-8')
 const routes = [...xml.matchAll(/<loc>([^<]+)<\/loc>/g)]
     .map((m) => m[1].replace(BASE_URL, '') || '/')
+    // Sitemap-URL-er har trailing slash (matcher Netlify-redirect); rutene normaliseres uten
+    .map((r) => (r === '/' ? r : r.replace(/\/+$/, '')))
 
 // --- Load app + template ---
 const { createApp } = await import(pathToFileURL(SERVER_BUNDLE).href)

@@ -35,6 +35,14 @@ import AutomatVsManuellSammenligning from './AutomatVsManuellSammenligning'
 import VognkortEksempel from './VognkortEksempel'
 import { TilhengerKalkulator } from './TilhengerKalkulator'
 
+// Stabil anker-id fra seksjonstittel (gir Google mulighet til «Hopp til»-lenker i søkeresultatet)
+function sectionAnchorId(title: string): string {
+    return title
+        .toLowerCase()
+        .replace(/æ/g, 'ae').replace(/ø/g, 'o').replace(/å/g, 'a')
+        .replace(/[^a-z0-9]+/g, '-')
+        .replace(/^-+|-+$/g, '')
+}
 
 // Renders content string with support for paragraphs, bullet lists (- ), numbered lists (1. ) and code blocks (```)
 function renderContent(text: string) {
@@ -248,7 +256,7 @@ export default function TheoryTopic({ topic, onBack }: TheoryTopicProps) {
             <div className="theory-sections">
                 {topic.sections.map((section, index) => (
                     <section key={index} className={`theory-section theory-section-${section.type}`}>
-                        <h2 className="theory-section-title">{section.title}</h2>
+                        <h2 className="theory-section-title" id={sectionAnchorId(section.title)}>{section.title}</h2>
 
                         {section.type === 'pyramid' && (
                             <div className="theory-section-content">
@@ -301,6 +309,7 @@ export default function TheoryTopic({ topic, onBack }: TheoryTopicProps) {
                                 {section.component === 'RundkjoringAnimasjon' && <RundkjoringAnimasjon />}
                                 {section.component === 'AutomatVsManuellSammenligning' && <AutomatVsManuellSammenligning />}
                                 {section.component === 'VognkortEksempel' && <VognkortEksempel />}
+                                {section.component === 'TilhengerKalkulator' && <TilhengerKalkulator />}
                             </div>
                         ) : section.type === 'table' ? (
                             <div className="theory-section-content" dangerouslySetInnerHTML={{ __html: section.content || '' }} />

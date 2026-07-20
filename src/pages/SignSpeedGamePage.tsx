@@ -88,7 +88,7 @@ export default function SignSpeedGamePage() {
         />
         <meta property="og:title" content="Trafikkskilt-spill: Skiltduellen – hvor mange klarer du?" />
         <meta property="og:description" content="Gratis skiltspill: kjenn igjen norske trafikkskilt før tiden går ut. Jo raskere du svarer, jo flere poeng. Perfekt trening til teoriprøven klasse B." />
-        <link rel="canonical" href="https://teori-test.no/laeringsspill/skiltduellen" />
+        <link rel="canonical" href="https://teori-test.no/laeringsspill/skiltduellen/" />
         <script type="application/ld+json">
           {JSON.stringify({
             '@context': 'https://schema.org',

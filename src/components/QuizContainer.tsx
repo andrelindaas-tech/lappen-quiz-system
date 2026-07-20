@@ -238,7 +238,7 @@ export default function QuizContainer({ onReturnHome, onQuizComplete }: QuizCont
             : `Forbered deg til teoriprøven med vår ${mode.name}.`
     })()
 
-    const canonicalUrl = `https://teori-test.no/quiz${category ? `/${category}` : ''}`
+    const canonicalUrl = `https://teori-test.no/quiz${category ? `/${category}` : ''}/`
 
     if (loading) {
         return (

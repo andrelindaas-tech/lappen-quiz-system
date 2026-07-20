@@ -79,9 +79,11 @@ function beregnKlasse(bil: number, tilhenger: number): Resultat {
 }
 
 export function TilhengerKalkulator() {
-    const [bilVekt, setBilVekt] = useState('');
-    const [tilhengerVekt, setTilhengerVekt] = useState('');
-    const [resultat, setResultat] = useState<Resultat | null>(null);
+    const [bilVekt, setBilVekt] = useState('1985');
+    const [tilhengerVekt, setTilhengerVekt] = useState('1400');
+    const [resultat, setResultat] = useState<Resultat | null>(() => {
+        return beregnKlasse(1985, 1400);
+    });
 
     // Beregn automatisk når begge felt er fylt ut
     useEffect(() => {

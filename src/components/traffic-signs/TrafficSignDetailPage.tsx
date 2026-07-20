@@ -3,7 +3,30 @@ import { useParams, Link, useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { getTrafficSignBySlug, getCategoryBySlug } from '../../lib/trafficSigns';
 import { trafficSigns } from '../../data/trafficSigns';
+import { getSignExtra } from '../../data/trafficSignExtras';
 import '../../theory.css';
+
+// Standard gyldighets-/rekkeviddeforklaring per skiltgruppe (vises i FAQ på alle skiltsider)
+const categoryValidityNotes: Record<string, string> = {
+  'vikeplikt-og-forkjorsskilt':
+    'Vikeplikt- og stoppskilt gjelder i krysset de står ved. Forkjørsveg gjelder helt til den oppheves av «Slutt på forkjørsveg», vikeplikt- eller stoppskilt, mens forkjørskryss bare gjelder det første krysset.',
+  fareskilt:
+    'Fareskilt varsler en fare lenger fremme. Utenfor tettbygd strøk står skiltet vanligvis 150–250 meter før faren, i tettbygd strøk 50–150 meter. Underskilt kan angi hvor lang strekning faren gjelder.',
+  forbudsskilt:
+    'Hovedregelen er at forbudet gjelder fra skiltet og fram til neste vegkryss, eller til et opphevelsesskilt eller nytt skilt endrer reguleringen. Skiltede fartsgrenser gjelder til nytt fartsgrenseskilt eller opphevelse — uavhengig av kryss. Underskilt kan angi sone eller strekning.',
+  pabudsskilt:
+    'Påbudet gjelder stedet eller strekningen skiltet regulerer — typisk gjennom krysset eller til påbudet naturlig er oppfylt. Midlertidige gule skilt ved vegarbeid gjelder foran de permanente.',
+  opplysningsskilt:
+    'Opplysningen gjelder stedet eller strekningen skiltet står ved. Mange av skiltene (motorveg, motortrafikkveg, gatetun, envegskjøring, kollektivfelt) gjelder til et eget sluttskilt opphever dem.',
+  serviceskilt:
+    'Serviceskilt gir informasjon om tilbud og tjenester langs vegen. De pålegger ingen plikter og har ingen rekkevidde å huske til prøven.',
+  vegvisningsskilt:
+    'Vegvisningsskilt gir informasjon om veger, reisemål og avstander. De pålegger ingen plikter, men hjelper deg å planlegge feltvalg i god tid.',
+  underskilt:
+    'Underskilt gjelder aldri alene — de presiserer eller utvider betydningen av hovedskiltet de henger under, og følger hovedskiltets rekkevidde.',
+  markeringsskilt:
+    'Markeringsskilt markerer selve stedet — en hindring, kurve eller kant — og gjelder der de står.',
+};
 
 export default function TrafficSignDetailPage() {
   const { categorySlug, signSlug } = useParams<{ categorySlug: string; signSlug: string }>();
@@ -126,6 +149,34 @@ export default function TrafficSignDetailPage() {
           },
         ]
       : []),
+    // Kuraterte FAQ for skilt med mye søketrafikk (trafficSignExtras.ts)
+    ...(getSignExtra(sign.slug)?.faq ?? []).map((item) => ({
+      '@type': 'Question',
+      name: item.question,
+      acceptedAnswer: { '@type': 'Answer', text: item.answer },
+    })),
+    // Auto-genererte FAQ fra eksisterende felt (alle skilt)
+    ...(sign.aliases && sign.aliases.length > 0
+      ? [
+          {
+            '@type': 'Question',
+            name: `Hva kalles ${signTitleName.toLowerCase()}-skiltet i dagligtale?`,
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: `Skiltet kalles også ${sign.aliases.join(', ')}.${cleanVisualDescription ? ` Du kjenner det igjen slik: ${cleanVisualDescription}.` : ''}`,
+            },
+          },
+        ]
+      : []),
+    ...(categoryValidityNotes[category.slug]
+      ? [
+          {
+            '@type': 'Question',
+            name: 'Hvor lenge gjelder skiltet?',
+            acceptedAnswer: { '@type': 'Answer', text: categoryValidityNotes[category.slug] },
+          },
+        ]
+      : []),
   ];
   const faqStructuredData = {
     '@context': 'https://schema.org',
@@ -138,7 +189,7 @@ export default function TrafficSignDetailPage() {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Skiltbanken', item: 'https://teori-test.no/trafikkskilt' },
+      { '@type': 'ListItem', position: 1, name: 'Skiltguiden', item: 'https://teori-test.no/trafikkskilt' },
       { '@type': 'ListItem', position: 2, name: category.name, item: `https://teori-test.no/trafikkskilt/${category.slug}` },
       { '@type': 'ListItem', position: 3, name: signTitleName },
     ],
@@ -167,7 +218,7 @@ export default function TrafficSignDetailPage() {
       {/* Breadcrumbs */}
       <nav style={{ marginBottom: 'var(--spacing-lg)', fontSize: '0.9rem' }}>
         <Link to="/trafikkskilt" style={{ color: 'var(--color-primary)', textDecoration: 'none' }}>
-          Skiltbanken
+          Skiltguiden
         </Link>
         <span style={{ color: 'var(--color-text-light)', margin: '0 8px' }}>/</span>
         <Link to={`/trafikkskilt/${category.slug}`} style={{ color: 'var(--color-primary)', textDecoration: 'none' }}>
@@ -241,6 +292,11 @@ export default function TrafficSignDetailPage() {
                   Kjennetegn: {sign.visualDescription}
                 </p>
               )}
+              {sign.aliases && sign.aliases.length > 0 && (
+                <p style={{ fontSize: '0.9rem', color: 'var(--color-text-light)', marginTop: '4px', margin: 0 }}>
+                  Kalles også: {sign.aliases.join(', ')}.
+                </p>
+              )}
 
               {/* Practice CTA */}
               <div style={{ marginTop: 'var(--spacing-lg)' }}>
@@ -292,6 +348,18 @@ export default function TrafficSignDetailPage() {
                   </li>
                 ))}
               </ol>
+            </div>
+          )}
+
+          {/* Hvor møter du skiltet (kuratert for topp-skilt) */}
+          {getSignExtra(sign.slug) && (
+            <div style={{ borderTop: '1px solid var(--color-border)', paddingTop: 'var(--spacing-lg)' }}>
+              <h2 style={{ fontSize: '1.25rem', fontWeight: 700, marginBottom: 'var(--spacing-xs)' }}>
+                Hvor møter du skiltet?
+              </h2>
+              <p style={{ color: 'var(--color-text)', lineHeight: '1.6', fontSize: '1rem' }}>
+                {getSignExtra(sign.slug)!.whereYouMeetIt}
+              </p>
             </div>
           )}
 
@@ -470,6 +538,40 @@ export default function TrafficSignDetailPage() {
             </div>
           </section>
         )}
+
+        {/* Synlig FAQ: kuratert (topp-skilt) + autogenerert fra aliases/gyldighet (alle skilt) */}
+        {(() => {
+          const visibleFaq = [
+            ...(getSignExtra(sign.slug)?.faq ?? []),
+            ...(sign.aliases && sign.aliases.length > 0
+              ? [{
+                  question: `Hva kalles ${(sign.displayName || sign.name).toLowerCase()}-skiltet i dagligtale?`,
+                  answer: `Skiltet kalles også ${sign.aliases.join(', ')}.${cleanVisualDescription ? ` Du kjenner det igjen slik: ${cleanVisualDescription}.` : ''}`,
+                }]
+              : []),
+            ...(categoryValidityNotes[category.slug]
+              ? [{ question: 'Hvor lenge gjelder skiltet?', answer: categoryValidityNotes[category.slug] }]
+              : []),
+          ];
+          if (visibleFaq.length === 0) return null;
+          return (
+            <section style={{ maxWidth: '760px' }}>
+              <h2 style={{ fontSize: '1.4rem', fontWeight: 700, marginBottom: 'var(--spacing-md)' }}>
+                Ofte stilte spørsmål om {(sign.displayName || sign.name).toLowerCase()}-skiltet
+              </h2>
+              {visibleFaq.map((item) => (
+                <div key={item.question} style={{ marginBottom: 'var(--spacing-lg)' }}>
+                  <h3 style={{ fontSize: '1.05rem', fontWeight: 700, marginBottom: '6px' }}>
+                    {item.question}
+                  </h3>
+                  <p style={{ color: 'var(--color-text-light)', lineHeight: '1.6', margin: 0 }}>
+                    {item.answer}
+                  </p>
+                </div>
+              ))}
+            </section>
+          );
+        })()}
 
         {/* Sources block */}
         {sign.sources && sign.sources.length > 0 && (

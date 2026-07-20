@@ -79,6 +79,8 @@ export default function TrafficSignCategoryPage() {
     ? 'Påbudsskilt (obligatoriske skilt) – alle med forklaring'
     : category.slug === 'underskilt'
     ? 'Underskilt | Trafikkskilt til teoriprøven'
+    : category.slug === 'vikeplikt-og-forkjorsskilt'
+    ? 'Vikepliktskilt og forkjørsskilt – alle med forklaring'
     : `${category.name} - Forklaringer og regler til teoriprøven | Teori-test.no`;
 
   const seoDesc = category.slug === 'forbudsskilt'
@@ -91,6 +93,8 @@ export default function TrafficSignCategoryPage() {
     ? 'Hva er påbudsskilt? De runde blå skiltene med hvite piler kalles også obligatoriske skilt. Se alle med forklaring og vanlige misforståelser.'
     : category.slug === 'underskilt'
     ? 'Lær hva underskilt betyr til teoriprøven. Se hvordan underskilt presiserer avstand, tid, kjøretøygrupper, unntak og gyldighet for hovedskilt.'
+    : category.slug === 'vikeplikt-og-forkjorsskilt'
+    ? 'Hva er vikepliktskilt? Se alle vikeplikt- og forkjørsskiltene – vikeplikt, stopp, forkjørsveg og møtende trafikk – med forklaring og vanlige teorifeller.'
     : `Lær alt om ${category.name.toLowerCase()} til teoriprøven. Her finner du en oversikt over alle skilt i denne gruppen med forklaringer, kjøreregler og vanlige misforståelser.`;
 
   // BreadcrumbList structured data (matches the visible breadcrumb)
@@ -98,7 +102,7 @@ export default function TrafficSignCategoryPage() {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Skiltbanken', item: 'https://teori-test.no/trafikkskilt' },
+      { '@type': 'ListItem', position: 1, name: 'Skiltguiden', item: 'https://teori-test.no/trafikkskilt' },
       { '@type': 'ListItem', position: 2, name: category.name },
     ],
   };
@@ -131,7 +135,7 @@ export default function TrafficSignCategoryPage() {
       {/* Breadcrumb navigation */}
       <nav style={{ marginBottom: 'var(--spacing-md)', fontSize: '0.9rem' }}>
         <Link to="/trafikkskilt" style={{ color: 'var(--color-primary)', textDecoration: 'none' }}>
-          Skiltbanken
+          Skiltguiden
         </Link>
         <span style={{ color: 'var(--color-text-light)', margin: '0 8px' }}>/</span>
         <span style={{ color: 'var(--color-text-light)' }}>{category.name}</span>
@@ -266,6 +270,25 @@ export default function TrafficSignCategoryPage() {
         </div>
       </section>
 
+      {/* De vanligste teorifellene i gruppen */}
+      {category.commonMistakes && category.commonMistakes.length > 0 && (
+        <section style={{ marginTop: 'var(--spacing-2xl)', maxWidth: '760px' }}>
+          <h2 style={{ fontSize: '1.5rem', fontWeight: 700, marginBottom: 'var(--spacing-sm)' }}>
+            De vanligste teorifellene med {category.name.toLowerCase()}
+          </h2>
+          <p style={{ color: 'var(--color-text-light)', marginBottom: 'var(--spacing-md)' }}>
+            Dette er misforståelsene som oftest fører til feil svar på teoriprøven i denne skiltgruppen:
+          </p>
+          <ul style={{ paddingLeft: '20px', margin: 0 }}>
+            {category.commonMistakes.map((mistake, idx) => (
+              <li key={idx} style={{ marginBottom: '12px', color: 'var(--color-text)', lineHeight: '1.6' }}>
+                {mistake}
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
+
       {/* Quiz CTA */}
       <section style={{
         marginTop: 'var(--spacing-2xl)',
@@ -316,6 +339,32 @@ export default function TrafficSignCategoryPage() {
           ))}
         </section>
       )}
+
+      {/* Om kildene */}
+      <section style={{
+        marginTop: 'var(--spacing-2xl)',
+        padding: 'var(--spacing-lg)',
+        backgroundColor: 'var(--color-bg)',
+        border: '1px solid var(--color-border)',
+        borderRadius: 'var(--radius-lg)',
+        maxWidth: '760px',
+        fontSize: '0.9rem',
+        color: 'var(--color-text-light)',
+        lineHeight: '1.6',
+      }}>
+        <h2 style={{ fontSize: '1rem', fontWeight: 700, marginBottom: '8px', color: 'var(--color-text)' }}>
+          Om kildene våre
+        </h2>
+        <p style={{ margin: '0 0 8px 0' }}>
+          Skiltforklaringene i skiltguiden er basert på gjeldende skiltforskrift og Statens vegvesens offisielle
+          skiltoversikt, og kvalitetssikres mot originalkildene når regelverket endres. Sist gjennomgått: juli 2026.
+        </p>
+        <p style={{ margin: 0 }}>
+          <a href="https://www.vegvesen.no/trafikkinformasjon/vei-og-skilt/trafikkskilt/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-primary)', textDecoration: 'none' }}>Statens vegvesen: trafikkskilt</a>
+          {' · '}
+          <a href="https://lovdata.no/dokument/SF/forskrift/2005-10-07-1219" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-primary)', textDecoration: 'none' }}>Skiltforskriften (Lovdata)</a>
+        </p>
+      </section>
     </div>
   );
 }

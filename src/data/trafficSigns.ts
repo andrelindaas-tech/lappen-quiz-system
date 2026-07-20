@@ -383,7 +383,7 @@ export const trafficSigns: TrafficSign[] = [
     slug: 'tunnel',
     category: 'fareskilt',
     imagePath: '/signs/fareskilt/skilt-122-tunnel.jpg',
-    shortExplanation: 'Varsler om tunnel forut.',
+    shortExplanation: 'Varsler om tunnel lenger fremme. Ta av solbriller og vær forberedt på brå endring i lysforhold.',
     longExplanation: 'Forbereder føreren på tunnelkjøring, hvor lysforholdene endres brått og kjøremiljøet blir mer lukket.',
     theoryTrap: 'Det er påbudt å bruke nærlys/kjørelys i tunnel. Du må aldri snu eller rygge inne i en tunnel.',
     whatToDo: [
@@ -4648,6 +4648,52 @@ export const trafficSigns: TrafficSign[] = [
       { name: 'Lovdata', url: 'https://lovdata.no/dokument/SF/forskrift/2005-10-07-1219' }
     ],
     aliases: ['trafikksylinder', 'sylinder', 'veggsylinder', 'oransje stolpe']
+  },
+  {
+    id: '548',
+    code: '548',
+    name: 'Gågate',
+    displayName: 'Gågate',
+    slug: 'gagate',
+    category: 'opplysningsskilt',
+    imagePath: '/signs/opplysningsskilt/skilt-548-gagate.jpg',
+    shortExplanation: 'Viser at du kjører inn i en gågate, der kjøring med motorvogn i utgangspunktet er forbudt.',
+    longExplanation: 'Gågaten er forbeholdt gående. Kjøring med motorvogn er forbudt, med mindre underskilt åpner for unntak — for eksempel varetransport i bestemte tidsrom. Den som har lov til å kjøre, må kjøre i gangfart og har vikeplikt for gående. Parkering er forbudt. Skiltet gjelder til «Slutt på gågate» (550).',
+    theoryTrap: 'Gågate og gatetun forveksles ofte: i et gatetun er kjøring TILLATT i gangfart, mens i en gågate er kjøring i utgangspunktet FORBUDT (unntak krever underskilt). Felles for begge: når du kjører ut, har du vikeplikt for all annen trafikk.',
+    whatToDo: [
+      'Ikke kjør inn med mindre et underskilt gir deg lov (f.eks. varetransport).',
+      'Har du lovlig ærend: kjør i gangfart og vik for gående.',
+      'Husk vikeplikt for all trafikk når du kjører ut av gågaten.'
+    ],
+    confusedWith: ['540'],
+    sources: [
+      { name: 'Statens vegvesen', url: 'https://www.vegvesen.no' },
+      { name: 'Lovdata', url: 'https://lovdata.no/dokument/SF/forskrift/2005-10-07-1219' }
+    ],
+    aliases: ['gågate', 'gå gate', 'bilfri gate', 'gangvei i sentrum'],
+    visualDescription: 'Firkantet blått skilt med gående personer og gatemiljø.',
+  },
+  {
+    id: '605',
+    code: '605',
+    name: 'Bensinstasjon',
+    displayName: 'Bensinstasjon',
+    slug: 'bensinstasjon',
+    category: 'serviceskilt',
+    imagePath: '/signs/serviceskilt/skilt-605-bensinstasjon.jpg',
+    shortExplanation: 'Viser at det finnes bensinstasjon eller drivstoffanlegg ved vegen eller via avkjøringen.',
+    longExplanation: 'Serviceskiltet opplyser om hvor du kan fylle drivstoff. Det brukes ofte sammen med vegvisningsskilt før avkjøringer, og kan ha symboler for ladestasjon der det tilbys.',
+    theoryTrap: 'Serviceskilt pålegger deg ingenting — de gir bare informasjon. Men å planlegge fylling og lading i god tid er en del av god turplanlegging, som teoriprøven kan teste.',
+    whatToDo: [
+      'Planlegg fylling eller lading i god tid, spesielt før fjelloverganger og lange strekninger.'
+    ],
+    confusedWith: [],
+    sources: [
+      { name: 'Statens vegvesen', url: 'https://www.vegvesen.no' },
+      { name: 'Lovdata', url: 'https://lovdata.no/dokument/SF/forskrift/2005-10-07-1219' }
+    ],
+    aliases: ['bensinstasjon', 'bensinpumpe', 'drivstoff', 'tanking'],
+    visualDescription: 'Firkantet blått skilt med hvit bensinpumpe.',
   }
 ];
 

@@ -8,6 +8,8 @@ export interface TrafficSignCategory {
   synonymIntro?: string;
   /** FAQ vist nederst på kategorisiden + FAQPage-schema */
   faq?: { question: string; answer: string }[];
+  /** De vanligste teorifellene i skiltgruppen — vises som egen seksjon under skiltgriden */
+  commonMistakes?: string[];
 }
 
 export const trafficSignCategories: TrafficSignCategory[] = [
@@ -32,6 +34,13 @@ export const trafficSignCategories: TrafficSignCategory[] = [
         answer: 'Det gule, diamantformede skiltet med hvit kant er forkjørsveg (206). Det betyr at kryssende trafikk har vikeplikt for deg, helt til skiltet «Slutt på forkjørsveg» opphever det.'
       }
     ],
+    commonMistakes: [
+      'Vikepliktskilt betyr ikke at du alltid må stoppe — full stans kreves bare hvis det er nødvendig for å slippe frem kryssende trafikk. Det er stoppskiltet (204) som alltid krever at hjulene står helt i ro.',
+      'Forkjørsveg (206) gjelder helt til den oppheves av «Slutt på forkjørsveg», vikeplikt- eller stoppskilt — mens forkjørskryss (210) bare gjelder det første krysset. Mange blander rekkevidden til de to.',
+      'På skilt 212/214 (vikeplikt overfor møtende / møtende har vikeplikt) er det pilfargene som avgjør: rød pil = den som må vike. Pilretningene er en gjenganger på teoriprøven.',
+      'Vikepliktskiltet og stoppskiltet har unike former (trekant med spissen ned og åttekant) nettopp for at du skal kjenne dem igjen bakfra eller med snø på — et klassisk teorispørsmål.',
+      'Skilt i denne gruppen setter høyreregelen til side. Ser du ingen vikeplikt- eller forkjørsskilt i et kryss, er det høyreregelen som gjelder.',
+    ],
   },
   {
     id: 'fareskilt',
@@ -53,6 +62,12 @@ export const trafficSignCategories: TrafficSignCategory[] = [
         question: 'Hvor langt før faren står fareskiltet?',
         answer: 'Utenfor tettbygd strøk står fareskilt vanligvis 150–250 meter før faren. I tettbygd strøk kan avstanden være kortere. Et underskilt kan angi en annen avstand.'
       }
+    ],
+    commonMistakes: [
+      'Fareskilt forbyr ingenting — de varsler. Det er situasjonen bak skiltet (glatt veg, barn, dyr) som avgjør hva du må gjøre, og riktig svar på prøven er nesten alltid «tilpass farten og øk oppmerksomheten».',
+      'Elgskiltet betyr ikke at elgen krysser akkurat ved skiltet — faren gjelder en strekning, ofte angitt med underskilt. Størst risiko er det i grålysning og skumring.',
+      'Mange glemmer avstandsregelen: utenfor tettbygd strøk står fareskiltet vanligvis 150–250 meter FØR faren. Ser du skiltet, har du altså litt tid — bruk den til å senke farten.',
+      '«Glatt kjørebane»-skiltet gjelder ikke bare is og snø: vegen kan være glatt av regn etter en tørkeperiode, løv, grus eller søl fra landbruk.',
     ],
   },
   {
@@ -76,6 +91,13 @@ export const trafficSignCategories: TrafficSignCategory[] = [
         answer: 'Et forbudsskilt gjelder som hovedregel frem til neste kryss, eller til et opphevelsesskilt eller nytt skilt endrer reguleringen. Underskilt kan angi en bestemt strekning.'
       }
     ],
+    commonMistakes: [
+      'Ikke alle forbud opphører i neste kryss: parkeringsregulering gjelder til krysset, men en skiltet fartsgrense gjelder videre til den oppheves av nytt fartsgrenseskilt eller opphevelsesskilt.',
+      'Parkering forbudt (én skråstrek) og stans forbudt (kryss) blandes ofte: ved parkering forbudt kan du fortsatt stanse kort for av- og påstigning, ved stans forbudt kan du ikke stanse i det hele tatt.',
+      '«Innkjøring forbudt» betyr ikke at gaten er enveiskjørt — det kan komme trafikk imot selv om du passerte skiltet lovlig fra riktig side.',
+      'Forbikjøring forbudt gjelder motorvogn med flere enn to hjul — tohjuls MC og moped kan fortsatt forbikjøres når det er trygt.',
+      '«Slutt på fartsgrense»-skiltene betyr aldri fri fart: du går tilbake til de generelle grensene, 50 km/t i tettbygd strøk og 80 km/t utenfor.',
+    ],
   },
   {
     id: 'pabudsskilt',
@@ -98,6 +120,12 @@ export const trafficSignCategories: TrafficSignCategory[] = [
         answer: 'Påbudsskilt (runde, blå) pålegger deg en handling du må utføre. Opplysningsskilt (firkantede, ofte blå) informerer om hva som gjelder på stedet, for eksempel motorveg eller gangfelt.'
       }
     ],
+    commonMistakes: [
+      'Blå runde skilt er påbud — ikke forslag. Viser pilen rett frem, kan du ikke svinge selv om det «ser klart ut» eller ville spart deg en omvei.',
+      'Påbudt rundkjøring betyr at du MÅ følge rundkjøringen i pilens retning — du kan aldri svinge til venstre foran sentraløya.',
+      'Rund og blå (påbud: hva du MÅ gjøre) forveksles med firkantet og blå (opplysning: hva som gjelder). Formen er det raskeste kjennetegnet på prøven.',
+      'Påbudt kjørefelt/kjøreretning brukes ofte midlertidig ved vegarbeid — det midlertidige gule skiltet gjelder foran de permanente.',
+    ],
   },
   {
     id: 'opplysningsskilt',
@@ -115,6 +143,13 @@ export const trafficSignCategories: TrafficSignCategory[] = [
         question: 'Er opplysningsskilt bare til informasjon?',
         answer: 'Nei – mange opplysningsskilt har rettslig betydning. Skiltet for gangfelt betyr for eksempel at du har vikeplikt for gående i feltet, og motorvegskiltet betyr at reglene for motorveg gjelder.'
       }
+    ],
+    commonMistakes: [
+      '«Opplysning» betyr ikke «uforpliktende»: gatetun krever gangfart, motorveg-skiltet utløser motorvegreglene, og envegskjøring/kollektivfelt-skiltene har bøtesatser bak seg.',
+      'Sammenfletting (530) og kjørefelt slutter (532) er gruppens største felle: ved sammenfletting fletter begge felt annenhver gang uten prioritet, ved kjørefelt slutter har du som mister feltet vikeplikt.',
+      'I gatetun er «fartsgrensen» gangfart (under 10 km/t) — ikke 30. Og når du kjører UT av gatetunet, har du vikeplikt for all annen trafikk.',
+      'Motortrafikkveg har samme adgangsregler og forbud (rygging, vending, stans) som motorveg — men kan ha møtende trafikk og kryss i plan. Mange tror reglene er «mildere».',
+      'Møteplass-lommen (M-skiltet) er kun for passering — aldri parkering eller snuplass.',
     ],
   },
   {

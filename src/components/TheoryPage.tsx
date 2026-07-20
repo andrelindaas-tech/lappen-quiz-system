@@ -64,7 +64,7 @@ const articleCategorySections = [
     {
         title: 'Kjøretøy og teknisk',
         description: 'Alt om bilen, dekk, bremser, lys, vognkort, tilhenger og førerstøttesystemer.',
-        ids: ['dekk-bremser-styring', 'sikkerhetskontroll', 'varsellamper-i-bilen', 'bilens-lys', 'vognkort-vekter', 'tilhenger', 'forerstottesystemer', 'automatlappen']
+        ids: ['dekk-bremser-styring', 'sikkerhetskontroll', 'varsellamper-i-bilen', 'bilens-lys', 'vognkort-vekter', 'tilhenger', 'tilhengerkalkulator', 'forerstottesystemer', 'automatlappen']
     },
     {
         title: 'Trafikanter og samspill',
@@ -404,7 +404,7 @@ export default function TheoryPage() {
                                                     <div className="card-icon-box">
                                                         {getTopicIcon(article.id)}
                                                     </div>
-                                                    <h3 className="theory-card-title">{article.title}</h3>
+                                                    <h3 className="theory-card-title"><Link to={`/laeringsressurser/${article.id}`} style={{ color: 'inherit', textDecoration: 'none' }} onClick={(e) => e.stopPropagation()}>{article.title}</Link></h3>
                                                     <p className="theory-card-desc">{parseInlineLinks(article.shortDescription)}</p>
                                                     <span className="theory-card-badge">
                                                         Se temakart <ArrowRight size={14} style={{ marginLeft: '4px' }} />
@@ -432,7 +432,7 @@ export default function TheoryPage() {
                                                     <div className="card-icon-box">
                                                         {getTopicIcon(item.id)}
                                                     </div>
-                                                    <h3 className="theory-card-title">{item.title}</h3>
+                                                    <h3 className="theory-card-title"><Link to={`/laeringsressurser/${item.id}`} style={{ color: 'inherit', textDecoration: 'none' }} onClick={(e) => e.stopPropagation()}>{item.title}</Link></h3>
                                                     <p className="theory-card-desc">{parseInlineLinks(item.shortDescription)}</p>
                                                     <span className="theory-card-badge">
                                                         Les mer <ArrowRight size={14} style={{ marginLeft: '4px' }} />
@@ -462,7 +462,7 @@ export default function TheoryPage() {
                                                     <div className="card-icon-box">
                                                         {getTopicIcon(topic.id)}
                                                     </div>
-                                                    <h2 className="theory-card-title">{topic.title}</h2>
+                                                    <h2 className="theory-card-title"><Link to={`/laeringsressurser/${topic.id}`} style={{ color: 'inherit', textDecoration: 'none' }} onClick={(e) => e.stopPropagation()}>{topic.title}</Link></h2>
                                                     <p className="theory-card-desc">{parseInlineLinks(topic.shortDescription)}</p>
                                                     <span className="theory-card-badge">
                                                         Les mer <ArrowRight size={14} style={{ marginLeft: '4px' }} />
@@ -490,7 +490,7 @@ export default function TheoryPage() {
                                                 <div className="card-icon-box">
                                                     {getTopicIcon(article.id)}
                                                 </div>
-                                                <h3 className="theory-card-title">{article.title}</h3>
+                                                <h3 className="theory-card-title"><Link to={`/laeringsressurser/${article.id}`} style={{ color: 'inherit', textDecoration: 'none' }} onClick={(e) => e.stopPropagation()}>{article.title}</Link></h3>
                                                 <p className="theory-card-desc">{parseInlineLinks(article.shortDescription)}</p>
                                                 <span className="theory-card-badge">
                                                     Les artikkel <ArrowRight size={14} style={{ marginLeft: '4px' }} />

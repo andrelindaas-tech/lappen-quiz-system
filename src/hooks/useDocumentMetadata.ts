@@ -24,7 +24,9 @@ export function useDocumentMetadata({ title, description, canonical }: MetadataO
         const metaDesc = document.querySelector('meta[name="description"]')
         if (metaDesc) metaDesc.setAttribute('content', desc)
 
-        const canonicalUrl = canonical || (window.location.origin + window.location.pathname)
+        const rawPath = window.location.pathname
+        const normalizedPath = rawPath.endsWith('/') ? rawPath : rawPath + '/'
+        const canonicalUrl = canonical || (window.location.origin + normalizedPath)
 
 
         // Update OG Tags

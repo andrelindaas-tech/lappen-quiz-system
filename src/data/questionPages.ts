@@ -275,6 +275,49 @@ export const questionPages: QuestionPageData[] = [
         quizPath: '/quiz?mode=hurtig',
         quizLabel: 'Øv med en ekspresstest',
     },
+
+    // ===== Veimerking og linjer =====
+    {
+        slug: 'bot-for-a-kjore-pa-eller-over-sperrelinje',
+        question: 'Du kjører på eller over gul eller hvit sperrelinje. Hvor stor blir boten?',
+        answerShort: 'Boten (forenklet forelegg) er 6 550 kroner etter satsene som gjelder fra 15. februar 2026.',
+        options: [
+            { text: '3 350 kroner' },
+            { text: '6 350 kroner' },
+            { text: '6 550 kroner', correct: true },
+            { text: '10 750 kroner' },
+        ],
+        explanation: 'Å kjøre **på eller over gul eller hvit sperrelinje** kan avgjøres med forenklet forelegg — en standardisert bot politiet kan skrive ut på stedet. Satsen er 6 550 kroner fra 15. februar 2026. Samme sats gjelder kjøring i sperreområde, på fortau og i sykkelfelt.\n\nSatsene justeres jevnlig (de økte senest i februar 2026), så på prøven er det viktigere at du kan **rangeringen** enn kronebeløpet utenat: sperrelinje ligger i mellomsjiktet — over lysfeil (4 100 kr), under kollektivfelt (8 650 kr) og langt under rødt lys, vikepliktsbrudd og ulovlig forbikjøring (10 750 kr).\n\nSkjer kryssingen som ledd i en ulovlig forbikjøring — for eksempel forbi bakketopp eller i kryss — kan forholdet i stedet straffes som ulovlig forbikjøring med høyere bot og prikker.\n\nHusk også hovedregelen: [hvit sperrelinje](/laeringsressurser/veimerking) skal ikke krysses, hverken for feltskifte eller forbikjøring.',
+        topic: 'Veimerking og linjer',
+        articleId: 'veimerking',
+        articleLabel: 'Veimerking – komplett guide',
+        quizPath: '/quiz/veimerking',
+        quizLabel: 'Ta veimerking-quizen',
+        sources: [
+            { name: 'Forskrift om forenklet forelegg i vegtrafikksaker (Lovdata)', url: 'https://lovdata.no/dokument/SF/forskrift/1990-06-29-492' },
+        ],
+    },
+    {
+        slug: 'gir-kryssing-av-sperrelinje-prikker',
+        question: 'Får du prikker på førerkortet for å krysse en sperrelinje?',
+        answerShort: 'Nei. Å kjøre på eller over en sperrelinje gir bot, men ikke prikker. Det er kjøring i sperreområde (avgrenset av gule linjer) som gir 3 prikker.',
+        options: [
+            { text: 'Ja, alltid 3 prikker' },
+            { text: 'Ja, 2 prikker i prøveperioden' },
+            { text: 'Nei, det gir bot, men ikke prikker', correct: true },
+            { text: 'Bare hvis sperrelinjen er gul' },
+        ],
+        explanation: 'Dette skillet overrasker mange — til og med politiet omtaler det ofte feil: Prikkbelastningsforskriften nevner **kjøring i sperreområde** begrenset av heltrukken gul linje eller parallelle gule sperrelinjer (oppmerking 1014). Det gir 3 prikker.\n\nÅ kjøre **på eller over selve sperrelinjen** (oppmerking 1004) står derimot ikke i prikklisten. Det gir bot (forenklet forelegg på 6 550 kroner i 2026), men altså ikke prikker.\n\nTo viktige forbehold:\n- Krysser du sperrelinjen som ledd i en **ulovlig forbikjøring**, er det forbikjøringen som straffes — og den gir både høyere bot og 3 prikker.\n- Er forholdet alvorlig nok, kan politiet anmelde i stedet for å bruke forenklet forelegg.\n\nUsikker på forskjellen? [Sperrelinje er en linje, sperreområde er et skravert felt](/laeringsressurser/veimerking) — begge er forklart med illustrasjoner i veimerking-guiden. Se også [prikker på førerkortet](/laeringsressurser/prikker-pa-forerkortet).',
+        topic: 'Veimerking og linjer',
+        articleId: 'veimerking',
+        articleLabel: 'Veimerking – komplett guide',
+        quizPath: '/quiz/veimerking',
+        quizLabel: 'Ta veimerking-quizen',
+        sources: [
+            { name: 'Forskrift om prikkbelastning (Lovdata)', url: 'https://lovdata.no/dokument/SF/forskrift/2003-09-19-1164' },
+            { name: 'Forskrift om forenklet forelegg i vegtrafikksaker (Lovdata)', url: 'https://lovdata.no/dokument/SF/forskrift/1990-06-29-492' },
+        ],
+    },
 ]
 
 /** Grupper spørsmålene etter tema (til hub-siden) */

@@ -5,11 +5,13 @@ import StartScreen from './components/StartScreen'
 
 const QuizContainer = lazy(() => import('./components/QuizContainer'))
 const TheoryPage = lazy(() => import('./components/TheoryPage'))
-const OppkjoringPage = lazy(() => import('./components/OppkjoringPage'))
 const LearningGamesIndex = lazy(() => import('./components/LearningGamesIndex'))
 const StoppingDistanceChallenge = lazy(() => import('./components/StoppingDistanceChallenge'))
 const RoadMarkingGame = lazy(() => import('./components/RoadMarkingGame'))
 const VikepliktSpill = lazy(() => import('./components/VikepliktSpill'))
+const ParkingIsoDemo = lazy(() => import('./components/ParkingIsoDemo'))
+const Parking2DDemo = lazy(() => import('./components/Parking2DDemo'))
+const CarLightsDemo = lazy(() => import('./components/CarLightsDemo'))
 const SignSpeedGamePage = lazy(() => import('./pages/SignSpeedGamePage'))
 const TrafficSignBank = lazy(() => import('./components/traffic-signs/TrafficSignBank'))
 const TrafficSignCategoryPage = lazy(() => import('./components/traffic-signs/TrafficSignCategoryPage'))
@@ -144,8 +146,9 @@ export default function App() {
             <div className="ambient-glow-1" />
             <div className="ambient-glow-2" />
             <Helmet>
-                <link rel="canonical" href={"https://teori-test.no" + location.pathname} />
-                <meta property="og:url" content={`https://teori-test.no${location.pathname}`} />
+                {/* Netlify 301-redirecter alle mappebaserte URL-er til versjonen med skråstrek — canonical må matche */}
+                <link rel="canonical" href={"https://teori-test.no" + (location.pathname.endsWith('/') ? location.pathname : location.pathname + '/')} />
+                <meta property="og:url" content={"https://teori-test.no" + (location.pathname.endsWith('/') ? location.pathname : location.pathname + '/')} />
             </Helmet>
             
             <div className={`sticky-header-wrapper ${!showHeader ? 'header-hidden' : ''}`}>
@@ -284,13 +287,15 @@ export default function App() {
                         <Route path="/" element={<StartScreen />} />
                         <Route path="/quiz" element={<QuizContainer onReturnHome={handleReturnHome} onQuizComplete={handleQuizComplete} />} />
                         <Route path="/quiz/:category" element={<QuizContainer onReturnHome={handleReturnHome} onQuizComplete={handleQuizComplete} />} />
-                        <Route path="/laeringsressurser/oppkjoring" element={<OppkjoringPage />} />
                         <Route path="/laeringsressurser/:articleId?" element={<TheoryPage />} />
                         <Route path="/teori/:articleId" element={<LegacyTeoriRedirect />} />
                         <Route path="/laeringsspill" element={<LearningGamesIndex />} />
                         <Route path="/laeringsspill/stopplengde" element={<StoppingDistanceChallenge />} />
                         <Route path="/laeringsspill/veimerking" element={<RoadMarkingGame />} />
                         <Route path="/laeringsspill/vikeplikt" element={<VikepliktSpill />} />
+                        <Route path="/laeringsspill/parkering-iso-demo" element={<ParkingIsoDemo />} />
+                        <Route path="/laeringsspill/parkering-2d-demo" element={<Parking2DDemo />} />
+                        <Route path="/laeringsspill/billys-demo" element={<CarLightsDemo />} />
                         <Route path="/laeringsspill/skiltduellen" element={<SignSpeedGamePage />} />
                         <Route path="/trafikkskilt" element={<TrafficSignBank />} />
                         <Route path="/trafikkskilt/:categorySlug" element={<TrafficSignCategoryPage />} />

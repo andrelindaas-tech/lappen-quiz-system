@@ -370,7 +370,7 @@ export function SignSpeedGame({ rounds, playerName, onGameEnd, onProfileClick, o
         </section>
       ) : !round ? (
         <section className="start-panel">
-          <p className="eyebrow">Skiltbanken</p>
+          <p className="eyebrow">Skiltguiden</p>
           <h1>Skiltduellen</h1>
           {playerName ? <p className="player-greeting">Klar, {playerName}?</p> : null}
           <button className="primary-action" type="button" onClick={startGame}>

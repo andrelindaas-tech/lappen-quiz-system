@@ -391,6 +391,22 @@ export default function StartScreen() {
                     </Link>
                     {' '}— oppgaver med fasit og ekstra god forklaring.
                 </p>
+                <p style={{ textAlign: 'center', fontSize: '0.95rem', color: 'var(--color-text-light)', marginTop: 'var(--spacing-sm)' }}>
+                    Eller øv på ett tema om gangen:{' '}
+                    <Link to="/quiz/skilt" style={{ color: 'var(--color-primary)', fontWeight: 600, textDecoration: 'none' }}>skilt-quiz</Link>
+                    {', '}
+                    <Link to="/quiz/vikeplikt" style={{ color: 'var(--color-primary)', fontWeight: 600, textDecoration: 'none' }}>vikeplikt-quiz</Link>
+                    {', '}
+                    <Link to="/quiz/fartsregler" style={{ color: 'var(--color-primary)', fontWeight: 600, textDecoration: 'none' }}>fartsregler</Link>
+                    {' eller '}
+                    <Link to="/quiz/veimerking" style={{ color: 'var(--color-primary)', fontWeight: 600, textDecoration: 'none' }}>veimerking</Link>.
+                </p>
+                <p style={{ textAlign: 'center', fontSize: '0.95rem', color: 'var(--color-text-light)', marginTop: 'var(--spacing-sm)' }}>
+                    Nytt: test deg i{' '}
+                    <Link to="/laeringsspill/vikeplikt" style={{ color: 'var(--color-primary)', fontWeight: 600, textDecoration: 'none' }}>vikepliktspillet</Link>
+                    {' '}— hvem kjører først? Og følg utviklingen din i{' '}
+                    <Link to="/min-fremgang" style={{ color: 'var(--color-primary)', fontWeight: 600, textDecoration: 'none' }}>Min fremgang</Link>.
+                </p>
             </section>
 
             {/* GUIDES AND CHIPS TILE */}

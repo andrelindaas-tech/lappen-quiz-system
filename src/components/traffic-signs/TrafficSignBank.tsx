@@ -11,7 +11,7 @@ export default function TrafficSignBank() {
   const faqItems = useMemo(() => [
     {
       question: "Hvor mange trafikkskilt er det i Norge?",
-      answer: "Det finnes nesten 300 offisielle trafikkskilt i Norge, fordelt på 9 grupper som fareskilt, forbudsskilt, påbudsskilt, opplysningsskilt og vikepliktskilt. Skiltbanken på teori-test.no dekker 212 av de viktigste med forklaringer og teorifeller."
+      answer: "Det finnes nesten 300 offisielle trafikkskilt i Norge, fordelt på 9 grupper som fareskilt, forbudsskilt, påbudsskilt, opplysningsskilt og vikepliktskilt. Skiltguiden på teori-test.no dekker 214 av de viktigste med forklaringer og teorifeller."
     },
     {
       question: "Hva er forskjellen på fareskilt og forbudsskilt?",
@@ -424,6 +424,32 @@ export default function TrafficSignBank() {
             </div>
           ))}
         </div>
+      </section>
+
+      {/* Om kildene */}
+      <section style={{
+        marginTop: 'var(--spacing-2xl)',
+        padding: 'var(--spacing-lg)',
+        backgroundColor: 'var(--color-bg)',
+        border: '1px solid var(--color-border)',
+        borderRadius: 'var(--radius-lg)',
+        maxWidth: '760px',
+        fontSize: '0.9rem',
+        color: 'var(--color-text-light)',
+        lineHeight: '1.6',
+      }}>
+        <h2 style={{ fontSize: '1rem', fontWeight: 700, marginBottom: '8px', color: 'var(--color-text)' }}>
+          Om kildene våre
+        </h2>
+        <p style={{ margin: '0 0 8px 0' }}>
+          Skiltforklaringene i skiltguiden er basert på gjeldende skiltforskrift og Statens vegvesens offisielle
+          skiltoversikt, og kvalitetssikres mot originalkildene når regelverket endres. Sist gjennomgått: juli 2026.
+        </p>
+        <p style={{ margin: 0 }}>
+          <a href="https://www.vegvesen.no/trafikkinformasjon/vei-og-skilt/trafikkskilt/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-primary)', textDecoration: 'none' }}>Statens vegvesen: trafikkskilt</a>
+          {' · '}
+          <a href="https://lovdata.no/dokument/SF/forskrift/2005-10-07-1219" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-primary)', textDecoration: 'none' }}>Skiltforskriften (Lovdata)</a>
+        </p>
       </section>
     </div>
   );

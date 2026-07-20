@@ -2,18 +2,20 @@
 
 > Gratis øvingsside for teoriprøven til førerkort klasse B (personbil) i Norge. Øvingsprøver med 45 spørsmål i samme format som Statens vegvesens teoriprøve, med fasit, forklaringer og analyse av svake temaer. Ingen registrering eller betaling. Innholdet er på norsk (bokmål).
 
-Nettstedet inneholder også en komplett skiltguide med 212 norske trafikkskilt, 46+ læringsartikler som dekker pensum for klasse B, og interaktive læringsspill. Alt innhold er kvalitetssikret mot Statens vegvesens offisielle informasjon.
+Nettstedet inneholder også en komplett skiltguide med 212 norske trafikkskilt, 50+ læringsartikler som dekker pensum for klasse B (inkludert mennesket i trafikken: syn, trøtthet, medisiner og risikoforståelse), kuraterte teorispørsmål med fasit og kildehenvisninger, og interaktive læringsspill. Alt innhold er kvalitetssikret mot Statens vegvesens offisielle informasjon og Lovdata.
 
 ## Hovedinnhold
 
 - [Gratis teoriprøve (45 spørsmål)](https://teori-test.no/): Øvingsprøve i samme format som den offisielle teoriprøven
-- [Teoriprøven for bil – alt du må vite](https://teori-test.no/laeringsressurser/teoriproven-bil): Fakta om prøven: 45 spørsmål, maks 7 feil, 90 minutter, pris og krav
-- [Teoritentamen – øv gratis](https://teori-test.no/laeringsressurser/teoritentamen): Om begrepet teoritentamen og gratis øving på nett
-- [Læringsartikler](https://teori-test.no/laeringsressurser): Alle temaer i pensum: vikeplikt, skilt, veimerking, bremselengde, fartsgrenser m.m.
-- [Skiltguide](https://teori-test.no/trafikkskilt): Alle norske trafikkskilt med bilde, forklaring og vanlige misforståelser
-- [Læringsspill](https://teori-test.no/laeringsspill): Gratis interaktive spill: skiltgjenkjenning, stopplengde og veimerking
+- [Teoriprøven for bil – alt du må vite](https://teori-test.no/laeringsressurser/teoriproven-bil/): Fakta om prøven: 45 spørsmål, maks 7 feil, 90 minutter, pris og krav
+- [Teoritentamen – øv gratis](https://teori-test.no/laeringsressurser/teoritentamen/): Om begrepet teoritentamen og gratis øving på nett
+- [Temaliste for teoriprøven](https://teori-test.no/laeringsressurser/temaliste-teoriproven-klasse-b/): De 10 hovedtemaene teorien er delt inn i, med riktig guide per tema
+- [Læringsartikler](https://teori-test.no/laeringsressurser/): Alle temaer i pensum: vikeplikt, skilt, veimerking, bremselengde, fartsgrenser, motorvei, varsellamper m.m.
+- [Ofte spurte teorispørsmål](https://teori-test.no/sporsmal/): Ekte oppgaveformat med fasit, forklaring og kilder (Lovdata/Statens vegvesen)
+- [Skiltguide](https://teori-test.no/trafikkskilt/): Alle norske trafikkskilt med bilde, forklaring og vanlige misforståelser
+- [Læringsspill](https://teori-test.no/laeringsspill/): Gratis interaktive spill: vikeplikt (hvem kjører først), skiltgjenkjenning, stopplengde og veimerking
 
 ## Om
 
-- [Om oss](https://teori-test.no/laeringsressurser/om-oss): Uavhengig læringsressurs, ikke tilknyttet Statens vegvesen
+- [Om oss](https://teori-test.no/laeringsressurser/om-oss/): Uavhengig læringsressurs, ikke tilknyttet Statens vegvesen
 - [Sitemap](https://teori-test.no/sitemap.xml)

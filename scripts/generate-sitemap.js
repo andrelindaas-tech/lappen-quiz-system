@@ -137,8 +137,10 @@ function generateSitemap() {
   xml += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">\n';
 
   for (const url of urls) {
+    // Netlify 301-redirecter mappebaserte URL-er til versjonen med skråstrek — sitemap må matche canonical
+    const locWithSlash = url.loc.endsWith('/') ? url.loc : url.loc + '/';
     xml += '    <url>\n';
-    xml += `        <loc>${BASE_URL}${url.loc}</loc>\n`;
+    xml += `        <loc>${BASE_URL}${locWithSlash}</loc>\n`;
     xml += `        <lastmod>${TODAY}</lastmod>\n`;
     xml += `        <changefreq>${url.changefreq}</changefreq>\n`;
     xml += `        <priority>${url.priority}</priority>\n`;
