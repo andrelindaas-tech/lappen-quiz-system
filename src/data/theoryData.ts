@@ -52,7 +52,7 @@ export const theoryTopics: TheoryTopic[] = [
             {
                 title: '1. Grunnregelen: Høyreregelen',
                 type: 'text',
-                content: 'Den viktigste regelen i trafikken er høyreregelen: Du har vikeplikt for kjøretøy som kommer fra høyre, med mindre noe annet er bestemt av skilt eller oppmerking.\n- Hvor gjelder den? I alle kryss uten vikepliktskilt, stoppskilt eller forkjørsvei.\n- Viktig om T-kryss: Høyreregelen gjelder også i umerkede T-kryss. Selv om du kjører rett frem på den gjennomgående veien, må du vike for biler som kommer fra høyre i krysset.\n\n![Illustrasjon av høyreregelen der grønn bil viker for blå bil fra høyre](/hoyreregelen.png)'
+                content: 'Den viktigste regelen i trafikken er høyreregelen: Du har vikeplikt for kjøretøy som kommer fra høyre, med mindre noe annet er bestemt av skilt eller oppmerking.\n- Hvor gjelder den? I alle kryss uten [vikepliktskilt](/trafikkskilt/vikeplikt-og-forkjorsskilt), stoppskilt eller forkjørsvei.\n- Viktig om T-kryss: Høyreregelen gjelder også i umerkede T-kryss. Selv om du kjører rett frem på den gjennomgående veien, må du vike for biler som kommer fra høyre i krysset.\n\n![Illustrasjon av høyreregelen der grønn bil viker for blå bil fra høyre](/hoyreregelen.png)'
             },
             {
                 title: '2. Myndighetspyramiden: Hva gjelder når?',
@@ -222,6 +222,11 @@ export const theoryTopics: TheoryTopic[] = [
                 content: 'Reaksjonslengde = (80 ÷ 10) × 3 = 24 meter\nBremselengde = (80 ÷ 10)² ÷ 2 = 32 meter\nStopplengde = 24 + 32 = 56 meter\n\nDet betyr at du trenger minst 56 meter for å stoppe helt!'
             },
             {
+                title: 'Hvorfor står det 24 meter og ikke 22?',
+                type: 'info',
+                content: 'Ser du 22 meter i andre kilder for reaksjonslengden i 80 km/t, er begge tall riktige — de svarer bare på litt ulike spørsmål.\n\n**Eksakt fysikk:** 80 km/t er 22,2 meter i sekundet. Ett sekunds reaksjonstid gir da 22,2 meter.\n\n**Huskeregelen på teoriprøven:** fart delt på 10, ganget med 3. Det gir 8 × 3 = 24 meter. Regelen runder bevisst opp, slik at du aldri undervurderer avstanden når du regner i hodet.\n\nVi bruker huskeregelen i tabellene fordi det er den du skal kunne på prøven. Skal du regne eksakt, deler du farten på 3,6 og ganger med reaksjonstiden i sekunder.'
+            },
+            {
                 title: 'Viktig å huske',
                 type: 'warning',
                 content: 'Det er særlig to ting som gjør bremselengden mye lengre: høyere fart og dårligere veigrep.\n\n### 1. Når farten dobles, firedobles bremselengden\n\nPå tørr vei øker bremselengden kraftig når farten øker. Dobler du farten, blir bremselengden omtrent fire ganger så lang.\n\n![Illustrasjon som viser at når farten dobles, firedobles bremselengden](/bremselengde-dobbel-fart.png)\n\n*Når farten dobles, blir bremselengden fire ganger så lang. Dette er en av de viktigste huskereglene til teoriprøven.*\n\n### 2. Dårlig føre gjør bremselengden enda lengre\n\nPå våt vei kan bremselengden bli omtrent dobbelt så lang som på tørr vei. På snø og is kan den bli mange ganger lengre. Ved 80 km/t kan stopplengden på is bli over 300 meter.\n\n**Husk forskjellen:**\n\n* Høyere fart øker bremselengden fordi bilen har mer bevegelsesenergi.\n* Dårlig føre øker bremselengden fordi dekkene får dårligere grep.'
@@ -286,6 +291,11 @@ export const theoryTopics: TheoryTopic[] = [
                 answer: "Ved 50 km/t er reaksjonslengden 15 meter og bremselengden 12,5 meter på tørr vei. Total stopplengde er 27,5 meter."
             }
         ],
+        sources: {
+            title: 'Kilder og grunnlag for tallene',
+            type: 'text',
+            content: '- **Statens vegvesen:** [Temaliste til teoriprøve klasse B](https://www.vegvesen.no/globalassets/forerkort/ta-forerkort/temaliste-til-teoriprove-klasse-b-bokmal.pdf) — reaksjonstid, bremselengde og stopplengde er del av pensum.\n- **Trygg Trafikk:** [Bremselengde- og kollisjonskalkulator](https://www.tryggtrafikk.no/ung/bremselengde/)\n- **Beregningsgrunnlag:** bremselengde er regnet med huskeregelen (fart ÷ 10)² ÷ 2 på tørr asfalt, som tilsvarer en friksjonskoeffisient på omtrent 0,8. Reaksjonslengden bruker huskeregelen (fart ÷ 10) × 3 ved ett sekunds reaksjonstid.'
+        },
         miniQuiz: [
             {
                 question: "Hva er bremselengden din om du nødbremser på tørr asfalt og kjører 60 km/t?",
@@ -342,7 +352,7 @@ export const theoryTopics: TheoryTopic[] = [
             {
                 title: 'Hva er myndighetspyramiden?',
                 type: 'text',
-                content: 'I trafikken vil du ofte oppleve at ulike signaler gir deg motstridende beskjeder. Hvem skal du egentlig høre på? Kanskje ruller du frem mot et travelt veikryss hvor trafikklyset lyser knallgrønt, samtidig som det står et tydelig vikepliktskilt montert på den samme stolpen. For å gjøre det enda mer krevende, står det kanskje en politibetjent midt i krysset og signaliserer at du må stoppe.\n\nLøsningen på dette potensielle kaoset er et av de viktigste fundamentene i trafikkopplæringen. Noen kaller den også trafikkpyramiden, men prinsippet er det samme: det handler om hva som har høyest myndighet i trafikken.'
+                content: 'I trafikken vil du ofte oppleve at ulike signaler gir deg motstridende beskjeder. Hvem skal du egentlig høre på? Kanskje ruller du frem mot et travelt veikryss hvor trafikklyset lyser knallgrønt, samtidig som det står et tydelig [vikepliktskilt](/trafikkskilt/vikeplikt-og-forkjorsskilt) montert på den samme stolpen. For å gjøre det enda mer krevende, står det kanskje en politibetjent midt i krysset og signaliserer at du må stoppe.\n\nLøsningen på dette potensielle kaoset er et av de viktigste fundamentene i trafikkopplæringen. Noen kaller den også trafikkpyramiden, men prinsippet er det samme: det handler om hva som har høyest myndighet i trafikken.'
             },
             {
                 title: 'Nivå 1: Politi og manuell dirigering (Øverste myndighet)',
@@ -496,42 +506,42 @@ export const theoryTopics: TheoryTopic[] = [
             {
                 title: 'Lettere å huske når du ser og prøver selv',
                 type: 'tip',
-                content: 'Linjene er lettere å skille når du ser dem i praksis: lenger ned på siden finner du bilder av hver linjetype og en interaktiv guide der du klikker på linjene i et veikryss. Vil du teste deg med en gang? Prøv [veimerking-spillet](/laeringsspill/veimerking) eller ta [veimerking-quizen](/quiz/veimerking).'
+                content: 'Linjene er lettere å skille når du ser dem i praksis: lenger ned på siden finner du bilder av de viktigste linjetypene og en interaktiv guide der du klikker på linjene i et veikryss. Vil du teste deg med en gang? Prøv [veimerking-spillet](/laeringsspill/veimerking) eller ta [veimerking-quizen](/quiz/veimerking).'
             },
             {
                 title: 'Gul og hvit veimerking',
                 type: 'text',
-                content: 'Fargen på linjen gir deg viktig informasjon.\n\nGul veimerking brukes vanligvis mot eller mellom motgående trafikkretninger. Den markerer grensen mellom kjørefelt der trafikken går i motsatte retninger. Gul oppmerking kan også brukes ved midlertidig oppmerking (for eksempel ved vegarbeid).\n\nHvit veimerking brukes vanligvis for å skille kjørefelt i samme retning (der trafikken går samme vei), markere kantlinjer eller vise oppmerking i vegkryss, gangfelt og spesielle felt.\n\n*Vanlige misforståelser:* Mange tror at gul alltid betyr forbud og hvit alltid betyr "fritt fram". Det stemmer ikke. Du må se på både farge, linjetype (heltrukken eller stiplet) og den konkrete situasjonen.'
+                content: 'Fargen på linjen gir deg viktig informasjon.\n\nGul veimerking brukes vanligvis mot eller mellom motgående trafikkretninger. Den markerer grensen mellom kjørefelt der trafikken går i motsatte retninger. Gul oppmerking kan også brukes ved midlertidig oppmerking (for eksempel ved vegarbeid).\n\nHvit veimerking brukes vanligvis for å skille kjørefelt i samme retning (der trafikken går samme vei), markere kantlinjer eller vise oppmerking i vegkryss, gangfelt og spesielle felt.\n\nPå illustrasjonene lenger ned kan du bruke retningspilene som huskeregel: peker pilene mot hverandre, skiller linjen motgående trafikk og er gul. Peker de samme vei, skiller den kjørefelt i samme retning og er hvit.\n\n*Vanlige misforståelser:* Mange tror at gul alltid betyr forbud og hvit alltid betyr "fritt fram". Det stemmer ikke. Du må se på både farge, linjetype (heltrukken eller stiplet) og den konkrete situasjonen.'
             },
             {
-                title: 'Hvite linjer — de vanligste',
+                title: 'Kjørefeltlinje og kantlinje',
                 type: 'table',
-                content: '<div style="display:flex;flex-direction:column;gap:1.5rem"><div><strong style="font-size:1rem;color:var(--color-text)">Kjørefeltlinje (stiplet hvit)</strong><div style="background:#2d2d2d;border-radius:6px;padding:12px 16px;margin:8px 0;position:relative;overflow:hidden"><div style="font-size:10px;color:#999;margin-bottom:6px">→ Felt A</div><div style="height:3px;background:repeating-linear-gradient(90deg,white 0px,white 20px,transparent 20px,transparent 32px);border-radius:2px"></div><div style="font-size:10px;color:#999;margin-top:6px">→ Felt B</div></div><p style="color:var(--color-text-light);line-height:1.6;margin:0">Den vanligste linjen på norske veier. Skiller kjørefelt i samme kjøreretning. Du kan krysse den når det er trygt og lovlig — for eksempel ved feltskifte eller forbikjøring der forholdene tillater det.</p></div><div><strong style="font-size:1rem;color:var(--color-text)">Sperrelinje (heltrukken hvit)</strong><div style="background:#2d2d2d;border-radius:6px;padding:12px 16px;margin:8px 0"><div style="font-size:10px;color:#999;margin-bottom:6px">→ Felt A</div><div style="height:3px;background:white;border-radius:2px"></div><div style="font-size:10px;color:#999;margin-top:6px">→ Felt B</div></div><p style="color:var(--color-text-light);line-height:1.6;margin:0">Forbyr overkjøring. Du har ikke lov til å krysse en hvit sperrelinje, hverken for å bytte felt eller kjøre forbi andre. Den brukes der sikt eller trafikkforhold gjør forbikjøring farlig. [Les mer om når forbikjøring er forbudt](/laeringsressurser/forbikjoring).</p></div><div><strong style="font-size:1rem;color:var(--color-text)">Dobbel heltrukken linje</strong><div style="background:#2d2d2d;border-radius:6px;padding:12px 16px;margin:8px 0"><div style="font-size:10px;color:#999;margin-bottom:6px">→ Din retning</div><div style="height:2.5px;background:white;border-radius:2px;margin-bottom:4px"></div><div style="height:2.5px;background:white;border-radius:2px"></div><div style="font-size:10px;color:#999;margin-top:6px">← Motgående trafikk</div></div><p style="color:var(--color-text-light);line-height:1.6;margin:0">Dobbel heltrukken linje betyr at trafikk fra begge retninger skal holde seg på sin side av linjen. Du skal ikke krysse den for feltskifte eller forbikjøring.</p></div><div><strong style="font-size:1rem;color:var(--color-text)">Kombinerte linjer (én stiplet + én heltrukken)</strong><div style="background:#2d2d2d;border-radius:6px;padding:12px 16px;margin:8px 0"><div style="font-size:10px;color:#9fe1cb;margin-bottom:6px">→ Kan krysse (stiplet side)</div><div style="height:2.5px;background:repeating-linear-gradient(90deg,white 0px,white 16px,transparent 16px,transparent 26px);border-radius:2px;margin-bottom:4px"></div><div style="height:2.5px;background:white;border-radius:2px"></div><div style="font-size:10px;color:#f09595;margin-top:6px">← Kan IKKE krysse (heltrukken side)</div></div><p style="color:var(--color-text-light);line-height:1.6;margin:0">Her gjelder regelen for linjen nærmest deg. Kjører du på siden med den stiplete linjen, kan du krysse om det er trygt. Kjører du på siden med den heltrukne, er det forbudt.</p></div></div>'
+                content: '<img src="/images/veimerking-kjorefeltlinje-kantlinje.svg" alt="En vei sett ovenfra med heltrukne hvite kantlinjer langs ytterkantene og en stiplet hvit kjørefeltlinje i midten. Kantlinjen er alltid heltrukken, kjørefeltlinjen har kort strek og langt opphold." style="width:100%;height:auto;border-radius:8px;margin:0 0 0.35rem;" /><p style="font-size:0.85rem;color:var(--color-text-light);text-align:center;margin:0 0 1.25rem;">Kjørefeltlinje 1000 er stiplet. Kantlinje 1012 er heltrukken. En stiplet linje er altså ikke en kantlinje.</p><p style="line-height:1.65;margin:0 0 1rem;"><strong>Kjørefeltlinje (1000)</strong> er den vanligste linjen på norske veier. Den skiller kjørefelt i samme kjøreretning, og kjennes igjen på kort strek og langt opphold. Du kan krysse den når det er trygt og lovlig — for eksempel ved feltskifte eller <a href="/laeringsressurser/forbikjoring" style="color:var(--color-primary);font-weight:600;text-decoration:none;">forbikjøring</a> der forholdene tillater det.</p><p style="line-height:1.65;margin:0;"><strong>Kantlinje (1012)</strong> markerer kjørebanens ytterkant. Den er alltid heltrukken, og den er ikke et forbud — den viser deg hvor kjørebanen slutter. Derfor er «stiplet kantlinje» en selvmotsigelse: er linjen stiplet, er det en kjørefeltlinje.</p>'
             },
             {
                 title: 'Hvit sperrelinje',
                 type: 'text',
-                content: 'En hvit sperrelinje er en heltrukken hvit linje som skiller kjørefelt i samme kjøreretning. Den brukes der det kan være farlig eller uønsket å skifte felt, for eksempel før kryss, ved dårlig oversikt eller der trafikken må holdes i bestemte felt.\n\nDu skal som hovedregel ikke kjøre på eller over en hvit sperrelinje. Det betyr at du ikke skal bruke den til feltskifte eller [forbikjøring](/laeringsressurser/forbikjoring). Les mer om [reglene for forbikjøring](/laeringsressurser/forbikjoring).\n\nBrudd på sperrelinje kan også være relevant for [bøter og forelegg](/laeringsressurser/boter-og-forelegg), og enkelte trafikkovertredelser kan gi [prikker på førerkortet](/laeringsressurser/prikker-pa-forerkortet).\n\n*Vanlige misforståelser:* Hvit sperrelinje gjelder ikke bare forbikjøring. Den forbyr også vanlige feltskifter før for eksempel kryss eller i tunneler.'
+                content: '![Hvit og gul sperrelinje sett ovenfra. Hvit sperrelinje skiller kjørefelt i samme kjøreretning, gul sperrelinje skiller motgående kjøreretninger. Begge er heltrukne.](/images/veimerking-sperrelinje.svg)\n*Sperrelinje 1004: hvit skiller kjørefelt i samme retning, gul skiller motgående retninger. Retningspilene viser forskjellen.*\n\nBildet over viser begge variantene.\n\nGul sperrelinje skiller motgående kjøreretninger, og der er regelen strengere: du skal aldri kjøre på eller til venstre for den.\n\nHvit sperrelinje er en heltrukken hvit linje som skiller kjørefelt i samme kjøreretning. Den brukes der det kan være farlig eller uønsket å skifte felt, for eksempel før kryss, ved dårlig oversikt eller der trafikken må holdes i bestemte felt.\n\nDu skal som hovedregel ikke kjøre på eller over en hvit sperrelinje. Det betyr at du ikke skal bruke den til feltskifte eller [forbikjøring](/laeringsressurser/forbikjoring). Les mer om [reglene for forbikjøring](/laeringsressurser/forbikjoring).\n\nBrudd på sperrelinje kan også være relevant for [bøter og forelegg](/laeringsressurser/boter-og-forelegg), og enkelte trafikkovertredelser kan gi [prikker på førerkortet](/laeringsressurser/prikker-pa-forerkortet).\n\n*Vanlige misforståelser:* Hvit sperrelinje gjelder ikke bare forbikjøring. Den forbyr også vanlige feltskifter før for eksempel kryss eller i tunneler.'
             },
             {
                 title: 'Gul varsellinje',
                 type: 'table',
-                content: '<p style="color:var(--color-text-light); line-height:1.6; margin-bottom:1.5rem;">Gul varsellinje brukes mellom motgående trafikkretninger og varsler ofte at sikten eller forholdene gjør forbikjøring risikabelt, eller at du nærmer deg sperrelinje. Den betyr ikke automatisk forbud mot å krysse, men du må vurdere om det er trygt og lovlig.</p><div style="background:#2d2d2d; border-radius:8px; padding:20px; margin:16px 0; max-width:600px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);"><div style="font-size:0.85rem; font-weight:500; color:var(--color-text-light); margin-bottom:10px; display:flex; justify-content:space-between;"><span>← Motgående trafikk</span><span>Din retning →</span></div><svg viewBox="0 0 400 80" style="width:100%; height:auto; display:block; background:#1a1a1a; border-radius:6px; border:1px solid #333;"><line x1="0" y1="4" x2="400" y2="4" stroke="#ffffff" stroke-width="4" /><line x1="0" y1="76" x2="400" y2="76" stroke="#ffffff" stroke-width="4" /><path d="M 120 22 L 80 22 M 92 15 L 80 22 L 92 29" stroke="rgba(255, 255, 255, 0.45)" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round" /><path d="M 280 58 L 320 58 M 308 51 L 320 58 L 308 65" stroke="rgba(255, 255, 255, 0.45)" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round" /><line x1="0" y1="40" x2="400" y2="40" stroke="#ffd100" stroke-width="5" stroke-dasharray="48, 16" /></svg></div><p style="color:var(--color-text-light); line-height:1.6; margin-top:1.5rem;"><em>Vanlige misforståelser:</em> En gul varsellinje er ikke et absolutt kryssingsforbud på samme måte som en sperrelinje, men den varsler at forbikjøring er risikabelt og krever ekstra aktsomhet og sikkerhetsvurdering.</p>'
+                content: '<img src="/images/veimerking-varsellinje.svg" alt="Gul og hvit varsellinje sett ovenfra. Varsellinje har lang strek og kort opphold. Gul varsellinje betyr at sikten er for kort til vanlig forbikjøring, hvit varsellinje varsler fare ved å skifte kjørefelt." style="width:100%;height:auto;border-radius:8px;margin:0 0 0.35rem;" /><p style="font-size:0.85rem;color:var(--color-text-light);text-align:center;margin:0 0 1.25rem;">Varsellinje 1002: lang strek, kort opphold — motsatt av kjørefeltlinjen.</p><p style="color:var(--color-text-light); line-height:1.6; margin-bottom:1.5rem;">Gul varsellinje brukes mellom motgående trafikkretninger og varsler ofte at sikten eller forholdene gjør forbikjøring risikabelt, eller at du nærmer deg sperrelinje. Den betyr ikke automatisk forbud mot å krysse, men du må vurdere om det er trygt og lovlig.</p><p style="color:var(--color-text-light); line-height:1.6; margin-top:1.5rem;"><em>Vanlige misforståelser:</em> En gul varsellinje er ikke et absolutt kryssingsforbud på samme måte som en sperrelinje, men den varsler at forbikjøring er risikabelt og krever ekstra aktsomhet og sikkerhetsvurdering.</p>'
             },
             {
                 title: 'Hvit varsellinje',
                 type: 'table',
-                content: '<p style="color:var(--color-text-light); line-height:1.6; margin-bottom:1.5rem;">Hvit varsellinje brukes ved hvit oppmerking, typisk mellom kjørefelt i samme kjøreretning eller der trafikken går samme vei. Den varsler om fare eller spesielle forhold ved feltskifte.</p><p style="color:var(--color-text-light); line-height:1.6; margin-bottom:1.5rem;">Den kan ligne på en vanlig feltlinje, men varsellinjen har et annet mønster med lengre streker og kortere mellomrom. Akkurat som den gule varsellinjen, betyr ikke en hvit varsellinje automatisk at det er forbudt å krysse den, men den signaliserer at du må være ekstra på vakt før du skifter felt.</p><div style="background:#2d2d2d; border-radius:8px; padding:20px; margin:16px 0; max-width:600px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);"><div style="font-size:0.85rem; font-weight:500; color:var(--color-text-light); margin-bottom:10px; display:flex; justify-content:space-between;"><span>Felt A (Din retning) →</span><span>Felt B (Samme retning) →</span></div><svg viewBox="0 0 400 80" style="width:100%; height:auto; display:block; background:#1a1a1a; border-radius:6px; border:1px solid #333;"><line x1="0" y1="4" x2="400" y2="4" stroke="#ffffff" stroke-width="4" /><line x1="0" y1="76" x2="400" y2="76" stroke="#ffffff" stroke-width="4" /><path d="M 80 22 L 120 22 M 108 15 L 120 22 L 108 29" stroke="rgba(255, 255, 255, 0.45)" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round" /><path d="M 280 58 L 320 58 M 308 51 L 320 58 L 308 65" stroke="rgba(255, 255, 255, 0.45)" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round" /><line x1="0" y1="40" x2="400" y2="40" stroke="#ffffff" stroke-width="5" stroke-dasharray="48, 16" /></svg></div><p style="color:var(--color-text-light); line-height:1.6; margin-top:1rem;"><em>Vanlige misforståelser:</em> Mange forveksler hvit varsellinje med en vanlig kjørefeltlinje og utfører feltskifter uten ekstra oppmerksomhet. Se alltid etter lengden på strekene!</p>'
+                content: '<p style="color:var(--color-text-light); line-height:1.6; margin-bottom:1.5rem;">Hvit varsellinje brukes ved hvit oppmerking, typisk mellom kjørefelt i samme kjøreretning eller der trafikken går samme vei. Den varsler om fare eller spesielle forhold ved feltskifte.</p><p style="color:var(--color-text-light); line-height:1.6; margin-bottom:1.5rem;">Den kan ligne på en vanlig feltlinje, men varsellinjen har et annet mønster med lengre streker og kortere mellomrom. Akkurat som den gule varsellinjen, betyr ikke en hvit varsellinje automatisk at det er forbudt å krysse den, men den signaliserer at du må være ekstra på vakt før du skifter felt.</p><p style="color:var(--color-text-light); line-height:1.6; margin-bottom:1.5rem;">Se illustrasjonen over: den hvite varsellinjen er panelet til høyre. Legg merke til at begge pilene peker samme vei — hvit oppmerking betyr kjørefelt i samme kjøreretning.</p><p style="color:var(--color-text-light); line-height:1.6; margin-top:1rem;"><em>Vanlige misforståelser:</em> Mange forveksler hvit varsellinje med en vanlig kjørefeltlinje og utfører feltskifter uten ekstra oppmerksomhet. Se alltid etter lengden på strekene!</p>'
             },
             {
                 title: 'Kombinerte linjer',
                 type: 'text',
-                content: 'Kombinert linje består av to linjer ved siden av hverandre (for eksempel en stiplet linje og en heltrukken linje). Da gjelder alltid regelen for den linjen som ligger nærmest din side av veien.\n\nHvis den stiplede linjen ligger nærmest din side, kan du krysse linjene når det er trygt og lovlig. Hvis den heltrukne linjen ligger nærmest din side, er det strengt forbudt å krysse eller kjøre over linjene.\n\n*Vanlige misforståelser:* Mange glemmer å sjekke hvilken linje som ligger nærmest eget kjøretøy, og antar feilaktig at de ikke har lov til å krysse i det hele tatt, eller omvendt.'
+                content: '![Kombinert linje sett ovenfra med bilens plassering markert. Til venstre ligger varsellinjen nærmest bilen og forbikjøring er tillatt. Til høyre ligger sperrelinjen nærmest og forbikjøring er forbudt.](/images/veimerking-kombinert-linje.svg)\n*Kombinert linje 1006: det er linjen nærmest deg som gjelder.*\n\nKombinert linje består av to linjer ved siden av hverandre (for eksempel en stiplet linje og en heltrukken linje). Da gjelder alltid regelen for den linjen som ligger nærmest din side av veien.\n\nHvis den stiplede linjen ligger nærmest din side, kan du krysse linjene når det er trygt og lovlig. Hvis den heltrukne linjen ligger nærmest din side, er det strengt forbudt å krysse eller kjøre over linjene.\n\n*Vanlige misforståelser:* Mange glemmer å sjekke hvilken linje som ligger nærmest eget kjøretøy, og antar feilaktig at de ikke har lov til å krysse i det hele tatt, eller omvendt.'
             },
             {
                 title: 'Vikelinje',
                 type: 'text',
-                content: 'Vikelinje viser hvor du skal vike eller stanse når du har [vikeplikt](/laeringsressurser/vikeplikt). Den består av en rekke hvite trekanter («haifinner») på tvers av kjørebanen og gjerne et vikesymbol i asfalten i forkant.\n\nVikelinjen betyr ikke alltid at du må stoppe helt. Du skal stanse dersom det er nødvendig for å overholde vikeplikten. Hvis det er fri sikt og ingen kryssende trafikk du har vikeplikt for, kan du kjøre videre med tilpasset fart uten å stoppe helt. Les mer i vår [komplette guide til vikeplikt](/laeringsressurser/vikeplikt).\n\n*Vanlige misforståelser:* Noen tror at vikelinje krever full stans uansett trafikk. Det er kun ved stopplinje og stoppskilt at du har stopplikt.'
+                content: '![Vikelinje og sperreområde sett ovenfra. Vikelinje er en rekke hvite trekanter som viser hvor vikeplikten inntrer. Sperreområde er et skravert felt avgrenset av heltrukken linje.](/images/veimerking-vikelinje-sperreomrade.svg)\n*Vikelinje 1022 og sperreområde 1014.*\n\nBildet over viser to ting: vikelinjen til venstre, og et sperreområde til høyre — det siste er forklart i egen seksjon lenger ned.\n\nVikelinje viser hvor du skal vike eller stanse når du har [vikeplikt](/laeringsressurser/vikeplikt). Den består av en rekke hvite trekanter («haifinner») på tvers av kjørebanen og gjerne et vikesymbol i asfalten i forkant.\n\nVikelinjen betyr ikke alltid at du må stoppe helt. Du skal stanse dersom det er nødvendig for å overholde vikeplikten. Hvis det er fri sikt og ingen kryssende trafikk du har vikeplikt for, kan du kjøre videre med tilpasset fart uten å stoppe helt. Les mer i vår [komplette guide til vikeplikt](/laeringsressurser/vikeplikt).\n\n*Vanlige misforståelser:* Noen tror at vikelinje krever full stans uansett trafikk. Det er kun ved stopplinje og stoppskilt at du har stopplikt.'
             },
             {
                 title: 'Stopplinje',
@@ -541,7 +551,7 @@ export const theoryTopics: TheoryTopic[] = [
             {
                 title: 'Sperreområde',
                 type: 'text',
-                content: 'Sperreområde er et markert område i kjørebanen, ofte med skrå, hvite eller gule striper (skravering). Det viser et område du ikke skal kjøre i, over, eller bruke som kjørefelt.\n\nSperreområder brukes for å lede trafikken riktig, skille trafikkstrømmer eller beskytte områder der det ikke er trygt eller ønskelig å kjøre.\n\n*Vanlige misforståelser:* Noen tror at sperreområdet kan brukes til å snike forbi kø, eller som et ekstra kjørefelt når man skal svinge. Det er strengt forbudt.'
+                content: 'Du finner sperreområdet illustrert i bildet under «Vikelinje» over — det skraverte feltet til høyre.\n\nSperreområde er et markert område i kjørebanen, ofte med skrå, hvite eller gule striper (skravering). Det viser et område du ikke skal kjøre i, over, eller bruke som kjørefelt.\n\nSperreområder brukes for å lede trafikken riktig, skille trafikkstrømmer eller beskytte områder der det ikke er trygt eller ønskelig å kjøre.\n\n*Vanlige misforståelser:* Noen tror at sperreområdet kan brukes til å snike forbi kø, eller som et ekstra kjørefelt når man skal svinge. Det er strengt forbudt.\n\n**Dobbel heltrukken linje** hører hjemme her: to parallelle sperrelinjer med under 100 cm mellomrom og fresing mellom dem regnes som sperreområde etter skiltforskriften. Uansett gjelder det samme praktiske poenget — trafikk fra begge retninger skal holde seg på sin side, og du skal ikke krysse for feltskifte eller forbikjøring.'
             },
             {
                 title: 'Pilmerking',
@@ -706,7 +716,7 @@ export const theoryTopics: TheoryTopic[] = [
             {
                 title: 'Kort forklart',
                 type: 'info',
-                content: 'Når du skal inn i en rundkjøring, har du normalt vikeplikt for trafikk som allerede er inne i rundkjøringen. Du må senke farten, følge vikepliktskilt og vikepliktslinje, og bare kjøre inn når det er trygt.\n\nDu skal blinke til høyre når du skal ut av rundkjøringen. Skal du langt rundt, kan venstreblink før og inne i rundkjøringen hjelpe andre å forstå hvor du skal, men det viktigste er at du alltid blinker riktig ut.'
+                content: 'Når du skal inn i en rundkjøring, har du normalt vikeplikt for trafikk som allerede er inne i rundkjøringen. Du må senke farten, følge [vikepliktskilt](/trafikkskilt/vikeplikt-og-forkjorsskilt) og vikepliktslinje, og bare kjøre inn når det er trygt.\n\nDu skal blinke til høyre når du skal ut av rundkjøringen. Skal du langt rundt, kan venstreblink før og inne i rundkjøringen hjelpe andre å forstå hvor du skal, men det viktigste er at du alltid blinker riktig ut.'
             },
             {
                 title: 'Hovedregelen: Vikeplikt ved innkjøring',
@@ -908,7 +918,7 @@ export const theoryTopics: TheoryTopic[] = [
             {
                 title: 'Forbikjøringsforbud-skiltet',
                 type: 'info',
-                content: 'Skilt 334, forbikjøringsforbud, betyr at du ikke har lov til å kjøre forbi motorvogn med flere enn to hjul.\n\n![Forbikjøringsforbud skilt 334 med rød bil og svart bil](/signs/skilt-334.svg)\n*Skilt 334: Forbikjøringsforbud. Du kan ikke kjøre forbi motorvogn med flere enn to hjul.*\n\nForbudet gjelder frem til det blir opphevet av skilt, eller over strekningen som er angitt med underskilt.\n\nViktig nyanse:\nForbudsskiltet gjelder forbikjøring av motorvogn med flere enn to hjul. Det betyr ikke automatisk at enhver passering av en tohjuling er forbudt. Men du må fortsatt følge alle andre regler: sikt, avstand, fart, veimerking og sikkerhet.\n\nLurer du på flere trafikkskilt? Se vår [komplette skiltguide](/laeringsressurser/skilt) eller prøv [skilt-testen](/quiz/skilt).'
+                content: 'Skilt 334, forbikjøringsforbud, betyr at du ikke har lov til å kjøre forbi motorvogn med flere enn to hjul.\n\n![Forbikjøringsforbud skilt 334 med rød bil og svart bil](/signs/skilt-334.svg)\n*Skilt 334: Forbikjøringsforbud. Du kan ikke kjøre forbi motorvogn med flere enn to hjul.*\n\nForbudet gjelder frem til det blir opphevet av skilt, eller over strekningen som er angitt med [underskilt](/trafikkskilt/underskilt).\n\nViktig nyanse:\nForbudsskiltet gjelder forbikjøring av motorvogn med flere enn to hjul. Det betyr ikke automatisk at enhver passering av en tohjuling er forbudt. Men du må fortsatt følge alle andre regler: sikt, avstand, fart, veimerking og sikkerhet.\n\nLurer du på flere trafikkskilt? Se vår [komplette skiltguide](/laeringsressurser/skilt) eller prøv [skilt-testen](/quiz/skilt).'
             },
             {
                 title: 'Sperrelinje og varsellinje',
@@ -965,8 +975,8 @@ export const theoryTopics: TheoryTopic[] = [
         ],
         faq: [
             {
-                question: 'Er forbikjøring på høyre side lov?',
-                answer: 'Som hovedregel nei. Det er bare lov i bestemte unntak, for eksempel når kjøretøyet foran tydelig skal svinge til venstre, ved tett feltvis kø eller i felt for bestemte trafikanter.'
+                question: 'Er det lov å kjøre forbi på høyre side?',
+                answer: 'Som hovedregel nei — forbikjøring skjer til venstre. På høyre side er det bare lov i bestemte tilfeller: når kjøretøyet foran har plassert seg og gitt tegn for å svinge til venstre, i tett saktegående kø der flere felt beveger seg ulikt, og der feltene har ulike kjøremål — for eksempel eget felt for høyresving. På motorvei i normal fart kan man ikke passere på høyre: du skal tilbake i høyre felt etter forbikjøring, og passere andre på venstre side.'
             },
             {
                 question: 'Er forbikjøring i kryss lov?',
@@ -1188,7 +1198,7 @@ export const theoryTopics: TheoryTopic[] = [
             {
                 title: 'Direkte svar',
                 type: 'info',
-                content: 'Norske trafikkskilt er delt inn i hovedgrupper som fareskilt, vikeplikt- og forkjørsskilt, forbudsskilt, påbudsskilt, opplysningsskilt, serviceskilt, vegvisningsskilt, underskilt og markeringsskilt. Til teoriprøven klasse B bør du først lære form og farge, deretter hva skiltet betyr i trafikken.'
+                content: 'Norske trafikkskilt er delt inn i hovedgrupper som fareskilt, vikeplikt- og [forkjørsskilt](/trafikkskilt/vikeplikt-og-forkjorsskilt), [forbudsskilt](/trafikkskilt/forbudsskilt), [påbudsskilt](/trafikkskilt/pabudsskilt), [opplysningsskilt](/trafikkskilt/opplysningsskilt), [serviceskilt](/trafikkskilt/serviceskilt), [vegvisningsskilt](/trafikkskilt/vegvisningsskilt), [underskilt](/trafikkskilt/underskilt) og [markeringsskilt](/trafikkskilt/markeringsskilt). Til teoriprøven klasse B bør du først lære form og farge, deretter hva skiltet betyr i trafikken.'
             },
             {
                 title: 'Kort forklart',
@@ -1264,7 +1274,7 @@ export const theoryTopics: TheoryTopic[] = [
             {
                 title: 'Fareskilt',
                 type: 'signs',
-                content: 'Fareskilt varsler fare på eller ved veien. De er vanligvis trekantede med rød kant og hvit bunn. Se alle [fareskilt i vår oversikt](/trafikkskilt/fareskilt).\n\nEksempler på fareskilt er barn (142), elg (146) og de spesielle skiltene for planoverganger. Les mer om [regler ved planovergang](/laeringsressurser/planovergang-regler) for å lære hvordan du tolker fareskilt, bom og lyssignaler.\n\n**Viktig teorifelle:** Et fareskilt betyr ikke automatisk lavere fartsgrense. Det betyr at du må tilpasse farten etter faren.',
+                content: '[Fareskilt](/trafikkskilt/fareskilt) varsler fare på eller ved veien. De er vanligvis trekantede med rød kant og hvit bunn. Se alle [fareskilt i vår oversikt](/trafikkskilt/fareskilt).\n\nEksempler på fareskilt er barn (142), elg (146) og de spesielle skiltene for planoverganger. Les mer om [regler ved planovergang](/laeringsressurser/planovergang-regler) for å lære hvordan du tolker fareskilt, bom og lyssignaler.\n\n**Viktig teorifelle:** Et fareskilt betyr ikke automatisk lavere fartsgrense. Det betyr at du må tilpasse farten etter faren.',
                 signs: [
                     {
                         name: 'Fareskilt 142 Barn',
@@ -1951,7 +1961,7 @@ export const theoryTopics: TheoryTopic[] = [
             },
             {
                 question: 'Hvor mange meter fra gangfelt kan man parkere?',
-                answer: 'Du må stå minst 5 meter foran gangfeltet i kjøreretningen. Etter gangfeltet kan parkering være lovlig hvis det ellers er trygt og tillatt.'
+                answer: 'Du må stå minst 5 meter foran gangfeltet i kjøreretningen. Avstanden måles fra oppmerkingen — mangler oppmerkingen, måles den fra skiltstolpen på stedet. Etter gangfeltet kan du parkere hvis det ellers er trygt og tillatt. Regelen står i trafikkreglene § 17 nr. 1 bokstav d, og er gitt for at fører og fotgjenger skal se hverandre i tid.'
             },
             {
                 question: 'Hvor mange meter fra veikryss kan man parkere?',
@@ -2073,14 +2083,14 @@ export const theoryTopics: TheoryTopic[] = [
         seoDescription: 'Lær promillegrensen for bil i Norge, hvordan alkohol påvirker kjøringen, hva som gjelder dagen derpå, og hva du må kunne til teoriprøven.',
         sections: [
             {
-                title: '',
-                type: 'text',
-                content: '![Person med bilnøkkel som lar være å drikke alkohol før bilkjøring.](/images/promille-hero.jpg)\n*Skal du kjøre, er det tryggeste valget å la alkoholen stå.*'
-            },
-            {
                 title: 'Kort forklart',
                 type: 'info',
                 content: '- Promillegrensen for bil i Norge er 0,2 promille.\n- Grensen gjelder alle motorvognførere, også unge førere og ved øvelseskjøring.\n- Du kan være straffbart påvirket selv om du føler deg edru.\n- Alkohol svekker reaksjonsevne, oppmerksomhet og vurderingsevne.\n- Du kan fortsatt ha promille dagen derpå.\n- Er du i tvil, skal du ikke kjøre.'
+            },
+            {
+                title: '',
+                type: 'text',
+                content: '![Person med bilnøkkel som lar være å drikke alkohol før bilkjøring.](/images/promille-hero.jpg)\n*Skal du kjøre, er det tryggeste valget å la alkoholen stå.*'
             },
             {
                 title: 'Hva er promillegrensen i Norge?',
@@ -2090,7 +2100,7 @@ export const theoryTopics: TheoryTopic[] = [
             {
                 title: '',
                 type: 'text',
-                content: '![Infografikk som viser promillegrensen for bilkjøring i Norge på 0,2 promille.](/images/promille-infografikk.jpg)\n*Promillegrensen er 0,2 promille, men det tryggeste er å ikke drikke før du skal kjøre.*'
+                content: '![Infografikk: promillegrensen for bilkjøring i Norge er 0,2 promille. Kjører du med mer enn 0,2 ‰ i blodet, regnes du som påvirket etter vegtrafikkloven § 22. Alkohol svekker reaksjon, oppmerksomhet og vurderingsevne, og du kan ha promille dagen derpå.](/images/promille-infografikk.svg)\n*Promillegrensen er 0,2 promille, men det tryggeste er å ikke drikke før du skal kjøre.*'
             },
             {
                 title: 'Beregning av promille',
@@ -3204,7 +3214,7 @@ En rød pil betyr at du ikke kan kjøre i pilens retning.
                 type: 'text',
                 content: `Blinkende gult lys betyr at signalanlegget ikke regulerer trafikken på vanlig måte. Da skal du kjøre ekstra forsiktig og følge skilt, veimerking og vanlige trafikkregler.
 
-Ved et kryss med blinkende gult lys kan for eksempel vikepliktskilt, stoppskilt eller høyreregelen avgjøre hvem som skal kjøre først.
+Ved et kryss med blinkende gult lys kan for eksempel [vikepliktskilt](/trafikkskilt/vikeplikt-og-forkjorsskilt), stoppskilt eller høyreregelen avgjøre hvem som skal kjøre først.
 
 **Vanlig misforståelse:** Blinkende gult betyr ikke at du har forkjørsrett. Det betyr at du må være ekstra oppmerksom.`
             },
@@ -3376,7 +3386,7 @@ Når du nærmer deg et lyskryss, bør du derfor se etter:
             {
                 title: '1. Kort forklart',
                 type: 'text',
-                content: 'Feltvalg betyr å velge riktig kjørefelt i god tid. Feltskifte betyr at du bytter fra ett felt til et annet, og da har du vikeplikt for trafikken i feltet du skal inn i. Fletting gjelder når to vanlige kjørefelt i samme retning blir til ett; da skal førerne tilpasse farten og slippe hverandre inn vekselvis. Kollektivfelt og sambruksfelt kan bare brukes når skilt og eventuelle underskilt tillater det.'
+                content: 'Feltvalg betyr å velge riktig kjørefelt i god tid. Feltskifte betyr at du bytter fra ett felt til et annet, og da har du vikeplikt for trafikken i feltet du skal inn i. Fletting gjelder når to vanlige kjørefelt i samme retning blir til ett; da skal førerne tilpasse farten og slippe hverandre inn vekselvis. Kollektivfelt og sambruksfelt kan bare brukes når skilt og eventuelle [underskilt](/trafikkskilt/underskilt) tillater det.'
             },
             {
                 title: '2. Hva betyr feltvalg?',
@@ -3401,7 +3411,7 @@ Når du nærmer deg et lyskryss, bør du derfor se etter:
             {
                 title: '6. Påkjøring og akselerasjonsfelt',
                 type: 'text',
-                content: 'Et akselerasjonsfelt, også kalt fartsøkningsfelt, brukes for å komme opp i fart før du kjører inn på en større vei. Dette er vanlig ved påkjøring til motorvei eller motortrafikkvei.\n\nDen viktigste feilen er å kjøre for sakte. Hvis du kommer inn på motorveien med for lav fart, tvinger du andre til å bremse eller skifte felt (les om [reaksjonstid](/laeringsressurser/reaksjonstid) og fartstilpasning). Bruk feltet til å øke farten, observere trafikken og finne en trygg luke.\n\n![Illustrasjon av bil i akselerasjonsfelt som skal inn på motorvei.](/images/feltvalg-akselerasjonsfelt.png)\n*Bruk akselerasjonsfeltet til å komme opp i fart, observere og finne en trygg luke.*\n\nSjekk dette før du legger deg inn:\n- Er det vikepliktskilt, eller er dette en sammenfletting?\n- Er linjen mellom feltene heltrukken eller stiplet? (les om [veimerking](/laeringsressurser/veimerking))\n- Har du nok fart til å passe inn i trafikkflyten? (se [fartsgrenser](/laeringsressurser/fartsgrenser))\n- Har du kontrollert speil og blindsone?\n- Har du gitt tegn i god tid?\n- Er det plass foran eller bak kjøretøyet du skal flette inn ved?\n\nHvis påkjøringen har vikepliktskilt eller kort innkjøring uten reelt akselerasjonsfelt, må du vente til det er trygt å kjøre inn. Ikke bland dette med fletting.'
+                content: 'Et akselerasjonsfelt, også kalt fartsøkningsfelt, brukes for å komme opp i fart før du kjører inn på en større vei. Dette er vanlig ved påkjøring til motorvei eller motortrafikkvei.\n\nDen viktigste feilen er å kjøre for sakte. Hvis du kommer inn på motorveien med for lav fart, tvinger du andre til å bremse eller skifte felt (les om [reaksjonstid](/laeringsressurser/reaksjonstid) og fartstilpasning). Bruk feltet til å øke farten, observere trafikken og finne en trygg luke.\n\n![Illustrasjon av bil i akselerasjonsfelt som skal inn på motorvei.](/images/feltvalg-akselerasjonsfelt.png)\n*Bruk akselerasjonsfeltet til å komme opp i fart, observere og finne en trygg luke.*\n\nSjekk dette før du legger deg inn:\n- Er det [vikepliktskilt](/trafikkskilt/vikeplikt-og-forkjorsskilt), eller er dette en sammenfletting?\n- Er linjen mellom feltene heltrukken eller stiplet? (les om [veimerking](/laeringsressurser/veimerking))\n- Har du nok fart til å passe inn i trafikkflyten? (se [fartsgrenser](/laeringsressurser/fartsgrenser))\n- Har du kontrollert speil og blindsone?\n- Har du gitt tegn i god tid?\n- Er det plass foran eller bak kjøretøyet du skal flette inn ved?\n\nHvis påkjøringen har vikepliktskilt eller kort innkjøring uten reelt akselerasjonsfelt, må du vente til det er trygt å kjøre inn. Ikke bland dette med fletting.'
             },
             {
                 title: '7. Kollektivfelt',
@@ -3573,8 +3583,8 @@ Når du nærmer deg et lyskryss, bør du derfor se etter:
         icon: '🚗',
         shortDescription: 'Førerstøttesystemer kan hjelpe deg med å bremse, holde avstand, varsle om fare eller holde bilen i feltet. Men de erstatter ikke føreren. På teoriprøven er det viktigste å forstå at du fortsatt må følge med, tilpasse farten og gripe inn når systemene ikke fungerer godt nok.',
         color: 'var(--apple-blue)',
-        seoTitle: 'Førerstøttesystemer: ABS, ESP og adaptiv cruise | Teori-test.no',
-        seoDescription: 'Lær hva ABS, ESP, adaptiv cruise control, filholder og nødbrems gjør – og hvorfor du fortsatt har ansvaret som fører. Med teorifeller og miniQuiz.',
+        seoTitle: 'Førerstøttesystemer på teoriprøven – ABS, ESP og eksempler',
+        seoDescription: 'Hva er førerstøttesystemer, og hvilke hjelper når du mister kontroll? Se eksempler på ABS, ESP, filholder og nødbrems – med teorifeller og minitest.',
         sections: [
             {
                 title: 'Kort forklart: Hva er førerstøttesystemer?',
@@ -3582,7 +3592,7 @@ Når du nærmer deg et lyskryss, bør du derfor se etter:
                 content: 'Førerstøttesystemer (ofte kalt ADAS - Advanced Driver Assistance Systems) er elektroniske hjelpemidler i bilen. De kan varsle om fare, hjelpe med styring og fart, eller gripe inn i kritiske situasjoner. Hovedregelen til teoriprøven er enkel:\n\n**Systemene hjelper føreren, men de erstatter aldri førerens ansvar.**\n\nDet betyr at uansett hvilke systemer som er aktivert i bilen, er det du som fører som er ansvarlig for bilens plassering, fart, sikkerhet og eventuelle regelbrudd.\n\n![Illustrasjon av førerstøttesystemer i bil, med ABS, ESP, adaptiv cruise control, filholder, blindsonevarsler og automatisk nødbrems.](/images/forerstottesystemer_oversikt.png)\n*En oversikt over de viktigste førerstøttesystemene i en moderne bil, og hvor de hjelper deg under kjøring.*'
             },
             {
-                title: 'Tabell: Vanlige førerstøttesystemer på teoriprøven',
+                title: 'Eksempler på førerstøttesystemer',
                 type: 'table',
                 content: '<div style="overflow-x: auto; -webkit-overflow-scrolling: touch; margin-top: 1rem;"><table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem;"><thead><tr style="background-color: var(--color-surface); border-bottom: 2px solid var(--color-border);"><th style="padding: 12px 8px;">System</th><th style="padding: 12px 8px;">Hva det hjelper med</th><th style="padding: 12px 8px;">Hva du fortsatt må gjøre</th><th style="padding: 12px 8px;">Vanlig teorifelle</th></tr></thead><tbody><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>ABS</b> (Blokkeringsfrie bremser)</td><td style="padding: 12px 8px;">Hindrer at hjulene låser seg ved hard bremsing, slik at du kan styre.</td><td style="padding: 12px 8px;">Bremse hardt og holde trykket på pedalen, og styr unna faren.</td><td style="padding: 12px 8px;">Å tro at ABS-bremser alltid gir kortere bremselengde. (På løs snø eller grus kan den bli lengre).</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>ESP / Antiskrens</b></td><td style="padding: 12px 8px;">Hjelper med å stabilisere bilen ved skrensfare ved å bremse enkelthjul.</td><td style="padding: 12px 8px;">Tilpass farten etter forholdene og unngå brå rattbevegelser.</td><td style="padding: 12px 8px;">Å tro at ESP opphever glatt føre og tillater høyere fart i svinger.</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Antispinn</b></td><td style="padding: 12px 8px;">Reduserer hjulspinn ved igangkjøring eller akselerasjon.</td><td style="padding: 12px 8px;">Kjør rolig, gi forsiktig gass og tilpass deg glatt underlag.</td><td style="padding: 12px 8px;">Å tro at bilen får bedre faktisk veigrep enn dekkene og føret tillater.</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Adaptiv cruise control</b></td><td style="padding: 12px 8px;">Holder valgt fart og tilpasser avstanden til kjøretøyet foran.</td><td style="padding: 12px 8px;">Følg med på trafikken, vær klar til å bremse selv, og tilpass farten etter sikt og føre.</td><td style="padding: 12px 8px;">Å tro at systemet fungerer som en autopilot og reagerer riktig i alle situasjoner.</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Filholder / Kjørefeltassistent</b></td><td style="padding: 12px 8px;">Varsler eller styrer forsiktig for å holde bilen innenfor kjørefeltet.</td><td style="padding: 12px 8px;">Hold hendene på rattet, se på veien, styr selv og bruk blinklys ved filskifte.</td><td style="padding: 12px 8px;">Å tro at systemet fungerer like godt uten synlige linjer i veibanen.</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Automatisk nødbrems</b></td><td style="padding: 12px 8px;">Varsler og bremser automatisk hvis en kollisjon er nært forestående.</td><td style="padding: 12px 8px;">Hold tilstrekkelig avstand, les trafikkbildet fremover og brems tidlig.</td><td style="padding: 12px 8px;">Å tro at nødbremsen alltid oppdager alle hindringer og avverger enhver kollisjon.</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Blindsonevarsler</b></td><td style="padding: 12px 8px;">Varsler med lys/lyd hvis det ligger et kjøretøy i blindsonen din.</td><td style="padding: 12px 8px;">Sjekk alltid speil og ta skulderblikk før du skifter kjørefelt.</td><td style="padding: 12px 8px;">Å stole blindt på varsellampen og droppe skulderblikket (kan overse raske MC/sykler).</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Ryggekamera / Parkeringssensor</b></td><td style="padding: 12px 8px;">Hjelper deg å oppdage hindringer bak bilen under rygging.</td><td style="padding: 12px 8px;">Se deg rundt i alle retninger, sjekk speil og blindsoner før og under rygging.</td><td style="padding: 12px 8px;">Å tro at kameraet viser alt og erstatter plikten til fysisk observasjon.</td></tr><tr><td style="padding: 12px 8px;"><b>Skiltgjenkjenning / ISA</b></td><td style="padding: 12px 8px;">Leser fartsskilt og kan varsle eller tilpasse bilens fartsgrense automatisk.</td><td style="padding: 12px 8px;">Følg med på fysiske skilt, og tilpass farten etter vær, sikt og føre.</td><td style="padding: 12px 8px;">Å tro at bilen alltid viser riktig fartsgrense (systemet kan feile på midlertidige skilt).</td></tr></tbody></table></div>'
             },
@@ -3590,6 +3600,16 @@ Når du nærmer deg et lyskryss, bør du derfor se etter:
                 title: 'ABS og ESP: De viktigste sikkerhetssystemene',
                 type: 'text',
                 content: 'De to mest kjente og utbredte førerstøttesystemene er ABS og ESP. De jobber aktivt med bilens veigrep under kjøring:\n\n### ABS (Blokkeringsfrie bremser)\nHovedoppgaven til ABS-bremser er å hindre at hjulene låser seg helt når du bremser maksimalt. Hvis hjulene låser seg, mister du all mulighet til å styre bilen. Med ABS kan du bremse maksimalt og samtidig styre unna en hindring. Les mer om hvordan veigrep og fart påvirker [bremselengde og stopplengde](/laeringsressurser/bremselengde).\n\n**Teorifelle:** Mange tror ABS-bremser alltid gir kortere bremselengde. På enkelte underlag, som løs snø eller grus, kan bremselengden bli lengre med ABS. På [glatt føre](/laeringsressurser/glatt-fore) er hovedpoenget at ABS hjelper deg å beholde styringen, ikke at bilen stopper raskere.\n\n### ESP / Antiskrens\nESP (Electronic Stability Program) overvåker bilens retning og hjulenes rotasjon. Hvis bilen begynner å skli (understyring eller overstyring), griper ESP inn ved å bremse ett eller flere hjul individuelt for å rette opp bilen.\n\n**Teorifelle:** ESP kan hjelpe deg med å hente inn en skrens, men systemet opphever ikke fysikkens lover. Kjører du for fort inn i en sving på glatt føre, vil bilen skli ut uansett om ESP er aktivert eller ikke.'
+            },
+            {
+                title: 'Hvilke systemer hjelper når du mister kontroll?',
+                type: 'info',
+                content: 'Dette er et klassisk teorispørsmål, så her er svaret samlet:\n\n- **ESP (antiskrens)** stabiliserer bilen når den begynner å skli, ved å bremse enkelthjul.\n- **ABS** hindrer at hjulene låser seg ved hard bremsing — slik at du beholder styringen.\n- **Antispinn** reduserer hjulspinn under akselerasjon på glatt underlag.\n\nFelles for alle: de kan hjelpe deg å gjenvinne kontroll, men de opphever ikke dårlig veigrep eller for høy fart. Riktig svar på prøven handler ofte om nettopp denne begrensningen — les mer om [veigrep og glatt føre](/laeringsressurser/glatt-fore).'
+            },
+            {
+                title: 'Hvordan merker du at systemene griper inn?',
+                type: 'text',
+                content: 'Teoriprøven kan spørre hvordan du *oppdager* at et førerstøttesystem hjelper deg. Slik kjennes de vanligste:\n\n- **ABS**: pulsering eller vibrasjon i bremsepedalen når du bremser hardt — hold pedalen inne, det er systemet som jobber.\n- **ESP/antispinn**: varsellampen blinker i dashbordet, og du kan merke at motorkraften reduseres eller at enkelthjul bremses kort.\n- **Filholder**: vibrasjon i rattet eller et forsiktig styreinngrep når du er i ferd med å forlate kjørefeltet uten blinklys.\n- **Automatisk nødbrems**: varsler først med lyd/lys — og bremser selv hvis du ikke reagerer.\n\nSer du en varsellampe som lyser *konstant* i stedet for å blinke, kan det bety feil i systemet — se [varsellamper i bilen](/laeringsressurser/varsellamper-i-bilen).'
             },
             {
                 title: 'Adaptiv cruise control og filholder: Komfort, ikke selvkjøring',
@@ -3618,6 +3638,14 @@ Når du nærmer deg et lyskryss, bør du derfor se etter:
             }
         ],
         faq: [
+            {
+                question: 'Hvilke førerstøttesystemer hjelper deg når du mister kontroll over bilen?',
+                answer: 'ESP (antiskrens) stabiliserer bilen når den sklir, ABS lar deg beholde styringen under hard bremsing, og antispinn reduserer hjulspinn ved akselerasjon. Husk til prøven: systemene kan hjelpe, men de opphever ikke dårlig veigrep eller for høy fart.'
+            },
+            {
+                question: 'Hvordan oppdager du at førerstøttesystemene hjelper deg?',
+                answer: 'ABS merkes som pulsering i bremsepedalen, ESP og antispinn ved at varsellampen blinker og motorkraften kan reduseres, filholderen ved vibrasjon eller et lett styreinngrep, og automatisk nødbrems varsler med lyd og lys før den eventuelt bremser selv.'
+            },
             {
                 question: 'Hva er førerstøttesystemer?',
                 answer: 'Førerstøttesystemer (ADAS) er elektroniske hjelpemidler i bilen som kan varsle, hjelpe eller gripe inn i bestemte situasjoner, for eksempel ved bremsing, feltplassering, avstand eller rygging.'
@@ -3750,7 +3778,7 @@ export const theoryArticles: TheoryTopic[] = [
             {
                 title: 'Krav: Når kan du ta teoriprøven?',
                 type: 'text',
-                content: 'For klasse B kan du ta teoriprøven fra du er 17,5 år – altså et halvt år før du kan kjøre opp.\n\nFør du møter opp må du ha sendt inn søknad om førerkort på vegvesen.no og fått den godkjent. På trafikkstasjonen må du vise gyldig legitimasjon, ta førerkortfoto og betale gebyret. Du trenger ikke bestille time til teoriprøven på alle trafikkstasjoner, men sjekk din lokale stasjon på vegvesen.no – og husk at drop-in kan ha ventetid.'
+                content: 'For klasse B kan du ta teoriprøven fra du er 17,5 år – altså et halvt år før du kan kjøre opp.\n\nFør du møter opp må du ha sendt inn søknad om førerkort på vegvesen.no og fått den godkjent. På trafikkstasjonen må du vise gyldig legitimasjon, ta førerkortfoto og betale gebyret. Du trenger ikke bestille time til teoriprøven på alle trafikkstasjoner, men sjekk din lokale stasjon på vegvesen.no – og husk at drop-in kan ha ventetid.\n\nGår du på videregående? Da tar du sannsynligvis prøven i skoletiden. Siden 1. august 2025 teller ikke teoriprøven med i fraværsgrensen – se [reglene for gyldig fravær](/laeringsressurser/teoriprove-gyldig-fravaer).'
             },
             {
                 title: 'Hvilke språk kan du ta prøven på?',
@@ -4077,7 +4105,7 @@ export const theoryArticles: TheoryTopic[] = [
             {
                 title: 'Hva betyr den røde varseltrekanten?',
                 type: 'text',
-                content: 'Varseltrekanten på pakningen er et varsel, ikke et forbudsskilt: legemidlet kan påvirke reaksjonsevne, oppmerksomhet eller dømmekraft, og det gjelder egne regler for bilkjøring.\n\nOm du kan kjøre, avhenger av dosen, hvor lenge du har brukt medisinen, og hvordan akkurat du reagerer — mange bruker trekantmerkede medisiner fast og kjører lovlig. Ordningen ble i 2018 knyttet direkte til førerkortforskriftens regler for legemidler.\n\nDet trygge svaret, både på prøven og i livet: **les pakningsvedlegget, og spør lege eller apotek** om hva som gjelder for deg og din dose. Vær ekstra forsiktig de første dagene på en ny medisin.'
+                content: 'Varseltrekanten på pakningen er et varsel, ikke et [forbudsskilt](/trafikkskilt/forbudsskilt): legemidlet kan påvirke reaksjonsevne, oppmerksomhet eller dømmekraft, og det gjelder egne regler for bilkjøring.\n\nOm du kan kjøre, avhenger av dosen, hvor lenge du har brukt medisinen, og hvordan akkurat du reagerer — mange bruker trekantmerkede medisiner fast og kjører lovlig. Ordningen ble i 2018 knyttet direkte til førerkortforskriftens regler for legemidler.\n\nDet trygge svaret, både på prøven og i livet: les pakningsvedlegget, og spør lege eller apotek om hva som gjelder for deg og din dose. Vær ekstra forsiktig de første dagene på en ny medisin.'
             },
             {
                 title: 'Faste grenser — «promillegrenser» for andre stoffer',
@@ -4265,7 +4293,7 @@ export const theoryArticles: TheoryTopic[] = [
             {
                 title: 'Motorvei vs. motortrafikkvei',
                 type: 'text',
-                content: 'Begge er skiltet med egne opplysningsskilt og har de samme forbudene mot myk trafikk, stans, rygging og vending. Forskjellen er standarden:\n\n- **Motorvei:** alltid fysisk adskilte kjøreretninger og planfrie kryss (av- og påkjøringsramper). Fartsgrense opptil 110 km/t.\n- **Motortrafikkvei:** lavere standard — kan ha smalere profil og vanligvis lavere fartsgrense. \n\nSe [fartsgrense-guiden](/laeringsressurser/fartsgrenser) for de generelle og særskilte fartsgrensene.'
+                content: 'Begge er skiltet med egne [opplysningsskilt](/trafikkskilt/opplysningsskilt) og har de samme forbudene mot myk trafikk, stans, rygging og vending. Forskjellen er standarden:\n\n- **Motorvei:** alltid fysisk adskilte kjøreretninger og planfrie kryss (av- og påkjøringsramper). Fartsgrense opptil 110 km/t.\n- **Motortrafikkvei:** lavere standard — kan ha smalere profil og vanligvis lavere fartsgrense. \n\nSe [fartsgrense-guiden](/laeringsressurser/fartsgrenser) for de generelle og særskilte fartsgrensene.'
             },
             {
                 title: 'Slik bruker du dette på prøven',
@@ -4324,7 +4352,7 @@ export const theoryArticles: TheoryTopic[] = [
             {
                 title: 'Kort forklart',
                 type: 'info',
-                content: 'Trafikalt grunnkurs er første trinn i føreropplæringen og nøkkelen som låser opp øvelseskjøringen:\n\n• **17 timer** obligatorisk kurs, felles for alle førerkortklasser\n• Kan tas fra du er **15 år**\n• Inkluderer **førstehjelp** og **mørkekjøringsdemonstrasjon**\n• Etter kurset får du bevis som gir rett til å [øvelseskjøre](/laeringsressurser/ovingskjoring)\n• Er du **over 25**, er du fritatt fra kurset — men ikke fra førstehjelp og mørkekjøring'
+                content: 'Trafikalt grunnkurs er første trinn i føreropplæringen og nøkkelen som låser opp øvelseskjøringen:\n\n• 17 timer obligatorisk kurs, felles for alle førerkortklasser\n• Kan tas fra du er 15 år\n• Førstehjelp og mørkekjøring er en del av det\n• Etter kurset får du bevis som gir rett til å [øvelseskjøre](/laeringsressurser/ovingskjoring)\n• Er du over 25, er du fritatt fra selve kurset, men ikke fra førstehjelp og mørkekjøring'
             },
             {
                 title: 'Hva lærer du på kurset?',
@@ -4334,17 +4362,27 @@ export const theoryArticles: TheoryTopic[] = [
             {
                 title: 'Mørkekjøringen — den viktige detaljen',
                 type: 'warning',
-                content: 'Mørkekjøringsdemonstrasjonen kan bare gjennomføres i mørketiden (vinterhalvåret). Tar du grunnkurset i perioden **16. mars til 31. oktober**, får du et bevis som er tidsbegrenset: du kan øvelseskjøre i lyse perioder, men må gjennomføre mørkekjøringen så snart den tilbys — først da får du fullverdig bevis fra Statens vegvesen.\n\nDemonstrasjonen viser deg blant annet hvor sent du ser fotgjengere uten refleks, og hvordan [fjernlys og nærlys](/laeringsressurser/lysbruk-morkekjoring) fungerer i praksis. Den må uansett være gjennomført før du kan ta oppkjøringen.'
+                content: 'Mørkekjøringsdemonstrasjonen kan bare gjennomføres i mørketiden (vinterhalvåret). Tar du grunnkurset i perioden 16. mars til 31. oktober, får du et bevis som er tidsbegrenset: du kan øvelseskjøre i lyse perioder, men må gjennomføre mørkekjøringen så snart den tilbys — først da får du fullverdig bevis fra Statens vegvesen.\n\nDemonstrasjonen viser deg blant annet hvor sent du ser fotgjengere uten refleks, og hvordan [fjernlys og nærlys](/laeringsressurser/lysbruk-morkekjoring) fungerer i praksis. Den må uansett være gjennomført før du kan ta oppkjøringen.'
             },
             {
                 title: 'Over 25 år? Da gjelder fritaket',
                 type: 'text',
-                content: 'Er du fylt 25, slipper du selve grunnkurset og kan begynne å øvelseskjøre med bare gyldig legitimasjon. Men to deler er fortsatt obligatoriske før førerprøven: **førstehjelpsdelen og mørkekjøringsdemonstrasjonen**.\n\nMange over 25 tar disse to bitene tidlig likevel, så de ikke blir en flaskehals rett før oppkjøringen — mørkekjøring tilbys jo bare i vinterhalvåret.'
+                content: 'Er du fylt 25, slipper du selve grunnkurset og kan begynne å øvelseskjøre med bare gyldig legitimasjon. Men to deler er fortsatt obligatoriske før førerprøven: førstehjelpsdelen og mørkekjøringsdemonstrasjonen.\n\nMange over 25 tar disse to bitene tidlig likevel, så de ikke blir en flaskehals rett før oppkjøringen — mørkekjøring tilbys jo bare i vinterhalvåret.'
             },
             {
                 title: 'Hva koster trafikalt grunnkurs?',
                 type: 'text',
-                content: 'Prisen settes av den enkelte trafikkskole og varierer en del — typisk fra rundt et par tusenlapper, ofte med mørkekjøringen som eget tillegg. Noen kommuner og videregående skoler tilbyr kurset rimeligere som valgfag eller fritidstilbud for 15–16-åringer.\n\nTo sparetips: sammenlign flere skoler i nærheten (prisforskjellene er reelle), og sjekk om skolen inkluderer mørkekjøring i prisen eller fakturerer den separat.'
+                content: 'Et komplett kurs koster rundt 3 900–4 500 kroner hos de to trafikkskolene vi sjekket 26. juli 2026, og den dekker alle tre delene: selve kurset, førstehjelpen og mørkekjøringen.\n\nPrisen er ikke regulert — hver trafikkskole setter sin egen. To skoler er et lite utvalg, så bruk tallene som et utgangspunkt og be om et samlet tilbud der du bor.'
+            },
+            {
+                title: 'Priseksempler fra to trafikkskoler',
+                type: 'table',
+                content: '<div class="responsive-theory-table-wrapper" style="margin-top: 1rem;"><table class="responsive-theory-table" style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem;"><thead><tr style="background-color: var(--color-surface); border-bottom: 2px solid var(--color-border);"><th style="padding: 12px 8px;">Del av kurset</th><th style="padding: 12px 8px;">Flex Trafikkskole, Bergen</th><th style="padding: 12px 8px;">Lippert Trafikkskole, Gran</th></tr></thead><tbody><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Grunnkurs med førstehjelp</b></td><td style="padding: 12px 8px;" data-label="Flex Trafikkskole, Bergen">1 690 kr</td><td style="padding: 12px 8px;" data-label="Lippert Trafikkskole, Gran">2 500 kr</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Mørkekjøring (demonstrasjon)</b></td><td style="padding: 12px 8px;" data-label="Flex Trafikkskole, Bergen">2 690 kr</td><td style="padding: 12px 8px;" data-label="Lippert Trafikkskole, Gran">2 000 kr</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Førstehjelp kjøpt alene</b></td><td style="padding: 12px 8px;" data-label="Flex Trafikkskole, Bergen">999 kr</td><td style="padding: 12px 8px;" data-label="Lippert Trafikkskole, Gran">1 100 kr</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Alt samlet, under 25 år</b></td><td style="padding: 12px 8px;" data-label="Flex Trafikkskole, Bergen"><b>3 880 kr</b></td><td style="padding: 12px 8px;" data-label="Lippert Trafikkskole, Gran"><b>4 500 kr</b></td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Bare det obligatoriske, over 25 år</b></td><td style="padding: 12px 8px;" data-label="Flex Trafikkskole, Bergen"><b>3 689 kr</b></td><td style="padding: 12px 8px;" data-label="Lippert Trafikkskole, Gran"><b>3 100 kr</b></td></tr></tbody></table></div>'
+            },
+            {
+                title: 'Tre ting som gjør prisen høyere enn du tror',
+                type: 'tip',
+                content: 'Mørkekjøringen er ofte den dyreste enkeltdelen. Hos Flex koster den 2 690 kr — mer enn selve kurset. Mange skoler tar den ikke med i prisen de reklamerer med, så et tilbud på «trafikalt grunnkurs 1 690 kr» er sannsynligvis uten mørkekjøring. Spør alltid om totalen.\n\nFritaket for deg over 25 sparer mindre enn du tror. Du slipper de 17 timene, men førstehjelp og mørkekjøring er fortsatt obligatorisk. Hos Lippert sparer du 1 400 kr på fritaket. Hos Flex sparer du bare 191 kr, fordi de selger hele kurset som en rabattert pakke — kjøper du de to obligatoriske delene hver for seg, koster det nesten det samme som alt sammen. Be om pris på begge deler før du bestemmer deg.\n\nGebyrene til Statens vegvesen kommer i tillegg, og de har ingenting med trafikkskolen å gjøre. [Teoriprøven](/laeringsressurser/teoriproven-bil) koster 480 kr, [oppkjøringen](/laeringsressurser/oppkjoring) 1 490 kr når du betaler på nett, og utstedelse av førerkortet 160 kr. Prisene gjelder fra 1. februar 2026.\n\nVerdt å sjekke til slutt: noen kommuner og videregående skoler tilbyr grunnkurset som valgfag eller fritidstilbud til 15–16-åringer. Da er det billigere, og av og til gratis.'
             },
             {
                 title: 'Etter kurset: klar for å øve',
@@ -4352,7 +4390,20 @@ export const theoryArticles: TheoryTopic[] = [
                 content: 'Med grunnkursbevis (og legitimasjon) kan du øvelseskjøre privat med ledsager — kravene til ledsager, L-skilt og ekstra speil finner du i [øvelseskjøring-guiden](/laeringsressurser/ovingskjoring).\n\nSmart rekkefølge videre: mengdetrening privat + kjøretimer, [teoriprøven](/laeringsressurser/teoriproven-bil) når teorien sitter, [sikkerhetskurs på bane](/laeringsressurser/sikkerhetskurs-pa-bane) i trinn 3, og til slutt sikkerhetskurs på veg og [oppkjøring](/laeringsressurser/oppkjoring).'
             }
         ],
+        sources: {
+            title: 'Kilder',
+            type: 'text',
+            content: '- **Statens vegvesen:** [Priser på teoriprøve, oppkjøring, utstedelse og bilde](https://www.vegvesen.no/forerkort/ta-forerkort/priser/) — gebyrene gjelder fra 1. februar 2026\n- **Statens vegvesen:** [Trafikant i mørket (mørkekjøring)](https://www.vegvesen.no/forerkort/ta-forerkort/trafikant-i-morket/)\n- **Kurspriser hentet 26. juli 2026:** [Flex Trafikkskole, Bergen](https://www.flextrafikkskole.no/priser) (priser per 1. juli 2026) og [Lippert Trafikkskole, Gran](https://www.lippert.no/priser/) (priser fra 1. januar 2026)'
+        },
         faq: [
+            {
+                question: 'Hvor mye koster trafikalt grunnkurs?',
+                answer: 'Et komplett kurs — de 17 timene, førstehjelp og mørkekjøring — kostet 3 880 kr og 4 500 kr hos de to trafikkskolene vi sjekket i juli 2026. Prisen er ikke regulert, så den varierer mellom skoler. Mørkekjøringen faktureres ofte separat og utgjør gjerne halvparten av totalen, så spør alltid om en samlet pris.'
+            },
+            {
+                question: 'Hva koster trafikalt grunnkurs hvis man er over 25?',
+                answer: 'Du slipper selve kurset, men førstehjelp og mørkekjøring er fortsatt obligatorisk. Hos de to skolene vi sjekket i juli 2026 kostet de to delene til sammen 3 100 kr og 3 689 kr — mot 4 500 kr og 3 880 kr for det komplette kurset. Fritaket sparte altså 1 400 kr hos den ene og bare 191 kr hos den andre, som selger kurset som rabattert pakke.'
+            },
             {
                 question: 'Hvor mange timer er trafikalt grunnkurs?',
                 answer: '17 timer, inkludert førstehjelp og mørkekjøringsdemonstrasjon. Kurset er felles for alle førerkortklasser og har ingen eksamen — men du må delta på alle delene.'
@@ -4594,7 +4645,7 @@ export const theoryArticles: TheoryTopic[] = [
             {
                 title: 'Kort forklart: Hva betyr automatlappen?',
                 type: 'info',
-                content: 'Automatlappen er førerkort klasse B med **kode 78**. Du får kode 78 når du består oppkjøringen med automatgir. Da kan du kjøre personbil med automatgir og elbil, men ikke bil med manuelt gir.\n\nKjører du opp med manuelt gir, kan du kjøre både manuell og automat. Har du allerede kode 78, kan du fjerne begrensningen ved å bestå en ny oppkjøring med manuelt gir. Du trenger ikke ta hele føreropplæringen på nytt.'
+                content: 'Automatlappen er førerkort klasse B med kode 78, ofte skrevet B78. Du får kode 78 når du består oppkjøringen med automatgir. Da kan du kjøre personbil med automatgir og elbil, men ikke bil med manuelt gir.\n\nKjører du opp med manuelt gir, kan du kjøre både manuell og automat. Har du allerede kode 78, kan du fjerne begrensningen ved å bestå en ny oppkjøring med manuelt gir. Du trenger ikke ta hele føreropplæringen på nytt.'
             },
             {
                 title: 'Kode 78 på ett minutt',
@@ -4615,6 +4666,11 @@ export const theoryArticles: TheoryTopic[] = [
                 title: 'Er teoriprøven annerledes med automatgir?',
                 type: 'text',
                 content: 'Nei. Teoriprøven for klasse B er den samme enten du planlegger å kjøre opp med automatgir eller manuelt gir. Du må kunne de samme trafikkreglene, skiltene og sikkerhetsprinsippene. Kode 78 bestemmes av bilen du bruker på den praktiske oppkjøringen, ikke av teoriprøven.\n\nPå oppkjøringen vurderes trafikkforståelse, observasjon, plassering, fartstilpasning og samhandling. Automatgir fjerner giringen, men ikke ansvaret for å kjøre selvstendig og sikkert. Les mer om [oppkjøring klasse B](/laeringsressurser/oppkjoring) og [sikkerhetskontroll](/laeringsressurser/sikkerhetskontroll).'
+            },
+            {
+                title: 'Oppkjøring med automatgir',
+                type: 'text',
+                content: 'Kjører du opp med automatgir, er selve oppkjøringen den samme som med manuelt gir. Sensor vurderer trafikkforståelse, observasjon, plassering, fartstilpasning og samhandling — ikke om du girer selv.\n\nForskjellen er hva du sitter igjen med: består du med automatgir, får du kode 78 i førerkortet, og da kan du bare kjøre biler med automatgir. Består du med manuelt gir, gjelder førerkortet begge deler.\n\nDu velger altså ikke kode 78 på forhånd — den følger av hvilken bil du bruker på prøven. Les mer om [oppkjøring klasse B](/laeringsressurser/oppkjoring).'
             },
             {
                 title: 'Fordeler og ulemper med automatlappen',
@@ -4642,6 +4698,11 @@ export const theoryArticles: TheoryTopic[] = [
                 content: '• **«Kode 78 betyr bare elbil.»** Feil. Den gjelder alle biler med automatgir, ikke bare elbiler.\n• **«Jeg kan kjøre manuell bil hvis jeg har øvd.»** Feil. Du må ha fjernet kode 78 ved å bestå oppkjøring med manuelt gir.\n• **«Automatlappen har en enklere teoriprøve.»** Feil. Teoriprøven for klasse B er den samme.\n• **«Kode 78 betyr at jeg ikke kan trekke tilhenger.»** Feil. Begrensningen gjelder girtypen på bilen.\n• **«Automatgir gjør bilen selvkjørende.»** Feil. Du har samme ansvar for observasjon og sikker kjøring.'
             }
         ],
+        sources: {
+            title: 'Kilder',
+            type: 'text',
+            content: '- **Statens vegvesen:** [Personbil klasse B – veien til førerkortet](https://www.vegvesen.no/forerkort/ta-forerkort/veien-til-forerkortet/personbil-b/)\n- **Statens vegvesen:** [Rekordmange oppkjøringer i fjor](https://www.vegvesen.no/om-oss/presse/aktuelt/2026/07/rekordmange-oppkjoringer/) — 70 % av oppkjøringene i klasse B ble tatt med automatgir i første halvår 2026.'
+        },
         miniQuiz: [
             {
                 question: 'Hva betyr kode 78 på førerkortet?',
@@ -5110,7 +5171,7 @@ export const theoryArticles: TheoryTopic[] = [
             {
                 title: 'Hva bør du øve mest på?',
                 type: 'text',
-                content: 'Noen temaer går igjen fordi de tester forståelse, ikke bare hukommelse.\n\n**Vikeplikt og høyreregelen**\nVikeplikt er et av de viktigste temaene. Du bør kunne høyreregelen, vikepliktskilt, rundkjøringer, gangfelt, buss fra holdeplass og utkjøring fra parkering eller privat vei.\nLes mer: [komplett guide til vikeplikt](/laeringsressurser/vikeplikt)\n\n**Skilt og vegoppmerking**\nDu må kjenne igjen skilt, men også forstå hva de betyr i praksis. Sperrelinjer, vikelinjer, stopplinjer og kjørefeltpiler kan være avgjørende i bildeoppgaver.\nLes mer: [guide til trafikkskilt](/laeringsressurser/skilt) og [veimerking](/laeringsressurser/veimerking)\n\n**Bremselengde og reaksjonstid**\nDette er klassiske teoriprøve-temaer. Du bør forstå forskjellen på reaksjonslengde, bremselengde og stopplengde, og hvordan fart, føre og dekk påvirker risikoen.\nLes mer: [kalkulator for bremselengde](/laeringsressurser/bremselengde)\n\n**Lys, mørke og sikt**\nMørkekjøring, refleks, nærlys, fjernlys og tåkelys handler om å se og bli sett. Husk at moderne autolys ikke alltid betyr at baklysene er tent.\n\n**Sikkerhetskontroll og kjøretøy**\nDu bør kunne grunnleggende kontroll av dekk, lys, bremser, varsellamper og sikkerhetsutstyr. Dette er nyttig både til teoriprøven og oppkjøringen.'
+                content: 'Noen temaer går igjen fordi de tester forståelse, ikke bare hukommelse.\n\n**Vikeplikt og høyreregelen**\nVikeplikt er et av de viktigste temaene. Du bør kunne høyreregelen, [vikepliktskilt](/trafikkskilt/vikeplikt-og-forkjorsskilt), rundkjøringer, gangfelt, buss fra holdeplass og utkjøring fra parkering eller privat vei.\nLes mer: [komplett guide til vikeplikt](/laeringsressurser/vikeplikt)\n\n**Skilt og vegoppmerking**\nDu må kjenne igjen skilt, men også forstå hva de betyr i praksis. Sperrelinjer, vikelinjer, stopplinjer og kjørefeltpiler kan være avgjørende i bildeoppgaver.\nLes mer: [guide til trafikkskilt](/laeringsressurser/skilt) og [veimerking](/laeringsressurser/veimerking)\n\n**Bremselengde og reaksjonstid**\nDette er klassiske teoriprøve-temaer. Du bør forstå forskjellen på reaksjonslengde, bremselengde og stopplengde, og hvordan fart, føre og dekk påvirker risikoen.\nLes mer: [kalkulator for bremselengde](/laeringsressurser/bremselengde)\n\n**Lys, mørke og sikt**\nMørkekjøring, refleks, nærlys, fjernlys og tåkelys handler om å se og bli sett. Husk at moderne autolys ikke alltid betyr at baklysene er tent.\n\n**Sikkerhetskontroll og kjøretøy**\nDu bør kunne grunnleggende kontroll av dekk, lys, bremser, varsellamper og sikkerhetsutstyr. Dette er nyttig både til teoriprøven og oppkjøringen.'
             },
             {
                 title: 'Vanlige feil på teoriprøven',
@@ -5490,8 +5551,8 @@ Les mer om [trafikkuhell og førstehjelp](/laeringsressurser/trafikkuhell-forste
         icon: '🚌',
         shortDescription: 'Lær regelen for buss som skal ut fra holdeplass, når 60 km/t-grensen betyr noe, og hvilke teorifeller du må unngå.',
         color: 'var(--apple-blue)',
-        seoTitle: 'Buss fra holdeplass: når har du vikeplikt?',
-        seoDescription: 'Se når du har vikeplikt for buss fra holdeplass, hva som gjelder ved 60 km/t eller lavere, blinklys, busslomme og typiske teorifeller.',
+        seoTitle: 'Vikeplikt for buss – gjelder ved 60 km/t eller lavere',
+        seoDescription: 'Du har vikeplikt for buss som gir tegn om å forlate holdeplass der fartsgrensen er 60 km/t eller lavere. Se regelen, unntakene og typiske teorifeller.',
         sections: [
             {
                 title: 'Buss fra holdeplass',
@@ -5501,7 +5562,7 @@ Les mer om [trafikkuhell og førstehjelp](/laeringsressurser/trafikkuhell-forste
             {
                 title: 'Kort forklart',
                 type: 'info',
-                content: `På vei med fartsgrense 60 km/t eller lavere har du vikeplikt for buss som skal kjøre ut fra holdeplass. Du skal senke farten og gi bussen mulighet til å kjøre ut når det kan skje uten fare. Bussen skal normalt bruke blinklys og må også opptre forsiktig, men på teoriprøven må du vurdere hele situasjonen rundt holdeplassen.`
+                content: `På vei med fartsgrense 60 km/t eller lavere har du vikeplikt for buss som skal kjøre ut fra holdeplass. Du skal senke farten og gi bussen mulighet til å kjøre ut når det kan skje uten fare. Bussen skal normalt bruke blinklys. Regelen står i **trafikkreglene § 7 nr. 5**, som også slår fast at **bussføreren skal unngå fare** — bussen kan altså ikke tvinge seg ut. På teoriprøven må du vurdere hele situasjonen rundt holdeplassen.`
             },
             {
                 title: 'Buss som skal ut fra holdeplass',
@@ -5562,6 +5623,11 @@ Hvis svaret er ja, er riktig løsning som regel å senke farten rolig og gi buss
                 answer: 'Skiltet viser at stedet er holdeplass for buss. Som bilfører må du være ekstra oppmerksom på buss som skal ut og passasjerer som kan krysse veien.'
             }
         ],
+        sources: {
+            title: 'Kilder',
+            type: 'text',
+            content: '- **Lovdata:** [Trafikkreglene § 7 nr. 5 – vikeplikt](https://lovdata.no/dokument/SF/forskrift/1986-03-21-747) — «På veg med fartsgrense 60 km i timen eller lavere har kjørende vikeplikt for buss når føreren gir tegn om at bussen skal forlate holdeplass. Bussføreren skal unngå fare.»\n- **Statens vegvesen:** [Temaliste til teoriprøve klasse B](https://www.vegvesen.no/globalassets/forerkort/ta-forerkort/temaliste-til-teoriprove-klasse-b-bokmal.pdf)'
+        },
         miniQuiz: [
             {
                 question: 'Du kjører i 50-sone. En buss ved holdeplass blinker ut. Hva er riktig?',
@@ -5604,7 +5670,7 @@ Hvis svaret er ja, er riktig løsning som regel å senke farten rolig og gi buss
                 type: 'text',
                 content: `Trikkespørsmål på teoriprøven handler ofte om at trikken ikke oppfører seg som en vanlig bil. Den går på skinner, kan ikke svinge unna og trenger lang bremselengde. Derfor må du som bilfører gi trikken god plass og være ekstra oppmerksom der vei og spor møtes.
 
-Det viktigste er ikke å pugge en løs setning om at "trikken har forkjørsrett". Du må forstå situasjonen: Hvor kommer trikken fra? Skal du krysse sporene? Finnes det trafikklys, vikepliktskilt eller rundkjøring? Og kan du komme deg helt over uten å bli stående i sporet?`
+Det viktigste er ikke å pugge en løs setning om at "trikken har forkjørsrett". Du må forstå situasjonen: Hvor kommer trikken fra? Skal du krysse sporene? Finnes det trafikklys, [vikepliktskilt](/trafikkskilt/vikeplikt-og-forkjorsskilt) eller rundkjøring? Og kan du komme deg helt over uten å bli stående i sporet?`
             },
             {
                 title: 'Kort forklart',
@@ -5889,7 +5955,7 @@ Se også etter kø. Hvis du kjører inn over trikkesporet og blir stående der, 
             {
                 title: 'Elbil i kollektivfelt',
                 type: 'text',
-                content: `Denne artikkelen handler spesielt om elbil i kollektivfelt. Den brede forklaringen av feltvalg finner du i hovedguiden om [feltvalg, fletting og kollektivfelt](/laeringsressurser/feltvalg-fletting-kollektivfelt). Her fokuserer vi på det teoriprøven ofte tester: elbil, underskilt, taxi, sambruksfelt og når du må velge vanlig kjørefelt.`
+                content: `Denne artikkelen handler spesielt om elbil i kollektivfelt. Den brede forklaringen av feltvalg finner du i hovedguiden om [feltvalg, fletting og kollektivfelt](/laeringsressurser/feltvalg-fletting-kollektivfelt). Her fokuserer vi på det teoriprøven ofte tester: elbil, [underskilt](/trafikkskilt/underskilt), taxi, sambruksfelt og når du må velge vanlig kjørefelt.`
             },
             {
                 title: 'Kort forklart',
@@ -6407,7 +6473,7 @@ I bil uten bilbelte er reglene strengere: Barn under 3 år skal ikke transporter
             {
                 title: '2. Rundkjøring: vikeplikt, feltvalg og blinklys',
                 type: 'text',
-                content: 'Rundkjøring er vanskelig fordi flere regler brukes samtidig. Du må tenke på plassering, vikeplikt, feltvalg, blinklys og andre trafikanter.\n\nSom hovedregel skal du vike for trafikk som allerede er inne i rundkjøringen når du møter vikepliktskilt før innkjøring. Du skal også blinke tydelig når du skal ut.\n\n**Hvorfor mange bommer:**\nDe blander innkjøring, feltvalg og utkjøring i én vurdering. Da blir spørsmålet fort mer komplisert enn det ser ut.\n\n**Slik tenker du riktig:**\nDel rundkjøringen i fire: før innkjøring, inne i rundkjøringen, eventuelt feltskifte, og utkjøring.'
+                content: 'Rundkjøring er vanskelig fordi flere regler brukes samtidig. Du må tenke på plassering, vikeplikt, feltvalg, blinklys og andre trafikanter.\n\nSom hovedregel skal du vike for trafikk som allerede er inne i rundkjøringen når du møter [vikepliktskilt](/trafikkskilt/vikeplikt-og-forkjorsskilt) før innkjøring. Du skal også blinke tydelig når du skal ut.\n\n**Hvorfor mange bommer:**\nDe blander innkjøring, feltvalg og utkjøring i én vurdering. Da blir spørsmålet fort mer komplisert enn det ser ut.\n\n**Slik tenker du riktig:**\nDel rundkjøringen i fire: før innkjøring, inne i rundkjøringen, eventuelt feltskifte, og utkjøring.'
             },
             {
                 title: '3. Utkjøring fra privat vei, parkering eller bensinstasjon',
@@ -6417,7 +6483,7 @@ I bil uten bilbelte er reglene strengere: Barn under 3 år skal ikke transporter
             {
                 title: '4. Forveksler skiltgrupper',
                 type: 'text',
-                content: 'Skilt handler ikke bare om å pugge enkeltskilt. Du må forstå systemet.\n\nFareskilt varsler fare. Forbudsskilt forteller hva som er forbudt. Påbudsskilt forteller hva du må gjøre. Opplysningsskilt gir informasjon.\n\n**Hvorfor mange bommer:**\nDe prøver å huske hvert skilt alene, uten å forstå form og farge først.\n\n**Slik tenker du riktig:**\nLær rekkefølgen: form → kategori → betydning. Da blir enkeltskiltene lettere.'
+                content: 'Skilt handler ikke bare om å pugge enkeltskilt. Du må forstå systemet.\n\nFareskilt varsler fare. [Forbudsskilt](/trafikkskilt/forbudsskilt) forteller hva som er forbudt. [Påbudsskilt](/trafikkskilt/pabudsskilt) forteller hva du må gjøre. [Opplysningsskilt](/trafikkskilt/opplysningsskilt) gir informasjon.\n\n**Hvorfor mange bommer:**\nDe prøver å huske hvert skilt alene, uten å forstå form og farge først.\n\n**Slik tenker du riktig:**\nLær rekkefølgen: form → kategori → betydning. Da blir enkeltskiltene lettere.'
             },
             {
                 title: '5. Glemmer full stans ved STOPP-skilt',
@@ -6613,7 +6679,7 @@ I bil uten bilbelte er reglene strengere: Barn under 3 år skal ikke transporter
             {
                 title: 'Fareskilt: Glatt kjørebane',
                 type: 'signs',
-                content: 'Når du kjører i områder der det er spesielt stor fare for glatt vei under visse forhold, vil du møte fareskiltet for glatt kjørebane. Når du ser dette skiltet, skal du umiddelbart senke farten og øke avstanden.',
+                content: 'Når du kjører i områder der det er spesielt stor fare for glatt vei under visse forhold, vil du møte [fareskiltet](/trafikkskilt/fareskilt) for glatt kjørebane. Når du ser dette skiltet, skal du umiddelbart senke farten og øke avstanden.',
                 signs: [
                     {
                         name: 'Fareskilt 116: Glatt kjørebane',
@@ -6625,7 +6691,7 @@ I bil uten bilbelte er reglene strengere: Barn under 3 år skal ikke transporter
             {
                 title: 'Mer om fareskiltet',
                 type: 'text',
-                content: 'Fareskilt 116 settes ofte opp sammen med et underskilt som presiserer når eller over hvilken strekning faren gjelder (f.eks. «Gjelder ved væromslag» eller en lengde som «Gjelder over 3 km»).\n\n[Se alle fareskilt og detaljer i skiltguiden](/trafikkskilt/fareskilt/glatt-kjorebane)'
+                content: 'Fareskilt 116 settes ofte opp sammen med et [underskilt](/trafikkskilt/underskilt) som presiserer når eller over hvilken strekning faren gjelder (f.eks. «Gjelder ved væromslag» eller en lengde som «Gjelder over 3 km»).\n\n[Se alle fareskilt og detaljer i skiltguiden](/trafikkskilt/fareskilt/glatt-kjorebane)'
             },
             {
                 title: 'Kilder og regelverk',
@@ -7371,6 +7437,82 @@ En annen vanlig feil er å tro at prikker slettes når boten er betalt. Betaling
                 options: ['Den dekker skade bilen gjør på andre', 'Den gjør at du kan kjøre uforsiktig', 'Den dekker alltid egen bil fullt ut', 'Den erstatter førerkort'],
                 correct: 'Den dekker skade bilen gjør på andre',
                 explanation: 'Ansvarsforsikring handler først og fremst om skade på andre personer, kjøretøy eller eiendom.'
+            }
+        ]
+    },
+    {
+        id: 'teoriprove-gyldig-fravaer',
+        title: 'Er teoriprøven gyldig fravær på videregående?',
+        icon: '🏫',
+        shortDescription: 'Ja — siden 1. august 2025 teller ikke teoriprøven med i fraværsgrensen. Men det gjelder bare klasse B, og svaret er et annet for vitnemålet ditt. Her er hele regelen med kilder.',
+        color: 'var(--apple-blue)',
+        seoTitle: 'Er teoriprøven gyldig fravær? Regelen for videregående (2026)',
+        seoDescription: 'Teoriprøven og oppkjøringen er unntatt fraværsgrensen fra 1. august 2025. Se hva som er unntatt, hva som ikke er det, hvordan du dokumenterer det — og hvorfor svaret er annerledes for vitnemålet.',
+        sections: [
+            {
+                title: 'Kort forklart',
+                type: 'info',
+                content: 'Kort svar: ja, men bare delvis — og bare for klasse B.\n\n• Fra 1. august 2025 teller ikke teoriprøven med i fraværsgrensen på ti prosent\n• Det samme gjelder oppkjøringen, og rimelig reisetid til og fra\n• Vanlige kjøretimer er ikke unntatt — dem må du legge utenom skoletiden\n• Gjelder kun klasse B. Moped, MC, lastebil og buss er ikke omfattet\n• Vitnemålet følger en annen regel — timene kan bli stående der, forklart lenger ned\n• Fraværet må dokumenteres, og du bør levere dokumentasjonen med en gang'
+            },
+            {
+                title: 'Hva som faktisk er unntatt',
+                type: 'text',
+                content: 'Utdanningsdirektoratet lister opp nøyaktig hvilke deler av opplæringen til klasse B som kan holdes utenfor fraværsgrensen:\n\n- 4 timer obligatorisk sikkerhetskurs på bane, trinn 3 — det mange kaller [glattkjøring](/laeringsressurser/sikkerhetskurs-pa-bane)\n- 9 timer av sikkerhetskurs på veg, del 2 og 3 av trinn 4\n- Førerprøven for klasse B — både [teoriprøven](/laeringsressurser/teoriproven-bil) og [oppkjøringen](/laeringsressurser/oppkjoring)\n\nI tillegg dekkes rimelig reisetid, og den ekstra tiden det tar når det sitter to elever i bilen. Udir begrunner det med at trafikkskolens måte å organisere seg på ikke bør avgjøre hvor mye fravær du får.\n\nDet var de to kursene som ble unntatt først. Teoriprøven og oppkjøringen kom til 1. august 2025, og gjaldt fra første skoledag det året.'
+            },
+            {
+                title: 'Hva som ikke er unntatt',
+                type: 'warning',
+                content: 'Dette er den delen folk oftest tar feil om.\n\nVanlige kjøretimer teller med. De er ikke nevnt i unntaket, og de er den største tidsbruken i hele opplæringen. Legg dem til fritimer, ettermiddager eller fridager.\n\nTrafikalt grunnkurs og mørkekjøring teller med. Selv om de er obligatoriske, står de ikke på listen. Se [trafikalt grunnkurs](/laeringsressurser/trafikalt-grunnkurs) for hva de delene inneholder.\n\nAndre førerkortklasser teller med. Udir er tydelig: «annen type trafikkopplæring enn til førerkort klasse B, kan ikke unntas fraværsgrensen.» Tar du moped, MC, traktor eller lastebil, gjelder ikke dette unntaket for deg i det hele tatt.'
+            },
+            {
+                title: 'Fraværsgrensen og vitnemålet er to forskjellige ting',
+                type: 'text',
+                content: 'Når noen spør om teoriprøven er «gyldig fravær», mener de gjerne to ulike ting uten å vite det. Det finnes nemlig to regelsett, og de behandler prøven forskjellig.\n\nFraværsgrensen avgjør om du får karakter i et fag. Går du over ti prosent udokumentert fravær i faget, mister du halvårsvurderingen eller standpunktkarakteren. Her regnes unntakene i timer, og det er ingen øvre grense for hvor mye som kan unntas.\n\nFravær på vitnemålet er et eget system. Der føres fraværet samlet for alle fag, det har ingenting med karakterer å gjøre, og unntakene regnes i dager, ikke timer. Udir sier det rett ut: timefravær hos for eksempel tannlege eller BUP kan ikke unntas der. I tillegg er det tak på ti dager per skoleår.\n\nEn teoriprøve tar halvannen time pluss reise. Den forsvinner altså fra fraværsgrensen, men den er ikke en hel dag, og da er det lite sannsynlig at den kan strykes fra vitnemålet. Grunnene til unntak er de samme i begge regelsett — det er måten de regnes på som skiller.'
+            },
+            {
+                title: 'Slik dokumenterer du det',
+                type: 'tip',
+                content: 'Udir skriver at fravær på grunn av trafikkopplæring «må dokumenteres av kjøreskolen». Det dekker kursene godt, men teoriprøven tar du jo hos Statens vegvesen, ikke hos kjøreskolen.\n\nI praksis løses det ved at du leverer bekreftelse fra begge: kjøreskolen dokumenterer kursene, trafikkstasjonen dokumenterer prøven. Østfold fylkeskommune skriver det slik til sine elever: «Du må vise dokumentasjon i form av melding fra kjøreskolen og trafikkstasjonen.»\n\nDu har allerede to papirer som viser at du var der: kvitteringen for betalt prøve, og bekreftelsen på timen du bestilte. Ta vare på begge.\n\nLever dokumentasjonen tidlig. Skolen har plikt til å ta imot dokumentasjon fortløpende, og du kan levere når som helst. Det er lettere å finne fram kvitteringen samme uke enn i mai.\n\nEn ting til: fylkeskommunen din kan sette egne krav til hva slags dokumentasjon som godtas. Sjekk fraværsreglementet på skolens nettsider hvis du er i tvil.'
+            },
+            {
+                title: 'Hvor mye er egentlig ti prosent?',
+                type: 'text',
+                content: 'Grensen regnes per fag, ikke samlet — og det er en klokketime som gjelder, ikke en skoletime.\n\nEt eksempel fra Udir: engelsk på vg1 studieforberedende er 140 klokketimer i året. Ti prosent er 14 klokketimer. Har skolen din 45-minutters økter, blir det 17,5 undervisningstimer. Du kan altså ha 17 timer udokumentert fravær i engelsk, men ved 18 er grensen brutt.\n\nGrensen er 10,0 prosent, og 10,4 kan ikke rundes ned til 10.\n\nRektor kan i spesielle tilfeller la deg få karakter selv med opptil 15 prosent, hvis årsaken gjør det klart urimelig å nekte deg den. Men det er en mulighet rektor har, ikke en rettighet du kan kreve — og du kan ikke klage på et nei.'
+            }
+        ],
+        sources: {
+            title: 'Kilder',
+            type: 'text',
+            content: '- **Utdanningsdirektoratet:** [Rundskriv om fraværsgrensen, punkt 3.3.3 – fravær som skyldes obligatorisk trafikkopplæring](https://www.udir.no/regelverk-og-tilsyn/skole-og-opplaring/rundskriv-om-fravarsgrensen/3.-hva-omfattes-av-fravarsgrensen#3.3-fravar-som-kan-unntas-fravarsgrensen) — hjemmel: opplæringsforskriften § 9-8 andre ledd\n- **Utdanningsdirektoratet:** [Punkt 5.1 – forskjellen på fraværsgrensen og føring av fravær på vitnemålet](https://www.udir.no/regelverk-og-tilsyn/skole-og-opplaring/rundskriv-om-fravarsgrensen/5.hva-er-skillet-mellom-fravarsgrensen-og-annet-regelverk) — hjemmel: opplæringsforskriften § 9-53\n- **Norges Trafikkskoleforbund:** [Nå får elevene gyldig fravær for førerprøve](https://ntsf.no/aktuelt/nyheter/na-far-elevene-gyldig-fravaer-for-forerprove) (19.08.2025) — om endringen som trådte i kraft 1. august 2025\n- **Østfold fylkeskommune / Malakoff vgs:** [Førerkort og fravær](https://ofk.no/malakoff-vgs/aktuelt/forerkort-og-fravar.132916.aspx) — eksempel på hvordan en fylkeskommune praktiserer dokumentasjonskravet\n\nInnholdet er kontrollert mot Udirs rundskriv 26. juli 2026. Rundskrivet ble sist endret 9. januar 2026.'
+        },
+        faq: [
+            {
+                question: 'Er teoriprøven gyldig fravær på videregående?',
+                answer: 'Ja. Fra 1. august 2025 er både teoriprøven og oppkjøringen for klasse B unntatt fraværsgrensen på ti prosent, sammen med rimelig reisetid. Fraværet må dokumenteres. Merk at timene fortsatt kan bli ført på vitnemålet, siden det er en egen regel som regner i dager og ikke timer.'
+            },
+            {
+                question: 'Kan man få gyldig fravær for teoriprøven?',
+                answer: 'Ja, hvis du tar førerkort klasse B. Teoriprøven har vært unntatt fraværsgrensen siden 1. august 2025. Tar du moped, MC, traktor eller en tyngre klasse, gjelder ikke unntaket.'
+            },
+            {
+                question: 'Er kjøretimer gyldig fravær?',
+                answer: 'Nei. Vanlige kjøretimer teller med i fraværsgrensen. Bare 4 timer sikkerhetskurs på bane, 9 timer av sikkerhetskurs på veg, teoriprøven og oppkjøringen er unntatt — alt for klasse B.'
+            },
+            {
+                question: 'Hvordan dokumenterer jeg fravær for teoriprøven?',
+                answer: 'Med bekreftelse fra trafikkstasjonen der du tok prøven. Kvitteringen for betalt prøve og bekreftelsen på bestilt time viser at du var der. Kjøreskolen dokumenterer kursdelene. Fylkeskommunen kan ha egne krav, så sjekk fraværsreglementet til skolen din.'
+            },
+            {
+                question: 'Blir teoriprøven strøket fra fraværet på vitnemålet?',
+                answer: 'Sannsynligvis ikke. Unntak fra vitnemålet regnes i hele dager, ikke timer, og er begrenset til ti dager i året. En teoriprøve på halvannen time pluss reise er sjelden en hel dag. Unntaksgrunnene er de samme som for fraværsgrensen, men reglene for hva som faktisk strykes er ulike.'
+            },
+            {
+                question: 'Gjelder dette moped og MC også?',
+                answer: 'Nei. Utdanningsdirektoratet skriver at annen trafikkopplæring enn til førerkort klasse B ikke kan unntas fraværsgrensen. Teoriprøve for moped, MC, traktor, lastebil eller buss gir altså ikke dokumentert fravær.'
+            },
+            {
+                question: 'Når må jeg levere dokumentasjonen?',
+                answer: 'Så snart du har den. Skolen plikter å ta imot dokumentasjon fortløpende, og du trenger ikke vente til du har nådd fraværsgrensen.'
             }
         ]
     }

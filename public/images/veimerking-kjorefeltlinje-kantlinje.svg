@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 300" width="800" height="300" role="img" aria-labelledby="ttl dsc"><title id="ttl">Kjorefeltlinje og kantlinje pa samme vei, sett ovenfra</title><desc id="dsc">En vei sett ovenfra med heltrukne hvite kantlinjer langs begge ytterkanter og en stiplet hvit kjorefeltlinje i midten. Kantlinje 1012 er alltid heltrukken og markerer kjorebanens ytterkant. Kjorefeltlinje 1000 har kort strek og langt opphold og skiller kjorefelt i samme retning. En stiplet linje er derfor ikke en kantlinje.</desc><rect width="800" height="300" rx="12" fill="#262624"/>
+<text x="400" y="32" fill="#a3a39d" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="13" font-weight="500" text-anchor="middle">Stiplet linje og kantlinje er to forskjellige oppmerkinger</text>
+<rect x="230" y="48" width="340" height="200" rx="6" fill="#3f3f3c"/>
+<rect x="246" y="58" width="8" height="180" fill="#f6f6f3"/>
+<rect x="548" y="58" width="8" height="180" fill="#f6f6f3"/>
+<line x1="400" y1="58" x2="400" y2="238" stroke="#f6f6f3" stroke-width="5" stroke-dasharray="12 34"/>
+<path d="M320 169 l8 16 h-16 z" fill="#eaeae6" opacity=".85"/>
+<path d="M480 169 l8 16 h-16 z" fill="#eaeae6" opacity=".85"/>
+<line x1="242" y1="120" x2="186" y2="120" stroke="#a3a39d" stroke-width="1.5"/><circle cx="242" cy="120" r="3" fill="#a3a39d"/>
+<text x="178" y="116" fill="#eaeae6" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="13.5" font-weight="500" text-anchor="end">Kantlinje (1012)</text>
+<text x="178" y="133" fill="#a3a39d" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="12" font-weight="500" text-anchor="end">heltrukken</text>
+<line x1="404" y1="88" x2="614" y2="88" stroke="#a3a39d" stroke-width="1.5"/><circle cx="404" cy="88" r="3" fill="#a3a39d"/>
+<text x="622" y="84" fill="#eaeae6" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="13.5" font-weight="500" text-anchor="start">Kjørefeltlinje (1000)</text>
+<text x="622" y="101" fill="#a3a39d" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="12" font-weight="500" text-anchor="start">stiplet</text>
+<text x="400" y="278" fill="#eaeae6" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="15" font-weight="500" text-anchor="middle">Kantlinjen viser ytterkanten. Den stiplede linjen skiller kjørefelt.</text>
+</svg>

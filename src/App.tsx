@@ -1,3 +1,4 @@
+import { TrafficSignLookPage, TrafficSignNumberIndex } from './components/traffic-signs/TrafficSignLookPage'
 // Main App Component
 import { useState, useEffect, useCallback, Suspense, lazy, startTransition } from 'react'
 import { Routes, Route, Link, useNavigate, useLocation, Navigate, useParams } from 'react-router-dom'
@@ -9,9 +10,16 @@ const LearningGamesIndex = lazy(() => import('./components/LearningGamesIndex'))
 const StoppingDistanceChallenge = lazy(() => import('./components/StoppingDistanceChallenge'))
 const RoadMarkingGame = lazy(() => import('./components/RoadMarkingGame'))
 const VikepliktSpill = lazy(() => import('./components/VikepliktSpill'))
-const ParkingIsoDemo = lazy(() => import('./components/ParkingIsoDemo'))
-const Parking2DDemo = lazy(() => import('./components/Parking2DDemo'))
-const CarLightsDemo = lazy(() => import('./components/CarLightsDemo'))
+// MIDLERTIDIG FRAKOBLET 26.07.2026 — Andrés egne demoer for parkering og billys.
+// Komponentfilene ligger urørt lokalt (ParkingIsoDemo.tsx, Parking2DDemo.tsx,
+// CarLightsDemo.tsx, data/parking2DScenarios.ts), men de er ikke committet.
+// App.tsx var derimot committet med importene, så Netlify feilet med TS2307 og
+// hele nettstedet stod udeployet fra 20. juli.
+// Slik kobler du dem inn igjen når demoene er klare: fjern kommentaren her og på
+// de tre rutene under /laeringsspill/, og commit komponentfilene samtidig.
+// const ParkingIsoDemo = lazy(() => import('./components/ParkingIsoDemo'))
+// const Parking2DDemo = lazy(() => import('./components/Parking2DDemo'))
+// const CarLightsDemo = lazy(() => import('./components/CarLightsDemo'))
 const SignSpeedGamePage = lazy(() => import('./pages/SignSpeedGamePage'))
 const TrafficSignBank = lazy(() => import('./components/traffic-signs/TrafficSignBank'))
 const TrafficSignCategoryPage = lazy(() => import('./components/traffic-signs/TrafficSignCategoryPage'))
@@ -293,11 +301,18 @@ export default function App() {
                         <Route path="/laeringsspill/stopplengde" element={<StoppingDistanceChallenge />} />
                         <Route path="/laeringsspill/veimerking" element={<RoadMarkingGame />} />
                         <Route path="/laeringsspill/vikeplikt" element={<VikepliktSpill />} />
-                        <Route path="/laeringsspill/parkering-iso-demo" element={<ParkingIsoDemo />} />
-                        <Route path="/laeringsspill/parkering-2d-demo" element={<Parking2DDemo />} />
-                        <Route path="/laeringsspill/billys-demo" element={<CarLightsDemo />} />
+                        {/* Midlertidig frakoblet 26.07.2026 — se kommentar ved importene øverst.
+                            Rutene lå ikke i sitemap og ingenting lenket til dem, så de var
+                            uansett bare nåbare ved å skrive URL-en manuelt. */}
+                        {/* <Route path="/laeringsspill/parkering-iso-demo" element={<ParkingIsoDemo />} /> */}
+                        {/* <Route path="/laeringsspill/parkering-2d-demo" element={<Parking2DDemo />} /> */}
+                        {/* <Route path="/laeringsspill/billys-demo" element={<CarLightsDemo />} /> */}
                         <Route path="/laeringsspill/skiltduellen" element={<SignSpeedGamePage />} />
                         <Route path="/trafikkskilt" element={<TrafficSignBank />} />
+                        <Route path="/trafikkskilt/skiltnummer" element={<TrafficSignNumberIndex />} />
+                        <Route path="/trafikkskilt/blaa-skilt" element={<TrafficSignLookPage />} />
+                        <Route path="/trafikkskilt/rode-skilt" element={<TrafficSignLookPage />} />
+                        <Route path="/trafikkskilt/trekantede-skilt" element={<TrafficSignLookPage />} />
                         <Route path="/trafikkskilt/:categorySlug" element={<TrafficSignCategoryPage />} />
                         <Route path="/trafikkskilt/:categorySlug/:signSlug" element={<TrafficSignDetailPage />} />
                         <Route path="/min-fremgang" element={<MinFremgang />} />

@@ -174,3 +174,36 @@ export function parseInlineLinks(text: string) {
 
     return parts.length > 0 ? parts : [text]
 }
+
+/**
+ * Legger data-label på hver <td> i artikkeltabeller, hentet fra <th> i samme kolonne.
+ * Brukes fordi tabellene stables på mobil (.responsive-theory-table i theory.css) og da
+ * trenger hver celle sitt eget kolonnenavn. Ren strengoperasjon, så den virker også under
+ * prerendering hvor DOM ikke finnes. Hver <table> behandles for seg, og celler som
+ * allerede har data-label — eller ligger i første kolonne — blir stående urørt.
+ */
+export function addTableCellLabels(html: string): string {
+    return html.replace(/<table[\s\S]*?<\/table>/gi, (table) => {
+        const headMatch = table.match(/<thead[\s\S]*?<\/thead>/i)
+        if (!headMatch) return table
+        const headers: string[] = []
+        for (const th of headMatch[0].matchAll(/<th[^>]*>([\s\S]*?)<\/th>/gi)) {
+            headers.push(th[1].replace(/<[^>]+>/g, '').replace(/&nbsp;/g, ' ').trim())
+        }
+        if (headers.length === 0) return table
+
+        const bodyStart = table.search(/<tbody[^>]*>/i)
+        if (bodyStart === -1) return table
+        const head = table.slice(0, bodyStart)
+        const body = table.slice(bodyStart).replace(/<tr[\s\S]*?<\/tr>/gi, (row) => {
+            let col = 0
+            return row.replace(/<td\b([^>]*)>/gi, (cell, attrs) => {
+                const label = headers[col]
+                col++
+                if (col === 1 || !label || /data-label=/i.test(attrs)) return cell
+                return `<td${attrs} data-label="${label.replace(/"/g, '&quot;')}">`
+            })
+        })
+        return head + body
+    })
+}

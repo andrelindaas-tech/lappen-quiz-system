@@ -33,6 +33,10 @@ function generateSitemap() {
     { loc: '/quiz/skilt', priority: '0.6', changefreq: 'monthly' },
     { loc: '/quiz/fartsregler', priority: '0.6', changefreq: 'monthly' },
     { loc: '/quiz/veimerking', priority: '0.6', changefreq: 'monthly' },
+  { loc: '/trafikkskilt/skiltnummer', priority: '0.7', changefreq: 'monthly' },
+  { loc: '/trafikkskilt/blaa-skilt', priority: '0.7', changefreq: 'monthly' },
+  { loc: '/trafikkskilt/rode-skilt', priority: '0.7', changefreq: 'monthly' },
+  { loc: '/trafikkskilt/trekantede-skilt', priority: '0.7', changefreq: 'monthly' },
     { loc: '/sporsmal', priority: '0.7', changefreq: 'weekly' },
   ];
 

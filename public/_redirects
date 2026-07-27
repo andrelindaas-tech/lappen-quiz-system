@@ -29,3 +29,14 @@
 /laeringsressurser/trafikkuhell    /laeringsressurser/trafikkuhell-forstehjelp 301
 
 /*    /index.html   200
+
+# Konsolidering 25.07.2026 — spørsmålssider slått sammen med eiende artikkel
+/sporsmal/hvor-langt-fra-gangfelt-kan-du-parkere   /laeringsressurser/stans-og-parkering   301
+/sporsmal/hva-betyr-blinkende-gult-lys             /laeringsressurser/trafikklys-signaler  301
+/sporsmal/er-det-lov-a-kjore-forbi-pa-hoyre-side   /laeringsressurser/forbikjoring         301
+
+# Rydding 25.07.2026 — quiz-URL-er Google indekserte fordi ruta godtok alle kategorier
+/quiz/fareskilt            /quiz/skilt        301
+/quiz/forbudsskilt         /quiz/skilt        301
+/quiz/underskilt           /quiz/skilt        301
+/quiz/fart_og_plassering   /quiz/fartsregler  301

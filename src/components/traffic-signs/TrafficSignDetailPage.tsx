@@ -204,6 +204,11 @@ export default function TrafficSignDetailPage() {
         <meta property="og:description" content={seoDesc} />
         <meta name="twitter:title" content={seoTitle} />
         <meta name="twitter:description" content={seoDesc} />
+        {/* Uten dette arver alle 214 skiltsidene det generiske delingsbildet fra index.html.
+            Her er selve skiltet det eneste som gir mening — også for AI-modeller som leser siden. */}
+        <meta property="og:image" content={`https://teori-test.no${sign.imagePath}`} />
+        <meta property="og:image:alt" content={`Skilt ${sign.code} ${sign.name}`} />
+        <meta name="twitter:image" content={`https://teori-test.no${sign.imagePath}`} />
         <script type="application/ld+json">
           {JSON.stringify(imageStructuredData)}
         </script>

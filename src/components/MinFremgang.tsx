@@ -14,6 +14,7 @@ import {
     getDisplayName,
     setDisplayName,
 } from '../utils/progressStore'
+import { getWrongAnswersCount } from '../utils/wrongAnswersStore'
 import { trackEvent } from '../utils/analytics'
 import { useCountUp } from '../hooks/useCountUp'
 import { theoryTopics, theoryArticles } from '../data/theoryData'
@@ -49,6 +50,8 @@ const cardStyle: CSSProperties = {
 export default function MinFremgang() {
     const [name, setName] = useState(() => getDisplayName())
     const [nameInput, setNameInput] = useState('')
+    const [fokusCount, setFokusCount] = useState(0)
+    useEffect(() => { setFokusCount(getWrongAnswersCount()) }, [])
     const [showAll, setShowAll] = useState(false)
 
     const streak = getStreak()
@@ -182,6 +185,43 @@ export default function MinFremgang() {
                             {streak.count === 0 ? 'Fullfør en prøve i dag for å starte!' : 'Hold den gående! 🔥'}
                         </span>
                     </div>
+                </div>
+
+                {/* Fokusmodus — samme språk som kortet på forsiden, kortere */}
+                <div style={{ ...cardStyle, display: 'flex', alignItems: 'center', gap: '14px', flexWrap: 'wrap' }}>
+                    <div style={{
+                        flex: 'none', width: '44px', height: '44px', borderRadius: '13px',
+                        backgroundColor: 'rgba(45, 212, 191, 0.16)', color: 'var(--color-primary)',
+                        display: 'flex', alignItems: 'center', justifyContent: 'center',
+                    }}>
+                        <Target size={22} strokeWidth={2.2} />
+                    </div>
+                    <div style={{ flex: 1, minWidth: '180px' }}>
+                        <div style={{ fontSize: '0.9rem', fontWeight: 700, marginBottom: '3px' }}>Fokusmodus</div>
+                        <div style={{ fontSize: '0.85rem', color: 'var(--color-text-light)', lineHeight: 1.45 }}>
+                            {fokusCount > 0
+                                ? 'Øv på spørsmål du har svart feil på tidligere, så du får jobbet bort de svake punktene før prøvedagen.'
+                                : 'Spørsmål du svarer feil på lagres her, så du kan øve bort de svake punktene før prøvedagen.'}
+                        </div>
+                        <div style={{ fontSize: '0.85rem', color: 'var(--color-text-light)', marginTop: '8px' }}>
+                            Lagrede feilsvar:{' '}
+                            <strong style={{ color: fokusCount > 0 ? 'var(--color-primary)' : 'inherit' }}>
+                                {fokusCount} {fokusCount === 1 ? 'spørsmål' : 'spørsmål'}
+                            </strong>
+                        </div>
+                    </div>
+                    {fokusCount > 0 && (
+                        <Link
+                            to="/quiz?mode=fokus"
+                            onClick={() => trackEvent('progress_focus_click', { count: fokusCount })}
+                            style={{
+                                padding: '0.6rem 1.1rem', borderRadius: '10px', background: 'var(--color-primary)',
+                                color: '#fff', fontWeight: 600, textDecoration: 'none', whiteSpace: 'nowrap',
+                            }}
+                        >
+                            Start test ›
+                        </Link>
+                    )}
                 </div>
 
                 {/* Artikler + prøver totalt */}

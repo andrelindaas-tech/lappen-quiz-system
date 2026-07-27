@@ -933,3 +933,51 @@ body.dark-mode .theory-inline-code {
     background-color: #1a1d24;
     border-color: rgba(255, 255, 255, 0.08);
 }
+/* ---------------------------------------------------------------
+   Responsive tabeller i artikler (.responsive-theory-table)
+   Klassen var i bruk i 66 tabeller uten at den hadde CSS. På mobil
+   ble kolonne 2 og 3 klippet av wrapperens overflow-x. Under 700 px
+   stables radene i stedet, med kolonneoverskriften hentet fra
+   data-label. !important trengs fordi cellene har inline padding.
+   --------------------------------------------------------------- */
+.responsive-theory-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+@media (max-width: 700px) {
+    .responsive-theory-table thead {
+        display: none;
+    }
+
+    .responsive-theory-table tr {
+        display: block;
+        padding: 0.9rem 0;
+    }
+
+    .responsive-theory-table td {
+        display: block;
+        padding: 0 0 0.6rem 0 !important;
+        border: none !important;
+    }
+
+    .responsive-theory-table td:last-child {
+        padding-bottom: 0 !important;
+    }
+
+    .responsive-theory-table td:first-child {
+        font-size: 1.02rem;
+        margin-bottom: 0.15rem;
+    }
+
+    .responsive-theory-table td[data-label]::before {
+        content: attr(data-label);
+        display: block;
+        font-size: 0.75rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        color: var(--color-text-light);
+        margin-bottom: 0.15rem;
+    }
+}

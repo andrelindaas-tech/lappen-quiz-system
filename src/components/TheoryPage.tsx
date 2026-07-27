@@ -29,7 +29,7 @@ const articleCategorySections = [
     {
         title: 'Om teoriprøven',
         description: 'Fakta om prøven: antall spørsmål, tid, pris, krav – og hvordan du øver gratis.',
-        ids: ['teoriproven-bil', 'teoritentamen']
+        ids: ['teoriproven-bil', 'teoritentamen', 'teoriprove-gyldig-fravaer']
     },
     {
         title: 'Vikeplikt og kryss',

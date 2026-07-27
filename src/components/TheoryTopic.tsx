@@ -22,7 +22,8 @@ import {
 import BrakeCalculator from './BrakeCalculator'
 import TrailerWeightSimulator from './TrailerWeightSimulator'
 import DashboardWarningSimulator from './DashboardWarningSimulator'
-import { parseInlineLinks } from '../utils/textUtils'
+import { parseInlineLinks, addTableCellLabels } from '../utils/textUtils'
+import NesteSteg from './NesteSteg'
 import { markArticleRead } from '../utils/progressStore'
 import { SignIllustration } from './SignIllustration'
 import AuthorityPyramid from './AuthorityPyramid'
@@ -312,7 +313,7 @@ export default function TheoryTopic({ topic, onBack }: TheoryTopicProps) {
                                 {section.component === 'TilhengerKalkulator' && <TilhengerKalkulator />}
                             </div>
                         ) : section.type === 'table' ? (
-                            <div className="theory-section-content" dangerouslySetInnerHTML={{ __html: section.content || '' }} />
+                            <div className="theory-section-content" dangerouslySetInnerHTML={{ __html: addTableCellLabels(section.content || '') }} />
                         ) : (
                             <div className="theory-section-content">
                                 {section.content && renderContent(section.content)}
@@ -345,6 +346,8 @@ export default function TheoryTopic({ topic, onBack }: TheoryTopicProps) {
                         </div>
                     </div>
                 )}
+
+                <NesteSteg articleId={topic.id} />
 
                 {topic.sources && (
                     <div className="theory-sources-section" style={{ marginTop: '2rem', borderTop: '1px solid var(--color-border)', paddingTop: '1.5rem' }}>

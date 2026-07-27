@@ -209,6 +209,41 @@ export default function TrafficSignBank() {
         )}
       </section>
 
+      {/* Finn skiltet etter utseende — egne sider, fordi søkefeltet over er klientsidig
+          og ikke kan rangere i Google på «blått skilt med rød strek» o.l. */}
+      <section style={{ marginBottom: 'var(--spacing-2xl)' }}>
+        <h2 style={{ fontSize: '1.35rem', fontWeight: 700, marginBottom: 'var(--spacing-sm)' }}>
+          Husker du bare hvordan skiltet så ut?
+        </h2>
+        <p style={{ color: 'var(--color-text-light)', lineHeight: 1.6, maxWidth: '800px', marginBottom: 'var(--spacing-md)' }}>
+          Du trenger ikke vite hva skiltet heter. Bla gjennom etter farge, form eller nummer.
+        </p>
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px' }}>
+          {[
+            { to: '/trafikkskilt/blaa-skilt', navn: 'Blå skilt', antall: 67 },
+            { to: '/trafikkskilt/rode-skilt', navn: 'Røde skilt', antall: 42 },
+            { to: '/trafikkskilt/trekantede-skilt', navn: 'Trekantede skilt', antall: 23 },
+            { to: '/trafikkskilt/skiltnummer', navn: 'Alle skilt etter nummer', antall: 214 },
+          ].map((g) => (
+            <Link
+              key={g.to}
+              to={g.to}
+              style={{
+                padding: '10px 16px',
+                borderRadius: '999px',
+                border: '1px solid var(--color-border)',
+                textDecoration: 'none',
+                color: 'inherit',
+                fontWeight: 600,
+                fontSize: '0.95rem',
+              }}
+            >
+              {g.navn} <span style={{ color: 'var(--color-text-light)', fontWeight: 400 }}>({g.antall})</span>
+            </Link>
+          ))}
+        </div>
+      </section>
+
       {/* Categories Grid */}
       <section id="categories" style={{ marginBottom: 'var(--spacing-2xl)' }}>
         <h2 style={{ fontSize: '1.75rem', fontWeight: 800, letterSpacing: '-0.02em', marginBottom: 'var(--spacing-sm)' }}>

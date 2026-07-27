@@ -144,62 +144,7 @@ export const questionPages: QuestionPageData[] = [
         quizPath: '/quiz?mode=hurtig',
         quizLabel: 'Øv med en ekspresstest',
     },
-    {
-        slug: 'hva-betyr-blinkende-gult-lys',
-        question: 'Hva betyr blinkende gult lys?',
-        answerShort: 'At signalanlegget er ute av drift eller varsler om fare. Blinkende gult gir ingen prioritet — følg skilt og vikepliktregler, og vær ekstra oppmerksom.',
-        options: [
-            { text: 'Du har forkjørsrett gjennom krysset' },
-            { text: 'Anlegget er ute av drift — følg skilt og vikepliktregler', correct: true },
-            { text: 'Lyset skifter snart til grønt' },
-            { text: 'Kun kollektivtrafikk kan kjøre' },
-        ],
-        explanation: 'Når trafikklyset blinker gult, er lysreguleringen i praksis «koblet ut». Da rykker du ett nivå ned i [myndighetspyramiden](/laeringsressurser/myndighetspyramiden): skiltene og vegoppmerkingen gjelder, og finnes ikke de, gjelder høyreregelen.\n\nTypisk teorifelle: Blinkende gult lys sammen med et vikepliktskilt. Da har du vikeplikt — skiltet gjelder for fullt når lyset er ute av spill.\n\nBlinkende gult brukes også som ren fareblinking, for eksempel ved gangfelt — sett ned farten og vær klar til å stanse.\n\n[Les guiden om trafikklys og signaler](/laeringsressurser/trafikklys-signaler).',
-        topic: 'Trafikklys og signaler',
-        articleId: 'myndighetspyramiden',
-        articleLabel: 'Myndighetspyramiden forklart',
-        quizPath: '/quiz?mode=hurtig',
-        quizLabel: 'Øv med en ekspresstest',
-    },
 
-    // ===== Parkering =====
-    {
-        slug: 'hvor-langt-fra-gangfelt-kan-du-parkere',
-        question: 'Hvor langt fra et gangfelt kan du parkere?',
-        answerShort: 'Du må stanse/parkere minst 5 meter foran gangfeltet. Avstanden regnes i kjøreretningen — rett etter gangfeltet gjelder ikke 5-metersregelen.',
-        options: [
-            { text: 'Minst 1 meter foran' },
-            { text: 'Minst 5 meter foran', correct: true },
-            { text: 'Minst 10 meter på begge sider' },
-            { text: 'Parkering ved gangfelt er alltid forbudt uansett avstand' },
-        ],
-        explanation: 'Grunnen til regelen er sikt: en bil parkert rett foran gangfeltet skjuler fotgjengere — særlig barn — for trafikken som nærmer seg. Fem meter gir førere en sjanse til å oppdage den som skal krysse.\n\nHusk at regelen gjelder *foran* gangfeltet, altså på den siden trafikken kommer fra i din kjøreretning. Etter gangfeltet kan du i utgangspunktet parkere (så lenge ingen andre forbud gjelder).\n\nDen samme 5-metersregelen gjelder også foran veikryss. [Les hele guiden om stans og parkering](/laeringsressurser/stans-og-parkering) — dette er en klassisk teorifelle.',
-        topic: 'Parkering og stans',
-        articleId: 'stans-og-parkering',
-        articleLabel: 'Stans og parkering – 5-metersregelen',
-        quizPath: '/quiz?mode=hurtig',
-        quizLabel: 'Øv med en ekspresstest',
-        sources: [{ name: 'Trafikkreglene § 17 (Lovdata)', url: 'https://lovdata.no/dokument/SF/forskrift/1986-03-21-747' }],
-    },
-
-    // ===== Forbikjøring =====
-    {
-        slug: 'er-det-lov-a-kjore-forbi-pa-hoyre-side',
-        question: 'Er det lov å kjøre forbi på høyre side?',
-        answerShort: 'Hovedregelen er forbikjøring til venstre. Passering på høyre er bare lov i bestemte tilfeller — blant annet når kjøretøyet foran skal svinge til venstre, eller i saktegående kø i flere felt.',
-        options: [
-            { text: 'Ja, alltid når det er flere felt' },
-            { text: 'Nei, aldri under noen omstendighet' },
-            { text: 'Bare når kjøretøyet foran skal svinge til venstre, eller i kø i flere felt', correct: true },
-            { text: 'Bare på motorvei' },
-        ],
-        explanation: 'De viktigste unntakene fra venstreregelen:\n- Kjøretøyet foran har plassert seg for å svinge til venstre og gitt tegn — da passerer du på høyre.\n- I tett, saktegående kø i flere felt regnes det ikke som forbikjøring at feltene beveger seg ulikt.\n- Der feltene har ulike kjøremål (for eksempel eget felt for høyresving).\n\nPå motorvei er «snik-forbikjøring» på høyre i normal fart ikke lov — du skal tilbake til høyre felt etter forbikjøring og passere andre på venstre side.\n\n[Les hele guiden om forbikjøring](/laeringsressurser/forbikjoring) — med reglene for når forbikjøring er helt forbudt.',
-        topic: 'Forbikjøring og plassering',
-        articleId: 'forbikjoring',
-        articleLabel: 'Forbikjøring – regler, forbud og feller',
-        quizPath: '/quiz?mode=hurtig',
-        quizLabel: 'Øv med en ekspresstest',
-    },
 
     // ===== Førerkort og prikker =====
     {

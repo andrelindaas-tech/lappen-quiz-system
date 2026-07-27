@@ -1,6 +1,7 @@
 // Action Layer: Quiz Container (Main Orchestrator)
 import { useState, useEffect } from 'react'
-import { useParams, useSearchParams } from 'react-router-dom'
+import NotFound from './NotFound'
+import { useParams, useSearchParams, Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
 import { fetchRandomQuestions, fetchQuestionsByCategory, fetchQuestionsByIds } from '../services/questionService'
 import { QuizEngine } from '../logic/quizEngine'
@@ -23,10 +24,80 @@ interface QuizContainerProps {
     onQuizComplete: () => void
 }
 
+// Gyldige temaquiz-URL-er. Ruta godtok tidligere hvilken som helst streng, så Google
+// rakk å indeksere /quiz/fareskilt, /quiz/underskilt, /quiz/forbudsskilt og
+// /quiz/fart_og_plassering — alle på posisjon 35–64 med null klikk. Ukjente kategorier
+// gir nå en ekte 404 med noindex i stedet for en tom side som svarer 200.
+const GYLDIGE_QUIZ_KATEGORIER = ['vikeplikt', 'skilt', 'fartsregler', 'veimerking'] as const
+
 const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL
+
+
+// Crawlbar tekst under quizen. Uten denne er quiz-sidene helt tomme for Google:
+// /quiz/skilt rangerer på posisjon 7,7 med null tegn innhold, og de svakere
+// quiz-sidene har ingenting å rangere på i det hele tatt. Vises likt for alle.
+const QUIZ_INFO: Record<string, { tittel: string; tekst: string; lenker: { to: string; navn: string }[] }> = {
+    skilt: {
+        tittel: 'Om skilt-testen',
+        tekst: 'Testen henter ti tilfeldige spørsmål om norske trafikkskilt — fareskilt, forbudsskilt, påbudsskilt og opplysningsskilt. Du får forklaring på hvert svar, og du kan ta testen så mange ganger du vil. Vil du lese deg opp først, finner du alle 214 skiltene med bilde og forklaring i skiltguiden.',
+        // Maks to lenker per quiz. Skiltguiden er hovedmålet; nummeroppslaget dekker
+        // det andre behovet etter en test — «jeg husker skiltet, ikke navnet».
+        // Farge- og nummersidene lenkes fra skiltguiden og fra hverandre.
+        lenker: [
+            { to: '/trafikkskilt', navn: 'Skiltguiden – alle 214 skilt' },
+            { to: '/trafikkskilt/skiltnummer', navn: 'Slå opp skilt på nummer' },
+        ],
+    },
+    vikeplikt: {
+        tittel: 'Om vikeplikt-testen',
+        tekst: 'Ti spørsmål om vikeplikt: høyreregelen, rundkjøring, gangfelt, buss fra holdeplass og vikepliktskiltene. Vikeplikt er et av temaene flest stryker på, så det er verdt å ta testen flere ganger.',
+        // Spillet beholdes som lenke nummer to: GA4 viser 8m30s og 8,9 visninger
+        // per bruker på det, klart høyest av alt innholdet.
+        lenker: [
+            { to: '/laeringsressurser/vikeplikt', navn: 'Vikeplikt – komplett guide' },
+            { to: '/laeringsspill/vikeplikt', navn: 'Vikepliktspillet' },
+        ],
+    },
+    fartsregler: {
+        tittel: 'Om fartstesten',
+        tekst: 'Spørsmål om fartsgrenser, plassering i kjørefelt, reaksjonstid og bremselengde. Regneoppgavene om stopplengde er blant de vanligste på teoriprøven.',
+        // Bremselengde-siden dekker også reaksjonstid, så den lenken er droppet.
+        lenker: [
+            { to: '/laeringsressurser/fartsgrenser', navn: 'Fartsgrenser i Norge' },
+            { to: '/laeringsressurser/bremselengde', navn: 'Bremselengde og stopplengde' },
+        ],
+    },
+    veimerking: {
+        tittel: 'Om veimerking-testen',
+        tekst: 'Spørsmål om linjene i veibanen: sperrelinje, varsellinje, kombinert linje, kantlinje, vikelinje og sperreområde. Fargen og mønsteret avgjør hva du har lov til.',
+        lenker: [
+            { to: '/laeringsressurser/veimerking', navn: 'Veimerking forklart med bilder' },
+            { to: '/laeringsspill/veimerking', navn: 'Veimerking-spillet' },
+        ],
+    },
+}
+
+function QuizInfo({ kategori }: { kategori?: string }) {
+    const info = kategori ? QUIZ_INFO[kategori.toLowerCase()] : undefined
+    if (!info) return null
+    return (
+        <section style={{ maxWidth: '46rem', margin: '2.5rem auto 0', padding: '1.25rem 1.5rem', borderTop: '1px solid var(--color-border)' }}>
+            <h2 style={{ fontSize: '1.1rem', fontWeight: 700, marginBottom: '0.6rem' }}>{info.tittel}</h2>
+            <p style={{ color: 'var(--color-text-light)', lineHeight: 1.65, margin: '0 0 0.9rem' }}>{info.tekst}</p>
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.4rem 1.1rem', fontSize: '0.95rem' }}>
+                {info.lenker.map((l) => (
+                    <Link key={l.to} to={l.to} style={{ color: 'var(--color-primary)', fontWeight: 600, textDecoration: 'none' }}>
+                        {l.navn}
+                    </Link>
+                ))}
+            </div>
+        </section>
+    )
+}
 
 export default function QuizContainer({ onReturnHome, onQuizComplete }: QuizContainerProps) {
     const { category: rawCategory } = useParams()
+    const ukjentKategori = !!rawCategory && !GYLDIGE_QUIZ_KATEGORIER.includes(rawCategory.toLowerCase() as typeof GYLDIGE_QUIZ_KATEGORIER[number])
     const category = rawCategory?.toLowerCase() === 'fartsregler' ? 'fart_og_plassering' : rawCategory
     const [searchParams] = useSearchParams()
 
@@ -240,6 +311,8 @@ export default function QuizContainer({ onReturnHome, onQuizComplete }: QuizCont
 
     const canonicalUrl = `https://teori-test.no/quiz${category ? `/${category}` : ''}/`
 
+    if (ukjentKategori) return <NotFound />
+
     if (loading) {
         return (
             <div className="container">
@@ -250,6 +323,8 @@ export default function QuizContainer({ onReturnHome, onQuizComplete }: QuizCont
                 <div className="loading">
                     Laster spørsmål...
                 </div>
+                {/* Crawleren ser denne tilstanden, ikke den ferdige quizen — teksten må stå her også. */}
+                <QuizInfo kategori={rawCategory} />
             </div>
         )
     }
@@ -360,6 +435,8 @@ export default function QuizContainer({ onReturnHome, onQuizComplete }: QuizCont
                 onPrevious={handlePrevious}
                 previousAnswer={previousAnswer}
             />
+
+            <QuizInfo kategori={rawCategory} />
         </div>
     )
 }

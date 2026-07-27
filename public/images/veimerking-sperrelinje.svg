@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 300" width="800" height="300" role="img" aria-labelledby="ttl dsc"><title id="ttl">Hvit og gul sperrelinje sett ovenfra</title><desc id="dsc">Hvit sperrelinje skiller kjorefelt i samme kjoreretning; begge retningspilene peker samme vei. Gul sperrelinje skiller motgaende kjoreretninger; pilene peker mot hverandre. Begge er heltrukne og skal ikke krysses.</desc><rect width="800" height="300" rx="12" fill="#262624"/>
+<text x="400" y="30" fill="#a3a39d" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="13" font-weight="500" text-anchor="middle">Sperrelinje er heltrukken — den skal ikke krysses</text>
+<rect x="40" y="54" width="300" height="196" rx="6" fill="#3f3f3c"/><rect x="56" y="62" width="4" height="180" fill="#f6f6f3" opacity=".8"/><rect x="320" y="62" width="4" height="180" fill="#f6f6f3" opacity=".8"/>
+<rect x="460" y="54" width="300" height="196" rx="6" fill="#3f3f3c"/><rect x="476" y="62" width="4" height="180" fill="#f6f6f3" opacity=".8"/><rect x="740" y="62" width="4" height="180" fill="#f6f6f3" opacity=".8"/>
+<line x1="190" y1="64" x2="190" y2="240" stroke="#f6f6f3" stroke-width="5"/>
+<path d="M120 141 l8 16 h-16 z" fill="#eaeae6" opacity=".85"/>
+<path d="M260 141 l8 16 h-16 z" fill="#eaeae6" opacity=".85"/>
+<line x1="610" y1="64" x2="610" y2="240" stroke="#edb92a" stroke-width="5"/>
+<path d="M540 141 l8 16 h-16 z" fill="#eaeae6" opacity=".85"/>
+<path d="M680 163 l8 -16 h-16 z" fill="#eaeae6" opacity=".85"/>
+<rect x="64" y="64" width="50" height="21" rx="10" fill="#ffffff" opacity=".13"/><text x="89" y="79" fill="#eaeae6" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="12.5" text-anchor="middle">1004</text>
+<rect x="484" y="64" width="50" height="21" rx="10" fill="#ffffff" opacity=".13"/><text x="509" y="79" fill="#eaeae6" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="12.5" text-anchor="middle">1004</text>
+<text x="190" y="278" fill="#eaeae6" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="15" font-weight="500" text-anchor="middle">Hvit — kjørefelt i samme retning</text>
+<text x="610" y="278" fill="#eaeae6" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="15" font-weight="500" text-anchor="middle">Gul — motgående kjøreretninger</text>
+</svg>

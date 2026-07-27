@@ -48,7 +48,7 @@ export const trafficSigns: TrafficSign[] = [
       { name: 'Statens vegvesen', url: 'https://www.vegvesen.no' },
       { name: 'Lovdata', url: 'https://lovdata.no/dokument/SF/forskrift/2005-10-07-1219' }
     ],
-    aliases: ['yield', 'gi vikeplikt', 'trekant'],
+    aliases: ['yield', 'gi vikeplikt', 'trekant'],
     visualDescription: 'Trekantet skilt med spissen ned, rød kant og hvit bunn.',
   },
   {
@@ -72,7 +72,7 @@ export const trafficSigns: TrafficSign[] = [
       { name: 'Statens vegvesen', url: 'https://www.vegvesen.no' },
       { name: 'Lovdata', url: 'https://lovdata.no/dokument/SF/forskrift/2005-10-07-1219' }
     ],
-    aliases: ['stop', 'stoppe', 'stoppskilt'],
+    aliases: ['stop', 'stoppe', 'stoppskilt'],
     visualDescription: 'Åttekantet rødt skilt med hvit kant og teksten STOP.',
   },
   {
@@ -96,7 +96,7 @@ export const trafficSigns: TrafficSign[] = [
       { name: 'Statens vegvesen', url: 'https://www.vegvesen.no' },
       { name: 'Lovdata', url: 'https://lovdata.no/dokument/SF/forskrift/2005-10-07-1219' }
     ],
-    aliases: ['forkjørsvei', 'diamant', 'gul diamant'],
+    aliases: ['forkjørsvei', 'diamant', 'gul diamant'],
     visualDescription: 'Diamantformet skilt med gul midt, hvit ramme og svart ytterkant.',
   },
   {
@@ -119,7 +119,7 @@ export const trafficSigns: TrafficSign[] = [
       { name: 'Statens vegvesen', url: 'https://www.vegvesen.no' },
       { name: 'Lovdata', url: 'https://lovdata.no/dokument/SF/forskrift/2005-10-07-1219' }
     ],
-    aliases: ['slutt på forkjørsvei', 'opphevet forkjørsveg'],
+    aliases: ['slutt på forkjørsvei', 'opphevet forkjørsveg'],
     visualDescription: 'Gul og hvit diamant med fem tynne, parallelle, svarte skråstreker over.',
   },
   {
@@ -142,7 +142,7 @@ export const trafficSigns: TrafficSign[] = [
       { name: 'Statens vegvesen', url: 'https://www.vegvesen.no' },
       { name: 'Lovdata', url: 'https://lovdata.no/dokument/SF/forskrift/2005-10-07-1219' }
     ],
-    aliases: ['forkjørskryss', 'kryss med vikeplikt'],
+    aliases: ['forkjørskryss', 'kryss med vikeplikt'],
     visualDescription: 'Trekantet skilt med spissen opp, rød kant, hvit bunn og et svart symbol som viser en tykk pil rett fram krysset av en tynn tverrlinje.',
   },
   {
@@ -165,7 +165,7 @@ export const trafficSigns: TrafficSign[] = [
       { name: 'Statens vegvesen', url: 'https://www.vegvesen.no' },
       { name: 'Lovdata', url: 'https://lovdata.no/dokument/SF/forskrift/2005-10-07-1219' }
     ],
-    aliases: ['møtende trafikk', 'smal vei', 'rød pil'],
+    aliases: ['møtende trafikk', 'smal vei', 'rød pil'],
     visualDescription: 'Rundt skilt med rød kant, hvit bunn, rød pil oppover og svart pil nedover.',
   },
   {
@@ -188,7 +188,7 @@ export const trafficSigns: TrafficSign[] = [
       { name: 'Statens vegvesen', url: 'https://www.vegvesen.no' },
       { name: 'Lovdata', url: 'https://lovdata.no/dokument/SF/forskrift/2005-10-07-1219' }
     ],
-    aliases: ['møtende vikeplikt', 'smal vei forkjørsrett', 'hvit pil'],
+    aliases: ['møtende vikeplikt', 'smal vei forkjørsrett', 'hvit pil'],
     visualDescription: 'Blått firkantet skilt med hvit pil oppover og rød pil nedover.',
   },
 
@@ -331,7 +331,7 @@ export const trafficSigns: TrafficSign[] = [
     ],
     confusedWith: [],
     sources: [{ name: 'Statens vegvesen', url: 'https://www.vegvesen.no' }],
-    aliases: ['veiarbeid', 'arbeid', 'vegarbeid'],
+    aliases: ['veiarbeid', 'arbeid', 'vegarbeid'],
     visualDescription: 'Trekantet skilt med spissen opp, rød kant, gul bunn og et svart symbol av en person som graver.',
   },
   {
@@ -372,7 +372,7 @@ export const trafficSigns: TrafficSign[] = [
     ],
     confusedWith: [],
     sources: [{ name: 'Statens vegvesen', url: 'https://www.vegvesen.no' }],
-    aliases: ['glatt', 'is', 'glatt kjørebane', 'såpeglatt', 'hålke'],
+    aliases: ['glatt', 'is', 'glatt kjørebane', 'såpeglatt', 'hålke'],
     visualDescription: 'Trekantet skilt med spissen opp, rød kant, hvit bunn og et svart symbol av en bil som sklir og lager svingete spor.',
   },
   {
@@ -533,7 +533,7 @@ export const trafficSigns: TrafficSign[] = [
     ],
     confusedWith: ['140'],
     sources: [{ name: 'Statens vegvesen', url: 'https://www.vegvesen.no' }],
-    aliases: ['barn', 'skole', 'barnehage', 'lekeplass'],
+    aliases: ['barn', 'skole', 'barnehage', 'lekeplass'],
     visualDescription: 'Trekantet skilt med spissen opp, rød kant, hvit bunn og et svart symbol av to barn som løper.',
   },
   {
@@ -648,7 +648,7 @@ export const trafficSigns: TrafficSign[] = [
     imagePath: '/signs/forbudsskilt/skilt-302-innkjoring-forbudt.jpg',
     shortExplanation: 'Viser forbud mot å kjøre forbi skiltet. Sykling kan være tillatt ved underskilt.',
     longExplanation: 'Skiltet markerer at det er forbudt å kjøre inn på vegen fra denne retningen. Dette gjøres ofte for å regulere enveiskjørte veger, slik at trafikk kun flyter én veg. Vegen kan likevel ha trafikk i motsatt retning.',
-    theoryTrap: 'Gjelder kun kjøring inn på vegen fra denne retningen. Vegen kan fortsatt være toveis og ha trafikk som kommer mot deg.',
+    theoryTrap: 'Gjelder kun kjøring inn på vegen fra denne retningen. Vegen kan fortsatt være toveis og ha trafikk som kommer mot deg. Skiltet forveksles ofte med «gjennomkjøring forbudt», som er noe helt annet: der er det lov å kjøre inn, men ikke å bruke vegen som gjennomfartsåre. Innkjøring forbudt betyr at du ikke skal passere skiltet i det hele tatt.',
     whatToDo: [
       'Ikke kjør inn i vegen som er sperret med dette skiltet.',
       'Se etter eventuelle underskilt som gjør unntak for syklende eller andre.',
@@ -656,7 +656,7 @@ export const trafficSigns: TrafficSign[] = [
     ],
     confusedWith: [],
     sources: [{ name: 'Statens vegvesen', url: 'https://www.vegvesen.no' }],
-    aliases: ['innkjøring', 'innkjoring', 'enveiskjørt', 'forbudt innkjøring'],
+    aliases: ['innkjøring', 'innkjoring', 'innkjoring forbudt', 'enveiskjørt', 'forbudt innkjøring', 'skilt 302', 'gjennomkjøring forbudt'],
     visualDescription: 'Rundt rødt skilt med en hvit vannrett bjelke i midten.',
   },
   {
@@ -676,7 +676,7 @@ export const trafficSigns: TrafficSign[] = [
     ],
     confusedWith: ['302', '306.1'],
     sources: [{ name: 'Statens vegvesen', url: 'https://www.vegvesen.no' }],
-    aliases: ['alle kjøretøy', 'stengt veg', 'stengt', 'forbudt for alle kjøretøy'],
+    aliases: ['alle kjøretøy', 'stengt veg', 'stengt', 'forbudt for alle kjøretøy'],
     visualDescription: 'Rundt skilt med rød kant og hvit bunn.',
   },
   {
@@ -696,7 +696,7 @@ export const trafficSigns: TrafficSign[] = [
     ],
     confusedWith: ['306.0'],
     sources: [{ name: 'Statens vegvesen', url: 'https://www.vegvesen.no' }],
-    aliases: ['motorvogn', 'bil og motorsykkel', 'forbudt for motorvogn'],
+    aliases: ['motorvogn', 'bil og motorsykkel', 'forbudt for motorvogn'],
     visualDescription: 'Rundt skilt med rød kant, hvit bunn og et svart symbol av en personbil.',
   },
   {
@@ -716,7 +716,7 @@ export const trafficSigns: TrafficSign[] = [
     ],
     confusedWith: ['306.8'],
     sources: [{ name: 'Statens vegvesen', url: 'https://www.vegvesen.no' }],
-    aliases: ['sykkel forbudt', 'sykling', 'forbudt for syklende'],
+    aliases: ['sykkel forbudt', 'sykling', 'forbudt for syklende'],
     visualDescription: 'Rundt skilt med rød kant, hvit bunn og et svart symbol av en sykkel.',
   },
   {
@@ -736,7 +736,7 @@ export const trafficSigns: TrafficSign[] = [
     ],
     confusedWith: ['306.6'],
     sources: [{ name: 'Statens vegvesen', url: 'https://www.vegvesen.no' }],
-    aliases: ['gående og syklende', 'fotgjenger forbudt', 'forbudt for gående og syklende'],
+    aliases: ['gående og syklende', 'fotgjenger forbudt', 'forbudt for gående og syklende'],
     visualDescription: 'Rundt skilt med rød kant, hvit bunn og svarte symboler av en gående og en syklende.',
   },
   {
@@ -756,7 +756,7 @@ export const trafficSigns: TrafficSign[] = [
     ],
     confusedWith: [],
     sources: [{ name: 'Statens vegvesen', url: 'https://www.vegvesen.no' }],
-    aliases: ['farlig gods', 'adr', 'giftig last', 'transport av farlig gods'],
+    aliases: ['farlig gods', 'adr', 'giftig last', 'transport av farlig gods'],
     visualDescription: 'Rundt skilt med rød kant, hvit bunn, en svart lastebil og et oransje symbol (eksplosjon) bak.',
   },
   {
@@ -776,7 +776,7 @@ export const trafficSigns: TrafficSign[] = [
     ],
     confusedWith: ['314'],
     sources: [{ name: 'Statens vegvesen', url: 'https://www.vegvesen.no' }],
-    aliases: ['bredde', 'breddegrense', 'trang vei'],
+    aliases: ['bredde', 'breddegrense', 'trang vei'],
     visualDescription: 'Rundt skilt med rød kant, hvit bunn og teksten 2,3 m med piler på hver side.',
   },
   {
@@ -796,7 +796,7 @@ export const trafficSigns: TrafficSign[] = [
     ],
     confusedWith: ['312'],
     sources: [{ name: 'Statens vegvesen', url: 'https://www.vegvesen.no' }],
-    aliases: ['høyde', 'hoyde', 'høydegrense', 'lav undergang'],
+    aliases: ['høyde', 'hoyde', 'høydegrense', 'lav undergang'],
     visualDescription: 'Rundt skilt med rød kant, hvit bunn og teksten 3,5 m med piler over og under.',
   },
   {
@@ -816,7 +816,7 @@ export const trafficSigns: TrafficSign[] = [
     ],
     confusedWith: ['330.2', '332'],
     sources: [{ name: 'Statens vegvesen', url: 'https://www.vegvesen.no' }],
-    aliases: ['svingforbud', 'høyre sving', 'svinge høyre', 'svingforbud høyre'],
+    aliases: ['svingforbud', 'høyre sving', 'svinge høyre', 'svingforbud høyre'],
     visualDescription: 'Rundt skilt med rød kant, hvit bunn og en svart pil som svinger til høyre med en rød skråstrek over.',
   },
   {
@@ -836,7 +836,7 @@ export const trafficSigns: TrafficSign[] = [
     ],
     confusedWith: ['330.1', '332'],
     sources: [{ name: 'Statens vegvesen', url: 'https://www.vegvesen.no' }],
-    aliases: ['svingforbud', 'venstre sving', 'svinge venstre', 'svingforbud venstre'],
+    aliases: ['svingforbud', 'venstre sving', 'svinge venstre', 'svingforbud venstre'],
     visualDescription: 'Rundt skilt med rød kant, hvit bunn og en svart pil som svinger til venstre med en rød skråstrek over.',
   },
   {
@@ -847,7 +847,7 @@ export const trafficSigns: TrafficSign[] = [
     slug: 'vendingsforbud',
     category: 'forbudsskilt',
     imagePath: '/signs/forbudsskilt/skilt-332-vendingsforbud.jpg',
-    shortExplanation: 'Forbyr å vende kjøretøyet (ta U-sving) i kryss eller på vegstrekning.',
+    shortExplanation: 'Forbyr å vende kjøretøyet (ta U-sving) i kryss eller på vegstrekning. Uten dette skiltet er det i utgangspunktet tillatt å vende i et veikryss, så lenge du har fri sikt, ikke hindrer andre og det ikke er sperrelinje, gangfelt eller planovergang i veien.',
     longExplanation: 'Skiltet forbyr all form for vending eller U-sving på den aktuelle strekningen frem til neste vegkryss. Det brukes på steder der U-svinger kan skape farlige situasjoner på grunn av høy fart eller dårlig sikt.',
     theoryTrap: 'Selv om det er forbudt å snu (vende), er det fortsatt tillatt å svinge til venstre inn på en sideveg (med mindre det også er svingforbudskilt).',
     whatToDo: [
@@ -856,7 +856,7 @@ export const trafficSigns: TrafficSign[] = [
     ],
     confusedWith: ['330.2'],
     sources: [{ name: 'Statens vegvesen', url: 'https://www.vegvesen.no' }],
-    aliases: ['u-sving', 'vending', 'snu', 'u sving'],
+    aliases: ['u-sving', 'vending', 'snu', 'u sving', 'vende i veikryss', 'er det tillatt å vende', 'vendingsforbud', 'skilt 332'],
     visualDescription: 'Rundt skilt med rød kant, hvit bunn og en svart U-sving-pil med en rød skråstrek over.',
   },
   {
@@ -877,7 +877,7 @@ export const trafficSigns: TrafficSign[] = [
     ],
     confusedWith: ['336', '335'],
     sources: [{ name: 'Statens vegvesen', url: 'https://www.vegvesen.no' }],
-    aliases: ['forbikjøring', 'forbikjoring', 'forbifart', 'forbikjøring forbudt'],
+    aliases: ['forbikjøring', 'forbikjoring', 'forbifart', 'forbikjøring forbudt'],
     visualDescription: 'Rundt skilt med rød kant, hvit bunn og to biler ved siden av hverandre (en rød til venstre og en svart til høyre).',
   },
   {
@@ -897,7 +897,7 @@ export const trafficSigns: TrafficSign[] = [
     ],
     confusedWith: ['334', '337'],
     sources: [{ name: 'Statens vegvesen', url: 'https://www.vegvesen.no' }],
-    aliases: ['forbikjøring lastebil', 'lastebil forbud', 'forbikjøringsforbud lastebil'],
+    aliases: ['forbikjøring lastebil', 'lastebil forbud', 'forbikjøringsforbud lastebil'],
     visualDescription: 'Rundt skilt med rød kant, hvit bunn, en rød lastebil til venstre og en svart personbil til høyre.',
   },
   {
@@ -917,7 +917,7 @@ export const trafficSigns: TrafficSign[] = [
     ],
     confusedWith: ['334', '337'],
     sources: [{ name: 'Statens vegvesen', url: 'https://www.vegvesen.no' }],
-    aliases: ['forbikjøring', 'forbikjoring', 'slutt på forbikjøringsforbud', 'opphevet forbikjøring'],
+    aliases: ['forbikjøring', 'forbikjoring', 'slutt på forbikjøringsforbud', 'opphevet forbikjøring'],
     visualDescription: 'Rundt skilt med hvit bunn, fem tynne, parallelle, grå skråstreker og to grå biler ved siden av hverandre.',
   },
   {
@@ -936,7 +936,7 @@ export const trafficSigns: TrafficSign[] = [
     ],
     confusedWith: ['335', '336'],
     sources: [{ name: 'Statens vegvesen', url: 'https://www.vegvesen.no' }],
-    aliases: ['slutt forbikjøring lastebil', 'lastebil forbikjøring opphevet', 'slutt på forbikjøringsforbud for lastebil'],
+    aliases: ['slutt forbikjøring lastebil', 'lastebil forbikjøring opphevet', 'slutt på forbikjøringsforbud for lastebil'],
     visualDescription: 'Rundt skilt med hvit bunn, fem tynne, parallelle, grå skråstreker, en grå lastebil og en grå personbil ved siden av hverandre.',
   },
   {
@@ -956,7 +956,7 @@ export const trafficSigns: TrafficSign[] = [
     ],
     confusedWith: ['364', '366'],
     sources: [{ name: 'Statens vegvesen', url: 'https://www.vegvesen.no' }],
-    aliases: ['fartsgrense', 'fart', 'fart 50', 'fartsgrense 50'],
+    aliases: ['fartsgrense', 'fart', 'fart 50', 'fartsgrense 50'],
     visualDescription: 'Rundt skilt med rød kant, hvit bunn og tallet 50.',
   },
   {
@@ -976,7 +976,7 @@ export const trafficSigns: TrafficSign[] = [
     ],
     confusedWith: ['362'],
     sources: [{ name: 'Statens vegvesen', url: 'https://www.vegvesen.no' }],
-    aliases: ['fartsgrense', 'fart', 'slutt på særskilt fartsgrense', 'opphevet fartsgrense'],
+    aliases: ['fartsgrense', 'fart', 'slutt på særskilt fartsgrense', 'opphevet fartsgrense'],
     visualDescription: 'Rundt skilt med hvit bunn, fem tynne, parallelle, svarte skråstreker over et lysegrått tall 50.',
   },
   {
@@ -996,7 +996,7 @@ export const trafficSigns: TrafficSign[] = [
     ],
     confusedWith: ['362', '368'],
     sources: [{ name: 'Statens vegvesen', url: 'https://www.vegvesen.no' }],
-    aliases: ['sone', 'fartssone', 'fartsgrensesone', 'fartsone'],
+    aliases: ['sone', 'fartssone', 'fartsgrensesone', 'fartsone'],
     visualDescription: 'Firkantet hvitt skilt med svart kant, som viser teksten SONE over et rundt fartsgrenseskilt med rød kant og tallet 30.',
   },
   {
@@ -1015,7 +1015,7 @@ export const trafficSigns: TrafficSign[] = [
     ],
     confusedWith: ['366'],
     sources: [{ name: 'Statens vegvesen', url: 'https://www.vegvesen.no' }],
-    aliases: ['slutt sone', 'opphevet sone', 'slutt på fartsgrensesone'],
+    aliases: ['slutt sone', 'opphevet sone', 'slutt på fartsgrensesone'],
     visualDescription: 'Firkantet gråhvitt skilt som viser teksten SONE over en grå ring med tallet 30, overstrøket med fem tynne, parallelle, svarte/grå skråstreker.',
   },
   {
@@ -1035,7 +1035,7 @@ export const trafficSigns: TrafficSign[] = [
     ],
     confusedWith: ['372'],
     sources: [{ name: 'Statens vegvesen', url: 'https://www.vegvesen.no' }],
-    aliases: ['stans', 'stopp forbudt', 'all stans forbudt', 'stans forbudt'],
+    aliases: ['stans', 'stopp forbudt', 'all stans forbudt', 'stans forbudt', 'blått skilt med rødt kryss', 'skilt 370', 'rødt kryss skilt'],
     visualDescription: 'Rundt skilt med rød kant, blå bunn og et rødt kryss (X) over hele skiltflaten.',
   },
   {
@@ -1055,7 +1055,7 @@ export const trafficSigns: TrafficSign[] = [
     ],
     confusedWith: ['370'],
     sources: [{ name: 'Statens vegvesen', url: 'https://www.vegvesen.no' }],
-    aliases: ['parkering', 'stans', 'parkere', 'parkering forbudt'],
+    aliases: ['parkering', 'stans', 'parkere', 'parkering forbudt'],
     visualDescription: 'Rundt skilt med rød kant, blå bunn og en rød diagonal skråstrek.',
   },
 
@@ -1077,7 +1077,7 @@ export const trafficSigns: TrafficSign[] = [
     ],
     confusedWith: ['402.2', '402.3', '402.4', '402.5', '402.6', '402.7', '402.8', '526'],
     sources: [{ name: 'Statens vegvesen', url: 'https://www.vegvesen.no' }],
-    aliases: ['påbud', 'pabud', 'kjøreretning', 'kjoreretning', 'rett fram'],
+    aliases: ['påbud', 'pabud', 'kjøreretning', 'kjoreretning', 'rett fram'],
     visualDescription: 'Blått rundt skilt med en hvit pil som peker rett opp.',
   },
   {
@@ -1097,7 +1097,7 @@ export const trafficSigns: TrafficSign[] = [
     ],
     confusedWith: ['402.1', '402.3', '402.4', '402.5', '402.6', '402.7', '402.8', '404.1'],
     sources: [{ name: 'Statens vegvesen', url: 'https://www.vegvesen.no' }],
-    aliases: ['påbud', 'pabud', 'kjøreretning', 'kjoreretning', 'høyre', 'hoyre'],
+    aliases: ['påbud', 'pabud', 'kjøreretning', 'kjoreretning', 'høyre', 'hoyre'],
     visualDescription: 'Blått rundt skilt med en hvit pil som peker til høyre.',
   },
   {
@@ -1117,7 +1117,7 @@ export const trafficSigns: TrafficSign[] = [
     ],
     confusedWith: ['402.1', '402.2', '402.4', '402.5', '402.6', '402.7', '402.8', '404.2'],
     sources: [{ name: 'Statens vegvesen', url: 'https://www.vegvesen.no' }],
-    aliases: ['påbud', 'pabud', 'kjøreretning', 'kjoreretning', 'venstre'],
+    aliases: ['påbud', 'pabud', 'kjøreretning', 'kjoreretning', 'venstre'],
     visualDescription: 'Blått rundt skilt med en hvit pil som peker til venstre.',
   },
   {
@@ -1137,7 +1137,7 @@ export const trafficSigns: TrafficSign[] = [
     ],
     confusedWith: ['402.1', '402.2', '402.3', '402.5', '402.6', '402.7', '402.8'],
     sources: [{ name: 'Statens vegvesen', url: 'https://www.vegvesen.no' }],
-    aliases: ['påbud', 'pabud', 'kjøreretning', 'kjoreretning', 'rett fram', 'høyre', 'hoyre'],
+    aliases: ['påbud', 'pabud', 'kjøreretning', 'kjoreretning', 'rett fram', 'høyre', 'hoyre'],
     visualDescription: 'Blått rundt skilt med en hvit pil som deler seg rett fram og til høyre.',
   },
   {
@@ -1157,7 +1157,7 @@ export const trafficSigns: TrafficSign[] = [
     ],
     confusedWith: ['402.1', '402.2', '402.3', '402.4', '402.6', '402.7', '402.8'],
     sources: [{ name: 'Statens vegvesen', url: 'https://www.vegvesen.no' }],
-    aliases: ['påbud', 'pabud', 'kjøreretning', 'kjoreretning', 'rett fram', 'venstre'],
+    aliases: ['påbud', 'pabud', 'kjøreretning', 'kjoreretning', 'rett fram', 'venstre'],
     visualDescription: 'Blått rundt skilt med en hvit pil som deler seg rett fram og til venstre.',
   },
   {
@@ -1177,7 +1177,7 @@ export const trafficSigns: TrafficSign[] = [
     ],
     confusedWith: ['402.1', '402.2', '402.3', '402.4', '402.5', '402.7', '402.8'],
     sources: [{ name: 'Statens vegvesen', url: 'https://www.vegvesen.no' }],
-    aliases: ['påbud', 'pabud', 'kjøreretning', 'kjoreretning', 'høyre', 'hoyre', 'venstre'],
+    aliases: ['påbud', 'pabud', 'kjøreretning', 'kjoreretning', 'høyre', 'hoyre', 'venstre'],
     visualDescription: 'Blått rundt skilt med en hvit pil som peker til både høyre og venstre.',
   },
   {
@@ -1196,7 +1196,7 @@ export const trafficSigns: TrafficSign[] = [
     ],
     confusedWith: ['402.1', '402.2', '402.8', '404.1'],
     sources: [{ name: 'Statens vegvesen', url: 'https://www.vegvesen.no' }],
-    aliases: ['påbud', 'pabud', 'kjøreretning', 'kjoreretning', 'høyre side', 'hoyre side', 'runding'],
+    aliases: ['påbud', 'pabud', 'kjøreretning', 'kjoreretning', 'høyre side', 'hoyre side', 'runding'],
     visualDescription: 'Blått rundt skilt med en hvit pil som peker skrått nedover mot høyre.',
   },
   {
@@ -1215,7 +1215,7 @@ export const trafficSigns: TrafficSign[] = [
     ],
     confusedWith: ['402.1', '402.3', '402.7', '404.2'],
     sources: [{ name: 'Statens vegvesen', url: 'https://www.vegvesen.no' }],
-    aliases: ['påbud', 'pabud', 'kjøreretning', 'kjoreretning', 'venstre side', 'runding'],
+    aliases: ['påbud', 'pabud', 'kjøreretning', 'kjoreretning', 'venstre side', 'runding'],
     visualDescription: 'Blått rundt skilt med en hvit pil som peker skrått nedover mot venstre.',
   },
   {
@@ -1235,7 +1235,7 @@ export const trafficSigns: TrafficSign[] = [
     ],
     confusedWith: ['404.2', '402.2', '402.7'],
     sources: [{ name: 'Statens vegvesen', url: 'https://www.vegvesen.no' }],
-    aliases: ['påbud', 'pabud', 'kjørefelt', 'kjorefelt', 'høyre', 'hoyre'],
+    aliases: ['påbud', 'pabud', 'kjørefelt', 'kjorefelt', 'høyre', 'hoyre'],
     visualDescription: 'Blått rundt skilt med en hvit pil som peker skrått nedover mot høyre.',
   },
   {
@@ -1255,7 +1255,7 @@ export const trafficSigns: TrafficSign[] = [
     ],
     confusedWith: ['404.1', '402.3', '402.8'],
     sources: [{ name: 'Statens vegvesen', url: 'https://www.vegvesen.no' }],
-    aliases: ['påbud', 'pabud', 'kjørefelt', 'kjorefelt', 'venstre'],
+    aliases: ['påbud', 'pabud', 'kjørefelt', 'kjorefelt', 'venstre'],
     visualDescription: 'Blått rundt skilt med en hvit pil som peker skrått nedover mot venstre.',
   },
   {
@@ -1276,7 +1276,7 @@ export const trafficSigns: TrafficSign[] = [
     ],
     confusedWith: ['408'],
     sources: [{ name: 'Statens vegvesen', url: 'https://www.vegvesen.no' }],
-    aliases: ['påbud', 'pabud', 'rundkjøring', 'rundkjoring'],
+    aliases: ['påbud', 'pabud', 'rundkjøring', 'rundkjoring'],
     visualDescription: 'Blått rundt skilt med tre hvite piler som danner en sirkel.',
   },
   {
@@ -1296,7 +1296,7 @@ export const trafficSigns: TrafficSign[] = [
     ],
     confusedWith: ['406', '402.2', '402.3'],
     sources: [{ name: 'Statens vegvesen', url: 'https://www.vegvesen.no' }],
-    aliases: ['påbud', 'pabud', 'kjøreretning', 'kjoreretning', 'rundkjøring', 'rundkjoring'],
+    aliases: ['påbud', 'pabud', 'kjøreretning', 'kjoreretning', 'rundkjøring', 'rundkjoring'],
     visualDescription: 'Blått avlangt skilt med tre hvite piler som peker mot høyre.',
   },
 
@@ -1322,7 +1322,7 @@ export const trafficSigns: TrafficSign[] = [
       { name: 'Statens vegvesen', url: 'https://www.vegvesen.no' },
       { name: 'Lovdata', url: 'https://lovdata.no/dokument/SF/forskrift/2005-10-07-1219' }
     ],
-    aliases: ['motorveg', 'motorvei', 'motorveiskilt', 'fart'],
+    aliases: ['motorveg', 'motorvei', 'motorveiskilt', 'fart'],
     visualDescription: 'Blått firkantet skilt med et hvitt symbol av to kjørebaner og en bro over.',
   },
   {
@@ -1345,7 +1345,7 @@ export const trafficSigns: TrafficSign[] = [
       { name: 'Statens vegvesen', url: 'https://www.vegvesen.no' },
       { name: 'Lovdata', url: 'https://lovdata.no/dokument/SF/forskrift/2005-10-07-1219' }
     ],
-    aliases: ['motortrafikkveg', 'motortrafikkvei', 'hurtigveg', 'hurtigvei'],
+    aliases: ['motortrafikkveg', 'motortrafikkvei', 'hurtigveg', 'hurtigvei'],
     visualDescription: 'Blått firkantet skilt med et hvitt symbol av en personbil sett fra siden.',
   },
   {
@@ -1365,7 +1365,7 @@ export const trafficSigns: TrafficSign[] = [
     ],
     confusedWith: ['502', '505'],
     sources: [{ name: 'Statens vegvesen', url: 'https://www.vegvesen.no' }],
-    aliases: ['slutt på motorveg', 'slutt på motorvei', 'motorveg slutt'],
+    aliases: ['slutt på motorveg', 'slutt på motorvei', 'motorveg slutt'],
     visualDescription: 'Blått firkantet skilt med hvitt symbol av motorveg, overstrøket med en rød diagonal linje.',
   },
   {
@@ -1385,7 +1385,7 @@ export const trafficSigns: TrafficSign[] = [
     ],
     confusedWith: ['503', '504'],
     sources: [{ name: 'Statens vegvesen', url: 'https://www.vegvesen.no' }],
-    aliases: ['slutt på motortrafikkveg', 'slutt på motortrafikkvei', 'motortrafikkveg slutt'],
+    aliases: ['slutt på motortrafikkveg', 'slutt på motortrafikkvei', 'motortrafikkveg slutt'],
     visualDescription: 'Blått firkantet skilt med hvitt symbol av motortrafikkveg, overstrøket med en rød diagonal linje.',
   },
   {
@@ -1406,7 +1406,7 @@ export const trafficSigns: TrafficSign[] = [
     ],
     confusedWith: ['140'],
     sources: [{ name: 'Statens vegvesen', url: 'https://www.vegvesen.no' }],
-    aliases: ['gangfelt', 'fotgjengerfelt', 'zebra', 'krysse veien', 'fotgjenger'],
+    aliases: ['gangfelt', 'fotgjengerfelt', 'zebra', 'krysse veien', 'fotgjenger'],
     visualDescription: 'Blått firkantet skilt med en hvit trekant som viser en person som går over et gangfelt.',
   },
   {
@@ -1428,7 +1428,7 @@ export const trafficSigns: TrafficSign[] = [
     ],
     confusedWith: ['552'],
     sources: [{ name: 'Statens vegvesen', url: 'https://www.vegvesen.no' }],
-    aliases: ['møteplass', 'moteplass', 'møtested', 'smal vei', 'passering'],
+    aliases: ['møteplass', 'moteplass', 'møtested', 'smal vei', 'passering'],
     visualDescription: 'Blått firkantet skilt med en stor, hvit bokstav M.',
   },
   {
@@ -1449,7 +1449,7 @@ export const trafficSigns: TrafficSign[] = [
     ],
     confusedWith: ['302', '402'],
     sources: [{ name: 'Statens vegvesen', url: 'https://www.vegvesen.no' }],
-    aliases: ['envegskjøring', 'envegskjoring', 'enveiskjøring', 'enveiskjørt', 'enveis'],
+    aliases: ['envegskjøring', 'envegskjoring', 'enveiskjøring', 'enveiskjørt', 'enveis'],
     visualDescription: 'Blått avlangt skilt med en hvit pil og teksten ENVEGSKJØRING.',
   },
   {
@@ -1469,7 +1469,7 @@ export const trafficSigns: TrafficSign[] = [
     ],
     confusedWith: ['302'],
     sources: [{ name: 'Statens vegvesen', url: 'https://www.vegvesen.no' }],
-    aliases: ['blindveg', 'blindvei', 'stengt veg', 'stengt vei'],
+    aliases: ['blindveg', 'blindvei', 'stengt veg', 'stengt vei'],
     visualDescription: 'Blått firkantet skilt med et rødt og hvitt symbol av en blindvei.',
   },
   {
