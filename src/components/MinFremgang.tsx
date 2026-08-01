@@ -48,17 +48,17 @@ const cardStyle: CSSProperties = {
 }
 
 export default function MinFremgang() {
-    const [name, setName] = useState(() => getDisplayName())
+    // LocalStorage må ikke leses i første render: den prerendrede siden har ingen
+    // brukerdata, og klienten må starte med nøyaktig samme HTML for å hydrere trygt.
+    const [name, setName] = useState('')
     const [nameInput, setNameInput] = useState('')
     const [fokusCount, setFokusCount] = useState(0)
-    useEffect(() => { setFokusCount(getWrongAnswersCount()) }, [])
     const [showAll, setShowAll] = useState(false)
-
-    const streak = getStreak()
-    const results = getQuizResults()
-    const totals = getTotals()
-    const byType = getCountsByType()
-    const articlesRead = getArticlesReadCount()
+    const [streak, setStreak] = useState({ count: 0, lastDate: '' })
+    const [results, setResults] = useState<ReturnType<typeof getQuizResults>>([])
+    const [totals, setTotals] = useState({ tests: 0, questions: 0 })
+    const [byType, setByType] = useState<ReturnType<typeof getCountsByType>>([])
+    const [articlesRead, setArticlesRead] = useState(0)
     const articleProgress = Math.min(100, Math.round((articlesRead / TOTAL_ARTICLES) * 100))
 
     // Levende tall og linjer (teller mykt opp ved åpning)
@@ -69,11 +69,25 @@ export default function MinFremgang() {
     const animQuestions = useCountUp(totals.questions, 900)
 
     useEffect(() => {
+        const storedName = getDisplayName()
+        const storedStreak = getStreak()
+        const storedResults = getQuizResults()
+        const storedTotals = getTotals()
+        const storedByType = getCountsByType()
+        const storedArticlesRead = getArticlesReadCount()
+
+        setName(storedName)
+        setStreak(storedStreak)
+        setResults(storedResults)
+        setTotals(storedTotals)
+        setByType(storedByType)
+        setArticlesRead(storedArticlesRead)
+        setFokusCount(getWrongAnswersCount())
+
         trackEvent('progress_viewed', {
-            tests_taken: totals.tests,
-            has_name: name ? true : false,
+            tests_taken: storedTotals.tests,
+            has_name: Boolean(storedName),
         })
-        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     function saveName() {

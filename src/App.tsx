@@ -1,6 +1,6 @@
 import { TrafficSignLookPage, TrafficSignNumberIndex } from './components/traffic-signs/TrafficSignLookPage'
 // Main App Component
-import { useState, useEffect, useCallback, Suspense, lazy, startTransition } from 'react'
+import { useState, useEffect, useCallback, Suspense, lazy, startTransition, useRef } from 'react'
 import { Routes, Route, Link, useNavigate, useLocation, Navigate, useParams } from 'react-router-dom'
 import StartScreen from './components/StartScreen'
 
@@ -34,9 +34,10 @@ import { recordCompletion } from './utils/streakStore'
 import './index.css'
 import './fokus.css'
 import './theory.css'
+import './design-v2.css'
 import ScrollToTop from './components/ScrollToTop'
 import { Helmet } from 'react-helmet-async'
-import { ClipboardCheck, Signpost, BookOpen, Gamepad2, TrendingUp } from 'lucide-react'
+import { Menu, X } from 'lucide-react'
 
 // GA4 global type
 declare function gtag(...args: unknown[]): void
@@ -89,6 +90,7 @@ export default function App() {
             document.body.classList.remove('dark-mode')
         }
         localStorage.setItem('darkMode', isDarkMode.toString())
+        window.dispatchEvent(new Event('teori-test-theme-change'))
     }, [isDarkMode, themeInitialized])
 
     const toggleDarkMode = () => {
@@ -100,40 +102,57 @@ export default function App() {
     }
 
     const [showHeader, setShowHeader] = useState(true)
-    const [lastScrollY, setLastScrollY] = useState(0)
+    const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+    const lastScrollY = useRef(0)
 
     // Reset header visibility on page/route transition
     useEffect(() => {
         setShowHeader(true)
+        setMobileMenuOpen(false)
     }, [location.pathname])
 
     // Track scroll direction to hide header on scroll down, show on scroll up on mobile
     useEffect(() => {
+        const mobileHeaderQuery = window.matchMedia('(max-width: 760px)')
+
         const handleScroll = () => {
             const currentScrollY = window.scrollY
-            
-            // Keep header visible when close to the top
-            if (currentScrollY < 80) {
+
+            if (!mobileHeaderQuery.matches) {
                 setShowHeader(true)
-                setLastScrollY(currentScrollY)
+                lastScrollY.current = currentScrollY
                 return
             }
 
-            if (currentScrollY > lastScrollY) {
+            // Keep header visible when close to the top
+            if (currentScrollY < 80) {
+                setShowHeader(true)
+                lastScrollY.current = currentScrollY
+                return
+            }
+
+            if (currentScrollY > lastScrollY.current + 6) {
                 // Scrolling down -> hide header
                 setShowHeader(false)
-            } else {
+            } else if (currentScrollY < lastScrollY.current - 6) {
                 // Scrolling up -> show header
                 setShowHeader(true)
             }
-            setLastScrollY(currentScrollY)
+            lastScrollY.current = currentScrollY
+        }
+
+        const handleViewportChange = () => {
+            setShowHeader(true)
+            lastScrollY.current = window.scrollY
         }
 
         window.addEventListener('scroll', handleScroll, { passive: true })
+        mobileHeaderQuery.addEventListener('change', handleViewportChange)
         return () => {
             window.removeEventListener('scroll', handleScroll)
+            mobileHeaderQuery.removeEventListener('change', handleViewportChange)
         }
-    }, [lastScrollY])
+    }, [])
 
     // Send GA4 page_view for SPA navigation and close mobile menu on route transitions
     useEffect(() => {
@@ -151,142 +170,67 @@ export default function App() {
     return (
         <>
             <ScrollToTop />
-            <div className="ambient-glow-1" />
-            <div className="ambient-glow-2" />
             <Helmet>
                 {/* Netlify 301-redirecter alle mappebaserte URL-er til versjonen med skråstrek — canonical må matche */}
                 <link rel="canonical" href={"https://teori-test.no" + (location.pathname.endsWith('/') ? location.pathname : location.pathname + '/')} />
                 <meta property="og:url" content={"https://teori-test.no" + (location.pathname.endsWith('/') ? location.pathname : location.pathname + '/')} />
             </Helmet>
-            
-            <div className={`sticky-header-wrapper ${!showHeader ? 'header-hidden' : ''}`}>
-                <header style={{
-                    backgroundColor: 'var(--color-header-bg)',
-                    backdropFilter: 'blur(16px)',
-                    WebkitBackdropFilter: 'blur(16px)',
-                    borderBottom: '1px solid var(--color-border)',
-                    padding: '0.85rem 0',
-                    transition: 'background-color 0.3s ease, border-color 0.3s ease'
-                }}>
-                <div className="section-container" style={{
-                    display: 'flex',
-                    justifyContent: 'space-between',
-                    alignItems: 'center',
-                    paddingTop: 0,
-                    paddingBottom: 0
-                }}>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--spacing-lg)' }}>
-                        <Link to="/" className="logo-wrapper" style={{ textDecoration: 'none' }}>
-                            <div className="logo-icon-container">
-                                <div className="logo-icon-glow" />
-                                <svg viewBox="0 0 100 100" fill="none" className="logo-svg">
-                                    <defs>
-                                        <linearGradient id="roadGlow" x1="0%" y1="100%" x2="100%" y2="0%">
-                                            <stop offset="0%" stopColor="#2dd4bf" />
-                                            <stop offset="50%" stopColor="#0d9488" />
-                                            <stop offset="100%" stopColor="#0f766e" />
-                                        </linearGradient>
-                                        <linearGradient id="roadSurface" x1="0%" y1="100%" x2="100%" y2="0%">
-                                            <stop offset="0%" stopColor="#0d9488" stopOpacity="0.03" />
-                                            <stop offset="100%" stopColor="#2dd4bf" stopOpacity="0.2" />
-                                        </linearGradient>
-                                    </defs>
-                                    <path 
-                                        d="M 22,92 C 50,85 32,58 58,46 C 75,41 84,41 85,41 L 85,41 C 84,41 79,41 70,44 C 50,56 70,82 76,92 Z" 
-                                        fill="url(#roadSurface)"
-                                    />
-                                    <path 
-                                        d="M 22,92 C 50,85 32,58 58,46 C 75,41 84,41 85,41" 
-                                        stroke="url(#roadGlow)" 
-                                        strokeWidth="4.5" 
-                                        strokeLinecap="round"
-                                    />
-                                    <path 
-                                        d="M 76,92 C 70,82 50,56 70,44 C 79,41 84,41 85,41" 
-                                        stroke="url(#roadGlow)" 
-                                        strokeWidth="4.5" 
-                                        strokeLinecap="round"
-                                    />
-                                    <path 
-                                        d="M 49,92 C 60,83.5 41,57 64,45 C 77,41.5 84,41 85,41" 
-                                        stroke={isDarkMode ? '#ffffff' : '#0d9488'} 
-                                        strokeWidth="2" 
-                                        strokeDasharray="3 4.5" 
-                                        strokeLinecap="round" 
-                                        className={isDarkMode ? 'opacity-85' : 'opacity-95'}
-                                    />
-                                </svg>
-                            </div>
-                            <div className="logo-text-container">
-                                <span className="header-logo-text">
-                                    Teori-test<span style={{ color: 'var(--color-primary)' }}>.no</span>
-                                </span>
-                                <span className="logo-subtitle">Klasse B Førerkort</span>
-                            </div>
-                        </Link>
-                    </div>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--spacing-sm)' }}>
-                        <DailyStreak shouldBounce={streakBounce} onBounceComplete={handleBounceComplete} />
-                        <ThemeToggle isDark={isDarkMode} onToggle={toggleDarkMode} />
-                    </div>
-                </div>
-            </header>
 
-            {!location.pathname.startsWith('/quiz') && location.pathname !== '/laeringsspill/stopplengde' && location.pathname !== '/laeringsspill/skiltduellen' && (
-                <div className="sub-navigation">
-                    <div className="sub-nav-container">
-                        <div className="sub-nav-scroll-wrapper">
-                            <div className="sub-nav-chips">
-                                <Link
-                                    to="/"
-                                    className={`sub-nav-chip ${location.pathname === '/' ? 'active' : ''}`}
-                                >
-                                    <span className="sub-nav-chip-icon">
-                                        <ClipboardCheck size={16} strokeWidth={2.2} />
-                                    </span>
-                                    Øvingsprøve
-                                </Link>
-                                <Link
-                                    to="/trafikkskilt"
-                                    className={`sub-nav-chip ${location.pathname.startsWith('/trafikkskilt') ? 'active' : ''}`}
-                                >
-                                    <span className="sub-nav-chip-icon">
-                                        <Signpost size={16} strokeWidth={2.2} />
-                                    </span>
-                                    Skiltguide
-                                </Link>
-                                <Link
-                                    to="/laeringsressurser"
-                                    className={`sub-nav-chip ${location.pathname.startsWith('/laeringsressurser') ? 'active' : ''}`}
-                                >
-                                    <span className="sub-nav-chip-icon">
-                                        <BookOpen size={16} strokeWidth={2.2} />
-                                    </span>
-                                    Artikler
-                                </Link>
-                                <Link
-                                    to="/laeringsspill"
-                                    className={`sub-nav-chip ${location.pathname.startsWith('/laeringsspill') ? 'active' : ''}`}
-                                >
-                                    <span className="sub-nav-chip-icon">
-                                        <Gamepad2 size={16} strokeWidth={2.2} />
-                                    </span>
-                                    Minispill
-                                </Link>
-                                <Link
-                                    to="/min-fremgang"
-                                    className={`sub-nav-chip ${location.pathname.startsWith('/min-fremgang') ? 'active' : ''}`}
-                                >
-                                    <span className="sub-nav-chip-icon">
-                                        <TrendingUp size={16} strokeWidth={2.2} />
-                                    </span>
-                                    Min fremgang
-                                </Link>
+            <div className={`tt-site-header-wrap ${!showHeader ? 'is-hidden' : ''} ${mobileMenuOpen ? 'menu-open' : ''}`}>
+                <header className="tt-site-header">
+                    <div className="tt-header-inner">
+                        <Link to="/" className="tt-brand" aria-label="Teori-test.no, forsiden">
+                            <span className="tt-brand-mark" aria-hidden="true">
+                                <svg viewBox="0 0 1000 1000" focusable="false">
+                                    <circle className="tt-brand-face" cx="500" cy="500" r="450" strokeWidth="34" />
+                                    <g className="tt-brand-glyph">
+                                        <rect x="265" y="279.48" width="361.7" height="32.69" />
+                                        <rect x="265" y="279.48" width="32.7" height="118.52" />
+                                        <rect x="265" y="365.3" width="159.39" height="32.7" />
+                                        <rect x="391.7" y="365.3" width="32.69" height="279.96" />
+                                        <rect x="391.7" y="612.57" width="118.52" height="32.69" />
+                                        <rect x="477.52" y="365.3" width="32.7" height="279.96" />
+                                        <rect x="477.52" y="365.3" width="257.48" height="32.7" />
+                                        <rect x="702.3" y="365.3" width="32.7" height="112.4" />
+                                        <rect x="567.43" y="445" width="167.57" height="32.7" />
+                                        <rect x="567.43" y="445" width="32.7" height="259.52" />
+                                        <rect x="477.52" y="671.83" width="122.61" height="32.69" />
+                                    </g>
+                                </svg>
+                            </span>
+                            <span className="tt-brand-copy">
+                                <strong>teori-test.no</strong>
+                                <small>Klasse B · Førerkort</small>
+                            </span>
+                        </Link>
+
+                        <nav className={`tt-main-nav ${mobileMenuOpen ? 'is-open' : ''}`} id="main-navigation" aria-label="Hovednavigasjon">
+                            <Link to="/" className={location.pathname === '/' ? 'active' : ''}>Øvingsprøve</Link>
+                            <Link to="/trafikkskilt" className={location.pathname.startsWith('/trafikkskilt') ? 'active' : ''}>Skiltguide</Link>
+                            <Link to="/laeringsressurser" className={location.pathname.startsWith('/laeringsressurser') ? 'active' : ''}>Artikler</Link>
+                            <Link to="/laeringsspill" className={location.pathname.startsWith('/laeringsspill') ? 'active' : ''}>Minispill</Link>
+                            <Link to="/min-fremgang" className={`tt-progress-link ${location.pathname.startsWith('/min-fremgang') ? 'active' : ''}`}>Min fremgang</Link>
+                        </nav>
+
+                        <div className="tt-header-actions">
+                            <div className="tt-header-streak">
+                                <DailyStreak shouldBounce={streakBounce} onBounceComplete={handleBounceComplete} />
                             </div>
+                            <ThemeToggle isDark={isDarkMode} onToggle={toggleDarkMode} />
+                            <button
+                                className="tt-menu-button"
+                                type="button"
+                                aria-expanded={mobileMenuOpen}
+                                aria-controls="main-navigation"
+                                aria-label={mobileMenuOpen ? 'Lukk meny' : 'Åpne meny'}
+                                onClick={() => setMobileMenuOpen((open) => !open)}
+                            >
+                                {mobileMenuOpen ? <X size={16} aria-hidden="true" /> : <Menu size={16} aria-hidden="true" />}
+                                <span>Meny</span>
+                            </button>
                         </div>
                     </div>
-                </div>
-            )}
+                </header>
             </div>
 
             <main>
@@ -332,10 +276,6 @@ export default function App() {
                             <Link to="/laeringsressurser/teoriproven-bil" className="footer-link">Om teoriprøven</Link>
                             <span className="footer-separator" aria-hidden="true">•</span>
                             <Link to="/sporsmal" className="footer-link">Teorispørsmål</Link>
-                            <span className="footer-separator" aria-hidden="true">•</span>
-                            <Link to="/laeringsressurser/om-oss" className="footer-link">Om oss</Link>
-                            <span className="footer-separator" aria-hidden="true">•</span>
-                            <Link to="/laeringsressurser/kontakt" className="footer-link">Kontakt</Link>
                             <span className="footer-separator" aria-hidden="true">•</span>
                             <Link to="/laeringsressurser/personvern" className="footer-link">Personvern &amp; Cookies</Link>
                         </nav>

@@ -5,6 +5,17 @@ import { getAllCategories, searchTrafficSigns } from '../../lib/trafficSigns';
 import { trafficSigns } from '../../data/trafficSigns';
 import '../../theory.css';
 
+const featuredSignShapes: Record<string, 'triangle' | 'octagon' | 'diamond' | 'circle'> = {
+  '202': 'triangle',
+  '204': 'octagon',
+  '206': 'diamond',
+  '302': 'circle',
+  '334': 'circle',
+  '370': 'circle',
+  '372': 'circle',
+  '406': 'circle',
+};
+
 export default function TrafficSignBank() {
   const [searchQuery, setSearchQuery] = useState('');
 
@@ -426,7 +437,8 @@ export default function TrafficSignBank() {
                 <img
                   src={sign.imagePath}
                   alt={`Skilt ${sign.code} ${sign.displayName || sign.name}`}
-                  style={{ maxHeight: '100%', maxWidth: '80px', objectFit: 'contain' }}
+                  className="featured-sign-image"
+                  data-sign-shape={featuredSignShapes[sign.code]}
                   loading="lazy"
                 />
               </div>

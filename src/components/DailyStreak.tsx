@@ -9,11 +9,18 @@ interface DailyStreakProps {
 }
 
 export default function DailyStreak({ shouldBounce, onBounceComplete }: DailyStreakProps) {
-    const [enabled, setEnabled] = useState(() => isStreakEnabled())
-    const [count, setCount] = useState(() => getStreak().count)
+    // Prerendering har ikke tilgang til brukerens localStorage. Bruk samme
+    // startverdier på server og klient, og hent den lokale streaken etter mount.
+    const [enabled, setEnabled] = useState(true)
+    const [count, setCount] = useState(0)
     const [showMenu, setShowMenu] = useState(false)
     const menuRef = useRef<HTMLDivElement>(null)
     const controls = useAnimation()
+
+    useEffect(() => {
+        setEnabled(isStreakEnabled())
+        setCount(getStreak().count)
+    }, [])
 
     // Update count when it changes externally (e.g. after quiz completion)
     useEffect(() => {

@@ -39,7 +39,7 @@ export async function fetchRandomQuestions(count: number): Promise<Question[]> {
 
 /**
  * Fetches random questions from a specific category
- * Used for specialized tests like "Skilt-test"
+ * Used for specialized tests like "Skilttest"
  */
 export async function fetchQuestionsByCategory(count: number, category: string): Promise<Question[]> {
   try {

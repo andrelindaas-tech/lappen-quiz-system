@@ -27,10 +27,20 @@ export default function SignSpeedGamePage() {
     trackEvent('game_started', { game_name: 'skiltduellen' });
   }, []);
 
-  const [profile, setProfile] = useState<LocalProfile | null>(() => loadLocalProfile());
-  const [nickname, setNickname] = useState(() => profile?.nickname ?? '');
-  const [isEditingProfile, setIsEditingProfile] = useState(() => !profile);
-  const [scoreboard, setScoreboard] = useState<ScoreboardEntry[]>(() => loadScoreboard());
+  // Hold første klientrender lik den prerendrede HTML-en. Lokal profil og
+  // poengtavle lastes straks etter hydrering.
+  const [profile, setProfile] = useState<LocalProfile | null>(null);
+  const [nickname, setNickname] = useState('');
+  const [isEditingProfile, setIsEditingProfile] = useState(true);
+  const [scoreboard, setScoreboard] = useState<ScoreboardEntry[]>([]);
+
+  useEffect(() => {
+    const storedProfile = loadLocalProfile();
+    setProfile(storedProfile);
+    setNickname(storedProfile?.nickname ?? '');
+    setIsEditingProfile(!storedProfile);
+    setScoreboard(loadScoreboard());
+  }, []);
 
   const canSaveProfile = useMemo(() => isValidNickname(nickname), [nickname]);
 

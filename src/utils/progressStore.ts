@@ -3,7 +3,7 @@
 
 export interface QuizRecord {
     date: string // ISO
-    name: string // f.eks. 'Full prøve', 'Ekspresstest', 'Skilt-test'
+    name: string // f.eks. 'Full prøve', 'Ekspresstest', 'Skilttest'
     correct: number
     total: number
     passed: boolean

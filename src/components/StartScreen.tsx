@@ -1,137 +1,151 @@
-import { useState, useEffect } from 'react'
-import { useNavigate, Link } from 'react-router-dom'
-import { getWrongAnswersCount, clearWrongAnswers } from '../utils/wrongAnswersStore'
+import { useEffect, useRef, useState, type ReactNode } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
-import { Zap, Signpost, Target, Route, Gauge, Layers, CircleGauge, Wine, Truck, Wrench, ChevronDown, RefreshCw, Car, ChevronRight, BookOpen, HelpCircle, Snowflake, Gamepad2, Share2 } from 'lucide-react'
+import { ChevronDown, ChevronRight, RefreshCw } from 'lucide-react'
+import { clearWrongAnswers, getWrongAnswersCount } from '../utils/wrongAnswersStore'
+import './StartScreenV2.css'
 
 interface FaqItem {
-    question: string;
-    answer: React.ReactNode;
-    jsonLdAnswer?: string;
+    question: string
+    answer: ReactNode
+    jsonLdAnswer?: string
+}
+
+const demoProgress = {
+    correct: 32,
+    total: 45,
+    tests: 2,
+    questions: 20,
+    articles: 14,
+    totalArticles: 55,
+    scores: [
+        { label: 'Skilt', score: 64 },
+        { label: 'Vikeplikt', score: 78 },
+        { label: 'Full prøve', score: 86 },
+    ],
 }
 
 const faqItems: FaqItem[] = [
     {
         question: 'Er teoriprøven på Teori-test.no gratis?',
-        answer: 'Ja. Du kan ta en teoriprøve gratis for bil klasse B med 45 spørsmål, fasit og forklaringer. Du trenger ikke registrere deg.'
+        answer: 'Ja. Du kan ta en teoriprøve gratis for bil klasse B med 45 spørsmål, fasit og forklaringer. Du trenger ikke registrere deg.',
     },
     {
         question: 'Er dette en teoriprøve for bil klasse B?',
-        answer: 'Ja. Øvingen er laget for deg som skal ta teoriprøven for bil/personbil klasse B.'
+        answer: 'Ja. Øvingen er laget for deg som skal ta teoriprøven for bil/personbil klasse B.',
     },
     {
         question: 'Er dette den ekte teoriprøven?',
-        answer: 'Nei. Dette er en øvingsprøve laget for å ligne formatet på teoriprøven for klasse B, slik at du kan trene før den ekte prøven hos Statens vegvesen.'
+        answer: 'Nei. Dette er en øvingsprøve laget for å ligne formatet på teoriprøven for klasse B, slik at du kan trene før den ekte prøven hos Statens vegvesen.',
     },
     {
         question: 'Hvor mange spørsmål er det på teoriprøven?',
-        answer: 'Teoriprøven for bil (klasse B) hos Statens vegvesen har 45 spørsmål. Du må svare riktig på minst 38 for å bestå. Øvingsprøven vår bruker samme format med 45 spørsmål.'
+        answer: 'Teoriprøven for bil (klasse B) hos Statens vegvesen har 45 spørsmål. Du må svare riktig på minst 38 for å bestå. Øvingsprøven vår bruker samme format med 45 spørsmål.',
     },
     {
         question: 'Hvor mange feil kan man ha på teoriprøven?',
-        answer: 'Du kan ha maksimalt 7 feil på teoriprøven for klasse B. Det tilsvarer minst 38 riktige av 45 spørsmål, altså cirka 85 prosent.'
+        answer: 'Du kan ha maksimalt 7 feil på teoriprøven for klasse B. Det tilsvarer minst 38 riktige av 45 spørsmål, altså cirka 85 prosent.',
     },
     {
         question: 'Hvor lang tid har man på teoriprøven?',
-        answer: 'Du har 90 minutter på den offisielle teoriprøven for klasse B. Trenger du mer tid, kan du be prøvevakten om ekstra tid. Hos oss kan du øve med valgfri 90-minutters nedtelling.'
+        answer: 'Du har 90 minutter på den offisielle teoriprøven for klasse B. Trenger du mer tid, kan du be prøvevakten om ekstra tid. Hos oss kan du øve med valgfri 90-minutters nedtelling.',
     },
     {
         question: 'Får jeg se fasit og forklaring?',
-        answer: 'Ja. Etter prøven får du se riktige svar og korte forklaringer, slik at du kan lære av feilene dine.'
+        answer: 'Ja. Etter prøven får du se riktige svar og korte forklaringer, slik at du kan lære av feilene dine.',
     },
     {
         question: 'Får jeg se hva jeg bør øve mer på etter prøven?',
-        answer: 'Ja. Etter full prøve får du en oversikt over temaene du bommet mest på, slik at du kan øve videre mer målrettet.'
+        answer: 'Ja. Etter full prøve får du en oversikt over temaene du bommet mest på, slik at du kan øve videre mer målrettet.',
     },
     {
         question: 'Hvilke temaer kan jeg øve på?',
-        answer: 'Spørsmålene dekker de viktigste kategoriene i pensum for teoriprøven klasse B. Du kan øve på blant annet vikeplikt, trafikkskilt, veimerking, bremselengde, forbikjøring, promille, glatt føre, kjøretøy, sikkerhetskontroll og trafikkregler.'
-    },
-    {
-        question: 'Hva er fokusmodus?',
-        answer: 'Fokusmodus lar deg øve videre på spørsmål du tidligere har svart feil på. Dette lagres lokalt i nettleseren din.'
+        answer: 'Spørsmålene dekker de viktigste kategoriene i pensum for teoriprøven klasse B. Du kan øve på blant annet vikeplikt, trafikkskilt, veimerking, bremselengde, forbikjøring, promille, glatt føre, kjøretøy, sikkerhetskontroll og trafikkregler.',
     },
     {
         question: 'Finnes det en gratis teoriprøve-app jeg kan bruke?',
         answer: (
             <>
-                Du trenger ikke laste ned en egen app. Teori-test.no fungerer i nettleseren på mobil, nettbrett og PC. For rask tilgang kan brukeren legge siden til på hjemskjermen:
-                <ul style={{ marginTop: '0.5rem', paddingLeft: '1.25rem', listStyleType: 'disc' }}>
-                    <li><strong>iPhone/Safari:</strong> Åpne teori-test.no, trykk Del-ikonet og velg "Legg til på Hjem-skjerm".</li>
-                    <li><strong>Android/Chrome:</strong> Åpne teori-test.no, trykk menyen og velg "Legg til på startsiden" eller "Installer app".</li>
-                </ul>
+                <p>Du trenger ikke laste ned en egen app. Teori-test.no fungerer i nettleseren på mobil, nettbrett og PC.</p>
+                <span className="tt-v2-faq-instruction"><strong>iPhone/Safari:</strong> Åpne teori-test.no, trykk Del-ikonet og velg «Legg til på Hjem-skjerm».</span>
+                <span className="tt-v2-faq-instruction"><strong>Android/Chrome:</strong> Åpne teori-test.no, trykk menyen og velg «Legg til på startsiden» eller «Installer app».</span>
             </>
         ),
-        jsonLdAnswer: 'Du trenger ikke laste ned en egen app. Teori-test.no fungerer i nettleseren på mobil, nettbrett og PC. For rask tilgang kan brukeren legge siden til på hjemskjermen.'
-    }
+        jsonLdAnswer: 'Du trenger ikke laste ned en egen app. Teori-test.no fungerer i nettleseren på mobil, nettbrett og PC. For rask tilgang kan brukeren legge siden til på hjemskjermen.',
+    },
 ]
 
 export default function StartScreen() {
+    const navigate = useNavigate()
+    const roundaboutFrame = useRef<HTMLIFrameElement>(null)
     const [fokusCount, setFokusCount] = useState(0)
     const [useTimerForFull, setUseTimerForFull] = useState(false)
     const [activeFaq, setActiveFaq] = useState<number | null>(null)
-    const [shareStatus, setShareStatus] = useState('')
-    const navigate = useNavigate()
+    const [roundaboutHeight, setRoundaboutHeight] = useState(720)
 
-    // Load wrong answers count on mount and when returning from quiz
     useEffect(() => {
-        const count = getWrongAnswersCount()
-        setFokusCount(count)
-        console.log(`🎯 Fokusmodus has ${count} questions`)
+        setFokusCount(getWrongAnswersCount())
     }, [])
 
-    const toggleFaq = (index: number) => {
-        setActiveFaq(prev => prev === index ? null : index)
-    }
+    useEffect(() => {
+        const frame = roundaboutFrame.current
+        if (!frame) return
 
-    const handleClearFokus = () => {
-        if (confirm('Er du sikker på at du vil nullstille alle lagrede feilsvar i fokusmodus?')) {
-            clearWrongAnswers()
-            setFokusCount(0)
-        }
-    }
-
-    const handleShare = async () => {
-        const shareData = {
-            title: 'Teori-test.no',
-            text: 'Øv gratis til teoriprøven for klasse B med 45 spørsmål, fasit og forklaringer.',
-            url: window.location.origin
+        const syncTheme = () => {
+            frame.contentWindow?.postMessage({
+                type: 'teori-test-theme',
+                theme: document.body.classList.contains('dark-mode') ? 'dark' : 'light',
+            }, '*')
         }
 
-        if (navigator.share && navigator.canShare && navigator.canShare(shareData)) {
-            try {
-                await navigator.share(shareData)
-            } catch (err) {
-                console.log('Deling avbrutt eller feilet:', err)
-            }
-        } else {
-            try {
-                await navigator.clipboard.writeText(window.location.origin)
-                setShareStatus('Lenke kopiert!')
-                setTimeout(() => setShareStatus(''), 2000)
-            } catch (err) {
-                console.error('Klarte ikke å kopiere lenke:', err)
-                setShareStatus('Kunne ikke kopiere lenke')
-                setTimeout(() => setShareStatus(''), 2000)
+        const handleMessage = (event: MessageEvent) => {
+            if (event.source !== frame.contentWindow) return
+            if (event.data?.type === 'roundabout-ready') syncTheme()
+            if (event.data?.type === 'roundabout-height') {
+                const nextHeight = Math.max(360, Math.min(1100, Number(event.data.height) || 0))
+                setRoundaboutHeight(nextHeight)
             }
         }
-    }
+
+        const handleThemeChange = () => syncTheme()
+        window.addEventListener('message', handleMessage)
+        window.addEventListener('teori-test-theme-change', handleThemeChange)
+        frame.addEventListener('load', syncTheme)
+
+        return () => {
+            window.removeEventListener('message', handleMessage)
+            window.removeEventListener('teori-test-theme-change', handleThemeChange)
+            frame.removeEventListener('load', syncTheme)
+        }
+    }, [])
 
     const faqJsonLd = {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": faqItems.map(item => ({
-            "@type": "Question",
-            "name": item.question,
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": item.jsonLdAnswer || (typeof item.answer === 'string' ? item.answer : 'Besøk Teori-test.no for detaljert informasjon.')
-            }
-        }))
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: faqItems.map((item) => ({
+            '@type': 'Question',
+            name: item.question,
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: item.jsonLdAnswer || (typeof item.answer === 'string'
+                    ? item.answer
+                    : 'Besøk Teori-test.no for detaljert informasjon.'),
+            },
+        })),
+    }
+
+    const startFullQuiz = () => {
+        navigate(`/quiz?mode=eksamen${useTimerForFull ? '&timer=true' : ''}`)
+    }
+
+    const clearFokus = () => {
+        if (!window.confirm('Er du sikker på at du vil nullstille alle lagrede feilsvar i fokusmodus?')) return
+        clearWrongAnswers()
+        setFokusCount(0)
     }
 
     return (
-        <div className="start-screen">
+        <div className="tt-v2-start">
             <Helmet>
                 <title>Gratis teoriprøve klasse B 2026 – 45 spørsmål og fasit | Teori-test.no</title>
                 <meta name="description" content="Øv gratis til teoriprøven for klasse B. Ta full prøve med 45 spørsmål, vikeplikt-test, skilt-test og interaktive guider. Ingen registrering." />
@@ -146,573 +160,358 @@ export default function StartScreen() {
                 <meta name="twitter:description" content="Øv gratis til teoriprøven for klasse B. Ta full prøve med 45 spørsmål, vikeplikt-test, skilt-test og interaktive guider. Ingen registrering." />
                 <meta name="twitter:image" content="https://teori-test.no/og-image.png" />
                 <meta name="twitter:image:alt" content="Teori-test.no – gratis teoriprøve for klasse B" />
-                <script type="application/ld+json">
-                    {JSON.stringify(faqJsonLd)}
-                </script>
+                <script type="application/ld+json">{JSON.stringify(faqJsonLd)}</script>
             </Helmet>
 
-            {/* HERO SECTION */}
-            <header className="section-container hero-container">
-                <div className="hero-section-clean">
-                    <h1 className="hero-title">
-                        Norges enkleste måte å øve til teoriprøven – helt gratis.
-                    </h1>
-                    <p className="hero-description">
+            <section className="tt-v2-hero tt-v2-container">
+                <div className="tt-v2-hero-copy">
+                    <p className="tt-v2-eyebrow">Klasse B · Førerkort</p>
+                    <h1>Norges enkleste måte å øve til teoriprøven – helt gratis.</h1>
+                    <p className="tt-v2-lead">
                         Teori-test.no er laget for deg som snart skal ta teoriprøven for klasse B. Her finner du kvalitetssikrede teorioppgaver som dekker hele pensum – fra fartsgrenser og vikeplikt til vegoppmerking og trafikkskilt. I tillegg til øvingsprøver finner du interaktive læringsartikler med visuelle guider og simulatorer. Du trenger ikke å lage bruker, betale, eller laste ned noe.
                     </p>
+                    <div className="tt-v2-assurances" aria-label="Kort fakta">
+                        <span>Ingen registrering</span>
+                        <span>45 spørsmål</span>
+                        <span>Oppdatert 2026</span>
+                        <span>Klasse B-pensum</span>
+                    </div>
                 </div>
-            </header>
 
-            {/* TRUST BADGES ROW */}
-            <div className="section-container trust-badges-container">
-                <div className="trust-badges-row">
-                    {['100% gratis', 'Ingen registrering', '45 spørsmål', 'Oppdatert 2026', 'Klasse B-pensum'].map((text, i) => (
-                        <div key={i} className="trust-badge">
-                            <span className="trust-badge-check">✓</span>
-                            {text}
+                <aside className="tt-v2-hero-action" aria-label="Full prøve">
+                    <div className="tt-v2-start-head"><strong>Full prøve</strong><span>Klasse B</span></div>
+                    <div className="tt-v2-start-facts">
+                        <span><strong>45</strong><small>spørsmål</small></span>
+                        <span><strong>90</strong><small>minutter</small></span>
+                        <span><strong>7</strong><small>maks feil</small></span>
+                    </div>
+                    <a className="tt-v2-button tt-v2-button-primary" href="#prover">
+                        Start full prøve <ChevronRight size={14} aria-hidden="true" />
+                    </a>
+                </aside>
+            </section>
+
+            <section className="tt-v2-proof" aria-label="Dette får du">
+                <div className="tt-v2-container tt-v2-proof-grid">
+                    <div className="tt-v2-proof-item"><strong>Pensum etter Vegvesenets læreplan</strong></div>
+                    <div className="tt-v2-proof-item"><strong>Forklaring på hvert svar</strong></div>
+                    <div className="tt-v2-proof-item"><strong>Stor skiltguide</strong></div>
+                    <div className="tt-v2-proof-item"><strong>Samme format som prøven</strong></div>
+                </div>
+            </section>
+
+            <section className="tt-v2-feature-stage tt-v2-container" id="fremgang" aria-label="Min fremgang og Fokusmodus">
+                <article className="tt-v2-feature-card tt-v2-progress-card">
+                    <div className="tt-v2-feature-copy">
+                        <p className="tt-v2-eyebrow">Min fremgang</p>
+                        <h2>Få oversikt over svake områder</h2>
+                        <p>Etter full prøve ser du hvilke temaer du bør øve mer på – og hvor du står nå.</p>
+                        <Link className="tt-v2-text-link" to="/min-fremgang">
+                            Min fremgang <ChevronRight size={14} aria-hidden="true" />
+                        </Link>
+                    </div>
+
+                    <div className="tt-v2-progress-visual" aria-label="Din fremgangsoversikt">
+                        <div className="tt-v2-progress-meta">
+                            <span>Siste fulle prøve</span>
+                            <strong>{demoProgress.correct} <small>/ {demoProgress.total} riktige</small></strong>
                         </div>
-                    ))}
-                </div>
-            </div>
+                        <div className="tt-v2-bar-list">
+                            {demoProgress.scores.map((item) => (
+                                <div className="tt-v2-bar-row" key={item.label}>
+                                    <div className="tt-v2-bar-head"><span>{item.label}</span><b>{item.score} %</b></div>
+                                    <i><span style={{ width: `${item.score}%` }} /></i>
+                                </div>
+                            ))}
+                        </div>
+                        <dl className="tt-v2-progress-activity" aria-label="Aktivitet totalt">
+                            <div><dt>Prøver</dt><dd><strong>{demoProgress.tests}</strong> totalt</dd></div>
+                            <div><dt>Spørsmål</dt><dd><strong>{demoProgress.questions}</strong> svart på</dd></div>
+                            <div><dt>Artikler</dt><dd><strong>{demoProgress.articles}</strong> / {demoProgress.totalArticles}</dd></div>
+                        </dl>
+                    </div>
+                </article>
 
-            {/* MODE CARDS SECTION */}
-            <section id="mode-selection" className="section-container">
-                <div className="mode-selection-header">
-                    <h2>Velg prøvetype</h2>
+                <article className="tt-v2-feature-card tt-v2-focus-card">
+                    <div className="tt-v2-focus-symbol" aria-hidden="true"><i /><i /><i /></div>
+                    <p className="tt-v2-eyebrow">Fokusmodus</p>
+                    <h2>Tren videre på spørsmålene du faktisk bommer på.</h2>
+                    <p>Feilsvarene dine lagres anonymt i nettleseren din, slik at du kan luke ut de svake punktene før prøvedagen.</p>
+                    {fokusCount > 0 && (
+                        <p className="tt-v2-focus-count">Lagrede feilsvar: <strong>{fokusCount} spørsmål</strong></p>
+                    )}
+                    <div className="tt-v2-focus-actions">
+                        <button
+                            className="tt-v2-button tt-v2-button-secondary"
+                            type="button"
+                            disabled={fokusCount === 0}
+                            onClick={() => navigate('/quiz?mode=fokus')}
+                        >
+                            Start test <ChevronRight size={14} aria-hidden="true" />
+                        </button>
+                        {fokusCount > 0 && (
+                            <button className="tt-v2-reset-button" type="button" onClick={clearFokus}>
+                                <RefreshCw size={14} aria-hidden="true" /> Nullstill
+                            </button>
+                        )}
+                    </div>
+                </article>
+            </section>
+
+            <section className="tt-v2-trials tt-v2-container" id="prover">
+                <div className="tt-v2-section-heading">
+                    <div><p className="tt-v2-eyebrow">Øvingsprøve</p><h2>Velg prøvetype</h2></div>
                     <p>Velg mellom en rask øvingstest eller fullverdig eksamensprøve</p>
                 </div>
 
-                <div className="mode-cards">
-                    {/* Full Quiz Card */}
-                    <div
-                        className="mode-card mode-card-full"
-                        onClick={() => navigate(`/quiz?mode=eksamen${useTimerForFull ? '&timer=true' : ''}`)}
-                        role="button"
-                        tabIndex={0}
-                        onKeyDown={(e) => {
-                            if (e.key === 'Enter' || e.key === ' ') {
-                                navigate(`/quiz?mode=eksamen${useTimerForFull ? '&timer=true' : ''}`)
-                            }
-                        }}
-                    >
-                        <div className="mode-card-full-left">
-                            <div className="card-icon-box">
-                                <BookOpen size={24} strokeWidth={1.8} />
-                            </div>
-                            <div>
-                                <h3 className="card-title">
-                                    Full prøve
-                                    <span className="mode-badge mode-badge-full">Offisielt format</span>
-                                </h3>
-                                <p className="card-desc">
-                                    Simulerer den virkelige teoriprøven hos Statens vegvesen med samme tidsbegrensning og beståttgrense (maks 7 feil av 45 oppgaver). Denne samler spørsmål fra alle kategorier for å gi deg et mest mulig realistisk bilde av sjansene dine for å bestå før den ekte eksamenen. Etter prøven får du en oversikt over hvilke temaer du bør øve mer på.
-                                </p>
-                            </div>
-                        </div>
-
-                        <div className="mode-card-full-right">
-                            <div className="card-stats-box">
-                                <div className="card-stats-item">
-                                    <span className="card-stats-label">TID</span>
-                                    <strong className="card-stats-value">90 min</strong>
+                <div className="tt-v2-trial-grid">
+                    <article className="tt-v2-trial-card tt-v2-trial-card-full">
+                        <div className="tt-v2-trial-number">01</div>
+                        <div className="tt-v2-trial-copy">
+                            <div className="tt-v2-trial-title-row"><h3>Full prøve</h3><span className="tt-v2-trial-badge">Offisielt format</span></div>
+                            <p>Simulerer den virkelige teoriprøven hos Statens vegvesen med samme tidsbegrensning og beståttgrense (maks 7 feil av 45 oppgaver). Denne samler spørsmål fra alle kategorier for å gi deg et mest mulig realistisk bilde av sjansene dine for å bestå før den ekte eksamenen. Etter prøven får du en oversikt over hvilke temaer du bør øve mer på.</p>
+                            <div className="tt-v2-trial-bottom">
+                                <div className="tt-v2-trial-meta">
+                                    <span><small>Tid</small>90 min</span>
+                                    <span><small>Krav</small>Maks 7 feil</span>
                                 </div>
-                                <div className="card-stats-item">
-                                    <span className="card-stats-label">KRAV</span>
-                                    <strong className="card-stats-value">Maks 7 feil</strong>
-                                </div>
-                            </div>
-
-                            {/* Timer toggle checkbox */}
-                            <div
-                                className="card-timer-toggle"
-                                onClick={(e) => {
-                                    e.stopPropagation() // Prevent card click
-                                    setUseTimerForFull(!useTimerForFull)
-                                }}
-                            >
-                                <input
-                                    type="checkbox"
-                                    id="timer-toggle"
-                                    checked={useTimerForFull}
-                                    onChange={() => { }} // Handled by parent div
-                                    style={{ pointerEvents: 'none', marginRight: '4px' }}
-                                />
-                                <label htmlFor="timer-toggle" style={{ cursor: 'pointer' }}>
-                                    Tidsbegrensning (90 min)
+                                <label className="tt-v2-time-toggle">
+                                    <input
+                                        type="checkbox"
+                                        checked={useTimerForFull}
+                                        onChange={(event) => setUseTimerForFull(event.target.checked)}
+                                    />
+                                    <span>Tidsbegrensning (90 min)</span>
                                 </label>
-                            </div>
-
-                            <div className="card-action-btn card-action-btn-primary">
-                                Start full prøve <ChevronRight size={14} />
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* Vikeplikt Card */}
-                    <div
-                        className="mode-card"
-                        onClick={() => navigate('/quiz/vikeplikt')}
-                        role="button"
-                        tabIndex={0}
-                        onKeyDown={(e) => {
-                            if (e.key === 'Enter' || e.key === ' ') navigate('/quiz/vikeplikt')
-                        }}
-                    >
-                        <div className="mode-card-main">
-                            <div className="card-icon-box">
-                                <Car size={24} strokeWidth={1.8} />
-                            </div>
-                            <h3 className="card-title">Vikeplikt-test</h3>
-                            <p className="card-desc">
-                                Målrettet øving på en vanlig strykfelle. Test din forståelse for høyreregler, svingeregler, forkjørsvei, rundkjøringer og spesielle vikepliktsituasjoner med visualiseringer.
-                            </p>
-                        </div>
-                        <div className="mode-card-footer">
-                            <span className="card-meta">Med visuelle kryss-diagrammer</span>
-                            <div className="card-action-btn">
-                                Start test <ChevronRight size={14} />
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* Ekspresstest Card */}
-                    <div
-                        className="mode-card"
-                        onClick={() => navigate('/quiz?mode=hurtig')}
-                        role="button"
-                        tabIndex={0}
-                        onKeyDown={(e) => {
-                            if (e.key === 'Enter' || e.key === ' ') navigate('/quiz?mode=hurtig')
-                        }}
-                    >
-                        <div className="mode-card-main">
-                            <div className="card-icon-box">
-                                <Zap size={24} strokeWidth={1.8} />
-                            </div>
-                            <h3 className="card-title">Ekspresstest</h3>
-                            <p className="card-desc">
-                                10 raske spørsmål når du vil ta en kjapp sjekk. Passer perfekt når du har dårlig tid på bussen, skolen eller i pausen.
-                            </p>
-                        </div>
-                        <div className="mode-card-footer">
-                            <span className="card-meta">15 minutter • 10 spørsmål</span>
-                            <div className="card-action-btn">
-                                Start test <ChevronRight size={14} />
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* Skilt Card */}
-                    <div
-                        className="mode-card"
-                        onClick={() => navigate('/quiz/skilt')}
-                        role="button"
-                        tabIndex={0}
-                        onKeyDown={(e) => {
-                            if (e.key === 'Enter' || e.key === ' ') navigate('/quiz/skilt')
-                        }}
-                    >
-                        <div className="mode-card-main">
-                            <div className="card-icon-box">
-                                <HelpCircle size={24} strokeWidth={1.8} />
-                            </div>
-                            <h3 className="card-title">Skilt-test</h3>
-                            <p className="card-desc">
-                                Øv på trafikkskilt og vikepliktskilt. Lær deg betydningen av de viktigste forbuds-, påbuds-, opplysnings- og fareskiltene du garantert vil møte på veien.
-                            </p>
-                        </div>
-                        <div className="mode-card-footer">
-                            <span className="card-meta">Med skiltillustrasjoner</span>
-                            <div className="card-action-btn">
-                                Start test <ChevronRight size={14} />
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* Fokusmodus Card */}
-                    <div
-                        className={`mode-card ${fokusCount === 0 ? 'disabled' : ''}`}
-                        onClick={() => {
-                            if (fokusCount > 0) {
-                                navigate('/quiz?mode=fokus')
-                            }
-                        }}
-                        role="button"
-                        tabIndex={fokusCount > 0 ? 0 : -1}
-                        onKeyDown={(e) => {
-                            if ((e.key === 'Enter' || e.key === ' ') && fokusCount > 0) {
-                                navigate('/quiz?mode=fokus')
-                            }
-                        }}
-                    >
-                        <div className="mode-card-main">
-                            <div className="card-icon-box">
-                                <Target size={24} strokeWidth={1.8} />
-                            </div>
-                            <h3 className="card-title">
-                                Fokusmodus
-                                {fokusCount > 0 && <span className="mode-badge mode-badge-full">Smart øving</span>}
-                            </h3>
-                            <p className="card-desc">
-                                Øv på spørsmål du har svart feil på tidligere. Vårt system lagrer feilsvarte spørsmål i din lokale nettleser helt anonymt, slik at du kan eliminere svake punkter frem mot selve prøvedagen.
-                            </p>
-                        </div>
-                        <div className="mode-card-footer">
-                            <span className="card-meta">
-                                Lagrede feilsvar: <strong style={{ color: 'var(--color-primary)' }}>{fokusCount} spørsmål</strong>
-                            </span>
-                            <div className="card-actions-wrapper" onClick={(e) => e.stopPropagation()}>
-                                {fokusCount > 0 && (
-                                    <button 
-                                        onClick={handleClearFokus}
-                                        className="card-reset-btn"
-                                        title="Tøm lagrede feilsvar"
-                                    >
-                                        <RefreshCw size={14} />
-                                    </button>
-                                )}
-                                <button 
-                                    disabled={fokusCount === 0}
-                                    onClick={() => navigate('/quiz?mode=fokus')}
-                                    className={`card-action-btn ${fokusCount === 0 ? 'card-action-btn-disabled' : ''}`}
-                                >
-                                    Start test <ChevronRight size={14} />
+                                <button className="tt-v2-button tt-v2-button-primary" type="button" onClick={startFullQuiz}>
+                                    Start full prøve <ChevronRight size={14} aria-hidden="true" />
                                 </button>
                             </div>
                         </div>
-                    </div>
-                </div>
+                    </article>
 
-                {/* Diskret lenke til teorispørsmålene */}
-                <p style={{ textAlign: 'center', fontSize: '0.95rem', color: 'var(--color-text-light)', marginTop: 'var(--spacing-lg)' }}>
-                    Ikke klar for en hel prøve? Prøv våre{' '}
-                    <Link to="/sporsmal" style={{ color: 'var(--color-primary)', fontWeight: 600, textDecoration: 'none' }}>
-                        ofte spurte teorispørsmål
-                    </Link>
-                    {' '}— oppgaver med fasit og ekstra god forklaring.
-                </p>
-                <p style={{ textAlign: 'center', fontSize: '0.95rem', color: 'var(--color-text-light)', marginTop: 'var(--spacing-sm)' }}>
-                    Eller øv på ett tema om gangen:{' '}
-                    <Link to="/quiz/skilt" style={{ color: 'var(--color-primary)', fontWeight: 600, textDecoration: 'none' }}>skilt-quiz</Link>
-                    {', '}
-                    <Link to="/quiz/vikeplikt" style={{ color: 'var(--color-primary)', fontWeight: 600, textDecoration: 'none' }}>vikeplikt-quiz</Link>
-                    {', '}
-                    <Link to="/quiz/fartsregler" style={{ color: 'var(--color-primary)', fontWeight: 600, textDecoration: 'none' }}>fartsregler</Link>
-                    {' eller '}
-                    <Link to="/quiz/veimerking" style={{ color: 'var(--color-primary)', fontWeight: 600, textDecoration: 'none' }}>veimerking</Link>.
-                </p>
-                <p style={{ textAlign: 'center', fontSize: '0.95rem', color: 'var(--color-text-light)', marginTop: 'var(--spacing-sm)' }}>
-                    Nytt: test deg i{' '}
-                    <Link to="/laeringsspill/vikeplikt" style={{ color: 'var(--color-primary)', fontWeight: 600, textDecoration: 'none' }}>vikepliktspillet</Link>
-                    {' '}— hvem kjører først? Og følg utviklingen din i{' '}
-                    <Link to="/min-fremgang" style={{ color: 'var(--color-primary)', fontWeight: 600, textDecoration: 'none' }}>Min fremgang</Link>.
-                </p>
+                    <TrialCard
+                        number="02"
+                        title="Vikepliktstest"
+                        description="Målrettet øving på en vanlig strykfelle. Test din forståelse for høyreregler, svingeregler, forkjørsvei, rundkjøringer og spesielle vikepliktsituasjoner med visualiseringer."
+                        meta="10 spørsmål · vikeplikt i trafikken"
+                        onStart={() => navigate('/quiz/vikeplikt')}
+                    />
+                    <TrialCard
+                        number="03"
+                        title="Ekspresstest"
+                        description="10 raske spørsmål når du vil ta en kjapp sjekk. Passer perfekt når du har dårlig tid på bussen, skolen eller i pausen."
+                        meta="10 spørsmål · ca. 15 minutter"
+                        onStart={() => navigate('/quiz?mode=hurtig')}
+                    />
+                    <TrialCard
+                        number="04"
+                        title="Skilttest"
+                        description="Øv på trafikkskilt og vikepliktskilt. Lær deg betydningen av de viktigste forbuds-, påbuds-, opplysnings- og fareskiltene du garantert vil møte på veien."
+                        meta="10 spørsmål · norske trafikkskilt"
+                        onStart={() => navigate('/quiz/skilt')}
+                    />
+                </div>
             </section>
 
-            {/* GUIDES AND CHIPS TILE */}
-            <section className="section-container">
-                <div className="theory-full-width-tile">
-                    <h2>Interaktive guider og artikler</h2>
+            <section className="tt-v2-interactive" aria-label="Interaktiv læring">
+                <div className="tt-v2-container">
+                    <div className="tt-v2-section-heading">
+                        <div><p className="tt-v2-eyebrow">Mer enn spørsmål</p><h2>Interaktive guider og artikler</h2></div>
+                        <p>Forstå reglene bak spørsmålene med visuelle eksempler, steg-for-steg-guider og korte forklaringer.</p>
+                    </div>
+
+                    <article className="tt-v2-roundabout-feature">
+                        <header className="tt-v2-roundabout-head">
+                            <div>
+                                <span className="tt-v2-roundabout-label">Interaktiv demo</span>
+                                <h3>Rundkjøring: plassering, tegn og vikeplikt</h3>
+                                <p>Firearmet rundkjøring med ett kjørefelt. Du kommer inn nedenfra. Trafikken kjører til høyre om midtøya.</p>
+                            </div>
+                            <a className="tt-v2-button tt-v2-button-tertiary" href="/rundkjoring-visning.html" target="_blank" rel="noopener">
+                                Åpne hele demoen <ChevronRight size={14} aria-hidden="true" />
+                            </a>
+                        </header>
+                        <iframe
+                            ref={roundaboutFrame}
+                            className="tt-v2-roundabout-frame"
+                            src="/rundkjoring-visning.html?embed=1"
+                            title="Interaktiv demonstrasjon av plassering, tegn og vikeplikt i rundkjøring"
+                            loading="lazy"
+                            scrolling="no"
+                            style={{ height: `${roundaboutHeight}px` }}
+                        />
+                    </article>
+
+                    <article className="tt-v2-sign-guide">
+                        <div className="tt-v2-sign-guide-copy">
+                            <span className="tt-v2-roundabout-label">250 norske trafikkskilt</span>
+                            <h3>Skiltguide</h3>
+                            <p>Alle skiltgruppene forklart, med de vanligste misforståelsene ved hvert skilt.</p>
+                            <Link className="tt-v2-text-link" to="/trafikkskilt">
+                                Åpne skiltguiden <ChevronRight size={14} aria-hidden="true" />
+                            </Link>
+                        </div>
+                        <div className="tt-v2-stage-signs" aria-hidden="true">
+                            <img src="/signs/vikeplikt.svg" alt="" loading="lazy" decoding="async" />
+                            <img src="/signs/stopp.svg" alt="" loading="lazy" decoding="async" />
+                            <img src="/signs/forkjorsvei.svg" alt="" loading="lazy" decoding="async" />
+                            <img src="/signs/forbudsskilt/skilt-362-50-fartsgrense.jpg" alt="" loading="lazy" decoding="async" />
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <section className="tt-v2-how">
+                <div className="tt-v2-container">
+                    <div className="tt-v2-how-heading"><p className="tt-v2-eyebrow">Fra øving til oversikt</p><h2>Slik fungerer det</h2></div>
+                    <ol className="tt-v2-how-track">
+                        <HowStep number="01" title="Velg prøve eller tema">Start med full prøve, tematest eller en guide.</HowStep>
+                        <HowStep number="02" title="Svar på spørsmål">Øv i samme format som teoriprøven hos Statens vegvesen.</HowStep>
+                        <HowStep number="03" title="Se forklaring">Lær hvorfor svaret er riktig eller feil – ikke bare hva som var riktig.</HowStep>
+                        <HowStep number="04" title="Få oversikt over svake områder">Etter full prøve ser du hvilke temaer du bør øve mer på, og kan trene videre i Fokusmodus.</HowStep>
+                    </ol>
+                </div>
+            </section>
+
+            <section className="tt-v2-trust" aria-label="Om siden og kildene">
+                <div className="tt-v2-container tt-v2-trust-grid">
+                    <div className="tt-v2-trust-method">
+                        <p className="tt-v2-eyebrow">Åpent om innholdet</p>
+                        <h2>Du skal kunne se hva du øver på.</h2>
+                        <ol className="tt-v2-method-list">
+                            <TrustMethod number="01" title="Temaer fra klasse B-pensum">Oppgavene tar utgangspunkt i temaene som inngår i opplæringen for klasse B.</TrustMethod>
+                            <TrustMethod number="02" title="Forklaring etter hvert svar">Etter at du har svart, får du en forklaring som viser hvorfor alternativet er riktig eller feil.</TrustMethod>
+                            <TrustMethod number="03" title="Synlig oppdateringsdato">Vi viser når innholdet sist ble gjennomgått eller vesentlig oppdatert.</TrustMethod>
+                        </ol>
+                    </div>
+                    <div>
+                        <p className="tt-v2-eyebrow">Dette kan du forvente</p>
+                        <div className="tt-v2-trust-facts">
+                            <div><span>Svar</span><span>Forklaring etter hvert svar</span></div>
+                            <div><span>Skiltguide</span><span>For norske trafikkskilt</span></div>
+                            <div><span>Tjenesten</span><span>Uavhengig læringsressurs</span></div>
+                            <div><span>Tilknytning</span><span>Ikke tilknyttet Statens vegvesen</span></div>
+                        </div>
+                        <p className="tt-v2-trust-sources">
+                            Les mer om{' '}
+                            <a href="https://www.vegvesen.no/" target="_blank" rel="noopener noreferrer">opplæring for klasse B hos Statens vegvesen</a>
+                            {' '}og{' '}
+                            <a href="https://lovdata.no/dokument/SF/forskrift/1986-03-21-747" target="_blank" rel="noopener noreferrer">trafikkreglene på Lovdata</a>.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <section className="tt-v2-seo tt-v2-container" aria-labelledby="bruk-resultatene">
+                <div className="tt-v2-seo-intro">
+                    <p className="tt-v2-eyebrow">Fra resultat til neste økt</p>
+                    <h2 id="bruk-resultatene">Bruk resultatene til å velge hva du øver på.</h2>
                     <p>
-                        Forstå reglene bak spørsmålene med visuelle eksempler, kalkulatorer og korte forklaringer.
+                        En prøve er mest nyttig som et øyeblikksbilde av egen øving. Se etter temaene du oftest svarer feil på, les forklaringen og prøv den samme regelen i en ny situasjon. Når du øver igjen senere, kan du sammenligne resultatene med dine egne tidligere forsøk.
                     </p>
-
-                    <div className="theory-chips-container">
-                        {[
-                            { label: 'Vikeplikt og rundkjøring', path: '/laeringsressurser/vikeplikt', icon: Route },
-                            { label: 'Bremselengde og stopplengde', path: '/laeringsressurser/bremselengde', icon: Gauge },
-                            { label: 'Myndighetspyramiden', path: '/laeringsressurser/myndighetspyramiden', icon: Layers },
-                            { label: 'Veimerking', path: '/laeringsressurser/veimerking', icon: Route },
-                            { label: 'Trafikkskilt', path: '/laeringsressurser/skilt', icon: Signpost },
-                            { label: 'Fartsgrenser', path: '/laeringsressurser/fartsgrenser', icon: CircleGauge },
-                            { label: 'Promille og rus', path: '/laeringsressurser/promille', icon: Wine },
-                            { label: 'Tilhenger og vekt', path: '/laeringsressurser/tilhenger', icon: Truck },
-                            { label: 'Sikkerhetskontroll', path: '/laeringsressurser/sikkerhetskontroll', icon: Wrench },
-                            { label: 'Glatt føre', path: '/laeringsressurser/glatt-fore', icon: Snowflake }
-                        ].map((topic, i) => {
-                            const IconComponent = topic.icon
-                            return (
-                                <Link 
-                                    key={i} 
-                                    to={topic.path} 
-                                    className="theory-chip"
-                                >
-                                    <IconComponent size={14} strokeWidth={2} />
-                                    {topic.label}
-                                </Link>
-                            )
-                        })}
+                    <div className="tt-v2-seo-links">
+                        <p>
+                            <strong>Kort økt:</strong>{' '}
+                            <Link to="/quiz/skilt">Skilt-quiz</Link> ·{' '}
+                            <Link to="/quiz/vikeplikt">Vikeplikt-quiz</Link> ·{' '}
+                            <Link to="/quiz/fartsregler">Fartsregler</Link> ·{' '}
+                            <Link to="/quiz/veimerking">Veimerking</Link>
+                        </p>
+                        <p>
+                            <strong>Forstå regelen:</strong>{' '}
+                            <Link to="/sporsmal">Teorispørsmål</Link> ·{' '}
+                            <Link to="/laeringsressurser">Interaktive guider</Link>
+                        </p>
+                        <p>
+                            <strong>Fortsett der du slapp:</strong>{' '}
+                            <Link to="/min-fremgang">Min fremgang</Link> ·{' '}
+                            <Link to="/quiz?mode=fokus">Fokusmodus</Link>
+                        </p>
                     </div>
-
-                    <Link 
-                        to="/laeringsressurser" 
-                        className="button button-secondary"
-                    >
-                        Se alle artikler →
-                    </Link>
                 </div>
+
+                <aside className="tt-v2-exam-facts" aria-labelledby="exam-facts-title">
+                    <h3 id="exam-facts-title">Teoriprøven klasse B: kort fakta</h3>
+                    <ul>
+                        <li><strong>45</strong><span>spørsmål på teoriprøven for klasse B</span></li>
+                        <li><strong>90</strong><span>minutter ordinær tid</span></li>
+                        <li><strong>7</strong><span>maks feil for å bestå</span></li>
+                        <li><strong>17,5</strong><span>år er tidligste alder for å ta prøven</span></li>
+                        <li><strong>3</strong><span>års gyldighet etter bestått teoriprøve</span></li>
+                        <li><strong>2</strong><span>uker er minste ventetid ved stryk</span></li>
+                    </ul>
+                    <p>Teoriprøven tas hos Statens vegvesen. Bestill time før du møter på trafikkstasjonen.</p>
+                    <small>Regler kan endres. Sjekk alltid Statens vegvesen for oppdatert informasjon før du bestiller prøve.</small>
+                </aside>
             </section>
 
-            {/* COMPACT MORE THAN A TEST SECTION */}
-            <section className="section-container section-divider">
-                <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
-                    <h2 className="start-screen-section-title" style={{ marginBottom: '0.5rem' }}>Alt du trenger for å øve smartere</h2>
+            <section className="tt-v2-faq tt-v2-container" id="faq">
+                <div className="tt-v2-faq-heading">
+                    <div><p className="tt-v2-eyebrow">Om øvingsprøven</p><h2>Ofte stilte spørsmål</h2></div>
+                    <p>Svar på vanlige spørsmål om teoriprøven, øvingen og hvordan Teori-test.no fungerer.</p>
                 </div>
-                
-                <div className="compact-features-grid" style={{
-                    display: 'grid',
-                    gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
-                    gap: '1.5rem',
-                    marginBottom: '1.5rem'
-                }}>
-                    {[
-                        { 
-                            title: 'Skiltguide', 
-                            desc: 'Se skiltet, forstå regelen og unngå vanlige misforståelser.',
-                            icon: Signpost
-                        },
-                        { 
-                            title: 'Forklaringer', 
-                            desc: 'Få korte svar når du lurer på hvorfor et svar er riktig.',
-                            icon: HelpCircle
-                        },
-                        { 
-                            title: 'Praktisk øving', 
-                            desc: 'Bruk kalkulatorer, minispill og visuelle eksempler når tekst ikke er nok.',
-                            icon: Gamepad2
-                        },
-                        { 
-                            title: 'Fokusmodus', 
-                            desc: 'Tren videre på spørsmålene du faktisk bommer på.',
-                            icon: Target
-                        }
-                    ].map((item, i) => {
-                        const IconComponent = item.icon;
+                <div className="tt-v2-faq-list">
+                    {faqItems.map((faq, index) => {
+                        const open = activeFaq === index
                         return (
-                            <div key={i} style={{ 
-                                display: 'flex', 
-                                gap: '1rem', 
-                                alignItems: 'flex-start',
-                                padding: '1rem',
-                                borderRadius: '12px',
-                                background: 'var(--color-bg-secondary)',
-                                border: '1px solid var(--color-border)',
-                                cursor: 'default'
-                            }} className="compact-feature-item">
-                                <div style={{ 
-                                    display: 'flex', 
-                                    alignItems: 'center', 
-                                    justifyContent: 'center', 
-                                    padding: '10px', 
-                                    borderRadius: '10px', 
-                                    background: 'var(--color-bg)', 
-                                    color: 'var(--color-primary)',
-                                    border: '1px solid var(--color-border)',
-                                    flexShrink: 0
-                                }}>
-                                    <IconComponent size={20} strokeWidth={2} />
-                                </div>
-                                <div>
-                                    <h3 style={{ margin: '0 0 4px 0', fontSize: '1.05rem', fontWeight: 'bold' }}>{item.title}</h3>
-                                    <p style={{ margin: 0, fontSize: '0.9rem', color: 'var(--color-text-light)', lineHeight: '1.45' }}>{item.desc}</p>
-                                </div>
+                            <div className={`tt-v2-faq-item ${open ? 'is-open' : ''}`} key={faq.question}>
+                                <button type="button" onClick={() => setActiveFaq(open ? null : index)} aria-expanded={open}>
+                                    <span>{faq.question}</span>
+                                    <ChevronDown size={18} aria-hidden="true" />
+                                </button>
+                                {open && <div className="tt-v2-faq-answer">{typeof faq.answer === 'string' ? <p>{faq.answer}</p> : faq.answer}</div>}
                             </div>
                         )
                     })}
                 </div>
-
-                <div style={{ 
-                    textAlign: 'center', 
-                    fontSize: '0.88rem', 
-                    color: 'var(--color-text-light)',
-                    display: 'flex',
-                    justifyContent: 'center',
-                    gap: '1rem',
-                    flexWrap: 'wrap',
-                    marginTop: '2rem',
-                    opacity: 0.9,
-                    fontWeight: '555'
-                }}>
-                    <span>Gratis å bruke</span>
-                    <span style={{ color: 'var(--color-border)' }}>•</span>
-                    <span>Ingen konto</span>
-                    <span style={{ color: 'var(--color-border)' }}>•</span>
-                    <span>Ingen app å laste ned</span>
-                </div>
-            </section>
-
-            {/* HOW IT WORKS */}
-            <section className="section-container section-divider">
-                <h2 className="start-screen-section-title">Slik fungerer det</h2>
-                <div className="how-it-works-grid">
-                    {[
-                        { title: 'Velg prøve eller tema', desc: 'Start med full prøve, tematest eller guide.' },
-                        { title: 'Svar på spørsmål', desc: 'Øv i samme format som teoriprøven.' },
-                        { title: 'Se forklaring', desc: 'Lær hvorfor svaret er riktig eller feil.' },
-                        { title: 'Få oversikt over svake områder', desc: 'Etter full prøve ser du hvilke temaer du bør øve mer på.' }
-                    ].map((step, i) => (
-                        <div key={i} className="step-card">
-                            <div className="step-badge">
-                                {i + 1}
-                            </div>
-                            <h3 className="step-title">{step.title}</h3>
-                            <p className="step-desc">{step.desc}</p>
-                        </div>
-                    ))}
-                </div>
-            </section>
-
-            {/* SEO & FAQ SECTION */}
-            <section className="section-container section-divider">
-                <div className="start-screen-seo">
-                    <h2>Om Teori-test.no</h2>
-                    <p>
-                        Teori-test.no er en gratis læringsplattform for deg som skal ta førerkort for klasse B. Her kan du øve til teoriprøven med kvalitetssikrede spørsmål, studere trafikkskilt i vår skiltguide, prøve minispill som Skiltduellen, eller dykke ned i interaktive læringsartikler. Etter full prøve ser du også hvilke temaer du bør øve mer på. Alt innhold er tilgjengelig helt gratis og uten registrering.
-                    </p>
-
-                    {/* SHARE ROW */}
-                    <div style={{
-                        display: 'flex',
-                        alignItems: 'center',
-                        flexWrap: 'wrap',
-                        gap: '0.75rem',
-                        marginTop: '1rem',
-                        marginBottom: '2rem',
-                        fontSize: '0.92rem',
-                        color: 'var(--color-text-light)'
-                    }}>
-                        <span>Kjenner du noen som øver til teoriprøven? Del Teori-test.no.</span>
-                        <button
-                            onClick={handleShare}
-                            className="button button-secondary"
-                            style={{
-                                display: 'inline-flex',
-                                alignItems: 'center',
-                                gap: '6px',
-                                fontSize: '0.85rem',
-                                padding: '6px 12px',
-                                borderRadius: '6px',
-                                border: '1px solid var(--color-border)'
-                            }}
-                        >
-                            <Share2 size={13} />
-                            Del siden
-                        </button>
-                        {shareStatus && (
-                            <span style={{
-                                fontSize: '0.85rem',
-                                color: 'var(--color-success)',
-                                fontWeight: '600',
-                                marginLeft: '0.25rem'
-                            }}>
-                                {shareStatus}
-                            </span>
-                        )}
-                    </div>
-
-                    {/* COMPACT FACT BOX */}
-                    <div className="fact-box-container" style={{
-                        marginTop: '2.5rem',
-                        marginBottom: '2.5rem',
-                        padding: '1.5rem',
-                        background: 'var(--color-bg-secondary)',
-                        border: '1px solid var(--color-border)',
-                        borderRadius: '12px',
-                    }}>
-                        <h3 style={{
-                            margin: '0 0 1.25rem 0',
-                            fontSize: '1.15rem',
-                            fontWeight: '800',
-                            color: 'var(--color-text)',
-                            textAlign: 'center'
-                        }}>
-                            Teoriprøven klasse B: kort fakta
-                        </h3>
-                        
-                        <div style={{
-                            display: 'grid',
-                            gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
-                            gap: '1rem',
-                        }}>
-                            {[
-                                '45 spørsmål på teoriprøven for klasse B',
-                                '90 minutter ordinær tid',
-                                'Maks 7 feil for å bestå',
-                                '17,5 år er tidligste alder for å ta prøven',
-                                '3 år gyldighet etter bestått teoriprøve',
-                                'Minst 2 uker ventetid ved stryk',
-                                'Teoriprøven tas hos Statens vegvesen',
-                                'Bestill time før du møter på trafikkstasjonen'
-                            ].map((fact, index) => (
-                                <div key={index} style={{
-                                    display: 'flex',
-                                    gap: '0.75rem',
-                                    alignItems: 'center',
-                                    padding: '0.75rem 1rem',
-                                    background: 'var(--color-bg)',
-                                    border: '1px solid var(--color-border)',
-                                    borderRadius: '8px',
-                                    fontSize: '0.9rem',
-                                    color: 'var(--color-text)',
-                                    lineHeight: '1.4',
-                                    cursor: 'default'
-                                }} className="compact-fact-card">
-                                    <span style={{
-                                        color: 'var(--color-primary)',
-                                        fontWeight: '900',
-                                        fontSize: '1.1rem',
-                                        flexShrink: 0
-                                    }}>✓</span>
-                                    <span>{fact}</span>
-                                </div>
-                            ))}
-                        </div>
-
-                        <p style={{
-                            margin: '1.25rem 0 0 0',
-                            fontSize: '0.78rem',
-                            color: 'var(--color-text-light)',
-                            textAlign: 'center',
-                            fontStyle: 'italic',
-                            lineHeight: '1.45'
-                        }}>
-                            Regler kan endres. Sjekk alltid Statens vegvesen for oppdatert informasjon før du bestiller prøve.
-                        </p>
-                    </div>
-
-                    <div className="faq-section">
-                        <h2>Ofte stilte spørsmål</h2>
-                        
-                        <div className="faq-container">
-                            {faqItems.map((faq, index) => {
-                                const isOpen = activeFaq === index
-                                return (
-                                    <div key={index} className="faq-item">
-                                        <button 
-                                            className="faq-trigger" 
-                                            onClick={() => toggleFaq(index)}
-                                            aria-expanded={isOpen}
-                                        >
-                                            <span>{faq.question}</span>
-                                            <span 
-                                                className="faq-icon-arrow"
-                                                style={{ transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)' }}
-                                            >
-                                                <ChevronDown size={18} strokeWidth={2.5} />
-                                            </span>
-                                        </button>
-                                        {isOpen && (
-                                            <div className="faq-content">
-                                                {typeof faq.answer === 'string' ? <p>{faq.answer}</p> : faq.answer}
-                                            </div>
-                                        )}
-                                    </div>
-                                )
-                            })}
-                        </div>
-                    </div>
-                </div>
             </section>
         </div>
+    )
+}
+
+interface TrialCardProps {
+    number: string
+    title: string
+    description: string
+    meta: string
+    onStart: () => void
+}
+
+function TrialCard({ number, title, description, meta, onStart }: TrialCardProps) {
+    return (
+        <article className="tt-v2-trial-card">
+            <div className="tt-v2-trial-number">{number}</div>
+            <div className="tt-v2-trial-copy">
+                <div className="tt-v2-trial-title-row"><h3>{title}</h3></div>
+                <p>{description}</p>
+                <div className="tt-v2-trial-bottom">
+                    <div className="tt-v2-trial-meta"><span>{meta}</span></div>
+                    <button className="tt-v2-button tt-v2-button-tertiary" type="button" onClick={onStart}>
+                        Start test <ChevronRight size={14} aria-hidden="true" />
+                    </button>
+                </div>
+            </div>
+        </article>
+    )
+}
+
+function HowStep({ number, title, children }: { number: string; title: string; children: ReactNode }) {
+    return (
+        <li className="tt-v2-how-step">
+            <span className="tt-v2-how-dot" aria-hidden="true">{number}</span>
+            <h3>{title}</h3>
+            <p>{children}</p>
+        </li>
+    )
+}
+
+function TrustMethod({ number, title, children }: { number: string; title: string; children: ReactNode }) {
+    return (
+        <li>
+            <i aria-hidden="true">{number}</i>
+            <strong>{title}</strong>
+            <span>{children}</span>
+        </li>
     )
 }

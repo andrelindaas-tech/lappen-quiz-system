@@ -13,7 +13,6 @@ const SIGNS_DATA_PATH = path.join(ROOT_DIR, 'src/data/trafficSigns.ts');
 const SITEMAP_PATH = path.join(ROOT_DIR, 'public/sitemap.xml');
 
 const BASE_URL = 'https://teori-test.no';
-const TODAY = new Date().toISOString().split('T')[0];
 
 function generateSitemap() {
   console.log('Generating sitemap.xml...');
@@ -145,7 +144,11 @@ function generateSitemap() {
     const locWithSlash = url.loc.endsWith('/') ? url.loc : url.loc + '/';
     xml += '    <url>\n';
     xml += `        <loc>${BASE_URL}${locWithSlash}</loc>\n`;
-    xml += `        <lastmod>${TODAY}</lastmod>\n`;
+    // lastmod skal bare brukes når URL-en har en reell, dokumentert
+    // innholdsendring. Build-dato på alle sider gir søkemotorene et falskt signal.
+    if (url.lastmod) {
+      xml += `        <lastmod>${url.lastmod}</lastmod>\n`;
+    }
     xml += `        <changefreq>${url.changefreq}</changefreq>\n`;
     xml += `        <priority>${url.priority}</priority>\n`;
     if (url.image) {

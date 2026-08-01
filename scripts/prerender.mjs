@@ -59,7 +59,15 @@ function renderRoute(url) {
     })
 }
 
-function buildDocument(appHtml, helmet) {
+function escapeHtmlAttribute(value) {
+    return value
+        .replaceAll('&', '&amp;')
+        .replaceAll('"', '&quot;')
+        .replaceAll('<', '&lt;')
+        .replaceAll('>', '&gt;')
+}
+
+function buildDocument(appHtml, helmet, route) {
     let doc = template
     let head = helmet
         ? [helmet.title, helmet.meta, helmet.link, helmet.script]
@@ -78,7 +86,11 @@ function buildDocument(appHtml, helmet) {
     if (head.trim()) {
         doc = doc.replace('</head>', `  ${head}\n</head>`)
     }
-    return doc.replace('<div id="root"></div>', `<div id="root">${appHtml}</div>`)
+    const prerenderPath = escapeHtmlAttribute(route)
+    return doc.replace(
+        '<div id="root"></div>',
+        `<div id="root" data-prerender-path="${prerenderPath}">${appHtml}</div>`,
+    )
 }
 
 let ok = 0
@@ -88,7 +100,7 @@ for (const route of routes) {
         const { html, helmet } = await renderRoute(route)
         const outDir = route === '/' ? DIST : path.join(DIST, route.replace(/^\//, ''))
         fs.mkdirSync(outDir, { recursive: true })
-        fs.writeFileSync(path.join(outDir, 'index.html'), buildDocument(html, helmet), 'utf-8')
+        fs.writeFileSync(path.join(outDir, 'index.html'), buildDocument(html, helmet, route), 'utf-8')
         ok++
     } catch (err) {
         failed.push(`${route}: ${err?.message ?? err}`)

@@ -14,12 +14,11 @@ interface ResultScreenProps {
 }
 
 export default function ResultScreen({ result, mode, onRestart, onReview, onReturnHome }: ResultScreenProps) {
-    // Trigger confetti when passing full test or clearing Fokus mode
+    // Celebrate only the concrete achievement of clearing all saved Fokus questions.
     useEffect(() => {
-        const isFullPass = mode.name === 'Full prøve' && result.passed
         const isFokusCleared = mode.isFokusMode && result.passed && result.errors === 0
 
-        if (isFullPass || isFokusCleared) {
+        if (isFokusCleared) {
             // Celebrate!
             const duration = 3000
             const end = Date.now() + duration
@@ -30,14 +29,14 @@ export default function ResultScreen({ result, mode, onRestart, onReview, onRetu
                     angle: 60,
                     spread: 55,
                     origin: { x: 0 },
-                    colors: ['#9333ea', '#f59e0b', '#3b82f6']
+                    colors: ['#2dd4bf', '#f59e0b', '#38bdf8']
                 })
                 confetti({
                     particleCount: 3,
                     angle: 120,
                     spread: 55,
                     origin: { x: 1 },
-                    colors: ['#9333ea', '#f59e0b', '#3b82f6']
+                    colors: ['#2dd4bf', '#f59e0b', '#38bdf8']
                 })
 
                 if (Date.now() < end) {
@@ -51,6 +50,12 @@ export default function ResultScreen({ result, mode, onRestart, onReview, onRetu
 
     // Special message for Fokusmodus cleared
     const isFokusCleared = mode.isFokusMode && result.passed && result.errors === 0
+    const errorReference = result.errors === 1 ? 'det ene feilsvaret' : `de ${result.errors} feilsvarene`
+    const resultSummary = isFokusCleared
+        ? 'Du svarte riktig på alle spørsmålene i denne fokustesten. Ingen av disse feilsvarene er lenger lagret i Fokusmodus.'
+        : result.errors === 0
+            ? `Du svarte riktig på alle ${result.totalCount} spørsmål i denne testen.`
+            : `Du svarte riktig på ${result.correctCount} av ${result.totalCount} spørsmål. Se gjennom ${errorReference} og velg hva du vil øve videre på.`
 
     // Levende tall: score og prosent teller mykt opp
     const animCorrect = useCountUp(result.correctCount)
@@ -95,34 +100,32 @@ export default function ResultScreen({ result, mode, onRestart, onReview, onRetu
 
     return (
         <div className="result-screen">
-            <div className="result-icon">
-                {isFokusCleared ? '🎉' : result.passed ? '✅' : '❌'}
-            </div>
-
-            <h1 className={`result-status ${result.passed ? 'passed' : 'failed'}`}>
-                {isFokusCleared ? 'FOKUSMODUS FULLFØRT!' : result.passed ? 'BESTÅTT!' : 'IKKE BESTÅTT'}
-            </h1>
+            <h2 className="result-status">
+                Resultat fra testen
+            </h2>
 
             <p className="result-mode-name">{mode.name}</p>
 
             <p style={{ color: 'var(--color-text-light)', marginBottom: 'var(--spacing-xl)' }}>
-                {isFokusCleared
-                    ? '🌟 Fantastisk! Du har mestret alle feilene dine!'
-                    : result.passed
-                        ? (mode.name === 'Full prøve' ? 'Gratulerer! Du har bestått teoriprøven.' : 'Bra jobba! Du besto øvingstesten.')
-                        : (mode.isFokusMode ? 'Du har fortsatt noen feil å jobbe med. Prøv igjen!' : 'Du må øve mer og prøve igjen.')}
+                {resultSummary}
             </p>
 
             <div className="score-bar-container" style={{ margin: 'var(--spacing-lg) 0 var(--spacing-xl) 0', width: '100%', display: 'flex', flexDirection: 'column', gap: '8px', textAlign: 'left' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: '1rem', fontWeight: 600 }}>
-                    <span style={{ color: 'var(--color-text)' }}>Din score: {animCorrect} av {result.totalCount}</span>
-                    <span style={{ color: result.passed ? 'var(--color-success)' : 'var(--color-error)' }}>{animPercentage}%</span>
+                    <span style={{ color: 'var(--color-text)' }}>Riktige svar: {animCorrect} av {result.totalCount}</span>
+                    <span style={{ color: 'var(--color-primary)' }}>{animPercentage}%</span>
                 </div>
                 <div style={{ position: 'relative', width: '100%', height: '14px', background: 'linear-gradient(to right, #E24B4A 0%, #EF9F27 40%, #97C459 70%, #1D9E75 100%)', borderRadius: '7px' }}>
                     <div style={{ position: 'absolute', left: `${animPercentage}%`, transform: 'translateX(-50%)', top: '-3px', width: '3px', height: '20px', backgroundColor: 'var(--color-text)', borderRadius: '1.5px', border: '1px solid var(--color-bg)', boxShadow: 'var(--shadow-sm)' }} />
                 </div>
                 <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.85rem', color: 'var(--color-text-light)' }}>
-                    <span>Bestått-grense: {result.totalCount - result.maxErrors} av {result.totalCount}</span>
+                    <span>
+                        {mode.isExamMode
+                            ? `Denne testen: ${result.errors} feil · Teoriprøven: maks ${result.maxErrors} feil`
+                            : mode.isFokusMode
+                                ? `${result.errors} spørsmål gjenstår i Fokusmodus`
+                                : `${result.errors} feil i denne testen`}
+                    </span>
                     <span>100%</span>
                 </div>
             </div>
@@ -140,11 +143,7 @@ export default function ResultScreen({ result, mode, onRestart, onReview, onRetu
 
                 <div className="result-stat">
                     <span className="result-stat-label">Feil:</span>
-                    <span className="result-stat-value" style={{
-                        color: result.errors > result.maxErrors ? 'var(--color-error)' : 'inherit'
-                    }}>
-                        {result.errors} <span style={{ fontSize: '0.85em', opacity: 0.8, fontWeight: 'normal', marginLeft: '0.25rem' }}>(Maks {result.maxErrors})</span>
-                    </span>
+                    <span className="result-stat-value">{result.errors}</span>
                 </div>
 
                 <div className="result-stat">
@@ -199,12 +198,12 @@ export default function ResultScreen({ result, mode, onRestart, onReview, onRetu
             <div style={{ margin: 'var(--spacing-xl) 0', padding: 'var(--spacing-md) var(--spacing-lg)', borderRadius: '12px', background: 'var(--color-bg-secondary)', border: '1px solid var(--color-border)', textAlign: 'left' }}>
                 <h3 style={{ fontSize: '1.05rem', fontWeight: 700, margin: '0 0 0.5rem 0', color: 'var(--color-text)' }}>Hva nå?</h3>
                 <p style={{ fontSize: '0.9rem', color: 'var(--color-text-light)', margin: '0 0 0.35rem 0' }}>
-                    🎮 Tren vurderingsevnen i{' '}
+                    Tren vurderingsevnen i{' '}
                     <a href="/laeringsspill/vikeplikt" style={{ color: 'var(--color-primary)', fontWeight: 600, textDecoration: 'none' }}>vikepliktspillet</a>
                     {' '}— trykk på bilene i riktig rekkefølge.
                 </p>
                 <p style={{ fontSize: '0.9rem', color: 'var(--color-text-light)', margin: 0 }}>
-                    📈 Se utviklingen din over tid i{' '}
+                    Se utviklingen din over tid i{' '}
                     <a href="/min-fremgang" style={{ color: 'var(--color-primary)', fontWeight: 600, textDecoration: 'none' }}>Min fremgang</a>
                     {' '}— lagres kun lokalt på din enhet.
                 </p>
@@ -215,7 +214,7 @@ export default function ResultScreen({ result, mode, onRestart, onReview, onRetu
                     className="button"
                     onClick={onRestart}
                 >
-                    🔄 Prøv igjen ({mode.name})
+                    Ta testen på nytt
                 </button>
 
                 {result.errors > 0 && (
@@ -223,7 +222,7 @@ export default function ResultScreen({ result, mode, onRestart, onReview, onRetu
                         className="button button-secondary"
                         onClick={onReview}
                     >
-                        📖 Se feilene dine ({result.errors})
+                        Se feilsvarene ({result.errors})
                     </button>
                 )}
 
@@ -231,7 +230,7 @@ export default function ResultScreen({ result, mode, onRestart, onReview, onRetu
                     className="button button-secondary"
                     onClick={onReturnHome}
                 >
-                    🏠 Tilbake til start
+                    Tilbake til start
                 </button>
             </div>
         </div>

@@ -74,10 +74,10 @@ body.dark-mode .theory-chip {
 :root {
   /* Colors - Light Mode Refinements */
   --color-primary: #0d9488;          /* Premium Teal accent */
-  --color-primary-dark: #0f766e;     
+  --color-primary-dark: #0f766e;
   --color-primary-soft: rgba(13, 148, 136, 0.06);
   --color-accent-glow: rgba(13, 148, 136, 0.08);
-  
+
   --color-cta: #0d9488;              /* Match primary CTA for brand alignment */
   --color-cta-hover: #0f766e;
 
@@ -91,7 +91,7 @@ body.dark-mode .theory-chip {
   --color-bg-secondary: #f8fafc;     /* Soft slate-50 background */
   --color-border: #e2e8f0;           /* Soft border slate-200 */
   --color-header-bg: rgba(255, 255, 255, 0.85);
-  
+
   /* Motorrom Interactive - Light Mode */
   --motorrom-bg: #f8fafc;
   --motorrom-engine: #cbd5e1;
@@ -109,7 +109,7 @@ body.dark-mode .theory-chip {
   --spacing-2xl: 3.5rem;
 
   /* Typography - Larger for better readability */
-  --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-family: "IBM Plex Sans Variable", "IBM Plex Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --font-size-sm: 0.875rem;
   --font-size-base: 1rem;
   --font-size-lg: 1.125rem;
@@ -215,6 +215,26 @@ h2 {
   max-width: 900px;
   margin: 0 auto;
   padding: var(--spacing-xl);
+}
+
+.quiz-page-header {
+  margin: 0 0 var(--spacing-md);
+}
+
+.quiz-page-heading {
+  margin: 0;
+  font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+}
+
+.quiz-page-intro {
+  max-width: 44rem;
+  margin: 0.4rem 0 0;
+  color: var(--color-text-light);
+  font-size: var(--font-size-sm);
+  line-height: 1.55;
 }
 
 /* Loading State */
@@ -1668,7 +1688,7 @@ body.dark-mode .theory-faq-item {
   body.dark-mode .header-logo-text {
     font-size: 1.05rem !important;
   }
-  
+
   header .container,
   header .section-container {
     padding-left: 8px !important;
@@ -1759,6 +1779,33 @@ body.dark-mode .site-footer {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: var(--spacing-md);
+}
+
+.featured-sign-image {
+  display: block;
+  max-width: 80px;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.featured-sign-image[data-sign-shape="triangle"] {
+  -webkit-clip-path: polygon(50% 100%, 0 0, 100% 0);
+  clip-path: polygon(50% 100%, 0 0, 100% 0);
+}
+
+.featured-sign-image[data-sign-shape="octagon"] {
+  -webkit-clip-path: polygon(29% 0, 71% 0, 100% 29%, 100% 71%, 71% 100%, 29% 100%, 0 71%, 0 29%);
+  clip-path: polygon(29% 0, 71% 0, 100% 29%, 100% 71%, 71% 100%, 29% 100%, 0 71%, 0 29%);
+}
+
+.featured-sign-image[data-sign-shape="diamond"] {
+  -webkit-clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+  clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+}
+
+.featured-sign-image[data-sign-shape="circle"] {
+  -webkit-clip-path: circle(50% at 50% 50%);
+  clip-path: circle(50% at 50% 50%);
 }
 
 @media (max-width: 640px) {
@@ -2967,4 +3014,4 @@ body.dark-mode .lightbox-caption {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
-}
+}

@@ -31,6 +31,7 @@ import ReaksjonstidTest from './ReaksjonstidTest'
 import VeimerkingInteraktiv from './VeimerkingInteraktiv'
 import MotorromInteraktiv from './MotorromInteraktiv'
 import RundkjoringAnimasjon from './RundkjoringAnimasjon'
+import RundkjoringDemo from './RundkjoringDemo'
 import MiniQuiz from './MiniQuiz'
 import AutomatVsManuellSammenligning from './AutomatVsManuellSammenligning'
 import VognkortEksempel from './VognkortEksempel'
@@ -307,7 +308,9 @@ export default function TheoryTopic({ topic, onBack }: TheoryTopicProps) {
                             </div>
                         ) : section.type === 'component' ? (
                             <div className="theory-section-content">
+                                {section.content && renderContent(section.content)}
                                 {section.component === 'RundkjoringAnimasjon' && <RundkjoringAnimasjon />}
+                                {section.component === 'RundkjoringDemo' && <RundkjoringDemo />}
                                 {section.component === 'AutomatVsManuellSammenligning' && <AutomatVsManuellSammenligning />}
                                 {section.component === 'VognkortEksempel' && <VognkortEksempel />}
                                 {section.component === 'TilhengerKalkulator' && <TilhengerKalkulator />}

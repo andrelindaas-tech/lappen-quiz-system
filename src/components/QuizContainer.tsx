@@ -32,6 +32,63 @@ const GYLDIGE_QUIZ_KATEGORIER = ['vikeplikt', 'skilt', 'fartsregler', 'veimerkin
 
 const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL
 
+type QuizSeoKey = 'root' | typeof GYLDIGE_QUIZ_KATEGORIER[number]
+
+interface QuizSeoMetadata {
+    title: string
+    description: string
+    heading: string
+    intro?: string
+}
+
+const QUIZ_SEO: Record<QuizSeoKey, QuizSeoMetadata> = {
+    root: {
+        title: 'Øvingsprøve klasse B – start testen | Teori-test.no',
+        description: 'Start en gratis øvingsprøve for klasse B og få fasit med forklaringer. Prøv full test med 45 spørsmål, ekspresstest eller blandet øving.',
+        heading: 'Øvingsprøve for klasse B',
+        intro: 'Velg full prøve, ekspresstest eller blandet øving. Du får fasit med forklaring på hvert svar.',
+    },
+    vikeplikt: {
+        title: 'Vikeplikt-quiz – Øv til teoriprøven | Teori-test.no',
+        description: 'Test kunnskapene dine om vikeplikt med 10 målrettede spørsmål. Gratis øving til teoriprøven for førerkort klasse B.',
+        heading: 'Vikeplikt-quiz',
+    },
+    skilt: {
+        title: 'Skilt-quiz – Test deg på trafikkskilt | Teori-test.no',
+        description: 'Test deg på trafikkskilt med 10 spørsmål — gratis og uten registrering. Øv på fareskilt, forbudsskilt og vikepliktskilt til teoriprøven klasse B.',
+        heading: 'Skilt-quiz',
+    },
+    fartsregler: {
+        title: 'Fartsregler-quiz – fart og plassering | Teori-test.no',
+        description: 'Test deg på fartsgrenser, fartstilpasning, plassering, reaksjonstid og bremselengde. Gratis quiz for teoriprøven klasse B med fasit og forklaringer.',
+        heading: 'Fartsregler-quiz: fart og plassering',
+    },
+    veimerking: {
+        title: 'Veimerking-quiz – linjer og oppmerking | Teori-test.no',
+        description: 'Test hva sperrelinje, varsellinje, vikelinje og annen vegoppmerking betyr. Gratis quiz for teoriprøven klasse B med fasit og forklaringer.',
+        heading: 'Veimerking-quiz',
+    },
+}
+
+function QuizDocumentHead({ seo, canonicalUrl }: { seo: QuizSeoMetadata; canonicalUrl: string }) {
+    return (
+        <Helmet>
+            <title>{seo.title}</title>
+            <meta name="description" content={seo.description} />
+            <link rel="canonical" href={canonicalUrl} />
+        </Helmet>
+    )
+}
+
+function QuizPageHeader({ seo, showIntro = false }: { seo: QuizSeoMetadata; showIntro?: boolean }) {
+    return (
+        <header className="quiz-page-header">
+            <h1 className="quiz-page-heading">{seo.heading}</h1>
+            {showIntro && seo.intro && <p className="quiz-page-intro">{seo.intro}</p>}
+        </header>
+    )
+}
+
 
 // Crawlbar tekst under quizen. Uten denne er quiz-sidene helt tomme for Google:
 // /quiz/skilt rangerer på posisjon 7,7 med null tegn innhold, og de svakere
@@ -97,8 +154,12 @@ function QuizInfo({ kategori }: { kategori?: string }) {
 
 export default function QuizContainer({ onReturnHome, onQuizComplete }: QuizContainerProps) {
     const { category: rawCategory } = useParams()
-    const ukjentKategori = !!rawCategory && !GYLDIGE_QUIZ_KATEGORIER.includes(rawCategory.toLowerCase() as typeof GYLDIGE_QUIZ_KATEGORIER[number])
-    const category = rawCategory?.toLowerCase() === 'fartsregler' ? 'fart_og_plassering' : rawCategory
+    const publicCategory = rawCategory?.toLowerCase()
+    const kjentKategori = !!publicCategory && GYLDIGE_QUIZ_KATEGORIER.includes(publicCategory as typeof GYLDIGE_QUIZ_KATEGORIER[number])
+    const ukjentKategori = !!publicCategory && !kjentKategori
+    // Den offentlige URL-en heter fartsregler, mens spørsmålsdatabasen fortsatt
+    // bruker det interne kategorinavnet fart_og_plassering.
+    const category = publicCategory === 'fartsregler' ? 'fart_og_plassering' : publicCategory
     const [searchParams] = useSearchParams()
 
     // Construct mode dynamically from URL params
@@ -112,7 +173,7 @@ export default function QuizContainer({ onReturnHome, onQuizComplete }: QuizCont
             const isVikeplikt = category.toLowerCase() === 'vikeplikt';
             
             return {
-                name: isSkilt ? 'Skilt-test' : (isVikeplikt ? 'Vikeplikt-test' : `${category.charAt(0).toUpperCase() + category.slice(1)}-test`),
+                name: isSkilt ? 'Skilttest' : (isVikeplikt ? 'Vikepliktstest' : `${category.charAt(0).toUpperCase() + category.slice(1)}-test`),
                 questionCount: (isSkilt || isVikeplikt) ? 10 : 15,
                 maxErrors: isSkilt ? 1 : (isVikeplikt ? 2 : 3),
                 description: isSkilt ? '10 skilte spørsmål - Maks 1 feil' : (isVikeplikt ? '10 spørsmål – maks 2 feil' : `Øv på ${category} spørsmål`),
@@ -292,34 +353,20 @@ export default function QuizContainer({ onReturnHome, onQuizComplete }: QuizCont
         console.log('⏰ 5 minutes remaining!')
     }
 
-    // Dynamic SEO Metadata for Quiz Container
-    const metaTitle = (() => {
-        if (category?.toLowerCase() === 'vikeplikt') return 'Vikeplikt-quiz – Øv til teoriprøven | Teori-test.no'
-        if (category?.toLowerCase() === 'skilt') return 'Skilt-quiz – Test deg på trafikkskilt | Teori-test.no'
-        return category
-            ? `Teoriprøve: ${category.charAt(0).toUpperCase() + category.slice(1)} | Teori-test.no`
-            : `Start ${mode.name} | Teori-test.no`
-    })()
-
-    const metaDescription = (() => {
-        if (category?.toLowerCase() === 'vikeplikt') return 'Test kunnskapene dine om vikeplikt med 10 målrettede spørsmål. Gratis øving til teoriprøven for førerkort klasse B.'
-        if (category?.toLowerCase() === 'skilt') return 'Test deg på trafikkskilt med 10 spørsmål — gratis og uten registrering. Øv på fareskilt, forbudsskilt og vikepliktskilt til teoriprøven klasse B.'
-        return category
-            ? `Øv på ${category} spørsmål for førerkort klasse B. Spesialtilpasset øvingsprøve for ${category}.`
-            : `Forbered deg til teoriprøven med vår ${mode.name}.`
-    })()
-
-    const canonicalUrl = `https://teori-test.no/quiz${category ? `/${category}` : ''}/`
+    const seoKey: QuizSeoKey = kjentKategori
+        ? publicCategory as typeof GYLDIGE_QUIZ_KATEGORIER[number]
+        : 'root'
+    const quizSeo = QUIZ_SEO[seoKey]
+    const canonicalUrl = `https://teori-test.no/quiz${publicCategory ? `/${publicCategory}` : ''}/`
+    const showRootIntro = !publicCategory && !modeParam
 
     if (ukjentKategori) return <NotFound />
 
     if (loading) {
         return (
             <div className="container">
-                <Helmet>
-                    <title>{metaTitle}</title>
-                    <link rel="canonical" href={canonicalUrl} />
-                </Helmet>
+                <QuizDocumentHead seo={quizSeo} canonicalUrl={canonicalUrl} />
+                <QuizPageHeader seo={quizSeo} showIntro={showRootIntro} />
                 <div className="loading">
                     Laster spørsmål...
                 </div>
@@ -332,10 +379,8 @@ export default function QuizContainer({ onReturnHome, onQuizComplete }: QuizCont
     if (error) {
         return (
             <div className="container">
-                <Helmet>
-                    <title>Feil | Teori-test.no</title>
-                    <link rel="canonical" href={canonicalUrl} />
-                </Helmet>
+                <QuizDocumentHead seo={quizSeo} canonicalUrl={canonicalUrl} />
+                <QuizPageHeader seo={quizSeo} showIntro={showRootIntro} />
                 <div className="error">
                     <h2>Feil ved lasting av quiz</h2>
                     <p>{error}</p>
@@ -355,10 +400,8 @@ export default function QuizContainer({ onReturnHome, onQuizComplete }: QuizCont
         const incorrectAnswers = engine.getIncorrectAnswers(questions)
         return (
             <div className="container">
-                <Helmet>
-                    <title>Gjennomgang av svar | Teori-test.no</title>
-                    <link rel="canonical" href={canonicalUrl} />
-                </Helmet>
+                <QuizDocumentHead seo={quizSeo} canonicalUrl={canonicalUrl} />
+                <QuizPageHeader seo={quizSeo} showIntro={showRootIntro} />
                 <ReviewMode incorrectAnswers={incorrectAnswers} onRestart={handleRestart} />
             </div>
         )
@@ -381,10 +424,8 @@ export default function QuizContainer({ onReturnHome, onQuizComplete }: QuizCont
 
         return (
             <div className="container">
-                <Helmet>
-                    <title>Resultat: {result.passed ? 'Bestått' : 'Ikke bestått'} | Teori-test.no</title>
-                    <link rel="canonical" href={canonicalUrl} />
-                </Helmet>
+                <QuizDocumentHead seo={quizSeo} canonicalUrl={canonicalUrl} />
+                <QuizPageHeader seo={quizSeo} showIntro={showRootIntro} />
                 <ResultScreen
                     result={result}
                     mode={mode}
@@ -401,11 +442,8 @@ export default function QuizContainer({ onReturnHome, onQuizComplete }: QuizCont
 
     return (
         <div className="container">
-            <Helmet>
-                <title>{metaTitle}</title>
-                <meta name="description" content={metaDescription} />
-                <link rel="canonical" href={canonicalUrl} />
-            </Helmet>
+            <QuizDocumentHead seo={quizSeo} canonicalUrl={canonicalUrl} />
+            <QuizPageHeader seo={quizSeo} showIntro={showRootIntro} />
 
             {mode.useTimer && mode.timeLimitMinutes && (
                 <Timer

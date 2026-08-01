@@ -1,0 +1,1440 @@
+<!doctype html>
+<html lang="nb">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rundkjøring — interaktiv demo</title>
+<link rel="stylesheet" href="/fonts/ibm-plex-sans.css">
+<style>
+/* =============================================================================
+   All CSS er scoped under .rk-demo (SPEC §1.1). Ingen selektorer på
+   body/html/*, ingen generiske ID-er. Filen kan limes rett inn i en side.
+   ============================================================================= */
+
+.rk-demo{
+  /* --- Grensesnittfarger, hentet fra teori-test.no (SPEC §5.2) --- */
+  --rk-aksent:        #0d9488;
+  --rk-aksent-mork:   #0f766e;
+  --rk-tekst:         #0f172a;
+  --rk-tekst-dempet:  #64748b;
+  --rk-bg:            #ffffff;
+  --rk-bg-2:          #f8fafc;
+  --rk-kant:          #e2e8f0;
+  --rk-riktig:        #059669;
+  --rk-feil:          #dc2626;
+
+  /* --- Kartfarger (SPEC §5.2, nedre tabell) --- */
+  --rk-terreng:       #eef2f0;
+  --rk-terreng-mork:  #e3eae5;
+  --rk-asfalt:        #4a5057;
+  --rk-asfalt-lys:    #565d65;
+  --rk-oppmerking:    #f5f7f8;
+  --rk-midtoy:        #a8c9a3;
+  --rk-midtoy-mork:   #90b98c;
+  --rk-midtoy-lys:    #bcd7b7;
+  --rk-fortau:        #dde4e0;
+  --rk-oy:            #c9d2ce;
+  --rk-bil-bruker:    #2f6fed;
+  --rk-bil-bruker-m:  #245bc9;
+  --rk-bil-annen:     #8b93a0;
+  --rk-bil-annen-m:   #767e8b;
+  --rk-glass:         #cfe0ef;
+  --rk-blink:         #ffb020;
+  --rk-spor:          #e8622c;
+  --rk-brems:         #e0483d;
+  --rk-riktig-kart:   #2fa96b;
+  --rk-feil-kart:     #e0483d;
+  --rk-skilt-rod:     #d02a2a;
+  --rk-skilt-bla:     #1c5ba8;
+
+  --rk-radius:        14px;
+  --rk-skygge:        0 1px 2px rgba(15,23,42,.05), 0 8px 24px -12px rgba(15,23,42,.18);
+
+  font-family:'IBM Plex Sans Variable','IBM Plex Sans',system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  color:var(--rk-tekst);
+  background:var(--rk-bg);
+  line-height:1.55;
+  -webkit-font-smoothing:antialiased;
+  box-sizing:border-box;
+  max-width:1400px;
+  margin:0 auto;
+  padding:28px 22px 40px;
+}
+.rk-demo *,
+.rk-demo *::before,
+.rk-demo *::after{ box-sizing:border-box; }
+
+/* ---------------------------------------------------------------- topptekst */
+.rk-demo .rk-topp{ margin-bottom:20px; }
+.rk-demo .rk-tittel{
+  font-size:clamp(22px,3.4vw,30px);
+  font-weight:700; letter-spacing:-.02em; margin:0 0 4px;
+}
+.rk-demo .rk-undertittel{
+  margin:0; color:var(--rk-tekst-dempet); font-size:15px; max-width:62ch;
+}
+
+/* ------------------------------------------------------------- modusvelger */
+.rk-demo .rk-modus{
+  display:inline-flex; gap:4px; margin-top:18px;
+  background:var(--rk-bg-2); border:1px solid var(--rk-kant);
+  border-radius:12px; padding:4px;
+}
+.rk-demo .rk-modus button{
+  font:inherit; font-size:14px; font-weight:600;
+  min-height:44px; min-width:88px; padding:0 18px;
+  border:0; border-radius:9px; background:transparent;
+  color:var(--rk-tekst-dempet); cursor:pointer;
+  transition:background .15s, color .15s;
+}
+.rk-demo .rk-modus button:hover:not(:disabled){ color:var(--rk-tekst); }
+.rk-demo .rk-modus button[aria-selected="true"]{
+  background:var(--rk-bg); color:var(--rk-aksent);
+  box-shadow:0 1px 2px rgba(15,23,42,.08);
+}
+.rk-demo .rk-modus button:disabled{ opacity:.45; cursor:not-allowed; }
+
+/* -------------------------------------------------------------------- layout */
+.rk-demo .rk-layout{
+  display:grid; grid-template-columns:minmax(0,1fr) 372px;
+  gap:22px; margin-top:20px; align-items:start;
+}
+@media (max-width:900px){
+  .rk-demo{ padding:20px 14px 32px; }
+  .rk-demo .rk-layout{ grid-template-columns:minmax(0,1fr); }
+}
+
+/* --------------------------------------------------------------------- scene */
+.rk-demo .rk-scene{
+  background:var(--rk-terreng);
+  border:1px solid var(--rk-kant);
+  border-radius:var(--rk-radius);
+  box-shadow:var(--rk-skygge);
+  overflow:hidden;
+  position:relative;
+}
+.rk-demo .rk-svg{ display:block; width:100%; height:auto; }
+
+/* --------------------------------------------------------------------- panel */
+.rk-demo .rk-panel{ display:flex; flex-direction:column; gap:14px; }
+.rk-demo .rk-kort{
+  background:var(--rk-bg-2);
+  border:1px solid var(--rk-kant);
+  border-radius:var(--rk-radius);
+  padding:16px 18px;
+}
+.rk-demo .rk-kort h2{
+  font-size:12px; font-weight:700; letter-spacing:.08em; text-transform:uppercase;
+  color:var(--rk-tekst-dempet); margin:0 0 12px;
+}
+.rk-demo .rk-kort p{ margin:0 0 10px; font-size:14.5px; }
+.rk-demo .rk-kort p:last-child{ margin-bottom:0; }
+.rk-demo .rk-liten{ font-size:13px; color:var(--rk-tekst-dempet); }
+.rk-demo .rk-uthev{ color:var(--rk-aksent); font-weight:600; }
+
+/* ------------------------------------------------------------ destinasjoner */
+.rk-demo .rk-dest{ display:grid; grid-template-columns:1fr 1fr; gap:8px; }
+.rk-demo .rk-dest button{
+  font:inherit; font-size:14px; font-weight:600; text-align:left;
+  min-height:52px; padding:8px 12px;
+  border:1px solid var(--rk-kant); border-radius:11px;
+  background:var(--rk-bg); color:var(--rk-tekst); cursor:pointer;
+  transition:border-color .15s, box-shadow .15s, background .15s;
+}
+.rk-demo .rk-dest button:hover{ border-color:var(--rk-aksent); }
+.rk-demo .rk-dest button[aria-pressed="true"]{
+  border-color:var(--rk-aksent); background:#f0fdfa;
+  box-shadow:inset 0 0 0 1px var(--rk-aksent);
+}
+.rk-demo .rk-dest button span{
+  display:block; font-weight:500; font-size:12.5px; color:var(--rk-tekst-dempet);
+}
+.rk-demo .rk-dest button[aria-pressed="true"] span{ color:var(--rk-aksent-mork); }
+
+/* -------------------------------------------------------------------- brytere */
+.rk-demo .rk-brytere{ display:flex; flex-direction:column; gap:2px; }
+.rk-demo .rk-bryter{
+  display:flex; align-items:center; gap:10px;
+  min-height:44px; padding:0 6px; margin:0 -6px;
+  border-radius:9px; cursor:pointer; font-size:14px;
+  transition:background .12s;
+}
+.rk-demo .rk-bryter:hover{ background:rgba(13,148,136,.06); }
+.rk-demo .rk-bryter input{
+  appearance:none; -webkit-appearance:none;
+  width:38px; height:22px; flex:0 0 auto; margin:0;
+  border:1px solid var(--rk-kant); border-radius:11px;
+  background:var(--rk-bg); position:relative; cursor:pointer;
+  transition:background .18s, border-color .18s;
+}
+.rk-demo .rk-bryter input::after{
+  content:''; position:absolute; top:2px; left:2px;
+  width:16px; height:16px; border-radius:50%;
+  background:var(--rk-tekst-dempet);
+  transition:transform .18s, background .18s;
+}
+.rk-demo .rk-bryter input:checked{
+  background:var(--rk-aksent); border-color:var(--rk-aksent);
+}
+.rk-demo .rk-bryter input:checked::after{
+  transform:translateX(16px); background:#fff;
+}
+.rk-demo .rk-bryter input:focus-visible{ outline:2px solid var(--rk-aksent); outline-offset:2px; }
+
+/* --------------------------------------------------------------- fasit-tabell */
+.rk-demo .rk-fasit{ width:100%; border-collapse:collapse; font-size:13.5px; }
+.rk-demo .rk-fasit th,
+.rk-demo .rk-fasit td{
+  text-align:left; padding:7px 8px; border-bottom:1px solid var(--rk-kant);
+}
+.rk-demo .rk-fasit th{
+  font-size:11px; letter-spacing:.06em; text-transform:uppercase;
+  color:var(--rk-tekst-dempet); font-weight:700;
+}
+.rk-demo .rk-fasit tr:last-child td{ border-bottom:0; }
+.rk-demo .rk-fasit td:first-child{ font-weight:600; white-space:nowrap; }
+.rk-demo .rk-merke{
+  display:inline-block; padding:1px 8px; border-radius:20px;
+  font-size:12px; font-weight:600; white-space:nowrap;
+}
+.rk-demo .rk-merke-blink{ background:#fff5e0; color:#8a5a00; }
+.rk-demo .rk-merke-av{ background:var(--rk-kant); color:var(--rk-tekst-dempet); }
+.rk-demo .rk-merke-valgfri{ background:#f0fdfa; color:var(--rk-aksent-mork); }
+
+/* -------------------------------------------------------------------- notat */
+.rk-demo .rk-notat{
+  border-left:3px solid var(--rk-aksent); background:#f0fdfa;
+  border-radius:0 10px 10px 0; padding:12px 14px; font-size:13.5px;
+}
+.rk-demo .rk-notat strong{ color:var(--rk-aksent-mork); }
+
+/* ------------------------------------------------------ blinklys-animasjon */
+@keyframes rk-blink{
+  0%,44%   { opacity:1; }
+  56%,100% { opacity:.10; }
+}
+.rk-demo .rk-blinker{ opacity:.10; }
+.rk-demo .rk-blinker.rk-pa{
+  opacity:1;
+  animation:rk-blink .667s steps(1,end) infinite;
+  filter:url(#rk-glod-blink);
+}
+.rk-demo .rk-bremselys{ opacity:0; transition:opacity .18s; }
+.rk-demo .rk-bremselys.rk-pa{ opacity:1; filter:url(#rk-glod-brems); }
+
+@media (prefers-reduced-motion:reduce){
+  .rk-demo .rk-blinker.rk-pa{ animation:none; opacity:1; }
+}
+
+/* --------------------------------------------------------- kart-typografi */
+.rk-demo .rk-kart-etikett{
+  font-family:'IBM Plex Sans Variable','IBM Plex Sans',system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  font-size:19px; font-weight:700; fill:var(--rk-tekst);
+}
+.rk-demo .rk-kart-etikett-liten{
+  font-family:'IBM Plex Sans Variable','IBM Plex Sans',system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  font-size:15px; font-weight:600; fill:var(--rk-tekst-dempet);
+}
+.rk-demo .rk-kart-nr{
+  font-family:'IBM Plex Sans Variable','IBM Plex Sans',system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  font-size:17px; font-weight:700; fill:#fff;
+}
+</style>
+</head>
+<body style="margin:0;background:#ffffff">
+
+<div class="rk-demo">
+
+  <div class="rk-topp">
+    <h1 class="rk-tittel">Rundkjøring: plassering, tegn og vikeplikt</h1>
+    <p class="rk-undertittel">
+      Firearmet rundkjøring med ett kjørefelt. Du kommer inn nedenfra.
+      Trafikken kjører til høyre om midtøya.
+    </p>
+    <div class="rk-modus" role="tablist" aria-label="Modus">
+      <button type="button" role="tab" aria-selected="true">Vis meg</button>
+      <button type="button" role="tab" aria-selected="false" disabled title="Bygges i steg 4">Øv</button>
+    </div>
+  </div>
+
+  <div class="rk-layout">
+
+    <div class="rk-scene" id="rk-scene"></div>
+
+    <div class="rk-panel">
+
+      <div class="rk-kort">
+        <h2>Hvor skal du?</h2>
+        <div class="rk-dest" id="rk-dest-knapper"></div>
+      </div>
+
+      <div class="rk-kort" id="rk-forklaring" aria-live="polite"></div>
+
+      <div class="rk-kort">
+        <h2>Vis i tegningen</h2>
+        <div class="rk-brytere" id="rk-brytere"></div>
+      </div>
+
+      <div class="rk-kort">
+        <h2>Fasit for denne manøveren</h2>
+        <table class="rk-fasit" id="rk-fasit"></table>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+'use strict';
+
+/* =============================================================================
+   LAG 1 — REGLER
+   Fagreglene som data. Kildene og statusen til hver regel står i REGLER.md.
+   Kommentarene er på norsk med vilje: en instruktør uten utviklerbakgrunn skal
+   kunne lese og korrigere fagligheten her (SPEC §8).
+   ============================================================================= */
+
+/* Plassering på vei frem mot rundkjøringen (SPEC §4.1).
+   Tenk på rundkjøringen som et vanlig veikryss:
+     høyresving  -> mot kantlinjen (høyre)
+     rett frem   -> til høyre
+     venstresving-> mot venstre
+     U-sving     -> til venstre                                              */
+const PLASSERING = { 1:'hoyre', 2:'hoyre', 3:'venstre', 4:'venstre' };
+
+/* Tegngivning på vei INN (SPEC §4.3).
+   MERK: ved 3. og 4. avkjøring er venstreblink VALGFRITT. Statens vegvesen
+   skriver «du KAN hjelpe andre trafikanter ved å blinke til venstre».
+   Demoen skal aldri si at det er påbudt.                                    */
+const TEGN_INN = {
+  1: { tegn:'hoyre',   paabudt:true  },
+  2: { tegn:'ingen',   paabudt:true  },
+  3: { tegn:'venstre', paabudt:false },
+  4: { tegn:'venstre', paabudt:false }
+};
+
+/* Tegngivning på vei UT (SPEC §4.3 og §4.5).
+   Høyreblink ut er ALLTID påbudt, uansett manøver og plassering.
+   Ved 1. avkjøring sto høyreblinken på fra før innkjøring og beholdes helt
+   til bilen har kjørt ut. Ved 2., 3. og 4. slås den på når bilen er
+   «på høyde med siste utkjøring før din» — Vegvesenets egen ordlyd.         */
+const TEGN_UT = {
+  1: 'fra-foer-innkjoring',
+  2: 'paa-hoyde-med-forrige',
+  3: 'paa-hoyde-med-forrige',
+  4: 'paa-hoyde-med-forrige'
+};
+
+/* Vikeplikt (SPEC §4.6). Én formulering, brukt overalt i grensesnittet.
+   PDF-ens «vikeplikt for de som kommer fra venstre» skal IKKE brukes.       */
+const VIKEPLIKT_TEKST =
+  'Du har vikeplikt for trafikk som allerede er inne i rundkjøringen. ' +
+  'Du må vise tydelig at du vil vike: sett ned farten i god tid, og stans ' +
+  'om nødvendig før vikelinja.';
+
+/* Forklaringstekster per destinasjon. Terminologien følger artikkelen på
+   teori-test.no (SPEC §1.1 og §4.8).                                        */
+const DESTINASJONER = [
+  {
+    nr:1, arm:'Ø', navn:'1. avkjøring', manover:'til høyre',
+    skiltPil: 70,
+    plasseringHvorfor:
+      'Høyresving. Akkurat som i et vanlig veikryss legger du bilen mot ' +
+      'kantlinjen — altså til høyre i feltet.',
+    tegnInnHvorfor:
+      'Høyreblink i god tid før du kjører inn. Den skal stå på helt til du ' +
+      'har kjørt ut av rundkjøringen.',
+    tegnUtHvorfor:
+      'Blinken sto på fra før innkjøringen, så du gjør ingenting nytt — du ' +
+      'bare beholder den til du er ute.',
+    oppsummering:
+      'Høyre plassering, høyreblink hele veien, ut i første arm.'
+  },
+  {
+    nr:2, arm:'N', navn:'2. avkjøring', manover:'rett frem',
+    skiltPil: 0,
+    plasseringHvorfor:
+      'Rett frem gir plassering til høyre. En gylden huskeregel: det er ' +
+      'skiltingen du ser på vei frem mot rundkjøringen som bestemmer ' +
+      'plasseringen. Peker pila rett opp eller til høyre for rett opp, ' +
+      'legger du deg til høyre.',
+    tegnInnHvorfor:
+      'Ingen blink inn. Du skal verken til høyre i første arm eller langt ' +
+      'rundt, så et tegn nå ville bare fortalt andre noe feil.',
+    tegnUtHvorfor:
+      'Høyreblink når du er på høyde med siste utkjøring før din — her ' +
+      'altså når du passerer 1. avkjøring.',
+    oppsummering:
+      'Høyre plassering, ingen blink inn, høyreblink når du passerer 1. avkjøring.'
+  },
+  {
+    nr:3, arm:'V', navn:'3. avkjøring', manover:'til venstre',
+    skiltPil: -70,
+    plasseringHvorfor:
+      'Venstresving. Pila på skiltet peker til venstre for midten, og da — ' +
+      'og bare da — legger du bilen mot venstre i feltet.',
+    tegnInnHvorfor:
+      'Du kan blinke til venstre for å vise at du skal langt rundt. Det er ' +
+      'ikke påbudt. Vegvesenet fremhever at det er mest nyttig i mindre ' +
+      'rundkjøringer med god oversikt.',
+    tegnUtHvorfor:
+      'Bytt til høyreblink når du er på høyde med siste utkjøring før din — ' +
+      'her altså når du passerer 2. avkjøring.',
+    oppsummering:
+      'Venstre plassering, venstreblink er valgfritt, høyreblink når du ' +
+      'passerer 2. avkjøring.'
+  },
+  {
+    nr:4, arm:'S', navn:'4. avkjøring', manover:'tilbake samme vei',
+    skiltPil: null,
+    plasseringHvorfor:
+      'Du skal mer enn halvveis rundt, altså tilbake samme vei. Da legger ' +
+      'du bilen til venstre i feltet, på samme måte som ved venstresving.',
+    tegnInnHvorfor:
+      'Du kan blinke til venstre for å vise at du skal langt rundt. Det er ' +
+      'ikke påbudt, men det hjelper andre å forstå at du ikke skal ut med det første.',
+    tegnUtHvorfor:
+      'Bytt til høyreblink når du er på høyde med siste utkjøring før din — ' +
+      'her altså når du passerer 3. avkjøring.',
+    oppsummering:
+      'Venstre plassering, venstreblink er valgfritt, høyreblink når du ' +
+      'passerer 3. avkjøring.'
+  }
+];
+
+const destinasjon = nr => DESTINASJONER[nr-1];
+
+/* Hvilken utkjøring er «siste utkjøring før din»? Brukes både til teksten og
+   som geometrisk trigger i animasjonen (SPEC §4.3 punkt 4).                 */
+function sisteUtkjoringFoer(nr){ return nr <= 1 ? null : nr - 1; }
+
+
+/* =============================================================================
+   LAG 2 — GEOMETRI
+   Alle koordinater, radier og baner. Ingen magiske tall utenfor dette laget.
+   Skala: 1 SVG-enhet = 0,1 meter. Midtøya er altså 18 m i diameter.
+   ============================================================================= */
+
+const GEO = {
+  /* lerret */
+  viewW: 900, viewH: 900,
+  senterX: 450, senterY: 450,
+
+  /* rundkjøringen */
+  indreRadius: 100,       // midtøya (10 m radius)
+  feltbredde: 66,         // det sirkulerende kjørefeltet (6,6 m)
+
+  /* armene */
+  armFeltbredde: 46,      // ett kjørefelt hver vei (4,6 m). Innkjøringsfeltet
+                          // er litt bredere enn en vanlig kjørefeltbredde,
+                          // slik det gjerne er inn mot en rundkjøring.
+  oyBredde: 20,           // trafikkøya mellom inn- og utkjøring (2,0 m)
+  armLengde: 452,         // ut til lerretkanten
+  oyNese: 266,            // hvor langt ut trafikkøyas spiss ligger. Den slutter
+                          // der gangfeltet slutter, så den fungerer som
+                          // trafikkøy for fotgjengere som krysser.
+  flareRadius: 34,        // avrundingen der armen møter rundkjøringen
+  fortauBredde: 15,
+  fortauKlaring: 10,
+
+  /* Plassering i kjørefeltet.
+     Verdiene er avstand fra armens midtlinje, og de er satt eksplisitt fordi
+     de har en fast grense å holde seg innenfor: du skal ligge til høyre i
+     feltet, men IKKE oppå kantlinja. Innkjøringsfeltet går fra 10 (kanten av
+     trafikkøya) til 56 (vegkanten). Kantlinja dekker 51,2–54,8 og øyas kant
+     9,1–10,9. Bilen er 1,9 m bred, men speilene er det bredeste punktet og
+     stikker 11,3 ut til hver side. Plasseringene under gir da knapt 3 enheter
+     klaring til oppmerkingen i begge retninger — bilen ligger til høyre i
+     feltet, men ingen del av den er oppå kantlinja.
+     Forskjellen på de to plasseringene blir 12 enheter, altså 1,2 m. Det er
+     også omtrent så mye man faktisk kan flytte seg i et 4,6 m bredt felt.    */
+  plasseringFra: 414,           // her begynner bilen å gli sidelengs på plass
+  plasseringTil: 330,           // her ligger den i valgt plassering, og blir liggende
+  innPlasseringHoyre: 37,
+  innPlasseringVenstre: 25,
+  /* Samme i det sirkulerende feltet, som går fra 100 (midtøya) til 166.
+     De to verdiene skal ligge så langt fra hverandre at to biler kan stå side
+     om side, begge innenfor kantlinja og klar av midtøya (SPEC §4.4).        */
+  sirkPlasseringHoyre: 147,
+  sirkPlasseringVenstre: 117,
+
+  /* bilen */
+  bilLengde: 46, bilBredde: 19,
+
+  /* gangfelt, ca. 5 m fra rundkjøringen */
+  gangfeltInn: 218, gangfeltUt: 266,
+
+  /* vikelinje ved innkjøringen */
+  vikelinjeRadius: 176,
+
+  /* skilt */
+  skiltVerge: -84,        // lateral plassering på høyre skulder (negativ = innkjøringssiden).
+                          // Vikepliktskiltet er 47 bredt, så det trengs minst
+                          // 80 for at det skal stå helt utenfor vegkanten.
+  skiltVikeplikt: 212,
+  skiltPaabud: 254,
+
+  /* baner */
+  entryTurnGrader: 30,    // hvor mange grader inn i sirkelen innkjøringskurven slutter
+  exitTurnGrader: 30,     // hvor mange grader før armen utkjøringskurven starter
+
+  /* fase 2-forberedelse: rundkjøringen bygges fra denne configen (SPEC §9) */
+  antallArmer: 4,
+  antallFelt: 1
+};
+
+/* Utledede mål — samlet her så de aldri regnes ut på nytt nede i koden. */
+GEO.ytreRadius       = GEO.indreRadius + GEO.feltbredde;            // 155
+GEO.armHalvbredde    = GEO.armFeltbredde + GEO.oyBredde / 2;        // 48
+GEO.feltSenterOffset = GEO.oyBredde / 2 + GEO.armFeltbredde / 2;    // 29
+GEO.sirkSenterRadius = GEO.indreRadius + GEO.feltbredde / 2;        // 122,5
+
+/* Armene. Vinkel i grader: 0 = mot høyre (øst), voksende = medklokka på
+   skjermen, siden y peker nedover i SVG.                                    */
+const ARMER = [
+  { id:'S', navn:'Sør',  vinkel:  90, brukerensInngang:true  },
+  { id:'Ø', navn:'Øst',  vinkel:   0, brukerensInngang:false },
+  { id:'N', navn:'Nord', vinkel: -90, brukerensInngang:false },
+  { id:'V', navn:'Vest', vinkel: 180, brukerensInngang:false }
+];
+const arm = id => ARMER.find(a => a.id === id);
+const INNGANG = arm('S');
+
+const rad = g => g * Math.PI / 180;
+const grader = r => r * 180 / Math.PI;
+
+/* Punkt i armens lokale koordinater.
+   u = avstand utover fra senteret langs armen
+   w = sideveis. NEGATIV w er innkjøringssiden (der brukeren kommer fra),
+       positiv w er utkjøringssiden. Dette følger av høyrekjøring og er
+       konsekvent for alle fire armene.                                      */
+function armPunkt(vinkel, u, w){
+  const a = rad(vinkel), c = Math.cos(a), s = Math.sin(a);
+  return { x: GEO.senterX + u * c - w * s, y: GEO.senterY + u * s + w * c };
+}
+/* Retningen en bil kjører når den kommer INN langs armen (mot senteret). */
+function innRetning(vinkel){
+  const a = rad(vinkel);
+  return { x: -Math.cos(a), y: -Math.sin(a) };
+}
+/* Retningen en bil kjører når den kjører UT langs armen (fra senteret). */
+function utRetning(vinkel){
+  const a = rad(vinkel);
+  return { x: Math.cos(a), y: Math.sin(a) };
+}
+
+/* Punkt på det sirkulerende feltet. Vinkelen kan være «uttrukket», altså
+   under -360, slik at en hel runde kan beskrives monotont.                  */
+function sirkPunkt(radius, vinkel){
+  const a = rad(vinkel);
+  return { x: GEO.senterX + radius * Math.cos(a), y: GEO.senterY + radius * Math.sin(a) };
+}
+/* Kjøreretningen i rundkjøringen. Trafikken går til HØYRE om midtøya, som
+   på skjermen betyr at vinkelen minker (mot klokka visuelt).                */
+function sirkRetning(vinkel){
+  const a = rad(vinkel);
+  return { x: Math.sin(a), y: -Math.cos(a) };
+}
+
+/* Radien bilen holder i rundkjøringen, gitt plasseringen den valgte på vei
+   inn. «Høyre i feltet» = nærmest kantlinjen = større radius (SPEC §4.4).   */
+function sirkRadius(plassering){
+  return plassering === 'hoyre' ? GEO.sirkPlasseringHoyre : GEO.sirkPlasseringVenstre;
+}
+/* Sideveis plassering i innkjøringsfeltet, i armens lokale koordinater.
+   Negativ w er innkjøringssiden, så begge verdiene er negative.             */
+function innFeltW(plassering){
+  return -(plassering === 'hoyre' ? GEO.innPlasseringHoyre : GEO.innPlasseringVenstre);
+}
+
+/* Uttrukket vinkel for hver utkjøring, sett fra brukerens innkjøring i sør.
+   Innkjøringen ligger på 90 grader; hver utkjøring er 90 grader videre.
+     1. avkjøring (Ø)  ->    0
+     2. avkjøring (N)  ->  -90
+     3. avkjøring (V)  -> -180
+     4. avkjøring (S)  -> -270
+   Dette er også radiallinjene som definerer «på høyde med» (SPEC §4.3).     */
+function utkjoringVinkel(nr){ return INNGANG.vinkel - 90 * nr; }
+
+/* Hvilken arm hører til utkjøring nr? */
+function utkjoringArm(nr){
+  const v = ((utkjoringVinkel(nr) % 360) + 360) % 360;
+  return ARMER.find(a => (((a.vinkel % 360) + 360) % 360) === v);
+}
+
+/* ---------------------------------------------------------------- banebygger */
+
+const f2 = n => Math.round(n * 100) / 100;
+const P  = p => f2(p.x) + ' ' + f2(p.y);
+
+function forleng(p, retning, lengde){
+  return { x: p.x + retning.x * lengde, y: p.y + retning.y * lengde };
+}
+function avstand(a, b){ return Math.hypot(b.x - a.x, b.y - a.y); }
+
+/* Bygger hele ruten for én destinasjon som én SVG-path.
+   Deles i navngitte etapper slik at animasjonen kan finne igjen hvor på
+   banen den er (innkjøring, sirkulering, utkjøring).                        */
+function lagRute(nr, plassering){
+  const d   = [];
+  const inn = INNGANG;
+  const wF  = -GEO.feltSenterOffset;          // feltsenter på vei inn
+  const wP  = innFeltW(plassering);           // valgt plassering
+  const hIn = innRetning(inn.vinkel);
+
+  /* --- Etappe 1: rett frem i feltet, med et mykt sidebytte til plassering.
+         Sidebyttet legges inn i banen selv, slik at bilens rotasjon får en
+         naturlig liten styrevinkel når den glir på plass.
+         Plasseringen er ferdig valgt i god tid før rundkjøringen — det er
+         Vegvesenets første hovedregel (PLASSERING før LAV FART).            */
+  const start = armPunkt(inn.vinkel, GEO.armLengde, wF);
+  const gA    = armPunkt(inn.vinkel, GEO.plasseringFra, wF);
+  const gB    = armPunkt(inn.vinkel, GEO.plasseringTil, wP);
+  d.push('M ' + P(start), 'L ' + P(gA));
+  d.push('C ' + P(forleng(gA, hIn, 46)) + ' ' + P(forleng(gB, hIn, -46)) + ' ' + P(gB));
+
+  /* --- Etappe 2: frem til vikelinja. */
+  const vike = armPunkt(inn.vinkel, GEO.vikelinjeRadius + 9, wP);
+  d.push('L ' + P(vike));
+  const vikeLengde = null; // settes av kalleren via målinger, se maalRute()
+
+  /* --- Etappe 3: innkjøringskurven, inn i det sirkulerende feltet.
+         Bilen svinger først litt til høyre for å bli med i sirkulasjonen,
+         og blir så ført til venstre av midtøya.                             */
+  const R      = sirkRadius(plassering);
+  const vJoin  = inn.vinkel - GEO.entryTurnGrader;
+  const pJoin  = sirkPunkt(R, vJoin);
+  const tJoin  = sirkRetning(vJoin);
+  const hInn   = 0.45 * avstand(vike, pJoin);
+  d.push('C ' + P(forleng(vike, hIn, hInn)) + ' ' +
+                P(forleng(pJoin, tJoin, -hInn)) + ' ' + P(pJoin));
+
+  /* --- Etappe 4: sirkulering. Vinkelen minker frem til utkjøringskurven.
+         Punktsampling hvert 1,5 grad; avviket fra den perfekte sirkelen er
+         da under 0,01 enheter og usynlig.                                   */
+  const vLeave = utkjoringVinkel(nr) + GEO.exitTurnGrader;
+  for (let v = vJoin - 1.5; v > vLeave; v -= 1.5) d.push('L ' + P(sirkPunkt(R, v)));
+  const pLeave = sirkPunkt(R, vLeave);
+  d.push('L ' + P(pLeave));
+
+  /* --- Etappe 5: utkjøringskurven, ut i utkjøringsfeltet. Bilen retter
+         seg opp i feltsenteret på vei ut.                                   */
+  const uArm  = utkjoringArm(nr);
+  const wUt   = GEO.feltSenterOffset;          // utkjøringsfeltet, positiv side
+  const pUt   = armPunkt(uArm.vinkel, GEO.ytreRadius + 24, wUt);
+  const hUt   = utRetning(uArm.vinkel);
+  const tLeave= sirkRetning(vLeave);
+  const hLen  = 0.45 * avstand(pLeave, pUt);
+  d.push('C ' + P(forleng(pLeave, tLeave, hLen)) + ' ' +
+                P(forleng(pUt, hUt, -hLen)) + ' ' + P(pUt));
+
+  /* --- Etappe 6: rett ut av armen. */
+  d.push('L ' + P(armPunkt(uArm.vinkel, GEO.armLengde, wUt)));
+
+  return { d: d.join(' '), plassering, nr, vJoin, vLeave, radius:R, utArm:uArm };
+}
+
+/* Alle åtte ruter (fire destinasjoner x to plasseringer) bygges én gang.
+   Den andre plasseringen brukes til å vise «feil plassering» senere.        */
+const RUTER = {};
+DESTINASJONER.forEach(dst => {
+  RUTER[dst.nr] = {
+    hoyre:   lagRute(dst.nr, 'hoyre'),
+    venstre: lagRute(dst.nr, 'venstre')
+  };
+});
+const rute = nr => RUTER[nr][PLASSERING[nr]];
+
+
+/* =============================================================================
+   LAG 3 — RENDER
+   Bygger SVG-en fra GEOMETRI. Ingenting her kjenner til animasjon eller quiz.
+   ============================================================================= */
+
+const NS = 'http://www.w3.org/2000/svg';
+function el(tag, attrs, ...kids){
+  const n = document.createElementNS(NS, tag);
+  if (attrs) for (const k in attrs) if (attrs[k] != null) n.setAttribute(k, attrs[k]);
+  kids.flat(Infinity).forEach(k => { if (k) n.appendChild(k); });
+  return n;
+}
+function g(attrs, ...kids){ return el('g', attrs, kids); }
+const V = n => 'var(--rk-' + n + ')';
+
+/* ------------------------------------------------------------------ defs */
+function lagDefs(){
+  return el('defs', null,
+    /* myk skygge under biler og skilt */
+    el('filter', {id:'rk-skygge-myk', x:'-60%', y:'-60%', width:'220%', height:'220%'},
+      el('feDropShadow', {dx:0, dy:2.5, stdDeviation:2.6,
+        'flood-color':'#0f172a', 'flood-opacity':.30})),
+    el('filter', {id:'rk-skygge-skilt', x:'-60%', y:'-60%', width:'220%', height:'220%'},
+      el('feDropShadow', {dx:0, dy:3, stdDeviation:3.2,
+        'flood-color':'#0f172a', 'flood-opacity':.28})),
+    /* glød rundt aktivt blinklys */
+    el('filter', {id:'rk-glod-blink', x:'-300%', y:'-300%', width:'700%', height:'700%'},
+      el('feDropShadow', {dx:0, dy:0, stdDeviation:3.4,
+        'flood-color':'#ffb020', 'flood-opacity':.95})),
+    el('filter', {id:'rk-glod-brems', x:'-300%', y:'-300%', width:'700%', height:'700%'},
+      el('feDropShadow', {dx:0, dy:0, stdDeviation:2.8,
+        'flood-color':'#e0483d', 'flood-opacity':.9})),
+    /* svak dybde i asfalten inn mot midtøya */
+    el('radialGradient', {id:'rk-asfalt-grad', cx:'50%', cy:'50%', r:'50%'},
+      el('stop', {offset:'0%',   'stop-color':V('asfalt-lys')}),
+      el('stop', {offset:'62%',  'stop-color':V('asfalt-lys')}),
+      el('stop', {offset:'100%', 'stop-color':V('asfalt')})),
+    el('radialGradient', {id:'rk-oy-grad', cx:'38%', cy:'32%', r:'78%'},
+      el('stop', {offset:'0%',   'stop-color':V('midtoy-lys')}),
+      el('stop', {offset:'100%', 'stop-color':V('midtoy')})),
+    /* pilspiss på rutelinja */
+    el('marker', {id:'rk-pil-spor', viewBox:'0 0 10 10', refX:7, refY:5,
+      markerWidth:5.5, markerHeight:5.5, orient:'auto-start-reverse'},
+      el('path', {d:'M 0 1 L 9 5 L 0 9 z', fill:V('spor')}))
+  );
+}
+
+/* ------------------------------------------------------- terreng og fortau */
+function lagTerreng(){
+  /* Store, myke flater i de fire hjørnene, og noen trekroner sett ovenfra.
+     Alt er faste tall, slik at tegningen ser identisk ut hver gang.         */
+  const blobber = [
+    [45, 310, 158, 126], [135, 310, 158, 126],
+    [225, 310, 158, 126], [315, 310, 158, 126]
+  ];
+  const trær = [
+    [ 42, 262, 26], [ 58, 350, 19], [ 33, 372, 15],
+    [138, 262, 26], [122, 356, 18], [147, 378, 14],
+    [222, 268, 24], [238, 352, 18], [213, 376, 15],
+    [318, 268, 24], [302, 358, 17], [327, 372, 14]
+  ];
+  return g({'aria-hidden':'true'},
+    el('rect', {x:0, y:0, width:GEO.viewW, height:GEO.viewH, fill:V('terreng')}),
+    blobber.map(([v, r, rx, ry]) => {
+      const p = sirkPunkt(r, v);
+      return el('ellipse', {cx:f2(p.x), cy:f2(p.y), rx, ry,
+        fill:V('terreng-mork'), opacity:.9});
+    }),
+    trær.map(([v, r, rr]) => {
+      const p = sirkPunkt(r, v);
+      return g(null,
+        el('circle', {cx:f2(p.x), cy:f2(p.y), r:rr, fill:V('midtoy-mork'), opacity:.5}),
+        el('circle', {cx:f2(p.x - rr * .26), cy:f2(p.y - rr * .28), r:rr * .6,
+          fill:V('midtoy-lys'), opacity:.45})
+      );
+    })
+  );
+}
+
+function lagFortau(){
+  const w = GEO.armHalvbredde + GEO.fortauKlaring + GEO.fortauBredde / 2;
+  return g({'aria-hidden':'true'}, ARMER.map(a => {
+    const lag = [];
+    [-1, 1].forEach(side => {
+      const p1 = armPunkt(a.vinkel, GEO.ytreRadius + 14, side * w);
+      const p2 = armPunkt(a.vinkel, GEO.armLengde, side * w);
+      lag.push(el('line', {x1:f2(p1.x), y1:f2(p1.y), x2:f2(p2.x), y2:f2(p2.y),
+        stroke:V('fortau'), 'stroke-width':GEO.fortauBredde, 'stroke-linecap':'round'}));
+    });
+    return lag;
+  }));
+}
+
+/* ------------------------------------------------------------------- asfalt */
+
+/* Avrundingen (flaren) der en arm møter rundkjøringen. Uten den blir hjørnet
+   spisst og tegningen ser ut som et kryss med en sirkel oppå. Med den ser
+   innkjøringen ut som en virkelig innkjøring.
+   side = +1 eller -1, altså hvilken av armens to kanter.
+   inset > 0 gir den samme kurven trukket litt inn i asfalten, som brukes til
+   å tegne kantlinja.                                                        */
+function flare(vinkel, side, inset){
+  const i  = inset || 0;
+  const hb = GEO.armHalvbredde - i;      // armens halve bredde
+  const R  = GEO.ytreRadius - i;         // rundkjøringens ytterkant
+  const f  = GEO.flareRadius + i;        // avrundingsradien
+  const wC = side * (hb + f);
+  const uC = Math.sqrt((R + f) * (R + f) - (hb + f) * (hb + f));
+  const skala = R / (R + f);
+  return {
+    f, hb, R, uC,
+    senter: armPunkt(vinkel, uC, wC),                 // avrundingens sentrum
+    T1: armPunkt(vinkel, uC, side * hb),              // tangerer armens kant
+    T2: armPunkt(vinkel, uC * skala, wC * skala),     // tangerer rundkjøringen
+    K:  armPunkt(vinkel, Math.sqrt(R * R - hb * hb), side * hb), // det spisse hjørnet
+    sweep: side > 0 ? 1 : 0,
+    /* global vinkel til T2, altså hvor på rundkjøringen munningen slutter */
+    vinkelT2: vinkel + side * grader(Math.atan2(hb + f, uC))
+  };
+}
+
+function lagAsfalt(){
+  const armer = ARMER.map(a => {
+    const p1 = armPunkt(a.vinkel, GEO.indreRadius, 0);
+    const p2 = armPunkt(a.vinkel, GEO.armLengde, 0);
+    return el('line', {x1:f2(p1.x), y1:f2(p1.y), x2:f2(p2.x), y2:f2(p2.y),
+      stroke:V('asfalt'), 'stroke-width':GEO.armHalvbredde * 2});
+  });
+  /* kilene som fyller de fire hjørnene ved hver arm */
+  const kiler = [];
+  ARMER.forEach(a => [1, -1].forEach(side => {
+    const fl = flare(a.vinkel, side, 0);
+    kiler.push(el('path', {d:
+      'M ' + P(fl.T1) + ' L ' + P(fl.K) + ' L ' + P(fl.T2) +
+      ' A ' + fl.f + ' ' + fl.f + ' 0 0 ' + fl.sweep + ' ' + P(fl.T1) + ' Z',
+      fill:V('asfalt')}));
+  }));
+  return g({'aria-hidden':'true'},
+    armer, kiler,
+    el('circle', {cx:GEO.senterX, cy:GEO.senterY, r:GEO.ytreRadius,
+      fill:'url(#rk-asfalt-grad)'})
+  );
+}
+
+/* ---------------------------------------------------------------- midtøya */
+function lagMidtoy(){
+  /* Vegetasjon: noen få myke former i tre grønntoner. Ikke klipart. */
+  const busker = [
+    [ -18, -26, 30, 26, 'midtoy-mork', .55],
+    [  22, -12, 36, 30, 'midtoy-mork', .45],
+    [  -4,  26, 32, 24, 'midtoy-mork', .5 ],
+    [ -34,  14, 20, 17, 'midtoy-mork', .4 ],
+    [  34,  26, 18, 15, 'midtoy-mork', .42]
+  ];
+  const trær = [[-20,-24,13],[18,-10,15],[-2,24,14],[36,22,9],[-38,10,9]];
+  return g({'aria-hidden':'true'},
+    el('circle', {cx:GEO.senterX, cy:GEO.senterY, r:GEO.indreRadius,
+      fill:'url(#rk-oy-grad)'}),
+    /* kantstein */
+    el('circle', {cx:GEO.senterX, cy:GEO.senterY, r:GEO.indreRadius - 2.2,
+      fill:'none', stroke:V('oppmerking'), 'stroke-width':4.4, opacity:.9}),
+    busker.map(([dx, dy, rx, ry, farge, op]) =>
+      el('ellipse', {cx:GEO.senterX + dx, cy:GEO.senterY + dy, rx, ry,
+        fill:V(farge), opacity:op})),
+    trær.map(([dx, dy, r]) => g(null,
+      el('circle', {cx:GEO.senterX + dx, cy:GEO.senterY + dy, r,
+        fill:V('midtoy-mork'), opacity:.9}),
+      el('circle', {cx:GEO.senterX + dx - r * .28, cy:GEO.senterY + dy - r * .3,
+        r:r * .62, fill:V('midtoy-lys'), opacity:.75})
+    ))
+  );
+}
+
+/* ------------------------------------------------------------- oppmerking */
+
+/* Kantlinja tegnes som én sammenhengende omriss av hele asfaltflaten: langs
+   armens kant, rundt avrundingen, og videre langs rundkjøringens ytterkant.
+   Heltrukken hele veien — dette er linja du ikke skal krysse.               */
+const KANT_INSET = 3;
+
+function lagOppmerking(){
+  const deler = [];
+
+  /* Én linje per armkant, med avrundingen på enden. */
+  ARMER.forEach(a => [1, -1].forEach(side => {
+    const fl = flare(a.vinkel, side, KANT_INSET);
+    const ut = armPunkt(a.vinkel, GEO.armLengde, side * fl.hb);
+    deler.push(el('path', {d:
+      'M ' + P(ut) + ' L ' + P(fl.T1) +
+      ' A ' + fl.f + ' ' + fl.f + ' 0 0 ' + fl.sweep + ' ' + P(fl.T2),
+      fill:'none', stroke:V('oppmerking'), 'stroke-width':3.6,
+      'stroke-linecap':'round', opacity:.85}));
+  }));
+
+  /* Buene mellom to armer, langs rundkjøringens ytterkant. */
+  const sortert = ARMER.slice().sort((x, y) => x.vinkel - y.vinkel);
+  sortert.forEach((a, i) => {
+    const b  = sortert[(i + 1) % sortert.length];
+    const fra = flare(a.vinkel, 1, KANT_INSET).vinkelT2;
+    let til   = flare(b.vinkel, -1, KANT_INSET).vinkelT2;
+    if (til < fra) til += 360;
+    const R = GEO.ytreRadius - KANT_INSET;
+    deler.push(el('path', {d:
+      'M ' + P(sirkPunkt(R, fra)) +
+      ' A ' + R + ' ' + R + ' 0 0 1 ' + P(sirkPunkt(R, til)),
+      fill:'none', stroke:V('oppmerking'), 'stroke-width':3.6, opacity:.85}));
+  });
+
+  /* Midtlinje utenfor trafikkøya: heltrukken, den skal ikke krysses. */
+  ARMER.forEach(a => {
+    const m1 = armPunkt(a.vinkel, GEO.oyNese + 12, 0);
+    const m2 = armPunkt(a.vinkel, GEO.armLengde, 0);
+    deler.push(el('line', {x1:f2(m1.x), y1:f2(m1.y), x2:f2(m2.x), y2:f2(m2.y),
+      stroke:V('oppmerking'), 'stroke-width':3.4, opacity:.75}));
+  });
+
+  return g({'aria-hidden':'true'}, deler);
+}
+
+/* Dråpeformet trafikkøy mellom inn- og utkjøring. Den butte enden ligger mot
+   rundkjøringen, spissen peker mot trafikken som kommer.                    */
+function lagTrafikkoyer(){
+  const halv = GEO.oyBredde / 2;
+  const u0 = GEO.ytreRadius + 12, u1 = GEO.oyNese, L = u1 - u0;
+  return g({'aria-hidden':'true'}, ARMER.map(a => {
+    const p = (u, w) => P(armPunkt(a.vinkel, u, w));
+    const d = [
+      'M ' + p(u0, -halv - .5),
+      'C ' + p(u0 + L * .34, -halv - 1.2) + ' ' + p(u0 + L * .74, -halv * .6) +
+             ' ' + p(u1, 0),
+      'C ' + p(u0 + L * .74,  halv * .6) + ' ' + p(u0 + L * .34,  halv + 1.2) +
+             ' ' + p(u0, halv + .5),
+      'Q ' + p(GEO.ytreRadius + 4, 0) + ' ' + p(u0, -halv - .5),
+      'Z'
+    ].join(' ');
+    return el('path', {d, fill:V('oy'), stroke:V('oppmerking'),
+      'stroke-width':1.8, 'stroke-linejoin':'round', opacity:.9});
+  }));
+}
+
+/* Gangfelt (sebrastriper) på hver arm, ca. 5 m fra rundkjøringen. Stripene
+   ligger langs kjøreretningen, slik de gjør i virkeligheten.                */
+function lagGangfelt(){
+  const bredde = GEO.armHalvbredde * 2 - 6;
+  const stripe = 9.5, mellom = 8.5, steg = stripe + mellom;
+  const antall = Math.floor((bredde + mellom) / steg);
+  const margin = (bredde - (antall * steg - mellom)) / 2;
+  const u1 = GEO.gangfeltInn, u2 = GEO.gangfeltUt;
+
+  return g({'aria-hidden':'true', class:'rk-gangfelt'}, ARMER.map(a =>
+    Array.from({length:antall}, (_, i) => {
+      const w = -bredde / 2 + margin + i * steg + stripe / 2;
+      const p1 = armPunkt(a.vinkel, u1, w), p2 = armPunkt(a.vinkel, u2, w);
+      return el('line', {x1:f2(p1.x), y1:f2(p1.y), x2:f2(p2.x), y2:f2(p2.y),
+        stroke:V('oppmerking'), 'stroke-width':stripe, opacity:.82});
+    })
+  ));
+}
+
+/* Vikelinje ved innkjøringen: brutt linje på tvers av innkjøringsfeltet.
+   Dette er linja du eventuelt skal stanse foran (SPEC §4.6).                */
+function lagVikelinje(a){
+  const bredde = GEO.armFeltbredde - 3;
+  const stripe = 6, mellom = 4.2, steg = stripe + mellom;
+  const antall = Math.floor((bredde + mellom) / steg);
+  const margin = (bredde - (antall * steg - mellom)) / 2;
+  const senter = -GEO.feltSenterOffset;
+  return g({class:'rk-vikelinje'}, Array.from({length:antall}, (_, i) => {
+    const w = senter - bredde / 2 + margin + i * steg + stripe / 2;
+    const p1 = armPunkt(a.vinkel, GEO.vikelinjeRadius - 3, w);
+    const p2 = armPunkt(a.vinkel, GEO.vikelinjeRadius + 3, w);
+    return el('line', {x1:f2(p1.x), y1:f2(p1.y), x2:f2(p2.x), y2:f2(p2.y),
+      stroke:V('oppmerking'), 'stroke-width':stripe, 'stroke-linecap':'butt'});
+  }));
+}
+
+/* ----------------------------------------------------------------- skiltene */
+
+/* Skilt 202, vikeplikt: trekant på spissen, hvit med rød ramme. */
+function lagVikepliktskilt(){
+  const r = 21, h = r * 1.62;
+  const d = 'M ' + (-r) + ' ' + (-h / 2) + ' L ' + r + ' ' + (-h / 2) +
+            ' L 0 ' + (h / 2) + ' Z';
+  return g({class:'rk-skilt-vikeplikt', filter:'url(#rk-skygge-skilt)'},
+    el('path', {d, fill:V('skilt-rod'), 'stroke-linejoin':'round',
+      stroke:V('skilt-rod'), 'stroke-width':5}),
+    el('path', {d, fill:'#fff', transform:'scale(.63)'})
+  );
+}
+
+/* Skilt 406, påbudt kjøreretning i rundkjøring: blå sirkel med tre piler
+   som viser at trafikken går til høyre om midtøya.                          */
+function lagPaabudsskilt(){
+  const r = 19;
+  const piler = [0, 120, 240].map(v => {
+    const R = 11.4, halv = 34;
+    const a1 = rad(v - halv), a2 = rad(v + halv);
+    const p1 = {x:R * Math.cos(a1), y:R * Math.sin(a1)};
+    const p2 = {x:R * Math.cos(a2), y:R * Math.sin(a2)};
+    /* buen tegnes mot klokka på skjermen, samme vei som trafikken */
+    const bane = 'M ' + P(p2) + ' A ' + R + ' ' + R + ' 0 0 0 ' + P(p1);
+    const t = {x:Math.sin(a1), y:-Math.cos(a1)};
+    const n = {x:-t.y, y:t.x};
+    const sp = [
+      {x:p1.x + t.x * 4.6, y:p1.y + t.y * 4.6},
+      {x:p1.x - t.x * 1.2 + n.x * 3.4, y:p1.y - t.y * 1.2 + n.y * 3.4},
+      {x:p1.x - t.x * 1.2 - n.x * 3.4, y:p1.y - t.y * 1.2 - n.y * 3.4}
+    ];
+    return g(null,
+      el('path', {d:bane, fill:'none', stroke:'#fff', 'stroke-width':3.1,
+        'stroke-linecap':'round'}),
+      el('path', {d:'M ' + P(sp[0]) + ' L ' + P(sp[1]) + ' L ' + P(sp[2]) + ' Z',
+        fill:'#fff'})
+    );
+  });
+  return g({class:'rk-skilt-paabud', filter:'url(#rk-skygge-skilt)'},
+    el('circle', {r:r, fill:V('skilt-bla'), stroke:'#fff', 'stroke-width':2.4}),
+    piler
+  );
+}
+
+/* Vegvisningsskilt: diagram med piler. Dette er skiltet §4.2 handler om, så
+   det skal være tydelig og lesbart. Den stiplede loddlinja viser «rett opp»,
+   slik at «til venstre for midten» blir synlig og ikke bare en påstand.     */
+function lagVegvisningsskilt(piler, uthevet){
+  const bw = 148, bh = 116, r = 17;
+  const ox = 0, oy = bh / 2 - 17;          // pilenes utgangspunkt
+  const lengde = 64;
+
+  const deler = [
+    el('rect', {x:-bw / 2, y:-bh / 2, width:bw, height:bh, rx:r,
+      fill:'#fff', stroke:'#cbd5e1', 'stroke-width':3}),
+    /* «rett opp»-referansen. Uten den er «til venstre for midten» bare en
+       påstand; med den kan eleven se det (SPEC §4.2).                       */
+    el('line', {x1:ox, y1:oy - 6, x2:ox, y2:oy - lengde - 12,
+      stroke:'#cbd5e1', 'stroke-width':2.4, 'stroke-dasharray':'6 6'}),
+    /* stammen bilen kommer fra */
+    el('line', {x1:ox, y1:bh / 2 - 8, x2:ox, y2:oy,
+      stroke:'#334155', 'stroke-width':7, 'stroke-linecap':'round'})
+  ];
+
+  /* Pilene. Den som gjelder valgt destinasjon er teal og tykkere. */
+  piler.filter(p => p.grader != null).forEach(pil => {
+    const aktiv  = pil.nr === uthevet;
+    const farge  = aktiv ? V('aksent') : '#94a3b8';
+    const a   = rad(pil.grader - 90);        // -90 fordi 0 grader er rett opp
+    const dir = {x:Math.cos(a), y:Math.sin(a)};
+    const nor = {x:-dir.y, y:dir.x};
+    const b = 8.5, l = 15;                   // halv bredde og lengde på pilspissen
+    const tip  = {x:ox + dir.x * lengde, y:oy + dir.y * lengde};
+    /* skaftet stopper der pilspissen begynner, ellers stikker det ut i tuppen */
+    const skaft = {x:ox + dir.x * (lengde - l + 2), y:oy + dir.y * (lengde - l + 2)};
+    deler.push(el('line', {x1:ox, y1:oy, x2:f2(skaft.x), y2:f2(skaft.y),
+      stroke:farge, 'stroke-width':aktiv ? 9 : 6.5, 'stroke-linecap':'round'}));
+    deler.push(el('path', {
+      d:'M ' + P(tip) +
+        ' L ' + P({x:tip.x - dir.x * l + nor.x * b, y:tip.y - dir.y * l + nor.y * b}) +
+        ' L ' + P({x:tip.x - dir.x * l - nor.x * b, y:tip.y - dir.y * l - nor.y * b}) + ' Z',
+      fill:farge}));
+  });
+
+  /* U-sving-symbol for 4. avkjøring. Det ligger i skiltets øvre venstre hjørne,
+     godt unna venstrepila, ellers smelter de to sammen til én uleselig form.  */
+  if (piler.some(p => p.usving)) {
+    const cx = -bw / 2 + 26, cy = -bh / 2 + 30;
+    const aktiv = uthevet === 4;
+    const farge = aktiv ? V('aksent') : '#94a3b8';
+    deler.push(el('path', {
+      d:'M ' + (cx - 8) + ' ' + (cy + 13) +
+        ' L ' + (cx - 8) + ' ' + (cy - 6) +
+        ' A 8 8 0 0 1 ' + (cx + 8) + ' ' + (cy - 6) +
+        ' L ' + (cx + 8) + ' ' + (cy + 3),
+      fill:'none', stroke:farge, 'stroke-width':aktiv ? 7 : 5.5,
+      'stroke-linecap':'round'}));
+    deler.push(el('path', {
+      d:'M ' + (cx + 8) + ' ' + (cy + 14) +
+        ' L ' + (cx + 1.5) + ' ' + (cy + 3) +
+        ' L ' + (cx + 14.5) + ' ' + (cy + 3) + ' Z',
+      fill:farge}));
+  }
+
+  return g({class:'rk-vegvisning', filter:'url(#rk-skygge-skilt)'}, deler);
+}
+
+/* Pilene på skiltet ved brukerens innkjøring. Vinklene kan overstyres av
+   quizen (skiltPilGrader) — det er hele poenget med §4.2.                   */
+function skiltPiler(overstyrtPil){
+  return [
+    {nr:3, grader:DESTINASJONER[2].skiltPil},
+    {nr:2, grader:overstyrtPil != null ? overstyrtPil : DESTINASJONER[1].skiltPil},
+    {nr:1, grader:DESTINASJONER[0].skiltPil},
+    {nr:4, usving:true, grader:null}
+  ].filter(p => p.usving || p.grader != null);
+}
+
+/* Skiltene plasseres på høyre skulder av innkjøringen og roteres slik at de
+   vender mot den bilen som kommer inn på den armen. For brukerens arm, som
+   peker oppover, gir det ingen rotasjon — skiltet står rett vei.
+   Rotasjonen er kjøreretningen inn langs armen, altså armvinkel minus 90.   */
+function lagSkilt(a, opts){
+  const o = opts || {};
+  const plasser = (u, w, node) => {
+    const p = armPunkt(a.vinkel, u, w);
+    node.setAttribute('transform',
+      'translate(' + f2(p.x) + ' ' + f2(p.y) + ') rotate(' + (a.vinkel - 90) + ')');
+    return node;
+  };
+  /* Skiltene tegnes bare ved brukerens innkjøring (SPEC §5.3). De andre
+     armene har dem også i virkeligheten, men små, roterte kopier ble bare
+     støy i tegningen uten å lære eleven noe.
+     Vegvisningsskiltet står ikke i tegningen — det vises for seg selv ved
+     siden av (se lagVegvisningsskilt), der det er stort nok til å leses.     */
+  if (!a.brukerensInngang) return g({class:'rk-skilt-' + a.id});
+  const deler = [
+    plasser(GEO.skiltVikeplikt, GEO.skiltVerge, lagVikepliktskilt()),
+    plasser(GEO.skiltPaabud,    GEO.skiltVerge, lagPaabudsskilt())
+  ];
+  return g({class:'rk-skilt-' + a.id}, deler);
+}
+
+/* ------------------------------------------------------------------- bilen */
+
+/* Bil sett rett ovenfra. Lokale koordinater: bilen peker mot -y (oppover),
+   senter i origo. Blinklys, bremselys og frontlys er egne noder slik at de
+   kan styles og animeres (SPEC §2 og §5.4).                                 */
+function lagBil(opts){
+  const o = opts || {};
+  const L = GEO.bilLengde, B = GEO.bilBredde;
+  const hl = L / 2, hb = B / 2;
+  const kropp = o.bruker ? V('bil-bruker') : V('bil-annen');
+  const mork  = o.bruker ? V('bil-bruker-m') : V('bil-annen-m');
+
+  /* karosseri med litt smalere front enn bak */
+  const karosseri =
+    'M ' + (-hb + 1.4) + ' ' + (-hl + 7) +
+    ' C ' + (-hb + 1) + ' ' + (-hl + 2.2) + ' ' + (-hb + 3.4) + ' ' + (-hl) + ' 0 ' + (-hl) +
+    ' C ' + (hb - 3.4) + ' ' + (-hl) + ' ' + (hb - 1) + ' ' + (-hl + 2.2) + ' ' +
+            (hb - 1.4) + ' ' + (-hl + 7) +
+    ' L ' + (hb) + ' ' + (hl - 8) +
+    ' C ' + (hb) + ' ' + (hl - 1.6) + ' ' + (hb - 2.6) + ' ' + (hl) + ' 0 ' + (hl) +
+    ' C ' + (-hb + 2.6) + ' ' + (hl) + ' ' + (-hb) + ' ' + (hl - 1.6) + ' ' +
+            (-hb) + ' ' + (hl - 8) + ' Z';
+
+  const hjul = [[-hb - .6, -hl + 8.5], [hb - 3.4, -hl + 8.5],
+                [-hb - .6,  hl - 17.5], [hb - 3.4,  hl - 17.5]]
+    .map(([x, y]) => el('rect', {x, y, width:4, height:9, rx:1.6,
+      fill:'#22272e', opacity:.9}));
+
+  const blinkerNode = (x, y, w, h) => el('rect', {x:x - w / 2, y:y - h / 2,
+    width:w, height:h, rx:1.5, fill:V('blink')});
+
+  return g({class:'rk-bil' + (o.bruker ? ' rk-bil-bruker' : ''),
+            filter:'url(#rk-skygge-myk)'},
+    /* hjulene under karosseriet */
+    g({'aria-hidden':'true'}, hjul),
+    el('path', {d:karosseri, fill:kropp}),
+    /* tak / kupé */
+    el('rect', {x:-hb + 2.6, y:-hl + 11, width:B - 5.2, height:L - 24, rx:4,
+      fill:mork, opacity:.85}),
+    /* frontrute og bakrute */
+    el('path', {d:'M ' + (-hb + 3.4) + ' ' + (-hl + 12.4) +
+                  ' L ' + (hb - 3.4) + ' ' + (-hl + 12.4) +
+                  ' L ' + (hb - 5.2) + ' ' + (-hl + 17.6) +
+                  ' L ' + (-hb + 5.2) + ' ' + (-hl + 17.6) + ' Z',
+      fill:V('glass')}),
+    el('path', {d:'M ' + (-hb + 4.4) + ' ' + (hl - 15.4) +
+                  ' L ' + (hb - 4.4) + ' ' + (hl - 15.4) +
+                  ' L ' + (hb - 3) + ' ' + (hl - 10.8) +
+                  ' L ' + (-hb + 3) + ' ' + (hl - 10.8) + ' Z',
+      fill:V('glass'), opacity:.85}),
+    /* speil. De er bilens bredeste punkt, så bredden her bestemmer hvor nær
+       kantlinja bilen kan legges — se GEO.innPlasseringHoyre.               */
+    el('rect', {x:-hb - 1.8, y:-hl + 13.4, width:2.4, height:4.2, rx:1.1, fill:mork}),
+    el('rect', {x: hb - .6,  y:-hl + 13.4, width:2.4, height:4.2, rx:1.1, fill:mork}),
+    /* frontlys */
+    el('rect', {x:-hb + 3, y:-hl + 1.4, width:4.6, height:2.6, rx:1.2,
+      fill:'#fdf6e0', opacity:.95}),
+    el('rect', {x: hb - 7.6, y:-hl + 1.4, width:4.6, height:2.6, rx:1.2,
+      fill:'#fdf6e0', opacity:.95}),
+    /* bremselys */
+    g({class:'rk-bremselys'},
+      el('rect', {x:-hb + 2.6, y:hl - 3.4, width:4.8, height:2.6, rx:1.2, fill:V('brems')}),
+      el('rect', {x: hb - 7.4, y:hl - 3.4, width:4.8, height:2.6, rx:1.2, fill:V('brems')})),
+    /* blinklys: to foran, to bak, på hver side */
+    g({class:'rk-blinker rk-blink-venstre'},
+      blinkerNode(-hb + 2.2, -hl + 3.6, 4.4, 3),
+      blinkerNode(-hb + 2.2,  hl - 5.6, 4.4, 3)),
+    g({class:'rk-blinker rk-blink-hoyre'},
+      blinkerNode(hb - 2.2, -hl + 3.6, 4.4, 3),
+      blinkerNode(hb - 2.2,  hl - 5.6, 4.4, 3))
+  );
+}
+
+/* Fotgjenger sett ovenfra: hode og skuldre. */
+function lagFotgjenger(){
+  return g({class:'rk-fotgjenger', filter:'url(#rk-skygge-myk)'},
+    el('rect', {x:-7, y:-4.4, width:14, height:8.8, rx:4.4, fill:'#5b6472'}),
+    el('circle', {cx:0, cy:0, r:4.4, fill:'#e8c7a6'})
+  );
+}
+
+/* Plasserer en node med posisjon og retning (tangenten til banen). */
+function settPose(node, p, retningGrader){
+  node.setAttribute('transform',
+    'translate(' + f2(p.x) + ' ' + f2(p.y) + ') rotate(' + f2(retningGrader) + ')');
+}
+/* Retning i grader for en bil som skal peke langs vektoren (dx,dy).
+   Bilen er tegnet pekende oppover, altså mot -y, derfor +90.               */
+function retningGrader(dx, dy){ return grader(Math.atan2(dy, dx)) + 90; }
+
+
+/* =============================================================================
+   LAG 4 — SCENE (statisk visning; animasjon og quiz kommer i neste steg)
+   ============================================================================= */
+
+const tilstand = {
+  destinasjon: 2,
+  visAlle:      false,
+  visRutelinje: true,
+  visTrafikk:   true,
+  visMyke:      true
+};
+
+const scene = document.getElementById('rk-scene');
+let svg, lagRuteLinje, lagBiler, lagSkiltGruppe;
+
+function byggScene(){
+  svg = el('svg', {
+    class:'rk-svg', viewBox:'0 0 ' + GEO.viewW + ' ' + GEO.viewH,
+    preserveAspectRatio:'xMidYMid meet',
+    role:'img', 'aria-labelledby':'rk-svg-tittel rk-svg-desc'
+  },
+    el('title', {id:'rk-svg-tittel'}),
+    el('desc',  {id:'rk-svg-desc'}),
+    lagDefs(),
+    lagTerreng(),
+    lagFortau(),
+    lagAsfalt(),
+    lagOppmerking(),
+    lagGangfelt(),
+    /* Trafikkøya er en opphøyd øy, så gangfeltets striper skal ikke gå over
+       den. Derfor tegnes øya etter gangfeltet.                              */
+    lagTrafikkoyer(),
+    lagMidtoy(),
+    lagVikelinje(INNGANG)
+  );
+  svg.querySelector('title').textContent =
+    'Firearmet rundkjøring sett ovenfra, med brukerens bil på vei inn fra sør.';
+  svg.querySelector('desc').textContent =
+    'Tegningen viser plassering i kjørefeltet, vikelinje, vegvisningsskilt og ' +
+    'blinklys for den valgte avkjøringen.';
+
+  lagRuteLinje   = g({class:'rk-rutelinje'});
+  lagSkiltGruppe = g({class:'rk-skilt'});
+  lagBiler       = g({class:'rk-biler'});
+  svg.appendChild(lagRuteLinje);
+  svg.appendChild(lagSkiltGruppe);
+  svg.appendChild(lagBiler);
+
+  /* armetiketter: hvilken avkjøring er hvilken */
+  /* Nummerbadge og manøvertekst ved hver arm. Teksten legges 40 enheter
+     nærmere senteret enn badgen, slik at den aldri havner utenfor lerretet. */
+  const etiketter = g({class:'rk-etiketter'});
+  DESTINASJONER.forEach(dst => {
+    const a  = arm(dst.arm);
+    const w  = GEO.armHalvbredde + 62;
+    const p  = armPunkt(a.vinkel, 400, w);
+    const pt = armPunkt(a.vinkel, 330, w);
+    const kule = g(null,
+      el('circle', {cx:f2(p.x), cy:f2(p.y), r:17, fill:V('aksent'), opacity:.94}),
+      el('text', {x:f2(p.x), y:f2(p.y) + 6, class:'rk-kart-nr', 'text-anchor':'middle'})
+    );
+    kule.querySelector('text').textContent = dst.nr;
+    const t = el('text', {x:f2(pt.x), y:f2(pt.y) + 6, class:'rk-kart-etikett-liten',
+      'text-anchor':'middle'});
+    t.textContent = dst.manover;
+    etiketter.appendChild(kule);
+    etiketter.appendChild(t);
+  });
+  svg.appendChild(etiketter);
+
+  scene.appendChild(svg);
+}
+
+/* --------------------------------------------------------- tegn opp scenen */
+
+function tegnRutelinje(){
+  lagRuteLinje.textContent = '';
+  if (!tilstand.visRutelinje) return;
+  const r = rute(tilstand.destinasjon);
+  lagRuteLinje.appendChild(el('path', {d:r.d, fill:'none', stroke:V('spor'),
+    'stroke-width':6, 'stroke-linecap':'round', opacity:.28}));
+  lagRuteLinje.appendChild(el('path', {d:r.d, fill:'none', stroke:V('spor'),
+    'stroke-width':2.6, 'stroke-dasharray':'11 9', 'stroke-linecap':'round',
+    'marker-end':'url(#rk-pil-spor)'}));
+}
+
+function tegnSkilt(){
+  lagSkiltGruppe.textContent = '';
+  ARMER.forEach(a => lagSkiltGruppe.appendChild(
+    lagSkilt(a, {uthevet:tilstand.destinasjon})));
+}
+
+/* Bil i innkjøringsfeltet, stillestående, på gitt avstand fra senteret. */
+function bilPaaInnkjoring(plassering, u, opts){
+  const node = lagBil(opts);
+  const h = innRetning(INNGANG.vinkel);
+  settPose(node, armPunkt(INNGANG.vinkel, u, innFeltW(plassering)),
+    retningGrader(h.x, h.y));
+  return node;
+}
+/* Bil inne i rundkjøringen, på gitt vinkel og plassering. */
+function bilISirkel(plassering, vinkel, opts){
+  const node = lagBil(opts);
+  const r = sirkRetning(vinkel);
+  settPose(node, sirkPunkt(sirkRadius(plassering), vinkel), retningGrader(r.x, r.y));
+  return node;
+}
+
+/* Bilen(e). I den statiske visningen står bilen stille, og vi viser alle fire
+   plasseringene samtidig når bryteren er på (SPEC §10 steg 2).              */
+function tegnBiler(){
+  lagBiler.textContent = '';
+  const nr = tilstand.destinasjon;
+  const p  = PLASSERING[nr];
+
+  if (tilstand.visAlle) {
+    /* Fire stillestående biler: begge plasseringene i innkjøringsfeltet, og
+       de samme to plasseringene inne i rundkjøringen. De to i rundkjøringen
+       står på samme vinkel, side om side — det viser poenget i §4.4 om at
+       plasseringen må være presis nok til at det er plass til et kjøretøy
+       ved siden av deg.                                                     */
+    const merk = (p, tekst, dx, dy) => {
+      const t = el('text', {x:f2(p.x + dx), y:f2(p.y + dy),
+        class:'rk-kart-etikett-liten', 'text-anchor':'middle'});
+      t.textContent = tekst;
+      lagBiler.appendChild(t);
+    };
+    lagBiler.appendChild(bilPaaInnkjoring('hoyre',   296, {bruker:true}));
+    lagBiler.appendChild(bilPaaInnkjoring('venstre', 358, {bruker:true}));
+    merk(armPunkt(INNGANG.vinkel, 296, innFeltW('hoyre')),   'høyre',   58, 5);
+    merk(armPunkt(INNGANG.vinkel, 358, innFeltW('venstre')), 'venstre', -62, 5);
+    lagBiler.appendChild(bilISirkel('hoyre',   -45, {bruker:true}));
+    lagBiler.appendChild(bilISirkel('venstre', -45, {bruker:true}));
+    merk(sirkPunkt(GEO.ytreRadius + 46, -45), 'side om side', 0, 5);
+  } else {
+    const bil = bilPaaInnkjoring(p, 300, {bruker:true});
+    /* blinkstatus på vei inn, etter tabellen i REGLER-laget */
+    const t = TEGN_INN[nr].tegn;
+    if (t === 'hoyre')   bil.querySelector('.rk-blink-hoyre').classList.add('rk-pa');
+    if (t === 'venstre') bil.querySelector('.rk-blink-venstre').classList.add('rk-pa');
+    lagBiler.appendChild(bil);
+  }
+
+  if (tilstand.visTrafikk) {
+    /* To grå biler som allerede er INNE i rundkjøringen — det er disse du
+       har vikeplikt for (SPEC §4.6).                                       */
+    lagBiler.appendChild(bilISirkel('hoyre',   126, {bruker:false}));
+    lagBiler.appendChild(bilISirkel('venstre', 170, {bruker:false}));
+    /* én bil på vei ut av 1. avkjøring */
+    const a = arm('Ø');
+    const pt = armPunkt(a.vinkel, 300, GEO.feltSenterOffset);
+    const node = lagBil({bruker:false});
+    settPose(node, pt, retningGrader(utRetning(a.vinkel).x, utRetning(a.vinkel).y));
+    lagBiler.appendChild(node);
+  }
+
+  if (tilstand.visMyke) {
+    /* Fotgjenger på vei mot gangfeltet i utkjøringsarmen (SPEC §4.7). */
+    const ua = utkjoringArm(tilstand.destinasjon);
+    const pt = armPunkt(ua.vinkel, (GEO.gangfeltInn + GEO.gangfeltUt) / 2,
+      GEO.armHalvbredde + 4);
+    const node = lagFotgjenger();
+    settPose(node, pt, ua.vinkel + 90);
+    lagBiler.appendChild(node);
+  }
+}
+
+/* ----------------------------------------------------------------- panelet */
+
+const merke = (klasse, tekst) =>
+  '<span class="rk-merke ' + klasse + '">' + tekst + '</span>';
+
+function tegnPanel(){
+  const nr  = tilstand.destinasjon;
+  const dst = destinasjon(nr);
+  const pl  = PLASSERING[nr];
+  const ti  = TEGN_INN[nr];
+  const foer = sisteUtkjoringFoer(nr);
+
+  /* forklaringskortet */
+  const f = document.getElementById('rk-forklaring');
+  const bitene = [];
+  bitene.push('<h2>' + dst.navn + ' — ' + dst.manover + '</h2>');
+  bitene.push('<p><span class="rk-uthev">Plassering:</span> ' +
+    (pl === 'hoyre' ? 'til høyre i feltet' : 'til venstre i feltet') + '. ' +
+    dst.plasseringHvorfor + '</p>');
+  bitene.push('<p><span class="rk-uthev">Tegn inn:</span> ' + dst.tegnInnHvorfor + '</p>');
+  bitene.push('<p><span class="rk-uthev">Tegn ut:</span> ' + dst.tegnUtHvorfor + '</p>');
+  bitene.push('<p><span class="rk-uthev">Vikeplikt:</span> ' + VIKEPLIKT_TEKST + '</p>');
+  if (!ti.paabudt) {
+    bitene.push('<div class="rk-notat"><strong>Ikke påbudt.</strong> ' +
+      'Venstreblink på vei inn er noe du <em>kan</em> gjøre for å hjelpe andre. ' +
+      'Å tro at det alltid er påbudt er en klassisk teoriprøvefeil.</div>');
+  }
+  if (nr === 2) {
+    bitene.push('<div class="rk-notat"><strong>Huskeregel, ikke lovbestemmelse.</strong> ' +
+      'Skiltpil-regelen er en hjelp til å velge plassering. Følg alltid skilt, ' +
+      'piler og vegoppmerking hvis de viser noe annet.</div>');
+  }
+  f.innerHTML = bitene.join('');
+
+  /* fasittabellen */
+  const tegnInnCelle = ti.tegn === 'ingen'
+    ? merke('rk-merke-av', 'Ingen blink')
+    : merke('rk-merke-blink', (ti.tegn === 'hoyre' ? 'Høyre →' : '← Venstre')) +
+      (ti.paabudt ? '' : ' ' + merke('rk-merke-valgfri', 'valgfritt'));
+
+  const tegnUtCelle = TEGN_UT[nr] === 'fra-foer-innkjoring'
+    ? merke('rk-merke-blink', 'Høyre →') +
+      '<div class="rk-liten">Sto på fra før innkjøring, beholdes til du har kjørt ut.</div>'
+    : merke('rk-merke-blink', 'Høyre →') +
+      '<div class="rk-liten">Slås på når du er på høyde med siste utkjøring før din — ' +
+      'her ' + foer + '. avkjøring.</div>';
+
+  document.getElementById('rk-fasit').innerHTML =
+    '<tbody>' +
+    '<tr><th>Steg</th><th>Fasit</th></tr>' +
+    '<tr><td>Plassering</td><td>' +
+      (pl === 'hoyre' ? 'Høyre i feltet' : 'Venstre i feltet') + '</td></tr>' +
+    '<tr><td>Tegn inn</td><td>' + tegnInnCelle + '</td></tr>' +
+    '<tr><td>Vikeplikt</td><td>For trafikk som allerede er inne i rundkjøringen</td></tr>' +
+    '<tr><td>Tegn ut</td><td>' + tegnUtCelle + '</td></tr>' +
+    '<tr><td>Ved utkjøring</td><td>Sjekk blindsonen. Vik for fotgjengere i gangfelt.</td></tr>' +
+    '</tbody>';
+}
+
+/* ---------------------------------------------------------------- kontroller */
+
+function byggKontroller(){
+  const dk = document.getElementById('rk-dest-knapper');
+  DESTINASJONER.forEach(dst => {
+    const b = document.createElement('button');
+    b.type = 'button';
+    b.setAttribute('aria-pressed', String(dst.nr === tilstand.destinasjon));
+    b.innerHTML = dst.navn + '<span>' + dst.manover + '</span>';
+    b.addEventListener('click', () => {
+      tilstand.destinasjon = dst.nr;
+      dk.querySelectorAll('button').forEach((x, i) =>
+        x.setAttribute('aria-pressed', String(i + 1 === dst.nr)));
+      oppdater();
+    });
+    dk.appendChild(b);
+  });
+
+  const brytere = [
+    ['visAlle',      'Vis alle fire plasseringene'],
+    ['visRutelinje', 'Vis rutelinje'],
+    ['visTrafikk',   'Vis annen trafikk'],
+    ['visMyke',      'Vis myke trafikanter']
+  ];
+  const holder = document.getElementById('rk-brytere');
+  brytere.forEach(([nokkel, tekst]) => {
+    const lab = document.createElement('label');
+    lab.className = 'rk-bryter';
+    const inp = document.createElement('input');
+    inp.type = 'checkbox';
+    inp.checked = tilstand[nokkel];
+    inp.setAttribute('aria-label', tekst);
+    inp.addEventListener('change', () => { tilstand[nokkel] = inp.checked; oppdater(); });
+    lab.appendChild(inp);
+    lab.appendChild(document.createTextNode(tekst));
+    holder.appendChild(lab);
+  });
+}
+
+function oppdater(){
+  tegnRutelinje();
+  tegnSkilt();
+  tegnBiler();
+  tegnPanel();
+}
+
+byggScene();
+byggKontroller();
+oppdater();
+
+})();
+</script>
+</body>
+</html>

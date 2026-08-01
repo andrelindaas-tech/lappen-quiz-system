@@ -946,6 +946,39 @@ body.dark-mode .theory-inline-code {
 }
 
 @media (max-width: 700px) {
+    /* index.css har en generell regel i @media (max-width: 640px) som setter
+       `white-space: nowrap !important` og `overflow-x: auto !important` på alle
+       tabeller. Den hindrer ordbryting og tvinger sidescrolling, og den slår alt
+       som ikke også er !important. Her overstyres den for artikkeltabellene.
+       Klassevelgeren har høyere spesifisitet enn `table`, så disse vinner. */
+    .responsive-theory-table-wrapper,
+    .responsive-theory-table {
+        overflow-x: visible !important;
+        white-space: normal !important;
+    }
+    .responsive-theory-table,
+    .responsive-theory-table tbody {
+        display: block !important;
+        width: 100%;
+        max-width: 100%;
+    }
+    .responsive-theory-table td,
+    .responsive-theory-table th {
+        white-space: normal !important;
+        overflow-wrap: break-word;
+        word-break: normal;
+    }
+    /* Illustrasjoner får full bredde på mobil. Artikkelkortet har
+       padding: var(--spacing-lg) under 700 px, altså 1,5rem på hver side — det er
+       rundt 48 px, eller 12 % av tegningen på en 400 px skjerm.
+       !important er nødvendig fordi bildene har width og margin satt inline. */
+    .theory-section-content img[src^="/images/"] {
+        width: calc(100% + 2 * var(--spacing-lg)) !important;
+        max-width: calc(100% + 2 * var(--spacing-lg)) !important;
+        margin: 0 calc(-1 * var(--spacing-lg)) 0.35rem !important;
+        border-radius: 0 !important;
+    }
+
     .responsive-theory-table thead {
         display: none;
     }
@@ -979,5 +1012,14 @@ body.dark-mode .theory-inline-code {
         letter-spacing: 0.04em;
         color: var(--color-text-light);
         margin-bottom: 0.15rem;
+    }
+}
+@media (max-width: 699px) {
+    .roundabout-demo-controls {
+        display: none !important;
+    }
+
+    .roundabout-demo-frame {
+        height: 640px !important;
     }
 }

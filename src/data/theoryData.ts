@@ -234,7 +234,7 @@ export const theoryTopics: TheoryTopic[] = [
             {
                 title: 'Faktorer som påvirker bremselengden',
                 type: 'info',
-                content: '• Fart — Dobbel fart gir 4 ganger lengre bremselengde\n• Veidekke — Is, snø, regn øker bremselengden betydelig\n• Dekkenes tilstand — Slitte dekk gir dårligere grep\n• Bremsenes tilstand — Slitte bremser reduserer bremsekraften\n• Bilens vekt — Tung bil trenger lengre avstand\n• Helning — Nedoverbakke øker bremselengden\n\nKlar til å teste kunnskapen? Ta [øvingsprøven om fartsregler](/quiz/fart_og_plassering) eller les om [vikeplikt](/laeringsressurser/vikeplikt).'
+                content: '• Fart — Dobbel fart gir 4 ganger lengre bremselengde\n• Veidekke — Is, snø, regn øker bremselengden betydelig\n• Dekkenes tilstand — Slitte dekk gir dårligere grep\n• Bremsenes tilstand — Slitte bremser reduserer bremsekraften\n• Bilens vekt — Tung bil trenger lengre avstand\n• Helning — Nedoverbakke øker bremselengden\n\nKlar til å teste kunnskapen? Ta [øvingsprøven om fartsregler](/quiz/fartsregler) eller les om [vikeplikt](/laeringsressurser/vikeplikt).'
             },
             {
                 title: 'Slik endres bremselengden med veiforhold',
@@ -516,7 +516,7 @@ export const theoryTopics: TheoryTopic[] = [
             {
                 title: 'Kjørefeltlinje og kantlinje',
                 type: 'table',
-                content: '<img src="/images/veimerking-kjorefeltlinje-kantlinje.svg" alt="En vei sett ovenfra med heltrukne hvite kantlinjer langs ytterkantene og en stiplet hvit kjørefeltlinje i midten. Kantlinjen er alltid heltrukken, kjørefeltlinjen har kort strek og langt opphold." style="width:100%;height:auto;border-radius:8px;margin:0 0 0.35rem;" /><p style="font-size:0.85rem;color:var(--color-text-light);text-align:center;margin:0 0 1.25rem;">Kjørefeltlinje 1000 er stiplet. Kantlinje 1012 er heltrukken. En stiplet linje er altså ikke en kantlinje.</p><p style="line-height:1.65;margin:0 0 1rem;"><strong>Kjørefeltlinje (1000)</strong> er den vanligste linjen på norske veier. Den skiller kjørefelt i samme kjøreretning, og kjennes igjen på kort strek og langt opphold. Du kan krysse den når det er trygt og lovlig — for eksempel ved feltskifte eller <a href="/laeringsressurser/forbikjoring" style="color:var(--color-primary);font-weight:600;text-decoration:none;">forbikjøring</a> der forholdene tillater det.</p><p style="line-height:1.65;margin:0;"><strong>Kantlinje (1012)</strong> markerer kjørebanens ytterkant. Den er alltid heltrukken, og den er ikke et forbud — den viser deg hvor kjørebanen slutter. Derfor er «stiplet kantlinje» en selvmotsigelse: er linjen stiplet, er det en kjørefeltlinje.</p>'
+                content: '<img src="/images/veimerking-kjorefeltlinje-kantlinje.svg" alt="En vei sett ovenfra med heltrukne hvite kantlinjer langs ytterkantene og en stiplet hvit kjørefeltlinje i midten. Kantlinjen er alltid heltrukken, kjørefeltlinjen har kort strek og langt opphold." style="width:auto;max-width:100%;height:auto;border-radius:8px;margin:0 auto 0.35rem;display:block;" /><p style="font-size:0.85rem;color:var(--color-text-light);text-align:center;margin:0 0 1.25rem;">Stiplet linje og kantlinje er to forskjellige oppmerkinger. Kantlinjen viser kjørebanens ytterkant og er alltid heltrukken, mens kjørefeltlinjen har kort strek og langt opphold. En stiplet linje er derfor aldri en kantlinje.</p><p style="line-height:1.65;margin:0 0 1rem;"><strong>Kjørefeltlinje (1000)</strong> er den vanligste linjen på norske veier. Den skiller kjørefelt i samme kjøreretning, og kjennes igjen på kort strek og langt opphold. Du kan krysse den når det er trygt og lovlig — for eksempel ved feltskifte eller <a href="/laeringsressurser/forbikjoring" style="color:var(--color-primary);font-weight:600;text-decoration:none;">forbikjøring</a> der forholdene tillater det.</p><p style="line-height:1.65;margin:0;"><strong>Kantlinje (1012)</strong> markerer kjørebanens ytterkant. Den er alltid heltrukken, og den er ikke et forbud — den viser deg hvor kjørebanen slutter. Derfor er «stiplet kantlinje» en selvmotsigelse: er linjen stiplet, er det en kjørefeltlinje.</p>'
             },
             {
                 title: 'Hvit sperrelinje',
@@ -526,7 +526,7 @@ export const theoryTopics: TheoryTopic[] = [
             {
                 title: 'Gul varsellinje',
                 type: 'table',
-                content: '<img src="/images/veimerking-varsellinje.svg" alt="Gul og hvit varsellinje sett ovenfra. Varsellinje har lang strek og kort opphold. Gul varsellinje betyr at sikten er for kort til vanlig forbikjøring, hvit varsellinje varsler fare ved å skifte kjørefelt." style="width:100%;height:auto;border-radius:8px;margin:0 0 0.35rem;" /><p style="font-size:0.85rem;color:var(--color-text-light);text-align:center;margin:0 0 1.25rem;">Varsellinje 1002: lang strek, kort opphold — motsatt av kjørefeltlinjen.</p><p style="color:var(--color-text-light); line-height:1.6; margin-bottom:1.5rem;">Gul varsellinje brukes mellom motgående trafikkretninger og varsler ofte at sikten eller forholdene gjør forbikjøring risikabelt, eller at du nærmer deg sperrelinje. Den betyr ikke automatisk forbud mot å krysse, men du må vurdere om det er trygt og lovlig.</p><p style="color:var(--color-text-light); line-height:1.6; margin-top:1.5rem;"><em>Vanlige misforståelser:</em> En gul varsellinje er ikke et absolutt kryssingsforbud på samme måte som en sperrelinje, men den varsler at forbikjøring er risikabelt og krever ekstra aktsomhet og sikkerhetsvurdering.</p>'
+                content: '<img src="/images/veimerking-varsellinje.svg" alt="Gul og hvit varsellinje sett ovenfra. Varsellinje har lang strek og kort opphold. Gul varsellinje betyr at sikten er for kort til vanlig forbikjøring, hvit varsellinje varsler fare ved å skifte kjørefelt." style="width:auto;max-width:100%;height:auto;border-radius:8px;margin:0 auto 0.35rem;display:block;" /><p style="font-size:0.85rem;color:var(--color-text-light);text-align:center;margin:0 0 1.25rem;">Varsellinje 1002: lang strek, kort opphold — motsatt av kjørefeltlinjen.</p><p style="color:var(--color-text-light); line-height:1.6; margin-bottom:1.5rem;">Gul varsellinje brukes mellom motgående trafikkretninger og varsler ofte at sikten eller forholdene gjør forbikjøring risikabelt, eller at du nærmer deg sperrelinje. Den betyr ikke automatisk forbud mot å krysse, men du må vurdere om det er trygt og lovlig.</p><p style="color:var(--color-text-light); line-height:1.6; margin-top:1.5rem;"><em>Vanlige misforståelser:</em> En gul varsellinje er ikke et absolutt kryssingsforbud på samme måte som en sperrelinje, men den varsler at forbikjøring er risikabelt og krever ekstra aktsomhet og sikkerhetsvurdering.</p>'
             },
             {
                 title: 'Hvit varsellinje',
@@ -732,6 +732,15 @@ export const theoryTopics: TheoryTopic[] = [
                 title: 'Rundkjøring med to felt',
                 type: 'text',
                 content: 'I rundkjøringer med to felt bør du velge riktig felt før du kjører inn. Som tommelfingerregel gjelder dette:\n\n- Høyre felt: når du skal til høyre eller rett frem\n- Venstre felt: når du skal til venstre eller snu\n- Følg alltid skilt, piler og vegoppmerking hvis de viser noe annet\n\nPlassering handler ikke bare om regler. Det handler også om å gjøre det lett for andre å forstå hva du skal.\n\n![Rundkjøring med to felt som viser plassering, feltvalg og kjøremønster](/Rundkjoring_med_kjoretoybaner_to_felt.png)'
+            },
+            {
+                // LOKAL FORHÅNDSVISNING 28.07.2026 — iframe mot public/rundkjoring-demo.html,
+                // som er gitignorert. Skal denne seksjonen committes, må ignoreringen fjernes
+                // samtidig, ellers viser produksjon en tom ramme.
+                title: 'Prøv selv: interaktiv rundkjøring',
+                type: 'component',
+                component: 'RundkjoringDemo',
+                content: 'Velg hvor du skal ut, og se hvilket felt du bør ligge i, når du har vikeplikt og når du skal blinke.'
             },
             {
                 title: 'Slik bruker du blinklys i rundkjøring',
@@ -3748,7 +3757,7 @@ export const theoryArticles: TheoryTopic[] = [
         shortDescription: 'Hvor mange spørsmål, hvor mange feil kan du ha, hva koster den og hvor lenge er den gyldig? Her er alle fakta om teoriprøven for klasse B, basert på Statens vegvesen.',
         color: 'var(--apple-blue)',
         seoTitle: 'Teoriprøven for bil (klasse B) 2026 – spørsmål, tid, pris og krav',
-        seoDescription: '45 spørsmål, maks 7 feil, 90 minutter og 480 kr per forsøk. Alt om teoriprøven for bil: krav, booking, språk, gyldighet – og gratis øvingsprøve.',
+        seoDescription: '45 spørsmål, maks 7 feil og 90 minutter. Se pris, krav og hvordan du søker om førerkort og bestiller teoriprøven hos Statens vegvesen.',
         sections: [
             {
                 title: 'Kort forklart: Teoriprøven i tall',
@@ -3778,7 +3787,12 @@ export const theoryArticles: TheoryTopic[] = [
             {
                 title: 'Krav: Når kan du ta teoriprøven?',
                 type: 'text',
-                content: 'For klasse B kan du ta teoriprøven fra du er 17,5 år – altså et halvt år før du kan kjøre opp.\n\nFør du møter opp må du ha sendt inn søknad om førerkort på vegvesen.no og fått den godkjent. På trafikkstasjonen må du vise gyldig legitimasjon, ta førerkortfoto og betale gebyret. Du trenger ikke bestille time til teoriprøven på alle trafikkstasjoner, men sjekk din lokale stasjon på vegvesen.no – og husk at drop-in kan ha ventetid.\n\nGår du på videregående? Da tar du sannsynligvis prøven i skoletiden. Siden 1. august 2025 teller ikke teoriprøven med i fraværsgrensen – se [reglene for gyldig fravær](/laeringsressurser/teoriprove-gyldig-fravaer).'
+                content: 'For klasse B kan du ta teoriprøven fra du er 17,5 år – altså et halvt år før du kan kjøre opp.\n\nFør du kan bestille time, må du ha søkt om førerkort på Din side. Når søknaden er registrert og godkjent, kan du bestille teoriprøven hos Statens vegvesen. Du må ha bestilt time før du møter på trafikkstasjonen.\n\nGår du på videregående? Da tar du sannsynligvis prøven i skoletiden. Siden 1. august 2025 teller ikke teoriprøven med i fraværsgrensen – se [reglene for gyldig fravær](/laeringsressurser/teoriprove-gyldig-fravaer).'
+            },
+            {
+                title: 'Slik bestiller du teoriprøven for bil',
+                type: 'info',
+                content: '1. [Søk om førerkort på Din side](https://www.vegvesen.no/forerkort/ta-forerkort/sok-om-forerkort/).\n2. Vent til du får beskjed om at søknaden er registrert og godkjent.\n3. [Bestill time til teoriprøven hos Statens vegvesen](https://www.vegvesen.no/forerkort/ta-forerkort/teoriprove/bestill-time-til-teoriprove/) og velg trafikkstasjon og ledig tidspunkt.\n4. På prøvedagen viser du gyldig legitimasjon, tar førerkortfoto og betaler for bildet og teoriprøven på trafikkstasjonen.\n\nHar du satt en dato? [Ta en full øvingsprøve med 45 spørsmål](/quiz?mode=eksamen) og se hvilke temaer du bør øve mer på før prøvedagen.'
             },
             {
                 title: 'Hvilke språk kan du ta prøven på?',
@@ -3804,7 +3818,7 @@ export const theoryArticles: TheoryTopic[] = [
         sources: {
             title: 'Kilder',
             type: 'text',
-            content: '- **Statens vegvesen:** [Gjennomføring av teoriprøven](https://www.vegvesen.no/forerkort/ta-forerkort/teoriprove/gjennomforing-av-teoriproven/) (antall spørsmål, tid, beståttkrav, språk, hjelpemidler)\n- **Statens vegvesen:** [Gebyrer for førerprøver](https://www.vegvesen.no/forerkort/ta-forerkort/gebyrer-for-foreproven/)'
+            content: '- **Statens vegvesen:** [Bestill time til teoriprøven](https://www.vegvesen.no/forerkort/ta-forerkort/teoriprove/bestill-time-til-teoriprove/) (søknad, timebestilling, legitimasjon, foto og betaling)\n- **Statens vegvesen:** [Søk om førerkort](https://www.vegvesen.no/forerkort/ta-forerkort/sok-om-forerkort/)\n- **Statens vegvesen:** [Gjennomføring av teoriprøven](https://www.vegvesen.no/forerkort/ta-forerkort/teoriprove/gjennomforing-av-teoriproven/) (antall spørsmål, tid, beståttkrav, språk, hjelpemidler)\n- **Statens vegvesen:** [Gebyrer for førerprøver](https://www.vegvesen.no/forerkort/ta-forerkort/gebyrer-for-foreproven/)'
         },
         faq: [
             {
@@ -3838,6 +3852,22 @@ export const theoryArticles: TheoryTopic[] = [
             {
                 question: 'Kan jeg øve gratis på teoriprøven?',
                 answer: 'Ja. På Teori-test.no kan du ta gratis øvingsprøver med 45 spørsmål, fasit, forklaringer og analyse av hvilke temaer du bør øve mer på – uten registrering.'
+            },
+            {
+                question: 'Hvordan bestiller jeg teoriprøven for bil?',
+                answer: 'Søk først om førerkort på Din side. Når søknaden er registrert og godkjent, bestiller du time til teoriprøven hos Statens vegvesen og velger trafikkstasjon og et ledig tidspunkt.'
+            },
+            {
+                question: 'Må jeg søke om førerkort før jeg bestiller teoriprøven?',
+                answer: 'Ja. Du må søke om førerkort først. Når søknaden er registrert og godkjent, kan du bestille time til teoriprøven.'
+            },
+            {
+                question: 'Kan jeg møte opp til teoriprøven uten time?',
+                answer: 'Nei. Du må bestille time før du møter på trafikkstasjonen for å ta teoriprøven.'
+            },
+            {
+                question: 'Hva må jeg ha med på teoriprøven?',
+                answer: 'Du må vise gyldig legitimasjon på trafikkstasjonen. Der tar du også førerkortfoto og betaler for bildet og teoriprøven.'
             }
         ],
         miniQuiz: [

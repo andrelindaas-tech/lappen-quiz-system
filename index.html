@@ -8,14 +8,18 @@
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="apple-touch-icon" href="/favicon.svg" />
 
+  <!-- Shared brand typography. The same file is reused inside standalone demos. -->
+  <link rel="preload" href="/fonts/ibm-plex-sans-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="/fonts/ibm-plex-sans.css" />
+
   <!-- Preconnect to external services (reduces LCP) -->
   <link rel="preconnect" href="https://tdclflxovwhqutaikvuj.supabase.co" crossorigin />
   <link rel="dns-prefetch" href="https://tdclflxovwhqutaikvuj.supabase.co" />
 
 
   <!-- Viewport & Mobile -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#1a1d2e" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#0f172a" />
 
   <!-- Primary SEO Meta Tags -->
   <title>Gratis teoriprøve klasse B 2026 – 45 spørsmål og fasit | Teori-test.no</title>
@@ -79,7 +83,16 @@
     </script>
 </head>
 
-<body>
+<body class="dark-mode">
+  <script>
+    try {
+      if (localStorage.getItem('darkMode') === 'false') {
+        document.body.classList.remove('dark-mode');
+      }
+    } catch {
+      // Dark mode remains the safe default when storage is unavailable.
+    }
+  </script>
   <div id="root"></div>
   <script type="module" src="/src/main.tsx"></script>
 </body>

@@ -297,7 +297,7 @@ export default function TheoryPage() {
                             fontSize: '0.9rem', fontWeight: 600,
                         }}>
                             <span style={{
-                                fontSize: '0.7rem', fontWeight: 800, letterSpacing: '0.05em',
+                                fontSize: '0.7rem', fontWeight: 700, letterSpacing: '0.05em',
                                 backgroundColor: 'var(--color-primary)', color: '#fff',
                                 padding: '2px 8px', borderRadius: '100px',
                             }}>NYTT</span>
