@@ -32,7 +32,7 @@ const faqItems: FaqItem[] = [
     },
     {
         question: 'Er dette en teoriprøve for bil klasse B?',
-        answer: 'Ja. Øvingen er laget for deg som skal ta teoriprøven for bil/personbil klasse B.',
+        answer: 'Ja. Øvingen er laget for deg som skal ta teoriprøven for personbil i klasse B.',
     },
     {
         question: 'Er dette den ekte teoriprøven?',
@@ -60,7 +60,7 @@ const faqItems: FaqItem[] = [
     },
     {
         question: 'Hvilke temaer kan jeg øve på?',
-        answer: 'Spørsmålene dekker de viktigste kategoriene i pensum for teoriprøven klasse B. Du kan øve på blant annet vikeplikt, trafikkskilt, veimerking, bremselengde, forbikjøring, promille, glatt føre, kjøretøy, sikkerhetskontroll og trafikkregler.',
+        answer: 'Spørsmålene dekker de viktigste kategoriene i pensum for teoriprøven for klasse B. Du kan øve på blant annet vikeplikt, trafikkskilt, veimerking, bremselengde, forbikjøring, promille, glatt føre, kjøretøy, sikkerhetskontroll og trafikkregler.',
     },
     {
         question: 'Finnes det en gratis teoriprøve-app jeg kan bruke?',
@@ -148,16 +148,16 @@ export default function StartScreen() {
         <div className="tt-v2-start">
             <Helmet>
                 <title>Gratis teoriprøve klasse B 2026 – 45 spørsmål og fasit | Teori-test.no</title>
-                <meta name="description" content="Øv gratis til teoriprøven for klasse B. Ta full prøve med 45 spørsmål, vikeplikt-test, skilt-test og interaktive guider. Ingen registrering." />
+                <meta name="description" content="Øv gratis til teoriprøven for klasse B. Ta full prøve med 45 spørsmål, vikepliktstest, skilttest og interaktive guider. Ingen registrering." />
                 <meta property="og:type" content="website" />
                 <meta property="og:url" content="https://teori-test.no/" />
                 <meta property="og:title" content="Gratis teoriprøve klasse B 2026 – 45 spørsmål og fasit | Teori-test.no" />
-                <meta property="og:description" content="Øv gratis til teoriprøven for klasse B. Ta full prøve med 45 spørsmål, vikeplikt-test, skilt-test og interaktive guider. Ingen registrering." />
+                <meta property="og:description" content="Øv gratis til teoriprøven for klasse B. Ta full prøve med 45 spørsmål, vikepliktstest, skilttest og interaktive guider. Ingen registrering." />
                 <meta property="og:image" content="https://teori-test.no/og-image.png" />
                 <meta property="og:image:alt" content="Teori-test.no – gratis teoriprøve for klasse B" />
                 <meta name="twitter:card" content="summary_large_image" />
                 <meta name="twitter:title" content="Gratis teoriprøve klasse B 2026 – 45 spørsmål og fasit | Teori-test.no" />
-                <meta name="twitter:description" content="Øv gratis til teoriprøven for klasse B. Ta full prøve med 45 spørsmål, vikeplikt-test, skilt-test og interaktive guider. Ingen registrering." />
+                <meta name="twitter:description" content="Øv gratis til teoriprøven for klasse B. Ta full prøve med 45 spørsmål, vikepliktstest, skilttest og interaktive guider. Ingen registrering." />
                 <meta name="twitter:image" content="https://teori-test.no/og-image.png" />
                 <meta name="twitter:image:alt" content="Teori-test.no – gratis teoriprøve for klasse B" />
                 <script type="application/ld+json">{JSON.stringify(faqJsonLd)}</script>
@@ -168,7 +168,7 @@ export default function StartScreen() {
                     <p className="tt-v2-eyebrow">Klasse B · Førerkort</p>
                     <h1>Norges enkleste måte å øve til teoriprøven – helt gratis.</h1>
                     <p className="tt-v2-lead">
-                        Teori-test.no er laget for deg som snart skal ta teoriprøven for klasse B. Her finner du kvalitetssikrede teorioppgaver som dekker hele pensum – fra fartsgrenser og vikeplikt til vegoppmerking og trafikkskilt. I tillegg til øvingsprøver finner du interaktive læringsartikler med visuelle guider og simulatorer. Du trenger ikke å lage bruker, betale, eller laste ned noe.
+                        Teori-test.no er laget for deg som snart skal ta teoriprøven for klasse B. Her finner du kvalitetssikrede teorioppgaver som dekker hele pensum – fra fartsgrenser og vikeplikt til vegoppmerking og trafikkskilt. I tillegg til øvingsprøver finner du interaktive læringsartikler med visuelle guider og simulatorer. Du trenger ikke å opprette en bruker, betale eller laste ned noe.
                     </p>
                     <div className="tt-v2-assurances" aria-label="Kort fakta">
                         <span>Ingen registrering</span>
@@ -261,7 +261,7 @@ export default function StartScreen() {
             <section className="tt-v2-trials tt-v2-container" id="prover">
                 <div className="tt-v2-section-heading">
                     <div><p className="tt-v2-eyebrow">Øvingsprøve</p><h2>Velg prøvetype</h2></div>
-                    <p>Velg mellom en rask øvingstest eller fullverdig eksamensprøve</p>
+                    <p>Velg mellom en rask øvingstest og en fullverdig eksamensprøve.</p>
                 </div>
 
                 <div className="tt-v2-trial-grid">
@@ -366,10 +366,10 @@ export default function StartScreen() {
                 <div className="tt-v2-container">
                     <div className="tt-v2-how-heading"><p className="tt-v2-eyebrow">Fra øving til oversikt</p><h2>Slik fungerer det</h2></div>
                     <ol className="tt-v2-how-track">
-                        <HowStep number="01" title="Velg prøve eller tema">Start med full prøve, tematest eller en guide.</HowStep>
+                        <HowStep number="01" title="Velg prøve eller tema">Start med en full prøve, en tematest eller en guide.</HowStep>
                         <HowStep number="02" title="Svar på spørsmål">Øv i samme format som teoriprøven hos Statens vegvesen.</HowStep>
                         <HowStep number="03" title="Se forklaring">Lær hvorfor svaret er riktig eller feil – ikke bare hva som var riktig.</HowStep>
-                        <HowStep number="04" title="Få oversikt over svake områder">Etter full prøve ser du hvilke temaer du bør øve mer på, og kan trene videre i Fokusmodus.</HowStep>
+                        <HowStep number="04" title="Få oversikt over svake områder">Etter full prøve ser du hvilke temaer du bør øve mer på, og kan trene videre i fokusmodus.</HowStep>
                     </ol>
                 </div>
             </section>
@@ -432,7 +432,7 @@ export default function StartScreen() {
                 </div>
 
                 <aside className="tt-v2-exam-facts" aria-labelledby="exam-facts-title">
-                    <h3 id="exam-facts-title">Teoriprøven klasse B: kort fakta</h3>
+                    <h3 id="exam-facts-title">Teoriprøven for klasse B: kort fakta</h3>
                     <ul>
                         <li><strong>45</strong><span>spørsmål på teoriprøven for klasse B</span></li>
                         <li><strong>90</strong><span>minutter ordinær tid</span></li>

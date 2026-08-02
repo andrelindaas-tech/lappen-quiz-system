@@ -277,7 +277,7 @@ export default function App() {
                             <span className="footer-separator" aria-hidden="true">•</span>
                             <Link to="/sporsmal" className="footer-link">Teorispørsmål</Link>
                             <span className="footer-separator" aria-hidden="true">•</span>
-                            <Link to="/laeringsressurser/personvern" className="footer-link">Personvern &amp; Cookies</Link>
+                            <Link to="/laeringsressurser/personvern" className="footer-link">Personvern og informasjonskapsler</Link>
                         </nav>
 
                         {/* Copyright & Disclaimer */}
