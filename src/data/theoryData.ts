@@ -1256,9 +1256,9 @@ export const theoryTopics: TheoryTopic[] = [
                     },
                     {
                         name: 'Serviceskilt',
-                        description: '600-serien\nViser service og tilbud langs veien, som bensinstasjon, rasteplass eller førstehjelp.\nEksempler: Førstehjelp (602), Bensinstasjon (605), Rasteplass (613)',
-                        imageUrl: '/signs/serviceskilt/skilt-605-bensinstasjon.jpg',
-                        alt: 'Serviceskilt med symbol av en bensinpumpe, skilt 605 bensinstasjon'
+                        description: '600-serien\nViser service og tilbud langs veien, som bensinstasjon, rasteplass eller førstehjelp.\nEksempler: Førstehjelp (602), Drivstoff (610), Rasteplass (613)',
+                        imageUrl: '/signs/serviceskilt/skilt-610-drivstoff.jpg',
+                        alt: 'Serviceskilt med symbol av en bensinpumpe, skilt 610 drivstoff'
                     },
                     {
                         name: 'Vegvisningsskilt',
@@ -1369,10 +1369,10 @@ export const theoryTopics: TheoryTopic[] = [
                 content: 'Serviceskilt viser tilbud langs veien, som bensinstasjon, rasteplass eller førstehjelp. Vegvisningsskilt hjelper deg å finne retning, sted og veitype. Se oversikten over [vegvisningsskilt](/trafikkskilt/vegvisningsskilt) og [serviceskilt](/trafikkskilt/serviceskilt) i guiden.\n\nDisse er vanligvis ikke de vanskeligste teoriskiltene, men du bør kjenne hovedprinsippet.',
                 signs: [
                     {
-                        name: 'Serviceskilt 605 Bensinstasjon',
+                        name: 'Serviceskilt 610 Drivstoff',
                         description: 'Viser at det finnes bensinstasjon i nærheten.',
-                        imageUrl: '/signs/serviceskilt/skilt-605-bensinstasjon.jpg',
-                        alt: 'Serviceskilt med tegning av en bensinpumpe, skilt 605 bensinstasjon'
+                        imageUrl: '/signs/serviceskilt/skilt-610-drivstoff.jpg',
+                        alt: 'Serviceskilt med tegning av en bensinpumpe, skilt 610 drivstoff'
                     },
                     {
                         name: 'Vegvisningsskilt 713 Vegviser',
@@ -6563,7 +6563,7 @@ I bil uten bilbelte er reglene strengere: Barn under 3 år skal ikke transporter
             {
                 title: 'Klar for å teste deg?',
                 type: 'tip',
-                content: '[Ta en gratis teoriprøve](/prove)'
+                content: '[Ta en gratis teoriprøve](/quiz/?mode=eksamen)'
             },
             {
                 title: 'Kilder og research',

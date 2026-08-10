@@ -1,7 +1,8 @@
 // Action Layer: Quiz Container (Main Orchestrator)
 import { useState, useEffect } from 'react'
 import NotFound from './NotFound'
-import { useParams, useSearchParams, Link } from 'react-router-dom'
+import { useParams, useSearchParams } from 'react-router-dom'
+import Link from './InternalLink'
 import { Helmet } from 'react-helmet-async'
 import { fetchRandomQuestions, fetchQuestionsByCategory, fetchQuestionsByIds } from '../services/questionService'
 import { QuizEngine } from '../logic/quizEngine'
@@ -96,12 +97,12 @@ function QuizPageHeader({ seo, showIntro = false }: { seo: QuizSeoMetadata; show
 const QUIZ_INFO: Record<string, { tittel: string; tekst: string; lenker: { to: string; navn: string }[] }> = {
     skilt: {
         tittel: 'Om skilt-testen',
-        tekst: 'Testen henter ti tilfeldige spørsmål om norske trafikkskilt — fareskilt, forbudsskilt, påbudsskilt og opplysningsskilt. Du får forklaring på hvert svar, og du kan ta testen så mange ganger du vil. Vil du lese deg opp først, finner du alle 214 skiltene med bilde og forklaring i skiltguiden.',
+        tekst: 'Testen henter ti tilfeldige spørsmål om norske trafikkskilt — fareskilt, forbudsskilt, påbudsskilt og opplysningsskilt. Du får forklaring på hvert svar, og du kan ta testen så mange ganger du vil. Vil du lese deg opp først, finner du alle 250 skiltene med bilde og forklaring i skiltguiden.',
         // Maks to lenker per quiz. Skiltguiden er hovedmålet; nummeroppslaget dekker
         // det andre behovet etter en test — «jeg husker skiltet, ikke navnet».
         // Farge- og nummersidene lenkes fra skiltguiden og fra hverandre.
         lenker: [
-            { to: '/trafikkskilt', navn: 'Skiltguiden – alle 214 skilt' },
+            { to: '/trafikkskilt', navn: 'Skiltguiden – alle 250 skilt' },
             { to: '/trafikkskilt/skiltnummer', navn: 'Slå opp skilt på nummer' },
         ],
     },

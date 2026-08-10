@@ -49,7 +49,7 @@ Kategori-grid:
 - `forbudsskilt/skilt-302-innkjoring-forbudt.jpg`
 - `pabudsskilt/skilt-406-pabudt-rundkjoring.jpg`
 - `opplysningsskilt/skilt-516-gangfelt.jpg`
-- `serviceskilt/skilt-605-bensinstasjon.jpg`
+- `serviceskilt/skilt-610-drivstoff.jpg`
 - `vegvisningsskilt/skilt-713-vegviser.jpg`
 - `underskilt/skilt-802-avstand.jpg`
 - `markeringsskilt/skilt-904-retningsmarkering.jpg`

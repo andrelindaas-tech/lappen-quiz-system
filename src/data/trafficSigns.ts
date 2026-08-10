@@ -636,6 +636,487 @@ export const trafficSigns: TrafficSign[] = [
     sources: [{ name: 'Statens vegvesen', url: 'https://www.vegvesen.no' }],
     aliases: ['ulykke', 'kollisjon', 'smell', 'ulykkessted']
   },
+  {
+    id: '114.1',
+    code: '114.1',
+    name: 'Rasfare',
+    displayName: 'Rasfare',
+    slug: 'rasfare',
+    category: 'fareskilt',
+    imagePath: '/signs/fareskilt/skilt-114-1-rasfare.jpg',
+    shortExplanation: 'Varsler om fare for ras og om at stein, jord eller snø kan ligge i kjørebanen.',
+    longExplanation: 'Skiltet brukes på strekninger der stein, jord eller snø kan rase ned fra siden som er vist i symbolet. Faren gjelder både selve raset og masser som allerede ligger i vegen. Skilt 114.1 viser rasfare fra høyre side, mens speilvendt variant brukes når faren kommer fra venstre.',
+    theoryTrap: 'Skiltet varsler ikke bare at et ras kan starte mens du passerer. Det varsler også om steiner eller andre rasmasser som kan ligge i kjørebanen etter et tidligere ras.',
+    whatToDo: [
+      'Senk farten slik at du kan stanse innenfor den delen av vegen du har oversikt over.',
+      'Se etter stein, jord eller snø i kjørebanen og unngå unødvendig stans i rasutsatte partier.',
+      'Vær ekstra oppmerksom etter kraftig regn, snøsmelting og store temperatursvingninger.'
+    ],
+    confusedWith: ['116', '156'],
+    sources: [
+      { name: 'Statens vegvesen – offisielle skiltfiler', url: 'https://www.vegvesen.no/fag/veg-og-gate/trafikkskilt-og-vegoppmerking/filer-og-fargekoder-for-trafikkskilt/' },
+      { name: 'Lovdata – skiltforskriften', url: 'https://lovdata.no/forskrift/2005-10-07-1219' }
+    ],
+    aliases: ['ras', 'steinras', 'jordras', 'snoras', 'rasfare fra høyre'],
+    visualDescription: 'Trekantet fareskilt med rød kant og svart fjellside til høyre, med steiner som faller ned i vegen.'
+  },
+  {
+    id: '117',
+    code: '117',
+    name: 'Farlig vegskulder',
+    displayName: 'Farlig vegskulder',
+    slug: 'farlig-vegskulder',
+    category: 'fareskilt',
+    imagePath: '/signs/fareskilt/skilt-117-farlig-vegskulder.jpg',
+    shortExplanation: 'Varsler om en vegskulder som er svak, bratt, ujevn eller på annen måte farlig å kjøre ut på.',
+    longExplanation: 'Skiltet brukes der overgangen mellom kjørebanen og vegskulderen kan være farlig. Skulderen kan være lavere enn asfalten, ha løst underlag eller ikke tåle vekten av et kjøretøy. Dersom hjulene kommer utenfor asfaltkanten, kan bilen trekke kraftig til siden eller bli vanskelig å få kontroll på.',
+    theoryTrap: 'En vanlig feil er å rykke bilen brått tilbake på asfalten hvis et hjul kommer ut på skulderen. Det kan gi skrens eller føre bilen over i motsatt kjørefelt.',
+    whatToDo: [
+      'Hold god avstand til vegkanten og reduser farten før smale partier eller møtende trafikk.',
+      'Kommer et hjul utenfor asfaltkanten, slipp gassen og stabiliser bilen før du styrer rolig tilbake.',
+      'Unngå å stanse på skulderen med mindre det er nødvendig.'
+    ],
+    confusedWith: ['112', '116'],
+    sources: [
+      { name: 'Statens vegvesen – offisielle skiltfiler', url: 'https://www.vegvesen.no/fag/veg-og-gate/trafikkskilt-og-vegoppmerking/filer-og-fargekoder-for-trafikkskilt/' },
+      { name: 'Lovdata – skiltforskriften', url: 'https://lovdata.no/forskrift/2005-10-07-1219' }
+    ],
+    aliases: ['vegskulder', 'veiskulder', 'farlig veikant', 'lav asfaltkant'],
+    visualDescription: 'Trekantet fareskilt med rød kant og svart symbol av en bil som heller ned mot en lav eller løs vegskulder.'
+  },
+  {
+    id: '120',
+    code: '120',
+    name: 'Kai, strand eller ferjeleie',
+    displayName: 'Kai, strand eller ferjeleie',
+    slug: 'kai-strand-eller-ferjeleie',
+    category: 'fareskilt',
+    imagePath: '/signs/fareskilt/skilt-120-kai-strand-ferjeleie.jpg',
+    shortExplanation: 'Varsler om at vegen leder mot vann ved en kai, strand eller et ferjeleie.',
+    longExplanation: 'Skiltet settes opp der vegen ender eller går helt fram til vannet, for eksempel ved en ferjekai, rampe eller strand. Det er særlig viktig i mørke, tåke og på glatt føre, fordi det kan være vanskelig å se hvor kjørearealet slutter.',
+    theoryTrap: 'Skiltet betyr ikke at ferjen nødvendigvis ligger til kai. Du må kunne stanse før bom, kø, kaikant eller vann selv om vegen ser åpen ut.',
+    whatToDo: [
+      'Senk farten tidlig og se etter bom, lyssignal, kø og anvisninger fra ferjepersonell.',
+      'Hold ekstra avstand på vått eller glatt dekke, der bremselengden kan bli lang.',
+      'Stans på anvist plass og ikke kjør ut på ferjelemmen før du får klarsignal.'
+    ],
+    confusedWith: ['156'],
+    sources: [
+      { name: 'Statens vegvesen – offisielle skiltfiler', url: 'https://www.vegvesen.no/fag/veg-og-gate/trafikkskilt-og-vegoppmerking/filer-og-fargekoder-for-trafikkskilt/' },
+      { name: 'Lovdata – skiltforskriften', url: 'https://lovdata.no/forskrift/2005-10-07-1219' }
+    ],
+    aliases: ['kai', 'strand', 'ferjeleie', 'fergekai', 'ferjekai', 'vann'],
+    visualDescription: 'Trekantet fareskilt med rød kant og svart bil som kjører ned mot bølger eller vann.'
+  },
+  {
+    id: '136.1',
+    code: '136.1',
+    name: 'Avstandsskilt til planovergang – én skråstrek',
+    displayName: 'Avstandsskilt til planovergang – én skråstrek',
+    slug: 'avstandsskilt-planovergang-en-skrastrek',
+    category: 'fareskilt',
+    imagePath: '/signs/fareskilt/skilt-136-1-avstandsskilt-planovergang.jpg',
+    shortExplanation: 'Markerer det siste av tre avstandsskilt før en planovergang og viser at du nærmer deg jernbanesporet.',
+    longExplanation: 'Avstandsskiltene 136.3, 136.2 og 136.1 plasseres i denne rekkefølgen på innkjøringen mot en planovergang. Antallet røde skråstreker blir redusert etter hvert som avstanden til planovergangen blir kortere. Skiltet med én skråstrek er det siste i serien.',
+    theoryTrap: 'Én skråstrek betyr ikke at faren er lengst unna. Det er motsatt: færre streker betyr at du er nærmere planovergangen.',
+    whatToDo: [
+      'Reduser farten og vær forberedt på å stanse før planovergangen.',
+      'Se etter lyssignal, bom, stoppskilt og tog fra begge retninger.',
+      'Kjør aldri inn på sporet før du er sikker på at du kan passere helt over.'
+    ],
+    confusedWith: ['136.2', '136.3', '134', '135'],
+    sources: [
+      { name: 'Statens vegvesen – offisielle skiltfiler', url: 'https://www.vegvesen.no/fag/veg-og-gate/trafikkskilt-og-vegoppmerking/filer-og-fargekoder-for-trafikkskilt/' },
+      { name: 'Lovdata – skiltforskriften', url: 'https://lovdata.no/forskrift/2005-10-07-1219' }
+    ],
+    aliases: ['avstandsskilt', 'planovergang', 'jernbane', 'en stripe', 'én strek'],
+    visualDescription: 'Smalt, loddrett hvitt skilt med én rød skråstrek.'
+  },
+  {
+    id: '136.2',
+    code: '136.2',
+    name: 'Avstandsskilt til planovergang – to skråstreker',
+    displayName: 'Avstandsskilt til planovergang – to skråstreker',
+    slug: 'avstandsskilt-planovergang-to-skrastreker',
+    category: 'fareskilt',
+    imagePath: '/signs/fareskilt/skilt-136-2-avstandsskilt-planovergang.jpg',
+    shortExplanation: 'Er det midterste av tre avstandsskilt før en planovergang og viser at avstanden til sporet blir kortere.',
+    longExplanation: 'Skilt 136.2 inngår i en serie med tre avstandsmarkører før en planovergang. Først møter du skiltet med tre skråstreker, deretter dette med to og til slutt skiltet med én. Serien hjelper deg å oppfatte hvor raskt du nærmer deg jernbanesporet.',
+    theoryTrap: 'Rekkefølgen er 3–2–1 mot planovergangen. To streker er altså mellomskiltet, ikke det første eller siste.',
+    whatToDo: [
+      'Fortsett å redusere farten og flytt oppmerksomheten mot planovergangen.',
+      'Kontroller trafikken bak før du eventuelt bremser kraftigere.',
+      'Vær forberedt på kø eller kjøretøy som allerede har stanset foran sporet.'
+    ],
+    confusedWith: ['136.1', '136.3', '134', '135'],
+    sources: [
+      { name: 'Statens vegvesen – offisielle skiltfiler', url: 'https://www.vegvesen.no/fag/veg-og-gate/trafikkskilt-og-vegoppmerking/filer-og-fargekoder-for-trafikkskilt/' },
+      { name: 'Lovdata – skiltforskriften', url: 'https://lovdata.no/forskrift/2005-10-07-1219' }
+    ],
+    aliases: ['avstandsskilt', 'planovergang', 'jernbane', 'to striper', 'to streker'],
+    visualDescription: 'Smalt, loddrett hvitt skilt med to parallelle røde skråstreker.'
+  },
+  {
+    id: '136.3',
+    code: '136.3',
+    name: 'Avstandsskilt til planovergang – tre skråstreker',
+    displayName: 'Avstandsskilt til planovergang – tre skråstreker',
+    slug: 'avstandsskilt-planovergang-tre-skrastreker',
+    category: 'fareskilt',
+    imagePath: '/signs/fareskilt/skilt-136-3-avstandsskilt-planovergang.jpg',
+    shortExplanation: 'Er det første av tre avstandsskilt og varsler at du nærmer deg en planovergang.',
+    longExplanation: 'Skilt 136.3 starter serien av avstandsmarkører fram mot en planovergang. Etter dette kommer vanligvis skilt 136.2 med to skråstreker og 136.1 med én. Skiltene gjør planovergangen lettere å oppdage og viser den trinnvise tilnærmingen til sporet.',
+    theoryTrap: 'Tre skråstreker er det første skiltet i serien og dermed det som står lengst fra planovergangen. Mange husker rekkefølgen baklengs.',
+    whatToDo: [
+      'Begynn å tilpasse farten med en gang og skaff deg oversikt over området foran.',
+      'Se etter videre skilting, lyssignal og bom ved planovergangen.',
+      'Unngå forbikjøring og andre handlinger som tar oppmerksomheten bort fra sporet.'
+    ],
+    confusedWith: ['136.1', '136.2', '134', '135'],
+    sources: [
+      { name: 'Statens vegvesen – offisielle skiltfiler', url: 'https://www.vegvesen.no/fag/veg-og-gate/trafikkskilt-og-vegoppmerking/filer-og-fargekoder-for-trafikkskilt/' },
+      { name: 'Lovdata – skiltforskriften', url: 'https://lovdata.no/forskrift/2005-10-07-1219' }
+    ],
+    aliases: ['avstandsskilt', 'planovergang', 'jernbane', 'tre striper', 'tre streker'],
+    visualDescription: 'Smalt, loddrett hvitt skilt med tre parallelle røde skråstreker.'
+  },
+  {
+    id: '139',
+    code: '139',
+    name: 'Sporvogn',
+    displayName: 'Sporvogn',
+    slug: 'sporvogn',
+    category: 'fareskilt',
+    imagePath: '/signs/fareskilt/skilt-139-sporvogn.jpg',
+    shortExplanation: 'Varsler om sted eller strekning der sporvogn krysser eller kjører i vegen.',
+    longExplanation: 'Skiltet brukes der sporvognstrafikk kan komme overraskende på andre trafikanter, for eksempel når skinnene krysser kjørebanen eller går inn i et felles trafikkareal. En sporvogn er tung, har lang bremselengde og kan ikke svinge unna.',
+    theoryTrap: 'Sporvognen følger skinnene og kan ikke gjøre en unnamanøver. Selv om vikeplikten avhenger av situasjonen og øvrig regulering, må du aldri kjøre slik at sporvognen tvinges til en bråstans.',
+    whatToDo: [
+      'Senk farten, se i begge retninger langs skinnene og følg lyssignal og annen skilting.',
+      'Ikke stans slik at bilen blir stående på eller for nær sporet.',
+      'Vær oppmerksom på passasjerer som går til og fra holdeplass.'
+    ],
+    confusedWith: ['132', '134', '135'],
+    sources: [
+      { name: 'Statens vegvesen – offisielle skiltfiler', url: 'https://www.vegvesen.no/fag/veg-og-gate/trafikkskilt-og-vegoppmerking/filer-og-fargekoder-for-trafikkskilt/' },
+      { name: 'Lovdata – skiltforskriften', url: 'https://lovdata.no/forskrift/2005-10-07-1219' }
+    ],
+    aliases: ['trikk', 'sporvogn', 'trikkespor', 'skinner'],
+    visualDescription: 'Trekantet fareskilt med rød kant og svart frontmotiv av en sporvogn eller trikk.'
+  },
+  {
+    id: '152',
+    code: '152',
+    name: 'Sidevind',
+    displayName: 'Sidevind',
+    slug: 'sidevind',
+    category: 'fareskilt',
+    imagePath: '/signs/fareskilt/skilt-152-sidevind.jpg',
+    shortExplanation: 'Varsler om et sted eller en strekning der sterk sidevind ofte forekommer.',
+    longExplanation: 'Skiltet står gjerne på broer, fjelloverganger, åpne sletter og ved utløpet av skjermede partier. Vindkast kan flytte kjøretøyet sideveis, særlig når du kommer ut av tunnel eller skog, eller når et stort kjøretøy ikke lenger skjermer for vinden.',
+    theoryTrap: 'Vindretningen i skiltmotivet er ikke en garanti for hvilken vei bilen vil bli presset. Vind og kast kan variere, så begge hender bør være på rattet.',
+    whatToDo: [
+      'Reduser farten og hold begge hender rolig på rattet.',
+      'Øk sideavstanden til syklister, motorsyklister og store kjøretøy.',
+      'Vær forberedt på plutselige kast ved bruer, tunnelåpninger og når du passerer lastebiler.'
+    ],
+    confusedWith: ['156'],
+    sources: [
+      { name: 'Statens vegvesen – offisielle skiltfiler', url: 'https://www.vegvesen.no/fag/veg-og-gate/trafikkskilt-og-vegoppmerking/filer-og-fargekoder-for-trafikkskilt/' },
+      { name: 'Lovdata – skiltforskriften', url: 'https://lovdata.no/forskrift/2005-10-07-1219' }
+    ],
+    aliases: ['vind', 'sidevind', 'vindkast', 'vindpølse'],
+    visualDescription: 'Trekantet fareskilt med rød kant og svart vindpølse som blåser til siden.'
+  },
+  {
+    id: '156',
+    code: '156',
+    name: 'Annen fare',
+    displayName: 'Annen fare',
+    slug: 'annen-fare',
+    category: 'fareskilt',
+    imagePath: '/signs/fareskilt/skilt-156-annen-fare.jpg',
+    shortExplanation: 'Varsler om en fare som ikke har et eget fareskilt. Et underskilt opplyser normalt hva faren gjelder.',
+    longExplanation: 'Annen fare brukes når faren ikke dekkes av et mer spesifikt fareskilt. Derfor må skiltet leses sammen med underskiltet, som kan beskrive for eksempel ulykke, aktivitet, lokal risiko eller en midlertidig situasjon. Uten å lese underskiltet vet du ikke nøyaktig hvilken fare du nærmer deg.',
+    theoryTrap: 'Utropstegnet betyr ikke en bestemt fare i seg selv. Betydningen står på underskiltet, og på teoriprøven må du alltid tolke kombinasjonen samlet.',
+    whatToDo: [
+      'Les underskiltet raskt og tilpass fart og plassering til den beskrevne faren.',
+      'Øk avstanden og vær forberedt på å stanse dersom situasjonen er uoversiktlig.',
+      'Se etter midlertidige anvisninger, personer eller hindringer i og ved vegen.'
+    ],
+    confusedWith: ['153'],
+    sources: [
+      { name: 'Statens vegvesen – offisielle skiltfiler', url: 'https://www.vegvesen.no/fag/veg-og-gate/trafikkskilt-og-vegoppmerking/filer-og-fargekoder-for-trafikkskilt/' },
+      { name: 'Lovdata – skiltforskriften', url: 'https://lovdata.no/forskrift/2005-10-07-1219' }
+    ],
+    aliases: ['annen fare', 'utropstegn', 'ukjent fare', 'fareskilt med utropstegn'],
+    visualDescription: 'Trekantet fareskilt med rød kant og et stort svart utropstegn på hvit bunn.'
+  },
+  {
+    id: '118',
+    code: '118',
+    name: 'Bevegelig bru',
+    displayName: 'Bevegelig bru',
+    slug: 'bevegelig-bru',
+    category: 'fareskilt',
+    imagePath: '/signs/fareskilt/skilt-118-bevegelig-bru.jpg',
+    shortExplanation: 'Varsler om en bru som kan åpnes eller beveges, slik at vegen periodevis blir stengt.',
+    longExplanation: 'Skiltet brukes før klaffebruer, svingbruer og andre bevegelige bruer. Når brua åpnes for skipstrafikk, stenges vegen vanligvis med bom og rødt signal. Du må nærme deg med en fart som gjør at du kan stanse kontrollert før sperringen.',
+    theoryTrap: 'At bommen fortsatt er oppe betyr ikke at du kan øke farten for å rekke over. Rødt signal eller anvisning om stans skal alltid følges, og brua kan begynne å åpne kort tid etter varslingen.',
+    whatToDo: [
+      'Senk farten og se etter bom, rødt blinksignal og kø foran brua.',
+      'Stans foran stopplinjen eller i trygg avstand fra bommen når signalet krever det.',
+      'Ikke kjør videre før bommen er helt oppe og signalet tillater passering.'
+    ],
+    confusedWith: ['120', '156'],
+    sources: [
+      { name: 'Statens vegvesen – offisielle skiltfiler', url: 'https://www.vegvesen.no/fag/veg-og-gate/trafikkskilt-og-vegoppmerking/filer-og-fargekoder-for-trafikkskilt/' },
+      { name: 'Lovdata – skiltforskriften', url: 'https://lovdata.no/forskrift/2005-10-07-1219' }
+    ],
+    aliases: ['bevegelig bru', 'bevegelig bro', 'klaffebru', 'vippebru', 'bro åpnes'],
+    visualDescription: 'Trekantet fareskilt med rød kant og svart symbol av to brudeler som er løftet opp.'
+  },
+  {
+    id: '138.1',
+    code: '138.1',
+    name: 'Jernbanespor – enkeltsporet',
+    displayName: 'Jernbanespor – enkeltsporet',
+    slug: 'jernbanespor-enkeltsporet',
+    category: 'fareskilt',
+    imagePath: '/signs/fareskilt/skilt-138-1-jernbanespor-enkeltsporet.jpg',
+    shortExplanation: 'Angir stedet der ett jernbane- eller forstadsbanespor krysser vegen i plan.',
+    longExplanation: 'Skilt 138.1, ofte kalt Andreaskors, står ved selve planovergangen og viser at overgangen er enkeltsporet. Du skal alltid forsikre deg om at tog eller sporvogn ikke nærmer seg, også når overgangen har bom eller signalanlegg.',
+    theoryTrap: 'Andreaskorset er ikke bare et tidlig varsel; det markerer selve kryssingsstedet. At bommen er oppe eller signalet er mørkt fritar deg ikke fra plikten til å kontrollere at sporet er klart.',
+    whatToDo: [
+      'Reduser farten, se og lytt etter tog i begge retninger.',
+      'Stans foran signal eller bom når du varsles, og gi alltid fri veg for tog.',
+      'Kjør bare inn på sporet når du kan passere helt over uten å stanse.'
+    ],
+    confusedWith: ['138.2', '134', '135'],
+    sources: [
+      { name: 'Statens vegvesen – offisielle skiltfiler', url: 'https://www.vegvesen.no/fag/veg-og-gate/trafikkskilt-og-vegoppmerking/filer-og-fargekoder-for-trafikkskilt/' },
+      { name: 'Lovdata – skiltforskriften', url: 'https://lovdata.no/forskrift/2005-10-07-1219' }
+    ],
+    aliases: ['andreaskors', 'jernbanespor', 'enkeltspor', 'planovergang', 'togskinner'],
+    visualDescription: 'Hvitt kryss med røde endefelt, formet som én stor X.'
+  },
+  {
+    id: '138.2',
+    code: '138.2',
+    name: 'Jernbanespor – flersporet',
+    displayName: 'Jernbanespor – flersporet',
+    slug: 'jernbanespor-flersporet',
+    category: 'fareskilt',
+    imagePath: '/signs/fareskilt/skilt-138-2-jernbanespor-flersporet.jpg',
+    shortExplanation: 'Angir stedet der to eller flere jernbane- eller forstadsbanespor krysser vegen i plan.',
+    longExplanation: 'Skilt 138.2 er Andreaskorset for en flersporet planovergang. Flere spor betyr at et nytt tog kan komme fra motsatt retning like etter at det første har passert. Du må derfor vente på klarsignal og kontrollere alle spor før du kjører over.',
+    theoryTrap: 'Når ett tog har passert, er ikke overgangen nødvendigvis klar. På en flersporet overgang kan et nytt tog komme på sporet ved siden av, og bom eller rødt signal kan fortsatt være aktivt.',
+    whatToDo: [
+      'Vent til bommen er helt oppe og signalene tillater kjøring.',
+      'Kontroller begge retninger og alle spor før du kjører inn på overgangen.',
+      'Passer sporene sammenhengende uten å stanse mellom dem.'
+    ],
+    confusedWith: ['138.1', '134', '135'],
+    sources: [
+      { name: 'Statens vegvesen – offisielle skiltfiler', url: 'https://www.vegvesen.no/fag/veg-og-gate/trafikkskilt-og-vegoppmerking/filer-og-fargekoder-for-trafikkskilt/' },
+      { name: 'Lovdata – skiltforskriften', url: 'https://lovdata.no/forskrift/2005-10-07-1219' }
+    ],
+    aliases: ['andreaskors', 'jernbanespor', 'flerspor', 'flersporet planovergang', 'togskinner'],
+    visualDescription: 'Hvitt Andreaskors med røde endefelt og et ekstra, kortere kryss under som viser flere spor.'
+  },
+  {
+    id: '150',
+    code: '150',
+    name: 'Fly',
+    displayName: 'Fly',
+    slug: 'fly',
+    category: 'fareskilt',
+    imagePath: '/signs/fareskilt/skilt-150-fly.jpg',
+    shortExplanation: 'Varsler at fly kan fly lavt over eller nær vegen.',
+    longExplanation: 'Skiltet brukes nær flyplasser og innflygingsområder der luftfartøy kan passere lavt over vegen. Et lavtflygende fly kan gi kraftig lyd, skygge eller luftstrøm og dermed overraske føreren.',
+    theoryTrap: 'Skiltet varsler først og fremst om at du kan bli skremt eller distrahert av lavtflygende fly. Det betyr ikke at flyet bruker vegen som rullebane eller at du automatisk skal stoppe.',
+    whatToDo: [
+      'Hold jevn fart og oppmerksomheten på trafikken selv om et fly passerer lavt.',
+      'Unngå brå bremsing eller unnamanøver bare på grunn av lyd eller skygge.',
+      'Følg eventuelle signaler dersom vegen kan bli midlertidig stengt.'
+    ],
+    confusedWith: ['151', '152'],
+    sources: [
+      { name: 'Statens vegvesen – offisielle skiltfiler', url: 'https://www.vegvesen.no/fag/veg-og-gate/trafikkskilt-og-vegoppmerking/filer-og-fargekoder-for-trafikkskilt/' },
+      { name: 'Lovdata – skiltforskriften', url: 'https://lovdata.no/forskrift/2005-10-07-1219' }
+    ],
+    aliases: ['fly', 'flyplass', 'lavtflygende fly', 'innflyging'],
+    visualDescription: 'Trekantet fareskilt med rød kant og svart silhuett av et fly sett forfra.'
+  },
+  {
+    id: '151',
+    code: '151',
+    name: 'Militær aktivitet',
+    displayName: 'Militær aktivitet',
+    slug: 'militaer-aktivitet',
+    category: 'fareskilt',
+    imagePath: '/signs/fareskilt/skilt-151-militaer-aktivitet.jpg',
+    shortExplanation: 'Varsler om militær aktivitet som kan påvirke trafikken på eller ved vegen.',
+    longExplanation: 'Skiltet brukes ved øvingsområder, militærleirer og strekninger der militære kjøretøy eller kolonner kan krysse eller benytte vegen. Store og beltegående kjøretøy kan ha begrenset sikt, lav fart og kreve mer plass enn vanlige biler.',
+    theoryTrap: 'Militær aktivitet betyr ikke at vanlige trafikkregler settes til side. Men anvisning fra militærpolitiet gjelder foran skilt og andre trafikkregler, på samme måte som anvisning fra politiet.',
+    whatToDo: [
+      'Reduser farten og vær forberedt på store, saktegående kjøretøy eller en militær kolonne.',
+      'Følg tegn og anvisninger fra militærpolitiet eller annen person med myndighet til å regulere trafikken.',
+      'Ikke bryt inn i eller hindre en militær kjøretøykolonne.'
+    ],
+    confusedWith: ['150', '156'],
+    sources: [
+      { name: 'Statens vegvesen – offisielle skiltfiler', url: 'https://www.vegvesen.no/fag/veg-og-gate/trafikkskilt-og-vegoppmerking/filer-og-fargekoder-for-trafikkskilt/' },
+      { name: 'Lovdata – skiltforskriften', url: 'https://lovdata.no/forskrift/2005-10-07-1219' },
+      { name: 'Lovdata – trafikkreglene', url: 'https://lovdata.no/forskrift/1986-03-21-747' }
+    ],
+    aliases: ['militær aktivitet', 'militaer aktivitet', 'militærøvelse', 'stridsvogn', 'militær kolonne'],
+    visualDescription: 'Trekantet fareskilt med rød kant og svart silhuett av en stridsvogn.'
+  },
+  {
+    id: '154',
+    code: '154',
+    name: 'Skiløpere',
+    displayName: 'Skiløpere',
+    slug: 'skilopere',
+    category: 'fareskilt',
+    imagePath: '/signs/fareskilt/skilt-154-skilopere.jpg',
+    shortExplanation: 'Varsler om et sted der skiløpere ofte krysser vegen.',
+    longExplanation: 'Skiltet brukes der skiløyper eller vanlige skitraséer krysser en veg. Skiløpere kan ha høy fart, begrenset mulighet til å stoppe og være vanskelige å oppdage bak brøytekanter, vegetasjon eller i mørket.',
+    theoryTrap: 'En skiløper kan komme raskere inn i vegen enn en vanlig fotgjenger og kan ha dårlig kontroll på isete eller bratte partier. Du må derfor reagere før personen er ute i kjørebanen.',
+    whatToDo: [
+      'Senk farten og se etter skiløpere på begge sider av vegen.',
+      'Vær forberedt på å stanse, særlig ved brøytekanter og uoversiktlige løypekryss.',
+      'Unngå sprut og unødvendig nær passering dersom skiløpere venter ved vegkanten.'
+    ],
+    confusedWith: ['142', '144', '155'],
+    sources: [
+      { name: 'Statens vegvesen – offisielle skiltfiler', url: 'https://www.vegvesen.no/fag/veg-og-gate/trafikkskilt-og-vegoppmerking/filer-og-fargekoder-for-trafikkskilt/' },
+      { name: 'Lovdata – skiltforskriften', url: 'https://lovdata.no/forskrift/2005-10-07-1219' }
+    ],
+    aliases: ['skiløpere', 'skilopere', 'skiløype', 'langrenn', 'skiløype krysser vei'],
+    visualDescription: 'Trekantet fareskilt med rød kant og svart symbol av en person på langrennsski.'
+  },
+  {
+    id: '155',
+    code: '155',
+    name: 'Ridende',
+    displayName: 'Ridende',
+    slug: 'ridende',
+    category: 'fareskilt',
+    imagePath: '/signs/fareskilt/skilt-155-ridende.jpg',
+    shortExplanation: 'Varsler om et sted der ridende ofte krysser eller rir ut i vegen.',
+    longExplanation: 'Skiltet brukes nær ridesentre, staller og ridestier. Hester kan bli skremt av høy fart, motorlyd, horn eller brå bevegelser og kan da bevege seg uforutsigbart i eller langs kjørebanen.',
+    theoryTrap: 'Det er ikke nok å passere innenfor fartsgrensen. Du skal redusere farten og holde så stor avstand at hest og rytter ikke utsettes for fare eller skremmes unødig.',
+    whatToDo: [
+      'Senk farten tidlig og vær klar til å stanse.',
+      'Passer rolig med stor sideavstand og unngå horn, rusing av motor eller brå akselerasjon.',
+      'Følg tegn fra rytteren dersom hesten trenger ekstra tid eller plass.'
+    ],
+    confusedWith: ['146.1', '154'],
+    sources: [
+      { name: 'Statens vegvesen – offisielle skiltfiler', url: 'https://www.vegvesen.no/fag/veg-og-gate/trafikkskilt-og-vegoppmerking/filer-og-fargekoder-for-trafikkskilt/' },
+      { name: 'Lovdata – skiltforskriften', url: 'https://lovdata.no/forskrift/2005-10-07-1219' }
+    ],
+    aliases: ['ridende', 'hest', 'rytter', 'ridesenter', 'hest krysser vei'],
+    visualDescription: 'Trekantet fareskilt med rød kant og svart symbol av en rytter på hest.'
+  },
+  {
+    id: '146.2',
+    code: '146.2',
+    name: 'Dyr – rein',
+    displayName: 'Dyr – rein',
+    slug: 'dyr-rein',
+    category: 'fareskilt',
+    imagePath: '/signs/fareskilt/skilt-146-2-rein.jpg',
+    shortExplanation: 'Varsler at rein ofte ferdes over eller langs vegen.',
+    longExplanation: 'Skiltet brukes på strekninger med reinbeite eller kjente flyttleier. Reinen kan komme i store flokker, og dyr som først står utenfor vegen kan plutselig følge resten av flokken inn i kjørebanen. Risikoen kan variere med årstid, vær og reindriftens flytting av dyr.',
+    theoryTrap: 'Én rein ved vegkanten betyr ofte at flere dyr følger etter. Ikke øk farten straks det første dyret har passert, og ikke regn med at flokken beveger seg samlet i én retning.',
+    whatToDo: [
+      'Senk farten og undersøk begge sider av vegen etter flere dyr.',
+      'Vær forberedt på å stanse dersom reinen går inn i kjørebanen.',
+      'Passer rolig og uten horn eller rusing av motor som kan skremme flokken.'
+    ],
+    confusedWith: ['146.1', '146.3', '146.4', '146.5'],
+    sources: [
+      { name: 'Statens vegvesen – offisielle skiltfiler', url: 'https://www.vegvesen.no/fag/veg-og-gate/trafikkskilt-og-vegoppmerking/filer-og-fargekoder-for-trafikkskilt/' },
+      { name: 'Lovdata – skiltforskriften', url: 'https://lovdata.no/forskrift/2005-10-07-1219' }
+    ],
+    aliases: ['rein', 'reinsdyr', 'reinbeite', 'reinflokk', 'dyr i veien'],
+    visualDescription: 'Trekantet fareskilt med rød kant og svart silhuett av en rein med stort gevir.'
+  },
+  {
+    id: '146.3',
+    code: '146.3',
+    name: 'Dyr – hjort',
+    displayName: 'Dyr – hjort',
+    slug: 'dyr-hjort',
+    category: 'fareskilt',
+    imagePath: '/signs/fareskilt/skilt-146-3-hjort.jpg',
+    shortExplanation: 'Varsler at hjort eller rådyr ofte ferdes over eller langs vegen.',
+    longExplanation: 'Skiltet settes opp på strekninger med hyppig ferdsel av hjort eller rådyr. Dyrene kan komme raskt ut fra skog, grøft eller vegetasjon og skifte retning brått. Aktiviteten er ofte størst i skumring, grålysning og mørke.',
+    theoryTrap: 'Når én hjort har krysset, kan flere følge tett bak. Å feste blikket bare på dyret som allerede har passert kan gjøre at du overser neste dyr fra samme side.',
+    whatToDo: [
+      'Reduser farten og søk aktivt langs skogkanten og grøften.',
+      'Vær særlig oppmerksom i skumring, grålysning og mørke.',
+      'Brems kontrollert og unngå en brå unnamanøver dersom et dyr kommer ut i vegen.'
+    ],
+    confusedWith: ['146.1', '146.2', '146.4', '146.5'],
+    sources: [
+      { name: 'Statens vegvesen – offisielle skiltfiler', url: 'https://www.vegvesen.no/fag/veg-og-gate/trafikkskilt-og-vegoppmerking/filer-og-fargekoder-for-trafikkskilt/' },
+      { name: 'Lovdata – skiltforskriften', url: 'https://lovdata.no/forskrift/2005-10-07-1219' }
+    ],
+    aliases: ['hjort', 'rådyr', 'raadyr', 'hjortefare', 'dyr i veien'],
+    visualDescription: 'Trekantet fareskilt med rød kant og svart silhuett av en springende hjort med gevir.'
+  },
+  {
+    id: '146.4',
+    code: '146.4',
+    name: 'Dyr – ku',
+    displayName: 'Dyr – ku',
+    slug: 'dyr-ku',
+    category: 'fareskilt',
+    imagePath: '/signs/fareskilt/skilt-146-4-ku.jpg',
+    shortExplanation: 'Varsler at storfe ofte krysser eller oppholder seg på eller langs vegen.',
+    longExplanation: 'Skiltet brukes ved beiteområder og faste kryssingssteder for storfe. Kyr kan stå stille i kjørebanen eller bevege seg i en flokk som bruker lang tid på å passere. Et dyr kan snu eller skifte retning dersom det blir skremt.',
+    theoryTrap: 'At én ku har gått av vegen betyr ikke at resten av flokken følger samme linje. Kjør aldri mellom dyr i en samlet flokk uten at den som leder dyrene tydelig viser at det er trygt.',
+    whatToDo: [
+      'Senk farten og vær klar til å stanse for dyr eller person som leder flokken.',
+      'Passer i svært lav fart og med størst mulig avstand.',
+      'Unngå horn, rusing av motor og andre handlinger som kan skremme dyrene.'
+    ],
+    confusedWith: ['146.1', '146.2', '146.3', '146.5'],
+    sources: [
+      { name: 'Statens vegvesen – offisielle skiltfiler', url: 'https://www.vegvesen.no/fag/veg-og-gate/trafikkskilt-og-vegoppmerking/filer-og-fargekoder-for-trafikkskilt/' },
+      { name: 'Lovdata – skiltforskriften', url: 'https://lovdata.no/forskrift/2005-10-07-1219' }
+    ],
+    aliases: ['ku', 'kyr', 'storfe', 'kveg', 'beitedyr'],
+    visualDescription: 'Trekantet fareskilt med rød kant og svart silhuett av en ku sett fra siden.'
+  },
+  {
+    id: '146.5',
+    code: '146.5',
+    name: 'Dyr – sau',
+    displayName: 'Dyr – sau',
+    slug: 'dyr-sau',
+    category: 'fareskilt',
+    imagePath: '/signs/fareskilt/skilt-146-5-sau.jpg',
+    shortExplanation: 'Varsler at sau ofte krysser eller oppholder seg på eller langs vegen.',
+    longExplanation: 'Skiltet brukes på strekninger der sau og lam går på beite eller ofte krysser vegen. Dyrene kan ligge skjult i grøften, stå i kjørebanen eller plutselig løpe etter resten av flokken. Lam kan reagere annerledes enn voksne dyr.',
+    theoryTrap: 'Sau som trekker ut mot vegkanten kan brått vende tilbake foran bilen. Ikke anta at dyret fortsetter bort fra vegen bare fordi det først beveger seg i riktig retning.',
+    whatToDo: [
+      'Reduser farten og se etter både voksne dyr og lam i grøften.',
+      'Stans om nødvendig og la hele flokken finne ro før du passerer.',
+      'Passer sakte og med god avstand uten å bruke horn.'
+    ],
+    confusedWith: ['146.1', '146.2', '146.3', '146.4'],
+    sources: [
+      { name: 'Statens vegvesen – offisielle skiltfiler', url: 'https://www.vegvesen.no/fag/veg-og-gate/trafikkskilt-og-vegoppmerking/filer-og-fargekoder-for-trafikkskilt/' },
+      { name: 'Lovdata – skiltforskriften', url: 'https://lovdata.no/forskrift/2005-10-07-1219' }
+    ],
+    aliases: ['sau', 'lam', 'småfe', 'smaafe', 'beitedyr'],
+    visualDescription: 'Trekantet fareskilt med rød kant og svarte silhuetter av en voksen sau og et lam.'
+  },
 
   // --- FORBUDSSKILT (Aktiv Kategori) ---
   {
@@ -1057,6 +1538,198 @@ export const trafficSigns: TrafficSign[] = [
     sources: [{ name: 'Statens vegvesen', url: 'https://www.vegvesen.no' }],
     aliases: ['parkering', 'stans', 'parkere', 'parkering forbudt'],
     visualDescription: 'Rundt skilt med rød kant, blå bunn og en rød diagonal skråstrek.',
+  },
+  {
+    id: '306.3',
+    code: '306.3',
+    name: 'Forbudt for traktor og saktegående motorredskap',
+    displayName: 'Forbudt for traktor og saktegående motorredskap',
+    slug: 'forbudt-for-traktor-og-saktegaende-motorredskap',
+    category: 'forbudsskilt',
+    imagePath: '/signs/forbudsskilt/skilt-306-3-forbudt-for-traktor-og-motorredskap.jpg',
+    shortExplanation: 'Forbyr alle traktorer og motorredskap som er konstruert for fart under 40 km/t.',
+    longExplanation: 'Skiltet brukes på veger og strekninger der traktorer og saktegående motorredskap vil skape fare eller store trafikkproblemer. Forbudet gjelder alle traktorer, og i tillegg motorredskap som er konstruert for fart lavere enn 40 km/t.',
+    theoryTrap: '40 km/t-grensen gjelder bare motorredskap-delen av bestemmelsen. Alle traktorer er forbudt, også en traktor som er konstruert for 40 km/t eller mer.',
+    whatToDo: [
+      'Velg en annen veg dersom du fører traktor eller motorredskap som omfattes av forbudet.',
+      'Les eventuelle underskilt for avstand, tidsrom eller unntak.',
+      'Ikke kjør forbi skiltet for å lete etter en snumulighet på den forbudte strekningen.'
+    ],
+    confusedWith: ['306.1', '306.5', '310'],
+    sources: [
+      { name: 'Statens vegvesen – offisielle skiltfiler', url: 'https://www.vegvesen.no/fag/veg-og-gate/trafikkskilt-og-vegoppmerking/filer-og-fargekoder-for-trafikkskilt/' },
+      { name: 'Lovdata – skiltforskriften', url: 'https://lovdata.no/forskrift/2005-10-07-1219' }
+    ],
+    aliases: ['traktor forbudt', 'forbudt for traktor', 'motorredskap forbudt', 'saktegående kjøretøy'],
+    visualDescription: 'Rundt forbudsskilt med rød kant og svart traktorsymbol på hvit bunn.'
+  },
+  {
+    id: '306.4',
+    code: '306.4',
+    name: 'Forbudt for motorsykkel og moped',
+    displayName: 'Forbudt for motorsykkel og moped',
+    slug: 'forbudt-for-motorsykkel-og-moped',
+    category: 'forbudsskilt',
+    imagePath: '/signs/forbudsskilt/skilt-306-4-forbudt-for-motorsykkel-og-moped.jpg',
+    shortExplanation: 'Forbyr kjøring med motorsykkel og moped forbi skiltet.',
+    longExplanation: 'Skiltet brukes der motorsykkel- og mopedtrafikk ikke er tillatt, for eksempel av hensyn til sikkerhet, vegstandard eller lokal regulering. Forbudet gjelder kjøretøygruppene motorsykkel og moped, ikke vanlig personbil.',
+    theoryTrap: 'Skiltet gjelder både motorsykkel og moped, selv om motivet lett kan oppfattes som bare en motorsykkel. Det er kjøretøygruppen som avgjør, ikke motorstørrelsen alene.',
+    whatToDo: [
+      'Velg en annen rute dersom du kjører motorsykkel eller moped.',
+      'Se etter underskilt som presiserer tid, strekning eller unntak.',
+      'Ikke forveksle skiltet med et generelt motorvognforbud.'
+    ],
+    confusedWith: ['306.1', '306.6', '306.10'],
+    sources: [
+      { name: 'Statens vegvesen – offisielle skiltfiler', url: 'https://www.vegvesen.no/fag/veg-og-gate/trafikkskilt-og-vegoppmerking/filer-og-fargekoder-for-trafikkskilt/' },
+      { name: 'Lovdata – skiltforskriften', url: 'https://lovdata.no/forskrift/2005-10-07-1219' }
+    ],
+    aliases: ['motorsykkel forbudt', 'moped forbudt', 'mc forbudt', 'forbudt for mc'],
+    visualDescription: 'Rundt forbudsskilt med rød kant og svart motorsykkel med fører på hvit bunn.'
+  },
+  {
+    id: '306.5',
+    code: '306.5',
+    name: 'Forbudt for lastebil og trekkbil',
+    displayName: 'Forbudt for lastebil og trekkbil',
+    slug: 'forbudt-for-lastebil-og-trekkbil',
+    category: 'forbudsskilt',
+    imagePath: '/signs/forbudsskilt/skilt-306-5-forbudt-for-lastebil-og-trekkbil.jpg',
+    shortExplanation: 'Forbyr kjøring med lastebil og trekkbil forbi skiltet.',
+    longExplanation: 'Skiltet stenger den aktuelle vegen eller strekningen for kjøretøy som er registrert som lastebil eller trekkbil. Det kan brukes for å lede tungtrafikk bort fra trange gater, svake veger eller områder der store kjøretøy skaper ulempe.',
+    theoryTrap: 'Forbudet bestemmes av kjøretøytypen, ikke bare av størrelsen du ser. Et eget vekttall krever et annet skilt, for eksempel 310 eller 318.',
+    whatToDo: [
+      'Følg skiltet rute eller velg annen veg dersom du fører lastebil eller trekkbil.',
+      'Kontroller eventuelle underskilt for unntak, tidsrom eller tillatt varelevering.',
+      'Ikke anta at en tom lastebil er unntatt; forbudet gjelder kjøretøytypen.'
+    ],
+    confusedWith: ['306.3', '310', '318.1'],
+    sources: [
+      { name: 'Statens vegvesen – offisielle skiltfiler', url: 'https://www.vegvesen.no/fag/veg-og-gate/trafikkskilt-og-vegoppmerking/filer-og-fargekoder-for-trafikkskilt/' },
+      { name: 'Lovdata – skiltforskriften', url: 'https://lovdata.no/forskrift/2005-10-07-1219' }
+    ],
+    aliases: ['lastebil forbudt', 'trekkbil forbudt', 'tungtrafikk forbudt', 'forbudt for lastebil'],
+    visualDescription: 'Rundt forbudsskilt med rød kant og svart lastebilsymbol på hvit bunn.'
+  },
+  {
+    id: '306.7',
+    code: '306.7',
+    name: 'Forbudt for gående',
+    displayName: 'Forbudt for gående',
+    slug: 'forbudt-for-gaende',
+    category: 'forbudsskilt',
+    imagePath: '/signs/forbudsskilt/skilt-306-7-forbudt-for-gaende.jpg',
+    shortExplanation: 'Forbyr gående å ferdes forbi skiltet.',
+    longExplanation: 'Skiltet brukes der det er farlig eller uønsket med fotgjengere, for eksempel ved enkelte tunneler, anlegg eller vegstrekninger uten trygt areal for gående. Forbudet retter seg mot gående, mens andre trafikantgrupper må vurderes etter øvrig skilting.',
+    theoryTrap: 'Skiltet forbyr bare gående. Det er ikke det samme som skilt 306.8, som også forbyr syklende og fører av liten elektrisk motorvogn.',
+    whatToDo: [
+      'Velg en annen rute dersom du ferdes til fots.',
+      'Se etter anvist gangveg eller omkjøring før den forbudte strekningen.',
+      'Som bilfører bør du likevel være oppmerksom på at noen kan ha oversett skiltet.'
+    ],
+    confusedWith: ['306.6', '306.8', '306.10'],
+    sources: [
+      { name: 'Statens vegvesen – offisielle skiltfiler', url: 'https://www.vegvesen.no/fag/veg-og-gate/trafikkskilt-og-vegoppmerking/filer-og-fargekoder-for-trafikkskilt/' },
+      { name: 'Lovdata – skiltforskriften', url: 'https://lovdata.no/forskrift/2005-10-07-1219' }
+    ],
+    aliases: ['gående forbudt', 'fotgjengere forbudt', 'forbudt for fotgjengere', 'ingen gående'],
+    visualDescription: 'Rundt forbudsskilt med rød kant og svart symbol av en gående person på hvit bunn.'
+  },
+  {
+    id: '306.9',
+    code: '306.9',
+    name: 'Forbudt for ridende',
+    displayName: 'Forbudt for ridende',
+    slug: 'forbudt-for-ridende',
+    category: 'forbudsskilt',
+    imagePath: '/signs/forbudsskilt/skilt-306-9-forbudt-for-ridende.jpg',
+    shortExplanation: 'Forbyr ridende å ferdes forbi skiltet.',
+    longExplanation: 'Skiltet brukes på strekninger der ridning ikke er tillatt, ofte fordi trafikk, vegstandard eller arealbruk gjør det uforsvarlig eller uønsket. Det retter seg mot ridende med hest eller annet ridedyr.',
+    theoryTrap: 'Skilt 306.9 er et forbud og må ikke forveksles med fareskilt 155 Ridende. Fareskiltet varsler bilføreren om ryttere; forbudsskiltet nekter rytteren å ferdes videre.',
+    whatToDo: [
+      'Velg en annen rute dersom du rir.',
+      'Følg eventuelle underskilt som presiserer virkeområdet.',
+      'Som bilfører: skill det runde forbudsskiltet fra det trekantede fareskiltet for ridende.'
+    ],
+    confusedWith: ['155', '306.7'],
+    sources: [
+      { name: 'Statens vegvesen – offisielle skiltfiler', url: 'https://www.vegvesen.no/fag/veg-og-gate/trafikkskilt-og-vegoppmerking/filer-og-fargekoder-for-trafikkskilt/' },
+      { name: 'Lovdata – skiltforskriften', url: 'https://lovdata.no/forskrift/2005-10-07-1219' }
+    ],
+    aliases: ['ridning forbudt', 'hest forbudt', 'forbudt for rytter', 'ridende forbudt'],
+    visualDescription: 'Rundt forbudsskilt med rød kant og svart symbol av en rytter på hest.'
+  },
+  {
+    id: '306.10',
+    code: '306.10',
+    name: 'Forbudt for liten elektrisk motorvogn',
+    displayName: 'Forbudt for liten elektrisk motorvogn',
+    slug: 'forbudt-for-liten-elektrisk-motorvogn',
+    category: 'forbudsskilt',
+    imagePath: '/signs/forbudsskilt/skilt-306-10-forbudt-for-liten-elektrisk-motorvogn.png',
+    shortExplanation: 'Forbyr ferdsel på veg og fortau med liten elektrisk motorvogn, for eksempel elsparkesykkel.',
+    longExplanation: 'Skilt 306.10 gjelder liten elektrisk motorvogn og brukes der slike kjøretøy ikke er tillatt på vegen eller fortauet. Elsparkesykkel er det vanligste eksemplet. Forbudet gjelder kjøretøytypen som er definert som liten elektrisk motorvogn.',
+    theoryTrap: 'Skiltet gjelder både veg og fortau. Det er heller ikke et generelt sykkelforbud; sykkel reguleres av skilt 306.6 eller 306.8 dersom også syklende skal omfattes.',
+    whatToDo: [
+      'Velg en annen rute dersom du bruker liten elektrisk motorvogn.',
+      'Ikke fortsett på fortauet for å omgå skiltet; forbudet gjelder også der.',
+      'Skill symbolet for elsparkesykkel fra moped- og motorsykkelforbudet.'
+    ],
+    confusedWith: ['306.4', '306.6', '306.8'],
+    sources: [
+      { name: 'Statens vegvesen – offisielle skiltfiler', url: 'https://www.vegvesen.no/fag/veg-og-gate/trafikkskilt-og-vegoppmerking/filer-og-fargekoder-for-trafikkskilt/' },
+      { name: 'Lovdata – skiltforskriften', url: 'https://lovdata.no/forskrift/2005-10-07-1219' }
+    ],
+    aliases: ['elsparkesykkel forbudt', 'sparkesykkel forbudt', 'liten elektrisk motorvogn', 'el-sparkesykkel forbudt'],
+    visualDescription: 'Rundt forbudsskilt med rød kant, rød diagonal strek og svart symbol av en elsparkesykkel.'
+  },
+  {
+    id: '318.1',
+    code: '318.1',
+    name: 'Totalvektgrense for kjøretøy',
+    displayName: 'Totalvektgrense for kjøretøy',
+    slug: 'totalvektgrense-for-kjoretoy',
+    category: 'forbudsskilt',
+    imagePath: '/signs/forbudsskilt/skilt-318-1-totalvektgrense-kjoretoy.jpg',
+    shortExplanation: 'Forbyr kjøretøy med aktuell totalvekt høyere enn vekten som er angitt på skiltet.',
+    longExplanation: 'Skilt 318.1 begrenser den aktuelle totalvekten, altså det kjøretøyet faktisk veier med fører, passasjerer, drivstoff og last på kjøretidspunktet. For et vogntog vurderes hvert enkelt kjøretøy mot grensen.',
+    theoryTrap: 'Dette skiltet gjelder aktuell totalvekt, ikke tillatt totalvekt i vognkortet. En lastebil med høy tillatt totalvekt kan passere dersom den faktiske vekten er under grensen, men føreren må kunne dokumentere og kjenne vekten.',
+    whatToDo: [
+      'Kontroller kjøretøyets aktuelle totalvekt før du velger strekningen.',
+      'Med vogntog skal både trekkvogn og tilhenger hver for seg være innenfor grensen.',
+      'Velg annen rute dersom ett av kjøretøyene er tyngre enn angitt.'
+    ],
+    confusedWith: ['310', '318.2', '320', '322'],
+    sources: [
+      { name: 'Statens vegvesen – offisielle skiltfiler', url: 'https://www.vegvesen.no/fag/veg-og-gate/trafikkskilt-og-vegoppmerking/filer-og-fargekoder-for-trafikkskilt/' },
+      { name: 'Lovdata – skiltforskriften', url: 'https://lovdata.no/forskrift/2005-10-07-1219' }
+    ],
+    aliases: ['totalvektgrense', 'vektgrense kjøretøy', '12 tonn', 'aktuell totalvekt', 'vektbegrensning'],
+    visualDescription: 'Rundt forbudsskilt med rød kant og svart vektangivelse, i eksemplet 12 tonn.'
+  },
+  {
+    id: '318.2',
+    code: '318.2',
+    name: 'Totalvektgrense for vogntog',
+    displayName: 'Totalvektgrense for vogntog',
+    slug: 'totalvektgrense-for-vogntog',
+    category: 'forbudsskilt',
+    imagePath: '/signs/forbudsskilt/skilt-318-2-totalvektgrense-vogntog.jpg',
+    shortExplanation: 'Forbyr vogntog med samlet aktuell totalvekt høyere enn vekten som er angitt.',
+    longExplanation: 'Skilt 318.2 gjelder den samlede aktuelle totalvekten til trekkjøretøy og tilhenger. Det gjelder også et enkelt kjøretøy dersom kjøretøyets aktuelle totalvekt alene er høyere enn grensen. Skiltet beskytter gjerne bru eller veg med begrenset bæreevne.',
+    theoryTrap: 'Her skal vektene i vogntoget summeres. Det er ikke nok at trekkbilen og tilhengeren hver for seg ligger under grensen; den samlede aktuelle totalvekten må være innenfor.',
+    whatToDo: [
+      'Summer aktuell totalvekt for trekkjøretøy og tilhenger før passering.',
+      'Velg annen rute dersom summen overstiger angitt grense.',
+      'Husk at skiltet også stopper et enkelt kjøretøy som alene er tyngre enn grensen.'
+    ],
+    confusedWith: ['310', '318.1', '320', '322'],
+    sources: [
+      { name: 'Statens vegvesen – offisielle skiltfiler', url: 'https://www.vegvesen.no/fag/veg-og-gate/trafikkskilt-og-vegoppmerking/filer-og-fargekoder-for-trafikkskilt/' },
+      { name: 'Lovdata – skiltforskriften', url: 'https://lovdata.no/forskrift/2005-10-07-1219' }
+    ],
+    aliases: ['totalvektgrense vogntog', 'vogntog vektgrense', '30 tonn', 'samlet aktuell totalvekt', 'vektbegrensning'],
+    visualDescription: 'Rundt forbudsskilt med rød kant, svart vogntogsymbol og vektangivelse, i eksemplet 30 tonn.'
   },
 
   // --- PÅBUDSSKILT (Aktiv Kategori) ---
@@ -1805,8 +2478,8 @@ export const trafficSigns: TrafficSign[] = [
   {
     id: '526.2',
     code: '526.2',
-    name: 'Envegskjøring',
-    displayName: 'Envegskjøring',
+    name: 'Envegskjøring på kryssende veg',
+    displayName: 'Envegskjøring på kryssende veg',
     slug: 'envegskjoring-retning',
     category: 'opplysningsskilt',
     imagePath: '/signs/opplysningsskilt/skilt-526-2-envegskjoring.jpg',
@@ -1819,7 +2492,8 @@ export const trafficSigns: TrafficSign[] = [
     ],
     confusedWith: ['526'],
     sources: [{ name: 'Statens vegvesen', url: 'https://www.vegvesen.no' }],
-    aliases: ['envegskjøring', 'envegskjoring kryss', 'enveiskjøring', 'pil']
+    aliases: ['envegskjøring', 'envegskjoring kryss', 'enveiskjøring', 'pil'],
+    visualDescription: 'Blått rektangulært skilt med en hvit vannrett pil som viser tillatt retning på den kryssende vegen.',
   },
   {
     id: '527.2',
@@ -2035,6 +2709,201 @@ export const trafficSigns: TrafficSign[] = [
     confusedWith: ['540'],
     sources: [{ name: 'Statens vegvesen', url: 'https://www.vegvesen.no' }],
     aliases: ['slutt gatetun', 'vikeplikt', 'ut av gatetun']
+  },
+  {
+    id: '550',
+    code: '550',
+    name: 'Slutt på gågate',
+    displayName: 'Slutt på gågate',
+    slug: 'slutt-pa-gagate',
+    category: 'opplysningsskilt',
+    imagePath: '/signs/opplysningsskilt/skilt-550-slutt-pa-gagate.jpg',
+    shortExplanation: 'Viser at gågaten slutter og at de særlige reglene for gågate opphører.',
+    longExplanation: 'Skiltet markerer utkjøringen fra en gågate. Når du kjører ut fra gågaten og inn på en annen veg, har du vikeplikt for trafikken på vegen du kjører inn på. Etter skiltet gjelder den reguleringen som er skiltet eller følger av de alminnelige trafikkreglene.',
+    theoryTrap: 'Når du kjører ut av en gågate, kan du ikke bruke høyreregelen til din fordel. Du har vikeplikt for andre trafikanter på vegen du kjører inn på, på samme måte som ved utkjøring fra gatetun.',
+    whatToDo: [
+      'Hold gangfart og ta hensyn til gående helt til du har forlatt gågaten.',
+      'Stans om nødvendig og vike for trafikken på vegen du kjører inn på.',
+      'Se etter nytt fartsgrenseskilt, parkeringsregulering og andre skilt etter utkjøringen.'
+    ],
+    confusedWith: ['548', '542'],
+    sources: [
+      { name: 'Statens vegvesen – offisielle skiltfiler', url: 'https://www.vegvesen.no/fag/veg-og-gate/trafikkskilt-og-vegoppmerking/filer-og-fargekoder-for-trafikkskilt/' },
+      { name: 'Lovdata – skiltforskriften', url: 'https://lovdata.no/forskrift/2005-10-07-1219' }
+    ],
+    aliases: ['slutt gågate', 'ut av gågate', 'gågate slutt', 'vikeplikt fra gågate'],
+    visualDescription: 'Rektangulært skilt med gågatesymbolet i grått og flere svarte diagonale streker over motivet.'
+  },
+  {
+    id: '555',
+    code: '555',
+    name: 'Havarilomme',
+    displayName: 'Havarilomme',
+    slug: 'havarilomme',
+    category: 'opplysningsskilt',
+    imagePath: '/signs/opplysningsskilt/skilt-555-havarilomme.svg',
+    shortExplanation: 'Viser en utvidelse av vegen eller tunnelen som er beregnet for nødstans ved havari eller annen nødsituasjon.',
+    longExplanation: 'En havarilomme gir et tryggere sted å få kjøretøyet ut av kjørefeltet når du ikke kan fortsette. Den finnes særlig i tunneler og på vegstrekninger der det er vanskelig eller farlig å stanse langs kanten. Lommen er laget for nødsituasjoner, ikke for vanlig parkering eller rast.',
+    theoryTrap: 'Havarilommen er ikke en rasteplass eller parkeringslomme. Bruk den bare når kjøretøyet har problemer, ved akutt sykdom eller i en annen reell nødsituasjon.',
+    whatToDo: [
+      'Kjør så langt inn i lommen som det er forsvarlig, stans motoren og slå på nødblink.',
+      'Ta på refleksvest før du går ut, og bruk nødtelefon dersom den finnes i nærheten.',
+      'I tunnel: Følg sikkerhetsanvisningene og opphold deg bak rekkverk eller på et sikkert sted hvis mulig.'
+    ],
+    confusedWith: ['556', '605'],
+    sources: [
+      { name: 'Statens vegvesen – skilt og vegoppmerking', url: 'https://www.vegvesen.no/trafikkinformasjon/vei-og-skilt/trafikkskilt-og-henvendelser/trafikkskilt/' },
+      { name: 'Lovdata – skiltforskriften', url: 'https://lovdata.no/forskrift/2005-10-07-1219' }
+    ],
+    aliases: ['nødlomme', 'havari', 'nødstans', 'stoppelomme tunnel'],
+    visualDescription: 'Blått, rektangulært skilt med hvit bil som er kjørt inn i en lomme på siden av vegen.'
+  },
+  {
+    id: '556.2',
+    code: '556.2',
+    name: 'Automatisk trafikkontroll – strekningsmåling',
+    displayName: 'Automatisk trafikkontroll – strekningsmåling',
+    slug: 'automatisk-trafikkontroll-strekningsmaling',
+    category: 'opplysningsskilt',
+    imagePath: '/signs/opplysningsskilt/skilt-556-2-automatisk-trafikkontroll-strekningsmaling.jpg',
+    shortExplanation: 'Varsler om strekningsmåling, der gjennomsnittsfarten måles mellom to kontrollpunkter.',
+    longExplanation: 'Ved strekningsmåling registreres kjøretøyet ved starten og slutten av en kontrollert strekning. Tiden mellom punktene brukes til å beregne gjennomsnittsfarten. Det er derfor ikke nok å bremse bare ved kameraene; fartsgrensen må overholdes gjennom hele strekningen.',
+    theoryTrap: 'Et vanlig fotoboksskilt varsler kontroll ved ett punkt. Skilt 556.2 gjelder strekningsmåling og kontrollerer gjennomsnittsfarten mellom flere registreringspunkter.',
+    whatToDo: [
+      'Kontroller farten og hold den innenfor skiltet fartsgrense gjennom hele målestrekningen.',
+      'Unngå brå nedbremsing ved kameraet; tilpass farten jevnt og tidlig.',
+      'Hold god avstand og la ikke oppmerksomheten på kameraene gå utover trafikkbildet.'
+    ],
+    confusedWith: ['556'],
+    sources: [
+      { name: 'Statens vegvesen – offisielle skiltfiler', url: 'https://www.vegvesen.no/fag/veg-og-gate/trafikkskilt-og-vegoppmerking/filer-og-fargekoder-for-trafikkskilt/' },
+      { name: 'Lovdata – skiltforskriften', url: 'https://lovdata.no/forskrift/2005-10-07-1219' }
+    ],
+    aliases: ['strekningsmåling', 'streknings-atk', 'gjennomsnittsmåling', 'fotoboks', 'automatisk trafikkontroll'],
+    visualDescription: 'Blått, rektangulært skilt med to hvite kamerasymboler og radiobølger mellom kontrollpunktene.'
+  },
+  {
+    id: '506',
+    code: '506',
+    name: 'Tungtrafikkfelt',
+    displayName: 'Tungtrafikkfelt',
+    slug: 'tungtrafikkfelt',
+    category: 'opplysningsskilt',
+    imagePath: '/signs/opplysningsskilt/skilt-506-tungtrafikkfelt.jpg',
+    shortExplanation: 'Viser at et kjørefelt er for motorvogner med tillatt totalvekt høyere enn vekten som står på skiltet.',
+    longExplanation: 'Skilt 506 markerer starten på et tungtrafikkfelt. I eksemplet med 7,5 tonn kan motorvogner med tillatt totalvekt over 7 500 kg bruke feltet. Uniformerte utrykningskjøretøy har også adgang, og underskilt kan åpne feltet for andre, for eksempel taxi.',
+    theoryTrap: 'Vektgrensen gjelder kjøretøyets tillatte totalvekt, ikke hvor mye kjøretøyet faktisk veier eller har lastet den aktuelle dagen. En vanlig personbil får derfor ikke bruke feltet selv om trafikken i andre felt står stille.',
+    whatToDo: [
+      'Les vektgrensen og eventuelle underskilt før du velger felt.',
+      'Bruk ikke tungtrafikkfeltet med vanlig personbil med mindre et underskilt uttrykkelig gir adgang.',
+      'Vær oppmerksom på store kjøretøy som skifter inn i eller ut av feltet.'
+    ],
+    confusedWith: ['507', '508', '509'],
+    sources: [
+      { name: 'Statens vegvesen – tungtrafikkfelt', url: 'https://www.vegvesen.no/trafikkinformasjon/trafikksikkerhet/trafikkregler/kollektivfelt/' },
+      { name: 'Statens vegvesen – offisielle skiltfiler', url: 'https://www.vegvesen.no/fag/veg-og-gate/trafikkskilt-og-vegoppmerking/filer-og-fargekoder-for-trafikkskilt/' },
+      { name: 'Lovdata – skiltforskriften', url: 'https://lovdata.no/forskrift/2005-10-07-1219' }
+    ],
+    aliases: ['tungtrafikkfelt', 'tungbilfelt', 'lastebilfelt', '7,5 tonn felt', 'felt for tungtrafikk'],
+    visualDescription: 'Blått firkantet skilt med hvit lastebilsilhuett og en angitt vektgrense, i eksemplet 7,5 tonn.'
+  },
+  {
+    id: '507',
+    code: '507',
+    name: 'Slutt på tungtrafikkfelt',
+    displayName: 'Slutt på tungtrafikkfelt',
+    slug: 'slutt-pa-tungtrafikkfelt',
+    category: 'opplysningsskilt',
+    imagePath: '/signs/opplysningsskilt/skilt-507-slutt-pa-tungtrafikkfelt.jpg',
+    shortExplanation: 'Viser at tungtrafikkfeltet og den reserverte feltbruken opphører.',
+    longExplanation: 'Skilt 507 markerer slutten på et tungtrafikkfelt. Feltet er ikke lenger reservert for kjøretøy over den angitte tillatte totalvekten. Skiltet er overstrøket for å vise at den særskilte feltreguleringen avsluttes.',
+    theoryTrap: 'Skiltet opphever bare tungtrafikkfeltet. Det opphever ikke automatisk fartsgrense, forbikjøringsforbud eller andre reguleringer som gjelder på strekningen.',
+    whatToDo: [
+      'Forvent feltskifte og tilpass avstanden til store kjøretøy rundt deg.',
+      'Følg vanlig feltmerking og øvrige skilt etter at tungtrafikkfeltet slutter.',
+      'Unngå å bli liggende i blindsonen til lastebil eller vogntog som må skifte felt.'
+    ],
+    confusedWith: ['506', '510', '511'],
+    sources: [
+      { name: 'Statens vegvesen – tungtrafikkfelt', url: 'https://www.vegvesen.no/trafikkinformasjon/trafikksikkerhet/trafikkregler/kollektivfelt/' },
+      { name: 'Statens vegvesen – offisielle skiltfiler', url: 'https://www.vegvesen.no/fag/veg-og-gate/trafikkskilt-og-vegoppmerking/filer-og-fargekoder-for-trafikkskilt/' },
+      { name: 'Lovdata – skiltforskriften', url: 'https://lovdata.no/forskrift/2005-10-07-1219' }
+    ],
+    aliases: ['slutt tungtrafikkfelt', 'tungbilfelt slutt', 'lastebilfelt slutt', 'slutt på 7,5 tonn felt'],
+    visualDescription: 'Blått firkantet tungtrafikkfeltskilt med rød diagonal strek over lastebil og vektgrense.'
+  },
+  {
+    id: '513',
+    code: '513',
+    name: 'Holdeplass for sporvogn',
+    displayName: 'Holdeplass for sporvogn',
+    slug: 'holdeplass-for-sporvogn',
+    category: 'opplysningsskilt',
+    imagePath: '/signs/opplysningsskilt/skilt-513-holdeplass-for-sporvogn.jpg',
+    shortExplanation: 'Markerer holdeplass for sporvogn og at trafikkreglenes bestemmelser om holdeplass gjelder.',
+    longExplanation: 'Skiltet viser hvor sporvognen stanser for av- og påstigning. Du må holde særlig lav fart og om nødvendig stanse ved sporvogn som står eller skal stanse. Ved holdeplass uten trafikkøy skal den som vil passere sporvognen på høyre side, stanse og gi fri veg for passasjerene.',
+    theoryTrap: 'Passasjerer kan gå direkte mellom fortau og sporvogn over kjørebanen. Uten trafikkøy skal du ikke snike deg forbi på høyre side; du skal stanse og vente til av- og påstigningen er ferdig.',
+    whatToDo: [
+      'Reduser farten og se etter passasjerer som går til eller fra sporvognen.',
+      'Stans og gi fri veg ved passering på høyre side av sporvogn på holdeplass uten trafikkøy.',
+      'Ikke stans i holdeplassutvidelsen eller nærmere enn 20 meter fra holdeplasskiltet, bortsett fra kort av- eller påstigning som ikke er til hinder.'
+    ],
+    confusedWith: ['512', '514', '139'],
+    sources: [
+      { name: 'Statens vegvesen – offisielle skiltfiler', url: 'https://www.vegvesen.no/fag/veg-og-gate/trafikkskilt-og-vegoppmerking/filer-og-fargekoder-for-trafikkskilt/' },
+      { name: 'Lovdata – skiltforskriften', url: 'https://lovdata.no/forskrift/2005-10-07-1219' },
+      { name: 'Lovdata – trafikkreglene', url: 'https://lovdata.no/forskrift/1986-03-21-747' }
+    ],
+    aliases: ['trikkeholdeplass', 'sporvognholdeplass', 'holdeplass trikk', 'trikkestopp'],
+    visualDescription: 'Blått rektangulært skilt med hvit silhuett av en sporvogn på skinner.'
+  },
+  {
+    id: '556.1',
+    code: '556.1',
+    name: 'Automatisk trafikkontroll – punktmåling',
+    displayName: 'Automatisk trafikkontroll – punktmåling',
+    slug: 'automatisk-trafikkontroll-punktmaling',
+    category: 'opplysningsskilt',
+    imagePath: '/signs/opplysningsskilt/skilt-556-1-automatisk-trafikkontroll-punktmaling.jpg',
+    shortExplanation: 'Varsler om automatisk trafikkontroll der farten måles ved ett bestemt kontrollpunkt.',
+    longExplanation: 'Skilt 556.1 varsler en vanlig fotoboks eller annet automatisk kontrollpunkt. Kjøretøyets fart registreres ved selve målepunktet. Fartsgrensen gjelder naturligvis på hele vegen, selv om denne kontrollformen måler ved ett punkt.',
+    theoryTrap: 'Punktmåling må ikke forveksles med strekningsmåling. Ett kamerasymbol varsler kontroll ved ett punkt, mens skilt 556.2 med to kameraer viser at gjennomsnittsfarten måles over en strekning.',
+    whatToDo: [
+      'Kontroller farten tidlig og hold den jevnt innenfor fartsgrensen.',
+      'Unngå bråbremsing foran kameraet, som kan skape fare for trafikken bak.',
+      'Hold oppmerksomheten på vegen og ikke på selve fotoboksen.'
+    ],
+    confusedWith: ['556.2', '558'],
+    sources: [
+      { name: 'Statens vegvesen – offisielle skiltfiler', url: 'https://www.vegvesen.no/fag/veg-og-gate/trafikkskilt-og-vegoppmerking/filer-og-fargekoder-for-trafikkskilt/' },
+      { name: 'Lovdata – skiltforskriften', url: 'https://lovdata.no/forskrift/2005-10-07-1219' }
+    ],
+    aliases: ['punktmåling', 'fotoboks', 'automatisk trafikkontroll', 'fartskamera', 'atk'],
+    visualDescription: 'Blått firkantet skilt med ett hvitt kamerasymbol og bølger under kameraet.'
+  },
+  {
+    id: '558',
+    code: '558',
+    name: 'Videokontroll/-overvåking',
+    displayName: 'Videokontroll/-overvåking',
+    slug: 'videokontroll-overvaking',
+    category: 'opplysningsskilt',
+    imagePath: '/signs/opplysningsskilt/skilt-558-videokontroll-overvaking.jpg',
+    shortExplanation: 'Opplyser om at området eller trafikken blir kontrollert eller overvåket med videokamera.',
+    longExplanation: 'Skiltet brukes der kamera overvåker trafikk, tunnel, vegstrekning eller annet offentlig område. Formålet kan være trafikkstyring, sikkerhet eller kontroll. Skiltet i seg selv angir ikke punkt- eller strekningsmåling av fart.',
+    theoryTrap: 'Kamerasymbolet ligner på automatisk trafikkontroll, men 558 har et skråstilt overvåkingskamera. Det betyr ikke automatisk at farten måles; fartskontroll varsles med skilt 556.1 eller 556.2.',
+    whatToDo: [
+      'Fortsett å følge trafikkreglene og eventuelle variable skilt eller signaler på strekningen.',
+      'Ikke brems brått bare fordi du ser overvåkingsskiltet.',
+      'Skill skiltet fra automatisk trafikkontroll når du tolker en teorioppgave.'
+    ],
+    confusedWith: ['556.1', '556.2'],
+    sources: [
+      { name: 'Statens vegvesen – offisielle skiltfiler', url: 'https://www.vegvesen.no/fag/veg-og-gate/trafikkskilt-og-vegoppmerking/filer-og-fargekoder-for-trafikkskilt/' },
+      { name: 'Lovdata – skiltforskriften', url: 'https://lovdata.no/forskrift/2005-10-07-1219' }
+    ],
+    aliases: ['videokontroll', 'videoovervåking', 'kameraovervåking', 'overvåkingskamera', 'cctv'],
+    visualDescription: 'Blått firkantet skilt med hvitt symbol av et skråstilt overvåkingskamera på en stolpe.'
   },
   // --- UNDERSKILT (Aktiv Kategori) ---
   {
@@ -2916,6 +3785,30 @@ export const trafficSigns: TrafficSign[] = [
       { name: 'Lovdata', url: 'https://lovdata.no/dokument/SF/forskrift/2005-10-07-1219' }
     ],
     aliases: ['rasteplass', 'rast', 'pause', 'benk', 'veikant parkering']
+  },
+  {
+    id: '613.2',
+    code: '613.2',
+    name: 'Rasteplass med toalett',
+    displayName: 'Rasteplass med toalett',
+    slug: 'rasteplass-med-toalett',
+    category: 'serviceskilt',
+    imagePath: '/signs/serviceskilt/skilt-613-2-rasteplass-med-toalett.jpg',
+    shortExplanation: 'Viser til en rasteplass der det også finnes toalett.',
+    longExplanation: 'Skiltet viser en tilrettelagt rasteplass med toalettfasiliteter. Symbolene for rasteplass og WC er samlet i samme serviceskilt, slik at du før avkjøringen kan se at stedet er egnet både for pause og toalettbesøk.',
+    theoryTrap: 'Skiltet betyr ikke at det er bensinstasjon, servering eller overnatting på stedet. Det lover bare rasteplass og toalett; andre tilbud må vises med egne symboler.',
+    whatToDo: [
+      'Bruk rasteplassen dersom du trenger en trygg pause eller et toalettbesøk.',
+      'Reduser farten i god tid før avkjøringen og følg eventuell lokal skilting på området.',
+      'Hold området ryddig og vis hensyn til andre trafikanter.'
+    ],
+    confusedWith: ['613.1', '612'],
+    sources: [
+      { name: 'Statens vegvesen – offisielle skiltfiler', url: 'https://www.vegvesen.no/fag/veg-og-gate/trafikkskilt-og-vegoppmerking/filer-og-fargekoder-for-trafikkskilt/' },
+      { name: 'Lovdata – skiltforskriften', url: 'https://lovdata.no/forskrift/2005-10-07-1219' }
+    ],
+    aliases: ['rasteplass med toalett', 'rasteplass med wc', 'hvileplass med toalett', 'wc rasteplass'],
+    visualDescription: 'Blått firkantet serviceskilt med hvitt felt, WC-tekst, benk og et tre.',
   },
   {
     id: '614',
@@ -3941,47 +4834,48 @@ export const trafficSigns: TrafficSign[] = [
   {
     id: '761',
     code: '761',
-    name: 'Motorveg',
-    displayName: 'Motorveg',
-    slug: 'motorveg',
+    name: 'Motorveg (vegvisningssymbol)',
+    displayName: 'Motorveg – vegvisningssymbol',
+    slug: 'motorveg-vegvisningssymbol',
     category: 'vegvisningsskilt',
     imagePath: '/signs/vegvisningsskilt/skilt-761-motorveg.jpg',
-    shortExplanation: 'Markerer at vegen er klassifisert som motorveg.',
-    longExplanation: 'Motorvegskiltet markerer starten på en motorveg, der spesielle trafikkregler gjelder: Det er forbudt for gående, syklende, mopeder, traktorer og kjøretøy som ikke kan kjøre lovlig i minst 40 km/t på vannrett veg.',
-    theoryTrap: 'Dette er et vegvisningsskilt (kode 761) og ikke et opplysningsskilt, selv om det er blått og gir informasjon. På motorveg er det strengt forbudt å rygge, vende, kjøre i motsatt retning eller stanse/parkere på kjørebanen eller veiskulderen.',
+    shortExplanation: 'Vegvisningssymbol som viser at et reisemål eller vegvalg leder til motorveg.',
+    longExplanation: 'Symbol 761 brukes inne på vegvisningsskilt for å vise at den angitte retningen fører til motorveg. Symbolet er ikke det regulerende startskiltet for motorveg; de særskilte motorvegreglene begynner ved skilt 502 «Motorveg».',
+    theoryTrap: 'Ikke forveksle vegvisningssymbol 761 med opplysningsskilt 502. Symbol 761 viser vei mot motorveg, mens skilt 502 markerer stedet der motorvegreglene begynner å gjelde.',
     whatToDo: [
-      'Kjør kun inn på motorveg med godkjent motorvogn (minst 40 km/t konstruktiv hastighet).',
-      'Bruk akselerasjonsfeltet til å tilpasse farten til trafikken på motorvegen.',
-      'Hold god sikkerhetsavstand og følg de særskilte reglene for motorveg.'
+      'Bruk symbolet til å velge retningen som leder til motorveg.',
+      'Vær forberedt på påkjøring, men husk at motorvegreglene først gjelder når du passerer skilt 502.'
     ],
-    confusedWith: ['763'],
+    confusedWith: ['502', '763'],
     sources: [
       { name: 'Statens vegvesen', url: 'https://www.vegvesen.no' },
       { name: 'Lovdata', url: 'https://lovdata.no/dokument/SF/forskrift/2005-10-07-1219' }
     ],
-    aliases: ['motorveg', 'motorvei', 'e6 motorvei', 'blått motorvegskilt', 'vei klasse a']
+    aliases: ['motorvegsymbol', 'motorveisymbol', 'symbol for motorveg', 'vei til motorveg'],
+    visualDescription: 'Hvitt motorvegsymbol som brukes som del av et vegvisningsskilt.',
   },
   {
     id: '763',
     code: '763',
-    name: 'Motortrafikkveg',
-    displayName: 'Motortrafikkveg',
-    slug: 'motortrafikkveg',
+    name: 'Motortrafikkveg (vegvisningssymbol)',
+    displayName: 'Motortrafikkveg – vegvisningssymbol',
+    slug: 'motortrafikkveg-vegvisningssymbol',
     category: 'vegvisningsskilt',
     imagePath: '/signs/vegvisningsskilt/skilt-763-motortrafikkveg.jpg',
-    shortExplanation: 'Markerer at vegen er klassifisert som motortrafikkveg.',
-    longExplanation: 'Motortrafikkveg (tidligere kalt "bilveg") har de samme adgangsbegrensningene som en motorveg (forbudt for gående, syklende, moped, traktor). Vegen har imidlertid ofte lavere standard enn motorveg, f.eks. tofeltsveg uten midtdeler.',
-    theoryTrap: 'Mange forveksler dette med motorveg. En motortrafikkveg kan ha møtende trafikk uten midtdeler og plankryss (kryss i samme plan). Rygge/vende-forbudet gjelder fortsatt.',
+    shortExplanation: 'Vegvisningssymbol som viser at et reisemål eller vegvalg leder til motortrafikkveg.',
+    longExplanation: 'Symbol 763 brukes inne på vegvisningsskilt for å vise at den angitte retningen fører til motortrafikkveg. Symbolet regulerer ikke vegen i seg selv; reglene for motortrafikkveg begynner ved skilt 503 «Motortrafikkveg».',
+    theoryTrap: 'Ikke forveksle vegvisningssymbol 763 med opplysningsskilt 503. Symbol 763 viser vei mot motortrafikkveg, mens skilt 503 markerer hvor de særskilte reglene begynner.',
     whatToDo: [
-      'Følg de samme kjøretøysbegrensningene som på motorveg.',
-      'Vær oppmerksom på møtende trafikk og plankryss.'
+      'Bruk symbolet til å velge retningen som leder til motortrafikkveg.',
+      'Følg videre skilting og vær forberedt på at skilt 503 markerer starten på de særskilte reglene.'
     ],
-    confusedWith: ['761'],
+    confusedWith: ['503', '761'],
     sources: [
       { name: 'Statens vegvesen', url: 'https://www.vegvesen.no' },
       { name: 'Lovdata', url: 'https://lovdata.no/dokument/SF/forskrift/2005-10-07-1219' }
     ],
-    aliases: ['motortrafikkveg', 'motortrafikkvei', 'bilveg', 'bilvei', 'blåbil']
+    aliases: ['motortrafikkvegsymbol', 'motortrafikkveisymbol', 'symbol for motortrafikkveg', 'vei til motortrafikkveg'],
+    visualDescription: 'Hvitt bilsymbol som brukes som del av et vegvisningsskilt for motortrafikkveg.',
   },
   {
     id: '765',
@@ -4008,24 +4902,25 @@ export const trafficSigns: TrafficSign[] = [
   {
     id: '767',
     code: '767',
-    name: 'Parkering',
-    displayName: 'Parkering',
-    slug: 'parkering',
+    name: 'Parkering (vegvisningssymbol)',
+    displayName: 'Parkering – vegvisningssymbol',
+    slug: 'parkering-vegvisningssymbol',
     category: 'vegvisningsskilt',
     imagePath: '/signs/vegvisningsskilt/skilt-767-parkering.jpg',
-    shortExplanation: 'Angir at parkering er tillatt på stedet.',
-    longExplanation: 'Dette skiltet markerer en plass eller strekning der det er tillatt å parkere kjøretøy. Eventuelle tidsbegrensninger, parkeringsvilkår eller betalingsplikt vil være angitt på underskilt.',
-    theoryTrap: 'Selv om det er en stor hvit P på blå bakgrunn, er dette offisielt et vegvisningsskilt (767). Hvis skiltet står uten underskilt, gjelder tillatelsen uten tidsbegrensning.',
+    shortExplanation: 'Vegvisningssymbol som viser retningen til eller plasseringen av et parkeringstilbud.',
+    longExplanation: 'Symbol 767 brukes på vegvisningsskilt for å vise vei til parkering. Det må skilles fra opplysningsskilt 552 «Parkering», som regulerer at parkering er tillatt på stedet eller strekningen der skiltet står.',
+    theoryTrap: 'En hvit P betyr ikke alltid at skiltet i seg selv regulerer parkering. Symbol 767 inngår i vegvisning og leder fram til parkering; skilt 552 angir selve parkeringsreguleringen.',
     whatToDo: [
-      'Parkér kjøretøyet i henhold til eventuelle oppmerkede felt.',
-      'Sjekk alltid om det er underskilt som angir tidsbegrensning, avgift eller reserverte plasser.'
+      'Følg retningen symbolet viser dersom du skal til parkeringsområdet.',
+      'Les skilt og vilkår på selve parkeringsområdet før du parkerer.'
     ],
-    confusedWith: ['769'],
+    confusedWith: ['552', '769'],
     sources: [
       { name: 'Statens vegvesen', url: 'https://www.vegvesen.no' },
       { name: 'Lovdata', url: 'https://lovdata.no/dokument/SF/forskrift/2005-10-07-1219' }
     ],
-    aliases: ['parkering', 'p-skilt', 'parkere', 'parkeringsplass']
+    aliases: ['parkeringssymbol', 'p-symbol', 'vei til parkering', 'parkering vegvisning'],
+    visualDescription: 'Hvitt P-symbol som brukes som del av et vegvisningsskilt.',
   },
   {
     id: '769',
@@ -4673,27 +5568,5 @@ export const trafficSigns: TrafficSign[] = [
     aliases: ['gågate', 'gå gate', 'bilfri gate', 'gangvei i sentrum'],
     visualDescription: 'Firkantet blått skilt med gående personer og gatemiljø.',
   },
-  {
-    id: '605',
-    code: '605',
-    name: 'Bensinstasjon',
-    displayName: 'Bensinstasjon',
-    slug: 'bensinstasjon',
-    category: 'serviceskilt',
-    imagePath: '/signs/serviceskilt/skilt-605-bensinstasjon.jpg',
-    shortExplanation: 'Viser at det finnes bensinstasjon eller drivstoffanlegg ved vegen eller via avkjøringen.',
-    longExplanation: 'Serviceskiltet opplyser om hvor du kan fylle drivstoff. Det brukes ofte sammen med vegvisningsskilt før avkjøringer, og kan ha symboler for ladestasjon der det tilbys.',
-    theoryTrap: 'Serviceskilt pålegger deg ingenting — de gir bare informasjon. Men å planlegge fylling og lading i god tid er en del av god turplanlegging, som teoriprøven kan teste.',
-    whatToDo: [
-      'Planlegg fylling eller lading i god tid, spesielt før fjelloverganger og lange strekninger.'
-    ],
-    confusedWith: [],
-    sources: [
-      { name: 'Statens vegvesen', url: 'https://www.vegvesen.no' },
-      { name: 'Lovdata', url: 'https://lovdata.no/dokument/SF/forskrift/2005-10-07-1219' }
-    ],
-    aliases: ['bensinstasjon', 'bensinpumpe', 'drivstoff', 'tanking'],
-    visualDescription: 'Firkantet blått skilt med hvit bensinpumpe.',
-  }
 ];
 

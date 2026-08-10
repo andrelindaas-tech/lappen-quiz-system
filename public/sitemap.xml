@@ -713,6 +713,166 @@
         </image:image>
     </url>
     <url>
+        <loc>https://teori-test.no/trafikkskilt/fareskilt/rasfare/</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/fareskilt/skilt-114-1-rasfare.jpg</image:loc>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://teori-test.no/trafikkskilt/fareskilt/farlig-vegskulder/</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/fareskilt/skilt-117-farlig-vegskulder.jpg</image:loc>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://teori-test.no/trafikkskilt/fareskilt/kai-strand-eller-ferjeleie/</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/fareskilt/skilt-120-kai-strand-ferjeleie.jpg</image:loc>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://teori-test.no/trafikkskilt/fareskilt/avstandsskilt-planovergang-en-skrastrek/</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/fareskilt/skilt-136-1-avstandsskilt-planovergang.jpg</image:loc>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://teori-test.no/trafikkskilt/fareskilt/avstandsskilt-planovergang-to-skrastreker/</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/fareskilt/skilt-136-2-avstandsskilt-planovergang.jpg</image:loc>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://teori-test.no/trafikkskilt/fareskilt/avstandsskilt-planovergang-tre-skrastreker/</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/fareskilt/skilt-136-3-avstandsskilt-planovergang.jpg</image:loc>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://teori-test.no/trafikkskilt/fareskilt/sporvogn/</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/fareskilt/skilt-139-sporvogn.jpg</image:loc>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://teori-test.no/trafikkskilt/fareskilt/sidevind/</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/fareskilt/skilt-152-sidevind.jpg</image:loc>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://teori-test.no/trafikkskilt/fareskilt/annen-fare/</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/fareskilt/skilt-156-annen-fare.jpg</image:loc>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://teori-test.no/trafikkskilt/fareskilt/bevegelig-bru/</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/fareskilt/skilt-118-bevegelig-bru.jpg</image:loc>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://teori-test.no/trafikkskilt/fareskilt/jernbanespor-enkeltsporet/</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/fareskilt/skilt-138-1-jernbanespor-enkeltsporet.jpg</image:loc>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://teori-test.no/trafikkskilt/fareskilt/jernbanespor-flersporet/</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/fareskilt/skilt-138-2-jernbanespor-flersporet.jpg</image:loc>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://teori-test.no/trafikkskilt/fareskilt/fly/</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/fareskilt/skilt-150-fly.jpg</image:loc>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://teori-test.no/trafikkskilt/fareskilt/militaer-aktivitet/</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/fareskilt/skilt-151-militaer-aktivitet.jpg</image:loc>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://teori-test.no/trafikkskilt/fareskilt/skilopere/</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/fareskilt/skilt-154-skilopere.jpg</image:loc>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://teori-test.no/trafikkskilt/fareskilt/ridende/</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/fareskilt/skilt-155-ridende.jpg</image:loc>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://teori-test.no/trafikkskilt/fareskilt/dyr-rein/</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/fareskilt/skilt-146-2-rein.jpg</image:loc>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://teori-test.no/trafikkskilt/fareskilt/dyr-hjort/</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/fareskilt/skilt-146-3-hjort.jpg</image:loc>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://teori-test.no/trafikkskilt/fareskilt/dyr-ku/</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/fareskilt/skilt-146-4-ku.jpg</image:loc>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://teori-test.no/trafikkskilt/fareskilt/dyr-sau/</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/fareskilt/skilt-146-5-sau.jpg</image:loc>
+        </image:image>
+    </url>
+    <url>
         <loc>https://teori-test.no/trafikkskilt/forbudsskilt/innkjoring-forbudt/</loc>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
@@ -878,6 +1038,70 @@
         <priority>0.6</priority>
         <image:image>
             <image:loc>https://teori-test.no/signs/forbudsskilt/skilt-372-parkering-forbudt.jpg</image:loc>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://teori-test.no/trafikkskilt/forbudsskilt/forbudt-for-traktor-og-saktegaende-motorredskap/</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/forbudsskilt/skilt-306-3-forbudt-for-traktor-og-motorredskap.jpg</image:loc>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://teori-test.no/trafikkskilt/forbudsskilt/forbudt-for-motorsykkel-og-moped/</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/forbudsskilt/skilt-306-4-forbudt-for-motorsykkel-og-moped.jpg</image:loc>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://teori-test.no/trafikkskilt/forbudsskilt/forbudt-for-lastebil-og-trekkbil/</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/forbudsskilt/skilt-306-5-forbudt-for-lastebil-og-trekkbil.jpg</image:loc>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://teori-test.no/trafikkskilt/forbudsskilt/forbudt-for-gaende/</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/forbudsskilt/skilt-306-7-forbudt-for-gaende.jpg</image:loc>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://teori-test.no/trafikkskilt/forbudsskilt/forbudt-for-ridende/</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/forbudsskilt/skilt-306-9-forbudt-for-ridende.jpg</image:loc>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://teori-test.no/trafikkskilt/forbudsskilt/forbudt-for-liten-elektrisk-motorvogn/</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/forbudsskilt/skilt-306-10-forbudt-for-liten-elektrisk-motorvogn.png</image:loc>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://teori-test.no/trafikkskilt/forbudsskilt/totalvektgrense-for-kjoretoy/</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/forbudsskilt/skilt-318-1-totalvektgrense-kjoretoy.jpg</image:loc>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://teori-test.no/trafikkskilt/forbudsskilt/totalvektgrense-for-vogntog/</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/forbudsskilt/skilt-318-2-totalvektgrense-vogntog.jpg</image:loc>
         </image:image>
     </url>
     <url>
@@ -1273,6 +1497,70 @@
         </image:image>
     </url>
     <url>
+        <loc>https://teori-test.no/trafikkskilt/opplysningsskilt/slutt-pa-gagate/</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/opplysningsskilt/skilt-550-slutt-pa-gagate.jpg</image:loc>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://teori-test.no/trafikkskilt/opplysningsskilt/havarilomme/</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/opplysningsskilt/skilt-555-havarilomme.svg</image:loc>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://teori-test.no/trafikkskilt/opplysningsskilt/automatisk-trafikkontroll-strekningsmaling/</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/opplysningsskilt/skilt-556-2-automatisk-trafikkontroll-strekningsmaling.jpg</image:loc>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://teori-test.no/trafikkskilt/opplysningsskilt/tungtrafikkfelt/</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/opplysningsskilt/skilt-506-tungtrafikkfelt.jpg</image:loc>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://teori-test.no/trafikkskilt/opplysningsskilt/slutt-pa-tungtrafikkfelt/</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/opplysningsskilt/skilt-507-slutt-pa-tungtrafikkfelt.jpg</image:loc>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://teori-test.no/trafikkskilt/opplysningsskilt/holdeplass-for-sporvogn/</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/opplysningsskilt/skilt-513-holdeplass-for-sporvogn.jpg</image:loc>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://teori-test.no/trafikkskilt/opplysningsskilt/automatisk-trafikkontroll-punktmaling/</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/opplysningsskilt/skilt-556-1-automatisk-trafikkontroll-punktmaling.jpg</image:loc>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://teori-test.no/trafikkskilt/opplysningsskilt/videokontroll-overvaking/</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/opplysningsskilt/skilt-558-videokontroll-overvaking.jpg</image:loc>
+        </image:image>
+    </url>
+    <url>
         <loc>https://teori-test.no/trafikkskilt/underskilt/avstand/</loc>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
@@ -1526,6 +1814,14 @@
         <priority>0.6</priority>
         <image:image>
             <image:loc>https://teori-test.no/signs/serviceskilt/skilt-613-1-rasteplass.jpg</image:loc>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://teori-test.no/trafikkskilt/serviceskilt/rasteplass-med-toalett/</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://teori-test.no/signs/serviceskilt/skilt-613-2-rasteplass-med-toalett.jpg</image:loc>
         </image:image>
     </url>
     <url>
@@ -1913,7 +2209,7 @@
         </image:image>
     </url>
     <url>
-        <loc>https://teori-test.no/trafikkskilt/vegvisningsskilt/motorveg/</loc>
+        <loc>https://teori-test.no/trafikkskilt/vegvisningsskilt/motorveg-vegvisningssymbol/</loc>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -1921,7 +2217,7 @@
         </image:image>
     </url>
     <url>
-        <loc>https://teori-test.no/trafikkskilt/vegvisningsskilt/motortrafikkveg/</loc>
+        <loc>https://teori-test.no/trafikkskilt/vegvisningsskilt/motortrafikkveg-vegvisningssymbol/</loc>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -1937,7 +2233,7 @@
         </image:image>
     </url>
     <url>
-        <loc>https://teori-test.no/trafikkskilt/vegvisningsskilt/parkering/</loc>
+        <loc>https://teori-test.no/trafikkskilt/vegvisningsskilt/parkering-vegvisningssymbol/</loc>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -2182,14 +2478,6 @@
         <priority>0.6</priority>
         <image:image>
             <image:loc>https://teori-test.no/signs/opplysningsskilt/skilt-548-gagate.jpg</image:loc>
-        </image:image>
-    </url>
-    <url>
-        <loc>https://teori-test.no/trafikkskilt/serviceskilt/bensinstasjon/</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-        <image:image>
-            <image:loc>https://teori-test.no/signs/serviceskilt/skilt-605-bensinstasjon.jpg</image:loc>
         </image:image>
     </url>
 </urlset>

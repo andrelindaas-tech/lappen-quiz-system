@@ -22,6 +22,7 @@ Prioritert klasse B-sett:
 - `skilt-611-toalettommeanlegg.jpg`
 - `skilt-612-toalett.jpg`
 - `skilt-613-1-rasteplass.jpg`
+- `skilt-613-2-rasteplass-med-toalett.jpg`
 - `skilt-614-enklere-servering.jpg`
 - `skilt-616-spisested.jpg`
 - `skilt-618-campingplass.jpg`
@@ -42,4 +43,3 @@ Prioritert klasse B-sett:
 - `skilt-650-40-gardsmat-bygdeturisme.jpg`
 
 Merk: Skilt 605 er nodtelefon. Drivstoff/bensinstasjon ligger under 610-varianter.
-

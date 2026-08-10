@@ -1,5 +1,5 @@
 import { useState, useMemo } from 'react';
-import { Link } from 'react-router-dom';
+import Link from '../InternalLink';
 import { Helmet } from 'react-helmet-async';
 import { getAllCategories, searchTrafficSigns } from '../../lib/trafficSigns';
 import { trafficSigns } from '../../data/trafficSigns';
@@ -22,7 +22,7 @@ export default function TrafficSignBank() {
   const faqItems = useMemo(() => [
     {
       question: "Hvor mange trafikkskilt er det i Norge?",
-      answer: "Det finnes nesten 300 offisielle trafikkskilt i Norge, fordelt på 9 grupper som fareskilt, forbudsskilt, påbudsskilt, opplysningsskilt og vikepliktskilt. Skiltguiden på teori-test.no dekker 214 av de viktigste med forklaringer og teorifeller."
+      answer: `Det finnes nesten 300 offisielle trafikkskilt i Norge, fordelt på 9 grupper som fareskilt, forbudsskilt, påbudsskilt, opplysningsskilt og vikepliktskilt. Skiltguiden på teori-test.no dekker ${trafficSigns.length} av de viktigste med forklaringer og teorifeller.`
     },
     {
       question: "Hva er forskjellen på fareskilt og forbudsskilt?",
@@ -234,7 +234,7 @@ export default function TrafficSignBank() {
             { to: '/trafikkskilt/blaa-skilt', navn: 'Blå skilt', antall: 67 },
             { to: '/trafikkskilt/rode-skilt', navn: 'Røde skilt', antall: 42 },
             { to: '/trafikkskilt/trekantede-skilt', navn: 'Trekantede skilt', antall: 23 },
-            { to: '/trafikkskilt/skiltnummer', navn: 'Alle skilt etter nummer', antall: 214 },
+            { to: '/trafikkskilt/skiltnummer', navn: 'Alle skilt etter nummer', antall: trafficSigns.length },
           ].map((g) => (
             <Link
               key={g.to}
