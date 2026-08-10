@@ -1,5 +1,6 @@
 import { useMemo } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
+import Link from '../InternalLink';
 import { Helmet } from 'react-helmet-async';
 import { getCategoryBySlug, getTrafficSignsByCategory } from '../../lib/trafficSigns';
 import '../../theory.css';

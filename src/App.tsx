@@ -1,7 +1,9 @@
 import { TrafficSignLookPage, TrafficSignNumberIndex } from './components/traffic-signs/TrafficSignLookPage'
 // Main App Component
 import { useState, useEffect, useCallback, Suspense, lazy, startTransition, useRef } from 'react'
-import { Routes, Route, Link, useNavigate, useLocation, Navigate, useParams } from 'react-router-dom'
+import { Routes, Route, useNavigate, useLocation, Navigate, useParams } from 'react-router-dom'
+import Link from './components/InternalLink'
+import { normalizeInternalPath } from './utils/internalUrls'
 import StartScreen from './components/StartScreen'
 
 const QuizContainer = lazy(() => import('./components/QuizContainer'))
@@ -63,6 +65,16 @@ export default function App() {
     const [streakBounce, setStreakBounce] = useState(false)
     const location = useLocation()
     const navigate = useNavigate()
+
+    // Programmatic SPA navigation bypasses Netlify's server-side 301. Replace
+    // slashless app routes in-place so the address bar, canonical and internal
+    // links all use the same URL. Static files (for example .html) are skipped.
+    useEffect(() => {
+        const pathname = normalizeInternalPath(location.pathname)
+        if (pathname !== location.pathname) {
+            navigate({ pathname, search: location.search, hash: location.hash }, { replace: true })
+        }
+    }, [location.pathname, location.search, location.hash, navigate])
 
     const handleQuizComplete = useCallback(() => {
         recordCompletion()

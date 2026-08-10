@@ -1,5 +1,6 @@
 import { useMemo } from 'react';
-import { useParams, Link, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
+import Link from '../InternalLink';
 import { Helmet } from 'react-helmet-async';
 import { getTrafficSignBySlug, getCategoryBySlug } from '../../lib/trafficSigns';
 import { trafficSigns } from '../../data/trafficSigns';
@@ -204,7 +205,7 @@ export default function TrafficSignDetailPage() {
         <meta property="og:description" content={seoDesc} />
         <meta name="twitter:title" content={seoTitle} />
         <meta name="twitter:description" content={seoDesc} />
-        {/* Uten dette arver alle 214 skiltsidene det generiske delingsbildet fra index.html.
+        {/* Uten dette arver skiltsidene det generiske delingsbildet fra index.html.
             Her er selve skiltet det eneste som gir mening — også for AI-modeller som leser siden. */}
         <meta property="og:image" content={`https://teori-test.no${sign.imagePath}`} />
         <meta property="og:image:alt" content={`Skilt ${sign.code} ${sign.name}`} />

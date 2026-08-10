@@ -2,7 +2,8 @@
 // spørsmålet øverst, fasit og forklaring under, «Neste spørsmål» gjør settet til en kortstokk.
 import { useEffect, useState } from 'react'
 import type { ReactNode } from 'react'
-import { Link, useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
+import Link from './InternalLink'
 import { Helmet } from 'react-helmet-async'
 import { ArrowRight, ChevronDown } from 'lucide-react'
 import { getQuestionBySlug, questionPages } from '../data/questionPages'

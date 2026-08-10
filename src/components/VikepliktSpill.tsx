@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useRef, useState, type KeyboardEvent } from 'react'
 import { Helmet } from 'react-helmet-async'
-import { Link } from 'react-router-dom'
+import Link from './InternalLink'
 import { Play, RotateCcw } from 'lucide-react'
 import { trackEvent } from '../utils/analytics'
 import {

@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import Link from './InternalLink'
 import { Helmet } from 'react-helmet-async'
 import { CircleGauge, Gamepad2, Timer, Trophy, Signpost, Route } from 'lucide-react'
 

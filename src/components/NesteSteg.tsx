@@ -10,7 +10,7 @@
 // Bevisst beskjeden: én linje tekst, én knapp, én sekundærlenke. Vi tester plassering
 // og måling først, ikke visuell vekt.
 
-import { Link } from 'react-router-dom'
+import Link from './InternalLink'
 import { trackEvent } from '../utils/analytics'
 
 // Artikler med en temaquiz som faktisk finnes. Alt annet får ekspresstesten.

@@ -1,4 +1,2 @@
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
+# Every public route is prerendered to dist/<route>/index.html.
+# Unknown paths fall through to dist/404.html with a real 404 response.

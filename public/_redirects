@@ -1,42 +1,49 @@
 # Redirects fra gamle /teori/-stier til /laeringsressurser/
-/teori/bremselengde                /laeringsressurser/bremselengde             301
-/teori/reaksjonstid                /laeringsressurser/reaksjonstid             301
-/teori/vikeplikt                   /laeringsressurser/vikeplikt                301
-/teori/skilt                       /laeringsressurser/skilt                    301
-/teori/sikkerhet                   /laeringsressurser/sikkerhetsutstyr       301
-/teori/miljo                       /laeringsressurser/miljo                    301
-/teori/stans-og-parkering          /laeringsressurser/stans-og-parkering       301
-/teori/vognkort-vekter             /laeringsressurser/vognkort-vekter          301
-/teori/vognkort-og-vekt            /laeringsressurser/vognkort-vekter          301
-/teori/sikkerhetskontroll          /laeringsressurser/sikkerhetskontroll       301
-/teori/stroket-teoriproven         /laeringsressurser/stroket-teoriproven      301
-/teori/oppkjoring                  /laeringsressurser/oppkjoring               301
-/teori/tips-eksamen                /laeringsressurser/tips-eksamen             301
-/teori/ovingskjoring               /laeringsressurser/ovingskjoring            301
-/teori/promille                    /laeringsressurser/promille                 301
-/teori/tilhenger                   /laeringsressurser/tilhenger                301
-/teori/fartsgrenser                /laeringsressurser/fartsgrenser             301
-/teori/myndighetspyramiden         /laeringsressurser/myndighetspyramiden      301
-/teori/veimerking                  /laeringsressurser/veimerking               301
-/teori/rundkjoring                 /laeringsressurser/rundkjoring              301
-/teori/morkekjoring                /laeringsressurser/lysbruk-morkekjoring     301
-/teori/trafikkuhell                /laeringsressurser/trafikkuhell-forstehjelp 301
+/teori/bremselengde                /laeringsressurser/bremselengde/             301
+/teori/reaksjonstid                /laeringsressurser/reaksjonstid/             301
+/teori/vikeplikt                   /laeringsressurser/vikeplikt/                301
+/teori/skilt                       /laeringsressurser/skilt/                    301
+/teori/sikkerhet                   /laeringsressurser/sikkerhetsutstyr/         301
+/teori/miljo                       /laeringsressurser/miljo/                    301
+/teori/stans-og-parkering          /laeringsressurser/stans-og-parkering/       301
+/teori/vognkort-vekter             /laeringsressurser/vognkort-vekter/          301
+/teori/vognkort-og-vekt            /laeringsressurser/vognkort-vekter/          301
+/teori/sikkerhetskontroll          /laeringsressurser/sikkerhetskontroll/       301
+/teori/stroket-teoriproven         /laeringsressurser/stroket-teoriproven/      301
+/teori/oppkjoring                  /laeringsressurser/oppkjoring/               301
+/teori/tips-eksamen                /laeringsressurser/tips-eksamen/             301
+/teori/ovingskjoring               /laeringsressurser/ovingskjoring/            301
+/teori/promille                    /laeringsressurser/promille/                 301
+/teori/tilhenger                   /laeringsressurser/tilhenger/                301
+/teori/fartsgrenser                /laeringsressurser/fartsgrenser/             301
+/teori/myndighetspyramiden         /laeringsressurser/myndighetspyramiden/      301
+/teori/veimerking                  /laeringsressurser/veimerking/               301
+/teori/rundkjoring                 /laeringsressurser/rundkjoring/              301
+/teori/morkekjoring                /laeringsressurser/lysbruk-morkekjoring/     301
+/teori/trafikkuhell                /laeringsressurser/trafikkuhell-forstehjelp/ 301
 
 # Intern redirect (gammel URL-variant)
-/laeringsressurser/vognkort-og-vekt    /laeringsressurser/vognkort-vekter      301
-/laeringsressurser/sikkerhet          /laeringsressurser/sikkerhetsutstyr      301
-/laeringsressurser/morkekjoring    /laeringsressurser/lysbruk-morkekjoring     301
-/laeringsressurser/trafikkuhell    /laeringsressurser/trafikkuhell-forstehjelp 301
-
-/*    /index.html   200
+/laeringsressurser/vognkort-og-vekt /laeringsressurser/vognkort-vekter/          301
+/laeringsressurser/sikkerhet        /laeringsressurser/sikkerhetsutstyr/          301
+/laeringsressurser/morkekjoring     /laeringsressurser/lysbruk-morkekjoring/      301
+/laeringsressurser/trafikkuhell     /laeringsressurser/trafikkuhell-forstehjelp/  301
+/laeringsressurser/stans-parkering  /laeringsressurser/stans-og-parkering/        301
+/laeringsressurser/kontakt          /laeringsressurser/personvern/                301
+/prove                              /quiz/                                         301
 
 # Konsolidering 25.07.2026 — spørsmålssider slått sammen med eiende artikkel
-/sporsmal/hvor-langt-fra-gangfelt-kan-du-parkere   /laeringsressurser/stans-og-parkering   301
-/sporsmal/hva-betyr-blinkende-gult-lys             /laeringsressurser/trafikklys-signaler  301
-/sporsmal/er-det-lov-a-kjore-forbi-pa-hoyre-side   /laeringsressurser/forbikjoring         301
+/sporsmal/hvor-langt-fra-gangfelt-kan-du-parkere   /laeringsressurser/stans-og-parkering/   301
+/sporsmal/hva-betyr-blinkende-gult-lys             /laeringsressurser/trafikklys-signaler/  301
+/sporsmal/er-det-lov-a-kjore-forbi-pa-hoyre-side   /laeringsressurser/forbikjoring/         301
 
 # Rydding 25.07.2026 — quiz-URL-er Google indekserte fordi ruta godtok alle kategorier
-/quiz/fareskilt            /quiz/skilt        301
-/quiz/forbudsskilt         /quiz/skilt        301
-/quiz/underskilt           /quiz/skilt        301
-/quiz/fart_og_plassering   /quiz/fartsregler  301
+/quiz/fareskilt            /quiz/skilt/        301
+/quiz/forbudsskilt         /quiz/skilt/        301
+/quiz/underskilt           /quiz/skilt/        301
+/quiz/fart_og_plassering   /quiz/fartsregler/  301
+
+# Skiltguide 10.08.2026 — unike slugs for vegvisningssymboler og feilregistrert 605
+/trafikkskilt/vegvisningsskilt/motorveg             /trafikkskilt/vegvisningsskilt/motorveg-vegvisningssymbol/             301
+/trafikkskilt/vegvisningsskilt/motortrafikkveg      /trafikkskilt/vegvisningsskilt/motortrafikkveg-vegvisningssymbol/      301
+/trafikkskilt/vegvisningsskilt/parkering             /trafikkskilt/vegvisningsskilt/parkering-vegvisningssymbol/             301
+/trafikkskilt/serviceskilt/bensinstasjon             /trafikkskilt/serviceskilt/drivstoff/                                  301

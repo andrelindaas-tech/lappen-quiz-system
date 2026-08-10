@@ -1,5 +1,6 @@
 // Teori-siden — Oversikt over alle emner
-import { useParams, useNavigate, Link } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
+import Link from './InternalLink'
 import { useEffect, useState, useMemo } from 'react'
 import { Helmet } from 'react-helmet-async'
 import { 

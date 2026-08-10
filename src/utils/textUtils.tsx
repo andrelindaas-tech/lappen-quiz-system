@@ -1,5 +1,6 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import Link from '../components/InternalLink'
+import { normalizeInternalHtmlLinks } from './internalUrls'
 
 /**
  * Helper to parse bold markdown **text** and italic *text*
@@ -183,7 +184,8 @@ export function parseInlineLinks(text: string) {
  * allerede har data-label — eller ligger i første kolonne — blir stående urørt.
  */
 export function addTableCellLabels(html: string): string {
-    return html.replace(/<table[\s\S]*?<\/table>/gi, (table) => {
+    const normalizedHtml = normalizeInternalHtmlLinks(html)
+    return normalizedHtml.replace(/<table[\s\S]*?<\/table>/gi, (table) => {
         const headMatch = table.match(/<thead[\s\S]*?<\/thead>/i)
         if (!headMatch) return table
         const headers: string[] = []

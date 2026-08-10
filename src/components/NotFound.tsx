@@ -1,5 +1,5 @@
 // 404-side — vises for ukjente URL-er i stedet for forsiden (unngår soft-404)
-import { Link } from 'react-router-dom'
+import Link from './InternalLink'
 import { Helmet } from 'react-helmet-async'
 
 export default function NotFound() {
@@ -7,7 +7,7 @@ export default function NotFound() {
         <div className="container" style={{ textAlign: 'center', padding: 'var(--spacing-2xl) var(--spacing-lg)', maxWidth: '560px', margin: '0 auto' }}>
             <Helmet>
                 <title>Fant ikke siden | Teori-test.no</title>
-                <meta name="robots" content="noindex, nofollow" />
+                <meta name="robots" content="noindex, follow" />
             </Helmet>
             <div style={{ fontSize: '3rem', marginBottom: 'var(--spacing-sm)' }}>🚧</div>
             <h1 style={{ fontSize: '1.75rem', fontWeight: 800, marginBottom: 'var(--spacing-sm)' }}>

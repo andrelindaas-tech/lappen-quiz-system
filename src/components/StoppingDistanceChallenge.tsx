@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { trackEvent } from '../utils/analytics'
-import { Link } from 'react-router-dom'
+import Link from './InternalLink'
 import { Helmet } from 'react-helmet-async'
 import confetti from 'canvas-confetti'
 import './StoppingDistanceChallenge.css'

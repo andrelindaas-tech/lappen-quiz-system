@@ -1,6 +1,6 @@
 // Hub for spørsmålssidene («/sporsmal») — v2: temakort med ikoner, nummererte
 // spørsmålsrader uten svar-teaser, og «kortstokk»-CTA øverst.
-import { Link } from 'react-router-dom'
+import Link from './InternalLink'
 import { Helmet } from 'react-helmet-async'
 import { Gauge, Zap, Car, Route, Shield, HeartPulse, Snowflake, HelpCircle, ArrowRight } from 'lucide-react'
 import type { ReactNode } from 'react'

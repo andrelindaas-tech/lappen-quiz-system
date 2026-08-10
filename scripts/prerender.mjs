@@ -14,6 +14,10 @@ const DIST = path.join(ROOT, 'dist')
 const SERVER_BUNDLE = path.join(ROOT, 'dist-server', 'entry-server.js')
 const SITEMAP = path.join(ROOT, 'public', 'sitemap.xml')
 const BASE_URL = 'https://teori-test.no'
+// Crawlable utility routes that should have route-correct HTML, but must not
+// appear in the sitemap because they are intentionally noindex.
+const EXTRA_ROUTES = ['/min-fremgang']
+const NOT_FOUND_ROUTE = '/404'
 
 // --- Browser API shims (components read localStorage in state initializers) ---
 const memoryStorage = () => {
@@ -32,10 +36,11 @@ globalThis.sessionStorage = memoryStorage()
 
 // --- Collect routes from the freshly generated sitemap ---
 const xml = fs.readFileSync(SITEMAP, 'utf-8')
-const routes = [...xml.matchAll(/<loc>([^<]+)<\/loc>/g)]
+const sitemapRoutes = [...xml.matchAll(/<loc>([^<]+)<\/loc>/g)]
     .map((m) => m[1].replace(BASE_URL, '') || '/')
     // Sitemap-URL-er har trailing slash (matcher Netlify-redirect); rutene normaliseres uten
     .map((r) => (r === '/' ? r : r.replace(/\/+$/, '')))
+const routes = [...new Set([...sitemapRoutes, ...EXTRA_ROUTES])]
 
 // --- Load app + template ---
 const { createApp } = await import(pathToFileURL(SERVER_BUNDLE).href)
@@ -105,6 +110,20 @@ for (const route of routes) {
     } catch (err) {
         failed.push(`${route}: ${err?.message ?? err}`)
     }
+}
+
+// Netlify serves dist/404.html with a real 404 status when no static route or
+// explicit redirect matches. This prevents unknown URLs from receiving the
+// homepage HTML and canonical through an SPA catch-all.
+try {
+    const { html, helmet } = await renderRoute(NOT_FOUND_ROUTE)
+    fs.writeFileSync(
+        path.join(DIST, '404.html'),
+        buildDocument(html, helmet, NOT_FOUND_ROUTE),
+        'utf-8',
+    )
+} catch (err) {
+    failed.push(`${NOT_FOUND_ROUTE}: ${err?.message ?? err}`)
 }
 
 // Clean up the SSR bundle — only dist/ should be deployed

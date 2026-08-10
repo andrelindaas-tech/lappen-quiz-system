@@ -2,7 +2,7 @@
 // Design fra Claude design («Min fremgang» variant 5), oversatt til sidens CSS-variabler.
 import { useEffect, useState } from 'react'
 import type { CSSProperties } from 'react'
-import { Link } from 'react-router-dom'
+import Link from './InternalLink'
 import { Helmet } from 'react-helmet-async'
 import { BookOpen, Car, Zap, HelpCircle, Target, ClipboardCheck, TrendingUp } from 'lucide-react'
 import { getStreak } from '../utils/streakStore'
@@ -104,7 +104,7 @@ export default function MinFremgang() {
         <div className="container" style={{ maxWidth: '480px', margin: '0 auto', paddingBottom: 'var(--spacing-2xl)' }}>
             <Helmet>
                 <title>Min fremgang | Teori-test.no</title>
-                <meta name="robots" content="noindex, nofollow" />
+                <meta name="robots" content="noindex, follow" />
             </Helmet>
 
             {/* Ramme rundt hele dashbordet (jf. Claude design-mockup) */}

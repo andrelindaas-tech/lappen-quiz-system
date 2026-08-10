@@ -199,12 +199,12 @@ export default function ResultScreen({ result, mode, onRestart, onReview, onRetu
                 <h3 style={{ fontSize: '1.05rem', fontWeight: 700, margin: '0 0 0.5rem 0', color: 'var(--color-text)' }}>Hva nå?</h3>
                 <p style={{ fontSize: '0.9rem', color: 'var(--color-text-light)', margin: '0 0 0.35rem 0' }}>
                     Tren vurderingsevnen i{' '}
-                    <a href="/laeringsspill/vikeplikt" style={{ color: 'var(--color-primary)', fontWeight: 600, textDecoration: 'none' }}>vikepliktspillet</a>
+                    <a href="/laeringsspill/vikeplikt/" style={{ color: 'var(--color-primary)', fontWeight: 600, textDecoration: 'none' }}>vikepliktspillet</a>
                     {' '}— trykk på bilene i riktig rekkefølge.
                 </p>
                 <p style={{ fontSize: '0.9rem', color: 'var(--color-text-light)', margin: 0 }}>
                     Se utviklingen din over tid i{' '}
-                    <a href="/min-fremgang" style={{ color: 'var(--color-primary)', fontWeight: 600, textDecoration: 'none' }}>Min fremgang</a>
+                    <a href="/min-fremgang/" style={{ color: 'var(--color-primary)', fontWeight: 600, textDecoration: 'none' }}>Min fremgang</a>
                     {' '}— lagres kun lokalt på din enhet.
                 </p>
             </div>

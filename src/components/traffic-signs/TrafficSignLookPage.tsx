@@ -5,7 +5,8 @@
 // uten å få klikk, fordi siden Google viser inneholder kategorikort — ikke blå skilt.
 // Disse sidene gir hvert utseende en side som faktisk inneholder svaret.
 
-import { useLocation, Link, Navigate } from 'react-router-dom'
+import { useLocation, Navigate } from 'react-router-dom'
+import Link from '../InternalLink'
 import { Helmet } from 'react-helmet-async'
 import {
     getSignLookGroup,
