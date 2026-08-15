@@ -26,6 +26,19 @@ const demoProgress = {
     ],
 }
 
+const coreTheoryTopics = [
+    { label: 'Vikeplikt og rundkjøring', path: '/laeringsressurser/vikeplikt' },
+    { label: 'Bremselengde og stopplengde', path: '/laeringsressurser/bremselengde' },
+    { label: 'Myndighetspyramiden i trafikken', path: '/laeringsressurser/myndighetspyramiden' },
+    { label: 'Veimerking til teoriprøven', path: '/laeringsressurser/veimerking' },
+    { label: 'Trafikkskilt og skiltregler', path: '/laeringsressurser/skilt' },
+    { label: 'Fartsgrenser og fartstilpasning', path: '/laeringsressurser/fartsgrenser' },
+    { label: 'Promille, rus og reaksjonsevne', path: '/laeringsressurser/promille' },
+    { label: 'Tilhenger, vekt og førerkortklasse', path: '/laeringsressurser/tilhenger' },
+    { label: 'Sikkerhetskontroll av bilen', path: '/laeringsressurser/sikkerhetskontroll' },
+    { label: 'Glatt føre og vinterkjøring', path: '/laeringsressurser/glatt-fore' },
+] as const
+
 const faqItems: FaqItem[] = [
     {
         question: 'Er teoriprøven på Teori-test.no gratis?',
@@ -360,6 +373,35 @@ export default function StartScreen() {
                             <img src="/signs/forbudsskilt/skilt-362-50-fartsgrense.jpg" alt="" loading="lazy" decoding="async" />
                         </div>
                     </article>
+                </div>
+            </section>
+
+            <section className="tt-v2-topics" aria-labelledby="core-theory-topics-title">
+                <div className="tt-v2-container">
+                    <div className="tt-v2-topics-heading">
+                        <div>
+                            <p className="tt-v2-eyebrow">Les deg opp på pensum</p>
+                            <h2 id="core-theory-topics-title">Viktige temaer på teoriprøven</h2>
+                        </div>
+                        <p>Gå rett til forklaringer, eksempler og vanlige teorifeller i temaene mange synes er vanskelige.</p>
+                    </div>
+
+                    <nav aria-label="Sentrale temaer for teoriprøven">
+                        <ul className="tt-v2-topic-list">
+                            {coreTheoryTopics.map((topic) => (
+                                <li key={topic.path}>
+                                    <Link to={topic.path}>
+                                        <span>{topic.label}</span>
+                                        <ChevronRight size={16} aria-hidden="true" />
+                                    </Link>
+                                </li>
+                            ))}
+                        </ul>
+                    </nav>
+
+                    <Link className="tt-v2-text-link tt-v2-topics-all" to="/laeringsressurser">
+                        Se alle læringsressurser <ChevronRight size={14} aria-hidden="true" />
+                    </Link>
                 </div>
             </section>
 

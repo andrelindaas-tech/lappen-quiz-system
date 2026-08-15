@@ -752,6 +752,80 @@ body.dark-mode .tt-v2-feature-card {
   border-radius: 50%;
 }
 
+/* Core theory topics */
+.tt-v2-topics {
+  padding: 72px 0;
+  background: var(--tt-surface);
+  border-top: 1px solid var(--tt-line);
+  border-bottom: 1px solid var(--tt-line);
+}
+
+.tt-v2-topics-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 32px;
+  margin-bottom: 30px;
+}
+
+.tt-v2-topics-heading h2 {
+  margin: 0;
+  font-size: 38px;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 0;
+}
+
+.tt-v2-topics-heading > p {
+  max-width: 410px;
+  margin: 0;
+  color: var(--tt-muted);
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.tt-v2-topic-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 36px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--tt-line-strong);
+}
+
+.tt-v2-topic-list li {
+  border-bottom: 1px solid var(--tt-line);
+}
+
+.tt-v2-topic-list a {
+  min-height: 59px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  color: var(--tt-ink);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.35;
+  text-decoration: none;
+  transition: color .16s ease, padding-left .16s ease;
+}
+
+.tt-v2-topic-list a:hover {
+  padding-left: 5px;
+  color: var(--tt-accent-text);
+}
+
+.tt-v2-topic-list svg {
+  flex: 0 0 auto;
+  color: var(--tt-muted);
+}
+
+.tt-v2-topics-all {
+  margin-top: 22px;
+}
+
 /* Compact timeline */
 .tt-v2-how {
   padding: 50px 0 54px;
@@ -1177,6 +1251,29 @@ body.dark-mode .tt-v2-feature-card {
 
   .tt-v2-section-heading > p {
     margin-top: 12px;
+  }
+
+  .tt-v2-topics {
+    padding: 50px 0;
+  }
+
+  .tt-v2-topics-heading {
+    display: block;
+    margin-bottom: 23px;
+  }
+
+  .tt-v2-topics-heading h2 {
+    font-size: 32px;
+  }
+
+  .tt-v2-topics-heading > p {
+    max-width: none;
+    margin-top: 14px;
+  }
+
+  .tt-v2-topic-list {
+    grid-template-columns: 1fr;
+    gap: 0;
   }
 
   .tt-v2-hero {
