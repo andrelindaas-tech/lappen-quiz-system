@@ -7,6 +7,7 @@ const __dirname = path.dirname(__filename);
 
 const ROOT_DIR = path.resolve(__dirname, '..');
 const THEORY_DATA_PATH = path.join(ROOT_DIR, 'src/data/theoryData.ts');
+const VIKEPLIKT_DATA_PATH = path.join(ROOT_DIR, 'src/data/vikepliktTopic.ts');
 const QUESTIONS_DATA_PATH = path.join(ROOT_DIR, 'src/data/questionPages.ts');
 const CAT_DATA_PATH = path.join(ROOT_DIR, 'src/data/trafficSignCategories.ts');
 const SIGNS_DATA_PATH = path.join(ROOT_DIR, 'src/data/trafficSigns.ts');
@@ -55,12 +56,17 @@ function generateSitemap() {
     console.warn(`Warning: Could not find question pages at ${QUESTIONS_DATA_PATH}`);
   }
 
-  // 2. Parse theory articles from theoryData.ts
-  if (fs.existsSync(THEORY_DATA_PATH)) {
-    const content = fs.readFileSync(THEORY_DATA_PATH, 'utf-8');
-    // Extract IDs using anchored word-boundary regex
+  // 2. Parse theory articles from the theory data files
+  const theoryDataPaths = [VIKEPLIKT_DATA_PATH, THEORY_DATA_PATH];
+  const ids = new Set();
+  for (const theoryDataPath of theoryDataPaths) {
+    if (!fs.existsSync(theoryDataPath)) {
+      console.warn(`Warning: Could not find theory data at ${theoryDataPath}`);
+      continue;
+    }
+
+    const content = fs.readFileSync(theoryDataPath, 'utf-8');
     const idRegex = /\bid:\s*['"]([^'"]+)['"]/g;
-    const ids = new Set();
     let match;
     while ((match = idRegex.exec(content)) !== null) {
       const id = match[1];
@@ -73,17 +79,15 @@ function generateSitemap() {
         ids.add(id);
       }
     }
-    
-    // Add unique article URLs
-    for (const id of ids) {
-      urls.push({
-        loc: `/laeringsressurser/${id}`,
-        priority: '0.7',
-        changefreq: 'monthly'
-      });
-    }
-  } else {
-    console.warn(`Warning: Could not find theory data at ${THEORY_DATA_PATH}`);
+  }
+
+  // Add unique article URLs
+  for (const id of ids) {
+    urls.push({
+      loc: `/laeringsressurser/${id}`,
+      priority: '0.7',
+      changefreq: 'monthly'
+    });
   }
 
   // 3. Parse active categories from trafficSignCategories.ts

@@ -194,9 +194,92 @@ body.dark-mode .theory-topic-header {
     word-wrap: break-word;
 }
 
+.theory-article-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem 1rem;
+    margin-top: var(--spacing-md);
+    color: var(--color-text-light);
+    font-size: 0.85rem;
+    line-height: 1.5;
+}
+
+.theory-article-meta span {
+    display: inline-block;
+}
+
+.theory-article-image {
+    margin: var(--spacing-lg) 0 0;
+}
+
+.theory-article-image-hero {
+    margin: 0 0 var(--spacing-xl);
+}
+
+.theory-article-image img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--color-border);
+}
+
+.theory-article-image figcaption {
+    margin-top: 0.6rem;
+    color: var(--color-text-light);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    text-align: center;
+}
+
+/* Fire vikepliktsituasjoner: HTML/SVG-illustrasjonen skal følge artikkelbredden. */
+.vikeplikt-situasjoner-illustrasjon {
+    width: 100%;
+    margin-top: var(--spacing-lg);
+    overflow: hidden;
+}
+
+.vikeplikt-situasjoner-figure {
+    margin: 0;
+}
+
+.vikeplikt-situasjoner-caption {
+    margin-top: 0.6rem;
+    color: var(--color-text-light);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    text-align: center;
+}
+
+.vikeplikt-situasjoner-illustrasjon > div {
+    padding-inline: 0 !important;
+}
+
+.vikeplikt-situasjoner-illustrasjon > div > div:nth-of-type(2) {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+}
+
+@media (max-width: 620px) {
+    .vikeplikt-situasjoner-illustrasjon > div > div:nth-of-type(2) {
+        grid-template-columns: 1fr !important;
+    }
+}
+
 .theory-topic-icon-lg {
     font-size: 3.5rem;
     filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.2));
+}
+
+.theory-topic-image-icon {
+    display: block;
+    width: 64px;
+    height: 64px;
+    object-fit: contain;
+}
+
+/* Skjuler den hvite, firkantede bildeflaten rundt vikepliktskiltet. */
+.theory-topic-image-icon--yield {
+    clip-path: polygon(1% 7%, 99% 7%, 50% 96%);
 }
 
 /* ===== Teori-seksjoner ===== */
@@ -334,6 +417,58 @@ body.dark-mode .theory-section-example {
     background: var(--color-bg);
 }
 
+/* Rundkjøring: samme rolige fargesystem som forsiden.
+   Fire fargefamilier: nøytral, marine tekst, teal og amber. */
+.theory-topic-rundkjoring {
+    --roundabout-card-bg: var(--color-bg);
+    --roundabout-teal-bg: #eef9f6;
+    --roundabout-teal-border: rgba(13, 148, 136, 0.28);
+    --roundabout-amber-bg: #fff8e7;
+    --roundabout-amber-border: rgba(180, 83, 9, 0.34);
+    --roundabout-card-shadow: 0 18px 44px rgba(15, 23, 42, 0.055);
+}
+
+body.dark-mode .theory-topic-rundkjoring {
+    --roundabout-card-bg: var(--color-bg);
+    --roundabout-teal-bg: #10231f;
+    --roundabout-teal-border: rgba(45, 212, 191, 0.3);
+    --roundabout-amber-bg: #2b2415;
+    --roundabout-amber-border: rgba(245, 158, 11, 0.32);
+    --roundabout-card-shadow: 0 12px 28px rgba(0, 0, 0, 0.24);
+}
+
+body .theory-topic-rundkjoring .theory-section {
+    background: var(--roundabout-card-bg);
+    border-color: var(--color-border);
+    box-shadow: var(--roundabout-card-shadow);
+}
+
+body .theory-topic-rundkjoring .theory-section-info {
+    background: var(--roundabout-teal-bg);
+    border-color: var(--roundabout-teal-border);
+}
+
+body .theory-topic-rundkjoring .theory-section-warning {
+    background: var(--roundabout-card-bg);
+    border-color: var(--roundabout-amber-border);
+    box-shadow: var(--roundabout-card-shadow);
+}
+
+body .theory-topic-rundkjoring .theory-section-tip {
+    background: var(--roundabout-amber-bg);
+    border-color: var(--roundabout-amber-border);
+    box-shadow: var(--roundabout-card-shadow);
+}
+
+body .theory-topic-rundkjoring .theory-section-component {
+    background: var(--roundabout-card-bg);
+    border-color: var(--color-border);
+}
+
+body.dark-mode .theory-topic-rundkjoring .theory-section::before {
+    display: none;
+}
+
 /* Skilt-seksjon med bilder */
 .theory-section-signs {
     background-color: var(--color-bg);
@@ -359,7 +494,32 @@ body.dark-mode .theory-section-example {
 .theory-sign-item:hover {
     transform: translateX(8px);
     box-shadow: var(--shadow-md);
-    border-color: rgba(255, 255, 255, 0.1);
+    border-color: color-mix(in srgb, var(--color-primary) 45%, var(--color-border));
+}
+
+.theory-sign-item-link {
+    color: inherit;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.theory-sign-item-link::after {
+    content: '→';
+    flex-shrink: 0;
+    color: var(--color-primary);
+    font-size: 1.35rem;
+    font-weight: 700;
+    transition: transform 0.2s ease;
+}
+
+.theory-sign-item-link:hover::after {
+    transform: translateX(3px);
+}
+
+.theory-sign-item-link:focus-visible {
+    outline: 3px solid color-mix(in srgb, var(--color-primary) 55%, transparent);
+    outline-offset: 3px;
+    border-color: var(--color-primary);
 }
 
 .theory-sign-visual {
@@ -620,6 +780,10 @@ body.dark-mode .theory-section-example {
         text-align: center;
         gap: var(--spacing-md);
         padding: var(--spacing-lg);
+    }
+
+    .theory-article-meta {
+        justify-content: center;
     }
 
     .theory-topic-title {

@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="430" viewBox="0 0 720 430" role="img" aria-labelledby="title description">
+  <title id="title">Rødt hovedsignal med separat grønn pil mot høyre</title>
+  <desc id="description">En enkel illustrasjon av et norsk trafikksignal der hovedsignalet er rødt og et separat signal viser grønn pil mot høyre.</desc>
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f4f7f4"/>
+      <stop offset="1" stop-color="#dde9e5"/>
+    </linearGradient>
+    <linearGradient id="housing" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#30383c"/>
+      <stop offset="1" stop-color="#151a1d"/>
+    </linearGradient>
+    <radialGradient id="redLight">
+      <stop offset="0" stop-color="#ff6b60"/>
+      <stop offset="0.6" stop-color="#e4312b"/>
+      <stop offset="1" stop-color="#9c1714"/>
+    </radialGradient>
+    <radialGradient id="greenLight">
+      <stop offset="0" stop-color="#7af3cc"/>
+      <stop offset="0.65" stop-color="#14b98b"/>
+      <stop offset="1" stop-color="#08765e"/>
+    </radialGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="170%">
+      <feDropShadow dx="0" dy="12" stdDeviation="12" flood-color="#10243d" flood-opacity="0.22"/>
+    </filter>
+    <filter id="greenGlow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="7" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="720" height="430" rx="28" fill="url(#background)"/>
+  <path d="M0 340 C170 285 255 365 395 326 C520 291 615 300 720 252 L720 430 L0 430 Z" fill="#c9ddd5" opacity="0.58"/>
+  <rect x="325" y="28" width="18" height="402" rx="9" fill="#6d7779"/>
+
+  <g filter="url(#shadow)">
+    <rect x="183" y="46" width="190" height="330" rx="28" fill="url(#housing)"/>
+    <rect x="199" y="62" width="158" height="298" rx="20" fill="#22292d" stroke="#444e53" stroke-width="3"/>
+
+    <path d="M211 91 Q278 39 345 91 L334 118 Q278 84 222 118 Z" fill="#111619"/>
+    <circle cx="278" cy="126" r="49" fill="#090c0e" stroke="#465056" stroke-width="5"/>
+    <circle cx="278" cy="126" r="38" fill="url(#redLight)"/>
+    <circle cx="264" cy="112" r="10" fill="#ffaaa4" opacity="0.48"/>
+
+    <path d="M211 185 Q278 133 345 185 L334 212 Q278 178 222 212 Z" fill="#111619"/>
+    <circle cx="278" cy="220" r="49" fill="#090c0e" stroke="#465056" stroke-width="5"/>
+    <circle cx="278" cy="220" r="37" fill="#343b3e"/>
+
+    <path d="M211 279 Q278 227 345 279 L334 306 Q278 272 222 306 Z" fill="#111619"/>
+    <circle cx="278" cy="314" r="49" fill="#090c0e" stroke="#465056" stroke-width="5"/>
+    <circle cx="278" cy="314" r="37" fill="#30383b"/>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="405" y="198" width="176" height="162" rx="25" fill="url(#housing)"/>
+    <rect x="421" y="214" width="144" height="130" rx="18" fill="#22292d" stroke="#444e53" stroke-width="3"/>
+    <path d="M433 241 Q493 196 553 241 L543 266 Q493 237 443 266 Z" fill="#111619"/>
+    <circle cx="493" cy="281" r="52" fill="#080d0d" stroke="#465056" stroke-width="5"/>
+    <circle cx="493" cy="281" r="41" fill="url(#greenLight)" opacity="0.9"/>
+    <path d="M463 270 H500 V253 L530 281 L500 309 V292 H463 Z" fill="#dcfff4" filter="url(#greenGlow)"/>
+  </g>
+
+  <g font-family="Arial, Helvetica, sans-serif" fill="#10243d">
+    <text x="405" y="89" font-size="21" font-weight="700">Grønn pil mot høyre</text>
+    <text x="405" y="119" font-size="17">Du kan kjøre i pilens retning.</text>
+    <text x="405" y="145" font-size="17">Hovedsignalet gjelder de andre</text>
+    <text x="405" y="170" font-size="17">kjøreretningene.</text>
+  </g>
+</svg>

@@ -1,6 +1,7 @@
 // Teori-emne detaljvisning
 import React from 'react'
 import { Helmet } from 'react-helmet-async'
+import { Link } from 'react-router-dom'
 import type { TheoryTopic as TopicType } from '../data/theoryData'
 import { 
     Shield, 
@@ -36,6 +37,7 @@ import MiniQuiz from './MiniQuiz'
 import AutomatVsManuellSammenligning from './AutomatVsManuellSammenligning'
 import VognkortEksempel from './VognkortEksempel'
 import { TilhengerKalkulator } from './TilhengerKalkulator'
+import VikepliktSituasjonerIllustrasjon from './VikepliktSituasjonerIllustrasjon'
 
 // Stabil anker-id fra seksjonstittel (gir Google mulighet til «Hopp til»-lenker i søkeresultatet)
 function sectionAnchorId(title: string): string {
@@ -124,9 +126,22 @@ function renderContent(text: string) {
     return output
 }
 
+function ArticleImage({ image, hero = false }: { image: NonNullable<TopicType['heroImage']>; hero?: boolean }) {
+    return (
+        <figure className={`theory-article-image${hero ? ' theory-article-image-hero' : ''}`}>
+            <img src={image.src} alt={image.alt} loading={hero ? 'eager' : 'lazy'} />
+            {image.caption && <figcaption>{image.caption}</figcaption>}
+        </figure>
+    )
+}
+
 const getTopicIcon = (id: string, iconFromData: string) => {
     if (iconFromData && (iconFromData.startsWith('data:image') || iconFromData.startsWith('/'))) {
-        return <img src={iconFromData} alt="" style={{ width: '64px', height: '64px', objectFit: 'contain' }} />
+        const imageClassName = id === 'vikeplikt'
+            ? 'theory-topic-image-icon theory-topic-image-icon--yield'
+            : 'theory-topic-image-icon'
+
+        return <img src={iconFromData} alt="" className={imageClassName} />
     }
 
     const iconProps = {
@@ -189,9 +204,11 @@ export default function TheoryTopic({ topic, onBack }: TheoryTopicProps) {
         "headline": topic.title,
         "description": topic.seoDescription || topic.shortDescription,
         "inLanguage": "nb",
-        "datePublished": "2026-02-21",
-        "dateModified": "2026-02-21",
-        "image": topic.icon.startsWith('http') ? topic.icon : "https://teori-test.no/og-image.png",
+        "datePublished": topic.publishedDate || "2026-02-21",
+        "dateModified": topic.lastUpdated || topic.publishedDate || "2026-02-21",
+        "image": topic.heroImage
+            ? `https://teori-test.no${topic.heroImage.src}`
+            : topic.icon.startsWith('http') ? topic.icon : "https://teori-test.no/og-image.png",
         "author": {
             "@type": "Organization",
             "name": "Teori-test.no",
@@ -222,7 +239,7 @@ export default function TheoryTopic({ topic, onBack }: TheoryTopicProps) {
     } : null
 
     return (
-        <article className="theory-topic-detail">
+        <article className={`theory-topic-detail theory-topic-${topic.id}`}>
             {/* Dynamic SEO Header Tags */}
             <Helmet>
                 <title>{topic.seoTitle || `${topic.title} | Teori-test.no`}</title>
@@ -252,27 +269,36 @@ export default function TheoryTopic({ topic, onBack }: TheoryTopicProps) {
                 <div className="theory-topic-header-text">
                     <h1 className="theory-topic-title">{topic.title}</h1>
                     <p className="theory-topic-desc">{parseInlineLinks(topic.shortDescription)}</p>
+                    {(topic.author || topic.reviewedBy || topic.lastUpdated) && (
+                        <div className="theory-article-meta" aria-label="Artikkelinformasjon">
+                            {topic.author && <span><strong>Av:</strong> {topic.author}</span>}
+                            {topic.reviewedBy && <span><strong>Faglig gjennomgang:</strong> {topic.reviewedBy}</span>}
+                            {topic.reviewedAgainst && <span><strong>Kontrollert mot:</strong> {topic.reviewedAgainst}</span>}
+                            {topic.lastUpdated && <span><strong>Sist oppdatert:</strong> {new Intl.DateTimeFormat('nb-NO', { day: 'numeric', month: 'long', year: 'numeric' }).format(new Date(`${topic.lastUpdated}T12:00:00`))}</span>}
+                        </div>
+                    )}
                 </div>
             </header>
+
+            {topic.heroImage && <ArticleImage image={topic.heroImage} hero />}
 
             <div className="theory-sections">
                 {topic.sections.map((section, index) => (
                     <section key={index} className={`theory-section theory-section-${section.type}`}>
                         <h2 className="theory-section-title" id={sectionAnchorId(section.title)}>{section.title}</h2>
 
-                        {section.type === 'pyramid' && (
+                        {section.type === 'pyramid' ? (
                             <div className="theory-section-content">
                                 {section.content && renderContent(section.content)}
                                 <AuthorityPyramid />
+                                {section.image && <ArticleImage image={section.image} />}
                             </div>
-                        )}
-
-                        {section.type === 'signs' && section.signs ? (
+                        ) : section.type === 'signs' && section.signs ? (
                             <div className="theory-section-content">
                                 {section.content && renderContent(section.content)}
                                 <div className="theory-signs-grid">
-                                    {section.signs.map((sign, i) => (
-                                        <div key={i} className="theory-sign-item">
+                                    {section.signs.map((sign, i) => {
+                                        const signContent = <>
                                             <div className="theory-sign-visual">
                                                 {sign.signId ? (
                                                     <SignIllustration signId={sign.signId} className="theory-sign-svg" />
@@ -288,9 +314,25 @@ export default function TheoryTopic({ topic, onBack }: TheoryTopicProps) {
                                                 <strong>{sign.name}</strong>
                                                 <p>{sign.description}</p>
                                             </div>
-                                        </div>
-                                    ))}
+                                        </>
+
+                                        return sign.href ? (
+                                            <Link
+                                                key={i}
+                                                to={sign.href}
+                                                className="theory-sign-item theory-sign-item-link"
+                                                aria-label={`Les mer om ${sign.name} i skiltguiden`}
+                                            >
+                                                {signContent}
+                                            </Link>
+                                        ) : (
+                                            <div key={i} className="theory-sign-item">
+                                                {signContent}
+                                            </div>
+                                        )
+                                    })}
                                 </div>
+                                {section.image && <ArticleImage image={section.image} />}
                             </div>
                         ) : section.type === 'calculator' ? (
                             <div className="theory-section-content">
@@ -305,6 +347,7 @@ export default function TheoryTopic({ topic, onBack }: TheoryTopicProps) {
                                     {topic.id === 'veimerking' && <VeimerkingInteraktiv />}
                                     {topic.id === 'tilhenger' && <TilhengerKalkulator />}
                                 </div>
+                                {section.image && <ArticleImage image={section.image} />}
                             </div>
                         ) : section.type === 'component' ? (
                             <div className="theory-section-content">
@@ -314,12 +357,18 @@ export default function TheoryTopic({ topic, onBack }: TheoryTopicProps) {
                                 {section.component === 'AutomatVsManuellSammenligning' && <AutomatVsManuellSammenligning />}
                                 {section.component === 'VognkortEksempel' && <VognkortEksempel />}
                                 {section.component === 'TilhengerKalkulator' && <TilhengerKalkulator />}
+                                {section.image && <ArticleImage image={section.image} />}
                             </div>
                         ) : section.type === 'table' ? (
-                            <div className="theory-section-content" dangerouslySetInnerHTML={{ __html: addTableCellLabels(section.content || '') }} />
+                            <div className="theory-section-content">
+                                <div dangerouslySetInnerHTML={{ __html: addTableCellLabels(section.content || '') }} />
+                                {section.image && <ArticleImage image={section.image} />}
+                            </div>
                         ) : (
                             <div className="theory-section-content">
                                 {section.content && renderContent(section.content)}
+                                {section.component === 'VikepliktSituasjonerIllustrasjon' && <VikepliktSituasjonerIllustrasjon />}
+                                {section.image && <ArticleImage image={section.image} />}
                             </div>
                         )}
                     </section>
@@ -351,6 +400,15 @@ export default function TheoryTopic({ topic, onBack }: TheoryTopicProps) {
                 )}
 
                 <NesteSteg articleId={topic.id} />
+
+                {topic.closingNote && (
+                    <section className={`theory-section theory-section-${topic.closingNote.type}`}>
+                        <h2 className="theory-section-title" id={sectionAnchorId(topic.closingNote.title)}>{topic.closingNote.title}</h2>
+                        <div className="theory-section-content">
+                            {topic.closingNote.content && renderContent(topic.closingNote.content)}
+                        </div>
+                    </section>
+                )}
 
                 {topic.sources && (
                     <div className="theory-sources-section" style={{ marginTop: '2rem', borderTop: '1px solid var(--color-border)', paddingTop: '1.5rem' }}>
