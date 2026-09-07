@@ -1,13 +1,14 @@
 .vp-game-page {
-    --vp-ground: #dce8d7;
-    --vp-grass-detail: rgba(70, 116, 73, 0.3);
+    --vp-ground: #dfe9dc;
+    --vp-grass-detail: rgba(70, 116, 73, 0.2);
     --vp-tree-shadow: rgba(35, 65, 42, 0.24);
     --vp-tree-dark: #2f7650;
     --vp-tree-mid: #4d9665;
     --vp-tree-light: #77b783;
-    --vp-road: #66717b;
+    --vp-road: #465360;
     --vp-road-marking: rgba(255, 255, 255, 0.9);
-    --vp-curb: #c7c5bb;
+    --vp-center-line: #f6d369;
+    --vp-curb: #d5d8d1;
     --vp-curb-edge: #8d918e;
     --vp-player: #2563eb;
     --vp-red: #dc3f4d;
@@ -29,7 +30,7 @@ body.dark-mode .vp-game-page {
     --vp-road-marking: rgba(255, 255, 255, 0.82);
     --vp-curb: #737a78;
     --vp-curb-edge: #a5aeaa;
-    --vp-player: var(--color-primary);
+    --vp-player: #6095ff;
     --vp-red: #ef5b66;
     --vp-yellow: #f5b82e;
     --vp-purple: #a78bfa;
@@ -58,6 +59,45 @@ body.dark-mode .vp-game-page {
     box-shadow: var(--shadow-lg);
 }
 
+.vp-page-intro {
+    margin-bottom: var(--spacing-lg);
+}
+
+.vp-page-intro h1 {
+    max-width: 20ch;
+    margin: 0.3rem 0 0.65rem;
+    color: var(--color-text);
+    font-size: clamp(2rem, 6vw, 3rem);
+    line-height: 1.06;
+    letter-spacing: -0.04em;
+}
+
+.vp-page-intro p {
+    max-width: 68ch;
+    margin: 0;
+    color: var(--color-text-light);
+    line-height: 1.65;
+}
+
+.vp-product-points {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: var(--spacing-md) 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+.vp-product-points li {
+    border: 1px solid var(--color-border);
+    border-radius: 999px;
+    padding: 6px 11px;
+    background: var(--color-bg);
+    color: var(--color-text);
+    font-size: 0.82rem;
+    font-weight: 750;
+}
+
 .vp-header {
     display: grid;
     grid-template-columns: minmax(0, 1fr) auto;
@@ -65,8 +105,8 @@ body.dark-mode .vp-game-page {
     gap: var(--spacing-md);
 }
 
-.vp-header h1,
-.vp-results h1 {
+.vp-header h2,
+.vp-results h2 {
     margin: 0.2rem 0 0.35rem;
     color: var(--color-text);
     font-size: clamp(1.85rem, 6vw, 2.65rem);
@@ -201,9 +241,15 @@ body.dark-mode .vp-game-page {
     fill: var(--vp-road);
 }
 
+.vp-road-junction {
+    stroke: var(--vp-curb);
+    stroke-width: 4;
+    stroke-linejoin: round;
+}
+
 .vp-road-markings line {
-    stroke: var(--vp-road-marking);
-    stroke-width: 3;
+    stroke: var(--vp-center-line);
+    stroke-width: 2.5;
     stroke-dasharray: 14 11;
 }
 
@@ -361,6 +407,19 @@ body.dark-mode .vp-game-page {
     stroke-linecap: round;
 }
 
+.vp-car-mirrors {
+    fill: #dce7ef;
+    stroke: #203446;
+    stroke-width: 0.6;
+}
+
+.vp-car-panel {
+    fill: none;
+    stroke: rgba(15, 30, 48, 0.3);
+    stroke-width: 0.8;
+    stroke-linecap: round;
+}
+
 .vp-car-headlights {
     fill: #fff7c2;
     stroke: rgba(86, 66, 0, 0.55);
@@ -514,7 +573,7 @@ body:not(.dark-mode) .vp-button--primary {
     background: var(--color-bg-secondary);
 }
 
-.vp-feedback.is-correct { border-left-color: var(--color-success); }
+.vp-feedback.is-correct { border-left-width: 1px; border-left-color: var(--color-border); }
 .vp-feedback.is-wrong { border-left-color: var(--color-error); }
 
 .vp-feedback-heading {
@@ -627,6 +686,41 @@ body.dark-mode .vp-order-summary span.is-active b {
     margin-top: var(--spacing-md);
 }
 
+.vp-training {
+    margin-top: var(--spacing-lg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: clamp(1rem, 3vw, 1.5rem);
+    background: var(--color-bg-secondary);
+}
+
+.vp-training h2 {
+    margin: 0 0 var(--spacing-sm);
+    color: var(--color-text);
+    font-size: 1.35rem;
+}
+
+.vp-training ul {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.4rem var(--spacing-lg);
+    margin: 0;
+    padding-left: 1.2rem;
+    color: var(--color-text);
+    line-height: 1.5;
+}
+
+.vp-training p {
+    margin: var(--spacing-md) 0 0;
+    color: var(--color-text-light);
+    line-height: 1.6;
+}
+
+.vp-training a {
+    color: var(--color-primary);
+    font-weight: 750;
+}
+
 @keyframes vp-indicator-blink {
     0%, 42% { opacity: 1; }
     43%, 100% { opacity: 0.2; }
@@ -640,6 +734,10 @@ body.dark-mode .vp-order-summary span.is-active b {
     .vp-card {
         border-radius: var(--radius-md);
         padding: 14px;
+    }
+
+    .vp-page-intro {
+        margin-bottom: var(--spacing-md);
     }
 
     .vp-header {
@@ -672,5 +770,14 @@ body.dark-mode .vp-order-summary span.is-active b {
 
     .vp-feedback {
         padding: 14px;
+    }
+
+    .vp-results-actions {
+        display: grid;
+        width: 100%;
+    }
+
+    .vp-training ul {
+        grid-template-columns: 1fr;
     }
 }

@@ -4,6 +4,7 @@ import { useState, useEffect, useCallback, Suspense, lazy, startTransition, useR
 import { Routes, Route, useNavigate, useLocation, Navigate, useParams } from 'react-router-dom'
 import Link from './components/InternalLink'
 import { normalizeInternalPath } from './utils/internalUrls'
+import AnalyticsPageView from './components/AnalyticsPageView'
 import StartScreen from './components/StartScreen'
 
 const QuizContainer = lazy(() => import('./components/QuizContainer'))
@@ -40,9 +41,6 @@ import './design-v2.css'
 import ScrollToTop from './components/ScrollToTop'
 import { Helmet } from 'react-helmet-async'
 import { Menu, X } from 'lucide-react'
-
-// GA4 global type
-declare function gtag(...args: unknown[]): void
 
 function LegacyTeoriRedirect() {
     const { articleId } = useParams()
@@ -166,19 +164,6 @@ export default function App() {
         }
     }, [])
 
-    // Send GA4 page_view for SPA navigation and close mobile menu on route transitions
-    useEffect(() => {
-        if (typeof gtag !== 'undefined') {
-            // Use setTimeout to allow react-helmet-async to update the document.title first
-            setTimeout(() => {
-                gtag('event', 'page_view', {
-                    page_path: location.pathname + location.search,
-                    page_title: document.title
-                })
-            }, 100)
-        }
-    }, [location])
-
     return (
         <>
             <ScrollToTop />
@@ -277,6 +262,8 @@ export default function App() {
                         {/* Fallback route: ekte 404 med noindex (unngår soft-404) */}
                         <Route path="*" element={<NotFound />} />
                     </Routes>
+                    {/* Commit tracking with the loaded route, after its Helmet metadata. */}
+                    <AnalyticsPageView />
                 </Suspense>
             </main>
 

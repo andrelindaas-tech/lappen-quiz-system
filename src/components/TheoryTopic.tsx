@@ -38,6 +38,7 @@ import AutomatVsManuellSammenligning from './AutomatVsManuellSammenligning'
 import VognkortEksempel from './VognkortEksempel'
 import { TilhengerKalkulator } from './TilhengerKalkulator'
 import VikepliktSituasjonerIllustrasjon from './VikepliktSituasjonerIllustrasjon'
+import ArticlePractice from './ArticlePractice'
 
 // Stabil anker-id fra seksjonstittel (gir Google mulighet til «Hopp til»-lenker i søkeresultatet)
 function sectionAnchorId(title: string): string {
@@ -357,6 +358,9 @@ export default function TheoryTopic({ topic, onBack }: TheoryTopicProps) {
                                 {section.component === 'AutomatVsManuellSammenligning' && <AutomatVsManuellSammenligning />}
                                 {section.component === 'VognkortEksempel' && <VognkortEksempel />}
                                 {section.component === 'TilhengerKalkulator' && <TilhengerKalkulator />}
+                                {section.component === 'ArticlePractice:bus' && <ArticlePractice topic="bus" />}
+                                {section.component === 'ArticlePractice:child' && <ArticlePractice topic="child" />}
+                                {section.component === 'ArticlePractice:parking' && <ArticlePractice topic="parking" />}
                                 {section.image && <ArticleImage image={section.image} />}
                             </div>
                         ) : section.type === 'table' ? (

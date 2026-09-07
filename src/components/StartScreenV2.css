@@ -1636,3 +1636,41 @@ body.dark-mode .tt-v2-feature-card {
     transition-duration: .001ms !important;
   }
 }
+
+/* Selected homepage collage, September 2026. */
+.tt-v2-hero {
+  grid-template-columns: minmax(0, 1fr) minmax(300px, 38%);
+  align-items: center;
+  gap: 30px;
+  padding-top: 66px;
+}
+.tt-v2-hero-art {
+  position: relative;
+  width: 100%;
+  max-width: 440px;
+  justify-self: center;
+  isolation: isolate;
+}
+.tt-v2-hero-art > img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 28px;
+  /* The asset has real alpha transparency in both themes. */
+}
+.tt-v2-hero-logo {
+  position: absolute;
+  width: 37%;
+  height: auto;
+  left: 50.2%;
+  top: 50.35%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+}
+@media (max-width: 760px) {
+  .tt-v2-hero { padding-top: 47px; }
+  .tt-v2-hero-art { width: min(100%, 280px); margin: 20px auto -12px; }
+}
+@media (max-width: 379px) {
+  .tt-v2-hero { padding-top: 36px; }
+}

@@ -1733,164 +1733,126 @@ export const theoryTopics: TheoryTopic[] = [
     },
 
     {
-        id: 'stans-og-parkering',
-        title: 'Stans og parkering: forskjellen og reglene du må kunne til teoriprøven',
-        icon: '🅿️',
-        shortDescription: 'Reglene for stans og parkering er en klassisk gjenganger på teoriprøven for klasse B. Mange mister unødvendige poeng her fordi de blander sammen de to begrepene, eller glemmer de eksakte avstandsreglene for gangfelt og veikryss.',
-        color: 'var(--apple-blue)',
-        seoTitle: 'Stans og parkering – 5-metersregelen og teorifeller',
-        seoDescription: 'Hva er forskjellen på stans og parkering? Lær 5-metersregelen ved gangfelt og kryss, se eksempler og test deg med gratis quiz til teoriprøven.',
+        id: "stans-og-parkering",
+        title: "Stans og parkering: forskjellen og reglene du må kunne til teoriprøven",
+        icon: "🅿️",
+        shortDescription: "Kan du vente i bilen, slippe av noen eller parkere ved gangfelt? Se situasjonene, lær forskjellen på stans og parkering, og øv på reglene før teoriprøven.",
+        color: "var(--apple-blue)",
+        seoTitle: "Stans og parkering – 5-metersregelen og teorifeller",
+        seoDescription: "Hva er forskjellen på stans og parkering? Lær 5-metersregelen ved gangfelt og kryss, se eksempler og test deg med gratis quiz til teoriprøven.",
         sections: [
             {
-                title: 'Kort forklart: forskjellen på stans og parkering',
-                type: 'text',
-                content: 'Forskjellen på stans og parkering er at stans er et kort opphold, for eksempel for av- og påstigning eller av- og pålessing. Parkering er når bilen blir stående av andre grunner, selv om føreren sitter i bilen. Stopper du for å handle, hente en pakke eller ringe, regnes det normalt som parkering.'
+                title: "Kort forklart: forskjellen på stans og parkering",
+                type: "text",
+                content: "Parkering er når du setter fra deg bilen, selv om du blir sittende i den. Unntaket er kortest mulig stans for av- og påstigning eller av- og pålessing. Å vente på noen som ennå ikke er klar, ta en telefon eller hente en liten pakke regnes normalt som parkering.\n\nTrafikal stans skyldes trafikken, som rødt lys eller vikeplikt. Der det er stanseforbud, er heller ikke frivillig avstigning tillatt."
             },
             {
-                title: '',
-                type: 'table',
-                content: `<div style="overflow-x:auto; margin: 1rem 0;"><table style="width:100%;border-collapse:collapse;font-size:0.9rem;text-align:left">
-<thead>
-<tr style="border-bottom:2px solid var(--color-border)">
-<th style="padding:12px 8px;color:var(--color-text-light)">Begrep</th>
-<th style="padding:12px 8px;color:var(--color-text-light)">Hva betyr det?</th>
-</tr>
-</thead>
-<tbody>
-<tr style="border-bottom:1px solid var(--color-border)"><td style="padding:12px 8px;font-weight:500;color:var(--color-text)">Stans</td><td style="padding:12px 8px;color:var(--color-text-light)">Kortvarig stopp, typisk for å slippe av eller på passasjerer, eller laste av/på</td></tr>
-<tr style="border-bottom:1px solid var(--color-border)"><td style="padding:12px 8px;font-weight:500;color:var(--color-text)">Parkering</td><td style="padding:12px 8px;color:var(--color-text-light)">Bilen blir stående av andre grunner, også hvis føreren sitter i bilen</td></tr>
-<tr style="border-bottom:1px solid var(--color-border)"><td style="padding:12px 8px;font-weight:500;color:var(--color-text)">Trafikal stans</td><td style="padding:12px 8px;color:var(--color-text-light)">Stopp på grunn av trafikken, for eksempel kø, rødt lys eller vikeplikt</td></tr>
-<tr style="border-bottom:1px solid var(--color-border)"><td style="padding:12px 8px;font-weight:500;color:var(--color-text)">Stans forbudt</td><td style="padding:12px 8px;color:var(--color-text-light)">Verken stans eller parkering er tillatt</td></tr>
-<tr style="border-bottom:1px solid var(--color-border)"><td style="padding:12px 8px;font-weight:500;color:var(--color-text)">Parkering forbudt</td><td style="padding:12px 8px;color:var(--color-text-light)">Du kan stanse kort, men ikke parkere</td></tr>
-</tbody>
-</table></div>`
+                title: "Kan jeg stå her? Prøv tre situasjoner",
+                type: "component",
+                content: "Vurder stedet og grunnen til at bilen står stille. Det er ikke antall minutter eller om motoren går som avgjør om det er parkering.",
+                component: "ArticlePractice:parking"
             },
             {
-                title: '',
-                type: 'text',
-                content: 'Det viktigste på teoriprøven er å forstå forskjellen mellom et lovlig kort stopp og en ulovlig parkering.'
+                title: "Begrepene på ett sted",
+                type: "table",
+                content: "<div style=\"overflow-x:auto; margin: 1rem 0;\"><table style=\"width:100%;border-collapse:collapse;font-size:0.9rem;text-align:left\">\n<thead>\n<tr style=\"border-bottom:2px solid var(--color-border)\">\n<th style=\"padding:12px 8px;color:var(--color-text-light)\">Begrep</th>\n<th style=\"padding:12px 8px;color:var(--color-text-light)\">Hva betyr det?</th>\n</tr>\n</thead>\n<tbody>\n<tr style=\"border-bottom:1px solid var(--color-border)\"><td style=\"padding:12px 8px;font-weight:500;color:var(--color-text)\">Stans</td><td style=\"padding:12px 8px;color:var(--color-text-light)\">Kort opphold; bare kortest mulig av-/påstigning eller av-/pålessing er unntatt fra parkering</td></tr>\n<tr style=\"border-bottom:1px solid var(--color-border)\"><td style=\"padding:12px 8px;font-weight:500;color:var(--color-text)\">Parkering</td><td style=\"padding:12px 8px;color:var(--color-text-light)\">Bilen blir stående av andre grunner, også hvis føreren sitter i bilen</td></tr>\n<tr style=\"border-bottom:1px solid var(--color-border)\"><td style=\"padding:12px 8px;font-weight:500;color:var(--color-text)\">Trafikal stans</td><td style=\"padding:12px 8px;color:var(--color-text-light)\">Stopp på grunn av trafikken, for eksempel kø, rødt lys eller vikeplikt</td></tr>\n<tr style=\"border-bottom:1px solid var(--color-border)\"><td style=\"padding:12px 8px;font-weight:500;color:var(--color-text)\">Stans forbudt</td><td style=\"padding:12px 8px;color:var(--color-text-light)\">Verken stans eller parkering er tillatt</td></tr>\n<tr style=\"border-bottom:1px solid var(--color-border)\"><td style=\"padding:12px 8px;font-weight:500;color:var(--color-text)\">Parkering forbudt</td><td style=\"padding:12px 8px;color:var(--color-text-light)\">Kortest mulig av-/påstigning eller av-/pålessing kan være lov</td></tr>\n</tbody>\n</table></div>"
             },
             {
-                title: 'Hva er trafikal stans?',
-                type: 'text',
-                content: 'Trafikal stans betyr at du stopper fordi trafikken krever det. Dette regnes ikke som vanlig stans eller parkering.\n\nEksempler på trafikal stans:\n\n- Du stopper for rødt lys\n- Du venter i kø\n- Du stanser for å overholde vikeplikt\n- Du stopper for fotgjengere i gangfelt\n- Du venter fordi trafikken foran deg står stille\n\nDette er viktig fordi et skilt med stans forbudt ikke betyr at du kan ignorere rødt lys eller vikeplikt. Trafikken går alltid først.'
+                title: "Hva er trafikal stans?",
+                type: "text",
+                content: "Trafikal stans betyr at du stopper fordi trafikken krever det. Dette regnes ikke som vanlig stans eller parkering.\n\nEksempler på trafikal stans:\n\n- Du stopper for rødt lys\n- Du venter i kø\n- Du stanser for å overholde vikeplikt\n- Du stopper for fotgjengere i gangfelt\n- Du venter fordi trafikken foran deg står stille\n\nDette er viktig fordi et skilt med stans forbudt ikke betyr at du kan ignorere rødt lys eller vikeplikt. Trafikken går alltid først."
             },
             {
-                title: 'Må du alltid kunne stanse?',
-                type: 'text',
-                content: 'Ja. Etter trafikkreglene skal du alltid kjøre slik at du kan stanse for enhver påregnelig hindring. Det betyr at fart, sikt, føre og trafikkforhold bestemmer hvor fort du kan kjøre. Dette gjelder selv om fartsgrensen er høyere.\n\nDenne regelen henger tett sammen med bremselengde, reaksjonstid og sikt. Du må kunne stoppe trygt hvis det dukker opp en fotgjenger, syklist, bil eller annen hindring foran deg.'
+                title: "Må du alltid kunne stanse?",
+                type: "text",
+                content: "Ja. Etter trafikkreglene skal du alltid kjøre slik at du kan stanse for enhver påregnelig hindring. Det betyr at fart, sikt, føre og trafikkforhold bestemmer hvor fort du kan kjøre. Dette gjelder selv om fartsgrensen er høyere.\n\nDenne regelen henger tett sammen med bremselengde, reaksjonstid og sikt. Du må kunne stoppe trygt hvis det dukker opp en fotgjenger, syklist, bil eller annen hindring foran deg."
             },
             {
-                title: '5-metersregelen ved gangfelt og veikryss',
-                type: 'text',
-                content: '5-metersregelen er en av de viktigste reglene du må kunne.\n\nDu har ikke lov til å stanse eller parkere:\n\n- på gangfelt\n- nærmere enn 5 meter foran gangfelt\n- i veikryss\n- nærmere enn 5 meter fra veikryss\n\nPoenget er sikt. Hvis du stanser for nær et gangfelt eller veikryss, kan du skjule fotgjengere, syklister eller biler for andre trafikanter.\n\n![5-metersregelen ved gangfelt – parkering foran og etter gangfelt](/stans-og-parkering-5-meter.png)\n*Du må holde minst 5 meter foran gangfeltet. Etter gangfeltet kan parkering være lovlig hvis det ellers er trygt og tillatt.*\n\n### Hvor mange meter fra gangfelt kan jeg parkere?\n\nDet er ulovlig å stanse eller parkere på gangfeltet, eller nærmere enn 5 meter foran gangfeltet i kjøreretningen. Etter gangfeltet kan du derimot parkere lovlig, så lenge det ikke finnes andre forbud eller forhold som gjør parkeringen farlig.\n\nRegelen finnes for å sikre god sikt. Hvis biler står tett inntil gangfeltet før kryssingen, kan de skjule fotgjengere for andre trafikanter. Da rekker ikke føreren nødvendigvis å oppdage personen i tide.\n\n### Gjelder 5-metersregelen i T-kryss?\n\nJa, T-kryss er også veikryss. Du må ikke stanse eller parkere i selve krysset eller slik at du hindrer sikt og ferdsel.\n\nI et T-kryss kan målingen være litt mer forvirrende enn i et vanlig kryss, fordi den rette siden av veien ikke alltid har en tydelig avrunding i kantstein eller veikant. På teoriprøven er hovedpoenget likevel enkelt: Ikke parker i eller tett ved munningen av et T-kryss.\n\n### 5-metersregelen i vegkryss\n\nDet er ikke lov å stanse eller parkere i et vegkryss, eller nærmere enn 5 meter fra vegkrysset. Avstanden måles fra punktet der fortauskant, kantlinje eller vegkant begynner å runde.\n\n5-metersregelen gjelder i begge retninger, uansett om gata er enveiskjørt eller toveiskjørt. Målet er å sikre sikt og plass til trafikk som skal inn og ut av krysset.\n\n![5-metersregelen i vegkryss – parkering minst 5 meter fra kryss](/stans-og-parkering-5-meter-kryss.png)\n*Du må holde minst 5 meter avstand fra vegkrysset, målt fra der kanten begynner å runde.*'
+                title: "5-metersregelen ved gangfelt og veikryss",
+                type: "text",
+                content: "5-metersregelen er en av de viktigste reglene du må kunne.\n\nDu har ikke lov til å stanse eller parkere:\n\n- på gangfelt\n- nærmere enn 5 meter foran gangfelt\n- i veikryss\n- nærmere enn 5 meter fra veikryss\n\nPoenget er sikt. Hvis du stanser for nær et gangfelt eller veikryss, kan du skjule fotgjengere, syklister eller biler for andre trafikanter.\n\n![5-metersregelen ved gangfelt – parkering foran og etter gangfelt](/stans-og-parkering-5-meter.png)\n*Du må holde minst 5 meter foran gangfeltet. Etter gangfeltet kan parkering være lovlig hvis det ellers er trygt og tillatt.*\n\n### Hvor mange meter fra gangfelt kan jeg parkere?\n\nDet er ulovlig å stanse eller parkere på gangfeltet, eller nærmere enn 5 meter foran gangfeltet i kjøreretningen. Etter gangfeltet kan du derimot parkere lovlig, så lenge det ikke finnes andre forbud eller forhold som gjør parkeringen farlig.\n\nRegelen finnes for å sikre god sikt. Hvis biler står tett inntil gangfeltet før kryssingen, kan de skjule fotgjengere for andre trafikanter. Da rekker ikke føreren nødvendigvis å oppdage personen i tide.\n\n### Gjelder 5-metersregelen i T-kryss?\n\nJa, T-kryss er også veikryss. Du må ikke stanse eller parkere i selve krysset eller slik at du hindrer sikt og ferdsel.\n\nI et T-kryss kan målingen være litt mer forvirrende enn i et vanlig kryss, fordi den rette siden av veien ikke alltid har en tydelig avrunding i kantstein eller veikant. På teoriprøven er hovedpoenget likevel enkelt: Ikke parker i eller tett ved munningen av et T-kryss.\n\n### 5-metersregelen i vegkryss\n\nDet er ikke lov å stanse eller parkere i et vegkryss, eller nærmere enn 5 meter fra vegkrysset. Avstanden måles fra punktet der fortauskant, kantlinje eller vegkant begynner å runde.\n\n5-metersregelen gjelder i begge retninger, uansett om gata er enveiskjørt eller toveiskjørt. Målet er å sikre sikt og plass til trafikk som skal inn og ut av krysset.\n\n![5-metersregelen i vegkryss – parkering minst 5 meter fra kryss](/stans-og-parkering-5-meter-kryss.png)\n*Du må holde minst 5 meter avstand fra vegkrysset, målt fra der kanten begynner å runde.*"
             },
             {
-                title: 'Forbudt å stanse vs. forbudt å parkere',
-                type: 'table',
-                content: `<div style="overflow-x:auto; margin: 1rem 0;"><table style="width:100%;border-collapse:collapse;font-size:0.9rem;text-align:left">
-<thead>
-<tr style="border-bottom:2px solid var(--color-border)">
-<th style="padding:12px 8px;color:var(--color-text-light)">Situasjon</th>
-<th style="padding:12px 8px;color:var(--color-text-light)">Forbudt å stanse</th>
-<th style="padding:12px 8px;color:var(--color-text-light)">Forbudt å parkere</th>
-</tr>
-</thead>
-<tbody>
-<tr style="border-bottom:1px solid var(--color-border)"><td style="padding:12px 8px;color:var(--color-text)">På gangfelt eller sykkelkryssing</td><td style="padding:12px 8px;color:var(--color-error)">Ja</td><td style="padding:12px 8px;color:var(--color-error)">Ja</td></tr>
-<tr style="border-bottom:1px solid var(--color-border)"><td style="padding:12px 8px;color:var(--color-text)">Nærmere enn 5 meter foran gangfelt</td><td style="padding:12px 8px;color:var(--color-error)">Ja</td><td style="padding:12px 8px;color:var(--color-error)">Ja</td></tr>
-<tr style="border-bottom:1px solid var(--color-border)"><td style="padding:12px 8px;color:var(--color-text)">I veikryss eller nærmere enn 5 meter fra kryss</td><td style="padding:12px 8px;color:var(--color-error)">Ja</td><td style="padding:12px 8px;color:var(--color-error)">Ja</td></tr>
-<tr style="border-bottom:1px solid var(--color-border)"><td style="padding:12px 8px;color:var(--color-text)">På fortau, gangvei eller sykkelvei</td><td style="padding:12px 8px;color:var(--color-error)">Ja</td><td style="padding:12px 8px;color:var(--color-error)">Ja</td></tr>
-<tr style="border-bottom:1px solid var(--color-border)"><td style="padding:12px 8px;color:var(--color-text)">I uoversiktlig kurve eller på bakketopp</td><td style="padding:12px 8px;color:var(--color-error)">Ja</td><td style="padding:12px 8px;color:var(--color-error)">Ja</td></tr>
-<tr style="border-bottom:1px solid var(--color-border)"><td style="padding:12px 8px;color:var(--color-text)">I tunnel</td><td style="padding:12px 8px;color:var(--color-error)">Ja</td><td style="padding:12px 8px;color:var(--color-error)">Ja</td></tr>
-<tr style="border-bottom:1px solid var(--color-border)"><td style="padding:12px 8px;color:var(--color-text)">På motorvei</td><td style="padding:12px 8px;color:var(--color-error)">Ja</td><td style="padding:12px 8px;color:var(--color-error)">Ja</td></tr>
-<tr style="border-bottom:1px solid var(--color-border)"><td style="padding:12px 8px;color:var(--color-text)">Der skiltet viser “Stans forbudt”</td><td style="padding:12px 8px;color:var(--color-error)">Ja</td><td style="padding:12px 8px;color:var(--color-error)">Ja</td></tr>
-<tr style="border-bottom:1px solid var(--color-border)"><td style="padding:12px 8px;color:var(--color-text)">Der skiltet viser “Parkering forbudt”</td><td style="padding:12px 8px;color:var(--color-success)">Nei, kort stans kan være lov</td><td style="padding:12px 8px;color:var(--color-error)">Ja</td></tr>
-<tr style="border-bottom:1px solid var(--color-border)"><td style="padding:12px 8px;color:var(--color-text)">Foran inn- eller utkjørsel</td><td style="padding:12px 8px;color:var(--color-success)">Ofte kort stans mulig hvis du ikke hindrer</td><td style="padding:12px 8px;color:var(--color-error)">Ja, hvis du hindrer adkomst</td></tr>
-</tbody>
-</table></div>`
+                title: "Forbudt å stanse vs. forbudt å parkere",
+                type: "table",
+                content: "<div style=\"overflow-x:auto; margin: 1rem 0;\"><table style=\"width:100%;border-collapse:collapse;font-size:0.9rem;text-align:left\">\n<thead>\n<tr style=\"border-bottom:2px solid var(--color-border)\">\n<th style=\"padding:12px 8px;color:var(--color-text-light)\">Situasjon</th>\n<th style=\"padding:12px 8px;color:var(--color-text-light)\">Forbudt å stanse</th>\n<th style=\"padding:12px 8px;color:var(--color-text-light)\">Forbudt å parkere</th>\n</tr>\n</thead>\n<tbody>\n<tr style=\"border-bottom:1px solid var(--color-border)\"><td style=\"padding:12px 8px;color:var(--color-text)\">På gangfelt eller sykkelkryssing</td><td style=\"padding:12px 8px;color:var(--color-error)\">Ja</td><td style=\"padding:12px 8px;color:var(--color-error)\">Ja</td></tr>\n<tr style=\"border-bottom:1px solid var(--color-border)\"><td style=\"padding:12px 8px;color:var(--color-text)\">Nærmere enn 5 meter foran gangfelt</td><td style=\"padding:12px 8px;color:var(--color-error)\">Ja</td><td style=\"padding:12px 8px;color:var(--color-error)\">Ja</td></tr>\n<tr style=\"border-bottom:1px solid var(--color-border)\"><td style=\"padding:12px 8px;color:var(--color-text)\">I veikryss eller nærmere enn 5 meter fra kryss</td><td style=\"padding:12px 8px;color:var(--color-error)\">Ja</td><td style=\"padding:12px 8px;color:var(--color-error)\">Ja</td></tr>\n<tr style=\"border-bottom:1px solid var(--color-border)\"><td style=\"padding:12px 8px;color:var(--color-text)\">På fortau, gangvei eller sykkelvei</td><td style=\"padding:12px 8px;color:var(--color-error)\">Ja</td><td style=\"padding:12px 8px;color:var(--color-error)\">Ja</td></tr>\n<tr style=\"border-bottom:1px solid var(--color-border)\"><td style=\"padding:12px 8px;color:var(--color-text)\">I uoversiktlig kurve eller på bakketopp</td><td style=\"padding:12px 8px;color:var(--color-error)\">Ja</td><td style=\"padding:12px 8px;color:var(--color-error)\">Ja</td></tr>\n<tr style=\"border-bottom:1px solid var(--color-border)\"><td style=\"padding:12px 8px;color:var(--color-text)\">I tunnel</td><td style=\"padding:12px 8px;color:var(--color-error)\">Ja</td><td style=\"padding:12px 8px;color:var(--color-error)\">Ja</td></tr>\n<tr style=\"border-bottom:1px solid var(--color-border)\"><td style=\"padding:12px 8px;color:var(--color-text)\">På motorvei</td><td style=\"padding:12px 8px;color:var(--color-error)\">Ja</td><td style=\"padding:12px 8px;color:var(--color-error)\">Ja</td></tr>\n<tr style=\"border-bottom:1px solid var(--color-border)\"><td style=\"padding:12px 8px;color:var(--color-text)\">Der skiltet viser “Stans forbudt”</td><td style=\"padding:12px 8px;color:var(--color-error)\">Ja</td><td style=\"padding:12px 8px;color:var(--color-error)\">Ja</td></tr>\n<tr style=\"border-bottom:1px solid var(--color-border)\"><td style=\"padding:12px 8px;color:var(--color-text)\">Der skiltet viser “Parkering forbudt”</td><td style=\"padding:12px 8px;color:var(--color-success)\">Nei, kort stans kan være lov</td><td style=\"padding:12px 8px;color:var(--color-error)\">Ja</td></tr>\n<tr style=\"border-bottom:1px solid var(--color-border)\"><td style=\"padding:12px 8px;color:var(--color-text)\">Foran inn- eller utkjørsel</td><td style=\"padding:12px 8px;color:var(--color-success)\">Kortest mulig av-/påstigning eller av-/pålessing kan være lov</td><td style=\"padding:12px 8px;color:var(--color-error)\">Ja</td></tr>\n</tbody>\n</table></div>"
             },
             {
-                title: '',
-                type: 'text',
-                content: 'Hvis det er forbudt å stanse, er parkering også forbudt. Men hvis det bare er parkering forbudt, kan kort stans være lov. Dette gjelder spesielt på steder med høy risiko, som tunneler. Les mer om reglene for [stans i tunnel](/laeringsressurser/tunnelsikkerhet) og generell sikkerhet.\n\nLes også guiden om [trafikkskilt](/laeringsressurser/skilt) hvis du vil lære forskjellen på stans forbudt-skiltet og parkering forbudt-skiltet.'
+                title: "Kort stans er ikke alltid lov",
+                type: "text",
+                content: "Av- og påstigning kan være lov der bare parkering er forbudt. Der stans er forbudt, gjelder ikke dette unntaket. Du kan for eksempel ikke slippe av en passasjer i en tunnel. Se [tunnelsikkerhet](/laeringsressurser/tunnelsikkerhet/) og [reglene om parkering hos Statens vegvesen](https://www.vegvesen.no/trafikkinformasjon/vei-og-skilt/parkering/parkeringsregler/om-parkering/)."
             },
             {
-                title: 'Kan du stanse på venstre side av veien?',
-                type: 'text',
-                content: 'Som hovedregel skal stans og parkering skje på høyre side av veien i kjøreretningen. Å stanse eller parkere på venstre side kan være farlig fordi bilen står mot trafikkretningen og kan skape dårlig sikt eller uventede situasjoner.\n\nPå enveiskjørt vei kan venstre side være tillatt hvis det ellers er lovlig.'
+                title: "Kan du stanse på venstre side av veien?",
+                type: "text",
+                content: "Det er ikke et generelt forbud mot å parkere mot kjøreretningen. Du må likevel kontrollere hvilke skilt som gjelder på den aktuelle siden, og all kjøring inn og ut av plassen må være lovlig og trygg. Parkeringsskilt gjelder normalt i veiens kjøreretning fra skiltet til neste skilt eller veikryss. Din parkeringsretning endrer ikke dette. Se [Statens vegvesen om hvor parkeringsskilt gjelder](https://www.vegvesen.no/trafikkinformasjon/vei-og-skilt/parkering/parkeringsregler/hvor-gjelder-parkeringsskiltet/)."
             },
             {
-                title: 'Kan man parkere på forkjørsvei?',
-                type: 'text',
-                content: 'Ja, det kan være lov å parkere på forkjørsvei hvis det ikke er skiltet forbud og du ikke bryter andre regler. Du kan likevel ikke parkere der bilen hindrer sikt, skaper fare, står for nær veikryss eller gangfelt, eller sperrer trafikken.\n\nForkjørsvei betyr ikke automatisk parkeringsforbud. Du må alltid se etter skilt, vegoppmerking og om bilen står trygt.'
+                title: "Kan man parkere på forkjørsvei?",
+                type: "text",
+                content: "På forkjørsvei med høyere fartsgrense enn 50 km/t er det forbudt å parkere på kjørebanen. Dette gjelder også uten et eget parkeringsforbudsskilt. Ved 50 km/t eller lavere gjelder ikke dette særforbudet, men skilt, andre parkeringsregler, sikt og sikkerhet kan fortsatt hindre parkering. Se trafikkreglene § 17 nr. 3."
             },
             {
-                title: 'Skilt for stans og parkering',
-                type: 'text',
-                content: 'Det er spesielt to skilt du må kjenne:\n\n### Stans forbudt\n\nDette skiltet betyr at du ikke kan stanse frivillig. Du kan altså ikke stoppe for å slippe av en passasjer, hente noen, laste av varer eller vente.\n\nUnntak: Du må selvfølgelig fortsatt stanse ved trafikal stans, for eksempel rødt lys, kø eller vikeplikt.\n\n### Parkering forbudt\n\nDette skiltet betyr at du ikke kan parkere, men du kan normalt stanse kort for av- og påstigning eller av- og pålessing.\n\nTypisk teorifelle: Mange tror parkering forbudt betyr at bilen aldri kan stoppe. Det er feil. Kort stans kan være lov, men bilen skal ikke bli stående.'
+                title: "Skilt for stans og parkering",
+                type: "text",
+                content: "Det er spesielt to skilt du må kjenne:\n\n### Stans forbudt\n\nDette skiltet betyr at du ikke kan stanse frivillig. Du kan altså ikke stoppe for å slippe av en passasjer, hente noen, laste av varer eller vente.\n\nUnntak: Du må selvfølgelig fortsatt stanse ved trafikal stans, for eksempel rødt lys, kø eller vikeplikt.\n\n### Parkering forbudt\n\nDette skiltet betyr at du ikke kan parkere, men du kan normalt stanse kort for av- og påstigning eller av- og pålessing.\n\nTypisk teorifelle: Mange tror parkering forbudt betyr at bilen aldri kan stoppe. Det er feil. Kort stans kan være lov, men bilen skal ikke bli stående."
             },
             {
-                title: 'Veimerking og parkering',
-                type: 'text',
-                content: 'Skilt er ikke det eneste som regulerer stans og parkering. Også vegoppmerking kan fortelle deg hva som er lov.\n\nEksempler:\n\n- Gangfelt viser hvor du må være ekstra oppmerksom på fotgjengere\n- Gul kantlinje kan bety stans- eller parkeringsforbud\n- Oppmerkede parkeringsfelt viser hvor bilen skal stå\n- Sykkelfelt og kollektivfelt har egne regler\n\nLes mer i guiden om [veimerking til teoriprøven](/laeringsressurser/veimerking).'
+                title: "Veimerking og parkering",
+                type: "text",
+                content: "Oppmerkede parkeringsfelt viser hvordan bilen skal stå. Gangfelt, sykkelfelt og kollektivfelt er steder der egne regler for stans gjelder. Følg både [trafikkskiltene](/trafikkskilt/) og [veimerkingen](/laeringsressurser/veimerking/). Se etter hvilke felt og arealer oppmerkingen avgrenser før du stanser."
             },
             {
-                title: 'Kan jeg parkere mot kjøreretningen?',
-                type: 'text',
-                content: 'Som hovedregel skal kjøretøy parkeres på høyre side av veien i kjøreretningen. På enveiskjørte veier kan det være tillatt å parkere på venstre side dersom det ellers er lovlig og ikke skaper fare.\n\nPå teoriprøven bør du alltid tenke: Er bilen plassert slik at andre trafikanter ser den tydelig, og kommer trygt forbi?'
+                title: "Typiske teorifeller",
+                type: "warning",
+                content: "- Å vente i bilen er parkering selv om motoren går.\n- Nødblink gir ikke lov til å stanse på et forbudt sted.\n- Avstigning er ikke tillatt der det er stanseforbud.\n- Femmetersregelen gjelder foran gangfelt, ikke automatisk etter.\n- T-kryss er også veikryss.\n- På forkjørsvei over 50 km/t er parkering på kjørebanen forbudt selv uten eget forbudsskilt."
             },
             {
-                title: 'Typiske teorifeller',
-                type: 'warning',
-                content: '### 1. “Jeg stopper bare i ett minutt”\n\nKort tid hjelper ikke hvis stedet har stanseforbud. På gangfelt, foran gangfelt, i veikryss eller der skiltet viser stans forbudt, kan selv et kort stopp være feil.\n\n### 2. Parkering forbudt betyr ikke stans forbudt\n\nVed parkering forbudt kan du normalt stanse kort for av- og påstigning. Men du kan ikke bli stående og vente.\n\n### 3. 5 meter foran gangfelt\n\nDu skal ikke stanse eller parkere nærmere enn 5 meter foran gangfeltet. Etter gangfeltet kan parkering være lovlig, men bare hvis det ellers er trygt og tillatt.\n\n### 4. T-kryss teller også som kryss\n\nMange glemmer T-kryss. Ikke parker i eller tett ved munningen av et T-kryss, selv om det ikke ser ut som et “vanlig” fireveis kryss.\n\n### 5. Trafikal stans er ikke parkering\n\nHvis du stopper for rødt lys, kø eller vikeplikt, er det trafikal stans. Det er noe annet enn å stoppe frivillig for å vente, handle eller slippe av noen.\n\n### 6. Fortau er ikke en nødløsning\n\nDu kan ikke parkere på fortau, gangvei eller sykkelvei bare fordi veien er trang. Det kan hindre gående, syklister, barnevogner og rullestolbrukere.\n\n### 7. Forkjørsvei betyr ikke automatisk parkeringsforbud\n\nDet kan være lov å parkere på forkjørsvei, men bare hvis det ikke er skiltet forbud og bilen ikke skaper fare, hindrer sikt eller står ulovlig nær kryss eller gangfelt.'
-            },
-            {
-                title: 'Hva bør du kunne til teoriprøven?',
-                type: 'tip',
-                content: 'Du bør kunne:\n\n- forskjellen på stans og parkering\n- hva trafikal stans betyr\n- 5-metersregelen ved gangfelt og veikryss\n- forskjellen på stans forbudt og parkering forbudt\n- når kort stans er lov\n- hvor du aldri må stanse\n- hvordan skilt og veimerking regulerer parkering\n\nSe også [temalisten for teoriprøven klasse B](/laeringsressurser/temaliste-teoriproven-klasse-b) for å få oversikt over hvilke temaer du bør kunne.'
+                title: "Hva bør du kunne til teoriprøven?",
+                type: "tip",
+                content: "Du bør kunne:\n\n- forskjellen på stans og parkering\n- hva trafikal stans betyr\n- 5-metersregelen ved gangfelt og veikryss\n- forskjellen på stans forbudt og parkering forbudt\n- når kort stans er lov\n- hvor du aldri må stanse\n- hvordan skilt og veimerking regulerer parkering\n\nSe også [temalisten for teoriprøven klasse B](/laeringsressurser/temaliste-teoriproven-klasse-b) for å få oversikt over hvilke temaer du bør kunne."
             }
         ],
         faq: [
             {
-                question: 'Hva er forskjellen på stans og parkering?',
-                answer: 'Stans er et kort opphold, for eksempel for av- og påstigning eller av- og pålessing. Parkering er når bilen blir stående av andre grunner, også hvis føreren sitter i bilen.'
+                question: "Hva er forskjellen på stans og parkering?",
+                answer: "Stans er et kort opphold, for eksempel for av- og påstigning eller av- og pålessing. Parkering er når bilen blir stående av andre grunner, også hvis føreren sitter i bilen."
             },
             {
-                question: 'Hva betyr trafikal stans?',
-                answer: 'Trafikal stans er når du stopper på grunn av trafikken, for eksempel rødt lys, kø, vikeplikt eller fotgjengere i gangfelt.'
+                question: "Hva betyr trafikal stans?",
+                answer: "Trafikal stans er når du stopper på grunn av trafikken, for eksempel rødt lys, kø, vikeplikt eller fotgjengere i gangfelt."
             },
             {
-                question: 'Hvor mange meter fra gangfelt kan man parkere?',
-                answer: 'Du må stå minst 5 meter foran gangfeltet i kjøreretningen. Avstanden måles fra oppmerkingen — mangler oppmerkingen, måles den fra skiltstolpen på stedet. Etter gangfeltet kan du parkere hvis det ellers er trygt og tillatt. Regelen står i trafikkreglene § 17 nr. 1 bokstav d, og er gitt for at fører og fotgjenger skal se hverandre i tid.'
+                question: "Hvor mange meter fra gangfelt kan man parkere?",
+                answer: "Du må stå minst 5 meter foran gangfeltet i kjøreretningen. Avstanden måles fra oppmerkingen — mangler oppmerkingen, måles den fra skiltstolpen på stedet. Etter gangfeltet kan du parkere hvis det ellers er trygt og tillatt. Regelen står i trafikkreglene § 17 nr. 1 bokstav d, og er gitt for at fører og fotgjenger skal se hverandre i tid."
             },
             {
-                question: 'Hvor mange meter fra veikryss kan man parkere?',
-                answer: 'Du skal ikke stanse eller parkere i veikryss eller nærmere enn 5 meter fra veikryss.'
+                question: "Hvor mange meter fra veikryss kan man parkere?",
+                answer: "Du skal ikke stanse eller parkere i veikryss eller nærmere enn 5 meter fra veikryss."
             },
             {
-                question: 'Er det tillatt å stanse på venstre side av veien?',
-                answer: 'Som hovedregel skal stans og parkering skje på høyre side i kjøreretningen. På enveiskjørt vei kan venstre side være tillatt hvis det ellers er lovlig.'
+                question: "Er det tillatt å stanse på venstre side av veien?",
+                answer: "Det er ikke generelt forbudt å parkere mot kjøreretningen. Skiltingen, stedet og andre trafikkregler avgjør om stans eller parkering er lovlig. Kontroller også at kjøringen inn og ut av plassen kan skje lovlig og trygt."
             },
             {
-                question: 'Har du lov til å stanse i tunnel?',
-                answer: 'Nei, du skal ikke stanse eller parkere i tunnel med mindre trafikken eller en nødsituasjon gjør det nødvendig.'
+                question: "Har du lov til å stanse i tunnel?",
+                answer: "Nei, du skal ikke stanse eller parkere i tunnel med mindre trafikken eller en nødsituasjon gjør det nødvendig."
             },
             {
-                question: 'Kan man parkere på forkjørsvei?',
-                answer: 'Ja, det kan være lov hvis det ikke er skiltet forbud og bilen ikke står farlig, hindrer sikt eller bryter andre regler.'
+                question: "Kan man parkere på forkjørsvei?",
+                answer: "På forkjørsvei med høyere fartsgrense enn 50 km/t er det forbudt å parkere på kjørebanen. Dette gjelder også uten et eget parkeringsforbudsskilt. Ved 50 km/t eller lavere gjelder ikke dette særforbudet, men skilt, andre parkeringsregler, sikt og sikkerhet kan fortsatt hindre parkering. Se trafikkreglene § 17 nr. 3."
             },
             {
-                question: 'Kan jeg stanse der det er parkering forbudt?',
-                answer: 'Ja, kort stans for av- og påstigning eller av- og pålessing kan normalt være lov. Men du kan ikke parkere eller bli stående.'
+                question: "Kan jeg stanse der det er parkering forbudt?",
+                answer: "Ja, kort stans for av- og påstigning eller av- og pålessing kan normalt være lov. Men du kan ikke parkere eller bli stående."
             },
             {
-                question: 'Kan jeg stanse der det er stans forbudt?',
-                answer: 'Nei, ikke frivillig. Stans forbudt betyr at både stans og parkering er forbudt. Trafikal stans, som kø eller rødt lys, er noe annet.'
+                question: "Kan jeg stanse der det er stans forbudt?",
+                answer: "Nei, ikke frivillig. Stans forbudt betyr at både stans og parkering er forbudt. Trafikal stans, som kø eller rødt lys, er noe annet."
             },
             {
-                question: 'Kan jeg parkere på fortau?',
-                answer: 'Nei, du skal ikke parkere på fortau, gangvei eller sykkelvei. Det kan hindre og skape fare for myke trafikanter.'
+                question: "Kan jeg parkere på fortau?",
+                answer: "Nei, du skal ikke parkere på fortau, gangvei eller sykkelvei. Det kan hindre og skape fare for myke trafikanter."
             }
         ],
         miniQuiz: [
@@ -1970,8 +1932,25 @@ export const theoryTopics: TheoryTopic[] = [
                 ],
                 correct: "Nei, kort stans for av- og påstigning kan være lov",
                 explanation: "Ved parkering forbudt kan kort stans være lov, men bilen skal ikke bli stående."
+            },
+            {
+                question: "Du vil parkere på kjørebanen på en forkjørsvei i 60-sone. Det finnes ingen særskilt tillatelse. Hva gjelder?",
+                options: [
+                    "Det er lov uten parkeringsforbudsskilt",
+                    "Det er forbudt å parkere på kjørebanen",
+                    "Det er lov hvis du sitter i bilen",
+                    "Det er lov i opptil fem minutter"
+                ],
+                correct: "Det er forbudt å parkere på kjørebanen",
+                explanation: "På forkjørsvei med høyere fartsgrense enn 50 km/t gjelder parkeringsforbud på kjørebanen, jf. trafikkreglene § 17 nr. 3."
             }
-        ]
+        ],
+        sources: {
+            title: "Kilder",
+            type: "text",
+            content: "- [Lovdata: Trafikkreglene §§ 1 og 17](https://lovdata.no/dokument/SF/forskrift/1986-03-21-747)\n- [Statens vegvesen: Regler om parkering og førerens ansvar](https://www.vegvesen.no/trafikkinformasjon/vei-og-skilt/parkering/parkeringsregler/om-parkering/)\n- [Statens vegvesen: Hvor gjelder parkeringsskiltet?](https://www.vegvesen.no/trafikkinformasjon/vei-og-skilt/parkering/parkeringsregler/hvor-gjelder-parkeringsskiltet/)"
+        },
+        lastUpdated: "2026-09-05"
     },
 
     {
@@ -4559,10 +4538,11 @@ export const theoryArticles: TheoryTopic[] = [
         id: 'automatlappen',
         title: 'Automatlappen: kode 78, automat eller manuell?',
         icon: '🚗',
+        lastUpdated: '2026-09-07',
         shortDescription: 'Hva betyr kode 78, kan du kjøre manuell bil, og hvordan fjerner du begrensningen? Her får du automatlappen forklart enkelt.',
         color: 'var(--apple-green)',
         seoTitle: 'Automatlappen og elbil: kode 78, regler og oppkjøring i 2026',
-        seoDescription: 'Skal du ta lappen på elbil eller automatgir? Lær hva kode 78 betyr, om du kan kjøre tilhenger, hvordan regenerering fungerer og om automatlappen er en begrensning i 2026.',
+        seoDescription: 'Automatlappen gir kode 78. Se hvilke biler du kan kjøre, forskjellen på automat og manuell, og hvordan du fjerner begrensningen med ny oppkjøring.',
         sections: [
             {
                 title: 'Kort forklart: Hva betyr automatlappen?',
@@ -4587,12 +4567,7 @@ export const theoryArticles: TheoryTopic[] = [
             {
                 title: 'Er teoriprøven annerledes med automatgir?',
                 type: 'text',
-                content: 'Nei. Teoriprøven for klasse B er den samme enten du planlegger å kjøre opp med automatgir eller manuelt gir. Du må kunne de samme trafikkreglene, skiltene og sikkerhetsprinsippene. Kode 78 bestemmes av bilen du bruker på den praktiske oppkjøringen, ikke av teoriprøven.\n\nPå oppkjøringen vurderes trafikkforståelse, observasjon, plassering, fartstilpasning og samhandling. Automatgir fjerner giringen, men ikke ansvaret for å kjøre selvstendig og sikkert. Les mer om [oppkjøring klasse B](/laeringsressurser/oppkjoring) og [sikkerhetskontroll](/laeringsressurser/sikkerhetskontroll).'
-            },
-            {
-                title: 'Oppkjøring med automatgir',
-                type: 'text',
-                content: 'Kjører du opp med automatgir, er selve oppkjøringen den samme som med manuelt gir. Sensor vurderer trafikkforståelse, observasjon, plassering, fartstilpasning og samhandling — ikke om du girer selv.\n\nForskjellen er hva du sitter igjen med: består du med automatgir, får du kode 78 i førerkortet, og da kan du bare kjøre biler med automatgir. Består du med manuelt gir, gjelder førerkortet begge deler.\n\nDu velger altså ikke kode 78 på forhånd — den følger av hvilken bil du bruker på prøven. Les mer om [oppkjøring klasse B](/laeringsressurser/oppkjoring).'
+                content: 'Nei. Teoriprøven for klasse B er den samme enten du planlegger å kjøre opp med automatgir eller manuelt gir. Du må kunne de samme trafikkreglene, skiltene og sikkerhetsprinsippene. Kode 78 bestemmes av bilen du bruker på den praktiske oppkjøringen, ikke av teoriprøven.\n\nPå oppkjøringen vurderes trafikkforståelse, observasjon, plassering, fartstilpasning og samhandling. Automatgir fjerner giringen, men ikke ansvaret for å kjøre selvstendig og sikkert. Les mer om [oppkjøring klasse B](/laeringsressurser/oppkjoring/) og [sikkerhetskontroll](/laeringsressurser/sikkerhetskontroll/). Du kan også [øve gratis til teoriprøven](/quiz/).'
             },
             {
                 title: 'Fordeler og ulemper med automatlappen',
@@ -4610,9 +4585,9 @@ export const theoryArticles: TheoryTopic[] = [
                 content: 'Ja. Kode 78 handler om girtype, ikke om tilhenger. Du kan trekke tilhenger så lenge trekkbilen har automatgir, førerkortklassen din tillater kombinasjonen, og bilen er godkjent for vekten. Sjekk både [reglene for tilhenger](/laeringsressurser/tilhenger) og [vognkort og vekter](/laeringsressurser/vognkort-vekter).'
             },
             {
-                title: 'Hvordan fjerner du kode 78?',
-                type: 'warning',
-                content: 'For å få rett til å kjøre manuelt gir må du lære deg å bruke clutch og gir og deretter bestå en ny oppkjøring med manuelt gir. Når du består, fjernes begrensningen slik at klasse B gjelder både manuell og automat.\n\nDu kan øvelseskjøre privat eller ta kjøretimer før prøven. Statens vegvesen krever ny praktisk prøve, men ikke at du tar hele opplæringen fra starten. Se gjeldende krav og pris hos [Statens vegvesen for personbil klasse B](https://www.vegvesen.no/forerkort/ta-forerkort/veien-til-forerkortet/personbil-b/).'
+                title: 'Fra automat til manuell: slik fjerner du kode 78',
+                type: 'text',
+                content: 'Har du klasse B med kode 78 og vil kjøre manuell bil, må du bestå en ny oppkjøring med manuelt gir.\n\n1. Øv på clutch, girskift og bakkestart til du kan følge med på trafikken samtidig. Avtal gjerne en vurderingstime med en trafikkskole.\n2. Avtal godkjent manuell skolebil til prøven og bestill oppkjøring.\n3. Bestå prøven før du kjører manuell bil på egen hånd.\n\nDu trenger ikke begynne hele føreropplæringen på nytt. Du må betale for ny oppkjøring; kjøretimer og leie av skolebil kommer i tillegg. Be trafikkskolen om et samlet prisoverslag. Se [gjeldende krav hos Statens vegvesen](https://www.vegvesen.no/forerkort/ta-forerkort/veien-til-forerkortet/personbil-b/).'
             },
             {
                 title: 'Vanlige misforståelser',
@@ -4623,7 +4598,7 @@ export const theoryArticles: TheoryTopic[] = [
         sources: {
             title: 'Kilder',
             type: 'text',
-            content: '- **Statens vegvesen:** [Personbil klasse B – veien til førerkortet](https://www.vegvesen.no/forerkort/ta-forerkort/veien-til-forerkortet/personbil-b/)\n- **Statens vegvesen:** [Rekordmange oppkjøringer i fjor](https://www.vegvesen.no/om-oss/presse/aktuelt/2026/07/rekordmange-oppkjoringer/) — 70 % av oppkjøringene i klasse B ble tatt med automatgir i første halvår 2026.'
+            content: '- **Statens vegvesen:** [Personbil klasse B – veien til førerkortet](https://www.vegvesen.no/forerkort/ta-forerkort/veien-til-forerkortet/personbil-b/)\n- **Statens vegvesen:** [Rekordmange oppkjøringer – første halvår 2026](https://www.vegvesen.no/om-oss/presse/aktuelt/2026/07/rekordmange-oppkjoringer/) — 70 % av oppkjøringene i klasse B ble tatt med automatgir i første halvår 2026.'
         },
         miniQuiz: [
             {
@@ -4634,9 +4609,9 @@ export const theoryArticles: TheoryTopic[] = [
             },
             {
                 question: 'Kan du kjøre elbil med kode 78 i førerkortet?',
-                options: ['Nei, elbil krever spesielt førerkort', 'Ja, elbiler kjøres som automatbiler', 'Bare hvis elbilen er under 3500 kg', 'Nei, du trenger kode 100'],
+                options: ['Nei, elbil krever spesielt førerkort', 'Ja, elbiler kjøres som automatbiler', 'Bare etter et eget elbilkurs', 'Nei, du trenger kode 100'],
                 correct: 'Ja, elbiler kjøres som automatbiler',
-                explanation: 'Elbiler har ikke manuell girkasse og kjøres som automatbiler. Du kan derfor kjøre elbil med kode 78.'
+                explanation: 'Elbiler har ikke manuell girkasse og kjøres som automatbiler. Du kan derfor kjøre elbil med kode 78 når bilen er innenfor førerkortklassen din.'
             },
             {
                 question: 'Kan du trekke tilhenger med automatlappen (kode 78)?',
@@ -4659,12 +4634,16 @@ export const theoryArticles: TheoryTopic[] = [
         ],
         faq: [
             {
+                question: 'Hvordan går jeg fra automatlappen til manuelt gir?',
+                answer: 'Du må bestå en ny oppkjøring med manuell bil. Øv på clutch og girskift, og avtal godkjent skolebil til prøven. Du trenger ikke starte hele føreropplæringen på nytt.'
+            },
+            {
                 question: 'Hva betyr kode 78 på førerkortet?',
                 answer: 'Kode 78 betyr at førerkortet ditt er begrenset til biler med automatgir. Du får denne koden hvis du kjører opp med automatgir.'
             },
             {
                 question: 'Kan jeg kjøre elbil med automatlappen?',
-                answer: 'Ja. Elbiler kjøres som automatbiler, så du kan kjøre elbil med førerkort klasse B med kode 78.'
+                answer: 'Ja, når elbilen er innenfor klasse B. Kode 78 begrenser girtypen, men utvider ikke hvilke kjøretøy eller vekter førerkortklassen tillater.'
             },
             {
                 question: 'Kan jeg kjøre manuell bil med automatlappen?',
@@ -5468,114 +5447,144 @@ Les mer om [trafikkuhell og førstehjelp](/laeringsressurser/trafikkuhell-forste
     },
 
     {
-        id: 'buss-fra-holdeplass',
-        title: 'Buss fra holdeplass: når har du vikeplikt?',
-        icon: '🚌',
-        shortDescription: 'Lær regelen for buss som skal ut fra holdeplass, når 60 km/t-grensen betyr noe, og hvilke teorifeller du må unngå.',
-        color: 'var(--apple-blue)',
-        seoTitle: 'Vikeplikt for buss – gjelder ved 60 km/t eller lavere',
-        seoDescription: 'Du har vikeplikt for buss som gir tegn om å forlate holdeplass der fartsgrensen er 60 km/t eller lavere. Se regelen, unntakene og typiske teorifeller.',
+        id: "buss-fra-holdeplass",
+        title: "Vikeplikt for buss: hva gjelder i 60- og 70-sone?",
+        icon: "🚌",
+        shortDescription: "Samme buss, samme blinklys – men en annen fartsgrense kan endre hvem som har vikeplikt. Sammenlign situasjonene og prøv deg før du leser fasiten.",
+        color: "var(--apple-blue)",
+        seoTitle: "Vikeplikt for buss – gjelder ved 60 km/t eller lavere",
+        seoDescription: "Når har du vikeplikt for buss? Sammenlign 60- og 70-sone i visuelle oppgaver, se forklaringen og test deg gratis uten innlogging.",
         sections: [
             {
-                title: 'Buss fra holdeplass',
-                type: 'text',
-                content: `Spørsmål om buss fra holdeplass er en klassiker på teoriprøven. Det virker enkelt, men mange bommer fordi de glemmer at fartsgrensen, blinklys og situasjonen rundt holdeplassen må vurderes samtidig.`
+                title: "Kort forklart",
+                type: "info",
+                content: "På vei med fartsgrense 60 km/t eller lavere har du vikeplikt for buss som gir tegn om å forlate holdeplassen. Senk farten tidlig og gi bussen plass. Bussføreren skal samtidig unngå fare.\n\nOver 60 km/t gjelder ikke denne særregelen. En buss som skal ut fra en busslomme i en 70-sone, har vikeplikt ved utkjøringen. Du må likevel kjøre hensynsfullt og være klar til å unngå en farlig situasjon."
             },
             {
-                title: 'Kort forklart',
-                type: 'info',
-                content: `På vei med fartsgrense 60 km/t eller lavere har du vikeplikt for buss som skal kjøre ut fra holdeplass. Du skal senke farten og gi bussen mulighet til å kjøre ut når det kan skje uten fare. Bussen skal normalt bruke blinklys. Regelen står i **trafikkreglene § 7 nr. 5**, som også slår fast at **bussføreren skal unngå fare** — bussen kan altså ikke tvinge seg ut. På teoriprøven må du vurdere hele situasjonen rundt holdeplassen.`
+                title: "Samme holdeplass – to forskjellige fartsgrenser",
+                type: "component",
+                content: "Velg svar i 60-sonen, og bytt deretter til 70-sonen. Bussen blinker i begge situasjonene. Illustrasjonen viser en busslomme, ikke et kjørefelt som fortsetter eller flettes sammen.",
+                component: "ArticlePractice:bus"
             },
             {
-                title: 'Buss som skal ut fra holdeplass',
-                type: 'text',
-                content: `![Illustrasjon av buss som blinker ut fra holdeplass i 50-sone](/buss-fra-holdeplass.png)
-*I 60 km/t eller lavere skal du gi bussen mulighet til å kjøre ut når det kan skje uten fare.*`
+                title: "Når må du slippe bussen ut?",
+                type: "table",
+                content: "<div class=\"responsive-theory-table-wrapper\"><table class=\"responsive-theory-table\"><thead><tr><th>Situasjon</th><th>Hvem må vike?</th><th>Det du må se etter</th></tr></thead><tbody><tr><th scope=\"row\">Holdeplass, fartsgrense 60 km/t eller lavere</th><td>Du har vikeplikt når bussen gir tegn om å kjøre ut</td><td>Bussføreren må også unngå fare</td></tr><tr><th scope=\"row\">Busslomme, fartsgrense 70 km/t</th><td>Bussen har vikeplikt ved utkjøring</td><td>Du må fortsatt tilpasse farten og unngå fare</td></tr><tr><th scope=\"row\">Du kjører i 50 på en vei skiltet 70</th><td>Særregelen gjelder ikke</td><td>Fartsgrensen avgjør, ikke din faktiske fart</td></tr><tr><th scope=\"row\">Holdeplass uten egen busslomme, 60 km/t eller lavere</th><td>Særregelen gjelder også her</td><td>Det avgjørende er at bussen forlater holdeplassen</td></tr></tbody></table></div>"
             },
             {
-                title: 'Når må du slippe bussen ut?',
-                type: 'table',
-                content: `<div class="responsive-theory-table-wrapper" style="margin-top: 1rem;"><table class="responsive-theory-table" style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem;"><thead><tr style="background-color: var(--color-surface); border-bottom: 2px solid var(--color-border);"><th style="padding: 12px 8px;">Situasjon</th><th style="padding: 12px 8px;">Hva gjør du?</th><th style="padding: 12px 8px;">Typisk teorifelle</th></tr></thead><tbody><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">Fartsgrense 60 km/t eller lavere</td><td style="padding: 12px 8px;">Senk farten og gi bussen mulighet til å kjøre ut</td><td style="padding: 12px 8px;">Mange tror regelen bare gjelder i busslomme</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">Bussen blinker ut</td><td style="padding: 12px 8px;">Vær klar til å slippe den ut hvis det er trygt</td><td style="padding: 12px 8px;">Du skal ikke akselerere forbi</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">Det er gående ved holdeplassen</td><td style="padding: 12px 8px;">Vær ekstra oppmerksom og klar til å stoppe</td><td style="padding: 12px 8px;">Fotgjengere kan komme ut foran eller bak bussen</td></tr><tr><td style="padding: 12px 8px;">Høyere fartsgrense enn 60 km/t</td><td style="padding: 12px 8px;">Bussen har ikke samme særregel, men du må fortsatt kjøre hensynsfullt</td><td style="padding: 12px 8px;">Hensynsplikten gjelder alltid</td></tr></tbody></table></div>`
+                title: "Blinklys, tydelige tegn og førerens ansvar",
+                type: "text",
+                content: "Se etter blinklys og om bussen gjør seg klar til å kjøre ut. Statens vegvesen presiserer at vikeplikten også gjelder når det går klart frem av situasjonen at bussen skal forlate holdeplassen, selv om blinklyset ikke brukes. Et manglende blinklys er derfor ingen grunn til å presse seg forbi.\n\nBussføreren skal unngå fare. Har du kommet tett på når bussen gir tegn, må begge førere vurdere fart og avstand. Ikke svar med en farlig unnamanøver eller bråbrems hvis du kan unngå det. Se den samlede veiledningen om [vikeplikt for buss og trikk](https://www.vegvesen.no/nn/trafikkinformasjon/trafikktryggleik/trafikkreglar/vikeplikt/vikeplikt-for-buss-og-trikk/)."
             },
             {
-                title: 'Slik løser du spørsmålet på teoriprøven',
-                type: 'tip',
-                content: `Bruk denne korte testen:
-
-1. Er fartsgrensen 60 km/t eller lavere?
-2. Skal bussen ut fra holdeplassen?
-3. Kan du senke farten og slippe den ut uten å skape fare?
-
-Hvis svaret er ja, er riktig løsning som regel å senke farten rolig og gi bussen plass. Se samtidig i speil, vurder trafikken bak deg og se etter fotgjengere ved holdeplassen.`
+                title: "Tre ting å gjøre når du nærmer deg",
+                type: "tip",
+                content: "1. Les fartsgrensen og oppdag holdeplassen tidlig.\n2. Se etter tegn fra bussen, passasjerer og trafikken bak deg.\n3. Senk farten i god tid og gi plass når du har vikeplikt.\n\nPassasjerer kan komme ut foran eller bak bussen. God samhandling handler også om å oppdage dem, ikke bare å avgjøre hvem som kjører først."
             },
             {
-                title: 'Typiske teorifeller',
-                type: 'warning',
-                content: `Vanlige feil er å tro at du alltid har forkjørsrett fordi du allerede kjører på veien, eller at regelen bare gjelder når bussen står i en egen busslomme. En annen felle er å bare se på bussen og glemme fotgjengere som kan krysse veien ved holdeplassen.`
+                title: "Typiske teorifeller",
+                type: "warning",
+                content: "- Å tro at regelen bare gjelder i 50-sone. Den gjelder også ved 60 km/t.\n- Å bruke egen fart i stedet for den skiltede fartsgrensen.\n- Å tro at regelen bare gjelder i busslommer.\n- Å tro at blinklys gir bussen rett til å skape fare.\n- Å øke farten for å komme forbi når bussen skal ut."
             },
             {
-                title: 'Les mer',
-                type: 'text',
-                content: `Dette henger tett sammen med [vikeplikt](/laeringsressurser/vikeplikt), [fartsgrenser](/laeringsressurser/fartsgrenser), [stans og parkering](/laeringsressurser/stans-og-parkering) og [feltvalg og kollektivfelt](/laeringsressurser/feltvalg-fletting-kollektivfelt). Se også [holdeplass for buss-skiltet](/trafikkskilt/opplysningsskilt/holdeplass-for-buss) i skiltguiden og Statens vegvesen om [vikeplikt for buss og trikk](https://www.vegvesen.no/trafikkinformasjon/trafikksikkerhet/trafikkregler/vikeplikt/vikeplikt-og-trikk/).`
+                title: "Øv videre på vikeplikt",
+                type: "text",
+                content: "Bruk [vikepliktspillet](/laeringsspill/vikeplikt/) for å øve på hvem som kjører først. Les deretter om [vikeplikt i kryss](/laeringsressurser/vikeplikt/), [fartsgrenser og fartstilpasning](/laeringsressurser/fartsgrenser/) og [reglene for stans og parkering](/laeringsressurser/stans-og-parkering/). [Holdeplasskiltet](/trafikkskilt/opplysningsskilt/holdeplass-for-buss/) forklares i skiltguiden."
             }
         ],
         faq: [
             {
-                question: 'Når har du vikeplikt for buss fra holdeplass?',
-                answer: 'På vei med fartsgrense 60 km/t eller lavere har du vikeplikt for buss som gir tegn om at den skal kjøre ut fra holdeplass.'
+                question: "Når har du vikeplikt for buss fra holdeplass?",
+                answer: "På vei med fartsgrense 60 km/t eller lavere har du vikeplikt for buss som gir tegn om at den skal kjøre ut fra holdeplass."
             },
             {
-                question: 'Gjelder regelen bare når bussen står i busslomme?',
-                answer: 'Nei. Regelen gjelder når bussen skal forlate holdeplassen, uansett om holdeplassen har busslomme eller ikke.'
+                question: "Hva bør du passe ekstra på ved bussholdeplass?",
+                answer: "Vær ekstra oppmerksom på fotgjengere som kan komme ut foran eller bak bussen, og senk farten tidlig."
             },
             {
-                question: 'Må bussen bruke blinklys?',
-                answer: 'Bussen skal normalt bruke blinklys og unngå å skape farlige situasjoner. Du må likevel vurdere hele situasjonen hvis det er tydelig at bussen skal kjøre ut fra holdeplassen.'
+                question: "Hva betyr holdeplass for buss-skiltet?",
+                answer: "Skiltet viser at stedet er holdeplass for buss. Som bilfører må du være ekstra oppmerksom på buss som skal ut og passasjerer som kan krysse veien."
             },
             {
-                question: 'Hva bør du passe ekstra på ved bussholdeplass?',
-                answer: 'Vær ekstra oppmerksom på fotgjengere som kan komme ut foran eller bak bussen, og senk farten tidlig.'
+                question: "Har du vikeplikt for buss i 60-sone?",
+                answer: "Ja, når bussen gir tegn om å forlate holdeplassen. Særregelen gjelder fartsgrense 60 km/t eller lavere. Bussføreren skal samtidig unngå fare."
             },
             {
-                question: 'Kan du stanse i busslomme?',
-                answer: 'Du skal ikke stanse eller parkere slik at du hindrer buss eller passasjerer. Busslomme og holdeplass er laget for kollektivtrafikk, så velg et annet trygt sted hvis du må stanse.'
+                question: "Har du vikeplikt for buss i 70-sone?",
+                answer: "Særregelen gjelder ikke i 70-sone. En buss som kjører ut fra en busslomme, har vikeplikt ved utkjøringen. Du må likevel kjøre hensynsfullt og unngå fare."
             },
             {
-                question: 'Hva betyr holdeplass for buss-skiltet?',
-                answer: 'Skiltet viser at stedet er holdeplass for buss. Som bilfører må du være ekstra oppmerksom på buss som skal ut og passasjerer som kan krysse veien.'
+                question: "Gjelder regelen uten busslomme?",
+                answer: "Ja. Ved fartsgrense 60 km/t eller lavere gjelder regelen når bussen gir tegn om å forlate holdeplassen, også uten en egen busslomme."
+            },
+            {
+                question: "Hva hvis bussen ikke blinker?",
+                answer: "Statens vegvesen presiserer at vikeplikten også gjelder når det går klart frem at bussen skal forlate holdeplassen. Du må vurdere situasjonen og ikke presse deg forbi fordi blinklyset mangler."
             }
         ],
         sources: {
-            title: 'Kilder',
-            type: 'text',
-            content: '- **Lovdata:** [Trafikkreglene § 7 nr. 5 – vikeplikt](https://lovdata.no/dokument/SF/forskrift/1986-03-21-747) — «På veg med fartsgrense 60 km i timen eller lavere har kjørende vikeplikt for buss når føreren gir tegn om at bussen skal forlate holdeplass. Bussføreren skal unngå fare.»\n- **Statens vegvesen:** [Temaliste til teoriprøve klasse B](https://www.vegvesen.no/globalassets/forerkort/ta-forerkort/temaliste-til-teoriprove-klasse-b-bokmal.pdf)'
+            title: "Kilder",
+            type: "text",
+            content: "- **Lovdata:** [Trafikkreglene § 7 nr. 5 – vikeplikt](https://lovdata.no/dokument/SF/forskrift/1986-03-21-747) — «På veg med fartsgrense 60 km i timen eller lavere har kjørende vikeplikt for buss når føreren gir tegn om at bussen skal forlate holdeplass. Bussføreren skal unngå fare.»\n- **Statens vegvesen:** [Temaliste til teoriprøve klasse B](https://www.vegvesen.no/globalassets/forerkort/ta-forerkort/temaliste-til-teoriprove-klasse-b-bokmal.pdf)"
         },
         miniQuiz: [
             {
-                question: 'Du kjører i 50-sone. En buss ved holdeplass blinker ut. Hva er riktig?',
-                options: ['Akselerere forbi før bussen rekker ut', 'Senk farten og gi bussen mulighet til å kjøre ut', 'Tute for å varsle at du kjører først', 'Bare stoppe hvis det er gangfelt'],
-                correct: 'Senk farten og gi bussen mulighet til å kjøre ut',
-                explanation: 'Ved 60 km/t eller lavere har du vikeplikt for buss som gir tegn om at den skal forlate holdeplassen.'
+                question: "Du kjører i 50-sone. En buss ved holdeplass blinker ut. Hva er riktig?",
+                options: [
+                    "Akselerere forbi før bussen rekker ut",
+                    "Senk farten og gi bussen mulighet til å kjøre ut",
+                    "Tute for å varsle at du kjører først",
+                    "Bare stoppe hvis det er gangfelt"
+                ],
+                correct: "Senk farten og gi bussen mulighet til å kjøre ut",
+                explanation: "Ved 60 km/t eller lavere har du vikeplikt for buss som gir tegn om at den skal forlate holdeplassen."
             },
             {
-                question: 'Hva er en viktig fare ved bussholdeplass?',
-                options: ['At bussen alltid rygger', 'At fotgjengere kan komme ut foran eller bak bussen', 'At fartsgrensen alltid blir 30 km/t', 'At du alltid må stoppe helt'],
-                correct: 'At fotgjengere kan komme ut foran eller bak bussen',
-                explanation: 'Du må se etter både bussen og myke trafikanter rundt holdeplassen.'
+                question: "Hva er en viktig fare ved bussholdeplass?",
+                options: [
+                    "At bussen alltid rygger",
+                    "At fotgjengere kan komme ut foran eller bak bussen",
+                    "At fartsgrensen alltid blir 30 km/t",
+                    "At du alltid må stoppe helt"
+                ],
+                correct: "At fotgjengere kan komme ut foran eller bak bussen",
+                explanation: "Du må se etter både bussen og myke trafikanter rundt holdeplassen."
             },
             {
-                question: 'Gjelder bussregelen ved fartsgrense 80 km/t?',
-                options: ['Ja, alltid samme regel', 'Nei, ikke den særskilte regelen for 60 km/t eller lavere', 'Bare hvis bussen har passasjerer', 'Bare i tunnel'],
-                correct: 'Nei, ikke den særskilte regelen for 60 km/t eller lavere',
-                explanation: 'Den særskilte vikeplikten gjelder ved fartsgrense 60 km/t eller lavere, men du skal alltid kjøre hensynsfullt.'
+                question: "Gjelder bussregelen ved fartsgrense 80 km/t?",
+                options: [
+                    "Ja, alltid samme regel",
+                    "Nei, ikke den særskilte regelen for 60 km/t eller lavere",
+                    "Bare hvis bussen har passasjerer",
+                    "Bare i tunnel"
+                ],
+                correct: "Nei, ikke den særskilte regelen for 60 km/t eller lavere",
+                explanation: "Den særskilte vikeplikten gjelder ved fartsgrense 60 km/t eller lavere, men du skal alltid kjøre hensynsfullt."
             },
             {
-                question: 'Hva bør du gjøre hvis du vurderer å stanse i en busslomme?',
-                options: ['Stanse der hvis det er praktisk', 'Unngå å stanse slik at buss eller passasjerer hindres', 'Parkere der så lenge nødblink er på', 'Bare stanse hvis du står under ett minutt'],
-                correct: 'Unngå å stanse slik at buss eller passasjerer hindres',
-                explanation: 'Busslomme og holdeplass er for kollektivtrafikk. Ikke stans slik at du skaper hinder eller fare.'
+                question: "Hva bør du gjøre hvis du vurderer å stanse i en busslomme?",
+                options: [
+                    "Stanse der hvis det er praktisk",
+                    "Unngå å stanse slik at buss eller passasjerer hindres",
+                    "Parkere der så lenge nødblink er på",
+                    "Bare stanse hvis du står under ett minutt"
+                ],
+                correct: "Unngå å stanse slik at buss eller passasjerer hindres",
+                explanation: "Busslomme og holdeplass er for kollektivtrafikk. Ikke stans slik at du skaper hinder eller fare."
+            },
+            {
+                question: "Du kjører i 50 km/t i en 70-sone. Bussen blinker ut fra en busslomme. Hva avgjør om særregelen gjelder?",
+                options: [
+                    "Din faktiske fart",
+                    "Den skiltede fartsgrensen",
+                    "Bussens størrelse",
+                    "Antall passasjerer"
+                ],
+                correct: "Den skiltede fartsgrensen",
+                explanation: "Det er den skiltede fartsgrensen som avgjør. Særregelen gjelder ikke på en vei med fartsgrense 70 km/t."
             }
-        ]
+        ],
+        lastUpdated: "2026-09-05"
     },
 
     {
@@ -6098,120 +6107,164 @@ Hvis det oppstår kø, hold avstand til bilen foran. Da får nødetater og andre
     },
 
     {
-        id: 'barn-i-bil-og-sikring',
-        title: 'Barn i bil og sikring: reglene du må kunne',
-        icon: '👶',
-        shortDescription: 'Lær reglene for barnesete, beltestol, høydegrenser, airbag og førerens ansvar når barn er passasjerer i bilen.',
-        color: 'var(--apple-pink)',
-        seoTitle: 'Barn i bil og sikring: barnesete, airbag og ansvar',
-        seoDescription: 'Se reglene for sikring av barn i bil til teoriprøven: ansvar, barnesete, bilpute, beltestol, 135 cm, 140 cm, airbag og bilbelte.',
+        id: "barn-i-bil-og-sikring",
+        title: "Barn i bil: barnesete, forsetet og airbag",
+        icon: "👶",
+        shortDescription: "Se når airbagen må kobles ut, hvilke høydegrenser som gjelder og hva du har ansvar for som fører. Øv på tre situasjoner med forklaring.",
+        color: "var(--apple-pink)",
+        seoTitle: "Barn foran i bil og airbag – regler og trygg sikring",
+        seoDescription: "Kan barn sitte foran med airbag? Se forskjellen på lovkrav og anbefalinger, forstå 135, 140 og 150 cm, og øv med visuelle oppgaver.",
         sections: [
             {
-                title: 'Barn i bil og sikring',
-                type: 'text',
-                content: `Spørsmål om barn i bil handler ikke bare om barnesete. Du må også kunne førerens ansvar, høydegrenser, airbag og hva som er trygg plassering. Dette er viktig både på teoriprøven og i vanlig kjøring.`
+                title: "Kort forklart: barn foran og airbag",
+                type: "info",
+                content: "Et bakovervendt barnesete må aldri stå foran en aktiv frontairbag. Dette er forbudt. Barn under 140 cm bør heller ikke sitte foran en aktiv frontairbag når de sitter forovervendt; dette er en sikkerhetsanbefaling fra Statens vegvesen.\n\nKravene til barnesikringsutstyr gjelder i tillegg: Under 135 cm skal barnet bruke godkjent utstyr som passer høyde og vekt. Fra 135 til 150 cm skal slikt utstyr brukes hvis det finnes i bilen."
             },
             {
-                title: 'Kort forklart',
-                type: 'info',
-                content: `Barn under 135 cm skal bruke godkjent barnesikringsutstyr som passer barnets høyde og vekt. Barn mellom 135 og 150 cm skal bruke slikt utstyr hvis det finnes i bilen. Føreren har ansvar for at passasjerer under 15 år er riktig sikret. Bakovervendt barnesete skal aldri brukes foran aktiv airbag. Utstyret må være godkjent, for eksempel etter ECE R44.03, R44.04 eller R129.`
+                title: "Hvor kan barnet sitte?",
+                type: "component",
+                content: "Se på setets retning, barnets høyde og om frontairbagen er aktiv. Velg en situasjon og vurder hva føreren må gjøre.",
+                component: "ArticlePractice:child"
             },
             {
-                title: 'Reglene du må kunne',
-                type: 'table',
-                content: `<div class="responsive-theory-table-wrapper" style="margin-top: 1rem;"><table class="responsive-theory-table" style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem;"><thead><tr style="background-color: var(--color-surface); border-bottom: 2px solid var(--color-border);"><th style="padding: 12px 8px;">Tema</th><th style="padding: 12px 8px;">Regel</th><th style="padding: 12px 8px;">Teorifelle</th></tr></thead><tbody><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">Barn under 135 cm</td><td style="padding: 12px 8px;">Skal bruke godkjent barnesikringsutstyr</td><td style="padding: 12px 8px;">Vanlig bilbelte er ikke nok</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">Barn 135-150 cm</td><td style="padding: 12px 8px;">Skal bruke utstyr hvis det finnes i bilen</td><td style="padding: 12px 8px;">Beltestol kan fortsatt være riktig</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">Passasjer under 15 år</td><td style="padding: 12px 8px;">Føreren har ansvar for sikringen</td><td style="padding: 12px 8px;">Barnet har ikke hovedansvaret selv</td></tr><tr><td style="padding: 12px 8px;">Bakovervendt sete foran</td><td style="padding: 12px 8px;">Ikke foran aktiv airbag</td><td style="padding: 12px 8px;">Airbag må være koblet ut</td></tr></tbody></table></div>`
+                title: "135, 140 og 150 cm – tre forskjellige grenser",
+                type: "table",
+                content: "<div class=\"responsive-theory-table-wrapper\"><table class=\"responsive-theory-table\"><thead><tr><th>Grense eller situasjon</th><th>Hva gjelder?</th><th>Lovkrav eller anbefaling?</th></tr></thead><tbody><tr><th scope=\"row\">Under 135 cm</th><td>Godkjent barnesikringsutstyr tilpasset høyde og vekt</td><td>Lovkrav</td></tr><tr><th scope=\"row\">135–150 cm</th><td>Bruk godkjent barnesikringsutstyr hvis det finnes i bilen</td><td>Lovkrav</td></tr><tr><th scope=\"row\">Under 140 cm og aktiv frontairbag</th><td>Barnet bør ikke sitte i forsetet</td><td>Sikkerhetsanbefaling</td></tr><tr><th scope=\"row\">Bakovervendt sete foran aktiv frontairbag</th><td>Denne plasseringen er ikke tillatt</td><td>Forbud</td></tr><tr><th scope=\"row\">Passasjer under 15 år</th><td>Føreren har ansvar for at passasjeren er sikret</td><td>Lovkrav</td></tr></tbody></table></div>"
             },
             {
-                title: 'Airbag og plassering',
-                type: 'warning',
-                content: `Bakovervendt barnesete skal aldri plasseres foran en aktiv airbag. Hvis airbagen utløses, kan barnet bli alvorlig skadet. Barn under 140 cm bør heller ikke sitte foran en aktiv airbag hvis den ikke er koblet ut. Baksetet er ofte det tryggeste valget.
-
-Sideairbag er normalt ikke et problem når barnet sitter riktig sikret, men barnet bør ikke lene seg mot døren eller sitte slik at airbagen kan treffe feil.`
+                title: "Kan barnet sitte i forsetet?",
+                type: "text",
+                content: "Høyde alene avgjør ikke om en bestemt plassering er trygg. Se også på setetype, sittestilling, frontairbag og hva produsentene tillater. 140 cm er ikke en generell lovgrense for å sitte foran.\n\nBakovervendt sete foran krever at frontairbagen er koblet ut, og at plasseringen er tillatt etter bilens og barnesetets bruksanvisninger. For mindre barn er en egnet plass i baksetet ofte det beste alternativet. Ikke flytt setet langt bak og anta at en aktiv airbag dermed er ufarlig."
             },
             {
-                title: 'Godkjent utstyr og bil uten bilbelte',
-                type: 'tip',
-                content: `Velg barnesete, beltestol eller pute etter barnets høyde og vekt, ikke alder alene. Sjekk at utstyret er godkjent og riktig montert.
-
-I bil uten bilbelte er reglene strengere: Barn under 3 år skal ikke transporteres i bilen. Barn over 3 år kan ikke sitte foran hvis det ikke finnes bilbelte. Dette er en typisk teorifelle fordi mange blander "kort tur" med lovlig sikring.`
+                title: "Før turen: kontroller dette",
+                type: "tip",
+                content: "1. Bruk et godkjent sete som passer barnets høyde og vekt.\n2. Kontroller at plasseringen og monteringen følger begge bruksanvisningene.\n3. Sjekk frontairbagen hvis barnet skal sitte foran.\n4. Stram selene og kontroller at beltet ligger riktig.\n\nSideairbager er normalt ikke farlige når barnet sitter riktig sikret. Barnet skal ikke lene seg mot en dør med airbag. Se bilens instruksjonsbok."
             },
             {
-                title: 'Slik tenker du på teoriprøven',
-                type: 'tip',
-                content: `Velg svaret som gir best faktisk beskyttelse, ikke bare det som virker mest praktisk. Riktig sikring handler om barnets høyde, vekt, setetype og plassering i bilen. Hvis et svar sier at airbag kan erstatte barnesete eller bilbelte, er det feil.`
+                title: "Godkjent utstyr og bil uten bilbelte",
+                type: "tip",
+                content: "Velg barnesete, beltestol eller pute etter barnets høyde og vekt, ikke alder alene. Sjekk at utstyret er godkjent og riktig montert.\n\nI bil uten bilbelte er reglene strengere: Barn under 3 år skal ikke transporteres i bilen. Barn over 3 år kan ikke sitte foran hvis det ikke finnes bilbelte. Dette er en typisk teorifelle fordi mange blander \"kort tur\" med lovlig sikring."
             },
             {
-                title: 'Les mer',
-                type: 'text',
-                content: `Dette henger sammen med [sikkerhetsutstyr](/laeringsressurser/sikkerhetsutstyr), [bilbelte og airbag](/laeringsressurser/sikkerhetsutstyr), [sikkerhetskontroll](/laeringsressurser/sikkerhetskontroll) og [trafikkuhell og førstehjelp](/laeringsressurser/trafikkuhell-forstehjelp). Se også Statens vegvesen om [regelverket for sikring av barn i bil](https://www.vegvesen.no/trafikkinformasjon/trafikksikkerhet/sikker-kjoring/sikring-av-barn-i-bil/regelverket-for-sikring-av-barn/).`
+                title: "Typiske teorifeller",
+                type: "warning",
+                content: "- 135 cm betyr ikke at aktiv frontairbag automatisk er anbefalt.\n- 140 cm er ikke grensen for når alle barn kan slutte med barnesikringsutstyr.\n- Airbag erstatter aldri barnesete eller bilbelte.\n- En kort tur gir ikke et generelt unntak fra sikringskravene.\n- Føreren har ansvaret for passasjerer under 15 år."
+            },
+            {
+                title: "Øv videre på sikkerhet i bilen",
+                type: "text",
+                content: "Les om [bilbelte og annet sikkerhetsutstyr](/laeringsressurser/sikkerhetsutstyr/), og bruk [sikkerhetskontrollen](/laeringsressurser/sikkerhetskontroll/) til å øve på kontroller før kjøring. Se også [trafikkuhell og førstehjelp](/laeringsressurser/trafikkuhell-forstehjelp/)."
             }
         ],
         faq: [
             {
-                question: 'Når må barn bruke barnesete eller beltestol?',
-                answer: 'Barn under 135 cm skal bruke godkjent barnesikringsutstyr som passer barnets høyde og vekt.'
+                question: "Når kan barn sitte foran med airbag?",
+                answer: "Et bakovervendt barnesete skal aldri stå foran en aktiv frontairbag. Statens vegvesen anbefaler også at barn under 140 cm ikke sitter foran aktiv frontairbag. Sjekk alltid bilens og barnesetets bruksanvisninger; høyde alene avgjør ikke om plasseringen er trygg."
             },
             {
-                question: 'Hvem har ansvar for barn i bil?',
-                answer: 'Føreren har ansvar for at passasjerer under 15 år er riktig sikret med bilbelte eller godkjent barnesikringsutstyr.'
+                question: "Er 140 cm en lovgrense for barn i forsetet?",
+                answer: "Nei. Rådet om barn under 140 cm og aktiv frontairbag er en sikkerhetsanbefaling. Det gjelder i tillegg til lovkravene om barnesikringsutstyr og forbudet mot bakovervendt barnesete foran aktiv frontairbag."
             },
             {
-                question: 'Hvem har ansvar for at barn er sikret i bilen?',
-                answer: 'Føreren har ansvar for at passasjerer under 15 år er riktig sikret.'
+                question: "Når må barn bruke barnesete eller beltestol?",
+                answer: "Barn under 135 cm skal bruke godkjent barnesikringsutstyr som passer barnets høyde og vekt."
             },
             {
-                question: 'Kan bakovervendt barnesete stå foran airbag?',
-                answer: 'Nei, ikke foran en aktiv airbag. Airbagen må være koblet ut hvis bakovervendt sete skal brukes foran.'
+                question: "Hvem har ansvar for barn i bil?",
+                answer: "Føreren har ansvar for at passasjerer under 15 år er riktig sikret med bilbelte eller godkjent barnesikringsutstyr."
             },
             {
-                question: 'Hva gjelder for barn mellom 135 og 150 cm?',
-                answer: 'De skal bruke godkjent sikringsutstyr hvis det finnes i bilen.'
+                question: "Hvem har ansvar for at barn er sikret i bilen?",
+                answer: "Føreren har ansvar for at passasjerer under 15 år er riktig sikret."
             },
             {
-                question: 'Hva betyr godkjent barnesikringsutstyr?',
-                answer: 'Utstyret skal være godkjent etter relevant standard, for eksempel ECE R44.03, R44.04 eller R129, og passe barnets høyde og vekt.'
+                question: "Hva gjelder for barn mellom 135 og 150 cm?",
+                answer: "De skal bruke godkjent sikringsutstyr hvis det finnes i bilen."
             },
             {
-                question: 'Kan barn under 3 år sitte i bil uten bilbelte?',
-                answer: 'Nei. Barn under 3 år skal ikke transporteres i bil uten bilbelte.'
+                question: "Hva betyr godkjent barnesikringsutstyr?",
+                answer: "Utstyret skal være godkjent etter relevant standard, for eksempel ECE R44.03, R44.04 eller R129, og passe barnets høyde og vekt."
             },
             {
-                question: 'Er sideairbag farlig for barn?',
-                answer: 'Sideairbag er normalt ikke farlig når barnet sitter riktig sikret, men barnet bør ikke lene seg mot døren eller sitte feil plassert.'
+                question: "Kan barn under 3 år sitte i bil uten bilbelte?",
+                answer: "Nei. Barn under 3 år skal ikke transporteres i bil uten bilbelte."
             }
         ],
         miniQuiz: [
             {
-                question: 'Hva gjelder for barn under 135 cm?',
-                options: ['De kan bruke vanlig belte uten ekstra utstyr', 'De skal bruke godkjent barnesikringsutstyr', 'De må alltid sitte foran', 'De trenger bare airbag'],
-                correct: 'De skal bruke godkjent barnesikringsutstyr',
-                explanation: 'Barn under 135 cm skal sikres med godkjent utstyr som passer høyde og vekt.'
+                question: "Hva gjelder for barn under 135 cm?",
+                options: [
+                    "De kan bruke vanlig belte uten ekstra utstyr",
+                    "De skal bruke godkjent barnesikringsutstyr",
+                    "De må alltid sitte foran",
+                    "De trenger bare airbag"
+                ],
+                correct: "De skal bruke godkjent barnesikringsutstyr",
+                explanation: "Barn under 135 cm skal sikres med godkjent utstyr som passer høyde og vekt."
             },
             {
-                question: 'Hvem har ansvar for at passasjerer under 15 år er riktig sikret?',
-                options: ['Passasjeren selv', 'Føreren', 'Bilprodusenten', 'Den eldste passasjeren'],
-                correct: 'Føreren',
-                explanation: 'Føreren har ansvar for at passasjerer under 15 år er riktig sikret.'
+                question: "Hvem har ansvar for at passasjerer under 15 år er riktig sikret?",
+                options: [
+                    "Passasjeren selv",
+                    "Føreren",
+                    "Bilprodusenten",
+                    "Den eldste passasjeren"
+                ],
+                correct: "Føreren",
+                explanation: "Føreren har ansvar for at passasjerer under 15 år er riktig sikret."
             },
             {
-                question: 'Hva er riktig om bakovervendt barnesete og airbag?',
-                options: ['Det kan stå foran aktiv airbag', 'Det skal ikke brukes foran aktiv airbag', 'Airbag erstatter barnesete', 'Airbag gjør plassering uviktig'],
-                correct: 'Det skal ikke brukes foran aktiv airbag',
-                explanation: 'Aktiv airbag foran bakovervendt barnesete kan skade barnet alvorlig.'
+                question: "Hva er riktig om bakovervendt barnesete og airbag?",
+                options: [
+                    "Det kan stå foran aktiv airbag",
+                    "Det skal ikke brukes foran aktiv airbag",
+                    "Airbag erstatter barnesete",
+                    "Airbag gjør plassering uviktig"
+                ],
+                correct: "Det skal ikke brukes foran aktiv airbag",
+                explanation: "Aktiv airbag foran bakovervendt barnesete kan skade barnet alvorlig."
             },
             {
-                question: 'Hva bør du velge barnesikringsutstyr etter?',
-                options: ['Barnets høyde og vekt', 'Bilens farge', 'Hvor kort turen er', 'Om barnet vil sitte foran'],
-                correct: 'Barnets høyde og vekt',
-                explanation: 'Barnesete, beltestol og pute må passe barnets størrelse og være godkjent.'
+                question: "Hva bør du velge barnesikringsutstyr etter?",
+                options: [
+                    "Barnets høyde og vekt",
+                    "Bilens farge",
+                    "Hvor kort turen er",
+                    "Om barnet vil sitte foran"
+                ],
+                correct: "Barnets høyde og vekt",
+                explanation: "Barnesete, beltestol og pute må passe barnets størrelse og være godkjent."
             },
             {
-                question: 'Hva gjelder for barn under 3 år i bil uten bilbelte?',
-                options: ['Det er greit på korte turer', 'Barnet skal ikke transporteres i bilen', 'Barnet kan sitte på fanget', 'Barnet kan sitte foran hvis airbag er av'],
-                correct: 'Barnet skal ikke transporteres i bilen',
-                explanation: 'Barn under 3 år skal ikke transporteres i bil uten bilbelte.'
+                question: "Hva gjelder for barn under 3 år i bil uten bilbelte?",
+                options: [
+                    "Det er greit på korte turer",
+                    "Barnet skal ikke transporteres i bilen",
+                    "Barnet kan sitte på fanget",
+                    "Barnet kan sitte foran hvis airbag er av"
+                ],
+                correct: "Barnet skal ikke transporteres i bilen",
+                explanation: "Barn under 3 år skal ikke transporteres i bil uten bilbelte."
+            },
+            {
+                question: "Hva er riktig om 140 cm og airbag?",
+                options: [
+                    "Det er lovgrensen for alt barnesikringsutstyr",
+                    "Barn under 140 cm bør ikke sitte foran aktiv frontairbag",
+                    "Barn over 135 cm trenger aldri barnesete",
+                    "Airbag erstatter bilbelte fra 140 cm"
+                ],
+                correct: "Barn under 140 cm bør ikke sitte foran aktiv frontairbag",
+                explanation: "140 cm gjelder sikkerhetsanbefalingen om aktiv frontairbag. Kravene til barnesikringsutstyr har egne grenser."
             }
-        ]
+        ],
+        sources: {
+            title: "Kilder",
+            type: "text",
+            content: "- [Statens vegvesen: Regelverket for sikring av barn i bil](https://www.vegvesen.no/trafikkinformasjon/trafikksikkerhet/sikker-kjoring/sikring-av-barn-i-bil/regelverket-for-sikring-av-barn/)\n- Følg alltid bruksanvisningene for den konkrete bilen og barnesikringsutstyret."
+        },
+        lastUpdated: "2026-09-05"
     },
 
     {

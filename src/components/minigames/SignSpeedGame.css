@@ -169,6 +169,14 @@
   text-align: center;
 }
 
+.sign-game-intro { max-width: 43ch; margin: 0; color: var(--muted); font-size: 1rem; line-height: 1.6; }
+.sign-game-benefits { margin: 0; color: var(--green); font-size: 0.8rem; font-weight: 700; }
+.sign-game-learning { margin-top: 18px; padding-top: 22px; border-top: 1px solid var(--line); text-align: left; }
+.sign-game-learning h2 { margin: 0 0 8px; font-size: 1.1rem; }
+.sign-game-learning p, .sign-game-next { margin: 0; color: var(--muted); font-size: 0.9rem; line-height: 1.65; }
+.sign-game-learning a, .sign-game-next a { color: var(--green); text-decoration: underline; text-underline-offset: 3px; }
+.sign-game-learning a:focus-visible, .sign-game-next a:focus-visible { outline: 2px solid var(--green); outline-offset: 3px; }
+
 .eyebrow,
 .round-kicker {
   margin: 0;

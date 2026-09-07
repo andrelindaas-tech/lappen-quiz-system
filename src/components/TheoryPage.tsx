@@ -150,9 +150,6 @@ const getTopicIcon = (id: string) => {
     }
 }
 
-// GA4 global type
-declare function gtag(...args: unknown[]): void
-
 export default function TheoryPage() {
     const { articleId } = useParams()
     const navigate = useNavigate()
@@ -187,20 +184,10 @@ export default function TheoryPage() {
     const handleSelectTopic = (id: string) => {
         const path = `/laeringsressurser/${id}`
         navigate(path)
-        if (typeof gtag !== 'undefined') {
-            setTimeout(() => {
-                gtag('event', 'page_view', { page_path: path, page_title: document.title })
-            }, 100)
-        }
     }
 
     const handleBack = () => {
         navigate('/laeringsressurser')
-        if (typeof gtag !== 'undefined') {
-            setTimeout(() => {
-                gtag('event', 'page_view', { page_path: '/laeringsressurser', page_title: document.title })
-            }, 100)
-        }
     }
 
     const handleClearSearch = () => {

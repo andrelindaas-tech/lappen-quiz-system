@@ -1,788 +1,188 @@
-import { useState, useEffect } from 'react'
-import { trackEvent } from '../utils/analytics'
-import Link from './InternalLink'
+import { useEffect, useReducer, useRef, useState } from 'react'
+import { ArrowRight, BookOpen, Check, ChevronRight, Eye, Flag, Lightbulb, Maximize2, RotateCcw, Route, Target, Trophy, X } from 'lucide-react'
 import { Helmet } from 'react-helmet-async'
-import confetti from 'canvas-confetti'
+import Link from './InternalLink'
+import RoadMarkingScene from './RoadMarkingScene'
+import { ROAD_MARKING_SCENARIOS as scenarios } from '../data/roadMarkingScenarios'
+import { initialRoadMarkingState, roadMarkingReducer } from '../utils/roadMarkingGame'
+import { trackEvent } from '../utils/analytics'
 import './RoadMarkingGame.css'
 
-interface Option {
-    id: string
-    text: string
-    isCorrect: boolean
-}
-
-interface Scenario {
-    id: number
-    title: string
-    question: string
-    options: Option[]
-    explanation: string
-    svg: string
-}
-
-const SCENARIOS: Scenario[] = [
-    {
-        id: 1,
-        title: "Hvit sperrelinje",
-        question: "Hva betyr denne heltrukne hvite linjen mellom kjørefelt i samme retning?",
-        options: [
-            { id: 'a', text: "Kjørefeltlinje — kan krysses dersom du bruker blinklys først.", isCorrect: false },
-            { id: 'b', text: "Sperrelinje — det er forbudt å skifte kjørefelt over denne linjen.", isCorrect: true },
-            { id: 'c', text: "Varsellinje — advarer om at veien snart snevres inn.", isCorrect: false },
-            { id: 'd', text: "Kantlinje — markerer den ytre kanten av asfalten.", isCorrect: false }
-        ],
-        explanation: "En heltrukken hvit linje mellom kjørefelt i samme kjøreretning er en sperrelinje. Det er ikke tillatt å krysse denne eller kjøre på den. Slike linjer brukes ofte inn mot veikryss eller i tunneler der feltskifte utgjør en sikkerhetsrisiko.",
-        svg: `
-            <svg viewBox="0 0 600 300" class="w-full h-full rounded-lg bg-[#3f6a3d]">
-                <!-- Asfalt -->
-                <rect x="0" y="40" width="600" height="220" fill="#2c3540" />
-                <!-- Kjøreretningspiler i asfalten (samme retning) -->
-                <path d="M 120 100 L 150 100 M 140 95 L 150 100 L 140 105" stroke="white" stroke-width="3" fill="none" />
-                <path d="M 120 200 L 150 200 M 140 195 L 150 200 L 140 205" stroke="white" stroke-width="3" fill="none" />
-                <path d="M 450 100 L 480 100 M 470 95 L 480 100 L 470 105" stroke="white" stroke-width="3" fill="none" />
-                <path d="M 450 200 L 480 200 M 470 195 L 480 200 L 470 205" stroke="white" stroke-width="3" fill="none" />
-                <!-- Hvit sperrelinje -->
-                <line x1="0" y1="150" x2="600" y2="150" stroke="white" stroke-width="6" />
-                <!-- Rød stiplet markeringsring -->
-                <ellipse cx="300" cy="150" rx="180" ry="25" fill="none" stroke="#ef4444" stroke-width="3" stroke-dasharray="8 6" />
-            </svg>
-        `
-    },
-    {
-        id: 2,
-        title: "Gul varsellinje",
-        question: "Hva betyr denne gule linjen i midten av veien?",
-        options: [
-            { id: 'a', text: "Forbikjøring forbudt — linjen må aldri krysses.", isCorrect: false },
-            { id: 'b', text: "Vanlig midtlinje — du kan kjøre forbi som normalt om det er fri bane.", isCorrect: false },
-            { id: 'c', text: "Sikten er for kort til vanlig forbikjøring. Linjen varsler om fare.", isCorrect: true },
-            { id: 'd', text: "Sperreområde — veien deles permanent i to separate retninger.", isCorrect: false }
-        ],
-        explanation: "En gul varsellinje skiller motgående kjøreretninger og har lange streker med korte opphold (forholdet 3:1). Den varsler at sikten fremover er for kort til vanlig forbikjøring. Det er ikke et direkte forbud mot å krysse den, men en sterk advarsel.",
-        svg: `
-            <svg viewBox="0 0 600 300" class="w-full h-full rounded-lg bg-[#3f6a3d]">
-                <!-- Asfalt -->
-                <rect x="0" y="40" width="600" height="220" fill="#2c3540" />
-                <!-- Kjøreretningspiler (motgående) -->
-                <path d="M 120 100 L 150 100 M 140 95 L 150 100 L 140 105" stroke="white" stroke-width="3" fill="none" />
-                <path d="M 480 200 L 450 200 M 460 195 L 450 200 L 460 205" stroke="white" stroke-width="3" fill="none" />
-                <!-- Kantlinjer -->
-                <line x1="0" y1="45" x2="600" y2="45" stroke="white" stroke-width="3" />
-                <line x1="0" y1="255" x2="600" y2="255" stroke="white" stroke-width="3" />
-                <!-- Gul varsellinje -->
-                <line x1="0" y1="150" x2="600" y2="150" stroke="#facc15" stroke-width="5" stroke-dasharray="45 15" />
-                <!-- Markeringsring -->
-                <ellipse cx="300" cy="150" rx="160" ry="25" fill="none" stroke="#ef4444" stroke-width="3" stroke-dasharray="8 6" />
-            </svg>
-        `
-    },
-    {
-        id: 3,
-        title: "Kombinert linje",
-        question: "Du kjører bilen merket 'DU'. Hvilke regler gjelder for deg angående å krysse midtlinjen?",
-        options: [
-            { id: 'a', text: "Du kan krysse linjen (f.eks. for forbikjøring) fordi den stiplede linjen er på din side.", isCorrect: true },
-            { id: 'b', text: "Du må forholde deg til den heltrukne linjen og har kjøreforbud over den.", isCorrect: false },
-            { id: 'c', text: "Begge sider har forbud mot å krysse linjen uansett situasjon.", isCorrect: false },
-            { id: 'd', text: "Kombinerte linjer gjelder kun for svinging i kryss, ikke forbikjøring.", isCorrect: false }
-        ],
-        explanation: "Ved kombinert linje skal du alltid forholde deg til den linjen som ligger nærmest ditt eget kjørefelt. Siden den stiplede varsellinjen ligger på din side, har du lov til å krysse den dersom veien videre er klar og det kan skje sikkert.",
-        svg: `
-            <svg viewBox="0 0 600 300" class="w-full h-full rounded-lg bg-[#3f6a3d]">
-                <!-- Asfalt -->
-                <rect x="0" y="40" width="600" height="220" fill="#2c3540" />
-                <!-- Motgående pil øverst -->
-                <path d="M 480 95 L 450 95 M 460 90 L 450 95 L 460 100" stroke="white" stroke-width="3" fill="none" />
-                <!-- Eget felt pil nederst -->
-                <path d="M 120 205 L 150 205 M 140 200 L 150 205 L 140 210" stroke="white" stroke-width="3" fill="none" />
-                <!-- Kantlinjer -->
-                <line x1="0" y1="45" x2="600" y2="45" stroke="white" stroke-width="3" />
-                <line x1="0" y1="255" x2="600" y2="255" stroke="white" stroke-width="3" />
-                <!-- Kombinert linje -->
-                <line x1="0" y1="146" x2="600" y2="146" stroke="#facc15" stroke-width="4" />
-                <line x1="0" y1="154" x2="600" y2="154" stroke="#facc15" stroke-width="4" stroke-dasharray="15 15" />
-                <!-- Bil i eget felt -->
-                <rect x="200" y="180" width="70" height="40" rx="5" fill="#3b82f6" stroke="white" stroke-width="2" />
-                <text x="235" y="205" fill="white" font-size="14" font-weight="bold" text-anchor="middle">DU</text>
-                <!-- Markeringsring -->
-                <ellipse cx="320" cy="150" rx="140" ry="20" fill="none" stroke="#ef4444" stroke-width="3" stroke-dasharray="8 6" />
-            </svg>
-        `
-    },
-    {
-        id: 4,
-        title: "Vikelinje (Haitenner)",
-        question: "Hva forteller disse hvite trekantene ('haitennene') deg når du nærmer deg krysset?",
-        options: [
-            { id: 'a', text: "At du har forkjørsrett og kryssende trafikk må vike for deg.", isCorrect: false },
-            { id: 'b', text: "At du må stoppe helt opp uansett om det kommer biler eller ikke.", isCorrect: false },
-            { id: 'c', text: "At veien videre er enveiskjørt mot høyre.", isCorrect: false },
-            { id: 'd', text: "At du har vikeplikt for kryssende trafikk på den tverrgående veien.", isCorrect: true }
-        ],
-        explanation: "Hvite trekanter på tvers av kjørefeltet kalles en vikelinje (ofte kalt 'haitenner'). De markerer stedet hvor du må stanse for å overholde vikeplikten dersom det kommer kryssende trafikk. Du trenger ikke å stanse helt om det er fri bane.",
-        svg: `
-            <svg viewBox="0 0 600 300" class="w-full h-full rounded-lg bg-[#3f6a3d]">
-                <!-- Horisontal hovedvei -->
-                <rect x="0" y="0" width="600" height="120" fill="#2c3540" />
-                <!-- Vertikal tilførselsvei -->
-                <rect x="200" y="120" width="200" height="180" fill="#2c3540" />
-                <!-- Sidelinjer i krysset -->
-                <line x1="0" y1="120" x2="200" y2="120" stroke="white" stroke-width="4" />
-                <line x1="400" y1="120" x2="600" y2="120" stroke="white" stroke-width="4" />
-                <line x1="200" y1="120" x2="200" y2="300" stroke="white" stroke-width="4" />
-                <line x1="400" y1="120" x2="400" y2="300" stroke="white" stroke-width="4" />
-                <!-- Midtlinje på sideveien -->
-                <line x1="300" y1="160" x2="300" y2="300" stroke="#facc15" stroke-width="4" stroke-dasharray="10 10" />
-                <!-- Bil -->
-                <rect x="315" y="210" width="70" height="45" rx="5" fill="#3b82f6" stroke="white" stroke-width="2" />
-                <text x="350" y="238" fill="white" font-size="13" font-weight="bold" text-anchor="middle">DU</text>
-                <!-- Vikelinje -->
-                <g fill="white">
-                    <polygon points="310,123 330,123 320,138" />
-                    <polygon points="340,123 360,123 350,138" />
-                    <polygon points="370,123 390,123 380,138" />
-                </g>
-                <!-- Markeringsring -->
-                <ellipse cx="350" cy="130" rx="60" ry="22" fill="none" stroke="#ef4444" stroke-width="3" stroke-dasharray="6 4" />
-            </svg>
-        `
-    },
-    {
-        id: 5,
-        title: "Sperreområde",
-        question: "Hvilke regler gjelder for det skraverte området i midten (sperreområdet)?",
-        options: [
-            { id: 'a', text: "Området kan brukes som midlertidig stopp- eller svingefelt ved kø.", isCorrect: false },
-            { id: 'b', text: "Det er forbudt å kjøre, sykle eller parkere på eller over sperreområdet.", isCorrect: true },
-            { id: 'c', text: "Sperreområdet gjelder kun for tungtransport og lastebiler.", isCorrect: false },
-            { id: 'd', text: "Du kan kjøre over området dersom du skal svinge av til høyre senere.", isCorrect: false }
-        ],
-        explanation: "Et sperreområde er markert med diagonale hvite eller gule striper innenfor en heltrukken begrensningslinje. Det skal lede trafikken sikkert unna hindringer. Det er strengt forbudt å kjøre eller plassere kjøretøyet innenfor dette området.",
-        svg: `
-            <svg viewBox="0 0 600 300" class="w-full h-full rounded-lg bg-[#3f6a3d]">
-                <defs>
-                    <pattern id="diagonal-stripes" width="15" height="15" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
-                        <line x1="0" y1="0" x2="0" y2="15" stroke="white" stroke-width="4" />
-                    </pattern>
-                </defs>
-                <!-- Veibane som utvider seg naturlig (Polygon) -->
-                <polygon points="0,80 220,80 600,40 600,260 220,220 0,220" fill="#2c3540" />
-                
-                <!-- Kantlinjer som følger utvidingen -->
-                <path d="M 0 80 L 220 80 L 600 40" stroke="white" stroke-width="4" fill="none" />
-                <path d="M 0 220 L 220 220 L 600 260" stroke="white" stroke-width="4" fill="none" />
-                
-                <!-- Kjørefeltlinje før splitten -->
-                <line x1="0" y1="150" x2="220" y2="150" stroke="white" stroke-width="4" stroke-dasharray="8 16" />
-                
-                <!-- Sperreområde fylt med stripemønsteret -->
-                <polygon points="220,150 600,115 600,185" fill="url(#diagonal-stripes)" stroke="white" stroke-width="4" />
-                
-                <!-- Kjørepil øvre felt -->
-                <path d="M 320 100 L 440 82" stroke="white" stroke-width="3" fill="none" />
-                <path d="M 430 77 L 440 82 L 432 89" stroke="white" stroke-width="3" fill="none" />
-                
-                <!-- Kjørepil nedre felt -->
-                <path d="M 320 200 L 440 218" stroke="white" stroke-width="3" fill="none" />
-                <path d="M 432 211 L 440 218 L 430 223" stroke="white" stroke-width="3" fill="none" />
-                
-                <!-- Egen bil -->
-                <rect x="50" y="162" width="65" height="38" rx="5" fill="#3b82f6" stroke="white" stroke-width="2" />
-                <text x="82" y="186" fill="white" font-size="13" font-weight="bold" text-anchor="middle">DU</text>
-                
-                <!-- Rød markeringsring -->
-                <ellipse cx="410" cy="150" rx="160" ry="55" fill="none" stroke="#ef4444" stroke-width="3" stroke-dasharray="8 6" />
-            </svg>
-        `
-    },
-    {
-        id: 6,
-        title: "Stopplinje",
-        question: "Hva kreves av deg når du møter denne heltrukne, brede tverrlinjen (stopplinjen)?",
-        options: [
-            { id: 'a', text: "Det er en vikelinje, du må kun stoppe dersom det kommer biler.", isCorrect: false },
-            { id: 'b', text: "Du må redusere farten til under 20 km/t, men trenger ikke stoppe helt.", isCorrect: false },
-            { id: 'c', text: "Du må stoppe helt opp (hjulene i ro) før du passerer linjen.", isCorrect: true },
-            { id: 'd', text: "Linjen viser hvor du har vikeplikt fra høyre.", isCorrect: false }
-        ],
-        explanation: "En stopplinje er en bred, heltrukken tverrlinje som brukes sammen med stoppskilt eller trafikklys. Her har du en absolutt plikt til å stoppe helt opp (alle hjul må stå i ro) før linjen, selv om det ikke er noen andre biler i sikte.",
-        svg: `
-            <svg viewBox="0 0 600 300" class="w-full h-full rounded-lg bg-[#3f6a3d]">
-                <!-- Veier i krysset -->
-                <rect x="0" y="0" width="600" height="120" fill="#2c3540" />
-                <rect x="200" y="120" width="200" height="180" fill="#2c3540" />
-                <line x1="0" y1="120" x2="200" y2="120" stroke="white" stroke-width="4" />
-                <line x1="400" y1="120" x2="600" y2="120" stroke="white" stroke-width="4" />
-                <line x1="200" y1="120" x2="200" y2="300" stroke="white" stroke-width="4" />
-                <line x1="400" y1="120" x2="400" y2="300" stroke="white" stroke-width="4" />
-                <!-- Delelinje -->
-                <line x1="300" y1="160" x2="300" y2="300" stroke="#facc15" stroke-width="4" stroke-dasharray="10 10" />
-                <!-- Egen bil -->
-                <rect x="315" y="210" width="70" height="45" rx="5" fill="#3b82f6" stroke="white" stroke-width="2" />
-                <text x="350" y="238" fill="white" font-size="13" font-weight="bold" text-anchor="middle">DU</text>
-                <!-- Stoppskilt-ikon -->
-                <g transform="translate(415, 140)">
-                    <polygon points="10,0 25,0 35,10 35,25 25,35 10,35 0,25 0,10" fill="#ef4444" stroke="white" stroke-width="1.5" />
-                    <text x="17.5" y="21" fill="white" font-size="8" font-weight="bold" text-anchor="middle">STOP</text>
-                </g>
-                <!-- Stopplinje (bred tverrlinje) -->
-                <line x1="300" y1="125" x2="400" y2="125" stroke="white" stroke-width="12" />
-                <!-- Rød markeringsring -->
-                <ellipse cx="350" cy="125" rx="60" ry="18" fill="none" stroke="#ef4444" stroke-width="3" stroke-dasharray="6 4" />
-            </svg>
-        `
-    },
-    {
-        id: 7,
-        title: "Skillelinje",
-        question: "Hva markerer denne brede, stiplede hvite linjen (skillelinjen)?",
-        options: [
-            { id: 'a', text: "At det er en vanlig kjørefeltlinje der du fritt kan bytte felt for å kjøre forbi.", isCorrect: false },
-            { id: 'b', text: "At veien snevres inn til ett felt om kort tid.", isCorrect: false },
-            { id: 'c', text: "At du har vikeplikt for biler som kommer fra høyre.", isCorrect: false },
-            { id: 'd', text: "At feltet til høyre er et kollektivfelt eller sykkelfelt.", isCorrect: true }
-        ],
-        explanation: "En skillelinje er betydelig bredere enn en vanlig kjørefeltlinje. Den markerer grensen mot et kjørefelt for spesielle trafikantgrupper, som et kollektivfelt (buss/taxi) eller sykkelfelt. Du har som hovedregel ikke lov til å kjøre i kollektivfeltet med vanlig personbil.",
-        svg: `
-            <svg viewBox="0 0 600 300" class="w-full h-full rounded-lg bg-[#3f6a3d]">
-                <!-- Asfalt -->
-                <rect x="0" y="40" width="600" height="220" fill="#2c3540" />
-                <line x1="0" y1="45" x2="600" y2="45" stroke="white" stroke-width="3" />
-                <line x1="0" y1="255" x2="600" y2="255" stroke="white" stroke-width="3" />
-                <!-- Bred skillelinje -->
-                <line x1="0" y1="150" x2="600" y2="150" stroke="white" stroke-width="10" stroke-dasharray="15 20" />
-                <!-- Buss-tekst i asfalten -->
-                <text x="300" y="215" fill="white" font-size="28" font-weight="900" letter-spacing="4" text-anchor="middle" opacity="0.8">BUSS</text>
-                <!-- Pilmerking -->
-                <path d="M 100 95 L 130 95 M 120 90 L 130 95 L 120 100" stroke="white" stroke-width="3" fill="none" />
-                <!-- Egen bil -->
-                <rect x="50" y="75" width="65" height="38" rx="5" fill="#3b82f6" stroke="white" stroke-width="2" />
-                <text x="82" y="99" fill="white" font-size="13" font-weight="bold" text-anchor="middle">DU</text>
-                <!-- Rød markeringsring -->
-                <ellipse cx="300" cy="150" rx="180" ry="20" fill="none" stroke="#ef4444" stroke-width="3" stroke-dasharray="8 6" />
-            </svg>
-        `
-    },
-    {
-        id: 8,
-        title: "Gul sperrelinje",
-        question: "Hva betyr denne heltrukne gule linjen i midten (gul sperrelinje)?",
-        options: [
-            { id: 'a', text: "Den skiller motgående kjøreretninger, og det er forbudt å krysse den.", isCorrect: true },
-            { id: 'b', text: "Den skiller kjørefelt i samme retning der det er svingeforbud.", isCorrect: false },
-            { id: 'c', text: "Den tillater forbikjøring så lenge du har fri sikt fremover.", isCorrect: false },
-            { id: 'd', text: "Den markerer at det er en enveiskjørt gate.", isCorrect: false }
-        ],
-        explanation: "Heltrukken gul linje kalles en gul sperrelinje og skiller motgående kjøreretninger. Det er strengt forbudt å krysse denne linjen, eller kjøre til venstre for den, uansett om du har god sikt eller ikke. (Hvite sperrelinjer brukes til å skille felt i samme retning).",
-        svg: `
-            <svg viewBox="0 0 600 300" class="w-full h-full rounded-lg bg-[#3f6a3d]">
-                <!-- Asfalt -->
-                <rect x="0" y="40" width="600" height="220" fill="#2c3540" />
-                <!-- Motgående piler -->
-                <path d="M 480 95 L 450 95 M 460 90 L 450 95 L 460 100" stroke="white" stroke-width="3" fill="none" />
-                <path d="M 120 205 L 150 205 M 140 200 L 150 205 L 140 210" stroke="white" stroke-width="3" fill="none" />
-                <!-- Kantlinjer -->
-                <line x1="0" y1="45" x2="600" y2="45" stroke="white" stroke-width="3" />
-                <line x1="0" y1="255" x2="600" y2="255" stroke="white" stroke-width="3" />
-                <!-- Gul sperrelinje -->
-                <line x1="0" y1="150" x2="600" y2="150" stroke="#facc15" stroke-width="8" />
-                <!-- Egen bil -->
-                <rect x="200" y="180" width="70" height="40" rx="5" fill="#3b82f6" stroke="white" stroke-width="2" />
-                <text x="235" y="205" fill="white" font-size="14" font-weight="bold" text-anchor="middle">DU</text>
-                <!-- Markeringsring -->
-                <ellipse cx="320" cy="150" rx="140" ry="25" fill="none" stroke="#ef4444" stroke-width="3" stroke-dasharray="8 6" />
-            </svg>
-        `
-    },
-    {
-        id: 9,
-        title: "Hvit kantlinje",
-        question: "Hva er hovedformålet med denne heltrukne hvite linjen langs veikanten?",
-        options: [
-            { id: 'a', text: "Å markere at det er en asfaltert sykkelsti for syklister.", isCorrect: false },
-            { id: 'b', text: "Å vise at det er forbudt å parkere langs hele veistrekningen.", isCorrect: false },
-            { id: 'c', text: "Å markere kjørebanens ytterkant og lede sjåføren visuelt.", isCorrect: true },
-            { id: 'd', text: "Å varsle at det kommer et veikryss eller en avkjørsel om kort tid.", isCorrect: false }
-        ],
-        explanation: "En heltrukken hvit linje langs veikanten kalles en kantlinje (linje 1012). Hovedformålet er å markere grensen for den kjørbare delen av veien (kjørebanen), hjelpe sjåføren med å holde riktig plassering i veibanen, og gi visuell veiledning spesielt i mørket eller under vanskelige siktforhold.",
-        svg: `
-            <svg viewBox="0 0 600 300" class="w-full h-full rounded-lg bg-[#3f6a3d]">
-                <!-- Asfalt -->
-                <rect x="0" y="40" width="600" height="220" fill="#2c3540" />
-                <!-- Motgående piler -->
-                <path d="M 480 205 L 450 205 M 460 200 L 450 205 L 460 210" stroke="white" stroke-width="3" fill="none" />
-                <path d="M 120 95 L 150 95 M 140 90 L 150 95 L 140 100" stroke="white" stroke-width="3" fill="none" />
-                <!-- Gul stiplet delelinje -->
-                <line x1="0" y1="150" x2="600" y2="150" stroke="#facc15" stroke-width="6" stroke-dasharray="20 20" />
-                <!-- Hvite heltrukne kantlinjer -->
-                <line x1="0" y1="45" x2="600" y2="45" stroke="white" stroke-width="6" />
-                <line x1="0" y1="255" x2="600" y2="255" stroke="white" stroke-width="6" />
-                <!-- Røde markeringsringer rundt kantlinjene -->
-                <ellipse cx="300" cy="45" rx="180" ry="12" fill="none" stroke="#ef4444" stroke-width="3" stroke-dasharray="8 6" />
-                <ellipse cx="300" cy="255" rx="180" ry="12" fill="none" stroke="#ef4444" stroke-width="3" stroke-dasharray="8 6" />
-            </svg>
-        `
-    },
-    {
-        id: 10,
-        title: "Gul kantlinje",
-        question: "Hva betyr denne heltrukne gule linjen langs fortauskanten?",
-        options: [
-            { id: 'a', text: "Parkeringsforbud — du kan stanse kort for av- og påstigning, men ikke parkere.", isCorrect: false },
-            { id: 'b', text: "At det kun er tillatt å parkere her i helgene.", isCorrect: false },
-            { id: 'c', text: "Linjen markerer vikeplikt for fotgjengere.", isCorrect: false },
-            { id: 'd', text: "Stansforbud — det er forbudt å stanse eller parkere langs denne linjen.", isCorrect: true }
-        ],
-        explanation: "En heltrukken gul linje på kantstein eller langs veikanten betyr stansforbud (og dermed også parkeringsforbud). Her har du ikke lov til å stanse i det hele tatt – ikke en gang for en rask av- og påstigning. (Stiplet gul linje betyr kun parkeringsforbud).",
-        svg: `
-            <svg viewBox="0 0 600 300" class="w-full h-full rounded-lg bg-[#3f6a3d]">
-                <!-- Asfalt -->
-                <rect x="0" y="40" width="600" height="200" fill="#2c3540" />
-                <line x1="0" y1="45" x2="600" y2="45" stroke="white" stroke-width="3" />
-                <!-- Fortau nederst -->
-                <rect x="0" y="240" width="600" height="60" fill="#94a3b8" />
-                <line x1="0" y1="240" x2="600" y2="240" stroke="#475569" stroke-width="3" />
-                <!-- Gul heltrukken kantlinje -->
-                <line x1="0" y1="237" x2="600" y2="237" stroke="#facc15" stroke-width="6" />
-                <!-- Egen bil -->
-                <rect x="250" y="185" width="70" height="40" rx="5" fill="#3b82f6" stroke="white" stroke-width="2" />
-                <text x="285" y="210" fill="white" font-size="14" font-weight="bold" text-anchor="middle">DU</text>
-                <!-- Pil kjøreretning -->
-                <path d="M 100 120 L 130 120 M 120 115 L 130 120 L 120 125" stroke="white" stroke-width="3" fill="none" />
-                <!-- Markeringsring -->
-                <ellipse cx="285" cy="237" rx="110" ry="20" fill="none" stroke="#ef4444" stroke-width="3" stroke-dasharray="8 6" />
-            </svg>
-        `
-    },
-    {
-        id: 11,
-        title: "Dobbel sperrelinje",
-        question: "Hva betyr denne doble heltrukne gule linjen i midten av veien?",
-        options: [
-            { id: 'a', text: "Det er kun forbudt å krysse fra den siden der linjen er bredest.", isCorrect: false },
-            { id: 'b', text: "Forbud mot å krysse linjen for begge kjøreretninger.", isCorrect: true },
-            { id: 'c', text: "Forbikjøring er tillatt dersom begge sider har fri sikt.", isCorrect: false },
-            { id: 'd', text: "Linjen brukes kun midlertidig ved veiarbeid og har samme virkning som en vanlig midtlinje.", isCorrect: false }
-        ],
-        explanation: "Doble heltrukne gule linjer kalles en dobbel sperrelinje og angir at det er forbudt å krysse linjene eller kjøre til venstre for dem for begge kjøreretninger. Dobbel sperrelinje brukes typisk på firefeltsveier eller tofeltsveier med høy fartsgrense der forbikjøring og kryssing utgjør en særskilt fare.",
-        svg: `
-            <svg viewBox="0 0 600 300" class="w-full h-full rounded-lg bg-[#3f6a3d]">
-                <!-- Asfalt -->
-                <rect x="0" y="40" width="600" height="220" fill="#2c3540" />
-                <!-- Motgående piler -->
-                <path d="M 480 95 L 450 95 M 460 90 L 450 95 L 460 100" stroke="white" stroke-width="3" fill="none" />
-                <path d="M 120 205 L 150 205 M 140 200 L 150 205 L 140 210" stroke="white" stroke-width="3" fill="none" />
-                <!-- Kantlinjer -->
-                <line x1="0" y1="45" x2="600" y2="45" stroke="white" stroke-width="3" />
-                <line x1="0" y1="255" x2="600" y2="255" stroke="white" stroke-width="3" />
-                <!-- Dobbel gul sperrelinje -->
-                <line x1="0" y1="146" x2="600" y2="146" stroke="#facc15" stroke-width="4" />
-                <line x1="0" y1="154" x2="600" y2="154" stroke="#facc15" stroke-width="4" />
-                <!-- Egen bil -->
-                <rect x="200" y="180" width="70" height="40" rx="5" fill="#3b82f6" stroke="white" stroke-width="2" />
-                <text x="235" y="205" fill="white" font-size="14" font-weight="bold" text-anchor="middle">DU</text>
-                <!-- Markeringsring -->
-                <ellipse cx="320" cy="150" rx="170" ry="25" fill="none" stroke="#ef4444" stroke-width="3" stroke-dasharray="8 6" />
-            </svg>
-        `
-    },
-    {
-        id: 12,
-        title: "Pilmerking med sperrelinje",
-        question: "Du ligger i det høyre feltet, og det er en hvit sperrelinje på din venstre side. Hva må du gjøre?",
-        options: [
-            { id: 'a', text: "Du har påbud om å svinge til høyre. Du kan ikke lenger skifte felt eller kjøre rett frem.", isCorrect: true },
-            { id: 'b', text: "Pilen er kun en anbefaling; du kan kjøre rett frem om du er forsiktig.", isCorrect: false },
-            { id: 'c', text: "Du kan krysse sperrelinjen for å skifte felt om du bruker blinklys.", isCorrect: false },
-            { id: 'd', text: "Du må stoppe helt opp før du svinger til høyre.", isCorrect: false }
-        ],
-        explanation: "Kjørefeltpiler (skilt 1034) angir hvilke kjøreretninger som er tillatt i feltet. Det er forbudt å kjøre i strid med pilene. Siden det er en heltrukken sperrelinje på din venstre side, kan du heller ikke skifte felt, og du må derfor følge pilens retning og svinge til høyre.",
-        svg: `
-            <svg viewBox="0 0 600 300" class="w-full h-full rounded-lg bg-[#3f6a3d]">
-                <!-- Veibane som utvider seg diagonalt og deretter snevres inn til kun ETT felt etter svingen -->
-                <polygon points="0,40 600,40 600,150 520,150 520,300 420,300 420,255 0,255" fill="#2c3540" />
-                
-                <!-- Kantlinjer som markerer innsnevring og kryss-geometri -->
-                <path d="M 0 45 L 600 45" stroke="white" stroke-width="3" fill="none" />
-                <path d="M 0 255 L 420 255 L 420 300" stroke="white" stroke-width="3" fill="none" />
-                <path d="M 520 150 L 520 300" stroke="white" stroke-width="4" fill="none" />
-                
-                <!-- Heltrukken hvit sperrelinje (Løper uavbrutt helt ut til høyre) -->
-                <line x1="0" y1="150" x2="600" y2="150" stroke="white" stroke-width="6" />
-                
-                <!-- Pil rett frem i venstre felt -->
-                <path d="M 320 100 L 350 100 M 340 95 L 350 100 L 340 105" stroke="white" stroke-width="3" fill="none" />
-                
-                <!-- Sving til høyre pil som leder ned på sideveien -->
-                <path d="M 220 200 L 410 200 Q 470 200 470 230 L 470 270" stroke="white" stroke-width="4.5" fill="none" />
-                <path d="M 463 260 L 470 270 L 477 260" stroke="white" stroke-width="4.5" fill="none" />
-                
-                <!-- Egen bil -->
-                <rect x="110" y="180" width="70" height="40" rx="5" fill="#3b82f6" stroke="white" stroke-width="2" />
-                <text x="145" y="205" fill="white" font-size="14" font-weight="bold" text-anchor="middle">DU</text>
-                
-                <!-- Rød markeringsring rundt pilen og avkjøringen -->
-                <ellipse cx="360" cy="210" rx="130" ry="55" fill="none" stroke="#ef4444" stroke-width="3" stroke-dasharray="8 6" />
-            </svg>
-        `
-    },
-    {
-        id: 13,
-        title: "Midlertidig veimerking",
-        question: "Det pågår veiarbeid, og det er malt både gule og delvis slitte hvite linjer på asfalten. Hvilke skal du følge?",
-        options: [
-            { id: 'a', text: "Du skal følge de hvite linjene, da permanent oppmerking alltid gjelder først.", isCorrect: false },
-            { id: 'b', text: "Du må følge de gule linjene. Midlertidig gul oppmerking overstyrer den hvite.", isCorrect: true },
-            { id: 'c', text: "Du kan velge fritt basert på hvilket kjørefelt som er tomt.", isCorrect: false },
-            { id: 'd', text: "De gule linjene gjelder kun for anleggsmaskiner under 7,5 tonn.", isCorrect: false }
-        ],
-        explanation: "Under veiarbeid brukes det ofte midlertidig gul vegoppmerking for å lede trafikken i nye, midlertidige traséer. Regelen er krystallklar: Gul midlertidig oppmerking overstyrer alltid den ordinære hvite oppmerkingen.\n\nI praksis fjernes ikke den hvite malingen under kortvarig veiarbeid fordi det er dyrt, tidkrevende og skader asfalten. I stedet blir den overmalt, tapet over med svart markeringstape, eller rett og slett bare overstyrt av de gule linjene. Du skal derfor overse de hvite linjene og følge de gule.",
-        svg: `
-            <svg viewBox="0 0 600 300" class="w-full h-full rounded-lg bg-[#3f6a3d]">
-                <!-- Asfalt -->
-                <rect x="0" y="40" width="600" height="220" fill="#2c3540" />
-                
-                <!-- Ordinære, hvite kantlinjer (rette og parallelle med veien) -->
-                <line x1="0" y1="45" x2="600" y2="45" stroke="white" stroke-width="3" />
-                <line x1="0" y1="255" x2="600" y2="255" stroke="white" stroke-width="3" />
-                
-                <!-- Slitt hvit delelinje (lav opasitet) som fortsetter rett frem -->
-                <line x1="0" y1="150" x2="600" y2="150" stroke="white" stroke-width="4" stroke-dasharray="10 15" opacity="0.2" />
-                
-                <!-- Svarte kryss (tape) over den deaktiverte hvite delelinjen -->
-                <g stroke="#111827" stroke-width="3.5" opacity="0.8">
-                    <!-- Kryss 1 -->
-                    <line x1="120" y1="143" x2="135" y2="157" />
-                    <line x1="120" y1="157" x2="135" y2="143" />
-                    <!-- Kryss 2 -->
-                    <line x1="220" y1="143" x2="235" y2="157" />
-                    <line x1="220" y1="157" x2="235" y2="143" />
-                    <!-- Kryss 3 -->
-                    <line x1="360" y1="143" x2="375" y2="157" />
-                    <line x1="360" y1="157" x2="375" y2="143" />
-                    <!-- Kryss 4 -->
-                    <line x1="460" y1="143" x2="475" y2="157" />
-                    <line x1="460" y1="157" x2="475" y2="143" />
-                </g>
-                
-                <!-- Midlertidig gul delelinje som svinger unna veiarbeidet i midten -->
-                <path d="M 0 150 Q 300 80 600 150" stroke="#facc15" stroke-width="6" fill="none" stroke-dasharray="15 15" />
-                
-                <!-- Gule retningspiler i veibanen for å vise trafikkflyten -->
-                <g fill="none" stroke="#facc15" stroke-width="3" opacity="0.9">
-                    <!-- Retningspil 1 (før hindring, svinger oppover) -->
-                    <path d="M 40 210 Q 120 185 200 160" />
-                    <polygon points="200,160 188,162 194,171" fill="#facc15" stroke="none" />
-                    
-                    <!-- Retningspil 2 (etter hindring, svinger nedover igjen) -->
-                    <path d="M 380 155 Q 460 180 540 210" />
-                    <polygon points="540,210 526,203 532,212" fill="#facc15" stroke="none" />
-                </g>
-                
-                <!-- Kjegler som sperrer av det opprinnelige feltet -->
-                <g transform="translate(280, 160)">
-                    <polygon points="10,30 20,30 15,0" fill="#f97316" />
-                    <rect x="12" y="10" width="6" height="8" fill="white" />
-                </g>
-                <g transform="translate(320, 170)">
-                    <polygon points="10,30 20,30 15,0" fill="#f97316" />
-                    <rect x="12" y="10" width="6" height="8" fill="white" />
-                </g>
-
-                <!-- Egen bil som følger den gule svingen -->
-                <g transform="translate(110, 150) rotate(-10)">
-                    <rect x="0" y="0" width="65" height="38" rx="5" fill="#3b82f6" stroke="white" stroke-width="2" />
-                    <text x="32.5" y="24" fill="white" font-size="13" font-weight="bold" text-anchor="middle">DU</text>
-                </g>
-            </svg>
-        `
-    },
-    {
-        id: 14,
-        title: "Gangfelt (Sebrastriper)",
-        question: "Du nærmer deg dette gangfeltet (sebrastripene). Hva er din viktigste plikt som bilfører?",
-        options: [
-            { id: 'a', text: "Du har vikeplikt for syklister som sykler hurtig over gangfeltet.", isCorrect: false },
-            { id: 'b', text: "Du har kun vikeplikt dersom det er dårlig sikt eller mørkt.", isCorrect: false },
-            { id: 'c', text: "Du har vikeplikt for fotgjengere som befinner seg i, eller er på vei ut i, gangfeltet.", isCorrect: true },
-            { id: 'd', text: "Du må stoppe helt opp og stå i ro i 3 sekunder, uansett om det er folk der eller ikke.", isCorrect: false }
-        ],
-        explanation: "Sebrastriper i veibanen markerer et godkjent gangfelt. Som bilfører har du en streng og absolutt vikeplikt for fotgjengere som er i gangfeltet, eller som viser tydelig tegn på at de er på vei ut i det. Du må tilpasse farten i god tid.",
-        svg: `
-            <svg viewBox="0 0 600 300" class="w-full h-full rounded-lg bg-[#3f6a3d]">
-                <!-- Asfalt -->
-                <rect x="0" y="40" width="600" height="220" fill="#2c3540" />
-                <line x1="0" y1="45" x2="600" y2="45" stroke="white" stroke-width="3" />
-                <line x1="0" y1="255" x2="600" y2="255" stroke="white" stroke-width="3" />
-                <line x1="0" y1="150" x2="600" y2="150" stroke="white" stroke-width="4" stroke-dasharray="15 15" />
-                
-                <!-- Sebrastriper (Rektanglene ligger parallelt med kjøreretningen) -->
-                <g fill="white" opacity="0.95">
-                    <rect x="300" y="55" width="80" height="20" />
-                    <rect x="300" y="85" width="80" height="20" />
-                    <rect x="300" y="115" width="80" height="20" />
-                    <rect x="300" y="145" width="80" height="20" />
-                    <rect x="300" y="175" width="80" height="20" />
-                    <rect x="300" y="205" width="80" height="20" />
-                    <rect x="300" y="235" width="80" height="20" />
-                </g>
-
-                <!-- Egen bil på vei mot gangfeltet -->
-                <rect x="100" y="175" width="70" height="40" rx="5" fill="#3b82f6" stroke="white" stroke-width="2" />
-                <text x="135" y="200" fill="white" font-size="14" font-weight="bold" text-anchor="middle">DU</text>
-                
-                <!-- Rød markeringsring -->
-                <ellipse cx="340" cy="150" rx="70" ry="110" fill="none" stroke="#ef4444" stroke-width="3" stroke-dasharray="8 6" />
-            </svg>
-        `
-    }
-];
+const letters = ['A', 'B', 'C', 'D']
 
 export default function RoadMarkingGame() {
-    const [currentRound, setCurrentRound] = useState(0)
-    const [score, setScore] = useState(0)
-    const [streak, setStreak] = useState(0)
-    const [hasAnswered, setHasAnswered] = useState(false)
-    const [selectedOptionId, setSelectedOptionId] = useState<string | null>(null)
-    const [showResults, setShowResults] = useState(false)
+    const [state, dispatch] = useReducer(roadMarkingReducer, initialRoadMarkingState)
+    const [showHint, setShowHint] = useState(false)
+    const [highlight, setHighlight] = useState(false)
+    const questionRef = useRef<HTMLHeadingElement>(null)
+    const feedbackRef = useRef<HTMLDivElement>(null)
+    const resultRef = useRef<HTMLHeadingElement>(null)
+    const sceneDialogRef = useRef<HTMLDialogElement>(null)
+    const sceneZoomRef = useRef<HTMLDivElement>(null)
+    const startedAt = useRef(0)
+    const answerLock = useRef(false)
+    const viewed = useRef(false)
+    const completed = useRef(false)
+    const scenario = scenarios.find(s => s.id === state.queue[state.round])!
+    const answer = state.answers[state.round]
+    const score = state.answers.filter(a => a.correct).length
+    const missed = state.answers.filter(a => !a.correct)
+    const progress = (state.answers.length / state.queue.length) * 100
+    let streak = 0
+    for (let i = state.answers.length - 1; i >= 0 && state.answers[i].correct; i--) streak++
 
-    // GA4: game started
     useEffect(() => {
-        trackEvent('game_started', { game_name: 'veimerking' })
+        if (!viewed.current) {
+            viewed.current = true
+            trackEvent('game_view', { game_name: 'veimerking', total: scenarios.length })
+        }
     }, [])
 
-    const scenario = SCENARIOS[currentRound]
-
-    // Confetti effect on completion
     useEffect(() => {
-        if (showResults && score >= 90) {
-            const duration = 2000
-            const end = Date.now() + duration
-
-            const frame = () => {
-                confetti({
-                    particleCount: 4,
-                    angle: 60,
-                    spread: 55,
-                    origin: { x: 0, y: 0.85 },
-                    colors: ['#2dd4bf', '#3b82f6', '#10b981']
-                })
-                confetti({
-                    particleCount: 4,
-                    angle: 120,
-                    spread: 55,
-                    origin: { x: 1, y: 0.85 },
-                    colors: ['#2dd4bf', '#3b82f6', '#10b981']
-                })
-
-                if (Date.now() < end) {
-                    requestAnimationFrame(frame)
-                }
-            }
-            frame()
+        if (state.phase === 'playing') {
+            setShowHint(false)
+            setHighlight(false)
+            answerLock.current = false
+            questionRef.current?.focus({ preventScroll: true })
+            questionRef.current?.closest('.rmg-game')?.scrollIntoView({ block: 'start' })
         }
-    }, [showResults, score])
-
-
-    const handleSelectOption = (optionId: string, isCorrect: boolean) => {
-        if (hasAnswered) return
-        setSelectedOptionId(optionId)
-        setHasAnswered(true)
-
-        if (isCorrect) {
-            setScore(prev => prev + 10 + (streak * 2))
-            setStreak(prev => prev + 1)
-        } else {
-            setStreak(0)
+        if (state.phase === 'results') {
+            resultRef.current?.focus({ preventScroll: true })
+            resultRef.current?.scrollIntoView({ block: 'center' })
         }
+    }, [state.phase, state.round, state.retry])
+
+    useEffect(() => {
+        if (answer) {
+            feedbackRef.current?.focus({ preventScroll: true })
+            feedbackRef.current?.scrollIntoView({ block: 'nearest' })
+        }
+    }, [answer])
+
+    useEffect(() => {
+        if (state.phase === 'results' && !completed.current) {
+            completed.current = true
+            trackEvent('game_completed', {
+                game_name: 'veimerking', score, total: state.queue.length,
+                mode: state.retry ? 'retry' : 'full',
+                duration_seconds: Math.round((Date.now() - startedAt.current) / 1000),
+            })
+        }
+    }, [state.phase, state.queue.length, state.retry, score])
+
+    function start(retry = false) {
+        if (state.phase === 'results') trackEvent('game_replay', { game_name: 'veimerking', score, total: state.queue.length, mode: retry ? 'retry' : 'full' })
+        const total = retry ? missed.length : scenarios.length
+        startedAt.current = Date.now()
+        completed.current = false
+        dispatch({ type: retry ? 'retry' : 'start' })
+        trackEvent('game_started', { game_name: 'veimerking', total, mode: retry ? 'retry' : 'full' })
     }
 
-    const handleNextRound = () => {
-        setSelectedOptionId(null)
-        setHasAnswered(false)
-
-        if (currentRound < SCENARIOS.length - 1) {
-            setCurrentRound(prev => prev + 1)
-        } else {
-            setShowResults(true)
-        }
+    function select(option: number) {
+        if (answerLock.current || answer || state.phase !== 'playing') return
+        answerLock.current = true
+        dispatch({ type: 'answer', option, scenarioId: scenario.id })
+        trackEvent('game_round_completed', {
+            game_name: 'veimerking', round_number: state.round + 1, scenario_id: scenario.id,
+            is_correct: option === scenario.correct, score: score + Number(option === scenario.correct),
+            total: state.queue.length, mode: state.retry ? 'retry' : 'full', hint_used: showHint,
+        })
     }
 
-    const handleRestartGame = () => {
-        setCurrentRound(0)
-        setScore(0)
-        setStreak(0)
-        setHasAnswered(false)
-        setSelectedOptionId(null)
-        setShowResults(false)
+    function enlargeScene() {
+        sceneDialogRef.current?.showModal()
+        const scene = sceneZoomRef.current
+        if (scene) scene.scrollLeft = (scene.scrollWidth - scene.clientWidth) / 2
     }
 
-    const renderResults = () => {
-        let textResult = ""
-        if (score >= 140) {
-            textResult = "Utmerket! Du har vist svært god forståelse for veimerking, noe som gir deg et kjempefint utgangspunkt for teoriprøven."
-        } else if (score >= 90) {
-            textResult = "Godt bestått! Du har god grunnforståelse, men pass på de små nyansene rundt kollektivfelt og gule kantlinjer."
-        } else {
-            textResult = "Her er det rom for forbedring. Vegoppmerking kan virke lett, men har mange nyanser. Gå gjennom artiklene og prøv igjen!"
-        }
+    const isIntro = state.phase === 'intro'
+    return <div className="road-marking-game">
+        <Helmet>
+            <title>Veimerking-spill – test deg på linjer og oppmerking</title>
+            <meta name="description" content="Gratis spill om veimerking: sperrelinjer, varsellinjer, vikelinjer og sperreområder. Interaktive situasjoner som trener deg til teoriprøven klasse B." />
+            <meta property="og:title" content="Veimerking-spill – test deg på linjer og oppmerking" />
+            <meta property="og:description" content="Gratis spill om veimerking: sperrelinjer, varsellinjer, vikelinjer og sperreområder. Interaktive situasjoner som trener deg til teoriprøven klasse B." />
+            <script type="application/ld+json">{JSON.stringify({ '@context': 'https://schema.org', '@type': 'VideoGame', name: 'Veimerking-spillet', url: 'https://teori-test.no/laeringsspill/veimerking', description: 'Interaktivt læringsspill om veimerking: sperrelinjer, varsellinjer, vikelinjer og sperreområder. Laget for teoriprøven klasse B.', genre: 'Educational', gamePlatform: 'Web browser', applicationCategory: 'Game', isAccessibleForFree: true, inLanguage: 'nb' })}</script>
+            <script type="application/ld+json">{JSON.stringify({ '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Læringsspill', item: 'https://teori-test.no/laeringsspill' }, { '@type': 'ListItem', position: 2, name: 'Veimerking-spillet' }] })}</script>
+        </Helmet>
+        <nav className="rmg-breadcrumb" aria-label="Brødsmulesti"><Link to="/laeringsspill">Læringsspill</Link><ChevronRight size={14} aria-hidden="true" /><span aria-current="page">Veimerking</span></nav>
+        <header className="rmg-page-heading">
+            <div><p className="rmg-eyebrow"><Route size={15} aria-hidden="true" /> LÆR Å LESE VEIEN</p><h1>Veimerking-spillet</h1></div>
+            <span className="rmg-free-label"><span /> Gratis · Klasse B</span>
+        </header>
 
-        return (
-            <div className="quiz-results-card" key="results">
-                <span className="results-trophy" aria-hidden="true">🏆</span>
-                <h2 className="quiz-card-title" style={{ fontSize: '1.75rem', marginBottom: 'var(--spacing-sm)' }}>
-                    Spillet er fullført!
-                </h2>
-                <p className="results-score-info">
-                    Du oppnådde totalt <strong>{score} poeng</strong>.
-                </p>
-                
-                <div className="results-assessment">
-                    <h3 className="results-assessment-title">Resultatvurdering</h3>
-                    <p className="results-assessment-text">{textResult}</p>
+        {isIntro && <>
+            <section className="rmg-intro">
+                <div className="rmg-intro-copy">
+                    <span className="rmg-label">Små linjer. Stor betydning.</span>
+                    <h2>Se situasjonen.<br />Finn din vei.</h2>
+                    <p>Kan du skifte felt? Må du stoppe? Lær å lese oppmerkingen gjennom 14 situasjoner du kan møte på veien.</p>
+                    <div className="rmg-intro-facts"><span><Target size={17} aria-hidden="true" /> 14 bildeoppgaver</span><span><BookOpen size={17} aria-hidden="true" /> Forklaring etter hvert svar</span></div>
+                    <button className="rmg-primary" onClick={() => start()}>Start øvingen <ArrowRight size={19} aria-hidden="true" /></button>
+                    <p className="rmg-small">Ingen tidspress. Ingen innlogging.</p>
                 </div>
+                <div className="rmg-intro-visual">
+                    <div className="rmg-visual-topline"><span><span className="rmg-live-dot" /> DIN VEI TIL BEDRE OVERSIKT</span><span>01 / 14</span></div>
+                    <RoadMarkingScene scenarioId={3} description={scenarios[2].visualDescription} />
+                    <div className="rmg-preview-note"><div className="rmg-note-icon"><Eye size={20} aria-hidden="true" /></div><div><strong>Hvilken linje gjelder for deg?</strong><p>Se nøye. Det er forskjell på de to sidene.</p></div></div>
+                </div>
+            </section>
+            <div className="rmg-how">
+                {[{ icon: Eye, title: 'Se og vurder', text: 'Les veien fra bilen merket DU.' }, { icon: Lightbulb, title: 'Forstå hvorfor', text: 'Få forklaringen og en kort huskeregel.' }, { icon: RotateCcw, title: 'Øv på det du bommet på', text: 'Ta en ny runde med bare feilene dine.' }].map(({ icon: Icon, title, text }, i) => <div key={title}><span className="rmg-step-number">0{i + 1}</span><Icon size={20} aria-hidden="true" /><h3>{title}</h3><p>{text}</p></div>)}
+            </div>
+        </>}
 
-                <div className="results-actions">
-                    <button onClick={handleRestartGame} className="results-restart-btn">
-                        Spill på nytt
-                    </button>
-                    <Link to="/laeringsressurser/veimerking" className="results-theory-btn">
-                        📚 Les teorien om veimerking
-                    </Link>
+        {state.phase === 'playing' && <section className="rmg-game" aria-label={state.retry ? 'Øv på feilene' : 'Veimerkingsoppgaver'}>
+            <div className="rmg-toolbar">
+                <div><span className="rmg-round">{state.retry ? 'Øv på feilene' : 'Oppgave'} <strong>{state.round + 1}</strong><span> / {state.queue.length}</span></span><span className="rmg-category">{scenario.category}</span></div>
+                <div className="rmg-score"><Check size={16} aria-hidden="true" /><strong>{score}</strong> riktige{streak > 1 && <span className="rmg-streak">{streak} på rad</span>}</div>
+            </div>
+            <div className="rmg-progress" role="progressbar" aria-label="Besvarte oppgaver" aria-valuemin={0} aria-valuemax={state.queue.length} aria-valuenow={state.answers.length}><span style={{ width: `${progress}%` }} /></div>
+            <div className="rmg-play-layout">
+                <div className="rmg-situation">
+                    <div className="rmg-visual-topline"><span>SE SITUASJONEN</span><button className="rmg-enlarge" onClick={enlargeScene}><Maximize2 size={14} aria-hidden="true" />Forstørr bilde</button></div>
+                    <RoadMarkingScene scenarioId={scenario.id} description={scenario.visualDescription} highlight={highlight || Boolean(answer)} />
+                    <div className="rmg-scene-caption"><span><span className="rmg-car-dot" /> Bilen din er merket DU</span><button aria-pressed={highlight || Boolean(answer)} onClick={() => setHighlight(v => !v)} disabled={Boolean(answer)}><Eye size={15} aria-hidden="true" />{answer || highlight ? 'Markering vist' : 'Vis markering'}</button></div>
+                    <dialog className="rmg-scene-dialog" ref={sceneDialogRef} aria-labelledby="rmg-dialog-title">
+                        <div className="rmg-dialog-header"><h2 id="rmg-dialog-title">Se situasjonen nærmere</h2><form method="dialog"><button autoFocus aria-label="Lukk forstørret bilde"><X size={22} aria-hidden="true" /></button></form></div>
+                        <div className="rmg-zoom-stage" ref={sceneZoomRef} tabIndex={0} aria-label="Forstørret bilde, bla sidelengs for å se hele situasjonen"><RoadMarkingScene scenarioId={scenario.id} description={scenario.visualDescription} highlight={highlight || Boolean(answer)} /></div>
+                        <p className="rmg-zoom-help">Sveip sideveis i bildet for å se hele situasjonen.</p>
+                        <p>{scenario.visualDescription}</p>
+                    </dialog>
+                    <div className="rmg-observation"><span className="rmg-note-icon"><Eye size={20} aria-hidden="true" /></span><div><strong>{answer ? scenario.title : 'Hva forteller veien deg?'}</strong><p>{answer ? 'Se oppmerkingen sammen med forklaringen.' : 'Se på fargen, linjetypen og plasseringen før du svarer.'}</p></div></div>
+                </div>
+                <div className="rmg-question-panel">
+                    <p className="rmg-eyebrow">{answer ? 'SE FORKLARINGEN' : 'HVA GJØR DU?'}</p>
+                    <h2 ref={questionRef} tabIndex={-1}>{scenario.question}</h2>
+                    <div className="rmg-options" role="group" aria-label="Svaralternativer">
+                        {scenario.options.map((text, i) => <button key={`${scenario.id}-${i}`} className={`rmg-option${answer ? i === scenario.correct ? ' is-correct' : i === answer.option ? ' is-wrong' : ' is-muted' : ''}`} disabled={Boolean(answer)} onClick={() => select(i)}>
+                            <span className="rmg-option-letter" aria-hidden="true">{answer && i === scenario.correct ? <Check size={17} /> : answer && i === answer.option ? <X size={17} /> : letters[i]}</span>
+                            <span>{text}{answer && (i === scenario.correct || i === answer.option) && <small>{i === scenario.correct ? 'Riktig svar' : 'Ditt svar'}</small>}</span>
+                        </button>)}
+                    </div>
+                    {!answer && <div className="rmg-hint"><button aria-expanded={showHint} aria-controls="rmg-hint-text" onClick={() => { setShowHint(v => !v); setHighlight(true) }}><Lightbulb size={17} aria-hidden="true" />{showHint ? 'Skjul hint' : 'Trenger du et hint?'}</button>{showHint && <p id="rmg-hint-text">{scenario.hint}</p>}</div>}
+                    {answer && <div ref={feedbackRef} tabIndex={-1} className={`rmg-feedback ${answer.correct ? 'is-correct' : 'is-wrong'}`} role="region" aria-label={answer.correct ? 'Riktig svar' : 'Ikke helt riktig'}>
+                        <h3>{answer.correct ? <Check size={19} aria-hidden="true" /> : <Lightbulb size={19} aria-hidden="true" />}{answer.correct ? 'Riktig – godt sett!' : 'Ikke helt. Se forskjellen.'}</h3>
+                        <p>{scenario.explanation}</p>
+                        <div className="rmg-remember"><strong>Husk</strong><span>{scenario.remember}</span></div>
+                        <button className="rmg-primary" onClick={() => dispatch({ type: 'next' })}>{state.round + 1 === state.queue.length ? 'Se resultatet' : 'Neste oppgave'}<ArrowRight size={18} aria-hidden="true" /></button>
+                    </div>}
                 </div>
             </div>
-        )
-    }
+            <div className="rmg-game-bottom"><span><Flag size={14} aria-hidden="true" />{state.retry ? 'En ny sjanse til å få reglene til å sitte.' : 'Ta den tiden du trenger. Her øver du på å forstå.'}</span><span>{state.answers.length} av {state.queue.length} besvart</span></div>
+        </section>}
 
-    const progressPercent = ((currentRound + 1) / SCENARIOS.length) * 100
-
-    return (
-        <div className="road-marking-game">
-            <Helmet>
-                <title>Veimerking-spill – test deg på linjer og oppmerking</title>
-                <meta name="description" content="Gratis spill om veimerking: sperrelinjer, varsellinjer, vikelinjer og sperreområder. Interaktive situasjoner som trener deg til teoriprøven klasse B." />
-                <meta property="og:title" content="Veimerking-spill – test deg på linjer og oppmerking" />
-                <meta property="og:description" content="Gratis spill om veimerking: sperrelinjer, varsellinjer, vikelinjer og sperreområder. Interaktive situasjoner som trener deg til teoriprøven klasse B." />
-                <script type="application/ld+json">
-                    {JSON.stringify({
-                        '@context': 'https://schema.org',
-                        '@type': 'VideoGame',
-                        name: 'Veimerking-spillet',
-                        url: 'https://teori-test.no/laeringsspill/veimerking',
-                        description: 'Interaktivt læringsspill om veimerking: sperrelinjer, varsellinjer, vikelinjer og sperreområder. Laget for teoriprøven klasse B.',
-                        genre: 'Educational',
-                        gamePlatform: 'Web browser',
-                        applicationCategory: 'Game',
-                        isAccessibleForFree: true,
-                        inLanguage: 'nb',
-                    })}
-                </script>
-                <script type="application/ld+json">
-                    {JSON.stringify({
-                        '@context': 'https://schema.org',
-                        '@type': 'BreadcrumbList',
-                        itemListElement: [
-                            { '@type': 'ListItem', position: 1, name: 'Læringsspill', item: 'https://teori-test.no/laeringsspill' },
-                            { '@type': 'ListItem', position: 2, name: 'Veimerking-spillet' },
-                        ],
-                    })}
-                </script>
-            </Helmet>
-
-            <nav aria-label="Brødsmulesti">
-                <Link to="/laeringsspill">Læringsspill</Link>
-                <span style={{ color: 'var(--color-text-light)', margin: '0 8px' }}>/</span>
-                <span style={{ color: 'var(--color-text-light)' }}>Veimerking-spillet</span>
-            </nav>
-
-            <div className="quiz-card-container">
-                {showResults ? (
-                    renderResults()
-                ) : (
-                    <>
-                        {/* Header */}
-                        <div className="quiz-card-header">
-                            <div className="quiz-card-meta">
-                                <span className="quiz-card-kicker">
-                                    🚙 Kan du lese veimerkingen?
-                                </span>
-                                <span className="quiz-card-score">
-                                    Poeng: {score}
-                                </span>
-                            </div>
-                            <h1 className="quiz-card-title">Runde {currentRound + 1} av {SCENARIOS.length}</h1>
-                            
-                            <div className="quiz-progress-bar-bg">
-                                <div className="quiz-progress-bar-fill" style={{ width: `${progressPercent}%` }} />
-                            </div>
-                        </div>
-
-                        {/* Body */}
-                        <div className="quiz-card-body" key={currentRound}>
-                            {/* Inline Visual SVG */}
-                            <div 
-                                className="quiz-visual-wrapper" 
-                                dangerouslySetInnerHTML={{ __html: scenario.svg }} 
-                            />
-
-                            {/* Question */}
-                            <p className="quiz-question-text">{scenario.question}</p>
-
-                            {/* Options */}
-                            <div className="quiz-options-list">
-                                {scenario.options.map((option) => {
-                                    let btnClass = "quiz-option-btn"
-                                    if (hasAnswered) {
-                                        if (option.isCorrect) {
-                                            btnClass += " correct-option"
-                                        } else if (selectedOptionId === option.id) {
-                                            btnClass += " incorrect-option"
-                                        }
-                                    }
-
-                                    return (
-                                        <button
-                                            key={option.id}
-                                            disabled={hasAnswered}
-                                            onClick={() => handleSelectOption(option.id, option.isCorrect)}
-                                            className={btnClass}
-                                            aria-label={`Svaralternativ ${option.id.toUpperCase()}: ${option.text}`}
-                                        >
-                                            <span className="option-badge-text-group">
-                                                <span className="option-badge">{option.id.toUpperCase()}</span>
-                                                <span className="option-text">{option.text}</span>
-                                            </span>
-                                        </button>
-                                    )
-                                })}
-                            </div>
-
-                            {/* Feedback panel */}
-                            {hasAnswered && selectedOptionId && (
-                                <div className="quiz-feedback-panel">
-                                    <div className="quiz-feedback-status">
-                                        {scenario.options.find(o => o.id === selectedOptionId)?.isCorrect ? (
-                                            <span className="status-correct">✔ Riktig svar!</span>
-                                        ) : (
-                                            <span className="status-incorrect">❌ Feil svar.</span>
-                                        )}
-                                        {streak > 1 && (
-                                            <span className="streak-badge">
-                                                🔥 Streak x{streak}!
-                                            </span>
-                                        )}
-                                    </div>
-                                    <p className="quiz-feedback-text">{scenario.explanation}</p>
-                                    
-                                    <button onClick={handleNextRound} className="quiz-next-btn">
-                                        {currentRound < SCENARIOS.length - 1 ? "Neste runde" : "Se resultat"}
-                                    </button>
-                                </div>
-                            )}
-                        </div>
-                    </>
-                )}
+        {state.phase === 'results' && <section className="rmg-results">
+            <div className="rmg-result-top"><span className="rmg-trophy"><Trophy size={32} aria-hidden="true" /></span><p className="rmg-eyebrow">{state.retry ? 'REPETISJON FULLFØRT' : 'ØVING FULLFØRT'}</p><h2 tabIndex={-1} ref={resultRef}>{score === state.queue.length ? 'Alle linjene på plass!' : 'Du er et steg videre.'}</h2><p className="rmg-result-score"><strong>{score}</strong> / {state.queue.length} riktige</p><p>{missed.length ? `Du har ${missed.length} ${missed.length === 1 ? 'situasjon' : 'situasjoner'} å øve mer på. Ta en ny runde mens du husker forklaringene.` : 'Godt jobbet! Test forståelsen videre med flere veimerkingsspørsmål.'}</p>
+                <div className="rmg-result-actions">{missed.length > 0 ? <button className="rmg-primary" onClick={() => start(true)}><RotateCcw size={18} aria-hidden="true" />Øv på {missed.length === 1 ? 'feilen' : `de ${missed.length} feilene`}</button> : <Link className="rmg-primary" to="/quiz/veimerking">Ta veimerking-quizen<ArrowRight size={18} aria-hidden="true" /></Link>}<button className="rmg-secondary" onClick={() => start()}>Spill alle på nytt</button></div>
             </div>
-        </div>
-    )
+            <div className="rmg-review"><h3>Dette tar du med deg</h3><p>Klikk på en oppgave for å se svaret og huskeregelen.</p>{state.answers.map((item, i) => {
+                const s = scenarios.find(s => s.id === item.scenarioId)!
+                return <details key={s.id}><summary><span className={item.correct ? 'rmg-review-correct' : 'rmg-review-wrong'}>{item.correct ? <Check size={17} aria-label="Riktig" /> : <RotateCcw size={17} aria-label="Øv mer" />}</span><span><small>Oppgave {i + 1}</small>{s.title}</span><ChevronRight size={18} aria-hidden="true" /></summary><div className="rmg-review-body"><RoadMarkingScene scenarioId={s.id} description={s.visualDescription} highlight /><div><p><strong>Ditt svar:</strong> {s.options[item.option]}</p>{!item.correct && <p><strong>Riktig svar:</strong> {s.options[s.correct]}</p>}<p>{s.explanation}</p><div className="rmg-remember"><strong>Husk</strong><span>{s.remember}</span></div></div></div></details>
+            })}</div>
+        </section>}
+        <div className="rmg-theory-link"><BookOpen size={17} aria-hidden="true" /><span>Vil du lære mer? <Link to="/laeringsressurser/veimerking">Les guiden til veimerking</Link> eller <Link to="/quiz/veimerking">test forståelsen i veimerking-quizen<ArrowRight size={14} aria-hidden="true" /></Link>.</span></div>
+        <p className="rmg-source">Regelgrunnlag: <a href="https://lovdata.no/forskrift/2005-10-07-1219/§22" target="_blank" rel="noopener noreferrer">Skiltforskriften, kapittel 11</a> og <a href="https://lovdata.no/forskrift/1986-03-21-747/§9" target="_blank" rel="noopener noreferrer">trafikkreglene</a>. Illustrasjonene er forenklet.</p>
+    </div>
 }

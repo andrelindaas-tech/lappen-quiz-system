@@ -1187,3 +1187,45 @@ body.dark-mode .theory-inline-code {
         height: 640px !important;
     }
 }
+
+/* Review: neutral cards in the bus article, matching the selected site theme. */
+body .theory-topic-buss-fra-holdeplass .theory-section-tip,
+body .theory-topic-buss-fra-holdeplass .theory-section-warning {
+    background: var(--color-bg);
+}
+
+body:not(.dark-mode) .theory-topic-buss-fra-holdeplass .theory-section-tip,
+body:not(.dark-mode) .theory-topic-buss-fra-holdeplass .theory-section-warning { background: #fff; }
+
+/* Review: white checklist cards in the child-safety article, light mode only. */
+body:not(.dark-mode) .theory-topic-barn-i-bil-og-sikring .theory-section-tip {
+    background: #fff;
+}
+
+/* Review: neutral cards in the parking article, light mode only. */
+body:not(.dark-mode) .theory-topic-stans-og-parkering .theory-section-warning,
+body:not(.dark-mode) .theory-topic-stans-og-parkering .theory-section-tip {
+    background: #fff;
+}
+
+/* Automatlappen review: neutral surfaces and readable, responsive comparison. */
+body:not(.dark-mode) .theory-topic-automatlappen .theory-section-info,
+body:not(.dark-mode) .theory-topic-automatlappen .theory-section-tip { background: #fff; }
+.gear-comparison { margin-top: 1.5rem; }
+.gear-comparison-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+.gear-comparison-card { padding: 1.5rem; border: 1px solid var(--color-border); border-radius: 16px; background: var(--color-bg); }
+.gear-comparison-card header { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; }
+.gear-comparison-card h3 { margin: 0 0 .35rem; font-size: 1.35rem; }
+.gear-comparison-icon { display: grid; place-items: center; width: 3.25rem; height: 3.25rem; flex-shrink: 0; border: 1px solid var(--color-border); border-radius: 12px; color: var(--color-text-primary); background: var(--color-bg-secondary); font-size: 1.6rem; font-weight: 700; }
+.gear-comparison-badge { font-size: .85rem; color: var(--color-text-secondary); }
+.gear-comparison-card dl { margin: 0; }
+.gear-comparison-card dl > div { padding: 1rem 0; border-top: 1px solid var(--color-border); }
+.gear-comparison-card dl > div:last-child { padding-bottom: 0; }
+.gear-comparison-card dt { margin-bottom: .4rem; font-size: .8rem; font-weight: 600; color: var(--color-text-secondary); }
+.gear-comparison-card dd { margin: 0; line-height: 1.6; }
+.gear-comparison-card dl > div:first-child dd { font-weight: 700; }
+.gear-comparison .gear-comparison-note { margin: 1rem 0 0; font-size: .9rem; color: var(--color-text-secondary); }
+@media (max-width: 600px) {
+  .gear-comparison-grid { grid-template-columns: 1fr; }
+  .gear-comparison-card { padding: 1.25rem; }
+}

@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react'
-import { trackEvent } from '../utils/analytics'
+import { useState, useEffect, useRef } from 'react'
+import { createGameAnalytics } from '../utils/gameAnalytics'
 import Link from './InternalLink'
 import { Helmet } from 'react-helmet-async'
 import confetti from 'canvas-confetti'
@@ -46,13 +46,13 @@ function shuffle<T>(array: T[]): T[] {
 }
 
 export default function StoppingDistanceChallenge() {
-    const [scenarios, setScenarios] = useState<Scenario[]>([])
+    // Samme synlige oppgave på server og første klientrender; bland etter hydrering.
+    const [scenarios, setScenarios] = useState<Scenario[]>(DRY_SCENARIOS)
     const [currentIndex, setCurrentIndex] = useState(0)
-
-    // GA4: game started
-    useEffect(() => {
-        trackEvent('game_started', { game_name: 'stopplengde' })
-    }, [])
+    const [gameAnalytics] = useState(() => createGameAnalytics('stopplengde'))
+    const gameHasStarted = useRef(false)
+    const answerLock = useRef(false)
+    const animationTimers = useRef(new Set<number>())
     const [score, setScore] = useState(0)
     const [guess, setGuess] = useState(0)
     const [hasMovedSlider, setHasMovedSlider] = useState(false)
@@ -73,8 +73,28 @@ export default function StoppingDistanceChallenge() {
     const [showResultSegments, setShowResultSegments] = useState(false)
     const [showReactionFlash, setShowReactionFlash] = useState(false)
 
+    useEffect(() => { gameAnalytics.view(DRY_SCENARIOS.length) }, [gameAnalytics])
+    useEffect(() => {
+        if (hasMovedSlider) {
+            gameHasStarted.current = true
+            gameAnalytics.start(scenarios.length)
+        }
+    }, [gameAnalytics, hasMovedSlider, scenarios.length])
+
+    const scheduleAnimation = (callback: () => void, delay: number) => {
+        const timer = window.setTimeout(() => {
+            animationTimers.current.delete(timer)
+            callback()
+        }, delay)
+        animationTimers.current.add(timer)
+    }
+
     // Initial setup and restarts
     const initGame = (mode: SurfaceMode = 'torr') => {
+        animationTimers.current.forEach(window.clearTimeout)
+        animationTimers.current.clear()
+        answerLock.current = false
+        gameHasStarted.current = false
         setScenarios(shuffle(mode === 'torr' ? DRY_SCENARIOS : ALL_SCENARIOS))
         setCurrentIndex(0)
         setScore(0)
@@ -101,7 +121,19 @@ export default function StoppingDistanceChallenge() {
 
     useEffect(() => {
         initGame()
+        const timers = animationTimers.current
+        return () => {
+            timers.forEach(window.clearTimeout)
+            timers.clear()
+        }
     }, [])
+
+    const restartGame = (mode: SurfaceMode) => {
+        if (isMoving) return
+        if (gameHasStarted.current) gameAnalytics.replay({ score, total: scenarios.length })
+        setSurfaceMode(mode)
+        initGame(mode)
+    }
 
     useEffect(() => {
         if (isGameOver && score > 0) {
@@ -132,8 +164,7 @@ export default function StoppingDistanceChallenge() {
         }
     }, [isGameOver, score])
 
-    // SEO head — rendered in BOTH the loading state and the game view,
-    // so prerendering (SSG) always gets the correct title/meta.
+    // Metadata og synlig spillintroduksjon følger også med i prerenderet HTML.
     const seoHead = (
         <Helmet>
             <title>Stopplengde-spill – test bremselengde og reaksjonstid</title>
@@ -166,15 +197,6 @@ export default function StoppingDistanceChallenge() {
             </script>
         </Helmet>
     )
-
-    if (scenarios.length === 0) {
-        return (
-            <>
-                {seoHead}
-                <div style={{ padding: '3rem', textAlign: 'center', color: 'var(--color-text-light)' }}>Laster spill...</div>
-            </>
-        )
-    }
 
     const currentScenario = scenarios[currentIndex]
 
@@ -278,6 +300,7 @@ export default function StoppingDistanceChallenge() {
     }
 
     const handleCheckAnswer = () => {
+        if (answerLock.current || hasAnswered || isMoving) return
         if (!hasMovedSlider) {
             setFeedback({
                 type: 'warn',
@@ -290,6 +313,15 @@ export default function StoppingDistanceChallenge() {
         const diff = guess - values.stopping
         const tolerance = Math.max(3, values.stopping * 0.1)
         const isCorrect = Math.abs(diff) <= tolerance
+        answerLock.current = true
+        gameAnalytics.roundCompleted({
+            roundNumber: currentIndex + 1,
+            scenarioType: 'stopplengde',
+            regulation: surfaceMode,
+            isCorrect,
+            score: score + Number(isCorrect),
+            total: scenarios.length,
+        })
 
         setHasAnswered(true)
         setAnimatingPhase('driving')
@@ -301,13 +333,13 @@ export default function StoppingDistanceChallenge() {
 
         // Driving animation timeline:
         // 0ms -> 1000ms: Driving (wheels spin, road lines scroll, car stays at 12%)
-        setTimeout(() => {
+        scheduleAnimation(() => {
             // 1000ms -> 1500ms: Reaction flash & move to reactionEnd
             setAnimatingPhase('reacting')
             setShowReactionFlash(true)
-            setTimeout(() => setShowReactionFlash(false), 300) // quick visual pulse
+            scheduleAnimation(() => setShowReactionFlash(false), 300) // quick visual pulse
 
-            setTimeout(() => {
+            scheduleAnimation(() => {
                 // 1500ms -> 3000ms: Hard Braking phase (lights glow, chassis dips, smoke/particles emit, road stops scrolling, car decelerates)
                 setAnimatingPhase('braking')
                 setIsBraking(true)
@@ -318,7 +350,7 @@ export default function StoppingDistanceChallenge() {
                 const stopEndPos = percent(guess)
                 setCarLeft(`${stopEndPos}%`)
 
-                setTimeout(() => {
+                scheduleAnimation(() => {
                     // 3000ms: Stop & Reveal Results
                     setAnimatingPhase('finished')
                     setIsMoving(false)
@@ -359,12 +391,15 @@ export default function StoppingDistanceChallenge() {
     }
 
     const handleNext = () => {
+        if (!hasAnswered || isMoving) return
         if (currentIndex === scenarios.length - 1) {
+            gameAnalytics.complete({ score, total: scenarios.length })
             setIsGameOver(true)
             return
         }
 
         setCurrentIndex(prev => prev + 1)
+        answerLock.current = false
         setGuess(0)
         setHasMovedSlider(false)
         setHasAnswered(false)
@@ -423,17 +458,20 @@ export default function StoppingDistanceChallenge() {
             </nav>
 
             <section className="article-card" aria-labelledby="page-title">
-                <span className="kicker">Mini-spill for klasse B</span>
+                <span className="kicker">Gratis læringsspill for klasse B</span>
                 <h1 className="challenge-title" id="page-title">Stopplengde-utfordringen</h1>
                 <p className="intro">
                     Dra slideren til stopplengden du tror passer. Etter svaret får du fasit, utregning og en kort forklaring på hvorfor fart og føre betyr så mye.
                 </p>
+                <p className="sdc-product-facts">6 oppgaver på tørr asfalt eller 10 med ulike føreforhold. Ingen tidspress eller innlogging.</p>
 
                 {/* Førevelger: tren på tørr asfalt først, eller ta alle føreforhold */}
                 <div style={{ display: 'flex', gap: '8px', justifyContent: 'center', margin: '0 0 var(--spacing-lg) 0', flexWrap: 'wrap' }} role="group" aria-label="Velg føreforhold">
                     <button
                         type="button"
-                        onClick={() => { setSurfaceMode('torr'); initGame('torr') }}
+                        onClick={() => { if (surfaceMode !== 'torr') restartGame('torr') }}
+                        disabled={isMoving}
+                        aria-pressed={surfaceMode === 'torr'}
                         style={{
                             padding: '8px 18px',
                             borderRadius: '100px',
@@ -449,7 +487,9 @@ export default function StoppingDistanceChallenge() {
                     </button>
                     <button
                         type="button"
-                        onClick={() => { setSurfaceMode('alle'); initGame('alle') }}
+                        onClick={() => { if (surfaceMode !== 'alle') restartGame('alle') }}
+                        disabled={isMoving}
+                        aria-pressed={surfaceMode === 'alle'}
                         style={{
                             padding: '8px 18px',
                             borderRadius: '100px',
@@ -786,13 +826,18 @@ export default function StoppingDistanceChallenge() {
                                         "Dette er et tema mange undervurderer. Bruk utregningen bak hvert svar, og prøv igjen for å forbedre forståelsen din."
                                     )}
                                 </p>
-                                <button className="primary" onClick={() => initGame(surfaceMode)} type="button" style={{ margin: '0 auto' }}>
+                                <button className="primary" onClick={() => restartGame(surfaceMode)} type="button" style={{ margin: '0 auto' }}>
                                     Prøv på nytt
                                 </button>
                             </div>
                         </section>
                     )}
                 </div>
+            </section>
+            <section className="sdc-learning" aria-labelledby="sdc-learning-title">
+                <h2 id="sdc-learning-title">Dette trener du på</h2>
+                <p>Skille reaksjonslengde fra bremselengde, anslå total stopplengde og forstå hvordan fart og føre endrer avstanden.</p>
+                <p>Les <Link to="/laeringsressurser/bremselengde/">guiden til bremselengde og stopplengde</Link> for å forstå utregningen. Test kunnskapen videre i <Link to="/quiz/fartsregler/">quizen om fartsregler</Link>.</p>
             </section>
         </div>
     )

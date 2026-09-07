@@ -5,6 +5,7 @@ import { Helmet } from 'react-helmet-async'
 import { ChevronDown, ChevronRight, RefreshCw } from 'lucide-react'
 import { clearWrongAnswers, getWrongAnswersCount } from '../utils/wrongAnswersStore'
 import './StartScreenV2.css'
+import HeroSignCollage from './HeroSignCollage'
 
 interface FaqItem {
     question: string
@@ -192,17 +193,7 @@ export default function StartScreen() {
                     </div>
                 </div>
 
-                <aside className="tt-v2-hero-action" aria-label="Full prøve">
-                    <div className="tt-v2-start-head"><strong>Full prøve</strong><span>Klasse B</span></div>
-                    <div className="tt-v2-start-facts">
-                        <span><strong>45</strong><small>spørsmål</small></span>
-                        <span><strong>90</strong><small>minutter</small></span>
-                        <span><strong>7</strong><small>maks feil</small></span>
-                    </div>
-                    <a className="tt-v2-button tt-v2-button-primary" href="#prover">
-                        Start full prøve <ChevronRight size={14} aria-hidden="true" />
-                    </a>
-                </aside>
+                <HeroSignCollage />
             </section>
 
             <section className="tt-v2-proof" aria-label="Dette får du">

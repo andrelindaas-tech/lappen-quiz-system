@@ -2,7 +2,8 @@ import { useCallback, useEffect, useRef, useState, type KeyboardEvent } from 're
 import { Helmet } from 'react-helmet-async'
 import Link from './InternalLink'
 import { Play, RotateCcw } from 'lucide-react'
-import { trackEvent } from '../utils/analytics'
+import { createGameAnalytics } from '../utils/gameAnalytics'
+import { DRIVE_DURATION_MS, DRIVE_STAGGER_MS, prepareMotionPath, sampleMotionPath } from '../utils/vikepliktMotion'
 import {
     vikepliktScenarios,
     type VikepliktDirection,
@@ -325,30 +326,6 @@ const TREE_POSITIONS: Record<VikepliktScenario['template'], TreePosition[]> = {
     ],
 }
 
-// 1400 / 0,9 gir nøyaktig 10 % lavere kjørehastighet enn den opprinnelige avspillingen.
-const DRIVE_DURATION_MS = Math.round(1400 / 0.9)
-const DRIVE_STAGGER_MS = Math.round(1150 / 0.9)
-
-function easeInOutCubic(t: number) {
-    return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2
-}
-
-// Interpolerer bilens posisjon/rotasjon langs banen for en progresjon 0–1.
-function samplePath(path: Pose[], progress: number): Pose {
-    const clamped = Math.max(0, Math.min(1, progress))
-    const eased = easeInOutCubic(clamped)
-    const scaled = eased * (path.length - 1)
-    const index = Math.min(path.length - 2, Math.floor(scaled))
-    const local = scaled - index
-    const from = path[index]
-    const to = path[index + 1]
-    return {
-        x: from.x + (to.x - from.x) * local,
-        y: from.y + (to.y - from.y) * local,
-        rotation: from.rotation + (to.rotation - from.rotation) * local,
-    }
-}
-
 function prefersReducedMotion() {
     return typeof window !== 'undefined' && Boolean(window.matchMedia?.('(prefers-reduced-motion: reduce)').matches)
 }
@@ -475,12 +452,12 @@ function SceneRoad({ template }: Pick<VikepliktScenario, 'template'>) {
                 </>
             ) : (
                 <>
-                    <rect className="vp-road" x="0" y="130" width="360" height="100" />
-                    {template === 'x-kryss' ? (
-                        <rect className="vp-road" x="130" y="0" width="100" height="360" />
-                    ) : (
-                        <rect className="vp-road" x="130" y="180" width="100" height="180" />
-                    )}
+                    <path
+                        className="vp-road vp-road-junction"
+                        d={template === 'x-kryss'
+                            ? 'M 130 -4 H 230 V 112 Q 230 130 248 130 H 364 V 230 H 248 Q 230 230 230 248 V 364 H 130 V 248 Q 130 230 112 230 H -4 V 130 H 112 Q 130 130 130 112 Z'
+                            : 'M -4 130 H 364 V 230 H 248 Q 230 230 230 248 V 364 H 130 V 248 Q 130 230 112 230 H -4 Z'}
+                    />
                     <g className="vp-road-markings">
                         <line x1="0" y1="180" x2="130" y2="180" />
                         <line x1="230" y1="180" x2="360" y2="180" />
@@ -701,7 +678,12 @@ function SceneVehicle({
                         <rect x="10" y="7" width="3" height="8" rx="1.5" />
                     </g>
                     <rect className="vp-car-body" x="-11" y="-21" width="22" height="42" rx="5" />
+                    <g className="vp-car-mirrors">
+                        <rect x="-14" y="-7" width="4" height="3" rx="1" />
+                        <rect x="10" y="-7" width="4" height="3" rx="1" />
+                    </g>
                     <path className="vp-car-body-highlight" d="M -7 -17 Q 0 -20 7 -17" />
+                    <path className="vp-car-panel" d="M -8 -15 L -7 -12 M 8 -15 L 7 -12 M -7 15 H 7" />
                     <path className="vp-car-window" d="M -7 -11 Q 0 -14 7 -11 L 6 -4 L -6 -4 Z" />
                     <path className="vp-car-window" d="M -6 4 L 6 4 L 7 11 Q 0 14 -7 11 Z" />
                     <rect className="vp-car-roof" x="-6" y="-3" width="12" height="6" rx="2" />
@@ -763,6 +745,7 @@ function IntersectionScene({
     onActiveVehicleChange: (vehicleId: string | null) => void
     onPlaybackComplete: () => void
 }) {
+    const sceneRef = useRef<HTMLDivElement>(null)
     const vehicleRefs = useRef(new Map<string, VehicleRefs>())
     const trafficSignalRefs = useRef(new Map<VikepliktDirection, SVGGElement>())
 
@@ -795,9 +778,13 @@ function IntersectionScene({
             return
         }
 
+        // Svarknappene ligger under scenen; vis hele krysset når avspillingen starter.
+        sceneRef.current?.scrollIntoView({ block: 'center', behavior: 'instant' })
+
         const durationMs = Math.round(DRIVE_DURATION_MS * playbackSpeed)
         const staggerMs = Math.round((scenario.template === 'hindring' ? DRIVE_DURATION_MS : DRIVE_STAGGER_MS) * playbackSpeed)
         const totalMs = (scenario.correctOrder.length - 1) * staggerMs + durationMs
+        const motionPaths = new Map(scenario.vehicles.map(vehicle => [vehicle.id, prepareMotionPath(getVehiclePath(scenario, vehicle))]))
         let rafId = 0
         const startTime = performance.now()
         let lastActiveVehicleId: string | null = null
@@ -845,9 +832,9 @@ function IntersectionScene({
                 const driveIndex = scenario.correctOrder.indexOf(vehicle.id)
                 if (driveIndex < 0) return
                 const progress = (elapsed - driveIndex * staggerMs) / durationMs
-                const path = getVehiclePath(scenario, vehicle)
-                const start = path[0]
-                const pose = samplePath(path, progress)
+                const path = motionPaths.get(vehicle.id)!
+                const start = path.poses[0]
+                const pose = sampleMotionPath(path, progress)
                 const refs = vehicleRefs.current.get(vehicle.id)
                 refs?.group?.setAttribute('transform', `translate(${pose.x - start.x} ${pose.y - start.y})`)
                 refs?.car?.setAttribute('transform', `rotate(${pose.rotation})`)
@@ -875,11 +862,11 @@ function IntersectionScene({
     }, [checked, playbackRun, playbackSpeed, scenario, onActiveVehicleChange, onPlaybackComplete])
 
     return (
-        <div className="vp-scene-wrap">
+        <div className="vp-scene-wrap" ref={sceneRef}>
             <svg
                 className="vp-scene"
                 viewBox="0 0 360 360"
-                role="img"
+                role="group"
                 aria-label={`${scenario.template === 'x-kryss' ? 'X-kryss' : scenario.template === 't-kryss' ? 'T-kryss' : scenario.template === 'rundkjoring' ? 'Rundkjøring med ett felt' : 'Smal vei med parkert bil'} og ${scenario.vehicles.length} kjøretøy`}
             >
                 <SceneRoad template={scenario.template} />
@@ -921,8 +908,8 @@ export default function VikepliktSpill() {
     const [activeVehicleId, setActiveVehicleId] = useState<string | null>(null)
     const [playbackDone, setPlaybackDone] = useState(false)
     const [showResults, setShowResults] = useState(false)
-    const startedTrackedRef = useRef(false)
-    const completionTrackedRef = useRef(false)
+    const gameAnalyticsRef = useRef(createGameAnalytics('vikeplikt'))
+    const gameAnalytics = gameAnalyticsRef.current
 
     // Skjult QA-hjelp: ?runde=11 åpner en bestemt runde direkte.
     // Leses først etter mount, slik at SSR/prerender får identisk første render.
@@ -942,10 +929,8 @@ export default function VikepliktSpill() {
     }, [])
 
     useEffect(() => {
-        if (startedTrackedRef.current) return
-        startedTrackedRef.current = true
-        trackEvent('game_started', { game_name: 'vikeplikt' })
-    }, [])
+        gameAnalytics.view(vikepliktScenarios.length)
+    }, [gameAnalytics])
 
     const scenario = vikepliktScenarios[currentIndex]
     const progress = ((currentIndex + 1) / vikepliktScenarios.length) * 100
@@ -985,6 +970,7 @@ export default function VikepliktSpill() {
 
     const selectVehicle = (vehicleId: string) => {
         if (checked) return
+        gameAnalytics.start(vikepliktScenarios.length)
         setSelectedOrder(current => {
             if (current.includes(vehicleId)) {
                 return current.filter(id => id !== vehicleId)
@@ -1002,7 +988,16 @@ export default function VikepliktSpill() {
         setPlaybackRun(isCorrect ? 1 : null)
         setActiveVehicleId(null)
         setPlaybackDone(false)
-        if (isCorrect) setScore(current => current + 1)
+        const nextScore = score + (isCorrect ? 1 : 0)
+        if (isCorrect) setScore(nextScore)
+        gameAnalytics.roundCompleted({
+            roundNumber: currentIndex + 1,
+            scenarioType: scenario.template,
+            regulation: scenario.regulation,
+            isCorrect,
+            score: nextScore,
+            total: vikepliktScenarios.length,
+        })
     }
 
     const resetRound = () => {
@@ -1026,14 +1021,7 @@ export default function VikepliktSpill() {
 
     const completeGame = () => {
         setShowResults(true)
-        if (!completionTrackedRef.current) {
-            completionTrackedRef.current = true
-            trackEvent('game_completed', {
-                game_name: 'vikeplikt',
-                score,
-                total: vikepliktScenarios.length,
-            })
-        }
+        gameAnalytics.complete({ score, total: vikepliktScenarios.length })
     }
 
     const nextRound = () => {
@@ -1052,6 +1040,7 @@ export default function VikepliktSpill() {
     }
 
     const restartGame = () => {
+        gameAnalytics.replay({ score, total: vikepliktScenarios.length })
         setCurrentIndex(0)
         setScore(0)
         setSelectedOrder([])
@@ -1061,8 +1050,6 @@ export default function VikepliktSpill() {
         setActiveVehicleId(null)
         setPlaybackDone(false)
         setShowResults(false)
-        completionTrackedRef.current = false
-        trackEvent('game_started', { game_name: 'vikeplikt' })
     }
 
     const correctOrderVehicles = scenario.correctOrder.map(vehicleId => scenario.vehicles.find(vehicle => vehicle.id === vehicleId)!)
@@ -1077,14 +1064,27 @@ export default function VikepliktSpill() {
                 <span>Vikepliktspillet</span>
             </nav>
 
-            <section className="vp-card" aria-labelledby="vp-page-title">
+            <header className="vp-page-intro">
+                <span className="vp-kicker">Interaktiv trening i vikeplikt</span>
+                <h1 id="vp-page-title">Vikepliktspillet – hvem kjører først?</h1>
+                <p>
+                    Tren på hvem som skal kjøre først i 15 visuelle trafikksituasjoner. Spillet dekker høyreregelen, vikepliktskilt, venstresving, trafikklys, rundkjøring og hindringer i veien. Du får forklaring og animert fasit etter hver oppgave.
+                </p>
+                <ul className="vp-product-points" aria-label="Om spillet">
+                    <li>Gratis å spille</li>
+                    <li>Ingen innlogging</li>
+                    <li>15 animerte situasjoner</li>
+                </ul>
+            </header>
+
+            <section className="vp-card" aria-labelledby={showResults ? 'vp-results-title' : 'vp-task-title'}>
                 {!showResults ? (
                     <>
                         <header className="vp-header">
                             <div>
                                 <span className="vp-kicker">Vikepliktspillet · nivå {scenario.level}</span>
-                                <h1 id="vp-page-title">Når kjører du?</h1>
-                                <p>Trykk kjøretøyene i rekkefølgen de skal kjøre.</p>
+                                <h2 id="vp-task-title">Når kjører du?</h2>
+                                <p>Trykk på kjøretøyene i rekkefølgen de skal kjøre. Sjekk svaret og se den animerte fasiten.</p>
                             </div>
                             <div className="vp-score" aria-label={`${score} poeng`}>
                                 <strong>{score}</strong>
@@ -1172,9 +1172,13 @@ export default function VikepliktSpill() {
                                     </button>
                                 </>
                             ) : wasCorrect ? (
+                                <>
+                                {playbackDone && <button type="button" className="vp-button vp-button--secondary" onClick={playCorrectOrder}>
+                                    <RotateCcw size={18} aria-hidden="true" /> Se igjen
+                                </button>}
                                 <button
                                     type="button"
-                                    className="vp-button vp-button--primary vp-button--wide"
+                                    className={`vp-button vp-button--primary${playbackDone ? '' : ' vp-button--wide'}`}
                                     onClick={nextRound}
                                     disabled={!playbackDone}
                                 >
@@ -1184,6 +1188,7 @@ export default function VikepliktSpill() {
                                             ? 'Se resultat'
                                             : 'Neste situasjon'}
                                 </button>
+                                </>
                             ) : playbackRun === null ? (
                                 <button
                                     type="button"
@@ -1228,7 +1233,7 @@ export default function VikepliktSpill() {
                     <div className="vp-results">
                         <span className="vp-results-icon" aria-hidden="true">🏁</span>
                         <span className="vp-kicker">Alle situasjonene er fullført</span>
-                        <h1 id="vp-page-title">Du fikk {score} av {vikepliktScenarios.length} riktige</h1>
+                        <h2 id="vp-results-title">Du fikk {score} av {vikepliktScenarios.length} riktige</h2>
                         <p>
                             {score === vikepliktScenarios.length
                                 ? 'Full pott! Du skiller mellom høyreregelen, skilt, trafikklys, venstresving, hindringer og rundkjøring.'
@@ -1243,10 +1248,31 @@ export default function VikepliktSpill() {
                             <Link className="vp-button vp-button--secondary" to="/laeringsressurser/vikeplikt">
                                 Les vikeplikt-artikkelen
                             </Link>
+                            <Link className="vp-button vp-button--secondary" to="/quiz/vikeplikt">
+                                Ta vikepliktquizen
+                            </Link>
                         </div>
                     </div>
                 )}
             </section>
+
+            {!showResults && (
+                <section className="vp-training" aria-labelledby="vp-training-title">
+                    <h2 id="vp-training-title">Dette trener du på</h2>
+                    <ul>
+                        <li>uregulerte kryss og høyreregelen</li>
+                        <li>vikepliktskilt og forkjørsvei</li>
+                        <li>venstresving</li>
+                        <li>trafikklys kombinert med skilt</li>
+                        <li>hindring på egen eller motgående side</li>
+                        <li>rundkjøring</li>
+                        <li>riktig kjørerekkefølge med flere kjøretøy</li>
+                    </ul>
+                    <p>
+                        Vil du forstå reglene bedre, kan du lese <Link to="/laeringsressurser/vikeplikt">guiden om vikeplikt</Link>. Når du vil teste kunnskapen med vanlige spørsmål, kan du ta <Link to="/quiz/vikeplikt">vikepliktquizen</Link>.
+                    </p>
+                </section>
+            )}
         </div>
     )
 }

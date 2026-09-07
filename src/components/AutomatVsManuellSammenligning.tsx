@@ -1,62 +1,37 @@
+const choices = [
+  {
+    title: 'Automat', badge: 'Kode 78', symbol: 'D',
+    driving: 'Automatgir og elbil',
+    learning: 'Ingen clutch eller manuelle girskift.',
+    consideration: 'Vil du kjøre manuell senere, må du bestå en ny oppkjøring med manuelt gir.',
+  },
+  {
+    title: 'Manuell', badge: 'Uten kode 78', symbol: 'H',
+    driving: 'Både manuell og automat',
+    learning: 'Du lærer å bruke clutch og skifte gir selv.',
+    consideration: 'Mer å koordinere under opplæringen, men større valgfrihet når du skal låne eller leie bil.',
+  },
+];
+
 export default function AutomatVsManuellSammenligning() {
   return (
-    <div style={{ width: '100%', maxWidth: 680, margin: '2rem auto' }}>
-      <svg width="100%" viewBox="0 0 680 340" role="img" xmlns="http://www.w3.org/2000/svg">
-        <title>Automatlappen vs manuell — sammenligning og kode 78</title>
-        <desc>Visuell sammenligning av automat og manuell førerkort, med illustrasjon av kode 78</desc>
-
-        <text style={{font: '500 15px var(--font-sans)', fill: 'var(--color-text-primary)'}} x="340" y="32" textAnchor="middle">Automat eller manuell?</text>
-
-        {/* Automat-kort */}
-        <rect x="40" y="52" width="270" height="230" rx="12" fill="#E1F5EE" stroke="#0F6E56" strokeWidth="0.5"/>
-        <text style={{font: '500 14px var(--font-sans)', fill: '#085041'}} x="175" y="80" textAnchor="middle">Automatlappen</text>
-        <text style={{font: '400 12px var(--font-sans)', fill: '#1D9E75'}} x="175" y="96" textAnchor="middle">Kode 78 i førerkortet</text>
-
-        <text style={{font: '400 12px var(--font-sans)', fill: '#1D9E75'}} x="64" y="126">✓</text>
-        <text style={{font: '400 12px var(--font-sans)', fill: 'var(--color-text-primary)'}} x="80" y="126">Elbil og nyere biler</text>
-        <text style={{font: '400 12px var(--font-sans)', fill: '#1D9E75'}} x="64" y="148">✓</text>
-        <text style={{font: '400 12px var(--font-sans)', fill: 'var(--color-text-primary)'}} x="80" y="148">Slipper clutch og girskift</text>
-        <text style={{font: '400 12px var(--font-sans)', fill: '#1D9E75'}} x="64" y="170">✓</text>
-        <text style={{font: '400 12px var(--font-sans)', fill: 'var(--color-text-primary)'}} x="80" y="170">Mer fokus på trafikken</text>
-        <text style={{font: '400 12px var(--font-sans)', fill: '#1D9E75'}} x="64" y="192">✓</text>
-        <text style={{font: '400 12px var(--font-sans)', fill: 'var(--color-text-primary)'}} x="80" y="192">Vanligste valg i 2026</text>
-
-        <text style={{font: '400 12px var(--font-sans)', fill: '#A32D2D'}} x="64" y="222">✗</text>
-        <text style={{font: '400 12px var(--font-sans)', fill: 'var(--color-text-primary)'}} x="80" y="222">Ikke manuell bil</text>
-        <text style={{font: '400 12px var(--font-sans)', fill: '#A32D2D'}} x="64" y="244">✗</text>
-        <text style={{font: '400 12px var(--font-sans)', fill: 'var(--color-text-primary)'}} x="80" y="244">Kan begrense bilutleie</text>
-        <text style={{font: '400 12px var(--font-sans)', fill: '#A32D2D'}} x="64" y="266">✗</text>
-        <text style={{font: '400 12px var(--font-sans)', fill: 'var(--color-text-primary)'}} x="80" y="266">Ny oppkjøring for manuell</text>
-
-        {/* Manuell-kort */}
-        <rect x="370" y="52" width="270" height="230" rx="12" fill="#E6F1FB" stroke="#185FA5" strokeWidth="0.5"/>
-        <text style={{font: '500 14px var(--font-sans)', fill: '#0C447C'}} x="505" y="80" textAnchor="middle">Manuell</text>
-        <text style={{font: '400 12px var(--font-sans)', fill: '#378ADD'}} x="505" y="96" textAnchor="middle">Ingen kode 78</text>
-
-        <text style={{font: '400 12px var(--font-sans)', fill: '#185FA5'}} x="394" y="126">✓</text>
-        <text style={{font: '400 12px var(--font-sans)', fill: 'var(--color-text-primary)'}} x="410" y="126">Manuell og automat</text>
-        <text style={{font: '400 12px var(--font-sans)', fill: '#185FA5'}} x="394" y="148">✓</text>
-        <text style={{font: '400 12px var(--font-sans)', fill: 'var(--color-text-primary)'}} x="410" y="148">Full fleksibilitet</text>
-        <text style={{font: '400 12px var(--font-sans)', fill: '#185FA5'}} x="394" y="170">✓</text>
-        <text style={{font: '400 12px var(--font-sans)', fill: 'var(--color-text-primary)'}} x="410" y="170">Firmabil og varebil</text>
-        <text style={{font: '400 12px var(--font-sans)', fill: '#185FA5'}} x="394" y="192">✓</text>
-        <text style={{font: '400 12px var(--font-sans)', fill: 'var(--color-text-primary)'}} x="410" y="192">Større utvalg av leiebiler</text>
-
-        <text style={{font: '400 12px var(--font-sans)', fill: '#854F0B'}} x="394" y="222">✗</text>
-        <text style={{font: '400 12px var(--font-sans)', fill: 'var(--color-text-primary)'}} x="410" y="222">Clutch og gir må læres</text>
-        <text style={{font: '400 12px var(--font-sans)', fill: '#854F0B'}} x="394" y="244">✗</text>
-        <text style={{font: '400 12px var(--font-sans)', fill: 'var(--color-text-primary)'}} x="410" y="244">Mer å koordinere i starten</text>
-
-        {/* Kode 78 badge legend - Centered group */}
-        <g transform="translate(260, 290)">
-          <rect x="0" y="0" width="46" height="24" rx="4" fill="#FAEEDA" stroke="#BA7517" strokeWidth="0.5"/>
-          <text style={{font: '500 12px var(--font-sans)', fill: '#854F0B'}} x="23" y="16" textAnchor="middle">78</text>
-          <text style={{font: '400 12px var(--font-sans)', fill: 'var(--color-text-secondary)'}} x="56" y="16">= kun automatgir</text>
-        </g>
-
-        {/* Trend */}
-        <text style={{font: '400 12px var(--font-sans)', fill: 'var(--color-text-secondary)'}} x="340" y="335" textAnchor="middle">70 % av oppkjøringene brukte automatgir i første halvår 2026</text>
-      </svg>
+    <div className="gear-comparison">
+      <div className="gear-comparison-grid">
+        {choices.map(choice => (
+          <section className="gear-comparison-card" key={choice.title} aria-label={choice.title}>
+            <header>
+              <span className="gear-comparison-icon" aria-hidden="true">{choice.symbol}</span>
+              <div><h3>{choice.title}</h3><span className="gear-comparison-badge">{choice.badge}</span></div>
+            </header>
+            <dl>
+              <div><dt>Du kan kjøre</dt><dd>{choice.driving}</dd></div>
+              <div><dt>Under opplæringen</dt><dd>{choice.learning}</dd></div>
+              <div><dt>Vurder før du velger</dt><dd>{choice.consideration}</dd></div>
+            </dl>
+          </section>
+        ))}
+      </div>
+      <p className="gear-comparison-note">Begge gjelder klasse B. Kode 78 begrenser girtypen – de øvrige grensene for førerkortklassen gjelder fortsatt.</p>
     </div>
-  )
+  );
 }

@@ -1,5 +1,4 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
-import { trackEvent } from '../utils/analytics';
 import { Helmet } from 'react-helmet-async';
 import { useNavigate } from 'react-router-dom';
 import { SignSpeedGame, type SignSpeedGameResult } from '../components/minigames/SignSpeedGame';
@@ -22,23 +21,17 @@ const formatScore = (score: number) => new Intl.NumberFormat('nb-NO').format(sco
 export default function SignSpeedGamePage() {
   const navigate = useNavigate();
 
-  // GA4: game started
-  useEffect(() => {
-    trackEvent('game_started', { game_name: 'skiltduellen' });
-  }, []);
-
   // Hold første klientrender lik den prerendrede HTML-en. Lokal profil og
   // poengtavle lastes straks etter hydrering.
   const [profile, setProfile] = useState<LocalProfile | null>(null);
   const [nickname, setNickname] = useState('');
-  const [isEditingProfile, setIsEditingProfile] = useState(true);
+  const [isEditingProfile, setIsEditingProfile] = useState(false);
   const [scoreboard, setScoreboard] = useState<ScoreboardEntry[]>([]);
 
   useEffect(() => {
     const storedProfile = loadLocalProfile();
     setProfile(storedProfile);
     setNickname(storedProfile?.nickname ?? '');
-    setIsEditingProfile(!storedProfile);
     setScoreboard(loadScoreboard());
   }, []);
 
@@ -85,7 +78,7 @@ export default function SignSpeedGamePage() {
     clearLocalProfile();
     setProfile(null);
     setNickname('');
-    setIsEditingProfile(true);
+    setIsEditingProfile(false);
   }, []);
 
   return (
@@ -142,7 +135,7 @@ export default function SignSpeedGamePage() {
             <div className="profile-panel__inner">
               <p className="eyebrow" style={{ color: 'var(--green)' }}>Lokal profil</p>
               <h2 style={{ margin: '0 0 8px 0', fontSize: '1.65rem' }}>
-                {profile ? 'Endre nick' : 'Hva skal vi kalle deg?'}
+                {profile ? 'Endre nick' : 'Legg til et nick (valgfritt)'}
               </h2>
               <p style={{ margin: '0 0 16px 0', color: 'var(--muted)', fontSize: '0.95rem', lineHeight: '1.45' }}>
                 Nicket lagres bare i denne nettleseren. Ingen e-post, ingen innlogging.
@@ -171,15 +164,13 @@ export default function SignSpeedGamePage() {
                 >
                   Lagre
                 </button>
-                {profile ? (
-                  <button
+                <button
                     className="secondary-action"
                     type="button"
                     onClick={() => setIsEditingProfile(false)}
                   >
-                    Avbryt
+                    {profile ? 'Avbryt' : 'Fortsett uten nick'}
                   </button>
-                ) : null}
               </div>
               {profile ? (
                 <div className="profile-stats" aria-label="Profilstatistikk" style={{ display: 'flex', gap: '8px', marginTop: '16px' }}>

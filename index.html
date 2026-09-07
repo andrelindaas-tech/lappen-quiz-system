@@ -50,12 +50,25 @@
   <meta name="referrer" content="strict-origin-when-cross-origin" />
 
   <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-K2D4VD6ZL6"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-    gtag('config', 'G-K2D4VD6ZL6');
+    function gtag() {
+      // Account links can contain login tokens. Also block events after SPA navigation there.
+      if (!window.location.pathname.startsWith('/konto')) dataLayer.push(arguments);
+    }
+    // Local/preview builds keep a local queue for inspection, without contacting Google.
+    // An initial account visit must never load the Google tag.
+    if (['teori-test.no', 'www.teori-test.no'].includes(window.location.hostname)
+        && !window.location.pathname.startsWith('/konto')) {
+      var analyticsScript = document.createElement('script');
+      analyticsScript.async = true;
+      analyticsScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-K2D4VD6ZL6';
+      document.head.appendChild(analyticsScript);
+      gtag('js', new Date());
+      // AnalyticsPageView owns initial and SPA pageviews. Before deployment, also
+      // disable Enhanced Measurement's browser-history pageviews in the GA4 stream.
+      gtag('config', 'G-K2D4VD6ZL6', { send_page_view: false });
+    }
   </script>
 
   <!-- Structured Data (JSON-LD) -->

@@ -7,6 +7,8 @@ import {
   type SignSpeedRound,
 } from '../../data/minigames/signSpeedGame';
 import type { ScoreboardEntry } from '../../utils/localProfile';
+import { createGameAnalytics } from '../../utils/gameAnalytics';
+import Link from '../InternalLink';
 import './SignSpeedGame.css';
 
 type GamePhase = 'idle' | 'countdown' | 'playing' | 'feedback' | 'reveal' | 'ended';
@@ -70,6 +72,20 @@ export function SignSpeedGame({ rounds, playerName, onGameEnd, onProfileClick, o
   const roundBank = useMemo(() => rounds ?? getSignSpeedRounds(), [rounds]);
   const [state, setState] = useState<GameState>(() => createInitialState(roundBank));
   const reportedResultKey = useRef<string | null>(null);
+  const [gameAnalytics] = useState(() => createGameAnalytics('skiltduellen'));
+
+  useEffect(() => { gameAnalytics.view(); }, [gameAnalytics]);
+
+  useEffect(() => {
+    if ((state.phase === 'feedback' || state.phase === 'reveal') && state.round) {
+      gameAnalytics.roundCompleted({
+        roundNumber: state.roundIndex + 1,
+        scenarioType: 'skiltvalg',
+        isCorrect: state.phase === 'feedback',
+        score: state.score,
+      });
+    }
+  }, [gameAnalytics, state.phase, state.round, state.roundIndex, state.score]);
 
   useEffect(() => {
     setState(createInitialState(roundBank));
@@ -87,7 +103,7 @@ export function SignSpeedGame({ rounds, playerName, onGameEnd, onProfileClick, o
       const remainingRatio = 1 - elapsedMs / state.durationMs;
 
       if (remainingRatio <= 0) {
-        setState((current) => ({
+        setState((current) => current.phase !== 'playing' ? current : ({
           ...current,
           phase: 'reveal',
           endReason: 'timeout',
@@ -181,6 +197,7 @@ export function SignSpeedGame({ rounds, playerName, onGameEnd, onProfileClick, o
       }
 
       reportedResultKey.current = resultKey;
+      gameAnalytics.complete({ score: state.score, total: state.roundIndex + 1 });
       onGameEnd?.({
         score: state.score,
         streak: state.streak,
@@ -188,7 +205,7 @@ export function SignSpeedGame({ rounds, playerName, onGameEnd, onProfileClick, o
         reason: state.endReason,
       });
     }
-  }, [onGameEnd, state.endReason, state.phase, state.roundIndex, state.score, state.streak]);
+  }, [gameAnalytics, onGameEnd, state.endReason, state.phase, state.roundIndex, state.score, state.streak]);
 
   const startRound = useCallback(() => {
     setState((current) => {
@@ -259,13 +276,14 @@ export function SignSpeedGame({ rounds, playerName, onGameEnd, onProfileClick, o
   }, [state.phase, state.countdownVal, startRound]);
 
   const startGame = useCallback(() => {
+    gameAnalytics.start();
     reportedResultKey.current = null;
     setState({
       ...createInitialState(roundBank),
       phase: 'countdown',
       countdownVal: 3,
     });
-  }, [roundBank]);
+  }, [gameAnalytics, roundBank]);
 
   const resetGame = useCallback(() => {
     reportedResultKey.current = null;
@@ -307,13 +325,15 @@ export function SignSpeedGame({ rounds, playerName, onGameEnd, onProfileClick, o
   }, []);
 
   const restart = useCallback(() => {
+    gameAnalytics.replay({ score: state.score, total: state.roundIndex + 1 });
+    gameAnalytics.start();
     reportedResultKey.current = null;
     setState({
       ...createInitialState(roundBank),
       phase: 'countdown',
       countdownVal: 3,
     });
-  }, [roundBank]);
+  }, [gameAnalytics, roundBank, state.roundIndex, state.score]);
 
   const isActive =
     state.phase === 'countdown' || state.phase === 'playing' || state.phase === 'feedback' || state.phase === 'reveal';
@@ -370,17 +390,22 @@ export function SignSpeedGame({ rounds, playerName, onGameEnd, onProfileClick, o
         </section>
       ) : !round ? (
         <section className="start-panel">
-          <p className="eyebrow">Skiltguiden</p>
+          <p className="eyebrow">Gratis trafikkskilt-spill · Klasse B</p>
           <h1>Skiltduellen</h1>
+          <p className="sign-game-intro">Les påstanden og velg riktig trafikkskilt blant fire alternativer. Svar før tiden går ut, samle poeng og lær av forklaringen når runden er over.</p>
+          <p className="sign-game-benefits">Gratis · Ingen innlogging · Spill på tid</p>
           {playerName ? <p className="player-greeting">Klar, {playerName}?</p> : null}
           <button className="primary-action" type="button" onClick={startGame}>
-            Start
+            Start skiltduellen
           </button>
+          {!playerName && onProfileClick ? <button className="text-action" type="button" onClick={onProfileClick}>Legg til nick (valgfritt)</button> : null}
           {onClose ? (
             <button className="secondary-action" type="button" onClick={onClose} style={{ minWidth: '154px' }}>
               Tilbake til spillene
             </button>
           ) : null}
+
+          <div className="sign-game-learning"><h2>Dette trener du på</h2><p>Koble skiltets form og symbol til riktig betydning, og skille mellom skilt som ligner. Vil du øve uten tidspress, kan du ta <Link to="/quiz/skilt/">skiltquizen</Link> eller slå opp skilt i <Link to="/trafikkskilt/">skiltguiden</Link>.</p></div>
 
           {scoreboard && scoreboard.length > 0 ? (
             <div className="scoreboard-container">
@@ -454,6 +479,7 @@ export function SignSpeedGame({ rounds, playerName, onGameEnd, onProfileClick, o
               </p>
               <h2>{formatScore(state.score)} poeng</h2>
               <p>{round.explanation}</p>
+              <p className="sign-game-next">Øv videre uten tidspress i <Link to="/quiz/skilt/">skiltquizen</Link>, eller finn forklaringer i <Link to="/trafikkskilt/">skiltguiden</Link>.</p>
               <button className="primary-action" type="button" onClick={restart}>
                 Prøv igjen
               </button>
