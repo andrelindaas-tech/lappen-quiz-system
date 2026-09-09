@@ -1187,3 +1187,10 @@ body.dark-mode .theory-inline-code {
         height: 640px !important;
     }
 }
+
+/* Varsellamper: white backgrounds for the three highlighted article sections. */
+body:not(.dark-mode) .theory-topic-varsellamper-i-bilen .theory-section:has(> #kort-forklart-fargene-styrer-alvoret),
+body:not(.dark-mode) .theory-topic-varsellamper-i-bilen .theory-section:has(> #de-rode-stopp-sa-snart-det-er-trygt),
+body:not(.dark-mode) .theory-topic-varsellamper-i-bilen .theory-section:has(> #slik-bruker-du-dette-pa-proven) {
+    background: #fff;
+}
