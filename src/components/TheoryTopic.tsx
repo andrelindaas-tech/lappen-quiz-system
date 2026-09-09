@@ -353,6 +353,7 @@ export default function TheoryTopic({ topic, onBack }: TheoryTopicProps) {
                         ) : section.type === 'component' ? (
                             <div className="theory-section-content">
                                 {section.content && renderContent(section.content)}
+                                {section.componentId === 'dashboard' && <DashboardWarningSimulator />}
                                 {section.component === 'RundkjoringAnimasjon' && <RundkjoringAnimasjon />}
                                 {section.component === 'RundkjoringDemo' && <RundkjoringDemo />}
                                 {section.component === 'AutomatVsManuellSammenligning' && <AutomatVsManuellSammenligning />}

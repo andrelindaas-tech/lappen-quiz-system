@@ -1,276 +1,91 @@
-import { useState, useEffect } from 'react';
-import './DashboardWarningSimulator.css';
+import { useRef, useState } from 'react'
+import { dashboardLamps, dashboardQuestions, makeDashboardRound, type LampId } from '../data/dashboardLamps'
+import './DashboardWarningSimulator.css'
 
-interface MeaningOption {
-    label: string;
-    isCorrect: boolean;
-}
-
-interface Lamp {
-    id: string;
-    name: string;
-    color: 'red' | 'yellow';
-    correctAnswer: 'stop' | 'drive';
-    explanation: string;
-    icon: React.ReactNode;
-    meaningOptions: MeaningOption[];
-}
-
-const LAMPS: Lamp[] = [
-    {
-        id: 'brakes_red',
-        name: 'Bremseanlegg (Rød)',
-        color: 'red',
-        correctAnswer: 'stop',
-        explanation: 'Rødt lys betyr alltid stopp. Denne lampen indikerer en alvorlig feil på bremsesystemet, for eksempel lavt bremsevæskenivå eller feil på to-krets systemet. Du må stoppe umiddelbart og ringe veihjelp.',
-        meaningOptions: [
-            { label: 'Feil på bremsesystemet', isCorrect: true },
-            { label: 'Håndbrekket er på', isCorrect: false },
-            { label: 'Slitte dekk', isCorrect: false }
-        ],
-        icon: (
-            <svg viewBox="0 0 100 100" className="lamp-icon">
-                {/* Outer brackets/pads */}
-                <path d="M20 30 A 40 40 0 0 0 20 70" fill="none" stroke="currentColor" strokeWidth="8" strokeLinecap="round" />
-                <path d="M80 30 A 40 40 0 0 1 80 70" fill="none" stroke="currentColor" strokeWidth="8" strokeLinecap="round" />
-                {/* Inner circle with ! */}
-                <circle cx="50" cy="50" r="28" fill="none" stroke="currentColor" strokeWidth="6" />
-                <path d="M50 35 L50 58" fill="none" stroke="currentColor" strokeWidth="7" strokeLinecap="round" />
-                <circle cx="50" cy="68" r="4" fill="currentColor" />
-            </svg>
-        )
-    },
-    {
-        id: 'oil_red',
-        name: 'Oljetrykk (Rød)',
-        color: 'red',
-        correctAnswer: 'stop',
-        explanation: 'Rødt lys betyr alltid stopp. Motoren har for lavt oljetrykk. Dette kan føre til totalt motorhavari på sekunder. Stopp bilen forsvarlig og skru av motoren umiddelbart.',
-        meaningOptions: [
-            { label: 'Lavt oljetrykk', isCorrect: true },
-            { label: 'Lite drivstoff', isCorrect: false },
-            { label: 'Oljeservice nødvendig', isCorrect: false }
-        ],
-        icon: (
-            <svg viewBox="0 0 100 100" className="lamp-icon">
-                {/* Oil Lamp Body - More rectangular with distinct elements */}
-                <path d="M30 60 L30 80 L75 80 L80 65 L45 60 Z" fill="currentColor" opacity="0.9" />
-                {/* Spout - Long and thin */}
-                <path d="M75 68 L92 60" stroke="currentColor" strokeWidth="5" strokeLinecap="round" />
-                <path d="M92 60 Q96 60 94 65 L93 68 Q90 73 89 65 Z" fill="currentColor" /> {/* Spout end tip and drop combo */}
-                <circle cx="94" cy="74" r="4" fill="currentColor" /> {/* The actual drop */}
-                {/* Handle - Angled rect */}
-                <path d="M30 65 L10 65 L10 60 L30 55 Z" fill="currentColor" />
-                <path d="M10 65 L10 50 L30 45 L30 65" fill="none" stroke="currentColor" strokeWidth="5" strokeLinejoin="round" />
-                {/* Filler Cap - T-shape */}
-                <path d="M35 55 L50 55" stroke="currentColor" strokeWidth="6" strokeLinecap="round" />
-                <path d="M42.5 55 L42.5 60" stroke="currentColor" strokeWidth="5" />
-            </svg>
-        )
-    },
-    {
-        id: 'battery_red',
-        name: 'Lading/Batteri (Rød)',
-        color: 'red',
-        correctAnswer: 'stop',
-        explanation: 'Rødt lys betyr alltid stopp. Dynamoen lader ikke batteriet. Bilen vil snart gå tom for strøm og stanse. I mange biler betyr dette også at vannpumpen har stoppet, som fører til overoppheting. Finn et trygt sted og stans.',
-        meaningOptions: [
-            { label: 'Feil på ladesystemet', isCorrect: true },
-            { label: 'Flatt batteri', isCorrect: false },
-            { label: 'Startsperre aktivert', isCorrect: false }
-        ],
-        icon: (
-            <svg viewBox="0 0 100 100" className="lamp-icon">
-                <rect x="25" y="35" width="50" height="40" rx="3" fill="none" stroke="currentColor" strokeWidth="6" />
-                <rect x="35" y="28" width="10" height="7" fill="currentColor" />
-                <rect x="55" y="28" width="10" height="7" fill="currentColor" />
-                <path d="M35 55 L45 55 M55 55 L65 55 M60 50 L60 60" stroke="currentColor" strokeWidth="5" />
-            </svg>
-        )
-    },
-    {
-        id: 'engine_yellow',
-        name: 'Feil på motor (Gul)',
-        color: 'yellow',
-        correctAnswer: 'drive',
-        explanation: 'Gult varsellys betyr at du vanligvis kan kjøre videre, men at noe må sjekkes snarere enn senere. Her er det en feil med motoren eller avgassystemet. Kjør direkte til et verksted for kontroll.',
-        meaningOptions: [
-            { label: 'Feil på motor/avgass', isCorrect: true },
-            { label: 'Lite kjølevæske', isCorrect: false },
-            { label: 'Lite spylervæske', isCorrect: false }
-        ],
-        icon: (
-            <svg viewBox="0 0 100 100" className="lamp-icon">
-                {/* Engine block silhouette */}
-                <path d="M20 45 L30 45 L30 35 L60 35 L60 45 L70 45 L85 55 L85 75 L20 75 Z" fill="none" stroke="currentColor" strokeWidth="6" strokeLinejoin="round" />
-                {/* Fan/Pulley area */}
-                <circle cx="15" cy="60" r="4" fill="none" stroke="currentColor" strokeWidth="4" />
-                <line x1="10" y1="60" x2="20" y2="60" stroke="currentColor" strokeWidth="4" />
-                {/* Detail/Cap */}
-                <rect x="40" y="30" width="10" height="5" fill="currentColor" />
-            </svg>
-        )
-    },
-    {
-        id: 'tire_yellow',
-        name: 'Dekktrykk (Gul)',
-        color: 'yellow',
-        correctAnswer: 'drive',
-        explanation: 'Gult varsellys betyr at du kan kjøre videre. Dette indikerer feil dekktrykk på ett eller flere hjul. Kjør rolig til nærmeste bensinstasjon og kontroller luften i alle dekk.',
-        meaningOptions: [
-            { label: 'Lavt lufttrykk i dekk', isCorrect: true },
-            { label: 'Skjevslitte dekk', isCorrect: false },
-            { label: 'Feil på støtdempere', isCorrect: false }
-        ],
-        icon: (
-            <svg viewBox="0 0 100 100" className="lamp-icon">
-                {/* Tire Cross-section (Standard TPMS icon) */}
-                <path d="M35 30 L35 40 Q35 50 25 60 Q20 70 25 80 Q30 90 40 90 L60 90 Q70 90 75 80 Q80 70 75 60 Q65 50 65 40 L65 30" fill="none" stroke="currentColor" strokeWidth="6" strokeLinecap="butt" />
-                {/* Bottom treads/ripples - more like the image */}
-                <path d="M35 90 L35 95 M42 90 L42 95 M49 90 L49 95 M56 90 L56 95 M63 90 L63 95 M70 90 L70 95" stroke="currentColor" strokeWidth="5" strokeLinecap="round" />
-                {/* Exclamation point - bolder like the image */}
-                <path d="M50 25 L50 65" stroke="currentColor" strokeWidth="12" strokeLinecap="butt" />
-                <circle cx="50" cy="78" r="6" fill="currentColor" />
-            </svg>
-        )
-    },
-    {
-        id: 'abs_yellow',
-        name: 'ABS-bremser (Gul)',
-        color: 'yellow',
-        correctAnswer: 'drive',
-        explanation: 'Gult varsellys betyr at du kan kjøre videre, men vær oppmerksom. Feil på ABS-systemet gjør at hjulene kan låse seg ved hard nedbremsing, spesielt på glatt føre. Kjør til verksted for kontroll.',
-        meaningOptions: [
-            { label: 'Feil på ABS-systemet', isCorrect: true },
-            { label: 'Slitte bremseklosser', isCorrect: false },
-            { label: 'Systemet er i bruk', isCorrect: false }
-        ],
-        icon: (
-            <svg viewBox="0 0 100 100" className="lamp-icon">
-                <circle cx="50" cy="50" r="35" fill="none" stroke="currentColor" strokeWidth="6" />
-                <text x="50" y="58" fontSize="22" fontWeight="900" textAnchor="middle" fill="currentColor" style={{ fontFamily: 'Arial, sans-serif' }}>ABS</text>
-            </svg>
-        )
+function LampIcon({ id }: { id: LampId }) {
+    const shapes: Record<LampId, React.ReactNode> = {
+        oil: <><path d="M9 28h13l8-6h10l13 12 19-9 4 7-23 19H27L17 41H9zM31 15h17M39 15v8M9 29V19h13v9"/><path d="M78 42s-6 8-6 11a6 6 0 0 0 12 0c0-3-6-11-6-11Z"/></>,
+        battery: <path d="M14 22h62v35H14zM24 22v-7h11v7M55 22v-7h11v7M24 39h13M54 39h13M60.5 32v14"/>,
+        temperature: <path d="M41 41V13a5 5 0 0 1 10 0v28a10 10 0 1 1-10 0ZM52 19h9M52 29h9M46 27v24M10 62q8-7 16 0t16 0 16 0 16 0"/>,
+        brake: <><circle cx="45" cy="36" r="23"/><path d="M13 14a38 38 0 0 0 0 44M77 14a38 38 0 0 1 0 44M45 23v17"/><circle cx="45" cy="49" r="2" fill="currentColor"/></>,
+        belt: <><circle cx="43" cy="13" r="7"/><path d="m30 29 4-5h16l8 14-6 14H31l-6-18M35 52l-8 12M50 52l9 12M64 20 27 51M28 41l27 9"/></>,
+        engine: <path d="M17 28h12V18h29l9 12h9v-5h7v30h-7v-6h-7l-7 8H29L17 46ZM8 30v17M8 38h9M35 10h17M43 10v8"/>,
+        abs: <><circle cx="45" cy="36" r="25"/><path d="M12 14a38 38 0 0 0 0 44M78 14a38 38 0 0 1 0 44"/><text x="45" y="42" textAnchor="middle" fontSize="19" fontWeight="800" stroke="none" fill="currentColor">ABS</text></>,
+        esp: <path d="m27 32 5-16h24l7 16v17H27ZM29 32h32M33 49v5M57 49v5M32 38h5M53 38h5M33 59q-13 3-4 7M57 59q-13 3-4 7"/>,
+        tyre: <><path d="M24 12C13 25 9 46 20 58h50c11-12 7-33-4-46M26 58v6M37 58v6M48 58v6M59 58v6M45 22v20"/><circle cx="45" cy="50" r="2" fill="currentColor"/></>,
+        indicator: <path d="M38 28H23V18L7 36l16 18V44h15M52 28h15V18l16 18-16 18V44H52"/>,
+        dipped: <path d="M48 17q32 0 32 19T48 55ZM10 29l24-12M10 42l24-12M10 55l24-12M10 68l24-12"/>,
+        main: <path d="M48 17q32 0 32 19T48 55ZM9 18h25M9 30h25M9 42h25M9 54h25"/>,
     }
-];
+    return <svg viewBox="0 0 90 76" fill="none" stroke="currentColor" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">{shapes[id]}</svg>
+}
+const colors = { red: 'Rød', yellow: 'Gul', green: 'Grønn', blue: 'Blå' }
 
 export default function DashboardWarningSimulator() {
-    const [activeLamp, setActiveLamp] = useState<Lamp | null>(null);
-    const [questionType, setQuestionType] = useState<'action' | 'meaning'>('action');
-    const [shuffledOptions, setShuffledOptions] = useState<MeaningOption[]>([]);
-    const [userAnswer, setUserAnswer] = useState<string | null>(null);
-    const [feedback, setFeedback] = useState<{ status: 'correct' | 'incorrect'; text: string } | null>(null);
-
-    // Initialize with a random lamp and question type
-    useEffect(() => {
-        reset();
-    }, []);
-
-    const reset = () => {
-        const randomLamp = LAMPS[Math.floor(Math.random() * LAMPS.length)];
-        // 60% chance for 'meaning', 40% for 'action'
-        const randomType = Math.random() < 0.6 ? 'meaning' : 'action';
-        
-        setActiveLamp(randomLamp);
-        setQuestionType(randomType);
-        setUserAnswer(null);
-        setFeedback(null);
-
-        // Shuffle options for meaning quiz
-        if (randomType === 'meaning') {
-            const shuffled = [...randomLamp.meaningOptions].sort(() => Math.random() - 0.5);
-            setShuffledOptions(shuffled);
-        }
-    };
-
-    const handleAnswer = (answerValue: string) => {
-        if (!activeLamp || userAnswer) return;
-
-        setUserAnswer(answerValue);
-        
-        let isCorrect = false;
-        if (questionType === 'action') {
-            isCorrect = answerValue === activeLamp.correctAnswer;
-        } else {
-            const selectedOption = activeLamp.meaningOptions.find(o => o.label === answerValue);
-            isCorrect = !!selectedOption?.isCorrect;
-        }
-        
-        setFeedback({
-            status: isCorrect ? 'correct' : 'incorrect',
-            text: activeLamp.explanation
-        });
-    };
-
-    return (
-        <div className="dashboard-sim-container">
-            <h3 className="dashboard-sim-header">Simulering: Forstår du varsellampene?</h3>
-
-            <div className="dashboard-display">
-                {LAMPS.map((lamp) => (
-                    <div 
-                        key={lamp.id} 
-                        className={`dashboard-lamp-svg ${activeLamp?.id === lamp.id ? `active ${lamp.color}` : 'inactive'}`}
-                    >
-                        {lamp.icon}
-                    </div>
-                ))}
-            </div>
-
-            <div className="dashboard-sim-controls">
-                <p className="dashboard-question">
-                    {questionType === 'action' 
-                        ? 'Denne lampen lyser mens du kjører. Hva gjør du?' 
-                        : 'Hva betyr dette symbolet?'}
-                </p>
-                
-                <div className="dashboard-action-buttons">
-                    {questionType === 'action' ? (
-                        <>
-                            <button 
-                                className="dashboard-btn"
-                                onClick={() => handleAnswer('stop')}
-                                disabled={!!userAnswer}
-                            >
-                                Stopp bilen umiddelbart
-                            </button>
-                            <button 
-                                className="dashboard-btn"
-                                onClick={() => handleAnswer('drive')}
-                                disabled={!!userAnswer}
-                            >
-                                Kjør videre (til verksted)
-                            </button>
-                        </>
-                    ) : (
-                        shuffledOptions.map((option, idx) => (
-                            <button
-                                key={idx}
-                                className="dashboard-btn"
-                                onClick={() => handleAnswer(option.label)}
-                                disabled={!!userAnswer}
-                            >
-                                {option.label}
-                            </button>
-                        ))
-                    )}
-                </div>
-
-                {feedback && (
-                    <div className={`dashboard-explanation-box ${feedback.status}`}>
-                        <div className={`dashboard-status-title ${feedback.status}`}>
-                            {feedback.status === 'correct' ? '✅ Riktig!' : '❌ Ikke helt riktig'}
-                        </div>
-                        <div className="dashboard-text">
-                            {feedback.text}
-                        </div>
-                    </div>
-                )}
-
-                <button className="dashboard-reset-btn" onClick={reset}>
-                    🔄 Test en ny varsellampe
-                </button>
-            </div>
+    const [mode, setMode] = useState<'explore' | 'quiz'>('explore')
+    const [selectedId, setSelectedId] = useState<LampId>('oil')
+    const [blinking, setBlinking] = useState(false)
+    const [visited, setVisited] = useState<LampId[]>(['oil'])
+    const [round, setRound] = useState(() => dashboardQuestions.slice(0, 5))
+    const [answers, setAnswers] = useState<number[]>([])
+    const [index, setIndex] = useState(0)
+    const [finished, setFinished] = useState(false)
+    const [retry, setRetry] = useState(false)
+    const heading = useRef<HTMLHeadingElement>(null)
+    const question = round[index]
+    const answered = answers[index] !== undefined
+    const selected = dashboardLamps.find(lamp => lamp.id === (mode === 'quiz' ? question.lamp : selectedId))!
+    const isBlinking = mode === 'quiz' ? !!question.blinking : (selected.id === 'indicator' || blinking)
+    const score = answers.filter((answer, i) => answer === round[i].correct).length
+    const missed = round.filter((q, i) => answers[i] !== q.correct)
+    function startRound(onlyMissed = false) {
+        setRound(makeDashboardRound(onlyMissed ? missed : dashboardQuestions, onlyMissed ? missed.length : 5))
+        setAnswers([]); setIndex(0); setFinished(false); setRetry(onlyMissed); setMode('quiz')
+    }
+    function next() {
+        if (index === round.length - 1) setFinished(true)
+        else setIndex(index + 1)
+        requestAnimationFrame(() => heading.current?.focus())
+    }
+    return <div className="dw" aria-label="Interaktivt dashbord">
+        <div className="dw-top"><div><span className="dw-eyebrow">BAK RATTET</span><h3>Lær å lese dashbordet</h3></div><span className="dw-count">12 lamper · 2 måter å lære</span></div>
+        <div className="dw-modes" role="group" aria-label="Velg læringsmodus">
+            <button type="button" aria-pressed={mode === 'explore'} onClick={() => setMode('explore')}>Utforsk lampene</button>
+            <button type="button" aria-pressed={mode === 'quiz'} onClick={() => { if (mode !== 'quiz') { if (!answers.length && index === 0) startRound(); else setMode('quiz') } }}>Test deg selv</button>
         </div>
-    );
+        <p className="dw-intro">{mode === 'explore' ? 'Trykk på en lampe. Lær hva den betyr, og hva du bør gjøre.' : finished ? 'Runden er ferdig. Se hva du kan, og øv videre på det du bommet på.' : 'Se på lampen og les situasjonen. Hva ville du gjort?'}</p>
+        {!finished || mode === 'explore' ? <div className="dw-cluster">
+            <div className="dw-cluster-top"><span>TEORI-TEST / INSTRUMENTPANEL</span><span className="dw-live">{mode === 'explore' ? `${visited.length} av 12 utforsket` : `${retry ? 'Øv på feil' : 'Kunnskapstest'} · ${index + 1}/${round.length}`}</span></div>
+            <div className="dw-instruments" aria-hidden="true"><div className="dw-dial"><span>0</span><small>km/t</small></div><div className="dw-center"><span>SE. FORSTÅ. HANDLE.</span><strong>{mode === 'explore' ? 'Kjenn igjen signalet' : 'Hva forteller lampen?'}</strong><small>{isBlinking ? 'Blinkende lys' : 'Fast lys'} · {colors[selected.color].toLowerCase()} lampe</small></div><div className="dw-dial dw-dial-right"><span>P</span><small>øving</small></div></div>
+            <div className="dw-lamps" role="group" aria-label={mode === 'explore' ? 'Velg en lampe' : 'Lamper i instrumentpanelet'}>
+                {dashboardLamps.map((lamp, i) => {
+                    const active = lamp.id === selected.id
+                    const symbol = <><span className={`dw-symbol ${active && isBlinking ? 'dw-blink' : ''}`}><LampIcon id={lamp.id}/></span><span className="dw-lamp-label">{mode === 'explore' ? lamp.name : String(i + 1).padStart(2, '0')}</span></>
+                    return mode === 'explore'
+                        ? <button type="button" key={lamp.id} className={`dw-lamp dw-${lamp.color} ${active ? 'dw-active' : ''}`} aria-pressed={active} onClick={() => { setSelectedId(lamp.id); setBlinking(false); setVisited(prev => prev.includes(lamp.id) ? prev : [...prev, lamp.id]) }}>{symbol}</button>
+                        : <div key={lamp.id} className={`dw-lamp dw-${lamp.color} ${active ? 'dw-active' : ''}`} aria-label={active ? `${colors[lamp.color]} lampe: ${lamp.symbol}. ${isBlinking ? 'Blinkende lys' : 'Fast lys'}.` : undefined} aria-hidden={!active}>{symbol}</div>
+                })}
+            </div>
+            {mode === 'explore' && <div className="dw-legend"><span><i className="dw-red"/>Rød: reager</span><span><i className="dw-yellow"/>Gul: undersøk</span><span><i className="dw-green"/>Grønn / blå: informasjon</span></div>}
+        </div> : null}
+        {mode === 'explore' ? <div className="dw-card" aria-live="polite">
+            <div className="dw-card-heading"><span className={`dw-detail-icon dw-${selected.color}`}><LampIcon id={selected.id}/></span><div><span className="dw-eyebrow">{colors[selected.color]} lampe</span><h4>{selected.name}</h4></div></div>
+            {selected.blinkMeaning && <div className="dw-light-mode" role="group" aria-label="Lampens lysmønster"><button type="button" aria-pressed={!blinking} onClick={() => setBlinking(false)}>Fast lys</button><button type="button" aria-pressed={blinking} onClick={() => setBlinking(true)}>Blinkende lys</button></div>}
+            <p>{blinking && selected.blinkMeaning ? selected.blinkMeaning : selected.meaning}</p>
+            <div className="dw-action"><strong>Dette gjør du</strong><p>{blinking && selected.blinkAction ? selected.blinkAction : selected.action}</p></div>
+            <p className="dw-remember"><strong>Husk: </strong>{selected.remember}</p>
+            <button type="button" className="dw-primary" onClick={() => startRound()}>Test det du har lært <span aria-hidden="true">→</span></button>
+        </div> : finished ? <div className="dw-card dw-result">
+            <span className="dw-eyebrow">{retry ? 'ØVINGSRESULTAT' : 'DITT RESULTAT'}</span><h4 ref={heading} tabIndex={-1}>{score} av {round.length} riktige</h4>
+            <p>{score === round.length ? 'Du løste alle situasjonene i denne runden!' : 'God øving handler også om å forstå feilene. Ta en titt på forklaringene under.'}</p>
+            {missed.length > 0 && <div className="dw-review">{missed.map(q => <details key={q.id}><summary>{dashboardLamps.find(l => l.id === q.lamp)!.name} · {q.blinking ? 'blinkende lys' : 'fast lys'}</summary><p>{q.prompt}</p><p><strong>Du svarte: </strong>{q.options[answers[round.indexOf(q)]]}</p><p><strong>Riktig handling: </strong>{q.options[q.correct]}</p><p>{q.explanation}</p></details>)}</div>}
+            <div className="dw-result-actions">{missed.length > 0 && <button type="button" className="dw-primary" onClick={() => startRound(true)}>Øv på {missed.length === 1 ? 'feilen' : `de ${missed.length} feilene`}</button>}<button type="button" className={missed.length ? 'dw-secondary' : 'dw-primary'} onClick={() => startRound()}>Ny runde med 5 spørsmål</button><button type="button" className="dw-secondary" onClick={() => setMode('explore')}>Utforsk lampene</button></div>
+        </div> : <div className="dw-card">
+            <div className="dw-progress-label"><span>{retry ? 'Øv på feil' : 'Test deg selv'} · spørsmål {index + 1} av {round.length}</span><span>{score} riktige</span></div><progress value={answers.length} max={round.length} aria-label="Besvarte spørsmål"/>
+            <h4 ref={heading} tabIndex={-1} className="dw-question">{question.prompt}</h4>
+            <div className="dw-options">{question.options.map((option, i) => <button type="button" key={`${question.id}-${i}`} disabled={answered} className={answered ? (i === question.correct ? 'dw-correct' : i === answers[index] ? 'dw-wrong' : '') : ''} onClick={() => setAnswers(prev => prev.length === index ? [...prev, i] : prev)}><span className="dw-letter">{String.fromCharCode(65 + i)}</span><span>{option}{answered && i === question.correct && <small>✓ Riktig svar</small>}{answered && i === answers[index] && i !== question.correct && <small>✕ Ditt svar</small>}</span></button>)}</div>
+            {answered && <><div className="dw-feedback" role="status"><strong>{answers[index] === question.correct ? 'Riktig!' : 'Ikke helt riktig.'}</strong><p>{question.explanation}</p></div><button type="button" className="dw-primary" onClick={next}>{index === round.length - 1 ? 'Se resultatet' : 'Neste spørsmål'} <span aria-hidden="true">→</span></button></>}
+        </div>}
+        <p className="dw-footnote">Symboler og meldinger varierer mellom biler. Bruk alltid bilens instruksjonsbok ved et faktisk varsel.</p>
+    </div>
 }
