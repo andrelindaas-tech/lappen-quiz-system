@@ -57,7 +57,7 @@ function generateSitemap() {
   }
 
   // 2. Parse theory articles from the theory data files
-  const theoryDataPaths = [VIKEPLIKT_DATA_PATH, THEORY_DATA_PATH];
+  const theoryDataPaths = [VIKEPLIKT_DATA_PATH, THEORY_DATA_PATH, path.join(ROOT_DIR, 'src/data/ryggingVendingTopic.ts')];
   const ids = new Set();
   for (const theoryDataPath of theoryDataPaths) {
     if (!fs.existsSync(theoryDataPath)) {

@@ -1,5 +1,6 @@
 // Teoridata — Alt innhold på norsk
 import { vikepliktTopic } from './vikepliktTopic'
+import { ryggingVendingTopic } from './ryggingVendingTopic'
 
 export interface MiniQuizQuestion {
     question: string
@@ -19,6 +20,10 @@ export interface SignItem {
 
 export interface ArticleImage {
     src: string
+    srcSet?: string
+    sizes?: string
+    width?: number
+    height?: number
     alt: string
     caption?: string
 }
@@ -57,6 +62,7 @@ export interface TheoryTopic {
 
 export const theoryTopics: TheoryTopic[] = [
     vikepliktTopic,
+    ryggingVendingTopic,
     {
         id: 'bremselengde',
         title: 'Bremselengde kalkulator – regn ut stopplengde',
@@ -1744,7 +1750,7 @@ export const theoryTopics: TheoryTopic[] = [
             {
                 title: "Kort forklart: forskjellen på stans og parkering",
                 type: "text",
-                content: "Parkering er når du setter fra deg bilen, selv om du blir sittende i den. Unntaket er kortest mulig stans for av- og påstigning eller av- og pålessing. Å vente på noen som ennå ikke er klar, ta en telefon eller hente en liten pakke regnes normalt som parkering.\n\nTrafikal stans skyldes trafikken, som rødt lys eller vikeplikt. Der det er stanseforbud, er heller ikke frivillig avstigning tillatt."
+                content: "Parkering er når du setter fra deg bilen, selv om du blir sittende i den. Unntaket er kortest mulig stans for av- og påstigning eller av- og pålessing. Å vente på noen som ennå ikke er klar, ta en telefon eller hente en liten pakke regnes normalt som parkering.\n\nTrafikal stans skyldes trafikken, som rødt lys eller vikeplikt. Der det er stanseforbud, er heller ikke frivillig avstigning tillatt.\n\nNår du skal inn eller ut av parkeringsplassen, må du også vurdere sikt og vikeplikt. Se [reglene for rygging og vending](/laeringsressurser/rygging-og-vending/)."
             },
             {
                 title: "Kan jeg stå her? Prøv tre situasjoner",
@@ -1984,9 +1990,8 @@ export const theoryTopics: TheoryTopic[] = [
             },
             {
                 title: 'Beregning av promille',
-                type: 'calculator',
-                componentId: 'promille',
-                content: 'Bruk kalkulatoren som en veiledende illustrasjon av hvordan alkohol kan henge igjen i kroppen. Den kan ikke avgjøre om du er lovlig eller trygg nok til å kjøre.'
+                type: 'text',
+                content: 'En beregning av promille kan ikke avgjøre om du er lovlig eller trygg nok til å kjøre.'
             },
             {
                 title: 'Kan jeg kjøre dagen derpå?',
@@ -2696,87 +2701,56 @@ export const theoryTopics: TheoryTopic[] = [
         id: 'temaliste-teoriproven-klasse-b',
         title: 'Temaliste teoriprøven klasse B: 10 hovedtema du bør kunne',
         icon: '📋',
-        shortDescription: 'Se de 10 hovedtemaene teorien er delt inn i, og finn riktig guide hvis du er usikker på vikeplikt, skilt, fart, teknisk, sikkerhet eller ansvar.',
+        lastUpdated: '2026-09-21',
+        shortDescription: 'Åpne et hovedtema, finn det du vil lære og gå videre til forklaringer og øving. En praktisk oversikt for førerkort klasse B.',
         color: 'var(--apple-blue)',
         seoTitle: 'Temaliste teoriprøven klasse B: 10 hovedtema du må kunne',
         seoDescription: 'Se de 10 hovedtemaene til teoriprøven klasse B: vikeplikt, skilt, fart, bremselengde, parkering, veimerking, kjøretøy, trafikanter, sikkerhet og ansvar.',
         sections: [
             {
-                title: 'Kort forklart',
-                type: 'info',
-                content: 'Temalisten viser hvordan vi deler teorien inn i 10 hovedtemaer. Det er samme mentale modell som brukes på artikkelsiden og i analysen etter full prøve, slik at du lettere ser hvilke områder du kan og hvilke du bør øve mer på.'
+                title: "Finn temaet du vil lære mer om",
+                type: "component",
+                component: "TopicGuide",
+                content: "Åpne et hovedtema for å se undertemaer og hva du bør kunne. Du kan åpne flere temaer samtidig. Noen artikler finnes flere steder fordi de er relevante for flere temaer."
             },
             {
-                title: 'Slik bruker du temalisten',
-                type: 'tip',
-                content: '1. Finn hovedtemaet du er usikker på.\n2. Les de viktigste artiklene i den kategorien.\n3. Ta en full øvingsprøve.\n4. Bruk resultatanalysen til å se hvilke kategorier som fortsatt er svake.\n5. Gå tilbake til riktig kategori og øv mer målrettet.'
+                title: "Slik bruker du oversikten",
+                type: "text",
+                content: "1. Åpne et tema du vil forstå bedre.\n2. Velg undertemaet som passer det du lurer på.\n3. Les forklaringen og prøv oppgavene der de finnes.\n4. Ta en [øvingsprøve](/quiz/) og bruk resultatet til å velge hva du vil øve mer på.\n\nEr du helt ny? Start med [slik foregår teoriprøven](/laeringsressurser/teoriproven-bil/)."
             },
             {
-                title: '10 hovedtemaer – temakart for teoriprøven klasse B',
-                type: 'table',
-                content: `<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:1rem">
-<div style="border:1px solid var(--color-border);border-radius:12px;padding:1.25rem;background:var(--color-bg);"><strong style="color:var(--color-text)">1. Vikeplikt og kryss</strong><p style="color:var(--color-text-light);font-size:0.9rem;line-height:1.6">Vikeplikt, høyreregel, rundkjøring, buss fra holdeplass, trikk og trafikklys.</p><a href="/laeringsressurser/vikeplikt" style="color:var(--color-primary);text-decoration:none">Start med vikeplikt</a></div>
-<div style="border:1px solid var(--color-border);border-radius:12px;padding:1.25rem;background:var(--color-bg);"><strong style="color:var(--color-text)">2. Trafikkskilt</strong><p style="color:var(--color-text-light);font-size:0.9rem;line-height:1.6">Skiltgrupper, fareskilt, forbudsskilt, påbudsskilt og planovergang.</p><a href="/laeringsressurser/skilt" style="color:var(--color-primary);text-decoration:none">Les om trafikkskilt</a></div>
-<div style="border:1px solid var(--color-border);border-radius:12px;padding:1.25rem;background:var(--color-bg);"><strong style="color:var(--color-text)">3. Fart og plassering</strong><p style="color:var(--color-text-light);font-size:0.9rem;line-height:1.6">Fartsgrenser, feltvalg, forbikjøring, fletting, kollektivfelt og motorvei.</p><a href="/laeringsressurser/fartsgrenser" style="color:var(--color-primary);text-decoration:none">Les om fartsgrenser</a></div>
-<div style="border:1px solid var(--color-border);border-radius:12px;padding:1.25rem;background:var(--color-bg);"><strong style="color:var(--color-text)">4. Bremselengde og reaksjonstid</strong><p style="color:var(--color-text-light);font-size:0.9rem;line-height:1.6">Reaksjonslengde, bremselengde, stopplengde, glatt føre og veggrep.</p><a href="/laeringsressurser/bremselengde" style="color:var(--color-primary);text-decoration:none">Øv på bremselengde</a></div>
-<div style="border:1px solid var(--color-border);border-radius:12px;padding:1.25rem;background:var(--color-bg);"><strong style="color:var(--color-text)">5. Parkering og stans</strong><p style="color:var(--color-text-light);font-size:0.9rem;line-height:1.6">Stans, parkering, tunnel, gangfelt, kryss og steder med stansforbud.</p><a href="/laeringsressurser/stans-og-parkering" style="color:var(--color-primary);text-decoration:none">Les om stans og parkering</a></div>
-<div style="border:1px solid var(--color-border);border-radius:12px;padding:1.25rem;background:var(--color-bg);"><strong style="color:var(--color-text)">6. Veimerking</strong><p style="color:var(--color-text-light);font-size:0.9rem;line-height:1.6">Sperrelinje, varsellinje, kjørefeltlinjer, kantlinjer og symboler i veibanen.</p><a href="/laeringsressurser/veimerking" style="color:var(--color-primary);text-decoration:none">Les om veimerking</a></div>
-<div style="border:1px solid var(--color-border);border-radius:12px;padding:1.25rem;background:var(--color-bg);"><strong style="color:var(--color-text)">7. Kjøretøy og teknisk</strong><p style="color:var(--color-text-light);font-size:0.9rem;line-height:1.6">Dekk, bremser, styring, lys, varsellamper, vognkort, tilhenger og førerstøttesystemer.</p><a href="/laeringsressurser/dekk-bremser-styring" style="color:var(--color-primary);text-decoration:none">Les om kjøretøyet</a></div>
-<div style="border:1px solid var(--color-border);border-radius:12px;padding:1.25rem;background:var(--color-bg);"><strong style="color:var(--color-text)">8. Trafikanter og samspill</strong><p style="color:var(--color-text-light);font-size:0.9rem;line-height:1.6">Myke trafikanter, barn i bil, øvelseskjøring, trafikalt grunnkurs og sikkerhetskurs på bane.</p><a href="/laeringsressurser/ovingskjoring" style="color:var(--color-primary);text-decoration:none">Les om øvelseskjøring</a></div>
-<div style="border:1px solid var(--color-border);border-radius:12px;padding:1.25rem;background:var(--color-bg);"><strong style="color:var(--color-text)">9. Sikkerhet og førstehjelp</strong><p style="color:var(--color-text-light);font-size:0.9rem;line-height:1.6">Sikkerhetsutstyr, førstehjelp, promille, trafikkuhell og skadeforebygging.</p><a href="/laeringsressurser/sikkerhetsutstyr" style="color:var(--color-primary);text-decoration:none">Les om sikkerhet</a></div>
-<div style="border:1px solid var(--color-border);border-radius:12px;padding:1.25rem;background:var(--color-bg);"><strong style="color:var(--color-text)">10. Lover og ansvar</strong><p style="color:var(--color-text-light);font-size:0.9rem;line-height:1.6">Vegtrafikkloven §3, prikker, forelegg, førerkortbeslag, forsikring og plikter ved ulykke.</p><a href="/laeringsressurser/vegtrafikkloven-paragraf-3" style="color:var(--color-primary);text-decoration:none">Les om føreransvar</a></div>
-</div>`
+                title: "Vår oversikt og den offisielle temalisten",
+                type: "text",
+                content: "De ti hovedtemaene er Teori-test.no sin praktiske inndeling av læringsressursene. Dette er en veiviser til våre artikler, ikke Statens vegvesens offisielle temaliste eller en garanti for hvilke spørsmål du får.\n\nI vår oversikt finner du blant annet syn, trøtthet, medisiner, risiko og miljø under «Trafikanter og samspill».\n\n[Åpne Statens vegvesens offisielle temaliste for klasse B (PDF)](https://www.vegvesen.no/globalassets/forerkort/ta-forerkort/temaliste-til-teoriprove-klasse-b-bokmal.pdf)."
             },
             {
-                title: 'Mennesket i trafikken – temaet mange glemmer',
-                type: 'info',
-                content: 'Læreplanen handler ikke bare om regler og skilt, men også om føreren selv: syn, reaksjon, trøtthet, rus og hvordan vi faktisk tar beslutninger bak rattet. Dette går på tvers av de ti hovedtemaene over, og vi har egne guider om [syn og fartsblindhet](/laeringsressurser/syn-og-fartsblindhet), [trøtthet og mikrosøvn](/laeringsressurser/trotthet-og-mikrosovn), [medisiner og bilkjøring](/laeringsressurser/medisiner-og-bilkjoring) og [kjøreprosessen og risiko](/laeringsressurser/kjoreprosessen-og-risiko).'
-            },
-            {
-                title: 'Hvorfor denne inndelingen er nyttig',
-                type: 'info',
-                content: 'Når du tar en full prøve på Teori-test.no, kan resultatanalysen vise hvilke av disse hovedtemaene du scorer svakt på. Da blir det enklere å gå rett fra resultatet til riktig læringsressurs, i stedet for å lese alt på nytt.'
-            },
-            {
-                title: 'Hva bør du prioritere først?',
-                type: 'table',
-                content: `<div class="responsive-theory-table-wrapper"><table class="responsive-theory-table" style="width:100%;border-collapse:collapse;font-size:0.9rem"><thead><tr style="background-color:var(--color-surface);border-bottom:2px solid var(--color-border)"><th style="padding:12px 8px;text-align:left">Hvis du sliter med</th><th style="padding:12px 8px;text-align:left">Start her</th><th style="padding:12px 8px;text-align:left">Hvorfor</th></tr></thead>
-<tbody>
-<tr style="border-bottom:1px solid var(--color-border)"><td style="padding:12px 8px">Mange regelspørsmål</td><td style="padding:12px 8px"><a href="/laeringsressurser/vegtrafikkloven-paragraf-3" style="color:var(--color-primary);text-decoration:none">Vegtrafikkloven §3</a></td><td style="padding:12px 8px;color:var(--color-text-light)">Grunnregelen forklarer hvorfor det tryggeste svaret ofte er riktig.</td></tr>
-<tr style="border-bottom:1px solid var(--color-border)"><td style="padding:12px 8px">Skilt og oppmerking</td><td style="padding:12px 8px"><a href="/laeringsressurser/skilt" style="color:var(--color-primary);text-decoration:none">Trafikkskilt</a> og <a href="/laeringsressurser/veimerking" style="color:var(--color-primary);text-decoration:none">veimerking</a></td><td style="padding:12px 8px;color:var(--color-text-light)">Mange feil kommer av at skilt og linjer blandes sammen.</td></tr>
-<tr style="border-bottom:1px solid var(--color-border)"><td style="padding:12px 8px">Situasjoner i trafikken</td><td style="padding:12px 8px"><a href="/laeringsressurser/vikeplikt" style="color:var(--color-primary);text-decoration:none">Vikeplikt</a> og <a href="/laeringsressurser/feltvalg-fletting-kollektivfelt" style="color:var(--color-primary);text-decoration:none">feltvalg</a></td><td style="padding:12px 8px;color:var(--color-text-light)">Dette trener vurdering, ikke bare pugging.</td></tr>
-<tr style="border-bottom:1px solid var(--color-border)"><td style="padding:12px 8px">Spørsmål om føreren selv</td><td style="padding:12px 8px"><a href="/laeringsressurser/kjoreprosessen-og-risiko" style="color:var(--color-primary);text-decoration:none">Kjøreprosessen og risiko</a></td><td style="padding:12px 8px;color:var(--color-text-light)">Syn, trøtthet og rus avgjør mange oppgaver som ikke handler om regler.</td></tr>
-<tr><td style="padding:12px 8px">Teknisk og kontroll</td><td style="padding:12px 8px"><a href="/laeringsressurser/sikkerhetskontroll" style="color:var(--color-primary);text-decoration:none">Sikkerhetskontroll</a></td><td style="padding:12px 8px;color:var(--color-text-light)">Dette er nyttig både til teoriprøven og oppkjøringen.</td></tr>
-</tbody></table></div>`
-            },
-            {
-                title: 'Flere måter å øve på',
-                type: 'tip',
-                content: 'Lesing er bare halve jobben – test deg selv underveis:\n\n• [Ofte spurte teorispørsmål](/sporsmal): ekte oppgaver med fasit og ekstra grundig forklaring.\n• [Læringsspill](/laeringsspill): tren på vikeplikt, stopplengde, skilt og veimerking i spillform. Nyeste tilskudd er [vikepliktspillet](/laeringsspill/vikeplikt), der du velger hvem som kjører først i kryss.\n• Full øvingsprøve fra [forsiden](/): 45 tilfeldige spørsmål med resultatanalyse per hovedtema.'
-            }
+                title: "Vil du øve på en annen måte?",
+                type: "text",
+                content: "Bruk [læringsspillene](/laeringsspill/) for å utforske situasjoner, eller [teorispørsmål med forklaringer](/sporsmal/) for å kontrollere forståelsen din. Ta en [full øvingsprøve](/quiz/) når du vil teste flere temaer samlet."
+          }
         ],
         faq: [
-            {
+              {
                 question: 'Hva kommer på teoriprøven klasse B?',
                 answer: 'Teoriprøven klasse B kan dekke hele læreplanen. På Teori-test.no deler vi stoffet inn i 10 hovedtemaer: vikeplikt og kryss, trafikkskilt, fart og plassering, bremselengde og reaksjonstid, parkering og stans, veimerking, kjøretøy og teknisk, trafikanter og samspill, sikkerhet og førstehjelp, samt lover og ansvar.'
-            },
-            {
+              },
+              {
                 question: 'Er temalisten det samme som pensum?',
                 answer: 'Temalisten er en praktisk inndeling av pensumområdene. Den er ikke en fasit på hvilke spørsmål du får, men hjelper deg å se hvilke fagområder du bør beherske.'
-            },
-            {
+              },
+              {
                 question: 'Må jeg kunne alle temaene?',
                 answer: 'Ja. Teoriprøven trekker tilfeldige oppgaver fra hele læreplanen. Det er ikke mulig å velge bort enkelte områder, og du bør ha god kontroll på alle hovedtemaene for å minimere risikoen for å stryke.'
-            },
-            {
+              },
+              {
                 question: 'Hvordan bør jeg bruke temalisten når jeg øver?',
                 answer: 'Bruk listen som en personlig sjekkliste. Les guidene i temaene du er usikker på, ta en full øvingsprøve, og bruk resultatanalysen til å gå tilbake til riktig kategori.'
-            },
-            {
+              },
+              {
                 question: 'Hvor finner jeg Statens vegvesen sin temaliste?',
-                answer: 'Statens vegvesen publiserer den offisielle læreplanen for klasse B på sine nettsider. Vår temaliste og våre læringsressurser er systematisk bygget rundt disse kravene for å gi deg best mulig forberedelse.'
-            },
-            {
+                answer: 'Statens vegvesen publiserer en egen temaliste for teoriprøven klasse B. Du finner direktelenken til PDF-en i avsnittet «Vår oversikt og den offisielle temalisten» over. Våre ti hovedtemaer er en egen praktisk inndeling.'
+              },
+              {
                 question: 'Dekker temalisten også mennesket i trafikken?',
                 answer: 'Ja. Temaer som syn, reaksjon, trøtthet, rus og risikoforståelse går på tvers av de ti hovedtemaene, og vi har egne guider om syn og fartsblindhet, trøtthet og mikrosøvn, medisiner og bilkjøring, og kjøreprosessen og risiko.'
             }
@@ -2817,9 +2791,8 @@ export const theoryTopics: TheoryTopic[] = [
             },
             {
                 title: 'Lufttrykk: for lavt, riktig og for høyt',
-                type: 'calculator',
-                componentId: 'dekktrykk',
-                content: 'Feil lufttrykk endrer hvordan dekket ligger mot veien. Det påvirker kontaktflaten, dekkslitasjen, stabiliteten, bremselengden og drivstofforbruket. Dra i slideren eller trykk på knappene under for å se effekten av ulikt lufttrykk:'
+                type: 'text',
+                content: 'Feil lufttrykk endrer hvordan dekket ligger mot veien. Det påvirker kontaktflaten, dekkslitasjen, stabiliteten, bremselengden og drivstofforbruket.'
             },
             {
                 title: 'Hvordan ser du feil på dekkene?',
@@ -4479,7 +4452,7 @@ export const theoryArticles: TheoryTopic[] = [
         id: 'tilhengerkalkulator',
         title: 'Tilhengerkalkulator – kan bilen din trekke hengeren?',
         icon: '🧮',
-        shortDescription: 'Legg inn bilens og hengerens tillatte totalvekt og se med en gang om kombinasjonen er lovlig med klasse B, B96 eller BE. Funker også for campingvogn.',
+        shortDescription: 'Legg inn bilens og tilhengerens tillatte totalvekt og se hvilken førerkortklasse vektene krever. Sjekk også bilens trekkgrenser før kjøring.',
         color: 'var(--apple-red)',
         seoTitle: 'Tilhengerkalkulator – sjekk bil og henger med klasse B',
         seoDescription: 'Gratis tilhengerkalkulator: legg inn bilens og hengerens tillatte totalvekt og se om du kan kjøre med klasse B, B96 eller BE. Funker også for campingvogn og bobil med henger.',
@@ -4497,17 +4470,17 @@ export const theoryArticles: TheoryTopic[] = [
             {
                 title: 'Grensene på ett minutt',
                 type: 'table',
-                content: `<div class="responsive-theory-table-wrapper"><table class="responsive-theory-table" style="width:100%;border-collapse:collapse;font-size:0.95rem"><thead><tr style="background-color:var(--color-surface);border-bottom:2px solid var(--color-border)"><th style="padding:12px 8px;text-align:left">Førerkort</th><th style="padding:12px 8px;text-align:left">Hovedregel</th></tr></thead><tbody><tr style="border-bottom:1px solid var(--color-border)"><td style="padding:12px 8px"><b>Klasse B</b></td><td style="padding:12px 8px">Bil + henger kan til sammen ha tillatt totalvekt på maks 3&nbsp;500 kg. Unntak: henger med tillatt totalvekt maks 750 kg kan alltid trekkes — da kan kombinasjonen bli inntil 4&nbsp;250 kg.</td></tr><tr style="border-bottom:1px solid var(--color-border)"><td style="padding:12px 8px"><b>Klasse B96</b></td><td style="padding:12px 8px">Bil + henger kan til sammen ha tillatt totalvekt på inntil 4&nbsp;250 kg.</td></tr><tr><td style="padding:12px 8px"><b>Klasse BE</b></td><td style="padding:12px 8px">Hengeren kan ha tillatt totalvekt på inntil 3&nbsp;500 kg (bilen inntil 3&nbsp;500 kg i tillegg).</td></tr></tbody></table></div>`
+                content: `<div class="responsive-theory-table-wrapper"><table class="responsive-theory-table" style="width:100%;border-collapse:collapse;font-size:0.95rem"><thead><tr style="background-color:var(--color-surface);border-bottom:2px solid var(--color-border)"><th style="padding:12px 8px;text-align:left">Førerkort</th><th style="padding:12px 8px;text-align:left">Hovedregel</th></tr></thead><tbody><tr style="border-bottom:1px solid var(--color-border)"><td style="padding:12px 8px"><b>Klasse B</b></td><td style="padding:12px 8px">Bil + henger kan til sammen ha tillatt totalvekt på maks 3&nbsp;500 kg. Unntak: med tilhenger på høyst 750 kg tillatt totalvekt kan kombinasjonen være inntil 4&nbsp;250 kg. Bilens trekkgrenser gjelder i tillegg.</td></tr><tr style="border-bottom:1px solid var(--color-border)"><td style="padding:12px 8px"><b>Klasse B96</b></td><td style="padding:12px 8px">Bil + henger kan til sammen ha tillatt totalvekt på inntil 4&nbsp;250 kg.</td></tr><tr><td style="padding:12px 8px"><b>Klasse BE</b></td><td style="padding:12px 8px">Hengeren kan ha tillatt totalvekt på inntil 3&nbsp;500 kg (bilen inntil 3&nbsp;500 kg i tillegg).</td></tr></tbody></table></div>`
             },
             {
                 title: 'Skal du trekke campingvogn?',
-                type: 'info',
-                content: 'Campingvogner har ofte tillatt totalvekt på 1&nbsp;300–2&nbsp;000 kg. Med en vanlig personbil (tillatt totalvekt gjerne 2&nbsp;000–2&nbsp;500 kg) ryker 3&nbsp;500-grensen for klasse B fort — test kombinasjonen i kalkulatoren over. Havner du over grensen, er [B96 eller BE veien videre](/laeringsressurser/tilhenger). Og husk: bilens egen grense i felt O.1 må også holde, uansett førerkortklasse.'
+                type: 'text',
+                content: 'Campingvogner har ofte tillatt totalvekt på 1 300–2 000 kg. Med en vanlig personbil (tillatt totalvekt gjerne 2 000–2 500 kg) ryker 3 500-grensen for klasse B fort — test kombinasjonen i kalkulatoren over. Havner du over grensen, er [B96 eller BE veien videre](/laeringsressurser/tilhenger). Og husk: bilens egen grense i felt O.1 må også holde, uansett førerkortklasse.'
             },
             {
                 title: 'Kalkulatoren er en teorihjelper',
-                type: 'warning',
-                content: 'Kalkulatoren sjekker **førerkortklassen** — den vanligste teorifellen. To ting den ikke kan sjekke for deg:\n\n- **Bilens egen trekkevne** (felt O.1/O.2 i vognkortet) kan være lavere enn det førerkortet tillater. Begge må være innenfor.\n- På teoriprøven er fellen ofte at oppgaven oppgir *faktisk* vekt — men det er **tillatt totalvekt** i vognkortet som avgjør førerkortklassen.\n\nAlle reglene bak tallene finner du i [tilhenger-guiden](/laeringsressurser/tilhenger). Kilder: [Statens vegvesen om førerkortklasse B, B96 og BE](https://www.vegvesen.no/forerkort/ta-forerkort/veien-til-forerkortet/personbil-b/).'
+                type: 'text',
+                content: 'Kalkulatoren sjekker **førerkortklassen**. Husk også dette:\n\n- **Bilens egen trekkevne** (felt O.1/O.2 i vognkortet) kan være lavere enn det førerkortet tillater. Begge må være innenfor.\n- Skill mellom *faktisk* vekt og tillatt totalvekt. Det er **tillatt totalvekt** i vognkortet som avgjør førerkortklassen.\n\nAlle reglene bak tallene finner du i [tilhenger-guiden](/laeringsressurser/tilhenger). Kilder: [Statens vegvesen om førerkortklasse B, B96 og BE](https://www.vegvesen.no/forerkort/har-forerkort/forerkortklasser/personbil-klasse-b/).'
             }
         ],
         faq: [
@@ -4517,15 +4490,15 @@ export const theoryArticles: TheoryTopic[] = [
             },
             {
                 question: 'Teller det hva hengeren faktisk veier?',
-                answer: 'Nei — for førerkortklassen er det tillatt totalvekt i vognkortet som gjelder, ikke den faktiske vekten. En tom henger med tillatt totalvekt på 1 300 kg regnes som 1 300 kg i dette regnestykket. Dette er en klassisk felle på teoriprøven.'
+                answer: 'Nei — for førerkortklassen er det tillatt totalvekt i vognkortet som gjelder, ikke den faktiske vekten. En tom henger med tillatt totalvekt på 1 300 kg regnes som 1 300 kg i dette regnestykket.'
             },
             {
                 question: 'Hva er vogntogvekt?',
-                answer: 'Vogntogvekt er bilens og hengerens tillatte totalvekt lagt sammen. Det er dette tallet som avgjør om kombinasjonen er lovlig med klasse B (maks 3 500 kg, eller 4 250 kg når hengeren er på maks 750 kg).'
+                answer: 'Aktuell vogntogvekt er det bilen og tilhengeren faktisk veier til sammen med last. Tillatt vogntogvekt i bilens vognkort setter en grense for denne vekten. For førerkortklasse B og B96 bruker du derimot summen av bilens og tilhengerens tillatte totalvekter.'
             },
             {
                 question: 'Kan jeg trekke campingvogn med vanlig klasse B?',
-                answer: 'Bare hvis bilens og campingvognens tillatte totalvekt til sammen er maks 3 500 kg. Med en vanlig bil og campingvogn ryker grensen ofte — da trenger du B96 (inntil 4 250 kg samlet) eller BE.'
+                answer: 'Ja, når campingvognens tillatte totalvekt er høyst 750 kg, eller når summen av bilens og campingvognens tillatte totalvekter er høyst 3 500 kg. Bilens trekkgrenser må også overholdes. For tyngre kombinasjoner kan du trenge B96 eller BE.'
             },
             {
                 question: 'Hva er forskjellen på B96 og BE?',
@@ -6271,55 +6244,47 @@ Hvis det oppstår kø, hold avstand til bilen foran. Da får nødetater og andre
         id: 'bilens-lys',
         title: 'Bilens lys til teoriprøven klasse B',
         icon: '💡',
-        shortDescription: 'Lær riktig bruk av bilens lys til teoriprøven: nærlys, fjernlys, tåkelys, nødblink og autolys. Lær også typiske feller du bør unngå.',
+        shortDescription: 'Lær hvilke lys du skal bruke i dagslys, mørke og dårlig sikt. Utforsk lysene på en interaktiv bil, sammenlign funksjonene og test deg selv før teoriprøven.',
+        lastUpdated: '2026-09-21',
         color: 'var(--apple-yellow)',
         seoTitle: 'Bilens lys – nærlys, fjernlys og tåkelys | Teori-test.no',
         seoDescription: 'Lær riktig bruk av bilens lys til teoriprøven klasse B: nærlys, fjernlys, kjørelys, tåkelys, baklys, bremselys, blinklys, nødblink og autolys i tunnel.',
         sections: [
             {
-                title: 'Bilens lys til teoriprøven klasse B',
-                type: 'text',
-                content: 'Bilens lys handler ikke bare om å se veien. Like viktig er det at andre ser deg, forstår hva du skal gjøre, og ikke blir blendet.\n\nPå teoriprøven klasse B kan du få spørsmål om nærlys, fjernlys, kjørelys, tåkelys, baklys, bremselys, blinklys, nødblink, parkeringslys, skiltlys og ryggelys. Ofte handler spørsmålet ikke bare om hva lyset heter, men om når du skal bruke det.'
-            },
-            {
                 title: 'Kort forklart',
                 type: 'info',
-                content: 'Nærlys eller kjørelys skal være tent under kjøring. Fjernlys gir best sikt, men må ikke blende andre trafikanter. Tåkelys foran skal ikke brukes sammen med nærlys. Baklys må være tent når forholdene krever det, for eksempel i mørke, tunnel og dårlig sikt.\n\nHusk dette til teoriprøven:\n\n- Du skal bruke lys etter forholdene.\n- Kjørelys foran betyr ikke alltid at baklysene er tent.\n- Fjernlys må blendes ned når det kan blende andre.\n- Tåkelys foran kan brukes som kjørelys på dagtid, men ikke sammen med nærlys.\n- Nødblink brukes ved fare, ikke som parkeringslys.\n- Føreren har ansvaret, også når bilen har autolys.\n\n![Bilens frontlys på personbil – nærlys, kjørelys og riktig lysbruk til teoriprøven klasse B](/bilens_lys_hovedbilde.png)'
+                content: 'Du skal bruke godkjent kjørelys under kjøring, også på dagtid. I mørke, tunnel og dårlig sikt må du velge lys som både gjør bilen synlig og gir tilstrekkelig sikt.\n\n- Egne kjørelys tenner ikke nødvendigvis baklysene.\n- Bruk fjernlys når du trenger det, men blend ned før du blender andre.\n- Tåkelys foran skal ikke brukes sammen med nærlys.\n- Du har ansvaret for riktig lysbruk, også med autolys.'
             },
             {
-                title: 'Oversikt: bilens lys og typiske teorifeller',
-                type: 'text',
-                content: 'Les også:\n- [Mørkekjøring](/laeringsressurser/lysbruk-morkekjoring)\n- [Sikkerhetskontroll](/laeringsressurser/sikkerhetskontroll)\n- [Trafikkuhell og førstehjelp](/laeringsressurser/trafikkuhell-forstehjelp)'
-            },
-            {
-                title: 'Tabell: bilens lys og typiske teorifeller',
+                title: 'Oversikt over bilens lys og når du bruker dem',
                 type: 'table',
-                content: `<div class="responsive-theory-table-wrapper" style="margin-top: 1rem;"><table class="responsive-theory-table" style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem;"><thead><tr style="background-color: var(--color-surface); border-bottom: 2px solid var(--color-border);"><th style="padding: 12px 8px;">Lys</th><th style="padding: 12px 8px;">Når brukes det?</th><th style="padding: 12px 8px;">Typisk teorifelle</th></tr></thead><tbody><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Nærlys</b></td><td style="padding: 12px 8px;">Ved kjøring i mørke, tunnel, regn, snø, tåke eller dårlig sikt</td><td style="padding: 12px 8px;">Å tro at kjørelys alltid er nok</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Kjørelys</b></td><td style="padding: 12px 8px;">På dagtid og ved gode siktforhold</td><td style="padding: 12px 8px;">Baklys er ikke alltid tent sammen med kjørelys</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Fjernlys</b></td><td style="padding: 12px 8px;">På mørke veier når det ikke blender andre</td><td style="padding: 12px 8px;">Å glemme å blende ned for møtende eller forankjørende</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Tåkelys foran</b></td><td style="padding: 12px 8px;">Ved tåke eller svært dårlig sikt, eller som kjørelys på dagtid i stedet for nærlys</td><td style="padding: 12px 8px;">Skal ikke brukes sammen med nærlys</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Kurvelys</b></td><td style="padding: 12px 8px;">Ved lav fart i svinger, avhengig av bilens system</td><td style="padding: 12px 8px;">Å tro at det er ekstra lys du kan bruke fritt</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Baklys</b></td><td style="padding: 12px 8px;">Gjør bilen synlig bakfra, særlig i mørke, tunnel og dårlig sikt</td><td style="padding: 12px 8px;">Mange biler har ikke baklys tent med bare kjørelys</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Bremselys</b></td><td style="padding: 12px 8px;">Lyser automatisk når du bremser</td><td style="padding: 12px 8px;">Defekte bremselys gjør at bilen bak får mindre tid til å reagere</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Blinklys/retningslys</b></td><td style="padding: 12px 8px;">Ved sving, feltskifte, forbikjøring og ut av rundkjøring</td><td style="padding: 12px 8px;">Å blinke for sent, eller glemme å blinke ut av rundkjøring</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Nødblink/nødsignallys</b></td><td style="padding: 12px 8px;">Ved fare, stans, ulykke eller motorstopp</td><td style="padding: 12px 8px;">Å bruke nødblink som parkeringstillatelse</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Parkeringslys</b></td><td style="padding: 12px 8px;">Når bilen står parkert eller stanset og må være synlig</td><td style="padding: 12px 8px;">Å kjøre med bare parkeringslys</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Skiltlys</b></td><td style="padding: 12px 8px;">Lyser opp registreringsskiltet bak</td><td style="padding: 12px 8px;">Lett å glemme ved sikkerhetskontroll</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Ryggelys</b></td><td style="padding: 12px 8px;">Lyser når bilen settes i revers</td><td style="padding: 12px 8px;">Det varsler rygging, men gir deg ikke forkjørsrett</td></tr><tr><td style="padding: 12px 8px;"><b>Autolys</b></td><td style="padding: 12px 8px;">Automatisk lysfunksjon på nyere biler</td><td style="padding: 12px 8px;">Kan lure deg i tunnel, regn, tåke eller skumring</td></tr></tbody></table></div>`
+                content: `<div class="responsive-theory-table-wrapper" style="margin-top: 1rem;"><table class="responsive-theory-table" style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem;"><thead><tr style="background-color: var(--color-surface); border-bottom: 2px solid var(--color-border);"><th style="padding: 12px 8px;">Lys</th><th style="padding: 12px 8px;">Når brukes det?</th><th style="padding: 12px 8px;">Viktig å huske</th></tr></thead><tbody><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Nærlys</b></td><td style="padding: 12px 8px;">Ved kjøring i mørke, tunnel, regn, snø, tåke eller dårlig sikt</td><td style="padding: 12px 8px;">Å tro at kjørelys alltid er nok</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Kjørelys</b></td><td style="padding: 12px 8px;">På dagtid og ved gode siktforhold</td><td style="padding: 12px 8px;">Baklys er ikke alltid tent sammen med kjørelys</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Fjernlys</b></td><td style="padding: 12px 8px;">På mørke veier når det ikke blender andre</td><td style="padding: 12px 8px;">Å glemme å blende ned for møtende eller forankjørende</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Tåkelys foran</b></td><td style="padding: 12px 8px;">Ved tåke eller svært dårlig sikt, eller som kjørelys på dagtid i stedet for nærlys</td><td style="padding: 12px 8px;">Skal ikke brukes sammen med nærlys</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Kurvelys</b></td><td style="padding: 12px 8px;">Ved lav fart i svinger, avhengig av bilens system</td><td style="padding: 12px 8px;">Å tro at det er ekstra lys du kan bruke fritt</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Baklys</b></td><td style="padding: 12px 8px;">Gjør bilen synlig bakfra, særlig i mørke, tunnel og dårlig sikt</td><td style="padding: 12px 8px;">Mange biler har ikke baklys tent med bare kjørelys</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Bremselys</b></td><td style="padding: 12px 8px;">Lyser automatisk når du bremser</td><td style="padding: 12px 8px;">Defekte bremselys gjør at bilen bak får mindre tid til å reagere</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Blinklys/retningslys</b></td><td style="padding: 12px 8px;">Ved sving, feltskifte, forbikjøring og ut av rundkjøring</td><td style="padding: 12px 8px;">Å blinke for sent, eller glemme å blinke ut av rundkjøring</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Nødblink/nødsignallys</b></td><td style="padding: 12px 8px;">Ved fare, stans, ulykke eller motorstopp</td><td style="padding: 12px 8px;">Å bruke nødblink som parkeringstillatelse</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Parkeringslys</b></td><td style="padding: 12px 8px;">Når bilen står parkert eller stanset og må være synlig</td><td style="padding: 12px 8px;">Å kjøre med bare parkeringslys</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Skiltlys</b></td><td style="padding: 12px 8px;">Lyser opp registreringsskiltet bak</td><td style="padding: 12px 8px;">Lett å glemme ved sikkerhetskontroll</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;"><b>Ryggelys</b></td><td style="padding: 12px 8px;">Lyser når bilen settes i revers</td><td style="padding: 12px 8px;">Det varsler rygging, men gir deg ikke forkjørsrett</td></tr><tr><td style="padding: 12px 8px;"><b>Autolys</b></td><td style="padding: 12px 8px;">Automatisk lysfunksjon på nyere biler</td><td style="padding: 12px 8px;">Kan lure deg i tunnel, regn, tåke eller skumring</td></tr></tbody></table></div>`
             },
             {
                 title: 'Nærlys og kjørelys',
                 type: 'text',
-                content: 'Nærlys er det vanlige lyset du bruker når du kjører i mørke, i tunnel eller når sikten er dårlig. Nærlys gjør bilen synlig og lyser opp veien uten å blende møtende trafikk slik fjernlys kan gjøre.\n\nKjørelys brukes typisk på dagtid når sikten er god. Mange moderne biler har automatiske kjørelys foran. Men her kommer en viktig teorifelle: baklysene er ikke nødvendigvis tent når du kjører med kjørelys.\n\nDerfor må du selv vurdere forholdene. Er det tunnel, regn, snø, tåke, skumring eller mørkt, bør du sørge for at både lys foran og bak er tent.'
+                image: { src: '/bilens_lys_hovedbilde.png', alt: 'Frontlykter på en personbil', caption: 'Kjørelys gjør bilen synlig. I mørket trenger du lys som også belyser veien.' },
+                content: '**Er kjørelys og nærlys det samme?** Kjørelys er en fellesbetegnelse: nærlys kan brukes som kjørelys. Egne kjørelys (DRL), ofte LED-striper, gjør bilen synlig i dagslys, men erstatter ikke nærlys som belysning av veien i mørket. Baklysene er heller ikke alltid tent med DRL.\n\n**Hvor langt ser du med nærlys?** Lysenes rekkevidde er ikke det samme som avstanden der du oppdager en hindring. Det finnes ingen fast siktstrekning som gjelder alle nyere biler; lys, vær og kontrasten mot bakgrunnen spiller inn. Trygg Trafikk oppgir at en fotgjenger uten refleks først blir synlig på omtrent 25–30 meters hold. Tilpass farten til det du faktisk kan se.'
             },
             {
                 title: 'Fjernlys',
                 type: 'warning',
-                content: 'Fjernlys gir mye bedre sikt på mørke veier. Det er lurt å bruke fjernlys når det hjelper deg å se lenger frem, særlig på landevei uten møtende trafikk.\n\nNærlys kan brukes sammen med fjernlys, men fjernlys må ikke brukes slik at du blender eller forstyrrer andre trafikanter.\n\nDu må blende ned når fjernlyset kan blende:\n\n- møtende trafikk\n- bilen foran deg\n- ved bakketopper\n- i svinger der noen plutselig kan komme imot\n- når andre trafikanter kan bli forstyrret av lyset\n\nRiktig tankegang er: Bruk fjernlys når det gir bedre sikt, men blend ned i tide.'
+                content: 'Fjernlys gir mye bedre sikt på mørke veier. Det er lurt å bruke fjernlys når det hjelper deg å se lenger frem, særlig på landevei uten møtende trafikk.\n\nNærlys kan brukes sammen med fjernlys, men fjernlys må ikke brukes slik at du blender eller forstyrrer andre trafikanter.\n\nDu må blende ned når fjernlyset kan blende:\n\n- møtende trafikk\n- bilen foran deg\n- ved bakketopper\n- i svinger der noen plutselig kan komme imot\n- når andre trafikanter kan bli forstyrret av lyset\n\nLes mer om sikt, fartstilpasning og møte med andre biler i guiden til [mørkekjøring](/laeringsressurser/lysbruk-morkekjoring/).'
             },
             {
                 title: 'Tåkelys og kurvelys',
                 type: 'text',
-                content: 'Tåkelys foran lyser lavt og bredt. De kan være nyttige ved tåke, kraftig snøvær eller svært dårlig sikt.\n\nDen viktige regelen er enkel: Tåkelys foran skal ikke brukes sammen med nærlys.\n\nPå dagtid kan tåkelys brukes som kjørelys i stedet for nærlys, men ikke som “ekstra lys” sammen med nærlys. Det kan blende og forstyrrer andre trafikanter.\n\nKurvelys hjelper bilen å lyse opp svingen ved lav fart. På nyere biler styres dette ofte automatisk. Det er ikke et lys du bruker fritt for å få mer lys i vanlig kjøring.'
+                content: 'Tåkelys foran lyser lavt og bredt. De kan være nyttige ved tåke, kraftig snøvær eller svært dårlig sikt.\n\nDen viktige regelen er enkel: Tåkelys foran skal ikke brukes sammen med nærlys.\n\nPå dagtid kan tåkelys brukes som kjørelys i stedet for nærlys, men ikke som “ekstra lys” sammen med nærlys. Det kan blende og forstyrre andre trafikanter.\n\nKurvelys hjelper bilen å lyse opp svingen ved lav fart. På nyere biler styres dette ofte automatisk. Det er ikke et lys du bruker fritt for å få mer lys i vanlig kjøring.'
             },
             {
                 title: 'Baklys, bremselys og skiltlys',
                 type: 'info',
-                content: 'Baklys gjør bilen synlig bakfra. Dette er ekstra viktig i tunnel, mørke og dårlig sikt.\n\nBremselys tennes automatisk når du bremser. De forteller trafikken bak deg at farten reduseres. Defekte bremselys er farlig fordi føreren bak får mindre tid til å reagere.\n\nSkiltlys lyser opp registreringsskiltet bak. Det er lett å glemme, men det hører med til bilens lysutstyr og kan komme i spørsmål om sikkerhetskontroll.'
+                content: 'Baklys gjør bilen synlig bakfra. Dette er ekstra viktig i tunnel, mørke og dårlig sikt.\n\nBremselys tennes automatisk når du bremser. De forteller trafikken bak deg at farten reduseres. Defekte bremselys er farlig fordi føreren bak får mindre tid til å reagere.\n\nSkiltlys lyser opp registreringsskiltet bak. Kontroller også skiltlyset når du går gjennom bilens lys. Se hvordan du gjør en [sikkerhetskontroll av bilen](/laeringsressurser/sikkerhetskontroll/).'
             },
             {
                 title: 'Blinklys og nødblink',
                 type: 'warning',
-                content: 'Blinklys, også kalt retningslys, brukes for å vise andre trafikanter hvor du har tenkt deg.\n\nDu bruker blinklys ved:\n\n- svinging\n- feltskifte\n- forbikjøring\n- utkjøring fra veikant\n- kjøring ut av rundkjøring\n\nBlink i god tid, men ikke så tidlig at andre misforstår deg.\n\nNødblink brukes når bilen eller situasjonen skaper fare. Det kan være ved motorstopp, trafikkuhell, farlig stans eller plutselig kø.\n\nNødblink gjør deg mer synlig, men det gjør ikke en ulovlig stans lovlig.'
+                content: 'Blinklys, også kalt retningslys, brukes for å vise andre trafikanter hvor du har tenkt deg.\n\nDu bruker blinklys ved:\n\n- svinging\n- feltskifte\n- forbikjøring\n- utkjøring fra veikant\n- kjøring ut av rundkjøring\n\nBlink i god tid, men ikke så tidlig at andre misforstår deg.\n\nNødblink brukes når bilen eller situasjonen skaper fare. Det kan være ved motorstopp, trafikkuhell, farlig stans eller plutselig kø.\n\nNødblink gjør deg mer synlig, men det gjør ikke en ulovlig stans lovlig. Les om [sikring av ulykkessted og førstehjelp](/laeringsressurser/trafikkuhell-forstehjelp/) hvis du må stoppe ved en ulykke.'
             },
             {
                 title: 'Parkeringslys og ryggelys',
@@ -6332,15 +6297,20 @@ Hvis det oppstår kø, hold avstand til bilen foran. Da får nødetater og andre
                 content: 'Autolys er praktisk, men du kan ikke stole blindt på automatikken. Sensoren kan reagere for sent, eller bilen kan ha lys foran uten at baklysene er tent.\n\nDette er spesielt viktig ved:\n\n- tunnel\n- regn\n- snø\n- tåke\n- skumring\n- gråvær\n- mørk vei med mye skygge\n\nEt godt eksempel er når du kjører inn i tunnel på dagtid. Bilen kan se “opplyst” ut foran, men baklysene kan fortsatt være av. Da blir du vanskeligere å se bakfra.\n\nTil teoriprøven bør du huske dette: Føreren har ansvaret, ikke automatikken. Er du usikker, slå på nærlys manuelt.'
             },
             {
-                title: 'Typiske teoriprøve-feller om bilens lys',
+                title: 'Dette bør du huske om bilens lys',
                 type: 'warning',
-                content: '1. “Kjørelys er alltid nok.”\n\nFeil. I tunnel, mørke og dårlig sikt må du passe på at også baklysene er tent.\n\n2. “Tåkelys og nærlys gir ekstra god sikt.”\n\nFeil. Tåkelys foran skal ikke brukes sammen med nærlys.\n\n3. “Fjernlys er best når det er mørkt.”\n\nBare hvis du ikke blender andre.\n\n4. “Nødblink betyr at jeg kan stoppe hvor jeg vil.”\n\nFeil. Nødblink varsler fare, men gjør ikke en farlig eller ulovlig stans grei.\n\n5. “Autolys ordner alt.”\n\nFeil. Du som fører må kontrollere at riktig lys er tent.'
+                content: '“Kjørelys er alltid nok.”\n\nFeil. I tunnel, mørke og dårlig sikt må du passe på at også baklysene er tent.\n\n“Tåkelys og nærlys gir ekstra god sikt.”\n\nFeil. Tåkelys foran skal ikke brukes sammen med nærlys.\n\n“Fjernlys er best når det er mørkt.”\n\nBare hvis du ikke blender andre.\n\n“Nødblink betyr at jeg kan stoppe hvor jeg vil.”\n\nFeil. Nødblink varsler fare, men gjør ikke en farlig eller ulovlig stans grei.\n\n“Autolys ordner alt.”\n\nFeil. Du som fører må kontrollere at riktig lys er tent.'
             }
         ],
+        sources: {
+            title: 'Kilde og videre lesning',
+            type: 'text',
+            content: '[Statens vegvesen: Bilens lys](https://www.vegvesen.no/trafikkinformasjon/trafikksikkerhet/sikker-kjoring/bilens-lys/) – krav til lysutstyr og bruk av kjørelys, nærlys, tåkelys og parkeringslys.\n\n[Trygg Trafikk: Refleks redder liv](https://www.tryggtrafikk.no/tips/til-fots/refleks/) – synlighet og oppdagelsesavstand med nærlys.'
+        },
         faq: [
             {
                 question: 'Hva er forskjellen på nærlys og kjørelys?',
-                answer: 'Kjørelys brukes ofte på dagtid i gode siktforhold. Nærlys brukes når du trenger bedre synlighet, for eksempel i mørke, tunnel eller dårlig sikt.'
+                answer: 'Nærlys kan brukes som kjørelys. Egne kjørelys (DRL) gjør bilen synlig i dagslys, mens nærlys også belyser veien i mørket. Baklysene er ikke alltid tent med DRL.'
             },
             {
                 question: 'Er baklys alltid tent når kjørelys er på?',

@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="nb"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>Utforsk bilens lys · teori-test.no</title><link rel="stylesheet" href="./style.css"></head>
+<body><main>
+<header><a class="brand" href="/">teori-test<span>.no</span></a><span class="prototype">MINT · KONSEPT 03</span></header>
+<div class="intro"><div><p class="eyebrow">SE DET. PRØV DET. FORSTÅ DET.</p><h1>Bli kjent med bilens lys.</h1><p>Ta en runde rundt bilen. Velg et lys og se hva det gjør.</p></div><span class="model-name">MINT 05 · KOMPAKTBIL<br><small>Egen low-poly-modell laget i Blender</small></span></div>
+<section class="explorer" aria-label="Utforsk bilens lys">
+<div class="stage"><div class="stage-top"><div class="stage-state"><span id="mode-tag">Kjørelys</span><button id="stage-toggle" aria-pressed="true">Slå av</button></div><div class="segmented"><button id="day" aria-pressed="false">Dag</button><button id="night" aria-pressed="true">Natt</button></div></div>
+<div id="viewport" tabindex="0" role="group" aria-label="Interaktiv bilmodell. Bruk venstre og høyre piltast for å rotere, pluss og minus for å zoome. Dra for å rotere, rull for å zoome. Bruk kameraknappene som alternativ."></div>
+<div id="loading" role="status">Laster bilmodellen …</div>
+<div class="stage-bottom"><span>Dra for å rotere · Rull for å zoome</span><button id="reset">↺ Nullstill</button></div>
+<div class="camera" aria-label="Kameravinkel"><button data-view="front">Foran</button><button data-view="side">Siden</button><button data-view="rear">Bak</button><button id="zoom-in" aria-label="Zoom inn">＋</button><button id="zoom-out" aria-label="Zoom ut">−</button></div></div>
+<aside><p class="eyebrow">VELG LYSFUNKSJON</p><div id="modes" role="group" aria-label="Lysfunksjoner"></div><div class="comparison"><div><span class="eyebrow">SAMMENLIGN AV / PÅ</span><strong id="light-status" role="status">På</strong></div><button id="light-toggle" aria-pressed="true"><span class="switch" aria-hidden="true"></span><span id="toggle-label">Slå av lysene</span></button><small>Samme kameravinkel – se forskjellen på lyktene.</small></div><div class="explanation" aria-live="polite"><span id="number">01 / 13</span><h2 id="title"></h2><p id="description"></p><h3>Når brukes det?</h3><p id="usage"></p><p class="tip" id="tip"></p></div></aside>
+</section>
+<footer><p>En egen, fiktiv bil bygget i Blender etter konsept 3. Lysutbredelsen er illustrert, ikke en simulering av målbar rekkevidde.</p><a href="https://www.vegvesen.no/trafikkinformasjon/trafikksikkerhet/sikker-kjoring/bilens-lys/" target="_blank" rel="noreferrer">Lysregler hos Statens vegvesen ↗</a><a href="https://lovdata.no/dokument/SF/forskrift/1994-10-04-918/kap28" target="_blank" rel="noreferrer">Kjøretøyforskriften § 28-4 · rekkevidde ↗</a></footer>
+<noscript><p>3D-visningen trenger JavaScript. Les forklaringene i artikkelen eller hos Statens vegvesen via lenken over.</p></noscript></main><script type="module" src="./entry.js"></script></body></html>

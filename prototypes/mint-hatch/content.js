@@ -1,0 +1,32 @@
+export const modes = [
+ ['drl','Kjørelys','De hvite LED-stripene foran gjør bilen lettere å oppdage i dagslys. De er laget for å bli sett, og gir ikke tilstrekkelig belysning av en mørk vei.','Husk: Baklysene er ikke alltid tent med egne kjørelys. Sørg for nærlys og baklys i mørket og i tunneler.','front'],
+ ['low','Nærlys','Nærlys lyser opp veien foran bilen med et avgrenset lysbilde. På modellen tennes også posisjonslys, baklys og skiltlys.','Husk: Feiljusterte nærlys kan blende. Hold lyktene rene, og kontroller at begge virker.','front'],
+ ['high','Fjernlys','Fjernlys skal belyse veien minst 100 meter foran bilen. Dette er en minimumsrekkevidde, ikke en maksimal rekkevidde. Fjernlys gir bedre oversikt langt frem på mørke veier. Lysfeltet på modellen illustrerer forskjellen fra nærlys og er ikke vist i målestokk.','Husk: Blend ned i god tid når du møter andre eller kjører bak noen som kan bli blendet.','front'],
+ ['left','Blink venstre','Oransje blinklys varsler at du har tenkt å svinge eller flytte bilen mot venstre. Lyktene foran, bak og på sidespeilet blinker sammen.','Husk: Blink i god tid. Blinklys gir deg ikke forkjørsrett. Venstre er sett fra førerplassen.','side'],
+ ['right','Blink høyre','Oransje blinklys varsler at du har tenkt å svinge eller flytte bilen mot høyre. Signalet er synlig både foran, bak og fra siden.','Husk: Se etter andre trafikanter før du svinger eller skifter felt, selv om du har gitt tegn.','side'],
+ ['hazard','Nødblink','Alle blinklysene blinker samtidig og varsler andre om en faresituasjon. Roter bilen og se hvordan varslingen er synlig fra begge sider.','Husk: Nødblink er et farevarsel. Det gjør ikke en farlig parkering trygg.','front'],
+ ['tail','Baklys','De røde baklysene gjør bilen synlig bakfra og viser hvor bred den er. De lyser svakere enn bremselysene.','Prøv: Velg bremselys og sammenlign styrken. Baklys alene betyr ikke at bilen bremser.','rear'],
+ ['brake','Bremselys','Når føreren bremser, tennes kraftige røde lys bak. Modellen har to ytre bremselys og ett høyt plassert lys over bakruten.','Kontroll: Be en hjelper se på lysene mens du holder bremsepedalen inne. Alle bremselysene skal virke.','rear'],
+ ['reverse','Ryggelys','Hvite ryggelys lyser opp området bak bilen og varsler andre om at bilen er satt i revers. På modellen sitter de nederst i baklyktene.','Husk: Ryggelys viser en hensikt, men garanterer ikke at føreren har sett deg. Kontroller området før du rygger.','rear'],
+ ['fog','Tåkebaklys','Det kraftige røde lyset lavt bak gjør bilen lettere å oppdage i tett tåke eller annen svært dårlig sikt. Det er sterkere enn vanlige baklys.','Husk: Slå det av når sikten bedres. Det sterke lyset kan blende den som kjører bak.','rear'],
+ ['fog_front','Tåkelys foran','De lave lyktene gir et bredt lysfelt nær bilen. På modellen vises de sammen med posisjonslys, baklys og skiltlys.','Husk: Tåkelys foran skal ikke brukes sammen med nærlys. På dagtid kan de brukes som kjørelys i stedet for nærlys.','front'],
+ ['parking','Parkeringslys','Svake hvite posisjonslys foran og røde baklys viser hvor bilen står. På modellen er LED-stripene foran dempet, og skiltlyset er tent.','Husk: Parkeringslys gjør bilen synlig, men gir ikke nok lys til å kjøre i mørket.','front'],
+ ['plate','Skiltlys','Små hvite lamper over det bakre registreringsskiltet gjør skiltet lesbart i mørket. Her vises skiltlyset alene for å gjøre det lett å finne.','Kontroll: Se om hele skiltet er belyst, og hold både skiltet og lampene rene.','rear'],
+ ['off','Alle lys av','Her ser du hvordan lyktene ser ut uten lys. De røde og oransje glassene har fortsatt farge, men sender ikke ut lys.','Prøv: Velg en lysfunksjon og bruk av/på-knappen for å sammenligne uten at kameraet flytter seg.','front'],
+];
+export const usage = {
+ drl:'Brukes i dagslys. Skift til riktig belysning når sikt og lysforhold endrer seg.',
+ low:'Brukes i mørket når fjernlys kan blende, og når forholdene krever at veien og bilen er bedre belyst.',
+ high:'Brukes på mørke veier når du kan lyse langt frem uten å blende andre.',
+ left:'Brukes før venstresving og når du skal flytte bilen mot venstre, for eksempel ved feltskifte.',
+ right:'Brukes før høyresving og når du skal flytte bilen mot høyre, for eksempel ved feltskifte.',
+ hazard:'Brukes for å varsle fare, for eksempel hvis bilen blir stående etter en stans.',
+ tail:'Skal gjøre deg synlig bakfra i mørket og i tunneler. Sjekk at lysene faktisk er tent.',
+ brake:'Varsler trafikantene bak om at du bremser, slik at de kan reagere og tilpasse farten.',
+ reverse:'Tennes normalt når revers velges. Se bakover og rundt bilen før du begynner å rygge.',
+ fog:'Brukes ved svært dårlig sikt når vanlige baklys er vanskelige å oppdage.',
+ fog_front:'Kan brukes ved dårlig sikt. Unngå unødvendig bruk som kan sjenere andre trafikanter.',
+ parking:'Brukes for å markere en stillestående bil. Posisjonslysene lyser også sammen med flere av de andre lysfunksjonene.',
+ plate:'Lyser normalt sammen med bilens øvrige belysning. Denne isolerte visningen er ment for læring.',
+ off:'Av/på-knappen slukker hele den valgte demonstrasjonen. Dette er en sammenligning, ikke en lysinnstilling for kjøring.'
+};

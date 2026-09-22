@@ -108,6 +108,8 @@ Deretter ser du etter vikepliktskilt, stoppskilt, forkjørsveg, vikelinje eller 
 ### 4. Hva skal hver trafikant gjøre?
 Nå ser du på hva hver trafikant skal gjøre. Skal noen svinge til venstre, skifte felt, rygge eller kjøre ut fra en parkeringsplass? Slike handlinger har egne regler. Det samme gjelder når du svinger og krysser veien til gående eller syklende. Derfor betyr ikke grønt lys at du kan svinge uten å se deg for.
 
+[Se hvordan vikeplikten gjelder ved rygging og vending](/laeringsressurser/rygging-og-vending/).
+
 [Les forskjellen på feltskifte, fletting og vikeplikt](/laeringsressurser/feltvalg-fletting-kollektivfelt).
 
 ### 5. Gjelder høyreregelen?

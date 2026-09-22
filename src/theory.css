@@ -1235,3 +1235,6 @@ body:not(.dark-mode) .theory-topic-varsellamper-i-bilen .theory-section:has(> #d
 body:not(.dark-mode) .theory-topic-varsellamper-i-bilen .theory-section:has(> #slik-bruker-du-dette-pa-proven) {
     background: #fff;
 }
+
+/* Neutral article surfaces for the reversing and turning guide. */
+body:not(.dark-mode) .theory-topic-rygging-og-vending .theory-section { background: #fff; }
