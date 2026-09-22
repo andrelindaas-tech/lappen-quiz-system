@@ -133,7 +133,7 @@ console.log(`Prerendered ${ok}/${routes.length} routes.`)
 if (failed.length) {
     console.error('Failed routes:\n' + failed.join('\n'))
 }
-// Homepage must always prerender; tolerate a few stragglers elsewhere
-if (failed.some((f) => f.startsWith('/:')) || failed.length > routes.length * 0.05) {
+// Every route must exist before Netlify can publish the static site.
+if (failed.length > 0) {
     process.exit(1)
 }

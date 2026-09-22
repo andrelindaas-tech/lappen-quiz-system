@@ -1,5 +1,7 @@
+import MintCarLights from './MintCarLights'
 // Teori-emne detaljvisning
 import React from 'react'
+import TopicGuide from './TopicGuide'
 import { Helmet } from 'react-helmet-async'
 import { Link } from 'react-router-dom'
 import type { TheoryTopic as TopicType } from '../data/theoryData'
@@ -38,6 +40,7 @@ import AutomatVsManuellSammenligning from './AutomatVsManuellSammenligning'
 import VognkortEksempel from './VognkortEksempel'
 import { TilhengerKalkulator } from './TilhengerKalkulator'
 import VikepliktSituasjonerIllustrasjon from './VikepliktSituasjonerIllustrasjon'
+import RyggingVendingDemo from './RyggingVendingDemo'
 import ArticlePractice from './ArticlePractice'
 
 // Stabil anker-id fra seksjonstittel (gir Google mulighet til «Hopp til»-lenker i søkeresultatet)
@@ -130,7 +133,7 @@ function renderContent(text: string) {
 function ArticleImage({ image, hero = false }: { image: NonNullable<TopicType['heroImage']>; hero?: boolean }) {
     return (
         <figure className={`theory-article-image${hero ? ' theory-article-image-hero' : ''}`}>
-            <img src={image.src} alt={image.alt} loading={hero ? 'eager' : 'lazy'} />
+            <img src={image.src} srcSet={image.srcSet} sizes={image.sizes} width={image.width} height={image.height} alt={image.alt} loading={hero ? 'eager' : 'lazy'} />
             {image.caption && <figcaption>{image.caption}</figcaption>}
         </figure>
     )
@@ -205,7 +208,7 @@ export default function TheoryTopic({ topic, onBack }: TheoryTopicProps) {
         "headline": topic.title,
         "description": topic.seoDescription || topic.shortDescription,
         "inLanguage": "nb",
-        "datePublished": topic.publishedDate || "2026-02-21",
+        ...(topic.publishedDate ? { "datePublished": topic.publishedDate } : {}),
         "dateModified": topic.lastUpdated || topic.publishedDate || "2026-02-21",
         "image": topic.heroImage
             ? `https://teori-test.no${topic.heroImage.src}`
@@ -285,7 +288,8 @@ export default function TheoryTopic({ topic, onBack }: TheoryTopicProps) {
 
             <div className="theory-sections">
                 {topic.sections.map((section, index) => (
-                    <section key={index} className={`theory-section theory-section-${section.type}`}>
+                    <React.Fragment key={index}>
+                    <section className={`theory-section theory-section-${section.type}`}>
                         <h2 className="theory-section-title" id={sectionAnchorId(section.title)}>{section.title}</h2>
 
                         {section.type === 'pyramid' ? (
@@ -355,6 +359,8 @@ export default function TheoryTopic({ topic, onBack }: TheoryTopicProps) {
                                 {section.content && renderContent(section.content)}
                                 {section.componentId === 'dashboard' && <DashboardWarningSimulator />}
                                 {section.component === 'RundkjoringAnimasjon' && <RundkjoringAnimasjon />}
+                                {section.component === 'RyggingVendingDemo' && <RyggingVendingDemo />}
+                                {section.component === 'TopicGuide' && <TopicGuide />}
                                 {section.component === 'RundkjoringDemo' && <RundkjoringDemo />}
                                 {section.component === 'AutomatVsManuellSammenligning' && <AutomatVsManuellSammenligning />}
                                 {section.component === 'VognkortEksempel' && <VognkortEksempel />}
@@ -377,6 +383,8 @@ export default function TheoryTopic({ topic, onBack }: TheoryTopicProps) {
                             </div>
                         )}
                     </section>
+                    {topic.id === 'bilens-lys' && index === 0 && <MintCarLights />}
+                    </React.Fragment>
                 ))}
                 
                 {topic.faq && (

@@ -409,7 +409,7 @@ export function SignSpeedGame({ rounds, playerName, onGameEnd, onProfileClick, o
 
           {scoreboard && scoreboard.length > 0 ? (
             <div className="scoreboard-container">
-              <h3 className="scoreboard-title">🏆 Toppliste</h3>
+              <h3 className="scoreboard-title">Beste resultater på denne enheten</h3>
               <div className="scoreboard-list">
                 {scoreboard.slice(0, 5).map((entry, index) => {
                   const isPlayer = entry.nickname === playerName;

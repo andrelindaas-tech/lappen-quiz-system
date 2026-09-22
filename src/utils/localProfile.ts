@@ -110,24 +110,17 @@ export type ScoreboardEntry = {
 
 const SCOREBOARD_STORAGE_KEY = 'teori-test.signSpeedGame.scoreboard.v1';
 
-const DEFAULT_SCOREBOARD: ScoreboardEntry[] = [
-  { id: 'mock-1', nickname: "Skiltmester'n", score: 6800, streak: 15, roundsAnswered: 18, date: '2026-06-01T12:00:00Z' },
-  { id: 'mock-2', nickname: 'Sensoren', score: 4950, streak: 12, roundsAnswered: 14, date: '2026-06-02T12:00:00Z' },
-  { id: 'mock-3', nickname: 'Teori-Tore', score: 3100, streak: 8, roundsAnswered: 10, date: '2026-06-03T12:00:00Z' },
-  { id: 'mock-4', nickname: 'Kjøreskole-Kim', score: 1800, streak: 5, roundsAnswered: 7, date: '2026-06-04T12:00:00Z' },
-  { id: 'mock-5', nickname: 'Gjennomsnitts-Geir', score: 950, streak: 3, roundsAnswered: 4, date: '2026-06-05T12:00:00Z' },
-];
-
 export const loadScoreboard = (): ScoreboardEntry[] => {
   try {
     const raw = window.localStorage.getItem(SCOREBOARD_STORAGE_KEY);
-    if (!raw) {
-      window.localStorage.setItem(SCOREBOARD_STORAGE_KEY, JSON.stringify(DEFAULT_SCOREBOARD));
-      return DEFAULT_SCOREBOARD;
-    }
-    return JSON.parse(raw) as ScoreboardEntry[];
+    if (!raw) return [];
+    const saved = JSON.parse(raw);
+    if (!Array.isArray(saved)) return [];
+    // Exclude previously seeded demo entries; retain actual local results.
+    return saved.filter((entry): entry is ScoreboardEntry =>
+      entry && typeof entry.id === 'string' && !/^mock-[1-5]$/.test(entry.id));
   } catch {
-    return DEFAULT_SCOREBOARD;
+    return [];
   }
 };
 

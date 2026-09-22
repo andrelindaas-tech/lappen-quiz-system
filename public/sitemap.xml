@@ -436,6 +436,11 @@
         <priority>0.7</priority>
     </url>
     <url>
+        <loc>https://teori-test.no/laeringsressurser/rygging-og-vending/</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
         <loc>https://teori-test.no/trafikkskilt/vikeplikt-og-forkjorsskilt/</loc>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>

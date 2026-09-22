@@ -338,6 +338,7 @@ export default function TrafficSignDetailPage() {
               <p style={{ color: 'var(--color-text)', lineHeight: '1.6', fontSize: '1rem' }}>
                 {sign.longExplanation}
               </p>
+              {sign.id === '332' && <p><Link to="/laeringsressurser/rygging-og-vending/">Se hvordan du vurderer sikt, plass og vikeplikt ved rygging og vending.</Link></p>}
             </div>
           )}
 
