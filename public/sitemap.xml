@@ -492,6 +492,7 @@
         <image:image>
             <image:loc>https://teori-test.no/signs/vikeplikt-og-forkjorsskilt/skilt-202-vikeplikt.jpg</image:loc>
         </image:image>
+        <image:image><image:loc>https://teori-test.no/images/sign-situations/skilt-202-vikeplikt-situasjon.webp</image:loc></image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/vikeplikt-og-forkjorsskilt/stopp/</loc>
@@ -500,6 +501,7 @@
         <image:image>
             <image:loc>https://teori-test.no/signs/vikeplikt-og-forkjorsskilt/skilt-204-stopp.jpg</image:loc>
         </image:image>
+        <image:image><image:loc>https://teori-test.no/images/sign-situations/skilt-204-stopp-situasjon.webp</image:loc></image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/vikeplikt-og-forkjorsskilt/forkjorsveg/</loc>
@@ -532,6 +534,7 @@
         <image:image>
             <image:loc>https://teori-test.no/signs/vikeplikt-og-forkjorsskilt/skilt-212-vikeplikt-overfor-motende-kjorende.jpg</image:loc>
         </image:image>
+        <image:image><image:loc>https://teori-test.no/images/sign-situations/skilt-212-vikeplikt-overfor-motende-kjorende-situasjon.webp</image:loc></image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/vikeplikt-og-forkjorsskilt/motende-kjorende-har-vikeplikt/</loc>
@@ -884,6 +887,7 @@
         <image:image>
             <image:loc>https://teori-test.no/signs/forbudsskilt/skilt-302-innkjoring-forbudt.jpg</image:loc>
         </image:image>
+        <image:image><image:loc>https://teori-test.no/images/sign-situations/skilt-302-innkjoring-forbudt-situasjon.webp</image:loc></image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/forbudsskilt/forbudt-for-alle-kjoretoy/</loc>
@@ -964,6 +968,7 @@
         <image:image>
             <image:loc>https://teori-test.no/signs/forbudsskilt/skilt-332-vendingsforbud.jpg</image:loc>
         </image:image>
+        <image:image><image:loc>https://teori-test.no/images/sign-situations/skilt-332-vendingsforbud-situasjon.webp</image:loc></image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/forbudsskilt/forbikjoring-forbudt/</loc>
@@ -972,6 +977,7 @@
         <image:image>
             <image:loc>https://teori-test.no/signs/forbudsskilt/skilt-334-forbikjoring-forbudt.jpg</image:loc>
         </image:image>
+        <image:image><image:loc>https://teori-test.no/images/sign-situations/skilt-334-forbikjoring-forbudt-situasjon.webp</image:loc></image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/forbudsskilt/forbikjoringsforbud-for-lastebil/</loc>
@@ -980,6 +986,7 @@
         <image:image>
             <image:loc>https://teori-test.no/signs/forbudsskilt/skilt-335-forbikjoringsforbud-for-lastebil.jpg</image:loc>
         </image:image>
+        <image:image><image:loc>https://teori-test.no/images/sign-situations/skilt-335-forbikjoringsforbud-for-lastebil-situasjon.webp</image:loc></image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/forbudsskilt/slutt-pa-forbikjoringsforbud/</loc>
@@ -1020,6 +1027,7 @@
         <image:image>
             <image:loc>https://teori-test.no/signs/forbudsskilt/skilt-366-fartsgrensesone.jpg</image:loc>
         </image:image>
+        <image:image><image:loc>https://teori-test.no/images/sign-situations/skilt-366-fartsgrensesone-situasjon.webp</image:loc></image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/forbudsskilt/slutt-pa-fartsgrensesone/</loc>
@@ -1036,6 +1044,7 @@
         <image:image>
             <image:loc>https://teori-test.no/signs/forbudsskilt/skilt-370-stans-forbudt.jpg</image:loc>
         </image:image>
+        <image:image><image:loc>https://teori-test.no/images/sign-situations/skilt-370-stans-forbudt-situasjon.webp</image:loc></image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/forbudsskilt/parkering-forbudt/</loc>
@@ -1252,6 +1261,7 @@
         <image:image>
             <image:loc>https://teori-test.no/signs/opplysningsskilt/skilt-524-moteplass.jpg</image:loc>
         </image:image>
+        <image:image><image:loc>https://teori-test.no/images/sign-situations/skilt-524-moteplass-situasjon.webp</image:loc></image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/opplysningsskilt/envegskjoring/</loc>
@@ -1268,6 +1278,7 @@
         <image:image>
             <image:loc>https://teori-test.no/signs/opplysningsskilt/skilt-527-1-blindveg.jpg</image:loc>
         </image:image>
+        <image:image><image:loc>https://teori-test.no/images/sign-situations/skilt-527-blindveg-situasjon.webp</image:loc></image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/opplysningsskilt/parkering/</loc>
@@ -1452,6 +1463,7 @@
         <image:image>
             <image:loc>https://teori-test.no/signs/opplysningsskilt/skilt-530-sammenfletting.jpg</image:loc>
         </image:image>
+        <image:image><image:loc>https://teori-test.no/images/sign-situations/skilt-530-sammenfletting-situasjon.webp</image:loc></image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/opplysningsskilt/felt-for-fartsokning/</loc>
@@ -1460,6 +1472,7 @@
         <image:image>
             <image:loc>https://teori-test.no/signs/opplysningsskilt/skilt-531-felt-for-fartsokning.jpg</image:loc>
         </image:image>
+        <image:image><image:loc>https://teori-test.no/images/sign-situations/skilt-531-felt-for-fartsokning-situasjon.webp</image:loc></image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/opplysningsskilt/kjorefelt-slutter/</loc>
@@ -1516,6 +1529,7 @@
         <image:image>
             <image:loc>https://teori-test.no/signs/opplysningsskilt/skilt-555-havarilomme.svg</image:loc>
         </image:image>
+        <image:image><image:loc>https://teori-test.no/images/sign-situations/skilt-555-havarilomme-situasjon.webp</image:loc></image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/opplysningsskilt/automatisk-trafikkontroll-strekningsmaling/</loc>
@@ -1732,6 +1746,7 @@
         <image:image>
             <image:loc>https://teori-test.no/signs/serviceskilt/skilt-601-lytt-til-radio.jpg</image:loc>
         </image:image>
+        <image:image><image:loc>https://teori-test.no/images/sign-situations/skilt-601-radioinformasjon-situasjon.webp</image:loc></image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/serviceskilt/forstehjelp/</loc>

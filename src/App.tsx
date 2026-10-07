@@ -1,3 +1,5 @@
+import defaultWebApplication from './data/defaultWebApplication.json'
+import situationImages from './data/trafficSignSituationImages.json'
 import { TrafficSignLookPage, TrafficSignNumberIndex } from './components/traffic-signs/TrafficSignLookPage'
 // Main App Component
 import { useState, useEffect, useCallback, Suspense, lazy, startTransition, useRef } from 'react'
@@ -168,6 +170,12 @@ export default function App() {
         <>
             <ScrollToTop />
             <Helmet>
+                <meta property="og:image" content="https://teori-test.no/og-image.png" />
+                <meta property="og:image:width" content="1200" />
+                <meta property="og:image:height" content="630" />
+                <meta property="og:image:alt" content="Teori-test.no – Gratis øvingsprøve for førerkort klasse B" />
+                <meta name="twitter:image" content="https://teori-test.no/og-image.png" />
+                {!location.pathname.startsWith('/laeringsressurser/veimerking') && !(location.pathname.startsWith('/trafikkskilt/') && Object.entries(situationImages).some(([code, image]) => location.pathname.replace(/\/$/, '').endsWith('/' + image.split('/').pop()!.replace('skilt-' + code + '-', '').replace('-situasjon.webp', '')))) && <script type="application/ld+json">{JSON.stringify(defaultWebApplication)}</script>}
                 {/* Netlify 301-redirecter alle mappebaserte URL-er til versjonen med skråstrek — canonical må matche */}
                 <link rel="canonical" href={"https://teori-test.no" + (location.pathname.endsWith('/') ? location.pathname : location.pathname + '/')} />
                 <meta property="og:url" content={"https://teori-test.no" + (location.pathname.endsWith('/') ? location.pathname : location.pathname + '/')} />
@@ -202,7 +210,7 @@ export default function App() {
                         </Link>
 
                         <nav className={`tt-main-nav ${mobileMenuOpen ? 'is-open' : ''}`} id="main-navigation" aria-label="Hovednavigasjon">
-                            <Link to="/" className={location.pathname === '/' ? 'active' : ''}>Øvingsprøve</Link>
+                            <Link to="/" className={location.pathname === '/' ? 'active' : ''}>Gratis teoriprøve</Link>
                             <Link to="/trafikkskilt" className={location.pathname.startsWith('/trafikkskilt') ? 'active' : ''}>Skiltguide</Link>
                             <Link to="/laeringsressurser" className={location.pathname.startsWith('/laeringsressurser') ? 'active' : ''}>Artikler</Link>
                             <Link to="/laeringsspill" className={location.pathname.startsWith('/laeringsspill') ? 'active' : ''}>Minispill</Link>
@@ -272,7 +280,7 @@ export default function App() {
                     <div className="footer-centered-content">
                         {/* Navigation Links */}
                         <nav className="footer-nav" aria-label="Footerlenker">
-                            <Link to="/laeringsressurser/teoriproven-bil" className="footer-link">Om teoriprøven</Link>
+                            <Link to="/laeringsressurser/teoriproven-bil" className="footer-link">Fakta om teoriprøven</Link>
                             <span className="footer-separator" aria-hidden="true">•</span>
                             <Link to="/sporsmal" className="footer-link">Teorispørsmål</Link>
                             <span className="footer-separator" aria-hidden="true">•</span>

@@ -12,6 +12,7 @@
 
 import Link from './InternalLink'
 import { trackEvent } from '../utils/analytics'
+import { practiceLinkTopics, TheoryPracticeLinks } from './BeforeTheoryTest'
 
 // Artikler med en temaquiz som faktisk finnes. Alt annet får ekspresstesten.
 // Utvides når flere /quiz/-kategorier er på plass.
@@ -82,6 +83,7 @@ export default function NesteSteg({ articleId }: Props) {
                     eller ta hele prøven med 45 spørsmål
                 </Link>
             </div>
+            {practiceLinkTopics.has(articleId) && <TheoryPracticeLinks />}
         </div>
     )
 }

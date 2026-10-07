@@ -11,12 +11,12 @@ export const vikepliktTopic: TheoryTopic = {
     shortDescription: 'Her lærer du en enkel metode for å finne hvem som skal kjøre først – i kryss, rundkjøringer, gangfelt og utkjøringer.',
     icon: '/signs/vikeplikt-og-forkjorsskilt/skilt-202-vikeplikt.jpg',
     color: 'var(--apple-blue)',
-    seoTitle: 'Vikeplikt i trafikken – høyreregelen, rundkjøring og gangfelt | Teori-test.no',
-    seoDescription: 'Lær vikepliktreglene til teoriprøven: høyreregelen, vikeplikt i rundkjøring, gangfelt og fotgjengere – med eksempelspørsmål og forklaringer.',
+    seoTitle: 'Vikeplikt og høyreregelen – slik vet du hvem som kjører først',
+    seoDescription: 'Vikepliktreglene forklart enkelt: høyreregelen, vikepliktskilt, rundkjøring, venstresving og gangfelt. Med sjekkliste, animasjon og øvingsspørsmål.',
     author: 'Teori-test.no-redaksjonen',
     reviewedAgainst: 'Trafikkreglene og Statens vegvesens veiledning',
     publishedDate: '2026-02-21',
-    lastUpdated: '2026-08-23',
+    lastUpdated: '2026-10-07',
     heroImage: {
         src: '/images/vikeplikt/vikeplikt-t-kryss-vikepliktskilt.webp',
         alt: 'T-kryss med vikepliktskilt og biler på den kryssende veien',
@@ -36,59 +36,10 @@ De fire gruppene er ikke rangert. Hvis for eksempel politiet, trafikklyset og sk
 
 På teoriprøven kan en oppgave se vanskelig ut fordi du møter flere biler, skilt og trafikanter på samme bilde. Løsningen er å ta én ting om gangen. I denne guiden lærer du en fast måte å lese situasjonen på, slik at du kan bruke reglene i kryss, rundkjøringer, gangfelt og utkjøringer.
 
-[Start vikepliktquizen med situasjonsoppgaver og forklaringer →](/quiz/vikeplikt)`,
-            component: 'VikepliktSituasjonerIllustrasjon'
+[Start vikepliktquizen med situasjonsoppgaver og forklaringer →](/quiz/vikeplikt)`
         },
         {
-            title: 'Hva skal du følge når du får flere beskjeder?',
-            type: 'pyramid',
-            content: `Se for deg at du kommer til et kryss med både trafikklys og vikepliktskilt. Samtidig står en politibetjent i krysset og dirigerer trafikken. Hvem skal du følge?
-
-I slike situasjoner kan du bruke **myndighetspyramiden**. Den viser hvilke beskjeder som gjelder foran andre:
-
-1. Beskjed fra politiet eller andre som har myndighet til å dirigere trafikken
-2. Trafikklys
-3. Trafikkskilt og veioppmerking
-4. De alminnelige trafikkreglene
-
-I trafikkreglene brukes fagordet **anvisning** om slike beskjeder. Trafikkreglene § 3 sier at en beskjed fra politiet eller en annen person med myndighet gjelder foran andre beskjeder. Trafikklys, skilt og oppmerking gjelder igjen foran de vanlige trafikkreglene. Så lenge et trafikklys er i drift, gjelder det også foran et vikepliktskilt.
-
-Myndighetspyramiden forteller hva du skal følge når beskjedene ikke sier det samme. Men den løser ikke alltid hele situasjonen. Selv om du får grønt lys, må du fortsatt se på hvor du skal kjøre og hvem du krysser veien til.
-
-[Les hele forklaringen av myndighetspyramiden](/laeringsressurser/myndighetspyramiden).`
-        },
-        {
-            title: 'Hva betyr en grønn pil i trafikklyset?',
-            type: 'text',
-            content: `Et vanlig grønt lys og en grønn pil betyr ikke helt det samme.
-
-Et vanlig grønt lys gir deg lov til å passere signalet dersom veien er fri. Skal du svinge, kan du likevel måtte vike for andre trafikanter som fortsetter rett fram og krysser veien du svinger inn på.
-
-En grønn pil gjelder bare i retningen pilen peker. Når pilen lyser, skal andre trafikanter som krysser veien din, ha rødt lys. Derfor kalles dette **konfliktfri kjøring**. Du må likevel kontrollere at veien er fri og kjøre forsiktig.`,
-            image: {
-                src: '/images/vikeplikt/gronn-pil-trafikklys.svg',
-                alt: 'Trafikklys med rødt hovedsignal og en separat grønn pil mot høyre',
-                caption: 'Den grønne pilen gjelder bare for kjøring i retningen pilen viser. Her kan føreren svinge til høyre selv om hovedsignalet er rødt.'
-            }
-        },
-        {
-            title: 'Vanlig grønt lys og grønn pil',
-            type: 'table',
-            content: `<div class="responsive-theory-table-wrapper"><table class="responsive-theory-table" style="${tableStyle}"><thead><tr style="${headerStyle}"><th style="${cellStyle}">Signal</th><th style="${cellStyle}">Hva betyr det?</th><th style="${cellStyle}">Hva må du passe på?</th></tr></thead><tbody><tr style="${rowStyle}"><td style="${cellStyle}"><strong>Vanlig grønt lys</strong></td><td style="${cellStyle}">Du kan passere signalet dersom veien er fri.</td><td style="${cellStyle}">Ved svinging kan du fortsatt måtte vike for andre trafikanter.</td></tr><tr><td style="${cellStyle}"><strong>Grønn pil</strong></td><td style="${cellStyle}">Du kan kjøre i pilens retning, som skal være konfliktfritt regulert.</td><td style="${cellStyle}">Kontroller likevel at veien er fri og kjør oppmerksomt.</td></tr></tbody></table></div>`
-        },
-        {
-            title: 'Data fra teoritesten: Over halvparten svarte feil om grønn pil',
-            type: 'info',
-            content: `I ett av våre kvalitetssikrede spørsmål om grønn pil var **135 av 244 førstesvar feil – 55,3 prosent**. Til sammenligning var feilandelen 25 prosent i gjennomsnitt for de 70 vikepliktsspørsmålene vi analyserte.
-
-Den vanligste feilen var å tro at høyresvingende biler kan få grønn pil samtidig som kryssende fotgjengere har grønt. **76 av 244 brukere – 31,1 prosent – valgte dette alternativet.** Det utgjorde 56,3 prosent av alle feilsvarene på spørsmålet.
-
-**Husk dette:** En grønn pil gjelder bare i retningen pilen viser. Når pilen lyser grønt, skal trafikanter som krysser kjøreretningen din ikke få grønt samtidig. Du må likevel se at veien er fri og kjøre oppmerksomt.
-
-*Tallene er hentet fra teori-test.no i perioden 15. mai–19. august 2026 og bygger på første registrerte svar per anonym nettleser-ID. Gjentatte forsøk er ikke tatt med.*`
-        },
-        {
-            title: 'Slik løser du en vikepliktsoppgave steg for steg',
+            title: 'Slik finner du hvem som kjører først i krysset',
             type: 'text',
             content: `Det er lett å se rett på bilene og spørre: «Hvem kommer fra høyre?» Vent litt med det. Høyreregelen er bare én av flere regler, og ofte er situasjonen allerede avgjort av politiet, et trafikklys, et skilt eller det en av trafikantene skal gjøre.
 
@@ -115,7 +66,8 @@ Nå ser du på hva hver trafikant skal gjøre. Skal noen svinge til venstre, ski
 ### 5. Gjelder høyreregelen?
 Bruk høyreregelen først når ingen av punktene over avgjør situasjonen. Da har du vikeplikt for kjøretøy som kommer fra høyre. Dette kan også gjelde i et umerket T-kryss. Det spiller ingen rolle hvilken vei som ser størst ut, eller at du selv skal rett fram.
 
-**Kort huskeregel:** Se etter politi, lys, skilt og handling – og deretter høyre.`
+**Kort huskeregel:** Se etter politi, lys, skilt og handling – og deretter høyre.`,
+            component: 'VikepliktAnimasjon'
         },
         {
             title: 'Høyreregelen: Når har du vikeplikt fra høyre?',
@@ -130,7 +82,7 @@ Regelen kan også gjelde i et T-kryss. Det spiller ingen rolle om veien din ser 
             }
         },
         {
-            title: 'De vanligste vikepliktssituasjonene',
+            title: 'De viktigste vikepliktreglene i vanlige situasjoner',
             type: 'table',
             content: `<p>Sjekklisten hjelper deg med å finne riktig regel. Tabellen gir deg hovedregelen i situasjoner som går igjen både på teoriprøven og i trafikken.</p><div class="responsive-theory-table-wrapper"><table class="responsive-theory-table" style="${tableStyle}"><thead><tr style="${headerStyle}"><th style="${cellStyle}">Situasjon</th><th style="${cellStyle}">Hvem skal vike?</th><th style="${cellStyle}">Det viktigste å se etter</th></tr></thead><tbody><tr style="${rowStyle}"><td style="${cellStyle}">Uregulert kryss</td><td style="${cellStyle}">Kjørende viker for kjøretøy fra høyre.</td><td style="${cellStyle}">Ingen lys, skilt eller særregel avgjør først.</td></tr><tr style="${rowStyle}"><td style="${cellStyle}">Venstresving</td><td style="${cellStyle}">Den som svinger til venstre, viker for møtende kjøretøy.</td><td style="${cellStyle}">Kjøreretning og konfliktpunkt.</td></tr><tr style="${rowStyle}"><td style="${cellStyle}">Vikepliktskilt</td><td style="${cellStyle}">Den som møter skilt 202, viker for kjørende i begge retninger på kryssende vei.</td><td style="${cellStyle}">Skilt og vikelinje.</td></tr><tr style="${rowStyle}"><td style="${cellStyle}">Stoppskilt</td><td style="${cellStyle}">Den som møter skilt 204, stanser helt og viker.</td><td style="${cellStyle}">Stopplinje eller riktig stansested.</td></tr><tr style="${rowStyle}"><td style="${cellStyle}">Inn i rundkjøring</td><td style="${cellStyle}">Den som kjører inn, viker normalt for trafikken som allerede er inne.</td><td style="${cellStyle}">Vikepliktskilt og vikelinje ved innkjøringen.</td></tr><tr style="${rowStyle}"><td style="${cellStyle}">Ut fra parkeringsplass, eiendom eller lignende</td><td style="${cellStyle}">Den som kjører ut, viker for annen trafikant.</td><td style="${cellStyle}">Om trafikanten kommer fra et område som utløser utkjøringsregelen.</td></tr><tr style="${rowStyle}"><td style="${cellStyle}">Feltskifte</td><td style="${cellStyle}">Den som skifter felt, viker for trafikken i feltet det skal kjøres inn i.</td><td style="${cellStyle}">Feltlinjer, speil og blindsone.</td></tr><tr style="${rowStyle}"><td style="${cellStyle}">Gangfelt uten lysregulering</td><td style="${cellStyle}">Kjørende viker for gående i gangfeltet eller på vei ut i det.</td><td style="${cellStyle}">Fotgjengerens plassering og bevegelse.</td></tr><tr style="${rowStyle}"><td style="${cellStyle}">Buss fra holdeplass, 60 km/t eller lavere</td><td style="${cellStyle}">Kjørende viker når bussføreren gir tegn om å kjøre ut.</td><td style="${cellStyle}">Fartsgrense, holdeplass og tegn.</td></tr><tr><td style="${cellStyle}">Trikk</td><td style="${cellStyle}">Andre trafikanter skal som hovedregel gi fri vei.</td><td style="${cellStyle}">Trafikklys og skilt kan gi trikken vikeplikt.</td></tr></tbody></table></div>`
         },
@@ -168,6 +120,63 @@ Regelen kan også gjelde i et T-kryss. Det spiller ingen rolle om veien din ser 
                 alt: 'Vikepliktskilt og vikelinje i et norsk veikryss med gangfelt',
                 caption: 'Vikepliktskiltet og trekantene i veibanen gjør vikeplikten tydelig før krysset.'
             }
+        },
+        {
+            title: 'Hva skal du følge når du får flere beskjeder?',
+            type: 'pyramid',
+            content: `Se for deg at du kommer til et kryss med både trafikklys og vikepliktskilt. Samtidig står en politibetjent i krysset og dirigerer trafikken. Hvem skal du følge?
+
+I slike situasjoner kan du bruke **myndighetspyramiden**. Den viser hvilke beskjeder som gjelder foran andre:
+
+1. Beskjed fra politiet eller andre som har myndighet til å dirigere trafikken
+2. Trafikklys
+3. Trafikkskilt og veioppmerking
+4. De alminnelige trafikkreglene
+
+I trafikkreglene brukes fagordet **anvisning** om slike beskjeder. Trafikkreglene § 3 sier at en beskjed fra politiet eller en annen person med myndighet gjelder foran andre beskjeder. Trafikklys, skilt og oppmerking gjelder igjen foran de vanlige trafikkreglene. Så lenge et trafikklys er i drift, gjelder det også foran et vikepliktskilt.
+
+Myndighetspyramiden forteller hva du skal følge når beskjedene ikke sier det samme. Men den løser ikke alltid hele situasjonen. Selv om du får grønt lys, må du fortsatt se på hvor du skal kjøre og hvem du krysser veien til.
+
+[Les hele forklaringen av myndighetspyramiden](/laeringsressurser/myndighetspyramiden).`
+        },
+        {
+            title: 'Hva betyr en grønn pil i trafikklyset?',
+            type: 'text',
+            content: `Et vanlig grønt lys og en grønn pil betyr ikke helt det samme.
+
+Et vanlig grønt lys gir deg lov til å passere signalet dersom veien er fri. Skal du svinge, kan du likevel måtte vike for andre trafikanter som fortsetter rett fram og krysser veien du svinger inn på.
+
+En grønn pil gjelder bare i retningen pilen peker. Når pilen lyser, skal andre trafikanter som krysser veien din, ha rødt lys. Derfor kalles dette **konfliktfri kjøring**. Du må likevel kontrollere at veien er fri og kjøre forsiktig.`,
+            image: {
+                src: '/images/vikeplikt/gronn-pil-trafikklys.svg',
+                alt: 'Trafikklys med rødt hovedsignal og en separat grønn pil mot høyre',
+                caption: 'Den grønne pilen gjelder bare for kjøring i retningen pilen viser. Her kan føreren svinge til høyre selv om hovedsignalet er rødt.'
+            }
+        },
+        {
+            title: 'Data fra teoritesten: Over halvparten svarte feil om grønn pil',
+            type: 'info',
+            content: `I ett av våre kvalitetssikrede spørsmål om grønn pil var **135 av 244 førstesvar feil – 55,3 prosent**. Til sammenligning var feilandelen 25 prosent i gjennomsnitt for de 70 vikepliktsspørsmålene vi analyserte.
+
+Den vanligste feilen var å tro at høyresvingende biler kan få grønn pil samtidig som kryssende fotgjengere har grønt. **76 av 244 brukere – 31,1 prosent – valgte dette alternativet.** Det utgjorde 56,3 prosent av alle feilsvarene på spørsmålet.
+
+**Husk dette:** En grønn pil gjelder bare i retningen pilen viser. Når pilen lyser grønt, skal trafikanter som krysser kjøreretningen din ikke få grønt samtidig. Du må likevel se at veien er fri og kjøre oppmerksomt.
+
+*Tallene er hentet fra teori-test.no i perioden 15. mai–19. august 2026 og bygger på første registrerte svar per anonym nettleser-ID. Gjentatte forsøk er ikke tatt med.*`
+        },
+        {
+            title: 'Dette viser de anonyme svarene våre',
+            type: 'info',
+            content: `At vikeplikt oppleves som krevende, ser vi også i våre egne quizer. Tallene kan ikke fortelle hvordan alle norske elever ville gjort det på den offisielle teoriprøven, men de viser at mange i vårt eget utvalg svarer feil på spørsmål innen dette temaet.
+
+### Vikeplikt er vanskelig for mange
+I vår kvalitetssikrede analyse av **18 418 første registrerte svar på 70 vikepliktsspørsmål** var **25,0 prosent av svarene feil**.
+
+Tallene er samlet inn på teori-test.no fra 15. mai til 19. august 2026. Svarene behandles anonymt og brukes bare som samlet statistikk.
+
+Vi teller bare første svar per spørsmål fra hver anonyme bruker. Gjentatte forsøk og spørsmål som ikke har bestått den faglige kontrollen, er holdt utenfor.
+
+Resultatene viser oss hvor forklaringene, bildene og oppgavene bør bli bedre.`
         },
         {
             title: 'Fire eksempler du bør kunne løse',
@@ -211,20 +220,6 @@ Kjører du på en vei med fartsgrense 60 km/t eller lavere, har du vikeplikt nå
 Når du møter en trikk, skal du som hovedregel gi fri vei og om nødvendig stanse. Men «trikken har alltid forkjørsrett» er en for enkel huskeregel. Trikken må også følge trafikklys og skilt, og kan selv ha vikeplikt når den for eksempel skal inn i en rundkjøring eller inn på en forkjørsvei. [Les mer om trikk og vikeplikt](/laeringsressurser/trikk-og-vikeplikt).`
         },
         {
-            title: 'Dette viser de anonyme svarene våre',
-            type: 'info',
-            content: `At vikeplikt oppleves som krevende, ser vi også i våre egne quizer. Tallene kan ikke fortelle hvordan alle norske elever ville gjort det på den offisielle teoriprøven, men de viser at mange i vårt eget utvalg svarer feil på spørsmål innen dette temaet.
-
-### Vikeplikt er vanskelig for mange
-I vår kvalitetssikrede analyse av **18 418 første registrerte svar på 70 vikepliktsspørsmål** var **25,0 prosent av svarene feil**.
-
-Tallene er samlet inn på teori-test.no fra 15. mai til 19. august 2026. Svarene behandles anonymt og brukes bare som samlet statistikk.
-
-Statistikken bygger på første registrerte svar per anonym nettleser-ID og spørsmål. Gjentatte forsøk, feilmerkede spørsmål og spørsmål som ikke besto den faglige kontrollen, er ikke tatt med.
-
-Vi bruker resultatene til å finne regler som trenger bedre forklaringer, bilder eller øvingsoppgaver. De hjelper oss også med å oppdage spørsmål som bør kvalitetssikres før svarene tolkes som en reell faglig misforståelse.`
-        },
-        {
             title: 'Vanlige misforståelser om vikeplikt',
             type: 'warning',
             content: `Vikepliktsoppgaver blir ofte vanskelige fordi en enkel huskeregel brukes i feil situasjon:
@@ -246,6 +241,7 @@ Vi bruker resultatene til å finne regler som trenger bedre forklaringer, bilder
 - [Start hele vikepliktquizen med flere situasjoner og forklaringer →](/quiz/vikeplikt)
 - [Prøv vikepliktspillet og tren visuelt steg for steg →](/laeringsspill/vikeplikt)`
         }
+
     ],
     faq: [
         {

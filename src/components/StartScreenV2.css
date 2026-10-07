@@ -567,7 +567,7 @@ body.dark-mode .tt-v2-feature-card {
 
 .tt-v2-trial-badge {
   padding: 5px 8px;
-  color: var(--tt-accent-strong);
+  color: var(--tt-accent-text);
   background: rgba(45, 212, 191, .13);
   border-radius: 999px;
   font-size: 9px;

@@ -221,6 +221,41 @@ h2 {
   margin: 0 0 var(--spacing-md);
 }
 
+.quiz-reading-links {
+    max-width: 46rem;
+    margin: 2rem auto;
+    padding: 1rem;
+    line-height: 1.65;
+}
+
+.quiz-reading-links a {
+    color: var(--color-primary);
+    text-decoration: underline;
+    text-underline-offset: .2em;
+}
+
+.quiz-reading-disclosure {
+    max-width: 46rem;
+    margin: 1.5rem auto;
+    color: var(--color-text-light);
+}
+
+.quiz-reading-disclosure summary {
+    cursor: pointer;
+    padding: .75rem 0;
+    font-size: .9rem;
+}
+
+.quiz-reading-disclosure summary:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 3px;
+}
+
+.quiz-reading-disclosure > section,
+.quiz-reading-disclosure > .quiz-reading-links {
+    margin-top: .5rem !important;
+}
+
 .quiz-page-heading {
   margin: 0;
   font-size: clamp(1.2rem, 2.5vw, 1.5rem);

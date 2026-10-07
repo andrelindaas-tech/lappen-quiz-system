@@ -1,5 +1,5 @@
 // Action Layer: Quiz Container (Main Orchestrator)
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import NotFound from './NotFound'
 import { useParams, useSearchParams } from 'react-router-dom'
 import Link from './InternalLink'
@@ -44,10 +44,10 @@ interface QuizSeoMetadata {
 
 const QUIZ_SEO: Record<QuizSeoKey, QuizSeoMetadata> = {
     root: {
-        title: 'Øvingsprøve klasse B – start testen | Teori-test.no',
-        description: 'Start en gratis øvingsprøve for klasse B og få fasit med forklaringer. Prøv full test med 45 spørsmål, ekspresstest eller blandet øving.',
+        title: 'Gratis øvingsprøve klasse B – 45 spørsmål på 90 minutter',
+        description: 'Ta en gratis øvingsprøve for klasse B med samme format som hos Statens vegvesen: 45 spørsmål, 90 minutter og maks 7 feil. Fasit og forklaring på hvert svar.',
         heading: 'Øvingsprøve for klasse B',
-        intro: 'Velg full prøve, ekspresstest eller blandet øving. Du får fasit med forklaring på hvert svar.',
+        intro: 'Velg full prøve, ekspresstest eller en tematest. Du får fasit med forklaring på hvert svar.',
     },
     vikeplikt: {
         title: 'Vikeplikt-quiz – Øv til teoriprøven | Teori-test.no',
@@ -98,12 +98,11 @@ const QUIZ_INFO: Record<string, { tittel: string; tekst: string; lenker: { to: s
     skilt: {
         tittel: 'Om skilt-testen',
         tekst: 'Testen henter ti tilfeldige spørsmål om norske trafikkskilt — fareskilt, forbudsskilt, påbudsskilt og opplysningsskilt. Du får forklaring på hvert svar, og du kan ta testen så mange ganger du vil. Vil du lese deg opp først, finner du alle 250 skiltene med bilde og forklaring i skiltguiden.',
-        // Maks to lenker per quiz. Skiltguiden er hovedmålet; nummeroppslaget dekker
-        // det andre behovet etter en test — «jeg husker skiltet, ikke navnet».
-        // Farge- og nummersidene lenkes fra skiltguiden og fra hverandre.
         lenker: [
             { to: '/trafikkskilt', navn: 'Skiltguiden – alle 250 skilt' },
             { to: '/trafikkskilt/skiltnummer', navn: 'Slå opp skilt på nummer' },
+            { to: '/', navn: 'Gratis teoriprøve for bil – velg prøvetype' },
+            { to: '/laeringsressurser/skilt/', navn: 'Trafikkskilt og skiltregler' },
         ],
     },
     vikeplikt: {
@@ -135,8 +134,35 @@ const QUIZ_INFO: Record<string, { tittel: string; tekst: string; lenker: { to: s
     },
 }
 
+function QuizReading({ kategori, completed = false }: { kategori?: string; completed?: boolean }) {
+    if (kategori && !QUIZ_INFO[kategori.toLowerCase()]) return null
+    if (completed) return <QuizInfo kategori={kategori} />
+    return <details className="quiz-reading-disclosure">
+        <summary>Om testen og videre lesing</summary>
+        <QuizInfo kategori={kategori} />
+    </details>
+}
+
 function QuizInfo({ kategori }: { kategori?: string }) {
     const info = kategori ? QUIZ_INFO[kategori.toLowerCase()] : undefined
+    // V2 i SEO-revisjonen: /quiz/ er kjerneproduktet, men sendte bare «Laster spørsmål…»
+    // til Google. Teksten under gir siden noe å rangere på (øvingsprøve klasse B,
+    // 45 spørsmål) og bærer lenkene fra L8 videre til teoritentamen og faktasiden.
+    if (!kategori) return (
+        <section className="quiz-reading-links" aria-labelledby="om-ovingsproven" style={{ lineHeight: 1.65 }}>
+            <h2 id="om-ovingsproven" style={{ fontSize: '1.1rem', fontWeight: 700, margin: '0 0 0.6rem' }}>Om øvingsprøven for klasse B</h2>
+            <p style={{ margin: '0 0 0.8rem' }}>Teoriprøven for klasse B hos Statens vegvesen har 45 spørsmål, og du har 90 minutter på deg. Du består hvis du har maks 7 feil, altså minst 38 riktige svar. Den fulle prøven her bruker samme format, så du får øvd både på tempoet og på hvor mange feil du har råd til.</p>
+            <p style={{ margin: '0 0 0.8rem' }}>Du kan øve på flere måter:</p>
+            <ul style={{ margin: '0 0 0.8rem', paddingLeft: '1.25rem', listStyle: 'disc' }}>
+                <li style={{ marginBottom: '0.25rem' }}><strong>Full prøve:</strong> 45 spørsmål og maks 7 feil, med valgfri tidtaker på 90 minutter.</li>
+                <li style={{ marginBottom: '0.25rem' }}><strong>Ekspresstest:</strong> 10 tilfeldige spørsmål og maks 2 feil, når du bare har noen minutter.</li>
+                <li style={{ marginBottom: '0.25rem' }}><strong>Tematester:</strong> 10 spørsmål om skilt eller vikeplikt.</li>
+                <li style={{ marginBottom: '0.25rem' }}><strong>Fokusmodus:</strong> bare spørsmålene du har svart feil på tidligere.</li>
+            </ul>
+            <p style={{ margin: '0 0 0.8rem' }}>Etter hvert svar får du fasit og en forklaring på hvorfor svaret er riktig eller feil. Etter en full prøve ser du hvilke temaer du bør øve mer på. Prøvene er gratis, og du kan øve uten å lage konto.</p>
+            <p style={{ margin: '0 0 0.8rem' }}>Vil du vite mer om formatet, kan du lese om <Link to="/laeringsressurser/teoritentamen/">gratis teoritentamen</Link> eller se <Link to="/laeringsressurser/teoriproven-bil/">pris, tid og krav for teoriprøven</Link> hos Statens vegvesen.</p>
+        </section>
+    )
     if (!info) return null
     return (
         <section style={{ maxWidth: '46rem', margin: '2.5rem auto 0', padding: '1.25rem 1.5rem', borderTop: '1px solid var(--color-border)' }}>
@@ -226,6 +252,7 @@ export default function QuizContainer({ onReturnHome, onQuizComplete }: QuizCont
     const [startTime] = useState(() => Date.now())
     const [timeTaken, setTimeTaken] = useState<number>(0)
     const [showTimeWarning, setShowTimeWarning] = useState(false)
+    const completionRecorded = useRef(false)
 
     // 🚀 Prefetch next question's image for instant loading
     useImagePrefetch(questions, currentIndex, SUPABASE_URL)
@@ -236,6 +263,7 @@ export default function QuizContainer({ onReturnHome, onQuizComplete }: QuizCont
 
     async function loadQuiz() {
         try {
+            completionRecorded.current = false
             setLoading(true)
             setError(null)
             console.log(`🚀 Starting ${mode.name}...`)
@@ -277,6 +305,7 @@ export default function QuizContainer({ onReturnHome, onQuizComplete }: QuizCont
     }
 
     function handleAnswer(answer: string) {
+        if (completionRecorded.current || showResults) return
         const currentQuestion = questions[currentIndex]
         engine.recordAnswer(currentQuestion.id, answer)
         
@@ -299,6 +328,7 @@ export default function QuizContainer({ onReturnHome, onQuizComplete }: QuizCont
         if (currentIndex < questions.length - 1) {
             setCurrentIndex(prev => prev + 1)
         } else {
+            completionRecorded.current = true
             const elapsed = Math.floor((Date.now() - startTime) / 1000)
             setTimeTaken(elapsed)
 
@@ -310,6 +340,12 @@ export default function QuizContainer({ onReturnHome, onQuizComplete }: QuizCont
                 correct_count: finalResult.correctCount,
                 passed: finalResult.passed,
                 time_taken_seconds: elapsed,
+            })
+            trackEvent('test_completed', {
+                test_type: publicCategory || (mode.isExamMode ? 'eksamen' : mode.isFokusMode ? 'fokus' : modeParam === 'hurtig' ? 'hurtig' : 'blandet'),
+                score: finalResult.correctCount,
+                question_count: questions.length,
+                passed: finalResult.passed,
             })
 
             // «Min fremgang»: lagre resultatet lokalt
@@ -344,6 +380,8 @@ export default function QuizContainer({ onReturnHome, onQuizComplete }: QuizCont
     }
 
     function handleTimeUp() {
+        // An expired, unfinished test does not count as test_completed.
+        completionRecorded.current = true
         const elapsed = Math.floor((Date.now() - startTime) / 1000)
         setTimeTaken(elapsed)
         setShowResults(true)
@@ -371,8 +409,7 @@ export default function QuizContainer({ onReturnHome, onQuizComplete }: QuizCont
                 <div className="loading">
                     Laster spørsmål...
                 </div>
-                {/* Crawleren ser denne tilstanden, ikke den ferdige quizen — teksten må stå her også. */}
-                <QuizInfo kategori={rawCategory} />
+                <QuizReading kategori={rawCategory} />
             </div>
         )
     }
@@ -434,6 +471,7 @@ export default function QuizContainer({ onReturnHome, onQuizComplete }: QuizCont
                     onReview={handleShowReview}
                     onReturnHome={onReturnHome}
                 />
+                <QuizReading kategori={rawCategory} completed />
             </div>
         )
     }
@@ -475,7 +513,7 @@ export default function QuizContainer({ onReturnHome, onQuizComplete }: QuizCont
                 previousAnswer={previousAnswer}
             />
 
-            <QuizInfo kategori={rawCategory} />
+            <QuizReading kategori={rawCategory} />
         </div>
     )
 }

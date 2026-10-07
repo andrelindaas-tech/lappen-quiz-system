@@ -1,0 +1,20 @@
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Teori-test.no",
+  "url": "https://teori-test.no/",
+  "description": "Gratis øvingsprøve for teoriprøven til førerkort klasse B (personbil) i Norge.",
+  "applicationCategory": "EducationalApplication",
+  "operatingSystem": "All",
+  "inLanguage": "no",
+  "isAccessibleForFree": true,
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "NOK"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "Teori-test.no"
+  }
+}

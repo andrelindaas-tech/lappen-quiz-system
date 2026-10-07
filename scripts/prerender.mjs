@@ -54,7 +54,10 @@ function renderRoute(url) {
                 const sink = new PassThrough()
                 let html = ''
                 sink.on('data', (c) => (html += c))
-                sink.on('end', () => resolve({ html, helmet: helmetContext.helmet }))
+                // React kan legge inn en NUL-byte (\u0000) foran æ/ø/å når et tegn havner på en
+                // bufferkant i strømmen. Den ble funnet i 12 sider 7. okt 2026. Tegnet etter er
+                // intakt, så det er trygt å fjerne NUL-bytene.
+                sink.on('end', () => resolve({ html: html.replace(/\u0000/g, ''), helmet: helmetContext.helmet }))
                 stream.pipe(sink)
             },
             onError: reject,

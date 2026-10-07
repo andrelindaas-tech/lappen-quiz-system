@@ -2,7 +2,7 @@
 export default function HeroSignCollage() {
     return (
         <div className="tt-v2-hero-art" aria-hidden="true">
-            <img src="/images/home/hero-skiltkollasj-transparent.webp" width="1000" height="1000" alt="" loading="eager" decoding="async" />
+            <img src="/images/home/hero-skiltkollasj-transparent.webp" srcSet="/images/home/hero-skiltkollasj-transparent-500.webp 500w, /images/home/hero-skiltkollasj-transparent-700.webp 700w, /images/home/hero-skiltkollasj-transparent.webp 1000w" sizes="(max-width: 760px) 280px, 440px" width="1000" height="1000" alt="" loading="eager" decoding="async" />
             <svg className="tt-v2-hero-logo" viewBox="0 0 1000 1000" focusable="false">
                 <circle cx="500" cy="500" r="498" fill="#f5f8f7" />
                 <circle cx="500" cy="500" r="450" fill="#f5f8f7" stroke="#0f766e" strokeWidth="34" />

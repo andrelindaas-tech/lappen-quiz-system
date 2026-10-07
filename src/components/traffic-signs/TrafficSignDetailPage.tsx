@@ -5,6 +5,8 @@ import { Helmet } from 'react-helmet-async';
 import { getTrafficSignBySlug, getCategoryBySlug } from '../../lib/trafficSigns';
 import { trafficSigns } from '../../data/trafficSigns';
 import { getSignExtra } from '../../data/trafficSignExtras';
+import { trafficSignGuides } from '../../data/trafficSignGuides';
+import TrafficSignGuide from './TrafficSignGuide';
 import '../../theory.css';
 
 // Standard gyldighets-/rekkeviddeforklaring per skiltgruppe (vises i FAQ på alle skiltsider)
@@ -101,6 +103,8 @@ export default function TrafficSignDetailPage() {
       </div>
     );
   }
+
+  if (trafficSignGuides[sign.code]) return <TrafficSignGuide sign={sign} category={category} guide={trafficSignGuides[sign.code]} />;
 
   const signTitleName = sign.displayName || sign.name;
   const isUnderskilt = category.slug === 'underskilt';

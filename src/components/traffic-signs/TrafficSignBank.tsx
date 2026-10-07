@@ -365,6 +365,7 @@ export default function TrafficSignBank() {
         <div className="sign-quiz-cta-content">
           <h3 className="sign-quiz-cta-title">Vil du teste skiltene?</h3>
           <p className="sign-quiz-cta-text">Ta en kort skiltquiz og se hvilke skilt du kjenner igjen.</p>
+          <p><Link to="/laeringsressurser/skilt/">Slik lærer du skiltene til teoriprøven</Link>. Du kan også ta en <Link to="/">gratis teoriprøve</Link>.</p>
         </div>
         <Link
           to="/quiz/skilt"

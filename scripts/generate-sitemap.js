@@ -14,6 +14,7 @@ const SIGNS_DATA_PATH = path.join(ROOT_DIR, 'src/data/trafficSigns.ts');
 const SITEMAP_PATH = path.join(ROOT_DIR, 'public/sitemap.xml');
 
 const BASE_URL = 'https://teori-test.no';
+const situationImages = JSON.parse(fs.readFileSync(path.join(ROOT_DIR, 'src/data/trafficSignSituationImages.json'), 'utf8'));
 
 function generateSitemap() {
   console.log('Generating sitemap.xml...');
@@ -122,6 +123,7 @@ function generateSitemap() {
       const slugMatch = block.match(/slug:\s*['"]([^'"]+)['"]/);
       const categoryMatch = block.match(/category:\s*['"]([^'"]+)['"]/);
       const imageMatch = block.match(/imagePath:\s*['"]([^'"]+)['"]/);
+      const codeMatch = block.match(/code:\s*['"]([^'"]+)['"]/);
       if (slugMatch && categoryMatch) {
         const slug = slugMatch[1];
         const category = categoryMatch[1];
@@ -130,7 +132,8 @@ function generateSitemap() {
             loc: `/trafikkskilt/${category}/${slug}`,
             priority: '0.6',
             changefreq: 'monthly',
-            image: imageMatch ? imageMatch[1] : null
+            image: imageMatch ? imageMatch[1] : null,
+            situationImage: codeMatch ? situationImages[codeMatch[1]] : undefined
           });
         }
       }
@@ -159,6 +162,9 @@ function generateSitemap() {
       xml += '        <image:image>\n';
       xml += `            <image:loc>${BASE_URL}${url.image}</image:loc>\n`;
       xml += '        </image:image>\n';
+    }
+    if (url.situationImage) {
+      xml += `        <image:image><image:loc>${BASE_URL}${url.situationImage}</image:loc></image:image>\n`;
     }
     xml += '    </url>\n';
   }

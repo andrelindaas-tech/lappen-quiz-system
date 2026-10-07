@@ -6,6 +6,7 @@ import { ChevronDown, ChevronRight, RefreshCw } from 'lucide-react'
 import { clearWrongAnswers, getWrongAnswersCount } from '../utils/wrongAnswersStore'
 import './StartScreenV2.css'
 import HeroSignCollage from './HeroSignCollage'
+import BeforeTheoryTest from './BeforeTheoryTest'
 
 interface FaqItem {
     question: string
@@ -319,6 +320,7 @@ export default function StartScreen() {
                 </div>
             </section>
 
+            <div className="tt-v2-container"><BeforeTheoryTest /></div>
             <section className="tt-v2-interactive" aria-label="Interaktiv læring">
                 <div className="tt-v2-container">
                     <div className="tt-v2-section-heading">

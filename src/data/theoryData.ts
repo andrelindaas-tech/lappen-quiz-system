@@ -48,6 +48,8 @@ export interface TheoryTopic {
     hasCalculator?: boolean
     seoTitle?: string
     seoDescription?: string
+    /** Eget delingsbilde (PNG/JPG, 1200×630). Uten dette brukes nettstedets standardbilde. */
+    ogImage?: string
     faq?: { question: string, answer: string }[]
     miniQuiz?: MiniQuizQuestion[]
     sources?: TheorySection
@@ -382,7 +384,9 @@ export const theoryTopics: TheoryTopic[] = [
         shortDescription: 'Veimerking hjelper deg å forstå hvor du skal plassere bilen, når du kan skifte felt, hvor du må vike, og hvor det er farlig eller forbudt å kjøre over en linje. På teoriprøven blir du ofte testet på forskjellen mellom stiplet linje, sperrelinje, varsellinje, kombinert linje og vikelinje.',
         color: 'var(--apple-indigo)',
         seoTitle: 'Veimerking: hva betyr sperrelinje, varsellinje og kombinert linje?',
-        seoDescription: 'Se bilder av hvit og gul sperrelinje, varsellinje, kombinert linje og vikelinje. Regler, vanlige feil og gratis quiz – alt du må kunne til teoriprøven.',
+        seoDescription: 'Hva betyr stripene i veien? Se bilder av hvit og gul sperrelinje, varsellinje, kombinert linje og vikelinje – med regler, vanlige feil og gratis quiz.',
+        ogImage: '/images/veimerking-og.png',
+        lastUpdated: '2026-10-07',
         sections: [
 
             {
@@ -398,7 +402,7 @@ export const theoryTopics: TheoryTopic[] = [
             {
                 title: 'Gul og hvit veimerking',
                 type: 'text',
-                content: 'Fargen på linjen gir deg viktig informasjon.\n\nGul veimerking brukes vanligvis mot eller mellom motgående trafikkretninger. Den markerer grensen mellom kjørefelt der trafikken går i motsatte retninger. Gul oppmerking kan også brukes ved midlertidig oppmerking (for eksempel ved vegarbeid).\n\nHvit veimerking brukes vanligvis for å skille kjørefelt i samme retning (der trafikken går samme vei), markere kantlinjer eller vise oppmerking i vegkryss, gangfelt og spesielle felt.\n\nPå illustrasjonene lenger ned kan du bruke retningspilene som huskeregel: peker pilene mot hverandre, skiller linjen motgående trafikk og er gul. Peker de samme vei, skiller den kjørefelt i samme retning og er hvit.\n\n*Vanlige misforståelser:* Mange tror at gul alltid betyr forbud og hvit alltid betyr "fritt fram". Det stemmer ikke. Du må se på både farge, linjetype (heltrukken eller stiplet) og den konkrete situasjonen.'
+                content: 'Fargen på linjen gir deg viktig informasjon.\n\nVeimerking kalles også vegoppmerking, og mange sier bare «striper i veien». Den gule linjen midt i veien kalles ofte midtlinje. Den kan være stiplet (kjørefeltlinje), varsellinje eller sperrelinje, og det er linjetypen som avgjør hva du har lov til.\n\nGul veimerking brukes vanligvis mot eller mellom motgående trafikkretninger. Den markerer grensen mellom kjørefelt der trafikken går i motsatte retninger. Gul oppmerking kan også brukes ved midlertidig oppmerking (for eksempel ved vegarbeid).\n\nHvit veimerking brukes vanligvis for å skille kjørefelt i samme retning (der trafikken går samme vei), markere kantlinjer eller vise oppmerking i vegkryss, gangfelt og spesielle felt.\n\nPå illustrasjonene lenger ned kan du bruke retningspilene som huskeregel: peker pilene hver sin vei, skiller linjen motgående trafikk og er gul. Peker de samme vei, skiller den kjørefelt i samme retning og er hvit.\n\n*Vanlige misforståelser:* Mange tror at gul alltid betyr forbud og hvit alltid betyr "fritt fram". Det stemmer ikke. Du må se på både farge, linjetype (heltrukken eller stiplet) og den konkrete situasjonen.'
             },
             {
                 title: 'Kjørefeltlinje og kantlinje',
@@ -414,6 +418,11 @@ export const theoryTopics: TheoryTopic[] = [
                 title: 'Gul varsellinje',
                 type: 'table',
                 content: '<img src="/images/veimerking-varsellinje.svg" alt="Gul og hvit varsellinje sett ovenfra. Varsellinje har lang strek og kort opphold. Gul varsellinje betyr at sikten er for kort til vanlig forbikjøring, hvit varsellinje varsler fare ved å skifte kjørefelt." style="width:auto;max-width:100%;height:auto;border-radius:8px;margin:0 auto 0.35rem;display:block;" /><p style="font-size:0.85rem;color:var(--color-text-light);text-align:center;margin:0 0 1.25rem;">Varsellinje 1002: lang strek, kort opphold — motsatt av kjørefeltlinjen.</p><p style="color:var(--color-text-light); line-height:1.6; margin-bottom:1.5rem;">Gul varsellinje brukes mellom motgående trafikkretninger og varsler ofte at sikten eller forholdene gjør forbikjøring risikabelt, eller at du nærmer deg sperrelinje. Den betyr ikke automatisk forbud mot å krysse, men du må vurdere om det er trygt og lovlig.</p><p style="color:var(--color-text-light); line-height:1.6; margin-top:1.5rem;"><em>Vanlige misforståelser:</em> En gul varsellinje er ikke et absolutt kryssingsforbud på samme måte som en sperrelinje, men den varsler at forbikjøring er risikabelt og krever ekstra aktsomhet og sikkerhetsvurdering.</p>'
+            },
+            {
+                title: 'Dette bommer flest på: varsellinjen',
+                type: 'info',
+                content: 'I en av bildeoppgavene våre spør vi: «Hva kalles den gule linjen i midten av veien på bildet?» Bildet viser en stiplet gul midtlinje med lange streker og korte mellomrom. Riktig svar er varsellinje.\n\n**178 av 356 svarte feil – 50,0 prosent.** Det vanligste feilsvaret var «Kjørefeltlinje». 99 av 356 valgte det, altså 27,8 prosent av alle svarene og 55,6 prosent av feilsvarene.\n\nMange ser ut til å blande de to fordi begge er stiplede. **Husk dette:** Varsellinjen har lange streker og korte mellomrom. Kjørefeltlinjen har korte streker og lange mellomrom. Varsellinjen er en advarsel og ikke det samme som en heltrukken sperrelinje.\n\nDatagrunnlag: 356 gyldige førstesvar fra 1. juli til 30. september 2026. Vi teller ett svar per nettleser og spørsmål. Gjentatte svar er holdt utenfor. Kilde: [skiltforskriften § 22](https://lovdata.no/forskrift/2005-10-07-1219/§22).'
             },
             {
                 title: 'Hvit varsellinje',
@@ -461,7 +470,7 @@ export const theoryTopics: TheoryTopic[] = [
                 content: 'Klikk på linjene under for å se hva de betyr:'
             },
             {
-                title: '🎮 Test deg selv med Veimerking-spillet',
+                title: 'Test deg selv med veimerking-spillet',
                 type: 'tip',
                 content: 'Klar for å teste det du har lært? Prøv vårt interaktive **[Veimerking-spill](/laeringsspill/veimerking)** og se om du klarer full pott!'
             }
@@ -3611,7 +3620,7 @@ export const theoryArticles: TheoryTopic[] = [
             {
                 title: 'Hva er teoriprøven?',
                 type: 'text',
-                content: 'Teoriprøven er den teoretiske eksamenen du må bestå før du kan ta oppkjøringen (praktisk førerprøve). Prøven er digital og gjennomføres på en trafikkstasjon hos Statens vegvesen.\n\nSpørsmålene er flervalgsoppgaver, ofte med bilder av trafikksituasjoner. De tester om du forstår trafikkreglene i praksis – ikke bare om du har pugget dem. Temaene følger den offisielle temalisten for klasse B og dekker blant annet [vikeplikt](/laeringsressurser/vikeplikt), [trafikkskilt](/laeringsressurser/skilt), [veimerking](/laeringsressurser/veimerking), [bremselengde](/laeringsressurser/bremselengde), [fartsgrenser](/laeringsressurser/fartsgrenser) og førstehjelp.\n\nMange kaller prøven teoritentamen eller teorieksamen – [det er samme prøve](/laeringsressurser/teoritentamen). Det offisielle navnet hos Statens vegvesen er teoriprøve.'
+                content: 'Teoriprøven er den teoretiske eksamenen du må bestå før du kan ta oppkjøringen (praktisk førerprøve). Prøven er digital og gjennomføres på en trafikkstasjon hos Statens vegvesen.\n\nSpørsmålene er flervalgsoppgaver, ofte med bilder av trafikksituasjoner. De tester om du forstår trafikkreglene i praksis – ikke bare om du har pugget dem. Temaene følger den offisielle temalisten for klasse B og dekker blant annet [vikeplikt](/laeringsressurser/vikeplikt), [trafikkskilt](/laeringsressurser/skilt), [veimerking](/laeringsressurser/veimerking), [bremselengde](/laeringsressurser/bremselengde), [fartsgrenser](/laeringsressurser/fartsgrenser) og førstehjelp.\n\nMange kaller prøven [teoritentamen](/laeringsressurser/teoritentamen) eller teorieksamen. Det offisielle navnet hos Statens vegvesen er teoriprøve.'
             },
             {
                 title: 'Hvor mange spørsmål og hvor mange feil kan du ha?',
@@ -3626,7 +3635,7 @@ export const theoryArticles: TheoryTopic[] = [
             {
                 title: 'Hva koster teoriprøven?',
                 type: 'text',
-                content: 'Teoriprøven for bil koster 480 kr per forsøk (2026). I tillegg betaler du et gebyr for førerkortfotoet som tas i fotoautomat på trafikkstasjonen.\n\nMerk at gebyret gjelder per forsøk: stryker du, må du betale på nytt neste gang. God forberedelse er med andre ord den billigste veien til lappen – [øv gratis her](/) til du består prøvene dine stabilt.'
+                content: 'Teoriprøven for bil koster 480 kr per forsøk (2026). I tillegg betaler du et gebyr for førerkortfotoet som tas i fotoautomat på trafikkstasjonen.\n\nMerk at gebyret gjelder per forsøk: stryker du, må du betale på nytt neste gang. God forberedelse er med andre ord den billigste veien til lappen. Øv med en [gratis teoriprøve](/) til du består prøvene dine stabilt.'
             },
             {
                 title: 'Krav: Når kan du ta teoriprøven?',
@@ -3741,8 +3750,8 @@ export const theoryArticles: TheoryTopic[] = [
         icon: '📝',
         shortDescription: 'Teoritentamen, teoriprøve og teorieksamen er samme prøve. Her får du forklaringen – og en gratis teoritentamen med 45 spørsmål du kan ta med en gang.',
         color: 'var(--apple-green)',
-        seoTitle: 'Teoritentamen for bil – øv gratis på nett (45 spørsmål)',
-        seoDescription: 'Teoritentamen, teoriprøve og teorieksamen er samme prøve. Øv gratis med 45 spørsmål, fasit og forklaringer – helt uten innlogging.',
+        seoTitle: 'Gratis teoritentamen for bil – 45 spørsmål med fasit',
+        seoDescription: 'Ta en gratis teoritentamen for bil med 45 spørsmål, fasit og forklaringer. Samme format som teoriprøven hos Statens vegvesen, uten innlogging.',
         sections: [
             {
                 title: 'Kort forklart',
@@ -3767,7 +3776,7 @@ export const theoryArticles: TheoryTopic[] = [
             {
                 title: 'Fra teoritentamen til ekte teoriprøve',
                 type: 'text',
-                content: 'Når øvingsprøvene sitter, bestiller du den ekte teoriprøven hos Statens vegvesen. Den tas digitalt på en trafikkstasjon, koster 480 kr per forsøk (2026), og du får resultatet umiddelbart.\n\nHusk at du må ha godkjent søknad om førerkort før du møter opp, og at du kan ta prøven fra du er 17,5 år. [Alt om krav, booking og gjennomføring finner du her](/laeringsressurser/teoriproven-bil).'
+                content: 'Når øvingsprøvene sitter, bestiller du den ekte teoriprøven hos Statens vegvesen. Den tas digitalt på en trafikkstasjon, koster 480 kr per forsøk (2026), og du får resultatet umiddelbart.\n\nHusk at du må ha godkjent søknad om førerkort før du møter opp, og at du kan ta prøven fra du er 17,5 år. Les mer om [krav, booking og gjennomføring av teoriprøven](/laeringsressurser/teoriproven-bil).'
             }
         ],
         faq: [
@@ -4256,12 +4265,12 @@ export const theoryArticles: TheoryTopic[] = [
             {
                 title: 'Tre ting som gjør prisen høyere enn du tror',
                 type: 'tip',
-                content: 'Mørkekjøringen er ofte den dyreste enkeltdelen. Hos Flex koster den 2 690 kr — mer enn selve kurset. Mange skoler tar den ikke med i prisen de reklamerer med, så et tilbud på «trafikalt grunnkurs 1 690 kr» er sannsynligvis uten mørkekjøring. Spør alltid om totalen.\n\nFritaket for deg over 25 sparer mindre enn du tror. Du slipper de 17 timene, men førstehjelp og mørkekjøring er fortsatt obligatorisk. Hos Lippert sparer du 1 400 kr på fritaket. Hos Flex sparer du bare 191 kr, fordi de selger hele kurset som en rabattert pakke — kjøper du de to obligatoriske delene hver for seg, koster det nesten det samme som alt sammen. Be om pris på begge deler før du bestemmer deg.\n\nGebyrene til Statens vegvesen kommer i tillegg, og de har ingenting med trafikkskolen å gjøre. [Teoriprøven](/laeringsressurser/teoriproven-bil) koster 480 kr, [oppkjøringen](/laeringsressurser/oppkjoring) 1 490 kr når du betaler på nett, og utstedelse av førerkortet 160 kr. Prisene gjelder fra 1. februar 2026.\n\nVerdt å sjekke til slutt: noen kommuner og videregående skoler tilbyr grunnkurset som valgfag eller fritidstilbud til 15–16-åringer. Da er det billigere, og av og til gratis.'
+                content: 'Mørkekjøringen er ofte den dyreste enkeltdelen. Hos Flex koster den 2 690 kr — mer enn selve kurset. Mange skoler tar den ikke med i prisen de reklamerer med, så et tilbud på «trafikalt grunnkurs 1 690 kr» er sannsynligvis uten mørkekjøring. Spør alltid om totalen.\n\nFritaket for deg over 25 sparer mindre enn du tror. Du slipper de 17 timene, men førstehjelp og mørkekjøring er fortsatt obligatorisk. Hos Lippert sparer du 1 400 kr på fritaket. Hos Flex sparer du bare 191 kr, fordi de selger hele kurset som en rabattert pakke — kjøper du de to obligatoriske delene hver for seg, koster det nesten det samme som alt sammen. Be om pris på begge deler før du bestemmer deg.\n\nGebyrene til Statens vegvesen kommer i tillegg, og de har ingenting med trafikkskolen å gjøre. Prøven koster 480 kr, [oppkjøringen](/laeringsressurser/oppkjoring) 1 490 kr når du betaler på nett, og utstedelse av førerkortet 160 kr. Prisene gjelder fra 1. februar 2026. Se også [pris og tid på teoriprøven](/laeringsressurser/teoriproven-bil).\n\nVerdt å sjekke til slutt: noen kommuner og videregående skoler tilbyr grunnkurset som valgfag eller fritidstilbud til 15–16-åringer. Da er det billigere, og av og til gratis.'
             },
             {
                 title: 'Etter kurset: klar for å øve',
                 type: 'text',
-                content: 'Med grunnkursbevis (og legitimasjon) kan du øvelseskjøre privat med ledsager — kravene til ledsager, L-skilt og ekstra speil finner du i [øvelseskjøring-guiden](/laeringsressurser/ovingskjoring).\n\nSmart rekkefølge videre: mengdetrening privat + kjøretimer, [teoriprøven](/laeringsressurser/teoriproven-bil) når teorien sitter, [sikkerhetskurs på bane](/laeringsressurser/sikkerhetskurs-pa-bane) i trinn 3, og til slutt sikkerhetskurs på veg og [oppkjøring](/laeringsressurser/oppkjoring).'
+                content: 'Med grunnkursbevis (og legitimasjon) kan du øvelseskjøre privat med ledsager — kravene til ledsager, L-skilt og ekstra speil finner du i [øvelseskjøring-guiden](/laeringsressurser/ovingskjoring).\n\nSmart rekkefølge videre: mengdetrening privat + kjøretimer, teoriprøven når teorien sitter (se [fakta om teoriprøven](/laeringsressurser/teoriproven-bil)), [sikkerhetskurs på bane](/laeringsressurser/sikkerhetskurs-pa-bane) i trinn 3, og til slutt sikkerhetskurs på veg og [oppkjøring](/laeringsressurser/oppkjoring).'
             }
         ],
         sources: {
@@ -5035,7 +5044,7 @@ export const theoryArticles: TheoryTopic[] = [
             {
                 title: 'Kort forklart: Slik øker du sjansen for å bestå',
                 type: 'text',
-                content: 'Det viktigste er dette:\n1. Øv på full prøve med 45 spørsmål.\n2. Gå gjennom feilene dine etter hver prøve.\n3. Prioriter temaene du bommer mest på.\n4. Lær reglene bak svarene, ikke bare riktig alternativ.\n5. Ta prøven når du jevnlig klarer maks 7 feil.\n\nPå [Teori-test.no](/) kan du øve gratis med full prøve, temaprøver og forklaringer som hjelper deg å forstå hvorfor svaret er riktig.'
+                content: 'Det viktigste er dette:\n1. Øv på full prøve med 45 spørsmål.\n2. Gå gjennom feilene dine etter hver prøve.\n3. Prioriter temaene du bommer mest på.\n4. Lær reglene bak svarene, ikke bare riktig alternativ.\n5. Ta prøven når du jevnlig klarer maks 7 feil.\n\nHer kan du ta en [gratis teoriprøve for bil](/) med full prøve, temaprøver og forklaringer som hjelper deg å forstå hvorfor svaret er riktig.'
             },
             {
                 title: 'Fakta om teoriprøven klasse B',
@@ -7402,7 +7411,7 @@ En annen vanlig feil er å tro at prikker slettes når boten er betalt. Betaling
             {
                 title: 'Hva som faktisk er unntatt',
                 type: 'text',
-                content: 'Utdanningsdirektoratet lister opp nøyaktig hvilke deler av opplæringen til klasse B som kan holdes utenfor fraværsgrensen:\n\n- 4 timer obligatorisk sikkerhetskurs på bane, trinn 3 — det mange kaller [glattkjøring](/laeringsressurser/sikkerhetskurs-pa-bane)\n- 9 timer av sikkerhetskurs på veg, del 2 og 3 av trinn 4\n- Førerprøven for klasse B — både [teoriprøven](/laeringsressurser/teoriproven-bil) og [oppkjøringen](/laeringsressurser/oppkjoring)\n\nI tillegg dekkes rimelig reisetid, og den ekstra tiden det tar når det sitter to elever i bilen. Udir begrunner det med at trafikkskolens måte å organisere seg på ikke bør avgjøre hvor mye fravær du får.\n\nDet var de to kursene som ble unntatt først. Teoriprøven og oppkjøringen kom til 1. august 2025, og gjaldt fra første skoledag det året.'
+                content: 'Utdanningsdirektoratet lister opp nøyaktig hvilke deler av opplæringen til klasse B som kan holdes utenfor fraværsgrensen:\n\n- 4 timer obligatorisk sikkerhetskurs på bane, trinn 3 — det mange kaller [glattkjøring](/laeringsressurser/sikkerhetskurs-pa-bane)\n- 9 timer av sikkerhetskurs på veg, del 2 og 3 av trinn 4\n- Førerprøven for klasse B — både teoriprøven (se [fakta om teoriprøven](/laeringsressurser/teoriproven-bil)) og [oppkjøringen](/laeringsressurser/oppkjoring)\n\nI tillegg dekkes rimelig reisetid, og den ekstra tiden det tar når det sitter to elever i bilen. Udir begrunner det med at trafikkskolens måte å organisere seg på ikke bør avgjøre hvor mye fravær du får.\n\nDet var de to kursene som ble unntatt først. Teoriprøven og oppkjøringen kom til 1. august 2025, og gjaldt fra første skoledag det året.'
             },
             {
                 title: 'Hva som ikke er unntatt',

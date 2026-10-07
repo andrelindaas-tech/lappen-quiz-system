@@ -1,10 +1,10 @@
-import MintCarLights from './MintCarLights'
 // Teori-emne detaljvisning
 import React from 'react'
 import TopicGuide from './TopicGuide'
 import { Helmet } from 'react-helmet-async'
 import { Link } from 'react-router-dom'
 import type { TheoryTopic as TopicType } from '../data/theoryData'
+import { theoryUtilityPages } from '../data/theoryData'
 import { 
     Shield, 
     Gauge, 
@@ -27,6 +27,7 @@ import TrailerWeightSimulator from './TrailerWeightSimulator'
 import DashboardWarningSimulator from './DashboardWarningSimulator'
 import { parseInlineLinks, addTableCellLabels } from '../utils/textUtils'
 import NesteSteg from './NesteSteg'
+import BeforeTheoryTest, { beforeTheoryTestTopics } from './BeforeTheoryTest'
 import { markArticleRead } from '../utils/progressStore'
 import { SignIllustration } from './SignIllustration'
 import AuthorityPyramid from './AuthorityPyramid'
@@ -40,8 +41,10 @@ import AutomatVsManuellSammenligning from './AutomatVsManuellSammenligning'
 import VognkortEksempel from './VognkortEksempel'
 import { TilhengerKalkulator } from './TilhengerKalkulator'
 import VikepliktSituasjonerIllustrasjon from './VikepliktSituasjonerIllustrasjon'
+import VikepliktAnimasjon from './VikepliktAnimasjon'
 import RyggingVendingDemo from './RyggingVendingDemo'
 import ArticlePractice from './ArticlePractice'
+import MintCarLights from './MintCarLights'
 
 // Stabil anker-id fra seksjonstittel (gir Google mulighet til «Hopp til»-lenker i søkeresultatet)
 function sectionAnchorId(title: string): string {
@@ -196,10 +199,11 @@ interface TheoryTopicProps {
 }
 
 export default function TheoryTopic({ topic, onBack }: TheoryTopicProps) {
+    const isUtilityPage = theoryUtilityPages.some(page => page.id === topic.id)
     // «Min fremgang»: registrer at artikkelen er lest (lokalt)
     React.useEffect(() => {
-        markArticleRead(topic.id)
-    }, [topic.id])
+        if (!isUtilityPage) markArticleRead(topic.id)
+    }, [topic.id, isUtilityPage])
 
     // Generate JSON-LD for this specific topic
     const structuredData = {
@@ -252,6 +256,8 @@ export default function TheoryTopic({ topic, onBack }: TheoryTopicProps) {
                 <meta property="og:description" content={topic.seoDescription || topic.shortDescription} />
                 <meta name="twitter:title" content={topic.seoTitle || `${topic.title} | Teori-test.no`} />
                 <meta name="twitter:description" content={topic.seoDescription || topic.shortDescription} />
+                {topic.ogImage && <meta property="og:image" content={`https://teori-test.no${topic.ogImage}`} />}
+                {topic.ogImage && <meta name="twitter:image" content={`https://teori-test.no${topic.ogImage}`} />}
                 <script type="application/ld+json">
                     {JSON.stringify(structuredData)}
                 </script>
@@ -379,6 +385,7 @@ export default function TheoryTopic({ topic, onBack }: TheoryTopicProps) {
                             <div className="theory-section-content">
                                 {section.content && renderContent(section.content)}
                                 {section.component === 'VikepliktSituasjonerIllustrasjon' && <VikepliktSituasjonerIllustrasjon />}
+                                {section.component === 'VikepliktAnimasjon' && <VikepliktAnimasjon />}
                                 {section.image && <ArticleImage image={section.image} />}
                             </div>
                         )}
@@ -387,6 +394,7 @@ export default function TheoryTopic({ topic, onBack }: TheoryTopicProps) {
                     </React.Fragment>
                 ))}
                 
+                {beforeTheoryTestTopics.has(topic.id) && <BeforeTheoryTest currentTopic={topic.id} />}
                 {topic.faq && (
                     <div className="theory-faq-section">
                         <h2 className="theory-section-title">Ofte stilte spørsmål</h2>
@@ -412,7 +420,7 @@ export default function TheoryTopic({ topic, onBack }: TheoryTopicProps) {
                     </div>
                 )}
 
-                <NesteSteg articleId={topic.id} />
+                {!isUtilityPage && <NesteSteg articleId={topic.id} />}
 
                 {topic.closingNote && (
                     <section className={`theory-section theory-section-${topic.closingNote.type}`}>

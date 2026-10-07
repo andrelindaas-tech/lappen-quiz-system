@@ -20,6 +20,19 @@ export function getTrafficSignBySlug(categorySlug: string, signSlug: string): Tr
 /**
  * Searches for traffic signs matching the query (checks name, displayName, code, description, aliases, and category-based visual attributes).
  */
+// Søket skal finne «innkjøring» også når brukeren skriver «innkjoring» eller «innkjoering».
+// Derfor sammenlignes tekst og søk uten æøå. Da trenger ikke skiltdataene egne
+// alias-skrivemåter uten æøå, som ellers vises på siden som «Kalles også: innkjoring».
+function foldNorwegian(text: string): string {
+  return text
+    .toLowerCase()
+    .replace(/æ/g, 'ae')
+    .replace(/ø/g, 'o')
+    .replace(/å/g, 'a')
+    .replace(/aa/g, 'a')
+    .replace(/oe/g, 'o')
+}
+
 export function searchTrafficSigns(query: string): TrafficSign[] {
   const cleanQuery = query.toLowerCase().trim();
   if (!cleanQuery) return [];
@@ -75,7 +88,8 @@ export function searchTrafficSigns(query: string): TrafficSign[] {
       const allText = `${name} ${displayName} ${code} ${shortExplanation} ${longExplanation} ${theoryTrap} ${aliases} ${categoryText} ${visualTags}`;
 
       // Check if all search terms match somewhere in the text
-      const matchesAllTerms = searchTerms.every(term => allText.includes(term));
+      const foldedText = foldNorwegian(allText);
+      const matchesAllTerms = searchTerms.every(term => foldedText.includes(foldNorwegian(term)));
 
       if (!matchesAllTerms) return null;
 
@@ -87,12 +101,13 @@ export function searchTrafficSigns(query: string): TrafficSign[] {
       else if (code.includes(finalQuery)) score += 500;
 
       // 2. Exact match or includes on name/displayName
-      if (name === finalQuery || displayName === finalQuery) score += 800;
-      else if (name.includes(finalQuery)) score += 300;
+      const foldedQuery = foldNorwegian(finalQuery);
+      if (foldNorwegian(name) === foldedQuery || foldNorwegian(displayName) === foldedQuery) score += 800;
+      else if (foldNorwegian(name).includes(foldedQuery)) score += 300;
 
       // 3. Match on aliases
-      if (sign.aliases?.some(a => a.toLowerCase() === finalQuery)) score += 400;
-      else if (sign.aliases?.some(a => a.toLowerCase().includes(finalQuery))) score += 200;
+      if (sign.aliases?.some(a => foldNorwegian(a) === foldedQuery)) score += 400;
+      else if (sign.aliases?.some(a => foldNorwegian(a).includes(foldedQuery))) score += 200;
 
       return { sign, score };
     })
