@@ -159,7 +159,7 @@ function QuizInfo({ kategori }: { kategori?: string }) {
                 <li style={{ marginBottom: '0.25rem' }}><strong>Tematester:</strong> 10 spørsmål om skilt eller vikeplikt.</li>
                 <li style={{ marginBottom: '0.25rem' }}><strong>Fokusmodus:</strong> bare spørsmålene du har svart feil på tidligere.</li>
             </ul>
-            <p style={{ margin: '0 0 0.8rem' }}>Etter hvert svar får du fasit og en forklaring på hvorfor svaret er riktig eller feil. Etter en full prøve ser du hvilke temaer du bør øve mer på. Prøvene er gratis, og du kan øve uten å lage konto.</p>
+            <p style={{ margin: '0 0 0.8rem' }}>Etter hvert svar får du fasit og en forklaring på hvorfor svaret er riktig eller feil. Etter testen får du en temaoversikt. Når du har besvart minst tre spørsmål i et tema og har feilsvar der, kan du få forslag til repetisjon. Prøvene er gratis, og du kan øve uten å lage konto.</p>
             <p style={{ margin: '0 0 0.8rem' }}>Vil du vite mer om formatet, kan du lese om <Link to="/laeringsressurser/teoritentamen/">gratis teoritentamen</Link> eller se <Link to="/laeringsressurser/teoriproven-bil/">pris, tid og krav for teoriprøven</Link> hos Statens vegvesen.</p>
         </section>
     )
@@ -395,7 +395,11 @@ export default function QuizContainer({ onReturnHome, onQuizComplete }: QuizCont
     const seoKey: QuizSeoKey = kjentKategori
         ? publicCategory as typeof GYLDIGE_QUIZ_KATEGORIER[number]
         : 'root'
-    const quizSeo = QUIZ_SEO[seoKey]
+    const quizSeo = seoKey === 'root' && modeParam === 'hurtig' ? {
+        title: 'Ekspresstest – 10 spørsmål | Teori-test.no',
+        heading: 'Ekspresstest – 10 spørsmål',
+        description: 'Ta en gratis ekspresstest med 10 spørsmål for klasse B. Maks 2 feil for å bestå øvingstesten. Du får fasit og forklaringer.',
+    } : QUIZ_SEO[seoKey]
     const canonicalUrl = `https://teori-test.no/quiz${publicCategory ? `/${publicCategory}` : ''}/`
     const showRootIntro = !publicCategory && !modeParam
 
@@ -440,7 +444,7 @@ export default function QuizContainer({ onReturnHome, onQuizComplete }: QuizCont
             <div className="container">
                 <QuizDocumentHead seo={quizSeo} canonicalUrl={canonicalUrl} />
                 <QuizPageHeader seo={quizSeo} showIntro={showRootIntro} />
-                <ReviewMode incorrectAnswers={incorrectAnswers} onRestart={handleRestart} />
+                <ReviewMode incorrectAnswers={incorrectAnswers} onRestart={handleRestart} onBackToResults={() => setShowReview(false)} />
             </div>
         )
     }

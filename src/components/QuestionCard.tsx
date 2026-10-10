@@ -135,10 +135,15 @@ export default function QuestionCard({ question, questionNumber, totalQuestions,
                         disabled={hasAnswered}
                     >
                         <strong>{option.letter}:</strong> {option.text}
+                        {hasAnswered && option.text === question.correct_answer && <span> — Riktig svar</span>}
+                        {hasAnswered && option.text === selectedAnswer && option.text !== question.correct_answer && <span> — Ditt svar (feil)</span>}
                     </button>
                 ))}
             </div>
 
+            <div role="status" aria-live="polite" aria-atomic="true">
+                {hasAnswered && <p>{selectedAnswer === question.correct_answer ? 'Riktig svar.' : `Feil svar. Riktig svar er: ${question.correct_answer}`}</p>}
+            </div>
             {hasAnswered && question.explanation && (
                 <div className="explanation-box">
                     <strong>Forklaring:</strong>

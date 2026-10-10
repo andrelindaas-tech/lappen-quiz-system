@@ -22,6 +22,7 @@ export interface QuizResult {
     percentage: number
     maxErrors: number
     timeTaken?: number  // Time taken in seconds
+    unanswered?: number
     categoryBreakdown?: {
         [category: string]: {
             correct: number
@@ -76,7 +77,7 @@ export class QuizEngine {
         const totalCount = questions.length
         const errors = totalCount - correctCount
         const passed = errors <= this.maxErrors
-        const percentage = Math.round((correctCount / totalCount) * 100)
+        const percentage = totalCount ? Math.round((correctCount / totalCount) * 100) : 0
 
         // Calculate category breakdown
         const categoryBreakdown: { [category: string]: { correct: number; total: number } } = {}
@@ -108,6 +109,7 @@ export class QuizEngine {
             passed,
             percentage,
             maxErrors: this.maxErrors,
+            unanswered: questions.filter(q => this.getAnswer(q.id) === null).length,
             categoryBreakdown
         }
     }
@@ -116,12 +118,8 @@ export class QuizEngine {
      * Get all incorrect answers with their question details
      */
     getIncorrectAnswers(questions: Question[]): Array<{ question: Question; userAnswer: string }> {
-        return this.answers
-            .filter(answer => answer.isCorrect === false)
-            .map(answer => {
-                const question = questions.find(q => q.id === answer.questionId)!
-                return { question, userAnswer: answer.selectedAnswer }
-            })
+        return questions.filter(question => this.getAnswer(question.id) !== question.correct_answer)
+            .map(question => ({ question, userAnswer: this.getAnswer(question.id) ?? 'Ikke besvart' }))
     }
 
     /**

@@ -2,13 +2,15 @@
 import { useState } from 'react'
 import type { Question } from '../services/supabase'
 import ImageLightbox from './ImageLightbox'
+import { ArrowLeft, BookOpen, CheckCircle, Lightbulb, XCircle } from 'lucide-react'
 
 interface ReviewModeProps {
     incorrectAnswers: Array<{ question: Question; userAnswer: string }>
     onRestart: () => void
+    onBackToResults?: () => void
 }
 
-export default function ReviewMode({ incorrectAnswers, onRestart }: ReviewModeProps) {
+export default function ReviewMode({ incorrectAnswers, onRestart, onBackToResults }: ReviewModeProps) {
     const [zoomedImage, setZoomedImage] = useState<{ src: string; alt: string } | null>(null)
     const [imageErrors, setImageErrors] = useState<Record<string, boolean>>({})
 
@@ -16,9 +18,10 @@ export default function ReviewMode({ incorrectAnswers, onRestart }: ReviewModePr
         return (
             <div className="review-mode">
                 <div className="review-header">
-                    <h2>🎉 Perfekt!</h2>
+                    <h2><CheckCircle size={24} aria-hidden="true" /> Alle svar riktige</h2>
                     <p>Du fikk alle svarene riktig - ingen feil å gå gjennom!</p>
                 </div>
+                {onBackToResults && <button className="button button-secondary" onClick={onBackToResults}><ArrowLeft size={18} aria-hidden="true" /> Tilbake til resultatet</button>}
                 <button
                     className="button"
                     onClick={onRestart}
@@ -32,9 +35,10 @@ export default function ReviewMode({ incorrectAnswers, onRestart }: ReviewModePr
 
     return (
         <div className="review-mode">
+            {onBackToResults && <button className="button button-secondary" onClick={onBackToResults}><ArrowLeft size={18} aria-hidden="true" /> Tilbake til resultatet</button>}
             <div className="review-header">
-                <h2>📚 Gjennomgang av feil</h2>
-                <p>Her er de {incorrectAnswers.length} spørsmålene du svarte feil på:</p>
+                <h2><BookOpen size={24} aria-hidden="true" /> Gjennomgang av feil</h2>
+                <p>Her er de {incorrectAnswers.length} spørsmålene du ikke fikk riktig:</p>
             </div>
 
             <div className="review-questions">
@@ -79,16 +83,16 @@ export default function ReviewMode({ incorrectAnswers, onRestart }: ReviewModePr
 
                             <div className="review-answers">
                                 <div className="review-answer-row incorrect">
-                                    <strong>❌ Ditt svar:</strong> {userAnswerLetter}: {userAnswer}
+                                    <strong><XCircle size={18} aria-hidden="true" /> Ditt svar:</strong> {userAnswerLetter ? `${userAnswerLetter}: ` : ''}{userAnswer}
                                 </div>
                                 <div className="review-answer-row correct">
-                                    <strong>✅ Riktig svar:</strong> {correctAnswerLetter}: {question.correct_answer}
+                                    <strong><CheckCircle size={18} aria-hidden="true" /> Riktig svar:</strong> {correctAnswerLetter}: {question.correct_answer}
                                 </div>
                             </div>
 
                             {question.explanation && (
                                 <div className="review-explanation">
-                                    <strong>💡 Forklaring:</strong>
+                                    <strong><Lightbulb size={18} aria-hidden="true" /> Forklaring:</strong>
                                     <p>{question.explanation}</p>
                                 </div>
                             )}
