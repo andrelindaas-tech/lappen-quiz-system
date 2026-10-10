@@ -1,6 +1,6 @@
 import Link from './InternalLink'
 import { Helmet } from 'react-helmet-async'
-import { ArrowRight, BookOpen, CircleGauge, Gamepad2, Route, Signpost, UserCheck } from 'lucide-react'
+import { ArrowRight, BookOpen, CircleGauge, CircleParking, Gamepad2, Route, Signpost, UserCheck } from 'lucide-react'
 import './LearningGamesIndex.css'
 
 const games = [
@@ -28,6 +28,12 @@ const games = [
         description: 'Se veien fra bilen merket DU og velg ett av fire svar. Bruk hint, lær huskereglene og øv på nytt på oppgavene du bommet på.',
         detail: '14 bildeoppgaver · Øv på feilene', action: 'Øv på veimerking',
     },
+    {
+        slug: 'parkering', name: 'Parkeringsspillet', icon: CircleParking,
+        question: 'Hvor kan du parkere?',
+        description: 'Velg riktig plass ved gangfelt, kryss, holdeplass og skilt. Se sonene tegnet inn i bildet, og lær forskjellen på stans og parkering.',
+        detail: '10 situasjoner · Fasit i bildet', action: 'Øv på parkering',
+    },
 ]
 
 export default function LearningGamesIndex() {
@@ -35,9 +41,9 @@ export default function LearningGamesIndex() {
         <div className="lg-page">
             <Helmet>
                 <title>Gratis teorispill – lær til teoriprøven med spill</title>
-                <meta name="description" content="Fire gratis læringsspill til teoriprøven klasse B: tren på vikeplikt, trafikkskilt, stopplengde og veimerking. Spill rett i nettleseren – ingen innlogging." />
+                <meta name="description" content="Fem gratis læringsspill til teoriprøven klasse B: tren på vikeplikt, trafikkskilt, stopplengde, veimerking og parkering. Spill rett i nettleseren – ingen innlogging." />
                 <meta property="og:title" content="Gratis teorispill – lær til teoriprøven med spill" />
-                <meta property="og:description" content="Fire gratis læringsspill til teoriprøven klasse B: tren på vikeplikt, trafikkskilt, stopplengde og veimerking. Spill rett i nettleseren – ingen innlogging." />
+                <meta property="og:description" content="Fem gratis læringsspill til teoriprøven klasse B: tren på vikeplikt, trafikkskilt, stopplengde, veimerking og parkering. Spill rett i nettleseren – ingen innlogging." />
                 <script type="application/ld+json">{JSON.stringify({
                     '@context': 'https://schema.org', '@type': 'ItemList',
                     name: 'Læringsspill til teoriprøven klasse B',
@@ -50,9 +56,9 @@ export default function LearningGamesIndex() {
 
             <header className="lg-intro">
                 <h1>Gratis spill til teoriprøven – klasse B</h1>
-                <p>Teori sitter bedre når du bruker den. I de gratis læringsspillene trener du på vikeplikt, trafikkskilt, stopplengde og veimerking gjennom visuelle oppgaver og tydelige forklaringer. Spill direkte i nettleseren og uten innlogging.</p>
+                <p>Teori sitter bedre når du bruker den. I de gratis læringsspillene trener du på vikeplikt, trafikkskilt, stopplengde, veimerking og parkering gjennom visuelle oppgaver og tydelige forklaringer. Spill direkte i nettleseren og uten innlogging.</p>
                 <ul className="lg-benefits" aria-label="Om læringsspillene">
-                    <li><Gamepad2 size={18} aria-hidden="true" />Fire gratis spill</li>
+                    <li><Gamepad2 size={18} aria-hidden="true" />Fem gratis spill</li>
                     <li><UserCheck size={18} aria-hidden="true" />Ingen innlogging</li>
                     <li><BookOpen size={18} aria-hidden="true" />Fasit og forklaringer</li>
                 </ul>

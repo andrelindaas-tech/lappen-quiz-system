@@ -1764,7 +1764,7 @@ export const theoryTopics: TheoryTopic[] = [
             {
                 title: "Kan jeg stå her? Prøv tre situasjoner",
                 type: "component",
-                content: "Vurder stedet og grunnen til at bilen står stille. Det er ikke antall minutter eller om motoren går som avgjør om det er parkering.",
+                content: "Vurder stedet og grunnen til at bilen står stille. Det er ikke antall minutter eller om motoren går som avgjør om det er parkering.\n\nVil du øve på plassering i tegnede situasjoner, kan du prøve [parkeringsspillet](/laeringsspill/parkering/).",
                 component: "ArticlePractice:parking"
             },
             {
