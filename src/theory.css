@@ -1238,3 +1238,17 @@ body:not(.dark-mode) .theory-topic-varsellamper-i-bilen .theory-section:has(> #s
 
 /* Neutral article surfaces for the reversing and turning guide. */
 body:not(.dark-mode) .theory-topic-rygging-og-vending .theory-section { background: #fff; }
+
+/* Topic question groups: native disclosure keeps answers in the prerendered HTML. */
+.theory-question-group { border: 1px solid var(--color-border); border-radius: 16px; background: var(--color-surface); overflow: hidden; }
+.theory-question-group > summary { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 22px 24px; cursor: pointer; list-style: none; min-height: 72px; }
+.theory-question-group > summary::-webkit-details-marker { display: none; }
+.theory-question-group > summary h2 { color: var(--color-text); font-size: 1.1rem; line-height: 1.4; margin: 0; }
+.theory-question-chevron { display: grid; place-items: center; width: 32px; height: 32px; flex-shrink: 0; color: var(--color-primary); border: 1px solid var(--color-border); border-radius: 50%; font-size: 1.3rem; }
+.theory-question-group[open] > summary { border-bottom: 1px solid var(--color-border); }
+.theory-question-group[open] .theory-question-chevron { transform: rotate(180deg); }
+.theory-question-group > summary:focus-visible { outline: 3px solid var(--color-primary); outline-offset: -4px; }
+.theory-question-group > .theory-section-content { padding: 8px 24px 24px; }
+.theory-question-group .theory-section-subtitle-inner { margin-top: 28px; font-size: 1.05rem; line-height: 1.5; }
+@media(max-width: 600px) { .theory-question-group > summary { padding: 18px; } .theory-question-group > .theory-section-content { padding: 4px 18px 18px; } }
+@media print { .theory-question-group::details-content { display: block; } }

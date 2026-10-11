@@ -1,4 +1,5 @@
 // Teoridata — Alt innhold på norsk
+import { sikkerhetskontrollTopic } from './sikkerhetskontrollTopic'
 import { vikepliktTopic } from './vikepliktTopic'
 import { ryggingVendingTopic } from './ryggingVendingTopic'
 
@@ -30,6 +31,8 @@ export interface ArticleImage {
 
 export interface TheorySection {
     title: string
+    collapsible?: boolean
+    open?: boolean
     content?: string
     type: 'text' | 'formula' | 'info' | 'warning' | 'tip' | 'example' | 'signs' | 'calculator' | 'pyramid' | 'table' | 'component' | 'summary'
     signs?: SignItem[]
@@ -2347,7 +2350,7 @@ export const theoryTopics: TheoryTopic[] = [
             {
                 title: 'Dekktrykk påvirker forbruket',
                 type: 'text',
-                content: 'For lavt dekktrykk gjør at bilen ruller tyngre. Det kan gi høyere forbruk, dårligere kjøreegenskaper og mer dekkslitasje.\n\n![Dekktrykk og miljøpåvirkning – lavt dekktrykk gir økt forbruk, dårligere grep og lengre bremselengde](/Mijovennlig_kjoring_artikel_bilde_2.png)\n\nDu bør sjekke dekktrykket jevnlig, og alltid før langtur eller tung last. Riktig dekktrykk finner du vanligvis:\n\n- i bilens instruksjonsbok\n- på innsiden av dørkarmen\n- ved tanklokk eller ladeluke på enkelte biler\n\nHusk at dekktrykket ofte skal justeres når bilen er tungt lastet. For lavt dekktrykk kan også gi lengre bremselengde og dårligere grep, særlig på våt vei.\n\nLes også om [sikkerhetskontroll](/laeringsressurser/sikkerhetskontroll) hvis du vil lære mer om dekk, lys og kontroll av bilen.'
+                content: 'For lavt dekktrykk gjør at bilen ruller tyngre. Det kan gi høyere forbruk, dårligere kjøreegenskaper og mer dekkslitasje.\n\n![Dekktrykk og miljøpåvirkning – lavt dekktrykk gir økt forbruk, dårligere grep og lengre bremselengde](/Mijovennlig_kjoring_artikel_bilde_2.png)\n\nDu bør sjekke dekktrykket jevnlig, og alltid før langtur eller tung last. Riktig dekktrykk finner du vanligvis:\n\n- i bilens instruksjonsbok\n- på innsiden av dørkarmen\n- ved tanklokk eller ladeluke på enkelte biler\n\nHusk at dekktrykket ofte skal justeres når bilen er tungt lastet. For lavt dekktrykk kan også gi lengre bremselengde og dårligere grep, særlig på våt vei.\n\nLes også om [sikkerhetskontroll](/laeringsressurser/sikkerhetskontroll/) hvis du vil lære mer om dekk, lys og kontroll av bilen.'
             },
             {
                 title: 'Takboks, last og luftmotstand',
@@ -2827,7 +2830,7 @@ export const theoryTopics: TheoryTopic[] = [
             {
                 title: 'Bremsekraftforsterker',
                 type: 'text',
-                content: 'Bremsekraftforsterkeren hjelper deg med å få nok bremsekraft uten å måtte bruke ekstrem kraft på pedalen. En vanlig kontroll er at du pumper bremsepedalen 5-6 ganger med motoren av (til den blir hard), holder pedalen inne og starter motoren. Hvis pedalen synker litt inn når motoren starter, tyder det på at bremsekraftforsterkeren virker.\n\nHvis pedalen fortsetter å sige innover når du holder hardt trykk, kan det tyde på feil eller lekkasje i bremsesystemet. Bilen skal ikke brukes videre før feilen er kontrollert og rettet.\n\nSe også vår komplette guide til [sikkerhetskontroll av bilen](/laeringsressurser/sikkerhetskontroll).'
+                content: 'Bremsekraftforsterkeren hjelper deg med å få nok bremsekraft uten å måtte bruke ekstrem kraft på pedalen. En vanlig kontroll er at du pumper bremsepedalen 5-6 ganger med motoren av (til den blir hard), holder pedalen inne og starter motoren. Hvis pedalen synker litt inn når motoren starter, tyder det på at bremsekraftforsterkeren virker.\n\nHvis pedalen fortsetter å sige innover når du holder hardt trykk, kan det tyde på feil eller lekkasje i bremsesystemet. Bilen skal ikke brukes videre før feilen er kontrollert og rettet.\n\nSe også vår komplette guide til [sikkerhetskontroll av bilen](/laeringsressurser/sikkerhetskontroll/).'
             },
             {
                 title: 'ABS (Blokkeringsfrie bremser)',
@@ -3492,7 +3495,7 @@ Når du nærmer deg et lyskryss, bør du derfor se etter:
             {
                 title: 'Når systemene kan svikte',
                 type: 'warning',
-                content: 'Førerstøttesystemene er helt avhengige av sensorer, radarer og kameraer plassert rundt omkring på bilen (spesielt i fronten, på støtfangere og bak frontruten). Disse kan lett settes ut av spill av ytre forhold:\n\n- **Snø, is og sludd:** Kan dekke til radarer i grillen eller kameraet i frontruten. Bilen vil da ofte gi beskjed om at støttesystemene er utilgjengelige.\n- **Skitt, søle og veisalt:** En skitten bil kan blokkere linsene til ryggekameraet og blindsone-sensorene.\n- **Kraftig regn og tåke:** Reduserer sikten for kamerasystemene, noe som gjør det vanskelig for bilen å registrere kjøretøy eller fotgjengere.\n- **Dårlig vegoppmerking:** Snø, slaps, slitasje eller vegarbeid gjør at filholderen ikke klarer å lese kjørefeltene.\n- **Feil skiltgjenkjenning:** Skiltgjenkjenning (ISA) kan lese skilt på avkjøringsveier eller overse midlertidige fartsgrenser ved vegarbeid. Du må alltid forholde deg til de faktiske skiltene langs veien.\n\nHusk at du alltid må sjekke at sensorer og lykter er rene og fungerer før du kjører. Dette lærer du mer om i vår guide til [sikkerhetskontroll av bilen](/laeringsressurser/sikkerhetskontroll).\n\n![Bil på vintervei der snø og dårlig vegoppmerking kan gjøre at filholder, kamera og andre førerstøttesystemer fungerer dårligere.](/images/forerstottesystemer_vinter.png)\n*Snø og is kan blokkere sensorer og kameraer, og gjøre at førerstøttesystemene slutter å virke.*'
+                content: 'Førerstøttesystemene er helt avhengige av sensorer, radarer og kameraer plassert rundt omkring på bilen (spesielt i fronten, på støtfangere og bak frontruten). Disse kan lett settes ut av spill av ytre forhold:\n\n- **Snø, is og sludd:** Kan dekke til radarer i grillen eller kameraet i frontruten. Bilen vil da ofte gi beskjed om at støttesystemene er utilgjengelige.\n- **Skitt, søle og veisalt:** En skitten bil kan blokkere linsene til ryggekameraet og blindsone-sensorene.\n- **Kraftig regn og tåke:** Reduserer sikten for kamerasystemene, noe som gjør det vanskelig for bilen å registrere kjøretøy eller fotgjengere.\n- **Dårlig vegoppmerking:** Snø, slaps, slitasje eller vegarbeid gjør at filholderen ikke klarer å lese kjørefeltene.\n- **Feil skiltgjenkjenning:** Skiltgjenkjenning (ISA) kan lese skilt på avkjøringsveier eller overse midlertidige fartsgrenser ved vegarbeid. Du må alltid forholde deg til de faktiske skiltene langs veien.\n\nHusk at du alltid må sjekke at sensorer og lykter er rene og fungerer før du kjører. Dette lærer du mer om i vår guide til [sikkerhetskontroll av bilen](/laeringsressurser/sikkerhetskontroll/).\n\n![Bil på vintervei der snø og dårlig vegoppmerking kan gjøre at filholder, kamera og andre førerstøttesystemer fungerer dårligere.](/images/forerstottesystemer_vinter.png)\n*Snø og is kan blokkere sensorer og kameraer, og gjøre at førerstøttesystemene slutter å virke.*'
             },
             {
                 title: 'Vanlige misforståelser',
@@ -4421,7 +4424,7 @@ export const theoryArticles: TheoryTopic[] = [
             {
                 title: 'Slik bruker du dette på prøven',
                 type: 'tip',
-                content: 'Prøven tester sjelden alle lampene — den tester **prinsippet**: rød = stopp trygt og ikke kjør videre, gul = undersøk snarest. Pluss klassikerne oljetrykk (stans motoren) og brems (sjekk håndbrekket, så verksted).\n\nLampene inngår også i [sikkerhetskontrollen til oppkjøringen](/laeringsressurser/sikkerhetskontroll) — der må du kunne forklare dem for sensor.\n\n• [Ta en gratis øvingsprøve](/quiz?mode=hurtig)'
+                content: 'Prøven tester sjelden alle lampene — den tester **prinsippet**: rød = stopp trygt og ikke kjør videre, gul = undersøk snarest. Pluss klassikerne oljetrykk (stans motoren) og brems (sjekk håndbrekket, så verksted).\n\nLampene inngår også i [sikkerhetskontrollen til oppkjøringen](/laeringsressurser/sikkerhetskontroll/) — der må du kunne forklare dem for sensor.\n\n• [Ta en gratis øvingsprøve](/quiz?mode=hurtig)'
             }
         ],
         faq: [
@@ -4656,141 +4659,7 @@ export const theoryArticles: TheoryTopic[] = [
         ]
     },
 
-    {
-        id: 'sikkerhetskontroll',
-        title: 'Sikkerhetskontroll klasse B: Den komplette guiden',
-        icon: '🔧',
-        shortDescription: 'Lær deg de tekniske kontrollspørsmålene til oppkjøringen. Slik sjekker du bremser, styring, lys og dekk på en enkel måte.',
-        color: 'var(--apple-indigo)',
-        seoTitle: 'Sikkerhetskontroll klasse B – spørsmål fra sensor med fasit',
-        seoDescription: 'Alle de vanlige sensor-spørsmålene på sikkerhetskontrollen med fasit: bremser, dekk, lys, væsker, varsellamper og motorrom. Øv gratis før oppkjøringen klasse B.',
-        sections: [
-            {
-                title: 'Hva skjer på sikkerhetskontrollen?',
-                type: 'info',
-                content: 'På oppkjøringen får du en stikkprøve med én eller flere sikkerhetskontrolloppgaver. Sensor kan be deg kontrollere eller forklare noe ved bilen, for eksempel bremser, dekk, lys, styring, vognkort, væsker i motorrommet eller varsellamper.\n\nKort forklart: Du skal vise at du forstår om bilen er trygg å kjøre. Et godt svar består av tre deler: hva du kontrollerer, hvordan du kontrollerer det, og hvorfor feilen kan være farlig.'
-            },
-            {
-                title: 'Vanlige sikkerhetskontroll-spørsmål med fasit',
-                type: 'table',
-                content: `<table>\n    <thead>\n        <tr>\n            <th>Sensor spør</th>\n            <th>Slik kontrollerer du</th>\n            <th>Kort fasit</th>\n        </tr>\n    </thead>\n    <tbody>\n        <tr>\n            <td>Kontroller dekktrykket</td>\n            <td>Se i vognkortet eller dørkarmen for anbefalt trykk. Bruk trykkmåler på ventilen.</td>\n            <td>Riktig trykk = trygt. Lavt trykk = dårligere grep og høyere forbruk.</td>\n        </tr>\n        <tr>\n            <td>Kontroller mønsterdybden</td>\n            <td>Bruk mønsterdybdemåler eller 20-kroningen. Minimum 1,6 mm — anbefalt 3 mm.</td>\n            <td>Under 1,6 mm er ulovlig og farlig.</td>\n        </tr>\n        <tr>\n            <td>Kontroller bremsene</td>\n            <td>Trykk bremsepedalen ned. Den skal være fast og ikke synke. Sjekk bremsevæskenivå i motorrommet.</td>\n            <td>Myk pedal = luftboble i systemet.</td>\n        </tr>\n        <tr>\n            <td>Kontroller styringen</td>\n            <td>Kjør sakte og kjenn at bilen følger rattet uten å trekke til siden.</td>\n            <td>Trekking = feil hjulstilling eller dekk.</td>\n        </tr>\n        <tr>\n            <td>Kontroller lys foran</td>\n            <td>Slå på tenning. Sjekk nærlys, fjernlys og parkeringslys visuelt foran bilen.</td>\n            <td>Defekt lys = bot. Se [lysbruk](/laeringsressurser/lysbruk-morkekjoring).</td>\n        </tr>\n        <tr>\n            <td>Kontroller bremselys</td>\n            <td>Slå på tenning. Be noen se bakpå mens du tråkker bremsepedalen.</td>\n            <td>Eller bruk refleksjonen i en vegg/garasjeport.</td>\n        </tr>\n        <tr>\n            <td>Kontroller motorolje</td>\n            <td>Trekk ut oljepinnen, tørk, sett inn igjen og sjekk nivået. Skal være mellom min og max.</td>\n            <td>For lite olje = motorskade.</td>\n        </tr>\n        <tr>\n            <td>Kontroller kjølevæske</td>\n            <td>Sjekk nivå i ekspansjonsbeholderen. Skal være mellom min og max når motoren er kald.</td>\n            <td>Aldri åpne lokket på varm motor.</td>\n        </tr>\n        <tr>\n            <td>Kontroller bremsevæske</td>\n            <td>Se nivå i beholderne under panseret. Skal være mellom min og max.</td>\n            <td>Lavt nivå kan bety slitte bremser eller lekkasje.</td>\n        </tr>\n        <tr>\n            <td>Kontroller vindusvaskervæske</td>\n            <td>Sjekk beholdernivå. Fyll på ved behov.</td>\n            <td>Tomt = dårlig sikt = farlig.</td>\n        </tr>\n        <tr>\n            <td>Kontroller varsellamper</td>\n            <td>Start bilen og sjekk at alle varsellamper slukker etter oppstart.</td>\n            <td>Lamper som lyser = feil som må sjekkes.</td>\n        </tr>\n        <tr>\n            <td>Hva betyr ABS-lampen?</td>\n            <td>Vanlig brems kan fortsatt virke, men ABS-funksjonen kan være ute av drift.</td>\n            <td>Kjør til verksted snart.</td>\n        </tr>\n        <tr>\n            <td>Hva betyr oljelampen?</td>\n            <td>Lavt oljetrykk. Stopp umiddelbart og slå av motoren.</td>\n            <td>Fortsetter du å kjøre kan motoren bli ødelagt.</td>\n        </tr>\n        <tr>\n            <td>Kontroller sikkerhetsbeltene</td>\n            <td>Dra beltet ut raskt — det skal låse seg. Sjekk at det klikker skikkelig i låsen.</td>\n            <td>Defekt belte = ikke godkjent.</td>\n        </tr>\n        <tr>\n            <td>Les av vognkortet</td>\n            <td>Finn egenvekt, tillatt totalvekt og nyttelast. Nyttelast = totalvekt minus egenvekt.</td>\n            <td>Viktig for tilhenger og lastberegning.</td>\n        </tr>\n        <tr>\n            <td>Hva er største tillatte tilhengervekt?</td>\n            <td>Se vognkortets felt for største tilhengervekt.</td>\n            <td>Avhenger av bilmodell — alltid sjekk vognkortet.</td>\n        </tr>\n        <tr>\n            <td>Kontroller bremsekraftforsterkeren</td>\n            <td>Pump bremsepedalen 4–5 ganger med motoren av, hold pedalen inne og start motoren.</td>\n            <td>Pedalen skal synke litt når motoren starter — da virker forsterkeren.</td>\n        </tr>\n        <tr>\n            <td>Kontroller parkeringsbremsen</td>\n            <td>Sett på parkeringsbremsen og kjenn at den holder bilen — f.eks. i en liten bakke eller ved forsiktig belastning.</td>\n            <td>Bilen skal stå stille når parkeringsbremsen er på.</td>\n        </tr>\n        <tr>\n            <td>Kontroller signalhornet</td>\n            <td>Trykk på hornet og lytt.</td>\n            <td>Hornet skal gi tydelig lyd — det er påbudt utstyr.</td>\n        </tr>\n        <tr>\n            <td>Hvor har du varseltrekant og refleksvest?</td>\n            <td>Vis hvor de ligger. Trekanten skal være lett tilgjengelig, vesten bør ligge slik at du får tak i den fra førersetet.</td>\n            <td>Du skal kunne ta på vesten FØR du går ut av bilen ved nødstopp.</td>\n        </tr>\n        <tr>\n            <td>Kontroller vindusviskere og sikt</td>\n            <td>Test viskerne og spyleren, sjekk at bladene ikke er slitte og at frontruten er fri for skader i siktfeltet.</td>\n            <td>Fri sikt er et krav — slitte viskerblad må byttes.</td>\n        </tr>\n        <tr>\n            <td>Kontroller nødsignallysene (nødblink)</td>\n            <td>Slå på nødblinken og se at alle blinklysene blinker samtidig.</td>\n            <td>Nødblink brukes ved nødstopp og for å varsle om fare — alle fire skal virke.</td>\n        </tr>\n    </tbody>\n</table>`
-            },
-            {
-                title: 'Hva er sikkerhetskontroll?',
-                type: 'text',
-                content: 'Føreren har ansvar for at bilen er i forsvarlig og forskriftsmessig stand før kjøring. Dette følger av Vegtrafikkloven § 23. På sikkerhetskontrollen viser du at du forstår praktiske kontroller, ikke at du er bilmekaniker.\n\nLes mer hos [Statens vegvesen om oppkjøring](https://www.vegvesen.no/forerkort/ta-forerkort/oppkjoring/) og se også vår guide til [dekk, bremser og styring](/laeringsressurser/dekk-bremser-styring).'
-            },
-            {
-                title: 'Slik svarer du sensor',
-                type: 'tip',
-                content: 'Når sensor spør, trenger du ikke bruke vanskelige fagord. Svar rolig og praktisk:\n\n1. Jeg kontrollerer ...\n2. Jeg ser eller kjenner etter ...\n3. Feilen er farlig fordi ...\n\nEksempel: "Jeg kontrollerer bremselysene ved å trykke inn bremsepedalen og se at lysene bak tennes. Det er viktig fordi trafikken bak må se når jeg bremser."'
-            },
-            {
-                title: 'Interaktiv Guide: Hva sjekker du i motorrommet?',
-                type: 'calculator',
-                componentId: 'motorrom',
-                content: 'Klikk på de ulike symbolene under for å lære deg de viktigste sjekkpunktene i motorrommet før oppkjøringen.'
-            },
-            {
-                title: '1. Bremser',
-                type: 'info',
-                content: 'Bremsene er bilens viktigste sikkerhetssystem. Du kan bli bedt om å kontrollere flere deler av dette systemet.\n\nOppgave: Kontroller bremsekraftforsterkeren.\n\nSlik gjør du: Den tradisjonelle måten er å pumpe bremsepedalen 5-6 ganger mens motoren er av, til pedalen blir hard. Hold pedalen inne og start motoren. Pedalen skal da synke litt inn. På mange moderne biler med elektroniske løsninger fungerer ikke denne metoden; her må du bremse i lav fart og kjenne at bilen stopper effektivt med lite trykk på pedalen.\n\nSensors spørsmål: Er det forsvarlig å kjøre hvis den ikke virker?\n\nSvar: Nei, bremsepedalen blir veldig tung og bilen får dårligere bremseeffekt.\n\nOppgave: Kontroller om bremsene har skjevtrekk.\n\nSlik gjør du: Bygg opp litt fart (10-15 km/t) på en jevn og rett strekning, brems normalt, og hold bare løst i rattet. Bilen skal gå rett frem.\n\nSensors spørsmål: Hva kan være grunnen til skjevtrekk?\n\nSvar: Testen skal avdekke feil som gjør at hjulene bremser ulikt, noe som kan gjøre at man mister kontrollen under hard oppbremsing. (Merk at ulikt lufttrykk eller en svært sporete vei også kan gi skjevtrekk).\n\nOppgave: Varsellampe for to-krets bremsesystem.\n\nSlik gjør du: Skru på tenningen og finn den røde varsellampen med et utropstegn (!). Den skal lyse noen sekunder og så slukke.\n\nSensors spørsmål: Hva gjør du hvis lampen lyser under kjøring?\n\nSvar: Stans trygt og finn årsaken før du kjører videre, fordi den røde lampen kan indikere en alvorlig feil i bremsesystemet.'
-            },
-            {
-                title: '2. Styring',
-                type: 'info',
-                content: 'Bilen skal lystre dine bevegelser presist og uten stor motstand.\n\nOppgave: Kontroller servostyringen.\n\nSlik gjør du: Prøv å svinge på rattet mens motoren er slått av; du vil raskt møte motstand og rattet vil føles tungt. Hold presset mot rattet mens du starter motoren. Rattet skal da gi etter og motstanden forsvinne.\n\nSensors spørsmål: Er det forsvarlig å kjøre dersom den ikke fungerer?\n\nSvar: På mange moderne biler blir styringen så tung at det regnes som uforsvarlig. En rød varsellampe for styringen indikerer også at man ikke skal kjøre bilen.\n\nOppgave: Sjekk at bilen er retningsstabil.\n\nSlik gjør du: Kjør i lav fart (ca. 20 km/t) rett frem på et flatt underlag, løsne grepet forsiktig og se om bilen fortsetter rett frem. Kjør deretter ut av en sving, slipp opp grepet, og sjekk at rattet går tilbake av seg selv (selvoppretting).'
-            },
-            {
-                title: '3. Dekk og hjul',
-                type: 'info',
-                content: 'Dekkene er bilens eneste kontakt med asfalten, og tilstanden deres er et svært vanlig eksamensspørsmål.\n\nOppgave: Kontroller slitasjen på hjulene.\n\nSlik gjør du: Se på mønsterdybden ytterst, innerst og på midten av dekket (slitebanen) og vurder om det er jevnt slitt.\n\nSensors spørsmål: Hva kan ulik slitasje fortelle deg?\n\nSvar: Er dekket mest slitt på midten, har du kjørt med for høyt lufttrykk. Er det slitt både innerst og ytterst, har lufttrykket vært for lavt. Hvis dekket kun er slitt på den ene siden, tyder det på at feil i hjulopphenget gjør at hjulet ikke ruller riktig på veien.\n\nOppgave: Mål mønsterdybden.\n\nSlik gjør du: Bruk et måleinstrument eller finn dekkets egne slitasjeindikatorer for å se at gummien ikke er slitt helt ned.\n\nSensors spørsmål: Hva er kravene?\n\nSvar: Minstekravet til sommerdekk er 1,6 mm, og for vinterdekk er kravet minimum 3,0 mm.'
-            },
-            {
-                title: '4. Lys og Sikt',
-                type: 'info',
-                content: 'Gode lys er avgjørende for at du ser andre, og at andre ser deg.\n\nOppgave: Kontroller bremselysene.\n\nSlik gjør du: Bruk en varseltrekantboks eller en snøkost til å skyve inn bremsepedalen, og flytt setet frem slik at det holder objektet på plass mot pedalen. Gå ut og sjekk at alle tre bremselysene bak virker.\n\nSensors spørsmål: Er det forsvarlig å kjøre dersom bremselysene ikke virker?\n\nSvar: Nei. Trafikken bak vil ikke oppfatte at du bremser, noe som raskt kan medføre farlige situasjoner.\n\nOppgave: Kontroller parkeringslyset.\n\nSlik gjør du: Vri lysbryteren til symbolet for parkeringslys. Gå ut og sjekk.\n\nSensors spørsmål: I hvilke situasjoner er det viktig å bruke parkeringslyset?\n\nSvar: Ved stans i mørket for å slippe av passasjerer. Dette gjør at du ikke forveksles med en kjørende bil, slik at andre kan passere deg med fjernlysene på og lettere se fotgjengerne som går ut av bilen.\n\nOppgave: Nødsignallyset (varselblink).\n\nSensors spørsmål: I hvilke situasjoner vil du bruke nødsignallyset?\n\nSvar: Ved nødstopp og trafikkuhell for å varsle andre trafikanter. Et viktig tilleggspoeng her er å huske å slå av bilens andre lys (spesielt i mørket) slik at varselblinkene synes best mulig.'
-            },
-            {
-                title: '5. Motorrom og Sikkerhetsutstyr',
-                type: 'warning',
-                content: 'Oppgave: Sjekk at batteriet sitter fast.\n\nSlik gjør du: Åpne panseret, ta et godt tak i batteriet (gjerne i håndtakene på toppen) og beveg det frem og tilbake for å kjenne at det sitter stramt.\n\nSensors spørsmål: Hva er risikoen med et løst batteri?\n\nSvar: Et løst batteri kan forårsake kortslutninger og tretthetsbrudd i ledningene. Det inneholder i tillegg batterisyre som kan gjøre stor skade på bilen dersom batteriet velter og syren renner ut.\n\nOppgave: Kontroller sikkerhetsbeltene.\n\nSlik gjør du: Dra beltet helt ut for å se etter flisete kanter eller skader i stoffet. Dra hardt i beltet for å sjekke at beltestrammeren låser seg, og slipp det for å se at rullen trekker beltet raskt tilbake.\n\nSensors spørsmål: Hva er risikoen ved slappe ruller?\n\nSvar: Beltet vil ikke holde seg godt nok inntil kroppen, og vil dermed ikke fungere som det skal ved en bråstopp eller ulykke.\n\nOppgave: Airbag.\n\nSensors spørsmål: Har det noen betydning for hvem du plasserer i forsetet når bilen har airbag?\n\nSvar: Barn i bakovervendt barnesete skal aldri sitte foran en aktiv airbag, fordi airbagen utløses med en så voldsom kraft at barnet og setet vil bli skadet. Personer under 140 cm bør heller ikke sitte foran en aktiv airbag på grunn av airbagens treffpunkt.'
-            },
-            {
-                title: 'Test deg selv: Det interaktive dashbordet',
-                type: 'calculator',
-                componentId: 'dashboard',
-                content: 'På oppkjøringen forventes det at du forstår den grunnleggende logikken bak varsellampene, og spesielt fargekoden. Rødt lys betyr at du må stanse bilen på et trygt sted og slå av motoren. Gult lys betyr som regel at du kan fortsette kjøringen, men at bilen må kontrolleres. Prøv simulatoren under for å teste refleksene dine.\n\n[Les vår komplette guide til oppkjøringen](/laeringsressurser/oppkjoring)'
-            },
-            {
-                title: 'Typiske feil på sikkerhetskontrollen',
-                type: 'warning',
-                content: 'Mange gjør sikkerhetskontrollen vanskeligere enn den er. Sensor forventer ikke at du er bilmekaniker, men du må vise praktisk forståelse.\n\nVanlige feil:\n- Bare peke uten å forklare hvorfor kontrollen er viktig.\n- Si at du ville kjørt videre med rød varsellampe.\n- Blande varsellamper og kontrollamper.\n- Glemme at dekk, bremser, lys og sikt handler om trafikksikkerhet.\n- Ikke kunne forklare hvor olje, kjølevæske, bremsevæske og spylervæske finnes.\n\nLes også om [bilens lys](/laeringsressurser/bilens-lys), [sikkerhetsutstyr](/laeringsressurser/sikkerhetsutstyr) og [vognkort og vekter](/laeringsressurser/vognkort-vekter).'
-            }
-        ],
-        faq: [
-            {
-                question: 'Hva er sikkerhetskontroll på oppkjøring?',
-                answer: 'Sikkerhetskontroll er delen av oppkjøringen der sensor ber deg kontrollere eller forklare noe ved bilen. Det kan handle om bremser, dekk, lys, styring, vognkort, væsker i motorrommet eller varsellamper.'
-            },
-            {
-                question: 'Hvilke spørsmål kan sensor stille på sikkerhetskontroll klasse B?',
-                answer: 'Sensor kan spørre hvordan du kontrollerer bremser, bremselys, dekk, styring, varsellamper, olje, spylervæske, bremsevæske, kjølevæske, sikkerhetsbelter eller opplysninger i vognkortet.'
-            },
-            {
-                question: 'Må jeg kunne alt i motorrommet til oppkjøringen?',
-                answer: 'Nei, men du bør kjenne de viktigste punktene: olje, spylervæske, kjølevæske, bremsevæske og batteri. Du bør også kunne forklare hvorfor kontrollen er viktig.'
-            },
-            {
-                question: 'Hva skjer hvis jeg svarer feil på sikkerhetskontrollen?',
-                answer: 'En liten feil betyr ikke automatisk stryk, men sikkerhetskontrollen er en del av helhetsvurderingen. Alvorlig manglende forståelse for bremser, styring eller varsellamper kan trekke ned.'
-            },
-            {
-                question: 'Hva betyr varsellampe for tokrets bremsesystem?',
-                answer: 'Den kan bety feil i bremsesystemet, lav bremsevæske eller at parkeringsbremsen ikke er helt løst. Hvis lampen lyser under kjøring, må du stanse trygt og finne årsaken.'
-            },
-            {
-                question: 'Hvordan kontrollerer jeg bremsene før kjøring?',
-                answer: 'Du kan kjenne at bremsepedalen har fast motstand, se etter varsellamper og teste bremsene forsiktig ved lav fart. Bilen skal bremse jevnt og ikke trekke tydelig til én side.'
-            },
-            {
-                question: 'Hva bør jeg kunne om dekk på sikkerhetskontrollen?',
-                answer: 'Du bør kunne sjekke mønsterdybde, lufttrykk, synlige skader og om dekkene passer årstid og bil. Dårlige dekk gir dårligere veigrep og lengre bremselengde.'
-            }
-        ],
-        miniQuiz: [
-            {
-                question: 'Hva er hovedpoenget med sikkerhetskontrollen på oppkjøringen?',
-                options: ['Å vise at du kan kontrollere og forklare om bilen er trygg å kjøre', 'Å vise at du kan reparere bilen selv', 'Å pugge alle tekniske deler i motoren', 'Å finne ut hvor fort bilen kan kjøre'],
-                correct: 'Å vise at du kan kontrollere og forklare om bilen er trygg å kjøre',
-                explanation: 'Sensor vil se at du forstår enkle kontroller og hvorfor feil kan være farlige.'
-            },
-            {
-                question: 'Hva bør du gjøre hvis rød varsellampe for bremsesystemet lyser under kjøring?',
-                options: ['Stanse trygt og finne årsaken før du kjører videre', 'Kjøre videre hvis bilen virker normal', 'Skru av og på lysene', 'Bare kontrollere dekktrykket'],
-                correct: 'Stanse trygt og finne årsaken før du kjører videre',
-                explanation: 'Røde varsellamper kan bety alvorlig feil. Bremsesystemet er kritisk for sikkerheten.'
-            },
-            {
-                question: 'Hva er et godt svar hvis sensor ber deg kontrollere bremselys?',
-                options: ['Jeg sjekker at bremselysene tennes når bremsepedalen trykkes inn', 'Jeg ser bare om frontlysene virker', 'Jeg trenger ikke sjekke bremselys på dagtid', 'Jeg trykker på hornet'],
-                correct: 'Jeg sjekker at bremselysene tennes når bremsepedalen trykkes inn',
-                explanation: 'Bremselys varsler trafikken bak deg om at du bremser.'
-            },
-            {
-                question: 'Hva bør du sjekke på dekkene?',
-                options: ['Mønsterdybde, skader og lufttrykk', 'Bare fargen på felgene', 'Bare om bilen står rett', 'Bare om dekkene er rene'],
-                correct: 'Mønsterdybde, skader og lufttrykk',
-                explanation: 'Dekkene påvirker veigrep, bremselengde og styring.'
-            },
-            {
-                question: 'Hva er en vanlig feil på sikkerhetskontroll?',
-                options: ['Å forklare hva du sjekker og hvorfor', 'Å bare peke uten å forklare hvorfor kontrollen er viktig', 'Å svare rolig og praktisk', 'Å koble kontrollen til trafikksikkerhet'],
-                correct: 'Å bare peke uten å forklare hvorfor kontrollen er viktig',
-                explanation: 'Et godt svar viser både hva du kontrollerer og hvorfor det har betydning for sikkerheten.'
-            }
-        ]
-    },
+    sikkerhetskontrollTopic,
 
     {
         id: 'oppkjoring',
@@ -4814,12 +4683,12 @@ export const theoryArticles: TheoryTopic[] = [
             {
                 title: 'Slik foregår oppkjøringen',
                 type: 'text',
-                content: 'Prøven er delt i tre deler:\n\n1. **Klargjøring av kjøretøyet** — du gjør bilen klar for kjøring, stiller inn sete og speil.\n2. **Sikkerhetskontroll** — sensor gir deg en stikkprøve av tilfeldig valgte kontrolloppgaver, for eksempel bremser eller spylervæske. Alle de vanlige spørsmålene med fasit finner du i [sikkerhetskontroll-guiden](/laeringsressurser/sikkerhetskontroll).\n3. **Kjøring** — den klart største delen. Ruten er bestemt på forhånd, og sensor forteller deg underveis hvor du skal kjøre. Du skal løse oppgavene selvstendig: velge felt, tilpasse fart og håndtere situasjonene uten hjelp.\n\nDu kjører opp i en godkjent skolebil som leies av en trafikkskole — du kan ikke bruke din egen bil. Husk gyldig legitimasjon når du møter opp.'
+                content: 'Prøven er delt i tre deler:\n\n1. **Klargjøring av kjøretøyet** — du gjør bilen klar for kjøring, stiller inn sete og speil.\n2. **Sikkerhetskontroll** — sensor gir deg en stikkprøve av tilfeldig valgte kontrolloppgaver, for eksempel bremser eller spylervæske. Øvingsspørsmål med svar og fasit finner du i [sikkerhetskontroll-guiden](/laeringsressurser/sikkerhetskontroll/).\n3. **Kjøring** — den klart største delen. Ruten er bestemt på forhånd, og sensor forteller deg underveis hvor du skal kjøre. Du skal løse oppgavene selvstendig: velge felt, tilpasse fart og håndtere situasjonene uten hjelp.\n\nDu kjører opp i en godkjent skolebil som leies av en trafikkskole — du kan ikke bruke din egen bil. Husk gyldig legitimasjon når du møter opp.'
             },
             {
                 title: 'Hva vurderer sensor?',
                 type: 'text',
-                content: 'Sensor vurderer prøven **som en helhet** — én enkelt feil betyr ikke automatisk stryk, med mindre den er alvorlig (for eksempel brudd på vikeplikt som skaper fare). Det sensor ser etter:\n\n- **Trafikkforståelse**: leser du situasjonene og planlegger du fremover?\n- **Observasjon og tegngiving**: speil, blindsone og blinklys til riktig tid.\n- **Plassering og fartstilpasning**: riktig felt, riktig fart for forholdene — ikke bare fartsgrensen.\n- **Samhandling**: flyter du med trafikken og gjør deg forutsigbar for andre?\n- **Selvstendighet**: du er fører og har ansvaret under hele prøven.\n\nUansett resultat får du en skriftlig begrunnelse, og beskjeden får du med en gang prøven er over.'
+                content: 'Sensor vurderer prøven **som en helhet** — én enkelt feil betyr ikke automatisk stryk, med mindre den er alvorlig (for eksempel brudd på vikeplikt som skaper fare). Det sensor ser etter:\n\n- **Trafikkforståelse**: leser du situasjonene og planlegger du fremover?\n- **Observasjon og tegngiving**: speil, blindsone og blinklys til riktig tid.\n- **Plassering og fartstilpasning**: riktig felt, riktig fart for forholdene — ikke bare fartsgrensen.\n- **Samhandling**: flyter du med trafikken og gjør deg forutsigbar for andre?\n- **Selvstendighet**: du er fører og har ansvaret under hele prøven.\n\nFør kjøreturen får du også en oppgave på sikkerhetskontrollen. Se [spørsmål fra sensor på sikkerhetskontrollen](/laeringsressurser/sikkerhetskontroll/) med svar.\n\nUansett resultat får du en skriftlig begrunnelse, og beskjeden får du med en gang prøven er over.'
             },
             {
                 title: 'Pris og praktisk informasjon',
@@ -4839,7 +4708,7 @@ export const theoryArticles: TheoryTopic[] = [
             {
                 title: 'Hvis du stryker',
                 type: 'warning',
-                content: 'Omtrent 1 av 4 stryker på oppkjøringen i klasse B (26 prosent i første halvår 2026), så du er ikke alene. Dette gjelder da:\n\n- Du må vente **minst fire uker** før du kan kjøre opp på nytt, og du må betale for ny prøve.\n- Du får sensors **vurderingsskjema** — les det nøye, det forteller nøyaktig hva du må trene på.\n- Bruk ventetiden målrettet: øv på situasjonene fra skjemaet, og gå gjennom [sikkerhetskontrollen](/laeringsressurser/sikkerhetskontroll) på nytt hvis den var svak.\n\nKilder: [Statens vegvesen om oppkjøring](https://www.vegvesen.no/forerkort/ta-forerkort/oppkjoring/), [priser hos Statens vegvesen](https://www.vegvesen.no/forerkort/ta-forerkort/priser/) og [SVVs prøvestatistikk for første halvår 2026](https://www.vegvesen.no/om-oss/presse/aktuelt/2026/07/rekordmange-oppkjoringer/).'
+                content: 'Omtrent 1 av 4 stryker på oppkjøringen i klasse B (26 prosent i første halvår 2026), så du er ikke alene. Dette gjelder da:\n\n- Du må vente **minst fire uker** før du kan kjøre opp på nytt, og du må betale for ny prøve.\n- Du får sensors **vurderingsskjema** — les det nøye, det forteller nøyaktig hva du må trene på.\n- Bruk ventetiden målrettet: øv på situasjonene fra skjemaet, og gå gjennom [sikkerhetskontrollen](/laeringsressurser/sikkerhetskontroll/) på nytt hvis den var svak.\n\nKilder: [Statens vegvesen om oppkjøring](https://www.vegvesen.no/forerkort/ta-forerkort/oppkjoring/), [priser hos Statens vegvesen](https://www.vegvesen.no/forerkort/ta-forerkort/priser/) og [SVVs prøvestatistikk for første halvår 2026](https://www.vegvesen.no/om-oss/presse/aktuelt/2026/07/rekordmange-oppkjoringer/).'
             }
         ],
         faq: [
@@ -4971,7 +4840,7 @@ export const theoryArticles: TheoryTopic[] = [
             {
                 title: 'Teori + praksis = best forberedt',
                 type: 'tip',
-                content: 'Øvelseskjøring gir praktisk erfaring, men god trafikal forståelse starter med teorien. Mellom kjøreøktene bør du øve på [vikeplikt](/laeringsressurser/vikeplikt), [trafikkskilt](/laeringsressurser/skilt), [sikkerhetskontroll](/laeringsressurser/sikkerhetskontroll) og vanlige trafikkregler. Når du nærmer deg førerprøven, les vår guide til [oppkjøring klasse B](/laeringsressurser/oppkjoring).'
+                content: 'Øvelseskjøring gir praktisk erfaring, men god trafikal forståelse starter med teorien. Mellom kjøreøktene bør du øve på [vikeplikt](/laeringsressurser/vikeplikt), [trafikkskilt](/laeringsressurser/skilt), [sikkerhetskontroll](/laeringsressurser/sikkerhetskontroll/) og vanlige trafikkregler. Når du nærmer deg førerprøven, les vår guide til [oppkjøring klasse B](/laeringsressurser/oppkjoring).'
             }
         ],
         faq: [
@@ -5200,7 +5069,7 @@ export const theoryArticles: TheoryTopic[] = [
             {
                 title: '1. Stans og gjør deg synlig',
                 type: 'tip',
-                content: 'Stans på et trygt sted hvis du kan. Sett på nødblink, og ta på refleksvest før du går ut av bilen.\n\nRefleksvesten skal være lett tilgjengelig fra førerplassen, for eksempel i bildøren eller hanskerommet. Hvis vesten ligger nederst i bagasjerommet, hjelper den lite akkurat når du trenger den. Dette henger også sammen med [sikkerhetskontroll](/laeringsressurser/sikkerhetskontroll) av bilen og hvilket utstyr du skal ha tilgjengelig.'
+                content: 'Stans på et trygt sted hvis du kan. Sett på nødblink, og ta på refleksvest før du går ut av bilen.\n\nRefleksvesten skal være lett tilgjengelig fra førerplassen, for eksempel i bildøren eller hanskerommet. Hvis vesten ligger nederst i bagasjerommet, hjelper den lite akkurat når du trenger den. Dette henger også sammen med [sikkerhetskontroll](/laeringsressurser/sikkerhetskontroll/) av bilen og hvilket utstyr du skal ha tilgjengelig.'
             },
             {
                 title: '2. Sikre skadestedet',
@@ -5363,7 +5232,7 @@ Vanlige feller:
                 type: 'text',
                 content: `Ved trafikkuhell er riktig rekkefølge: stans, sikre, varsle og hjelpe. Sikre deg selv og stedet først. Bruk refleksvest, nødblink og varseltrekant. Ved personskade ringer du 113 og følger instruksene du får.
 
-Les mer om [trafikkuhell og førstehjelp](/laeringsressurser/trafikkuhell-forstehjelp), [bilens lys](/laeringsressurser/bilens-lys), [dekk, bremser og styring](/laeringsressurser/dekk-bremser-styring) og [sikkerhetskontroll](/laeringsressurser/sikkerhetskontroll).`
+Les mer om [trafikkuhell og førstehjelp](/laeringsressurser/trafikkuhell-forstehjelp), [bilens lys](/laeringsressurser/bilens-lys), [dekk, bremser og styring](/laeringsressurser/dekk-bremser-styring) og [sikkerhetskontroll](/laeringsressurser/sikkerhetskontroll/).`
             }
         ],
         faq: [
@@ -7344,7 +7213,7 @@ En annen vanlig feil er å tro at prikker slettes når boten er betalt. Betaling
             {
                 title: 'Les mer',
                 type: 'text',
-                content: `Dette henger sammen med [Vegtrafikkloven §3](/laeringsressurser/vegtrafikkloven-paragraf-3), [plikter ved ulykke](/laeringsressurser/plikter-ved-ulykke), [bøter og forelegg](/laeringsressurser/boter-og-forelegg), [sikkerhetskontroll](/laeringsressurser/sikkerhetskontroll), [bilansvarslova på Lovdata](https://lovdata.no/dokument/NL/lov/1961-02-03) og [Trafikkforsikringsforeningen om ansvarsforsikring](https://www.tff.no/tema/forsikring-kjop-salg-avregistrering/ansvarsforsikring).`
+                content: `Dette henger sammen med [Vegtrafikkloven §3](/laeringsressurser/vegtrafikkloven-paragraf-3), [plikter ved ulykke](/laeringsressurser/plikter-ved-ulykke), [bøter og forelegg](/laeringsressurser/boter-og-forelegg), [sikkerhetskontroll](/laeringsressurser/sikkerhetskontroll/), [bilansvarslova på Lovdata](https://lovdata.no/dokument/NL/lov/1961-02-03) og [Trafikkforsikringsforeningen om ansvarsforsikring](https://www.tff.no/tema/forsikring-kjop-salg-avregistrering/ansvarsforsikring).`
             }
         ],
         faq: [

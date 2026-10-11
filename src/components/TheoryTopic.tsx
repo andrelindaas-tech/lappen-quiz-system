@@ -20,7 +20,8 @@ import {
     HeartPulse,
     AlertTriangle,
     Snowflake,
-    Timer
+    Timer,
+    ChevronDown
 } from 'lucide-react'
 import BrakeCalculator from './BrakeCalculator'
 import TrailerWeightSimulator from './TrailerWeightSimulator'
@@ -295,6 +296,15 @@ export default function TheoryTopic({ topic, onBack }: TheoryTopicProps) {
             <div className="theory-sections">
                 {topic.sections.map((section, index) => (
                     <React.Fragment key={index}>
+                    {section.collapsible ? (
+                        <details className="theory-question-group" id={sectionAnchorId(section.title)} open={section.open}>
+                            <summary><h2>{section.title}</h2><span className="theory-question-chevron" aria-hidden="true"><ChevronDown size={18} /></span></summary>
+                            <div className="theory-section-content">
+                                {section.image && <ArticleImage image={section.image} />}
+                                {section.content && renderContent(section.content)}
+                            </div>
+                        </details>
+                    ) : (
                     <section className={`theory-section theory-section-${section.type}`}>
                         <h2 className="theory-section-title" id={sectionAnchorId(section.title)}>{section.title}</h2>
 
@@ -390,6 +400,7 @@ export default function TheoryTopic({ topic, onBack }: TheoryTopicProps) {
                             </div>
                         )}
                     </section>
+                    )}
                     {topic.id === 'bilens-lys' && index === 0 && <MintCarLights />}
                     </React.Fragment>
                 ))}

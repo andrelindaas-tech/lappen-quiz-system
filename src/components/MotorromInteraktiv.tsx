@@ -1,458 +1,84 @@
-import { useState, cloneElement, isValidElement, ReactElement } from 'react'
+import { useId, useState } from 'react'
+import { ArrowRight, BookOpen, Check, ShieldAlert } from 'lucide-react'
+import './MotorromInteraktiv.css'
 
-interface MotorKomponent {
-    id: string
-    name: string
-    x: number
-    y: number
-    color: string
-    icon: React.ReactNode
-    kortBeskrivelse: string
-    langBeskrivelse: string
-    sjekkPunkter: string[]
-    tegnPaFeil: string[]
-}
-
-const OilIcon = ({ color = 'currentColor' }: { color?: string }) => (
-    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        {/* Body */}
-        <path d="M7 17h11v-5H7v5z" />
-        {/* Handle */}
-        <path d="M7 12l-4-1v3l4 1" />
-        {/* Cap (T-shape) */}
-        <path d="M11 12v-2m-2 0h4" />
-        {/* Spout */}
-        <path d="M18 14c2-1 4-1 6-3l-2 3" />
-        {/* Drop */}
-        <path d="M22 17v.01" />
-    </svg>
-)
-
-const CoolantIcon = ({ color = 'currentColor' }: { color?: string }) => (
-    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M10 19H14" />
-        <path d="M12 19V5" />
-        <path d="M10 9H14" />
-        <path d="M10 13H14" />
-        <path d="M8 21C8 21 9 20 12 20C15 20 16 21 16 21" />
-        <path d="M8 17C8 17 9 16 12 16C15 16 16 17 16 17" />
-    </svg>
-)
-
-const BrakeIcon = ({ color = 'currentColor' }: { color?: string }) => (
-    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <circle cx="12" cy="12" r="9" />
-        <path d="M12 8V12" />
-        <path d="M12 16H12.01" />
-        <path d="M3 12C3 12 4 8 7 6" />
-        <path d="M21 12C21 12 20 8 17 6" />
-        <path d="M3 12C3 12 4 16 7 18" />
-        <path d="M21 12C21 12 20 16 17 18" />
-    </svg>
-)
-
-const WasherIcon = ({ color = 'currentColor' }: { color?: string }) => (
-    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M2 18C2 18 6 14 12 14C18 14 22 18 22 18" />
-        <path d="M12 14V11" />
-        <path d="M12 11C12 11 10 9 10 7C10 5 12 4 12 4C12 4 14 5 14 7C14 9 12 11 12 11" />
-        <path d="M8 11C8 11 7 9 7 7C7 5 8 4 8 4" />
-        <path d="M16 11C16 11 17 9 17 7C17 5 16 4 16 4" />
-    </svg>
-)
-
-const BatteryIcon = ({ color = 'currentColor' }: { color?: string }) => (
-    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <rect x="2" y="6" width="20" height="12" rx="2" />
-        <path d="M6 4V6" />
-        <path d="M18 4V6" />
-        <path d="M5 12H9" />
-        <path d="M7 10V14" />
-        <path d="M15 12H19" />
-    </svg>
-)
-
-const komponenter: MotorKomponent[] = [
-    {
-        id: 'kjolevaeske',
-        name: 'Kjølevæske',
-        x: 105, y: 275,
-        color: '#3b82f6',
-        icon: <CoolantIcon />,
-        kortBeskrivelse: 'Holder motoren kjølig og hindrer overoppheting.',
-        langBeskrivelse: 'Kjølevæsken sirkulerer gjennom motoren og radiatoren for å regulere motortemperaturen. For lite kjølevæske kan føre til overoppheting og alvorlige motorskader.',
-        sjekkPunkter: [
-            'Kontroller nivået i ekspansjonsbeholderen — skal stå mellom MIN og MAX',
-            'Sjekk at lokket sitter godt og er tett',
-        ],
-        tegnPaFeil: [
-            'Lavt nivå kan tyde på lekkasje i systemet',
-            'Hvit røyk fra eksosen kan tyde på at kjølevæske lekker inn i motoren',
-        ],
-    },
-    {
-        id: 'bremsevaeske',
-        name: 'Bremsevæske',
-        x: 320, y: 45,
-        color: '#ef4444',
-        icon: <BrakeIcon />,
-        kortBeskrivelse: 'Overfører bremsekraften fra pedalen til hjulbremsene.',
-        langBeskrivelse: 'Bremsevæsken overfører kraften fra bremsepedalen til hjulene. Beholderen sitter vanligvis ved siden av motoren, nær firewall.',
-        sjekkPunkter: [
-            'Kontroller at nivået er mellom MIN og MAX på beholderen',
-            'Se at beholderen ikke er sprukken eller skadet',
-        ],
-        tegnPaFeil: [
-            'Lavt nivå kan tyde på lekkasje eller slitte bremseklosser',
-            'Myk bremsepedal kan skyldes luft i systemet',
-        ],
-    },
-    {
-        id: 'spylervaeske',
-        name: 'Spylervæske',
-        x: 435, y: 275,
-        color: '#06b6d4',
-        icon: <WasherIcon />,
-        kortBeskrivelse: 'Væske til frontruten og eventuelt bakvindusvisker.',
-        langBeskrivelse: 'Spylervæske brukes av viskersystemet til å vaske vekk skitt og insekter. Viktig for god sikt. Om vinteren må man bruke frostbestendig blanding.',
-        sjekkPunkter: [
-            'Kontroller nivået i beholderen — lett gjenkjennelig med vindusvaskersymbol',
-            'Bruk spylervæske med frostvern om vinteren (-20°C eller lavere)',
-            'Sjekk at sprederne er rettet riktig og ikke er tette',
-        ],
-        tegnPaFeil: [
-            'Tom beholder — fyll opp med blanding egnet for temperatur',
-            'Tette spredere kan renses med en nål',
-            'Bruk aldri rent vann — fryser og skader pumpen',
-        ],
-    },
-    {
-        id: 'oljepaafylling',
-        name: 'Oljepåfylling',
-        x: 325, y: 145,
-        color: '#f59e0b',
-        icon: <OilIcon />,
-        kortBeskrivelse: 'Lokket der du fyller på motorolje.',
-        langBeskrivelse: 'Motoren trenger lodd for smøring. Oljepåfyllingslokket sitter på toppen av motoren, ofte merket med et oljekannesymbol.',
-        sjekkPunkter: [
-            'Fyll kun med korrekt oljeType — se bilens manual',
-            'Ikke overfyll — sjekk nivået med oljenivåpinnen',
-            'Pass på at lokket sitter skikkelig på plass',
-        ],
-        tegnPaFeil: [
-            'Hvit emulsjon på lokket kan tyde på vann i olja (kondens eller lekkasje)',
-            'Svart, tykk olje betyr den er forurenset og bør byttes',
-        ],
-    },
-    {
-        id: 'oljepin',
-        name: 'Oljenivåpinne',
-        x: 200, y: 220,
-        color: '#f97316',
-        icon: <OilIcon />,
-        kortBeskrivelse: 'Pinnen du bruker for å sjekke oljenivået i motoren.',
-        langBeskrivelse: 'Oljenivåpinnen (dipstick) har to merker — MIN og MAX. Oljenivået bør alltid ligge mellom disse.',
-        sjekkPunkter: [
-            'Slå av motoren og vent 5 minutter før du måler',
-            'Dra ut, tørk av, stikk helt inn, og dra ut på nytt',
-            'Les nivået — skal være mellom MIN og MAX',
-        ],
-        tegnPaFeil: [
-            'For lavt nivå — fyll på litt om gangen',
-            'For høyt nivå — kan skade motortettinger',
-        ],
-    },
-    {
-        id: 'batteri',
-        name: 'Batteri',
-        x: 440, y: 110,
-        color: '#8b5cf6',
-        icon: <BatteryIcon />,
-        kortBeskrivelse: 'Startbatteri som gir strøm til tenning og elektronikk.',
-        langBeskrivelse: 'Bilbatteriet leverer strøm til startmotoren. Et svakt batteri er vanligste årsak til startvansker om vinteren.',
-        sjekkPunkter: [
-            'Sjekk at kablene sitter godt fastskrudd',
-            'Kontroller at batteriet sitter fysisk fast',
-        ],
-        tegnPaFeil: [
-            'Bilen starter tregt — batteriet kan være svakt',
-            'Løse kabler kan føre til startvansker og gnister',
-        ],
-    },
+type Mode = 'dipstick' | 'electronic' | 'electric'
+type Point = { id: string; name: string; x: number; y: number; how: string; look: string; act: string }
+const points: Point[] = [
+    { id: 'washer', name: 'Spylervæske', x: 17, y: 73, how: 'Finn lokket med symbolet for frontrutespyler. Kontroller at spyleren gir væske på ruten.', look: 'Væsken skal bidra til fri sikt. Velg spylervæske som tåler temperaturen.', act: 'Fyll riktig væske ved behov. Hvis spyleren fortsatt ikke virker, må også dyser og system undersøkes.' },
+    { id: 'coolant', name: 'Kjølevæske', x: 17, y: 34, how: 'Finn beholderen og les av nivået utenfra når motoren er kald. På noen biler skal verksted gjøre dette.', look: 'Nivået skal være mellom MIN og MAX.', act: 'Få lavt nivå eller lekkasje undersøkt. Åpne aldri lokket når systemet er varmt.' },
+    { id: 'brake', name: 'Bremsevæske', x: 68, y: 20, how: 'Finn beholderen og les av uten å åpne lokket. Sjekk i instruksjonsboken om dette er en føreroppgave.', look: 'Nivået skal være mellom MIN og MAX.', act: 'Er nivået under MIN, må bilen undersøkes før kjøring. Ikke bare fyll på.' },
+    { id: 'battery', name: 'Lavvoltbatteri', x: 84, y: 44, how: 'Finn ut hvor lavvoltbatteriet er plassert. Se etter synlige skader og løse fester hvis batteriet er tilgjengelig.', look: 'Dette er ikke elbilens store fremdriftsbatteri. Lavvoltbatteriet kan være skjult eller stå et annet sted.', act: 'Ikke løsne kabler eller deksler for øvelsens skyld. Høyspenningsdeler og oransje kabler skal du ikke arbeide på.' },
+    { id: 'oil', name: 'Oljepåfylling', x: 53, y: 42, how: 'Finn oljepåfyllingslokket på motoren. Kontroller nivået med bilens målemetode før eventuell påfylling.', look: 'Lokket og peilepinnen har ulike oppgaver. Lokket viser hvor olje fylles, ikke hvor mye olje det er.', act: 'Bruk bare riktig oljespesifikasjon og mengde etter instruksjonsboken. For mye olje kan også gi skade.' },
+    { id: 'level', name: 'Oljenivå', x: 43, y: 69, how: 'Parker plant og slå av motoren. Trekk opp peilepinnen, tørk av og sett den helt inn. Trekk opp igjen og les av. Følg bilens krav til temperatur og ventetid.', look: 'Oljen skal være mellom MIN og MAX.', act: 'Bruk riktig olje og mengde ved etterfylling. Ikke fyll over MAX.' },
 ]
-
+const modes: { id: Mode; label: string }[] = [
+    { id: 'dipstick', label: 'Med peilepinne' }, { id: 'electronic', label: 'Elektronisk oljemåling' }, { id: 'electric', label: 'Elbil' },
+]
 export default function MotorromInteraktiv() {
-    const [aktiv, setAktiv] = useState<string | null>(null)
-
-    const aktivKomponent = komponenter.find(k => k.id === aktiv) ?? null
-
-    return (
-        <div style={{
-            fontFamily: 'inherit',
-            borderRadius: '16px',
-            overflow: 'hidden',
-            border: '1px solid var(--color-border)',
-            background: 'var(--color-card-bg)',
-            boxShadow: '0 10px 30px -10px rgba(0,0,0,0.2)',
-        }}>
-            {/* SVG Engine Bay */}
-            <div style={{ position: 'relative', background: 'var(--motorrom-bg)', padding: '0', overflow: 'hidden' }}>
-                <svg
-                    viewBox="0 0 520 340"
-                    width="100%"
-                    style={{ display: 'block', maxHeight: '420px' }}
-                    aria-label="Interaktivt motorrom"
-                >
-                    {/* Background area */}
-                    <rect x="0" y="0" width="520" height="340" fill="var(--motorrom-bg)" />
-                    
-                    {/* Simplified walls/perspective lines - solid clean lines */}
-                    <path d="M0,40 L520,40" stroke="var(--color-border)" strokeWidth="1" opacity="0.3" />
-                    <path d="M0,300 L520,300" stroke="var(--color-border)" strokeWidth="1" opacity="0.3" />
-
-                    {/* Windshield / Cowl area (Top) */}
-                    <rect x="0" y="0" width="520" height="40" fill="var(--motorrom-engine-front)" opacity="0.5" />
-                    <text x="260" y="24" textAnchor="middle" fontSize="11" fill="var(--motorrom-text)" fontWeight="600" letterSpacing="1.5">← PASSASJERKABIN (FRONTREKKE) →</text>
-
-                    {/* Engine Block - Solid with clear border */}
-                    <rect x="150" y="80" width="220" height="180" rx="12" fill="var(--motorrom-engine)" stroke="var(--color-border)" strokeWidth="2" />
-                    
-                    {/* Simple decorative lines for engine cover */}
-                    {[110, 140, 170, 200, 230].map(y => (
-                        <line key={y} x1="180" y1={y} x2="340" y2={y} stroke="var(--motorrom-bg)" strokeWidth="2" opacity="0.4" strokeLinecap="round" />
-                    ))}
-                    
-                    <text x="260" y="105" textAnchor="middle" fontSize="11" fill="var(--motorrom-text)" fontWeight="800" opacity="0.5">MOTOR / ENGINE</text>
-
-                    {/* Battery box - Solid */}
-                    <rect x="390" y="70" width="90" height="80" rx="6" fill="var(--motorrom-engine-front)" stroke="var(--color-border)" strokeWidth="1.5" />
-                    <circle cx="410" cy="85" r="5" fill="var(--motorrom-text)" />
-                    <circle cx="460" cy="85" r="5" fill="var(--motorrom-text)" />
-
-                    {/* Coolant Reservoir (Left side) - Simplified circular shape */}
-                    <circle cx="105" cy="275" r="35" fill="var(--motorrom-engine)" stroke="var(--color-border)" strokeWidth="1.5" />
-                    <circle cx="105" cy="275" r="22" fill="var(--motorrom-engine-front)" stroke="var(--color-border)" strokeWidth="1" />
-
-                    {/* Washer Fluid Reservoir (Right side) - Solid box */}
-                    <rect x="405" y="255" width="60" height="40" rx="8" fill="var(--motorrom-engine)" stroke="var(--color-border)" strokeWidth="1.5" />
-                    <circle cx="435" cy="275" r="14" fill="#06b6d4" opacity="0.2" />
-
-                    {/* Decoration lines (Hoses/Wires) - Subtle solid lines */}
-                    <path d="M140,260 Q120,200 150,150" fill="none" stroke="var(--motorrom-text)" strokeWidth="2" opacity="0.2" />
-                    <path d="M380,100 Q430,90 400,60" fill="none" stroke="var(--motorrom-text)" strokeWidth="2" opacity="0.2" />
-
-                    {/* Front area (Bottom) */}
-                    <rect x="0" y="300" width="520" height="40" fill="var(--motorrom-engine-front)" opacity="0.5" />
-                    <text x="260" y="325" textAnchor="middle" fontSize="11" fill="var(--motorrom-label)" fontWeight="bold" letterSpacing="2">↓ DU STÅR HER (FRONTEN AV BILEN) ↓</text>
-
-                    {/* Hotspots */}
-                    {komponenter.map(k => {
-                        const isActive = aktiv === k.id
-                        return (
-                            <g key={k.id} style={{ cursor: 'pointer' }} onClick={() => setAktiv(isActive ? null : k.id)}>
-                                {/* Pulse ring */}
-                                {!isActive && (
-                                    <circle cx={k.x} cy={k.y} r="20" fill={k.color} opacity="0.15">
-                                        <animate attributeName="r" values="16;24;16" dur="3s" repeatCount="indefinite" />
-                                        <animate attributeName="opacity" values="0.3;0;0.3" dur="3s" repeatCount="indefinite" />
-                                    </circle>
-                                )}
-                                {/* Main dot with shadow */}
-                                <circle cx={k.x} cy={k.y + 2} r="14" fill="rgba(0,0,0,0.5)" />
-                                <circle
-                                    cx={k.x} cy={k.y} r="14"
-                                    fill={isActive ? k.color : 'var(--motorrom-bg)'}
-                                    stroke={k.color}
-                                    strokeWidth="2.5"
-                                    style={{ transition: 'all 0.3s ease' }}
-                                />
-                                {/* Icon/X */}
-                                {isActive ? (
-                                    <text
-                                        x={k.x} y={k.y + 5}
-                                        textAnchor="middle"
-                                        fontSize="14"
-                                        fill="white"
-                                        style={{ transition: 'all 0.3s' }}
-                                    >
-                                        ✕
-                                    </text>
-                                ) : (
-                                    <g transform={`translate(${k.x - 10}, ${k.y - 10})`}>
-                                        {isValidElement(k.icon) 
-                                            ? cloneElement(k.icon as ReactElement, { color: 'var(--color-text)' })
-                                            : k.icon}
-                                    </g>
-                                )}
-                                {/* Active indicator tooltip-like circle */}
-                                {isActive && (
-                                    <path d={`M${k.x},${k.y-14} L${k.x-8},${k.y-30} L${k.x+8},${k.y-30} Z`} fill={k.color} />
-                                )}
-                            </g>
-                        )
-                    })}
-                </svg>
-            </div>
-
-            {/* Info panel */}
-            <div style={{
-                padding: '1.5rem',
-                minHeight: '140px',
-                borderTop: '1px solid var(--color-border)',
-                background: 'var(--color-bg)',
-            }}>
-                {!aktivKomponent ? (
-                    <div style={{
-                        display: 'flex',
-                        flexDirection: 'column',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        gap: '1rem',
-                        margin: '2rem 0',
-                    }}>
-                        <div style={{ padding: '1rem', background: 'var(--color-surface)', borderRadius: '50%', color: 'var(--color-primary)' }}>
-                            <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122"/></svg>
-                        </div>
-                        <p style={{
-                            color: 'var(--color-text-light)',
-                            fontSize: '0.95rem',
-                            textAlign: 'center',
-                            margin: 0,
-                            maxWidth: '300px'
-                        }}>
-                            Klikk på punktene i motorrommet for å lære nøyaktig hva du skal sjekke på oppkjøringen
-                        </p>
-                    </div>
-                ) : (
-                    <div style={{ animation: 'fadeIn 0.3s ease-out' }}>
-                        {/* Header */}
-                        <div style={{ display: 'flex', alignItems: 'flex-start', gap: '1rem', marginBottom: '1.25rem' }}>
-                            <div style={{ 
-                                width: '48px', 
-                                height: '48px', 
-                                background: aktivKomponent.color + '22',
-                                borderRadius: '12px',
-                                display: 'flex',
-                                alignItems: 'center',
-                                justifyContent: 'center',
-                                fontSize: '1.75rem',
-                                border: `1.5px solid ${aktivKomponent.color}44`
-                            }}>
-                                {isValidElement(aktivKomponent.icon) 
-                                    ? cloneElement(aktivKomponent.icon as ReactElement, { color: aktivKomponent.color })
-                                    : aktivKomponent.icon}
-                            </div>
-                            <div>
-                                <h3 style={{
-                                    margin: 0,
-                                    fontSize: '1.2rem',
-                                    fontWeight: 800,
-                                    color: 'var(--color-text)',
-                                    marginBottom: '0.25rem'
-                                }}>
-                                    {aktivKomponent.name}
-                                </h3>
-                                <p style={{ margin: 0, fontSize: '0.95rem', color: aktivKomponent.color, fontWeight: 600 }}>
-                                    {aktivKomponent.kortBeskrivelse}
-                                </p>
-                            </div>
-                        </div>
-
-                        <p style={{ fontSize: '0.9rem', color: 'var(--color-text)', lineHeight: 1.65, marginBottom: '1.5rem', opacity: 0.9 }}>
-                            {aktivKomponent.langBeskrivelse}
-                        </p>
-
-                        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '1rem' }}>
-                            {/* Checkpoints */}
-                            <div style={{
-                                background: 'var(--color-surface)',
-                                borderRadius: '12px',
-                                padding: '1rem',
-                                border: `1px solid var(--color-border)`,
-                                borderLeft: `4px solid ${aktivKomponent.color}`
-                            }}>
-                                <p style={{ margin: '0 0 0.75rem', fontSize: '0.8rem', fontWeight: 800, color: 'var(--color-text)', textTransform: 'uppercase', letterSpacing: '0.05em', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                                    <span style={{ color: aktivKomponent.color }}>✓</span> Hva du sjekker
-                                </p>
-                                <ul style={{ margin: 0, paddingLeft: '1.25rem', listStyleType: 'none' }}>
-                                    {aktivKomponent.sjekkPunkter.map((p, i) => (
-                                        <li key={i} style={{ fontSize: '0.88rem', color: 'var(--color-text-light)', lineHeight: 1.5, marginBottom: '0.5rem', position: 'relative' }}>
-                                            <span style={{ position: 'absolute', left: '-1rem', color: '#10b981' }}>•</span>
-                                            {p}
-                                        </li>
-                                    ))}
-                                </ul>
-                            </div>
-
-                            {/* Faults */}
-                            <div style={{
-                                background: 'var(--color-surface)',
-                                borderRadius: '12px',
-                                padding: '1rem',
-                                border: `1px solid var(--color-border)`,
-                                borderLeft: `4px solid #ef4444`
-                            }}>
-                                <p style={{ margin: '0 0 0.75rem', fontSize: '0.8rem', fontWeight: 800, color: 'var(--color-text)', textTransform: 'uppercase', letterSpacing: '0.05em', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                                    <span style={{ color: '#ef4444' }}>⚠️</span> Tegn på feil
-                                </p>
-                                <ul style={{ margin: 0, paddingLeft: '1.25rem', listStyleType: 'none' }}>
-                                    {aktivKomponent.tegnPaFeil.map((t, i) => (
-                                        <li key={i} style={{ fontSize: '0.88rem', color: 'var(--color-text-light)', lineHeight: 1.5, marginBottom: '0.5rem', position: 'relative' }}>
-                                            <span style={{ position: 'absolute', left: '-1rem', color: '#ef4444' }}>•</span>
-                                            {t}
-                                        </li>
-                                    ))}
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                )}
-            </div>
-
-            {/* Quick selectors */}
-            <div style={{
-                display: 'flex',
-                flexWrap: 'wrap',
-                gap: '0.6rem',
-                padding: '1rem 1.5rem',
-                background: 'var(--color-card-bg)',
-                borderTop: '1px solid var(--color-border)',
-            }}>
-                {komponenter.map(k => (
-                    <button
-                        key={k.id}
-                        onClick={() => setAktiv(aktiv === k.id ? null : k.id)}
-                        style={{
-                            display: 'inline-flex',
-                            alignItems: 'center',
-                            gap: '0.4rem',
-                            padding: '0.5rem 1rem',
-                            borderRadius: '10px',
-                            border: `1.5px solid ${aktiv === k.id ? k.color : 'var(--color-border)'}`,
-                            background: aktiv === k.id ? k.color + '15' : 'var(--color-bg)',
-                            color: aktiv === k.id ? k.color : 'var(--color-text-light)',
-                            fontSize: '0.85rem',
-                            fontWeight: 700,
-                            cursor: 'pointer',
-                            transition: 'all 0.2s cubic-bezier(0.4, 0, 0.2, 1)',
-                        }}
-                    >
-                        <span style={{ fontSize: '1rem', display: 'flex', alignItems: 'center' }}>
-                            {isValidElement(k.icon) 
-                                ? cloneElement(k.icon as ReactElement, { color: aktiv === k.id ? k.color : 'var(--color-text-light)' })
-                                : k.icon}
-                        </span>
-                        <span>{k.name}</span>
-                    </button>
-                ))}
-            </div>
-
-            <style>{`
-                @keyframes fadeIn {
-                    from { opacity: 0; transform: translateY(10px); }
-                    to { opacity: 1; transform: translateY(0); }
-                }
-            `}</style>
+    const [mode, setMode] = useState<Mode>('dipstick')
+    const [selected, setSelected] = useState('washer')
+    const panelId = useId()
+    const visible = points.filter(p => mode !== 'electric' || !['oil', 'level'].includes(p.id))
+    const point = visible.find(p => p.id === selected) || visible[0]
+    const detail = mode === 'electronic' && point.id === 'level' ? {
+        ...point, how: 'Finn oljenivå i bilens meny. Følg krav til temperatur, parkering og ventetid i instruksjonsboken.',
+        look: 'Se om displayet viser normalt nivå eller ber om etterfylling.',
+        act: 'Følg mengden bilen oppgir. Er målingen utilgjengelig, sjekk kravene til måling i instruksjonsboken.',
+    } : mode === 'electric' && ['coolant', 'brake'].includes(point.id) ? {
+        ...point, how: 'Finn kontrollen i bilens instruksjonsbok. På noen elbiler kan du lese av nivået selv; på andre gjør verkstedet det.',
+        look: 'Der føreren skal sjekke en beholder, skal nivået være mellom MIN og MAX. Les av utenfra; kjølesystemet skal være kaldt.',
+        act: 'Ikke fjern deksler eller åpne et varmt kjølesystem. La verkstedet gjøre kontroller som instruksjonsboken krever fagfolk til.',
+    } : point
+    function changeMode(next: Mode) {
+        setMode(next)
+        if (next === 'electric' && ['oil', 'level'].includes(selected)) setSelected('washer')
+    }
+    return <div className="engine-guide">
+        <div className="engine-guide-heading"><span>UNDER PANSERET</span><p>Finn punktet. Forstå kontrollen.</p></div>
+        <div className="engine-modes" role="group" aria-label="Type bil og oljemåling">
+            {modes.map(m => <button key={m.id} type="button" aria-pressed={mode === m.id} onClick={() => changeMode(m.id)}>{m.label}</button>)}
         </div>
-    )
+        <p className="engine-mode-note">{mode === 'electric' ? 'Ingen motorolje til forbrenningsmotor. Tilgang til væsker varierer mellom elbiler.' : mode === 'electronic' ? 'Oljenivået leses i bilens meny. Punkt 6 viser målingen, ikke en peilepinne.' : 'Peilepinnen måler nivået. Oljelokket brukes til påfylling.'}</p>
+        <div className="engine-workspace"><div>
+            <div className="engine-drawing">
+                <svg viewBox="0 0 560 400" role="img" aria-label="Prinsippskisse sett forfra. Kontrollpunktenes plassering og tilgjengelighet varierer mellom biler.">
+                    <rect x="1" y="1" width="558" height="398" rx="28" fill="#101e30" />
+                    <path d="M30 90 Q30 55 80 45 H480 Q530 55 530 90 V335 Q530 360 495 362 H65 Q30 360 30 335Z" fill="#1b2e42" stroke="#476177" strokeWidth="2" />
+                    <path d="M85 45 Q280 15 475 45" stroke="#708296" strokeWidth="12" fill="none" />
+                    <text x="280" y="27" textAnchor="middle" fill="#b8cada" fontSize="12" letterSpacing="2">MOT FRONTRUTEN</text>
+                    <path d="M45 110H66V325H45M515 110H494V325H515" stroke="#31485e" strokeWidth="12" fill="none" />
+                    <path d="M70 343H490" stroke="#0d1726" strokeWidth="15" />
+                    {Array.from({ length: 18 }, (_, i) => <path key={i} d={`M${90 + i * 22} 337v12`} stroke="#53677b" strokeWidth="3" />)}
+                    {mode === 'electric' ? <g><rect x="165" y="125" width="218" height="181" rx="35" fill="#111c2b" stroke="#64748b" strokeWidth="2" /><rect x="184" y="145" width="180" height="140" rx="24" fill="#233448" /><text x="274" y="224" textAnchor="middle" fill="#c3d3df" fontSize="14">DEKSEL / OPPBEVARING</text></g> : <g>
+                        <path d="M177 117H343L373 147V274L346 301H174L154 275V146Z" fill="#344b60" stroke="#8296a8" strokeWidth="2" />
+                        {[161, 189, 217, 245].map(y => <path key={y} d={`M181 ${y}H334`} stroke="#172b3d" strokeWidth="9" />)}
+                        <text x="265" y="137" textAnchor="middle" fill="#d3e0e8" fontSize="13" letterSpacing="3">MOTOR</text>
+                        <path d="M165 263H131Q118 263 118 241V191" fill="none" stroke="#0d1925" strokeWidth="16" />
+                        <circle cx="297" cy="167" r="22" fill="#0d1925" stroke="#d9ae56" strokeWidth="3" />
+                        {mode === 'dipstick' ? <path d="M238 270v28m-9-32a9 9 0 1 0 18 0a9 9 0 1 0-18 0" stroke="#f6bf56" strokeWidth="5" fill="none" /> : <g><rect x="205" y="256" width="70" height="42" rx="7" fill="#0d1925" stroke="#6edbce" /><path d="M219 281h13m4 0h13m4 0h9" stroke="#6edbce" strokeWidth="6" /></g>}
+                    </g>}
+                    <g opacity={mode === 'electric' ? 0.45 : 1}>
+                        <rect x="63" y="110" width="67" height="71" rx="22" fill="#a5c5d3" stroke="#e0edf2" strokeWidth="2" /><path d="M67 153h59v10H67" fill="#d78c98" /><rect x="79" y="100" width="35" height="16" rx="6" fill="#24313e" />
+                        <rect x="349" y="62" width="65" height="44" rx="10" fill="#b9c7cc" /><rect x="366" y="56" width="30" height="10" rx="4" fill="#263545" /><path d="M355 87h52" stroke="#a4814b" strokeWidth="7" />
+                    </g>
+                    <path d="M67 270Q63 255 80 253H112Q129 257 130 276V318H66Z" fill="#a4c8e0" stroke="#d7ebf6" strokeWidth="2" /><rect x="80" y="248" width="35" height="15" rx="6" fill="#3989d1" />
+                    <rect x="424" y="138" width="72" height="79" rx="8" fill="#111d2b" stroke="#72889a" strokeWidth="2" /><rect x="435" y="133" width="12" height="10" fill="#d4968c" /><rect x="474" y="133" width="12" height="10" fill="#9aaabc" /><text x="460" y="204" textAnchor="middle" fill="#b8cada" fontSize="11">LAVVOLT</text>
+                    <text x="280" y="385" textAnchor="middle" fill="#b8cada" fontSize="12" letterSpacing="2">DU STÅR FORAN BILEN</text>
+                </svg>
+                {visible.map((p, i) => <button key={p.id} type="button" className="engine-hotspot" style={{ left: `${p.x}%`, top: `${p.y}%` }} aria-label={`${i + 1}. ${p.name}`} aria-pressed={point.id === p.id} aria-controls={panelId} onClick={() => setSelected(p.id)}>{i + 1}</button>)}
+            </div>
+            <p className="engine-caption">Prinsippskisse · Plassering og tilgjengelighet varierer. Fargene identifiserer ikke væsketype.</p>
+            <div className="engine-points" role="group" aria-label="Kontrollpunkter">
+                {visible.map((p, i) => <button type="button" key={p.id} aria-pressed={p.id === point.id} aria-controls={panelId} onClick={() => setSelected(p.id)}><span>{i + 1}</span>{p.name}{p.id === point.id && <Check size={16} aria-hidden="true" />}</button>)}
+            </div>
+        </div>
+        <section className="engine-detail" id={panelId} aria-live="polite" aria-atomic="true">
+            <span className="engine-detail-label">KONTROLLPUNKT {visible.indexOf(point) + 1}</span><h3>{point.name}</h3>
+            <div><h4><BookOpen size={18} aria-hidden="true" /> Slik kontrollerer du</h4><p>{detail.how}</p></div>
+            <div><h4><Check size={18} aria-hidden="true" /> Se etter</h4><p>{detail.look}</p></div>
+            <div className="engine-action"><h4><ArrowRight size={18} aria-hidden="true" /> Hva gjør du med funnet?</h4><p>{detail.act}</p></div>
+        </section></div>
+        <div className="engine-safety"><ShieldAlert size={21} aria-hidden="true" /><p>Sikre bilen mot bevegelse før kontroll. Hold hender unna vifter og bevegelige deler, også når motoren er av. Følg instruksjonsboken før du åpner eller etterfyller noe.</p></div>
+    </div>
 }
