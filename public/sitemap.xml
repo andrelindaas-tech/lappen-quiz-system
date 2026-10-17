@@ -446,6 +446,11 @@
         <priority>0.7</priority>
     </url>
     <url>
+        <loc>https://teori-test.no/laeringsressurser/vinterdekk-og-piggdekk/</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
         <loc>https://teori-test.no/trafikkskilt/vikeplikt-og-forkjorsskilt/</loc>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>

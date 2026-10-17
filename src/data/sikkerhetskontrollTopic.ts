@@ -25,7 +25,7 @@ export const sikkerhetskontrollTopic: TheoryTopic = {
         ]),
         questions('Dekk og hjul: spørsmål 6–8', [
             ["6. Hvordan finner og måler du riktig dekktrykk?", "Finn anbefalt trykk på bilens trykketikett eller i instruksjonsboken. Mål på kalde dekk og juster ved behov.", "Feil lufttrykk gir dårligere kjøreegenskaper og økt dekkslitasje."],
-            ["7. Hvor stor mønsterdybde må dekkene ha?", "Mål i hovedrillene med en mønsterdybdemåler, flere steder på dekket. Minstekravet for personbil inntil 3 500 kg er 3 mm i vinterperioden og 1,6 mm ellers.", "Vinterperioden er 1. november–første søndag etter andre påskedag, og 16. oktober–30. april i Nordland, Troms og Finnmark. Dekkene må gi godt nok grep uansett dato."],
+            ["7. Hvor stor mønsterdybde må dekkene ha?", "Mål i hovedrillene med en mønsterdybdemåler, flere steder på dekket. Minstekravet for personbil inntil 3 500 kg er 3 mm i vinterperioden og 1,6 mm ellers.", "Vinterperioden er 1. november–første søndag etter andre påskedag, og 16. oktober–30. april i Nordland, Troms og Finnmark. Dekkene må gi godt nok grep uansett dato. Se [vinterdekk og piggdekk](/laeringsressurser/vinterdekk-og-piggdekk/)."],
             ["8. Hvilke skader og slitasjemønstre ser du etter?", "Se etter kutt, buler og ujevn slitasje på dekket. Sjekk også at felgen ikke har synlige skader.", "Buler og alvorlige skader må undersøkes før kjøring. Ujevn slitasje kan blant annet skyldes feil lufttrykk eller hjulstilling."],
         ]),
         questions('Lys og sikt: spørsmål 9–11', [

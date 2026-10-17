@@ -2,6 +2,7 @@
 import { sikkerhetskontrollTopic } from './sikkerhetskontrollTopic'
 import { vikepliktTopic } from './vikepliktTopic'
 import { ryggingVendingTopic } from './ryggingVendingTopic'
+import { vinterdekkTopic } from './vinterdekkTopic'
 
 export interface MiniQuizQuestion {
     question: string
@@ -2880,7 +2881,7 @@ export const theoryTopics: TheoryTopic[] = [
             {
                 title: 'Typiske teorifeller å passe opp for',
                 type: 'warning',
-                content: 'Her er de vanligste fellene på teoriprøven for dette temaet:\n\n- **Ansvar:** Du som fører er ansvarlig for at bilen har tilstrekkelig veigrep hele året, ikke bare for å følge de formelle piggdekkdatoene.\n- **Mønsterdybde:** Lovlig mønsterdybde (f.eks. 1,6 mm på sommeren) betyr ikke nødvendigvis at dekket er trygt på våt vei. Det er minstekravet.\n- **Sommerdekk:** Sommerdekk skal aldri brukes på vinterføre hvis de ikke gir godt nok veigrep.\n- **Lufttrykk:** Feil lufttrykk kan gi betydelig lengre bremselengde og dårligere grep selv om dekket ser normalt ut ved visuell sjekk.\n- **ABS:** ABS hjelper deg å styre under full bremsing, men det forkorter ikke nødvendigvis bremselengden. På glatt føre trenger du uansett lang avstand.\n- **Bremsing med ABS:** Med ABS skal du holde hardt og jevnt trykk på bremsepedalen, aldri pumpe den.\n- **Skjevtrekk:** Skjevtrekk ved bremsing kan skyldes ujevn bremsevirkning, men også dekk, veigrep eller hjuloppheng. Symptomet alene gir ikke en sikker diagnose.\n- **Begreper:** Husk at understyring betyr at forhjulene sklir og bilen vil rett frem. Overstyring betyr at bakhjulene slipper og bakenden kommer.'
+                content: 'Her er de vanligste fellene på teoriprøven for dette temaet:\n\n- **Ansvar:** Du som fører er ansvarlig for at bilen har tilstrekkelig veigrep hele året, ikke bare for å følge de formelle [piggdekkdatoene](/laeringsressurser/vinterdekk-og-piggdekk/).\n- **Mønsterdybde:** Lovlig mønsterdybde (f.eks. 1,6 mm på sommeren) betyr ikke nødvendigvis at dekket er trygt på våt vei. Det er minstekravet.\n- **Sommerdekk:** Sommerdekk skal aldri brukes på vinterføre hvis de ikke gir godt nok veigrep.\n- **Lufttrykk:** Feil lufttrykk kan gi betydelig lengre bremselengde og dårligere grep selv om dekket ser normalt ut ved visuell sjekk.\n- **ABS:** ABS hjelper deg å styre under full bremsing, men det forkorter ikke nødvendigvis bremselengden. På glatt føre trenger du uansett lang avstand.\n- **Bremsing med ABS:** Med ABS skal du holde hardt og jevnt trykk på bremsepedalen, aldri pumpe den.\n- **Skjevtrekk:** Skjevtrekk ved bremsing kan skyldes ujevn bremsevirkning, men også dekk, veigrep eller hjuloppheng. Symptomet alene gir ikke en sikker diagnose.\n- **Begreper:** Husk at understyring betyr at forhjulene sklir og bilen vil rett frem. Overstyring betyr at bakhjulene slipper og bakenden kommer.'
             }
         ],
         faq: [
@@ -4660,6 +4661,7 @@ export const theoryArticles: TheoryTopic[] = [
     },
 
     sikkerhetskontrollTopic,
+    vinterdekkTopic,
 
     {
         id: 'oppkjoring',
@@ -6493,7 +6495,7 @@ Hvis det oppstår kø, hold avstand til bilen foran. Da får nødetater og andre
             {
                 title: 'Dekk og veigrep',
                 type: 'text',
-                content: 'Dekkene er bilens eneste kontaktpunkt med veibanen. Du som fører har det juridiske ansvaret for at kjøretøyet har tilstrekkelig veigrep hele året, uavhengig av kalenderdatoer.\n- **Mønsterdybde:**\n  * **Vinterdekk:** Minst **3,0 mm** mønsterdybde (anbefalt 4 mm for sikker kjøring på slaps/snø).\n  * **Sommerdekk:** Minst **1,6 mm** mønsterdybde (anbefalt 3 mm på våt vei for å unngå vannplaning).\n- **Piggdekkregler:** Piggdekk er tillatt fra **1. november** til første søndag etter 2. påskedag i Sør-Norge (i Nord-Norge fra 16. oktober til 30. april). **Viktig felle:** Piggdekk kan brukes utenom disse datoene dersom føret krever det. Føret trumfer alltid datoen!\n- **Piggfrie vinterdekk:** Det er lovlig å bruke piggfrie vinterdekk om sommeren, men gummien er myk og blir glatt på varm asfalt, og bremselengden øker betydelig. Det frarådes derfor sterkt.'
+                content: 'Dekkene er bilens eneste kontaktpunkt med veibanen. Du som fører har det juridiske ansvaret for at kjøretøyet har tilstrekkelig veigrep hele året, uavhengig av kalenderdatoer.\n- **Mønsterdybde:**\n  * **Vinterdekk:** Minst **3,0 mm** mønsterdybde (anbefalt 4 mm for sikker kjøring på slaps/snø).\n  * **Sommerdekk:** Minst **1,6 mm** mønsterdybde (anbefalt 3 mm på våt vei for å unngå vannplaning).\n- **Piggdekkregler:** Piggdekk er tillatt fra **1. november** til første søndag etter 2. påskedag i Sør-Norge (i Nord-Norge fra 16. oktober til 30. april). **Viktig felle:** Piggdekk kan brukes utenom disse datoene dersom føret krever det. Føret trumfer alltid datoen! Se alle datoene og kravene i [vinterdekk og piggdekk](/laeringsressurser/vinterdekk-og-piggdekk/).\n- **Piggfrie vinterdekk:** Det er lovlig å bruke piggfrie vinterdekk om sommeren, men gummien er myk og blir glatt på varm asfalt, og bremselengden øker betydelig. Det frarådes derfor sterkt.'
             },
             {
                 title: 'Slik kjører du på glatt føre',

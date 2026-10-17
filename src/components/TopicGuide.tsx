@@ -40,6 +40,7 @@ const groups: { title: string; goal: string; items: [string, string, string][]; 
     ] },
     { title: 'Kjøretøy og teknisk', goal: 'Kjenn bilen og kontroller at den er trygg å bruke.', items: [
         ['dekk-bremser-styring', 'Dekk, bremser og styring', 'Forstå veigrep og tegn på feil.'],
+        ['vinterdekk-og-piggdekk', 'Vinterdekk og piggdekk', 'Kjenn datoene og kravet til mønsterdybde.'],
         ['sikkerhetskontroll', 'Sikkerhetskontroll', 'Vit hva du skal kontrollere før kjøring.'],
         ['bilens-lys', 'Bilens lys', 'Prøv lysene på en 3D-bil og lær når du bruker dem.'],
         ['varsellamper-i-bilen', 'Varsellamper', 'Vurder når du må stanse og undersøke bilen.'],

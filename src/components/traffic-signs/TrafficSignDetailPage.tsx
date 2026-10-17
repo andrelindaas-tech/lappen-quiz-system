@@ -108,9 +108,10 @@ export default function TrafficSignDetailPage() {
 
   const signTitleName = sign.displayName || sign.name;
   const isUnderskilt = category.slug === 'underskilt';
-  const seoTitle = isUnderskilt
-    ? `${signTitleName}-underskiltet (${sign.code}) | Hva betyr skiltet?`
-    : `${signTitleName}-skiltet (${sign.code}) | Hva betyr skiltet?`;
+  // Same pattern as the guide pages. Drop the question when the title would pass 60 characters.
+  const titleBase = `${isUnderskilt ? 'Underskilt' : 'Skilt'} ${sign.code} ${signTitleName}`;
+  const titleFull = `${titleBase} – hva betyr skiltet?`;
+  const seoTitle = titleFull.length <= 60 ? titleFull : titleBase;
   const seoDesc = isUnderskilt
     ? `Lær hva ${signTitleName.toLowerCase()}-underskiltet betyr, hvordan det presiserer hovedskiltet, og hvilken vanlig misforståelse du må passe på til teoriprøven.`
     : `Lær hva ${signTitleName.toLowerCase()}-skiltet betyr, hva du skal gjøre, og hvilken vanlig misforståelse du må passe på til teoriprøven.`;

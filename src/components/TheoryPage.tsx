@@ -65,7 +65,7 @@ const articleCategorySections = [
     {
         title: 'Kjøretøy og teknisk',
         description: 'Alt om bilen, dekk, bremser, lys, vognkort, tilhenger og førerstøttesystemer.',
-        ids: ['dekk-bremser-styring', 'sikkerhetskontroll', 'varsellamper-i-bilen', 'bilens-lys', 'vognkort-vekter', 'tilhenger', 'tilhengerkalkulator', 'forerstottesystemer', 'automatlappen']
+        ids: ['dekk-bremser-styring', 'vinterdekk-og-piggdekk', 'sikkerhetskontroll', 'varsellamper-i-bilen', 'bilens-lys', 'vognkort-vekter', 'tilhenger', 'tilhengerkalkulator', 'forerstottesystemer', 'automatlappen']
     },
     {
         title: 'Trafikanter og samspill',

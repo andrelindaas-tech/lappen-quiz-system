@@ -59,7 +59,7 @@ function generateSitemap() {
   }
 
   // 2. Parse theory articles from the theory data files
-  const theoryDataPaths = [VIKEPLIKT_DATA_PATH, THEORY_DATA_PATH, path.join(ROOT_DIR, 'src/data/ryggingVendingTopic.ts'), path.join(ROOT_DIR, 'src/data/sikkerhetskontrollTopic.ts')];
+  const theoryDataPaths = [VIKEPLIKT_DATA_PATH, THEORY_DATA_PATH, path.join(ROOT_DIR, 'src/data/ryggingVendingTopic.ts'), path.join(ROOT_DIR, 'src/data/sikkerhetskontrollTopic.ts'), path.join(ROOT_DIR, 'src/data/vinterdekkTopic.ts')];
   const ids = new Set();
   for (const theoryDataPath of theoryDataPaths) {
     if (!fs.existsSync(theoryDataPath)) {
