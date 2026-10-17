@@ -40,7 +40,6 @@ function LegacyTeoriRedirect() {
     const slugMap: Record<string, string> = {
         'vognkort-og-vekt': 'vognkort-vekter',
         'sikkerhet': 'sikkerhetsutstyr',
-        'morkekjoring': 'lysbruk-morkekjoring',
         'trafikkuhell': 'trafikkuhell-forstehjelp',
     }
     const targetId = articleId ? (slugMap[articleId.toLowerCase()] || articleId) : ''

@@ -3,6 +3,7 @@ import { sikkerhetskontrollTopic } from './sikkerhetskontrollTopic'
 import { vikepliktTopic } from './vikepliktTopic'
 import { ryggingVendingTopic } from './ryggingVendingTopic'
 import { vinterdekkTopic } from './vinterdekkTopic'
+import { morkekjoringTopic } from './morkekjoringTopic'
 
 export interface MiniQuizQuestion {
     question: string
@@ -933,11 +934,11 @@ export const theoryTopics: TheoryTopic[] = [
 
     {
         id: 'lysbruk-morkekjoring',
-        title: 'Lysbruk og mørkekjøring til teoriprøven',
+        title: 'Lysbruk i mørket til teoriprøven',
         icon: '💡',
         shortDescription: 'Lær reglene for lysbruk til teoriprøven: nærlys, fjernlys, tåkelys, baklys i tunnel, blending, mørkesyn, refleks og vanlige feller.',
         color: 'var(--apple-orange)',
-        seoTitle: 'Lysbruk og mørkekjøring – regler og feller | Teori-test.no',
+        seoTitle: 'Lysbruk i mørket – nærlys, fjernlys og tåkelys til teoriprøven',
         seoDescription: 'Lær reglene for lysbruk til teoriprøven: nærlys, fjernlys, tåkelys, baklys i tunnel, blending, mørkesyn, refleks og vanlige feller.',
         sections: [
             {
@@ -999,7 +1000,7 @@ export const theoryTopics: TheoryTopic[] = [
             {
                 title: 'Trafikant i mørket: hva er mørkekjøring?',
                 type: 'info',
-                content: '“Trafikant i mørket” kalles ofte mørkekjøring. Det er en del av trafikalt grunnkurs og handler om å forstå risiko ved kjøring i mørke.\n\nKurset gjennomføres i perioden der det er mørkt nok ute, og Statens vegvesen opplyser at det varer 3 timer. Du er passasjer i bil, deltar i demonstrasjoner og reflekterer over erfaringene med lærer og andre elever.\n\nPå teoriprøven er det ikke selve kurset som er viktigst, men forståelsen:\n- du ser mindre enn du tror\n- farten må ned når sikten blir kortere\n- riktig lysbruk er avgjørende\n- refleks og synlighet redder tid'
+                content: '“Trafikant i mørket” kalles ofte mørkekjøring. Det er et kurs på 3 timer i trafikalt grunnkurs, og det holdes mellom 1. november og 15. mars. Datoer, regler for øvelseskjøring og hva som gjelder over 25 år finner du i [mørkekjøring – trafikant i mørket](/laeringsressurser/morkekjoring/).\n\nPå teoriprøven er det ikke selve kurset som er viktigst, men forståelsen:\n- du ser mindre enn du tror\n- farten må ned når sikten blir kortere\n- riktig lysbruk er avgjørende\n- refleks og synlighet redder tid'
             },
             {
                 title: 'Vanlige teoriprøvefeller om lysbruk',
@@ -1030,7 +1031,7 @@ export const theoryTopics: TheoryTopic[] = [
             },
             {
                 question: 'Hva er mørkekjøring?',
-                answer: 'Mørkekjøring, eller Trafikant i mørket, er en del av trafikalt grunnkurs. Det handler om risiko, sikt, lysbruk og synlighet i mørket.'
+                answer: 'Mørkekjøring, eller trafikant i mørket, er et kurs på 3 timer i trafikalt grunnkurs. Det handler om risiko, sikt, lysbruk og synlighet i mørket, og holdes mellom 1. november og 15. mars. Les mer om [mørkekjøring](/laeringsressurser/morkekjoring/).'
             },
             {
                 question: 'Hvorfor er refleks viktig for bilføreren?',
@@ -4261,7 +4262,7 @@ export const theoryArticles: TheoryTopic[] = [
             {
                 title: 'Mørkekjøringen — den viktige detaljen',
                 type: 'warning',
-                content: 'Mørkekjøringsdemonstrasjonen kan bare gjennomføres i mørketiden (vinterhalvåret). Tar du grunnkurset i perioden 16. mars til 31. oktober, får du et bevis som er tidsbegrenset: du kan øvelseskjøre i lyse perioder, men må gjennomføre mørkekjøringen så snart den tilbys — først da får du fullverdig bevis fra Statens vegvesen.\n\nDemonstrasjonen viser deg blant annet hvor sent du ser fotgjengere uten refleks, og hvordan [fjernlys og nærlys](/laeringsressurser/lysbruk-morkekjoring) fungerer i praksis. Den må uansett være gjennomført før du kan ta oppkjøringen.'
+                content: 'Mørkekjøringen (trafikant i mørket) tar 3 timer og kan bare holdes mellom 1. november og 15. mars. Tar du grunnkurset mellom 16. mars og 31. oktober, får du et øvelseskjøringsbevis som bare gjelder fram til 31. oktober. Når du har tatt mørkekjøringen, får du et nytt bevis fra Statens vegvesen som gjelder hele året. Se [alt om mørkekjøring](/laeringsressurser/morkekjoring/) og sjekk om du kan øvelseskjøre på en bestemt dag.\n\nDemonstrasjonen viser deg blant annet hvor sent du ser fotgjengere uten refleks, og hvordan [fjernlys og nærlys](/laeringsressurser/lysbruk-morkekjoring) fungerer i praksis. Kjører du opp mellom 16. mars og 31. oktober, kan du ta mørkekjøringen etterpå, men den må være tatt og nytt førerkort bestilt innen 31. januar.'
             },
             {
                 title: 'Over 25 år? Da gjelder fritaket',
@@ -4317,7 +4318,7 @@ export const theoryArticles: TheoryTopic[] = [
             },
             {
                 question: 'Når kan jeg ta mørkekjøringen?',
-                answer: 'Bare i mørketiden (vinterhalvåret). Tar du grunnkurset mellom 16. mars og 31. oktober, får du et tidsbegrenset bevis til mørkekjøringen er gjennomført.'
+                answer: 'Bare mellom 1. november og 15. mars. Tar du grunnkurset mellom 16. mars og 31. oktober, gjelder øvelseskjøringsbeviset bare fram til 31. oktober, til mørkekjøringen er gjennomført.'
             }
         ],
         miniQuiz: [
@@ -4668,6 +4669,7 @@ export const theoryArticles: TheoryTopic[] = [
 
     sikkerhetskontrollTopic,
     vinterdekkTopic,
+    morkekjoringTopic,
 
     {
         id: 'oppkjoring',
@@ -4828,7 +4830,7 @@ export const theoryArticles: TheoryTopic[] = [
             {
                 title: 'Krav til deg som elev',
                 type: 'info',
-                content: 'Du må være minst 16 år for å øvelseskjøre med personbil. Er du under 25 år, må du ha fullført trafikalt grunnkurs før du starter. Ta alltid med legitimasjon og øvelseskjøringsbevis når du kjører.'
+                content: 'Du må være minst 16 år for å øvelseskjøre med personbil. Er du under 25 år, må du ha fullført trafikalt grunnkurs før du starter. Mellom 1. november og 15. mars må du i tillegg ha tatt [mørkekjøring](/laeringsressurser/morkekjoring/). Ta alltid med legitimasjon og øvelseskjøringsbevis når du kjører.'
             },
             {
                 title: 'Krav til ledsageren',

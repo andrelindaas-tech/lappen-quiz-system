@@ -22,7 +22,8 @@ const groups: { title: string; goal: string; items: [string, string, string][]; 
         ['forbikjoring', 'Forbikjøring', 'Vurder sikt og sikkerhetsmarginer, også når du passerer syklister.'],
         ['kollektivfelt-og-elbil', 'Kollektivfelt', 'Les vilkårene for hvem som kan bruke feltet.'],
         ['motorvei-regler', 'Motorvei', 'Planlegg påkjøring og avkjøring, og hold avstand til bilen foran.'],
-        ['lysbruk-morkekjoring', 'Lysbruk og mørkekjøring', 'Tilpass lys og fart når sikten blir dårlig.']
+        ['lysbruk-morkekjoring', 'Lysbruk i mørket', 'Tilpass lys og fart når sikten blir dårlig.'],
+        ['morkekjoring', 'Mørkekjøring', 'Vit når kurset tas, og når du kan øvelseskjøre.']
     ] },
     { title: 'Bremselengde og reaksjonstid', goal: 'Forstå hvor langt bilen beveger seg før den stanser.', items: [
         ['bremselengde', 'Reaksjonslengde, bremselengde og stopplengde', 'Se hvordan fart og føre påvirker strekningen.'],

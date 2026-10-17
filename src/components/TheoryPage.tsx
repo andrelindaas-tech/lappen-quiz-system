@@ -70,7 +70,7 @@ const articleCategorySections = [
     {
         title: 'Trafikanter og samspill',
         description: 'Forstå samspill, øvelseskjøring, miljø, barn i bil og forberedelse til prøvene.',
-        ids: ['ovingskjoring', 'trafikalt-grunnkurs', 'sikkerhetskurs-pa-bane', 'barn-i-bil-og-sikring', 'miljo', 'oppkjoring', 'tips-eksamen', 'stroket-teoriproven', 'vanlige-feil-teoriproven']
+        ids: ['ovingskjoring', 'trafikalt-grunnkurs', 'morkekjoring', 'sikkerhetskurs-pa-bane', 'barn-i-bil-og-sikring', 'miljo', 'oppkjoring', 'tips-eksamen', 'stroket-teoriproven', 'vanlige-feil-teoriproven']
     },
     {
         title: 'Sikkerhet og førstehjelp',
@@ -160,7 +160,6 @@ export default function TheoryPage() {
             const slugMap: Record<string, string> = {
                 'vognkort-og-vekt': 'vognkort-vekter',
                 'sikkerhet': 'sikkerhetsutstyr',
-                'morkekjoring': 'lysbruk-morkekjoring',
                 'trafikkuhell': 'trafikkuhell-forstehjelp',
             }
             const correctId = slugMap[articleId.toLowerCase()]
