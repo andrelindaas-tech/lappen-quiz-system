@@ -57,13 +57,14 @@ function sectionAnchorId(title: string): string {
         .replace(/^-+|-+$/g, '')
 }
 
-// Renders content string with support for paragraphs, bullet lists (- ), numbered lists (1. ) and code blocks (```)
+// Renders content string with support for paragraphs, bullet lists (- ), numbered lists (1. ), code blocks (```) and markdown tables (| a | b |)
 function renderContent(text: string) {
     const lines = text.split('\n')
     const output: React.ReactNode[] = []
     let ulItems: string[] = []
     let olItems: string[] = []
     let codeLines: string[] = []
+    let tableLines: string[] = []
     let inCodeBlock = false
     let key = 0
 
@@ -87,6 +88,21 @@ function renderContent(text: string) {
             olItems = []
         }
     }
+    const flushTable = () => {
+        if (tableLines.length === 0) return
+        const cells = (row: string) => row.trim().replace(/^\|/, '').replace(/\|$/, '').split('|').map(c => c.trim())
+        const rows = tableLines.filter(row => !/^\|?\s*:?-{3,}:?\s*(\|\s*:?-{3,}:?\s*)*\|?\s*$/.test(row.trim()))
+        const [head, ...body] = rows.map(cells)
+        output.push(
+            <div key={key++} className="responsive-theory-table-wrapper">
+                <table className="responsive-theory-table">
+                    <thead><tr>{head.map((c, i) => <th key={i} scope="col">{parseInlineLinks(c)}</th>)}</tr></thead>
+                    <tbody>{body.map((r, ri) => <tr key={ri}>{r.map((c, ci) => <td key={ci} data-label={head[ci] || ''}>{parseInlineLinks(c)}</td>)}</tr>)}</tbody>
+                </table>
+            </div>
+        )
+        tableLines = []
+    }
     const flushCode = () => {
         if (codeLines.length > 0) {
             output.push(
@@ -99,6 +115,7 @@ function renderContent(text: string) {
     }
 
     for (const line of lines) {
+        if (tableLines.length > 0 && !line.trim().startsWith('|')) flushTable()
         if (line.trim().startsWith('```')) {
             if (inCodeBlock) {
                 flushCode()
@@ -110,6 +127,10 @@ function renderContent(text: string) {
             }
         } else if (inCodeBlock) {
             codeLines.push(line)
+        } else if (line.trim().startsWith('|')) {
+            flushUl()
+            flushOl()
+            tableLines.push(line)
         } else if (line.startsWith('- ')) {
             flushOl()
             ulItems.push(line.slice(2))
@@ -131,6 +152,7 @@ function renderContent(text: string) {
     flushUl()
     flushOl()
     flushCode()
+    flushTable()
 
     return output
 }
