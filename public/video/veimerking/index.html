@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="nb"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Veimerking – forstå linjene | teori-test.no</title>
+<meta name="robots" content="noindex">
+<style>
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;background:#14363f;color:#e3eeec;font:15px/1.4 Arial,sans-serif}
+.wrap{height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;padding:8px}
+.stage{position:relative;flex:1;min-height:0;width:100%;display:flex;align-items:center;justify-content:center}
+canvas{display:block;max-width:100%;max-height:100%;width:auto;height:auto;border-radius:8px;background:#0e2a31}
+.start{position:absolute;inset:0;margin:auto;width:84px;height:84px;border-radius:50%;border:0;background:#e6c65e;color:#14363f;font:700 15px Arial;cursor:pointer;box-shadow:0 6px 24px #0006}
+.start[hidden]{display:none}
+.controls{width:100%;max-width:1160px;display:flex;align-items:center;gap:8px}
+button,select{min-height:40px;padding:6px 12px;border:1px solid #2f5761;border-radius:8px;background:#1b4550;color:#e3eeec;font:600 14px Arial;cursor:pointer}
+button:disabled{opacity:.45}
+input[type=range]{flex:1;min-width:60px;accent-color:#e6c65e}
+output{font-size:13px;font-variant-numeric:tabular-nums;white-space:nowrap;color:#a9c2c4}
+:focus-visible{outline:3px solid #e6c65e;outline-offset:2px}
+@media(max-width:520px){#chapter{max-width:110px}}
+</style></head><body>
+<div class="wrap">
+ <div class="stage"><canvas id="film" width="1920" height="1080" aria-label="Animasjon om veimerking med fortellerstemme"></canvas>
+  <button class="start" id="bigstart" aria-label="Spill av filmen" hidden>▶</button></div>
+ <div class="controls">
+  <button id="toggle" disabled aria-label="Spill av">Spill</button>
+  <input id="seek" type="range" min="0" max="162" step="0.01" value="0" aria-label="Tidspunkt" disabled>
+  <output id="time">0:00</output>
+  <select id="chapter" aria-label="Velg kapittel"></select>
+ </div>
+</div>
+<audio id="voice" src="fortelling.mp3" preload="metadata"></audio>
+<script src="bundle.js"></script>
+<script src="player.js"></script>
+</body></html>
