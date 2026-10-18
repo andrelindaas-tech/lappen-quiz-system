@@ -29,9 +29,43 @@ export interface TrafficSignGuide {
   };
 }
 
-// Signs selected by the owner: the original ten, five added on 7 October and 206 added on 18 October.
+// Signs selected by the owner: the original ten, five added on 7 October, and 206, 364 and 548 added on 18 October.
 // Answer statistics are included only where the owner supplied an actual extract.
 export const trafficSignGuides: Record<string, TrafficSignGuide> = {
+  '364': {
+    updatedAt: '2026-10-18',
+    intro: 'Se hvilken fartsgrense som gjelder etter skiltet, og hvorfor det ikke betyr fri fart.',
+    title: 'Slutt på særskilt fartsgrense (364) – hvilken fart gjelder?',
+    description: 'Skilt 364 betyr at fartsgrensen på skiltet slutter. Etter skiltet gjelder den generelle fartsgrensen: 80 km/t utenfor tettbygd strøk og 50 km/t i tettbygd strøk.',
+    answer: 'Fartsgrensen som står på skiltet, slutter her. Da gjelder den generelle fartsgrensen igjen: 80 km/t utenfor tettbygd strøk og 50 km/t i tettbygd strøk, til et nytt fartsgrenseskilt sier noe annet.',
+    scenario: 'Du kjører ut av et boligområde med 50 km/t. Ved skiltet slutter 50-grensen. Husene blir borte og veien går over i landevei, så den generelle fartsgrensen på 80 km/t gjelder.',
+    points: ['Skilt 364 viser at 50-grensen slutter.', 'Utenfor tettbygd strøk gjelder nå 80 km/t.', 'I tettbygd strøk er den generelle grensen 50 km/t.'],
+    misconception: 'Skiltet betyr ikke fri fart, og det betyr ikke alltid 80 km/t. Du går tilbake til den generelle fartsgrensen, og den er 50 km/t i tettbygd strøk. Fartsgrensen er også bare den høyeste lovlige farten. Du må alltid tilpasse farten etter føre og sikt.',
+    steps: ['Se om du er i eller utenfor tettbygd strøk.', 'Utenfor tettbygd strøk: maks 80 km/t. I tettbygd strøk: maks 50 km/t.', 'Øk farten jevnt, og bare når det er forsvarlig.', 'Følg med på nye fartsgrenseskilt.'],
+    places: ['Der en strekning med særskilt fartsgrense slutter, for eksempel når du kjører ut av et tettsted.', 'Etter en midlertidig nedsatt fartsgrense, for eksempel forbi et veiarbeid.'],
+    extent: 'Den generelle fartsgrensen gjelder fra skiltet og fram til et nytt fartsgrenseskilt eller en fartsgrensesone.',
+    comparisons: [['362', 'Fartsgrense: viser høyeste tillatte fart fra skiltet.'], ['366', 'Fartsgrensesone: fartsgrensen gjelder i alle gatene i et område.']],
+    consequence: 'Kjører du fortere enn den generelle fartsgrensen etter skiltet, er det en fartsovertredelse. Reaksjonen avhenger av hvor mye for fort du kjører og hvilken fartsgrense som gjelder.',
+    articles: [['fartsgrenser', 'Fartsgrenser i Norge'], ['bremselengde', 'Fart, reaksjonslengde og bremselengde']],
+    faq: [['Betyr skiltet at det er fri fart?', 'Nei. Den generelle fartsgrensen gjelder: 80 km/t utenfor tettbygd strøk og 50 km/t i tettbygd strøk.'], ['Hvilken fart gjelder etter Slutt på særskilt fartsgrense 50?', 'Som regel 80 km/t, fordi skiltet ofte står der du kjører ut av et tettsted. Er du fortsatt i tettbygd strøk, gjelder 50 km/t.'], ['Hva er tettbygd strøk?', 'Et område med sammenhengende bebyggelse langs veien, som i byer og tettsteder. Er du i tvil, velg den lavere farten til du ser et nytt fartsgrenseskilt.']], paragraph: 8,
+  },
+  '548': {
+    updatedAt: '2026-10-18',
+    intro: 'Se hvem som kan kjøre i gågaten, hvordan underskilt gir unntak, og hva du må gjøre hvis du har lov til å kjøre.',
+    title: 'Skilt 548 Gågate – hva betyr skiltet?',
+    description: 'Skilt 548 Gågate betyr at det er forbudt å kjøre motorvogn i området. Unntak, for eksempel varelevering til bestemte tider, står på underskilt. Den som kjører lovlig, skal holde gangfart og vike for gående.',
+    answer: 'Du kan ikke kjøre bil eller annen motorvogn inn i gågaten. Unntak står på underskilt, for eksempel varetransport mellom bestemte klokkeslett. Har du lov til å kjøre, skal du holde gangfart og vike for gående. Du kan ikke parkere i gågaten. Skiltet gjelder til skilt 550 Slutt på gågate.',
+    scenario: 'En varebil kjører inn i gågaten for å levere varer om morgenen, som underskiltet tillater. Den holder gangfart og stanser når gående krysser foran.',
+    points: ['Skilt 548 viser at gågaten starter. Motorvogn er forbudt.', 'Underskiltet gir unntak, her varetransport kl. 06–11.', 'Varebilen holder gangfart og venter på de gående.'],
+    misconception: 'Gågate og gatetun blir ofte forvekslet. I et gatetun er kjøring tillatt i gangfart. I en gågate er kjøring med motorvogn forbudt, og bare unntak på underskilt gir lov til å kjøre.',
+    steps: ['Kjør ikke inn med bil uten at et underskilt gir deg lov.', 'Les underskiltet: hvem som kan kjøre, og når.', 'Kjører du lovlig: hold gangfart og vik for gående.', 'Ikke parker. Lever eller hent, og kjør ut igjen.'],
+    places: ['I sentrum av byer og tettsteder, i gater som er tilrettelagt for gående.', 'Ved innkjøringen til et område med flere gågater, der skiltet gjelder for hele området.'],
+    extent: 'Skiltet gjelder for hele gågateområdet, fram til skilt 550 Slutt på gågate.',
+    comparisons: [['540', 'Gatetun: kjøring er tillatt i gangfart, og du må vike for gående.'], ['550', 'Slutt på gågate: når du kjører ut, har du vikeplikt for trafikken på veien du kjører inn på.']],
+    consequence: 'Kjører du motorvogn inn i gågaten uten at et underskilt gir deg lov, bryter du forbudet i skiltet. Gågaten er et område der gående skal kunne ferdes trygt.',
+    articles: [['stans-og-parkering', 'Reglene om stans og parkering'], ['vikeplikt', 'Vikeplikt og hvem som kjører først']],
+    faq: [['Kan jeg sykle i gågate?', 'Ja, skiltet forbyr motorvogn, ikke sykkel, med mindre det er skiltet noe annet. Som syklist skal du holde gangfart og vike for gående.'], ['Kan jeg kjøre inn for å levere eller hente noe?', 'Bare hvis et underskilt gir lov, for eksempel «Varetransport» med klokkeslett. Står det ikke noe unntak, kan du ikke kjøre inn.'], ['Kan jeg parkere i gågate?', 'Nei, parkering er forbudt i gågate.']], paragraph: 12,
+  },
   '206': {
     updatedAt: '2026-10-18',
     intro: 'Se hvem som må vente på deg, hvor lenge forkjørsveien gjelder, og når du likevel må vike.',
