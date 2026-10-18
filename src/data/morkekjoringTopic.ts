@@ -26,6 +26,7 @@ export const morkekjoringTopic: TheoryTopic = {
         {
             title: 'Hva skjer på mørkekjøringen?',
             type: 'text',
+            component: 'LysIMorketFilm',
             content: `Du kjører ikke selv. Du sitter på mens trafikklæreren kjører, og ser demonstrasjoner på et område med lite eller ingen trafikk. Etterpå snakker dere om det dere har sett.
 
 Poenget er å oppleve hvor lite du ser i mørket, og hva som gjør det lettere eller vanskeligere å bli sett:
@@ -35,7 +36,7 @@ Poenget er å oppleve hvor lite du ser i mørket, og hva som gjør det lettere e
 - hvordan blending fra møtende trafikk påvirker synet
 - hvorfor farten må tilpasses det du faktisk ser
 
-Det faglige om nærlys, fjernlys, blending og refleks finner du i [lysbruk til teoriprøven](/laeringsressurser/lysbruk-morkekjoring/).`
+Det faglige om nærlys, fjernlys, blending og refleks finner du i [lysbruk til teoriprøven](/laeringsressurser/lysbruk-morkekjoring/). Animasjonen viser hva som skjer med lyset når to biler møtes.`
         },
         {
             title: 'Kan du øvelseskjøre uten mørkekjøring?',

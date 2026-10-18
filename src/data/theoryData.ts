@@ -975,6 +975,7 @@ export const theoryTopics: TheoryTopic[] = [
             {
                 title: 'Fjernlys: når skal du blende ned?',
                 type: 'warning',
+                component: 'LysIMorketFilm',
                 content: 'Fjernlys gir best sikt på mørke veier, men du må blende ned når lyset kan blende andre.\n\nDu skal blende ned når:\n- du møter en annen bil\n- du kjører bak en annen bil\n- du møter gående, syklende eller andre trafikanter som kan bli blendet\n- veien er godt opplyst og fjernlys ikke er nødvendig\n\nNår fjernlys ikke er nødvendig eller ikke er lov å bruke, skal du bruke nærlys.\n\n**Hva gjør du hvis du blir blendet?**\nHvis en møtende bil blender deg, skal du ikke stirre rett inn i lysene. Se heller mot høyre veikant, senk farten og hold god avstand.\n\nIkke svar med å blende tilbake. Unødig eller hensynsløs bruk av lyssignal er forbudt, og det gjør situasjonen farligere.'
             },
             {
