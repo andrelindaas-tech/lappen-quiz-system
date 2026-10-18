@@ -19,27 +19,27 @@ export default function MotorromInteraktiv() {
     const [mode, setMode] = useState<Mode>('dipstick')
     const [selected, setSelected] = useState('washer')
     const panelId = useId()
-    const visible = points.filter(p => mode !== 'electric' || !['oil', 'level'].includes(p.id))
+    const visible = points.filter(p => mode !== 'electric' || !['oil', 'level', 'coolant'].includes(p.id))
     const point = visible.find(p => p.id === selected) || visible[0]
     const detail = mode === 'electronic' && point.id === 'level' ? {
         ...point, how: 'Finn oljenivå i bilens meny. Følg krav til temperatur, parkering og ventetid i instruksjonsboken.',
         look: 'Se om displayet viser normalt nivå eller ber om etterfylling.',
         act: 'Følg mengden bilen oppgir. Er målingen utilgjengelig, sjekk kravene til måling i instruksjonsboken.',
-    } : mode === 'electric' && ['coolant', 'brake'].includes(point.id) ? {
+    } : mode === 'electric' && point.id === 'brake' ? {
         ...point, how: 'Finn kontrollen i bilens instruksjonsbok. På noen elbiler kan du lese av nivået selv; på andre gjør verkstedet det.',
-        look: 'Der føreren skal sjekke en beholder, skal nivået være mellom MIN og MAX. Les av utenfra; kjølesystemet skal være kaldt.',
-        act: 'Ikke fjern deksler eller åpne et varmt kjølesystem. La verkstedet gjøre kontroller som instruksjonsboken krever fagfolk til.',
+        look: 'Der føreren skal sjekke beholderen, skal nivået være mellom MIN og MAX. Les av utenfra.',
+        act: 'Ikke fjern deksler for å komme til. La verkstedet gjøre kontroller som instruksjonsboken krever fagfolk til.',
     } : point
     function changeMode(next: Mode) {
         setMode(next)
-        if (next === 'electric' && ['oil', 'level'].includes(selected)) setSelected('washer')
+        if (next === 'electric' && ['oil', 'level', 'coolant'].includes(selected)) setSelected('washer')
     }
     return <div className="engine-guide">
         <div className="engine-guide-heading"><span>UNDER PANSERET</span><p>Finn punktet. Forstå kontrollen.</p></div>
         <div className="engine-modes" role="group" aria-label="Type bil og oljemåling">
             {modes.map(m => <button key={m.id} type="button" aria-pressed={mode === m.id} onClick={() => changeMode(m.id)}>{m.label}</button>)}
         </div>
-        <p className="engine-mode-note">{mode === 'electric' ? 'Ingen motorolje til forbrenningsmotor. Tilgang til væsker varierer mellom elbiler.' : mode === 'electronic' ? 'Oljenivået leses i bilens meny. Punkt 6 viser målingen, ikke en peilepinne.' : 'Peilepinnen måler nivået. Oljelokket brukes til påfylling.'}</p>
+        <p className="engine-mode-note">{mode === 'electric' ? 'Ingen motorolje. Mange elbiler har kjølevæske til batteri og motor, men beholderen er ofte skjult og kontrolleres av verkstedet. Sjekk instruksjonsboken.' : mode === 'electronic' ? 'Oljenivået leses i bilens meny. Punkt 6 viser målingen, ikke en peilepinne.' : 'Peilepinnen måler nivået. Oljelokket brukes til påfylling.'}</p>
         <div className="engine-workspace"><div>
             <div className="engine-drawing">
                 <svg viewBox="0 0 560 400" role="img" aria-label="Prinsippskisse sett forfra. Kontrollpunktenes plassering og tilgjengelighet varierer mellom biler.">
@@ -59,7 +59,7 @@ export default function MotorromInteraktiv() {
                         {mode === 'dipstick' ? <path d="M238 270v28m-9-32a9 9 0 1 0 18 0a9 9 0 1 0-18 0" stroke="#f6bf56" strokeWidth="5" fill="none" /> : <g><rect x="205" y="256" width="70" height="42" rx="7" fill="#0d1925" stroke="#6edbce" /><path d="M219 281h13m4 0h13m4 0h9" stroke="#6edbce" strokeWidth="6" /></g>}
                     </g>}
                     <g opacity={mode === 'electric' ? 0.45 : 1}>
-                        <rect x="63" y="110" width="67" height="71" rx="22" fill="#a5c5d3" stroke="#e0edf2" strokeWidth="2" /><path d="M67 153h59v10H67" fill="#d78c98" /><rect x="79" y="100" width="35" height="16" rx="6" fill="#24313e" />
+                        {mode !== 'electric' && <><rect x="63" y="110" width="67" height="71" rx="22" fill="#a5c5d3" stroke="#e0edf2" strokeWidth="2" /><path d="M67 153h59v10H67" fill="#d78c98" /><rect x="79" y="100" width="35" height="16" rx="6" fill="#24313e" /></>}
                         <rect x="349" y="62" width="65" height="44" rx="10" fill="#b9c7cc" /><rect x="366" y="56" width="30" height="10" rx="4" fill="#263545" /><path d="M355 87h52" stroke="#a4814b" strokeWidth="7" />
                     </g>
                     <path d="M67 270Q63 255 80 253H112Q129 257 130 276V318H66Z" fill="#a4c8e0" stroke="#d7ebf6" strokeWidth="2" /><rect x="80" y="248" width="35" height="15" rx="6" fill="#3989d1" />
