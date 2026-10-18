@@ -56,7 +56,7 @@ export const trafficSignGuides: Record<string, TrafficSignGuide> = {
     description: 'Skilt 548 Gågate betyr at det er forbudt å kjøre motorvogn i området. Unntak, for eksempel varelevering til bestemte tider, står på underskilt. Den som kjører lovlig, skal holde gangfart og vike for gående.',
     answer: 'Du kan ikke kjøre bil eller annen motorvogn inn i gågaten. Unntak står på underskilt, for eksempel varetransport mellom bestemte klokkeslett. Har du lov til å kjøre, skal du holde gangfart og vike for gående. Du kan ikke parkere i gågaten. Skiltet gjelder til skilt 550 Slutt på gågate.',
     scenario: 'En varebil kjører inn i gågaten for å levere varer om morgenen, som underskiltet tillater. Den holder gangfart og stanser når gående krysser foran.',
-    points: ['Skilt 548 viser at gågaten starter. Motorvogn er forbudt.', 'Underskiltet gir unntak, her varetransport kl. 06–11.', 'Varebilen holder gangfart og venter på de gående.'],
+    points: ['Skilt 548 viser at gågaten starter. Motorvogn er forbudt.', 'Underskiltet gir unntak, her varetransport kl. 06–11.', 'Varebilen holder gangfart og venter på de gående som krysser foran den.'],
     misconception: 'Gågate og gatetun blir ofte forvekslet. I et gatetun er kjøring tillatt i gangfart. I en gågate er kjøring med motorvogn forbudt, og bare unntak på underskilt gir lov til å kjøre.',
     steps: ['Kjør ikke inn med bil uten at et underskilt gir deg lov.', 'Les underskiltet: hvem som kan kjøre, og når.', 'Kjører du lovlig: hold gangfart og vik for gående.', 'Ikke parker. Lever eller hent, og kjør ut igjen.'],
     places: ['I sentrum av byer og tettsteder, i gater som er tilrettelagt for gående.', 'Ved innkjøringen til et område med flere gågater, der skiltet gjelder for hele området.'],
