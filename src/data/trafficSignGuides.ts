@@ -34,12 +34,12 @@ export interface TrafficSignGuide {
 export const trafficSignGuides: Record<string, TrafficSignGuide> = {
   '206': {
     updatedAt: '2026-10-18',
-    intro: 'Se hvem som har vikeplikt for deg, hvor lenge forkjørsveien gjelder, og når du likevel må vike.',
+    intro: 'Se hvem som må vente på deg, hvor lenge forkjørsveien gjelder, og når du likevel må vike.',
     title: 'Skilt 206 Forkjørsveg – hva betyr skiltet?',
-    description: 'Forkjørsveg betyr at kjørende fra sideveier og kryssende veier har vikeplikt for deg. Skiltet gjelder til skilt 208 Slutt på forkjørsveg, eller til et vikeplikt- eller stoppskilt.',
-    answer: 'Du kjører på en forkjørsvei. Kjørende fra sideveier og kryssende veier har vikeplikt for deg, så høyreregelen gjelder ikke i kryssene. Skiltet gjelder til skilt 208 Slutt på forkjørsveg, eller til du møter skilt 202 Vikeplikt eller 204 Stopp.',
-    scenario: 'Du kjører rett fram gjennom et kryss. Bilene i sideveiene har vikelinje og vikepliktskilt, og skal slippe deg fram. Du holder farten, men følger med på om noen ikke stanser.',
-    points: ['Skilt 206 viser at du kjører på forkjørsvei.', 'Bilene i sideveiene har vikeplikt for deg.', 'Følg likevel med: Den som har vikeplikt, kan overse deg.'],
+    description: 'Forkjørsveg betyr at du kjører på hovedveien gjennom krysset. Biler fra sideveiene må vente og slippe deg fram. Skiltet gjelder til skilt 208 Slutt på forkjørsveg, eller til et vikeplikt- eller stoppskilt.',
+    answer: 'Du kjører på hovedveien, og den er forkjørsvei. Biler som kommer fra sideveiene, må vente og slippe deg fram. Du skal derfor ikke vike for biler fra høyre i kryssene. Skiltet gjelder til skilt 208 Slutt på forkjørsveg, eller til du møter skilt 202 Vikeplikt eller 204 Stopp.',
+    scenario: 'Du kjører rett fram gjennom et kryss på forkjørsveien. Den røde og den hvite bilen kommer fra sideveier med vikepliktskilt og vikelinje. De må vente til du har kjørt forbi. Du holder farten, men følger med på om noen ikke stanser.',
+    points: ['Skilt 206 viser at veien du kjører på, er forkjørsvei.', 'Den røde bilen har vikepliktskilt og må vente på deg.', 'Den hvite bilen må også vente. Følg likevel med, for den kan overse deg.'],
     misconception: 'Forkjørsvei betyr ikke at du alltid kjører først. Svinger du til venstre, må du vike for møtende. Du må også slippe fram gående i gangfelt.',
     steps: ['Hold jevn fart gjennom krysset når det er trygt.', 'Se etter biler fra sideveiene som kommer fort eller ikke ser ut til å stanse.', 'Skal du svinge til venstre, vik for møtende kjørende.', 'Slipp fram gående i gangfelt, også på forkjørsvei.'],
     places: ['Ved starten av en vei med forkjørsrett, ofte en hovedvei gjennom et område.', 'Foran et enkelt kryss der det skal være tydelig at trafikken på din vei har forkjørsrett.'],
@@ -47,7 +47,7 @@ export const trafficSignGuides: Record<string, TrafficSignGuide> = {
     comparisons: [['202', 'Vikeplikt: du skal vike for kryssende trafikk. Det er motsatt av forkjørsvei.'], ['204', 'Stopp: du skal stanse helt og vike for kryssende trafikk.']],
     consequence: 'Skiltet pålegger ikke deg noe du kan bryte. Plikten ligger hos dem i sideveiene: Brudd på vikeplikt ved skilt 202 eller 204 med bil har et forenklet forelegg på 10 750 kr og gir tre prikker, seks i prøveperioden.',
     articles: [['vikeplikt', 'Vikeplikt og hvem som kjører først'], ['veimerking', 'Vikelinjen i sideveien']],
-    faq: [['Gjelder høyreregelen på forkjørsvei?', 'Nei. Kjørende fra sideveier og kryssende veier har vikeplikt for deg, så du skal ikke vike for trafikk fra høyre.'], ['Må jeg vike for møtende når jeg svinger til venstre fra forkjørsveien?', 'Ja. Forkjørsveien gir deg rett foran trafikken fra sideveiene, men ikke foran møtende. Svinger du til venstre, må du vike for dem som kommer mot deg.'], ['Hvor lenge gjelder forkjørsveien?', 'Til skilt 208 Slutt på forkjørsveg, eller til et vikepliktskilt eller stoppskilt gjelder for deg.'], ['Kan jeg parkere på forkjørsvei?', 'Utenfor tettbygd strøk er det forbudt å parkere på forkjørsvei. I tettbygd strøk gjelder de vanlige reglene for stans og parkering.']], paragraph: 6,
+    faq: [['Gjelder høyreregelen på forkjørsvei?', 'Nei. Biler fra sideveiene må vente på deg, så du skal ikke vike for trafikk fra høyre.'], ['Må jeg vike for møtende når jeg svinger til venstre fra forkjørsveien?', 'Ja. Forkjørsveien betyr at bilene fra sideveiene må vente på deg, men ikke at møtende må det. Svinger du til venstre, må du vike for dem som kommer mot deg.'], ['Hvor lenge gjelder forkjørsveien?', 'Til skilt 208 Slutt på forkjørsveg, eller til et vikepliktskilt eller stoppskilt gjelder for deg.'], ['Kan jeg parkere på forkjørsvei?', 'Utenfor tettbygd strøk er det forbudt å parkere på forkjørsvei. I tettbygd strøk gjelder de vanlige reglene for stans og parkering.']], paragraph: 6,
   },
   '370': {
     updatedAt: '2026-10-07', sourceDate: '7. oktober 2026',
