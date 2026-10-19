@@ -1,0 +1,11 @@
+.braking-animation { margin: 1.5rem 0 0; }
+.braking-animation-label { font-weight: 700; }
+.braking-animation-scene { width: 100%; overflow-x: auto; border-radius: 12px; margin: 1rem 0; }
+.braking-animation-caption { min-height: 3rem; font-weight: 600; }
+.braking-animation-play { background: #0f766e; color: white; border: 0; border-radius: 8px; padding: .75rem 1.25rem; font: inherit; font-weight: 700; cursor: pointer; }
+.braking-animation-play:hover { background: #115e59; }
+.braking-animation-play:focus-visible { outline: 3px solid #14b8a6; outline-offset: 3px; }
+.braking-animation-method { border: 1px solid var(--color-border); border-radius: 8px; padding: .75rem; }
+.braking-animation-summary { cursor: pointer; font-weight: 600; }
+.braking-animation-list { padding-left: 1.25rem; }
+.braking-animation-poster { display: block; width: 100%; height: auto; border-radius: 12px; }

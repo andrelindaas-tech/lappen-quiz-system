@@ -71,158 +71,139 @@ export const theoryTopics: TheoryTopic[] = [
     vikepliktTopic,
     ryggingVendingTopic,
     {
-        id: 'bremselengde',
-        title: 'Bremselengde kalkulator – regn ut stopplengde',
-        icon: '🚗',
-        shortDescription: 'Bruk kalkulatoren og tast inn hastighet — se bremselengde og stopplengde for tørr vei, våt vei og is. Med formel og øvingsoppgaver til teoriprøven.',
-        color: 'var(--apple-red)',
-        seoTitle: 'Bremselengde og stopplengde – slik regner du ut (med kalkulator)',
-        seoDescription: 'Slik regner du ut stopplengde: reaksjonslengde + bremselengde. Enkel 3-stegs metode du kan gjøre i hodet, kalkulator for tørr og våt vei og is, og øvingsoppgaver.',
+        id: "bremselengde",
+        title: "Bremselengde og stopplengde – enkelt forklart med kalkulator",
+        icon: "🚗",
+        shortDescription: "Lær å regne ut bremselengde og stopplengde. Se forskjellen på 50 og 60 km/t, og lær hvilken regnemåte du skal bruke i oppgavene.",
+        color: "var(--apple-red)",
+        seoTitle: "Bremselengde og stopplengde – slik regner du ut (med kalkulator)",
+        seoDescription: "Forstå bremselengde, reaksjonslengde og stopplengde med enkle eksempler. Prøv kalkulatoren og se hva 10 km/t høyere fart betyr.",
+        author: "Teori-test.no-redaksjonen",
+        reviewedAgainst: "Ung i trafikken og NAF",
+        lastUpdated: "2026-10-18",
         hasCalculator: true,
         sections: [
             {
-                title: 'Kort svar: Formel for bremselengde',
-                type: 'text',
-                content: 'På teoriprøven for klasse B kan du på tørr vei ved nødbremsing bruke denne huskeregelen:\n\n**Bremselengde = (fart / 10) × (fart / 10) / 2**\n\nEksempel ved 80 km/t:\n\n**8 × 8 / 2 = 32 meter**\n\nDet betyr at bremselengden ved 80 km/t på tørr vei er omtrent 32 meter. Husk at dette bare er selve bremselengden. Total stopplengde blir lengre, fordi du også må legge til reaksjonslengden.'
+                title: "Kort forklart",
+                type: "text",
+                content: "Bremselengde er avstanden bilen kjører fra du begynner å bremse til den stopper. Før du bremser, kjører bilen også et stykke mens du reagerer. Til sammen blir dette **stopplengden**. Høyere fart og dårligere veigrep gjør at du trenger mer plass til å stoppe."
             },
             {
-                title: 'Regn ut i 3 enkle steg («stryk nullen»-metoden)',
-                type: 'info',
-                content: 'Alt du trenger på teoriprøven kan gjøres i hodet med tre steg. Eksempel med 80 km/t på tørr vei:\n\n1. **Stryk nullen i farten:** 80 km/t → **8**\n2. **Reaksjonslengde:** tallet × 3 → 8 × 3 = **24 meter**\n3. **Bremselengde:** tallet × tallet ÷ 2 → 8 × 8 ÷ 2 = **32 meter**\n\nStopplengde = 24 + 32 = **56 meter**. Ferdig!\n\nPrøv selv med 60 km/t: stryk nullen (6), reaksjon 6 × 3 = 18 m, brems 6 × 6 ÷ 2 = 18 m, stopplengde **36 meter**.\n\nEr føret dårlig, ganger du bare bremselengden (ikke reaksjonslengden!) med førefaktoren: våt vei × 2, vått vinterføre × 4, is × 8–10.'
+                title: "Slik regner du ut bremselengden",
+                type: "text",
+                content: "En vanlig huskeregel for nødbremsing på tørr asfalt er:\n\n**Bremselengde ≈ (fart ÷ 10) × (fart ÷ 10) ÷ 2**\n\nKjører du i 80 km/t, gjør du slik:\n\n1. Del farten på 10: 80 ÷ 10 = **8**.\n2. Gang tallet med seg selv: 8 × 8 = **64**.\n3. Del på 2: 64 ÷ 2 = **32 meter**.\n\nDette er et overslag. Dekk, veigrep og bremser avgjør hvor lang bremselengden blir i praksis."
             },
             {
-                                title: 'Hva er bremselengde?',
-                type: 'text',
-                content: 'Bremselengde er den avstanden bilen tilbakelegger fra du begynner å bremse til bilen står stille. Bremselengden avhenger av farten, veidekke, bremsenes tilstand og bilens vekt.\n\nLes mer om hvordan sikt påvirker farten i [lysbruk og mørkekjøring](/laeringsressurser/lysbruk-morkekjoring).'
+                title: "Legg til reaksjonslengden",
+                type: "text",
+                content: "For et raskt overslag kan du dele farten på 10 og gange med 3. Ved 80 km/t blir det **8 × 3 = 24 meter**.\n\nLegg dette til bremselengden: **24 + 32 = 56 meter stopplengde** i regneeksemplet.\n\nFår du oppgitt en reaksjonstid, bruker du **fart ÷ 3,6 × sekunder**. Ved 80 km/t og ett sekund blir reaksjonslengden omtrent 22 meter. Huskeregelen gir et litt avrundet tall. Bruker du lengre tid på å reagere, kjører du også lengre før du bremser.\n\nLes mer om [reaksjonstid og reaksjonslengde](/laeringsressurser/reaksjonstid/)."
             },
             {
-                title: 'Prøv kalkulatoren!',
-                type: 'calculator',
-                content: 'Kalkulatoren nedenfor viser stopplengde (bremselengde + reaksjonslengde) for ulike hastigheter og veiforhold. Bremselengden alene er stopplengden minus reaksjonslengden. **Er du kun ute etter bremselengden, finner du den i den grønnmarkerte raden i tabellen nederst.**'
+                title: "Prøv bremselengdekalkulatoren",
+                type: "calculator",
+                content: "Velg fart og se hvor mye av stopplengden som går med til reaksjon og bremsing. Prøv også sammenligningen med 10 km/t høyere fart."
             },
             {
-                title: 'Stopplengdetabell (Oversikt)',
-                type: 'table',
-                content: '<div style="overflow-x: auto; -webkit-overflow-scrolling: touch; margin-top: 1rem;"><table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem;"><thead><tr style="background-color: var(--color-surface); border-bottom: 2px solid var(--color-border);"><th style="padding: 12px 8px;">Hastighet</th><th style="padding: 12px 8px;">Reaksjonslengde</th><th style="padding: 12px 8px;">Bremselengde (tørr)</th><th style="padding: 12px 8px;">Stopplengde (tørr)</th><th style="padding: 12px 8px;">Stopplengde (våt)</th></tr></thead><tbody><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">30 km/t</td><td style="padding: 12px 8px;">9 m</td><td style="padding: 12px 8px;">4,5 m</td><td style="padding: 12px 8px;"><b>13,5 m</b></td><td style="padding: 12px 8px;">18 m</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">50 km/t</td><td style="padding: 12px 8px;">15 m</td><td style="padding: 12px 8px;">12,5 m</td><td style="padding: 12px 8px;"><b>27,5 m</b></td><td style="padding: 12px 8px;">40 m</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">60 km/t</td><td style="padding: 12px 8px;">18 m</td><td style="padding: 12px 8px;">18 m</td><td style="padding: 12px 8px;"><b>36 m</b></td><td style="padding: 12px 8px;">54 m</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">80 km/t</td><td style="padding: 12px 8px;">24 m</td><td style="padding: 12px 8px;">32 m</td><td style="padding: 12px 8px;"><b>56 m</b></td><td style="padding: 12px 8px;">88 m</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">100 km/t</td><td style="padding: 12px 8px;">30 m</td><td style="padding: 12px 8px;">50 m</td><td style="padding: 12px 8px;"><b>80 m</b></td><td style="padding: 12px 8px;">130 m</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">110 km/t</td><td style="padding: 12px 8px;">33 m</td><td style="padding: 12px 8px;">60,5 m</td><td style="padding: 12px 8px;"><b>93,5 m</b></td><td style="padding: 12px 8px;">154 m</td></tr></tbody></table></div>'
+                title: "Stopplengde ved ulike hastigheter",
+                type: "table",
+                content: "Tallene er regneeksempler med huskereglene over. Våt vei er her regnet med dobbelt så lang bremselengde. Dette er ikke faste stoppavstander for bilen din.\n\n<div style=\"overflow-x: auto; -webkit-overflow-scrolling: touch; margin-top: 1rem;\"><table style=\"width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem;\"><thead><tr style=\"background-color: var(--color-surface); border-bottom: 2px solid var(--color-border);\"><th style=\"padding: 12px 8px;\">Hastighet</th><th style=\"padding: 12px 8px;\">Reaksjonslengde</th><th style=\"padding: 12px 8px;\">Bremselengde (tørr)</th><th style=\"padding: 12px 8px;\">Stopplengde (tørr)</th><th style=\"padding: 12px 8px;\">Stopplengde (våt, eksempel)</th></tr></thead><tbody><tr style=\"border-bottom: 1px solid var(--color-border);\"><td style=\"padding: 12px 8px;\">30 km/t</td><td style=\"padding: 12px 8px;\">9 m</td><td style=\"padding: 12px 8px;\">4,5 m</td><td style=\"padding: 12px 8px;\"><b>13,5 m</b></td><td style=\"padding: 12px 8px;\">18 m</td></tr><tr style=\"border-bottom: 1px solid var(--color-border);\"><td style=\"padding: 12px 8px;\">50 km/t</td><td style=\"padding: 12px 8px;\">15 m</td><td style=\"padding: 12px 8px;\">12,5 m</td><td style=\"padding: 12px 8px;\"><b>27,5 m</b></td><td style=\"padding: 12px 8px;\">40 m</td></tr><tr style=\"border-bottom: 1px solid var(--color-border);\"><td style=\"padding: 12px 8px;\">60 km/t</td><td style=\"padding: 12px 8px;\">18 m</td><td style=\"padding: 12px 8px;\">18 m</td><td style=\"padding: 12px 8px;\"><b>36 m</b></td><td style=\"padding: 12px 8px;\">54 m</td></tr><tr style=\"border-bottom: 1px solid var(--color-border);\"><td style=\"padding: 12px 8px;\">80 km/t</td><td style=\"padding: 12px 8px;\">24 m</td><td style=\"padding: 12px 8px;\">32 m</td><td style=\"padding: 12px 8px;\"><b>56 m</b></td><td style=\"padding: 12px 8px;\">88 m</td></tr><tr style=\"border-bottom: 1px solid var(--color-border);\"><td style=\"padding: 12px 8px;\">100 km/t</td><td style=\"padding: 12px 8px;\">30 m</td><td style=\"padding: 12px 8px;\">50 m</td><td style=\"padding: 12px 8px;\"><b>80 m</b></td><td style=\"padding: 12px 8px;\">130 m</td></tr><tr style=\"border-bottom: 1px solid var(--color-border);\"><td style=\"padding: 12px 8px;\">110 km/t</td><td style=\"padding: 12px 8px;\">33 m</td><td style=\"padding: 12px 8px;\">60,5 m</td><td style=\"padding: 12px 8px;\"><b>93,5 m</b></td><td style=\"padding: 12px 8px;\">154 m</td></tr></tbody></table></div>"
             },
             {
-                title: 'Formel for bremselengde, reaksjonslengde og stopplengde',
-                type: 'formula',
-                content: 'Reaksjonslengde = (Fart ÷ 10) × 3 meter\n\nBremselengde (tørr vei) = (Fart ÷ 10)² ÷ 2 meter\n\nStopplengde = Reaksjonslengde + Bremselengde'
+                title: "Dobbel fart gir fire ganger så lang bremselengde",
+                type: "component",
+                component: "BremselengdeFirdobling",
+                image: {
+                    src: "/images/bremselengde/bremselengde-dobbel-fart.webp",
+                    width: 1800,
+                    height: 522,
+                    alt: "Fire biler i 15, 30, 60 og 120 km/t bremser fra samme strek. Bremselengdene blir 1,1, 4,5, 18 og 72 meter: dobbel fart gir fire ganger så lang bremselengde."
+                },
+                content: "Når farten dobles, blir bremselengden omtrent fire ganger så lang, så lenge forholdene ellers er like. Halverer du farten, blir bremselengden en firedel. Tredobler du farten, blir den ni ganger så lang.\n\n**Reaksjonslengden følger farten direkte:** Dobbel fart gir dobbel reaksjonslengde ved samme reaksjonstid. Hele stopplengden blir derfor ikke fire ganger så lang."
             },
             {
-                title: 'Eksempel: 80 km/t på tørr vei',
-                type: 'example',
-                content: 'Reaksjonslengde = (80 ÷ 10) × 3 = 24 meter\nBremselengde = (80 ÷ 10)² ÷ 2 = 32 meter\nStopplengde = 24 + 32 = 56 meter\n\nDet betyr at du trenger minst 56 meter for å stoppe helt!'
+                title: "Oppgaven gir deg en bremselengde – hva gjør du da?",
+                type: "example",
+                content: "Da bruker du tallet i oppgaven, ikke et nytt overslag fra huskeregelen.\n\n**Eksempel:** Bremselengden er 12 meter ved 40 km/t. Hva blir den ved 80 km/t under samme forhold?\n\nFarten dobles. Du ganger derfor 12 meter med 4: **12 × 4 = 48 meter**.\n\nHuskeregelen for tørr asfalt ville gitt 32 meter. Men her kjenner du allerede bremselengden ved 40 km/t. Det er den du skal regne videre fra."
             },
             {
-                title: 'Hvorfor står det 24 meter og ikke 22?',
-                type: 'info',
-                content: 'Ser du 22 meter i andre kilder for reaksjonslengden i 80 km/t, er begge tall riktige — de svarer bare på litt ulike spørsmål.\n\n**Eksakt fysikk:** 80 km/t er 22,2 meter i sekundet. Ett sekunds reaksjonstid gir da 22,2 meter.\n\n**Huskeregelen på teoriprøven:** fart delt på 10, ganget med 3. Det gir 8 × 3 = 24 meter. Regelen runder bevisst opp, slik at du aldri undervurderer avstanden når du regner i hodet.\n\nVi bruker huskeregelen i tabellene fordi det er den du skal kunne på prøven. Skal du regne eksakt, deler du farten på 3,6 og ganger med reaksjonstiden i sekunder.'
+                title: "Hva skjer på våt vei, snø og is?",
+                type: "text",
+                content: "Dårligere veigrep gjør bremselengden lengre. Hvor mye lengre, varierer med dekkene og føret. Våt asfalt gir ikke alltid nøyaktig dobbelt bremselengde, og snø og is gir ikke samme grep.\n\nI regneoppgaver kan du få en faktor å bruke. Står det at bremselengden dobles, ganger du med 2. **Reaksjonslengden skal ikke ganges med førefaktoren.**\n\n**Eksempel:** Bremselengden er 15 meter. Oppgaven sier at dårligere grep gjør den dobbelt så lang. Da blir svaret **30 meter**.\n\nPå veien: Senk farten og øk avstanden når grepet blir dårligere. Les mer om [dekk, bremser og styring](/laeringsressurser/dekk-bremser-styring/) og [vinterdekk og piggdekk](/laeringsressurser/vinterdekk-og-piggdekk/)."
             },
             {
-                title: 'Viktig å huske',
-                type: 'warning',
-                content: 'Det er særlig to ting som gjør bremselengden mye lengre: høyere fart og dårligere veigrep.\n\n### 1. Når farten dobles, firedobles bremselengden\n\nPå tørr vei øker bremselengden kraftig når farten øker. Dobler du farten, blir bremselengden omtrent fire ganger så lang.\n\n![Illustrasjon som viser at når farten dobles, firedobles bremselengden](/bremselengde-dobbel-fart.png)\n\n*Når farten dobles, blir bremselengden fire ganger så lang. Dette er en av de viktigste huskereglene til teoriprøven.*\n\n### 2. Dårlig føre gjør bremselengden enda lengre\n\nPå våt vei kan bremselengden bli omtrent dobbelt så lang som på tørr vei. På snø og is kan den bli mange ganger lengre. Ved 80 km/t kan stopplengden på is bli over 300 meter.\n\n**Husk forskjellen:**\n\n* Høyere fart øker bremselengden fordi bilen har mer bevegelsesenergi.\n* Dårlig føre øker bremselengden fordi dekkene får dårligere grep.'
+                title: "Vannplaning: Dekkene mister grepet",
+                type: "text",
+                content: "Ved vannplaning kommer et vannlag mellom dekkene og veien. Da kan du miste kontroll over både styring og bremsing. Det er derfor misvisende å sette en bestemt bremselengde på vannplaning.\n\nReduser farten før du kommer til mye vann, og unngå hjulspor med stående vann. Gode dekk hjelper, men erstatter ikke lavere fart."
             },
             {
-                title: 'Faktorer som påvirker bremselengden',
-                type: 'info',
-                content: '• Fart — Dobbel fart gir 4 ganger lengre bremselengde\n• Veidekke — Is, snø, regn øker bremselengden betydelig\n• Dekkenes tilstand — Slitte dekk gir dårligere grep\n• Bremsenes tilstand — Slitte bremser reduserer bremsekraften\n• Bilens vekt — Tung bil trenger lengre avstand\n• Helning — Nedoverbakke øker bremselengden\n\nKlar til å teste kunnskapen? Ta [øvingsprøven om fartsregler](/quiz/fartsregler) eller les om [vikeplikt](/laeringsressurser/vikeplikt).'
-            },
-            {
-                title: 'Slik endres bremselengden med veiforhold',
-                type: 'table',
-                content: '<div style="overflow-x: auto; -webkit-overflow-scrolling: touch; margin-top: 1rem;"><table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem;"><thead><tr style="background-color: var(--color-surface); border-bottom: 2px solid var(--color-border);"><th style="padding: 12px 8px;">Veiforhold</th><th style="padding: 12px 8px;">Bremsefaktor</th><th style="padding: 12px 8px;">Eksempel: 80 km/t (32 m tørr)</th></tr></thead><tbody><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">Tørr asfalt</td><td style="padding: 12px 8px;"><b>1×</b></td><td style="padding: 12px 8px;">32 m</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">Våt asfalt</td><td style="padding: 12px 8px;"><b>2×</b></td><td style="padding: 12px 8px;">64 m</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">Vått vinterføre</td><td style="padding: 12px 8px;"><b>4×</b></td><td style="padding: 12px 8px;">128 m</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">Is / snø</td><td style="padding: 12px 8px;"><b>8–10×</b></td><td style="padding: 12px 8px;">256–320 m</td></tr><tr><td style="padding: 12px 8px;">Vannplaning</td><td style="padding: 12px 8px;"><b>∞</b></td><td style="padding: 12px 8px;">Bremser virker ikke</td></tr></tbody></table></div>'
-            },
-            {
-                title: 'Øvingsoppgaver — fart og føre kombinert',
-                type: 'text',
-                content: 'Test deg selv på disse to kombinasjonsoppgavene:\n\n**Oppgave 1:** Du kjører 60 km/t på vått vinterføre. Hva er bremselengden?\nBremselengde tørr = (60÷10)² ÷ 2 = 18 m. Vått vinterføre = 4×: **18 × 4 = 72 meter**\n\n**Oppgave 2:** Du dobler farten fra 50 til 100 km/t på tørr asfalt. Hva skjer med bremselengden?\nVed 50 km/t: (50÷10)² ÷ 2 = 12,5 m. Ved 100 km/t: (100÷10)² ÷ 2 = 50 m. **Bremselengden firedobles.**\n\nHusk: Dobbel fart = firedobbel bremselengde. Dette er den viktigste huskeregelen på teoriprøven.'
-            },
-            {
-                title: 'Vannplaning — når bremselengden blir uendelig',
-                type: 'warning',
-                content: 'Vannplaning oppstår når vannet ikke rekker å presses vekk under dekket, og bilen begynner å gli på et vannlag. Dette skjer typisk ved høy fart, slitte dekk eller mye vann på veien.\n\nNår du hydraplaner (vannplaner):\n- Dekket mister kontakt med veibanen\n- Bremsene virker ikke\n- Rattet responderer ikke\n- Bilen lar seg ikke styres\n\n**Hva du skal gjøre:** Ikke brems hardt. Ta foten av gassen, hold rattet stødig og la bilen sakke av seg selv til dekket får kontakt igjen.\n\n**Forebygging:** Reduser farten ved kraftig regn, skift dekk i tide og kjør i hjulsporene til bilen foran (der vannet er presset vekk).\n\n[Les om reaksjonstid og reaksjonslengde](/laeringsressurser/reaksjonstid)'
-            },
-            {
-                title: '🚗 Interaktivt bremsespill',
-                type: 'tip',
-                content: 'Vil du teste reaksjonstiden din i en simulator og se om du klarer å anslå riktig bremselengde og stopplengde på ulikt føre?\n\n👉 **[Prøv Stopplengde-utfordringen her!](/laeringsspill/stopplengde)**'
+                title: "Prøv stopplengdespillet",
+                type: "tip",
+                content: "Vil du kjenne hvor mye reaksjonstiden betyr? [Prøv stopplengdespillet](/laeringsspill/stopplengde/) og se hvor langt bilen rekker å kjøre før du bremser."
             }
         ],
         faq: [
             {
-                question: "Hva er bremselengden ved 80 km/t på tørr vei?",
-                answer: "Ved 80 km/t er bremselengden 32 meter på tørr vei. Reaksjonslengden er 24 meter, så total stopplengde blir 56 meter."
-            },
-            {
-                question: "Hvordan regner du ut stopplengde?",
-                answer: "Bruk stryk nullen-metoden: Stryk nullen i farten (80 km/t → 8). Reaksjonslengde = tallet × 3. Bremselengde = tallet × tallet ÷ 2. Stopplengde = reaksjonslengde + bremselengde. Ved 80 km/t: 24 + 32 = 56 meter."
-            },
-            {
-                question: "Hva er bremselengden ved 60 km/t?",
-                answer: "Ved 60 km/t er bremselengden 18 meter på tørr vei (6 × 6 ÷ 2). Med reaksjonslengden på 18 meter (6 × 3) blir total stopplengde 36 meter."
+                question: "Hvordan regner du ut bremselengde?",
+                answer: "En vanlig huskeregel på tørr asfalt er fart delt på 10, ganget med seg selv og delt på 2. Ved 80 km/t gir det 8 × 8 ÷ 2 = 32 meter. Det er et overslag, ikke en måling av bilen din."
             },
             {
                 question: "Hva er forskjellen på bremselengde og stopplengde?",
-                answer: "Bremselengde er avstanden fra du begynner å bremse til bilen stopper helt. Stopplengde er bremselengde pluss reaksjonslengde — altså hele avstanden fra du oppdager faren til bilen står stille."
+                answer: "Bremselengden starter når du begynner å bremse. Stopplengden inkluderer også avstanden du kjører mens du reagerer."
             },
             {
-                question: "Hvordan regner man ut bremselengde?",
-                answer: "Formelen er: (fart ÷ 10)² ÷ 2. Eksempel ved 80 km/t: (80 ÷ 10)² ÷ 2 = 64 ÷ 2 = 32 meter."
+                question: "Hva er bremselengden ved 60 km/t?",
+                answer: "Huskeregelen for tørr asfalt gir 6 × 6 ÷ 2 = 18 meter. Med reaksjonslengden anslått til 18 meter blir stopplengden 36 meter."
             },
             {
-                question: "Hvor lang er stopplengden ved 80 km/t på is?",
-                answer: "På is er bremselengden opptil 10 ganger lengre enn på tørr vei. Ved 80 km/t blir stopplengden på is over 344 meter."
-            },
-            {
-                question: "Hva påvirker bremselengden?",
-                answer: "Bremselengden påvirkes av fart, veidekke (tørr/våt/is/snø), dekkenes tilstand, bremsenes tilstand, bilens vekt og om du kjører i bakke."
+                question: "Hvor mye øker bremselengden når farten tredobles?",
+                answer: "Under samme forhold blir bremselengden ni ganger så lang: 3 × 3 = 9. Reaksjonslengden blir tre ganger så lang ved samme reaksjonstid."
             },
             {
                 question: "Hva er stopplengden ved 50 km/t?",
-                answer: "Ved 50 km/t er reaksjonslengden 15 meter og bremselengden 12,5 meter på tørr vei. Total stopplengde er 27,5 meter."
+                answer: "Huskereglene gir 15 meter reaksjonslengde og 12,5 meter bremselengde, til sammen 27,5 meter. Faktisk stopplengde avhenger blant annet av reaksjonstid og veigrep."
+            }
+        ],
+        miniQuiz: [
+            {
+                question: "Bremselengden er 9 meter ved 30 km/t. Hva blir den ved 60 km/t under samme forhold?",
+                options: [
+                    "18 meter",
+                    "36 meter",
+                    "27 meter",
+                    "72 meter"
+                ],
+                correct: "36 meter",
+                explanation: "Farten dobles, så bremselengden blir fire ganger så lang: 9 × 4 = 36 meter. Bruk avstanden som er oppgitt i spørsmålet."
+            },
+            {
+                question: "Du kjører 60 km/t. Hva gir huskeregelen for bremselengde på tørr asfalt?",
+                options: [
+                    "18 meter",
+                    "36 meter",
+                    "60 meter",
+                    "12 meter"
+                ],
+                correct: "18 meter",
+                explanation: "6 × 6 ÷ 2 = 18 meter. Dette er bremselengden. Reaksjonslengden kommer i tillegg når du regner ut stopplengden."
+            },
+            {
+                question: "En oppgave sier at dårligere grep dobler bremselengden. Hva skal du gange med 2?",
+                options: [
+                    "Hele stopplengden",
+                    "Bare reaksjonslengden",
+                    "Bare bremselengden",
+                    "Farten"
+                ],
+                correct: "Bare bremselengden",
+                explanation: "Førefaktoren gjelder bremsingen. Reaksjonslengden er den samme når fart og reaksjonstid er uendret."
             }
         ],
         sources: {
-            title: 'Kilder og grunnlag for tallene',
-            type: 'text',
-            content: '- **Statens vegvesen:** [Temaliste til teoriprøve klasse B](https://www.vegvesen.no/globalassets/forerkort/ta-forerkort/temaliste-til-teoriprove-klasse-b-bokmal.pdf) — reaksjonstid, bremselengde og stopplengde er del av pensum.\n- **Trygg Trafikk:** [Bremselengde- og kollisjonskalkulator](https://www.tryggtrafikk.no/ung/bremselengde/)\n- **Beregningsgrunnlag:** bremselengde er regnet med huskeregelen (fart ÷ 10)² ÷ 2 på tørr asfalt, som tilsvarer en friksjonskoeffisient på omtrent 0,8. Reaksjonslengden bruker huskeregelen (fart ÷ 10) × 3 ved ett sekunds reaksjonstid.'
-        },
-        miniQuiz: [
-            {
-                question: "Hva er bremselengden din om du nødbremser på tørr asfalt og kjører 60 km/t?",
-                options: ["18 meter", "25 meter", "36 meter", "64 meter"],
-                correct: "18 meter",
-                explanation: "Bruk huskeregelen: hastighet × hastighet ÷ 200.\n\n60 × 60 = 3600\n3600 ÷ 200 = 18 meter\n\nMerk: stopplengden er 36 meter (18m bremselengde + 18m reaksjonslengde), men spørsmålet gjelder kun bremselengden."
-            },
-            {
-                question: "Bremselengden er 20 meter på tørr asfalt. Hva blir den på våt asfalt?",
-                options: ["10 meter", "20 meter", "40 meter", "80 meter"],
-                correct: "40 meter",
-                explanation: "Våt asfalt dobler alltid bremselengden sammenlignet med tørr asfalt.\n\n20 meter × 2 = 40 meter\n\nHuskeregel: tørr → våt = gang med 2."
-            },
-            {
-                question: "Du dobler farten fra 50 til 100 km/t. Hva skjer med bremselengden?",
-                options: ["Den dobles", "Den tredobles", "Den firedobles", "Den blir åtte ganger lengre"],
-                correct: "Den firedobles",
-                explanation: "Når farten dobles, firedobles bremselengden. Dette er den viktigste huskeregelen.\n\nVed 50 km/t: 50 × 50 ÷ 200 = 12,5 meter\nVed 100 km/t: 100 × 100 ÷ 200 = 50 meter\n12,5 × 4 = 50 meter ✓"
-            },
-            {
-                question: "Hva skjer med bremselengden ved vannplaning?",
-                options: ["Den dobles", "Den firedobles", "Den blir ti ganger lengre", "Bremselengden er uendelig"],
-                correct: "Bremselengden er uendelig",
-                explanation: "Ved vannplaning mister dekket kontakt med veien og bilen flyter på et vannlag.\n\nBremsene virker ikke — bremselengden er i praksis uendelig.\n\nHva gjør du? Slipp gassen rolig, ikke brems brått, hold rattet rett."
-            },
-            {
-                question: "Bremselengden er 32 meter på tørr asfalt ved 80 km/t. Hva blir den på vått vinterføre?",
-                options: ["64 meter", "96 meter", "128 meter", "256 meter"],
-                correct: "128 meter",
-                explanation: "Vått vinterføre gir 4 ganger lengre bremselengde enn tørr asfalt.\n\n32 meter × 4 = 128 meter\n\nHuskeregel: tørr → vinterføre = gang med 4."
-            }
-        ]
-    },
+            title: "Kilder og beregninger",
+            type: "text",
+            content: "Tabellen og hovedkalkulatoren bruker huskereglene for reaksjonslengde og bremselengde. Sammenligningen mellom to hastigheter bruker ett sekunds reaksjonstid og samme, jevne nedbremsing for begge biler. Forutsetningene står ved resultatene."
+        }
+},
 
     {
         id: 'myndighetspyramiden',

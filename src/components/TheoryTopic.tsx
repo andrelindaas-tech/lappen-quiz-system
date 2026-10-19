@@ -24,6 +24,7 @@ import {
     ChevronDown
 } from 'lucide-react'
 import BrakeCalculator from './BrakeCalculator'
+import BremselengdeFirdobling from './BremselengdeFirdobling'
 import TrailerWeightSimulator from './TrailerWeightSimulator'
 import DashboardWarningSimulator from './DashboardWarningSimulator'
 import { parseInlineLinks, addTableCellLabels } from '../utils/textUtils'
@@ -400,6 +401,7 @@ export default function TheoryTopic({ topic, onBack }: TheoryTopicProps) {
                                 {section.content && renderContent(section.content)}
                                 {section.componentId === 'dashboard' && <DashboardWarningSimulator />}
                                 {section.component === 'RundkjoringAnimasjon' && <RundkjoringAnimasjon />}
+                                {section.component === 'BremselengdeFirdobling' && <BremselengdeFirdobling poster={section.image} />}
                                 {section.component === 'RyggingVendingDemo' && <RyggingVendingDemo />}
                                 {section.component === 'TopicGuide' && <TopicGuide />}
                                 {section.component === 'RundkjoringDemo' && <RundkjoringDemo />}
@@ -409,7 +411,7 @@ export default function TheoryTopic({ topic, onBack }: TheoryTopicProps) {
                                 {section.component === 'ArticlePractice:bus' && <ArticlePractice topic="bus" />}
                                 {section.component === 'ArticlePractice:child' && <ArticlePractice topic="child" />}
                                 {section.component === 'ArticlePractice:parking' && <ArticlePractice topic="parking" />}
-                                {section.image && <ArticleImage image={section.image} />}
+                                {section.image && section.component !== 'BremselengdeFirdobling' && <ArticleImage image={section.image} />}
                             </div>
                         ) : section.type === 'table' ? (
                             <div className="theory-section-content">

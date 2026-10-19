@@ -1,0 +1,13 @@
+.braking-comparison { margin-top: 2rem; padding: clamp(1rem, 3vw, 1.75rem); border: 1px solid var(--color-border); border-radius: 16px; background: var(--color-surface); }
+.braking-comparison h3 { margin-top: 0; }
+.braking-comparison label { display: block; margin-bottom: .5rem; font-weight: 600; }
+.braking-comparison select { max-width: 100%; padding: .7rem 1rem; border-radius: 8px; background: var(--color-bg, #101827); color: var(--color-text, #fff); border: 1px solid var(--color-border); font: inherit; }
+.comparison-answer { margin: 1.5rem 0; border-left: 4px solid #14b8a6; padding: .5rem 1rem; }
+.comparison-speed { display: block; font-size: clamp(2rem, 6vw, 3rem); line-height: 1.2; }
+.comparison-distances { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+.comparison-distances p { margin: 0; }
+.comparison-distances span { display: block; }
+.braking-comparison summary { cursor: pointer; font-weight: 600; padding: .5rem 0; }
+@media (max-width: 480px) { .comparison-distances { grid-template-columns: 1fr; } }
+
+@media (max-width: 480px) { .brake-calculator { padding: 1rem; } .brake-calculator .calc-breakdown { padding: .5rem; overflow-x: auto; } }

@@ -1,5 +1,6 @@
 // Interaktiv bremselengde-kalkulator
 import { useState } from 'react'
+import BrakingComparison from './BrakingComparison'
 
 interface BrakeResult {
     speed: number
@@ -39,8 +40,10 @@ export default function BrakeCalculator() {
     const presets = [30, 50, 60, 80, 100, 120]
 
     return (
+        <>
         <div className="brake-calculator">
-            <h3 className="calc-title">🧮 Bremselengde-kalkulator</h3>
+            <h3 className="calc-title">Bremselengdekalkulator</h3>
+            <p>Tallene er overslag. Her bruker vi huskeregelen for reaksjonslengde, dobbel bremselengde på våt vei og tidobbel på is. Dette viser forskjellen i modellen, ikke faste verdier for føret.</p>
 
             <div className="calc-input-section">
                 <label className="calc-label" htmlFor="speed-input">
@@ -126,7 +129,7 @@ export default function BrakeCalculator() {
                 <div className="calc-result-row">
                     <div className="calc-result-label">
                         <span className="calc-dot" style={{ backgroundColor: '#ef4444' }}></span>
-                        Stopplengde is/snø
+                        Stopplengde is (eksempel)
                     </div>
                     <div className="calc-bar-container">
                         <div
@@ -149,7 +152,7 @@ export default function BrakeCalculator() {
                             <th>Komponent</th>
                             <th>Stopplengde tørr vei</th>
                             <th>Stopplengde våt vei</th>
-                            <th>Stopplengde is/snø</th>
+                            <th>Stopplengde is</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -175,5 +178,7 @@ export default function BrakeCalculator() {
                 </table>
             </div>
         </div>
+        <BrakingComparison />
+        </>
     )
 }

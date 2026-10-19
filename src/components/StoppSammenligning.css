@@ -1,0 +1,14 @@
+.stop-animation { margin: 0; }
+.stop-label { font-weight: 600; }
+.stop-pairs, .stop-buttons, .stop-legend { display: flex; flex-wrap: wrap; gap: .6rem; margin: 1rem 0; }
+.stop-pair { padding: .5rem .75rem; border: 1px solid var(--color-border); border-radius: 8px; background: var(--color-bg); color: var(--color-text); font: inherit; cursor: pointer; }
+.stop-pair[aria-pressed="true"] { background: #0f766e; color: white; }
+.stop-pair:focus-visible { outline: 3px solid #14b8a6; outline-offset: 2px; }
+.stop-legend { font-size: .85rem; }
+.stop-legend-item { display: inline-flex; gap: .35rem; align-items: center; }
+.stop-swatch { display: inline-block; width: 20px; height: 12px; border-radius: 2px; }
+.stop-stats { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+.stop-stat { border: 1px solid var(--color-border); padding: .75rem; border-radius: 8px; }
+.stop-stat dd { margin: .25rem 0 0; }
+.stop-stat-value { font-size: 1.3rem; font-weight: 700; }
+@media(max-width: 480px) { .stop-stats { grid-template-columns: 1fr; } }
