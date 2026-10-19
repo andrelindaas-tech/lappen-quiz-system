@@ -2734,7 +2734,7 @@ export const theoryTopics: TheoryTopic[] = [
         id: 'temaliste-teoriproven-klasse-b',
         title: 'Temaliste teoriprøven klasse B: 10 hovedtema du bør kunne',
         icon: '📋',
-        lastUpdated: '2026-09-21',
+        lastUpdated: '2026-10-19',
         shortDescription: 'Åpne et hovedtema, finn det du vil lære og gå videre til forklaringer og øving. En praktisk oversikt for førerkort klasse B.',
         color: 'var(--apple-blue)',
         seoTitle: 'Temaliste teoriprøven klasse B: 10 hovedtema du må kunne',
