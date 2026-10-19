@@ -378,35 +378,9 @@ body.dark-mode .theory-section {
 
 /* Formel-seksjons og Eksempel-seksjons typography benytter standard font */
 
-/* Adjust light mode to use slightly tinted backgrounds for context if desired,
-   but keeping it clean and matched to dark mode philosophy */
-@media (prefers-color-scheme: light) {
-
-    /* Info-seksjon */
-    .theory-section-info {
-        background-color: #f0fdf4;
-    }
-
-    /* Advarsel-seksjon */
-    .theory-section-warning {
-        background-color: #fef3c7;
-    }
-
-    /* Tips-seksjon */
-    .theory-section-tip {
-        background-color: #eff6ff;
-    }
-
-    /* Formel-seksjon */
-    .theory-section-formula {
-        background-color: #faf5ff;
-    }
-
-    /* Eksempel-seksjon */
-    .theory-section-example {
-        background-color: #fdf4ff;
-    }
-}
+/* Alle seksjonstyper har samme nøytrale kort i begge moduser.
+   Typen styrer innholdet, ikke bakgrunnsfargen. Artikler som trenger egne
+   farger (f.eks. rundkjøring) setter dem selv. */
 
 /* Ensure dark mode definitely forces raw backgrounds */
 body.dark-mode .theory-section-info,
@@ -1188,33 +1162,7 @@ body.dark-mode .theory-inline-code {
     }
 }
 
-/* Review: neutral cards in the bus article, matching the selected site theme. */
-body .theory-topic-buss-fra-holdeplass .theory-section-tip,
-body .theory-topic-buss-fra-holdeplass .theory-section-warning {
-    background: var(--color-bg);
-}
-
-body:not(.dark-mode) .theory-topic-buss-fra-holdeplass .theory-section-tip,
-body:not(.dark-mode) .theory-topic-buss-fra-holdeplass .theory-section-warning { background: #fff; }
-
-/* Review: white checklist cards in the child-safety article, light mode only. */
-body:not(.dark-mode) .theory-topic-barn-i-bil-og-sikring .theory-section-tip {
-    background: #fff;
-}
-
-/* Review: neutral cards in the parking article, light mode only. */
-body:not(.dark-mode) .theory-topic-stans-og-parkering .theory-section-warning,
-body:not(.dark-mode) .theory-topic-stans-og-parkering .theory-section-tip {
-    background: #fff;
-}
-
-/* Bremselengde: nøytrale kort i lys modus. */
-body:not(.dark-mode) .theory-topic-bremselengde .theory-section-info,
-body:not(.dark-mode) .theory-topic-bremselengde .theory-section-tip { background: #fff; }
-
-/* Automatlappen review: neutral surfaces and readable, responsive comparison. */
-body:not(.dark-mode) .theory-topic-automatlappen .theory-section-info,
-body:not(.dark-mode) .theory-topic-automatlappen .theory-section-tip { background: #fff; }
+/* Automatlappen: readable, responsive comparison. */
 .gear-comparison { margin-top: 1.5rem; }
 .gear-comparison-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
 .gear-comparison-card { padding: 1.5rem; border: 1px solid var(--color-border); border-radius: 16px; background: var(--color-bg); }
