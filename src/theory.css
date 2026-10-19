@@ -1208,6 +1208,10 @@ body:not(.dark-mode) .theory-topic-stans-og-parkering .theory-section-tip {
     background: #fff;
 }
 
+/* Bremselengde: nøytrale kort i lys modus. */
+body:not(.dark-mode) .theory-topic-bremselengde .theory-section-info,
+body:not(.dark-mode) .theory-topic-bremselengde .theory-section-tip { background: #fff; }
+
 /* Automatlappen review: neutral surfaces and readable, responsive comparison. */
 body:not(.dark-mode) .theory-topic-automatlappen .theory-section-info,
 body:not(.dark-mode) .theory-topic-automatlappen .theory-section-tip { background: #fff; }

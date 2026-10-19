@@ -79,8 +79,7 @@ export const theoryTopics: TheoryTopic[] = [
         seoTitle: "Bremselengde og stopplengde – slik regner du ut (med kalkulator)",
         seoDescription: "Formel for bremselengde og stopplengde, med eksempler og tabell for 30–110 km/t. Prøv kalkulatoren og se hva 10 km/t høyere fart betyr.",
         author: "Teori-test.no-redaksjonen",
-        reviewedAgainst: "Ung i trafikken og NAF",
-        lastUpdated: "2026-10-18",
+        lastUpdated: "2026-10-19",
         hasCalculator: true,
         sections: [
             {
@@ -122,7 +121,7 @@ export const theoryTopics: TheoryTopic[] = [
             },
             {
                 title: "Oppgaven gir deg en bremselengde – hva gjør du da?",
-                type: "example",
+                type: "text",
                 image: {
                     src: "/images/bremselengde/bremselengde-dobbel-fart-forhold.webp",
                     width: 1024,
@@ -131,6 +130,11 @@ export const theoryTopics: TheoryTopic[] = [
                     caption: "Starter du med en oppgitt bremselengde, ganger du med 4 hver gang farten dobles: 1 → 4 → 16 → 64 meter."
                 },
                 content: "Da bruker du tallet i oppgaven, ikke et nytt overslag fra huskeregelen.\n\n**Eksempel:** Bremselengden er 12 meter ved 40 km/t. Hva blir den ved 80 km/t under samme forhold?\n\nFarten dobles. Du ganger derfor 12 meter med 4: **12 × 4 = 48 meter**.\n\nHuskeregelen for tørr asfalt ville gitt 32 meter. Men her kjenner du allerede bremselengden ved 40 km/t. Det er den du skal regne videre fra."
+            },
+            {
+                title: "Dette bommer flest på: når farten går ned",
+                type: "text",
+                content: "I en av oppgavene våre er bremselengden 54 meter i 90 km/t. Vi spør hva den blir når farten senkes til 30 km/t.\n\n**293 av 398 svarte feil – 73,6 prosent.** Det vanligste feilsvaret var 18 meter. 155 valgte det, altså 38,9 prosent av alle svarene og 52,9 prosent av feilsvarene.\n\n18 meter får du hvis du deler på 3 fordi farten er blitt en tredel. Men bremselengden endrer seg med farten ganget med seg selv. **Blir farten en tredel, blir bremselengden en niendedel:** 54 ÷ 9 = **6 meter**, så lenge bremseforholdene ellers er like.\n\nEn annen oppgave viser feilen fra motsatt side. Der dobles reaksjonstiden fra ett til to sekunder, i samme fart. 150 av 386 svarte feil, og 102 av dem trodde reaksjonslengden blir fire ganger så lang. Riktig svar er dobbelt så lang. **Regelen om å gange farten med seg selv gjelder bare bremselengden.** Reaksjonslengden øker i samme takt som farten og reaksjonstiden.\n\nDatagrunnlag: første svar per nettleser og spørsmål, besvart fra 21. juli til 18. oktober 2026. Gjentatte svar er holdt utenfor. En nettleser er ikke det samme som én person."
             },
             {
                 title: "Hva skjer på våt vei, snø og is?",
@@ -160,6 +164,10 @@ export const theoryTopics: TheoryTopic[] = [
             {
                 question: "Hva er bremselengden ved 60 km/t?",
                 answer: "Huskeregelen for tørr asfalt gir 6 × 6 ÷ 2 = 18 meter. Med reaksjonslengden anslått til 18 meter blir stopplengden 36 meter."
+            },
+            {
+                question: "Hvor mye kortere blir bremselengden når farten går ned?",
+                answer: "Regelen virker begge veier. Halverer du farten, blir bremselengden en firedel. Blir farten en tredel, blir bremselengden en niendedel. Er bremselengden 54 meter i 90 km/t, blir den 6 meter i 30 km/t under samme forhold."
             },
             {
                 question: "Hvor mye øker bremselengden når farten tredobles?",
