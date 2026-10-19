@@ -123,6 +123,13 @@ export const theoryTopics: TheoryTopic[] = [
             {
                 title: "Oppgaven gir deg en bremselengde – hva gjør du da?",
                 type: "example",
+                image: {
+                    src: "/images/bremselengde/bremselengde-dobbel-fart-forhold.webp",
+                    width: 1024,
+                    height: 426,
+                    alt: "Dobbel fart gir fire ganger så lang bremselengde: 1 meter ved 15 km/t blir 4 meter ved 30 km/t, 16 meter ved 60 km/t og 64 meter ved 120 km/t.",
+                    caption: "Starter du med en oppgitt bremselengde, ganger du med 4 hver gang farten dobles: 1 → 4 → 16 → 64 meter."
+                },
                 content: "Da bruker du tallet i oppgaven, ikke et nytt overslag fra huskeregelen.\n\n**Eksempel:** Bremselengden er 12 meter ved 40 km/t. Hva blir den ved 80 km/t under samme forhold?\n\nFarten dobles. Du ganger derfor 12 meter med 4: **12 × 4 = 48 meter**.\n\nHuskeregelen for tørr asfalt ville gitt 32 meter. Men her kjenner du allerede bremselengden ved 40 km/t. Det er den du skal regne videre fra."
             },
             {
