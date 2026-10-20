@@ -1,0 +1,8 @@
+{
+ "name":"veimerking-film-v3",
+ "version":"3.0.0",
+ "private":true,
+ "scripts":{"prepare-audio":"python -I prepare.py","build":"node build.cjs","check":"node export.cjs --stills","export":"node export.cjs","export:mobile":"node export.cjs --mobile"},
+ "dependencies":{"three":"0.186.1"},
+ "devDependencies":{"esbuild":"0.28.2","playwright":"1.56.1","pngjs":"7.0.0"}
+}

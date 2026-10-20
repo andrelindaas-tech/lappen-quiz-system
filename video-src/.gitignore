@@ -1,0 +1,9 @@
+node_modules/
+bundle.js
+assets-data.js
+car-data.js
+fortelling.wav
+*.mp4
+kontrollbilder/
+runde*/
+ferdig/

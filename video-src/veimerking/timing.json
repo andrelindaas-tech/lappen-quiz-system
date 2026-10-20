@@ -1,0 +1,140 @@
+{
+ "duration": 161.8,
+ "end_card": 3.0,
+ "rate": 24000,
+ "note": "Azure-opptakene er uendret; kun stillhet før/etter hvert kapittel.",
+ "chapters": [
+  {
+   "chapter": 1,
+   "title": "Farger",
+   "start": 0.0,
+   "speech": 0.0,
+   "audio": 27.8625,
+   "end": 28.3625,
+   "sentences": [
+    0,
+    3.6,
+    7.2,
+    11.1,
+    13.8,
+    17.35,
+    20.85,
+    24.45
+   ]
+  },
+  {
+   "chapter": 2,
+   "title": "Kjørefeltlinje",
+   "start": 28.3625,
+   "speech": 28.8625,
+   "audio": 12.425,
+   "end": 41.7875,
+   "sentences": [
+    0,
+    2.76,
+    5.79,
+    10.07
+   ]
+  },
+  {
+   "chapter": 3,
+   "title": "Varsellinje",
+   "start": 41.7875,
+   "speech": 42.2875,
+   "audio": 18.2125,
+   "end": 61.0,
+   "sentences": [
+    0,
+    3.6,
+    6.34,
+    11.15,
+    14.64
+   ]
+  },
+  {
+   "chapter": 4,
+   "title": "Sperrelinje",
+   "start": 61.0,
+   "speech": 61.5,
+   "audio": 16.675,
+   "end": 78.675,
+   "sentences": [
+    0,
+    3.94,
+    6.71,
+    9.74,
+    13.29
+   ]
+  },
+  {
+   "chapter": 5,
+   "title": "Kombinerte linjer",
+   "start": 78.675,
+   "speech": 80.175,
+   "audio": 21.125,
+   "end": 101.8,
+   "sentences": [
+    0,
+    4.44,
+    7.14,
+    11.96,
+    16.15
+   ]
+  },
+  {
+   "chapter": 6,
+   "title": "Sperreområde",
+   "start": 101.8,
+   "speech": 102.3,
+   "audio": 12.7,
+   "end": 115.5,
+   "sentences": [
+    0,
+    2.58,
+    6.91,
+    9.39
+   ]
+  },
+  {
+   "chapter": 7,
+   "title": "Kjørefeltpiler",
+   "start": 115.5,
+   "speech": 116.0,
+   "audio": 11.7625,
+   "end": 128.2625,
+   "sentences": [
+    0,
+    3.77,
+    7.3
+   ]
+  },
+  {
+   "chapter": 8,
+   "title": "Skillelinje",
+   "start": 128.2625,
+   "speech": 128.7625,
+   "audio": 13.4375,
+   "end": 142.7,
+   "sentences": [
+    0,
+    6.3,
+    10.43
+   ]
+  },
+  {
+   "chapter": 9,
+   "title": "Kantlinje",
+   "start": 142.7,
+   "speech": 143.2,
+   "audio": 15.1,
+   "end": 158.8,
+   "sentences": [
+    0,
+    3.12,
+    6.45,
+    10.22,
+    12.69
+   ]
+  }
+ ]
+}

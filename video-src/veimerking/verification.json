@@ -1,0 +1,95 @@
+{
+ "geometry": {
+  "curve": {
+   "samples": 435,
+   "maxHeight": -0.11999999731778388,
+   "violations": 0
+  },
+  "sameCurve": {
+   "samples": 435,
+   "maxHeight": -0.11999999731778388,
+   "violations": 0
+  },
+  "combined": {
+   "samples": 435,
+   "maxHeight": -0.11999999731778388,
+   "violations": 0
+  }
+ },
+ "stills": [
+  {
+   "viewport": {
+    "width": 390,
+    "height": 844
+   },
+   "overflow": false,
+   "mode": "mobile",
+   "fontPx": 17.6
+  },
+  {
+   "viewport": {
+    "width": 844,
+    "height": 390
+   },
+   "overflow": false,
+   "mode": "wide",
+   "fontPx": 25.7
+  },
+  {
+   "viewport": {
+    "width": 1360,
+    "height": 1050
+   },
+   "overflow": false,
+   "mode": "wide",
+   "fontPx": 37.5
+  }
+ ],
+ "speed": [
+  {
+   "chapter": 1,
+   "min": 0,
+   "max": 7
+  },
+  {
+   "chapter": 2,
+   "min": 7,
+   "max": 7
+  },
+  {
+   "chapter": 3,
+   "min": 7,
+   "max": 7
+  },
+  {
+   "chapter": 4,
+   "min": 7,
+   "max": 7
+  },
+  {
+   "chapter": 5,
+   "min": 6,
+   "max": 14.98
+  },
+  {
+   "chapter": 6,
+   "min": 7,
+   "max": 7
+  },
+  {
+   "chapter": 7,
+   "min": 0,
+   "max": 5
+  },
+  {
+   "chapter": 8,
+   "min": 5,
+   "max": 5
+  },
+  {
+   "chapter": 9,
+   "min": 5.5,
+   "max": 7
+  }
+ ]
+}

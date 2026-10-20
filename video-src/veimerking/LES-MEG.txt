@@ -1,0 +1,61 @@
+VEIMERKING – FULLFILM V3 MED FORTELLERSTEMME
+17. oktober 2026 · teori-test.no
+
+Åpne index.html i Chrome eller Edge. Ingen server trengs.
+Visning: Tilpass skjermen, Bredformat (16:9) eller Mobil (4:5).
+Start, pause, omspill, tidslinje og kapittelknapper styres av lydklokken.
+
+LEVERANSE
+veimerking-bredformat.mp4  1920 x 1080, 30 bilder/s, H.264 + AAC, 2:41,8
+veimerking-mobil.mp4       1080 x 1350, samme lyd og lengde
+kontrollbilder/            ett bilde midt i hver setning, begge formater
+
+HVA ER NYTT I V3
+- Alle ni kapitler har norsk fortellerstemme (Azure, Pernille, samme som kapittel 1).
+  Opptakene i lyd/ er uendret. prepare.py legger bare stillhet før og etter
+  hvert kapittel, aldri inne i setninger. Resultat: fortelling.wav + timing.json.
+- Nytt, revidert manus for kapittel 2–9 (fortellertekst.txt).
+- Ett fast informasjonsfelt nederst i hele filmen (punkt 8). Tittelboks,
+  tekstpekere og kontekstbokser er fjernet; turkis omriss viser hva det snakkes om.
+- Mindre tekst og lavere felt (punkt 5):
+  bredformat 62 px tekst, felt 230 px (før 108 px / 350 px);
+  mobil 52 px tekst, felt 260 px (før 68 px / 350 px).
+- Mobilformat for alle kapitler (punkt 9), med eget kamera.
+- Jevn fart (nytt punkt): bilen kjører med fast fart, 7 m/s på landevei og
+  5 m/s i by/smal vei. Ingen tidsforvrengning av scenen. Den bremser mykt der
+  den stopper (foran gangfeltet i kapittel 1 og før krysset i kapittel 7).
+  Eneste unntak er forbikjøringen i kapittel 5, der blå bil akselererer
+  mykt forbi den grå. fartsprofil.json viser målt fart per kapittel.
+- Avslutningsbilde med teori-test.no.
+
+TIDSPLAN (sekunder)
+1 Farger            0,0 – 28,4
+2 Kjørefeltlinje   28,4 – 41,8
+3 Varsellinje      41,8 – 61,0
+4 Sperrelinje      61,0 – 78,7
+5 Kombinerte linjer 78,7 – 101,8
+6 Sperreområde    101,8 – 115,5
+7 Kjørefeltpiler  115,5 – 128,3
+8 Skillelinje     128,3 – 142,7
+9 Kantlinje       142,7 – 158,8
+Avslutning        158,8 – 161,8
+
+BYGG OG EKSPORT
+npm install
+python -I prepare.py        (kun ved ny lyd)
+npm run build
+npm run check               (kontrollbilder + automatiske kontroller)
+npm run export              (bredformat)
+npm run export:mobile       (mobil)
+Sett CHROME og FFMPEG til lokale programmer.
+
+KONTROLLER (verification.json)
+- Terreng under veibanen i kurvene: 0 brudd.
+- Tekst innenfor feltet i alle kontrollbilder, begge formater.
+- Samme bilde etter vilkårlig søking.
+- Start, pause, søk og formatbytte med lydklokken.
+- Simulert 390 x 844, 844 x 390 og 1360 x 1050 uten horisontal rulling.
+  Minste hovedtekst på 390 px bred mobil: ca. 17,6 CSS-piksler.
+- Ikke testet på fysisk mobil.
+
+Tidligere versjoner er bevart i egne mapper.
