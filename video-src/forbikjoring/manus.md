@@ -1,7 +1,7 @@
 # Film: Forbikjøring – hvor mye vei trenger du?
 
 **Artikkel:** /laeringsressurser/forbikjoring/
-**Lengde:** ca. 1:45 (6 kapitler, ca. 215 ord tale)
+**Lengde:** ca. 1:50 (6 kapitler, ca. 230 ord tale)
 **Kjernefeil filmen retter opp:** Folk undervurderer hvor lang tid og hvor mye vei en forbikjøring tar når fartsforskjellen er liten. Det er dette ingen stillbilder klarer å vise, og det er filmens hovedpoeng.
 **Miljø:** Landevei, 80-sone, gul midtlinje. Lange rette strekninger, en bakketopp, en sving og et kryss. Lastebil foran.
 **Gjennomgående grafikk:** En tidtaker og en meterteller i hjørnet av scenen i kapittel 2.
@@ -31,12 +31,12 @@ LES: Fartsgrensen gjelder også når du kjører forbi. Er fartsforskjellen for l
 Skjerm: Ingen ekstra fart for å komme forbi
 Bilde: Fartsmerke på bilen viser 80. Blå bil legger seg tilbake bak lastebilen og holder god avstand.
 
-## Kap 4 – Her skal du ikke kjøre forbi (ca. 24 s)
+## Kap 4 – Forbikjøring forbudt (ca. 28 s)
 
-LES: Ikke kjør forbi der en bakketopp, en sving eller noe annet hindrer sikten. Ikke kjør forbi rett før eller i et kryss, med mindre du kjører på forkjørsvei eller krysset er lysregulert. Og ikke kjør forbi et kjøretøy som skjuler et gangfelt.
+LES: Ikke kjør forbi der en bakketopp, en sving eller noe annet hindrer sikten. Ikke kjør forbi rett før eller i et kryss, med mindre du kjører på forkjørsvei eller krysset er lysregulert. Og ikke kjør forbi et kjøretøy som skjuler et gangfelt. Der det er sperrelinje eller skilt for forbikjøring forbudt, er det også forbudt.
 
-Skjerm: Ikke ved bakketopp, sving, kryss eller gangfelt
-Bilde: Tre korte innklipp. Bakketopp: en skjult møtende bil vises gjennomsiktig bak toppen. Kryss: en bil står klar til å kjøre ut fra siden. Gangfelt: en bil stopper og skjuler en fotgjenger (fotgjengeren vises gjennomsiktig).
+Skjerm: Forbudt ved bakketopp, kryss, gangfelt, sperrelinje
+Bilde: Tre korte innklipp. Bakketopp: en skjult møtende bil vises gjennomsiktig bak toppen. Kryss: en bil står klar til å kjøre ut fra siden. Gangfelt: en bil stopper og skjuler en fotgjenger (fotgjengeren vises gjennomsiktig). Sperrelinje: varsellinje går over i sperrelinje, med skilt 334 Forbikjøring forbudt ved vegen. Bakketoppen vises med et lite innfelt bilde «sett fra siden».
 Fokus: Det som er skjult.
 
 ## Kap 5 – Når noen kjører forbi deg (ca. 18 s)
@@ -65,6 +65,7 @@ Bilde: Blå bil kjører forbi på en lang rett strekning uten møtende. Sluttkor
 | Ikke forbikjøring der sikten er hindret av bakketopp, sving eller annet | Trafikkreglene § 12 nr. 5 | OK |
 | Ikke rett før eller i kryss. Unntak: forkjørsvei, lysregulering (og flere felt i samme retning) | Trafikkreglene § 12 nr. 5 | OK. Filmen utelater unntaket for flere felt for å holde det kort |
 | Ikke forbi kjøretøy som skjuler gangfelt | Trafikkreglene § 12 nr. 6 | OK |
+| Sperrelinje og skilt 334 forbyr forbikjøring | Skiltforskriften (skilt 334 og oppmerking sperrelinje). Samme regel som i veimerkingsfilmen | OK |
 | Fartsgrensen gjelder også ved forbikjøring | Ingen unntak i fartsgrensereglene | OK |
 | 80 forbi 70: ca. 25 s, over 500 m, over 1 km fri vei | Eget regneeksempel: (25 + 18 + 25) m ÷ (80 − 70 km/t) ≈ 24,5 s. 22,2 m/s × 24,5 s ≈ 544 m. Møtende i 80: like langt, ca. 1 088 m til sammen | OK som regneeksempel. Forutsetningene vises i bildet. Tiden til å legge seg ut og inn er ikke tatt med, så det virkelige tallet blir enda høyere |
 | «Er du i tvil, så la være» | Råd, ikke regel | OK |

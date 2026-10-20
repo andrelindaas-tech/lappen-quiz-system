@@ -168,11 +168,28 @@ async function init() {
       const lg = new THREE.BufferGeometry(); lg.setAttribute('position', new THREE.Float32BufferAttribute(pts, 3)); root.add(new THREE.LineSegments(lg, new THREE.LineBasicMaterial({ color: '#33383b' }))); }
     // Fjell med snø i horisonten.
     const mountains = [];
-    for (let i = 0; i < 7; i++) { const cx = -620 + i * 210 + rnd() * 80, cz = -(S1 + 300 + rnd() * 260);
-      for (let k = 0; k < 4; k++) { const h = 70 + rnd() * (k ? 120 : 200), r = 80 + rnd() * 110, x = cx + (rnd() - .5) * 260, z = cz - rnd() * 140, tone = new THREE.Color().setHSL(.56 + rnd() * .04, .14 + rnd() * .08, .5 + rnd() * .1);
-        const g = new THREE.ConeGeometry(r, h, 6 + Math.floor(rnd() * 3)); g.rotateY(rnd() * 3); g.scale(1 + rnd() * .3, 1, 1 + rnd() * .3);
-        const m = mesh(g, std(tone, { flatShading: true }), root); m.position.set(x, h / 2 - 14, z); mountains.push(m);
-        if (h > 160) { const cap = mesh(new THREE.ConeGeometry(r * .3, h * .28, 6), std('#f1f5f6', { flatShading: true }), root); cap.scale.copy(m.scale); cap.geometry.rotateY(rnd() * 3); cap.position.set(x, h - 14 - h * .14 + .4, z); mountains.push(cap); } } }
+    // Norsk fjellandskap: skogkledde åser foran, avrundede fjell med snøflekker bak. Myke former, ingen spisse tinder.
+    function range(z0, z1, maxH, seedR, kind) {
+      const r2 = rng(seedR), bumps = []; for (let i = 0; i < 26; i++) bumps.push([-1700 + r2() * 3400, z0 + r2() * (z1 - z0), (.45 + r2() * .55) * maxH, 120 + r2() * 260]);
+      const step = kind === 'aas' ? 30 : 45, P = [], Cc = [], I = [], nx = Math.ceil(3400 / step) + 1, nz = Math.ceil((z1 - z0) / step) + 1;
+      for (let j = 0; j < nz; j++) for (let i = 0; i < nx; i++) {
+        const x = -1700 + i * step, z = z0 + j * step; let h = 0;
+        for (const [bx, bz, bh, br] of bumps) h = Math.max(h, bh * Math.exp(-(((x - bx) ** 2 + ((z - bz) * 1.6) ** 2) / (br * br))));
+        h += maxH * .06 * Math.sin(x * .013 + z * .01) + maxH * .04 * Math.sin(x * .031 - z * .02);
+        const edge = Math.min(1, j / 3, (nz - 1 - j) / 3); h = h * edge - 6;
+        P.push(x, h, -z); const c = new THREE.Color();
+        if (kind === 'aas') c.setHSL(.36 + r2() * .03, .32, .2 + r2() * .05 + Math.max(0, h) / maxH * .05);
+        else if (h > maxH * .8 + r2() * maxH * .08) c.set('#eef3f5');
+        else if (h > maxH * .38) c.setHSL(.58, .1, .5 + r2() * .06);
+        else c.setHSL(.38, .25, .26 + r2() * .05);
+        Cc.push(c.r, c.g, c.b);
+        if (i < nx - 1 && j < nz - 1) { const k = j * nx + i; I.push(k, k + nx, k + 1, k + 1, k + nx, k + nx + 1); }
+      }
+      const g = new THREE.BufferGeometry(); g.setAttribute('position', new THREE.Float32BufferAttribute(P, 3)); g.setAttribute('color', new THREE.Float32BufferAttribute(Cc, 3)); g.setIndex(I); g.computeVertexNormals();
+      const m = mesh(g, std('#ffffff', { vertexColors: true, roughness: 1 }), root); mountains.push(m); return m;
+    }
+    range(S1 + 120, S1 + 420, 70, seed * 3 + 1, 'aas');
+    range(S1 + 450, S1 + 1100, 300, seed * 5 + 2, 'fjell');
     // Sideveg med vikepliktskilt (202).
     if (junction) {
       const js = junction.s, jw = 6;
@@ -197,12 +214,13 @@ async function init() {
   }
 
   const worlds = {
-    straight: world('Lang rett strekning', { length: 1700, seed: 3, span: 820, elev: s => 1.2 * Math.sin(s * .004) }),
-    hill: world('Bakketopp', { length: 700, seed: 5, elev: s => 13 * Math.exp(-(((s - 240) / 70) ** 2)), centerline: s => s > 150 && s < 300 ? 'solid' : 'dash' }),
+    straight: world('Lang rett strekning', { length: 1700, seed: 3, span: 820, centerline: s => s >= 1300 && s < 1520 ? 'solid' : s >= 1216 && s < 1300 ? 'warning' : 'dash', elev: s => 1.2 * Math.sin(s * .004) }),
+    hill: world('Bakketopp', { length: 700, seed: 5, elev: s => 13 * Math.exp(-(((s - 240) / 70) ** 2)), centerline: s => s > 150 && s < 300 ? 'solid' : s > 96 && s <= 150 ? 'warning' : 'dash' }),
     junction: world('Kryss', { length: 700, seed: 9, junction: { s: 190 }, centerline: s => s > 120 && s < 215 ? 'warning' : 'dash' }),
     town: world('Gangfelt', { length: 500, seed: 11, town: { crossing: 140 } }),
   };
   worlds.straight.sign(signs.s362.t, 4.4, 30, 1.0, 1.0);
+  worlds.straight.sign(signs.s334.t, 4.4, 1296, 1.0, 1.0);
 
   // ---------- Kjøretøy og personer ----------
   const gltf = await new GLTFLoader().parseAsync(Uint8Array.from(atob(assets.car), c => c.charCodeAt(0)).buffer, '');
@@ -244,7 +262,9 @@ async function init() {
 
   function place(v, w, s, lane, { reverse = false, signal = 0, t = 0, turn = 0 } = {}) {
     v.o.visible = true; const p = w.road(s, lane, .02); v.o.position.copy(p);
-    const pitch = Math.atan((w.elev(s + 1) - w.elev(s - 1)) / 2);
+    // Lange kjøretøy: stigning mellom for- og bakaksel, så ingen hjul henger i lufta.
+    const half = v.len > 10 ? 7.8 : 1.3, ef = w.elev(s + half), eb = w.elev(s - half), pitch = Math.atan((ef - eb) / (2 * half));
+    if (v.len > 10) v.o.position.y = Math.min(ef, eb) + (Math.max(ef, eb) - Math.min(ef, eb)) * .5 + .02 - Math.max(0, (ef + eb) / 2 - w.elev(s)) * 0;
     v.o.rotation.set(0, 0, 0); v.o.rotation.order = 'YXZ'; v.o.rotation.y = (reverse ? 0 : Math.PI) - Math.atan(w.slope(s)) - turn; v.o.rotation.x = reverse ? pitch : -pitch;
     (v.wheels || []).forEach(o => o.rotation.x = s / .34);
     (v.signals || []).forEach(({ l, side }) => l.visible = signal !== 0 && side === -signal && Math.floor(t * 2.4) % 2 === 0);
