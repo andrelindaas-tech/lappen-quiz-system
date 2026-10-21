@@ -1,0 +1,37 @@
+Film: Vikeplikt – hvem kjører først?
+Dato for generering og nedlasting: 21. oktober 2026
+Tjeneste: ElevenLabs Text to Speech, i Andres innloggede Chrome-nettleser
+Stemme: Mia Starset - Clear and Friendly
+Modell: Eleven v4
+Stability: 50 %
+Similarity: 75 %
+Clone strength: 0 %
+Language: Auto (Recommended)
+Audio effects: Ingen
+Output format: MP3 44.1 kHz (128 kbps)
+Innstillingene ble kontrollert før hvert kapittel.
+
+Manuskilde: Claude outputs/video-manus/4-vikeplikt.md
+Kapittel 4: Andre godkjente den utvidede LES-teksten fra meldingen,
+med «en gågate, et gatetun eller et lignende område» i opplistingen.
+Andre LES-linjer ble brukt ordrett. Ingen uttaleendringer ble gjort.
+Andre har hørt gjennom filene og bekreftet at de høres bra ut.
+
+Nedlastede MP3-originaler ligger i undermappen mp3/:
+TT Kap 1.mp3 — 19,8 sekunder — Hvem bestemmer?
+TT Kap 2.mp3 — 15,6 sekunder — Høyreregelen
+TT Kap 3.mp3 — 11,5 sekunder — Skilt går foran
+TT Kap 4.mp3 — 20,3 sekunder — Ut fra en parkeringsplass
+TT Kap 5.mp3 — 14,6 sekunder — Smal veg og hindring
+TT Kap 6.mp3 — 18,5 sekunder — Buss fra holdeplass
+TT Kap 7.mp3 — 11,5 sekunder — Husk dette
+Lengdene er avrundet fra nettleserens lydmetadata.
+
+Kapittel 2 ble regenerert etter kort varighet. Valgt opptak er fortsatt
+omtrent 24 % kortere enn anslaget ved 2,2 ord per sekund.
+Kapittel 7 ble regenerert etter lang varighet. Valgt opptak er fortsatt
+omtrent 40 % lengre enn anslaget ved 2,2 ord per sekund.
+Den gamle «TT Kap 7 - tidligere variant.mp3» i ElevenLabs er ikke lastet ned.
+
+Ingen WAV-kopier er laget, etter Andres beskjed.
+Ingen commit eller push er utført.

@@ -1,0 +1,21 @@
+SSML for Azure Speech Studio – stemme nb-NO-PernilleNeural, ingen fart/tonehøyde-justering, eksport 24 kHz WAV.
+Lagre som «TT Kap N». Legg WAV-filene i denne mappen (lyd/).
+Hvis tallene leses feil, bytt til ord: 80 → åtti, 70 → sytti, 10 → ti, 25 → tjuefem, 500 → fem hundre.
+
+=== TT Kap 1 ===
+<speak xmlns="http://www.w3.org/2001/10/synthesis" xmlns:mstts="http://www.w3.org/2001/mstts" version="1.0" xml:lang="nb-NO"><voice name="nb-NO-PernilleNeural">Før du kjører forbi, må du være sikker på fire ting. Veien må være fri langt nok fremover. Bilen foran skal ikke selv kjøre forbi. Ingen bak deg har begynt å kjøre forbi deg. Og du må kunne legge deg inn igjen uten å hindre andre.</voice></speak>
+
+=== TT Kap 2 ===
+<speak xmlns="http://www.w3.org/2001/10/synthesis" xmlns:mstts="http://www.w3.org/2001/mstts" version="1.0" xml:lang="nb-NO"><voice name="nb-NO-PernilleNeural">Du kjører i 80 og vil forbi en lastebil som holder 70. Fartsforskjellen er bare 10 kilometer i timen. I dette eksemplet tar forbikjøringen rundt 25 sekunder. Da kjører du over 500 meter. En møtende bil kjører like langt på den tiden. Du trenger altså over en kilometer fri vei.</voice></speak>
+
+=== TT Kap 3 ===
+<speak xmlns="http://www.w3.org/2001/10/synthesis" xmlns:mstts="http://www.w3.org/2001/mstts" version="1.0" xml:lang="nb-NO"><voice name="nb-NO-PernilleNeural">Fartsgrensen gjelder også når du kjører forbi. Er fartsforskjellen for liten, er svaret å bli liggende bak.</voice></speak>
+
+=== TT Kap 4 ===
+<speak xmlns="http://www.w3.org/2001/10/synthesis" xmlns:mstts="http://www.w3.org/2001/mstts" version="1.0" xml:lang="nb-NO"><voice name="nb-NO-PernilleNeural">Ikke kjør forbi der en bakketopp, en sving eller noe annet hindrer sikten. Ikke kjør forbi rett før eller i et kryss, med mindre du kjører på forkjørsvei eller krysset er lysregulert. Og ikke kjør forbi et kjøretøy som skjuler et gangfelt. Der det er sperrelinje eller skilt for forbikjøring forbudt, er det også forbudt.</voice></speak>
+
+=== TT Kap 5 ===
+<speak xmlns="http://www.w3.org/2001/10/synthesis" xmlns:mstts="http://www.w3.org/2001/mstts" version="1.0" xml:lang="nb-NO"><voice name="nb-NO-PernilleNeural">Blir du forbikjørt, skal du holde deg så langt til høyre som mulig og ikke øke farten. Kjører du sakte eller har et stort kjøretøy, skal du slippe andre forbi. Om nødvendig kjører du inn til siden.</voice></speak>
+
+=== TT Kap 6 ===
+<speak xmlns="http://www.w3.org/2001/10/synthesis" xmlns:mstts="http://www.w3.org/2001/mstts" version="1.0" xml:lang="nb-NO"><voice name="nb-NO-PernilleNeural">Kjør bare forbi når du ser at det er nok plass. Er du i tvil, så la være. Det er nesten alltid en ny sjanse lenger fremme.</voice></speak>

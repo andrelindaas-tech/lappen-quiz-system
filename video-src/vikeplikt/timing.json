@@ -1,0 +1,105 @@
+{
+ "duration": 135.1061,
+ "end_card": 4.0,
+ "rate": 24000,
+ "chapters": [
+  {
+   "chapter": 1,
+   "title": "Hvem bestemmer?",
+   "start": 0.0,
+   "speech": 1.5,
+   "audio": 19.6996,
+   "end": 22.1996,
+   "sentences": [
+    0,
+    1.61,
+    4.29,
+    8.03,
+    12.22,
+    15.4
+   ]
+  },
+  {
+   "chapter": 2,
+   "title": "Høyreregelen",
+   "start": 22.1996,
+   "speech": 22.7996,
+   "audio": 15.219,
+   "end": 40.4185,
+   "sentences": [
+    0,
+    5.36,
+    7.68,
+    10.46
+   ]
+  },
+  {
+   "chapter": 3,
+   "title": "Skilt går foran",
+   "start": 40.4185,
+   "speech": 41.0185,
+   "audio": 11.2608,
+   "end": 54.4794,
+   "sentences": [
+    0,
+    3.56,
+    9.82
+   ]
+  },
+  {
+   "chapter": 4,
+   "title": "Ut fra en parkeringsplass",
+   "start": 54.4794,
+   "speech": 55.0794,
+   "audio": 19.8304,
+   "end": 76.5098,
+   "sentences": [
+    0,
+    3.81,
+    6.23,
+    16.85
+   ]
+  },
+  {
+   "chapter": 5,
+   "title": "Smal veg og hindring",
+   "start": 76.5098,
+   "speech": 77.1098,
+   "audio": 16.2612,
+   "end": 96.771,
+   "sentences": [
+    0,
+    6.82,
+    12.72
+   ]
+  },
+  {
+   "chapter": 6,
+   "title": "Buss fra holdeplass",
+   "start": 96.771,
+   "speech": 97.371,
+   "audio": 18.3656,
+   "end": 118.3365,
+   "sentences": [
+    0,
+    3.37,
+    9.2,
+    12.43,
+    15.34
+   ]
+  },
+  {
+   "chapter": 7,
+   "title": "Husk dette",
+   "start": 118.3365,
+   "speech": 118.9365,
+   "audio": 11.1696,
+   "end": 131.1061,
+   "sentences": [
+    0,
+    4.24,
+    9.47
+   ]
+  }
+ ]
+}

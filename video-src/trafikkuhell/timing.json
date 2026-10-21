@@ -1,0 +1,90 @@
+{
+ "duration": 106.2938,
+ "end_card": 4.0,
+ "rate": 24000,
+ "chapters": [
+  {
+   "chapter": 1,
+   "title": "Stans",
+   "start": 0.0,
+   "speech": 1.5,
+   "audio": 16.0222,
+   "end": 18.5222,
+   "sentences": [
+    0,
+    3.51,
+    6.45,
+    11.67
+   ]
+  },
+  {
+   "chapter": 2,
+   "title": "Sikre deg selv",
+   "start": 18.5222,
+   "speech": 19.1223,
+   "audio": 9.8581,
+   "end": 30.1803,
+   "sentences": [
+    0,
+    1.75,
+    4.78
+   ]
+  },
+  {
+   "chapter": 3,
+   "title": "Sikre stedet",
+   "start": 30.1803,
+   "speech": 31.1803,
+   "audio": 24.6662,
+   "end": 57.3465,
+   "sentences": [
+    0,
+    2.19,
+    7.17,
+    12.12,
+    21.43
+   ]
+  },
+  {
+   "chapter": 4,
+   "title": "Varsle",
+   "start": 57.3465,
+   "speech": 57.9465,
+   "audio": 10.295,
+   "end": 69.2415,
+   "sentences": [
+    0,
+    3.15,
+    7.53
+   ]
+  },
+  {
+   "chapter": 5,
+   "title": "Hjelp",
+   "start": 69.2415,
+   "speech": 69.8415,
+   "audio": 18.3956,
+   "end": 89.4371,
+   "sentences": [
+    0,
+    2.9,
+    6.77,
+    14.38,
+    16.11
+   ]
+  },
+  {
+   "chapter": 6,
+   "title": "Bli på stedet",
+   "start": 89.4371,
+   "speech": 90.0371,
+   "audio": 11.2567,
+   "end": 102.2938,
+   "sentences": [
+    0,
+    4.4,
+    8.79
+   ]
+  }
+ ]
+}

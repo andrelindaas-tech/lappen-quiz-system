@@ -1,0 +1,91 @@
+{
+ "duration": 112.5883,
+ "end_card": 4.0,
+ "rate": 24000,
+ "note": "Azure-opptakene er uendret; kun stillhet før/etter hvert kapittel.",
+ "chapters": [
+  {
+   "chapter": 1,
+   "title": "Før du kjører forbi",
+   "start": 0.0,
+   "speech": 1.5,
+   "audio": 15.6625,
+   "end": 17.6625,
+   "sentences": [
+    0,
+    3.43,
+    6.38,
+    9.54,
+    12.33
+   ]
+  },
+  {
+   "chapter": 2,
+   "title": "Så lang tid tar det",
+   "start": 17.6625,
+   "speech": 18.6625,
+   "audio": 20.3682,
+   "end": 51.4007,
+   "sentences": [
+    0,
+    4.37,
+    7.6,
+    11.58,
+    14.35,
+    17.52
+   ]
+  },
+  {
+   "chapter": 3,
+   "title": "Fartsgrensen",
+   "start": 51.4007,
+   "speech": 51.9007,
+   "audio": 6.6449,
+   "end": 59.3456,
+   "sentences": [
+    0,
+    3.2
+   ]
+  },
+  {
+   "chapter": 4,
+   "title": "Forbikjøring forbudt",
+   "start": 59.3456,
+   "speech": 61.8456,
+   "audio": 22.3331,
+   "end": 84.7787,
+   "sentences": [
+    0,
+    5.39,
+    12.97,
+    17.05
+   ]
+  },
+  {
+   "chapter": 5,
+   "title": "Når du blir forbikjørt",
+   "start": 84.7787,
+   "speech": 85.2787,
+   "audio": 12.7157,
+   "end": 98.5945,
+   "sentences": [
+    0,
+    5.81,
+    10.67
+   ]
+  },
+  {
+   "chapter": 6,
+   "title": "Husk dette",
+   "start": 98.5945,
+   "speech": 99.0945,
+   "audio": 7.4939,
+   "end": 108.5883,
+   "sentences": [
+    0,
+    3.05,
+    5.15
+   ]
+  }
+ ]
+}
