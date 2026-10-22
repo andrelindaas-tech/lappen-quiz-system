@@ -26,7 +26,8 @@ export const morkekjoringTopic: TheoryTopic = {
         {
             title: 'Hva skjer på mørkekjøringen?',
             type: 'text',
-            component: 'LysIMorketFilm',
+            component: 'ForklaringsFilm',
+            componentId: 'lys-i-morket',
             content: `Du kjører ikke selv. Du sitter på mens trafikklæreren kjører, og ser demonstrasjoner på et område med lite eller ingen trafikk. Etterpå snakker dere om det dere har sett.
 
 Poenget er å oppleve hvor lite du ser i mørket, og hva som gjør det lettere eller vanskeligere å bli sett:

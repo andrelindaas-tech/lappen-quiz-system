@@ -16,7 +16,7 @@ export const vikepliktTopic: TheoryTopic = {
     author: 'Teori-test.no-redaksjonen',
     reviewedAgainst: 'Trafikkreglene og Statens vegvesens veiledning',
     publishedDate: '2026-02-21',
-    lastUpdated: '2026-10-07',
+    lastUpdated: '2026-10-22',
     heroImage: {
         src: '/images/vikeplikt/vikeplikt-t-kryss-vikepliktskilt.webp',
         alt: 'T-kryss med vikepliktskilt og biler på den kryssende veien',
@@ -37,6 +37,13 @@ De fire gruppene er ikke rangert. Hvis for eksempel politiet, trafikklyset og sk
 På teoriprøven kan en oppgave se vanskelig ut fordi du møter flere biler, skilt og trafikanter på samme bilde. Løsningen er å ta én ting om gangen. I denne guiden lærer du en fast måte å lese situasjonen på, slik at du kan bruke reglene i kryss, rundkjøringer, gangfelt og utkjøringer.
 
 [Start vikepliktquizen med situasjonsoppgaver og forklaringer →](/quiz/vikeplikt)`
+        },
+        {
+            title: 'Film: Hvem kjører først?',
+            type: 'text',
+            content: 'Filmen går gjennom rekkefølgen du sjekker i: politi, lys og skilt, spesielle situasjoner og til slutt høyreregelen. Den viser også tre situasjoner mange bommer på: utkjøring fra parkeringsplass, hindring på din side og buss fra holdeplass.',
+            component: 'ForklaringsFilm',
+            componentId: 'vikeplikt'
         },
         {
             title: 'Slik finner du hvem som kjører først i krysset',

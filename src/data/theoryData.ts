@@ -414,7 +414,8 @@ export const theoryTopics: TheoryTopic[] = [
             {
                 title: 'Se filmen: slik leser du veimerkingen',
                 type: 'text',
-                component: 'VeimerkingVideo',
+                component: 'ForklaringsFilm',
+                componentId: 'veimerking',
                 content: 'Filmen går gjennom de viktigste linjene på under tre minutter: gul og hvit oppmerking, kjørefeltlinje, varsellinje, sperrelinje, kombinerte linjer, sperreområde, piler, skillelinje og kantlinje. Trykk Spill for å starte, og velg kapittel hvis du vil se én linje om igjen.'
             },
             {
@@ -830,6 +831,13 @@ export const theoryTopics: TheoryTopic[] = [
                 content: 'Hovedregelen i trafikkreglene er at forbikjøring skal skje til venstre.\n\nFør du starter en forbikjøring må du forsikre deg om at:\n• veien er fri langt nok fremover\n• kjøretøyet foran ikke selv har gitt tegn til forbikjøring\n• ingen bakfra allerede har begynt å kjøre forbi deg\n• du kan komme inn igjen uten fare, hindring eller unødig forstyrrelse\n\nEtter forbikjøringen skal du legge deg tilbake til høyre når det kan skje trygt.'
             },
             {
+                title: 'Film: Hvor mye vei trenger du for å kjøre forbi?',
+                type: 'text',
+                content: 'Filmen viser hva du må sjekke før du kjører forbi, hvor lang tid det tar når fartsforskjellen er liten, og hvor forbikjøring er forbudt.',
+                component: 'ForklaringsFilm',
+                componentId: 'forbikjoring'
+            },
+            {
                 title: 'Sjekklisten før du kjører forbi',
                 type: 'tip',
                 content: 'Før en forbikjøring bør du tenke:\n\nSikt: Ser jeg langt nok frem?\nPlass: Har jeg plass til å komme inn igjen?\nFart: Rekker jeg forbikjøringen uten å skape fare?\nBakover: Er noen allerede i ferd med å kjøre forbi meg?\nSkilt og linjer: Er det forbikjøringsforbud, sperrelinje eller dårlig sikt?\nMyke trafikanter: Kan fotgjengere, syklister eller barn være skjult?\n\nHusk også at høy fart gir lengre bremselengde, så du trenger mer plass enn du tror. På teoriprøven er det ofte ikke nok at forbikjøringen “kan gå”. Den må være trygg og lovlig.'
@@ -987,7 +995,8 @@ export const theoryTopics: TheoryTopic[] = [
             {
                 title: 'Fjernlys: når skal du blende ned?',
                 type: 'warning',
-                component: 'LysIMorketFilm',
+                component: 'ForklaringsFilm',
+                componentId: 'lys-i-morket',
                 content: 'Fjernlys gir best sikt på mørke veier, men du må blende ned når lyset kan blende andre.\n\nDu skal blende ned når:\n- du møter en annen bil\n- du kjører bak en annen bil\n- du møter gående, syklende eller andre trafikanter som kan bli blendet\n- veien er godt opplyst og fjernlys ikke er nødvendig\n\nNår fjernlys ikke er nødvendig eller ikke er lov å bruke, skal du bruke nærlys.\n\n**Hva gjør du hvis du blir blendet?**\nHvis en møtende bil blender deg, skal du ikke stirre rett inn i lysene. Se heller mot høyre veikant, senk farten og hold god avstand.\n\nIkke svar med å blende tilbake. Unødig eller hensynsløs bruk av lyssignal er forbudt, og det gjør situasjonen farligere.'
             },
             {
@@ -5075,6 +5084,13 @@ export const theoryArticles: TheoryTopic[] = [
                 content: 'Ved trafikkuhell bør du tenke slik:\n\n1. Stans hvis du er innblandet eller kommer først til stedet.\n2. Sikre deg selv og skadestedet før du går inn i situasjonen.\n3. Varsle 113 ved personskade eller alvorlig uhell.\n4. Hjelp skadde så godt du kan.\n5. Bli på stedet til politiet eller nødetatene sier noe annet, hvis det er personskade.\n\nDen korte versjonen er: Ikke skap en ny ulykke mens du prøver å hjelpe i den første.'
             },
             {
+                title: 'Film: Sikre, varsle, hjelpe',
+                type: 'text',
+                content: 'Se rekkefølgen i praksis, fra du stanser til politiet sier at du kan dra.',
+                component: 'ForklaringsFilm',
+                componentId: 'trafikkuhell'
+            },
+            {
                 title: 'Riktig rekkefølge ved trafikkuhell',
                 type: 'table',
                 content: '<div style="margin: 1rem 0; border-radius: 12px; overflow: hidden; border: 1px solid var(--border-color); box-shadow: 0 4px 12px rgba(0,0,0,0.1);"><img src="/trafikkuhell-prosedyre.jpg" alt="Illustrasjon av rekkefølge ved trafikkuhell: Stans, sikre, varsle og hjelpe" style="width: 100%; display: block;" /></div>'
@@ -5369,7 +5385,7 @@ Les mer om [trafikkuhell og førstehjelp](/laeringsressurser/trafikkuhell-forste
             {
                 title: "Øv videre på vikeplikt",
                 type: "text",
-                content: "Bruk [vikepliktspillet](/laeringsspill/vikeplikt/) for å øve på hvem som kjører først. Les deretter om [vikeplikt i kryss](/laeringsressurser/vikeplikt/), [fartsgrenser og fartstilpasning](/laeringsressurser/fartsgrenser/) og [reglene for stans og parkering](/laeringsressurser/stans-og-parkering/). [Holdeplasskiltet](/trafikkskilt/opplysningsskilt/holdeplass-for-buss/) forklares i skiltguiden."
+                content: "Bruk [vikepliktspillet](/laeringsspill/vikeplikt/) for å øve på hvem som kjører først. Les deretter om [vikeplikt i kryss](/laeringsressurser/vikeplikt/), [fartsgrenser og fartstilpasning](/laeringsressurser/fartsgrenser/) og [reglene for stans og parkering](/laeringsressurser/stans-og-parkering/). [Holdeplasskiltet](/trafikkskilt/opplysningsskilt/holdeplass-for-buss/) forklares i skiltguiden.\n\nI [filmen om vikeplikt](/laeringsressurser/vikeplikt/) viser kapittel 6 en buss som skal ut fra holdeplassen."
             }
         ],
         faq: [

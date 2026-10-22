@@ -47,9 +47,8 @@ import VikepliktAnimasjon from './VikepliktAnimasjon'
 import RyggingVendingDemo from './RyggingVendingDemo'
 import ArticlePractice from './ArticlePractice'
 import MintCarLights from './MintCarLights'
-import VeimerkingVideo from './VeimerkingVideo'
+import ForklaringsFilm from './ForklaringsFilm'
 import MorkekjoringSjekk from './MorkekjoringSjekk'
-import LysIMorketFilm from './LysIMorketFilm'
 
 // Stabil anker-id fra seksjonstittel (gir Google mulighet til «Hopp til»-lenker i søkeresultatet)
 function sectionAnchorId(title: string): string {
@@ -423,9 +422,8 @@ export default function TheoryTopic({ topic, onBack }: TheoryTopicProps) {
                                 {section.content && renderContent(section.content)}
                                 {section.component === 'VikepliktSituasjonerIllustrasjon' && <VikepliktSituasjonerIllustrasjon />}
                                 {section.component === 'VikepliktAnimasjon' && <VikepliktAnimasjon />}
-                                {section.component === 'VeimerkingVideo' && <VeimerkingVideo />}
+                                {section.component === 'ForklaringsFilm' && section.componentId && <ForklaringsFilm id={section.componentId} />}
                                 {section.component === 'MorkekjoringSjekk' && <MorkekjoringSjekk />}
-                                {section.component === 'LysIMorketFilm' && <LysIMorketFilm />}
                                 {section.image && <ArticleImage image={section.image} />}
                             </div>
                         )}
