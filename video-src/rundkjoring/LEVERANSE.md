@@ -48,7 +48,26 @@ Setningsstartene er målt med `ffmpeg silencedetect` (-38 dB) og ligger i `prepa
 - Avspilleren er testet ved 360, 390 og 1280 px: ingen vannrett rulling, og spill, pause, hopp og kapittelvelger virker.
 - To QA-runder med en egen agent på kontaktark, mot Andres tidligere tilbakemeldinger.
 
-## Funn fra siste QA-runde
+## Runde etter Andres gjennomgang
+
+Andres tilbakemeldinger, rettet:
+
+- **Bilene vrikket.** Banene var satt sammen av biter som ikke gikk jevnt over i hverandre, og kurven gjennom punktene skjøt over ved skjøtene. Nå går svingen inn og ut (radius 9 og 6 m) jevnt over i sirkelen, feltskiftet er en myk overgang mellom radiene, og hele banen glattes før den gjøres om til en kurve med punkter hver halve meter. Kontrollert for hele filmen: ingen svingninger i krumningen, bare hopp ved klipp.
+- **Vikelinja lå oppå bilen.** Markeringene på vegen tegnes nå på bakken i 3D og havner under bilene.
+- **Syklisten var ute på plenen.** Han sykler nå på sykkelvegen rundt rundkjøringen.
+- **For få andre biler.** Kap. 6 har fått en rød bil som passerer foran den blå før den kjører inn, og en grå bil som venter i øst til den blå har passert.
+- **Den blå ventet uten grunn i kap. 1.** Den røde er nå med fra oversikten og kjører rundt mens den blå nærmer seg. Den blå stopper ved vikelinja like før den røde kommer, står 2–3 s og kjører inn bak den.
+- **Etikett 1 var borte i bredformat.** «1 Før du kjører inn» (kap. 1) og «Vik og velg felt» (kap. 6) står nå nærmere rundkjøringen i bredformat.
+
+QA-runde 3 (egen agent), rettet:
+
+- Kap. 5: bilen ventet skjevt foran gangfeltet. Den står nå rett.
+- Kap. 4: en hvit bil kjører ved siden av den blå under «ikke fletting».
+- Kap. 5: gående og syklist overlappet i bredformat. Syklisten kommer 1 s senere.
+- Kap. 1 og 2: fronten sto over haitennene. Nå står bilen ved vikelinja uten å dekke haitennene, og bakenden er klar av gangfeltet.
+- Kap. 5: kameraet er senket. Kap. 2: «Rett frem» flyttet så den ikke kuttes i bredformat.
+
+## Funn fra QA-runde 2
 
 Rettet etter runde 2:
 
@@ -58,6 +77,8 @@ Rettet etter runde 2:
 - Kap. 3 følger bilen ut mot vest.
 
 Gjenstår, små:
+
+- Sluttkortet: bildet bak fryser, og den grå bilen fra kap. 6 står da svakt synlig på gangfeltet i nord under kortet.
 
 - Kap. 2: infofeltet er tomt et kort øyeblikk når teksten bytter. Det er en innfading på 0,25 s, som i de andre filmene.
 - Kap. 3: kameraet bak bilen ved første utkjøring er tett. Gangfeltskiltet tar plass i bredformat i siste del.
@@ -70,6 +91,5 @@ Gjenstår, små:
 - Ingen push og ingen deploy.
 - Rydding i arbeidsmappen, fordi agenten ikke har slettetillatelse:
   - `vite.config.ts.timestamp-*.mjs` i rotmappen ble laget av et mislykket byggeforsøk og kan slettes.
-  - `public/sitemap.xml` ble endret av byggeskriptet med to bildelinjer fra annet innhold. Endringen er ikke committet.
   - `Claude outputs/rundkjoring-dist-for-skjermbilder.tgz` var bare til skjermbildene og kan slettes.
 - MP3-filene og stillbildene får en C2PA-merking (Content Credentials) når de overføres til mappen. Selve lyden og bildet er uendret.

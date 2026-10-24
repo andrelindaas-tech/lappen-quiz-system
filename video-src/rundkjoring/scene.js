@@ -288,14 +288,31 @@ async function init() {
     return { at, len };
   }
   // Rute gjennom rundkjøringen: inn på armen `from` (sideveis offIn), rundt på radius rc (eller fra rc til rc2), ut på armen `to`.
-  function route(w, from, to, { offIn, rc, rc2 = rc, change = [.6, .9], offOut = w.exitOff, laps = 0, r0 = 90, r1 = 90, a0 = .5, a1 = .5 }) {
-    const pts = [], P = (th, r) => [w.ox + r * Math.cos(th), w.oz - r * Math.sin(th)];
-    for (let a = r0; a > w.ro + 2.8; a -= 3) pts.push(armPt(w, from, a, offIn));
-    const ts = ARMS[from] + a0; let te = ARMS[to] - a1; while (te < ts + .4) te += Math.PI * 2; te += laps * Math.PI * 2;
-    const n = Math.ceil((te - ts) / .1);
-    for (let i = 0; i <= n; i++) { const f = i / n, q = clamp((f - change[0]) / (change[1] - change[0])), sm = q * q * (3 - 2 * q); pts.push(P(ts + (te - ts) * f, rc + (rc2 - rc) * sm)); }
-    for (let a = w.ro + 2.8; a <= r1; a += 3) pts.push(armPt(w, to, a, -offOut));
-    return pathFrom(pts);
+  // Rute gjennom rundkjøringen med jevn kurvatur: rett inn langs armen `from` (sideveis offIn), en innkjøringsbue (radius Rf)
+  // som tangerer både armen og sirkelen, rundt på radius rc (eventuelt over til rc2 = feltskifte), en utkjøringsbue og rett ut på armen `to`.
+  // Alle overganger er tangentielle, så bilen svinger mykt og vrikker ikke.
+  function route(w, from, to, { offIn, rc, rc2 = rc, change = [.6, .9], offOut = w.exitOff, laps = 0, r0 = 90, r1 = 90, RfIn = 9, RfOut = 6 }) {
+    const pts = [], step = .5, P = (th, r) => [w.ox + r * Math.cos(th), w.oz - r * Math.sin(th)], ang = ([x, z]) => Math.atan2(-(z - w.oz), x - w.ox);
+    const arc = (cx, cz, R, t0, t1) => { const n = Math.max(2, Math.ceil(Math.abs(t1 - t0) * R / step)); for (let i = 1; i <= n; i++) { const t = t0 + (t1 - t0) * i / n; pts.push([cx + R * Math.cos(t), cz - R * Math.sin(t)]); } };
+    const wrapTo = (t, ref) => { while (t - ref > Math.PI) t -= 2 * Math.PI; while (t - ref < -Math.PI) t += 2 * Math.PI; return t; };
+    // Innkjøring: buesenter på armen med avstand rc + Rf fra sentrum.
+    const Rf = RfIn, sIn = offIn + Rf, aIn = Math.sqrt(Math.max(0, (rc + Rf) ** 2 - sIn ** 2));
+    for (let a = r0; a > aIn; a -= step) pts.push(armPt(w, from, a, offIn));
+    const [cxI, czI] = armPt(w, from, aIn, sIn), thI = ang([cxI, czI]), RI = Rf; // sirkelpunktet ligger på linjen sentrum–buesenter
+    { const L = armPt(w, from, aIn, offIn);
+      const a0 = Math.atan2(-(L[1] - czI), L[0] - cxI); let a1 = wrapTo(thI + Math.PI, a0); arc(cxI, czI, RI, a0, a1); }
+    // Utkjøring: buesenter på armen `to`, på venstre side for den som kjører ut (s < 0).
+    const RO = RfOut, sOut = offOut + RO, aOut = Math.sqrt(Math.max(0, (rc2 + RO) ** 2 - sOut ** 2));
+    const [cxO, czO] = armPt(w, to, aOut, -sOut); let thO = ang([cxO, czO]);
+    while (thO < thI + .3) thO += 2 * Math.PI; thO += laps * 2 * Math.PI;
+    { const n = Math.ceil((thO - thI) * Math.max(rc, rc2) / step); for (let i = 1; i <= n; i++) { const f = i / n, q = clamp((f - change[0]) / (change[1] - change[0])), sm = q * q * (3 - 2 * q); pts.push(P(thI + (thO - thI) * f, rc + (rc2 - rc) * sm)); } }
+    { const L = armPt(w, to, aOut, -offOut), a0 = wrapTo(thO + Math.PI, 0), a1 = wrapTo(Math.atan2(-(L[1] - czO), L[0] - cxO), a0); arc(cxO, czO, RO, a0, a1); }
+    for (let a = aOut + step; a <= r1; a += step) pts.push(armPt(w, to, a, -offOut));
+    // Glatting (glidende snitt over ca. ±3 m, to ganger): overgangene mellom rett strekning, bue og sirkel får gradvis rattutslag,
+    // slik en bil faktisk svinger, i stedet for et brått rykk.
+    let q = pts; for (let pass = 0; pass < 2; pass++) { const n = q.length, h = 6, out = q.map(p => p.slice());
+      for (let i = h; i < n - h; i++) { let sx = 0, sz = 0; for (let k = -h; k <= h; k++) { sx += q[i + k][0]; sz += q[i + k][1]; } out[i] = [sx / (2 * h + 1), sz / (2 * h + 1)]; } q = out; }
+    return pathFrom(q);
   }
   // Første avstand d der betingelsen er oppfylt (skann med 0,1 m).
   function dWhere(path, fn, from = 0) { for (let d = from; d < path.len; d += .1) if (fn(path.at(d))) return d; return path.len; }
@@ -346,6 +363,24 @@ async function init() {
   function setArrows(list) { arrowPool.forEach((a, k) => { const o = list[k]; a.w.visible = a.t.visible = !!o; if (!o) return; const [path, d0, d1, w = 1.1] = o.arrow, al = o.alpha ?? 1, head = Math.min(2.6, (d1 - d0) * .4);
     a.w.geometry.dispose(); a.t.geometry.dispose(); a.w.geometry = ribbon(path, d0 - .18, d1 + .3, w + .32, .061, head + .2, w * 2.3 + .55); a.t.geometry = ribbon(path, d0, d1, w, .066, head, w * 2.3); a.wM.opacity = .95 * al; a.tM.opacity = al; }); }
   // Flate på bakken (2D over scenen): liste med punkter, eller ring (r0..r1). Brukes for de tre fasene og gangfeltet.
+  // Flater på bakken tegnes i 3D, så biler og personer som står på dem dekker dem naturlig (ikke omvendt).
+  const zonePool = Array.from({ length: 5 }, () => { const mk = (c, o, f) => new THREE.MeshBasicMaterial({ color: c, transparent: true, opacity: o, depthWrite: false, toneMapped: false, polygonOffset: true, polygonOffsetFactor: f, side: THREE.DoubleSide });
+    const fM = mk(C.tealLight, .22, -2), wM = mk('#ffffff', .9, -3), tM = mk(C.tealLight, 1, -4);
+    const f = new THREE.Mesh(new THREE.BufferGeometry(), fM), w = new THREE.Mesh(new THREE.BufferGeometry(), wM), t = new THREE.Mesh(new THREE.BufferGeometry(), tM);
+    f.renderOrder = 0; w.renderOrder = 1; t.renderOrder = 2; [f, w, t].forEach(m => { m.visible = false; scene.add(m); }); return { f, w, t, fM, wM, tM }; });
+  // Polygon (liste med [x, z]) eller ring (annulus) → fyll og kantlinje som flate trekanter.
+  function zoneGeo(z) {
+    const loops = z.annulus ? (() => { const [w, r0, r1] = z.annulus, c = r => Array.from({ length: 96 }, (_, i) => { const q = i / 96 * Math.PI * 2; return [w.ox + Math.cos(q) * r, w.oz - Math.sin(q) * r]; }); return [c(r1), c(r0)]; })() : [z.pts];
+    const fill = [], y = .045;
+    if (z.annulus) { const [o, i2] = loops; for (let k = 0; k < o.length; k++) { const k2 = (k + 1) % o.length; fill.push(o[k][0], y, o[k][1], o[k2][0], y, o[k2][1], i2[k][0], y, i2[k][1], o[k2][0], y, o[k2][1], i2[k2][0], y, i2[k2][1], i2[k][0], y, i2[k][1]); } }
+    else { const P0 = z.pts; for (let k = 1; k < P0.length - 1; k++) fill.push(P0[0][0], y, P0[0][1], P0[k][0], y, P0[k][1], P0[k + 1][0], y, P0[k + 1][1]); }
+    const edge = width => { const out = []; for (const L2 of loops) for (let k = 0; k < L2.length; k++) { const [x1, z1] = L2[k], [x2, z2] = L2[(k + 1) % L2.length], len = Math.hypot(x2 - x1, z2 - z1) || 1, nx = -(z2 - z1) / len * width / 2, nz = (x2 - x1) / len * width / 2, ex = (x2 - x1) / len * width / 2, ez = (z2 - z1) / len * width / 2;
+      const a = [x1 - ex + nx, x1 - ex - nx, x2 + ex + nx, x2 + ex - nx], b = [z1 - ez + nz, z1 - ez - nz, z2 + ez + nz, z2 + ez - nz]; out.push(a[0], y, b[0], a[1], y, b[1], a[2], y, b[2], a[1], y, b[1], a[3], y, b[3], a[2], y, b[2]); } return out; };
+    const g = arr => { const q = new THREE.BufferGeometry(); q.setAttribute('position', new THREE.Float32BufferAttribute(arr, 3)); return q; };
+    return [g(fill), g(edge(.34)), g(edge(.16))];
+  }
+  function setZones(list) { zonePool.forEach((Z, k) => { const o = list[k]; [Z.f, Z.w, Z.t].forEach(m => m.visible = !!o); if (!o) return; const al = o.alpha ?? 1, [gf, gw, gt] = zoneGeo(o.zone);
+    [Z.f, Z.w, Z.t].forEach(m => m.geometry.dispose()); Z.f.geometry = gf; Z.w.geometry = gw; Z.t.geometry = gt; Z.fM.opacity = .22 * al; Z.wM.opacity = .9 * al; Z.tM.opacity = al; }); }
   function zone(z) { const poly = pts => pts.map(([x, zz]) => projV(V(x, .06, zz)));
     ctx.save(); ctx.beginPath();
     const add = P => { if (P.some(q => q[2] > 1)) return false; P.forEach(([x, y], i) => i ? ctx.lineTo(x, y) : ctx.moveTo(x, y)); ctx.closePath(); return true; };
@@ -387,6 +422,7 @@ async function init() {
     for (const [name, path, d, opt] of (sh.actors || [])) put(actors[name], path, d, opt || {}, t);
     for (const [name, x, z, yaw, kind, phase] of (sh.figs || [])) walkFig(figures[name], x, z, yaw, kind, phase);
     setArrows((sh.overlay || []).filter(o => o.arrow && (o.alpha ?? 1) > .001));
+    setZones(t == null ? [] : (sh.overlay || []).filter(o => o.zone && (o.alpha ?? 1) > .001));
     const c = sh.cam; camera.position.copy(c.from); camera.lookAt(c.to); camera.fov = c.fov ?? fovD(); camera.updateProjectionMatrix();
     const focus = c.to.clone(); focus.y = 0; sun.position.copy(focus).add(V(-40, 70, 32)); sun.target.position.copy(focus);
     const big = c.from.y > 30; Object.assign(sun.shadow.camera, big ? { left: -110, right: 110, top: 110, bottom: -110, far: 300 } : { left: -60, right: 60, top: 60, bottom: -60, far: 220 }); sun.shadow.camera.updateProjectionMatrix();
@@ -396,7 +432,7 @@ async function init() {
     const rank = o => o.zone ? 0 : o.dashed ? 1 : o.ring ? 3 : o.sign ? 4 : o.marker ? 5 : 6;
     for (const o of [...(sh.overlay || [])].sort((p, q) => rank(p) - rank(q))) {
       const al = o.alpha ?? 1; if (al <= .001 || o.arrow) continue; ctx.save(); ctx.globalAlpha = al;
-      if (o.zone) zone(o.zone);
+      if (o.zone && t == null) zone(o.zone); // i filmen tegnes flatene i 3D (setZones)
       if (o.dashed) dashed(...o.dashed);
       if (o.ring) ring(o.ring);
       if (o.sign) signBox(o.sign);
@@ -433,7 +469,7 @@ async function init() {
   const stateAt = (i, t) => { const ch = CHS[i]; t = Math.min(t, ch.end); return film.chapterState(i, t - ch.start, t - ch.speech); };
   const fmarks = CHS.slice(1).map(c => c.start / DURATION);
   const buffer = document.createElement('canvas'), bctx = buffer.getContext('2d');
-  window.__film = film;
+  window.__film = film; window.__route = route; window.__W = WORLDS; window.__stateAt = stateAt; window.__CHS = CHS;
   // Kontroll: står et stillestående kjøretøy på et gangfelt? Gir [t, navn] for hvert funn.
   window.auditCrosswalk = function (t0 = 0, t1 = DURATION, dt = .25) { const out = [], pos = {};
     for (let t = t0; t < t1; t += dt) { window.renderFrame(t);

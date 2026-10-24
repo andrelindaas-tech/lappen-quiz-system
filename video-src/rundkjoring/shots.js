@@ -40,8 +40,8 @@ export function SHOTS({ WORLDS, ARMS, armPt, route, pathFrom, dWhere, dNear, V, 
   // Kjøreveier i B (to felt).
   const B_SE = route(B, 'S', 'E', { offIn: B.lanesIn.right, rc: B.circ.right });
   const B_SN = route(B, 'S', 'N', { offIn: B.lanesIn.right, rc: B.circ.right });
-  const B_SW = route(B, 'S', 'W', { offIn: B.lanesIn.left, rc: B.circ.left, rc2: B.circ.right, change: [.82, .97] });
-  const B_SW2 = route(B, 'S', 'W', { offIn: B.lanesIn.left, rc: B.circ.left, rc2: B.circ.right, change: [.9, .985], laps: 1 });
+  const B_SW = route(B, 'S', 'W', { offIn: B.lanesIn.left, rc: B.circ.left, rc2: B.circ.right, change: [.68, .95] });
+  const B_SW2 = route(B, 'S', 'W', { offIn: B.lanesIn.left, rc: B.circ.left, rc2: B.circ.right, change: [.83, .97], laps: 1 });
   const B_NS = route(B, 'N', 'S', { offIn: B.lanesIn.right, rc: B.circ.right });
   const dB = (path, w, th, r) => dNear(path, ...P(w, th, r));
 
