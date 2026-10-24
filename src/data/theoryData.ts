@@ -826,6 +826,8 @@ export const theoryTopics: TheoryTopic[] = [
         color: 'var(--apple-orange)',
         seoTitle: 'Forbikjøring – regler, forbud og feller | Teori-test.no',
         seoDescription: 'Lær reglene for forbikjøring til teoriprøven klasse B: gangfelt, kryss, høyre side, forbikjøringsforbud, syklist, buss, traktor og motorvei.',
+        author: 'Teori-test.no-redaksjonen',
+        lastUpdated: '2026-10-22',
         sections: [
             {
                 title: 'Forbikjøring på teoriprøven: når er det lov, og når må du vente?',
@@ -1585,6 +1587,8 @@ export const theoryTopics: TheoryTopic[] = [
         color: 'var(--apple-blue)',
         seoTitle: 'Reaksjonstid bil: reaksjonslengde, formel og test | Teoriprøven',
         seoDescription: 'Lær hva reaksjonstid er, test reaksjonstiden din, og se hvordan du regner ut reaksjonslengde ved 30, 50, 80 og 100 km/t.',
+        author: 'Teori-test.no-redaksjonen',
+        reviewedAgainst: 'Vegtrafikkloven og Statens vegvesens temaliste for teoriprøven',
         sections: [
             {
                 title: 'Kort forklart',
@@ -5079,6 +5083,8 @@ export const theoryArticles: TheoryTopic[] = [
         color: 'var(--apple-red)',
         seoTitle: 'Trafikkuhell og førstehjelp – hva gjør du først? | Teori-test.no',
         seoDescription: 'Hva gjør du først ved trafikkuhell? Lær riktig rekkefølge: stans, sikre, varsle og hjelpe. Kort forklart for teoriprøven klasse B.',
+        author: 'Teori-test.no-redaksjonen',
+        lastUpdated: '2026-10-22',
         sections: [
             {
                 title: 'Hva gjør du først?',
@@ -5357,6 +5363,8 @@ Les mer om [trafikkuhell og førstehjelp](/laeringsressurser/trafikkuhell-forste
         color: "var(--apple-blue)",
         seoTitle: "Vikeplikt for buss – gjelder ved 60 km/t eller lavere",
         seoDescription: "Når har du vikeplikt for buss? Sammenlign 60- og 70-sone i visuelle oppgaver, se forklaringen og test deg gratis uten innlogging.",
+        author: 'Teori-test.no-redaksjonen',
+        reviewedAgainst: 'Trafikkreglene og Statens vegvesens veiledning',
         sections: [
             {
                 title: "Kort forklart",
@@ -5487,7 +5495,7 @@ Les mer om [trafikkuhell og førstehjelp](/laeringsressurser/trafikkuhell-forste
                 explanation: "Det er den skiltede fartsgrensen som avgjør. Særregelen gjelder ikke på en vei med fartsgrense 70 km/t."
             }
         ],
-        lastUpdated: "2026-09-05"
+        lastUpdated: "2026-10-22"
     },
 
     {
