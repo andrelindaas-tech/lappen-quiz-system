@@ -46,6 +46,6 @@ el('seek').oninput=()=>{pos=Number(el('seek').value);if(playing)t0=performance.n
 el('view').onchange=()=>{setView(el('view').value);draw(now());};
 function format(){if(!window.animationReady)return;const w=innerWidth<600&&innerHeight>innerWidth?'mobile':'wide';if(w!==fmt){setFilmFormat(w);fmt=w;draw(now());}}
 addEventListener('resize',format);
-(function ready(){if(window.animationReady){format();draw(0);['toggle','seek'].forEach(i=>el(i).disabled=false);el('bigstart').hidden=false;}else if(!window.animationError)requestAnimationFrame(ready);})();
+(function ready(){if(window.animationReady){format();draw(0);['toggle','seek'].forEach(i=>el(i).disabled=false);el('bigstart').hidden=false;if(/[?&]autoplay=1/.test(location.search))play();}else if(!window.animationError)requestAnimationFrame(ready);})();
 </script>
 </body></html>

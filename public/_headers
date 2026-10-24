@@ -10,3 +10,7 @@
 
 /assets/*
   Cache-Control: public, max-age=31536000, immutable
+
+# Forklaringsfilmene: filnavnene er faste, så de mellomlagres i ett døgn og fornyes i bakgrunnen.
+/video/*
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
