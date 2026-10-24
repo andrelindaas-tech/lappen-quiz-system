@@ -634,12 +634,19 @@ export const theoryTopics: TheoryTopic[] = [
         seoDescription: 'Lær regler for rundkjøring til teoriprøven: vikeplikt, blinklys, feltvalg, feltskifte og fotgjengere. Med bilder, interaktiv guide og minitest.',
         author: 'Teori-test.no-redaksjonen',
         reviewedAgainst: 'Trafikkreglene og Statens vegvesens veiledning',
-        lastUpdated: '2026-08-26',
+        lastUpdated: '2026-10-24',
         sections: [
             {
                 title: 'Kort forklart',
                 type: 'info',
                 content: 'En rundkjøring er et veikryss, og de vanlige trafikkreglene gjelder også her. Forskjellen er at den runde formen gjør plassering, fart og tegn ekstra viktig.\n\nNår du skal inn i en rundkjøring, har du normalt vikeplikt for trafikk som allerede er inne i rundkjøringen. Du må senke farten, følge [vikepliktskilt](/trafikkskilt/vikeplikt-og-forkjorsskilt) og vikepliktslinje, og bare kjøre inn når det er trygt. Skilt og veioppmerking må alltid følges.\n\nDu skal blinke til høyre når du skal ut av rundkjøringen. Skal du langt rundt, kan venstreblink før og inne i rundkjøringen hjelpe andre å forstå hvor du skal, men det viktigste er at du alltid blinker riktig ut.'
+            },
+            {
+                title: 'Film: Vikeplikt, feltvalg og blinklys i rundkjøring',
+                type: 'text',
+                content: 'Se de tre fasene i praksis: vikeplikt og feltvalg før du kjører inn, feltskifte mens du er inne, og blinklys og gangfelt når du skal ut.',
+                component: 'ForklaringsFilm',
+                componentId: 'rundkjoring'
             },
             {
                 title: 'Rundkjøringen i tre faser',

@@ -89,4 +89,18 @@ export const forklaringsfilmer: Record<string, Forklaringsfilm> = {
             "Start øverst: politi, lys og skilt. Så de spesielle situasjonene: parkering, hindring og buss. Og til slutt høyreregelen.",
         ],
     },
+    "rundkjoring": {
+        src: "/video/rundkjoring/index.html",
+        title: "Rundkjøring – vikeplikt, feltvalg og blinklys. Animasjon med fortellerstemme",
+        caption: "Animasjon: slik kjører du i rundkjøring (2:29, med lyd). Velg kapittel nederst i spilleren.",
+        textLabel: "Les teksten fra filmen",
+        paragraphs: [
+            "En rundkjøring er et kryss. Del den i tre: før du kjører inn, mens du er inne, og når du skal ut. Ved innkjøringen står det vikepliktskilt og vikelinje. Da har du vikeplikt for alle som allerede er inne i rundkjøringen, også de som kommer fra venstre. Høyreregelen gjelder ikke her. Senk farten i god tid, gjerne mer enn du tror. Da får du oversikt over trafikken og tid til å planlegge hvor du skal. Stans hvis du må.",
+            "Har rundkjøringen ett felt, viser du hvor du skal med plasseringen. Skal du til høyre, holder du deg til høyre i feltet. Skal du til venstre, legger du deg mot midten. Har rundkjøringen to felt, velger du felt før du kjører inn. Skal du til høyre, legger du deg i høyre felt. Skal du rett frem, er det som regel høyre felt. Skal du til venstre eller snu, legger du deg i venstre felt. Viser piler eller skilt noe annet, er det de som gjelder.",
+            "Skal du ut i første utkjøring, blinker du til høyre før du kjører inn, og helt til du er ute. Skal du lenger rundt, blinker du til høyre når du passerer utkjøringen før den du skal ut av. Å blinke til venstre når du kjører inn, er ikke påbudt, men det hjelper andre å forstå hvor du skal.",
+            "Skifter du felt inne i rundkjøringen, har du vikeplikt for trafikken i feltet du skal inn i. Det er ikke fletting. Kommer du ikke trygt over, kjører du heller en runde til.",
+            "Kontroller speil og blindsone før du svinger ut. Ved utkjøringen ligger det ofte et gangfelt. Der skal du vike for gående som er i gangfeltet eller på vei ut i det. Se etter syklister også, før du gir gass.",
+            "Før du kjører inn: vik for alle som er inne, og velg felt. Mens du er inne: hold feltet, og vik hvis du skifter felt. Når du skal ut: blink til høyre og se etter gående i gangfeltet.",
+        ],
+    },
 }
