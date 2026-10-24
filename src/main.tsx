@@ -21,8 +21,12 @@ const app = (
 // outside the sitemap receive dist/index.html through the SPA fallback; that is
 // homepage HTML and must be replaced instead of hydrated as another route.
 const prerenderPath = container.dataset.prerenderPath
+// Quiz modes share /quiz/ HTML, but their first render differs from that page.
+const hasQuizMode = normalizePath(window.location.pathname) === '/quiz'
+    && new URLSearchParams(window.location.search).has('mode')
 const isMatchingPrerender = container.hasChildNodes()
     && prerenderPath === normalizePath(window.location.pathname)
+    && !hasQuizMode
 
 if (isMatchingPrerender) {
     ReactDOM.hydrateRoot(container, app)
