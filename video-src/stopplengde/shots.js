@@ -11,8 +11,8 @@ export const CHAPTERS = [
   { title: 'Husk dette', sec: 14 },
 ];
 export const POSTER = ['Stopplengde:', 'reaksjon og bremsing'];
-// Plakatens lengde til lyden er laget (manus: ca. 2:20). Byttes med faktisk lengde fra timing.json.
-export const DURATION_EST = 140;
+// Faktisk lengde fra timing.json (2:14).
+export const DURATION_EST = 134.36;
 export const SUMMARY_TITLE = 'HUSK DETTE';
 export const SUMMARY_ROWS = [['40 km/t', '11,1 m', '8 m', '19,1 m'], ['80 km/t', '22,2 m', '32 m', '54,2 m']];
 

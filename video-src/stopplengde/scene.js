@@ -3,6 +3,9 @@ import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { assets } from './assets-data.js';
 import { C, FONT, LAYOUT, infoPanel, pill, rr } from './style.js';
 import { CHAPTERS, SHOTS, POSTER, DURATION_EST, SUMMARY_TITLE, SUMMARY_ROWS } from './shots.js';
+import { POINTS, END_LINES } from './information.js';
+import { FILM } from './film.js';
+import timing from './timing.json';
 
 // Storyboard for «Stopplengde – reaksjonslengde og bremselengde».
 // Rett veg langs x (kjøreretning +x). To felt i samme retning: nært felt z = +1,75, fjernt felt z = −1,75.
@@ -72,23 +75,27 @@ async function init() {
     return new THREE.SpriteMaterial({ map: new THREE.CanvasTexture(c), transparent: true, depthWrite: false, blending: THREE.AdditiveBlending, toneMapped: false }); };
   const redGlow = glow('rgba(255,40,30,1)');
   function makeCar(color) {
-    const o = carGltf.scene.clone(true);
-    o.traverse(m => { if (m.isMesh) { m.castShadow = m.receiveShadow = true; m.material = m.material.clone(); if (m.material.name === 'Lakk') m.material.color.set(color); } });
+    const o = carGltf.scene.clone(true), wheels = [], mats = [];
+    o.traverse(m => { if (m.name.startsWith('Hjul_')) wheels.push(m); if (m.isMesh) { m.castShadow = m.receiveShadow = true; m.material = m.material.clone(); mats.push(m.material); if (m.material.name === 'Lakk') m.material.color.set(color); } });
     const brake = []; for (const s of [-1, 1]) { const g = new THREE.Group(); g.position.set(s * .62, .82, -2.08); g.add(new THREE.Mesh(new THREE.BoxGeometry(.32, .14, .04), basic('#ff2a1f'))); const sp = new THREE.Sprite(redGlow); sp.scale.set(1.4, 1.4, 1); g.add(sp); g.visible = false; o.add(g); brake.push(g); }
-    scene.add(o); return { o, brake };
+    scene.add(o); return { o, brake, wheels, mats };
   }
   const cars = { near: makeCar('#1689c9'), far: makeCar('#1689c9') };
   const ball = (() => { const c = document.createElement('canvas'); c.width = 128; c.height = 64; const k = c.getContext('2d'); for (let i = 0; i < 8; i++) { k.fillStyle = i % 2 ? '#ffffff' : '#e8473a'; k.fillRect(i * 16, 0, 16, 64); }
     const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace; return mesh(new THREE.SphereGeometry(.35, 24, 16), new THREE.MeshStandardMaterial({ map: t, roughness: .5 }), scene, true); })();
   // Fronten på bilen står på x = front.
-  function placeCar(lane, front, braking) { const c = cars[lane]; c.o.visible = true; c.o.position.set(front - FRONT, 0, LANE[lane]); c.o.rotation.set(0, Math.PI / 2, 0); c.brake.forEach(b => b.visible = !!braking); }
+  // alpha < 1 toner bilen ut (brukes når bremsingen ikke skal vises). Hjulene ruller med fronten.
+  function placeCar(lane, front, braking, alpha = 1) { const c = cars[lane]; c.o.visible = alpha > .01; c.o.position.set(front - FRONT, 0, LANE[lane]); c.o.rotation.set(0, Math.PI / 2, 0);
+    c.brake.forEach(b => { b.visible = !!braking; b.children.forEach(k => { k.material.transparent = true; k.material.opacity = alpha; }); });
+    c.wheels.forEach(w => w.rotation.x = front / .34);
+    c.mats.forEach(m => { m.transparent = alpha < 1; m.opacity = alpha; m.depthWrite = alpha >= 1; }); c.o.traverse(m => { if (m.isMesh) m.castShadow = alpha > .5; }); }
 
   // ---------- Striper på vegen (3D, bilene står over dem) ----------
   const stripMat = c => new THREE.MeshBasicMaterial({ color: c, transparent: true, opacity: .92, depthWrite: false, toneMapped: false, polygonOffset: true, polygonOffsetFactor: -4 });
   const pool = Array.from({ length: 8 }, () => { const m = mesh(new THREE.PlaneGeometry(1, 1).rotateX(-Math.PI / 2), stripMat('#ffffff')); m.renderOrder = 2; m.visible = false; return m; });
   const lineMesh = mesh(new THREE.PlaneGeometry(1, 1).rotateX(-Math.PI / 2), basic('#ffffff', { polygonOffset: true, polygonOffsetFactor: -6 })); lineMesh.renderOrder = 3;
   function setStrips(list) { pool.forEach((m, i) => { const s = list[i]; m.visible = !!s; if (!s) return; const [lane, x0, x1, color] = s, w = 2.0;
-    m.material.color.set(color); m.position.set((x0 + x1) / 2, .03, LANE[lane]); m.scale.set(Math.max(.01, x1 - x0), 1, w); }); }
+    m.visible = x1 - x0 > .005 && (s[4] ?? 1) > .01; m.material.color.set(color); m.material.opacity = .92 * (s[4] ?? 1); m.position.set((x0 + x1) / 2, .03, LANE[lane]); m.scale.set(Math.max(.01, x1 - x0), 1, w); }); }
 
   // ---------- 2D over scenen ----------
   const projV = v => { const p = v.clone().project(camera); return [(p.x + 1) * L.W / 2, (1 - p.y) * L.sceneH / 2, p.z]; };
@@ -96,29 +103,29 @@ async function init() {
   // Avstandsstolper under vegen: samme x-målestokk som vegen. Hver rad er én bil.
   const px = x => at(x, 3.6)[0];
   function bars(rows, y0) { const bh = 56, gap = 16; let y = y0;
-    for (const r of rows) {
+    for (const r of rows) { ctx.save(); ctx.globalAlpha = r.alpha ?? 1;
       if (r.label) { ctx.save(); ctx.font = `700 28px ${FONT}`; ctx.fillStyle = C.text; ctx.textBaseline = 'middle'; ctx.textAlign = 'right'; const x = px(0) - 14; ctx.fillText(r.label, x, y + bh / 2); ctx.restore(); }
-      for (const [x0, x1, color, text] of r.segs) { const a = px(x0), b = px(x1); ctx.save(); ctx.shadowColor = 'rgba(15,23,42,.18)'; ctx.shadowBlur = 8; ctx.fillStyle = color; rr(ctx, a, y, Math.max(2, b - a), bh, 6); ctx.fill(); ctx.shadowColor = 'transparent';
+      for (const [x0, x1, color, text] of r.segs) { if (x1 - x0 < .01) continue; const a = px(x0), b = px(x1); ctx.save(); ctx.shadowColor = 'rgba(15,23,42,.18)'; ctx.shadowBlur = 8; ctx.fillStyle = color; rr(ctx, a, y, Math.max(2, b - a), bh, 6); ctx.fill(); ctx.shadowColor = 'transparent';
         ctx.lineWidth = 2; ctx.strokeStyle = 'rgba(255,255,255,.9)'; ctx.stroke();
         if (text) { ctx.font = `700 30px ${FONT}`; ctx.textBaseline = 'middle'; const tw = ctx.measureText(text).width; ctx.fillStyle = C.white; ctx.textAlign = 'center';
           if (tw + 16 < b - a) ctx.fillText(text, (a + b) / 2, y + bh / 2 + 1); else { ctx.fillStyle = C.text; ctx.textAlign = 'left'; ctx.fillText(text, b + 10, y + bh / 2 + 1); } }
         ctx.restore(); }
-      if (r.end) { const b = px(r.segs[r.segs.length - 1][1]); ctx.save(); ctx.font = `700 28px ${FONT}`; ctx.fillStyle = C.text; ctx.textBaseline = 'middle'; ctx.fillText(r.end, b + 12, y + bh / 2 + 1); ctx.restore(); }
-      y += bh + gap; }
+      if (r.end) { const b = px(r.segs[r.segs.length - 1][1]); ctx.save(); ctx.font = `700 28px ${FONT}`; ctx.fillStyle = C.text; ctx.textBaseline = 'middle'; ctx.globalAlpha *= r.endAlpha ?? 1; ctx.fillText(r.end, b + 12, y + bh / 2 + 1); ctx.restore(); }
+      ctx.restore(); y += bh + gap; }
     return y; }
   function ruler(x0, x1, y) { ctx.save(); ctx.strokeStyle = 'rgba(15,23,42,.55)'; ctx.lineWidth = 2; ctx.beginPath(); ctx.moveTo(px(x0), y); ctx.lineTo(px(x1), y); ctx.stroke();
     ctx.font = `600 22px ${FONT}`; ctx.textAlign = 'center'; ctx.textBaseline = 'top'; ctx.fillStyle = 'rgba(15,23,42,.75)';
     for (let x = x0; x <= x1 + .01; x += 5) { const p = px(x), big = x % 10 === 0; ctx.beginPath(); ctx.moveTo(p, y); ctx.lineTo(p, y + (big ? 14 : 8)); ctx.stroke(); if (big) ctx.fillText(`${x} m`, p, y + 18); }
     ctx.restore(); return y + 50; }
-  function bracket(x0, x1, text, y, color = C.text) { const a = px(x0), b = px(x1);
-    ctx.save(); ctx.lineCap = 'round'; const path = () => { ctx.beginPath(); ctx.moveTo(a, y); ctx.lineTo(a, y + 14); ctx.lineTo(b, y + 14); ctx.lineTo(b, y); };
+  function bracket(x0, x1, text, y, color = C.text, alpha = 1) { const a = px(x0), b = px(x1);
+    ctx.save(); ctx.globalAlpha = alpha; ctx.lineCap = 'round'; const path = () => { ctx.beginPath(); ctx.moveTo(a, y); ctx.lineTo(a, y + 14); ctx.lineTo(b, y + 14); ctx.lineTo(b, y); };
     ctx.strokeStyle = color; ctx.lineWidth = 4; path(); ctx.stroke(); ctx.restore();
-    pill(ctx, clamp((a + b) / 2, 160, L.W - 160), y + 50, text, { size: 30 }); return y + 90; }
+    ctx.restore(); ctx.save(); ctx.globalAlpha = alpha; pill(ctx, clamp((a + b) / 2, 160, L.W - 160), y + 50, text, { size: 30 }); ctx.restore(); return y + 90; }
   // Notisark: regnestykket bygges opp linje for linje. Aktiv linje er turkis.
-  function note(n) { const mob = L.H > L.W, x0 = n.right ? L.W - 32 - (n.w ?? 560) : 32, y0 = n.bottom !== false ? L.sceneH - 32 - (70 + n.lines.length * 52) : 32, w = n.w ?? 560, lh = 52, h = 70 + n.lines.length * lh;
-    ctx.save(); ctx.shadowColor = 'rgba(15,23,42,.22)'; ctx.shadowBlur = 18; ctx.shadowOffsetY = 4; ctx.fillStyle = 'rgba(255,255,255,.97)'; rr(ctx, x0, y0, w, h, 18); ctx.fill(); ctx.shadowColor = 'transparent';
+  function note(n) { const mob = L.H > L.W; if (!mob) n = { ...n, right: true }; const x0 = n.right ? L.W - 32 - (n.w ?? 560) : 32, lh = mob ? 52 : 44, y0 = n.bottom !== false ? L.sceneH - 32 - (70 + n.lines.length * lh) : 32, w = n.w ?? 560, h = 70 + n.lines.length * lh;
+    ctx.save(); ctx.globalAlpha = n.alpha ?? 1; ctx.shadowColor = 'rgba(15,23,42,.22)'; ctx.shadowBlur = 18; ctx.shadowOffsetY = 4; ctx.fillStyle = 'rgba(255,255,255,.97)'; rr(ctx, x0, y0, w, h, 18); ctx.fill(); ctx.shadowColor = 'transparent';
     ctx.font = `600 22px ${FONT}`; ctx.fillStyle = C.teal; ctx.textBaseline = 'alphabetic'; ctx.fillText((n.title ?? 'REGNESTYKKE').toUpperCase(), x0 + 26, y0 + 40);
-    n.lines.forEach((t, i) => { const on = i === (n.active ?? n.lines.length - 1); ctx.font = `${on ? 700 : 500} ${mob ? 34 : 32}px ${FONT}`; ctx.fillStyle = on ? C.teal : C.text; ctx.fillText(t, x0 + 26, y0 + 40 + 46 + i * lh); });
+    n.lines.forEach((t, i) => { const on = i === (n.active ?? n.lines.length - 1); ctx.globalAlpha = (n.alpha ?? 1) * ((n.lineAlpha || [])[i] ?? 1); ctx.font = `${on ? 700 : 500} ${mob ? 34 : 30}px ${FONT}`; ctx.fillStyle = on ? C.teal : C.text; ctx.fillText(t, x0 + 26, y0 + 40 + 46 + i * lh); });
     ctx.restore(); }
   function marker(x, text, lane = 'near') { const [px, py] = at(x, 3.7, 0), [, top] = at(x, -3.7, 0); ctx.save(); ctx.setLineDash([10, 8]); ctx.strokeStyle = 'rgba(255,255,255,.95)'; ctx.lineWidth = 4; ctx.beginPath(); ctx.moveTo(px, py); ctx.lineTo(px, top); ctx.stroke(); ctx.restore();
     if (text) pill(ctx, px, top - 34, text, { size: 26, dot: C.text }); }
@@ -128,10 +135,10 @@ async function init() {
 
   function drawScene(sh) {
     Object.values(cars).forEach(c => c.o.visible = false);
-    for (const [lane, front, braking] of (sh.cars || [])) placeCar(lane, front, braking);
-    ball.visible = !!sh.ball; if (sh.ball) ball.position.set(sh.ball[0], .35, sh.ball[1]);
+    for (const [lane, front, braking, alpha] of (sh.cars || [])) placeCar(lane, front, braking, alpha);
+    ball.visible = !!sh.ball; if (sh.ball) { ball.position.set(sh.ball[0], .35, sh.ball[1]); ball.rotation.set(sh.ball[2] ?? 0, 0, 0); }
     setStrips(sh.strips || []);
-    lineMesh.visible = sh.line !== false; lineMesh.position.set(0, .025, sh.lineZ ?? 0); lineMesh.scale.set(.3, 1, sh.lineW ?? 7.0);
+    lineMesh.visible = sh.line !== false && (sh.lineAlpha ?? 1) > .01; lineMesh.material.transparent = true; lineMesh.material.opacity = sh.lineAlpha ?? 1; lineMesh.position.set(0, .025, sh.lineZ ?? 0); lineMesh.scale.set(.3, 1, sh.lineW ?? 7.0);
     // Kamera: fra siden og litt ovenfra, x-midten og bredden bestemmer avstanden.
     const { cx, span, elev = 20, fov = 26 } = sh.cam, hf = 2 * Math.atan(Math.tan(fov * Math.PI / 360) * camera.aspect), dist = span / 2 / Math.tan(hf / 2), e = elev * Math.PI / 180;
     camera.fov = fov; camera.position.set(cx, Math.sin(e) * dist, Math.cos(e) * dist + (sh.cam.dz ?? 0)); camera.lookAt(cx, 0, sh.cam.lz ?? span * .26); camera.updateProjectionMatrix();
@@ -139,22 +146,22 @@ async function init() {
     camera.updateMatrixWorld(); renderer.render(scene, camera);
     ctx.reset(); ctx.drawImage(renderer.domElement, 0, 0, L.W, L.sceneH);
     { const y0 = at(sh.cam.cx, 3.6)[1] + 36; let y = y0; if (sh.bars) y = bars(sh.bars, y);
-      for (const [x, t] of (sh.markers || [])) { const p = px(x), [, top] = at(x, -3.7, 0); ctx.save(); ctx.setLineDash([10, 8]); ctx.strokeStyle = C.text; ctx.lineWidth = 3; ctx.beginPath(); ctx.moveTo(p, top); ctx.lineTo(p, y - 8); ctx.stroke(); ctx.restore(); pill(ctx, p, top - 34, t, { size: 26, dot: '#e8473a' }); }
-      if (sh.ruler) y = ruler(...sh.ruler, y); for (const b of (sh.brackets || [])) y = bracket(b[0], b[1], b[2], y, b[3]); }
-    for (const p of (sh.pills || [])) { const [x, y] = at(p.x, p.lane ?? 'near', p.y ?? 2.2); pill(ctx, clamp(x + (p.dx ?? 0), 150, L.W - 150), y + (p.dy ?? 0), p.text, { dot: p.dot, size: p.size ?? 28 }); }
+      for (const [x, t, ma = 1] of (sh.markers || [])) { const p = px(x), [, top] = at(x, -3.7, 0); ctx.save(); ctx.globalAlpha = ma; ctx.setLineDash([10, 8]); ctx.strokeStyle = C.text; ctx.lineWidth = 3; ctx.beginPath(); ctx.moveTo(p, top); ctx.lineTo(p, y - 8); ctx.stroke(); pill(ctx, p, top - 34, t, { size: 26, dot: '#e8473a' }); ctx.restore(); }
+      if (sh.ruler) y = ruler(...sh.ruler, y); for (const b of (sh.brackets || [])) y = bracket(b[0], b[1], b[2], y, b[3], b[4]); }
+    for (const p of (sh.pills || [])) { if ((p.alpha ?? 1) < .01) continue; const [x, y] = at(p.x, p.lane ?? 'near', p.y ?? 2.2); ctx.save(); ctx.globalAlpha = p.alpha ?? 1; pill(ctx, clamp(x + (p.dx ?? 0), 150, L.W - 150), y + (p.dy ?? 0), p.text, { dot: p.dot, size: p.size ?? 28 }); ctx.restore(); }
     if (sh.note) note(sh.note);
-    if (sh.summary) summary();
+    if (sh.summary) summary(sh.summary === true ? 1 : sh.summary);
   }
-  function summary() { const cw = 960, cx = (L.W - cw) / 2, cy = 150, rows = SUMMARY_ROWS, rh = 78, ch = 150 + rows.length * rh;
-    ctx.save(); ctx.fillStyle = 'rgba(15,23,42,.35)'; ctx.fillRect(0, 0, L.W, L.sceneH); ctx.shadowColor = 'rgba(15,23,42,.35)'; ctx.shadowBlur = 30; ctx.fillStyle = C.white; rr(ctx, cx, cy, cw, ch, 24); ctx.fill(); ctx.shadowColor = 'transparent';
+  function summary(alpha = 1) { if (alpha < .01) return; const wd = L.W > L.H, cw = wd ? 720 : 960, cx = wd ? L.W - cw - 40 : (L.W - cw) / 2, cy = wd ? 404 : 118, rows = SUMMARY_ROWS, rh = 78, ch = 150 + rows.length * rh;
+    ctx.save(); ctx.globalAlpha = alpha; ctx.fillStyle = `rgba(15,23,42,${wd ? .2 : .35})`; ctx.fillRect(0, 0, L.W, L.sceneH); ctx.shadowColor = 'rgba(15,23,42,.35)'; ctx.shadowBlur = 30; ctx.fillStyle = C.white; rr(ctx, cx, cy, cw, ch, 24); ctx.fill(); ctx.shadowColor = 'transparent';
     ctx.font = `600 30px ${FONT}`; ctx.fillStyle = C.teal; ctx.fillText(SUMMARY_TITLE, cx + 48, cy + 70);
-    const colX = [cx + 48, cx + 270, cx + 520, cx + 760], head = ['Fart', 'Reaksjon', 'Bremsing', 'Stopp'], hc = [C.muted, C.teal, '#d97706', C.text];
+    const colX = (wd ? [40, 200, 380, 560] : [48, 270, 520, 760]).map(o => cx + o), head = ['Fart', 'Reaksjon', 'Bremsing', 'Stopp'], hc = [C.muted, C.teal, '#d97706', C.text];
     ctx.font = `600 28px ${FONT}`; head.forEach((t, i) => { ctx.fillStyle = hc[i]; ctx.fillText(t, colX[i], cy + 128); });
     rows.forEach((r, k) => { const y = cy + 128 + (k + 1) * rh; ctx.fillStyle = C.border; ctx.fillRect(cx + 40, y - 52, cw - 80, 2); ctx.font = `600 38px ${FONT}`; r.forEach((t, i) => { ctx.fillStyle = i === 3 ? C.text : hc[i] === C.muted ? C.text : hc[i]; ctx.fillText(t, colX[i], y); }); });
     ctx.restore(); }
-  function posterPanel(lines) {
+  function posterPanel(lines, dur = DURATION_EST) {
     const { W, H, sceneH, pad } = L; ctx.save(); ctx.fillStyle = C.white; ctx.fillRect(0, sceneH, W, H - sceneH); ctx.fillStyle = C.border; ctx.fillRect(0, sceneH, W, 2);
-    ctx.font = `600 ${L.label}px ${FONT}`; ctx.fillStyle = C.teal; ctx.textAlign = 'left'; ctx.textBaseline = 'alphabetic'; ctx.fillText(`FORKLARINGSFILM · ${Math.floor(DURATION_EST / 60)}:${String(Math.round(DURATION_EST % 60)).padStart(2, '0')}`, pad, sceneH + 74);
+    ctx.font = `600 ${L.label}px ${FONT}`; ctx.fillStyle = C.teal; ctx.textAlign = 'left'; ctx.textBaseline = 'alphabetic'; ctx.fillText(`FORKLARINGSFILM · ${Math.floor(dur / 60)}:${String(Math.floor(dur % 60)).padStart(2, '0')}`, pad, sceneH + 74);
     ctx.textAlign = 'right'; ctx.fillStyle = C.text; ctx.font = `700 ${L.label}px ${FONT}`; ctx.fillText('teori-test.no', W - pad, sceneH + 74);
     ctx.textAlign = 'left'; ctx.font = `700 ${L.font}px ${FONT}`; lines.forEach((t, i) => ctx.fillText(t, pad, sceneH + 74 + 34 + L.font + i * L.line));
     const cx = W - pad - 70, cy = sceneH + 74 + 34 + L.font * .6 + L.line * .5; ctx.shadowColor = 'rgba(13,148,136,.45)'; ctx.shadowBlur = 24; ctx.fillStyle = C.teal; ctx.beginPath(); ctx.arc(cx, cy, 70, 0, 7); ctx.fill();
@@ -171,6 +178,37 @@ async function init() {
     const b = infoPanel(ctx, L, { chapter: sh.chapter, total: CHAPTERS.length, title: ch.title, lines: sh.text, progress: (starts[i] + ch.sec * sh.at) / total, chapterMarks: marks });
     window.infoBounds = b.map(x => ({ t: x.t, x: x.x, w: x.w })); return canvas;
   };
-  window.ready = true;
+
+  // ---------- Filmen ----------
+  const ease = k => { k = clamp(k); return k * k * (3 - 2 * k); };
+  const DURATION = timing.duration, CHS = timing.chapters, endStart = CHS[CHS.length - 1].end;
+  const film = FILM({ C, ORANGE, ease, clamp, CHS, SUMMARY_ROWS, wide: () => L.W > L.H });
+  const chapterOf = t => { let i = 0; while (i < CHS.length - 1 && t >= CHS[i + 1].start) i++; return i; };
+  const stateAt = (i, t) => { const ch = CHS[i]; t = Math.min(t, ch.end); return film.chapterState(i, t - ch.start, t - ch.speech); };
+  const cuts = CHS.slice(1).map((c, k) => ({ t: c.start, prev: [k, c.start - 1e-3], fade: .5 }));
+  const fmarks = CHS.slice(1).map(c => c.start / DURATION);
+  const buffer = document.createElement('canvas'), bctx = buffer.getContext('2d');
+  window.__film = film; window.__stateAt = stateAt; window.__CHS = CHS;
+  window.setFilmFormat = f => { window.setFormat(f); return { width: L.W, height: L.H }; };
+  window.chapterTimes = CHS.map(c => ({ chapter: c.chapter, title: c.title, start: c.start }));
+  window.filmDuration = DURATION;
+  window.renderFrame = function (seconds) {
+    const t = clamp(Number(seconds) || 0, 0, DURATION), end = t >= endStart;
+    const i = chapterOf(Math.min(t, endStart - 1e-3)), ch = CHS[i], u = t - ch.start, a = t - ch.speech;
+    const cut = cuts.find(c => t >= c.t && t < c.t + c.fade);
+    if (cut) { drawScene(stateAt(...cut.prev)); buffer.width = L.W; buffer.height = L.sceneH; bctx.drawImage(canvas, 0, 0, L.W, L.sceneH, 0, 0, L.W, L.sceneH); }
+    const st = stateAt(i, t); drawScene(st);
+    if (cut) { ctx.save(); ctx.globalAlpha = 1 - ease((t - cut.t) / cut.fade); ctx.drawImage(buffer, 0, 0); ctx.restore(); }
+    const S = ch.sentences; let k = 0; S.forEach((s, j) => { if (a >= s - .15) k = j; });
+    const lines = end ? END_LINES : POINTS[i][k], since = end ? t - endStart : k === 0 ? u : a - (S[k] - .15);
+    const b = infoPanel(ctx, L, { chapter: i + 1, total: CHAPTERS.length, title: ch.title, lines, progress: t / DURATION, chapterMarks: fmarks, alpha: clamp(since / .25, 0, 1) });
+    window.infoLayout = { bounds: b.map(x => ({ text: x.t, x: x.x, y: x.y, width: x.w, height: x.h })), width: L.W, sceneHeight: L.sceneH };
+    window.frameInfo = { t, chapter: i + 1, title: ch.title, speechTime: a, endCard: end, point: lines.join(' '), duration: DURATION, cars: (st.cars || []).map(c => ({ lane: c[0], front: +c[1].toFixed(3), braking: !!c[2] })), log: st.log || null };
+    return canvas;
+  };
+  // Plakaten i filmen bruker faktisk lengde.
+  window.renderShot = (orig => id => { const c = orig(id); if (id === 'plakat') posterPanel(POSTER, DURATION); return c; })(window.renderShot);
+  window.renderFrame(.5);
+  window.ready = true; window.animationReady = true;
 }
-init().catch(e => { window.initError = String(e && e.stack || e); console.error(e); });
+init().catch(e => { window.initError = window.animationError = String(e && e.stack || e); console.error(e); });

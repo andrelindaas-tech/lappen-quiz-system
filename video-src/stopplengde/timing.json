@@ -1,0 +1,107 @@
+{
+ "duration": 134.3623,
+ "end_card": 4.0,
+ "rate": 24000,
+ "estimate": false,
+ "chapters": [
+  {
+   "chapter": 1,
+   "title": "Tre deler av stoppet",
+   "start": 0.0,
+   "speech": 1.5,
+   "audio": 12.8957,
+   "end": 15.8957,
+   "sentences": [
+    0,
+    5.0,
+    9.15
+   ]
+  },
+  {
+   "chapter": 2,
+   "title": "Reaksjonslengde",
+   "start": 15.8957,
+   "speech": 16.4957,
+   "audio": 18.9799,
+   "end": 37.4756,
+   "sentences": [
+    0,
+    2.81,
+    5.28,
+    9.82,
+    14.04
+   ]
+  },
+  {
+   "chapter": 3,
+   "title": "Dobbel reaksjonstid",
+   "start": 37.4756,
+   "speech": 38.0756,
+   "audio": 12.7184,
+   "end": 52.794,
+   "sentences": [
+    0,
+    4.9,
+    9.78
+   ]
+  },
+  {
+   "chapter": 4,
+   "title": "Slik regner du bremselengden",
+   "start": 52.794,
+   "speech": 53.394,
+   "audio": 20.7172,
+   "end": 75.6112,
+   "sentences": [
+    0,
+    4.33,
+    9.27,
+    14.07,
+    17.08
+   ]
+  },
+  {
+   "chapter": 5,
+   "title": "Dobbel fart",
+   "start": 75.6112,
+   "speech": 76.2112,
+   "audio": 23.7769,
+   "end": 101.9881,
+   "sentences": [
+    0,
+    5.09,
+    11.86,
+    16.46,
+    18.87,
+    20.91
+   ]
+  },
+  {
+   "chapter": 6,
+   "title": "Stopplengde",
+   "start": 101.9881,
+   "speech": 102.5881,
+   "audio": 13.1331,
+   "end": 118.7212,
+   "sentences": [
+    0,
+    2.15,
+    6.91,
+    11.27
+   ]
+  },
+  {
+   "chapter": 7,
+   "title": "Husk dette",
+   "start": 118.7212,
+   "speech": 119.3212,
+   "audio": 10.0412,
+   "end": 130.3623,
+   "sentences": [
+    0,
+    3.8,
+    7.83
+   ]
+  }
+ ]
+}

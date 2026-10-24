@@ -1,0 +1,13 @@
+Fra du oppdager en fare til bilen står stille, kjører du et godt stykke. Først reagerer du, så bremser du. Reaksjonslengden og bremselengden blir til sammen stopplengden.
+
+Mens du reagerer, bremser ikke bilen. Den kjører videre i samme fart. Del farten på 3,6, så får du meter per sekund. 40 kilometer i timen er omtrent 11 meter i sekundet. Med ett sekunds reaksjonstid blir reaksjonslengden altså omtrent 11 meter.
+
+Er du trøtt eller uoppmerksom, kan reaksjonstiden bli to sekunder. Da blir reaksjonslengden dobbelt så lang, omtrent 22 meter. Ikke fire ganger så lang, for farten er den samme.
+
+En vanlig huskeregel for full bremsing på tørr asfalt er: Del farten på 10, gang tallet med seg selv, og del på 2. I 40 kilometer i timen blir det 4 ganger 4, som er 16. Delt på 2 blir det 8 meter. På vått føre eller is blir bremselengden mye lengre.
+
+I 80 kilometer i timen blir det 8 ganger 8, som er 64. Delt på 2 blir det 32 meter, altså fire ganger så langt. Er bremselengden oppgitt i oppgaven, kan du regne med forholdet mellom fartene: 80 delt på 40 er 2. 2 ganger 2 er 4. 8 meter ganger 4 er 32 meter.
+
+Legg sammen de to delene. I 40 kilometer i timen er stopplengden omtrent 19 meter. I 80 kilometer i timen er den omtrent 54 meter. Det er nesten tre ganger så langt.
+
+Reaksjonslengden følger farten og reaksjonstiden. Bremselengden blir fire ganger så lang når farten dobles. Stopplengden er de to lagt sammen.

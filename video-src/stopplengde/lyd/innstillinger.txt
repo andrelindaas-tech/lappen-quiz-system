@@ -1,0 +1,42 @@
+Film: Stopplengde / bremselengde
+Dato for generering og nedlasting: 24. oktober 2026
+Tjeneste: ElevenLabs Text to Speech via Andres innloggede Chrome-nettleser
+Stemme: Mia Starset - Clear and Friendly
+Modell: Eleven v4
+Stability: 50 %
+Similarity: 75 %
+Clone strength: 0 %
+Language: Auto (Recommended)
+Audio effects: Ingen
+Output format: MP3 44.1 kHz (128 kbps)
+Innstillingene ble kontrollert før hvert kapittel.
+Tekstkilde: Andres sju kapitteltekster, som stemmer med LES-linjene i Claude outputs/video-manus/6-stopplengde.md.
+Tekstene ble brukt ordrett, inkludert 3,6 og alle tall i regnestykkene.
+Ingen uttaleendringer eller andre tekstendringer ble gjort.
+Valgt opptak: Generation 1 for hvert kapittel. Eleven v4 lager også en alternativ variant automatisk.
+Ingen ekstra genereringer eller lengdejusteringer ble gjort.
+Originalene ligger i undermappen mp3/. Ingen WAV-kopier er laget.
+Agenten har ikke hørt lyden. Lytt særlig etter at 3,6 leses tre komma seks, og at regnestykkene i kapittel 4 og 5 er tydelige.
+
+Lengder fra nettleserens lydmetadata:
+TT Kap 1.mp3 — 12,20 sek — Tre deler av stoppet
+TT Kap 2.mp3 — 19,23 sek — Reaksjonslengde
+TT Kap 3.mp3 — 13,01 sek — Dobbel reaksjonstid
+TT Kap 4.mp3 — 21,00 sek — Slik regner du ut bremselengden
+TT Kap 5.mp3 — 22,60 sek — Dobbel fart: fire ganger så lang
+TT Kap 6.mp3 — 13,40 sek — Stopplengde
+TT Kap 7.mp3 — 10,37 sek — Husk dette
+
+
+Genererings-ID-er:
+TT Kap 1: jrMCfZoVUPilDuvxuUGa
+TT Kap 2: 0MQ2kDnzvNC370OW8f0c
+TT Kap 3: dbwQcvC0xVUpa3k8kRw7
+TT Kap 4: f2VAipNN5zcDvVUqyhj6
+TT Kap 5: ReoEOU2jwVvORzTaTMUW
+TT Kap 6: G93jI4WVWnGG8wADBg0A
+TT Kap 7: 9XU15vm08Y3uZOAxXKZZ
+
+
+Alle sju nedlastede filer ble kontrollert mot kopiene i repoet med SHA-256.
+Ingen commit eller push er utført.

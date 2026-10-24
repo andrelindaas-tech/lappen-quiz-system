@@ -79,13 +79,20 @@ export const theoryTopics: TheoryTopic[] = [
         seoTitle: "Bremselengde og stopplengde – slik regner du ut (med kalkulator)",
         seoDescription: "Formel for bremselengde og stopplengde, med eksempler og tabell for 30–110 km/t. Prøv kalkulatoren og se hva 10 km/t høyere fart betyr.",
         author: "Teori-test.no-redaksjonen",
-        lastUpdated: "2026-10-19",
+        lastUpdated: "2026-10-24",
         hasCalculator: true,
         sections: [
             {
                 title: "Kort forklart",
                 type: "text",
                 content: "Bremselengde er avstanden bilen kjører fra du begynner å bremse til den stopper. Før du bremser, kjører bilen også et stykke mens du reagerer. Til sammen blir dette **stopplengden**. Høyere fart og dårligere veigrep gjør at du trenger mer plass til å stoppe."
+            },
+            {
+                title: "Film: Reaksjonslengde, bremselengde og stopplengde",
+                type: "text",
+                content: "Se hvorfor bilen kjører videre mens du reagerer, hvordan du regner ut bremselengden med huskeregelen, og hvorfor dobbel fart gir fire ganger så lang bremselengde.",
+                component: "ForklaringsFilm",
+                componentId: "stopplengde"
             },
             {
                 title: "Formel for bremselengde – slik regner du ut",
@@ -1588,6 +1595,7 @@ export const theoryTopics: TheoryTopic[] = [
         seoTitle: 'Reaksjonstid bil: reaksjonslengde, formel og test | Teoriprøven',
         seoDescription: 'Lær hva reaksjonstid er, test reaksjonstiden din, og se hvordan du regner ut reaksjonslengde ved 30, 50, 80 og 100 km/t.',
         author: 'Teori-test.no-redaksjonen',
+        lastUpdated: '2026-10-24',
         reviewedAgainst: 'Vegtrafikkloven og Statens vegvesens temaliste for teoriprøven',
         sections: [
             {
@@ -1604,6 +1612,13 @@ export const theoryTopics: TheoryTopic[] = [
                 title: 'Slik henger reaksjonslengde og bremselengde sammen',
                 type: 'text',
                 content: '![Illustrasjon av oppmerksomhetsperiode, reaksjonslengde, bremselengde og total stopplengde for en bil.](/images/stopplengde-oversikt.png)\n*Stopplengden er reaksjonslengden pluss bremselengden. Reaksjonslengden er avstanden bilen kjører fra du oppdager faren til bremsingen starter.*'
+            },
+            {
+                title: 'Film: Stopplengde – reaksjon og bremsing',
+                type: 'text',
+                content: 'Se reaksjonslengden og bremselengden i bevegelse: 40 og 80 km/t, og 1 og 2 sekunders reaksjonstid.',
+                component: 'ForklaringsFilm',
+                componentId: 'stopplengde'
             },
             {
                 title: 'Prøv reaksjonstidstesten',
