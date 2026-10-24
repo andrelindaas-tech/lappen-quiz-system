@@ -23,7 +23,7 @@ export default function ForklaringsFilm({ id }: { id: string }) {
                     <button type="button" className="forklaringsfilm-poster" onClick={() => setStarted(true)} aria-label={`Spill av filmen: ${film.title}`}>
                         <picture>
                             <source media="(max-width: 640px)" srcSet={`${dir}poster-mobil.webp`} />
-                            <img src={`${dir}poster.webp`} alt="" loading="lazy" decoding="async" />
+                            <img src={`${dir}poster.webp`} alt={`Plakat for forklaringsfilmen: ${film.title}`} loading="lazy" decoding="async" />
                         </picture>
                     </button>
                 )}
