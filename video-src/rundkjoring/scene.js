@@ -3,12 +3,32 @@ import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { assets } from './assets-data.js';
 import { C, FONT, LAYOUT, infoPanel, pill, marker, rr } from './style.js';
 import { CHAPTERS, SHOTS, SUMMARY, SUMMARY_TITLE, POSTER, DURATION_EST } from './shots.js';
+import { FILM } from './film.js';
+import { POINTS, END_LINES } from './information.js';
+import timing from './timing.json';
 
 // Storyboard for «Rundkjøring – vikeplikt, feltvalg og blinklys».
 // Samme motor som vikepliktsfilmen. Ett bilde bestemmes bare av tilstanden det får inn.
 // x mot øst, z mot sør. Vinkel θ måles mot klokka sett ovenfra (øst = 0, nord = π/2), så
 // trafikken i rundkjøringen går med økende θ. Punkt: (ox + r cos θ, oz − r sin θ).
 const clamp = (v, a = 0, b = 1) => Math.max(a, Math.min(b, v));
+const ease = v => { v = clamp(v); return v * v * v * (v * (v * 6 - 15) + 10); };
+const win = (a, t0, t1, f = .35) => ease((a - t0) / f) * (1 - ease((a - t1) / f)); // inn ved t0, ut ved t1
+// Fart: kjør med v0, brems jevnt til stopp ved dStop (ferdig ved tStop), vent, og kjør igjen ved tGo.
+function goFrom(u, tGo, v, Ta = 3) { const q = u - tGo; if (q <= 0) return 0; return q < Ta ? v * q * q / (2 * Ta) : v * Ta / 2 + v * (q - Ta); }
+function stopGo(u, { dStop, v0, tStop, T = 3, tGo = Infinity, v1 = v0, Ta = 3 }) {
+  const tb = tStop - T, back = v0 * T / 2;
+  if (u < tb) return dStop - back - v0 * (tb - u);
+  if (u < tStop) { const q = u - tb; return dStop - back + v0 * q - v0 * q * q / (2 * T); }
+  return dStop + goFrom(u, tGo, v1, Ta);
+}
+// Fartsprofil: fart (m/s) lineært mellom nøkkeltider [t, v]. Posisjonen er dEnd ved tiden tAt (standard: siste nøkkeltid).
+function profile(t, keys, dEnd, tAt = keys[keys.length - 1][0]) {
+  const I = t => { const [t0, v0] = keys[0]; if (t <= t0) return -(t0 - t) * v0; let s = 0;
+    for (let i = 0; i < keys.length - 1; i++) { const [ta, va] = keys[i], [tb, vb] = keys[i + 1]; if (t <= ta) break; const te = Math.min(t, tb), vt = va + (vb - va) * (te - ta) / (tb - ta); s += (va + vt) / 2 * (te - ta); }
+    const [tl, vl] = keys[keys.length - 1]; if (t > tl) s += vl * (t - tl); return s; };
+  return dEnd - I(tAt) + I(t);
+}
 const V = (x, y, z) => new THREE.Vector3(x, y, z);
 const std = (color, extra = {}) => new THREE.MeshStandardMaterial({ color, roughness: .92, ...extra });
 const basic = color => new THREE.MeshBasicMaterial({ color, toneMapped: false, side: THREE.DoubleSide });
@@ -283,10 +303,11 @@ async function init() {
   const thetaOf = (w, p) => Math.atan2(-(p.z - w.oz), p.x - w.ox);
   const dNear = (path, x, z) => { let best = 0, bd = 1e9; for (let d = 0; d < path.len; d += .2) { const p = path.at(d), q = Math.hypot(p.x - x, p.z - z); if (q < bd) { bd = q; best = d; } } return best; };
 
-  function put(v, path, d, { signal = 0 } = {}) {
+  function put(v, path, d, { signal = 0 } = {}, t = null) {
     const p = path.at(d); v.o.visible = true; v.o.position.set(p.x, 0, p.z); v.o.rotation.set(0, p.yaw, 0);
     v.wheels.forEach(w => w.rotation.x = d / .34);
-    v.signals.forEach(({ l, side }) => l.visible = signal !== 0 && (signal === 2 || side === -signal));
+    const blink = t == null || (t * 1.5) % 1 < .55; // i filmen blinker lyset 1,5 ganger i sekundet
+    v.signals.forEach(({ l, side }) => l.visible = blink && signal !== 0 && (signal === 2 || side === -signal));
     if (v.rider) setPose(v.rider, 'ride', d / 2.1);
     snap(v.o);
   }
@@ -304,7 +325,7 @@ async function init() {
     ctx.save(); ctx.lineWidth = 17; ctx.strokeStyle = 'rgba(255,255,255,.97)'; ctx.beginPath(); ctx.ellipse(cx, cy, rx, ry, 0, 0, 7); ctx.stroke();
     ctx.lineWidth = 6; ctx.strokeStyle = C.amber; ctx.stroke(); ctx.restore();
   }
-  function dashed(path, d0, d1, color = '#ffffff', width = 5, off = 0) { const pts = []; for (let d = d0; d <= d1; d += .7) { const p = path.at(d), [lx, lz] = dirOf(p.yaw - Math.PI / 2); pts.push(projV(V(p.x + lx * off, .06, p.z + lz * off))); } if (pts.some(p => p[2] > 1)) return;
+  function dashed(path, d0, d1, color = '#ffffff', width = 5, off = 0) { const pts = []; for (let d = d0; d <= d1; d += .7) { const p = path.at(d), [lx, lz] = dirOf(p.yaw - Math.PI / 2); pts.push(projV(V(p.x + lx * off, .06, p.z + lz * off))); } if (pts.length < 2 || pts.some(p => p[2] > 1)) return;
     ctx.save(); ctx.setLineDash([18, 14]); ctx.lineCap = 'round'; ctx.lineJoin = 'round'; ctx.lineWidth = width + 4; ctx.strokeStyle = 'rgba(15,23,42,.35)'; ctx.beginPath(); pts.forEach(([x, y], i) => i ? ctx.lineTo(x, y) : ctx.moveTo(x, y)); ctx.stroke();
     ctx.lineWidth = width; ctx.strokeStyle = color; ctx.stroke();
     // Pilspiss i enden.
@@ -335,7 +356,8 @@ async function init() {
   function badge(b) {
     let p; if (b.actor) { const a = objOf(b.actor); if (!a.o.visible) return; p = a.o.position.clone().add(V(0, a.box[1] + (b.dy ?? .9), 0)); }
     else if (b.sign) { const s = SIGN[b.sign]; p = V(s.x, s.y + s.h / 2 + (b.dy ?? .8), s.z); } else p = V(...b.p);
-    const [x, y, z] = projV(p); if (z > 1) return; pill(ctx, clamp(x + (b.dx ?? 0), 210, L.W - 210), y + (b.dy2 ?? 0), b.text, { dot: b.dot ?? C.tealLight, size: b.size ?? 30 });
+    const [x, y, z] = projV(p); if (z > 1) return; if (b.actor && (x < 40 || x > L.W - 40 || y < 20 || y > L.sceneH - 20)) return; // bilen er utenfor bildet
+    pill(ctx, clamp(x + (b.dx ?? 0), 210, L.W - 210), y + (b.dy2 ?? 0), b.text, { dot: b.dot ?? C.tealLight, size: b.size ?? 30 });
   }
   function summaryCard(alpha) {
     const mob = L.H > L.W, cw = mob ? 960 : 1080, lh = mob ? 80 : 74, ch = 120 + SUMMARY.length * lh, cx = (L.W - cw) / 2, cy = (L.sceneH - ch) / 2;
@@ -349,7 +371,7 @@ async function init() {
   }
   function posterPanel(lines, total) {
     const { W, H, sceneH, pad } = L; ctx.save(); ctx.fillStyle = C.white; ctx.fillRect(0, sceneH, W, H - sceneH); ctx.fillStyle = C.border; ctx.fillRect(0, sceneH, W, 2);
-    ctx.font = `600 ${L.label}px ${FONT}`; ctx.fillStyle = C.teal; ctx.textAlign = 'left'; ctx.textBaseline = 'alphabetic'; ctx.fillText(`FORKLARINGSFILM · ${Math.floor(total / 60)}:${String(Math.round(total % 60)).padStart(2, '0')}`, pad, sceneH + 74);
+    ctx.font = `600 ${L.label}px ${FONT}`; ctx.fillStyle = C.teal; ctx.textAlign = 'left'; ctx.textBaseline = 'alphabetic'; ctx.fillText(`FORKLARINGSFILM · ${Math.floor(total / 60)}:${String(Math.floor(total % 60)).padStart(2, "0")}`, pad, sceneH + 74);
     ctx.textAlign = 'right'; ctx.fillStyle = C.text; ctx.font = `700 ${L.label}px ${FONT}`; ctx.fillText('teori-test.no', W - pad, sceneH + 74);
     ctx.textAlign = 'left'; ctx.font = `700 ${L.font}px ${FONT}`; lines.forEach((t, i) => ctx.fillText(t, pad, sceneH + 74 + 34 + L.font + i * L.line));
     const cx = W - pad - 70, cy = sceneH + 74 + 34 + L.font * .6 + L.line * .5; ctx.shadowColor = 'rgba(13,148,136,.45)'; ctx.shadowBlur = 24; ctx.fillStyle = C.teal; ctx.beginPath(); ctx.arc(cx, cy, 70, 0, 7); ctx.fill();
@@ -360,11 +382,11 @@ async function init() {
   window.setFormat('mobile');
   const fovD = () => L.H > L.W ? 46 : 34;
 
-  function drawScene(sh) {
+  function drawScene(sh, t = null) {
     Object.values(actors).forEach(a => a.o.visible = false); Object.values(figures).forEach(f => f.o.visible = false);
-    for (const [name, path, d, opt] of (sh.actors || [])) put(actors[name], path, d, opt || {});
+    for (const [name, path, d, opt] of (sh.actors || [])) put(actors[name], path, d, opt || {}, t);
     for (const [name, x, z, yaw, kind, phase] of (sh.figs || [])) walkFig(figures[name], x, z, yaw, kind, phase);
-    setArrows((sh.overlay || []).filter(o => o.arrow));
+    setArrows((sh.overlay || []).filter(o => o.arrow && (o.alpha ?? 1) > .001));
     const c = sh.cam; camera.position.copy(c.from); camera.lookAt(c.to); camera.fov = c.fov ?? fovD(); camera.updateProjectionMatrix();
     const focus = c.to.clone(); focus.y = 0; sun.position.copy(focus).add(V(-40, 70, 32)); sun.target.position.copy(focus);
     const big = c.from.y > 30; Object.assign(sun.shadow.camera, big ? { left: -110, right: 110, top: 110, bottom: -110, far: 300 } : { left: -60, right: 60, top: 60, bottom: -60, far: 220 }); sun.shadow.camera.updateProjectionMatrix();
@@ -373,6 +395,7 @@ async function init() {
     { const g = ctx.createRadialGradient(L.W / 2, L.sceneH * .5, Math.min(L.W, L.sceneH) * .5, L.W / 2, L.sceneH * .5, Math.max(L.W, L.sceneH) * .9); g.addColorStop(0, 'rgba(15,23,42,0)'); g.addColorStop(1, 'rgba(15,23,42,.14)'); ctx.fillStyle = g; ctx.fillRect(0, 0, L.W, L.sceneH); }
     const rank = o => o.zone ? 0 : o.dashed ? 1 : o.ring ? 3 : o.sign ? 4 : o.marker ? 5 : 6;
     for (const o of [...(sh.overlay || [])].sort((p, q) => rank(p) - rank(q))) {
+      const al = o.alpha ?? 1; if (al <= .001 || o.arrow) continue; ctx.save(); ctx.globalAlpha = al;
       if (o.zone) zone(o.zone);
       if (o.dashed) dashed(...o.dashed);
       if (o.ring) ring(o.ring);
@@ -380,6 +403,7 @@ async function init() {
       if (o.marker) { const [x, y, z] = projV(V(...o.marker.p)); if (z < 1) marker(ctx, x, y, o.marker.n, true); }
       if (o.badge) badge(o.badge);
       if (o.tag) pill(ctx, 32, 32 + 29, o.tag, { size: 32, dot: C.tealLight, align: 'left' });
+      ctx.restore();
     }
   }
 
@@ -400,6 +424,59 @@ async function init() {
     window.infoBounds = [...b.map(x => ({ t: x.t, x: x.x, w: x.w })), { t: 'overskrift', x: L.pad, w: lw + 240 }];
     return canvas;
   };
-  window.ready = true;
+
+  // ---------- Filmen ----------
+  const DURATION = timing.duration, CHS = timing.chapters, endStart = CHS[CHS.length - 1].end;
+  const film = FILM({ ...api, ease, win, stopGo, goFrom, profile, CHS, wide: () => L.W > L.H });
+  const cuts = []; CHS.forEach((c, i) => { if (i) cuts.push({ t: c.start, prev: [i - 1, c.start - 1e-3], fade: .5 }); (film.inner[i] || []).forEach(n => { const t = c.speech + n; cuts.push({ t, prev: [i, t - 1e-3], fade: .5 }); }); });
+  const chapterOf = t => { let i = 0; while (i < CHS.length - 1 && t >= CHS[i + 1].start) i++; return i; };
+  const stateAt = (i, t) => { const ch = CHS[i]; t = Math.min(t, ch.end); return film.chapterState(i, t - ch.start, t - ch.speech); };
+  const fmarks = CHS.slice(1).map(c => c.start / DURATION);
+  const buffer = document.createElement('canvas'), bctx = buffer.getContext('2d');
+  window.__film = film;
+  // Kontroll: står et stillestående kjøretøy på et gangfelt? Gir [t, navn] for hvert funn.
+  window.auditCrosswalk = function (t0 = 0, t1 = DURATION, dt = .25) { const out = [], pos = {};
+    for (let t = t0; t < t1; t += dt) { window.renderFrame(t);
+      for (const [n, a] of Object.entries(actors)) { if (!a.o.visible || n === 'bike') { delete pos[n]; continue; } const P0 = a.o.position, prev = pos[n]; pos[n] = [P0.x, P0.z];
+        if (!prev || Math.hypot(P0.x - prev[0], P0.z - prev[1]) > .02) continue; // i bevegelse
+        const [bx, , bz] = a.box, y = a.o.rotation.y, c = Math.cos(y), s2 = Math.sin(y);
+        const pts = [[-bx, -bz], [bx, -bz], [bx, bz], [-bx, bz], [0, -bz], [0, bz]].map(([x, z]) => [P0.x + x * c + z * s2, P0.z - x * s2 + z * c]);
+        for (const w of Object.values(WORLDS)) for (const arm of Object.keys(ARMS)) { const { u, r } = armFrame(ARMS[arm]);
+          if (pts.some(([x, z]) => { const dx = x - w.ox, dz = z - w.oz, aa = dx * u[0] + dz * u[1], ss = dx * r[0] + dz * r[1]; return aa > w.gs[0] && aa < w.gs[1] && ss > -w.hwOut && ss < w.hwIn; })) out.push([+t.toFixed(2), n, arm]); } } }
+    return out; };
+  window.setFilmFormat = f => { window.setFormat(f); return { width: L.W, height: L.H }; };
+  window.chapterTimes = CHS.map(c => ({ chapter: c.chapter, title: c.title, start: c.start }));
+  window.filmDuration = DURATION;
+  window.renderFrame = function (seconds) {
+    const t = clamp(Number(seconds) || 0, 0, DURATION), end = t >= endStart;
+    const i = chapterOf(Math.min(t, endStart - 1e-3)), ch = CHS[i], u = t - ch.start, a = t - ch.speech;
+    const cut = cuts.find(c => t >= c.t && t < c.t + c.fade);
+    if (cut) { const [pi, pt] = cut.prev; drawScene(stateAt(pi, pt), pt); buffer.width = L.W; buffer.height = L.sceneH; bctx.drawImage(canvas, 0, 0); }
+    const st = stateAt(i, t); drawScene(st, t);
+    if (cut) { ctx.save(); ctx.globalAlpha = 1 - ease((t - cut.t) / cut.fade); ctx.drawImage(buffer, 0, 0); ctx.restore(); }
+    if (end) summaryCard(ease((t - endStart - .2) / .6));
+    const S = ch.sentences; let k = 0; S.forEach((s, j) => { if (a >= s - .15) k = j; });
+    const lines = end ? END_LINES : POINTS[i][k], since = end ? t - endStart : k === 0 ? u : a - (S[k] - .15);
+    const b = infoPanel(ctx, L, { chapter: i + 1, total: CHAPTERS.length, title: ch.title, lines, progress: t / DURATION, chapterMarks: fmarks, alpha: clamp(since / .25, 0, 1) });
+    window.infoLayout = { bounds: b.map(x => ({ text: x.t, x: x.x, y: x.y, width: x.w, height: x.h })), width: L.W, sceneHeight: L.sceneH };
+    const bl = actors.blue.o; window.frameInfo = { t, chapter: i + 1, title: ch.title, speechTime: a, endCard: end, point: lines.join(' '), duration: DURATION, blue: bl.visible ? [+bl.position.x.toFixed(2), +bl.position.z.toFixed(2)] : null };
+    return canvas;
+  };
+  // Kontroll: hvor langt over/under bakken står kjøretøy og personer (meter), og om kjøretøy overlapper.
+  window.auditGround = function (t) { window.renderFrame(t); const out = [];
+    const check = (name, o) => { if (!o.visible) return; const pen = groundGap(o); out.push({ name, under: +pen.toFixed(3), over: +(-pen).toFixed(3) }); };
+    Object.entries(actors).forEach(([k, a]) => check(k, a.o)); Object.entries(figures).forEach(([k, f]) => check(k, f.o));
+    const vis = Object.entries(actors).filter(([, a]) => a.o.visible);
+    const corners = a => { const [bx, , bz] = a.box, y = a.o.rotation.y, c = Math.cos(y), s2 = Math.sin(y), P0 = a.o.position; return [[-bx, -bz], [bx, -bz], [bx, bz], [-bx, bz]].map(([x, z]) => [P0.x + x * c + z * s2, P0.z - x * s2 + z * c]); };
+    const sep = (A2, B2) => { for (const poly of [A2, B2]) for (let i = 0; i < 4; i++) { const [x1, z1] = poly[i], [x2, z2] = poly[(i + 1) % 4], nx = z1 - z2, nz = x2 - x1;
+        const pa = A2.map(([x, z]) => x * nx + z * nz), pb = B2.map(([x, z]) => x * nx + z * nz); if (Math.max(...pa) < Math.min(...pb) || Math.max(...pb) < Math.min(...pa)) return true; } return false; };
+    for (let p = 0; p < vis.length; p++) for (let q = p + 1; q < vis.length; q++) if (!sep(corners(vis[p][1]), corners(vis[q][1]))) out.push({ name: vis[p][0] + '×' + vis[q][0], overlap: true });
+    // Personer mot kjøretøy (gående mot bil og sykkel).
+    for (const [fn, f] of Object.entries(figures)) if (f.o.visible) for (const [an, a] of vis) { const P1 = f.o.position, cs = corners(a); const fc = [[P1.x - .3, P1.z - .3], [P1.x + .3, P1.z - .3], [P1.x + .3, P1.z + .3], [P1.x - .3, P1.z + .3]]; if (!sep(cs, fc)) out.push({ name: fn + '×' + an, overlap: true }); }
+    return out; };
+  // Plakaten i filmen bruker faktisk lengde.
+  window.renderShot = (orig => id => { const c = orig(id); if (id === 'plakat') posterPanel(POSTER, DURATION); return c; })(window.renderShot);
+  window.renderFrame(.5);
+  window.ready = true; window.animationReady = true;
 }
 init().catch(e => { window.initError = String(e && e.stack || e); console.error(e); });

@@ -1,0 +1,96 @@
+{
+ "duration": 149.8505,
+ "end_card": 4.0,
+ "rate": 24000,
+ "chapters": [
+  {
+   "chapter": 1,
+   "title": "Inn: vikeplikt",
+   "start": 0.0,
+   "speech": 1.5,
+   "audio": 32.14,
+   "end": 34.64,
+   "sentences": [
+    0,
+    2.2,
+    8.62,
+    13.14,
+    19.67,
+    22.31,
+    26.18,
+    30.87
+   ]
+  },
+  {
+   "chapter": 2,
+   "title": "Inn: felt og plassering",
+   "start": 34.64,
+   "speech": 35.24,
+   "audio": 32.047,
+   "end": 69.287,
+   "sentences": [
+    0,
+    4.51,
+    8.01,
+    13.44,
+    17.87,
+    21.15,
+    24.45,
+    28.67
+   ]
+  },
+  {
+   "chapter": 3,
+   "title": "Blinklys inn og ut",
+   "start": 69.287,
+   "speech": 69.887,
+   "audio": 23.7567,
+   "end": 95.6437,
+   "sentences": [
+    0,
+    9.04,
+    17.69
+   ]
+  },
+  {
+   "chapter": 4,
+   "title": "Inne: feltskifte",
+   "start": 95.6437,
+   "speech": 96.2437,
+   "audio": 11.0203,
+   "end": 111.764,
+   "sentences": [
+    0,
+    5.74,
+    7.65
+   ]
+  },
+  {
+   "chapter": 5,
+   "title": "Ut: gangfelt",
+   "start": 111.764,
+   "speech": 112.364,
+   "audio": 14.6739,
+   "end": 130.5379,
+   "sentences": [
+    0,
+    3.86,
+    6.98,
+    12.11
+   ]
+  },
+  {
+   "chapter": 6,
+   "title": "Husk dette",
+   "start": 130.5379,
+   "speech": 131.1379,
+   "audio": 13.7126,
+   "end": 145.8505,
+   "sentences": [
+    0,
+    4.94,
+    9.57
+   ]
+  }
+ ]
+}

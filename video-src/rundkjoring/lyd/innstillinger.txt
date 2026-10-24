@@ -1,0 +1,39 @@
+Film: Rundkjøring
+Dato: 24. oktober 2026
+Tjeneste: ElevenLabs Text to Speech via Andres innloggede Chrome-nettleser
+Stemme: Mia Starset - Clear and Friendly
+Modell: Eleven v4
+Stability: 50 %
+Similarity: 75 %
+Clone strength: 0 %
+Language: Auto (Recommended)
+Audio effects: Ingen effekter lagt til
+Output format: MP3 44.1 kHz (128 kbps)
+Innstillingene ble kontrollert før hvert kapittel.
+Tekstkilde: De seks kapitteltekstene fra Andres melding 24. oktober 2026.
+Teksten ble brukt ordrett. Ingen uttaleendringer eller andre tekstendringer.
+Valgt opptak: Generation 1 for hvert kapittel. Eleven v4 lager også en alternativ variant automatisk.
+Ingen ekstra genereringer eller lengdejusteringer ble gjort.
+MP3-originalene ligger i undermappen mp3/. Ingen WAV-kopier er laget.
+Agenten har ikke hørt lyden. Uttalen må kontrolleres av Andre.
+
+Lengder fra nettleserens lydmetadata:
+TT Kap 1.mp3 — 32,44 sek — Før du kjører inn: vikeplikt
+TT Kap 2.mp3 — 30,35 sek — Før du kjører inn: felt og plassering
+TT Kap 3.mp3 — 19,07 sek — Blinklys inn og ut
+TT Kap 4.mp3 — 11,31 sek — Mens du er inne: feltskifte
+TT Kap 5.mp3 — 14,99 sek — Når du skal ut: gangfelt
+TT Kap 6.mp3 — 14,03 sek — Husk dette
+
+
+Genererings-ID-er:
+TT Kap 1: UzRu7JCnlyKOpZFUbP4d
+TT Kap 2: MnWULXsVjKlaSWjC9jSW
+TT Kap 3: SuZH4TCrqhgIlsa1mxJX
+TT Kap 4: zJPJWzzCuIY5FBRsD7Ns
+TT Kap 5: Rd3DZA2qLdM2EbekHbw9
+TT Kap 6: F2ngqRbe7tUDOWEZLpWc
+
+
+Alle seks nedlastede filer ble kontrollert mot kopiene i repoet med SHA-256.
+Ingen commit eller push er utført.

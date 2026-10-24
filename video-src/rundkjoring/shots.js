@@ -12,8 +12,8 @@ export const CHAPTERS = [
 export const SUMMARY_TITLE = 'HUSK DETTE';
 export const SUMMARY = ['Inn: vik og velg felt', 'Inne: hold feltet', 'Ut: blink og se etter gående'];
 export const POSTER = ['Rundkjøring:', 'vikeplikt, felt og blinklys'];
-// Plakatens lengde til lyden er laget (manus: ca. 2:35). Byttes med faktisk lengde fra timing.json.
-export const DURATION_EST = 155;
+// Plakatens lengde: faktisk lengde fra timing.json (149,85 s). Filmen bruker timing.json direkte.
+export const DURATION_EST = 149.85;
 
 export function SHOTS({ WORLDS, ARMS, armPt, route, pathFrom, dWhere, dNear, V, C }) {
   const A = WORLDS.A, B = WORLDS.B, PI = Math.PI;
