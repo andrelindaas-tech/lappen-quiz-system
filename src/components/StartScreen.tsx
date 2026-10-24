@@ -14,6 +14,37 @@ interface FaqItem {
     jsonLdAnswer?: string
 }
 
+// Tallene under hero og kortene i «Mer enn spørsmål». Tallene er sjekket mot bygget.
+const PROOF = [
+    { number: '45', text: 'spørsmål, som på prøven' },
+    { number: '250', text: 'trafikkskilt forklart' },
+    { number: '50+', text: 'guider til pensum' },
+    { number: '5', text: 'læringsspill' },
+]
+
+const MORE_CARDS = [
+    {
+        label: 'Læringsspill', title: 'Lær gjennom spill', image: '/images/forside/laeringsspill.webp',
+        text: 'Korte spill om vikeplikt, skilt, stopplengde, veimerking og parkering.',
+        links: [{ text: 'Vikepliktspillet', to: '/laeringsspill/vikeplikt' }, { text: 'Skiltduellen', to: '/laeringsspill/skiltduellen' }, { text: 'Alle spillene', to: '/laeringsspill' }],
+    },
+    {
+        label: 'Forklaringsfilmer', title: 'Se det forklart', image: '/images/forside/forklaringsfilm.webp',
+        text: 'Korte filmer med forteller og skjermtekst, rett i artiklene.',
+        links: [{ text: 'Rundkjøring', to: '/laeringsressurser/rundkjoring' }, { text: 'Vikeplikt', to: '/laeringsressurser/vikeplikt' }, { text: 'Stopplengde', to: '/laeringsressurser/bremselengde' }],
+    },
+    {
+        label: '3D og interaktivt', title: 'Utforsk bilen', image: '/images/forside/bilens-lys.webp',
+        text: 'Bilens lys i 3D og motorrommet du må kjenne til sikkerhetskontrollen.',
+        links: [{ text: 'Bilens lys i 3D', to: '/laeringsressurser/bilens-lys' }, { text: 'Motorrommet', to: '/laeringsressurser/sikkerhetskontroll' }],
+    },
+    {
+        label: 'Kalkulatorer', title: 'Regn det ut', image: '/images/forside/kalkulator.webp',
+        text: 'Regn ut stopplengden, og hvor tung tilhenger du kan trekke.',
+        links: [{ text: 'Bremselengde og stopplengde', to: '/laeringsressurser/bremselengde' }, { text: 'Tilhengerkalkulator', to: '/laeringsressurser/tilhengerkalkulator' }],
+    },
+]
+
 const demoProgress = {
     correct: 32,
     total: 45,
@@ -199,10 +230,9 @@ export default function StartScreen() {
 
             <section className="tt-v2-proof" aria-label="Dette får du">
                 <div className="tt-v2-container tt-v2-proof-grid">
-                    <div className="tt-v2-proof-item"><strong>Pensum etter Vegvesenets læreplan</strong></div>
-                    <div className="tt-v2-proof-item"><strong>Forklaring på hvert svar</strong></div>
-                    <div className="tt-v2-proof-item"><strong>Stor skiltguide</strong></div>
-                    <div className="tt-v2-proof-item"><strong>Samme format som prøven</strong></div>
+                    {PROOF.map(p => (
+                        <div className="tt-v2-proof-item" key={p.text}><strong><span className="tt-v2-proof-number">{p.number}</span> {p.text}</strong></div>
+                    ))}
                 </div>
             </section>
 
@@ -366,6 +396,26 @@ export default function StartScreen() {
                             <img src="/signs/forbudsskilt/skilt-362-50-fartsgrense.jpg" alt="" loading="lazy" decoding="async" />
                         </div>
                     </article>
+
+                    <div className="tt-v2-more-grid">
+                        {MORE_CARDS.map(card => (
+                            <article className="tt-v2-more-card" key={card.title}>
+                                <img src={card.image} alt="" width={640} height={360} loading="lazy" decoding="async" />
+                                <div className="tt-v2-more-body">
+                                    <span className="tt-v2-roundabout-label">{card.label}</span>
+                                    <h3>{card.title}</h3>
+                                    <p>{card.text}</p>
+                                    <ul>
+                                        {card.links.map(l => (
+                                            <li key={l.to + l.text}>
+                                                <Link className="tt-v2-text-link" to={l.to}>{l.text} <ChevronRight size={14} aria-hidden="true" /></Link>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            </article>
+                        ))}
+                    </div>
                 </div>
             </section>
 
