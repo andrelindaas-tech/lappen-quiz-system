@@ -525,6 +525,7 @@
         <image:image>
             <image:loc>https://teori-test.no/signs/vikeplikt-og-forkjorsskilt/skilt-206-forkjorsveg.jpg</image:loc>
         </image:image>
+        <image:image><image:loc>https://teori-test.no/images/sign-situations/skilt-206-forkjorsveg-situasjon.webp</image:loc></image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/vikeplikt-og-forkjorsskilt/slutt-pa-forkjorsveg/</loc>
@@ -1034,6 +1035,7 @@
         <image:image>
             <image:loc>https://teori-test.no/signs/forbudsskilt/skilt-364-50-slutt-pa-saerskilt-fartsgrense.jpg</image:loc>
         </image:image>
+        <image:image><image:loc>https://teori-test.no/images/sign-situations/skilt-364-slutt-pa-saerskilt-fartsgrense-50-situasjon.webp</image:loc></image:image>
     </url>
     <url>
         <loc>https://teori-test.no/trafikkskilt/forbudsskilt/fartsgrensesone/</loc>
@@ -2514,5 +2516,6 @@
         <image:image>
             <image:loc>https://teori-test.no/signs/opplysningsskilt/skilt-548-gagate.jpg</image:loc>
         </image:image>
+        <image:image><image:loc>https://teori-test.no/images/sign-situations/skilt-548-gagate-situasjon.webp</image:loc></image:image>
     </url>
 </urlset>
