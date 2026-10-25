@@ -111,6 +111,16 @@ export default function StartScreen() {
     }, [])
 
 
+    // Nettstedets navn for Google (vises over søkeresultatet). Bare på forsiden, slik Google anbefaler.
+    const websiteJsonLd = {
+        '@context': 'https://schema.org',
+        '@type': 'WebSite',
+        name: 'Teori-test.no',
+        alternateName: ['Teori-test', 'Teoritest', 'Teori test'],
+        url: 'https://teori-test.no/',
+        inLanguage: 'nb',
+    }
+
     const faqJsonLd = {
         '@context': 'https://schema.org',
         '@type': 'FAQPage',
@@ -152,6 +162,7 @@ export default function StartScreen() {
                 <meta name="twitter:description" content="Øv gratis til teoriprøven for klasse B. Ta full prøve med 45 spørsmål, vikepliktstest, skilttest og interaktive guider. Ingen registrering." />
                 <meta name="twitter:image" content="https://teori-test.no/og-image.png" />
                 <meta name="twitter:image:alt" content="Teori-test.no – gratis teoriprøve for klasse B" />
+                <script type="application/ld+json">{JSON.stringify(websiteJsonLd)}</script>
                 <script type="application/ld+json">{JSON.stringify(faqJsonLd)}</script>
             </Helmet>
 
