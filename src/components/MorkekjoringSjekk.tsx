@@ -1,14 +1,10 @@
 import { useState } from 'react'
 import './MorkekjoringSjekk.css'
+import { inDarkSeason } from '../utils/morkeperiode'
 
 // Answers "can I practise driving now?" from the mørkekjøring rule: the course is needed from 1 November to 15 March.
 type Done = 'ja' | 'nei' | ''
 
-function inDarkSeason(date: Date) {
-    const m = date.getMonth() + 1
-    const d = date.getDate()
-    return m === 11 || m === 12 || m === 1 || m === 2 || (m === 3 && d <= 15)
-}
 
 function formatDate(date: Date) {
     return date.toLocaleDateString('nb-NO', { day: 'numeric', month: 'long', year: 'numeric' })

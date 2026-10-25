@@ -1,0 +1,22 @@
+.ovk-sjekk { margin-top: 1rem; padding: 1.25rem; border: 1px solid var(--color-border, #334155); border-radius: 14px; background: var(--color-surface, transparent); }
+.ovk-sjekk fieldset { border: 0; margin: 0 0 1.1rem; padding: 0; min-width: 0; }
+.ovk-sjekk legend { font-weight: 700; margin-bottom: 0.5rem; }
+.ovk-options { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.ovk-options label { display: inline-flex; align-items: center; gap: 0.5rem; min-height: 44px; padding: 0.55rem 0.95rem; border: 1px solid var(--color-border, #334155); border-radius: 999px; cursor: pointer; max-width: 100%; }
+.ovk-options input { flex: none; width: 1.1rem; height: 1.1rem; accent-color: var(--color-primary); }
+.ovk-options input:checked + span { font-weight: 700; color: var(--color-primary); }
+.ovk-sjekk input[type="date"] { min-height: 44px; padding: 0.55rem 0.75rem; border-radius: 10px; border: 1px solid var(--color-border, #334155); background: transparent; color: inherit; font: inherit; }
+.ovk-button { margin-top: 0.9rem; min-height: 44px; padding: 0.6rem 1.2rem; border: 0; border-radius: 999px; background: var(--color-primary); color: #fff; font: inherit; font-weight: 700; cursor: pointer; }
+.ovk-button:focus-visible, .ovk-options label:focus-within { outline: 3px solid var(--color-primary); outline-offset: 2px; }
+.ovk-result { margin-top: 0.5rem; padding: 1rem 1.1rem; border-radius: 12px; border-left: 4px solid var(--color-primary); background: rgba(45, 212, 191, 0.08); }
+.ovk-result.is-no { border-left-color: #f59e0b; background: rgba(245, 158, 11, 0.1); }
+.ovk-result-title { display: block; font-size: 1.15rem; }
+.ovk-result p { margin: 0.35rem 0 0; }
+.ovk-list { list-style: none; margin: 0.75rem 0 0; padding: 0; display: grid; gap: 0.45rem; }
+.ovk-list li { display: grid; grid-template-columns: 1.4rem 1fr; gap: 0.35rem; align-items: start; }
+.ovk-list li.is-ok > span:first-child { color: var(--color-primary); font-weight: 700; }
+.ovk-list li.is-missing > span:first-child { color: #d97706; font-weight: 700; }
+.ovk-note { font-size: 0.95rem; opacity: 0.9; }
+.ovk-hint { margin: 0; opacity: 0.8; }
+.ovk-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.ovk-result a { color: var(--color-primary); font-weight: 600; }

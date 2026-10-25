@@ -49,6 +49,7 @@ import ArticlePractice from './ArticlePractice'
 import MintCarLights from './MintCarLights'
 import ForklaringsFilm from './ForklaringsFilm'
 import MorkekjoringSjekk from './MorkekjoringSjekk'
+import OvelseskjoringSjekk from './OvelseskjoringSjekk'
 
 // Stabil anker-id fra seksjonstittel (gir Google mulighet til «Hopp til»-lenker i søkeresultatet)
 function sectionAnchorId(title: string): string {
@@ -255,7 +256,7 @@ export default function TheoryTopic({ topic, onBack }: TheoryTopicProps) {
         },
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": `https://teori-test.no/laeringsressurser/${topic.id}`
+            "@id": `https://teori-test.no/laeringsressurser/${topic.id}/`
         }
     }
 
@@ -410,6 +411,7 @@ export default function TheoryTopic({ topic, onBack }: TheoryTopicProps) {
                                 {section.component === 'ArticlePractice:bus' && <ArticlePractice topic="bus" />}
                                 {section.component === 'ArticlePractice:child' && <ArticlePractice topic="child" />}
                                 {section.component === 'ArticlePractice:parking' && <ArticlePractice topic="parking" />}
+                                {section.component === 'OvelseskjoringSjekk' && <OvelseskjoringSjekk />}
                                 {section.image && section.component !== 'BremselengdeFirdobling' && <ArticleImage image={section.image} />}
                             </div>
                         ) : section.type === 'table' ? (
@@ -424,6 +426,7 @@ export default function TheoryTopic({ topic, onBack }: TheoryTopicProps) {
                                 {section.component === 'VikepliktAnimasjon' && <VikepliktAnimasjon />}
                                 {section.component === 'ForklaringsFilm' && section.componentId && <ForklaringsFilm id={section.componentId} />}
                                 {section.component === 'MorkekjoringSjekk' && <MorkekjoringSjekk />}
+                                {section.component === 'OvelseskjoringSjekk' && <OvelseskjoringSjekk />}
                                 {section.image && <ArticleImage image={section.image} />}
                             </div>
                         )}

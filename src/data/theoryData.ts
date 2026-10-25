@@ -4,6 +4,7 @@ import { vikepliktTopic } from './vikepliktTopic'
 import { ryggingVendingTopic } from './ryggingVendingTopic'
 import { vinterdekkTopic } from './vinterdekkTopic'
 import { morkekjoringTopic } from './morkekjoringTopic'
+import { ovingskjoringTopic } from './ovingskjoringTopic'
 
 export interface MiniQuizQuestion {
     question: string
@@ -4142,7 +4143,7 @@ export const theoryArticles: TheoryTopic[] = [
             {
                 title: 'Erfaring flytter kapasitet',
                 type: 'text',
-                content: 'For en fersk fører krever selve bilkjøringen — gir, plassering, speil — mye mental kapasitet. Da blir det lite igjen til å lese trafikken.\n\nMed mengdetrening automatiseres det tekniske, og kapasiteten frigjøres til det som betyr noe: å oppdage og forutse. Det er derfor [øvelseskjøring](/laeringsressurser/ovingskjoring) i mange ulike situasjoner er så viktig — du trener ikke bare teknikk, du trener hele kjøreprosessen til å gå raskere.'
+                content: 'For en fersk fører krever selve bilkjøringen — gir, plassering, speil — mye mental kapasitet. Da blir det lite igjen til å lese trafikken.\n\nMed mengdetrening automatiseres det tekniske, og kapasiteten frigjøres til det som betyr noe: å oppdage og forutse. Det er derfor [øvelseskjøring](/laeringsressurser/ovingskjoring/) i mange ulike situasjoner er så viktig — du trener ikke bare teknikk, du trener hele kjøreprosessen til å gå raskere.'
             },
             {
                 title: 'Hvorfor har unge førere høyest risiko?',
@@ -4300,7 +4301,7 @@ export const theoryArticles: TheoryTopic[] = [
             {
                 title: 'Kort forklart',
                 type: 'info',
-                content: 'Trafikalt grunnkurs er første trinn i føreropplæringen og nøkkelen som låser opp øvelseskjøringen:\n\n• 17 timer obligatorisk kurs, felles for alle førerkortklasser\n• Kan tas fra du er 15 år\n• Førstehjelp og mørkekjøring er en del av det\n• Etter kurset får du bevis som gir rett til å [øvelseskjøre](/laeringsressurser/ovingskjoring)\n• Er du over 25, er du fritatt fra selve kurset, men ikke fra førstehjelp og mørkekjøring'
+                content: 'Trafikalt grunnkurs er første trinn i føreropplæringen og nøkkelen som låser opp øvelseskjøringen:\n\n• 17 timer obligatorisk kurs, felles for alle førerkortklasser\n• Kan tas fra du er 15 år\n• Førstehjelp og mørkekjøring er en del av det\n• Etter kurset får du bevis som gir rett til å [øvelseskjøre](/laeringsressurser/ovingskjoring/)\n• Er du over 25, er du fritatt fra selve kurset, men ikke fra førstehjelp og mørkekjøring'
             },
             {
                 title: 'Hva lærer du på kurset?',
@@ -4335,7 +4336,7 @@ export const theoryArticles: TheoryTopic[] = [
             {
                 title: 'Etter kurset: klar for å øve',
                 type: 'text',
-                content: 'Med grunnkursbevis (og legitimasjon) kan du øvelseskjøre privat med ledsager — kravene til ledsager, L-skilt og ekstra speil finner du i [øvelseskjøring-guiden](/laeringsressurser/ovingskjoring).\n\nSmart rekkefølge videre: mengdetrening privat + kjøretimer, teoriprøven når teorien sitter (se [fakta om teoriprøven](/laeringsressurser/teoriproven-bil)), [sikkerhetskurs på bane](/laeringsressurser/sikkerhetskurs-pa-bane) i trinn 3, og til slutt sikkerhetskurs på veg og [oppkjøring](/laeringsressurser/oppkjoring).'
+                content: 'Med grunnkursbevis (og legitimasjon) kan du øvelseskjøre privat med ledsager — kravene til ledsager, L-skilt og ekstra speil finner du i [øvelseskjøring-guiden](/laeringsressurser/ovingskjoring/). [Sjekk om dere kan øvelseskjøre nå](/laeringsressurser/ovingskjoring/#kan-dere-ovelseskjore-na).\n\nSmart rekkefølge videre: mengdetrening privat + kjøretimer, teoriprøven når teorien sitter (se [fakta om teoriprøven](/laeringsressurser/teoriproven-bil)), [sikkerhetskurs på bane](/laeringsressurser/sikkerhetskurs-pa-bane) i trinn 3, og til slutt sikkerhetskurs på veg og [oppkjøring](/laeringsressurser/oppkjoring).'
             }
         ],
         sources: {
@@ -4851,119 +4852,7 @@ export const theoryArticles: TheoryTopic[] = [
         ]
     },
 
-    {
-        id: 'ovingskjoring',
-        title: 'Øvelseskjøring klasse B: regler, krav og tips',
-        icon: '🚗',
-        shortDescription: 'Lær kravene til øvelseskjøring klasse B: alder, trafikalt grunnkurs, ledsager, L-skilt, ekstra speil, ansvar og smart mengdetrening.',
-        color: 'var(--apple-green)',
-        seoTitle: 'Øvelseskjøring klasse B: regler, ledsager og L-skilt',
-        seoDescription: 'Se krav til øvelseskjøring klasse B: alder, trafikalt grunnkurs, ledsager, L-skilt, ekstra speil, ansvar og tips til trygg mengdetrening.',
-        sections: [
-            {
-                title: 'Hva er øvelseskjøring?',
-                type: 'text',
-                content: 'Øvelseskjøring, ofte kalt øvingskjøring, er privat kjøretrening med en godkjent ledsager. For klasse B må du vite kravene til elev, ledsager og bil før dere starter. Her får du en enkel oversikt over reglene, hva bilen må ha, hvem som har ansvaret, og hvordan dere øver smart fram mot oppkjøringen.'
-            },
-            {
-                title: 'Kort forklart',
-                type: 'info',
-                content: 'For å øvelseskjøre med personbil må du som hovedregel være minst 16 år. Er du under 25 år, må du ha fullført trafikalt grunnkurs og ha med øvelseskjøringsbevis og legitimasjon. Ledsager må være minst 25 år og ha hatt førerkort klasse B sammenhengende i minst 5 år. Bilen skal ha rød L på hvit bakgrunn bak på bilen, ekstra speil for ledsager og være i forsvarlig stand. Les mer hos [Statens vegvesen om øvelseskjøring med personbil](https://www.vegvesen.no/forerkort/ta-forerkort/ovelseskjoring/ovelseskjoring-i-de-ulike-forerkortklassene/personbil/).'
-            },
-            {
-                title: 'Krav før dere starter',
-                type: 'table',
-                content: '<div class="responsive-theory-table-wrapper" style="margin-top: 1rem;"><table class="responsive-theory-table" style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem;"><thead><tr style="background-color: var(--color-surface); border-bottom: 2px solid var(--color-border);"><th style="padding: 12px 8px;">Tema</th><th style="padding: 12px 8px;">Krav</th><th style="padding: 12px 8px;">Typisk feil</th></tr></thead><tbody><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">Elev</td><td style="padding: 12px 8px;">Minst 16 år. Under 25 år må ha fullført trafikalt grunnkurs og ha med øvelseskjøringsbevis og legitimasjon.</td><td style="padding: 12px 8px;">Glemmer bevis eller legitimasjon.</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">Over 25 år</td><td style="padding: 12px 8px;">Kan øvelseskjøre uten å ha tatt hele trafikalt grunnkurs, men må ha gyldig legitimasjon.</td><td style="padding: 12px 8px;">Tror alle over 25 har samme krav som yngre elever.</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">Ledsager</td><td style="padding: 12px 8px;">Minst 25 år og hatt førerkort klasse B sammenhengende i minst 5 år.</td><td style="padding: 12px 8px;">Bruker ledsager som ikke oppfyller 5-årskravet.</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">Ansvar</td><td style="padding: 12px 8px;">Ledsager regnes som ansvarlig fører under øvelseskjøringen.</td><td style="padding: 12px 8px;">Ledsager følger ikke godt nok med.</td></tr><tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: 12px 8px;">Bil</td><td style="padding: 12px 8px;">Klasse B, tillatt totalvekt maks 3500 kg, forsvarlig stand og ekstra speil for ledsager.</td><td style="padding: 12px 8px;">Mangler ekstra speil.</td></tr><tr><td style="padding: 12px 8px;">L-skilt</td><td style="padding: 12px 8px;">Godt synlig rød L på hvit bakgrunn bak på bilen, kun under øvelseskjøring.</td><td style="padding: 12px 8px;">Lar L-skiltet stå på etter økten.</td></tr></tbody></table></div>'
-            },
-            {
-                title: 'Krav til deg som elev',
-                type: 'info',
-                content: 'Du må være minst 16 år for å øvelseskjøre med personbil. Er du under 25 år, må du ha fullført trafikalt grunnkurs før du starter. Mellom 1. november og 15. mars må du i tillegg ha tatt [mørkekjøring](/laeringsressurser/morkekjoring/). Ta alltid med legitimasjon og øvelseskjøringsbevis når du kjører.'
-            },
-            {
-                title: 'Krav til ledsageren',
-                type: 'warning',
-                content: 'Ledsageren må være minst 25 år, ha hatt førerkort klasse B sammenhengende i minst 5 år og sitte ved siden av deg. Ledsager regnes som ansvarlig fører og må være egnet til å kjøre: ikke ruspåvirket, syk, trøtt eller uoppmerksom. Telefonen bør ligge bort, og ledsageren må følge aktivt med.'
-            },
-            {
-                title: 'Krav til bilen',
-                type: 'info',
-                content: 'Bilen må være i forsvarlig stand, ha ekstra speil for ledsager og rød L på hvit bakgrunn godt synlig bak på bilen. Sjekk også forsikring, lys, bremser, speil og sikkerhetsbelter før dere starter. Øver du med automatgir og kjører opp med automat, får du automatkode på førerkortet.'
-            },
-            {
-                title: 'Slik øver dere smart',
-                type: 'tip',
-                content: 'Start på rolige steder og øk vanskelighetsgraden gradvis. Begynn med igangsetting, bremsing, giring, plassering og parkering. Gå deretter videre til boligfelt, kryss, [rundkjøringer](/laeringsressurser/rundkjoring), landevei, bykjøring, mørke og krevende føre. Korte, planlagte økter er ofte bedre enn lange turer uten mål. Avtal før økten hva dere skal trene på, og snakk kort om hva som gikk bra etterpå.'
-            },
-            {
-                title: 'Teori + praksis = best forberedt',
-                type: 'tip',
-                content: 'Øvelseskjøring gir praktisk erfaring, men god trafikal forståelse starter med teorien. Mellom kjøreøktene bør du øve på [vikeplikt](/laeringsressurser/vikeplikt), [trafikkskilt](/laeringsressurser/skilt), [sikkerhetskontroll](/laeringsressurser/sikkerhetskontroll/) og vanlige trafikkregler. Når du nærmer deg førerprøven, les vår guide til [oppkjøring klasse B](/laeringsressurser/oppkjoring).'
-            }
-        ],
-        faq: [
-            {
-                question: 'Når kan jeg begynne å øvelseskjøre med bil?',
-                answer: 'Du kan begynne å øvelseskjøre med personbil fra du er 16 år. Er du under 25 år, må du ha fullført trafikalt grunnkurs først.'
-            },
-            {
-                question: 'Hva må jeg ha med når jeg øvelseskjører?',
-                answer: 'Du må ha med legitimasjon med bilde. Er du under 25 år, må du også ha øvelseskjøringsbevis eller bevis for fullført trafikalt grunnkurs.'
-            },
-            {
-                question: 'Hvem kan være ledsager ved øvelseskjøring?',
-                answer: 'Ledsager må være minst 25 år og ha hatt førerkort klasse B sammenhengende i minst 5 år. Ledsager må også være egnet til å kjøre og følge aktivt med.'
-            },
-            {
-                question: 'Hvem har ansvaret under øvelseskjøring?',
-                answer: 'Ledsager regnes som ansvarlig fører under øvelseskjøringen, selv om eleven sitter bak rattet.'
-            },
-            {
-                question: 'Må bilen ha L-skilt og ekstra speil?',
-                answer: 'Ja. Bilen skal ha godt synlig rød L på hvit bakgrunn bak på bilen og ekstra speil for ledsager.'
-            },
-            {
-                question: 'Kan jeg øvelseskjøre med passasjerer?',
-                answer: 'Ja, men bare når eleven er trygg nok og ledsager vurderer at det er forsvarlig. I starten er det ofte best å kjøre uten passasjerer.'
-            },
-            {
-                question: 'Kan jeg øvelseskjøre med automatgir?',
-                answer: 'Ja. Du kan øvelseskjøre med automatgir, men hvis du kjører opp med automatgir får du førerkort med kode for automat.'
-            }
-        ],
-        miniQuiz: [
-            {
-                question: 'Hvor gammel må du være for å øvelseskjøre med personbil?',
-                options: ['15 år', '16 år', '17 år', '18 år'],
-                correct: '16 år',
-                explanation: 'Du kan begynne å øvelseskjøre med personbil når du er 16 år, så lenge kravene ellers er oppfylt.'
-            },
-            {
-                question: 'Hva er kravet til ledsager?',
-                options: ['Minst 21 år og hatt førerkort i 2 år', 'Minst 25 år og hatt klasse B sammenhengende i minst 5 år', 'Bare gyldig førerkort uansett alder', 'Må være trafikklærer'],
-                correct: 'Minst 25 år og hatt klasse B sammenhengende i minst 5 år',
-                explanation: 'Dette er hovedkravet til ledsager ved privat øvelseskjøring klasse B.'
-            },
-            {
-                question: 'Hvor skal L-skiltet være?',
-                options: ['Foran på bilen', 'Godt synlig bak på bilen', 'I frontruten', 'Det er valgfritt'],
-                correct: 'Godt synlig bak på bilen',
-                explanation: 'L-skiltet skal være godt synlig bak på bilen under øvelseskjøringen.'
-            },
-            {
-                question: 'Hva må bilen ha for ledsager?',
-                options: ['Ekstra speil', 'Ekstra pedalsett', 'Taklys', 'Varseltrekant på dashbordet'],
-                correct: 'Ekstra speil',
-                explanation: 'Ledsager skal ha ekstra speil slik at han eller hun har oversikt bakover.'
-            },
-            {
-                question: 'Hvem regnes som ansvarlig fører under privat øvelseskjøring?',
-                options: ['Eleven', 'Ledsager', 'Bileier', 'Trafikkstasjonen'],
-                correct: 'Ledsager',
-                explanation: 'Ledsager regnes som ansvarlig fører under privat øvelseskjøring.'
-            }
-        ]
-    },
+    ovingskjoringTopic,
 
     {
         id: 'tips-eksamen',

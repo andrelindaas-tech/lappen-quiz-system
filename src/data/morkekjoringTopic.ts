@@ -19,7 +19,7 @@ export const morkekjoringTopic: TheoryTopic = {
 
 **Når:** Kurset holdes bare mellom **1. november og 15. mars**, fordi det må være mørkt.
 
-**Øvelseskjøring:** Mellom 1. november og 15. mars kan du ikke øvelseskjøre før du har fullført mørkekjøringen.
+**Øvelseskjøring:** Mellom 1. november og 15. mars kan du ikke øvelseskjøre før du har fullført mørkekjøringen. Krav til ledsager og bil: [Sjekk om dere kan øvelseskjøre nå](/laeringsressurser/ovingskjoring/#kan-dere-ovelseskjore-na).
 
 **Over 25 år:** Du slipper selve grunnkurset, men mørkekjøring og førstehjelp må du ta.`
         },
