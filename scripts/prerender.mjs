@@ -44,7 +44,22 @@ const routes = [...new Set([...sitemapRoutes, ...EXTRA_ROUTES])]
 
 // --- Load app + template ---
 const { createApp } = await import(pathToFileURL(SERVER_BUNDLE).href)
-const template = fs.readFileSync(path.join(DIST, 'index.html'), 'utf-8')
+let template = fs.readFileSync(path.join(DIST, 'index.html'), 'utf-8')
+
+// Hoved-CSS-en legges rett inn i HTML-en, så første opptegning ikke venter på en egen forespørsel
+// (PageSpeed: «Forespørsler som blokkerer gjengivelse»). Filen er rundt 18 kB komprimert.
+{
+    const link = template.match(/<link rel="stylesheet" crossorigin href="(\/assets\/[^"]+\.css)">/)
+    if (link) {
+        const css = fs.readFileSync(path.join(DIST, link[1].replace(/^\//, '')), 'utf-8')
+        if (!css.includes('</style')) {
+            template = template.replace(link[0], () => `<style>${css}</style>`)
+            fs.writeFileSync(path.join(DIST, 'index.html'), template, 'utf-8')
+        }
+    } else {
+        console.warn('Fant ikke hoved-CSS-lenken i index.html, CSS er ikke lagt inn.')
+    }
+}
 
 function renderRoute(url) {
     return new Promise((resolve, reject) => {
