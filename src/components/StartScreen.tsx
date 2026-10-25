@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState, type ReactNode } from 'react'
+import { useEffect, useState, type ReactNode } from 'react'
 import { useNavigate } from 'react-router-dom'
 import Link from './InternalLink'
 import { Helmet } from 'react-helmet-async'
@@ -7,6 +7,7 @@ import { clearWrongAnswers, getWrongAnswersCount } from '../utils/wrongAnswersSt
 import './StartScreenV2.css'
 import HeroSignCollage from './HeroSignCollage'
 import BeforeTheoryTest from './BeforeTheoryTest'
+import MerEnnSporsmal from './MerEnnSporsmal'
 
 interface FaqItem {
     question: string
@@ -14,35 +15,12 @@ interface FaqItem {
     jsonLdAnswer?: string
 }
 
-// Tallene under hero og kortene i «Mer enn spørsmål». Tallene er sjekket mot bygget.
+// Tallene under hero. Tallene er sjekket mot bygget.
 const PROOF = [
     { number: '45', text: 'spørsmål, som på prøven' },
     { number: '250', text: 'trafikkskilt forklart' },
     { number: '50+', text: 'guider til pensum' },
     { number: '5', text: 'læringsspill' },
-]
-
-const MORE_CARDS = [
-    {
-        label: 'Læringsspill', title: 'Lær gjennom spill', image: '/images/forside/laeringsspill.webp',
-        text: 'Korte spill om vikeplikt, skilt, stopplengde, veimerking og parkering.',
-        links: [{ text: 'Vikepliktspillet', to: '/laeringsspill/vikeplikt' }, { text: 'Skiltduellen', to: '/laeringsspill/skiltduellen' }, { text: 'Alle spillene', to: '/laeringsspill' }],
-    },
-    {
-        label: 'Forklaringsfilmer', title: 'Se det forklart', image: '/images/forside/forklaringsfilm.webp',
-        text: 'Korte filmer med forteller og skjermtekst, rett i artiklene.',
-        links: [{ text: 'Rundkjøring', to: '/laeringsressurser/rundkjoring' }, { text: 'Vikeplikt', to: '/laeringsressurser/vikeplikt' }, { text: 'Stopplengde', to: '/laeringsressurser/bremselengde' }],
-    },
-    {
-        label: '3D og interaktivt', title: 'Utforsk bilen', image: '/images/forside/bilens-lys.webp',
-        text: 'Bilens lys i 3D og motorrommet du må kjenne til sikkerhetskontrollen.',
-        links: [{ text: 'Bilens lys i 3D', to: '/laeringsressurser/bilens-lys' }, { text: 'Motorrommet', to: '/laeringsressurser/sikkerhetskontroll' }],
-    },
-    {
-        label: 'Kalkulatorer', title: 'Regn det ut', image: '/images/forside/kalkulator.webp',
-        text: 'Regn ut stopplengden, og hvor tung tilhenger du kan trekke.',
-        links: [{ text: 'Bremselengde og stopplengde', to: '/laeringsressurser/bremselengde' }, { text: 'Tilhengerkalkulator', to: '/laeringsressurser/tilhengerkalkulator' }],
-    },
 ]
 
 const demoProgress = {
@@ -124,47 +102,14 @@ const faqItems: FaqItem[] = [
 
 export default function StartScreen() {
     const navigate = useNavigate()
-    const roundaboutFrame = useRef<HTMLIFrameElement>(null)
     const [fokusCount, setFokusCount] = useState(0)
     const [useTimerForFull, setUseTimerForFull] = useState(false)
     const [activeFaq, setActiveFaq] = useState<number | null>(null)
-    const [roundaboutHeight, setRoundaboutHeight] = useState(720)
 
     useEffect(() => {
         setFokusCount(getWrongAnswersCount())
     }, [])
 
-    useEffect(() => {
-        const frame = roundaboutFrame.current
-        if (!frame) return
-
-        const syncTheme = () => {
-            frame.contentWindow?.postMessage({
-                type: 'teori-test-theme',
-                theme: document.body.classList.contains('dark-mode') ? 'dark' : 'light',
-            }, '*')
-        }
-
-        const handleMessage = (event: MessageEvent) => {
-            if (event.source !== frame.contentWindow) return
-            if (event.data?.type === 'roundabout-ready') syncTheme()
-            if (event.data?.type === 'roundabout-height') {
-                const nextHeight = Math.max(360, Math.min(1100, Number(event.data.height) || 0))
-                setRoundaboutHeight(nextHeight)
-            }
-        }
-
-        const handleThemeChange = () => syncTheme()
-        window.addEventListener('message', handleMessage)
-        window.addEventListener('teori-test-theme-change', handleThemeChange)
-        frame.addEventListener('load', syncTheme)
-
-        return () => {
-            window.removeEventListener('message', handleMessage)
-            window.removeEventListener('teori-test-theme-change', handleThemeChange)
-            frame.removeEventListener('load', syncTheme)
-        }
-    }, [])
 
     const faqJsonLd = {
         '@context': 'https://schema.org',
@@ -348,6 +293,33 @@ export default function StartScreen() {
                         onStart={() => navigate('/quiz/skilt')}
                     />
                 </div>
+
+                <div className="tt-v2-exam-strip">
+                    <aside className="tt-v2-exam-facts" aria-labelledby="exam-facts-title">
+                        <h3 id="exam-facts-title">Teoriprøven for klasse B: kort fakta</h3>
+                        <ul>
+                            <li><strong>45</strong><span>spørsmål</span></li>
+                            <li><strong>90</strong><span>minutter</span></li>
+                            <li><strong>7</strong><span>feil kan du ha, maks</span></li>
+                            <li><strong>17,5</strong><span>år er tidligste alder</span></li>
+                            <li><strong>3</strong><span>år gjelder bestått prøve</span></li>
+                            <li><strong>2</strong><span>uker minst før ny prøve ved stryk</span></li>
+                        </ul>
+                        <small>Regler kan endres. Sjekk alltid Statens vegvesen før du bestiller prøve.</small>
+                    </aside>
+                    <aside className="tt-v2-exam-checklist" aria-labelledby="exam-checklist-title">
+                        <h3 id="exam-checklist-title">Dette må være på plass før prøven</h3>
+                        <ul>
+                            <li>Du har søkt om førerkort på Din side hos Statens vegvesen, og søknaden er godkjent. Har du svart ja på helsespørsmålene, trenger du syns- eller helseattest.</li>
+                            <li>Opplæringen er fullført og registrert: <Link to="/laeringsressurser/trafikalt-grunnkurs">trafikalt grunnkurs</Link>. Over 25 år er du fritatt for deler av det.</li>
+                            <li>Du er minst 17 og et halvt år, altså tidligst seks måneder før du fyller 18.</li>
+                            <li>Du har bestilt og betalt time, og har med gyldig legitimasjon.</li>
+                        </ul>
+                        <Link className="tt-v2-text-link" to="/laeringsressurser/teoriproven-bil">
+                            Alt om teoriprøven <ChevronRight size={14} aria-hidden="true" />
+                        </Link>
+                    </aside>
+                </div>
             </section>
 
             <div className="tt-v2-container"><BeforeTheoryTest /></div>
@@ -358,64 +330,7 @@ export default function StartScreen() {
                         <p>Forstå reglene bak spørsmålene med visuelle eksempler, steg-for-steg-guider og korte forklaringer.</p>
                     </div>
 
-                    <article className="tt-v2-roundabout-feature">
-                        <header className="tt-v2-roundabout-head">
-                            <div>
-                                <span className="tt-v2-roundabout-label">Interaktiv demo</span>
-                                <h3>Rundkjøring: plassering, tegn og vikeplikt</h3>
-                                <p>Firearmet rundkjøring med ett kjørefelt. Du kommer inn nedenfra. Trafikken kjører til høyre om midtøya.</p>
-                            </div>
-                            <a className="tt-v2-button tt-v2-button-tertiary" href="/rundkjoring-visning.html" target="_blank" rel="noopener">
-                                Åpne hele demoen <ChevronRight size={14} aria-hidden="true" />
-                            </a>
-                        </header>
-                        <iframe
-                            ref={roundaboutFrame}
-                            className="tt-v2-roundabout-frame"
-                            src="/rundkjoring-visning.html?embed=1"
-                            title="Interaktiv demonstrasjon av plassering, tegn og vikeplikt i rundkjøring"
-                            loading="lazy"
-                            scrolling="no"
-                            style={{ height: `${roundaboutHeight}px` }}
-                        />
-                    </article>
-
-                    <article className="tt-v2-sign-guide">
-                        <div className="tt-v2-sign-guide-copy">
-                            <span className="tt-v2-roundabout-label">250 norske trafikkskilt</span>
-                            <h3>Skiltguide</h3>
-                            <p>Alle skiltgruppene forklart, med de vanligste misforståelsene ved hvert skilt.</p>
-                            <Link className="tt-v2-text-link" to="/trafikkskilt">
-                                Åpne skiltguiden <ChevronRight size={14} aria-hidden="true" />
-                            </Link>
-                        </div>
-                        <div className="tt-v2-stage-signs" aria-hidden="true">
-                            <img src="/signs/vikeplikt.svg" alt="" loading="lazy" decoding="async" />
-                            <img src="/signs/stopp.svg" alt="" loading="lazy" decoding="async" />
-                            <img src="/signs/forkjorsvei.svg" alt="" loading="lazy" decoding="async" />
-                            <img src="/signs/forbudsskilt/skilt-362-50-fartsgrense.jpg" alt="" loading="lazy" decoding="async" />
-                        </div>
-                    </article>
-
-                    <div className="tt-v2-more-grid">
-                        {MORE_CARDS.map(card => (
-                            <article className="tt-v2-more-card" key={card.title}>
-                                <img src={card.image} alt="" width={640} height={360} loading="lazy" decoding="async" />
-                                <div className="tt-v2-more-body">
-                                    <span className="tt-v2-roundabout-label">{card.label}</span>
-                                    <h3>{card.title}</h3>
-                                    <p>{card.text}</p>
-                                    <ul>
-                                        {card.links.map(l => (
-                                            <li key={l.to + l.text}>
-                                                <Link className="tt-v2-text-link" to={l.to}>{l.text} <ChevronRight size={14} aria-hidden="true" /></Link>
-                                            </li>
-                                        ))}
-                                    </ul>
-                                </div>
-                            </article>
-                        ))}
-                    </div>
+                    <MerEnnSporsmal />
                 </div>
             </section>
 
@@ -489,7 +404,7 @@ export default function StartScreen() {
                 </div>
             </section>
 
-            <section className="tt-v2-seo tt-v2-container" aria-labelledby="bruk-resultatene">
+            <section className="tt-v2-seo tt-v2-seo-single tt-v2-container" aria-labelledby="bruk-resultatene">
                 <div className="tt-v2-seo-intro">
                     <p className="tt-v2-eyebrow">Fra resultat til neste økt</p>
                     <h2 id="bruk-resultatene">Bruk resultatene til å velge hva du øver på.</h2>
@@ -517,19 +432,6 @@ export default function StartScreen() {
                     </div>
                 </div>
 
-                <aside className="tt-v2-exam-facts" aria-labelledby="exam-facts-title">
-                    <h3 id="exam-facts-title">Teoriprøven for klasse B: kort fakta</h3>
-                    <ul>
-                        <li><strong>45</strong><span>spørsmål på teoriprøven for klasse B</span></li>
-                        <li><strong>90</strong><span>minutter ordinær tid</span></li>
-                        <li><strong>7</strong><span>maks feil for å bestå</span></li>
-                        <li><strong>17,5</strong><span>år er tidligste alder for å ta prøven</span></li>
-                        <li><strong>3</strong><span>års gyldighet etter bestått teoriprøve</span></li>
-                        <li><strong>2</strong><span>uker er minste ventetid ved stryk</span></li>
-                    </ul>
-                    <p>Teoriprøven tas hos Statens vegvesen. Bestill time før du møter på trafikkstasjonen.</p>
-                    <small>Regler kan endres. Sjekk alltid Statens vegvesen for oppdatert informasjon før du bestiller prøve.</small>
-                </aside>
             </section>
 
             <section className="tt-v2-faq tt-v2-container" id="faq">
