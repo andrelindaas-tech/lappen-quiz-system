@@ -2014,3 +2014,7 @@ body.dark-mode .tt-v2-feature-card {
 @media (max-width: 379px) {
   .tt-v2-hero { padding-top: 36px; }
 }
+
+/* Mørkt tema: hvit tekst på --tt-accent-strong (#20a99a) gir bare 2,9:1. Mørk tekst gir 6:1. */
+body.dark-mode .tt-v2-showcase-tab[aria-selected="true"],
+body.dark-mode .tt-v2-exam-checklist li::before { color: #061d1a; }

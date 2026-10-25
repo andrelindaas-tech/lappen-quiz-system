@@ -31,6 +31,6 @@ addEventListener('resize', format);
   if (window.animationReady) {
     total = filmDuration; el('seek').max = total;
     chapterTimes.forEach(c => el('chapter').append(new Option(c.chapter + ' · ' + c.title, c.chapter)));
-    format(); draw(0); ['toggle', 'seek', 'chapter'].forEach(id => el(id).disabled = false); el('bigstart').hidden = false; window.testReady = true;
+    format(); draw(0); ['toggle', 'seek', 'chapter'].forEach(id => el(id).disabled = false); el('bigstart').hidden = false; window.testReady = true; if (/[?&]autoplay=1/.test(location.search)) play();
   } else if (!window.animationError) requestAnimationFrame(ready);
 })();
