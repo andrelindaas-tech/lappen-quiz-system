@@ -1,0 +1,48 @@
+Film: Veimerking – forstå linjene
+Dato for generering og nedlasting: 30. oktober 2026
+Tjeneste: ElevenLabs Text to Speech via Andres innloggede Chrome-nettleser
+Stemme: Mia Starset - Clear and Friendly
+Modell: Eleven v4
+Stability: 50 %
+Similarity: 75 %
+Clone strength: 0 %
+Language: Auto (Recommended)
+Audio effects: Ingen
+Output format: MP3 44.1 kHz (128 kbps)
+Innstillingene ble kontrollert før hvert kapittel.
+Tekstkilde: Andres ni kapitteltekster, som stemmer med Claude outputs/video-manus/7-veimerking.md.
+Tekstene ble brukt ordrett. Ingen uttaleendringer eller andre tekstendringer.
+Ett opptak er valgt og lagret per kapittel fra modellens automatisk genererte varianter.
+Ingen ekstra genereringer eller lengdejusteringer ble gjort.
+MP3-originalene ligger i undermappen mp3/.
+Eksisterende WAV-filer i lyd/ er ikke endret. Ingen nye WAV-kopier er laget.
+Agenten har ikke hørt lyden. Uttalen må kontrolleres av Andre.
+Lytt særlig til veiskulderen og de sammensatte ordene kjørefeltlinje, varsellinje, sperrelinje, sperreområde, kjørefeltpiler, skillelinje og kollektivfelt.
+Kapittel 5: Kontroller at formuleringen om den blå bilen og den brutte linjen leses rolig og tydelig.
+
+Lengder fra nettleserens lydmetadata:
+TT Kap 1.mp3 — 29,57 sek — Farger
+TT Kap 2.mp3 — 12,67 sek — Kjørefeltlinje
+TT Kap 3.mp3 — 20,19 sek — Varsellinje
+TT Kap 4.mp3 — 18,68 sek — Sperrelinje
+TT Kap 5.mp3 — 22,60 sek — Kombinerte linjer
+TT Kap 6.mp3 — 11,73 sek — Sperreområde
+TT Kap 7.mp3 — 12,28 sek — Kjørefeltpiler
+TT Kap 8.mp3 — 14,60 sek — Skillelinje
+TT Kap 9.mp3 — 15,15 sek — Kantlinje
+
+
+Genererings-ID-er:
+TT Kap 1: 68FbcbxcMPMcy96Vwxko
+TT Kap 2: dL9oK5XTJR7xXxwnyUyv
+TT Kap 3: ZDbRCMBxeRRHvAaW0juD
+TT Kap 4: 6HqLuIk65c2EJvFzMDKS
+TT Kap 5: sIoRJlGeaDwNSZus5L8K
+TT Kap 6: MghyE3lN3CJHHTkG3xr0
+TT Kap 7: meCT8TCi9gZcvBy2TGHc
+TT Kap 8: wTbt25WaVSFCzVxHEWnb
+TT Kap 9: YzPhX2mCMoH03lTf0ku0
+
+
+Alle ni nedlastede filer er kontrollert mot kopiene i repoet med SHA-256.
+Ingen commit eller push er utført.

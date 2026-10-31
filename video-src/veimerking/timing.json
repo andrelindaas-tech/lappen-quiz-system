@@ -1,16 +1,16 @@
 {
- "duration": 161.8,
+ "duration": 169.9662,
  "end_card": 3.0,
  "rate": 24000,
- "note": "Azure-opptakene er uendret; kun stillhet før/etter hvert kapittel.",
+ "note": "ElevenLabs-opptakene (30.10.2026) er uendret; kun stillhet før/etter hvert kapittel. sentences = scenetid, audioSentences = taletid.",
  "chapters": [
   {
    "chapter": 1,
    "title": "Farger",
    "start": 0.0,
    "speech": 0.0,
-   "audio": 27.8625,
-   "end": 28.3625,
+   "audio": 29.5706,
+   "end": 30.0706,
    "sentences": [
     0,
     3.6,
@@ -20,121 +20,190 @@
     17.35,
     20.85,
     24.45
-   ]
+   ],
+   "audioSentences": [
+    0,
+    4.21,
+    7.77,
+    11.92,
+    14.55,
+    18.47,
+    22.47,
+    26.7
+   ],
+   "sceneAudio": 27.8625
   },
   {
    "chapter": 2,
    "title": "Kjørefeltlinje",
-   "start": 28.3625,
-   "speech": 28.8625,
-   "audio": 12.425,
-   "end": 41.7875,
+   "start": 30.0706,
+   "speech": 30.5706,
+   "audio": 12.6694,
+   "end": 43.74,
    "sentences": [
     0,
     2.76,
     5.79,
     10.07
-   ]
+   ],
+   "audioSentences": [
+    0,
+    2.5,
+    5.64,
+    10.2
+   ],
+   "sceneAudio": 12.425
   },
   {
    "chapter": 3,
    "title": "Varsellinje",
-   "start": 41.7875,
-   "speech": 42.2875,
-   "audio": 18.2125,
-   "end": 61.0,
+   "start": 43.74,
+   "speech": 44.24,
+   "audio": 20.1927,
+   "end": 64.9327,
    "sentences": [
     0,
     3.6,
     6.34,
     11.15,
     14.64
-   ]
+   ],
+   "audioSentences": [
+    0,
+    4.03,
+    6.83,
+    12.4,
+    16.4
+   ],
+   "sceneAudio": 18.2125
   },
   {
    "chapter": 4,
    "title": "Sperrelinje",
-   "start": 61.0,
-   "speech": 61.5,
-   "audio": 16.675,
-   "end": 78.675,
+   "start": 64.9327,
+   "speech": 65.4327,
+   "audio": 18.6775,
+   "end": 84.6102,
    "sentences": [
     0,
     3.94,
     6.71,
     9.74,
     13.29
-   ]
+   ],
+   "audioSentences": [
+    0,
+    4.47,
+    7.93,
+    11.14,
+    14.72
+   ],
+   "sceneAudio": 16.675
   },
   {
    "chapter": 5,
    "title": "Kombinerte linjer",
-   "start": 78.675,
-   "speech": 80.175,
-   "audio": 21.125,
-   "end": 101.8,
+   "start": 84.6102,
+   "speech": 86.1102,
+   "audio": 22.5959,
+   "end": 109.2061,
    "sentences": [
     0,
     4.44,
     7.14,
     11.96,
     16.15
-   ]
+   ],
+   "audioSentences": [
+    0,
+    5.54,
+    8.11,
+    13.19,
+    17.64
+   ],
+   "sceneAudio": 21.125
   },
   {
    "chapter": 6,
    "title": "Sperreområde",
-   "start": 101.8,
-   "speech": 102.3,
-   "audio": 12.7,
-   "end": 115.5,
+   "start": 109.2061,
+   "speech": 109.7061,
+   "audio": 11.729,
+   "end": 121.9351,
    "sentences": [
     0,
     2.58,
     6.91,
     9.39
-   ]
+   ],
+   "audioSentences": [
+    0,
+    2.28,
+    6.77,
+    8.74
+   ],
+   "sceneAudio": 12.7
   },
   {
    "chapter": 7,
    "title": "Kjørefeltpiler",
-   "start": 115.5,
-   "speech": 116.0,
-   "audio": 11.7625,
-   "end": 128.2625,
+   "start": 121.9351,
+   "speech": 122.4351,
+   "audio": 12.2775,
+   "end": 135.2127,
    "sentences": [
     0,
     3.77,
     7.3
-   ]
+   ],
+   "audioSentences": [
+    0,
+    3.91,
+    7.87
+   ],
+   "sceneAudio": 11.7625
   },
   {
    "chapter": 8,
    "title": "Skillelinje",
-   "start": 128.2625,
-   "speech": 128.7625,
-   "audio": 13.4375,
-   "end": 142.7,
+   "start": 135.2127,
+   "speech": 135.7127,
+   "audio": 14.6025,
+   "end": 150.8151,
    "sentences": [
     0,
     6.3,
     10.43
-   ]
+   ],
+   "audioSentences": [
+    0,
+    7.41,
+    11.77
+   ],
+   "sceneAudio": 13.4375
   },
   {
    "chapter": 9,
    "title": "Kantlinje",
-   "start": 142.7,
-   "speech": 143.2,
-   "audio": 15.1,
-   "end": 158.8,
+   "start": 150.8151,
+   "speech": 151.3151,
+   "audio": 15.151,
+   "end": 166.9662,
    "sentences": [
     0,
     3.12,
     6.45,
     10.22,
     12.69
-   ]
+   ],
+   "audioSentences": [
+    0,
+    3.23,
+    7.04,
+    11.16,
+    13.16
+   ],
+   "sceneAudio": 15.1
   }
  ]
 }

@@ -262,10 +262,16 @@ async function init(){
  const RURAL=7,URBAN=5;
  function cruiseStop(u,d0,v,uStop,T){const ub=uStop-T;if(u<=ub)return d0+v*u;const tau=Math.min(u-ub,T);return d0+v*ub+v*tau-v*tau*tau/(2*T);}
 
+ // Ny tale (30.10.2026) har annen takt enn scenen ble laget for. Taletid -> scenetid, stykkevis lineært mellom setningsstartene.
+ const knots=c=>{const n=[...(c.audioSentences||c.sentences),c.audio],o=[...c.sentences,c.sceneAudio||c.audio];return [n,o];};
+ const mapT=(x,from,to)=>{if(x<=from[0])return to[0]+(x-from[0]);for(let k=1;k<from.length;k++)if(x<=from[k])return to[k-1]+(x-from[k-1])*(to[k]-to[k-1])/(from[k]-from[k-1]);return to.at(-1)+(x-from.at(-1));};
+ const toScene=(i,a)=>{const [n,o]=knots(timing.chapters[i]);return mapT(a,n,o);};
+ const toAudio=(i,a)=>{const [n,o]=knots(timing.chapters[i]);return mapT(a,o,n);};
+
  const chapterStarts=timing.chapters.map(c=>c.start);
  // Bildeskift (ny situasjon) inne i kapitler, i sekunder fra talestart.
  const innerCuts={0:[11.1],2:[11.15],3:[6.71],8:[6.45]};
- const cutTimes=[];timing.chapters.forEach((c,i)=>{if(i)cutTimes.push(c.start);(innerCuts[i]||[]).forEach(a=>cutTimes.push(c.speech+a));});
+ const cutTimes=[];timing.chapters.forEach((c,i)=>{if(i)cutTimes.push(c.start);(innerCuts[i]||[]).forEach(a=>cutTimes.push(c.speech+toAudio(i,a)));});
  const endStart=timing.chapters.at(-1).end;
 
  function chapterState(i,u,a){
@@ -363,7 +369,7 @@ async function init(){
   ctx.reset();
   const t=clamp(Number(seconds)||0,0,DURATION),endT=Math.max(0,t-endStart);
   const tc=Math.min(t,endStart-1e-3);let i=0;while(i<chapterStarts.length-1&&tc>=chapterStarts[i+1])i++;
-  const ch=timing.chapters[i],u=tc-ch.start,a=tc-ch.speech;
+  const ch=timing.chapters[i],a=toScene(i,tc-ch.speech),u=a+(ch.speech-ch.start);
   const st=chapterState(i,u,a),w=st.w;
   gray.obj.visible=st.gray!==null;Object.values(worlds).forEach(v=>{v.root.visible=false;v.crosswalk.visible=false;});
   w.root.visible=true;w.crosswalk.visible=st.crosswalk;w.markings(st.mark);
