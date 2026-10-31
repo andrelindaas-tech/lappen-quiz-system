@@ -3675,13 +3675,21 @@ export const theoryArticles: TheoryTopic[] = [
         icon: '📋',
         shortDescription: 'Hvor mange spørsmål, hvor mange feil kan du ha, hva koster den og hvor lenge er den gyldig? Her er alle fakta om teoriprøven for klasse B, basert på Statens vegvesen.',
         color: 'var(--apple-blue)',
-        seoTitle: 'Teoriprøven for bil (klasse B) 2026 – spørsmål, tid, pris og krav',
+        seoTitle: 'Bestille teoriprøven – pris, tid, antall feil og krav (2026)',
+        author: 'Teori-test.no-redaksjonen',
+        reviewedAgainst: 'Statens vegvesen: priser fra 1. februar 2026, gjennomføring og bestilling av teoriprøven (kontrollert 31.10.2026)',
+        lastUpdated: '2026-10-31',
         seoDescription: '45 spørsmål, maks 7 feil og 90 minutter. Se pris, krav og hvordan du søker om førerkort og bestiller teoriprøven hos Statens vegvesen.',
         sections: [
             {
                 title: 'Kort forklart: Teoriprøven i tall',
                 type: 'info',
-                content: 'Teoriprøven for bil (klasse B) hos Statens vegvesen:\n• 45 spørsmål – du må ha minst 38 riktige for å bestå (maks 7 feil)\n• 90 minutter – du kan be om ekstra tid hvis du trenger det\n• 480 kr per forsøk (2026) – i tillegg kommer gebyr for førerkortfoto\n• Du kan ta prøven fra du er 17,5 år\n• Bestått prøve er gyldig i 3 år\n• Stryker du, må du vente 2 uker og betale nytt gebyr\n\nVil du kjenne på formatet først? [Ta en gratis øvingsprøve med 45 spørsmål](/quiz?mode=eksamen) – helt uten innlogging.'
+                content: 'Teoriprøven for bil (klasse B) hos Statens vegvesen:\n• 45 spørsmål – du må ha minst 38 riktige for å bestå (maks 7 feil)\n• 90 minutter – du kan be om ekstra tid hvis du trenger det\n• 480 kr per forsøk (priser fra 1. februar 2026). Oppkjøringen koster 1 540 kr, eller 1 490 kr ved betaling på nett\n• Du kan ta prøven fra du er 17,5 år\n• Du må bestå oppkjøringen innen 3 år etter bestått teoriprøve\n• Stryker du, må du vente 2 uker og betale nytt gebyr\n\nVil du kjenne på formatet først? [Ta en gratis øvingsprøve med 45 spørsmål](/quiz?mode=eksamen) – helt uten innlogging.'
+            },
+            {
+                title: 'Slik bestiller du teoriprøven',
+                type: 'info',
+                content: '1. [Søk om førerkort på Din side](https://www.vegvesen.no/forerkort/ta-forerkort/sok-om-forerkort/).\n2. Vent til du får beskjed om at søknaden er registrert og godkjent.\n3. [Bestill time til teoriprøven hos Statens vegvesen](https://www.vegvesen.no/forerkort/ta-forerkort/teoriprove/bestill-time-til-teoriprove/) og velg trafikkstasjon og ledig tidspunkt.\n4. På prøvedagen viser du gyldig legitimasjon, tar førerkortfoto og betaler for bildet og teoriprøven på trafikkstasjonen.\n\nHar du satt en dato? [Ta en full øvingsprøve med 45 spørsmål](/quiz?mode=eksamen) og se hvilke temaer du bør øve mer på før prøvedagen.'
             },
             {
                 title: 'Hva er teoriprøven?',
@@ -3701,7 +3709,7 @@ export const theoryArticles: TheoryTopic[] = [
             {
                 title: 'Hva koster teoriprøven?',
                 type: 'text',
-                content: 'Teoriprøven for bil koster 480 kr per forsøk (2026). I tillegg betaler du et gebyr for førerkortfotoet som tas i fotoautomat på trafikkstasjonen.\n\nMerk at gebyret gjelder per forsøk: stryker du, må du betale på nytt neste gang. God forberedelse er med andre ord den billigste veien til lappen. Øv med en [gratis teoriprøve](/) til du består prøvene dine stabilt.'
+                content: 'Teoriprøven for bil koster 480 kr per forsøk (priser fra 1. februar 2026). Bildet til førerkortet tas og betales på trafikkstasjonen. Oppkjøringen koster 1 540 kr, eller 1 490 kr hvis du betaler på nett.\n\nMerk at gebyret gjelder per forsøk: stryker du, må du betale på nytt neste gang. God forberedelse er med andre ord den billigste veien til lappen. Øv med en [gratis teoriprøve](/) til du består prøvene dine stabilt.'
             },
             {
                 title: 'Krav: Når kan du ta teoriprøven?',
@@ -3709,14 +3717,19 @@ export const theoryArticles: TheoryTopic[] = [
                 content: 'For klasse B kan du ta teoriprøven fra du er 17,5 år – altså et halvt år før du kan kjøre opp.\n\nFør du kan bestille time, må du ha søkt om førerkort på Din side. Når søknaden er registrert og godkjent, kan du bestille teoriprøven hos Statens vegvesen. Du må ha bestilt time før du møter på trafikkstasjonen.\n\nGår du på videregående? Da tar du sannsynligvis prøven i skoletiden. Siden 1. august 2025 teller ikke teoriprøven med i fraværsgrensen – se [reglene for gyldig fravær](/laeringsressurser/teoriprove-gyldig-fravaer).'
             },
             {
-                title: 'Slik bestiller du teoriprøven for bil',
-                type: 'info',
-                content: '1. [Søk om førerkort på Din side](https://www.vegvesen.no/forerkort/ta-forerkort/sok-om-forerkort/).\n2. Vent til du får beskjed om at søknaden er registrert og godkjent.\n3. [Bestill time til teoriprøven hos Statens vegvesen](https://www.vegvesen.no/forerkort/ta-forerkort/teoriprove/bestill-time-til-teoriprove/) og velg trafikkstasjon og ledig tidspunkt.\n4. På prøvedagen viser du gyldig legitimasjon, tar førerkortfoto og betaler for bildet og teoriprøven på trafikkstasjonen.\n\nHar du satt en dato? [Ta en full øvingsprøve med 45 spørsmål](/quiz?mode=eksamen) og se hvilke temaer du bør øve mer på før prøvedagen.'
+                title: 'Avbestille eller flytte time',
+                type: 'text',
+                content: 'Du avbestiller eller flytter timen på [Din side hos Statens vegvesen](https://www.vegvesen.no/dinside/dittforerkort/timebestilling/). Gjør det så tidlig som mulig, slik at timen kan gå til noen andre.\n\nFor oppkjøring og tilrettelagt teoriprøve må du betale hvis du avbestiller for sent. Les [Statens vegvesens regler for avbestilling](https://www.vegvesen.no/forerkort/ta-forerkort/priser/siste-frist-for-a-avbestille-time-til-prover-for-a-unnga-gebyr/) før du flytter en time.'
+            },
+            {
+                title: 'Tilrettelagt teoriprøve',
+                type: 'text',
+                content: 'Har du for eksempel lese- og skrivevansker eller ADHD, kan du søke om tilrettelagt teoriprøve. Da tar du prøven muntlig sammen med en sensor i et eget rom.\n\nDu søker på Din side etter at du har søkt om førerkort, og legger ved dokumentasjon fra for eksempel fastlege, logoped, PP-tjenesten eller lærer. Se [tilrettelagt teoriprøve hos Statens vegvesen](https://www.vegvesen.no/forerkort/ta-forerkort/teoriprove/tilrettelagt-teoriprove/).'
             },
             {
                 title: 'Hvilke språk kan du ta prøven på?',
                 type: 'text',
-                content: 'Teoriprøven for klasse B kan tas på norsk (bokmål og nynorsk), nordsamisk, engelsk, arabisk, sorani og tyrkisk. Du kan bytte språk underveis i prøven.\n\nDu kan bruke ordbok under prøven – enten din egen (den blir kontrollert for notater) eller en som finnes på trafikkstasjonen. Trenger du et annet språk enn de nevnte, kan du søke om tolkeassistert teoriprøve hos Statens vegvesen.'
+                content: 'Teoriprøven for klasse B kan tas på norsk, nordsamisk, engelsk, arabisk, sorani og tyrkisk. Du kan bytte språk underveis i prøven.\n\nDu kan bruke ordbok under prøven – enten din egen (den blir kontrollert for notater) eller en som finnes på trafikkstasjonen. Trenger du et annet språk enn de nevnte, kan du søke om tolkeassistert teoriprøve hos Statens vegvesen.'
             },
             {
                 title: 'Hva skjer hvis du stryker?',
@@ -3726,7 +3739,7 @@ export const theoryArticles: TheoryTopic[] = [
             {
                 title: 'Hvor lenge er bestått teoriprøve gyldig?',
                 type: 'text',
-                content: 'Bestått teoriprøve er gyldig i 3 år. Det betyr at du må bestå [oppkjøringen](/laeringsressurser/oppkjoring) innen 3 år etter at du besto teorien – ellers må du ta teoriprøven på nytt.\n\nDe fleste tar teoriprøven relativt tidlig i opplæringen, slik at den er unnagjort før kjøretimene og oppkjøringen.'
+                content: 'Du må bestå [oppkjøringen](/laeringsressurser/oppkjoring) innen 3 år etter at du besto teoriprøven. Klarer du ikke det, må du ta teoriprøven på nytt.\n\nDe fleste tar teoriprøven relativt tidlig i opplæringen, slik at den er unnagjort før kjøretimene og oppkjøringen.'
             },
             {
                 title: 'Slik forbereder du deg best',
@@ -3754,7 +3767,7 @@ export const theoryArticles: TheoryTopic[] = [
             },
             {
                 question: 'Hva koster teoriprøven i 2026?',
-                answer: 'Teoriprøven for bil koster 480 kr per forsøk i 2026. I tillegg kommer gebyr for førerkortfoto. Stryker du, må du betale nytt gebyr ved neste forsøk.'
+                answer: 'Teoriprøven for bil koster 480 kr per forsøk (priser fra 1. februar 2026). Bildet til førerkortet tas og betales på trafikkstasjonen. Stryker du, betaler du på nytt ved neste forsøk.'
             },
             {
                 question: 'Hvor gammel må du være for å ta teoriprøven?',
@@ -3762,7 +3775,7 @@ export const theoryArticles: TheoryTopic[] = [
             },
             {
                 question: 'Hvor lenge er teoriprøven gyldig?',
-                answer: 'Bestått teoriprøve er gyldig i 3 år. Du må bestå oppkjøringen innen 3 år, ellers må du ta teoriprøven på nytt.'
+                answer: 'Du må bestå oppkjøringen innen 3 år etter at du besto teoriprøven. Ellers må du ta teoriprøven på nytt.'
             },
             {
                 question: 'Hvilke språk kan teoriprøven tas på?',
@@ -3783,6 +3796,10 @@ export const theoryArticles: TheoryTopic[] = [
             {
                 question: 'Kan jeg møte opp til teoriprøven uten time?',
                 answer: 'Nei. Du må bestille time før du møter på trafikkstasjonen for å ta teoriprøven.'
+            },
+            {
+                question: 'Hvordan avbestiller jeg teoriprøven?',
+                answer: 'Du avbestiller eller flytter timen på Din side hos Statens vegvesen.'
             },
             {
                 question: 'Hva må jeg ha med på teoriprøven?',
@@ -3806,7 +3823,7 @@ export const theoryArticles: TheoryTopic[] = [
                 question: 'Hvor lenge er en bestått teoriprøve gyldig?',
                 options: ['1 år', '2 år', '3 år', 'Den varer evig'],
                 correct: '3 år',
-                explanation: 'Bestått teoriprøve er gyldig i 3 år. Du må bestå den praktiske førerprøven innen fristen, ellers må teorien tas på nytt.'
+                explanation: 'Du må bestå oppkjøringen innen 3 år etter bestått teoriprøve. Ellers må teorien tas på nytt.'
             }
         ]
     },
@@ -4871,7 +4888,7 @@ export const theoryArticles: TheoryTopic[] = [
             {
                 title: 'Fakta om teoriprøven klasse B',
                 type: 'info',
-                content: 'For klasse B gjelder dette:\n• Antall spørsmål: 45 spørsmål\n• Krav for å bestå: Minst 38 riktige\n• Maks antall feil: 7 feil\n• Tid: 90 minutter\n• Pris: 480 kr hos Statens vegvesen fra 1. februar 2026\n• Ved stryk: Du kan ta ny prøve tidligst etter 2 uker\n• Gyldighet: Bestått teoriprøve er gyldig i 3 år\n• Når kan du ta prøven?: Tidligst 6 måneder før alderskravet, altså 17,5 år for klasse B\n\nDu må bestille time hos Statens vegvesen og ta med gyldig legitimasjon. Møt heller litt tidlig enn å starte prøven med puls som en nødblink.\n\n[Se alle fakta om teoriprøven – pris, tid, krav og språk](/laeringsressurser/teoriproven-bil)'
+                content: 'Prøven har 45 spørsmål, du kan ha maks 7 feil, og du har 90 minutter.\n\nPris, bestilling, alderskrav og hva som skjer ved stryk står samlet her: [Alt om teoriprøven – pris, bestilling og krav](/laeringsressurser/teoriproven-bil).\n\nMøt heller litt tidlig enn å starte prøven med puls som en nødblink.'
             },
             {
                 title: 'Hva bør du øve mest på?',
@@ -4955,18 +4972,6 @@ export const theoryArticles: TheoryTopic[] = [
             {
                 question: 'Hvor mange feil kan man ha på teoriprøven?',
                 answer: 'Du kan ha maks 7 feil. Du må ha minst 38 riktige for å bestå.'
-            },
-            {
-                question: 'Hvor lenge varer teoriprøven?',
-                answer: 'Du har 90 minutter på teoriprøven for klasse B.'
-            },
-            {
-                question: 'Hva koster teoriprøven i 2026?',
-                answer: 'Hos Statens vegvesen koster teoriprøven 480 kr fra 1. februar 2026.'
-            },
-            {
-                question: 'Hvor lenge er teoriprøven gyldig?',
-                answer: 'Bestått teoriprøve er gyldig i 3 år.'
             },
             {
                 question: 'Hva skjer hvis jeg stryker?',
@@ -6240,7 +6245,7 @@ Hvis det oppstår kø, hold avstand til bilen foran. Da får nødetater og andre
             {
                 title: 'Direkte svar',
                 type: 'info',
-                content: 'Vanlige feil på teoriprøven klasse B handler ofte om vikeplikt, rundkjøring, privat vei og parkering, skilt, stopplikt, buss og trikk, bremselengde, følgeavstand, vegoppmerking og lesing av spørsmål. Listen under er basert på typiske teorifeller, Statens vegvesens temalister og research, ikke offisiell feilstatistikk per tema.\n\n![Infografikk med 10 vanlige feil på teoriprøven klasse B, blant annet vikeplikt, rundkjøring, skilt, bremselengde, følgeavstand og lesefeil](/vanlige-feil-teoriproven-infografikk.png)'
+                content: 'Vanlige feil på teoriprøven klasse B handler ofte om vikeplikt, rundkjøring, privat vei og parkering, skilt, stopplikt, buss og trikk, bremselengde, følgeavstand, vegoppmerking og lesing av spørsmål. Listen under er basert på typiske teorifeller, Statens vegvesens temalister og research, ikke offisiell feilstatistikk per tema.\n\nPrøven har 45 spørsmål, og du kan ha maks 7 feil. Pris, tid og bestilling står i [alt om teoriprøven](/laeringsressurser/teoriproven-bil).\n\n![Infografikk med 10 vanlige feil på teoriprøven klasse B, blant annet vikeplikt, rundkjøring, skilt, bremselengde, følgeavstand og lesefeil](/vanlige-feil-teoriproven-infografikk.png)'
             },
             {
                 title: 'Kort forklart',
@@ -6343,7 +6348,7 @@ Hvis det oppstår kø, hold avstand til bilen foran. Da får nødetater og andre
             },
             {
                 question: 'Hva skjer hvis jeg stryker på teoriprøven?',
-                answer: 'Hvis du stryker, må du vente før du kan ta ny prøve. Bruk ventetiden til å øve målrettet på temaene du fikk problemer med, i stedet for å bare ta tilfeldige prøver.'
+                answer: 'Hvis du stryker, må du vente to uker før du kan ta ny prøve. Bruk ventetiden til å øve målrettet på temaene du fikk problemer med, i stedet for å bare ta tilfeldige prøver.'
             },
             {
                 question: 'Er dette offisiell feilstatistikk fra Statens vegvesen?',
