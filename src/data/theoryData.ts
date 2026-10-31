@@ -2196,9 +2196,12 @@ export const theoryTopics: TheoryTopic[] = [
         id: 'tilhenger',
         title: 'Tilhenger og henger: Regler, klasser og kalkulator',
         icon: '🚗',
-        shortDescription: 'Alt du trenger om tilhenger til teoriprøven. 750 kg-regelen, campingvogn-regelen, klasse B96 og BE forklart enkelt med [gratis kalkulator](/laeringsressurser/tilhenger#henger-kalkulator).',
+        shortDescription: 'Alt du trenger om tilhenger til teoriprøven. 750 kg-regelen, campingvogn-regelen, klasse B96 og BE forklart enkelt, med lenke til [tilhengerkalkulatoren](/laeringsressurser/tilhengerkalkulator).',
         color: 'var(--apple-red)',
-        seoTitle: 'Tilhenger klasse B: regler, vekt, B96, BE og kalkulator | Teori-test.no',
+        seoTitle: 'Tilhenger på klasse B – regler, vekt, B96 og BE',
+        author: 'Teori-test.no-redaksjonen',
+        reviewedAgainst: 'Statens vegvesen om klasse B, B96 og BE, og trafikkreglene § 13 nr. 4 (kontrollert 31.10.2026)',
+        lastUpdated: '2026-10-31',
         seoDescription: 'Finn ut om du kan kjøre med tilhenger på klasse B. Se 750 kg-regelen, 3500 kg-regelen, B96, BE, fartsgrenser og bruk kalkulatoren.',
         sections: [
             {
@@ -2212,9 +2215,9 @@ export const theoryTopics: TheoryTopic[] = [
                 content: '- Klasse B: tilhenger maks 750 kg tillatt totalvekt.\n- Eller tyngre tilhenger hvis bil + tilhenger har samlet tillatt totalvekt maks 3500 kg.\n- B kode 96 (B96): samlet tillatt totalvekt maks 4250 kg.\n- BE: tyngre kombinasjoner, men fortsatt innenfor bilens og tilhengerens tekniske grenser.\n- Sjekk alltid: førerkortklasse, bilens vognkort og tilhengerens vognkort.'
             },
             {
-                title: 'Tilhengerkalkulator',
-                type: 'calculator',
-                content: 'Tast inn tillatt totalvekt for bil og tilhenger under for å sjekke hvilken førerkortklasse du trenger for å kjøre lovlig. Vil du ha kalkulatoren for seg selv (fin å dele)? [Åpne tilhengerkalkulatoren](/laeringsressurser/tilhengerkalkulator).'
+                title: 'Regn ut hvilken klasse du trenger',
+                type: 'tip',
+                content: 'Legg inn tillatt totalvekt fra vognkortene i [tilhengerkalkulatoren](/laeringsressurser/tilhengerkalkulator), så ser du om bil og henger holder med klasse B, eller om du trenger B96 eller BE.'
             },
             {
                 title: 'Førerkortklasser for tilhenger',
@@ -2264,12 +2267,12 @@ export const theoryTopics: TheoryTopic[] = [
             {
                 title: 'Klasse B96 – mellomklassen',
                 type: 'text',
-                content: 'B96 er en utvidelse av klasse B som gjelder når:\n- Tilhengeren veier MER enn 750 kg, OG\n- Kombinert tillatt totalvekt (bil + tilhenger) er MELLOM 3500 kg og 4250 kg.\n\nKrav for B96:\n- Bestå et 7-timers obligatorisk kurs (5 t teori + 2 t kjøring)\n- INGEN oppkjøring/praktisk prøve kreves\n- B96 "stemplet" i førerkortet etter bestått kurs\n\nEksempel: Bil med tillatt totalvekt 2500 kg + tilhenger 1200 kg = 3700 kg → B96.'
+                content: 'B96 er en utvidelse av klasse B som gjelder når:\n- Tilhengeren veier MER enn 750 kg, OG\n- Kombinert tillatt totalvekt (bil + tilhenger) er MELLOM 3500 kg og 4250 kg.\n\nKrav for B96:\n- Minst 7 timer obligatorisk opplæring hos trafikkskole\n- Ingen oppkjøring eller ny førerprøve\n- Kode 96 føres inn i førerkortet etter opplæringen\n\nEksempel: Bil med tillatt totalvekt 2500 kg + tilhenger 1200 kg = 3700 kg → B96.'
             },
             {
                 title: 'Klasse BE – for de tyngste kombinasjonene',
                 type: 'text',
-                content: 'BE kreves når kombinert tillatt totalvekt overstiger 4250 kg.\n- Tilhengeren kan ha tillatt totalvekt opp til 3500 kg\n- Kombinert vekt kan gå opp til 7000 kg\n- Krever full teoriprøve for BE + praktisk oppkjøring\n\nEksempel: Bil 3000 kg + tilhenger 1500 kg = 4500 kg → Klasse BE. BE gjelder tyngre kombinasjoner, innenfor grensene i bilens og tilhengerens vognkort.\n\nNB: Hestehengere og større båthengere havner ofte i BE-kategorien.'
+                content: 'BE kreves når kombinert tillatt totalvekt overstiger 4250 kg.\n- Tilhengeren kan ha tillatt totalvekt opp til 3500 kg\n- Kombinert vekt kan gå opp til 7000 kg\n- Krever minst 7 timer obligatorisk opplæring og oppkjøring, men ingen ny teoriprøve\n\nEksempel: Bil 3000 kg + tilhenger 1500 kg = 4500 kg → Klasse BE. BE gjelder tyngre kombinasjoner, innenfor grensene i bilens og tilhengerens vognkort.\n\nNB: Hestehengere og større båthengere havner ofte i BE-kategorien.'
             },
             {
                 title: 'Lastsikring og plassering av last på tilhenger',
@@ -2284,7 +2287,7 @@ export const theoryTopics: TheoryTopic[] = [
             {
                 title: 'Fartsgrenser med tilhenger',
                 type: 'info',
-                content: 'Alle tilhengere kan kjøres i inntil 80 km/t der fartsgrensen tillater det — uavhengig av om tilhengeren har bremser eller ikke. Den gamle 60 km/t-grensen for tilhengere uten bremser gjelder ikke lenger.\n\nTempo 100: Noen tilhengere kan etter en egen teknisk godkjenning hos Statens vegvesen kjøres i inntil 100 km/t. Du får da et godkjenningsdokument og et merke som skal monteres på tilhengeren. Autorisert Tempo 100-sjekk kan gjøres hos Statens vegvesen.'
+                content: 'Alle tilhengere kan kjøres i inntil 80 km/t der fartsgrensen tillater det — uavhengig av om tilhengeren har bremser eller ikke. Den gamle 60 km/t-grensen for tilhengere uten bremser gjelder ikke lenger. Grensen på 80 km/t gjelder også der fartsgrensen er høyere (trafikkreglene § 13 nr. 4).\n\nTempo 100: Noen tilhengere kan etter en egen teknisk godkjenning hos Statens vegvesen kjøres i inntil 100 km/t. Du får da et godkjenningsdokument og et merke som skal monteres på tilhengeren. Autorisert Tempo 100-sjekk kan gjøres hos Statens vegvesen.'
             },
             {
                 title: 'Sjekkliste før avgang med tilhenger',
@@ -4743,18 +4746,26 @@ export const theoryArticles: TheoryTopic[] = [
         icon: '🚗',
         shortDescription: 'Du har bestått teoriprøven – nå er det bare oppkjøringen igjen. Lær hva det koster, hvordan prøven foregår, hva sensor faktisk vurderer og hva som skjer hvis du stryker.',
         color: 'var(--apple-orange)',
-        seoTitle: 'Oppkjøring klasse B 2026 – pris, varighet og slik består du',
-        seoDescription: 'Alt om oppkjøring klasse B: pris (1 490 kr på nett), varighet 65–75 min, de tre delene av prøven, hva sensor vurderer og hva som skjer hvis du stryker.',
+        seoTitle: 'Oppkjøring klasse B 2026 – pris, bestilling og slik består du',
+        author: 'Teori-test.no-redaksjonen',
+        reviewedAgainst: 'Statens vegvesen om oppkjøring, priser og avbestilling (kontrollert 31.10.2026)',
+        lastUpdated: '2026-10-31',
+        seoDescription: 'Alt om oppkjøring klasse B: pris (1 490 kr på nett), varighet, bestilling, de tre delene av prøven, hva sensor vurderer og hva som skjer hvis du stryker.',
         sections: [
             {
                 title: 'Kort forklart',
                 type: 'info',
-                content: 'Oppkjøringen er den praktiske førerprøven du tar på en trafikkstasjon etter bestått teoriprøve. Den varer 65–75 minutter og består av tre deler: klargjøring av kjøretøyet, sikkerhetskontroll og kjøring. Du vurderes som en helhet — sensor ser etter at du kjører selvstendig og trygt, ikke at du er feilfri. I første halvår 2026 besto 74 prosent av dem som kjørte opp i klasse B.'
+                content: 'Oppkjøringen er den praktiske førerprøven du tar på en trafikkstasjon etter bestått teoriprøve. Prøven varer 55–75 minutter, og selve kjøringen tar 55–60 minutter. Den består av tre deler: klargjøring av kjøretøyet, sikkerhetskontroll og kjøring. Du vurderes som en helhet — sensor ser etter at du kjører selvstendig og trygt, ikke at du er feilfri. I første halvår 2026 besto 74 prosent av dem som kjørte opp i klasse B.'
             },
             {
                 title: 'Dette må være på plass før du kan kjøre opp',
                 type: 'tip',
                 content: '1. **All obligatorisk opplæring** må være fullført og registrert hos Statens vegvesen — inkludert [trafikalt grunnkurs](/laeringsressurser/trafikalt-grunnkurs), [sikkerhetskurs på bane](/laeringsressurser/sikkerhetskurs-pa-bane) og sikkerhetskurs på veg.\n2. **Teoriprøven** må være bestått — [den er gyldig i tre år](/laeringsressurser/teoriproven-bil).\n3. **Vandelen din** må være godkjent av politiet (skjer via søknaden om førerkort).\n4. **Helseattest** må være levert hvis du trenger det.\n\nPå Din side hos Statens vegvesen kan du sjekke at alt er registrert før du bestiller time.'
+            },
+            {
+                title: 'Slik bestiller du oppkjøringen',
+                type: 'info',
+                content: '1. Sjekk på Din side at obligatorisk opplæring er registrert, at teoriprøven er bestått og at vandel og eventuell helseattest er i orden.\n2. [Bestill time på Din side hos Statens vegvesen](https://www.vegvesen.no/dinside/dittforerkort/timebestilling/), eller gi trafikkskolen fullmakt til å bestille for deg.\n3. Avtal leie av skolebil med trafikkskolen.\n4. Må du flytte timen, gjør det senest to virkedager før prøven. Ellers må du betale, med mindre du var under 18 år da du bestilte.'
             },
             {
                 title: 'Slik foregår oppkjøringen',
@@ -4769,7 +4780,7 @@ export const theoryArticles: TheoryTopic[] = [
             {
                 title: 'Pris og praktisk informasjon',
                 type: 'table',
-                content: `<div class="responsive-theory-table-wrapper"><table class="responsive-theory-table" style="width:100%;border-collapse:collapse;font-size:0.95rem"><thead><tr style="background-color:var(--color-surface);border-bottom:2px solid var(--color-border)"><th style="padding:12px 8px;text-align:left">Hva</th><th style="padding:12px 8px;text-align:left">Detaljer (fra 1. februar 2026)</th></tr></thead><tbody><tr style="border-bottom:1px solid var(--color-border)"><td style="padding:12px 8px"><b>Pris oppkjøring klasse B</b></td><td style="padding:12px 8px">1 490 kr ved betaling på nett, 1 540 kr på trafikkstasjonen.</td></tr><tr style="border-bottom:1px solid var(--color-border)"><td style="padding:12px 8px"><b>Utstedelse av førerkort</b></td><td style="padding:12px 8px">160 kr på nett (270 kr på trafikkstasjonen) + 100 kr for bilde.</td></tr><tr style="border-bottom:1px solid var(--color-border)"><td style="padding:12px 8px"><b>Varighet</b></td><td style="padding:12px 8px">65–75 minutter totalt.</td></tr><tr style="border-bottom:1px solid var(--color-border)"><td style="padding:12px 8px"><b>Avbestilling</b></td><td style="padding:12px 8px">Senest to virkedager før — ellers må du betale for timen.</td></tr><tr><td style="padding:12px 8px"><b>Bil</b></td><td style="padding:12px 8px">Godkjent skolebil som leies av trafikkskole (kommer i tillegg til gebyret).</td></tr></tbody></table></div>`
+                content: `<div class="responsive-theory-table-wrapper"><table class="responsive-theory-table" style="width:100%;border-collapse:collapse;font-size:0.95rem"><thead><tr style="background-color:var(--color-surface);border-bottom:2px solid var(--color-border)"><th style="padding:12px 8px;text-align:left">Hva</th><th style="padding:12px 8px;text-align:left">Detaljer (fra 1. februar 2026)</th></tr></thead><tbody><tr style="border-bottom:1px solid var(--color-border)"><td style="padding:12px 8px"><b>Pris oppkjøring klasse B</b></td><td style="padding:12px 8px">1 490 kr ved betaling på nett, 1 540 kr på trafikkstasjonen.</td></tr><tr style="border-bottom:1px solid var(--color-border)"><td style="padding:12px 8px"><b>Utstedelse av førerkort</b></td><td style="padding:12px 8px">160 kr på nett (270 kr på trafikkstasjonen) + 100 kr for bilde.</td></tr><tr style="border-bottom:1px solid var(--color-border)"><td style="padding:12px 8px"><b>Varighet</b></td><td style="padding:12px 8px">55–75 minutter totalt, hvorav 55–60 minutter kjøring.</td></tr><tr style="border-bottom:1px solid var(--color-border)"><td style="padding:12px 8px"><b>Avbestilling</b></td><td style="padding:12px 8px">Senest to virkedager før prøven, ellers må du betale for timen. Var du under 18 år da du bestilte, slipper du å betale.</td></tr><tr><td style="padding:12px 8px"><b>Bil</b></td><td style="padding:12px 8px">Godkjent skolebil som leies av trafikkskole (kommer i tillegg til gebyret).</td></tr></tbody></table></div>`
             },
             {
                 title: 'Automat eller manuelt gir?',
@@ -4790,7 +4801,7 @@ export const theoryArticles: TheoryTopic[] = [
         faq: [
             {
                 question: 'Hvor lenge varer oppkjøringen for klasse B?',
-                answer: 'Prøven varer 65–75 minutter og består av klargjøring av kjøretøyet, sikkerhetskontroll og kjøring. Kjøringen er den klart største delen.'
+                answer: 'Prøven varer 55–75 minutter. Selve kjøringen tar 55–60 minutter, i tillegg til klargjøring av kjøretøyet og sikkerhetskontroll.'
             },
             {
                 question: 'Hva koster oppkjøringen i 2026?',
