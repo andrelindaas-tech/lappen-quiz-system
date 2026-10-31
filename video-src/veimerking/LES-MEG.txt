@@ -5,16 +5,6 @@ OPPDATERT 31.10.2026: NY VERSJON PÅ NETTSIDEN
   og nytt utseende. Den er laget i en annen økt og hentet fra artefakten «Veimerking forhåndsvisning».
 - KILDEKODEN TIL DEN NYE FILMEN LIGGER IKKE HER ENNÅ. Filene i denne mappen er versjon 3 (Azure-stemme).
   Legg kildefilene til den nye versjonen inn her før filmen endres igjen.
-
-OPPDATERT 31.10.2026: NY TALE
-- Ny fortellerstemme fra ElevenLabs (Mia Starset), lyd/mp3/ (se lyd/innstillinger.txt).
-- prepare.py leser lyd/wav-ny/ (24 kHz mono, konvertert fra mp3 med ffmpeg).
-  Lag dem med: for n in 1..9: ffmpeg -i "lyd/mp3/TT Kap n.mp3" -ac 1 -ar 24000 -sample_fmt s16 "lyd/wav-ny/TT Kap n.wav"
-- Scenen er uendret. scene.js oversetter taletid til scenetid mellom setningsstartene
-  (timing.json: audioSentences = ny tale, sentences = scenetid).
-- Ny lengde: 2:50 (170,0 s). Tidsplanen under gjelder den gamle versjonen.
-- Nettversjonen i public/video/veimerking har ny bundle.js og fortelling.mp3 (64 kbit/s mono).
-- MP4-filene er ikke laget på nytt.
 17. oktober 2026 · teori-test.no
 
 Åpne index.html i Chrome eller Edge. Ingen server trengs.
