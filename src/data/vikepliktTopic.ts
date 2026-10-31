@@ -105,21 +105,21 @@ Regelen kan også gjelde i et T-kryss. Det spiller ingen rolle om veien din ser 
                     description: 'Du har vikeplikt for kjørende fra begge retninger på veien du skal inn på eller krysse. Senk farten tidlig. Du må stanse når det er nødvendig, men ikke alltid.',
                     imageUrl: '/signs/vikeplikt-og-forkjorsskilt/skilt-202-vikeplikt.jpg',
                     alt: 'Vikepliktskilt 202, trekant med rød kant og spissen ned',
-                    href: '/trafikkskilt/vikeplikt-og-forkjorsskilt/vikeplikt'
+                    href: '/trafikkskilt/vikeplikt-og-forkjorsskilt/vikeplikt/'
                 },
                 {
                     name: 'Stopp – skilt 204',
                     description: 'Du skal alltid stanse helt før du vurderer om du kan kjøre videre. Stopp ved stopplinjen, eller så nær den kryssende veien som mulig dersom linjen mangler.',
                     imageUrl: '/signs/vikeplikt-og-forkjorsskilt/skilt-204-stopp.jpg',
                     alt: 'Stoppskilt 204, rødt åttekantet skilt med teksten STOPP',
-                    href: '/trafikkskilt/vikeplikt-og-forkjorsskilt/stopp'
+                    href: '/trafikkskilt/vikeplikt-og-forkjorsskilt/stopp/'
                 },
                 {
                     name: 'Forkjørsveg – skilt 206',
                     description: 'Trafikken fra sideveiene er pålagt vikeplikt. Forkjørsveien gjelder over en strekning, men du må fortsatt kjøre aktsomt og være forberedt på at andre kan gjøre feil.',
                     imageUrl: '/signs/vikeplikt-og-forkjorsskilt/skilt-206-forkjorsveg.jpg',
                     alt: 'Skilt 206 forkjørsveg, gul rute med hvit og svart kant',
-                    href: '/trafikkskilt/vikeplikt-og-forkjorsskilt/forkjorsveg'
+                    href: '/trafikkskilt/vikeplikt-og-forkjorsskilt/forkjorsveg/'
                 }
             ],
             image: {

@@ -5,6 +5,7 @@ import { ryggingVendingTopic } from './ryggingVendingTopic'
 import { vinterdekkTopic } from './vinterdekkTopic'
 import { morkekjoringTopic } from './morkekjoringTopic'
 import { ovingskjoringTopic } from './ovingskjoringTopic'
+import { kjorebaneTopic } from './kjorebaneTopic'
 
 export interface MiniQuizQuestion {
     question: string
@@ -439,7 +440,7 @@ export const theoryTopics: TheoryTopic[] = [
             {
                 title: 'Kjørefeltlinje og kantlinje',
                 type: 'table',
-                content: '<img src="/images/veimerking-kjorefeltlinje-kantlinje.svg" alt="En vei sett ovenfra med heltrukne hvite kantlinjer langs ytterkantene og en stiplet hvit kjørefeltlinje i midten. Kantlinjen er vanligvis heltrukken, kjørefeltlinjen har kort strek og langt opphold." style="width:auto;max-width:100%;height:auto;border-radius:8px;margin:0 auto 0.35rem;display:block;" /><p style="font-size:0.85rem;color:var(--color-text-light);text-align:center;margin:0 0 1.25rem;">Stiplet linje og kantlinje er to forskjellige oppmerkinger. Kantlinjen viser kjørebanens ytterkant og er vanligvis heltrukken. Kjørefeltlinjen har kort strek og langt opphold.</p><p style="line-height:1.65;margin:0 0 1rem;"><strong>Kjørefeltlinje (1000)</strong> er den vanligste linjen på norske veier. Den skiller kjørefelt i samme kjøreretning, og kjennes igjen på kort strek og langt opphold. Du kan krysse den når det er trygt og lovlig — for eksempel ved feltskifte eller <a href="/laeringsressurser/forbikjoring" style="color:var(--color-primary);font-weight:600;text-decoration:none;">forbikjøring</a> der forholdene tillater det.</p><p style="line-height:1.65;margin:0;"><strong>Kantlinje (1012)</strong> viser hvor kjørebanen slutter. Den er vanligvis heltrukken, men på smale veier uten midtlinje kan den være brutt. En heltrukken kantlinje er ikke en sperrelinje.</p>'
+                content: '<img src="/images/veimerking-kjorefeltlinje-kantlinje.svg" alt="En vei sett ovenfra med heltrukne hvite kantlinjer langs ytterkantene og en stiplet hvit kjørefeltlinje i midten. Kantlinjen er vanligvis heltrukken, kjørefeltlinjen har kort strek og langt opphold." style="width:auto;max-width:100%;height:auto;border-radius:8px;margin:0 auto 0.35rem;display:block;" /><p style="font-size:0.85rem;color:var(--color-text-light);text-align:center;margin:0 0 1.25rem;">Stiplet linje og kantlinje er to forskjellige oppmerkinger. Kantlinjen viser kjørebanens ytterkant og er vanligvis heltrukken. Kjørefeltlinjen har kort strek og langt opphold.</p><p style="line-height:1.65;margin:0 0 1rem;"><strong>Kjørefeltlinje (1000)</strong> er den vanligste linjen på norske veier. Den skiller kjørefelt i samme kjøreretning, og kjennes igjen på kort strek og langt opphold. Du kan krysse den når det er trygt og lovlig — for eksempel ved feltskifte eller <a href="/laeringsressurser/forbikjoring" style="color:var(--color-primary);font-weight:600;text-decoration:none;">forbikjøring</a> der forholdene tillater det.</p><p style="line-height:1.65;margin:0;"><strong>Kantlinje (1012)</strong> viser hvor kjørebanen slutter. Den er vanligvis heltrukken, men på smale veier uten midtlinje kan den være brutt. En heltrukken kantlinje er ikke en sperrelinje. Utenfor kantlinjen ligger veiskulderen – se <a href="/laeringsressurser/kjorebane-kjorefelt-veiskulder" style="color:var(--color-primary);font-weight:600;text-decoration:none;">forskjellen på kjørebane, kjørefelt og veiskulder</a>.</p>'
             },
             {
                 title: 'Hvit sperrelinje',
@@ -3322,7 +3323,7 @@ Når du nærmer deg et lyskryss, bør du derfor se etter:
             {
                 title: '2. Hva betyr feltvalg?',
                 type: 'text',
-                content: 'Feltvalg er plasseringen din før du kommer til en situasjon der veien deler seg, feltene får ulike retninger, eller ett felt har egne regler. Riktig feltvalg gjør trafikken mer forutsigbar for alle rundt deg.\n\nDu må velge felt tidlig nok til at du slipper brå feltbytter. Det gjelder særlig før kryss, [rundkjøringer](/laeringsressurser/rundkjoring), avkjøringer, påkjøringer til motorvei, kollektivfelt og steder der feltpiler viser hvilken retning feltet gjelder for.\n\nEt godt feltvalg bygger på fem ting:\n- skilt over eller ved kjørefeltet\n- vegoppmerking, som piler, kjørefeltlinjer og sperrelinjer\n- trafikklys og pilsignaler\n- hvor du skal videre\n- trafikkflyt, avstand og sikt\n\nHvis du oppdager for sent at du ligger i feil felt, er det ofte tryggere å følge feltet videre og finne en ny lovlig vei tilbake enn å presse deg inn i siste øyeblikk.'
+                content: 'Feltvalg er plasseringen din før du kommer til en situasjon der veien deler seg, feltene får ulike retninger, eller ett felt har egne regler. Riktig feltvalg gjør trafikken mer forutsigbar for alle rundt deg.\n\nDu må velge felt tidlig nok til at du slipper brå feltbytter. Det gjelder særlig før kryss, [rundkjøringer](/laeringsressurser/rundkjoring), avkjøringer, påkjøringer til motorvei, kollektivfelt og steder der feltpiler viser hvilken retning feltet gjelder for.\n\nEt godt feltvalg bygger på fem ting:\n- skilt over eller ved kjørefeltet\n- vegoppmerking, som piler, kjørefeltlinjer og sperrelinjer\n- trafikklys og pilsignaler\n- hvor du skal videre\n- trafikkflyt, avstand og sikt\n\nHvis du oppdager for sent at du ligger i feil felt, er det ofte tryggere å følge feltet videre og finne en ny lovlig vei tilbake enn å presse deg inn i siste øyeblikk.\n\nUsikker på hva som er kjørebane og hva som er kjørefelt? Se [kjørebane, kjørefelt og veiskulder](/laeringsressurser/kjorebane-kjorefelt-veiskulder) med tegninger.'
             },
             {
                 title: '3. Feltskifte, fletting og påkjøring er ikke det samme',
@@ -4881,6 +4882,7 @@ export const theoryArticles: TheoryTopic[] = [
     },
 
     ovingskjoringTopic,
+    kjorebaneTopic,
 
     {
         id: 'tips-eksamen',
