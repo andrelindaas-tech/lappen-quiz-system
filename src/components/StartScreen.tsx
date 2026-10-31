@@ -119,6 +119,17 @@ export default function StartScreen() {
         alternateName: ['Teori-test', 'Teoritest', 'Teori test'],
         url: 'https://teori-test.no/',
         inLanguage: 'nb',
+        publisher: { '@id': 'https://teori-test.no/#organization' },
+    }
+
+    // Organisasjon med logo, så Google kan vise riktig navn og ikon.
+    const organizationJsonLd = {
+        '@context': 'https://schema.org',
+        '@type': 'Organization',
+        '@id': 'https://teori-test.no/#organization',
+        name: 'Teori-test.no',
+        url: 'https://teori-test.no/',
+        logo: 'https://teori-test.no/logo.png',
     }
 
     const faqJsonLd = {
@@ -163,6 +174,7 @@ export default function StartScreen() {
                 <meta name="twitter:image" content="https://teori-test.no/og-image.png" />
                 <meta name="twitter:image:alt" content="Teori-test.no – gratis teoriprøve for klasse B" />
                 <script type="application/ld+json">{JSON.stringify(websiteJsonLd)}</script>
+                <script type="application/ld+json">{JSON.stringify(organizationJsonLd)}</script>
                 <script type="application/ld+json">{JSON.stringify(faqJsonLd)}</script>
             </Helmet>
 
