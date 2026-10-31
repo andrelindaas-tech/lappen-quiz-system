@@ -17,7 +17,7 @@ export const forklaringsfilmer: Record<string, Forklaringsfilm> = {
     "veimerking": {
         src: "/video/veimerking/index.html",
         title: "Veimerking – forstå linjene. Animasjon med fortellerstemme",
-        caption: "Animasjon: slik leser du veimerkingen (2:50, med lyd). Velg kapittel nederst i spilleren.",
+        caption: "Animasjon: slik leser du veimerkingen (2:47, med lyd). Velg kapittel nederst i spilleren.",
         textLabel: "Les teksten fra filmen",
         paragraphs: [
             "Veimerkingen hjelper deg å forstå hvordan veien skal brukes. Fargen forteller hvilken funksjon oppmerkingen har. Gul oppmerking brukes mellom motgående kjøreretninger. Hvit oppmerking har flere oppgaver. Her skiller en hvit linje kjørefelt i samme retning. En hvit kantlinje markerer kjørebanens ytterkant. Den skiller kjørebanen fra veiskulderen eller veikanten. Hvit oppmerking brukes også til gangfelt.",

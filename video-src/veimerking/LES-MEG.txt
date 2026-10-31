@@ -1,5 +1,11 @@
 VEIMERKING – FULLFILM V3 MED FORTELLERSTEMME
 
+OPPDATERT 31.10.2026: NY VERSJON PÅ NETTSIDEN
+- public/video/veimerking har en ny film (2:47) med ny stemme (ElevenLabs, Mia Starset, lyd/mp3/)
+  og nytt utseende. Den er laget i en annen økt og hentet fra artefakten «Veimerking forhåndsvisning».
+- KILDEKODEN TIL DEN NYE FILMEN LIGGER IKKE HER ENNÅ. Filene i denne mappen er versjon 3 (Azure-stemme).
+  Legg kildefilene til den nye versjonen inn her før filmen endres igjen.
+
 OPPDATERT 31.10.2026: NY TALE
 - Ny fortellerstemme fra ElevenLabs (Mia Starset), lyd/mp3/ (se lyd/innstillinger.txt).
 - prepare.py leser lyd/wav-ny/ (24 kHz mono, konvertert fra mp3 med ffmpeg).
