@@ -1987,7 +1987,7 @@ export const trafficSigns: TrafficSign[] = [
     theoryTrap: 'Mange tror at fartsgrensen automatisk blir 110 km/t på motorveg. Fartsgrensen er alltid den som er skiltet, og hvis det ikke er skiltet, gjelder den generelle fartsgrensen på 80 km/t.',
     whatToDo: [
       'Kjør kun inn på motorvegen dersom kjøretøyet ditt kan kjøre lovlig i minst 40 km/t på flat veg.',
-      'Bruk påkjøringsfeltet to å tilpasse farten til trafikken på motorvegen før du fletter inn.',
+      'Bruk påkjøringsfeltet til å tilpasse farten til trafikken på motorvegen før du kjører inn. Du har vikeplikt for trafikken som allerede er på motorvegen.',
       'Ikke snu, rygge, stanse eller parkere på vegen eller veiskulderen.'
     ],
     confusedWith: ['503', '504'],

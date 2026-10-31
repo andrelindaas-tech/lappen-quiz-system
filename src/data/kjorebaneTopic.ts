@@ -1,6 +1,6 @@
 import type { TheoryTopic } from './theoryData'
 
-// Kjørebane, kjørefelt og veiskulder. Fagkontrollert mot trafikkreglene §§ 1, 4, 7, 17 og 19
+// Kjørebane, kjørefelt og veiskulder. Fagkontrollert mot trafikkreglene §§ 1, 4, 5, 7, 17 og 19
 // og skiltforskriften § 23 nr. 3 (31.10.2026).
 const fig = (src: string, alt: string, tekst: string) =>
     `![${alt}](/images/kjorebane/${src})\n*${tekst}*`
@@ -18,7 +18,7 @@ export const kjorebaneTopic: TheoryTopic = {
     seoTitle: 'Kjørebane, kjørefelt og veiskulder – se forskjellen',
     seoDescription: 'En toveisvei har én kjørebane og to kjørefelt. Se fire veier tegnet ovenfra, forskjellen på veibane og kjørebane, og reglene der begrepene avgjør svaret.',
     author: 'Teori-test.no-redaksjonen',
-    reviewedAgainst: 'Trafikkreglene §§ 1, 4, 7, 17 og 19 og skiltforskriften § 23 (kontrollert 31.10.2026)',
+    reviewedAgainst: 'Trafikkreglene §§ 1, 4, 5, 7, 17 og 19 og skiltforskriften § 23 (kontrollert 31.10.2026)',
     publishedDate: '2026-10-31',
     lastUpdated: '2026-10-31',
     sections: [
@@ -38,7 +38,7 @@ En vanlig toveisvei har altså **én kjørebane og to kjørefelt**. Midtlinjen d
                 ['<strong>Kjørebane</strong>', 'Den delen av veien som er bestemt for kjøring med kjøretøy.', 'Området mellom kantlinjene. Kan ha ett eller flere kjørefelt og trafikk i én eller begge retninger.'],
                 ['<strong>Kjørefelt</strong>', 'Et felt i kjørebanen, markert med oppmerking eller bredt nok for én bilrekke.', 'Plass til én rekke biler etter hverandre. Finnes også på vei uten midtlinje, hvis veien er bred nok.'],
                 ['<strong>Veiskulder</strong>', 'Delen av veien utenfor kantlinjen.', 'Stripen utenfor den hvite kantlinjen. Kan være asfaltert, grus eller smal.'],
-            ]) + '<p style="margin-top: 1rem;">Begrepene er definert i <a href="https://lovdata.no/dokument/SF/forskrift/1986-03-21-747/KAPITTEL_1#§1">trafikkreglene § 1</a>.</p>'
+            ]) + '<p style="margin-top: 1rem;">Begrepene er definert i <a href="https://lovdata.no/dokument/SF/forskrift/1986-03-21-747#%C2%A71">trafikkreglene § 1</a>.</p>'
         },
         {
             title: 'Hva er kjørebane?',
@@ -65,7 +65,7 @@ Oppmerkingen gjør feltene lette å se. Men en vei uten midtlinje kan også ha t
 
 Skulderen kan være bred eller smal, og ha asfalt eller grus. Den er ikke alltid trygg å kjøre ut på. Skiltet [farlig vegskulder](/trafikkskilt/fareskilt/farlig-vegskulder) varsler om dette.
 
-Skulderen er viktig for andre trafikanter: syklende kan bruke høyre skulder, og gående skal bruke skulderen når det ikke finnes fortau eller gangvei.`
+Skulderen er viktig for andre trafikanter: syklende kan bruke høyre skulder, og gående skal bruke gangvei, fortau eller skulderen.`
         },
         {
             title: 'Fire veier som viser forskjellen',
@@ -127,13 +127,13 @@ I trafikkreglene og på teoriprøven er det **kjørebane**, **kjørefelt** og **
             type: 'text',
             content: `Flere trafikkregler bruker ordene direkte. Da må du vite hvilken del av veien som er hva.
 
-**Fra skulderen inn på kjørebanen.** Kjører du fra veiskulderen inn på kjørebanen, har du vikeplikt for annen trafikk ([trafikkreglene § 7 nr. 4](https://lovdata.no/dokument/SF/forskrift/1986-03-21-747/KAPITTEL_1#§7)). Det gjelder for eksempel når du har stanset på skulderen og skal kjøre videre.
+**Fra skulderen inn på kjørebanen.** Kjører du fra veiskulderen inn på kjørebanen, har du vikeplikt for annen trafikk ([trafikkreglene § 7 nr. 4](https://lovdata.no/dokument/SF/forskrift/1986-03-21-747#%C2%A77)). Det gjelder for eksempel når du har stanset på skulderen og skal kjøre videre.
 
-**Syklende på skulderen når du svinger.** Når du svinger, har du vikeplikt for syklende som skal rett fram, både i kjørebanen og på skulderen ved siden av ([§ 7 nr. 3](https://lovdata.no/dokument/SF/forskrift/1986-03-21-747/KAPITTEL_1#§7)). Sjekk speil og blindsone før du svinger til høyre.
+**Syklende på skulderen når du svinger.** Når du svinger, har du vikeplikt for syklende som skal rett fram, både i kjørebanen og på skulderen ved siden av ([§ 7 nr. 3](https://lovdata.no/dokument/SF/forskrift/1986-03-21-747#%C2%A77)). Sjekk speil og blindsone før du svinger til høyre.
 
-**Syklende og gående bruker skulderen.** Syklende kan bruke høyre skulder ([§ 4](https://lovdata.no/dokument/SF/forskrift/1986-03-21-747/KAPITTEL_1#§4)). Gående skal bruke skulderen når det ikke finnes fortau eller gangvei ([§ 19](https://lovdata.no/dokument/SF/forskrift/1986-03-21-747/KAPITTEL_1#§19)). Hold god avstand når du passerer dem.
+**Syklende og gående bruker skulderen.** Syklende kan bruke høyre skulder ([§ 5](https://lovdata.no/dokument/SF/forskrift/1986-03-21-747#%C2%A75)). Gående skal bruke gangvei, fortau eller skulderen ([§ 19](https://lovdata.no/dokument/SF/forskrift/1986-03-21-747#%C2%A719)). Hold god avstand når du passerer dem.
 
-**Parkering i kjørebanen.** På forkjørsvei med fartsgrense over 50 km/t er det forbudt å parkere i kjørebanen ([§ 17 nr. 3](https://lovdata.no/dokument/SF/forskrift/1986-03-21-747/KAPITTEL_1#§17)). At en plass ligger utenfor kjørebanen, betyr ikke automatisk at parkering er lov der. Les mer om [stans og parkering](/laeringsressurser/stans-og-parkering).`
+**Parkering i kjørebanen.** På forkjørsvei med fartsgrense over 50 km/t er det forbudt å parkere i kjørebanen ([§ 17 nr. 3](https://lovdata.no/dokument/SF/forskrift/1986-03-21-747#%C2%A717)). At en plass ligger utenfor kjørebanen, betyr ikke automatisk at parkering er lov der. Les mer om [stans og parkering](/laeringsressurser/stans-og-parkering).`
         },
         {
             title: 'Les veien med oppmerkingen',
@@ -216,7 +216,7 @@ I trafikkreglene og på teoriprøven er det **kjørebane**, **kjørefelt** og **
         type: 'text',
         content: `Kontrollert mot lov og forskrift 31. oktober 2026.
 
-- [Lovdata: Trafikkreglene § 1 (definisjoner), § 4, § 7, § 17 og § 19](https://lovdata.no/dokument/SF/forskrift/1986-03-21-747)
+- [Lovdata: Trafikkreglene § 1 (definisjoner), § 4, § 5, § 7, § 17 og § 19](https://lovdata.no/dokument/SF/forskrift/1986-03-21-747)
 - [Lovdata: Skiltforskriften § 23 (farge på vegoppmerking)](https://lovdata.no/dokument/SF/forskrift/2005-10-07-1219)
 - [Statens vegvesen: Definisjoner i håndbøkene (vegbane, kjørefelt, midtdeler)](https://www.vegvesen.no/fag/publikasjoner/handboker/definisjoner/)
 

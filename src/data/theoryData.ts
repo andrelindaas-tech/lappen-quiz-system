@@ -251,8 +251,8 @@ export const theoryTopics: TheoryTopic[] = [
         icon: '👮',
         shortDescription: 'I trafikken vil du ofte oppleve at ulike signaler gir deg motstridende beskjeder. Hvem skal du høre på? Lær hierarkiet for å unngå fellene på prøven.',
         color: 'var(--apple-blue)',
-        seoTitle: 'Myndighetspyramiden forklart – rekkefølgen med enkel huskeregel',
-        seoDescription: 'Politi → trafikklys → skilt → trafikkregler. Enkel huskeregel for myndighetspyramiden (trafikkpyramiden), med eksempler og fellene som går igjen på teoriprøven.',
+        seoTitle: 'Myndighetspyramiden – rekkefølgen og huskeregelen (med figur)',
+        seoDescription: 'Politi, trafikklys, skilt og oppmerking, trafikkregler: det som står øverst, gjelder først. Se pyramiden, huskeregelen og fellene som går igjen på teoriprøven.',
         sections: [
             {
                 title: 'Kort forklart: Myndighetspyramiden',
@@ -410,7 +410,7 @@ export const theoryTopics: TheoryTopic[] = [
         shortDescription: 'Veimerking hjelper deg å forstå hvor du skal plassere bilen, når du kan skifte felt, hvor du må vike, og hvor det er farlig eller forbudt å kjøre over en linje. På teoriprøven blir du ofte testet på forskjellen mellom stiplet linje, sperrelinje, varsellinje, kombinert linje og vikelinje.',
         color: 'var(--apple-indigo)',
         seoTitle: 'Veimerking: hva betyr sperrelinje, varsellinje og kombinert linje?',
-        seoDescription: 'Hva betyr stripene i veien? Se bilder av hvit og gul sperrelinje, varsellinje, kombinert linje og vikelinje – med regler, vanlige feil og gratis quiz.',
+        seoDescription: 'Sperrelinje betyr at du ikke skal kjøre på eller over linjen. Se bilder av hvit og gul sperrelinje, varsellinje, kombinert linje og vikelinje – med film og gratis quiz.',
         ogImage: '/images/veimerking-og.png',
         lastUpdated: '2026-10-07',
         sections: [
@@ -1594,8 +1594,8 @@ export const theoryTopics: TheoryTopic[] = [
         icon: '',
         shortDescription: 'Reaksjonstid er tiden det tar fra du oppdager en fare til du faktisk handler. På teoriprøven handler dette ofte om hvor langt bilen rekker å kjøre før du begynner å bremse. Den avstanden kalles reaksjonslengde.',
         color: 'var(--apple-blue)',
-        seoTitle: 'Reaksjonstid bil: reaksjonslengde, formel og test | Teoriprøven',
-        seoDescription: 'Lær hva reaksjonstid er, test reaksjonstiden din, og se hvordan du regner ut reaksjonslengde ved 30, 50, 80 og 100 km/t.',
+        seoTitle: 'Reaksjonstid – test deg selv og regn ut reaksjonslengden',
+        seoDescription: 'Hvor rask er du? Test reaksjonstiden din, og se hvor langt bilen kjører før du begynner å bremse ved 30, 50, 80 og 100 km/t.',
         author: 'Teori-test.no-redaksjonen',
         lastUpdated: '2026-10-24',
         reviewedAgainst: 'Vegtrafikkloven og Statens vegvesens temaliste for teoriprøven',
@@ -4232,13 +4232,13 @@ export const theoryArticles: TheoryTopic[] = [
         icon: '🛣️',
         shortDescription: 'Hvem har lov til å kjøre på motorvei, hva er forbudt, og hvem har vikeplikt ved påkjøring? Reglene mange bommer på — forklart enkelt.',
         color: 'var(--apple-blue)',
-        seoTitle: 'Regler på motorvei – forbud, påkjøring og vikeplikt',
-        seoDescription: 'Hva er forbudt på motorvei, hvem har vikeplikt i akselerasjonsfeltet, og hva er forskjellen på motorvei og motortrafikkvei? Forklart til teoriprøven.',
+        seoTitle: 'Motorvei og motortrafikkvei – forskjellen og reglene',
+        seoDescription: 'Hva er forskjellen på motorvei og motortrafikkvei? Se tabellen med skilt, fart og forbud, hvem som kan kjøre der, og hvem som har vikeplikt ved påkjøring.',
         sections: [
             {
                 title: 'Kort forklart',
                 type: 'info',
-                content: 'Motorvei er laget for én ting: rask og jevn trafikkflyt uten overraskelser. Derfor er reglene strenge:\n\n• Kun for motorkjøretøy som lovlig kan holde en viss fart — gående, syklende, moped og traktor er forbudt\n• Stans, parkering, rygging, vending og av-/påstigning er forbudt\n• Ved påkjøring har **du** vikeplikt for trafikken som allerede er på motorveien\n• Motortrafikkvei har i hovedsak de samme forbudene, men lavere standard'
+                content: 'Motorvei er laget for én ting: rask og jevn trafikkflyt uten overraskelser. Derfor er reglene strenge:\n\n• Kun for motorkjøretøy som lovlig kan holde en viss fart — gående, syklende, moped og traktor er forbudt\n• Stans, parkering, rygging, vending og av-/påstigning er forbudt\n• Ved påkjøring har **du** vikeplikt for trafikken som allerede er på motorveien\n• Motortrafikkvei har de samme forbudene, men lavere standard: den kan ha møtende trafikk uten midtdeler'
             },
             {
                 title: 'Hvem har ikke lov på motorveien?',
@@ -4261,9 +4261,9 @@ export const theoryArticles: TheoryTopic[] = [
                 content: 'Ved avkjøring gjelder det motsatte prinsippet: hold motorveiens fart til du er inne i retardasjonsfeltet, og brems der — ikke ute på motorveien. Slik forstyrrer du ikke trafikken bak.\n\nHusk også [fartsblindheten](/laeringsressurser/syn-og-fartsblindhet): etter lang motorveikjøring føles avkjøringsrampen saktere enn den er. Sjekk speedometeret — mange ramper har krappe svinger med lav fartsgrense.'
             },
             {
-                title: 'Motorvei vs. motortrafikkvei',
-                type: 'text',
-                content: 'Begge er skiltet med egne [opplysningsskilt](/trafikkskilt/opplysningsskilt) og har de samme forbudene mot myk trafikk, stans, rygging og vending. Forskjellen er standarden:\n\n- **Motorvei:** alltid fysisk adskilte kjøreretninger og planfrie kryss (av- og påkjøringsramper). Fartsgrense opptil 110 km/t.\n- **Motortrafikkvei:** lavere standard — kan ha smalere profil og vanligvis lavere fartsgrense. \n\nSe [fartsgrense-guiden](/laeringsressurser/fartsgrenser) for de generelle og særskilte fartsgrensene.'
+                title: 'Forskjellen på motorvei og motortrafikkvei',
+                type: 'table',
+                content: "<p>Reglene er de samme. Forskjellen ligger i hvordan veien er bygget.</p><div class=\"responsive-theory-table-wrapper\" style=\"margin-top: 1rem;\"><table class=\"responsive-theory-table\" style=\"width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem;\"><thead><tr style=\"background-color: var(--color-surface); border-bottom: 2px solid var(--color-border);\"><th style=\"padding: 12px 8px;\"></th><th style=\"padding: 12px 8px;\">Motorvei</th><th style=\"padding: 12px 8px;\">Motortrafikkvei</th></tr></thead><tbody><tr style=\"border-bottom: 1px solid var(--color-border);\"><td style=\"padding: 12px 8px;\"><strong>Hva er det?</strong></td><td style=\"padding: 12px 8px;\">Vei med planskilte kryss (av- og påkjøringsramper) og uten avkjørsler til eiendommer. Kjøreretningene er normalt skilt med midtdeler.</td><td style=\"padding: 12px 8px;\">Vei uten avkjørsler til eiendommer, men med lavere standard enn motorvei. Kan ha møtende trafikk uten fysisk midtdeler.</td></tr><tr style=\"border-bottom: 1px solid var(--color-border);\"><td style=\"padding: 12px 8px;\"><strong>Skilt</strong></td><td style=\"padding: 12px 8px;\"><a href=\"/trafikkskilt/opplysningsskilt/motorveg/\">502 Motorveg</a></td><td style=\"padding: 12px 8px;\"><a href=\"/trafikkskilt/opplysningsskilt/motortrafikkveg/\">503 Motortrafikkveg</a></td></tr><tr style=\"border-bottom: 1px solid var(--color-border);\"><td style=\"padding: 12px 8px;\"><strong>Hvem kan kjøre der?</strong></td><td style=\"padding: 12px 8px;\">Bare motorvogn og vogntog som lovlig kan kjøre minst 40 km/t på flat vei. Ikke moped.</td><td style=\"padding: 12px 8px;\">Samme regel</td></tr><tr style=\"border-bottom: 1px solid var(--color-border);\"><td style=\"padding: 12px 8px;\"><strong>Stans og parkering</strong></td><td style=\"padding: 12px 8px;\">Forbudt, også på ramper</td><td style=\"padding: 12px 8px;\">Forbudt, også på ramper</td></tr><tr style=\"border-bottom: 1px solid var(--color-border);\"><td style=\"padding: 12px 8px;\"><strong>Rygging og vending</strong></td><td style=\"padding: 12px 8px;\">Forbudt</td><td style=\"padding: 12px 8px;\">Forbudt</td></tr><tr><td style=\"padding: 12px 8px;\"><strong>Fartsgrense</strong></td><td style=\"padding: 12px 8px;\">Det som er skiltet, opptil 110 km/t</td><td style=\"padding: 12px 8px;\">Det som er skiltet, ofte lavere enn på motorvei</td></tr></tbody></table></div><p style=\"margin-top: 1rem;\"><strong>Huskeregel:</strong> Ser du møtende trafikk uten midtdeler, er det ikke motorvei. Skiltet avgjør likevel: forbudene gjelder fra skiltet 502 eller 503 og til skiltet om at motorveien eller motortrafikkveien slutter.</p><p>Reglene står i trafikkreglene § 4 nr. 2 (hvem kan kjøre der), § 11 nr. 2 (rygging og vending) og § 17 nr. 1 e (stans). Se også <a href=\"/laeringsressurser/fartsgrenser/\">fartsgrensene</a> og forskjellen på <a href=\"/laeringsressurser/kjorebane-kjorefelt-veiskulder/\">kjørebane og kjørefelt</a>.</p>"
             },
             {
                 title: 'Slik bruker du dette på prøven',
@@ -4282,7 +4282,11 @@ export const theoryArticles: TheoryTopic[] = [
             },
             {
                 question: 'Hva er forskjellen på motorvei og motortrafikkvei?',
-                answer: 'Begge har samme forbud, men motorvei har alltid adskilte kjøreretninger, planfrie kryss og fartsgrense opptil 110 km/t. Motortrafikkvei har lavere standard og vanligvis lavere fartsgrense.'
+                answer: 'Reglene er de samme: bare motorvogn som lovlig kan kjøre minst 40 km/t, ingen moped, og forbud mot stans, rygging og vending. Forskjellen er standarden. Motorvei har planskilte kryss og normalt midtdeler. Motortrafikkvei har lavere standard og kan ha møtende trafikk uten midtdeler.'
+            },
+            {
+                question: 'Kan man kjøre moped på motortrafikkvei?',
+                answer: 'Nei. Moped er forbudt både på motorvei og motortrafikkvei, også på av- og påkjøringene (trafikkreglene § 4 nr. 2).'
             },
             {
                 question: 'Hva gjør du hvis du kjører feil på motorveien?',
@@ -5283,8 +5287,8 @@ Les mer om [trafikkuhell og førstehjelp](/laeringsressurser/trafikkuhell-forste
         icon: "🚌",
         shortDescription: "Samme buss, samme blinklys – men en annen fartsgrense kan endre hvem som har vikeplikt. Sammenlign situasjonene og prøv deg før du leser fasiten.",
         color: "var(--apple-blue)",
-        seoTitle: "Vikeplikt for buss – gjelder ved 60 km/t eller lavere",
-        seoDescription: "Når har du vikeplikt for buss? Sammenlign 60- og 70-sone i visuelle oppgaver, se forklaringen og test deg gratis uten innlogging.",
+        seoTitle: "Når har du vikeplikt for buss? Regelen i 60- og 70-sone",
+        seoDescription: "Bussen gir tegn og skal ut fra holdeplassen. Må du slippe den ut? Se regelen, situasjonene som lurer mange, og test deg gratis i bildeoppgaver.",
         author: 'Teori-test.no-redaksjonen',
         reviewedAgainst: 'Trafikkreglene og Statens vegvesens veiledning',
         sections: [
@@ -5598,8 +5602,8 @@ Se også etter kø. Hvis du kjører inn over trikkesporet og blir stående der, 
         icon: '🚦',
         shortDescription: 'Lær hva du må gjøre ved planovergang, hvordan lys, bom og skilt skal tolkes, og hvilke svar som ofte er riktige på teoriprøven.',
         color: 'var(--apple-orange)',
-        seoTitle: 'Planovergang regler: stopp, lys, bom og skilt',
-        seoDescription: 'Lær reglene ved planovergang til teoriprøven klasse B: rødt lys, bom, skilt, stopp-plikt, kø og trygg kryssing av jernbane.',
+        seoTitle: 'Planovergang – hva er det, og når må du stanse?',
+        seoDescription: 'En planovergang er der vei og jernbane krysser i samme plan. Se når du må stanse, hva blinkende rødt lys og bom betyr, og skiltene som varsler.',
         sections: [
             {
                 title: 'Planovergang på teoriprøven',
