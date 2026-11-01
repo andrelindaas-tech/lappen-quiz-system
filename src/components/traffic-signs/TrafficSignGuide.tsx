@@ -6,9 +6,13 @@ import type { TrafficSignCategory } from '../../data/trafficSignCategories';
 import type { TrafficSignGuide as Guide } from '../../data/trafficSignGuides';
 import { trackEvent } from '../../utils/analytics';
 import './TrafficSignGuide.css';
+import { signTitleTest, signTestTitle, signTestDescription } from '../../data/trafficSignTitleTest';
 
 export default function TrafficSignGuide({ sign, category, guide }: { sign: TrafficSign; category: TrafficSignCategory; guide: Guide }) {
   const name = sign.displayName || sign.name;
+  const titleTest = signTitleTest[sign.code];
+  const pageTitle = titleTest ? signTestTitle(titleTest) : guide.title;
+  const pageDescription = titleTest ? signTestDescription(titleTest) : guide.description;
   const updatedAt = guide.updatedAt || '2026-10-05';
   const dateLabel = new Date(`${updatedAt}T12:00:00Z`).toLocaleDateString('nb-NO', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' });
   const sourceDate = guide.sourceDate || '5. oktober 2026';
@@ -54,19 +58,19 @@ export default function TrafficSignGuide({ sign, category, guide }: { sign: Traf
   ];
   return <article className="sign-guide container">
     <Helmet>
-      <title>{guide.title}</title><meta name="description" content={guide.description} />
-      <meta property="og:title" content={guide.title} /><meta property="og:description" content={guide.description} />
+      <title>{pageTitle}</title><meta name="description" content={pageDescription} />
+      <meta property="og:title" content={pageTitle} /><meta property="og:description" content={pageDescription} />
       <meta property="og:image" content={`https://teori-test.no${illustration}`} /><meta property="og:image:alt" content={guide.scenario} />
       <meta property="og:image:width" content="1200" /><meta property="og:image:height" content="1200" />
-      <meta name="twitter:title" content={guide.title} /><meta name="twitter:description" content={guide.description} />
+      <meta name="twitter:title" content={pageTitle} /><meta name="twitter:description" content={pageDescription} />
       <meta name="twitter:image" content={`https://teori-test.no${illustration}`} />
       {structured.map((data) => <script key={data['@type']} type="application/ld+json">{JSON.stringify(data)}</script>)}
     </Helmet>
     <nav aria-label="Brødsmuler"><Link to="/trafikkskilt/">Skiltguiden</Link> / <Link to={`/trafikkskilt/${category.slug}/`}>{category.name}</Link> / {sign.code}</nav>
     <header className="sign-guide-intro">
       <img className="sign-guide-official" src={sign.imagePath} alt={sign.visualDescription || `Skilt ${sign.code} ${name}`} width="180" height="180" />
-      <div><p className="sign-guide-eyebrow">{category.name} · Skilt {sign.code}</p><h1>Skilt {sign.code} {name}</h1>
-      <p>{guide.intro || 'Lær regelen, se den i en trafikksituasjon og skill skiltet fra lignende skilt.'}</p>
+      <div><p className="sign-guide-eyebrow">{category.name} · Skilt {sign.code}</p><h1>{titleTest ? titleTest.name : `Skilt ${sign.code} ${name}`}</h1>
+      <p>{titleTest ? titleTest.lead : guide.intro || 'Lær regelen, se den i en trafikksituasjon og skill skiltet fra lignende skilt.'}</p>
       <p className="sign-guide-date">Sist oppdatert <time dateTime={updatedAt}>{dateLabel}</time></p></div>
     </header>
     <section className="sign-guide-answer"><h2>Kort svar</h2><p>{guide.answer}</p><p className="sign-guide-visual">Kjennetegn: {sign.visualDescription}</p></section>

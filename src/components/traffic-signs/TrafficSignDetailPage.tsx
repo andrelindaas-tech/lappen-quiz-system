@@ -7,6 +7,7 @@ import { trafficSigns } from '../../data/trafficSigns';
 import { getSignExtra } from '../../data/trafficSignExtras';
 import { trafficSignGuides } from '../../data/trafficSignGuides';
 import TrafficSignGuide from './TrafficSignGuide';
+import { signTitleTest, signTestTitle, signTestDescription } from '../../data/trafficSignTitleTest';
 import '../../theory.css';
 
 // Standard gyldighets-/rekkeviddeforklaring per skiltgruppe (vises i FAQ på alle skiltsider)
@@ -111,8 +112,9 @@ export default function TrafficSignDetailPage() {
   // Same pattern as the guide pages. Drop the question when the title would pass 60 characters.
   const titleBase = `${isUnderskilt ? 'Underskilt' : 'Skilt'} ${sign.code} ${signTitleName}`;
   const titleFull = `${titleBase} – hva betyr skiltet?`;
-  const seoTitle = titleFull.length <= 60 ? titleFull : titleBase;
-  const seoDesc = isUnderskilt
+  const titleTest = signTitleTest[sign.code];
+  const seoTitle = titleTest ? signTestTitle(titleTest) : titleFull.length <= 60 ? titleFull : titleBase;
+  const seoDesc = titleTest ? signTestDescription(titleTest) : isUnderskilt
     ? `Lær hva ${signTitleName.toLowerCase()}-underskiltet betyr, hvordan det presiserer hovedskiltet, og hvilken vanlig misforståelse du må passe på til teoriprøven.`
     : `Lær hva ${signTitleName.toLowerCase()}-skiltet betyr, hva du skal gjøre, og hvilken vanlig misforståelse du må passe på til teoriprøven.`;
 
@@ -279,7 +281,7 @@ export default function TrafficSignDetailPage() {
             }}>
               <img
                 src={sign.imagePath}
-                alt={cleanVisualDescription ? `${cleanVisualDescription}, skilt ${sign.code} ${signTitleName}` : `Skilt ${sign.code} ${signTitleName} – norsk trafikkskilt`}
+                alt={titleTest ? `${titleTest.name}${cleanVisualDescription ? `: ${cleanVisualDescription}` : ''}` : cleanVisualDescription ? `${cleanVisualDescription}, skilt ${sign.code} ${signTitleName}` : `Skilt ${sign.code} ${signTitleName} – norsk trafikkskilt`}
                 style={{ maxHeight: '100%', maxWidth: '100%', objectFit: 'contain' }}
               />
             </div>
@@ -290,13 +292,13 @@ export default function TrafficSignDetailPage() {
                 Offentlig skilt nr. {sign.code}
               </div>
               <h1 style={{ fontSize: '2.25rem', fontWeight: 800, margin: '0 0 var(--spacing-sm) 0', letterSpacing: '-0.02em' }}>
-                {signTitleName}-skiltet
+                {titleTest ? titleTest.name : `${signTitleName}-skiltet`}
               </h1>
               <h2 style={{ fontSize: '1.15rem', color: 'var(--color-text)', fontWeight: 600, marginTop: 'var(--spacing-md)', marginBottom: 'var(--spacing-xs)' }}>
                 Kort forklart
               </h2>
               <p style={{ fontSize: '1.05rem', color: 'var(--color-text)', lineHeight: '1.6', margin: 0 }}>
-                {sign.shortExplanation}
+                {titleTest ? titleTest.lead : sign.shortExplanation}
               </p>
               {sign.visualDescription && (
                 <p style={{ fontSize: '0.9rem', color: 'var(--color-text-light)', marginTop: '8px', margin: 0, fontStyle: 'italic' }}>

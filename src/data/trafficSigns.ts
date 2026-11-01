@@ -1168,12 +1168,12 @@ export const trafficSigns: TrafficSign[] = [
     slug: 'forbudt-for-motorvogn',
     category: 'forbudsskilt',
     imagePath: '/signs/forbudsskilt/skilt-306-1-forbudt-for-motorvogn.jpg',
-    shortExplanation: 'Forbyr ferdsel med motorvogn (kjøretøy med motor, unntatt tohjuls moped).',
-    longExplanation: 'Skiltet forbyr kjøring med alle typer motorvogner (personbil, lastebil, motorsykkel, tre- og firehjuls moped/ATV). Tohjuls moped og vanlig sykkel er likevel tillatt.',
-    theoryTrap: 'Husk at tohjuls moped er unntatt fra dette forbudet og kan kjøre her, mens motorsykkel og traktor er forbudt.',
+    shortExplanation: 'Forbyr ferdsel med motorvogn. Liten elektrisk motorvogn, som el-sparkesykkel, er unntatt.',
+    longExplanation: 'Skiltet forbyr kjøring med motorvogn, for eksempel personbil, lastebil, motorsykkel, moped og traktor. Unntaket er liten elektrisk motorvogn, som el-sparkesykkel. Vanlig sykkel er heller ikke omfattet.',
+    theoryTrap: 'Mange tror at moped er unntatt. Etter skiltforskriften er det bare liten elektrisk motorvogn, som el-sparkesykkel, som er unntatt.',
     whatToDo: [
       'Ikke kjør her med bil, motorsykkel, ATV eller traktor.',
-      'Du kan passere med vanlig sykkel eller tohjuls moped.'
+      'Du kan passere med vanlig sykkel eller el-sparkesykkel.'
     ],
     confusedWith: ['306.0'],
     sources: [{ name: 'Statens vegvesen', url: 'https://www.vegvesen.no' }],
