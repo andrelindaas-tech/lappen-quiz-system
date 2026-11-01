@@ -18,6 +18,7 @@ export const kjorebaneTopic: TheoryTopic = {
     seoTitle: 'Kjørebane, kjørefelt og veiskulder – se forskjellen',
     seoDescription: 'En toveisvei har én kjørebane og to kjørefelt. Se fire veier tegnet ovenfra, forskjellen på veibane og kjørebane, og reglene der begrepene avgjør svaret.',
     author: 'Teori-test.no-redaksjonen',
+    ogImage: '/images/kjorebane/00-oversikt.png',
     reviewedAgainst: 'Trafikkreglene §§ 1, 4, 5, 7, 17 og 19 og skiltforskriften § 23 (kontrollert 31.10.2026)',
     publishedDate: '2026-10-31',
     lastUpdated: '2026-10-31',
@@ -30,6 +31,11 @@ export const kjorebaneTopic: TheoryTopic = {
 - **Veiskulder** er delen av veien utenfor kantlinjen. Den er ikke et kjørefelt.
 
 En vanlig toveisvei har altså **én kjørebane og to kjørefelt**. Midtlinjen deler kjørebanen i to felt, men lager ikke to kjørebaner. Det gjør bare en fysisk midtdeler.`
+        },
+        {
+            title: 'Slik ser det ut',
+            type: 'text',
+            content: fig('00-oversikt.svg', 'Toveisvei sett ovenfra med forklaring: kjørebanen ligger mellom de to hvite kantlinjene og har to kjørefelt, ett i hver retning, delt av gul midtlinje. Utenfor hver kantlinje ligger veiskulderen.', 'Kjørebanen ligger mellom kantlinjene. Midtlinjen deler den i to kjørefelt. Veiskulderen ligger utenfor kantlinjen.')
         },
         {
             title: 'Forskjellen i en tabell',
